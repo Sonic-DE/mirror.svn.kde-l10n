@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter id="details.institutions">
+<chapterinfo>
+  <authorgroup>
+    <author
+>&Roger.Lum; &Roger.Lum.mail; </author>
+    <author
+>&Jack.H.Ostroff; &Jack.H.Ostroff.mail; </author>
+  </authorgroup>
+  <date
+>01/12/2024</date>
+  <releaseinfo
+>5.2.0</releaseinfo>
+</chapterinfo>
+<title
+>Istituti</title>
+
+<para
+>Gli istituti in &kmymoney; servono per raggruppare i conti. Sono più comunemente istituti finanziari come banche e società di intermediazione finanziaria, ma possono essere qualsiasi cosa tu voglia, come <quote
+>Self</quote
+>, per tenere conti per il denaro in tasca e qualsiasi altro asset non effettivamente gestito da un istituto finanziario, o <quote
+>Stores</quote
+>, per raggruppare tutti i tuoi conti di carte di credito e altri conti con negozi al dettaglio. </para>
+
+<sect1 id="details.institutions.view"
+><title
+>Vista degli istituti</title>
+<para
+>La vista degli istituti visualizza un riepilogo di tutti i conti aperti raggruppati nei rispettivi istituti. L'elenco dei conti sotto ogni istituto può essere espanso o contratto facendo clic sulla freccia a sinistra del nome dell'istituto. L'ultimo istituto elencato è «Conti senza l'assegnazione di un istituto». </para>
+
+<para
+>La vista Istituti visualizza diverse colonne, che mostrano informazioni sul conto. Mostra anche il valore totale di tutti i conti in ogni istituto. È possibile selezionare quali colonne mostrare facendo clic con il tasto destro del mouse su una qualsiasi intestazione di colonna e selezionando o deselezionando la casella accanto al nome della colonna. </para>
+
+<screenshot>
+  <screeninfo
+>Vista degli istituti</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="institution_view.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Vista degli istituti</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<variablelist>
+  <varlistentry>
+    <term
+>Nome</term>
+    <listitem>
+      <para
+>Il nome dell'istituto o del conto. Questa colonna è sempre visualizzata. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+>Saldo</term>
+    <listitem>
+      <para
+>Il saldo attuale del conto. Per gli istituti non viene visualizzato alcun valore. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+>Valore totale</term>
+    <listitem>
+      <para
+>Per i conti, questo è lo stesso valore del saldo. Per gli istituti, questo è il totale dei saldi di tutti i conti in quell'istituto. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+>IBAN</term>
+    <listitem>
+      <para
+>L'<acronym
+><ulink url="https://it.wikipedia.org/wiki/International_Bank_Account_Number"
+>IBAN</ulink
+> </acronym
+> (International Bank Account Number) viene visualizzato se è stato immesso un valore nel campo appropriato nella finestra delle informazioni sul conto. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+>Coordinate bancarie</term>
+    <listitem>
+      <para
+><ulink url="https://en.wikipedia.org/wiki/Bank_code"
+>Codice bancario</ulink
+>. Questo identificatore è formattato e utilizzato in modo diverso in diversi paesisi. È noto come routing o routing transit number negli Stati Uniti e come sort code nel Regno Unito. Attualmente non è utilizzato da &kmymoney;. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+>SWIFT/BIC</term>
+    <listitem>
+      <para
+><acronym
+><ulink url="https://it.wikipedia.org/wiki/ISO_9362"
+>SWIFT/BIC</ulink
+></acronym
+> (codice identificativo della Society for Worldwide Interbank Financial Telecommunication/Business) </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+
+</sect1>
+
+<sect1 id="details.institutions.institution"
+><title
+>Opzioni degli istituti</title>
+<para
+>Facendo clic con il pulsante destro sul nome di un istituto si apre una finestra Opzioni dell'istituto, con diverse opzioni. Selezionando <guimenuitem
+>Nuovo istituto</guimenuitem
+> si inizia la procedura guidata di creazione di un nuovo istituto, dove si possono inserire tutte le informazioni necessarie. Selezionando Con questa procedura si può creare un nuovo istituto. Selezionando <guimenuitem
+>Modifica istituto</guimenuitem
+> si apre una finestra con i dettagli modificabili dell'istituto, come il suo nome ed indirizzo. Selezionando <guimenuitem
+>Elimina istituto</guimenuitem
+> si elimina l'istituto e tutti i conti associati. È bene notare che si potrà eliminare un istituto solo se si eliminano i conti associati, e questo è possibile solo se non contengono transazioni e non ci sono pianificazioni che vi si riferiscono. Selezionando <guimenuitem
+>Nuovo conto...</guimenuitem
+> si avvia la procedura di creazione di un nuovo conto, che è descritta in dettaglio nella prossima sezione. </para>
+
+<screenshot>
+  <screeninfo
+>Sotto-menu opzioni degli istituti</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="institution_options.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Sotto-menu opzioni degli istituti</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<sect2 id="details.institutions.new"
+><title
+>Nuovo istituto</title>
+<screenshot>
+  <screeninfo
+>nuovo istituto</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="newinst.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>nuovo istituto</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<note
+><para
+>Devi avere un file aperto prima di poter creare un nuovo istituto. Se non hai un file esistente, dovrai <link linkend="firsttime.newfile"
+>crearne uno</link
+>. </para
+></note>
+
+<para
+>Nella finestra Nuovo istituto è richiesto solo il nome, mentre tutti gli altri campi sono facoltativi. Come nella finestra delle informazioni personali, questi dati non sono attualmente utilizzati da &kmymoney;, ma alcuni elementi potrebbero essere necessari nelle versioni future per determinate funzionalità. In particolare, il <ulink url="https://en.wikipedia.org/wiki/Bank_code"
+>Bank Code</ulink
+> e il <acronym
+><ulink url="https://en.wikipedia.org/wiki/ISO_9362"
+>BIC (Bank Identifier Code)</ulink
+></acronym
+> saranno richiesti per l'online banking, anche se questo potrebbe dipendere dal paese in cui si trova la tua banca. </para>
+</sect2>
+
+<sect2
+><title
+>Opzioni del conto</title>
+<para
+>Le opzioni discusse sopra si riferiscono agli istituti elencati nella vista degli istituti. La maggior parte delle righe in questa vista sono conti. Facendo clic con il pulsante destro del mouse su un nome di conto si apre un menu Opzioni conto. Le voci e i dettagli per questo menu sono discussi alla fine del <link linkend="details.accounts.options"
+>capitolo Conti</link
+>. </para>
+</sect2>
+</sect1>
+</chapter>

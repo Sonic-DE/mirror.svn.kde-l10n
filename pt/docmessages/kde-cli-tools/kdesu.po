@@ -1,0 +1,719 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kdesu\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 12:04+0000\n"
+"PO-Revision-Date: 2020-10-13 12:08+0100\n"
+"Last-Translator: José Nuno Pires <zepires@gmail.com>\n"
+"Language-Team: pt <kde-i18n-pt@kde.org>\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-POFile-CheckAccelerator: 0\n"
+"X-POFile-IgnoreConsistency: root\n"
+"X-POFile-SpellExtra: bin kdm tty set Xauthority stdout Iglio kcmkdesu TTY\n"
+"X-POFile-SpellExtra: PROGRAM USER pty kfm true id kdesu group nogroup\n"
+"X-POFile-SpellExtra: kdmconfig kdesustub sw desktop Pietro setuid kdesud\n"
+"X-POFile-SpellExtra: PTY ARG DISPLAY kdmrc tmp hacker hackers nonewdcop\n"
+"X-POFile-SpellExtra: kfmclient arg profile libexec noignorebutton\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-POFile-SpellExtra: filemanagement attach prefix Path path config su kf\n"
+
+#. Tag: title
+#: index.docbook:13
+#, no-c-format
+msgid "The &kdesu; handbook"
+msgstr "Manual do &kdesu;"
+
+#. Tag: author
+#: index.docbook:16
+#, no-c-format
+msgid "&Geert.Jansen; &Geert.Jansen.mail;"
+msgstr "&Geert.Jansen; &Geert.Jansen.mail;"
+
+#. Tag: trans_comment
+#: index.docbook:17
+#, no-c-format
+msgid "ROLES_OF_TRANSLATORS"
+msgstr ""
+"<othercredit role=\"translator\"><firstname>José</firstname><surname>Pires</"
+"surname><affiliation><address><email>zepires@gmail.com</email></address></"
+"affiliation><contrib>Tradução</contrib></othercredit>"
+
+#. Tag: holder
+#: index.docbook:22
+#, no-c-format
+msgid "&Geert.Jansen;"
+msgstr "&Geert.Jansen;"
+
+#. Tag: date
+#: index.docbook:27
+#, no-c-format
+msgid "2010-09-21"
+msgstr "2010-09-21"
+
+#. Tag: releaseinfo
+#: index.docbook:28
+#, no-c-format
+msgid "KDE 4.5"
+msgstr "KDE 4.5"
+
+#. Tag: para
+#: index.docbook:31
+#, no-c-format
+msgid ""
+"&kdesu; is a graphical front end for the &UNIX; <command>su</command> "
+"command."
+msgstr ""
+"O &kdesu; é um interface gráfico para o comando &UNIX; <command>su</command>."
+
+#. Tag: keyword
+#: index.docbook:35
+#, no-c-format
+msgid "<keyword>KDE</keyword>"
+msgstr "<keyword>KDE</keyword>"
+
+#. Tag: keyword
+#: index.docbook:36
+#, no-c-format
+msgid "<keyword>su</keyword>"
+msgstr "<keyword>su</keyword>"
+
+#. Tag: keyword
+#: index.docbook:37
+#, no-c-format
+msgid "password"
+msgstr "senha"
+
+#. Tag: keyword
+#: index.docbook:38
+#, no-c-format
+msgid "root"
+msgstr "root"
+
+#. Tag: title
+#: index.docbook:44
+#, no-c-format
+msgid "Introduction"
+msgstr "Introdução"
+
+#. Tag: para
+#: index.docbook:60
+#, no-c-format
+msgid ""
+"Welcome to &kdesu;! &kdesu; is a graphical front end for the &UNIX; "
+"<command>su</command> command for the K Desktop Environment. It allows you "
+"to run a program as different user by supplying the password for that user. "
+"&kdesu; is an unprivileged program; it uses the system's <command>su</"
+"command>."
+msgstr ""
+"Bem-vindo ao &kdesu;! O &kdesu; é uma interface gráfica para o comando Unix "
+"<command>su</command>, para o ambiente de trabalho K. Permite-lhe executar "
+"um programa como um utilizador diferente, fornecendo a senha desse "
+"utilizador. O &kdesu; é um programa sem privilégios e usa o <command>su</"
+"command> do sistema."
+
+#. Tag: para
+#: index.docbook:66
+#, no-c-format
+msgid ""
+"&kdesu; has one additional feature: it can remember passwords for you. If "
+"you are using this feature, you only need to enter the password once for "
+"each command. See <xref linkend=\"sec-password-keeping\"/> for more "
+"information on this and a security analysis."
+msgstr ""
+"O &kdesu; tem uma função adicional: permite ao utilizador recordar as "
+"senhas. Se estiver a usar esta funcionalidade, necessita apenas de "
+"introduzir a senha uma vez para cada comando. Veja em <xref linkend=\"sec-"
+"password-keeping\"/> para mais informações e uma análise à segurança."
+
+#. Tag: para
+#: index.docbook:72
+#, no-c-format
+msgid ""
+"This program is meant to be started from the command line or from <filename>."
+"desktop</filename> files. Although it asks for the <systemitem class="
+"\"username\">root</systemitem> password using a &GUI; dialog, I consider it "
+"to be more of a command line &lt;-&gt; &GUI; glue instead of a pure &GUI; "
+"program."
+msgstr ""
+"Este programa pretende ser executado a partir da linha de comandos ou de "
+"ficheiros <filename>.desktop</filename>. Embora seja pedida a senha do "
+"<systemitem class=\"username\">root</systemitem>, usando uma janela gráfica, "
+"é considerada como sendo mais uma associação linha de comando &lt;-&gt; "
+"gráfica em vez de um puro programa gráfico."
+
+#. Tag: para
+#: index.docbook:78
+#, no-c-format
+msgid ""
+"Since <command>kdesu</command> is no longer installed in <userinput> $(kf5-"
+"config --prefix)</userinput>/bin but in <userinput>kf5-config --path "
+"libexec</userinput> and therefore not in your <envar>Path</envar>, you have "
+"to use <userinput>$(kf5-config --path libexec)<command>kdesu</command></"
+"userinput> to launch <command>kdesu</command>."
+msgstr ""
+"Dado que o <command>kdesu</command> não está mais instalado em <userinput> "
+"$(kf5-config --prefix)</userinput>/bin mas sim em <userinput>kf5-config --"
+"path libexec</userinput> e, por isso, fora da sua <envar>Path</envar>, terá "
+"de usar o comando <userinput>$(kf5-config --path libexec)<command>kdesu</"
+"command></userinput> para invocar o <command>kdesu</command>."
+
+#. Tag: title
+#: index.docbook:85
+#, no-c-format
+msgid "Using &kdesu;"
+msgstr "Usar o &kdesu;"
+
+#. Tag: para
+#: index.docbook:87
+#, no-c-format
+msgid "Usage of &kdesu; is easy. The syntax is like this:"
+msgstr "A utilização do &kdesu; é fácil. A sintaxe é a seguinte:"
+
+#. Tag: cmdsynopsis
+#: index.docbook:89
+#, no-c-format
+msgid ""
+"<command>kdesu</command> <group choice=\"opt\"><option>-c</option> "
+"<replaceable> command</replaceable></group> <group choice=\"opt\"><option>-"
+"d</option></group> <group choice=\"opt\"><option>-f</option> <replaceable> "
+"file</replaceable></group> <group choice=\"opt\"><option>-i</option> "
+"<replaceable> icon name</replaceable></group> <group choice=\"opt\"><option>-"
+"n</option></group> <group choice=\"opt\"><option>-p</option> <replaceable> "
+"priority</replaceable></group> <group choice=\"opt\"><option>-r</option></"
+"group> <group choice=\"opt\"><option>-s</option></group> <group choice=\"opt"
+"\"><option>-t</option></group> <group choice=\"opt\"><option>-u</option> "
+"<replaceable> user</replaceable></group> <group choice=\"opt\"><option>--"
+"noignorebutton</option></group> <group choice=\"opt\"><option>--attach</"
+"option> <replaceable> winid</replaceable></group>"
+msgstr ""
+"<command>kdesu</command> <group choice=\"opt\"><option>-c</option> "
+"<replaceable> comando</replaceable></group> <group choice=\"opt\"><option>-"
+"d</option></group> <group choice=\"opt\"><option>-f</option> <replaceable> "
+"ficheiro</replaceable></group> <group choice=\"opt\"><option>-i</option> "
+"<replaceable> nome do ícone</replaceable></group> <group choice=\"opt"
+"\"><option>-n</option></group> <group choice=\"opt\"><option>-p</option> "
+"<replaceable> prioridade</replaceable></group> <group choice=\"opt"
+"\"><option>-r</option></group> <group choice=\"opt\"><option>-s</option></"
+"group> <group choice=\"opt\"><option>-t</option></group> <group choice=\"opt"
+"\"><option>-u</option> <replaceable> utilizador</replaceable></group> <group "
+"choice=\"opt\"><option>--noignorebutton</option></group> <group choice=\"opt"
+"\"><option>--attach</option> <replaceable> ID</replaceable></group>"
+
+#. Tag: cmdsynopsis
+#: index.docbook:110
+#, no-c-format
+msgid ""
+"<command>kdesu</command> <arg choice=\"opt\">&kde; Generic Options</arg> "
+"<arg choice=\"opt\">&Qt; Generic Options</arg>"
+msgstr ""
+"<command>kdesu</command> <arg choice=\"opt\">Opções Genéricas do &kde;</arg> "
+"<arg choice=\"opt\">Opções Genéricas do Qt</arg>"
+
+#. Tag: para
+#: index.docbook:116
+#, no-c-format
+msgid "The command line options are explained below."
+msgstr "As opções da linha de comandos são explicadas em baixo."
+
+#. Tag: option
+#: index.docbook:120
+#, no-c-format
+msgid "-c <replaceable>command</replaceable>"
+msgstr "-c <replaceable>comando</replaceable>"
+
+#. Tag: para
+#: index.docbook:121
+#, no-c-format
+msgid ""
+"This specifies the command to run as root. It has to be passed in one "
+"argument. So if, for example, you want to start a new file manager, you "
+"would enter at the prompt: <userinput>$(kf5-config --path "
+"libexec)<command>kdesu <option>-c <replaceable> &dolphin;</replaceable></"
+"option></command></userinput>"
+msgstr ""
+"Isto indica o comando a ser executado como 'root'. Tem de ser passado um "
+"argumento. Assim se, por exemplo, quiser iniciar um novo gestor de "
+"ficheiros, iria introduzir na linha de comandos: <userinput>$(kf5-config --"
+"path libexec)<command>kdesu<option>-c <replaceable>&dolphin;</replaceable></"
+"option></command></userinput>"
+
+#. Tag: option
+#: index.docbook:127
+#, no-c-format
+msgid "<option>-d</option>"
+msgstr "<option>-d</option>"
+
+#. Tag: para
+#: index.docbook:128
+#, no-c-format
+msgid "Show debug information."
+msgstr "Mostra informações sobre a depuração."
+
+#. Tag: option
+#: index.docbook:131
+#, no-c-format
+msgid "-f <replaceable>file</replaceable>"
+msgstr "-f <replaceable>ficheiro</replaceable>"
+
+#. Tag: para
+#: index.docbook:132
+#, no-c-format
+msgid ""
+"This option allow efficient use of &kdesu; in <filename>.desktop</filename> "
+"files. It tells &kdesu; to examine the file specified by <parameter>file</"
+"parameter>. If this file is writable by the current user, &kdesu; will "
+"execute the command as the current user. If it is not writable, the command "
+"is executed as user <parameter>user</parameter> (defaults to root)."
+msgstr ""
+"Esta opção permite um uso eficiente do &kdesu; em ficheiros <filename>."
+"desktop</filename>. Isto diz ao &kdesu; para examinar o ficheiro indicado em "
+"<parameter>ficheiro</parameter>. Se este ficheiro puder ser alterado pelo "
+"utilizador actual, o &kdesu; irá executar o comando com esse utilizador. Se "
+"não puder ser alterado, o comando é executado com o utilizador "
+"<parameter>utilizador</parameter> (o 'root', por omissão)."
+
+#. Tag: para
+#: index.docbook:138
+#, no-c-format
+msgid ""
+"<parameter>file</parameter> is evaluated like this: if <parameter>file</"
+"parameter> starts with a <literal>/</literal>, it is taken as an absolute "
+"filename. Otherwise, it is taken as the name of a global &kde; configuration "
+"file."
+msgstr ""
+"O <parameter>ficheiro</parameter> é avaliado da seguinte maneira: se o "
+"<parameter>ficheiro</parameter> começar com um <literal>/</literal>, é "
+"tomado como um nome de ficheiro absoluto. De outra maneira, é tomado como o "
+"nome de um ficheiro de configuração global do &kde;."
+
+#. Tag: term
+#: index.docbook:144
+#, no-c-format
+msgid "<option>-i</option> <replaceable>icon name</replaceable>"
+msgstr "<option>-i</option> <replaceable>nome do ícone</replaceable>"
+
+#. Tag: para
+#: index.docbook:145
+#, no-c-format
+msgid ""
+"Specify icon to use in the password dialog. You may specify just the name, "
+"without any extension."
+msgstr ""
+"Indique o ícone a usar na janela da senha. Poderá indicar apenas o nome, sem "
+"qualquer extensão."
+
+#. Tag: para
+#: index.docbook:147
+#, no-c-format
+msgid ""
+"For instance to run &konqueror; in filemanager mode and show the &konqueror; "
+"icon in the password dialog:"
+msgstr ""
+"Por exemplo, para executar o &konqueror; como gestor de ficheiros e mostrar "
+"o ícone do &konqueror; na janela da senha:"
+
+#. Tag: screen
+#: index.docbook:149
+#, no-c-format
+msgid ""
+"<userinput>$(kf5-config --path libexec)<command>kdesu</command>  <option>-i "
+"konqueror</option>\n"
+"<option>-c \"konqueror --profile filemanagement\"</option></userinput>"
+msgstr ""
+"<userinput>$(kf5-config --path libexec)<command>kdesu</command>  <option>-i "
+"konqueror</option> \n"
+"<option>-c \"konqueror --profile filemanagement\"</option></userinput>"
+
+#. Tag: option
+#: index.docbook:154
+#, no-c-format
+msgid "<option>-n</option>"
+msgstr "<option>-n</option>"
+
+#. Tag: para
+#: index.docbook:155
+#, no-c-format
+msgid ""
+"Do not keep the password. This disables the <guilabel>keep password</"
+"guilabel> checkbox in the password dialog."
+msgstr ""
+"Não memorizar a senha. Isto desactiva a opção \"<guilabel>Guardar a senha</"
+"guilabel>\" na janela correspondente."
+
+#. Tag: term
+#: index.docbook:159
+#, no-c-format
+msgid "<option>-p</option> <replaceable>priority</replaceable>"
+msgstr "<option>-p</option> <replaceable>prioridade</replaceable>"
+
+#. Tag: para
+#: index.docbook:161
+#, no-c-format
+msgid ""
+"Set priority value. The priority is an arbitrary number between 0 and 100, "
+"where 100 means highest priority, and 0 means lowest. The default is 50."
+msgstr ""
+"Indica o valor da prioridade. A prioridade é um número qualquer entre 0 e "
+"100, onde o 100 corresponde à prioridade máxima e o 0 à mínima. O valor por "
+"omissão é 50."
+
+#. Tag: option
+#: index.docbook:167
+#, no-c-format
+msgid "<option>-r</option>"
+msgstr "<option>-r</option>"
+
+#. Tag: para
+#: index.docbook:168
+#, no-c-format
+msgid "Use realtime scheduling."
+msgstr "Usa o escalonamento em tempo-real."
+
+#. Tag: option
+#: index.docbook:173
+#, no-c-format
+msgid "<option>-s</option>"
+msgstr "<option>-s</option>"
+
+#. Tag: para
+#: index.docbook:174
+#, no-c-format
+msgid "Stop the kdesu daemon. See <xref linkend=\"sec-password-keeping\"/>."
+msgstr ""
+"Pára o servidor do 'kdesu'. Veja em <xref linkend=\"sec-password-keeping\"/>."
+
+#. Tag: option
+#: index.docbook:178
+#, no-c-format
+msgid "<option>-t</option>"
+msgstr "<option>-t</option>"
+
+#. Tag: para
+#: index.docbook:179
+#, no-c-format
+msgid ""
+"Enable terminal output. This disables password keeping. This is largely for "
+"debugging purposes; if you want to run a console mode app, use the standard "
+"<command>su</command> instead."
+msgstr ""
+"Permite enviar o resultado para o terminal. Isto desactiva a memorização de "
+"senhas. É largamente usado para efeitos de depuração; se você quiser "
+"executar uma aplicação no modo de consola, use o comando \"<command>su</"
+"command>\" normal."
+
+#. Tag: term
+#: index.docbook:184
+#, no-c-format
+msgid "<option>-u</option> <replaceable> user</replaceable>"
+msgstr "<option>-u</option> <replaceable>utilizador</replaceable>"
+
+#. Tag: para
+#: index.docbook:185
+#, no-c-format
+msgid ""
+"While the most common use for &kdesu; is to run a command as the superuser, "
+"you can supply any user name and the appropriate password."
+msgstr ""
+"Embora a utilização mais comum do &kdesu; seja correr um comando como super-"
+"utilizador, poderá indicar qualquer nome de utilizador e a senha apropriada."
+
+#. Tag: title
+#: index.docbook:196
+#, no-c-format
+msgid "Internals"
+msgstr "Detalhes Internos"
+
+#. Tag: title
+#: index.docbook:199
+#, no-c-format
+msgid "X authentication"
+msgstr "Autenticação X"
+
+#. Tag: para
+#: index.docbook:201
+#, no-c-format
+msgid ""
+"The program you execute will run under the root user id and will generally "
+"have no authority to access your X display. &kdesu; gets around this by "
+"adding an authentication cookie for your display to a temporary <filename>."
+"Xauthority</filename> file. After the command exits, this file is removed."
+msgstr ""
+"O programa que executar irá correr com o utilizador 'root' e, geralmente, "
+"não terá autorização para aceder ao seu ecrã do X. O &kdesu; contorna isto, "
+"adicionando uma 'cookie' de autenticação para o seu ecrã, num ficheiro "
+"temporário <filename>.Xauthority</filename>. Assim que o comando é "
+"terminado, o ficheiro é removido."
+
+#. Tag: para
+#: index.docbook:207
+#, no-c-format
+msgid ""
+"If you don't use X cookies, you are on your own. &kdesu; will detect this "
+"and will not add a cookie but you will have to make sure that root is "
+"allowed to access to your display."
+msgstr ""
+"Se você não usar os 'cookies' do X, então estará por sua conta e risco. O "
+"&kdesu; irá detectar isto e não adicionará qualquer 'cookie', contudo dever-"
+"se-á certificar que é permitido ao 'root' aceder ao seu ecrã."
+
+#. Tag: title
+#: index.docbook:214
+#, no-c-format
+msgid "Interface to <command>su</command>"
+msgstr "Interface para o <command>su</command>"
+
+#. Tag: para
+#: index.docbook:216
+#, no-c-format
+msgid ""
+"&kdesu; uses the sytem's <command>su</command> for acquiring priviliges. In "
+"this section, I explain the details of how &kdesu; does this."
+msgstr ""
+"O &kdesu; usa o comando <command>su</command> do sistema para obter "
+"privilégios. Nesta secção, serão explicados os detalhes de como o &kdesu; "
+"faz isso."
+
+#. Tag: para
+#: index.docbook:220
+#, no-c-format
+msgid ""
+"Because some <command>su</command> implementations (&ie; the one from "
+"&RedHat;) don't want to read the password from <literal>stdin</literal>, "
+"&kdesu; creates a pty/tty pair and executes <command>su</command> with its "
+"standard filedescriptors connected to the tty."
+msgstr ""
+"Dado que algumas das implementações do <command>su</command> (&ie; a da "
+"&RedHat;) não querem ler a senha a partir do <literal>stdin</literal>, o "
+"&kdesu; cria um par PTY/TTY e executa o <command>su</command> com os seus "
+"descritores-padrão de ficheiros associados ao TTY."
+
+#. Tag: para
+#: index.docbook:226
+#, no-c-format
+msgid ""
+"To execute the command the user selected, rather than an interactive shell, "
+"&kdesu; uses the <option>-c</option> argument with <command>su</command>. "
+"This argument is understood by every shell that I know of so it should work "
+"portably. <command>su</command> passes this <option>-c</option> argument to "
+"the target user's shell, and the shell executes the program. Example "
+"command: <command>su <option>root -c <replaceable>the_program</replaceable></"
+"option></command>."
+msgstr ""
+"Para executar o comando seleccionado pelo utilizador, em vez de uma linha de "
+"comandos interactiva, o &kdesu; usa o argumento <option>-c</option> com o "
+"<command>su</command>. Este argumento é entendido por todas as linhas de "
+"comando conhecidas, por isso deve funcionar sem problemas. O <command>su</"
+"command> passa o argumento <option>-c</option> para a linha de comandos de "
+"destino do utilizador, para que esta execute o programa. Um comando de "
+"exemplo: <command>su<option>root -c <replaceable>programa</replaceable></"
+"option></command>."
+
+#. Tag: para
+#: index.docbook:234
+#, no-c-format
+msgid ""
+"Instead of executing the user command directly with <command>su</command>, "
+"&kdesu; executes a little stub program called <application>kdesu_stub</"
+"application>. This stub (running as the target user), requests some "
+"information from &kdesu; over the pty/tty channel (the stub's stdin and "
+"stdout) and then executes the user's program. The information passed over "
+"is: the X display, an X authentication cookie (if available), the "
+"<envar>PATH</envar> and the command to run. The reason why a stub program is "
+"used is that the X cookie is private information and therefore cannot be "
+"passed on the command line."
+msgstr ""
+"Em vez de executar o comando do utilizador directamente com o <command>su</"
+"command>, o &kdesu; executa uma pequena porção de programa chamada "
+"<application>kdesu_stub</application>. Esta porção (correndo com o "
+"utilizador de destino), pede alguma informação ao &kdesu; sobre o canal PTY/"
+"TTY (a parte do 'stdin' e 'stdout') e, a seguir, executa o programa do "
+"utilizador. A informação recebida é: o ecrã do X, uma 'cookie' de "
+"autenticação X (se disponível), o <envar>PATH</envar> e o comando a "
+"executar. A razão porque é usada uma parte do programa é que a 'cookie' do X "
+"contém informação privada e, por conseguinte, não pode ser passada na linha "
+"de comandos."
+
+#. Tag: title
+#: index.docbook:248
+#, no-c-format
+msgid "Password Checking"
+msgstr "Verificação de Senhas"
+
+#. Tag: para
+#: index.docbook:250
+#, no-c-format
+msgid ""
+"&kdesu; will check the password you entered and gives an error message if it "
+"is not correct. The checking is done by executing a test program: <filename>/"
+"bin/true</filename>. If this succeeds, the password is assumed to be correct."
+msgstr ""
+"O &kdesu; verificará a senha que o utilizador introduziu e dá uma mensagem "
+"de erro se não for correcta. A verificação é feita executando um programa de "
+"teste: /bin/true. Se obtiver sucesso, a senha é assumida como correcta."
+
+#. Tag: title
+#: index.docbook:258
+#, no-c-format
+msgid "Password Keeping"
+msgstr "Guardar Senhas"
+
+#. Tag: para
+#: index.docbook:260
+#, no-c-format
+msgid ""
+"For your comfort, &kdesu; implements a <quote>keep password</quote> feature. "
+"If you are interested in security, you should read this paragraph."
+msgstr ""
+"Para o conforto do utilizador, o &kdesu; implementou a função <quote>Guardar "
+"a senha</quote>. Se estiver interessado em segurança, deverá ler este "
+"parágrafo."
+
+#. Tag: para
+#: index.docbook:264
+#, no-c-format
+msgid ""
+"Allowing &kdesu; to remember passwords opens up a (small) security hole in "
+"your system. Obviously, &kdesu; does not allow anybody but your user id to "
+"use the passwords, but, if done without caution, this would lowers "
+"<systemitem class=\"username\">root</systemitem>'s security level to that of "
+"a normal user (you). A hacker who breaks into your account, would get "
+"<systemitem class=\"username\">root</systemitem> access. &kdesu; tries to "
+"prevent this. The security scheme it uses is, in my opinion at least, "
+"reasonably safe and is explained here."
+msgstr ""
+"Ao permitir que o &kdesu; guarde as senhas, abre um buraco (pequeno) na "
+"segurança do seu sistema. Obviamente, o KDE não permite que qualquer um use "
+"as senhas mas apenas o seu ID de utilizador mas, se isto for feito sem "
+"precauções, irá diminuir o nível de segurança do <systemitem class=\"username"
+"\">root</systemitem> para um utilizador normal (como você próprio). Um "
+"'hacker' que entrar na sua conta, obterá acesso de <systemitem class="
+"\"username\">root</systemitem>. O &kdesu; tenta prevenir isto. O esquema de "
+"segurança que usa é razoavelmente seguro e é explicado aqui."
+
+#. Tag: para
+#: index.docbook:274
+#, no-c-format
+msgid ""
+"&kdesu; uses a daemon, called <application>kdesud</application>. The daemon "
+"listens to a &UNIX; socket in <filename>/tmp</filename> for commands. The "
+"mode of the socket is 0600 so that only your user id can connect to it. If "
+"password keeping is enabled, &kdesu; executes commands through this daemon. "
+"It writes the command and <systemitem class=\"username\">root</systemitem>'s "
+"password to the socket and the daemon executes the command using "
+"<command>su</command>, as describe before. After this, the command and the "
+"password are not thrown away. Instead, they are kept for a specified amount "
+"of time. This is the timeout value from in the control module. If another "
+"request for the same command is coming within this time period, the client "
+"does not have to supply the password. To keep hackers who broke into your "
+"account from stealing passwords from the daemon (for example, by attaching a "
+"debugger), the daemon is installed set-group-id nogroup. This should prevent "
+"all normal users (including you) from getting passwords from the "
+"<application>kdesud</application> process. Also, the daemon sets the "
+"<envar>DISPLAY</envar> environment variable to the value it had when it was "
+"started. The only thing a hacker can do is execute an application on your "
+"display."
+msgstr ""
+"O &kdesu; usa um servidor, chamado <application>kdesud</application>. O "
+"servidor espera num 'socket' UNIX em <filename>/tmp</filename> por comandos. "
+"O modo de permissões do 'socket' é 0600, de maneira a que apenas o seu "
+"utilizador possa ligar-se a ele. Se a opção <quote>Guardar a senha</quote> "
+"estiver activada, o &kdesu; executa os comandos através deste servidor. "
+"Escreva o comando e a senha do <systemitem class=\"username\">root</"
+"systemitem>, para que o 'socket' e o servidor executem o comando, usando o "
+"<command>su</command>, como descrito anteriormente. Depois disto, o comando "
+"e a senha não serão deitados fora. Em vez disso, são mantidas durante um "
+"espaço de tempo. Este é o tempo-limite do módulo de controlo. Se outro "
+"pedido para o mesmo comando chegar dentro deste período de tempo, o cliente "
+"não terá de fornecer a senha. Para não deixar que os 'hackers' entrem na sua "
+"conta, para roubar senhas do servidor (por exemplo, anexando um depurador), "
+"o servidor é instalado com 'set-group-id nogroup'. Isto deve fazer com que "
+"os utilizadores normais (incluindo você mesmo) não consigam obter senhas do "
+"processo <application>kdesud</application>. O servidor define ainda a "
+"variável de ambiente <envar>DISPLAY</envar>, com o valor que tinha quando "
+"foi iniciado. A única coisa que um 'hacker' pode fazer é executar uma "
+"aplicação no seu ecrã."
+
+#. Tag: para
+#: index.docbook:295
+#, no-c-format
+msgid ""
+"One weak spot in this scheme is that the programs you execute are probably "
+"not written with security in mind (like setuid <systemitem class=\"username"
+"\">root</systemitem> programs). This means that they might have buffer "
+"overruns or other problems and a hacker could exploit those."
+msgstr ""
+"Um ponto fraco neste esquema é que os programas que você executar não são "
+"escritos, provavelmente, tendo em mente a segurança (como os programas que "
+"definem um setuid <systemitem class=\"username\">root</systemitem>). Isto "
+"significa que eles podem ter sobrecargas de 'buffers' ou outros problemas "
+"que um 'hacker' pode explorar."
+
+#. Tag: para
+#: index.docbook:301
+#, no-c-format
+msgid ""
+"The use of the password keeping feature is a tradeoff between security and "
+"comfort. I encourage you to think it over and decide for yourself if you "
+"want to use it or not."
+msgstr ""
+"O uso da função para guardar as senhas é um compromisso entre o conforto e a "
+"segurança. Será encorajado a pensar sobre isto e decidir por si mesmo, se "
+"quiser usar esta função ou não."
+
+#. Tag: title
+#: index.docbook:309
+#, no-c-format
+msgid "Author"
+msgstr "Autoria"
+
+#. Tag: para
+#: index.docbook:311
+#, no-c-format
+msgid "&kdesu;"
+msgstr "&kdesu;"
+
+#. Tag: para
+#: index.docbook:313
+#, no-c-format
+msgid "Copyright 2000 &Geert.Jansen;"
+msgstr "Copyright 2000 &Geert.Jansen;"
+
+#. Tag: para
+#: index.docbook:315
+#, no-c-format
+msgid ""
+"&kdesu; is written by &Geert.Jansen;. It is somewhat based on Pietro Iglio's "
+"&kdesu;, version 0.3. Pietro and I agreed that I will maintain this program "
+"in the future."
+msgstr ""
+"O &kdesu; foi escrito por &Geert.Jansen;. É baseado no &kdesu; versão 0.3 de "
+"Pietro Iglio. O Pietro e eu acordámos que eu faria a manutenção deste "
+"programa no futuro."
+
+#. Tag: para
+#: index.docbook:319
+#, no-c-format
+msgid ""
+"The author can be reached through email at &Geert.Jansen.mail;. Please "
+"report any bugs you find to me so that I can fix them. If you have a "
+"suggestion, feel free to contact me."
+msgstr ""
+"O autor pode ser contactado através do e-mail em &Geert.Jansen.mail;. Por "
+"favor relate quaisquer erros que encontrar, de maneira a que eu os possa "
+"arranjar. Se tiver uma sugestão, sinta-se à vontade para me contactar."
+
+#. Tag: trans_comment
+#: index.docbook:323
+#, no-c-format
+msgid "CREDIT_FOR_TRANSLATORS"
+msgstr ""
+"<para>Tradução de José Nuno Pires <email>zepires@gmail.com</email></para>"
+
+#. Tag: chapter
+#: index.docbook:323
+#, no-c-format
+msgid "&underFDL; &underArtisticLicense;"
+msgstr "&underFDL; &underArtisticLicense;"

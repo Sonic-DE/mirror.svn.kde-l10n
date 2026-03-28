@@ -1,0 +1,1792 @@
+# translation of kate_regular-expressions.po to Polish
+# translation of kate_regular-expressions.po to
+#
+# Krzysztof Wozniak <wozniakk@ceti.pl>, 2006.
+# Krzysztof Lichota <lichota@mimuw.edu.pl>, 2006.
+# Krzysztof Woźniak <wozniakk@ceti.pl>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kate_regular-expressions\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 12:04+0000\n"
+"PO-Revision-Date: 2009-09-03 22:05+0200\n"
+"Last-Translator: Krzysztof Woźniak <wozniakk@ceti.pl>\n"
+"Language-Team: Polski <kde-i18n-doc@kde.org>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-KDE-DocBook-SVN-URL: branches/KDE/3.5/kdebase/doc/kate/regular-expressions."
+"docbook\n"
+"X-KDE-DocBook-SVN-Changed-Revision: 218543\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+
+#. Tag: author
+#: regular-expressions.docbook:4
+#, no-c-format
+msgid "&Anders.Lund; &Anders.Lund.mail;"
+msgstr "&Anders.Lund; &Anders.Lund.mail;"
+
+#. Tag: trans_comment
+#: regular-expressions.docbook:5
+#, no-c-format
+msgid "ROLES_OF_TRANSLATORS"
+msgstr ""
+"<othercredit role=\"translator\"><firstname>Krzysztof</"
+"firstname><surname>Woźniak</"
+"surname><affiliation><address><email>wozniakk@ceti.pl</email></address></"
+"affiliation><contrib>Polskie tłumaczenie</contrib></othercredit> "
+
+#. Tag: title
+#: regular-expressions.docbook:9
+#, no-c-format
+msgid "Regular Expressions"
+msgstr "Wyrażenia regularne"
+
+#. Tag: synopsis
+#: regular-expressions.docbook:11
+#, fuzzy, no-c-format
+#| msgid ""
+#| "This Appendix contains a brief but hopefully sufficient and\n"
+#| "covering introduction to the world of <emphasis>regular\n"
+#| "expressions</emphasis>. It documents regular expressions in the form\n"
+#| "available within &kate;, which is not compatible with the regular\n"
+#| "expressions of perl, nor with those of for example\n"
+#| "<command>grep</command>."
+msgid ""
+"This Appendix contains a brief but hopefully sufficient and\n"
+"covering introduction to the world of <emphasis>regular\n"
+"expressions</emphasis>. It documents regular expressions in the form\n"
+"available within &kappname;, which is not compatible with the regular\n"
+"expressions of perl, nor with those of for example\n"
+"<command>grep</command>."
+msgstr ""
+"Dodatek niniejszy zawiera krótkie, ale obejmujące większość zagadnień "
+"wprowadzenie do tajemniczego świata <emphasis>wyrażeń regularnych</"
+"emphasis>. Dokumentacja oparta jest na formacie wyrażeń regularnych "
+"stosowanych przez &kate;, która nie jest w pełni kompatybilna z wyrażeniami "
+"z języka perl lub polecenia  <command>grep</command>."
+
+#. Tag: title
+#: regular-expressions.docbook:15
+#, no-c-format
+msgid "Introduction"
+msgstr "Wprowadzenie"
+
+#. Tag: para
+#: regular-expressions.docbook:17
+#, no-c-format
+msgid ""
+"<emphasis>Regular Expressions</emphasis> provides us with a way to describe "
+"some possible contents of a text string in a way understood by a small piece "
+"of software, so that it can investigate if a text matches, and also in the "
+"case of advanced applications with the means of saving pieces or the "
+"matching text."
+msgstr ""
+"<emphasis>Wyrażenia regularne</emphasis> pozwalają na takie określenie "
+"możliwej zawartości przeszukiwanego tekstu, iż stosunkowo prosty program "
+"może określić, czy dany fragment pasuje, czy też nie, do poszukiwanego "
+"wzorca. Bardziej zaawansowane zastosowania wyrażeń regularnych pozwalają na "
+"przechowywanie i późniejsze wykorzystanie dopasowanych wzorców."
+
+#. Tag: para
+#: regular-expressions.docbook:23
+#, no-c-format
+msgid ""
+"An example: Say you want to search a text for paragraphs that starts with "
+"either of the names <quote>Henrik</quote> or <quote>Pernille</quote> "
+"followed by some form of the verb <quote>say</quote>."
+msgstr ""
+"Przykładowo, załóżmy, że chcemy znaleźć wszystkie zdania w tekście, "
+"rozpoczynające się od słów: <quote>Henrik</quote> lub <quote>Pernille</"
+"quote>, po których następuje czasownik <quote>say</quote>."
+
+#. Tag: para
+#: regular-expressions.docbook:28
+#, no-c-format
+msgid ""
+"With a normal search, you would start out searching for the first name, "
+"<quote>Henrik</quote> maybe followed by <quote>sa</quote> like this: "
+"<userinput>Henrik sa</userinput>, and while looking for matches, you would "
+"have to discard those not being the beginning of a paragraph, as well as "
+"those in which the word starting with the letters <quote>sa</quote> was not "
+"either <quote>says</quote>, <quote>said</quote> or so. And then of course "
+"repeat all of that with the next name..."
+msgstr ""
+"Wykorzystując tradycyjny mechanizm wyszukiwania należałoby zacząć od "
+"znalezienia napisu <quote>Henrik</quote> z następującym po nim fragmentem "
+"<quote>sa</quote> czyli np: <userinput>Henrik sa</userinput>. Przeglądając "
+"znalezione teksty należałoby odrzucić te nie będące początkiem zdania oraz "
+"te, gdzie napis <quote>sa</quote> nie jest początkiem słów <quote>says</"
+"quote>, <quote>said</quote> itd. Następnie trzeba oczywiście powtórzyć te "
+"działania dla kolejnego nazwiska..."
+
+#. Tag: para
+#: regular-expressions.docbook:37
+#, no-c-format
+msgid ""
+"With Regular Expressions, that task could be accomplished with a single "
+"search, and with a larger degree of preciseness."
+msgstr ""
+"Za pomocą wyrażeń regularnych zadanie to może być wykonane za pomocą jednej "
+"operacji szukania i z dużo większą precyzją."
+
+#. Tag: para
+#: regular-expressions.docbook:40
+#, no-c-format
+msgid ""
+"To achieve this, Regular Expressions defines rules for expressing in details "
+"a generalization of a string to match. Our example, which we might literally "
+"express like this: <quote>A line starting with either <quote>Henrik</quote> "
+"or <quote>Pernille</quote> (possibly following up to 4 blanks or tab "
+"characters) followed by a whitespace followed by <quote>sa</quote> and then "
+"either <quote>ys</quote> or <quote>id</quote></quote> could be expressed "
+"with the following regular expression:"
+msgstr ""
+"W wyrażeniu regularnym definiowane są reguły generalizujące poszukiwany "
+"fragment tekstu. W podanym przykładzie pożądany rezultat szukania można "
+"słownie opisać tak: <quote>Wyszukaj wiersz rozpoczynający się albo od słowa "
+"<quote>Henrik</quote> albo <quote>Pernille</quote> (przed którym występuje "
+"do 4 spacji lub znaków tabulacji), i następujący po nim tekst <quote>sa</"
+"quote> z końcówkami <quote>ys</quote> lub <quote>id</quote></quote>. Można "
+"to osiągnąć za pomocą następującego wyrażenia regularnego:"
+
+#. Tag: userinput
+#: regular-expressions.docbook:47
+#, no-c-format
+msgid "^[ \\t]{0,4}(Henrik|Pernille) sa(ys|id)"
+msgstr "^[ \\t]{0,4}(Henrik|Pernille) sa(ys|id)"
+
+#. Tag: para
+#: regular-expressions.docbook:50
+#, no-c-format
+msgid ""
+"The above example demonstrates all four major concepts of modern Regular "
+"Expressions, namely:"
+msgstr ""
+"Powyższy przykład przedstawia cztery główne mechanizmy współczesnych wyrażeń "
+"regularnych:"
+
+#. Tag: para
+#: regular-expressions.docbook:54
+#, no-c-format
+msgid "<para>Patterns</para>"
+msgstr "<para>Wzorce</para>"
+
+#. Tag: para
+#: regular-expressions.docbook:55
+#, no-c-format
+msgid "<para>Assertions</para>"
+msgstr "<para>Zakotwiczenia</para>"
+
+#. Tag: para
+#: regular-expressions.docbook:56
+#, no-c-format
+msgid "<para>Quantifiers</para>"
+msgstr "<para>Kwantyfikatory</para>"
+
+#. Tag: para
+#: regular-expressions.docbook:57
+#, no-c-format
+msgid "Back references"
+msgstr "Odwołania zwrotne"
+
+#. Tag: para
+#: regular-expressions.docbook:60
+#, no-c-format
+msgid ""
+"The caret (<literal>^</literal>) starting the expression is an assertion, "
+"being true only if the following matching string is at the start of a line."
+msgstr ""
+"Znak karetki (<literal>^</literal>), rozpoczynający wyrażenie jest "
+"zakotwiczeniem oznaczającym, iż dopasowanie będzie możliwe tylko wtedy, "
+"jeżeli podany wzorzec znajdzie się na początku wiersza."
+
+#. Tag: para
+#: regular-expressions.docbook:64
+#, fuzzy, no-c-format
+#| msgid ""
+#| "The stings <literal>[ \\t]</literal> and <literal>(Henrik|Pernille) sa(ys|"
+#| "id)</literal> are patterns. The first one is a <emphasis>character class</"
+#| "emphasis> that matches either a blank or a (horizontal) tab character; "
+#| "the other pattern contains first a subpattern matching either "
+#| "<literal>Henrik</literal> <emphasis>or</emphasis> <literal>Pernille</"
+#| "literal>, then a piece matching the exact string <literal> sa</literal> "
+#| "and finally a subpattern matching either <literal>ys</literal> "
+#| "<emphasis>or</emphasis> <literal>id</literal>"
+msgid ""
+"The strings <literal>[ \\t]</literal> and <literal>(Henrik|Pernille) sa(ys|"
+"id)</literal> are patterns. The first one is a <emphasis>character class</"
+"emphasis> that matches either a blank or a (horizontal) tab character; the "
+"other pattern contains first a subpattern matching either <literal>Henrik</"
+"literal> <emphasis>or</emphasis> <literal>Pernille</literal>, then a piece "
+"matching the exact string <literal> sa</literal> and finally a subpattern "
+"matching either <literal>ys</literal> <emphasis>or</emphasis> <literal>id</"
+"literal>"
+msgstr ""
+"Napisy <literal>[ \\t]</literal> oraz <literal>(Henrik|Pernille) sa(ys|id)</"
+"literal> to tzw. wzorce. Pierwszy określa <emphasis>klasę znaków</emphasis>, "
+"która będzie dopasowana do spacji lub tabulatora, drugi zawiera wzorzec "
+"składający się z podwzorca pasującego do napisu <literal>Henrik</literal> "
+"<emphasis>albo</emphasis> <literal>Pernille</literal>. Następnie poszukiwany "
+"jest fragment <literal> sa</literal>, a potem podwzorzec pasujący do napisów "
+"<literal>ys</literal> <emphasis> lub </emphasis> <literal>id</literal>."
+
+#. Tag: para
+#: regular-expressions.docbook:74
+#, no-c-format
+msgid ""
+"The string <literal>{0,4}</literal> is a quantifier saying <quote>anywhere "
+"from 0 up to 4 of the previous</quote>."
+msgstr ""
+"Zapis <literal>{0,4}</literal> jest kwantyfikatorem oznaczającym, iż "
+"dopasowane zostaną <quote>co najmniej 0 lecz nie więcej niż 4 wystąpienia "
+"określonego wzorca</quote>."
+
+#. Tag: para
+#: regular-expressions.docbook:77
+#, no-c-format
+msgid ""
+"Because regular expression software supporting the concept of <emphasis>back "
+"references</emphasis> saves the entire matching part of the string as well "
+"as sub-patterns enclosed in parentheses, given some means of access to those "
+"references, we could get our hands on either the whole match (when searching "
+"a text document in an editor with a regular expression, that is often marked "
+"as selected) or either the name found, or the last part of the verb."
+msgstr ""
+"Ponieważ oprogramowanie obsługi wyrażeń regularnych zawiera mechanizm "
+"<emphasis>odwołań zwrotnych</emphasis>, możliwe jest zachowanie całego "
+"dopasowanego fragmentu tekstu (określonego jako podwzorzec w nawiasach "
+"okrągłych), a następnie wykorzystanie tego fragmentu w dalszej części "
+"wyrażenia (w podanym przykładzie może to być dopasowane nazwisko lub "
+"ostatnia część czasownika)."
+
+#. Tag: para
+#: regular-expressions.docbook:85
+#, no-c-format
+msgid ""
+"All together, the expression will match where we wanted it to, and only "
+"there."
+msgstr ""
+"Podsumowując, wprowadzone wyrażenie regularne będzie pasować do tekstu tam, "
+"i tylko tam, gdzie użytkownik tego wymaga."
+
+#. Tag: para
+#: regular-expressions.docbook:88
+#, no-c-format
+msgid ""
+"The following sections will describe in details how to construct and use "
+"patterns, character classes, assertions, quantifiers and back references, "
+"and the final section will give a few useful examples."
+msgstr ""
+"Poniższe sekcje zawierają szczegółowe informacje o wykorzystaniu wzorców, "
+"klas znaków, zakotwiczeń, kwantyfikatorów i odwołań zwrotnych. W ostatniej "
+"części przedstawiono kilka pożytecznych przykładów wykorzystania wyrażeń "
+"regularnych."
+
+#. Tag: title
+#: regular-expressions.docbook:97
+#, no-c-format
+msgid "<title>Patterns</title>"
+msgstr "<title>Wzorce</title>"
+
+#. Tag: para
+#: regular-expressions.docbook:99
+#, no-c-format
+msgid ""
+"Patterns consists of literal strings and character classes. Patterns may "
+"contain sub-patterns, which are patterns enclosed in parentheses."
+msgstr ""
+"Wzorce mogą się składać ze znaków i klas znaków. Wzorce mogą zawierać "
+"podwzorce, czyli wzorce zamknięte w nawiasach okrągłych."
+
+#. Tag: title
+#: regular-expressions.docbook:104
+#, no-c-format
+msgid "Escaping characters"
+msgstr "Sekwencje specjalne"
+
+#. Tag: para
+#: regular-expressions.docbook:106
+#, no-c-format
+msgid ""
+"In patterns as well as in character classes, some characters have a special "
+"meaning. To literally match any of those characters, they must be marked or "
+"<emphasis>escaped</emphasis> to let the regular expression software know "
+"that it should interpret such characters in their literal meaning."
+msgstr ""
+"W definicji zarówno wzorców, jak i klas znaków, niektóre znaki mają "
+"specjalne znaczenie. Aby wyszukać te znaki w tekście, muszą być zapisane w "
+"postaci <emphasis>sekwencji specjalnej</emphasis>, tak aby program obsługi "
+"wyrażeń regularnych interpretował je jako znaki tekstu, a nie znaki "
+"sterujące procesem wyszukiwania."
+
+#. Tag: para
+#: regular-expressions.docbook:112
+#, no-c-format
+msgid ""
+"This is done by prepending the character with a backslash (<literal>\\</"
+"literal>)."
+msgstr ""
+"Aby tego dokonać należy poprzedzić znak specjalny znakiem odwrotnego "
+"ukośnika (<literal>\\</literal>)."
+
+#. Tag: para
+#: regular-expressions.docbook:116
+#, no-c-format
+msgid ""
+"The regular expression software will silently ignore escaping a character "
+"that does not have any special meaning in the context, so escaping for "
+"example a <quote>j</quote> (<userinput>\\j</userinput>) is safe. If you are "
+"in doubt whether a character could have a special meaning, you can therefore "
+"escape it safely."
+msgstr ""
+"Program obsługujący wyrażenia regularne pozwala zapisywać każdy znak w "
+"postaci sekwencji specjalnej, nawet taki, który nie ma żadnego specjalnego "
+"znaczenia. Na przykład zapisanie litery <quote>j</quote> w postaci sekwencji "
+"<userinput>\\j</userinput> jest całkowicie poprawne i oznacza literę "
+"<quote>j</quote>. Jeżeli więc użytkownik nie jest pewny czy dany znak ma "
+"znaczenie specjalne czy też nie, to może go dla bezpieczeństwa zapisać w "
+"postaci sekwencji specjalnej."
+
+#. Tag: para
+#: regular-expressions.docbook:122
+#, no-c-format
+msgid ""
+"Escaping of course includes the backslash character itself, to literally "
+"match a such, you would write <userinput>\\\\</userinput>."
+msgstr ""
+"Istnieje oczywiście również sekwencja specjalna dla określenia znaku "
+"odwrotnego ukośnika i jest to: <userinput>\\\\</userinput>."
+
+#. Tag: title
+#: regular-expressions.docbook:129
+#, no-c-format
+msgid "Character Classes and abbreviations"
+msgstr "Skróty i klasy znaków"
+
+#. Tag: para
+#: regular-expressions.docbook:131
+#, no-c-format
+msgid ""
+"A <emphasis>character class</emphasis> is an expression that matches one of "
+"a defined set of characters. In Regular Expressions, character classes are "
+"defined by putting the legal characters for the class in square brackets, "
+"<literal>[]</literal>, or by using one of the abbreviated classes described "
+"below."
+msgstr ""
+"<emphasis>Klasa znaków</emphasis> to wyrażenie pasujące do jednego znaku "
+"wybranego z określonego zbioru znaków. W wyrażeniach regularnych klasy "
+"znaków są definiowane poprzez podanie zbioru znaków wewnątrz nawiasów "
+"kwadratowych <literal>[]</literal> lub poprzez użycie jednego ze skrótowych "
+"predefiniowanych klas znaków opisanych poniżej."
+
+#. Tag: para
+#: regular-expressions.docbook:137
+#, no-c-format
+msgid ""
+"Simple character classes just contains one or more literal characters, for "
+"example <userinput>[abc]</userinput> (matching either of the letters "
+"<quote>a</quote>, <quote>b</quote> or <quote>c</quote>) or "
+"<userinput>[0123456789]</userinput> (matching any digit)."
+msgstr ""
+"Proste klasy znaków zawierają listę znaków np.: <userinput>[abc]</userinput> "
+"(klasa pasuje do każdej z liter: <quote>a</quote>, <quote>b</quote> lub "
+"<quote>c</quote>) albo <userinput>[0123456789]</userinput> (klasa znaków "
+"pasująca do dowolnej cyfry)."
+
+#. Tag: para
+#: regular-expressions.docbook:142
+#, no-c-format
+msgid ""
+"Because letters and digits have a logical order, you can abbreviate those by "
+"specifying ranges of them: <userinput>[a-c]</userinput> is equal to "
+"<userinput>[abc]</userinput> and <userinput>[0-9]</userinput> is equal to "
+"<userinput>[0123456789]</userinput>. Combining these constructs, for example "
+"<userinput>[a-fynot1-38]</userinput> is completely legal (the last one would "
+"match, of course, either of <quote>a</quote>,<quote>b</quote>,<quote>c</"
+"quote>,<quote>d</quote>, <quote>e</quote>,<quote>f</quote>,<quote>y</quote>,"
+"<quote>n</quote>,<quote>o</quote>,<quote>t</quote>, <quote>1</quote>,"
+"<quote>2</quote>,<quote>3</quote> or <quote>8</quote>)."
+msgstr ""
+"Ponieważ litery i cyfry można ustawić w logicznym porządku, to możliwe jest "
+"zapisanie klas znaków w postaci zakresów znaków np.: <userinput>[a-c]</"
+"userinput> jest równoważne zapisowi <userinput>[abc]</userinput>, zaś "
+"<userinput>[0-9]</userinput> jest tożsame z zapisem <userinput>[0123456789]</"
+"userinput>. Dopuszczalne są różne kombinacje zakresów w definicji klas "
+"znaków np. <userinput>[a-fynot1-38]</userinput> jest całkowicie poprawne, i "
+"będzie pasować do jednego następujących znaków: <quote>a</quote>,<quote>b</"
+"quote>,<quote>c</quote>,<quote>d</quote>, <quote>e</quote>,<quote>f</quote>,"
+"<quote>y</quote>,<quote>n</quote>,<quote>o</quote>,<quote>t</quote>, "
+"<quote>1</quote>,<quote>2</quote>,<quote>3</quote> lub <quote>8</quote>)."
+
+#. Tag: para
+#: regular-expressions.docbook:154
+#, no-c-format
+msgid ""
+"As capital letters are different characters from their non-capital "
+"equivalents, to create a caseless character class matching <quote>a</quote> "
+"or <quote>b</quote>, in any case, you need to write it <userinput>[aAbB]</"
+"userinput>."
+msgstr ""
+"Duże litery i małe litery są różnymi znakami dla oprogramowania obsługi "
+"wyrażeń regularnych, aby więc określić wzorzec nie uwzględniający wielkości "
+"liter: <quote>a</quote> lub <quote>b</quote> należy zapisać go następująco: "
+"<userinput>[aAbB]</userinput>."
+
+#. Tag: para
+#: regular-expressions.docbook:159
+#, no-c-format
+msgid ""
+"It is of course possible to create a <quote>negative</quote> class matching "
+"as <quote>anything but</quote> To do so put a caret (<literal>^</literal>) "
+"at the beginning of the class:"
+msgstr ""
+"Możliwe jest oczywiście utworzenie <quote>negacji</quote> klasy znaków, "
+"która oznacza dopasowanie do <quote>wszystkich znaków oprócz</quote> tych "
+"określonych w klasie. Negacji klasy dokonuje się za pomocą znaku "
+"karetki(<literal>^</literal>), który musi stanowić pierwszy znak jej "
+"definicji:"
+
+#. Tag: para
+#: regular-expressions.docbook:163
+#, no-c-format
+msgid ""
+"<userinput>[^abc]</userinput> will match any character <emphasis>but</"
+"emphasis> <quote>a</quote>, <quote>b</quote> or <quote>c</quote>."
+msgstr ""
+"<userinput>[^abc]</userinput> pasuje do każdego znaku <emphasis>z wyjątkiem "
+"liter </emphasis>:<quote>a</quote>, <quote>b</quote> lub <quote>c</quote>."
+
+#. Tag: para
+#: regular-expressions.docbook:167
+#, no-c-format
+msgid ""
+"In addition to literal characters, some abbreviations are defined, making "
+"life still a bit easier:"
+msgstr ""
+"Oprócz znaków alfabetu zdefiniowane zostały skróty dla pewnych znaków "
+"specjalnych oraz najczęściej używanych klas znaków:"
+
+#. Tag: userinput
+#: regular-expressions.docbook:173
+#, no-c-format
+msgid "<userinput>\\a</userinput>"
+msgstr "<userinput>\\a</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:174
+#, fuzzy, no-c-format
+#| msgid ""
+#| "This matches the <acronym>ASCII</acronym> bell character (BEL, 0x07)."
+msgid "This matches the &ASCII; bell character (BEL, 0x07)."
+msgstr "Pasuje do znaku <acronym>ASCII</acronym> dzwonka (BEL, 0x07)."
+
+#. Tag: userinput
+#: regular-expressions.docbook:178
+#, no-c-format
+msgid "<userinput>\\f</userinput>"
+msgstr "<userinput>\\f</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:179
+#, fuzzy, no-c-format
+#| msgid ""
+#| "This matches the <acronym>ASCII</acronym> form feed character (FF, 0x0C)."
+msgid "This matches the &ASCII; form feed character (FF, 0x0C)."
+msgstr "Pasuje do znaku <acronym>ASCII</acronym> form feed (FF, 0x0C)."
+
+#. Tag: userinput
+#: regular-expressions.docbook:183
+#, no-c-format
+msgid "<userinput>\\n</userinput>"
+msgstr "<userinput>\\n</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:184
+#, fuzzy, no-c-format
+#| msgid ""
+#| "This matches the <acronym>ASCII</acronym> line feed character (LF, 0x0A, "
+#| "Unix newline)."
+msgid "This matches the &ASCII; line feed character (LF, 0x0A, Unix newline)."
+msgstr ""
+"Pasuje do znaku <acronym>ASCII</acronym> line feed (LF, 0x0A, nowy wiersz w "
+"systemach UNIX)."
+
+#. Tag: userinput
+#: regular-expressions.docbook:188
+#, no-c-format
+msgid "<userinput>\\r</userinput>"
+msgstr "<userinput>\\r</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:189
+#, fuzzy, no-c-format
+#| msgid ""
+#| "This matches the <acronym>ASCII</acronym> carriage return character (CR, "
+#| "0x0D)."
+msgid "This matches the &ASCII; carriage return character (CR, 0x0D)."
+msgstr "Pasuje do znaku <acronym>ASCII</acronym> carriage return (CR, 0x0D)."
+
+#. Tag: userinput
+#: regular-expressions.docbook:193
+#, no-c-format
+msgid "<userinput>\\t</userinput>"
+msgstr "<userinput>\\t</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:194
+#, fuzzy, no-c-format
+#| msgid ""
+#| "This matches the <acronym>ASCII</acronym> horizontal tab character (HT, "
+#| "0x09)."
+msgid "This matches the &ASCII; horizontal tab character (HT, 0x09)."
+msgstr ""
+"Pasuje do znaku  <acronym>ASCII</acronym> - tabulacja pozioma (HT, 0x09)."
+
+#. Tag: userinput
+#: regular-expressions.docbook:198
+#, no-c-format
+msgid "<userinput>\\v</userinput>"
+msgstr "<userinput>\\v</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:199
+#, fuzzy, no-c-format
+#| msgid ""
+#| "This matches the <acronym>ASCII</acronym> vertical tab character (VT, "
+#| "0x0B)."
+msgid "This matches the &ASCII; vertical tab character (VT, 0x0B)."
+msgstr "Pasuje do znaku <acronym>ASCII</acronym> tabulacja pionowa (VT, 0x0B)."
+
+#. Tag: userinput
+#: regular-expressions.docbook:202
+#, no-c-format
+msgid "\\xhhhh"
+msgstr "\\xhhhh"
+
+#. Tag: para
+#: regular-expressions.docbook:204
+#, fuzzy, no-c-format
+#| msgid ""
+#| "This matches the Unicode character corresponding to the hexadecimal "
+#| "number hhhh (between 0x0000 and 0xFFFF). \\0ooo (&ie;, \\zero ooo) "
+#| "matches the <acronym>ASCII</acronym>/Latin-1 character corresponding to "
+#| "the octal number ooo (between 0 and 0377)."
+msgid ""
+"This matches the Unicode character corresponding to the hexadecimal number "
+"hhhh (between 0x0000 and 0xFFFF). \\0ooo (&ie;, \\zero ooo) matches the "
+"&ASCII;/Latin-1 character corresponding to the octal number ooo (between 0 "
+"and 0377)."
+msgstr ""
+"Pasuje do znaku Unicode o numerze \"hhhh\" zapisanym w formacie "
+"szesnastkowym (w zakresie od 0x0000 do 0xFFFF). \\0ooo (tzn.: \\zero ooo) "
+"pasuje do znaku <acronym>ASCII</acronym>/Latin-1 o kodzie \"ooo\" w systemie "
+"ósemkowym (z zakresu od 0 do 0377)."
+
+#. Tag: term
+#: regular-expressions.docbook:212
+#, no-c-format
+msgid "<userinput>.</userinput> (dot)"
+msgstr "<userinput>.</userinput> (kropka)"
+
+#. Tag: para
+#: regular-expressions.docbook:213
+#, no-c-format
+msgid "This matches any character (including newline)."
+msgstr "Pasuje do każdego znaku (także do znaku końca wiersza)."
+
+#. Tag: userinput
+#: regular-expressions.docbook:217
+#, no-c-format
+msgid "<userinput>\\d</userinput>"
+msgstr "<userinput>\\d</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:218
+#, no-c-format
+msgid "This matches a digit. Equal to <literal>[0-9]</literal>"
+msgstr "Pasuje do cyfry, co jest tożsame z zapisem: <literal>[0-9]</literal>"
+
+#. Tag: userinput
+#: regular-expressions.docbook:222
+#, no-c-format
+msgid "<userinput>\\D</userinput>"
+msgstr "<userinput>\\D</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:223
+#, no-c-format
+msgid ""
+"This matches a non-digit. Equal to <literal>[^0-9]</literal> or <literal>[^"
+"\\d]</literal>"
+msgstr ""
+"Pasuje do znaku nie będącego cyfrą, co jest równoważne zapisom: "
+"<literal>[^0-9]</literal> lub <literal>[^\\d]</literal>"
+
+#. Tag: userinput
+#: regular-expressions.docbook:227
+#, no-c-format
+msgid "<userinput>\\s</userinput>"
+msgstr "<userinput>\\s</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:228
+#, no-c-format
+msgid ""
+"This matches a whitespace character. Practically equal to <literal>[ \\t\\n"
+"\\r]</literal>"
+msgstr ""
+"Pasuje do znaku spacji lub innego tzw. białego znaku. Tożsame z: "
+"<literal>[ \\t\\n\\r]</literal>"
+
+#. Tag: userinput
+#: regular-expressions.docbook:232
+#, no-c-format
+msgid "<userinput>\\S</userinput>"
+msgstr "<userinput>\\S</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:233
+#, no-c-format
+msgid ""
+"This matches a non-whitespace. Practically equal to <literal>[^ \\t\\r\\n]</"
+"literal>, and equal to <literal>[^\\s]</literal>"
+msgstr ""
+"Dopasowuje znak nie będący spacją lub innym tzw. białym znakiem. Tożsame z: "
+"<literal>[^ \\t\\n\\r]</literal> lub <literal>[^\\s]</literal>"
+
+#. Tag: userinput
+#: regular-expressions.docbook:237
+#, no-c-format
+msgid "<userinput>\\w</userinput>"
+msgstr "<userinput>\\w</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:238
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Matches any <quote>word character</quote> - in this case any letter or "
+#| "digit. Note that underscore (<literal>_</literal>) is not matched, as is "
+#| "the case with perl regular expressions. Equal to <literal>[a-zA-Z0-9]</"
+#| "literal>"
+msgid ""
+"Matches any <quote>word character</quote> - in this case any letter, digit "
+"or underscore. Equal to <literal>[a-zA-Z0-9_]</literal>"
+msgstr ""
+"Pasuje do dowolnego <quote>elementu słowa</quote> - tzn. do dowolnej litery "
+"lub cyfry. Należy zwrócić uwagę, iż znak podkreślenia (<literal>_</literal>) "
+"nie zostanie dopasowany (co dzieje się np. w wyrażeniach regularnych Perl-"
+"a). Zapis ten równoważny jest klasie znaków: <literal>[a-zA-Z0-9]</literal>"
+
+#. Tag: userinput
+#: regular-expressions.docbook:243
+#, no-c-format
+msgid "<userinput>\\W</userinput>"
+msgstr "<userinput>\\W</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:244
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Matches any non-word character - anything but letters or numbers. Equal "
+#| "to <literal>[^a-zA-Z0-9]</literal> or <literal>[^\\w]</literal>"
+msgid ""
+"Matches any non-word character - anything but letters, numbers or "
+"underscore. Equal to <literal>[^a-zA-Z0-9_]</literal> or <literal>[^\\w]</"
+"literal>"
+msgstr ""
+"Pasuje do wszystkich znaków nie będących literami bądź cyframi, co jest "
+"równoważne wyrażeniom <literal>[^a-zA-Z0-9]</literal> lub <literal>[^\\w]</"
+"literal>"
+
+#. Tag: para
+#: regular-expressions.docbook:253
+#, no-c-format
+msgid ""
+"The <emphasis>POSIX notation of classes</emphasis>, <userinput>[:&lt;class "
+"name&gt;:]</userinput> are also supported. For example, <userinput>[:"
+"digit:]</userinput> is equivalent to <userinput>\\d</userinput>, and "
+"<userinput>[:space:]</userinput> to <userinput>\\s</userinput>. See the full "
+"list of POSIX character classes <ulink url=\"https://www.regular-expressions."
+"info/posixbrackets.html\">here</ulink>."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:260
+#, no-c-format
+msgid ""
+"The abbreviated classes can be put inside a custom class, for example to "
+"match a word character, a blank or a dot, you could write <userinput>[\\w "
+"\\.]</userinput>"
+msgstr ""
+"Skróty można wykorzystywać we własnych definicjach klas np. aby dopasować "
+"znak alfabetu, spację oraz kropkę można użyć wyrażenia: <userinput>[\\w "
+"\\.]</userinput>"
+
+#. Tag: title
+#: regular-expressions.docbook:265
+#, no-c-format
+msgid "Characters with special meanings inside character classes"
+msgstr "Znaki o specjalnym znaczeniu dla klas znaków"
+
+#. Tag: para
+#: regular-expressions.docbook:267
+#, no-c-format
+msgid ""
+"The following characters has a special meaning inside the <quote>[]</quote> "
+"character class construct, and must be escaped to be literally included in a "
+"class:"
+msgstr ""
+"Następujące znaki mają specjalne znaczenie wewnątrz definicji klasy znaków "
+"<quote>[]</quote>. Muszą one być zapisane w postaci sekwencji specjalnej, "
+"jeżeli użytkownik chce je umieścić jako element klasy:"
+
+#. Tag: userinput
+#: regular-expressions.docbook:273
+#, no-c-format
+msgid "<userinput>]</userinput>"
+msgstr "<userinput>]</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:274
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Ends the character class. Must be escaped unless it is the very first "
+#| "character in the class (may follow an unescaped caret)"
+msgid ""
+"Ends the character class. Must be escaped unless it is the very first "
+"character in the class (may follow an unescaped caret)."
+msgstr ""
+"Znak kończący definicję klasy znaków. Musi być zapisany w postaci sekwencji "
+"specjalnej, jeżeli nie jest pierwszym znakiem klasy (może nastąpić po daszku "
+"^ tzn. negacji klasy)."
+
+#. Tag: term
+#: regular-expressions.docbook:278 regular-expressions.docbook:415
+#, no-c-format
+msgid "<userinput>^</userinput> (caret)"
+msgstr "<userinput>^</userinput> (daszek)"
+
+#. Tag: para
+#: regular-expressions.docbook:279
+#, no-c-format
+msgid ""
+"Denotes a negative class, if it is the first character. Must be escaped to "
+"match literally if it is the first character in the class."
+msgstr ""
+"Oznacza negację klasy w przypadku, jeżeli jest na pierwszym miejscu jej "
+"definicji. Musi być zapisany w postaci sekwencji specjalnej w przypadku "
+"występowania jako pierwszy znak klasy."
+
+#. Tag: term
+#: regular-expressions.docbook:282
+#, no-c-format
+msgid "<userinput>-</userinput> (dash)"
+msgstr "<userinput>-</userinput> (minus)"
+
+#. Tag: para
+#: regular-expressions.docbook:283
+#, no-c-format
+msgid ""
+"Denotes a logical range. Must always be escaped within a character class."
+msgstr ""
+"Oznacza zakres znaków w klasie. Zawsze musi być zapisany w postaci sekwencji "
+"specjalnej."
+
+#. Tag: term
+#: regular-expressions.docbook:286 regular-expressions.docbook:410
+#, no-c-format
+msgid "<userinput>\\</userinput> (backslash)"
+msgstr "<userinput>\\</userinput> (odwrotny ukośnik)"
+
+#. Tag: para
+#: regular-expressions.docbook:287
+#, no-c-format
+msgid "The escape character. Must always be escaped."
+msgstr "Występuje tylko pod postacią sekwencji specjalnej."
+
+#. Tag: title
+#: regular-expressions.docbook:298
+#, no-c-format
+msgid "Alternatives: matching <quote>one of</quote>"
+msgstr "Alternatywa, czyli dopasowanie <quote>jednego z kilku</quote> wzorców"
+
+#. Tag: para
+#: regular-expressions.docbook:300
+#, no-c-format
+msgid ""
+"If you want to match one of a set of alternative patterns, you can separate "
+"those with <literal>|</literal> (vertical bar character)."
+msgstr ""
+"Jeżeli konieczne jest dopasowanie wyrażenia do jednego ze zbioru kilku "
+"alternatywnych wzorców, to należy je zapisać rozdzielając znakiem <literal>|"
+"</literal> (pionowej kreski)."
+
+#. Tag: para
+#: regular-expressions.docbook:303
+#, no-c-format
+msgid ""
+"For example to find either <quote>John</quote> or <quote>Harry</quote> you "
+"would use an expression <userinput>John|Harry</userinput>."
+msgstr ""
+"Na przykład w celu odszukania w tekście słów <quote>John</quote> lub "
+"<quote>Harry</quote> należy użyć wyrażenia <userinput>John|Harry</userinput>."
+
+#. Tag: title
+#: regular-expressions.docbook:309
+#, no-c-format
+msgid "Sub Patterns"
+msgstr "Podwzorce"
+
+#. Tag: para
+#: regular-expressions.docbook:311
+#, no-c-format
+msgid ""
+"<emphasis>Sub patterns</emphasis> are patterns enclosed in parentheses, and "
+"they have several uses in the world of regular expressions."
+msgstr ""
+"<emphasis>Podwzorce</emphasis>, czyli wzorce zamknięte w nawiasach "
+"okrągłych, wykorzystywane są w wielu sytuacjach przy tworzeniu wyrażeń "
+"regularnych."
+
+#. Tag: title
+#: regular-expressions.docbook:317
+#, no-c-format
+msgid "Specifying alternatives"
+msgstr "Definiowanie alternatyw"
+
+#. Tag: para
+#: regular-expressions.docbook:319
+#, no-c-format
+msgid ""
+"You may use a sub pattern to group a set of alternatives within a larger "
+"pattern. The alternatives are separated by the character <quote>|</quote> "
+"(vertical bar)."
+msgstr ""
+"Można skorzystać z podwzorców do grupowania zbioru wzorców alternatywnych, "
+"składających się na inny wzorzec. Wzorce alternatywne rozdzielane są znakiem "
+"<quote>|</quote> (pionowej kreski)."
+
+#. Tag: para
+#: regular-expressions.docbook:323
+#, no-c-format
+msgid ""
+"For example to match either of the words <quote>int</quote>, <quote>float</"
+"quote> or <quote>double</quote>, you could use the pattern <userinput>int|"
+"float|double</userinput>. If you only want to find one if it is followed by "
+"some whitespace and then some letters, put the alternatives inside a "
+"subpattern: <userinput>(int|float|double)\\s+\\w+</userinput>."
+msgstr ""
+"Na przykład aby wyszukać jeden z trzech wyrazów: <quote>int</quote>, "
+"<quote>float</quote> lub <quote>double</quote> można użyć wzorca "
+"<userinput>int|float|double</userinput>. Jeżeli dodatkowo po każdym z tych "
+"wyrazów ma występować spacja i pewna liczba innych znaków to należy to "
+"wyrażenie zapisać jako podwzorzec w nawiasach okrągłych: <userinput>(int|"
+"float|double)\\s+\\w+</userinput>."
+
+#. Tag: title
+#: regular-expressions.docbook:334
+#, no-c-format
+msgid "Capturing matching text (back references)"
+msgstr "Przechwytywanie dopasowanego tekstu (odwołania zwrotne)"
+
+#. Tag: para
+#: regular-expressions.docbook:336
+#, no-c-format
+msgid ""
+"If you want to use a back reference, use a sub pattern <userinput>(PATTERN)</"
+"userinput> to have the desired part of the pattern remembered. To prevent "
+"the sub pattern from being remembered, use a non-capturing group "
+"<userinput>(?:PATTERN)</userinput>."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:341
+#, fuzzy, no-c-format
+#| msgid ""
+#| "For example, if you want to find two occurrences of the same word "
+#| "separated by a comma and possibly some whitespace, you could write "
+#| "<userinput>(\\w+),\\s*\\1</userinput>. The sub pattern <literal>\\w+</"
+#| "literal> would find a chunk of word characters, and the entire expression "
+#| "would match if those were followed by a comma, 0 or more whitespace and "
+#| "then an equal chunk of word characters. (The string <literal>\\1</"
+#| "literal> references <emphasis>the first sub pattern enclosed in "
+#| "parentheses</emphasis>)"
+msgid ""
+"For example, if you want to find two occurrences of the same word separated "
+"by a comma and possibly some whitespace, you could write <userinput>(\\w+),"
+"\\s*\\1</userinput>. The sub pattern <literal>\\w+</literal> would find a "
+"chunk of word characters, and the entire expression would match if those "
+"were followed by a comma, 0 or more whitespace and then an equal chunk of "
+"word characters. (The string <literal>\\1</literal> references <emphasis>the "
+"first sub pattern enclosed in parentheses</emphasis>.)"
+msgstr ""
+"Przykładowo, jeżeli poszukiwane są dwa następujące po przecinku (i ew. "
+"spacji) powtórzenia tego samego słowa, to wyrażenie będzie miało postać "
+"<userinput>(\\w+),\\s*\\1</userinput>. Podwzorzec <literal>\\w+</literal> "
+"pasuje do zbitki liter lub cyfr zaś całe wyrażenie będzie dopasowane, jeżeli "
+"po tym podwzorcu wystąpi przecinek (spacja - 0 lub więcej), a następnie "
+"identyczna zbitka liter lub cyfr (zapis <literal>\\1</literal> odwołuje się "
+"do przechwyconego <emphasis>pierwszego zapisanego w nawiasach podwzorca "
+"wyrażenia</emphasis>)."
+
+#. Tag: para
+#: regular-expressions.docbook:351
+#, no-c-format
+msgid ""
+"To avoid ambiguities with usage of <userinput>\\1</userinput> with some "
+"digits behind it (&eg; <userinput>\\12</userinput> can be 12th subpattern or "
+"just the first subpattern with <userinput>2</userinput>) we use <userinput>"
+"\\{12}</userinput> as syntax for multi-digit subpatterns."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:352
+#, no-c-format
+msgid "Examples:"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:354
+#, no-c-format
+msgid "<userinput>\\{12}1</userinput> is <quote>use subpattern 12</quote>"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:355
+#, no-c-format
+msgid ""
+"<userinput>\\123</userinput> is <quote>use capture 1 then 23 as the normal "
+"text</quote>"
+msgstr ""
+
+#. Tag: title
+#: regular-expressions.docbook:365
+#, no-c-format
+msgid "Lookahead Assertions"
+msgstr "Zakotwiczenia w przód"
+
+#. Tag: para
+#: regular-expressions.docbook:367
+#, no-c-format
+msgid ""
+"A lookahead assertion is a sub pattern, starting with either <literal>?=</"
+"literal> or <literal>?!</literal>."
+msgstr ""
+"Zakotwiczenie w przód to podwzorzec rozpoczynający się od znaków <literal>?"
+"=</literal> lub <literal>?!</literal>."
+
+#. Tag: para
+#: regular-expressions.docbook:370
+#, no-c-format
+msgid ""
+"For example to match the literal string <quote>Bill</quote> but only if not "
+"followed by <quote> Gates</quote>, you could use this expression: "
+"<userinput>Bill(?! Gates)</userinput>. (This would find <quote>Bill Clinton</"
+"quote> as well as <quote>Billy the kid</quote>, but silently ignore the "
+"other matches.)"
+msgstr ""
+"Na przykład, aby dopasować napis <quote>Bill</quote>, ale tylko wtedy, gdy "
+"nie następuje po nim napis <quote> Gates</quote>, można użyć wyrażenia: "
+"<userinput>Bill(?! Gates)</userinput>. Pasuje ono do napisów <quote>Bill "
+"Clinton</quote> oraz <quote>Billy the kid</quote>, ale ignoruje inne "
+"wystąpienia."
+
+#. Tag: para
+#: regular-expressions.docbook:376 regular-expressions.docbook:393
+#, no-c-format
+msgid "Sub patterns used for assertions are not captured."
+msgstr "Podwzorce wykorzystane przy zakotwiczeniach nie są przechwytywane."
+
+#. Tag: para
+#: regular-expressions.docbook:378
+#, fuzzy, no-c-format
+#| msgid "See also <link linkend=\"assertions\">Assertions</link>"
+msgid "See also <link linkend=\"assertions\">Assertions</link>."
+msgstr ""
+"Więcej informacji w sekcji <link linkend=\"assertions\">Zakotwiczenia</link>"
+
+#. Tag: title
+#: regular-expressions.docbook:383
+#, fuzzy, no-c-format
+#| msgid "Lookahead Assertions"
+msgid "Lookbehind Assertions"
+msgstr "Zakotwiczenia w przód"
+
+#. Tag: para
+#: regular-expressions.docbook:385
+#, fuzzy, no-c-format
+#| msgid ""
+#| "A lookahead assertion is a sub pattern, starting with either <literal>?=</"
+#| "literal> or <literal>?!</literal>."
+msgid ""
+"A lookbehind assertion is a sub pattern, starting with either <literal>?&lt;"
+"=</literal> or <literal>?&lt;!</literal>."
+msgstr ""
+"Zakotwiczenie w przód to podwzorzec rozpoczynający się od znaków <literal>?"
+"=</literal> lub <literal>?!</literal>."
+
+#. Tag: para
+#: regular-expressions.docbook:388
+#, no-c-format
+msgid ""
+"Lookbehind has the same effect as the lookahead, but works backwards. For "
+"example to match the literal string <quote>fruit</quote> but only if not "
+"preceded by <quote>grape</quote>, you could use this expression: "
+"<userinput>(?&lt;!grape)fruit</userinput>."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:395
+#, no-c-format
+msgid "See also <link linkend=\"assertions\">Assertions</link>"
+msgstr ""
+"Więcej informacji w sekcji <link linkend=\"assertions\">Zakotwiczenia</link>"
+
+#. Tag: title
+#: regular-expressions.docbook:402
+#, no-c-format
+msgid "Characters with a special meaning inside patterns"
+msgstr "Znaki specjalnego znaczenia wewnątrz wzorców"
+
+#. Tag: para
+#: regular-expressions.docbook:404
+#, no-c-format
+msgid ""
+"The following characters have meaning inside a pattern, and must be escaped "
+"if you want to literally match them:"
+msgstr ""
+"Następujące znaki mają specjalne znaczenie wewnątrz definicji wzorca. Muszą "
+"one być zapisane w postaci sekwencji specjalnej w przypadku ich wyszukiwania "
+"w tekście:"
+
+#. Tag: para
+#: regular-expressions.docbook:411
+#, no-c-format
+msgid "The escape character."
+msgstr "Odwrotny ukośnik."
+
+#. Tag: para
+#: regular-expressions.docbook:416
+#, no-c-format
+msgid "Asserts the beginning of the string."
+msgstr "Zakotwiczenie do początku tekstu."
+
+#. Tag: userinput
+#: regular-expressions.docbook:420
+#, no-c-format
+msgid "<userinput>$</userinput>"
+msgstr "<userinput>$</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:421
+#, no-c-format
+msgid "Asserts the end of string."
+msgstr "Zakotwiczenie do końca tekstu."
+
+#. Tag: term
+#: regular-expressions.docbook:425
+#, no-c-format
+msgid "<userinput>()</userinput> (left and right parentheses)"
+msgstr "<userinput>()</userinput> (lewy i prawy nawias)"
+
+#. Tag: para
+#: regular-expressions.docbook:426
+#, no-c-format
+msgid "Denotes sub patterns."
+msgstr "Oznaczenie podwzorca."
+
+#. Tag: term
+#: regular-expressions.docbook:430
+#, no-c-format
+msgid "<userinput>{}</userinput> (left and right curly braces)"
+msgstr "<userinput>{}</userinput> (lewy i prawy nawias klamrowy)"
+
+#. Tag: para
+#: regular-expressions.docbook:431
+#, no-c-format
+msgid "Denotes numeric quantifiers."
+msgstr "Oznaczenie kwantyfikatora."
+
+#. Tag: term
+#: regular-expressions.docbook:435
+#, no-c-format
+msgid "<userinput>[]</userinput> (left and right square brackets)"
+msgstr "<userinput>[]</userinput> (lewy i prawy nawias kwadratowy)"
+
+#. Tag: para
+#: regular-expressions.docbook:436
+#, no-c-format
+msgid "Denotes character classes."
+msgstr "Oznaczenie klasy znaków."
+
+#. Tag: term
+#: regular-expressions.docbook:440
+#, no-c-format
+msgid "<userinput>|</userinput> (vertical bar)"
+msgstr "<userinput>|</userinput> (pionowa kreska)"
+
+#. Tag: para
+#: regular-expressions.docbook:441
+#, no-c-format
+msgid "logical OR. Separates alternatives."
+msgstr "Logiczne LUB. Rozdziela wzorce alternatywne."
+
+#. Tag: term
+#: regular-expressions.docbook:445 regular-expressions.docbook:522
+#, no-c-format
+msgid "<userinput>+</userinput> (plus sign)"
+msgstr "<userinput>+</userinput> (znak plusa)"
+
+#. Tag: para
+#: regular-expressions.docbook:446
+#, no-c-format
+msgid "Quantifier, 1 or more."
+msgstr "Kwantyfikator, oznacza: \"1 lub więcej\" wystąpień."
+
+#. Tag: term
+#: regular-expressions.docbook:450 regular-expressions.docbook:517
+#, no-c-format
+msgid "<userinput>*</userinput> (asterisk)"
+msgstr "<userinput>*</userinput> (gwiazdka)"
+
+#. Tag: para
+#: regular-expressions.docbook:451
+#, no-c-format
+msgid "Quantifier, 0 or more."
+msgstr "Kwantyfikator, oznacza: \"0 lub więcej\" wystąpień."
+
+#. Tag: term
+#: regular-expressions.docbook:455 regular-expressions.docbook:527
+#, no-c-format
+msgid "<userinput>?</userinput> (question mark)"
+msgstr "<userinput>?</userinput> (znak zapytania)"
+
+#. Tag: para
+#: regular-expressions.docbook:456
+#, no-c-format
+msgid "An optional character. Can be interpreted as a quantifier, 0 or 1."
+msgstr ""
+"Oznacza opcjonalność wzorca. Może być interpretowany jako kwantyfikator: 0 "
+"lub 1."
+
+#. Tag: title
+#: regular-expressions.docbook:468
+#, no-c-format
+msgid "<title>Quantifiers</title>"
+msgstr "<title>Kwantyfikatory</title>"
+
+#. Tag: para
+#: regular-expressions.docbook:470
+#, no-c-format
+msgid ""
+"<emphasis>Quantifiers</emphasis> allows a regular expression to match a "
+"specified number or range of numbers of either a character, character class "
+"or sub pattern."
+msgstr ""
+"<emphasis>Kwantyfikatory</emphasis> umożliwiają definiowanie wyrażeń "
+"regularnych, które dopasowują się do określonej liczby (zakresu) znaków, "
+"wzorców lub klas znaków."
+
+#. Tag: para
+#: regular-expressions.docbook:474
+#, no-c-format
+msgid ""
+"Quantifiers are enclosed in curly brackets (<literal>{</literal> and "
+"<literal>}</literal>) and have the general form <literal>{[minimum-"
+"occurrences][,[maximum-occurrences]]}</literal>"
+msgstr ""
+"Kwantyfikatory zapisywane są w nawiasach klamrowych (<literal>{</literal> "
+"oraz <literal>}</literal>) i mają postać: <literal>{[minimalna liczba "
+"wystąpień][,[maksymalna liczba wystąpień]]}</literal>"
+
+#. Tag: para
+#: regular-expressions.docbook:479
+#, no-c-format
+msgid "The usage is best explained by example:"
+msgstr "Wykorzystanie kwantyfikatorów zaprezentowano w poniższych przykładach:"
+
+#. Tag: userinput
+#: regular-expressions.docbook:484
+#, no-c-format
+msgid "<userinput>{1}</userinput>"
+msgstr "<userinput>{1}</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:485
+#, no-c-format
+msgid "Exactly 1 occurrence"
+msgstr "Dokładnie jedno wystąpienie"
+
+#. Tag: userinput
+#: regular-expressions.docbook:489
+#, no-c-format
+msgid "{0,1}"
+msgstr "{0,1}"
+
+#. Tag: para
+#: regular-expressions.docbook:490
+#, no-c-format
+msgid "Zero or 1 occurrences"
+msgstr "Brak wystąpienia lub jedno wystąpienie"
+
+#. Tag: userinput
+#: regular-expressions.docbook:494
+#, no-c-format
+msgid "{,1}"
+msgstr "{,1}"
+
+#. Tag: para
+#: regular-expressions.docbook:495
+#, no-c-format
+msgid "The same, with less work;)"
+msgstr "To co powyżej ale mniej pisania ;-)"
+
+#. Tag: userinput
+#: regular-expressions.docbook:499
+#, no-c-format
+msgid "{5,10}"
+msgstr "{5,10}"
+
+#. Tag: para
+#: regular-expressions.docbook:500
+#, no-c-format
+msgid "At least 5 but maximum 10 occurrences."
+msgstr "Co najmniej 5, ale nie więcej niż 10 wystąpień."
+
+#. Tag: userinput
+#: regular-expressions.docbook:504
+#, no-c-format
+msgid "{5,}"
+msgstr "{5,}"
+
+#. Tag: para
+#: regular-expressions.docbook:505
+#, no-c-format
+msgid "At least 5 occurrences, no maximum."
+msgstr "Co najmniej 5 wystąpień (brak górnego ograniczenia)."
+
+#. Tag: para
+#: regular-expressions.docbook:512
+#, no-c-format
+msgid "Additionally, there are some abbreviations:"
+msgstr "Dodatkowo możliwe jest wykorzystanie kilku skrótów:"
+
+#. Tag: para
+#: regular-expressions.docbook:518
+#, no-c-format
+msgid "similar to <literal>{0,}</literal>, find any number of occurrences."
+msgstr ""
+"podobnie jak <literal>{0,}</literal>, wyszukuje dowolną liczbę wystąpień."
+
+#. Tag: para
+#: regular-expressions.docbook:523
+#, no-c-format
+msgid "similar to <literal>{1,}</literal>, at least 1 occurrence."
+msgstr ""
+"podobnie jak <literal>{1,}</literal>, wyszukuje co najmniej jedno "
+"wystąpienie."
+
+#. Tag: para
+#: regular-expressions.docbook:528
+#, no-c-format
+msgid "similar to <literal>{0,1}</literal>, zero or 1 occurrence."
+msgstr ""
+"podobnie jak <literal>{0,1}</literal>, dopasowuje brak lub dokładnie jedno "
+"wystąpienie."
+
+#. Tag: title
+#: regular-expressions.docbook:537
+#, no-c-format
+msgid "Greed"
+msgstr "Zachłanność"
+
+#. Tag: para
+#: regular-expressions.docbook:539
+#, no-c-format
+msgid ""
+"When using quantifiers with no maximum, regular expressions defaults to "
+"match as much of the searched string as possible, commonly known as "
+"<emphasis>greedy</emphasis> behavior."
+msgstr ""
+"Jeżeli kwantyfikatory nie mają określonej maksymalnej liczby wystąpień, to "
+"wyrażenie jest dopasowywane do maksymalnej możliwej liczby wyszukiwanych "
+"wzorców. Zachowanie takie nazywane jest <emphasis>zachłannością</emphasis> "
+"kwantyfikatorów."
+
+#. Tag: para
+#: regular-expressions.docbook:543
+#, no-c-format
+msgid ""
+"Modern regular expression software provides the means of <quote>turning off "
+"greediness</quote>, though in a graphical environment it is up to the "
+"interface to provide you with access to this feature. For example a search "
+"dialog providing a regular expression search could have a check box labeled "
+"<quote>Minimal matching</quote> as well as it ought to indicate if "
+"greediness is the default behavior."
+msgstr ""
+"Współczesne oprogramowanie obsługujące wyrażenia regularne pozwala na "
+"<quote>wyłączenie zachłanności</quote>. W środowisku graficznym możliwość ta "
+"może być dostępna albo nie. Przykładowo, w oknie wyszukiwania pozwalającym "
+"na użycie wyrażeń regularnych, może znaleźć się pole wyboru o nazwie: "
+"<quote>Minimalne dopasowanie</quote>. Powinna też znaleźć się tam "
+"informacja, iż zachłanność jest zachowaniem domyślnym dla wyrażeń "
+"regularnych."
+
+#. Tag: title
+#: regular-expressions.docbook:554
+#, no-c-format
+msgid "In context examples"
+msgstr "Przykłady"
+
+#. Tag: para
+#: regular-expressions.docbook:556
+#, fuzzy, no-c-format
+#| msgid "Here are a few examples of using quantifiers"
+msgid "Here are a few examples of using quantifiers:"
+msgstr "Poniżej znajduje się kilka przykładów użycia kwantyfikatorów"
+
+#. Tag: userinput
+#: regular-expressions.docbook:561
+#, no-c-format
+msgid "^\\d{4,5}\\s"
+msgstr "^\\d{4,5}\\s"
+
+#. Tag: para
+#: regular-expressions.docbook:562
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Matches the digits in <quote>1234 go</quote> and <quote>12345 now</"
+#| "quote>, but neither in <quote>567 eleven</quote> nor in <quote>223459 "
+#| "somewhere</quote>"
+msgid ""
+"Matches the digits in <quote>1234 go</quote> and <quote>12345 now</quote>, "
+"but neither in <quote>567 eleven</quote> nor in <quote>223459 somewhere</"
+"quote>."
+msgstr ""
+"Pasuje do cyfr napisu <quote>1234 go</quote> oraz <quote>12345 now</quote> "
+"ale nie pasuje do napisów <quote>567 eleven</quote> albo <quote>223459 "
+"somewhere</quote>"
+
+#. Tag: userinput
+#: regular-expressions.docbook:567
+#, no-c-format
+msgid "<userinput>\\s+</userinput>"
+msgstr "<userinput>\\s+</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:568
+#, fuzzy, no-c-format
+#| msgid "Matches one or more whitespace characters"
+msgid "Matches one or more whitespace characters."
+msgstr "Pasuje do jednej lub więcej spacji lub innych tzw. białych znaków"
+
+#. Tag: userinput
+#: regular-expressions.docbook:572
+#, no-c-format
+msgid "(bla){1,}"
+msgstr "(bla){1,}"
+
+#. Tag: para
+#: regular-expressions.docbook:573
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Matches all of <quote>blablabla</quote> and the <quote>bla</quote> in "
+#| "<quote>blackbird</quote> or <quote>tabla</quote>"
+msgid ""
+"Matches all of <quote>blablabla</quote> and the <quote>bla</quote> in "
+"<quote>blackbird</quote> or <quote>tabla</quote>."
+msgstr ""
+"Pasuje do wszystkich <quote>blablabla</quote> oraz <quote>bla</quote> w "
+"słowach <quote>blackbird</quote> lub <quote>tabla</quote>"
+
+#. Tag: userinput
+#: regular-expressions.docbook:577
+#, no-c-format
+msgid "/?&gt;"
+msgstr "/?&gt;"
+
+#. Tag: para
+#: regular-expressions.docbook:578
+#, no-c-format
+msgid ""
+"Matches <quote>/&gt;</quote> in <quote>&lt;closeditem/&gt;</quote> as well "
+"as <quote>&gt;</quote> in <quote>&lt;openitem&gt;</quote>."
+msgstr ""
+"Pasuje do <quote>/&gt;</quote> w <quote>&lt;closeditem/&gt;</quote> jak "
+"również do <quote>&gt;</quote> w <quote>&lt;openitem&gt;</quote>."
+
+#. Tag: title
+#: regular-expressions.docbook:589
+#, no-c-format
+msgid "<title>Assertions</title>"
+msgstr "<title>Zakotwiczenia</title>"
+
+#. Tag: para
+#: regular-expressions.docbook:591
+#, no-c-format
+msgid ""
+"<emphasis>Assertions</emphasis> allows a regular expression to match only "
+"under certain controlled conditions."
+msgstr ""
+"<emphasis>Zakotwiczenia</emphasis> pozwalają dopasowywać wzorce wyrażenia "
+"regularnego tylko wtedy, gdy spełnione są określone warunki."
+
+#. Tag: para
+#: regular-expressions.docbook:594
+#, no-c-format
+msgid ""
+"An assertion does not need a character to match, it rather investigates the "
+"surroundings of a possible match before acknowledging it. For example the "
+"<emphasis>word boundary</emphasis> assertion does not try to find a non word "
+"character opposite a word one at its position, instead it makes sure that "
+"there is not a word character. This means that the assertion can match where "
+"there is no character, &ie; at the ends of a searched string."
+msgstr ""
+"Zakotwiczenie nie musi określać żadnego znaku do dopasowania. Bada ono "
+"raczej otoczenie potencjalnego dopasowania przed jego zatwierdzeniem. Na "
+"przykład zakotwiczenie <emphasis>granica słowa</emphasis> nie działa na "
+"zasadzie wyszukiwania znaków nie pasujących do słowa, ale zamiast tego "
+"sprawdza, czy kolejny znak nie jest znakim składającym się na słowo. Oznacza "
+"to, iż zakotwiczenie może zostać dopasowane tam, gdzie nie ma żadnego znaku "
+"(np. na końcu przeszukiwanego napisu)."
+
+#. Tag: para
+#: regular-expressions.docbook:602
+#, no-c-format
+msgid ""
+"Some assertions actually do have a pattern to match, but the part of the "
+"string matching that will not be a part of the result of the match of the "
+"full expression."
+msgstr ""
+"Część zakotwiczeń właściwie nie posiada wzorca dopasowania, lecz zamiast "
+"tego wskazują  część napisu nie stanowiącą rezultatu dopasowania całego "
+"wyrażenia."
+
+#. Tag: para
+#: regular-expressions.docbook:606
+#, no-c-format
+msgid ""
+"Regular Expressions as documented here supports the following assertions:"
+msgstr ""
+"Wyrażenia regularne opisane w tej dokumentacji pozwalają na użycie "
+"następujących zakotwiczeń:"
+
+#. Tag: term
+#: regular-expressions.docbook:612
+#, no-c-format
+msgid "<userinput>^</userinput> (caret: beginning of string)"
+msgstr "<userinput>^</userinput> (daszek: początek tekstu)"
+
+#. Tag: para
+#: regular-expressions.docbook:614
+#, no-c-format
+msgid "Matches the beginning of the searched string."
+msgstr "Określa początek przeszukiwanego tekstu."
+
+#. Tag: para
+#: regular-expressions.docbook:615
+#, no-c-format
+msgid ""
+"The expression <userinput>^Peter</userinput> will match at <quote>Peter</"
+"quote> in the string <quote>Peter, hey!</quote> but not in <quote>Hey, Peter!"
+"</quote>"
+msgstr ""
+"Wyrażenie <userinput>^Peter</userinput> spowoduje dopasowanie wzorca "
+"<quote>Peter</quote> dla tekstu <quote>Peter, hey!</quote> ale już nie dla "
+"tekstu: <quote>Hey, Peter!</quote>"
+
+#. Tag: term
+#: regular-expressions.docbook:621
+#, no-c-format
+msgid "<userinput>$</userinput> (end of string)"
+msgstr "<userinput>$</userinput> (koniec tekstu)"
+
+#. Tag: para
+#: regular-expressions.docbook:622
+#, no-c-format
+msgid "Matches the end of the searched string."
+msgstr "Określa koniec przeszukiwanego tekstu."
+
+#. Tag: para
+#: regular-expressions.docbook:624
+#, no-c-format
+msgid ""
+"The expression <userinput>you\\?$</userinput> will match at the last you in "
+"the string <quote>You didn't do that, did you?</quote> but nowhere in "
+"<quote>You didn't do that, right?</quote>"
+msgstr ""
+"Wyrażenie <userinput>you\\?$</userinput> będzie dopasowane do ostatniego "
+"\"you\" w tekście <quote>You didn't do that, did you?</quote>, ale już nie "
+"dla tekstu: <quote>You didn't do that, right?</quote>"
+
+#. Tag: term
+#: regular-expressions.docbook:632
+#, no-c-format
+msgid "<userinput>\\b</userinput> (word boundary)"
+msgstr "<userinput>\\b</userinput> (granica słowa)"
+
+#. Tag: para
+#: regular-expressions.docbook:633
+#, no-c-format
+msgid ""
+"Matches if there is a word character at one side and not a word character at "
+"the other."
+msgstr ""
+"Określa sytuację gdy po jednej stronie jest element słowa, a po drugiej inny "
+"znak (nie będący elementem słowa)."
+
+#. Tag: para
+#: regular-expressions.docbook:635
+#, no-c-format
+msgid ""
+"This is useful to find word ends, for example both ends to find a whole "
+"word. The expression <userinput>\\bin\\b</userinput> will match at the "
+"separate <quote>in</quote> in the string <quote>He came in through the "
+"window</quote>, but not at the <quote>in</quote> in <quote>window</quote>."
+msgstr ""
+"Funkcja przydatna do wykrywania końca słów. Jej użycie po dwóch stronach "
+"wzorca spowoduje dopasowanie tylko całych wyrazów. Wyrażenie <userinput>\\bin"
+"\\b</userinput> będzie dopasowane do <quote>in</quote> w tekście <quote>He "
+"came in through the window</quote>, ale nie do napisu <quote>in</quote> w "
+"słowie <quote>window</quote>."
+
+#. Tag: term
+#: regular-expressions.docbook:644
+#, no-c-format
+msgid "<userinput>\\B</userinput> (non word boundary)"
+msgstr "<userinput>\\B</userinput> (przeciwieństwo granicy słowa)"
+
+#. Tag: para
+#: regular-expressions.docbook:645
+#, no-c-format
+msgid "Matches wherever <quote>\\b</quote> does not."
+msgstr ""
+"Dopasowuje wzorzec wszędzie tam, gdzie <quote>\\b</quote> nie spowoduje "
+"dopasowania."
+
+#. Tag: para
+#: regular-expressions.docbook:646
+#, no-c-format
+msgid ""
+"That means that it will match for example within words: The expression "
+"<userinput>\\Bin\\B</userinput> will match at in <quote>window</quote> but "
+"not in <quote>integer</quote> or <quote>I'm in love</quote>."
+msgstr ""
+"Oznacza to, iż będą wyszukiwane wzorce znajdujące się np. wewnątrz dłuższych "
+"wyrazów. Wyrażenie <userinput>\\Bin\\B</userinput> będzie dopasowane do \"in"
+"\" w słowie <quote>window</quote>, ale już nie do \"in\" w wyrazie "
+"<quote>integer</quote>, czy też napisie <quote>I'm in love</quote>."
+
+#. Tag: term
+#: regular-expressions.docbook:652
+#, no-c-format
+msgid "<userinput>(?=PATTERN)</userinput> (Positive lookahead)"
+msgstr "<userinput>(?=PATTERN)</userinput> (Zakotwiczenie w przód)"
+
+#. Tag: para
+#: regular-expressions.docbook:653
+#, no-c-format
+msgid ""
+"A lookahead assertion looks at the part of the string following a possible "
+"match. The positive lookahead will prevent the string from matching if the "
+"text following the possible match does not match the <emphasis>PATTERN</"
+"emphasis> of the assertion, but the text matched by that will not be "
+"included in the result."
+msgstr ""
+"Zakotwiczenie w przód analizuje część napisu następującą po potencjalnym "
+"dopasowaniu. Zakotwiczenie w przód nie spowoduje dopasowania wzorca, jeżeli "
+"tekst następujący po nim nie pasuje do <emphasis>PATTERN</emphasis> (wzorca) "
+"zakotwiczenia. Należy podkreślić iż tekst, który pasuje do wzorca "
+"zakotwiczenia, nie będzie częścią rezultatu wyszukiwania."
+
+#. Tag: para
+#: regular-expressions.docbook:657
+#, no-c-format
+msgid ""
+"The expression <userinput>handy(?=\\w)</userinput> will match at "
+"<quote>handy</quote> in <quote>handyman</quote> but not in <quote>That came "
+"in handy!</quote>"
+msgstr ""
+"Wyrażenie <userinput>handy(?=\\w)</userinput> dopasowane będzie do "
+"<quote>handy</quote> w słowie <quote>handyman</quote> ale już nie do napisu: "
+"<quote>That came in handy!</quote>"
+
+#. Tag: term
+#: regular-expressions.docbook:663
+#, no-c-format
+msgid "<userinput>(?!PATTERN)</userinput> (Negative lookahead)"
+msgstr "<userinput>(?!PATTERN)</userinput> (Negacja zakotwiczenia w przód)"
+
+#. Tag: para
+#: regular-expressions.docbook:665
+#, no-c-format
+msgid ""
+"The negative lookahead prevents a possible match to be acknowledged if the "
+"following part of the searched string does match its <emphasis>PATTERN</"
+"emphasis>."
+msgstr ""
+"Zanegowane zakotwiczenie w przód nie dopuści dopasowania wzorca, jeżeli "
+"tekst następujący po nim pasuje do <emphasis>PATTERN</emphasis> (wzorca) "
+"zakotwiczenia."
+
+#. Tag: para
+#: regular-expressions.docbook:668
+#, no-c-format
+msgid ""
+"The expression <userinput>const \\w+\\b(?!\\s*&amp;)</userinput> will match "
+"at <quote>const char</quote> in the string <quote>const char* foo</quote> "
+"while it can not match <quote>const QString</quote> in <quote>const "
+"QString&amp; bar</quote> because the <quote>&amp;</quote> matches the "
+"negative lookahead assertion pattern."
+msgstr ""
+"Wyrażenie <userinput>const \\w+\\b(?!\\s*&amp;)</userinput> pasuje do tekstu "
+"<quote>const char</quote> w napisie <quote>const char* foo</quote> ale już "
+"nie będzie pasować do <quote>const QString</quote> w <quote>const "
+"QString&amp; bar</quote> ponieważ znak <quote>&amp;</quote> pasuje do "
+"negacji zakotwiczenia w przód."
+
+#. Tag: term
+#: regular-expressions.docbook:678
+#, fuzzy, no-c-format
+#| msgid "<userinput>(?=PATTERN)</userinput> (Positive lookahead)"
+msgid "<userinput>(?&lt;=PATTERN)</userinput> (Positive lookbehind)"
+msgstr "<userinput>(?=PATTERN)</userinput> (Zakotwiczenie w przód)"
+
+#. Tag: para
+#: regular-expressions.docbook:679
+#, fuzzy, no-c-format
+#| msgid ""
+#| "A lookahead assertion looks at the part of the string following a "
+#| "possible match. The positive lookahead will prevent the string from "
+#| "matching if the text following the possible match does not match the "
+#| "<emphasis>PATTERN</emphasis> of the assertion, but the text matched by "
+#| "that will not be included in the result."
+msgid ""
+"Lookbehind has the same effect as the lookahead, but works backwards. A "
+"lookbehind looks at the part of the string previous a possible match. The "
+"positive lookbehind will match a string only if it is preceded by the "
+"<emphasis>PATTERN</emphasis> of the assertion, but the text matched by that "
+"will not be included in the result."
+msgstr ""
+"Zakotwiczenie w przód analizuje część napisu następującą po potencjalnym "
+"dopasowaniu. Zakotwiczenie w przód nie spowoduje dopasowania wzorca, jeżeli "
+"tekst następujący po nim nie pasuje do <emphasis>PATTERN</emphasis> (wzorca) "
+"zakotwiczenia. Należy podkreślić iż tekst, który pasuje do wzorca "
+"zakotwiczenia, nie będzie częścią rezultatu wyszukiwania."
+
+#. Tag: para
+#: regular-expressions.docbook:683
+#, fuzzy, no-c-format
+#| msgid ""
+#| "The expression <userinput>handy(?=\\w)</userinput> will match at "
+#| "<quote>handy</quote> in <quote>handyman</quote> but not in <quote>That "
+#| "came in handy!</quote>"
+msgid ""
+"The expression <userinput>(?&lt;=cup)cake</userinput> will match at "
+"<quote>cake</quote> if it is succeeded by <quote>cup</quote> (in "
+"<quote>cupcake</quote> but not in <quote>cheesecake</quote> or in "
+"<quote>cake</quote> alone)."
+msgstr ""
+"Wyrażenie <userinput>handy(?=\\w)</userinput> dopasowane będzie do "
+"<quote>handy</quote> w słowie <quote>handyman</quote> ale już nie do napisu: "
+"<quote>That came in handy!</quote>"
+
+#. Tag: term
+#: regular-expressions.docbook:690
+#, fuzzy, no-c-format
+#| msgid "<userinput>(?!PATTERN)</userinput> (Negative lookahead)"
+msgid "<userinput>(?&lt;!PATTERN)</userinput> (Negative lookbehind)"
+msgstr "<userinput>(?!PATTERN)</userinput> (Negacja zakotwiczenia w przód)"
+
+#. Tag: para
+#: regular-expressions.docbook:691
+#, fuzzy, no-c-format
+#| msgid ""
+#| "The negative lookahead prevents a possible match to be acknowledged if "
+#| "the following part of the searched string does match its "
+#| "<emphasis>PATTERN</emphasis>."
+msgid ""
+"The negative lookbehind prevents a possible match to be acknowledged if the "
+"previous part of the searched string does match its <emphasis>PATTERN</"
+"emphasis>."
+msgstr ""
+"Zanegowane zakotwiczenie w przód nie dopuści dopasowania wzorca, jeżeli "
+"tekst następujący po nim pasuje do <emphasis>PATTERN</emphasis> (wzorca) "
+"zakotwiczenia."
+
+#. Tag: para
+#: regular-expressions.docbook:693
+#, fuzzy, no-c-format
+#| msgid ""
+#| "The expression <userinput>^Peter</userinput> will match at <quote>Peter</"
+#| "quote> in the string <quote>Peter, hey!</quote> but not in <quote>Hey, "
+#| "Peter!</quote>"
+msgid ""
+"The expression <userinput>(?&lt;![\\w\\.])[0-9]+</userinput> will match at "
+"<quote>123</quote> in the strings <quote>=123</quote> and <quote>-123</"
+"quote> while it can not match <quote>123</quote> in <quote>.123</quote> or "
+"<quote>word123</quote>."
+msgstr ""
+"Wyrażenie <userinput>^Peter</userinput> spowoduje dopasowanie wzorca "
+"<quote>Peter</quote> dla tekstu <quote>Peter, hey!</quote> ale już nie dla "
+"tekstu: <quote>Hey, Peter!</quote>"
+
+#. Tag: term
+#: regular-expressions.docbook:700
+#, fuzzy, no-c-format
+#| msgid "<userinput>(?!PATTERN)</userinput> (Negative lookahead)"
+msgid "<userinput>(PATTERN)</userinput> (Capturing group)"
+msgstr "<userinput>(?!PATTERN)</userinput> (Negacja zakotwiczenia w przód)"
+
+#. Tag: para
+#: regular-expressions.docbook:702
+#, no-c-format
+msgid ""
+"The sub pattern within the parentheses is captured and remembered, so that "
+"it can be used in back references. For example, the expression "
+"<userinput>(&amp;quot;+)[^&amp;quot;]*\\1</userinput> matches "
+"<userinput>&quot;&quot;&quot;&quot;text&quot;&quot;&quot;&quot;</userinput> "
+"and <userinput>&quot;text&quot;</userinput>."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:707
+#, no-c-format
+msgid ""
+"See the section <link linkend=\"regex-capturing\">Capturing matching text "
+"(back references)</link> for more information."
+msgstr ""
+
+#. Tag: term
+#: regular-expressions.docbook:713
+#, fuzzy, no-c-format
+#| msgid "<userinput>(?!PATTERN)</userinput> (Negative lookahead)"
+msgid "<userinput>(?:PATTERN)</userinput> (Non-capturing group)"
+msgstr "<userinput>(?!PATTERN)</userinput> (Negacja zakotwiczenia w przód)"
+
+#. Tag: para
+#: regular-expressions.docbook:715
+#, no-c-format
+msgid ""
+"The sub pattern within the parentheses is not captured and is not "
+"remembered. It is preferable to always use non-capturing groups if the "
+"captures will not be used."
+msgstr ""
+
+#~ msgid ""
+#~ "The POSIX notation of classes, <userinput>[:&lt;class name&gt;:]</"
+#~ "userinput> is currently not supported."
+#~ msgstr ""
+#~ "Zapis klas znaków w notacji POSIX <userinput>[:&lt;class name&gt;:]</"
+#~ "userinput> nie jest obecnie obsługiwany przez &kate;."
+
+#~ msgid ""
+#~ "If you want to use a back reference, use a sub pattern to have the "
+#~ "desired part of the pattern remembered."
+#~ msgstr ""
+#~ "Wykorzystanie odwołań zwrotnych wymaga użycia podwzorca dla określenia "
+#~ "części wzorca, którą system wyrażeń regularnych powinien przechwycić."

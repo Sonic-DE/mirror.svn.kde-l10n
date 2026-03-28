@@ -1,0 +1,1599 @@
+# translation of kate_regular-expressions to Kinyarwanda.
+# Copyright (C) 
+# This file is distributed under the same license as the kate_regular-expressions package.
+# Steve Murphy <murf@e-tools.com>, 2005.
+# Steve performed initial rough translation from compendium built from translations provided by the following translators:
+# Philibert Ndandali  <ndandali@yahoo.fr>, 2005.
+# Viateur MUGENZI <muvia1@yahoo.fr>, 2005.
+# Noëlla Mupole <s24211045@tuks.co.za>, 2005.
+# Carole Karema <karemacarole@hotmail.com>, 2005.
+# JEAN BAPTISTE NGENDAHAYO <ngenda_denis@yahoo.co.uk>, 2005.
+# Augustin KIBERWA  <akiberwa@yahoo.co.uk>, 2005.
+# Donatien NSENGIYUMVA <ndonatienuk@yahoo.co.uk>, 2005.
+# Antoine Bigirimana <antoine@e-tools.com>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kate_regular-expressions 3.4\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 12:04+0000\n"
+"PO-Revision-Date: 2005-05-25 19:21-0600\n"
+"Last-Translator: Steve Murphy <murf@e-tools.com>\n"
+"Language-Team: Kinyarwanda <translation-team-rw@lists.sourceforge.net>\n"
+"Language: rw\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Tag: author
+#: regular-expressions.docbook:4
+#, fuzzy, no-c-format
+msgid "&Anders.Lund; &Anders.Lund.mail;"
+msgstr ". ; . . Ibaruwa ; "
+
+#. Tag: trans_comment
+#: regular-expressions.docbook:5
+#, fuzzy, no-c-format
+msgid "ROLES_OF_TRANSLATORS"
+msgstr "IZINA RY'ABAVUNUZI"
+
+#. Tag: title
+#: regular-expressions.docbook:9
+#, fuzzy, no-c-format
+msgid "Regular Expressions"
+msgstr "Imvugo zidahinduka"
+
+#. Tag: synopsis
+#: regular-expressions.docbook:11
+#, fuzzy, no-c-format
+msgid ""
+"This Appendix contains a brief but hopefully sufficient and\n"
+"covering introduction to the world of <emphasis>regular\n"
+"expressions</emphasis>. It documents regular expressions in the form\n"
+"available within &kappname;, which is not compatible with the regular\n"
+"expressions of perl, nor with those of for example\n"
+"<command>grep</command>."
+msgstr ""
+"ifite A Intangiriro Kuri i Bya <emphasis> </emphasis> . Inyandiko Ibisanzwe "
+"in i muri &kate; , ni OYA Na: i Bya Perl , Na: Bya ya:  <command> </"
+"command> . "
+
+#. Tag: title
+#: regular-expressions.docbook:15
+#, no-c-format
+msgid "Introduction"
+msgstr "Intangiriro"
+
+#. Tag: para
+#: regular-expressions.docbook:17
+#, fuzzy, no-c-format
+msgid ""
+"<emphasis>Regular Expressions</emphasis> provides us with a way to describe "
+"some possible contents of a text string in a way understood by a small piece "
+"of software, so that it can investigate if a text matches, and also in the "
+"case of advanced applications with the means of saving pieces or the "
+"matching text."
+msgstr ""
+"<emphasis> </emphasis> RW Na: A Kuri Ibigize Bya A Umwandiko "
+"Ikurikiranyanyuguti in A ku A Gitoya Bya , NIBA A Umwandiko , na in i Bya "
+"Urwego rwo hejuru Porogaramu Na: i Bya Mu kubika Cyangwa i Umwandiko . "
+
+#. Tag: para
+#: regular-expressions.docbook:23
+#, fuzzy, no-c-format
+msgid ""
+"An example: Say you want to search a text for paragraphs that starts with "
+"either of the names <quote>Henrik</quote> or <quote>Pernille</quote> "
+"followed by some form of the verb <quote>say</quote>."
+msgstr ""
+"Urugero: : Kuri Shakisha A Umwandiko ya:  Ibika Na: Bya i Amazina <quote> </"
+"quote> Cyangwa <quote> </quote> ku Ifishi %S: Bya i Ishinga <quote> </"
+"quote> . "
+
+#. Tag: para
+#: regular-expressions.docbook:28
+#, fuzzy, no-c-format
+msgid ""
+"With a normal search, you would start out searching for the first name, "
+"<quote>Henrik</quote> maybe followed by <quote>sa</quote> like this: "
+"<userinput>Henrik sa</userinput>, and while looking for matches, you would "
+"have to discard those not being the beginning of a paragraph, as well as "
+"those in which the word starting with the letters <quote>sa</quote> was not "
+"either <quote>says</quote>, <quote>said</quote> or so. And then of course "
+"repeat all of that with the next name..."
+msgstr ""
+"A Bisanzwe Shakisha , Tangira &vendorShortName; Inyuma Gushakisha... ya:  i "
+"Itangira Izina: , <quote> </quote> ku <quote> </quote> nka iyi : <userinput> "
+"</userinput> , na ya:  , Kuri Kwanga OYA i Itangiriro Bya A Igika , Nka Nka "
+"in i ijambo Itangira... Na: i <quote> </quote> OYA <quote> </quote> , "
+"<quote> </quote> Cyangwa . Hanyuma Bya Gusubiramo Byose Bya Na: i "
+"Ibikurikira > Izina: ... "
+
+#. Tag: para
+#: regular-expressions.docbook:37
+#, fuzzy, no-c-format
+msgid ""
+"With Regular Expressions, that task could be accomplished with a single "
+"search, and with a larger degree of preciseness."
+msgstr ", Igikorwa Na: A UMWE Shakisha , na Na: A Kinini Dogere Bya . "
+
+#. Tag: para
+#: regular-expressions.docbook:40
+#, fuzzy, no-c-format
+msgid ""
+"To achieve this, Regular Expressions defines rules for expressing in details "
+"a generalization of a string to match. Our example, which we might literally "
+"express like this: <quote>A line starting with either <quote>Henrik</quote> "
+"or <quote>Pernille</quote> (possibly following up to 4 blanks or tab "
+"characters) followed by a whitespace followed by <quote>sa</quote> and then "
+"either <quote>ys</quote> or <quote>id</quote></quote> could be expressed "
+"with the following regular expression:"
+msgstr ""
+"iyi , ya:  in Birambuye A Bya A Ikurikiranyanyuguti Kuri BIHUYE . Urugero: , "
+"Twebwe nka iyi : <quote> A Umurongo: Itangira... Na: <quote> </quote> "
+"Cyangwa <quote> </quote> ( Hejuru Kuri 4 Cyangwa tab Inyuguti ) ku A ku "
+"<quote> </quote> na Hanyuma <quote> </quote> Cyangwa <quote> ID </quote> </"
+"quote> Na: i Ibisanzwe imvugo : "
+
+#. Tag: userinput
+#: regular-expressions.docbook:47
+#, fuzzy, no-c-format
+msgid "^[ \\t]{0,4}(Henrik|Pernille) sa(ys|id)"
+msgstr "^ [ \\t ] { 0 %S , 4 } ( | ) ( | ID ) "
+
+#. Tag: para
+#: regular-expressions.docbook:50
+#, fuzzy, no-c-format
+msgid ""
+"The above example demonstrates all four major concepts of modern Regular "
+"Expressions, namely:"
+msgstr "hejuru Urugero: Byose Bya BIGEZWEHO , : "
+
+#. Tag: para
+#: regular-expressions.docbook:54
+#, no-c-format
+msgid "<para>Patterns</para>"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:55
+#, no-c-format
+msgid "<para>Assertions</para>"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:56
+#, no-c-format
+msgid "<para>Quantifiers</para>"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:57
+#, fuzzy, no-c-format
+msgid "Back references"
+msgstr "Indango "
+
+#. Tag: para
+#: regular-expressions.docbook:60
+#, fuzzy, no-c-format
+msgid ""
+"The caret (<literal>^</literal>) starting the expression is an assertion, "
+"being true only if the following matching string is at the start of a line."
+msgstr ""
+"( <literal> ^ </literal> ) Itangira... i imvugo ni , nibyo NIBA i "
+"Ikurikiranyanyuguti ni Ku i Tangira &vendorShortName; Bya A Umurongo: . "
+
+#. Tag: para
+#: regular-expressions.docbook:64
+#, fuzzy, no-c-format
+msgid ""
+"The strings <literal>[ \\t]</literal> and <literal>(Henrik|Pernille) sa(ys|"
+"id)</literal> are patterns. The first one is a <emphasis>character class</"
+"emphasis> that matches either a blank or a (horizontal) tab character; the "
+"other pattern contains first a subpattern matching either <literal>Henrik</"
+"literal> <emphasis>or</emphasis> <literal>Pernille</literal>, then a piece "
+"matching the exact string <literal> sa</literal> and finally a subpattern "
+"matching either <literal>ys</literal> <emphasis>or</emphasis> <literal>id</"
+"literal>"
+msgstr ""
+"<literal> [ \\t ] </literal> na <literal> ( | ) ( | ID ) </literal> "
+"Imitako . Itangira Rimwe ni A <emphasis> Inyuguti: Urwego: </emphasis> A "
+"Ahatanditseho Cyangwa A ( Utambitse: ) tab Inyuguti: ; i Ikindi Ishusho "
+"ifite Itangira A <literal> </literal> <emphasis> Cyangwa </emphasis> "
+"<literal> </literal> , Hanyuma A i NYACYO Ikurikiranyanyuguti <literal> </"
+"literal> na A <literal> </literal> <emphasis> Cyangwa </emphasis> <literal> "
+"ID </literal> "
+
+#. Tag: para
+#: regular-expressions.docbook:74
+#, fuzzy, no-c-format
+msgid ""
+"The string <literal>{0,4}</literal> is a quantifier saying <quote>anywhere "
+"from 0 up to 4 of the previous</quote>."
+msgstr ""
+"Ikurikiranyanyuguti <literal> { 0 %S , 4 } </literal> ni A <quote> Aho ariho "
+"hose Kuva: 0 %S Hejuru Kuri 4 Bya i Ibanjirije </quote> . "
+
+#. Tag: para
+#: regular-expressions.docbook:77
+#, fuzzy, no-c-format
+msgid ""
+"Because regular expression software supporting the concept of <emphasis>back "
+"references</emphasis> saves the entire matching part of the string as well "
+"as sub-patterns enclosed in parentheses, given some means of access to those "
+"references, we could get our hands on either the whole match (when searching "
+"a text document in an editor with a regular expression, that is often marked "
+"as selected) or either the name found, or the last part of the verb."
+msgstr ""
+"Ibisanzwe imvugo i Bya <emphasis> Inyuma Indango </emphasis> i Inzira %s Bya "
+"i Ikurikiranyanyuguti Nka Nka - Imitako in , Bya Kuri Indango , Twebwe "
+"Kubona ku i BIHUYE ( Ryari: Gushakisha... A Umwandiko Inyandiko in Muhinduzi "
+"Na: A Ibisanzwe imvugo , ni cy/byagarajwe Nka Byahiswemo ) Cyangwa i Izina: "
+"Byabonetse , Cyangwa i Iheruka Inzira %s Bya i Ishinga . "
+
+#. Tag: para
+#: regular-expressions.docbook:85
+#, fuzzy, no-c-format
+msgid ""
+"All together, the expression will match where we wanted it to, and only "
+"there."
+msgstr ", i imvugo BIHUYE Twebwe Kuri , na . "
+
+#. Tag: para
+#: regular-expressions.docbook:88
+#, fuzzy, no-c-format
+msgid ""
+"The following sections will describe in details how to construct and use "
+"patterns, character classes, assertions, quantifiers and back references, "
+"and the final section will give a few useful examples."
+msgstr ""
+"Ibyatoranyijwe in Birambuye Kuri na Koresha Imitako , Inyuguti: Inzego , , "
+"na Inyuma Indango , na i Bihera Icyiciro A Ingero . "
+
+#. Tag: title
+#: regular-expressions.docbook:97
+#, no-c-format
+msgid "<title>Patterns</title>"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:99
+#, fuzzy, no-c-format
+msgid ""
+"Patterns consists of literal strings and character classes. Patterns may "
+"contain sub-patterns, which are patterns enclosed in parentheses."
+msgstr ""
+"Bya Ikurikiranyanyuguti na Inyuguti: Inzego . Gicurasi - Imitako , Imitako "
+"in . "
+
+#. Tag: title
+#: regular-expressions.docbook:104
+#, fuzzy, no-c-format
+msgid "Escaping characters"
+msgstr "Inyuguti "
+
+#. Tag: para
+#: regular-expressions.docbook:106
+#, fuzzy, no-c-format
+msgid ""
+"In patterns as well as in character classes, some characters have a special "
+"meaning. To literally match any of those characters, they must be marked or "
+"<emphasis>escaped</emphasis> to let the regular expression software know "
+"that it should interpret such characters in their literal meaning."
+msgstr ""
+"Imitako Nka Nka in Inyuguti: Inzego , Inyuguti A Bidasanzwe Igisobanuro . "
+"BIHUYE Icyo ari cyo cyose Bya Inyuguti , cy/byagarajwe Cyangwa <emphasis> </"
+"emphasis> Kuri i Ibisanzwe imvugo Inyuguti in Igisobanuro . "
+
+#. Tag: para
+#: regular-expressions.docbook:112
+#, fuzzy, no-c-format
+msgid ""
+"This is done by prepending the character with a backslash (<literal>\\</"
+"literal>)."
+msgstr "ni Byakozwe ku i Inyuguti: Na: A ( <literal> \\< /> ) . "
+
+#. Tag: para
+#: regular-expressions.docbook:116
+#, fuzzy, no-c-format
+msgid ""
+"The regular expression software will silently ignore escaping a character "
+"that does not have any special meaning in the context, so escaping for "
+"example a <quote>j</quote> (<userinput>\\j</userinput>) is safe. If you are "
+"in doubt whether a character could have a special meaning, you can therefore "
+"escape it safely."
+msgstr ""
+"Ibisanzwe imvugo Kureka A Inyuguti: OYA Icyo ari cyo cyose Bidasanzwe "
+"Igisobanuro in i Imvugiro , ya:  Urugero: A <quote> j </quote> ( <userinput> "
+"\\j </userinput> ) ni . in A Inyuguti: A Bidasanzwe Igisobanuro , Gusohoka . "
+
+#. Tag: para
+#: regular-expressions.docbook:122
+#, fuzzy, no-c-format
+msgid ""
+"Escaping of course includes the backslash character itself, to literally "
+"match a such, you would write <userinput>\\\\</userinput>."
+msgstr ""
+"Bya i Inyuguti: , Kuri BIHUYE A , Kwandika <userinput> \\\\ </userinput> . "
+
+#. Tag: title
+#: regular-expressions.docbook:129
+#, fuzzy, no-c-format
+msgid "Character Classes and abbreviations"
+msgstr "na "
+
+#. Tag: para
+#: regular-expressions.docbook:131
+#, fuzzy, no-c-format
+msgid ""
+"A <emphasis>character class</emphasis> is an expression that matches one of "
+"a defined set of characters. In Regular Expressions, character classes are "
+"defined by putting the legal characters for the class in square brackets, "
+"<literal>[]</literal>, or by using one of the abbreviated classes described "
+"below."
+msgstr ""
+"A <emphasis> Inyuguti: Urwego: </emphasis> ni imvugo Rimwe Bya A Gushyiraho "
+"Bya Inyuguti . , Inyuguti: Inzego ku i By'amategeko Inyuguti ya:  i Urwego: "
+"in kare Udusodeko , <literal> [ ] </literal> , Cyangwa ku ikoresha Rimwe Bya "
+"i Inzego munsi . "
+
+#. Tag: para
+#: regular-expressions.docbook:137
+#, fuzzy, no-c-format
+msgid ""
+"Simple character classes just contains one or more literal characters, for "
+"example <userinput>[abc]</userinput> (matching either of the letters "
+"<quote>a</quote>, <quote>b</quote> or <quote>c</quote>) or "
+"<userinput>[0123456789]</userinput> (matching any digit)."
+msgstr ""
+"Inyuguti: Inzego ifite Rimwe Cyangwa Birenzeho Inyuguti , ya:  Urugero: "
+"<userinput> [ ] </userinput> ( Bya i <quote> A </quote> , <quote> b </quote> "
+"Cyangwa <quote> C </quote> ) Cyangwa <userinput> [ 0123456789 ] </userinput> "
+"( Icyo ari cyo cyose Umubarwa ) . "
+
+#. Tag: para
+#: regular-expressions.docbook:142
+#, fuzzy, no-c-format
+msgid ""
+"Because letters and digits have a logical order, you can abbreviate those by "
+"specifying ranges of them: <userinput>[a-c]</userinput> is equal to "
+"<userinput>[abc]</userinput> and <userinput>[0-9]</userinput> is equal to "
+"<userinput>[0123456789]</userinput>. Combining these constructs, for example "
+"<userinput>[a-fynot1-38]</userinput> is completely legal (the last one would "
+"match, of course, either of <quote>a</quote>,<quote>b</quote>,<quote>c</"
+"quote>,<quote>d</quote>, <quote>e</quote>,<quote>f</quote>,<quote>y</quote>,"
+"<quote>n</quote>,<quote>o</quote>,<quote>t</quote>, <quote>1</quote>,"
+"<quote>2</quote>,<quote>3</quote> or <quote>8</quote>)."
+msgstr ""
+"na A Bijyanye n'inyurabwenge Itondekanya , ku Ibice Bya : <userinput> [ A - "
+"C ] </userinput> ni bingana Kuri <userinput> [ ] </userinput> na <userinput> "
+"[ 0 %S - 9 ] </userinput> ni bingana Kuri <userinput> [ 0123456789 ] </"
+"userinput> . , ya:  Urugero: <userinput> [ A - - ] </userinput> ni "
+"By'amategeko ( i Iheruka Rimwe BIHUYE , Bya , Bya <quote> A </quote> , "
+"<quote> b </quote> , <quote> C </quote> , <quote> d </quote> , <quote> e </"
+"quote> , <quote> F </quote> , <quote> Y </quote> , <quote> n </quote> , "
+"<quote> o </quote> , <quote> T </quote> , <quote> 1 </quote> , <quote> 2 </"
+"quote> , <quote> 3 </quote> Cyangwa <quote> 8 </quote> ) . "
+
+#. Tag: para
+#: regular-expressions.docbook:154
+#, fuzzy, no-c-format
+msgid ""
+"As capital letters are different characters from their non-capital "
+"equivalents, to create a caseless character class matching <quote>a</quote> "
+"or <quote>b</quote>, in any case, you need to write it <userinput>[aAbB]</"
+"userinput>."
+msgstr ""
+"Inyuguti Kuva: - , Kuri Kurema A Inyuguti: Urwego: <quote> A </quote> "
+"Cyangwa <quote> b </quote> , in Icyo ari cyo cyose , Kuri Kwandika "
+"<userinput> [ ] </userinput> . "
+
+#. Tag: para
+#: regular-expressions.docbook:159
+#, fuzzy, no-c-format
+msgid ""
+"It is of course possible to create a <quote>negative</quote> class matching "
+"as <quote>anything but</quote> To do so put a caret (<literal>^</literal>) "
+"at the beginning of the class:"
+msgstr ""
+"ni Bya Kuri Kurema A <quote> Munsi ya Zero </quote> Urwego: Nka <quote> </"
+"quote> Gushyira A ( <literal> ^ </literal> ) Ku i Itangiriro Bya i Urwego: : "
+
+#. Tag: para
+#: regular-expressions.docbook:163
+#, fuzzy, no-c-format
+msgid ""
+"<userinput>[^abc]</userinput> will match any character <emphasis>but</"
+"emphasis> <quote>a</quote>, <quote>b</quote> or <quote>c</quote>."
+msgstr ""
+"<userinput> [ ^ ] </userinput> BIHUYE Icyo ari cyo cyose Inyuguti: "
+"<emphasis> </emphasis> <quote> A </quote> , <quote> b </quote> Cyangwa "
+"<quote> C </quote> . "
+
+#. Tag: para
+#: regular-expressions.docbook:167
+#, fuzzy, no-c-format
+msgid ""
+"In addition to literal characters, some abbreviations are defined, making "
+"life still a bit easier:"
+msgstr "Guteranya + Kuri Inyuguti , , Ubuzima A : "
+
+#. Tag: userinput
+#: regular-expressions.docbook:173
+#, fuzzy, no-c-format
+msgid "<userinput>\\a</userinput>"
+msgstr "<userinput>\\a</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:174
+#, fuzzy, no-c-format
+msgid "This matches the &ASCII; bell character (BEL, 0x07)."
+msgstr "i <acronym> </acronym> &Inzogera Inyuguti: ( , ) . "
+
+#. Tag: userinput
+#: regular-expressions.docbook:178
+#, fuzzy, no-c-format
+msgid "<userinput>\\f</userinput>"
+msgstr "<userinput>\\f</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:179
+#, fuzzy, no-c-format
+msgid "This matches the &ASCII; form feed character (FF, 0x0C)."
+msgstr "i <acronym> </acronym> Ifishi %S: Inyuguti: ( , ) . "
+
+#. Tag: userinput
+#: regular-expressions.docbook:183
+#, fuzzy, no-c-format
+msgid "<userinput>\\n</userinput>"
+msgstr ""
+"<userinput> \n"
+"n </userinput> "
+
+#. Tag: para
+#: regular-expressions.docbook:184
+#, fuzzy, no-c-format
+msgid "This matches the &ASCII; line feed character (LF, 0x0A, Unix newline)."
+msgstr "i <acronym> </acronym> Umurongo: Inyuguti: ( , , UmurongoMushya ) . "
+
+#. Tag: userinput
+#: regular-expressions.docbook:188
+#, fuzzy, no-c-format
+msgid "<userinput>\\r</userinput>"
+msgstr "<userinput>\\r</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:189
+#, fuzzy, no-c-format
+msgid "This matches the &ASCII; carriage return character (CR, 0x0D)."
+msgstr "i <acronym> </acronym> Garuka Inyuguti: ( , ) . "
+
+#. Tag: userinput
+#: regular-expressions.docbook:193
+#, fuzzy, no-c-format
+msgid "<userinput>\\t</userinput>"
+msgstr "<userinput>\\t</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:194
+#, fuzzy, no-c-format
+msgid "This matches the &ASCII; horizontal tab character (HT, 0x09)."
+msgstr "i <acronym> </acronym> Utambitse: tab Inyuguti: ( , ) . "
+
+#. Tag: userinput
+#: regular-expressions.docbook:198
+#, fuzzy, no-c-format
+msgid "<userinput>\\v</userinput>"
+msgstr "<userinput>\\v</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:199
+#, fuzzy, no-c-format
+msgid "This matches the &ASCII; vertical tab character (VT, 0x0B)."
+msgstr "i <acronym> </acronym> Uhagaritse: tab Inyuguti: ( , ) . "
+
+#. Tag: userinput
+#: regular-expressions.docbook:202
+#, no-c-format
+msgid "\\xhhhh"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:204
+#, fuzzy, no-c-format
+msgid ""
+"This matches the Unicode character corresponding to the hexadecimal number "
+"hhhh (between 0x0000 and 0xFFFF). \\0ooo (&ie;, \\zero ooo) matches the "
+"&ASCII;/Latin-1 character corresponding to the octal number ooo (between 0 "
+"and 0377)."
+msgstr ""
+"i Inyuguti: Kuri i Umubare ( hagati na ) . \\0 ( &ie; , \\z ) i <acronym> </"
+"acronym> /- 1 Inyuguti: Kuri i Umubare ( hagati 0 %S na ) . "
+
+#. Tag: term
+#: regular-expressions.docbook:212
+#, fuzzy, no-c-format
+msgid "<userinput>.</userinput> (dot)"
+msgstr "<userinput> . </userinput> ( Akadomo ) "
+
+#. Tag: para
+#: regular-expressions.docbook:213
+#, fuzzy, no-c-format
+msgid "This matches any character (including newline)."
+msgstr "Icyo ari cyo cyose Inyuguti: ( UmurongoMushya ) . "
+
+#. Tag: userinput
+#: regular-expressions.docbook:217
+#, fuzzy, no-c-format
+msgid "<userinput>\\d</userinput>"
+msgstr "<userinput>\\d</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:218
+#, fuzzy, no-c-format
+msgid "This matches a digit. Equal to <literal>[0-9]</literal>"
+msgstr "A Umubarwa . Kuri <literal> [ 0 %S - 9 ] </literal> "
+
+#. Tag: userinput
+#: regular-expressions.docbook:222
+#, fuzzy, no-c-format
+msgid "<userinput>\\D</userinput>"
+msgstr "<userinput>\\D</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:223
+#, fuzzy, no-c-format
+msgid ""
+"This matches a non-digit. Equal to <literal>[^0-9]</literal> or <literal>[^"
+"\\d]</literal>"
+msgstr ""
+"A - Umubarwa . Kuri <literal> [ ^ 0 %S - 9 ] </literal> Cyangwa <literal> "
+"[ ^ \\d ] </literal> "
+
+#. Tag: userinput
+#: regular-expressions.docbook:227
+#, fuzzy, no-c-format
+msgid "<userinput>\\s</userinput>"
+msgstr "<userinput>\\s</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:228
+#, fuzzy, no-c-format
+msgid ""
+"This matches a whitespace character. Practically equal to <literal>[ \\t\\n"
+"\\r]</literal>"
+msgstr ""
+"A Inyuguti: . bingana Kuri <literal> [ \\t \n"
+"n \\r ] </literal> "
+
+#. Tag: userinput
+#: regular-expressions.docbook:232
+#, fuzzy, no-c-format
+msgid "<userinput>\\S</userinput>"
+msgstr "<userinput>\\S</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:233
+#, fuzzy, no-c-format
+msgid ""
+"This matches a non-whitespace. Practically equal to <literal>[^ \\t\\r\\n]</"
+"literal>, and equal to <literal>[^\\s]</literal>"
+msgstr ""
+"A - . bingana Kuri <literal> [ ^ \\t \\r \n"
+"n ] </literal> , na bingana Kuri <literal> [ ^ \\s ] "
+
+#. Tag: userinput
+#: regular-expressions.docbook:237
+#, fuzzy, no-c-format
+msgid "<userinput>\\w</userinput>"
+msgstr "<userinput>\\w</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:238
+#, fuzzy, no-c-format
+msgid ""
+"Matches any <quote>word character</quote> - in this case any letter, digit "
+"or underscore. Equal to <literal>[a-zA-Z0-9_]</literal>"
+msgstr ""
+"Icyo ari cyo cyose <quote> ijambo Inyuguti: </quote> - in iyi Icyo ari cyo "
+"cyose Ibaruwa: Cyangwa Umubarwa . icyitonderwa ( <literal> _ </literal> ) ni "
+"OYA , Nka ni i Na: Perl Ibisanzwe . Kuri <literal> [ A - - - 9 ] </literal> "
+
+#. Tag: userinput
+#: regular-expressions.docbook:243
+#, fuzzy, no-c-format
+msgid "<userinput>\\W</userinput>"
+msgstr "<userinput>\\W</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:244
+#, fuzzy, no-c-format
+msgid ""
+"Matches any non-word character - anything but letters, numbers or "
+"underscore. Equal to <literal>[^a-zA-Z0-9_]</literal> or <literal>[^\\w]</"
+"literal>"
+msgstr ""
+"Icyo ari cyo cyose - ijambo Inyuguti: - Cyangwa Imibare . Kuri <literal> [ ^ "
+"A - - - 9 ] </literal> Cyangwa <literal> [ ^ \\w ] </literal> "
+
+#. Tag: para
+#: regular-expressions.docbook:253
+#, no-c-format
+msgid ""
+"The <emphasis>POSIX notation of classes</emphasis>, <userinput>[:&lt;class "
+"name&gt;:]</userinput> are also supported. For example, <userinput>[:"
+"digit:]</userinput> is equivalent to <userinput>\\d</userinput>, and "
+"<userinput>[:space:]</userinput> to <userinput>\\s</userinput>. See the full "
+"list of POSIX character classes <ulink url=\"https://www.regular-expressions."
+"info/posixbrackets.html\">here</ulink>."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:260
+#, fuzzy, no-c-format
+msgid ""
+"The abbreviated classes can be put inside a custom class, for example to "
+"match a word character, a blank or a dot, you could write <userinput>[\\w "
+"\\.]</userinput>"
+msgstr ""
+"Inzego Gushyira Mo Imbere A Guhanga Urwego: , ya:  Urugero: Kuri BIHUYE A "
+"ijambo Inyuguti: , A Ahatanditseho Cyangwa A Akadomo , Kwandika <userinput> "
+"[ \\w \\. ] </userinput> "
+
+#. Tag: title
+#: regular-expressions.docbook:265
+#, fuzzy, no-c-format
+msgid "Characters with special meanings inside character classes"
+msgstr "Na: Bidasanzwe Mo Imbere Inyuguti: Inzego "
+
+#. Tag: para
+#: regular-expressions.docbook:267
+#, fuzzy, no-c-format
+msgid ""
+"The following characters has a special meaning inside the <quote>[]</quote> "
+"character class construct, and must be escaped to be literally included in a "
+"class:"
+msgstr ""
+"Inyuguti A Bidasanzwe Igisobanuro Mo Imbere i <quote> [ ] </quote> Inyuguti: "
+"Urwego: , na Kuri in A Urwego: : "
+
+#. Tag: userinput
+#: regular-expressions.docbook:273
+#, fuzzy, no-c-format
+msgid "<userinput>]</userinput>"
+msgstr "<userinput>]</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:274
+#, fuzzy, no-c-format
+msgid ""
+"Ends the character class. Must be escaped unless it is the very first "
+"character in the class (may follow an unescaped caret)."
+msgstr ""
+"i Inyuguti: Urwego: . ni i Itangira Inyuguti: in i Urwego: ( Gicurasi "
+"Gukurikira ) "
+
+#. Tag: term
+#: regular-expressions.docbook:278 regular-expressions.docbook:415
+#, no-c-format
+msgid "<userinput>^</userinput> (caret)"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:279
+#, fuzzy, no-c-format
+msgid ""
+"Denotes a negative class, if it is the first character. Must be escaped to "
+"match literally if it is the first character in the class."
+msgstr ""
+"A Munsi ya Zero Urwego: , NIBA ni i Itangira Inyuguti: . Kuri BIHUYE NIBA ni "
+"i Itangira Inyuguti: in i Urwego: . "
+
+#. Tag: term
+#: regular-expressions.docbook:282
+#, fuzzy, no-c-format
+msgid "<userinput>-</userinput> (dash)"
+msgstr "<userinput> - </userinput> ( AKANYEREZO ) "
+
+#. Tag: para
+#: regular-expressions.docbook:283
+#, fuzzy, no-c-format
+msgid ""
+"Denotes a logical range. Must always be escaped within a character class."
+msgstr ""
+"A Bijyanye n'inyurabwenge Urutonde . Buri gihe muri A Inyuguti: Urwego: . "
+
+#. Tag: term
+#: regular-expressions.docbook:286 regular-expressions.docbook:410
+#, no-c-format
+msgid "<userinput>\\</userinput> (backslash)"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:287
+#, fuzzy, no-c-format
+msgid "The escape character. Must always be escaped."
+msgstr "Gusohoka Inyuguti: . Buri gihe . "
+
+#. Tag: title
+#: regular-expressions.docbook:298
+#, fuzzy, no-c-format
+msgid "Alternatives: matching <quote>one of</quote>"
+msgstr ": <quote> Rimwe Bya </quote> "
+
+#. Tag: para
+#: regular-expressions.docbook:300
+#, fuzzy, no-c-format
+msgid ""
+"If you want to match one of a set of alternative patterns, you can separate "
+"those with <literal>|</literal> (vertical bar character)."
+msgstr ""
+"Kuri BIHUYE Rimwe Bya A Gushyiraho Bya Imitako , Na: <literal> | </literal> "
+"( Uhagaritse: Umurongo Inyuguti: ) . "
+
+#. Tag: para
+#: regular-expressions.docbook:303
+#, fuzzy, no-c-format
+msgid ""
+"For example to find either <quote>John</quote> or <quote>Harry</quote> you "
+"would use an expression <userinput>John|Harry</userinput>."
+msgstr ""
+"Urugero: Kuri Gushaka <quote> </quote> Cyangwa <quote> </quote> Koresha "
+"imvugo <userinput> | "
+
+#. Tag: title
+#: regular-expressions.docbook:309
+#, fuzzy, no-c-format
+msgid "Sub Patterns"
+msgstr "Imitako"
+
+#. Tag: para
+#: regular-expressions.docbook:311
+#, fuzzy, no-c-format
+msgid ""
+"<emphasis>Sub patterns</emphasis> are patterns enclosed in parentheses, and "
+"they have several uses in the world of regular expressions."
+msgstr "<emphasis> Imitako </emphasis> Imitako in , na in i Bya Ibisanzwe . "
+
+#. Tag: title
+#: regular-expressions.docbook:317
+#, fuzzy, no-c-format
+msgid "Specifying alternatives"
+msgstr "Yerekana ibisobanuro."
+
+#. Tag: para
+#: regular-expressions.docbook:319
+#, fuzzy, no-c-format
+msgid ""
+"You may use a sub pattern to group a set of alternatives within a larger "
+"pattern. The alternatives are separated by the character <quote>|</quote> "
+"(vertical bar)."
+msgstr ""
+"Gicurasi Koresha A Ishusho Kuri Itsinda A Gushyiraho Bya muri A Kinini "
+"Ishusho . ku i Inyuguti: <quote> | </quote> ( Uhagaritse: Umurongo ) . "
+
+#. Tag: para
+#: regular-expressions.docbook:323
+#, fuzzy, no-c-format
+msgid ""
+"For example to match either of the words <quote>int</quote>, <quote>float</"
+"quote> or <quote>double</quote>, you could use the pattern <userinput>int|"
+"float|double</userinput>. If you only want to find one if it is followed by "
+"some whitespace and then some letters, put the alternatives inside a "
+"subpattern: <userinput>(int|float|double)\\s+\\w+</userinput>."
+msgstr ""
+"Urugero: Kuri BIHUYE Bya i Amagambo <quote> INT </quote> , <quote> Kureremba "
+"</quote> Cyangwa <quote> MAHARAKUBIRI </quote> , Koresha i Ishusho "
+"<userinput> INT | Kureremba | MAHARAKUBIRI </userinput> . Kuri Gushaka Rimwe "
+"NIBA ni ku na Hanyuma , Gushyira i Mo Imbere A : <userinput> ( INT | "
+"Kureremba | MAHARAKUBIRI ) \\s + \\w + </userinput> . "
+
+#. Tag: title
+#: regular-expressions.docbook:334
+#, fuzzy, no-c-format
+msgid "Capturing matching text (back references)"
+msgstr "Umwandiko ( Inyuma Indango ) "
+
+#. Tag: para
+#: regular-expressions.docbook:336
+#, no-c-format
+msgid ""
+"If you want to use a back reference, use a sub pattern <userinput>(PATTERN)</"
+"userinput> to have the desired part of the pattern remembered. To prevent "
+"the sub pattern from being remembered, use a non-capturing group "
+"<userinput>(?:PATTERN)</userinput>."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:341
+#, fuzzy, no-c-format
+msgid ""
+"For example, if you want to find two occurrences of the same word separated "
+"by a comma and possibly some whitespace, you could write <userinput>(\\w+),"
+"\\s*\\1</userinput>. The sub pattern <literal>\\w+</literal> would find a "
+"chunk of word characters, and the entire expression would match if those "
+"were followed by a comma, 0 or more whitespace and then an equal chunk of "
+"word characters. (The string <literal>\\1</literal> references <emphasis>the "
+"first sub pattern enclosed in parentheses</emphasis>.)"
+msgstr ""
+"Urugero: , Kuri Gushaka Kabiri Bya i ijambo ku A akitso na , Kwandika "
+"<userinput> ( \\w + ) , \\s * \\1 </userinput> . Ishusho <literal> \\w + </"
+"literal> Gushaka A Bya ijambo Inyuguti , na i imvugo BIHUYE NIBA ku A "
+"akitso , 0 %S Cyangwa Birenzeho na Hanyuma bingana Bya ijambo Inyuguti . "
+"( Ikurikiranyanyuguti <literal> \\1 </literal> Indango <emphasis> i Itangira "
+"Ishusho in </emphasis> ) "
+
+#. Tag: para
+#: regular-expressions.docbook:351
+#, no-c-format
+msgid ""
+"To avoid ambiguities with usage of <userinput>\\1</userinput> with some "
+"digits behind it (&eg; <userinput>\\12</userinput> can be 12th subpattern or "
+"just the first subpattern with <userinput>2</userinput>) we use <userinput>"
+"\\{12}</userinput> as syntax for multi-digit subpatterns."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:352
+#, no-c-format
+msgid "Examples:"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:354
+#, no-c-format
+msgid "<userinput>\\{12}1</userinput> is <quote>use subpattern 12</quote>"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:355
+#, no-c-format
+msgid ""
+"<userinput>\\123</userinput> is <quote>use capture 1 then 23 as the normal "
+"text</quote>"
+msgstr ""
+
+#. Tag: title
+#: regular-expressions.docbook:365
+#, no-c-format
+msgid "Lookahead Assertions"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:367
+#, fuzzy, no-c-format
+msgid ""
+"A lookahead assertion is a sub pattern, starting with either <literal>?=</"
+"literal> or <literal>?!</literal>."
+msgstr "Cyangwa."
+
+#. Tag: para
+#: regular-expressions.docbook:370
+#, fuzzy, no-c-format
+msgid ""
+"For example to match the literal string <quote>Bill</quote> but only if not "
+"followed by <quote> Gates</quote>, you could use this expression: "
+"<userinput>Bill(?! Gates)</userinput>. (This would find <quote>Bill Clinton</"
+"quote> as well as <quote>Billy the kid</quote>, but silently ignore the "
+"other matches.)"
+msgstr ""
+"Urugero: Kuri BIHUYE i Ikurikiranyanyuguti <quote> </quote> NIBA OYA ku "
+"<quote> </quote> , Koresha iyi imvugo : <userinput> ( ? ! ) </userinput> . "
+"( Gushaka <quote> </quote> Nka Nka <quote> i </quote> , Kureka i Ikindi . ) "
+
+#. Tag: para
+#: regular-expressions.docbook:376 regular-expressions.docbook:393
+#, fuzzy, no-c-format
+msgid "Sub patterns used for assertions are not captured."
+msgstr "Imitako Byakoreshejwe ya:  OYA . "
+
+#. Tag: para
+#: regular-expressions.docbook:378
+#, no-c-format
+msgid "See also <link linkend=\"assertions\">Assertions</link>."
+msgstr ""
+
+#. Tag: title
+#: regular-expressions.docbook:383
+#, no-c-format
+msgid "Lookbehind Assertions"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:385
+#, fuzzy, no-c-format
+msgid ""
+"A lookbehind assertion is a sub pattern, starting with either <literal>?&lt;"
+"=</literal> or <literal>?&lt;!</literal>."
+msgstr "Cyangwa."
+
+#. Tag: para
+#: regular-expressions.docbook:388
+#, no-c-format
+msgid ""
+"Lookbehind has the same effect as the lookahead, but works backwards. For "
+"example to match the literal string <quote>fruit</quote> but only if not "
+"preceded by <quote>grape</quote>, you could use this expression: "
+"<userinput>(?&lt;!grape)fruit</userinput>."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:395
+#, no-c-format
+msgid "See also <link linkend=\"assertions\">Assertions</link>"
+msgstr ""
+
+#. Tag: title
+#: regular-expressions.docbook:402
+#, fuzzy, no-c-format
+msgid "Characters with a special meaning inside patterns"
+msgstr "Na: A Bidasanzwe Igisobanuro Mo Imbere Imitako "
+
+#. Tag: para
+#: regular-expressions.docbook:404
+#, fuzzy, no-c-format
+msgid ""
+"The following characters have meaning inside a pattern, and must be escaped "
+"if you want to literally match them:"
+msgstr "Inyuguti Igisobanuro Mo Imbere A Ishusho , na NIBA Kuri BIHUYE : "
+
+#. Tag: para
+#: regular-expressions.docbook:411
+#, fuzzy, no-c-format
+msgid "The escape character."
+msgstr "Gusohoka Inyuguti: . "
+
+#. Tag: para
+#: regular-expressions.docbook:416
+#, fuzzy, no-c-format
+msgid "Asserts the beginning of the string."
+msgstr "i Itangiriro Bya i Ikurikiranyanyuguti . "
+
+#. Tag: userinput
+#: regular-expressions.docbook:420
+#, fuzzy, no-c-format
+msgid "<userinput>$</userinput>"
+msgstr "<userinput>$</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:421
+#, fuzzy, no-c-format
+msgid "Asserts the end of string."
+msgstr "i Impera Bya Ikurikiranyanyuguti . "
+
+#. Tag: term
+#: regular-expressions.docbook:425
+#, fuzzy, no-c-format
+msgid "<userinput>()</userinput> (left and right parentheses)"
+msgstr "<userinput> ( ) </userinput> ( Ibumoso: na Iburyo: ) "
+
+#. Tag: para
+#: regular-expressions.docbook:426
+#, fuzzy, no-c-format
+msgid "Denotes sub patterns."
+msgstr "Imitako . "
+
+#. Tag: term
+#: regular-expressions.docbook:430
+#, fuzzy, no-c-format
+msgid "<userinput>{}</userinput> (left and right curly braces)"
+msgstr "<userinput> { } </userinput> ( Ibumoso: na Iburyo: Ingirwadusodeko ) "
+
+#. Tag: para
+#: regular-expressions.docbook:431
+#, fuzzy, no-c-format
+msgid "Denotes numeric quantifiers."
+msgstr "Bikurikije umubare . "
+
+#. Tag: term
+#: regular-expressions.docbook:435
+#, fuzzy, no-c-format
+msgid "<userinput>[]</userinput> (left and right square brackets)"
+msgstr "<userinput> [ ] </userinput> ( Ibumoso: na Iburyo: kare Udusodeko ) "
+
+#. Tag: para
+#: regular-expressions.docbook:436
+#, fuzzy, no-c-format
+msgid "Denotes character classes."
+msgstr "Inyuguti: Inzego . "
+
+#. Tag: term
+#: regular-expressions.docbook:440
+#, fuzzy, no-c-format
+msgid "<userinput>|</userinput> (vertical bar)"
+msgstr "<userinput> | </userinput> ( Uhagaritse: Umurongo ) "
+
+#. Tag: para
+#: regular-expressions.docbook:441
+#, fuzzy, no-c-format
+msgid "logical OR. Separates alternatives."
+msgstr "Bijyanye n'inyurabwenge . . "
+
+#. Tag: term
+#: regular-expressions.docbook:445 regular-expressions.docbook:522
+#, fuzzy, no-c-format
+msgid "<userinput>+</userinput> (plus sign)"
+msgstr "<userinput> + </userinput> ( Guteranya Shyiraho Umukono ) "
+
+#. Tag: para
+#: regular-expressions.docbook:446
+#, fuzzy, no-c-format
+msgid "Quantifier, 1 or more."
+msgstr ", 1 Cyangwa Birenzeho . "
+
+#. Tag: term
+#: regular-expressions.docbook:450 regular-expressions.docbook:517
+#, fuzzy, no-c-format
+msgid "<userinput>*</userinput> (asterisk)"
+msgstr "<userinput>*</userinput>(Asterisk"
+
+#. Tag: para
+#: regular-expressions.docbook:451
+#, fuzzy, no-c-format
+msgid "Quantifier, 0 or more."
+msgstr ", 0 %S Cyangwa Birenzeho . "
+
+#. Tag: term
+#: regular-expressions.docbook:455 regular-expressions.docbook:527
+#, fuzzy, no-c-format
+msgid "<userinput>?</userinput> (question mark)"
+msgstr "<userinput> ? </userinput> ( Ikibazo Ikimenyetso ) "
+
+#. Tag: para
+#: regular-expressions.docbook:456
+#, fuzzy, no-c-format
+msgid "An optional character. Can be interpreted as a quantifier, 0 or 1."
+msgstr "Bitari ngombwa Inyuguti: . Nka A , 0 %S Cyangwa 1 . "
+
+#. Tag: title
+#: regular-expressions.docbook:468
+#, no-c-format
+msgid "<title>Quantifiers</title>"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:470
+#, fuzzy, no-c-format
+msgid ""
+"<emphasis>Quantifiers</emphasis> allows a regular expression to match a "
+"specified number or range of numbers of either a character, character class "
+"or sub pattern."
+msgstr ""
+"<emphasis> </emphasis> A Ibisanzwe imvugo Kuri BIHUYE A Umubare Cyangwa "
+"Urutonde Bya Imibare Bya A Inyuguti: , Inyuguti: Urwego: Cyangwa Ishusho . "
+
+#. Tag: para
+#: regular-expressions.docbook:474
+#, fuzzy, no-c-format
+msgid ""
+"Quantifiers are enclosed in curly brackets (<literal>{</literal> and "
+"<literal>}</literal>) and have the general form <literal>{[minimum-"
+"occurrences][,[maximum-occurrences]]}</literal>"
+msgstr ""
+"in Udusodeko ( <literal> { </literal> na <literal> } </literal> ) na i "
+"Rusange Ifishi %S: <literal> { [ Gito - ] [ , [ Kinini - ] ] } </literal> "
+
+#. Tag: para
+#: regular-expressions.docbook:479
+#, fuzzy, no-c-format
+msgid "The usage is best explained by example:"
+msgstr "Ikoresha: ni Bihebuje ku Urugero: : "
+
+#. Tag: userinput
+#: regular-expressions.docbook:484
+#, fuzzy, no-c-format
+msgid "<userinput>{1}</userinput>"
+msgstr "<userinput>{1]"
+
+#. Tag: para
+#: regular-expressions.docbook:485
+#, fuzzy, no-c-format
+msgid "Exactly 1 occurrence"
+msgstr "1 ukugaragara "
+
+#. Tag: userinput
+#: regular-expressions.docbook:489
+#, fuzzy, no-c-format
+msgid "{0,1}"
+msgstr "{ 0 %S , 1 } "
+
+#. Tag: para
+#: regular-expressions.docbook:490
+#, fuzzy, no-c-format
+msgid "Zero or 1 occurrences"
+msgstr "Cyangwa 1 "
+
+#. Tag: userinput
+#: regular-expressions.docbook:494
+#, fuzzy, no-c-format
+msgid "{,1}"
+msgstr "{,1]"
+
+#. Tag: para
+#: regular-expressions.docbook:495
+#, fuzzy, no-c-format
+msgid "The same, with less work;)"
+msgstr ", Na: Birutwa Akazi ; ) "
+
+#. Tag: userinput
+#: regular-expressions.docbook:499
+#, fuzzy, no-c-format
+msgid "{5,10}"
+msgstr "{ 5 , 10 } "
+
+#. Tag: para
+#: regular-expressions.docbook:500
+#, fuzzy, no-c-format
+msgid "At least 5 but maximum 10 occurrences."
+msgstr "5 Kinini 10 . "
+
+#. Tag: userinput
+#: regular-expressions.docbook:504
+#, fuzzy, no-c-format
+msgid "{5,}"
+msgstr "{5."
+
+#. Tag: para
+#: regular-expressions.docbook:505
+#, fuzzy, no-c-format
+msgid "At least 5 occurrences, no maximum."
+msgstr "5 , Oya Kinini . "
+
+#. Tag: para
+#: regular-expressions.docbook:512
+#, no-c-format
+msgid "Additionally, there are some abbreviations:"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:518
+#, fuzzy, no-c-format
+msgid "similar to <literal>{0,}</literal>, find any number of occurrences."
+msgstr ""
+"Kuri <literal> { 0 %S , } </literal> , Gushaka Icyo ari cyo cyose Umubare "
+"Bya . "
+
+#. Tag: para
+#: regular-expressions.docbook:523
+#, fuzzy, no-c-format
+msgid "similar to <literal>{1,}</literal>, at least 1 occurrence."
+msgstr "Kuri <literal> { 1 , } </literal> , Ku 1 ukugaragara . "
+
+#. Tag: para
+#: regular-expressions.docbook:528
+#, fuzzy, no-c-format
+msgid "similar to <literal>{0,1}</literal>, zero or 1 occurrence."
+msgstr "Kuri <literal> { 0 %S , 1 } </literal> , Zeru Cyangwa 1 ukugaragara . "
+
+#. Tag: title
+#: regular-expressions.docbook:537
+#, fuzzy, no-c-format
+msgid "Greed"
+msgstr "Ikigereki"
+
+#. Tag: para
+#: regular-expressions.docbook:539
+#, fuzzy, no-c-format
+msgid ""
+"When using quantifiers with no maximum, regular expressions defaults to "
+"match as much of the searched string as possible, commonly known as "
+"<emphasis>greedy</emphasis> behavior."
+msgstr ""
+"ikoresha Na: Oya Kinini , Ibisanzwe Mburabuzi Kuri BIHUYE Nka Bya i "
+"Ikurikiranyanyuguti Nka , Nka <emphasis> </emphasis> &Imyifatire . "
+
+#. Tag: para
+#: regular-expressions.docbook:543
+#, fuzzy, no-c-format
+msgid ""
+"Modern regular expression software provides the means of <quote>turning off "
+"greediness</quote>, though in a graphical environment it is up to the "
+"interface to provide you with access to this feature. For example a search "
+"dialog providing a regular expression search could have a check box labeled "
+"<quote>Minimal matching</quote> as well as it ought to indicate if "
+"greediness is the default behavior."
+msgstr ""
+"Ibisanzwe imvugo i Bya <quote> Bidakora </quote> , in A ni Hejuru Kuri i "
+"Imigaragarire Kuri Na: Kuri iyi Ikiranga . Urugero: A Shakisha Ikiganiro A "
+"Ibisanzwe imvugo Shakisha A Kugenzura Agasanduku <quote> </quote> Nka Nka "
+"Kuri NIBA ni i Mburabuzi &Imyifatire . "
+
+#. Tag: title
+#: regular-expressions.docbook:554
+#, fuzzy, no-c-format
+msgid "In context examples"
+msgstr "Imvugiro Ingero "
+
+#. Tag: para
+#: regular-expressions.docbook:556
+#, fuzzy, no-c-format
+msgid "Here are a few examples of using quantifiers:"
+msgstr "A Ingero Bya ikoresha "
+
+#. Tag: userinput
+#: regular-expressions.docbook:561
+#, fuzzy, no-c-format
+msgid "^\\d{4,5}\\s"
+msgstr "^ \\d { 4 , 5 } \\s "
+
+#. Tag: para
+#: regular-expressions.docbook:562
+#, fuzzy, no-c-format
+msgid ""
+"Matches the digits in <quote>1234 go</quote> and <quote>12345 now</quote>, "
+"but neither in <quote>567 eleven</quote> nor in <quote>223459 somewhere</"
+"quote>."
+msgstr ""
+"i in <quote> Gyayo </quote> na <quote> NONEAHA </quote> , in <quote> </"
+"quote> in <quote> "
+
+#. Tag: userinput
+#: regular-expressions.docbook:567
+#, fuzzy, no-c-format
+msgid "<userinput>\\s+</userinput>"
+msgstr "<userinput>\\s+</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:568
+#, fuzzy, no-c-format
+msgid "Matches one or more whitespace characters."
+msgstr "Rimwe Cyangwa Birenzeho Inyuguti "
+
+#. Tag: userinput
+#: regular-expressions.docbook:572
+#, fuzzy, no-c-format
+msgid "(bla){1,}"
+msgstr "( ) { 1 , } "
+
+#. Tag: para
+#: regular-expressions.docbook:573
+#, fuzzy, no-c-format
+msgid ""
+"Matches all of <quote>blablabla</quote> and the <quote>bla</quote> in "
+"<quote>blackbird</quote> or <quote>tabla</quote>."
+msgstr ""
+"Byose Bya <quote> </quote> na i <quote> </quote> in <quote> </quote> Cyangwa "
+"<quote> </quote> "
+
+#. Tag: userinput
+#: regular-expressions.docbook:577
+#, fuzzy, no-c-format
+msgid "/?&gt;"
+msgstr "/&gt;"
+
+#. Tag: para
+#: regular-expressions.docbook:578
+#, fuzzy, no-c-format
+msgid ""
+"Matches <quote>/&gt;</quote> in <quote>&lt;closeditem/&gt;</quote> as well "
+"as <quote>&gt;</quote> in <quote>&lt;openitem&gt;</quote>."
+msgstr ""
+"<quote> /&gt; </quote> in <quote> &lt; /&gt; </quote> Nka Nka <quote> &gt; </"
+"quote> in "
+
+#. Tag: title
+#: regular-expressions.docbook:589
+#, no-c-format
+msgid "<title>Assertions</title>"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:591
+#, fuzzy, no-c-format
+msgid ""
+"<emphasis>Assertions</emphasis> allows a regular expression to match only "
+"under certain controlled conditions."
+msgstr "<emphasis> </emphasis> A Ibisanzwe imvugo Kuri BIHUYE Ibisabwa . "
+
+#. Tag: para
+#: regular-expressions.docbook:594
+#, fuzzy, no-c-format
+msgid ""
+"An assertion does not need a character to match, it rather investigates the "
+"surroundings of a possible match before acknowledging it. For example the "
+"<emphasis>word boundary</emphasis> assertion does not try to find a non word "
+"character opposite a word one at its position, instead it makes sure that "
+"there is not a word character. This means that the assertion can match where "
+"there is no character, &ie; at the ends of a searched string."
+msgstr ""
+"OYA A Inyuguti: Kuri BIHUYE , i Bya A BIHUYE Mbere . Urugero: i <emphasis> "
+"ijambo </emphasis> OYA Kugerageza Kuri Gushaka A ijambo Inyuguti: A ijambo "
+"Rimwe Ku Ibirindiro: , ni OYA A ijambo Inyuguti: . i BIHUYE ni Oya "
+"Inyuguti: , &ie; Ku i Bya A Ikurikiranyanyuguti . "
+
+#. Tag: para
+#: regular-expressions.docbook:602
+#, fuzzy, no-c-format
+msgid ""
+"Some assertions actually do have a pattern to match, but the part of the "
+"string matching that will not be a part of the result of the match of the "
+"full expression."
+msgstr ""
+"A Ishusho Kuri BIHUYE , i Inzira %s Bya i Ikurikiranyanyuguti OYA A Inzira "
+"%s Bya i Igisubizo Bya i BIHUYE Bya i Cyuzuye imvugo . "
+
+#. Tag: para
+#: regular-expressions.docbook:606
+#, fuzzy, no-c-format
+msgid ""
+"Regular Expressions as documented here supports the following assertions:"
+msgstr "Nka i : "
+
+#. Tag: term
+#: regular-expressions.docbook:612
+#, fuzzy, no-c-format
+msgid "<userinput>^</userinput> (caret: beginning of string)"
+msgstr "<userinput> ^ </userinput> ( : Itangiriro Bya Ikurikiranyanyuguti ) "
+
+#. Tag: para
+#: regular-expressions.docbook:614
+#, fuzzy, no-c-format
+msgid "Matches the beginning of the searched string."
+msgstr "i Itangiriro Bya i Ikurikiranyanyuguti . "
+
+#. Tag: para
+#: regular-expressions.docbook:615
+#, fuzzy, no-c-format
+msgid ""
+"The expression <userinput>^Peter</userinput> will match at <quote>Peter</"
+"quote> in the string <quote>Peter, hey!</quote> but not in <quote>Hey, Peter!"
+"</quote>"
+msgstr ""
+"imvugo <userinput> ^ </userinput> BIHUYE Ku <quote> </quote> in i "
+"Ikurikiranyanyuguti <quote> , ! </quote> OYA in <quote> , ! </quote> "
+
+#. Tag: term
+#: regular-expressions.docbook:621
+#, fuzzy, no-c-format
+msgid "<userinput>$</userinput> (end of string)"
+msgstr "<userinput> $ </userinput> ( Impera Bya Ikurikiranyanyuguti ) "
+
+#. Tag: para
+#: regular-expressions.docbook:622
+#, fuzzy, no-c-format
+msgid "Matches the end of the searched string."
+msgstr "i Impera Bya i Ikurikiranyanyuguti . "
+
+#. Tag: para
+#: regular-expressions.docbook:624
+#, fuzzy, no-c-format
+msgid ""
+"The expression <userinput>you\\?$</userinput> will match at the last you in "
+"the string <quote>You didn't do that, did you?</quote> but nowhere in "
+"<quote>You didn't do that, right?</quote>"
+msgstr ""
+"imvugo <userinput> \\? $ </userinput> BIHUYE Ku i Iheruka in i "
+"Ikurikiranyanyuguti <quote> , ? </quote> Ubuhano in <quote> , Iburyo: ? </"
+"quote> "
+
+#. Tag: term
+#: regular-expressions.docbook:632
+#, fuzzy, no-c-format
+msgid "<userinput>\\b</userinput> (word boundary)"
+msgstr "<userinput> \\b </userinput> ( ijambo ) "
+
+#. Tag: para
+#: regular-expressions.docbook:633
+#, fuzzy, no-c-format
+msgid ""
+"Matches if there is a word character at one side and not a word character at "
+"the other."
+msgstr ""
+"NIBA ni A ijambo Inyuguti: Ku Rimwe na OYA A ijambo Inyuguti: Ku i Ikindi . "
+
+#. Tag: para
+#: regular-expressions.docbook:635
+#, fuzzy, no-c-format
+msgid ""
+"This is useful to find word ends, for example both ends to find a whole "
+"word. The expression <userinput>\\bin\\b</userinput> will match at the "
+"separate <quote>in</quote> in the string <quote>He came in through the "
+"window</quote>, but not at the <quote>in</quote> in <quote>window</quote>."
+msgstr ""
+"ni Kuri Gushaka ijambo , ya:  Urugero: Byombi Kuri Gushaka A ijambo . imvugo "
+"<userinput> \\b in \\b </userinput> BIHUYE Ku i <quote> in </quote> in i "
+"Ikurikiranyanyuguti <quote> in Gihinguranya i Idirishya </quote> , OYA Ku i "
+"<quote> in </quote> in <quote> Idirishya </quote> . "
+
+#. Tag: term
+#: regular-expressions.docbook:644
+#, fuzzy, no-c-format
+msgid "<userinput>\\B</userinput> (non word boundary)"
+msgstr "<userinput> \\B </userinput> ( ijambo ) "
+
+#. Tag: para
+#: regular-expressions.docbook:645
+#, fuzzy, no-c-format
+msgid "Matches wherever <quote>\\b</quote> does not."
+msgstr "<quote> \\b </quote> OYA . "
+
+#. Tag: para
+#: regular-expressions.docbook:646
+#, fuzzy, no-c-format
+msgid ""
+"That means that it will match for example within words: The expression "
+"<userinput>\\Bin\\B</userinput> will match at in <quote>window</quote> but "
+"not in <quote>integer</quote> or <quote>I'm in love</quote>."
+msgstr ""
+"BIHUYE ya:  Urugero: muri Amagambo : imvugo <userinput> \\B in \\B </"
+"userinput> BIHUYE Ku in <quote> Idirishya </quote> OYA in <quote> Umubare "
+"wuzuye </quote> Cyangwa <quote> in Urukundo </quote> . "
+
+#. Tag: term
+#: regular-expressions.docbook:652
+#, no-c-format
+msgid "<userinput>(?=PATTERN)</userinput> (Positive lookahead)"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:653
+#, fuzzy, no-c-format
+msgid ""
+"A lookahead assertion looks at the part of the string following a possible "
+"match. The positive lookahead will prevent the string from matching if the "
+"text following the possible match does not match the <emphasis>PATTERN</"
+"emphasis> of the assertion, but the text matched by that will not be "
+"included in the result."
+msgstr ""
+"A Ku i Inzira %s Bya i Ikurikiranyanyuguti A BIHUYE . Birenze Zero i "
+"Ikurikiranyanyuguti Kuva: NIBA i Umwandiko i BIHUYE OYA BIHUYE i <emphasis> "
+"</emphasis> Bya i , i Umwandiko ku OYA in i Igisubizo . "
+
+#. Tag: para
+#: regular-expressions.docbook:657
+#, fuzzy, no-c-format
+msgid ""
+"The expression <userinput>handy(?=\\w)</userinput> will match at "
+"<quote>handy</quote> in <quote>handyman</quote> but not in <quote>That came "
+"in handy!</quote>"
+msgstr ""
+"imvugo <userinput> ( ? = \\w ) </userinput> BIHUYE Ku <quote> </quote> in "
+"<quote> </quote> OYA in <quote> in ! </quote> "
+
+#. Tag: term
+#: regular-expressions.docbook:663
+#, no-c-format
+msgid "<userinput>(?!PATTERN)</userinput> (Negative lookahead)"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:665
+#, fuzzy, no-c-format
+msgid ""
+"The negative lookahead prevents a possible match to be acknowledged if the "
+"following part of the searched string does match its <emphasis>PATTERN</"
+"emphasis>."
+msgstr ""
+"Munsi ya Zero A BIHUYE Kuri NIBA i Inzira %s Bya i Ikurikiranyanyuguti "
+"BIHUYE <emphasis> "
+
+#. Tag: para
+#: regular-expressions.docbook:668
+#, fuzzy, no-c-format
+msgid ""
+"The expression <userinput>const \\w+\\b(?!\\s*&amp;)</userinput> will match "
+"at <quote>const char</quote> in the string <quote>const char* foo</quote> "
+"while it can not match <quote>const QString</quote> in <quote>const "
+"QString&amp; bar</quote> because the <quote>&amp;</quote> matches the "
+"negative lookahead assertion pattern."
+msgstr ""
+"imvugo <userinput> \\w + \\b ( ? ! \\s * &amp; ) </userinput> BIHUYE Ku "
+"<quote> INYUGUTI </quote> in i Ikurikiranyanyuguti <quote> INYUGUTI * </"
+"quote> OYA BIHUYE <quote> </quote> in <quote> ; Umurongo </quote> i <quote> "
+"&amp; </quote> i Munsi ya Zero Ishusho . "
+
+#. Tag: term
+#: regular-expressions.docbook:678
+#, fuzzy, no-c-format
+msgid "<userinput>(?&lt;=PATTERN)</userinput> (Positive lookbehind)"
+msgstr "<userinput>*</userinput>(Asterisk"
+
+#. Tag: para
+#: regular-expressions.docbook:679
+#, fuzzy, no-c-format
+msgid ""
+"Lookbehind has the same effect as the lookahead, but works backwards. A "
+"lookbehind looks at the part of the string previous a possible match. The "
+"positive lookbehind will match a string only if it is preceded by the "
+"<emphasis>PATTERN</emphasis> of the assertion, but the text matched by that "
+"will not be included in the result."
+msgstr ""
+"A Ku i Inzira %s Bya i Ikurikiranyanyuguti A BIHUYE . Birenze Zero i "
+"Ikurikiranyanyuguti Kuva: NIBA i Umwandiko i BIHUYE OYA BIHUYE i <emphasis> "
+"</emphasis> Bya i , i Umwandiko ku OYA in i Igisubizo . "
+
+#. Tag: para
+#: regular-expressions.docbook:683
+#, fuzzy, no-c-format
+msgid ""
+"The expression <userinput>(?&lt;=cup)cake</userinput> will match at "
+"<quote>cake</quote> if it is succeeded by <quote>cup</quote> (in "
+"<quote>cupcake</quote> but not in <quote>cheesecake</quote> or in "
+"<quote>cake</quote> alone)."
+msgstr ""
+"imvugo <userinput> ( ? = \\w ) </userinput> BIHUYE Ku <quote> </quote> in "
+"<quote> </quote> OYA in <quote> in ! </quote> "
+
+#. Tag: term
+#: regular-expressions.docbook:690
+#, fuzzy, no-c-format
+msgid "<userinput>(?&lt;!PATTERN)</userinput> (Negative lookbehind)"
+msgstr "<userinput>*</userinput>(Asterisk"
+
+#. Tag: para
+#: regular-expressions.docbook:691
+#, fuzzy, no-c-format
+msgid ""
+"The negative lookbehind prevents a possible match to be acknowledged if the "
+"previous part of the searched string does match its <emphasis>PATTERN</"
+"emphasis>."
+msgstr ""
+"Munsi ya Zero A BIHUYE Kuri NIBA i Inzira %s Bya i Ikurikiranyanyuguti "
+"BIHUYE <emphasis> "
+
+#. Tag: para
+#: regular-expressions.docbook:693
+#, fuzzy, no-c-format
+msgid ""
+"The expression <userinput>(?&lt;![\\w\\.])[0-9]+</userinput> will match at "
+"<quote>123</quote> in the strings <quote>=123</quote> and <quote>-123</"
+"quote> while it can not match <quote>123</quote> in <quote>.123</quote> or "
+"<quote>word123</quote>."
+msgstr ""
+"imvugo <userinput> ^ </userinput> BIHUYE Ku <quote> </quote> in i "
+"Ikurikiranyanyuguti <quote> , ! </quote> OYA in <quote> , ! </quote> "
+
+#. Tag: term
+#: regular-expressions.docbook:700
+#, fuzzy, no-c-format
+msgid "<userinput>(PATTERN)</userinput> (Capturing group)"
+msgstr "<userinput>*</userinput>(Asterisk"
+
+#. Tag: para
+#: regular-expressions.docbook:702
+#, no-c-format
+msgid ""
+"The sub pattern within the parentheses is captured and remembered, so that "
+"it can be used in back references. For example, the expression "
+"<userinput>(&amp;quot;+)[^&amp;quot;]*\\1</userinput> matches "
+"<userinput>&quot;&quot;&quot;&quot;text&quot;&quot;&quot;&quot;</userinput> "
+"and <userinput>&quot;text&quot;</userinput>."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:707
+#, no-c-format
+msgid ""
+"See the section <link linkend=\"regex-capturing\">Capturing matching text "
+"(back references)</link> for more information."
+msgstr ""
+
+#. Tag: term
+#: regular-expressions.docbook:713
+#, fuzzy, no-c-format
+msgid "<userinput>(?:PATTERN)</userinput> (Non-capturing group)"
+msgstr "<userinput> $ </userinput> ( Impera Bya Ikurikiranyanyuguti ) "
+
+#. Tag: para
+#: regular-expressions.docbook:715
+#, no-c-format
+msgid ""
+"The sub pattern within the parentheses is not captured and is not "
+"remembered. It is preferable to always use non-capturing groups if the "
+"captures will not be used."
+msgstr ""
+
+#, fuzzy
+#~ msgid ""
+#~ "The POSIX notation of classes, <userinput>[:&lt;class name&gt;:]</"
+#~ "userinput> is currently not supported."
+#~ msgstr ""
+#~ "Bya Inzego , <userinput> [ : &lt; Urwego: ; : ] </userinput> ni OYA . "
+
+#, fuzzy
+#~ msgid ""
+#~ "If you want to use a back reference, use a sub pattern to have the "
+#~ "desired part of the pattern remembered."
+#~ msgstr ""
+#~ "Kuri Koresha A Inyuma Indango , Koresha A Ishusho Kuri i Inzira %s Bya i "
+#~ "Ishusho . "

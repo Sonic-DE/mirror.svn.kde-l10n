@@ -1,0 +1,1041 @@
+# Spanish translations for ktechlab_microbe.po package.
+# Copyright (C) 2017-2026 This file is copyright:
+# This file is distributed under the same license as the ktechlab package.
+# Automatically generated, 2017.
+#
+# SPDX-FileCopyrightText: 2017, 2021, 2025, 2026 Eloy Cuadra <ecuadra@eloihr.net>
+msgid ""
+msgstr ""
+"Project-Id-Version: ktechlab manual\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 12:04+0000\n"
+"PO-Revision-Date: 2026-02-10 14:29+0100\n"
+"Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
+"Language-Team: Spanish <kde-l10n-es@kde.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 25.12.2\n"
+
+#. Tag: title
+#: microbe.docbook:3
+#, no-c-format
+msgid "&microbe;"
+msgstr "&microbe;"
+
+#. Tag: title
+#: microbe.docbook:5
+#, no-c-format
+msgid "Introduction and General Syntax"
+msgstr "Introducción y sintaxis general"
+
+#. Tag: para
+#: microbe.docbook:6
+#, no-c-format
+msgid ""
+"<application>Microbe</application> compiles programs written in the custom "
+"language for PICs, as a companion program to &ktechlab;. The syntax has been "
+"designed to suit a &flowcode; program. The syntax for running "
+"<command>microbe</command> from the command line is: <programlisting>microbe "
+"[options] [input.microbe] [output.asm]</programlisting> where options are:"
+msgstr ""
+"<application>Microbe</application> compila programas escritos en el lenguaje "
+"personalizado para PIC, como programa complementario de &ktechlab;. La "
+"sintaxis se ha diseñado para que se ajuste a un programa &flowcode;. La "
+"sintaxis para ejecutar <command>microbe</command> en la línea de órdenes es: "
+"<programlisting>microbe [opciones] [entrada.microbe] [salida.asm]</"
+"programlisting>, donde las opciones son:"
+
+#. Tag: para
+#: microbe.docbook:16
+#, no-c-format
+msgid ""
+"<function>--show-source</function> - Puts each line of &microbe; source code "
+"as a comment in the assembly output before the assembly instructions "
+"themselves for that line."
+msgstr ""
+"<function>--show-source</function>: Coloca cada línea del código fuente de "
+"&microbe; como un comentario en la salida de ensamblador antes de las "
+"instrucciones de ensamblador de cada línea."
+
+#. Tag: para
+#: microbe.docbook:17
+#, no-c-format
+msgid ""
+"<function>--no-optimize</function> - Prevent optimization of the "
+"instructions generated from the source. Optimization is usually safe, and so "
+"this option is mainly used for debugging."
+msgstr ""
+"<function>--no-optimize</function>: Evitar la optimización de las "
+"instrucciones generadas desde el código fuente. La optimización suele ser "
+"segura, por lo que esta opción se usa principalmente para depuración."
+
+#. Tag: para
+#: microbe.docbook:20
+#, no-c-format
+msgid ""
+"The .microbe input file must identify the target PIC by inserting the PIC "
+"name at the top of the .microbe file; &eg; the name of a PIC16F84 is "
+"\"P16F84\"."
+msgstr ""
+"El archivo de entrada .microbe debe identificar el PIC de destino insertando "
+"el nombre del PIC al principio del archivo .microbe; por ejemplo, el nombre "
+"del PIC16F84 es «P16F84»."
+
+#. Tag: title
+#: microbe.docbook:23
+#, no-c-format
+msgid "Simple complete &microbe; program"
+msgstr "Sencillo programa &microbe; completo"
+
+#. Tag: programlisting
+#: microbe.docbook:24
+#, no-c-format
+msgid ""
+"P16F84\n"
+"\n"
+"a = 0\n"
+"repeat\n"
+"{\n"
+"        PORTA = a\n"
+"        a = a + 1\n"
+"}\n"
+"until a == 5\n"
+"\n"
+"end"
+msgstr ""
+"P16F84\n"
+"\n"
+"a = 0\n"
+"repeat\n"
+"{\n"
+"        PORTA = a\n"
+"        a = a + 1\n"
+"}\n"
+"until a == 5\n"
+"\n"
+"end"
+
+#. Tag: title
+#: microbe.docbook:29
+#, no-c-format
+msgid "Naming conventions"
+msgstr "Convenciones de nombres"
+
+#. Tag: para
+#: microbe.docbook:30
+#, no-c-format
+msgid "The following rules apply to variable names and labels:"
+msgstr ""
+"Las siguientes reglas se aplican a los nombres y etiquetas de variables:"
+
+#. Tag: para
+#: microbe.docbook:33
+#, no-c-format
+msgid ""
+"They can only contain alphanumerical characters [a..z][A..Z][0..9] and the "
+"underscore \"_\"."
+msgstr ""
+"Solo pueden contener caracteres alfanuméricos [a..z][A..Z][0..9] y el signo "
+"de subrayado «_»."
+
+#. Tag: para
+#: microbe.docbook:34
+#, no-c-format
+msgid "They are case-sensitive."
+msgstr "Se distingue entre mayúsculas y minúsculas."
+
+#. Tag: para
+#: microbe.docbook:35
+#, no-c-format
+msgid "They cannot start with a number."
+msgstr "No pueden empezar con un número."
+
+#. Tag: para
+#: microbe.docbook:36
+#, no-c-format
+msgid ""
+"They should not start with <quote>__</quote> (double underscore), as this is "
+"reserved for use by the compiler."
+msgstr ""
+"No deben empezar con «__» (doble subrayado), ya que esto está reservado para "
+"el uso del compilador."
+
+#. Tag: title
+#: microbe.docbook:42
+#, no-c-format
+msgid "Bracing conventions"
+msgstr "Convenciones de paréntesis"
+
+#. Tag: para
+#: microbe.docbook:43
+#, no-c-format
+msgid ""
+"Curly braces, {}, indicate the start and end of a code block. They can "
+"appear anywhere before the start and after the end of the code block. "
+"Examples of acceptable code blocks:"
+msgstr ""
+"Las llaves, {}, indican el inicio y el final de un bloque de código. Pueden "
+"aparecer en cualquier lugar antes y después del inicio del bloque. Ejemplos "
+"de bloques de código aceptables:"
+
+#. Tag: programlisting
+#: microbe.docbook:49
+#, no-c-format
+msgid ""
+"statement1 {\n"
+"        some code\n"
+"}"
+msgstr ""
+"instrucción1 {\n"
+"        código\n"
+"}"
+
+#. Tag: programlisting
+#: microbe.docbook:50
+#, no-c-format
+msgid ""
+"statement2 {\n"
+"        other code }"
+msgstr ""
+"instrucción2 {\n"
+"        otro código }"
+
+#. Tag: programlisting
+#: microbe.docbook:52
+#, no-c-format
+msgid ""
+"statement3\n"
+"{\n"
+"        other code\n"
+"}"
+msgstr ""
+"instrucción3\n"
+"{\n"
+"        otro código\n"
+"}"
+
+#. Tag: programlisting
+#: microbe.docbook:54
+#, no-c-format
+msgid ""
+"statement5 {\n"
+"        code block\n"
+"} statement6"
+msgstr ""
+"instrucción5 {\n"
+"        bloque de código\n"
+"} instrucción6"
+
+#. Tag: title
+#: microbe.docbook:58
+#, no-c-format
+msgid "Commenting"
+msgstr "Comentarios"
+
+#. Tag: para
+#: microbe.docbook:59
+#, no-c-format
+msgid ""
+"Commenting is similar to C. // comments out the rest of the line. /* and */ "
+"denote a multiline comment."
+msgstr ""
+"Los comentarios son similares a los de C. // comenta el resto de la línea. /"
+"* y */ denotan un comentario de varias líneas."
+
+#. Tag: programlisting
+#: microbe.docbook:61
+#, no-c-format
+msgid ""
+"// This is a comment\n"
+"x = 2 \n"
+"/* As is this\n"
+"multiline comment */"
+msgstr ""
+"// Esto es un comentario\n"
+"x = 2 \n"
+"/* Esto es un\n"
+"comentario multilínea */"
+
+#. Tag: title
+#: microbe.docbook:66
+#, no-c-format
+msgid "Program Structure"
+msgstr "Estructura del programa"
+
+#. Tag: para
+#: microbe.docbook:67
+#, no-c-format
+msgid ""
+"The PIC id must be inserted at the top of the program. The end of the main "
+"program is denoted with <quote>end</quote>. Subroutines must placed after "
+"<quote>end</quote>."
+msgstr ""
+"El ID del PIC se debe insertar al principio del programa. El final del "
+"programa principal se indica con «end». Las subrutinas deben colocarse "
+"después de «end»."
+
+#. Tag: title
+#: microbe.docbook:73
+#, no-c-format
+msgid "Subroutines"
+msgstr "Subrutinas"
+
+#. Tag: para
+#: microbe.docbook:74
+#, no-c-format
+msgid "A subroutine can be called from anywhere in the code. Syntax:"
+msgstr ""
+"Se puede llamar a una subrutina desde cualquier parte del código. Sintaxis:"
+
+#. Tag: programlisting
+#: microbe.docbook:77
+#, no-c-format
+msgid ""
+"sub SubName\n"
+"{\n"
+"        // Code...\n"
+"}"
+msgstr ""
+"sub NombreSubrutina\n"
+"{\n"
+"        // Código…\n"
+"}"
+
+#. Tag: para
+#: microbe.docbook:78
+#, no-c-format
+msgid ""
+"The subroutine is called with <quote>call <replaceable>SubName</"
+"replaceable></quote>."
+msgstr ""
+"La subrutina se se llama con «call <replaceable>NombreSubrutina</"
+"replaceable>»."
+
+#. Tag: title
+#: microbe.docbook:83
+#, no-c-format
+msgid "&microbe; language reference"
+msgstr "Referencia del lenguaje &microbe;"
+
+#. Tag: title
+#: microbe.docbook:85 microbe.docbook:99
+#, no-c-format
+msgid "<title>if</title>"
+msgstr "<title>if</title>"
+
+#. Tag: para
+#: microbe.docbook:86
+#, no-c-format
+msgid ""
+"Conditional branching. Syntax: <programlisting role=\"correct\">if "
+"[expression] then [statement]</programlisting> or <programlisting role="
+"\"correct\">\n"
+"if [expression] then\n"
+"{\n"
+"        [statement block]\n"
+"}</programlisting> Similarly for else: <programlisting role=\"correct\">else "
+"[statement]</programlisting> or"
+msgstr ""
+"Ramificación condicional. Sintaxis: <programlisting role=\"correct\">if "
+"[expresión] then [instrucción]</programlisting> o <programlisting role="
+"\"correct\">\n"
+"if [expresión] then\n"
+"{\n"
+"        [bloque de instrucciones]\n"
+"}</programlisting> De igual modo para else: <programlisting role=\"correct"
+"\">else [instrucción]</programlisting> o"
+
+#. Tag: programlisting
+#: microbe.docbook:96
+#, no-c-format
+msgid ""
+"else\n"
+"{\n"
+"        [statement block]\n"
+"}"
+msgstr ""
+"else\n"
+"{\n"
+"        [bloque de instrucciones]\n"
+"}"
+
+#. Tag: programlisting
+#: microbe.docbook:100
+#, no-c-format
+msgid ""
+"if porta.0 is high then\n"
+"{\n"
+"        delay 200\n"
+"}\n"
+"else\n"
+"{\n"
+"        delay 300\n"
+"}"
+msgstr ""
+"if porta.0 is high then\n"
+"{\n"
+"        delay 200\n"
+"}\n"
+"else\n"
+"{\n"
+"        delay 300\n"
+"}"
+
+#. Tag: title
+#: microbe.docbook:105
+#, no-c-format
+msgid "alias"
+msgstr "alias"
+
+#. Tag: para
+#: microbe.docbook:106
+#, no-c-format
+msgid "Aliases one string to another. Syntax:"
+msgstr "Alias de una cadena a otra. Sintaxis:"
+
+#. Tag: programlisting
+#: microbe.docbook:107
+#, no-c-format
+msgid "alias [from] [to]"
+msgstr "alias [desde] [hasta]"
+
+#. Tag: title
+#: microbe.docbook:112
+#, no-c-format
+msgid "repeat"
+msgstr "repeat"
+
+#. Tag: para
+#: microbe.docbook:113
+#, no-c-format
+msgid ""
+"Executes the statement block repeatedly until expression evaluates to true. "
+"The evaluation of the expression is performed after the statement block, so "
+"the statement block will always be executed at least once. Syntax:"
+msgstr ""
+"Ejecuta el bloque de instrucciones repetidamente hasta que la expresión se "
+"evalúa como verdadera. La evaluación de la expresión se realiza después del "
+"bloque de instrucciones, por lo que este siempre se ejecutará al menos una "
+"vez. Sintaxis:"
+
+#. Tag: programlisting
+#: microbe.docbook:116
+#, no-c-format
+msgid ""
+"repeat\n"
+"{\n"
+"        [statement block]\n"
+"}\n"
+"until [expression]"
+msgstr ""
+"repeat\n"
+"{\n"
+"        [bloque de instrucciones]\n"
+"}\n"
+"until [expresión]"
+
+#. Tag: title
+#: microbe.docbook:121
+#, no-c-format
+msgid "while"
+msgstr "while"
+
+#. Tag: para
+#: microbe.docbook:122
+#, no-c-format
+msgid ""
+"Similar to repeat, this repeatedly executes the statement block. However, "
+"the expression is evaluated before execution, not after. So if the "
+"expression evaluates to false on the first pass, then the statement block "
+"will not get executed. Syntax:"
+msgstr ""
+"Similar a repeat, ejecuta repetidamente el bloque de instrucciones. Sin "
+"embargo, la expresión se evalúa antes de la ejecución, no después. Por lo "
+"tanto, si la expresión se evalúa como falsa en la primera pasada, el bloque "
+"de instrucciones no se ejecutará. Sintaxis:"
+
+#. Tag: programlisting
+#: microbe.docbook:126
+#, no-c-format
+msgid ""
+"while [expression]\n"
+"{\n"
+"        [statement block]\n"
+"}"
+msgstr ""
+"while [expresión]\n"
+"{\n"
+"        [bloque de instrucciones]\n"
+"}"
+
+#. Tag: title
+#: microbe.docbook:132 microbe.docbook:145
+#, no-c-format
+msgid "goto"
+msgstr "goto"
+
+#. Tag: para
+#: microbe.docbook:133
+#, no-c-format
+msgid ""
+"This causes execution of the code to continue at the next statement after "
+"the label specified. Goto syntax: <programlisting role=\"correct"
+"\"><function>goto</function> [labelname]</programlisting> Label syntax: "
+"<programlisting role=\"correct\"><function>labelname:</function></"
+"programlisting> It is often considered good programming practice to avoid "
+"the use of goto. Use of control statements and subroutines will result in a "
+"much more readable program."
+msgstr ""
+"Esto hace que la ejecución del código continúe en la instrucción siguiente a "
+"la etiqueta indicada. Sintaxis de goto: <programlisting role=\"correct"
+"\"><function>goto</function> [nombreetiqueta]</programlisting> Sintaxis de "
+"la etiqueta: <programlisting role=\"correct\"><function>nombreetiqueta:</"
+"function></programlisting> Se suele considerar una buena práctica evitar el "
+"uso de goto. El uso de instrucciones de control y de subrutinas generará un "
+"programa mucho más legible."
+
+#. Tag: programlisting
+#: microbe.docbook:146
+#, no-c-format
+msgid ""
+"goto MyLabel\n"
+"\n"
+"...\n"
+"\n"
+"[MyLabel]:\n"
+"// Code will continue at this point"
+msgstr ""
+"goto MiEtiqueta\n"
+"\n"
+"…\n"
+"\n"
+"[MiEtiqueta]:\n"
+"// El código continúa en este punto"
+
+#. Tag: title
+#: microbe.docbook:151
+#, no-c-format
+msgid "call"
+msgstr "call"
+
+#. Tag: para
+#: microbe.docbook:152
+#, no-c-format
+msgid ""
+"Calls a subroutine. Syntax: <programlisting role=\"correct\"><function>call</"
+"function> [SubName]</programlisting> where <replaceable>SubName</"
+"replaceable> is the name of the subroutine to be called."
+msgstr ""
+"Llama a una subrutina. Sintaxis: <programlisting role=\"correct"
+"\"><function>call</function> [NombreSubrutina]</programlisting> donde "
+"<replaceable>NombreSubrutina</replaceable> es el nombre de la subrutina que "
+"se llama."
+
+#. Tag: title
+#: microbe.docbook:162
+#, no-c-format
+msgid "delay"
+msgstr "delay"
+
+#. Tag: para
+#: microbe.docbook:163
+#, no-c-format
+msgid ""
+"This causes the code execution to stop for the given period of time. The "
+"interval is in milliseconds. Syntax:"
+msgstr ""
+"Hace que la ejecución del código se detenga durante el período de tiempo "
+"indicado. El intervalo se expresa en milisegundos. Sintaxis:"
+
+#. Tag: programlisting
+#: microbe.docbook:167
+#, no-c-format
+msgid "<function>delay</function> [interval]"
+msgstr "<function>delay</function> [intervalo]"
+
+#. Tag: para
+#: microbe.docbook:169
+#, no-c-format
+msgid ""
+"At present, &microbe; assumes that the PIC is operating at a frequency of "
+"4MHz - &ie; each instruction takes 1 microsecond to execute. If this is not "
+"the case, the interval must be adjusted proportionately."
+msgstr ""
+"Actualmente, &microbe; asume que el PIC opera a una frecuencia de 4 MHz; "
+"cada instrucción tarda 1 microsegundo en ejecutarse. De no ser así, el "
+"intervalo debe ajustarse proporcionalmente."
+
+#. Tag: title
+#: microbe.docbook:174
+#, no-c-format
+msgid "sevenseg"
+msgstr "sevenseg"
+
+#. Tag: para
+#: microbe.docbook:175
+#, no-c-format
+msgid ""
+"This is used to define the pin mapping for a (common cathode) seven segment "
+"display connected to the PIC. Syntax: <programlisting role=\"correct"
+"\"><function>sevenseg</function> [name] [a] [b] [c] [d] [e] [f] [g]</"
+"programlisting> where [a]...[g] are the PIC pins to which the respective "
+"segments of the seven segment display are attached. The pins can be written "
+"either as PORTX.N or RXN."
+msgstr ""
+"Se usa para definir la asignación de pines de una pantalla de siete "
+"segmentos (cátodo común) conectada al PIC. Sintaxis: <programlisting role="
+"\"correct\"><function>sevenseg</function> [nombre] [a] [b] [c] [d] [e] [f] "
+"[g]</programlisting> donde [a]…[g] son ​​los pines del PIC a los que se "
+"conectan los respectivos segmentos de la pantalla de siete segmentos. Los "
+"pines se pueden escribir como PORTX.N o RXN."
+
+#. Tag: para
+#: microbe.docbook:181
+#, no-c-format
+msgid ""
+"To display a number on the seven segment, the pin mapping is treated as a "
+"write only variable."
+msgstr ""
+"Para mostrar un número en la pantalla de siete segmentos, la asignación de "
+"pines se trata como una variable de solo escritura."
+
+#. Tag: title
+#: microbe.docbook:183
+#, no-c-format
+msgid "Defining and outputting to a seven segment"
+msgstr "Definición y salida a una pantalla de siete segmentos"
+
+#. Tag: programlisting
+#: microbe.docbook:184
+#, no-c-format
+msgid ""
+"sevenseg seg1 RB0 RB1 RB2 RB3 RB4 RB5 RB6\n"
+"seg1 = x + 2"
+msgstr ""
+"sevenseg seg1 RB0 RB1 RB2 RB3 RB4 RB5 RB6\n"
+"seg1 = x + 2"
+
+#. Tag: title
+#: microbe.docbook:190
+#, no-c-format
+msgid "keypad"
+msgstr "keypad"
+
+#. Tag: para
+#: microbe.docbook:191
+#, no-c-format
+msgid ""
+"This is used to define the pin mapping for a keypad connected to the PIC. "
+"Syntax: <programlisting role=\"correct\"><function>keypad</function> [name] "
+"[row 1] ... [row 4] [column 1] ... [column n]</programlisting> where [row "
+"1] ... [row 4] and [column 1] ... [column n] are the PIC pins to which the "
+"respective rows and columns of the keypad are attached (at the moment, the "
+"number of rows is not changeable). See <xref linkend=\"sevenseg\"/> (above) "
+"for more information on pin mappings."
+msgstr ""
+"Se usa para definir la asignación de pines de un teclado conectado al PIC. "
+"Sintaxis: <programlisting role=\"correct\"><function>keypad</function> "
+"[nombre] [fila 1]… [fila 4] [columna 1]… [columna n]</programlisting> donde "
+"[fila 1]… [fila 4] y [columna 1]… [columna n] son los pines del PIC a los "
+"que se conectan las respectivas filas y columnas del teclado (hasta la "
+"actualidad, el número de filas no se puede modificar). Consulte <xref "
+"linkend=\"sevenseg\"/>(más arriba) para más información sobre la asignación "
+"de pines."
+
+#. Tag: para
+#: microbe.docbook:197
+#, no-c-format
+msgid ""
+"The columns of the keypad should be pulled down via 100k resistors to "
+"ground. The row pins must be configured as outputs and the column pins as "
+"inputs. Once the keypad has been defined, it is treated as a read only "
+"variable."
+msgstr ""
+"Las columnas del teclado deben conectarse a tierra mediante resistencias de "
+"100 kΩ. Los pines de las filas deben configurarse como salidas y los de las "
+"columnas como entradas. Una vez definido el teclado, se trata como una "
+"variable de solo lectura."
+
+#. Tag: title
+#: microbe.docbook:199
+#, no-c-format
+msgid "Defining and reading from a keypad"
+msgstr "Definir y leer desde un teclado"
+
+#. Tag: programlisting
+#: microbe.docbook:200
+#, no-c-format
+msgid ""
+"keypad keypad1 RB0 RB1 RB2 RB3 RB4 RB5 RB6\n"
+"x = keypad1"
+msgstr ""
+"keypad keypad1 RB0 RB1 RB2 RB3 RB4 RB5 RB6\n"
+"x = keypad1"
+
+#. Tag: para
+#: microbe.docbook:204
+#, no-c-format
+msgid ""
+"By default, the values returned for a keypad are: <itemizedlist> "
+"<listitem><para>The value of the number if it is a numeric key (1 to 3 along "
+"top row; hexadecimal A to D down the fourth column and continuing for each "
+"extra column).</para></listitem> <listitem><para>253 for the key in row 4, "
+"column 1.</para></listitem> <listitem><para>254 for the key in row 4, column "
+"3.</para></listitem> </itemizedlist> These values can be redefined by using "
+"the alias command, where the name of the key in row x, column y (rows and "
+"columns starting at 1), is Keypad_x_y. For example, to give the star key on "
+"a 4x3 keypad the value zero, the following alias would be used:"
+msgstr ""
+"De forma predeterminada, los valores devueltos por un teclado son: "
+"<itemizedlist><listitem><para>El valor del número si se trata de una tecla "
+"numérica (de 1 a 3 para la fila superior, hexadecimal A a D hasta la cuarta "
+"columna y continuando por cada columna adicional).</para></listitem> "
+"<listitem><para>253 para la tecla de la fila 4, columna 1.</para></listitem> "
+"<listitem><para>254 para la tecla de la fila 4, columna 3.</para></listitem> "
+"</itemizedlist> Estos valores se pueden redefinir usando la instrucción "
+"«alias», donde el nombre de la tecla de la fila x, columna y (las filas y "
+"las columnas empiezan por 1), es Keypad_x_y. Por ejemplo, para que la tecla "
+"estrella en un teclado de 4x3 dé el valor cero, se usaría el siguiente alias:"
+
+#. Tag: title
+#: microbe.docbook:213
+#, no-c-format
+msgid "Aliasing a keypad key to a value"
+msgstr "Asignar un valor a una tecla del teclado"
+
+#. Tag: programlisting
+#: microbe.docbook:214
+#, no-c-format
+msgid "alias Keypad_4_1 0"
+msgstr "alias Keypad_4_1 0"
+
+#. Tag: title
+#: microbe.docbook:221
+#, no-c-format
+msgid "PIC I/O"
+msgstr "E/S de PIC"
+
+#. Tag: title
+#: microbe.docbook:224
+#, no-c-format
+msgid "Port Direction"
+msgstr "Dirección del puerto"
+
+#. Tag: para
+#: microbe.docbook:225
+#, no-c-format
+msgid ""
+"The port direction is set by assigning a value to TRIS*, where * is the port "
+"letter. For example:"
+msgstr ""
+"La dirección del puerto se establece asignando un valor a TRIS*, donde * es "
+"la letra del puerto. Por ejemplo:"
+
+#. Tag: title
+#: microbe.docbook:228
+#, no-c-format
+msgid "Setting port directions"
+msgstr "Definición de direcciones de puertos"
+
+#. Tag: programlisting
+#: microbe.docbook:229
+#, no-c-format
+msgid "TRISB = b'01111001'"
+msgstr "TRISB = b'01111001'"
+
+#. Tag: para
+#: microbe.docbook:231
+#, no-c-format
+msgid ""
+"The above sets pins RB1, RB2 and RB7 on PORTB as outputs, and the other pins "
+"on PORTB as inputs. In this example, b'01111001' is a binary representation "
+"of the output type. The 1 on the right represents an output on RB0, and the "
+"0 on the left represents an input on RB7."
+msgstr ""
+"Lo anterior define los pines RB1, RB2 y RB7 de PORTB como salidas, y el "
+"resto de pines de PORTB como entradas. En este ejemplo, b'01111001' es la "
+"representación binaria del tipo de salida. El 1 de la derecha representa una "
+"salida en RB0, mientras que el 0 de la izquierda representa una entrada en "
+"RB7."
+
+#. Tag: title
+#: microbe.docbook:237
+#, no-c-format
+msgid "Port I/O"
+msgstr "E/S de puertos"
+
+#. Tag: para
+#: microbe.docbook:238
+#, no-c-format
+msgid "The port can be treated as a variable. For example:"
+msgstr "El puerto se puede tratar como una variable. Por ejemplo:"
+
+#. Tag: title
+#: microbe.docbook:242
+#, no-c-format
+msgid "Writing to a port"
+msgstr "Escritura en puertos"
+
+#. Tag: programlisting
+#: microbe.docbook:243
+#, no-c-format
+msgid "x = PORTA"
+msgstr "x = PORTA"
+
+#. Tag: para
+#: microbe.docbook:246
+#, no-c-format
+msgid "The above assigns the value of PORTA to the variable x."
+msgstr "Lo de arriba asigna el valor de PORTA a la variable x."
+
+#. Tag: title
+#: microbe.docbook:252
+#, no-c-format
+msgid "Pin I/O"
+msgstr "E/S de pines"
+
+#. Tag: para
+#: microbe.docbook:253
+#, no-c-format
+msgid ""
+"Each pin on a port is obtained by prefixing the pin number by the port name; "
+"&eg; Pin 2 (starting from Pin 0) on PORTA is known as <emphasis>PORTA.0</"
+"emphasis>. The syntax to set a pin state is: <programlisting role=\"correct"
+"\">PORTX.N = <emphasis>STATE</emphasis></programlisting> where "
+"<emphasis>STATE</emphasis> can be <emphasis>high</emphasis> or "
+"<emphasis>low</emphasis>. The syntax to test a pin state is: <programlisting "
+"role=\"correct\"><function>if</function> PORTX.N is <emphasis>STATE</"
+"emphasis> <function>then</function></programlisting> Combining these "
+"examples, we have:"
+msgstr ""
+"Cada pin de un puerto se obtiene anteponiendo el nombre del puerto al número "
+"de pin. Por ejemplo, el pin 2 (empezando desde el pin 0) de PORTA, se conoce "
+"como <emphasis>PORTA.0</emphasis>. La sintaxis para definir el estado de un "
+"pin es: <programlisting role=\"correct\">PORTX.N = <emphasis>ESTADO</"
+"emphasis></programlisting> donde <emphasis>ESTADO</emphasis> puede ser "
+"<emphasis>high</emphasis> o <emphasis>low</emphasis>. La sintaxis para "
+"comprobar el estado de un pin es: <programlisting role=\"correct"
+"\"><function>if</function> PORTX.N is <emphasis>ESTADO</emphasis> "
+"<function>then</function></programlisting> Combinando estos ejemplos, "
+"tenemos:"
+
+#. Tag: title
+#: microbe.docbook:266
+#, no-c-format
+msgid "Setting and testing pin state"
+msgstr "Definición y comprobación del estado de un pin"
+
+#. Tag: programlisting
+#: microbe.docbook:267
+#, no-c-format
+msgid ""
+"TRISA = 0\n"
+"TRISB = 255\n"
+"<function>if</function> PORTA.3 is <function>high</function> <function>then</"
+"function>\n"
+"{\n"
+"        PORTB.5 = <function>low</function>\n"
+"}\n"
+"<function>else</function>\n"
+"{\n"
+"        PORTB = PORTA + 15\n"
+"}"
+msgstr ""
+"TRISA = 0\n"
+"TRISB = 255\n"
+"<function>if</function> PORTA.3 is <function>high</function> <function>then</"
+"function>\n"
+"{\n"
+"        PORTB.5 = <function>low</function>\n"
+"}\n"
+"<function>else</function>\n"
+"{\n"
+"        PORTB = PORTA + 15\n"
+"}"
+
+#. Tag: title
+#: microbe.docbook:273
+#, no-c-format
+msgid "Variables"
+msgstr "Variables"
+
+#. Tag: para
+#: microbe.docbook:274
+#, no-c-format
+msgid ""
+"All variables are 8-bit unsigned integers, giving a range from 0 to 255. "
+"<application>&microbe;</application> supports the typical unary operations "
+"(acting on one variable) and binary operations (acting on two variables) "
+"that are supported by the PIC. In addition, &microbe; also supports division "
+"and multiplication."
+msgstr ""
+"Todas las variables son enteros sin signo de 8 bits, en el intervalo de 0 a "
+"255. <application>&microbe;</application> permite las operaciones unarias "
+"(que actúan sobre una variable) y las operaciones binarias (que actúan sobre "
+"dos variables) típicas del PIC. Además, &microbe; también permite la "
+"división y la multiplicación."
+
+#. Tag: title
+#: microbe.docbook:280
+#, no-c-format
+msgid "Unary Operations"
+msgstr "Operaciones unarias"
+
+#. Tag: para
+#: microbe.docbook:283
+#, no-c-format
+msgid ""
+"<emphasis>rotateleft x</emphasis> - Rotates the variable x left through "
+"carry."
+msgstr ""
+"<emphasis>rotateleft x</emphasis>: Rota la variable x a la izquierda con "
+"acarreo."
+
+#. Tag: para
+#: microbe.docbook:284
+#, no-c-format
+msgid ""
+"<emphasis>rotateright x</emphasis> - Rotates the variable x right through "
+"carry."
+msgstr ""
+"<emphasis>rotateright x</emphasis>: Rota la variable x a la derecha con "
+"acarreo."
+
+#. Tag: para
+#: microbe.docbook:285
+#, no-c-format
+msgid ""
+"<emphasis>increment x</emphasis> - Increments the variable x. If x has a "
+"value of 255, then x wraps round to 0."
+msgstr ""
+"<emphasis>increment x</emphasis>: Aumenta la variable x. Si x vale 255, x "
+"vuelve a tener el valor 0."
+
+#. Tag: para
+#: microbe.docbook:286
+#, no-c-format
+msgid ""
+"<emphasis>decrement x</emphasis> - Decrements the variable x. If x has a "
+"value of 0, then x wraps round to 255."
+msgstr ""
+"<emphasis>decrement x</emphasis>: Disminuye la variable x. Si x vale 0, x "
+"vuelve a tener el valor 255."
+
+#. Tag: title
+#: microbe.docbook:292
+#, no-c-format
+msgid "Arithmetic"
+msgstr "Aritmética"
+
+#. Tag: para
+#: microbe.docbook:293 microbe.docbook:309
+#, no-c-format
+msgid "Supported operations:"
+msgstr "Operaciones permitidas:"
+
+#. Tag: para
+#: microbe.docbook:296
+#, no-c-format
+msgid "<emphasis>Addition:</emphasis> x + y"
+msgstr "<emphasis>Adición:</emphasis> x + y"
+
+#. Tag: para
+#: microbe.docbook:297
+#, no-c-format
+msgid "<emphasis>Subtraction:</emphasis> x - y"
+msgstr "<emphasis>Sustracción:</emphasis> x - y"
+
+#. Tag: para
+#: microbe.docbook:298
+#, no-c-format
+msgid "<emphasis>Multiplication:</emphasis> x * y"
+msgstr "<emphasis>Multiplicación:</emphasis> x * y"
+
+#. Tag: para
+#: microbe.docbook:299
+#, no-c-format
+msgid "<emphasis>Division:</emphasis> x / y"
+msgstr "<emphasis>División:</emphasis> x / y"
+
+#. Tag: para
+#: microbe.docbook:300
+#, no-c-format
+msgid "<emphasis>Binary XOR:</emphasis> x XOR y"
+msgstr "<emphasis>XOR binario:</emphasis> x XOR y"
+
+#. Tag: para
+#: microbe.docbook:301
+#, no-c-format
+msgid "<emphasis>Binary AND:</emphasis> x AND y"
+msgstr "<emphasis>Y binario:</emphasis> x AND y"
+
+#. Tag: para
+#: microbe.docbook:302
+#, no-c-format
+msgid "<emphasis>Binary OR:</emphasis> x OR y"
+msgstr "<emphasis>O binario:</emphasis> x OR y"
+
+#. Tag: title
+#: microbe.docbook:308 microbe.docbook:324
+#, no-c-format
+msgid "Comparison"
+msgstr "Comparación"
+
+#. Tag: para
+#: microbe.docbook:313
+#, no-c-format
+msgid "<emphasis>Equals:</emphasis> x == y"
+msgstr "<emphasis>Igual a:</emphasis> x == y"
+
+#. Tag: para
+#: microbe.docbook:314
+#, no-c-format
+msgid "<emphasis>Does not equal:</emphasis> x != y"
+msgstr "<emphasis>Distinto de:</emphasis> x != y"
+
+#. Tag: para
+#: microbe.docbook:315
+#, no-c-format
+msgid "<emphasis>Is greater than:</emphasis> x > y"
+msgstr "<emphasis>Mayor que:</emphasis> x > y"
+
+#. Tag: para
+#: microbe.docbook:316
+#, no-c-format
+msgid "<emphasis>Is less than:</emphasis> x &lt; y"
+msgstr "<emphasis>Menor que:</emphasis> x &lt; y"
+
+#. Tag: para
+#: microbe.docbook:317
+#, no-c-format
+msgid "<emphasis>Is greater than or equal to:</emphasis> x &gt;= y"
+msgstr "<emphasis>Mayor o igual que:</emphasis> x &gt;= y"
+
+#. Tag: para
+#: microbe.docbook:318
+#, no-c-format
+msgid "<emphasis>Is less than or equal to:</emphasis> x &lt;= y"
+msgstr "<emphasis>Menor o igual que:</emphasis> x &lt;= y"
+
+#. Tag: para
+#: microbe.docbook:321
+#, no-c-format
+msgid "For example:"
+msgstr "Por ejemplo:"
+
+#. Tag: programlisting
+#: microbe.docbook:325
+#, no-c-format
+msgid ""
+"<function>if</function> PORTA >= 5 <function>then</function>\n"
+"{\n"
+"        ...\n"
+"}"
+msgstr ""
+"<function>if</function> PORTA >= 5 <function>then</function>\n"
+"{\n"
+"        …\n"
+"}"

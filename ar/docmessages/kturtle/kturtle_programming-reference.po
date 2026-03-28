@@ -1,0 +1,2780 @@
+#
+# Taha Zerrouki <taha.zerrouki@gmail.com>, 2023.
+# Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2023.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 12:04+0000\n"
+"PO-Revision-Date: 2023-04-26 00:17+0400\n"
+"Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
+"Language-Team: ar\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+
+#. Tag: title
+#: programming-reference.docbook:2
+#, no-c-format
+msgid "&turtlescript; Programming Reference"
+msgstr "مرجع سكربت السلحفاة البرمجي"
+
+#. Tag: para
+#: programming-reference.docbook:3
+#, no-c-format
+msgid ""
+"This is the reference for &kturtle;'s &turtlescript;. In the first section "
+"of this chapter have a look at some aspects of the <link linkend=\"grammar"
+"\">grammar</link> of &turtlescript; programs. The second section deals "
+"exclusively with <link linkend=\"mathematical-operators\">mathematical "
+"operators</link>, <link linkend=\"boolean-operators\">boolean (true/false) "
+"operators</link> and <link linkend=\"comparing-operators\">comparison "
+"operators</link>. The third section is basically a giant list of all <link "
+"linkend=\"commands\">commands</link> explaining them one-by-one. Section "
+"four explains how to <link linkend=\"assignment-of-variables\">assign</link> "
+"values to <link linkend=\"assignment-of-variables\">variables</link>. "
+"Finally we explain how to arrange the execution of commands with <link "
+"linkend=\"controlling-execution\">execution controlling statements</link> in "
+"section five and how to create you own commands with <link linkend=\"learn"
+"\"><userinput>learn</userinput></link> in section six."
+msgstr ""
+"هذا مرجع لغة برمجة سلحفاتك واسمها سكربت السلحفاة.في القسم الأول من هذا "
+"الفصل، سنتحدّث عن   <link linkend=\"grammar\">قواعد كتابة</link> برنامج سكربت "
+"السلحفاة. في القسم الثاني، سنتعامل مع  <link linkend=\"mathematical-operators"
+"\">العمليات الرياضية</link> و <link linkend=\"boolean-operators\">العمليات "
+"المنطقية </link> و <link linkend=\"comparing-operators\">عمليات المقارنة</"
+"link>. القسم الثالث به قائمة كل  <link linkend=\"commands\">الأوامر</link> "
+"مشروحة واحدة  واحدة. القسم الرابع يشرح كيف   <link linkend=\"assignment-of-"
+"variables\">تُنسد</link> قيمًا إلى <link linkend=\"assignment-of-variables"
+"\">المتغيرات</link>. وفي النهاية، سنفصّل كيفية نضبط التنفيذ بـ<link linkend="
+"\"controlling-execution\">تعليمات التحكّم</link> في القسم الخامس وطريقة إنشاء "
+"أوامر مخصّصة بالأمر <link linkend=\"learn\"><userinput>تعلم</userinput></"
+"link> في الفصل السادس."
+
+#. Tag: title
+#: programming-reference.docbook:6
+#, no-c-format
+msgid "The Grammar of &turtlescript;"
+msgstr "قواعد كتابة سكربت السلحفاة"
+
+#. Tag: para
+#: programming-reference.docbook:7
+#, no-c-format
+msgid ""
+"As in any language, &turtlescript; has different types of words and symbols. "
+"In English we distinguish verbs (like 'to walk' or 'to sing') and nouns "
+"(like 'sister' or 'house'), they are used for different purposes. "
+"&turtlescript; is a programming language, it is used to instruct &kturtle; "
+"what to do."
+msgstr ""
+"كما هو الحال في أي لغة، سكربت السلحفاة فيها أنواع مختلفة من الكلمات والرموز."
+"في اللغة العربية، نميز الأفعال (مثل \"مشى يمشي\" أو \"أكل يأكل\") والأسماء "
+"(مثل \"أخت\" أو \"منزل\")، وتستخدم استخدامها لأغراض مختلفة.سكربت السلحفاة هي "
+"لغة برمجة ،  تُستخدم لتعليم سلحفاتك ما يجب القيام به."
+
+#. Tag: para
+#: programming-reference.docbook:8
+#, no-c-format
+msgid ""
+"In this section some of &turtlescript;'s different types of words and "
+"symbols are briefly explained. We explain <link linkend=\"comment"
+"\">comments</link>, <link linkend=\"command\">commands</link> and the three "
+"different kinds of literals: <link linkend=\"number\">numbers</link>, <link "
+"linkend=\"string\">strings</link> and <link linkend=\"boolean-value"
+"\">boolean (true/false) values</link>."
+msgstr ""
+"في هذا القسم، سنشرح  شرحا مختصرًا أنواعًا مختلفة من كلمات ورموز سكربت السلحفاة."
+"سنشرح  <link linkend=\"comment\">التعليقات</link>، و<link linkend=\"command"
+"\">الأوامر </link> وثلاثة أنواع أخرى هي : <link linkend=\"number\">الأعداد </"
+"link>، و <link linkend=\"string\">السلاسل</link> و <link linkend=\"boolean-"
+"value\">القيم المنطقية (صح، غلط)</link>."
+
+#. Tag: title
+#: programming-reference.docbook:12
+#, no-c-format
+msgid "Comments"
+msgstr "تعليقات"
+
+#. Tag: para
+#: programming-reference.docbook:13
+#, no-c-format
+msgid ""
+"A program consists instructions that are executed when the program is run "
+"and so called comments. Comments are not executed, &kturtle; simply ignores "
+"them when executing your program. Comment are there for other programmers to "
+"make them understand your program better. Everything that follows on a "
+"<userinput>#</userinput> symbol is considered a comment in &turtlescript;. "
+"For example this little program that does nothing: <screen>\n"
+"# this little program does nothing, it is only a comment!\n"
+"</screen> It is a bit useless but it explain the matter well."
+msgstr ""
+"في البرنامج تعليمات للتنفيذ عند تشغيل البرنامج، أمّا التعليقاتُ فلا تُنفّذ، بل "
+"تتجاهلها  سلحفاتك التعليقات مفيدة كي يفهم الآخرون برنامج فهمًا أفضل.كلّ ما "
+"يأتي بعد علامة <userinput>#</userinput> يُعدّ تعليقا في سكربت السلحفاة. مثلا، "
+"هذا البرنامج الصغير، لا يفعل شيئًا: <screen>\n"
+"#هذا البرنامج الصغير لا يفعل شيئا، هو تعليق فقط!\n"
+"</screen>  يبدو بلا فائدة، لكنه يشرح الفكرة جيّدًا."
+
+#. Tag: para
+#: programming-reference.docbook:16
+#, no-c-format
+msgid ""
+"Comments get very useful when the program gets a little bit more complex. It "
+"can help to give some advice to other programmers. In the following program "
+"you see comments being used together with the <link linkend=\"print\">print</"
+"link> command. <screen>\n"
+"# this program has been made by Cies Breijs.\n"
+"print \"this text will get printed on the canvas\"\n"
+"# the previous line is not a comment, but the next line is:\n"
+"# print \"this text will not get printed!\"\n"
+"</screen> The first line describes the program. The second line is executed "
+"by &kturtle; and prints <userinput>this text will get printed on the canvas</"
+"userinput> on the canvas. The third line is a comment. And the forth line is "
+"a comment that contains a piece of &turtlescript;, if the <userinput>#</"
+"userinput> symbol would be removed on the fourth line the print statement "
+"will we executed by &kturtle;. Programmers say: the print statement on the "
+"fourth line is 'commented out'."
+msgstr ""
+"تصبح التعليقات مفيدة للغاية عندما يصبح البرنامج أكثر تعقيدًا. قد تساعد في "
+"تقديم نصائح للمبرمجين الآخرين. في البرنامج التالي، نستخدم تعليقات  الاستخدام "
+"مع الأمر <link linkend=\"print\">اطبع</link> <screen> \n"
+"#هذا برنامج من  تصميم أحمد.\n"
+"اطبع \"هذا النص سيطبع على الرقعة\"\n"
+"#السطر السابق ليس تعليقا، لكن السطر الموالي تعليق:\n"
+"#اطبع \"هذا النص سيطبع على الرقعة\"</screen>\n"
+"السطر الأول يعرّف بالبرنامج. السطر الثاني تنفّذه  سلحفاتك لطباعة  "
+"<userinput>هذا النص سيطبع على الرقعة</userinput> على الرقعة. السطر الثالث "
+"تعليقٌ. أما السطر الرابع، فهو تعليق فيه تعليمات  سكربت السلحفاة، فإذا حذفنا "
+"العلامة <userinput>#</userinput> ستنفذ تعليمة الطباعة من سلحفاتك. يقول "
+"المبرمجو أن تعليمة الطباعة في السطر الرابعة \"مُعلّقة\"."
+
+#. Tag: para
+#: programming-reference.docbook:19
+#, no-c-format
+msgid ""
+"Commented lines are <glossterm>highlighted</glossterm> with light gray in "
+"the <link linkend=\"the-editor\">code editor</link>."
+msgstr ""
+"الأسطر المعلقة  <glossterm>ملوّنة</glossterm> بالرمادي الفاتح في <link "
+"linkend=\"the-editor\">المحرر</link>."
+
+#. Tag: title
+#: programming-reference.docbook:23 programming-reference.docbook:162
+#, no-c-format
+msgid "Commands"
+msgstr "أوامر"
+
+#. Tag: para
+#: programming-reference.docbook:24
+#, no-c-format
+msgid ""
+"Using commands you tell the turtle or &kturtle; to do something. Some "
+"commands need input, some give output. <screen>\n"
+"# forward is a command that needs input, in this case the number 100:\n"
+"forward 100\n"
+"</screen> The first line is a <link linkend=\"comment\">comment</link>. The "
+"second line contains the <userinput>forward</userinput> command and the "
+"<link linkend=\"number\">number</link> <userinput>100</userinput>. The "
+"number is not part of command, it is considered 'input' for the command."
+msgstr ""
+"استعمال الأوامر، يأمر السلحفاة أن تعمل شيئا ما.بعض الأوامر تحتاج إلى "
+"مدخلات.  <screen>\n"
+"# الأمر تقدّم  يحتاج إلى مدخل، في هذه الحالة العدد  100:\n"
+"تقدم 100\n"
+"</screen> السطر الأول  <link linkend=\"comment\">تعليق السطر الثاني فيه "
+"الأمر </link>.   <userinput>تقدم</userinput> و <link linkend=\"number"
+"\">العدد</link> <userinput>100</userinput>. العدد ليس جزءًا من الأمر، بل يُعدّ "
+"\"مدخلا\" للأمر."
+
+#. Tag: para
+#: programming-reference.docbook:27
+#, no-c-format
+msgid ""
+"Some commands like &eg; <userinput>go</userinput> need more than one input "
+"value. Multiple values have to be separated using the <userinput>,</"
+"userinput> character (comma)."
+msgstr ""
+"بعض الأوامر مثل  <userinput>اذهب</userinput> تحتاج إلى أكثر من مدخل واحد. "
+"تُفصل المداخل المتعددة بفاصلة  <userinput>،</userinput>."
+
+#. Tag: para
+#: programming-reference.docbook:28
+#, no-c-format
+msgid ""
+"For a detailed overview of all commands that &kturtle; supports go <link "
+"linkend=\"commands\">here</link>. Built-in commands are "
+"<glossterm>highlighted</glossterm> in dark blue."
+msgstr ""
+"لتفاصيل أكثر عن كل أوامر <link linkend=\"commands\">طالع هنا </link>. "
+"الأوامر الجاهزة <glossterm>تُميّز</glossterm> بلون أزرق غامق."
+
+#. Tag: title
+#: programming-reference.docbook:32
+#, no-c-format
+msgid "Numbers"
+msgstr "أعداد"
+
+#. Tag: para
+#: programming-reference.docbook:33
+#, no-c-format
+msgid ""
+"Most likely you already know quite a bit about numbers. The way numbers are "
+"used in &kturtle; is not much different from spoken language, or math."
+msgstr ""
+"لابد أنّك تعرف الأعداد. طريقة استخدام الأعداد في سلحفاتك لا يختلف كثيرًا عن "
+"اللغة المنطوقة أو الرياضيات."
+
+#. Tag: para
+#: programming-reference.docbook:34
+#, no-c-format
+msgid ""
+"We have the so called natural numbers: <userinput>0</userinput>, "
+"<userinput>1</userinput>, <userinput>2</userinput>, <userinput>3</"
+"userinput>, <userinput>4</userinput>, <userinput>5</userinput>, &etc; The "
+"negative numbers: <userinput>-1</userinput>, <userinput>-2</userinput>, "
+"<userinput>-3</userinput>, &etc; And the numbers with decimals, or dot-"
+"numbers, for example: <userinput>0.1</userinput>, <userinput>3.14</"
+"userinput>, <userinput>33.3333</userinput>, <userinput>-5.05</userinput>, "
+"<userinput>-1.0</userinput>. The <userinput>.</userinput> character (dot) is "
+"used as decimal separator."
+msgstr ""
+"لدينا الأعداد الطبيعية: <userinput>0</userinput>، <userinput>1</userinput>، "
+"<userinput>2</userinput>، <userinput>3</userinput>، <userinput>4</"
+"userinput>، <userinput>5</userinput>، إلى أخره والأعداد السالبة : "
+"<userinput>-1</userinput>، <userinput>-2</userinput>، <userinput>-3</"
+"userinput>، إلى أخره والأعداد العشرية مثل: <userinput>0.1</userinput>، "
+"<userinput>3.14</userinput>، <userinput>33.3333</userinput>، "
+"<userinput>-5.05</userinput>، <userinput>-1.0</userinput>. الفاصلة "
+"<userinput>.</userinput> تفصل بين الجزء الصحيح والجزء العشري."
+
+#. Tag: para
+#: programming-reference.docbook:37
+#, no-c-format
+msgid ""
+"Numbers can be used in <link linkend=\"mathematical-operators\">mathematical "
+"operators</link> and <link linkend=\"comparing-operators\">comparison "
+"operators</link>. They can also be stored in <link linkend=\"assignment-of-"
+"variables\">variables</link>. Numbers are <glossterm>highlighted</glossterm> "
+"in dark red."
+msgstr ""
+"تستعمل الأعداد في  <link linkend=\"mathematical-operators\">العمليات "
+"الحسابية</link> و <link linkend=\"comparing-operators\">عمليات المقارنة</"
+"link>. وتُحفظ في  <link linkend=\"assignment-of-variables\">متغيرات</link>. "
+"الأعداد <glossterm>تُميّز</glossterm> بالأحمر الغامق."
+
+#. Tag: title
+#: programming-reference.docbook:43
+#, no-c-format
+msgid "Strings"
+msgstr "سلاسل"
+
+#. Tag: para
+#: programming-reference.docbook:44
+#, no-c-format
+msgid ""
+"First an example: <screen>\n"
+"print \"Hello, I'm a string.\"\n"
+"</screen> In this example <userinput>print</userinput> is a command where "
+"<userinput>\"Hello, I'm a string.\"</userinput> is a string. Strings start "
+"and end with the <userinput>\"</userinput> mark, by these marks &kturtle; "
+"knows it is a string."
+msgstr ""
+"سنبدأ بمثال:  <screen>\n"
+"اطبع \"سلام، أنا سلسلة حروف.\"\n"
+"</screen>  في هذا المثال الأمر<userinput>اطبع</userinput> يطبع سلسلة حروف  "
+"<userinput>\"سلام، أنا سلسلة حروف.\"</userinput>. تبدأ السلاسل وتنتهي بعلامة "
+"اقتباس<userinput>\"</userinput>، تعتبر  سلحفاتك ما بين علامتي اقتباس سلسلة "
+"حروف."
+
+#. Tag: para
+#: programming-reference.docbook:47
+#, no-c-format
+msgid ""
+"Strings can be put in <link linkend=\"assignment-of-variables\">variables</"
+"link>, just like <link linkend=\"number\">numbers</link>. Yet, unlike "
+"numbers, strings cannot be used in <link linkend=\"mathematical-operators"
+"\">mathematical operators</link> or <link linkend=\"comparing-operators"
+"\">comparison operators</link>. Strings are <glossterm>highlighted</"
+"glossterm> with red."
+msgstr ""
+"تُحفظ السلاسل في<link linkend=\"assignment-of-variables\">متغيرات</link>، "
+"مثل ،  <link linkend=\"number\">الأعداد</link>. Yet، لكن على عكس الأعداد، "
+"السلاسل لا تستعمل في  <link linkend=\"mathematical-operators\">العمليات "
+"الحسابية</link> أو <link linkend=\"comparing-operators\">عمليات المقارنة</"
+"link> . السلاسل <glossterm>تُميّز</glossterm> بالأحمر."
+
+#. Tag: title
+#: programming-reference.docbook:51
+#, no-c-format
+msgid "Boolean (true/false) values"
+msgstr "قيم منطقية (صح، غلط)"
+
+#. Tag: para
+#: programming-reference.docbook:52
+#, no-c-format
+msgid ""
+"There are only two boolean values: <userinput>true</"
+"userinput><indexterm><primary>true</primary></indexterm> and "
+"<userinput>false</userinput><indexterm><primary>false</primary></indexterm>. "
+"Sometimes they are also called: <quote><userinput>on</userinput></quote> and "
+"<quote><userinput>off</userinput></quote>, <quote><userinput>yes</"
+"userinput></quote> and <quote><userinput>no</userinput></quote>, "
+"<quote><userinput>one</userinput></quote> and <quote><userinput>zero</"
+"userinput></quote>. But in &turtlescript; we call them, always, "
+"<userinput>true</userinput> and <userinput>false</userinput>. Have a look at "
+"this piece of &turtlescript;: <screen>\n"
+"$a = true\n"
+"</screen> If you look in the <link linkend=\"the-inspector\">inspector</"
+"link> you can see that the <link linkend=\"assignment-of-variables"
+"\">variable</link> <userinput>$a</userinput> is set to <userinput>true</"
+"userinput>, and has the boolean type."
+msgstr ""
+"لدينا قيمتان منطقيتان هما: <userinput>صح</userinput><indexterm><primary>صح</"
+"primary></indexterm> و <userinput>غلط</userinput><indexterm><primary>غلط</"
+"primary></indexterm>. قد تسمى هاتان القيمتان: <quote><userinput>صواب</"
+"userinput></quote> و <quote><userinput>خطأ</userinput></quote>، "
+"<quote><userinput>نعم</userinput></quote> و <quote><userinput>لا</"
+"userinput></quote>، <quote><userinput>واحد</userinput></quote> و "
+"<quote><userinput>صفر</userinput></quote>. لكن في سكربت السلحفاة سندعوها، "
+"<userinput>صح</userinput> و <userinput>غلط</userinput>. طالع هذا المثال "
+"سكربت السلحفاة: <screen>\n"
+"$س = صح\n"
+"</screen> إذا نظرت إلى <link linkend=\"the-inspector\">المفتش</link> سترى أن "
+"قيمة <link linkend=\"assignment-of-variables\">المتغير </link> <userinput>"
+"$س</userinput>  تساوي  <userinput>صح</userinput>، ونوعها منطقي."
+
+#. Tag: para
+#: programming-reference.docbook:55
+#, no-c-format
+msgid ""
+"Often boolean values are the result of a <link linkend=\"comparing-operators"
+"\">comparison operator</link>, like in the following piece of "
+"&turtlescript;: <screen>\n"
+"$answer = 10 &gt; 3\n"
+"</screen> The <link linkend=\"assignment-of-variables\">variable</link> "
+"<userinput>$answer</userinput> is set to <userinput>true</userinput> because "
+"<userinput>10</userinput> is larger than <userinput>3</userinput>."
+msgstr ""
+"عادة القيم المنطقية ناتجة عن <link linkend=\"comparing-operators\">عمليات "
+"مقارنة</link>، كما في المثال الآتي سكربت السلحفاة: <screen>\n"
+"$جواب = 10 &gt; 3\n"
+"</screen> قيمة <link linkend=\"assignment-of-variables\">المتغير</link> "
+"<userinput>$جواب</userinput> هي <userinput>صح</userinput> لأنّ <userinput>10</"
+"userinput> أكبر من <userinput>3</userinput>."
+
+#. Tag: para
+#: programming-reference.docbook:58
+#, no-c-format
+msgid ""
+"Boolean values, <userinput>true</userinput> and <userinput>false</"
+"userinput>, are <glossterm>highlighted</glossterm> with dark red."
+msgstr ""
+"القيم المنطقية، <userinput>صح</userinput> و <userinput>غلط</userinput> "
+"<glossterm>تُميّز</glossterm> بالأحمر الغامق."
+
+#. Tag: title
+#: programming-reference.docbook:66
+#, no-c-format
+msgid "Mathematical, boolean and comparing operators"
+msgstr "عوامل رياضية ومنطقية ومقارنة"
+
+#. Tag: para
+#: programming-reference.docbook:67
+#, no-c-format
+msgid ""
+"The title of this section might sound very difficult, yet it is not as "
+"difficult as it sound."
+msgstr ""
+"قد يبدو عنوان هذا القسم صعبًا للغاية، إلا أنه ليس بالصعوبة التي يبدو عليها."
+
+#. Tag: title
+#: programming-reference.docbook:70
+#, no-c-format
+msgid "Mathematical operators"
+msgstr "عوامل رياضية"
+
+#. Tag: para
+#: programming-reference.docbook:71
+#, no-c-format
+msgid ""
+"These are the basic math symbols known as: add (<userinput>+</userinput>), "
+"subtract (<userinput>-</userinput>), multiply (<userinput>*</userinput>), "
+"divide (<userinput>/</userinput>) and power (<userinput>^</userinput>)."
+msgstr ""
+"علامات العمليات الحسابية هي:: الجمع (<userinput>+</userinput>)، الطرح "
+"(<userinput>-</userinput>)، الضرب (<userinput>*</userinput>)، القسمة "
+"(<userinput>/</userinput>) والقوة (الأس) (<userinput>^</userinput>)."
+
+#. Tag: para
+#: programming-reference.docbook:73
+#, no-c-format
+msgid ""
+"Here a small example of the mathematical operators you can use in "
+"&turtlescript;: <screen>\n"
+"$add      = 1 + 1\n"
+"$subtract = 20 - 5\n"
+"$multiply = 15 * 2\n"
+"$divide   = 30 / 30\n"
+"$power    = 2 ^ 2\n"
+"</screen> The values resulting from the mathematical operations get <link "
+"linkend=\"assignment-of-variables\">assigned</link> to various <link linkend="
+"\"assignment-of-variables\">variables</link>. Using the <link linkend=\"the-"
+"inspector\">inspector</link> you can see the values."
+msgstr ""
+"هذه أمثلة عن العمليات الحسابية في سكربت  السلحفاة: <screen>\n"
+"$مجموع      = 1 + 1\n"
+"$فرق = 20 - 5\n"
+"$جداء = 15 * 2\n"
+"$حاصل   = 30 / 30\n"
+"$أس    = 2 ^ 2\n"
+"</screen> القيم الناتجة عن العمليات <link linkend=\"assignment-of-variables"
+"\">تُسند</link> إلى <link linkend=\"assignment-of-variables\">متغيرات</link>. "
+"باستعمال  <link linkend=\"the-inspector\">المفتّش</link> يمكنك رؤية قيم "
+"المتغيرات."
+
+#. Tag: para
+#: programming-reference.docbook:76
+#, no-c-format
+msgid ""
+"If you just want a simple calculation to be done you can do something like "
+"this:"
+msgstr "إن رغبت في إجراء عملية حسابية بسيطة، اصنع مثل هذا:"
+
+#. Tag: screen
+#: programming-reference.docbook:77
+#, no-c-format
+msgid "print 2010-12"
+msgstr "اطبع 2010-12"
+
+#. Tag: para
+#: programming-reference.docbook:78
+#, no-c-format
+msgid ""
+"Now an example with parentheses: <screen>\n"
+"print ( ( 20 - 5 ) * 2 / 30 ) + 1\n"
+"</screen> The expressions inside parentheses will be calculated first. In "
+"this example, 20-5 will be calculated, then multiplied by 2, divided by 30, "
+"and then 1 is added (giving 2). Parentheses can also be used in other cases."
+msgstr ""
+"والآن إليك مثالًا عن الأقواس:<screen>\n"
+"اطبع ((20 - 5) * 2/30) + 1 \n"
+" </screen>سيُحسب ما داخل الأقواس أولاً. في هذا المثال ،  ستُحسب 20-5 ،  ثم يضرب "
+"الناتج في 2 ،  ثم يُقسم على 30 ،  ثم يضاف 1 (والنتيجة 2). تُستخدم الأقواس في "
+"حالات أخرى."
+
+#. Tag: para
+#: programming-reference.docbook:81
+#, no-c-format
+msgid ""
+"&kturtle; also has more advanced mathematical features in the form of "
+"commands. Have a look at the following commands but be aware that it "
+"concerns advanced operations: <link linkend=\"round\">round</link>, <link "
+"linkend=\"random\">random</link>, <link linkend=\"sqrt\">sqrt</link> , <link "
+"linkend=\"pi\">pi</link>, <link linkend=\"sin\">sin</link>, <link linkend="
+"\"cos\">cos</link>, <link linkend=\"tan\">tan</link>, <link linkend=\"arcsin"
+"\">arcsin</link>, <link linkend=\"arccos\">arccos</link>, <link linkend="
+"\"arctan\">arctan</link>."
+msgstr ""
+"في سلحفاتك دوّال رياضية متقدمة. اطّلع على الأوامر الآتية، ولكن انتبه أنها "
+"وظائف متقدمّة:  <link linkend=\"round\">تقريب</link>، <link linkend=\"random"
+"\">عشوائي</link>، <link linkend=\"sqrt\">جذر</link> ،  <link linkend=\"pi"
+"\">pi طا</link>، <link linkend=\"sin\">sin جا</link>، <link linkend=\"cos"
+"\">cos جتا</link>، <link linkend=\"tan\">tan ظا</link>، <link linkend="
+"\"arcsin\">arcsin قوس_جا</link>، <link linkend=\"arccos\">arccos قوس_جتا</"
+"link>، <link linkend=\"arctan\">arctan قوس_ظا</link>."
+
+#. Tag: title
+#: programming-reference.docbook:87
+#, no-c-format
+msgid "Boolean (true/false) operators"
+msgstr "عمليات منطقية (صح، غلط)"
+
+#. Tag: para
+#: programming-reference.docbook:88
+#, no-c-format
+msgid ""
+"Where <link linkend=\"mathematical-operators\">mathematical operators</link> "
+"are mainly for <link linkend=\"number\">numbers</link>, boolean operators "
+"are for <link linkend=\"boolean-value\">boolean values</link> "
+"(<userinput>true</userinput> and <userinput>false</userinput>). There are "
+"only three boolean operators, namely: <userinput>and</"
+"userinput><indexterm><primary>and</primary></indexterm>, <userinput>or</"
+"userinput><indexterm><primary>or</primary></indexterm>, and <userinput>not</"
+"userinput><indexterm><primary>not</primary></indexterm>. The following piece "
+"of &turtlescript; shows how to use them: <screen>\n"
+"$and_1_1 = true and true    # -> true\n"
+"$and_1_0 = true and false   # -> false\n"
+"$and_0_1 = false and true   # -> false\n"
+"$and_0_0 = false and false  # -> false\n"
+"\n"
+"$or_1_1 = true or true    # -> true\n"
+"$or_1_0 = true or false   # -> true\n"
+"$or_0_1 = false or true   # -> true\n"
+"$or_0_0 = false or false  # -> false\n"
+"\n"
+"$not_1 = not true   # -> false\n"
+"$not_0 = not false  # -> true\n"
+"</screen> Using the <link linkend=\"the-inspector\">inspector</link> you can "
+"see the values, yet we also supply these results as little comments at the "
+"end of the lines. <userinput>and</userinput> evaluates <userinput>true</"
+"userinput> only if both sides are <userinput>true</userinput>. "
+"<userinput>or</userinput> evaluates <userinput>true</userinput> if either "
+"side is <userinput>true</userinput>. And <userinput>not</userinput> turns a "
+"<userinput>true</userinput> into <userinput>false</userinput> and a "
+"<userinput>false</userinput> into <userinput>true</userinput>."
+msgstr ""
+"<link linkend=\"mathematical-operators\">العمليات الحسابية </link> <link "
+"linkend=\"number\">للأعداد</link>،  أمّا العمليات المنطقية  فتخصّ<link linkend="
+"\"boolean-value\">القيم المنطقية</link> (<userinput>صح</userinput> و "
+"<userinput>غلط</userinput>). العمليات المنطقية ثلاثة هي: <userinput>و</"
+"userinput><indexterm><primary>و</primary></indexterm>، <userinput>أو</"
+"userinput><indexterm><primary>أو</primary></indexterm>، <userinput>ليس</"
+"userinput><indexterm><primary>ليس</primary></indexterm>. إليك بعض الأمثلة: "
+"<screen>\n"
+"$وصل_1_1 = صح و صح    # -> صح\n"
+"$وصل_1_0 = صح و غلط   # -> غلط\n"
+"$وصل_0_1 = غلط و صح   # -> غلط\n"
+"$وصل_0_0 = غلط و غلط  # -> غلط\n"
+"\n"
+"$فصل_1_1 = صح أو صح    # -> صح\n"
+"$أو_1_0 = صح أو غلط   # -> صح\n"
+"$أو_0_1 = غلط أو صح   # -> صح\n"
+"$أو_0_0 = غلط أو غلط  # -> غلط\n"
+"\n"
+"$نفي_1 = ليس صح   # -> غلط\n"
+"$نفي_0 = ليس غلط  # -> صح\n"
+"</screen> باستعمال <link linkend=\"the-inspector\">المفتش</link> ترى قيم كل "
+"المتغيرات، كما أننا وضعنا تعليقات صغيرة في نهاية كل سطر توضح النتيجة.. "
+"<userinput>و</userinput> تنتج <userinput>صح</userinput> فقط إن كان الطرفان "
+"<userinput>صح</userinput>. <userinput>أو</userinput> تنتج <userinput>صح</"
+"userinput> إن كان أحد الطرفين <userinput>صح</userinput>. و <userinput>ليس</"
+"userinput> تجعل <userinput>صح</userinput> <userinput>غلطا</userinput> و "
+"<userinput>غلط</userinput> <userinput>صح</userinput>."
+
+#. Tag: para
+#: programming-reference.docbook:91
+#, no-c-format
+msgid "Boolean operators are <glossterm>highlighted</glossterm> with pink."
+msgstr "العمليات المنطقية  <glossterm>تميّز </glossterm> بالوردي."
+
+#. Tag: title
+#: programming-reference.docbook:94
+#, no-c-format
+msgid "Some more advanced examples"
+msgstr "أمثلة إضافية متقدمة"
+
+#. Tag: para
+#: programming-reference.docbook:95
+#, no-c-format
+msgid ""
+"Consider the following example with <userinput>and</userinput>: <screen>\n"
+"$a = 1\n"
+"$b = 5\n"
+"if (($a &lt; 10) and ($b == 5)) and ($a &lt; $b) {\n"
+"  print \"hello\"\n"
+"}\n"
+"</screen> In this piece of &turtlescript; the result of three <link linkend="
+"\"comparing-operators\">comparing operators</link> are merged using "
+"<userinput>and</userinput> operators. This means that all three have to "
+"evaluate <quote>true</quote> in order for the <quote>hello</quote> to be "
+"printed."
+msgstr ""
+"إليك هذا المثال عن الوصل <userinput>و</userinput>: <screen>\n"
+"$ج = 1\n"
+"$ب = 5\n"
+"إذا (($ج &lt; 10) و ($ب == 5)) و ($ج &lt; $ب) {\n"
+" اطبع \"تمام\"\n"
+"}\n"
+"</screen> في هذا البرنامج الصغير، نتيجة  <link linkend=\"comparing-operators"
+"\">عمليات المقارنة</link> تربط بعمليات وصل <userinput>و</userinput>. مما "
+"سيعطي  <quote>صح</quote> فيؤدي إلى طباعة <quote>تمام</quote>."
+
+#. Tag: para
+#: programming-reference.docbook:99
+#, no-c-format
+msgid ""
+"An example with <userinput>or</userinput>: <screen>\n"
+"$n = 1\n"
+"if ($n &lt; 10) or ($n == 2) {\n"
+"  print \"hello\"\n"
+"}\n"
+"</screen> In this piece of &turtlescript; the left side of the "
+"<userinput>or</userinput> is evaluating to <quote>true</quote>, the right "
+"side to <quote>false</quote>. Since one of the two sides of the "
+"<userinput>or</userinput> operator is <quote>true</quote>, the "
+"<userinput>or</userinput> operator evaluates <quote>true</quote>. That means "
+"<quote>hello</quote> gets printed."
+msgstr ""
+"هذا مثال للفصل بـ <userinput>أو</userinput>: <screen>\n"
+"$ع = 1\n"
+"إذا ($ع &lt; 10) أو ($ع == 2) {\n"
+"  اطبع \"تمام\"\n"
+"}\n"
+"</screen> في هذا المثال، الطرف الأيمن قبل <userinput>أو</userinput> يعطي "
+"<quote>صح</quote>، الطرف الأيسر يعطي <quote>غلط</quote>. وبما أنّ أحد طرفي "
+"العملية <userinput>أو</userinput>  <quote>صح</quote>، فالناتج  <quote>صح</"
+"quote>. مما يعني أن <quote>تمام</quote> ستُطبع."
+
+#. Tag: para
+#: programming-reference.docbook:103
+#, no-c-format
+msgid ""
+"And finally an example with <userinput>not</userinput> which changes "
+"<quote>true</quote> into <quote>false</quote> and <quote>false</quote> into "
+"<quote>true</quote>. Have a look:"
+msgstr ""
+"وأخيرًا هذا مثال عن النفي بـ<userinput>ليس</userinput>  التي تغيّر  <quote>صح</"
+"quote> إلى <quote>غلط</quote> و <quote>غلط</quote> إلى <quote>صح</quote>. "
+"انظر:"
+
+#. Tag: screen
+#: programming-reference.docbook:104
+#, no-c-format
+msgid ""
+"$n = 1\n"
+"if not ($n == 3) {\n"
+"  print \"hello\"\n"
+"} else {\n"
+"  print \"not hello ;-)\"\n"
+"}"
+msgstr ""
+"$ع = 1\n"
+"إذا ليس ($ع == 3) {\n"
+"  اطبع \"تمام\"\n"
+"} وإلا {\n"
+"  اطبع \"ليس تمام ;-)\"\n"
+"}"
+
+#. Tag: title
+#: programming-reference.docbook:109
+#, no-c-format
+msgid "Comparing operators"
+msgstr "عوامل المقارنة"
+
+#. Tag: para
+#: programming-reference.docbook:110
+#, no-c-format
+msgid ""
+"Consider this simple comparison: <screen>\n"
+"$answer = 10 &gt; 3\n"
+"</screen> Here <userinput>10</userinput> is compared to <userinput>3</"
+"userinput> with the <quote>greater than</quote> operator. The result of this "
+"comparison, the <link linkend=\"boolean-value\">boolean value</link> "
+"<userinput>true</userinput> is stored in the <link linkend=\"assignment-of-"
+"variables\">variable</link> <userinput>$answer</userinput>."
+msgstr ""
+"لتكن المقارنة الآتية: <screen>\n"
+"$جواب = 10 &gt; 3\n"
+"</screen> هنا <userinput>10</userinput>  تقارن مع <userinput>3</userinput> "
+"بالعامل <quote>أكبر من </quote>. نتيجة المقارنة هي  <link linkend=\"boolean-"
+"value\">قيمة منطقية</link> <userinput>صح</userinput> تُحفظ في <link linkend="
+"\"assignment-of-variables\">المتغيّر</link> <userinput>$جواب</userinput>."
+
+#. Tag: para
+#: programming-reference.docbook:113
+#, no-c-format
+msgid ""
+"All <link linkend=\"number\">numbers</link> and <link linkend=\"assignment-"
+"of-variables\">variables</link> (that contain numbers) can be compared to "
+"each other with comparing operators."
+msgstr ""
+"كل <link linkend=\"number\">الأعداد</link> و <link linkend=\"assignment-of-"
+"variables\">المتغيرات</link> (التي تحوي أعدادًا) يُمكن مقارنتها بواسطة عمليات "
+"المقارنة."
+
+#. Tag: para
+#: programming-reference.docbook:114
+#, no-c-format
+msgid ""
+"Here are all possible comparing operators: <table> <title>Types of "
+"questions</title> <tgroup cols=\"3\"> <tbody> <row> <entry><userinput>$A == "
+"$B</userinput></entry> <entry>equals</entry> <entry>answer is <quote>true</"
+"quote> if <userinput>$A</userinput> equals <userinput>$B</userinput></entry> "
+"</row> <row> <entry><userinput>$A != $B</userinput></entry> <entry>not-"
+"equals</entry> <entry>answer is <quote>true</quote> if <userinput>$A</"
+"userinput> does not equal <userinput>$B</userinput></entry> </row> <row> "
+"<entry><userinput>$A &gt; $B</userinput></entry> <entry>greater than</entry> "
+"<entry>answer is <quote>true</quote> if <userinput>$A</userinput> is greater "
+"than <userinput>$B</userinput></entry> </row> <row> <entry><userinput>$A "
+"&lt; $B</userinput></entry> <entry>smaller than</entry> <entry>answer is "
+"<quote>true</quote> if <userinput>$A</userinput> is smaller than <userinput>"
+"$B</userinput></entry> </row> <row> <entry><userinput>$A &gt;= $B</"
+"userinput></entry> <entry>greater than or equals</entry> <entry>answer is "
+"<quote>true</quote> if <userinput>$A</userinput> is greater than or equals "
+"<userinput>$B</userinput></entry> </row> <row> <entry><userinput>$A &lt;= "
+"$B</userinput></entry> <entry>smaller than or equals</entry> <entry>answer "
+"is <quote>true</quote> if <userinput>$A</userinput> is smaller than or "
+"equals <userinput>$B</userinput></entry> </row> </tbody> </tgroup> </table> "
+"Please note that <userinput>$A</userinput> and <userinput>$B</userinput> "
+"have to be <link linkend=\"number\">numbers</link> or <link linkend="
+"\"assignment-of-variables\">variables</link> that contain numbers."
+msgstr ""
+"هذه بعض المقارنات: <table> <title>أنواع الأسئلة</title> <tgroup cols=\"3\"> "
+"<tbody> <row> <entry><userinput>$ج == $ب</userinput></entry> <entry>تساوي</"
+"entry> <entry>الجواب هو  <quote>صح</quote> إذا <userinput>$ج</userinput> "
+"يساوي <userinput>$ب</userinput></entry> </row> <row> <entry><userinput>$ج != "
+"$ب</userinput></entry> <entry>لا تساوي</entry> <entry>الجواب  <quote>صح</"
+"quote> إذا <userinput>$ج</userinput> لا يساوي <userinput>$ب</userinput></"
+"entry> </row> <row> <entry><userinput>$ج &gt; $ب</userinput></entry> "
+"<entry>أكبر من</entry> <entry>الجواب <quote>صح</quote> إذا <userinput>$ج</"
+"userinput> أكبر من <userinput>$ب</userinput></entry> </row> <row> "
+"<entry><userinput>$ج &lt; $ب</userinput></entry> <entry>أصغر من </entry> "
+"<entry>الجواب  <quote>صح</quote> إذا <userinput>$ج</userinput> أصغر من  "
+"<userinput>$ب</userinput></entry> </row> <row> <entry><userinput>$ج &gt;= "
+"$ب</userinput></entry> <entry>أكبر من أو يساوي</entry> <entry>الجواب "
+"<quote>صح</quote> إذا <userinput>$ج</userinput> أكبر من <userinput>$B</"
+"userinput> أو يساويه</entry> </row> <row> <entry><userinput>$ج &lt;= $ب</"
+"userinput></entry> <entry>أصغر من أو يساوي </entry> <entry>الجواب <quote>صح</"
+"quote> إذا <userinput>$ج</userinput> أصغر من   <userinput>$ب</userinput> أو "
+"يساويه</entry> </row> </tbody> </tgroup> </table> رجاء، لاحظ أنّ  <userinput>"
+"$ج</userinput> و <userinput>$ب</userinput>  <link linkend=\"number\">عددان</"
+"link> أو <link linkend=\"assignment-of-variables\">متغيران</link> يحويان "
+"أعداد."
+
+#. Tag: para
+#: programming-reference.docbook:163
+#, no-c-format
+msgid ""
+"Using commands you tell the turtle or &kturtle; to do something. Some "
+"commands need input, some give output. In this section we explain all the "
+"built-in commands of &kturtle;. Alternatively, using <link linkend=\"learn"
+"\"><userinput>learn</userinput></link>, you can create your own commands. "
+"Built-in commands we discuss here are <glossterm>highlighted</glossterm> "
+"with dark blue."
+msgstr ""
+"باستخدام الأوامر تطلب من  السلحفاة أو سلحفاتك فعل شيء ما. بعض الأوامر تحتاج "
+"إلى مدخلات، وبعضها يعطي مخرجات. في هذا القسم نشرح كل أوامر  سلحفاتك. بدلاً من "
+"ذلك ،  يمكن استخدام الأمر <link linkend=\"learn\"> <userinput>تعلم</"
+"userinput> </link> لإنشاء أوامرك الخاصة.الأوامر المضمنة التي نناقشها هنا "
+"<glossterm>مميّزة</glossterm> باللون الأزرق الداكن."
+
+#. Tag: title
+#: programming-reference.docbook:166
+#, no-c-format
+msgid "Moving the turtle"
+msgstr "تحريك السلحفاة"
+
+#. Tag: para
+#: programming-reference.docbook:167
+#, no-c-format
+msgid "There are several commands to move the turtle over the screen."
+msgstr "توجد عدة أوامر لتحريك السلحفاة على الشاشة."
+
+#. Tag: term
+#: programming-reference.docbook:172
+#, no-c-format
+msgid "<term>forward (fw)</term>"
+msgstr "<term> تقدم (أمام)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:172
+#, no-c-format
+msgid "<primary>forward (fw)</primary>"
+msgstr "<primary> تقدم (أمام)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:173
+#, no-c-format
+msgid "forward X"
+msgstr "تقدم س"
+
+#. Tag: para
+#: programming-reference.docbook:173
+#, no-c-format
+msgid ""
+"<userinput>forward</userinput> moves the turtle forward by the amount of X "
+"pixels. When the pen is down the turtle will leave a trail. "
+"<userinput>forward</userinput> can be abbreviated to <userinput>fw</"
+"userinput>."
+msgstr ""
+"<userinput>تقدم</userinput> تحرّك السلحفاة إلى الأمام بعدد من البكسلات أو "
+"النقاط. إذا كان القلم منخفضا، تترك السلحفاة خطًا. يمكن كتابة <userinput>تقدم</"
+"userinput> بـ <userinput>أمام</userinput>."
+
+#. Tag: term
+#: programming-reference.docbook:180
+#, no-c-format
+msgid "<term>backward (bw)</term>"
+msgstr "<term>وراء (خلف)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:180
+#, no-c-format
+msgid "<primary>backward (bw)</primary>"
+msgstr "<primary>وراء (خلف)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:181
+#, no-c-format
+msgid "backward X"
+msgstr "وراء س"
+
+#. Tag: para
+#: programming-reference.docbook:181
+#, no-c-format
+msgid ""
+"<userinput>backward</userinput> moves the turtle backward by the amount of X "
+"pixels. When the pen is down the turtle will leave a trail. "
+"<userinput>backward</userinput> can be abbreviated to <userinput>bw</"
+"userinput>."
+msgstr ""
+"<userinput>وراء</userinput> حرّك السلحفاة إلى الوراء بعدد من البكسلات أو "
+"النقاط. إذا كان القلم منخفضا، تترك السلحفاة خطًا. يمكن كتابة <userinput>وراء</"
+"userinput> بـ <userinput>خلف</userinput>."
+
+#. Tag: term
+#: programming-reference.docbook:188
+#, no-c-format
+msgid "<term>turnleft (tl)</term>"
+msgstr "<term>در_يسار (يسار)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:188
+#, no-c-format
+msgid "<primary>turnleft (tl)</primary>"
+msgstr "<primary>در_يسار (يسار)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:189
+#, no-c-format
+msgid "turnleft X"
+msgstr "در_يسار س"
+
+#. Tag: para
+#: programming-reference.docbook:189
+#, no-c-format
+msgid ""
+"<userinput>turnleft</userinput> commands the turtle to turn an amount of X "
+"degrees to the left. <userinput>turnleft</userinput> can be abbreviated to "
+"<userinput>tl</userinput>."
+msgstr ""
+"<userinput>در_يسار</userinput> تأمر السلحفاة بالدوران نحو اليسار بعدد من "
+"الدرجات. <userinput>در_يسار</userinput> تختصر إلى<userinput>يسار</userinput>."
+
+#. Tag: term
+#: programming-reference.docbook:196
+#, no-c-format
+msgid "<term>turnright (tr)</term>"
+msgstr "<term>در_يمين (يمين)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:196
+#, no-c-format
+msgid "<primary>turnright (tr)</primary>"
+msgstr "<primary>در_يمين (يمين)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:197
+#, no-c-format
+msgid "turnright X"
+msgstr "در_يمين س"
+
+#. Tag: para
+#: programming-reference.docbook:197
+#, no-c-format
+msgid ""
+"<userinput>turnright</userinput> the turtle to turn an amount of X degrees "
+"to the right. <userinput>turnright</userinput> can be abbreviated to "
+"<userinput>tr</userinput>."
+msgstr ""
+"<userinput>در_يمين</userinput> تأمر السلحفاة بالدوران نحو اليمين بعدد من "
+"الدرجات. <userinput>در_يمين</userinput> تختصر إلى<userinput>يمين</userinput>."
+
+#. Tag: term
+#: programming-reference.docbook:204
+#, no-c-format
+msgid "<term>direction (dir)</term>"
+msgstr "<term>اتجاه (جهة)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:204
+#, no-c-format
+msgid "<primary>direction (dir)</primary>"
+msgstr "<primary>اتجاه (جهة)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:205
+#, no-c-format
+msgid "direction X"
+msgstr "اتجاه س"
+
+#. Tag: para
+#: programming-reference.docbook:205
+#, no-c-format
+msgid ""
+"<userinput>direction</userinput> set the turtle's direction to an amount of "
+"X degrees counting from zero, and thus is not relative to the turtle's "
+"previous direction. <userinput>direction</userinput> can be abbreviated to "
+"<userinput>dir</userinput>."
+msgstr ""
+"<userinput>اتجاه</userinput> اضبط اتجاه السلحفاة على مقدار درجات انطلاقا من "
+"الصفر، أي لا تتعلق الزاوية باتجاه السلحفاة السابق. <userinput>اتجاه</"
+"userinput> تختصر إلى <userinput>جهة</userinput>."
+
+#. Tag: term
+#: programming-reference.docbook:212
+#, no-c-format
+msgid "<term>getdirection</term>"
+msgstr "<term>هات_اتجاه</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:212
+#, no-c-format
+msgid "<primary>getdirection</primary>"
+msgstr "<primary>هات_اتجاه</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:213
+#, no-c-format
+msgid "<screen>getdirection</screen>"
+msgstr "<screen>هات_اتجاه</screen>"
+
+#. Tag: para
+#: programming-reference.docbook:213
+#, no-c-format
+msgid ""
+"<userinput>getdirection</userinput> returns the turtle's direction as an "
+"amount of degrees counting from zero, where zero is the direction when the "
+"turtle is pointing upwards."
+msgstr ""
+"يعرض <userinput>هات-اتجاه</userinput> زاوية اتجاه السلحفاة بالدرجات انطلاقا "
+"من الصفر، حيث الزاوية صفر هي اتجاه السلحفاة حين تشير إلى الأعلى."
+
+#. Tag: term
+#: programming-reference.docbook:220
+#, no-c-format
+msgid "<term>center</term>"
+msgstr "<term>وسط</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:220
+#, no-c-format
+msgid "<primary>center</primary>"
+msgstr "<primary>وسط</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:221
+#, no-c-format
+msgid "<screen>center</screen>"
+msgstr "<screen>وسط</screen>"
+
+#. Tag: para
+#: programming-reference.docbook:221
+#, no-c-format
+msgid ""
+"<userinput>center</userinput> moves the turtle to the center on the canvas."
+msgstr "<userinput> وسط </userinput> يحرك السلحفاة إلى المركز على الرقعة."
+
+#. Tag: term
+#: programming-reference.docbook:228
+#, no-c-format
+msgid "<term>go</term>"
+msgstr "<term>اذهب</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:228
+#, no-c-format
+msgid "<primary>go</primary>"
+msgstr "<primary>اذهب</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:229
+#, no-c-format
+msgid "go X,Y"
+msgstr "اذهب س، ع"
+
+#. Tag: para
+#: programming-reference.docbook:229
+#, no-c-format
+msgid ""
+"<userinput>go</userinput> commands the turtle to go to a certain place on "
+"the canvas. This place is X <glossterm linkend=\"pixels\">pixels</glossterm> "
+"from the left of the canvas, and Y <glossterm linkend=\"pixels\">pixels</"
+"glossterm> from the top of the canvas."
+msgstr ""
+"يأمر <userinput>اذهب</userinput> السلحفاة بالذهاب إلى مكان معين على الرقعة. "
+"يقع هذا المكان على بعد عدد س  <glossterm linkend=\"pixels\">بسكل </"
+"glossterm> من يسار اللوحة، و عدد ص <glossterm linkend=\"pixels\">بكسل</"
+"glossterm> من أعلى اللوحة."
+
+#. Tag: term
+#: programming-reference.docbook:236
+#, no-c-format
+msgid "<term>gox</term>"
+msgstr "<term>اذهب_س</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:236
+#, no-c-format
+msgid "gox (gx)"
+msgstr "اذهب_س (سين)"
+
+#. Tag: screen
+#: programming-reference.docbook:237
+#, no-c-format
+msgid "gox X"
+msgstr "اذهب_س س"
+
+#. Tag: para
+#: programming-reference.docbook:237
+#, no-c-format
+msgid ""
+"<userinput>gox</userinput> using this command the turtle will move to X "
+"<glossterm linkend=\"pixels\">pixels</glossterm> from the left of the canvas "
+"whilst staying at the same height. <userinput>gox</userinput> can be "
+"abbreviated to <userinput>gx</userinput>."
+msgstr ""
+"<userinput>اذهب_س</userinput> باستخدام هذا الأمر ،  ستنتقل السلحفاة إلى عدد "
+"س <glossterm linkend=\"pixels\">بكسل</glossterm>  من يسار الرقعة، لكن تبقى "
+"على نفس الارتفاع. يختصر <userinput>اذهب_س</userinput> إلى <userinput>سين</"
+"userinput>."
+
+#. Tag: term
+#: programming-reference.docbook:244
+#, no-c-format
+msgid "<term>goy</term>"
+msgstr "<term>اذهب_ص</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:244
+#, no-c-format
+msgid "goy (gy)"
+msgstr "اذهب_ص (صاد)"
+
+#. Tag: screen
+#: programming-reference.docbook:245
+#, no-c-format
+msgid "goy Y"
+msgstr "اذهب_ص"
+
+#. Tag: para
+#: programming-reference.docbook:245
+#, no-c-format
+msgid ""
+"<userinput>goy</userinput> using this command the turtle will move to Y "
+"<glossterm linkend=\"pixels\">pixels</glossterm> from the top of the canvas "
+"whilst staying at the same distance from the left border of the canvas. "
+"<userinput>goy</userinput> can be abbreviated to <userinput>gy</userinput>."
+msgstr ""
+"<userinput>اذهب_ص</userinput> باستخدام هذا الأمر ،  ستنتقل السلحفاة إلى عدد "
+"ص <glossterm linkend=\"pixels\">بكسل</glossterm>  من أعلى الرقعة، لكن تبقى "
+"على نفس البعد عن اليسار. يختصر <userinput>اذهب_ص </userinput> إلى "
+"<userinput>صاد</userinput>."
+
+#. Tag: para
+#: programming-reference.docbook:249
+#, no-c-format
+msgid ""
+"Using the commands <userinput>go</userinput>, <userinput>gox</userinput>, "
+"<userinput>goy</userinput> and <userinput>center</userinput> the turtle will "
+"not draw a line, no matter if the pen is up or down."
+msgstr ""
+"عند استعمال الأوامر  <userinput>اذهب</userinput>، <userinput>اذهب_س</"
+"userinput> و <userinput>اذهب_ص</userinput> و <userinput>وسط</userinput>لن "
+"ترسم السلحفاة خطًا، سواءً كان القلم مرفوعا أو منخفضا."
+
+#. Tag: title
+#: programming-reference.docbook:254
+#, no-c-format
+msgid "Where is the turtle?"
+msgstr "أين السلحفاة؟"
+
+#. Tag: para
+#: programming-reference.docbook:255
+#, no-c-format
+msgid ""
+"There are two commands which return the position of the turtle on the screen."
+msgstr "هناك أمران يعطيان موضع السلحفاة على الشاشة."
+
+#. Tag: term
+#: programming-reference.docbook:260
+#, no-c-format
+msgid "<term>getx</term>"
+msgstr "<term>هات_س</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:260
+#, no-c-format
+msgid "<primary>getx</primary>"
+msgstr "<primary>هات_س</primary>"
+
+#. Tag: para
+#: programming-reference.docbook:261
+#, no-c-format
+msgid ""
+"<userinput>getx</userinput> returns the number of pixels from the left of "
+"the canvas to the current position of the turtle."
+msgstr ""
+"<userinput>هات_س</userinput> تُرجع عدد وحدات البكسل من يسار الرقعة إلى الموضع "
+"الحالي للسلحفاة."
+
+#. Tag: term
+#: programming-reference.docbook:268
+#, no-c-format
+msgid "<term>gety</term>"
+msgstr "<term>هات_ص</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:268
+#, no-c-format
+msgid "<primary>gety</primary>"
+msgstr "<primary>هات_ص</primary>"
+
+#. Tag: para
+#: programming-reference.docbook:269
+#, no-c-format
+msgid ""
+"<userinput>gety</userinput> returns the number of pixels from the top of the "
+"canvas to the current position of the turtle."
+msgstr ""
+"<userinput>هات_ص</userinput> تُرجع عدد وحدات البكسل من أعلى الرقعة إلى الموضع "
+"الحالي للسلحفاة."
+
+#. Tag: title
+#: programming-reference.docbook:276
+#, no-c-format
+msgid "The turtle has a pen"
+msgstr "للسلحفاة قلم"
+
+#. Tag: para
+#: programming-reference.docbook:277
+#, no-c-format
+msgid ""
+"The turtle has a pen that draws a line when the turtle moves. There are a "
+"few commands to control the pen. In this section we explain these commands."
+msgstr ""
+"للسلحفاة قلمٌ يرسم خطاً عندما تتحرك. في هذا القسم نشرح الأوامر التي تتحكّم في "
+"القلم."
+
+#. Tag: term
+#: programming-reference.docbook:281
+#, no-c-format
+msgid "<term>penup (pu)</term>"
+msgstr "<term>رفع_القلم (رفع)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:281
+#, no-c-format
+msgid "<primary>penup (pu)</primary>"
+msgstr "<primary>رفع_القلم (رفع)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:282
+#, no-c-format
+msgid "penup"
+msgstr "رفع_القلم"
+
+#. Tag: para
+#: programming-reference.docbook:282
+#, no-c-format
+msgid ""
+"<userinput>penup</userinput> lifts the pen from the canvas. When the pen is "
+"<quote>up</quote> no line will be drawn when the turtle moves. See also "
+"<userinput>pendown</userinput>. <userinput>penup</userinput> can be "
+"abbreviated to <userinput>pu</userinput>."
+msgstr ""
+"<userinput>رفع_قلم</userinput> ترفع القلم عن الرقعة. حين <quote>يُرفع</quote> "
+"القلم عن الرقعة، لا يرسم خطًا عندما تتحرك السلحفاة. طالع أيضًا "
+"<userinput>ضع_قلم</userinput>.  يختصر الأمر <userinput>رفع_قلم</userinput> "
+"إلى <userinput>رفع</userinput>."
+
+#. Tag: term
+#: programming-reference.docbook:289
+#, no-c-format
+msgid "<term>pendown (pd)</term>"
+msgstr "<term>ضع_القلم (ضع)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:289
+#, no-c-format
+msgid "<primary>pendown (pd)</primary>"
+msgstr "<primary>ضع_القلم (ضع)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:290
+#, no-c-format
+msgid "pendown"
+msgstr "ضع_القلم"
+
+#. Tag: para
+#: programming-reference.docbook:290
+#, no-c-format
+msgid ""
+"<userinput>pendown</userinput> presses the pen down on the canvas. When the "
+"pen is press <quote>down</quote> on the canvas a line will be drawn when the "
+"turtle moves. See also <userinput>penup</userinput>. <userinput>pendown</"
+"userinput> can be abbreviated to <userinput>pd</userinput>."
+msgstr ""
+"<userinput>ضع_قلم</userinput> يضع القلم على الرقعة. حين <quote>يُوضع</quote> "
+"القلم على الرقعة، يرسم خطًا عندما تتحرك السلحفاة. طالع أيضًا "
+"<userinput>رفع_قلم</userinput>. يختصر الأمر <userinput>ضع_قلم</userinput> "
+"إلى <userinput>ضع</userinput>."
+
+#. Tag: term
+#: programming-reference.docbook:297
+#, no-c-format
+msgid "<term>penwidth (pw)</term>"
+msgstr "<term>عرض_قلم (عرض)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:297
+#, no-c-format
+msgid "<primary>penwidth (pw)</primary>"
+msgstr "<primary>عرض_قلم (عرض)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:298
+#, no-c-format
+msgid "penwidth X"
+msgstr "عرض_قلم س"
+
+#. Tag: para
+#: programming-reference.docbook:298
+#, no-c-format
+msgid ""
+"<userinput>penwidth</userinput> sets the width of the pen (the line width) "
+"to an amount of X <glossterm linkend=\"pixels\">pixels</glossterm>. "
+"<userinput>penwidth</userinput> can be abbreviated to <userinput>pw</"
+"userinput>."
+msgstr ""
+"<userinput>عرض_قلم</userinput> يضبط عرض القلم أو الخط إلى عدد من <glossterm "
+"linkend=\"pixels\">النقاط أو البكسلات</glossterm>. يُختصر <userinput>عرض_قلم</"
+"userinput> إلى <userinput>عرض</userinput>."
+
+#. Tag: term
+#: programming-reference.docbook:305
+#, no-c-format
+msgid "<term>pencolor (pc)</term>"
+msgstr "<term>لون_القلم (لون)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:305
+#, no-c-format
+msgid "<primary>pencolor (pc)</primary>"
+msgstr "<primary>لون_القلم (لون)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:306
+#, no-c-format
+msgid "pencolor R,G,B"
+msgstr "لون_القلم ح،خ،ز"
+
+#. Tag: para
+#: programming-reference.docbook:306
+#, no-c-format
+msgid ""
+"<userinput>pencolor</userinput> sets the color of the pen. "
+"<userinput>pencolor</userinput> takes an <glossterm linkend=\"rgb\">RGB "
+"combination</glossterm> as input. <userinput>pencolor</userinput> can be "
+"abbreviated to <userinput>pc</userinput>."
+msgstr ""
+"<userinput>لون_القلم</userinput> تضبط لون القلم وتأخذ قيمة لونية. <glossterm "
+"linkend=\"rgb\">RGB  ح.خ.ز</glossterm> في المدخل.  <userinput>لون_القلم</"
+"userinput> تختصر إلى <userinput>لون</userinput>."
+
+#. Tag: title
+#: programming-reference.docbook:313
+#, no-c-format
+msgid "Commands to control the canvas"
+msgstr "أوامر للتحكم في الرقعة"
+
+#. Tag: para
+#: programming-reference.docbook:314
+#, no-c-format
+msgid "There are several commands to control the canvas."
+msgstr "توجد أوامر  عديدة للتحكم في الرقعة."
+
+#. Tag: term
+#: programming-reference.docbook:318
+#, no-c-format
+msgid "<term>canvassize (cs)</term>"
+msgstr "<term>حجم_الرقعة (حجم)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:318
+#, no-c-format
+msgid "<primary>canvassize (cs)</primary>"
+msgstr "<primary>حجم_الرقعة (حجم)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:319
+#, no-c-format
+msgid "canvassize X,Y"
+msgstr "حجم_الرقعة س،ص"
+
+#. Tag: para
+#: programming-reference.docbook:319
+#, no-c-format
+msgid ""
+"With the <userinput>canvassize</userinput> command you can set the size of "
+"the canvas. It takes X and Y as input, where X is the new canvas width in "
+"<glossterm linkend=\"pixels\">pixels</glossterm>, and Y is the new height of "
+"the canvas in <glossterm linkend=\"pixels\">pixels</glossterm>. "
+"<userinput>canvassize</userinput> can be abbreviated to <userinput>cs</"
+"userinput>."
+msgstr ""
+"بالأمر <userinput>حجم_الرقعة</userinput>  يمكنك ضبط حجم الرقعة، يأخذ الأمر "
+"مدخلات عددية س و ص. حيث س عرض الرقعة<glossterm linkend=\"pixels\">بالبكسل</"
+"glossterm>، وص ارتفاعها بـ <glossterm linkend=\"pixels\">البكسل</glossterm>. "
+"<userinput>حجم_الرقعة</userinput> يختصر إلى <userinput>حجم</userinput>."
+
+#. Tag: term
+#: programming-reference.docbook:326
+#, no-c-format
+msgid "<term>canvascolor (cc)</term>"
+msgstr "<term> لون_الرقعة (خلفية)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:326
+#, no-c-format
+msgid "<primary>canvascolor (cc)</primary>"
+msgstr "<primary> لون_الرقعة (خلفية)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:327
+#, no-c-format
+msgid "canvascolor R,G,B"
+msgstr "لون_الرقعة ح،خ،ز"
+
+#. Tag: para
+#: programming-reference.docbook:327
+#, no-c-format
+msgid ""
+"<userinput>canvascolor</userinput> set the color of the canvas. "
+"<userinput>canvascolor</userinput> takes an <glossterm linkend=\"rgb\">RGB "
+"combination</glossterm> as input. <userinput>canvascolor</userinput> can be "
+"abbreviated to <userinput>cc</userinput>."
+msgstr ""
+"<userinput>لون_الرقعة</userinput> تضبط لون الرقعة وتأخذ قيمة لونية . "
+"<glossterm linkend=\"rgb\">RGB  ح.خ.ز</glossterm> في المدخل.  "
+"<userinput>لون_الرقعة</userinput> تختصر إلى <userinput>خلفية</userinput>."
+
+#. Tag: title
+#: programming-reference.docbook:334
+#, no-c-format
+msgid "Commands to clean up"
+msgstr "أوامر المسح"
+
+#. Tag: para
+#: programming-reference.docbook:335
+#, no-c-format
+msgid ""
+"There are two commands to clean up the canvas after you have made a mess."
+msgstr "هناك أمران لتنظيف الرقعة بعد إحداث فوضى."
+
+#. Tag: term
+#: programming-reference.docbook:339
+#, no-c-format
+msgid "<term>clear (ccl)</term>"
+msgstr "<term>امسح (مسح)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:339
+#, no-c-format
+msgid "<primary>clear (ccl)</primary>"
+msgstr "<primary>امسح (مسح)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:340
+#, no-c-format
+msgid "clear"
+msgstr "امسح"
+
+#. Tag: para
+#: programming-reference.docbook:340
+#, no-c-format
+msgid ""
+"With <userinput>clear</userinput> you can clean all drawings from the "
+"canvas. All other things remain: the position and angle of the turtle, the "
+"canvascolor, the visibility of the turtle, and the canvas size."
+msgstr ""
+"باستخدام الأمر <userinput>مسح</userinput> يمكنك مسح ما رُسم على الرقعة. تبقى "
+"كل الأشياء الأخرى: موضع السلحفاة وزاويتها وإمكانية رؤيتها ولون الرقعة، "
+"وحجمها."
+
+#. Tag: term
+#: programming-reference.docbook:347
+#, no-c-format
+msgid "<term>reset</term>"
+msgstr "<term>جدد</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:347
+#, no-c-format
+msgid "<primary>reset</primary>"
+msgstr "<primary>جدد</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:348
+#, no-c-format
+msgid "<screen>reset</screen>"
+msgstr "<screen>جدد</screen>"
+
+#. Tag: para
+#: programming-reference.docbook:348
+#, no-c-format
+msgid ""
+"<userinput>reset</userinput> cleans much more thoroughly than the "
+"<userinput>clear</userinput> command. After a <userinput>reset</userinput> "
+"command everything is like is was when you had just started &kturtle;. The "
+"turtle is positioned at the middle of the screen, the canvas color is white, "
+"the turtle draws a black line on the canvas and the canvassize is set to 400 "
+"x 400 pixels."
+msgstr ""
+"الأمر <userinput>جدد</userinput> يمسح أكثر من الأمر<userinput>مسح</"
+"userinput>. بعد الأمر  <userinput>جدد</userinput> كل شيء يبدو وكأنك شغّلت "
+"سلحفاتك مجددًا.  تعود السلحفاة إلى وسط الشاشة، ويعود لون الرقعة أبيض. ويرجع "
+"لون القلم أسود،  وحجم الرقعة يعود إلى 400×400 بكسل."
+
+#. Tag: title
+#: programming-reference.docbook:355
+#, no-c-format
+msgid "The turtle is a sprite"
+msgstr "السلحفاة جنيّة"
+
+#. Tag: para
+#: programming-reference.docbook:356
+#, no-c-format
+msgid ""
+"First a brief explanation of what sprites are: sprites are small pictures "
+"that can be moved around the screen, like we often see in computer games. "
+"Our turtle is also a sprite. For more info see the glossary on <glossterm "
+"linkend=\"sprites\">sprites</glossterm>."
+msgstr ""
+"أولاً شرح موجز لماهية النقوش المتحركة: النقوش هي صور صغيرةيمكن تحريكها حول "
+"الشاشة، كما نراها غالبًا في ألعاب الكمبيوتر.سلحفاتنا هي أيضًا نقش. لمزيد من "
+"المعلومات راجع المسرد على <glossterm linkend = \"sprites\">نقش </glossterm>."
+
+#. Tag: para
+#: programming-reference.docbook:357
+#, no-c-format
+msgid ""
+"Next you will find a full overview on all commands to work with sprites."
+msgstr "بعد ذلك ستجد نظرة عامة وافية عن أوامر العمل مع النقوش المتحركة."
+
+#. Tag: para
+#: programming-reference.docbook:358
+#, no-c-format
+msgid ""
+"The current version of &kturtle; does not yet support the use of sprites "
+"other than the turtle. With future versions you will be able to change the "
+"turtle into something of your own design."
+msgstr ""
+"في هذا الإصدار من سلحفاتك  لا يمكن تغيير النقش من سلحفاة إلى شيء آخر. "
+"الإصدارات المستقبلية من سلحفاتك  سوف تسمح لك باستبدال السلحفاة بصورة من "
+"تصميمك."
+
+#. Tag: term
+#: programming-reference.docbook:362
+#, no-c-format
+msgid "<term>spriteshow (ss)</term>"
+msgstr "<term>أظهر (إظهار)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:362
+#, no-c-format
+msgid "<primary>spriteshow (ss)</primary>"
+msgstr "<primary>أظهر (إظهار)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:363
+#, no-c-format
+msgid "spriteshow"
+msgstr "أظهر"
+
+#. Tag: para
+#: programming-reference.docbook:363
+#, no-c-format
+msgid ""
+"<userinput>spriteshow</userinput> makes the turtle visible again after it "
+"has been hidden. <userinput>spriteshow</userinput> can be abbreviated to "
+"<userinput>ss</userinput>."
+msgstr ""
+"<userinput>أظهر</userinput> تجعل السلحفاة ظاهرة مرة أخرى إن كانت مخفية.  "
+"<userinput>أظهر</userinput> تكتب أيضا <userinput>إظهار</userinput>."
+
+#. Tag: term
+#: programming-reference.docbook:370
+#, no-c-format
+msgid "<term>spritehide (sh)</term>"
+msgstr "<term>أخف (إخفاء)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:370
+#, no-c-format
+msgid "<primary>spritehide (sh)</primary>"
+msgstr "<primary>أخف (إخفاء)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:371
+#, no-c-format
+msgid "spritehide"
+msgstr "أخف"
+
+#. Tag: para
+#: programming-reference.docbook:371
+#, no-c-format
+msgid ""
+"<userinput>spritehide</userinput> hides the turtle. This can be used if the "
+"turtle does not fit in your drawing. <userinput>spritehide</userinput> can "
+"be abbreviated to <userinput>sh</userinput>."
+msgstr ""
+"<userinput>أخف</userinput> تجعل السلحفاة  مخفية مرة أخرى إن كانت ظاهرة.  "
+"<userinput>أخف</userinput> تكتب أيضا <userinput>إخفاء</userinput>."
+
+#. Tag: title
+#: programming-reference.docbook:378
+#, no-c-format
+msgid "Can the turtle write?"
+msgstr "هل تقدر السلحفاة أن تكتب؟"
+
+#. Tag: para
+#: programming-reference.docbook:379
+#, no-c-format
+msgid ""
+"The answer is: <quote>yes</quote>. The turtle can write: it writes just "
+"about everything you command it to."
+msgstr ""
+"الجواب: <quote> نعم </quote>. تستطيع السلحفاة أن تكتب: إنها تكتب كل ما "
+"تأمرها به."
+
+#. Tag: term
+#: programming-reference.docbook:383
+#, no-c-format
+msgid "<term>print</term>"
+msgstr "<term>اطبع</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:383
+#, no-c-format
+msgid "<primary>print</primary>"
+msgstr "<primary>اطبع</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:384
+#, no-c-format
+msgid "print X"
+msgstr "اطبع س"
+
+#. Tag: para
+#: programming-reference.docbook:384
+#, no-c-format
+msgid ""
+"The <userinput>print</userinput> command is used to command the turtle to "
+"write something on the canvas. <userinput>print</userinput> takes numbers "
+"and strings as input. You can <userinput>print</userinput> various numbers "
+"and strings using the <quote>+</quote> symbol. See here a small example:"
+msgstr ""
+"يُستخدم <userinput>اطبع </userinput> لأمر السلحفاة بكتابة شيء ما على الرقعة. "
+"تأخذ <userinput>اطبع</userinput> الأرقام والسلاسل كمدخلات. <userinput>اطبع</"
+"userinput> أرقامًا وسلاسل مختلفة باستخدام الرمز <quote>+</quote>. إليك هذا "
+"المثال:"
+
+#. Tag: screen
+#: programming-reference.docbook:386
+#, no-c-format
+msgid ""
+"$year = 2003\n"
+"$author = \"Cies\"\n"
+"print $author + \" started the KTurtle project in \" + $year + \" and still "
+"enjoys working on it!\""
+msgstr ""
+"$سنة = 2003\n"
+"$كاتب = \"أحمد\"\n"
+"اطبع $كاتب + \" بدأ مشروعه في سنة \" + $سنة + \" وما زال يعمل عليه مستمتعًا!\""
+
+#. Tag: term
+#: programming-reference.docbook:393
+#, no-c-format
+msgid "<term>fontsize</term>"
+msgstr "<term>حجم_الخط</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:393
+#, no-c-format
+msgid "<primary>fontsize</primary>"
+msgstr "<primary>حجم_الخط</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:394
+#, no-c-format
+msgid "fontsize X"
+msgstr "حجم_الخط س"
+
+#. Tag: para
+#: programming-reference.docbook:394
+#, no-c-format
+msgid ""
+"<userinput>fontsize</userinput> sets the size of the font that is used by "
+"<userinput>print</userinput>. <userinput>fontsize</userinput> takes one "
+"input which should be a number. The size is set in <glossterm linkend="
+"\"pixels\">pixels</glossterm>."
+msgstr ""
+"<userinput>حجم_الخط</userinput> يضبط حجم الخط الذي سيطبع بالأمر  "
+"<userinput>اطبع</userinput>. <userinput>حجم_الخط</userinput> يأخذ مدخلا "
+"عدديا يعبر عن الحجم المرغوب. بـ <glossterm linkend=\"pixels\">البكسل</"
+"glossterm>."
+
+#. Tag: title
+#: programming-reference.docbook:401
+#, no-c-format
+msgid "Mathematical commands"
+msgstr "عوامل رياضية"
+
+#. Tag: para
+#: programming-reference.docbook:402
+#, no-c-format
+msgid ""
+"The following commands are &kturtle;'s more advanced mathematical commands."
+msgstr "الأوامر التالية هي أوامر رياضية أكثر تقدمًا."
+
+#. Tag: term
+#: programming-reference.docbook:406
+#, no-c-format
+msgid "<term>round</term>"
+msgstr "<term>تقريب</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:406
+#, no-c-format
+msgid "<primary>round</primary>"
+msgstr "<primary>تقريب</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:407
+#, no-c-format
+msgid "round(x)"
+msgstr "تقريب(س)"
+
+#. Tag: para
+#: programming-reference.docbook:407
+#, no-c-format
+msgid ""
+"<userinput>round</userinput> the given number to the nearest integer. "
+"<screen>\n"
+"print round(10.8)\n"
+"forward 20\n"
+"print round(10.3)\n"
+"</screen> With this code the turtle will print the numbers 11 and 10."
+msgstr ""
+"<userinput>تقريب</userinput> يقرّب لأقرب عدد صحيح. <screen>\n"
+"اطبع تقريب(10.8)\n"
+"تقدم 20\n"
+"اطبع تقريب(10.3)\n"
+"</screen> هذا المثال يطبع الأعداد 11 و 10."
+
+#. Tag: term
+#: programming-reference.docbook:416
+#, no-c-format
+msgid "<term>random (rnd)</term>"
+msgstr "<term>عشوائي (عشو)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:416
+#, no-c-format
+msgid "<primary>random (rnd)</primary>"
+msgstr "<primary>عشوائي (عشو)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:417
+#, no-c-format
+msgid "random X,Y"
+msgstr "عشوائي س،ع"
+
+#. Tag: para
+#: programming-reference.docbook:417
+#, no-c-format
+msgid ""
+"<userinput>random</userinput> is a command that takes input and gives "
+"output. As input are required two numbers, the first (X) sets the minimum "
+"output, the second (Y) sets the maximum. The output is a randomly chosen "
+"number that is equal or greater than the minimum and equal or smaller than "
+"the maximum. Here a small example: <screen>\n"
+"repeat 500 {\n"
+"  $x = random 1,20\n"
+"  forward $x\n"
+"  turnleft 10 - $x\n"
+"}\n"
+"</screen> Using the <userinput>random</userinput> command you can add a bit "
+"of chaos to your program."
+msgstr ""
+"الأمر <userinput>عشوائي</userinput> يأخذ مدخلين ويعطي مخرجًا واحدًا. المدخلان "
+"يعرفان مجال الأعداد العشوائية التي نريدها، فالمدخل الأول للحد الأدنى والثاني "
+"للحد الأقصى.  والناتج  عدد عشوائي في مجال المدخلات. هنا مثال صغير: <screen>\n"
+"كرر 500 {\n"
+"  $س = عشوائي 1،20\n"
+"  تقدم $س\n"
+"  در_يسار 10 - $س\n"
+"}\n"
+"</screen> باستعمال  الأمر<userinput>عشوائي</userinput> تضيف لمسة فوضوية "
+"لبرنامجك."
+
+#. Tag: term
+#: programming-reference.docbook:426
+#, no-c-format
+msgid "<term>mod</term>"
+msgstr "<term>باقي</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:426
+#, no-c-format
+msgid "<primary>mod</primary>"
+msgstr "<primary>باقي</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:427
+#, no-c-format
+msgid "mod X,Y"
+msgstr "باقي س،ع"
+
+#. Tag: para
+#: programming-reference.docbook:427
+#, no-c-format
+msgid ""
+"The <userinput>mod</userinput> returns remainder of the division of first "
+"number by the second number."
+msgstr ""
+"يعرض <userinput>باقي</userinput> ما تبقى من قسمة العدد الأول على العدد "
+"الثاني."
+
+#. Tag: term
+#: programming-reference.docbook:434
+#, no-c-format
+msgid "<term>sqrt</term>"
+msgstr "<term>جذر</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:434
+#, no-c-format
+msgid "<primary>sqrt</primary>"
+msgstr "<primary>جذر</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:435
+#, no-c-format
+msgid "sqrt X"
+msgstr "جذر س"
+
+#. Tag: para
+#: programming-reference.docbook:435
+#, no-c-format
+msgid ""
+"The <userinput>sqrt</userinput> command is sued to find the square root of a "
+"number, X."
+msgstr ""
+"يستخدم الأمر <userinput>جذر</userinput> للحصول على الجذر التربيعي للعدد "
+"المعطى."
+
+#. Tag: term
+#: programming-reference.docbook:452
+#, no-c-format
+msgid "<term>pi</term>"
+msgstr "<term>طا</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:452
+#, no-c-format
+msgid "<primary>pi</primary>"
+msgstr "<primary>طا</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:453
+#, no-c-format
+msgid "<screen>pi</screen>"
+msgstr "<screen>طا</screen>"
+
+#. Tag: para
+#: programming-reference.docbook:453
+#, no-c-format
+msgid "This command returns the constant Pi, <userinput>3.14159</userinput>."
+msgstr "يعطي هذا الأمر الثابت طا (Pi)، <userinput>3.14159</userinput>."
+
+#. Tag: term
+#: programming-reference.docbook:462
+#, no-c-format
+msgid ""
+"sin<indexterm><primary>sin</primary></indexterm>, "
+"cos<indexterm><primary>cos</primary></indexterm>, tan"
+msgstr ""
+"جا<indexterm><primary>جا</primary></indexterm>، جتا<indexterm><primary>جتا</"
+"primary></indexterm>، ظا"
+
+#. Tag: primary
+#: programming-reference.docbook:462
+#, no-c-format
+msgid "<primary>tan</primary>"
+msgstr "<primary>ظا</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:464
+#, no-c-format
+msgid ""
+"sin X\n"
+"cos X\n"
+"tan X"
+msgstr ""
+"جا س\n"
+"جتا س\n"
+"ظا س"
+
+#. Tag: para
+#: programming-reference.docbook:464
+#, no-c-format
+msgid ""
+"These three commands represent the world famous trigoniometrical functions "
+"<userinput>sin</userinput>, <userinput>cos</userinput> and <userinput>tan</"
+"userinput>. The input argument of these commands, X, is a <link linkend="
+"\"number\">number</link>."
+msgstr ""
+"هذه الأوامر تعبّر عن الدوال المثلثية<userinput>sin جا</userinput>، "
+"<userinput>cos جتا</userinput> و <userinput>tan ظا</userinput>. مدخل هذه "
+"الأوامر <link linkend=\"number\">عدد</link>."
+
+#. Tag: term
+#: programming-reference.docbook:473
+#, no-c-format
+msgid ""
+"arcsin<indexterm><primary>arcsin</primary></indexterm>, "
+"arccos<indexterm><primary>arccos</primary></indexterm>, arctan"
+msgstr ""
+"arcsin قوس جيب الزاوية<indexterm><primary>arcsin قوس_جا</primary></"
+"indexterm>، arccos قوس جيب التمام<indexterm><primary>arccos قوس_جتا</"
+"primary></indexterm>، arctan قوس ظل الزاوية"
+
+#. Tag: primary
+#: programming-reference.docbook:473
+#, no-c-format
+msgid "arctan"
+msgstr "قوس_ظل"
+
+#. Tag: screen
+#: programming-reference.docbook:475
+#, no-c-format
+msgid ""
+"arcsin X\n"
+"arccos X\n"
+"arctan X"
+msgstr ""
+"قوس_جا س\n"
+"قوس_جتا س\n"
+"قوس_ظا س"
+
+#. Tag: para
+#: programming-reference.docbook:475
+#, no-c-format
+msgid ""
+"These commands are the inverse functions of <link linkend=\"sin\">sin</"
+"link>, <link linkend=\"cos\">cos</link> and <link linkend=\"tan\">tan</"
+"link>. The input argument of these commands, X, is a <link linkend=\"number"
+"\">number</link>."
+msgstr ""
+"هذه الأوامر هي الدوال العكسية للدوال المثلثية <link linkend=\"sin\">sin جا</"
+"link>، <link linkend=\"cos\">cos جتا</link> و <link linkend=\"tan\">tan ظا</"
+"link>.  مدخل هذه الأوامر <link linkend=\"number\">عدد</link>."
+
+#. Tag: title
+#: programming-reference.docbook:482
+#, no-c-format
+msgid "Input and feedback through dialogs"
+msgstr "المدخلات وردود الفعل من خلال الحواري"
+
+#. Tag: para
+#: programming-reference.docbook:483
+#, no-c-format
+msgid ""
+"A dialog is a small pop-up window that provides some feedback or asks for "
+"some input. &kturtle; has two commands for dialogs, namely: "
+"<userinput>message</userinput> and <userinput>ask</userinput>"
+msgstr ""
+"الحواري أو مربع الحوار هو نافذة منبثقة صغيرة، تظهر بعض ردود الأفعال أو تطلب "
+"مدخلات ما.. سلحفاتك لها أمران للحواري: <userinput>رسالة</userinput> و "
+"<userinput>اسأل</userinput>"
+
+#. Tag: term
+#: programming-reference.docbook:487
+#, no-c-format
+msgid "<term>message</term>"
+msgstr "<term>رسالة</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:487
+#, no-c-format
+msgid "<primary>message</primary>"
+msgstr "<primary>رسالة</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:488
+#, no-c-format
+msgid "message X"
+msgstr "رسالة س"
+
+#. Tag: para
+#: programming-reference.docbook:488
+#, no-c-format
+msgid ""
+"The <userinput>message</userinput> command takes a <link linkend=\"string"
+"\">string</link> as input. It shows a pop-up dialog containing the text from "
+"the <link linkend=\"string\">string</link>."
+msgstr ""
+"الأمر <userinput>رسالة</userinput>  يحتاج إلى مدخل من نوع <link linkend="
+"\"string\">سلسلة نصية</link> . فتعرض نافذة منبثقة فيها نص  <link linkend="
+"\"string\">السلسلة</link>."
+
+#. Tag: screen
+#: programming-reference.docbook:490
+#, no-c-format
+msgid ""
+"message \"Cies started KTurtle in 2003 and still enjoys working on it!\""
+msgstr "رسالة \"انطلق مشروع سلحفاتك في 2003 ومازال يعمل مستمتعًا!\""
+
+#. Tag: term
+#: programming-reference.docbook:497
+#, no-c-format
+msgid "<term>ask</term>"
+msgstr "<term>اسأل</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:497
+#, no-c-format
+msgid "<primary>ask</primary>"
+msgstr "<primary>اسأل</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:498
+#, no-c-format
+msgid "ask X"
+msgstr "اسأل س"
+
+#. Tag: para
+#: programming-reference.docbook:498
+#, no-c-format
+msgid ""
+"<userinput>ask</userinput> takes a <link linkend=\"string\">string</link> as "
+"input. It shows this string in a pop-up dialog (similar to <link linkend="
+"\"message\">message</link>), along with an input field. After the user has "
+"entered a <link linkend=\"number\">number</link> or a <link linkend=\"string"
+"\">string</link> into this, the result can be stored in a <link linkend="
+"\"assignment-of-variables\">variable</link> or passed as an argument to a "
+"<link linkend=\"commands\">command</link>. For example: <screen>\n"
+"$in = ask \"What is your year of birth?\"\n"
+"$out = 2003 - $in\n"
+"print \"In 2003 you were \" + $out + \" years old at some point.\"\n"
+"</screen> If the user cancels the input dialog, or does not enter anything "
+"at all, the <link linkend=\"assignment-of-variables\">variable</link> is "
+"empty."
+msgstr ""
+"الأمر <userinput>اسأل</userinput> يحتاج إلى مدخل من نوع <link linkend="
+"\"string\">سلسلة</link> . يعرض نافذة منبثقة مثل الأمر <link linkend=\"message"
+"\">رسالة</link>)، مع حقل إدخال. عندما يدخل المستخدم   <link linkend=\"number"
+"\">عددًا</link> أو <link linkend=\"string\">سلسلة</link> فيه، فالنتيجة تحفظ "
+"في <link linkend=\"assignment-of-variables\">متغيّر</link> أو تمرّر كمعامل "
+"لـ<link linkend=\"commands\">أمر</link> ما. مثلا: <screen>\n"
+"$دخل = ask \"ما عام مولدك؟\"\n"
+"$خرج = 2003 - $دخل\n"
+"اطبع \"في 2003 كان عمرك \" + $خرج + \" سنة  في وقت ما.\"\n"
+"</screen> إذا ألغى المستخدم حوار الإدخال، أو لم يدخل شيئا على الإطلاق، فإن  "
+"<link linkend=\"assignment-of-variables\">المتغيّر</link> يبقى فارغا."
+
+#. Tag: title
+#: programming-reference.docbook:511
+#, no-c-format
+msgid "Assignment of variables"
+msgstr "إسناد المتغيرات"
+
+#. Tag: para
+#: programming-reference.docbook:512
+#, no-c-format
+msgid ""
+"First we have a look at variables, then we look at assigning values to those "
+"variables."
+msgstr "أولاً ،  سنلقي نظرة على المتغيرات، ثم إسناد القيم لتلك المتغيرات."
+
+#. Tag: para
+#: programming-reference.docbook:516
+#, no-c-format
+msgid ""
+"Variables are words that start with a <quote>$</quote>, in the <link linkend="
+"\"the-editor\">editor</link> they are <glossterm>highlighted</glossterm> "
+"with purple."
+msgstr ""
+"المتغيرات هي الكلمات التي تبدأ بـ <quote> $ </quote>، في <link linkend=\"the-"
+"editor\">المحرر</link>  وهي <glossterm> مميّزة </glossterm> باللون الأرجواني."
+
+#. Tag: para
+#: programming-reference.docbook:518
+#, no-c-format
+msgid ""
+"Variables can contain any <link linkend=\"number\">number</link>, <link "
+"linkend=\"string\">string</link> or <link linkend=\"boolean-value\">boolean "
+"(true/false) value</link>. Using the assignment, <userinput>=</userinput>, a "
+"variable is given its content. It will keep that content until the program "
+"finishes executing or until the variable is reassigned to something else."
+msgstr ""
+"المتغيرات قد تحوي  <link linkend=\"number\">عددًا</link> أو <link linkend="
+"\"string\">سلسلة</link> أو <link linkend=\"boolean-value\">قيمة منطقية</"
+"link>. باستعمال الإسناد <userinput>=</userinput>، يعطي المتغير مُحتواه. "
+"سيحتفظ المتغيّر بهذا المحتوى حتى ينتهي البرنامج من التنفيذ أو بعاد إسناد قيمة "
+"أخرى للمتغير."
+
+#. Tag: para
+#: programming-reference.docbook:520
+#, no-c-format
+msgid ""
+"You can use variables, once assigned, just as if they are their content. For "
+"instance in the following piece of &turtlescript;: <screen>\n"
+"$x = 10\n"
+"$x = $x / 3\n"
+"print $x\n"
+"</screen> First the variable <userinput>$x</userinput> is assigned to "
+"<userinput>10</userinput>. Then <userinput>$x</userinput> is reassigned to "
+"itself divided by <userinput>3</userinput> &mdash; this effectively means "
+"<userinput>$x</userinput> is reassigned to product of <userinput>10 / 3</"
+"userinput>. Finally <userinput>$x</userinput> is printed. In line two and "
+"three you see that <userinput>$x</userinput> is used as if it is its "
+"contents."
+msgstr ""
+"يمكنك استخدام المتغيرات، بمجرد تعيينها، كما لو كانت تساوي محتواها.مثلا في "
+"الكود الموالي:  <screen>\n"
+"$س = 10\n"
+"$س = $س / 3\n"
+"اطبع $س\n"
+"</screen> أولا المتغير <userinput>$س</userinput> أسندت إليه القيمة "
+"<userinput>10</userinput>. ثم أعيد تعيين <userinput>$س</userinput> إلى نفسه "
+"مقسومًا على <userinput>3</userinput> - هذا يعني أنّ <userinput>$س</userinput> "
+"قد أسند إليه <userinput>10 / 3</userinput>. أخيرا  يطبع<userinput>$س</"
+"userinput>. في السطرين الثاني والثالث نلاحظ أننا استعملنا  <userinput>$س</"
+"userinput> وكأنه يساوي محتواه."
+
+#. Tag: para
+#: programming-reference.docbook:524
+#, no-c-format
+msgid ""
+"Variables have to be assigned in order to be used. For example: <screen>\n"
+"print $n\n"
+"</screen> Will result in an error message."
+msgstr ""
+"يجب تعيين المتغيرات لاستخدامها. على سبيل المثال: <screen>\n"
+"اطبع $ع \n"
+"</screen> سينتج عنه رسالة خطأ."
+
+#. Tag: para
+#: programming-reference.docbook:528
+#, no-c-format
+msgid ""
+"Please consider the following piece of &turtlescript;: <screen>\n"
+"$a = 2004\n"
+"$b = 25\n"
+"\n"
+"# the next command prints \"2029\"\n"
+"print $a + $b\n"
+"backward 30\n"
+"# the next command prints \"2004 plus 25 equals 2029\"\n"
+"print $a + \" plus \" + $b + \" equals \" + ($a + $b)\n"
+"</screen> In the first two lines the variables <userinput>$a</userinput> and "
+"<userinput>$b</userinput> are set to 2004 and 25. Then in two "
+"<userinput>print</userinput> commands with a <userinput>backward 30</"
+"userinput> in between are executed. The comments before the "
+"<userinput>print</userinput> commands explain what they are doing. The "
+"command <userinput>backward 30</userinput> is there to make sure every "
+"output is on a new line. As you see variables can be used just as if their "
+"where what they contain, you can use them with any kind of <link linkend="
+"\"operators\">operators</link> or give them as input when invoking <link "
+"linkend=\"commands\">commands</link>."
+msgstr ""
+"نفرض الكود الآتي: <screen>\n"
+"$ج = 2004\n"
+"$ب = 25\n"
+"\n"
+"# الأمر الموالي يطبع \"2029\"\n"
+"اطبع $ج + $ب\n"
+"وراء 30\n"
+"# الأمر الموالي يطبع \"2004 زائد 25 يساوي 2029\"\n"
+"اطبع $ج + \" زائد \" + $ب + \" يساوي \" + ($ج + $ب)\n"
+"</screen> في السطرين الأول والثاني، أسند المتغيران  <userinput>$ج</"
+"userinput> و <userinput>$ب</userinput> إلى 2004  و25. ثم ثم تجد أمرين "
+"للطباعة  <userinput>اطبع</userinput> وأمر للعودة إلى الوراء <userinput>وراء "
+"30</userinput>. التعليقات قبل الطباعة لشرح ما سينتج. استعملنا الأمر   "
+"<userinput>وراء 30</userinput> لجعل الكتابة تظهر على سطر جديد. كما قد تلاحظ  "
+"فالمتغيرات تستخدم في مواضع مختلفة، وتعامل معاملة محتواها. يمكن التعامل معها "
+"بـ<link linkend=\"operators\">العمليات</link> أو كمداخل أو معاملات لـ<link "
+"linkend=\"commands\">أوامر ما</link>."
+
+#. Tag: para
+#: programming-reference.docbook:534
+#, no-c-format
+msgid ""
+"One more example: <screen>\n"
+"$name = ask \"What is your name?\"\n"
+"print \"Hi \" + $name + \"! Good luck while learning the art of "
+"programming...\"\n"
+"</screen> Pretty straight forward. Again you can see that the variable "
+"<userinput>$name</userinput>, treated just like a string."
+msgstr ""
+"مثال آخر: <screen>\n"
+"$اسم = اسأل \"ما اسمك؟\"\n"
+"اطبع \"أهلا يا \" + $اسم + \"! بالتوفيق في تعلّم فنّ البرمجة...\"\n"
+"</screen> يبدو جليّا أنّ المتغير<userinput>$اسم</userinput>، يُعامل على أنه "
+"سلسلة نصية."
+
+#. Tag: para
+#: programming-reference.docbook:538
+#, no-c-format
+msgid ""
+"When using variables the <link linkend=\"the-inspector\">inspector</link> is "
+"very helpful. It shows you the contents of all variables that are currently "
+"in use."
+msgstr ""
+"عند استخدام المتغيرات، يكون <link linkend = \"the-inspector\"> المفتش </"
+"link> مفيدًا جدًا. يعرض لك محتويات جميع المتغيرات قيد الاستخدام حاليًا."
+
+#. Tag: title
+#: programming-reference.docbook:544
+#, no-c-format
+msgid "Controlling execution"
+msgstr "التحكم في التنفيذ"
+
+#. Tag: para
+#: programming-reference.docbook:545
+#, no-c-format
+msgid ""
+"The execution controllers enable you &mdash; as their name implies &mdash; "
+"to control execution."
+msgstr "أوامر التحكم في التنفيذ تساعدك على التحكم في سيرورة البرنامج."
+
+#. Tag: para
+#: programming-reference.docbook:546
+#, no-c-format
+msgid ""
+"Execution controlling commands are <glossterm>highlighted</glossterm> with "
+"dark green in a bold font type. The brackets are mostly used together with "
+"execution controllers and they are <glossterm>highlighted</glossterm> with "
+"black."
+msgstr ""
+"أوامر التحكم في التنفيذ <glossterm>مميّزة </glossterm> بخط سميك أخضر داكن "
+"اللون. تُستخدم الأقواس الحاضنة في الغالب مع أدوات التحكم في التنفيذ و "
+"<glossterm>تميّز </glossterm> بالأسود."
+
+#. Tag: title
+#: programming-reference.docbook:549
+#, no-c-format
+msgid "Have the turtle wait"
+msgstr "اجعل السلحفاة تنتظر"
+
+#. Tag: para
+#: programming-reference.docbook:550
+#, no-c-format
+msgid ""
+"If you have done some programming in &kturtle; you have might noticed that "
+"the turtle can be very quick at drawing. This command makes the turtle wait "
+"for a given amount of time."
+msgstr ""
+"إذا برمجت قليلا في سلحفاتك ربما قد لاحظت أن السلحفاة قد تكون سريعة في الرسم. "
+"هذا الأمر سيجعل السلحفاة تنتظر فترة زمنية معينة."
+
+#. Tag: term
+#: programming-reference.docbook:553
+#, no-c-format
+msgid "<term>wait</term>"
+msgstr "<term>انتظر</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:553
+#, no-c-format
+msgid "<primary>wait</primary>"
+msgstr "<primary>انتظر</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:554
+#, no-c-format
+msgid "wait X"
+msgstr "انتظر س"
+
+#. Tag: para
+#: programming-reference.docbook:554
+#, no-c-format
+msgid ""
+"<userinput>wait</userinput> makes the turtle wait for X seconds. <screen>\n"
+"repeat 36 {\n"
+"  forward 5\n"
+"  turnright 10\n"
+"  wait 0.5\n"
+"}\n"
+"</screen> This code draws a circle, but the turtle will wait half a second "
+"after each step. This gives the impression of a slow-moving turtle."
+msgstr ""
+"الأمر <userinput>انتظر</userinput> يجعل السلحفاة تنتظر لعدد معين من الثواني. "
+"<screen>\n"
+"كرر 36 {\n"
+"  تقدم 5\n"
+"  يمين 10\n"
+"  انتظر 0.5\n"
+"}\n"
+"</screen> يرسم هذا الكود دائرة، لكن السلحفاة ستنتظر نصف ثانية بعد كل خطوة. "
+"مما يعطي انطباعًا أنّ سلحفاة بطيئة."
+
+#. Tag: title
+#: programming-reference.docbook:564
+#, no-c-format
+msgid "Execute <quote>if</quote>"
+msgstr "تنفيذ <quote>إذا</quote>"
+
+#. Tag: term
+#: programming-reference.docbook:567
+#, no-c-format
+msgid "<term>if</term>"
+msgstr "<term>إذا</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:567
+#, no-c-format
+msgid "<primary>if</primary>"
+msgstr "<primary>إذا</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:568
+#, no-c-format
+msgid "if <link linkend=\"boolean-value\">boolean</link> { ... }"
+msgstr "إذا <link linkend=\"boolean-value\">شرط منطقي</link> { ... }"
+
+#. Tag: para
+#: programming-reference.docbook:568
+#, no-c-format
+msgid ""
+"The code that is placed between the brackets will only be executed "
+"<userinput>if</userinput> the <link linkend=\"boolean-value\">boolean value</"
+"link> evaluates <quote>true</quote>. <screen>\n"
+"$x = 6\n"
+"if $x &gt; 5 {\n"
+"  print \"$x is greater than five!\"\n"
+"}\n"
+"</screen> On the first line <userinput>$x</userinput> is set to 6. On the "
+"second line a <link linkend=\"comparing-operators\">comparing operator</"
+"link> is used to evaluate <userinput>$x &gt; 5</userinput>. Since this "
+"evaluates <quote>true</quote>, 6 is larger than 5, the execution controller "
+"<userinput>if</userinput> will allow the code between the brackets to be "
+"executed."
+msgstr ""
+"ستنفذ التعليمات التي بين حاضنتين في حالة<userinput>إذا</userinput> تحقّق "
+"<link linkend=\"boolean-value\">الشرط المنطقي</link> أي <quote>صح</quote>. "
+"<screen>\n"
+"$س = 6\n"
+"إذا $س &gt; 5 {\n"
+"  اطبع \"$س أكبر من خمسة!\"\n"
+"}\n"
+"</screen> في السطر الأول <userinput>$س</userinput> يساوي 5. في السطر الثاني  "
+"نقارن <userinput>$س &gt; 5</userinput>. فإذا تحقق هذا الشرط، لدينا  6 أكبر "
+"من 5، فيسمح أمر التحكّم <userinput>إذا</userinput> بتنفيذ التعليمات التي ما "
+"بين حاضنتين."
+
+#. Tag: title
+#: programming-reference.docbook:577
+#, no-c-format
+msgid "If not, in other words: <quote>else</quote>"
+msgstr "إذا ليس، أو بعبارة أخرى: <quote>وإلّا</quote>"
+
+#. Tag: term
+#: programming-reference.docbook:580
+#, no-c-format
+msgid "<term>else</term>"
+msgstr "<term>وإلا</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:580
+#, no-c-format
+msgid "<primary>else</primary>"
+msgstr "<primary>وإلا</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:581
+#, no-c-format
+msgid "if <link linkend=\"boolean-value\">boolean</link> { ... } else { ... }"
+msgstr ""
+"إذا <link linkend=\"boolean-value\">شرط منطقي</link> { ... } وإلا { ... }"
+
+#. Tag: para
+#: programming-reference.docbook:581
+#, no-c-format
+msgid ""
+"<userinput>else</userinput> can be used in addition to the execution "
+"controller <link linkend=\"if\"><userinput>if</userinput></link>. The code "
+"between the brackets after <userinput>else</userinput> is only executed if "
+"the <link linkend=\"boolean-value\">boolean</link> evaluates <quote>false</"
+"quote>. <screen>\n"
+"reset\n"
+"$x = 4\n"
+"if $x &gt; 5 {\n"
+"  print \"$x is greater than five!\"\n"
+"} else {\n"
+"  print \"$x is smaller than six!\"\n"
+"}\n"
+"</screen> The <link linkend=\"comparing-operators\">comparing operator</"
+"link> evaluates the expression <userinput>$x &gt; 5</userinput>. Since 4 is "
+"not greater than 5 the expression evaluates <quote>false</quote>. This means "
+"the code between the brackets after <userinput>else</userinput> gets "
+"executed."
+msgstr ""
+"الأمر <userinput>وإلّا</userinput> قد يستعمل مع أمر التحكم <link linkend=\"if"
+"\"><userinput>إذا</userinput></link>. التعليمات التي ما بين حاضنتين بعد "
+"<userinput>وإلا</userinput> ستنفّذ إذا كان  <link linkend=\"boolean-value"
+"\">الشرط المنطقي</link> غير محقق أي <quote>غلطا</quote>. <screen>\n"
+"جدد\n"
+"$س = 4\n"
+"إذا $س &gt; 5 {\n"
+"  اطبع \"$س أكبر من خمسة!\"\n"
+"} وإلا {\n"
+"  اطبع \"$س أصغر من 6!\"\n"
+"}\n"
+"</screen>  <link linkend=\"comparing-operators\">عملية المقارنة</link> تحسب "
+"العبارة <userinput>$س &gt; 5</userinput>. بما أنّ 4 ليست أكبر من 5، فالعبارة "
+"<quote>غلط</quote>. هذا يعني أن ما بين حاضنتي<userinput>وإلّا</userinput> "
+"ستنفّذ."
+
+#. Tag: title
+#: programming-reference.docbook:590
+#, no-c-format
+msgid "The <quote>while</quote> loop"
+msgstr "حلقة <quote>مادام</quote>"
+
+#. Tag: term
+#: programming-reference.docbook:593
+#, no-c-format
+msgid "<term>while</term>"
+msgstr "<term>مادام</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:593
+#, no-c-format
+msgid "<primary>while</primary>"
+msgstr "<primary>مادام</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:594
+#, no-c-format
+msgid "while <link linkend=\"boolean-value\">boolean</link> { ... }"
+msgstr "مادام <link linkend=\"boolean-value\">شرط منطقي</link> { ... }"
+
+#. Tag: para
+#: programming-reference.docbook:594
+#, no-c-format
+msgid ""
+"The execution controller <userinput>while</userinput> is a lot like <link "
+"linkend=\"if\"><userinput>if</userinput></link>. The difference is that "
+"<userinput>while</userinput> keeps repeating (looping) the code between the "
+"brackets until the <link linkend=\"boolean-value\">boolean</link> evaluates "
+"<quote>false</quote>. <screen>\n"
+"$x = 1\n"
+"while $x &lt; 5 {\n"
+"  forward 10\n"
+"  wait 1\n"
+"  $x = $x + 1\n"
+"}\n"
+"</screen> On the first line <userinput>$x</userinput> is set to 1. On the "
+"second line <userinput>$x &lt; 5</userinput> is evaluated. Since the answer "
+"to this question is <quote>true</quote> the execution controller "
+"<userinput>while</userinput> starts executing the code between the brackets "
+"until the <userinput>$x &lt; 5</userinput> evaluates <quote>false</quote>. "
+"In this case the code between the brackets will be executed 4 times, because "
+"every time the fifth line is executed <userinput>$x</userinput> increases by "
+"1."
+msgstr ""
+"أمر التحكّم  <userinput>مادام</userinput> يشبه كثيرا الأمر <link linkend=\"if"
+"\"><userinput>إذا</userinput></link>. الفرق بينهما أنّ <userinput>مادام</"
+"userinput> تكرر التعليمات التي بين حاضنتين حتى يصبح <link linkend=\"boolean-"
+"value\">الشرط المنطقي</link>  <quote>غلطا</quote>. <screen>\n"
+"$س = 1\n"
+"مادام $س &lt; 5 {\n"
+"  تقدم 10\n"
+"  انتظر 1\n"
+"  $س = $س + 1\n"
+"}\n"
+"</screen> في السطر الأول <userinput>$س</userinput> قيمته 1. في السطر الثاني "
+"تحسب العبارة<userinput>$س &lt; 5</userinput>. والنتيجة  <quote>صج</quote> "
+"يبدأ أمر التحكم <userinput>مادام</userinput> في تنفيذ التعليمات ما بين "
+"حاضنتين حتى تصبح قيمة العبارة <userinput>$س &lt; 5</userinput> <quote>غلط</"
+"quote>.  في هذه الحالة، ينفّذ ما بين حاضنتين 4 مرات لأنه كلما نفذنا السطر "
+"الخامس زاد \n"
+" <userinput>$س</userinput> بـ 1."
+
+#. Tag: title
+#: programming-reference.docbook:603
+#, no-c-format
+msgid "The <quote>repeat</quote> loop"
+msgstr "حلقة التكرار  <quote>كرّر</quote>"
+
+#. Tag: term
+#: programming-reference.docbook:606
+#, no-c-format
+msgid "<term>repeat</term>"
+msgstr "<term>كرر</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:606
+#, no-c-format
+msgid "<primary>repeat</primary>"
+msgstr "<primary>كرر</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:607
+#, no-c-format
+msgid "repeat <link linkend=\"number\">number</link> { ... }"
+msgstr "كرر <link linkend=\"number\">عدد</link> { ... }"
+
+#. Tag: para
+#: programming-reference.docbook:607
+#, no-c-format
+msgid ""
+"The execution controller <userinput>repeat</userinput> is a lot like <link "
+"linkend=\"while\"><userinput>while</userinput></link>. The difference is "
+"that <userinput>repeat</userinput> keeps repeating (looping) the code "
+"between the brackets for as many times as the given number."
+msgstr ""
+"أمر التحكم <userinput>كرر</userinput> يشبه كثيرا الأمر <link linkend=\"while"
+"\"><userinput>مادام</userinput></link>. الفرق أنّ  <userinput>كرر</userinput> "
+"تكرر التعليمات التي ما بين حاضنتين عدة مرات حسب العدد المحدد."
+
+#. Tag: title
+#: programming-reference.docbook:614
+#, no-c-format
+msgid "The <quote>for</quote> loop, a counting loop"
+msgstr "حلقة التكرار المعدود  <quote>لكل</quote>"
+
+#. Tag: term
+#: programming-reference.docbook:617
+#, no-c-format
+msgid "<term>for</term>"
+msgstr "<term>لـكل</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:617
+#, no-c-format
+msgid "<primary>for</primary>"
+msgstr "<primary>لـكل</primary>"
+
+#. Tag: primary
+#: programming-reference.docbook:617
+#, no-c-format
+msgid "<primary>to</primary>"
+msgstr "<primary>إلى</primary>"
+
+#. Tag: primary
+#: programming-reference.docbook:617
+#, no-c-format
+msgid "step"
+msgstr "خطوة"
+
+#. Tag: screen
+#: programming-reference.docbook:618
+#, no-c-format
+msgid ""
+"for <link linkend=\"assignment-of-variables\">variable</link> = <link "
+"linkend=\"number\">number</link> to <link linkend=\"number\">number</link> "
+"{ ... }"
+msgstr ""
+"لكل <link linkend=\"assignment-of-variables\">متغير</link> = <link linkend="
+"\"number\">عدد</link> إلى <link linkend=\"number\">عدد</link> { ... }"
+
+#. Tag: para
+#: programming-reference.docbook:618
+#, no-c-format
+msgid ""
+"The <userinput>for</userinput> loop is a <quote>counting loop</quote>, &ie; "
+"it keeps count for you. The first number sets the variable to the value in "
+"the first loop. Every loop the number is increased until the second number "
+"is reached. <screen>\n"
+"for $x = 1 to 10 {\n"
+"  print $x * 7\n"
+"  forward 15\n"
+"}\n"
+"</screen> Every time the code between the brackets is executed the "
+"<userinput>$x</userinput> is increased by 1, until <userinput>$x</userinput> "
+"reaches the value of 10. The code between the brackets prints the <userinput>"
+"$x</userinput> multiplied by 7. After this program finishes its execution "
+"you will see the times table of 7 on the canvas."
+msgstr ""
+"حلقة <userinput>لكل</userinput> هي <quote>حلقة تكرار معدود</quote>، أي أنها "
+"كالعدّاد. العدد الأول يضبط  بداية متغيّر العدّاد. في كل دورة يزيد العداد حتى "
+"يصل إلى العدد الثاني الذي يمثل النهاية. <screen>\n"
+"لكل $س = 1 إلى 10 {\n"
+"  اطبع $س * 7\n"
+"  تقدم 15\n"
+"}\n"
+"</screen> في كل مرة تُنفّذ التعليمات ما بين حاضنتين، ويزيد<userinput>$س</"
+"userinput> بـ1، حتى يصل  <userinput>$س</userinput> إلى 10. ما بين حاضنتين، "
+"تطبع  <userinput>$س</userinput> مضروبا في 7. وفي نهاية تنفيذ البرنامج، نحصل "
+"على جدول ضرب 7 على الرقعة."
+
+#. Tag: para
+#: programming-reference.docbook:623
+#, no-c-format
+msgid "The default step size of a loop is 1, you can use an other value with"
+msgstr "مقدار الخطوة الافتراضي للحلقة هو 1، يمكنك استخدام قيمة أخرى له"
+
+#. Tag: screen
+#: programming-reference.docbook:625
+#, no-c-format
+msgid ""
+"for <link linkend=\"assignment-of-variables\">variable</link> = <link "
+"linkend=\"number\">number</link> to <link linkend=\"number\">number</link> "
+"step <link linkend=\"number\">number</link> { ... }"
+msgstr ""
+"لكل <link linkend=\"assignment-of-variables\">متغير</link> = <link linkend="
+"\"number\">عدد</link> إلى <link linkend=\"number\">عدد</link> خطوة <link "
+"linkend=\"number\">عدد</link> { ... }"
+
+#. Tag: title
+#: programming-reference.docbook:631
+#, no-c-format
+msgid "Leave a loop"
+msgstr "مغادرة حلقة تكرار"
+
+#. Tag: term
+#: programming-reference.docbook:634
+#, no-c-format
+msgid "<term>break</term>"
+msgstr "<term>اكسر</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:634
+#, no-c-format
+msgid "<primary>break</primary>"
+msgstr "<primary>اكسر</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:635
+#, no-c-format
+msgid "<screen>break</screen>"
+msgstr "<screen>اكسر</screen>"
+
+#. Tag: para
+#: programming-reference.docbook:635
+#, no-c-format
+msgid ""
+"Terminates the current loop immediately and transfers control to the "
+"statement immediately following that loop."
+msgstr ""
+"يُنهي الحلقة الحالية على الفور وينتقل إلى تنفيذ  إلى التعليمة التي تلي هذه "
+"الحلقة مباشرة."
+
+#. Tag: title
+#: programming-reference.docbook:642
+#, no-c-format
+msgid "Stop executing your program"
+msgstr "إيقاف تنفيذ البرنامج"
+
+#. Tag: term
+#: programming-reference.docbook:645
+#, no-c-format
+msgid "<term>exit</term>"
+msgstr "<term>اخرج</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:645
+#, no-c-format
+msgid "<primary>exit</primary>"
+msgstr "<primary>اخرج</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:646
+#, no-c-format
+msgid "<screen>exit</screen>"
+msgstr "<screen>اخرج</screen>"
+
+#. Tag: para
+#: programming-reference.docbook:646
+#, no-c-format
+msgid "Finishes the execution of your program."
+msgstr "إنهاء تنفيذ البرنامج."
+
+#. Tag: title
+#: programming-reference.docbook:653
+#, no-c-format
+msgid "Checking assertions at runtime"
+msgstr "التحقق من التأكيدات في أثناء التشغيل"
+
+#. Tag: term
+#: programming-reference.docbook:656
+#, no-c-format
+msgid "<term>assert</term>"
+msgstr "<term>تأكيد</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:656
+#, no-c-format
+msgid "<primary>assert</primary>"
+msgstr "<primary>تأكيد</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:657
+#, no-c-format
+msgid "assert <link linkend=\"boolean-value\">boolean</link>"
+msgstr "تحقق <link linkend=\"boolean-value\">شرط منطقي</link>"
+
+#. Tag: para
+#: programming-reference.docbook:657
+#, no-c-format
+msgid "Can be used to reason about program or input correctness."
+msgstr "يمكن استخدامها للتحقق من البرنامج أو صحة الإدخال."
+
+#. Tag: screen
+#: programming-reference.docbook:659
+#, no-c-format
+msgid ""
+"$in = ask \"What is your year of birth?\"\n"
+"# the year must be positive\n"
+"assert $in > 0"
+msgstr ""
+"$دخل = اسأل \"ما سنة مولدك؟\"\n"
+"# السنة يجب أن تكون موجبة\n"
+"تحقق $in > 0"
+
+#. Tag: title
+#: programming-reference.docbook:668
+#, no-c-format
+msgid "Create your own commands with <quote>learn</quote>"
+msgstr "اصنع أوامرك الخاصة بالأمر <quote>تعلم</quote>"
+
+#. Tag: para
+#: programming-reference.docbook:669
+#, no-c-format
+msgid ""
+"<userinput>learn</userinput><indexterm><primary>learn</primary></indexterm> "
+"is special as it is used to create your own commands. The commands you "
+"create can take <glossterm linkend=\"input-output\">input</glossterm> and "
+"return <glossterm linkend=\"input-output\">output</glossterm>. Let us take a "
+"look at how a new command is created: <screen>\n"
+"learn circle $x {\n"
+"  repeat 36 {\n"
+"    forward $x\n"
+"    turnleft 10\n"
+"  }\n"
+"}\n"
+"</screen> The new command is called <userinput>circle</userinput>. "
+"<userinput>circle</userinput> takes one <glossterm linkend=\"input-output"
+"\">input</glossterm> argument, to set the size of the circle. "
+"<userinput>circle</userinput> returns no <glossterm linkend=\"input-output"
+"\">output</glossterm>. The <userinput>circle</userinput> command can now be "
+"used like a normal command in the rest of the code. See this example:"
+msgstr ""
+"الأمر <userinput>تعلم</userinput><indexterm><primary>تعلم</primary></"
+"indexterm> أمر مميّز لأنه يستعمل لإنشاء أوامر جديدة. الأوامر الجديدة التي "
+"تنشئها تحتاج إلى   <glossterm linkend=\"input-output\">مداخل</glossterm> "
+"وترجع <glossterm linkend=\"input-output\">مخرجًا</glossterm>. انظر للأمر "
+"المُنشَأ: <screen>\n"
+"تعلم دائرة $س {\n"
+"  كرر 36 {\n"
+"    تقدم $س\n"
+"    در_يسار 10\n"
+"  }\n"
+"}\n"
+"</screen> الأمر الجديد <userinput>دائرة</userinput>. <userinput>دائرة</"
+"userinput> يحتاج إلى  <glossterm linkend=\"input-output\">مدخل</glossterm> "
+"لضبط قطر الدائرة. الأمر <userinput>دائرة</userinput> لا يرجع <glossterm "
+"linkend=\"input-output\">مخرجًا</glossterm>. الآن، يمكن استعمال الأمر "
+"<userinput>دائرة</userinput>  مثل أي أمر آخر، في ما تلاه من الكود. إليك هذا "
+"المثال:"
+
+#. Tag: screen
+#: programming-reference.docbook:672
+#, no-c-format
+msgid ""
+"learn circle $X {\n"
+"  repeat 36 {\n"
+"    forward $X \n"
+"    turnleft 10 \n"
+"  }\n"
+"}\n"
+"\n"
+"go 200,200 \n"
+"circle 20\n"
+"\n"
+"go 300,200 \n"
+"circle 40"
+msgstr ""
+"تعلم دائرة $س {\n"
+"  كرر 36 {\n"
+"    تقدم $س \n"
+"    در_يسار 10 \n"
+"  }\n"
+"}\n"
+"\n"
+"اذهب 200،200 \n"
+"دائرة 20\n"
+"\n"
+"اذهب 300،200 \n"
+"دائرة 40"
+
+#. Tag: para
+#: programming-reference.docbook:674
+#, no-c-format
+msgid ""
+"In the next example, a command with a return<indexterm><primary>return</"
+"primary></indexterm> value is created. <screen>\n"
+"learn faculty $x {\n"
+"  $r = 1\n"
+"  for $i = 1 to $x {\n"
+"    $r = $r * $i\n"
+"  }\n"
+"  return $r\n"
+"}\n"
+"\n"
+"print faculty 5\n"
+"</screen> In this example a new command called <userinput>faculty</"
+"userinput> is created. If the input of this command is <userinput>5</"
+"userinput> then the output is <userinput>5*4*3*2*1</userinput>. By using "
+"<userinput>return</userinput> the <glossterm linkend=\"input-output"
+"\">output</glossterm> value is specified and the execution is returned."
+msgstr ""
+"في المثال الموالي، سننشئ أمرًا  <indexterm><primary>يرجع</primary></"
+"indexterm>. قيمة <screen>\n"
+"تعلم مضروب $س {\n"
+"  $ض = 1\n"
+"  لكل $ي = 1 إلى $س {\n"
+"    $ض = $ض * $ي\n"
+"  }\n"
+"  أرجع $ض\n"
+"}\n"
+"\n"
+"اطبع مضروب 5\n"
+"</screen> في هذا المثال، أنشأنا أمرًا جديدا أسميناه  <userinput>مضروب</"
+"userinput>. إذا كان مدخله العدد <userinput>5</userinput> حصلنا على نتيجة "
+"<userinput>5*4*3*2*1</userinput>. باستعمال الأمر<userinput>أرجع</userinput> "
+"قيمة <glossterm linkend=\"input-output\">المخرج</glossterm> ترجع أثناء "
+"التنفيذ."
+
+#. Tag: para
+#: programming-reference.docbook:677
+#, no-c-format
+msgid ""
+"Commands can have more than one <glossterm linkend=\"input-output\">input</"
+"glossterm>. In the next example, a command that draws a rectangle is "
+"created: <screen>\n"
+"learn box $x, $y {\n"
+"  forward $y\n"
+"  turnright 90\n"
+"  forward $x\n"
+"  turnright 90\n"
+"  forward $y\n"
+"  turnright 90\n"
+"  forward $x\n"
+"  turnright 90\n"
+"}\n"
+"</screen> Now you can run <userinput>box 50, 100</userinput> and the turtle "
+"will draw a rectangle on the canvas."
+msgstr ""
+"بعض الأوامر قد تحتاج إلى أكثر من  <glossterm linkend=\"input-output\">مدخل</"
+"glossterm>. في المثال الآتي، نصنع أمرًا لرسم مستطيل: <screen>\n"
+"تعلم صندوق $س، $ع {\n"
+"  تقدم $ع\n"
+"  يمين 90\n"
+"  تقدم $س\n"
+"  يمين 90\n"
+"  تقدم $ع\n"
+"  يمين 90\n"
+"  تقدم $س\n"
+"  يمين 90\n"
+"}\n"
+"</screen> يمكنك الآن تنفيذ <userinput>صندوق 50، 100</userinput> وسترسم "
+"السلحفاة مستطيلا على الشاشة."

@@ -1,0 +1,3814 @@
+# translation of kturtle_programming-reference.po to
+#
+# Mandriva Poland <biuro@mandriva.pl>, 2006.
+# Krzysztof Lichota <lichota@mimuw.edu.pl>, 2007.
+# Maciej Wikło <maciej.wiklo@wp.pl>, 2009.
+# Marta Rybczyńska <kde-i18n@rybczynska.net>, 2009.
+# Damian Kociuba <damkoc1@o2.pl>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: kturtle_programming-reference\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 12:04+0000\n"
+"PO-Revision-Date: 2010-10-14 18:55+0200\n"
+"Last-Translator: Damian Kociuba <damkoc1@o2.pl>\n"
+"Language-Team: Polski <kde-i18n-doc@kde.org>\n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-KDE-DocBook-SVN-URL: branches/KDE/3.5/kdeedu/doc/kturtle/programming-"
+"reference.docbook\n"
+"X-KDE-DocBook-SVN-Changed-Revision: 509869\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+
+#. Tag: title
+#: programming-reference.docbook:2
+#, no-c-format
+msgid "&turtlescript; Programming Reference"
+msgstr "Dokumentacja programistyczna języka &turtlescript;"
+
+#. Tag: para
+#: programming-reference.docbook:3
+#, fuzzy, no-c-format
+#| msgid ""
+#| "This is the reference for &kturtle;'s &turtlescript;. In the first "
+#| "section of this chapter have a look at some aspects of the <link linkend="
+#| "\"grammar\">grammar</link> of &turtlescript; programs. The second section "
+#| "deals exclusively with <link linkend=\"mathematical-operators"
+#| "\">mathematical operators</link>, <link linkend=\"boolean-operators"
+#| "\">boolean (true/false) operators</link> and <link linkend=\"comparing-"
+#| "operators\">comparison operators</link>. The third section is basically a "
+#| "giant list of all <link linkend=\"commands\">commands</link> explaining "
+#| "them one-by-one. Section four explains how to <link linkend=\"assignment-"
+#| "of-variables\">assign</link> values to <link linkend=\"assignment-of-"
+#| "variables\">variables</link>. Finally we explain how to arrange the "
+#| "execution of commands with <link linkend=\"controlling-execution"
+#| "\">execution controlling statements</link> in section five and how to "
+#| "create you own commands with <link linkend=\"learn\">learn</link> in "
+#| "section six."
+msgid ""
+"This is the reference for &kturtle;'s &turtlescript;. In the first section "
+"of this chapter have a look at some aspects of the <link linkend=\"grammar"
+"\">grammar</link> of &turtlescript; programs. The second section deals "
+"exclusively with <link linkend=\"mathematical-operators\">mathematical "
+"operators</link>, <link linkend=\"boolean-operators\">boolean (true/false) "
+"operators</link> and <link linkend=\"comparing-operators\">comparison "
+"operators</link>. The third section is basically a giant list of all <link "
+"linkend=\"commands\">commands</link> explaining them one-by-one. Section "
+"four explains how to <link linkend=\"assignment-of-variables\">assign</link> "
+"values to <link linkend=\"assignment-of-variables\">variables</link>. "
+"Finally we explain how to arrange the execution of commands with <link "
+"linkend=\"controlling-execution\">execution controlling statements</link> in "
+"section five and how to create you own commands with <link linkend=\"learn"
+"\"><userinput>learn</userinput></link> in section six."
+msgstr ""
+"To jest dokumentacja &turtlescript;. W pierwszej części tego rozdziału "
+"poznasz reguły  <link linkend=\"grammar\">składni</link> programów pisanych "
+"w &turtlescript;. Druga część opisuje wyłącznie <link linkend=\"mathematical-"
+"operators\">operatory matematyczne</link>, <link linkend=\"boolean-operators"
+"\">operatory logiczne (prawda/fałsz)</link> i <link linkend=\"comparing-"
+"operators\">operatory porównania</link>. Trzecia część to po prostu wielki "
+"wykaz wszystkich <link linkend=\"commands\">poleceń</link> omówionych po "
+"kolei. Część czwarta wyjaśnia jak <link linkend=\"assignment-of-variables"
+"\">przypisać</link> wartości do <link linkend=\"assignment-of-variables"
+"\">zmiennych</link>. Na koniec, w części piątej wyjaśnimy, jak zorganizować "
+"wykonanie poleceń używając <link linkend=\"controlling-execution\">elementów "
+"sterujących</link> oraz w części szóstej jak tworzyć własne polecenia z "
+"użyciem  <link linkend=\"learn\">poznaj</link>."
+
+#. Tag: title
+#: programming-reference.docbook:6
+#, no-c-format
+msgid "The Grammar of &turtlescript;"
+msgstr "Składnia &turtlescript;"
+
+#. Tag: para
+#: programming-reference.docbook:7
+#, no-c-format
+msgid ""
+"As in any language, &turtlescript; has different types of words and symbols. "
+"In English we distinguish verbs (like 'to walk' or 'to sing') and nouns "
+"(like 'sister' or 'house'), they are used for different purposes. "
+"&turtlescript; is a programming language, it is used to instruct &kturtle; "
+"what to do."
+msgstr ""
+"Podobnie jak inne języki, &turtlescript; posiada różne typy słów i symboli. "
+"W języku polskim rozróżniamy czasowniki (przykładowo 'chodzić', czy "
+"'śpiewać') i rzeczowniki (jak 'siostra' lub 'dom'), których używamy do "
+"różnych celów. &turtlescript; jest językiem programowania, który jest "
+"wykorzystywany do nauczenia &kturtle;, co ma robić."
+
+#. Tag: para
+#: programming-reference.docbook:8
+#, no-c-format
+msgid ""
+"In this section some of &turtlescript;'s different types of words and "
+"symbols are briefly explained. We explain <link linkend=\"comment"
+"\">comments</link>, <link linkend=\"command\">commands</link> and the three "
+"different kinds of literals: <link linkend=\"number\">numbers</link>, <link "
+"linkend=\"string\">strings</link> and <link linkend=\"boolean-value"
+"\">boolean (true/false) values</link>."
+msgstr ""
+"W tej części niektóre typy słów i symboli języka &turtlescript; zostaną "
+"krótko omówione. Wyjaśnimy <link linkend=\"comment\">komentarze</link>, "
+"<link linkend=\"command\">polecenia</link> i trzy rodzaje danych: <link "
+"linkend=\"number\">liczby</link>, <link linkend=\"string\">teksty</link> i "
+"<link linkend=\"boolean-value\">wartości logiczne (prawda/fałsz)</link>."
+
+#. Tag: title
+#: programming-reference.docbook:12
+#, no-c-format
+msgid "Comments"
+msgstr "Komentarze"
+
+#. Tag: para
+#: programming-reference.docbook:13
+#, no-c-format
+msgid ""
+"A program consists instructions that are executed when the program is run "
+"and so called comments. Comments are not executed, &kturtle; simply ignores "
+"them when executing your program. Comment are there for other programmers to "
+"make them understand your program better. Everything that follows on a "
+"<userinput>#</userinput> symbol is considered a comment in &turtlescript;. "
+"For example this little program that does nothing: <screen>\n"
+"# this little program does nothing, it is only a comment!\n"
+"</screen> It is a bit useless but it explain the matter well."
+msgstr ""
+"Program zawiera instrukcje, które są wykonywane podczas działania programu i "
+"tzw. komentarze. Komentarze nie są wykonywane, &kturtle; po prostu ignoruje "
+"je, kiedy program jest wykonywany. Komentarze są po to, aby ułatwić innym "
+"programistom zrozumienie Twojego programu. W języku &turtlescript; wszystko "
+"za znakiem <userinput>#</userinput> jest uznane za komentarz. Dla przykładu "
+"program, który nic nie robi: <screen>\n"
+"# ten mały program nic nie robi, to tylko komentarz!\n"
+"</screen>Jest on trochę bezużyteczny, ale świetnie wyjaśnia zasadę."
+
+#. Tag: para
+#: programming-reference.docbook:16
+#, no-c-format
+msgid ""
+"Comments get very useful when the program gets a little bit more complex. It "
+"can help to give some advice to other programmers. In the following program "
+"you see comments being used together with the <link linkend=\"print\">print</"
+"link> command. <screen>\n"
+"# this program has been made by Cies Breijs.\n"
+"print \"this text will get printed on the canvas\"\n"
+"# the previous line is not a comment, but the next line is:\n"
+"# print \"this text will not get printed!\"\n"
+"</screen> The first line describes the program. The second line is executed "
+"by &kturtle; and prints <userinput>this text will get printed on the canvas</"
+"userinput> on the canvas. The third line is a comment. And the forth line is "
+"a comment that contains a piece of &turtlescript;, if the <userinput>#</"
+"userinput> symbol would be removed on the fourth line the print statement "
+"will we executed by &kturtle;. Programmers say: the print statement on the "
+"fourth line is 'commented out'."
+msgstr ""
+"Komentarze są bardzo użyteczne, kiedy program staje się trochę bardziej "
+"skomplikowany. To może pomóc innym programistom. W poniższym programie widać "
+"komentarze użyte razem z poleceniem <link linkend=\"print\">pisz</link>."
+"<screen>\n"
+"# ten program został napisany przez Cies Breijs.\n"
+"pisz \"ten tekst zostanie wypisany na płótnie\"\n"
+"# poprzedni wiersz nie jest komentarzem, ale następny jest:\n"
+"# pisz \"ten tekst nie zostanie wypisany!\"\n"
+"</screen> Pierwszy wiersz opisuje program. Drugi jest wykonany przez "
+"&kturtle;, który wypisuje <userinput>ten tekst zostanie wypisany na płótnie</"
+"userinput> na płótnie. Trzeci wiersz to komentarz. Czwarty też jest "
+"komentarzem, który zawiera w sobie polecenie języka &turtlescript;. Jeśli "
+"symbol <userinput>#</userinput> zostanie usunięty z ostatniego wiersza, to "
+"polecenie pisz zostanie wykonane przez  &kturtle;. Programiści mówią: "
+"polecenie pisz z czwartego wiersza zostało 'odkomentarzowane'."
+
+#. Tag: para
+#: programming-reference.docbook:19
+#, no-c-format
+msgid ""
+"Commented lines are <glossterm>highlighted</glossterm> with light gray in "
+"the <link linkend=\"the-editor\">code editor</link>."
+msgstr ""
+"W <link linkend=\"the-editor\">edytorze kodów</link> komentarze są "
+"<glossterm>podświetlone</glossterm> na kolor jasnoszary."
+
+#. Tag: title
+#: programming-reference.docbook:23 programming-reference.docbook:162
+#, no-c-format
+msgid "Commands"
+msgstr "Polecenia"
+
+#. Tag: para
+#: programming-reference.docbook:24
+#, no-c-format
+msgid ""
+"Using commands you tell the turtle or &kturtle; to do something. Some "
+"commands need input, some give output. <screen>\n"
+"# forward is a command that needs input, in this case the number 100:\n"
+"forward 100\n"
+"</screen> The first line is a <link linkend=\"comment\">comment</link>. The "
+"second line contains the <userinput>forward</userinput> command and the "
+"<link linkend=\"number\">number</link> <userinput>100</userinput>. The "
+"number is not part of command, it is considered 'input' for the command."
+msgstr ""
+"Używając poleceń mówisz żółwiowi lub programowi &kturtle;, co ma robić. "
+"Niektóre polecenia wymagają wejścia, niektóre zwracają wyjście. <screen>\n"
+"# naprzód jest poleceniem wymagającym wejścia, tutaj test to liczba 100:\n"
+"naprzód 100\n"
+"</screen> Pierwszy wiersz to <link linkend=\"comment\">komentarz</link>. "
+"Drugi zawiera polecenie <userinput>naprzód</userinput> i  <link linkend="
+"\"number\">liczbę</link> <userinput>100</userinput>.  Liczba nie jest "
+"częścią polecenia, jest to wejście polecenia."
+
+#. Tag: para
+#: programming-reference.docbook:27
+#, no-c-format
+msgid ""
+"Some commands like &eg; <userinput>go</userinput> need more than one input "
+"value. Multiple values have to be separated using the <userinput>,</"
+"userinput> character (comma)."
+msgstr ""
+
+#. Tag: para
+#: programming-reference.docbook:28
+#, fuzzy, no-c-format
+#| msgid ""
+#| "For a detailed overview of all commands that &kturtle; supports go <link "
+#| "linkend=\"commands\">here</link>. Built-in commands are "
+#| "<glossterm>highlighted</glossterm> in dark blue"
+msgid ""
+"For a detailed overview of all commands that &kturtle; supports go <link "
+"linkend=\"commands\">here</link>. Built-in commands are "
+"<glossterm>highlighted</glossterm> in dark blue."
+msgstr ""
+"Szczegółowy opis wszystkich poleceń &kturtle; znajduje się <link linkend="
+"\"commands\">tutaj</link>. Wbudowane polecenia są  <glossterm>podświetlane</"
+"glossterm> kolorem ciemnoniebieskim."
+
+#. Tag: title
+#: programming-reference.docbook:32
+#, no-c-format
+msgid "Numbers"
+msgstr "Liczby"
+
+#. Tag: para
+#: programming-reference.docbook:33
+#, no-c-format
+msgid ""
+"Most likely you already know quite a bit about numbers. The way numbers are "
+"used in &kturtle; is not much different from spoken language, or math."
+msgstr ""
+"Każdy użytkownik z pewnością wie trochę o liczbach. Sposób w jaki liczby "
+"używane są przez &kturtle; niezbyt różni się od języka mówionego czy "
+"matematyki."
+
+#. Tag: para
+#: programming-reference.docbook:34
+#, fuzzy, no-c-format
+#| msgid ""
+#| "We have the so called natural numbers: <userinput>0</userinput>, "
+#| "<userinput>1</userinput>, <userinput>2</userinput>, <userinput>3</"
+#| "userinput>, <userinput>4</userinput>, <userinput>5</userinput>, etc. The "
+#| "negative numbers: <userinput>-1</userinput>, <userinput>-2</userinput>, "
+#| "<userinput>-3</userinput>, etc. And the numbers with decimals, or dot-"
+#| "numbers, for example: <userinput>0.1</userinput>, <userinput>3.14</"
+#| "userinput>, <userinput>33.3333</userinput>, <userinput>-5.05</userinput>, "
+#| "<userinput>-1.0</userinput>."
+msgid ""
+"We have the so called natural numbers: <userinput>0</userinput>, "
+"<userinput>1</userinput>, <userinput>2</userinput>, <userinput>3</"
+"userinput>, <userinput>4</userinput>, <userinput>5</userinput>, &etc; The "
+"negative numbers: <userinput>-1</userinput>, <userinput>-2</userinput>, "
+"<userinput>-3</userinput>, &etc; And the numbers with decimals, or dot-"
+"numbers, for example: <userinput>0.1</userinput>, <userinput>3.14</"
+"userinput>, <userinput>33.3333</userinput>, <userinput>-5.05</userinput>, "
+"<userinput>-1.0</userinput>. The <userinput>.</userinput> character (dot) is "
+"used as decimal separator."
+msgstr ""
+"Mamy liczby naturalne: <userinput>0</userinput>, <userinput>1</userinput>, "
+"<userinput>2</userinput>, <userinput>3</userinput>, <userinput>4</"
+"userinput>, <userinput>5</userinput>, itd. Liczby ujemne: <userinput>-1</"
+"userinput>, <userinput>-2</userinput>, <userinput>-3</userinput>, itd. Oraz "
+"liczby dziesiętne np: <userinput>0.1</userinput>, <userinput>3.14</"
+"userinput>, <userinput>33.3333</userinput>, <userinput>-5.05</userinput>, "
+"<userinput>-1.0</userinput>."
+
+#. Tag: para
+#: programming-reference.docbook:37
+#, no-c-format
+msgid ""
+"Numbers can be used in <link linkend=\"mathematical-operators\">mathematical "
+"operators</link> and <link linkend=\"comparing-operators\">comparison "
+"operators</link>. They can also be stored in <link linkend=\"assignment-of-"
+"variables\">variables</link>. Numbers are <glossterm>highlighted</glossterm> "
+"in dark red."
+msgstr ""
+"Liczby mogą być używane z <link linkend=\"mathematical-operators"
+"\">operatorami matematycznymi</link> i <link linkend=\"comparing-operators"
+"\">operatorami porównania</link>. Możesz je również przechowywać w <link "
+"linkend=\"assignment-of-variables\">zmiennych</link>. Liczby są "
+"<glossterm>podświetlane</glossterm> kolorem ciemnoczerwonym."
+
+#. Tag: title
+#: programming-reference.docbook:43
+#, no-c-format
+msgid "Strings"
+msgstr "Teksty"
+
+#. Tag: para
+#: programming-reference.docbook:44
+#, no-c-format
+msgid ""
+"First an example: <screen>\n"
+"print \"Hello, I'm a string.\"\n"
+"</screen> In this example <userinput>print</userinput> is a command where "
+"<userinput>\"Hello, I'm a string.\"</userinput> is a string. Strings start "
+"and end with the <userinput>\"</userinput> mark, by these marks &kturtle; "
+"knows it is a string."
+msgstr ""
+"Najpierw przykład: <screen>\n"
+"pisz \"Cześć, Jestem tekstem.\"\n"
+"</screen> W tym przykładzie <userinput>pisz</userinput> jest poleceniem, a "
+"<userinput>\"Cześć, Jestem tekstem.\"</userinput> tekstem. Tekst zaczyna i "
+"kończy się znakiem <userinput>\"</userinput>, dzięki niemu &kturtle; "
+"rozpoznaje tekst."
+
+#. Tag: para
+#: programming-reference.docbook:47
+#, no-c-format
+msgid ""
+"Strings can be put in <link linkend=\"assignment-of-variables\">variables</"
+"link>, just like <link linkend=\"number\">numbers</link>. Yet, unlike "
+"numbers, strings cannot be used in <link linkend=\"mathematical-operators"
+"\">mathematical operators</link> or <link linkend=\"comparing-operators"
+"\">comparison operators</link>. Strings are <glossterm>highlighted</"
+"glossterm> with red."
+msgstr ""
+"Teksty mogą być umieszczane w <link linkend=\"assignment-of-variables"
+"\">zmiennych</link>, tak jak <link linkend=\"number\">liczby</link>, ale w "
+"przeciwieństwie do nich, teksty nie mogą być używane z <link linkend="
+"\"mathematical-operators\">operatorami matematycznymi</link> i <link linkend="
+"\"comparing-operators\">operatorami porównania</link>. Teksty są "
+"<glossterm>podświetlone</glossterm> kolorem czerwonym."
+
+#. Tag: title
+#: programming-reference.docbook:51
+#, no-c-format
+msgid "Boolean (true/false) values"
+msgstr "Wartości logiczne (prawda/fałsz)"
+
+#. Tag: para
+#: programming-reference.docbook:52
+#, fuzzy, no-c-format
+#| msgid ""
+#| "There are only two boolean values: <userinput>true</userinput> and "
+#| "<userinput>false</userinput>. Sometimes they are also called: on and off, "
+#| "yes and no, one and zero. But in &turtlescript; we call them, always, "
+#| "<userinput>true</userinput> and <userinput>false</userinput>. Have a look "
+#| "at this piece of &turtlescript;: <screen>\n"
+#| "$a = true\n"
+#| "</screen> If you look in the <link linkend=\"the-inspector\">inspector</"
+#| "link> you can see that the <link linkend=\"assignment-of-variables"
+#| "\">variable</link> <userinput>$a</userinput> is set to <userinput>true</"
+#| "userinput>, and has the boolean type."
+msgid ""
+"There are only two boolean values: <userinput>true</"
+"userinput><indexterm><primary>true</primary></indexterm> and "
+"<userinput>false</userinput><indexterm><primary>false</primary></indexterm>. "
+"Sometimes they are also called: <quote><userinput>on</userinput></quote> and "
+"<quote><userinput>off</userinput></quote>, <quote><userinput>yes</"
+"userinput></quote> and <quote><userinput>no</userinput></quote>, "
+"<quote><userinput>one</userinput></quote> and <quote><userinput>zero</"
+"userinput></quote>. But in &turtlescript; we call them, always, "
+"<userinput>true</userinput> and <userinput>false</userinput>. Have a look at "
+"this piece of &turtlescript;: <screen>\n"
+"$a = true\n"
+"</screen> If you look in the <link linkend=\"the-inspector\">inspector</"
+"link> you can see that the <link linkend=\"assignment-of-variables"
+"\">variable</link> <userinput>$a</userinput> is set to <userinput>true</"
+"userinput>, and has the boolean type."
+msgstr ""
+"Są tylko dwie wartości logiczne: <userinput>prawda</userinput> i "
+"<userinput>fałsz</userinput>. Czasami są nazywane: włączone i wyłączone, tak "
+"i nie, jeden i zero, ale w języku &turtlescript; nazywamy je zawsze "
+"<userinput>prawda</userinput> i <userinput>fałsz</userinput>. Spójrz na ten "
+"fragment kodu &turtlescript;: <screen>\n"
+"$a = prawda\n"
+"</screen> Patrząc na <link linkend=\"the-inspector\">podgląd</link> "
+"zobaczysz, że <link linkend=\"assignment-of-variables\">zmienna</link> "
+"<userinput>$a</userinput> ma wartość <userinput>prawda</userinput> i typ "
+"\"wartość logiczna\"."
+
+#. Tag: para
+#: programming-reference.docbook:55
+#, no-c-format
+msgid ""
+"Often boolean values are the result of a <link linkend=\"comparing-operators"
+"\">comparison operator</link>, like in the following piece of "
+"&turtlescript;: <screen>\n"
+"$answer = 10 &gt; 3\n"
+"</screen> The <link linkend=\"assignment-of-variables\">variable</link> "
+"<userinput>$answer</userinput> is set to <userinput>true</userinput> because "
+"<userinput>10</userinput> is larger than <userinput>3</userinput>."
+msgstr ""
+"Często wartości logiczne są wyjściem <link linkend=\"comparing-operators"
+"\">operatorów porównania</link>, tak jak w poniższym fragmencie kodu "
+"&turtlescript;: <screen>\n"
+"$odpowiedź = 10 &gt; 3\n"
+"</screen> <link linkend=\"assignment-of-variables\">Zmienna</link> "
+"<userinput>$odpowiedź</userinput> na wartość <userinput>prawda</userinput>, "
+"ponieważ <userinput>10</userinput> jest większe od <userinput>3</userinput>."
+
+#. Tag: para
+#: programming-reference.docbook:58
+#, no-c-format
+msgid ""
+"Boolean values, <userinput>true</userinput> and <userinput>false</"
+"userinput>, are <glossterm>highlighted</glossterm> with dark red."
+msgstr ""
+"Wartości logiczne, <userinput>prawda</userinput> i <userinput>fałsz</"
+"userinput>, są <glossterm>podświetlone</glossterm> kolorem ciemnoczerwonym."
+
+#. Tag: title
+#: programming-reference.docbook:66
+#, no-c-format
+msgid "Mathematical, boolean and comparing operators"
+msgstr "Operatory matematyczne, logiczne i porównania"
+
+#. Tag: para
+#: programming-reference.docbook:67
+#, no-c-format
+msgid ""
+"The title of this section might sound very difficult, yet it is not as "
+"difficult as it sound."
+msgstr "Tytuł tej części może brzmieć tajemniczo, ale to tylko pozory."
+
+#. Tag: title
+#: programming-reference.docbook:70
+#, no-c-format
+msgid "Mathematical operators"
+msgstr "Operatory matematyczne"
+
+#. Tag: para
+#: programming-reference.docbook:71
+#, no-c-format
+msgid ""
+"These are the basic math symbols known as: add (<userinput>+</userinput>), "
+"subtract (<userinput>-</userinput>), multiply (<userinput>*</userinput>), "
+"divide (<userinput>/</userinput>) and power (<userinput>^</userinput>)."
+msgstr ""
+"Rozpoznawane są proste operatory matematyczne takie jak: dodawanie "
+"(<userinput>+</userinput>), odejmowanie (<userinput>-</userinput>), mnożenie "
+"(<userinput>*</userinput>), dzielenie (<userinput>/</userinput>) i "
+"potęgowanie (<userinput>^</userinput>)."
+
+#. Tag: para
+#: programming-reference.docbook:73
+#, no-c-format
+msgid ""
+"Here a small example of the mathematical operators you can use in "
+"&turtlescript;: <screen>\n"
+"$add      = 1 + 1\n"
+"$subtract = 20 - 5\n"
+"$multiply = 15 * 2\n"
+"$divide   = 30 / 30\n"
+"$power    = 2 ^ 2\n"
+"</screen> The values resulting from the mathematical operations get <link "
+"linkend=\"assignment-of-variables\">assigned</link> to various <link linkend="
+"\"assignment-of-variables\">variables</link>. Using the <link linkend=\"the-"
+"inspector\">inspector</link> you can see the values."
+msgstr ""
+"Oto prosty przykład użycia operatorów matematycznych w języku "
+"&turtlescript;: <screen>\n"
+"$dodawanie     = 1 + 1\n"
+"$odejmowanie   = 20 - 5\n"
+"$mnożenie      = 15 * 2\n"
+"$dzielenie     = 30 / 30\n"
+"$potęgowanie   = 2 ^ 2\n"
+"</screen> Rezultaty działań zostały <link linkend=\"assignment-of-variables"
+"\">przypisane</link> do <link linkend=\"assignment-of-variables\">zmiennych</"
+"link>. Używając <link linkend=\"the-inspector\">podglądu</link> możesz "
+"zobaczyć ich wartości."
+
+#. Tag: para
+#: programming-reference.docbook:76
+#, no-c-format
+msgid ""
+"If you just want a simple calculation to be done you can do something like "
+"this:"
+msgstr "Chcąc dokonać prostego obliczenia wpisujemy po prostu:"
+
+#. Tag: screen
+#: programming-reference.docbook:77
+#, no-c-format
+msgid "print 2010-12"
+msgstr "pisz 2010-12"
+
+#. Tag: para
+#: programming-reference.docbook:78
+#, no-c-format
+msgid ""
+"Now an example with parentheses: <screen>\n"
+"print ( ( 20 - 5 ) * 2 / 30 ) + 1\n"
+"</screen> The expressions inside parentheses will be calculated first. In "
+"this example, 20-5 will be calculated, then multiplied by 2, divided by 30, "
+"and then 1 is added (giving 2). Parentheses can also be used in other cases."
+msgstr ""
+"Teraz przykład z nawiasami: <screen>\n"
+"pisz ( ( 20 - 5 ) * 2 / 30 ) + 1\n"
+"</screen> Wyrażenia wewnątrz nawiasów obliczane są najpierw. W tym "
+"przykładzie, najpierw zostanie obliczone 20-5, później pomnożone 2, "
+"podzielone przez 30, i zostanie dodane 1 (co daje 2). Nawiasy mogą być użyte "
+"także w innych sytuacjach."
+
+#. Tag: para
+#: programming-reference.docbook:81
+#, no-c-format
+msgid ""
+"&kturtle; also has more advanced mathematical features in the form of "
+"commands. Have a look at the following commands but be aware that it "
+"concerns advanced operations: <link linkend=\"round\">round</link>, <link "
+"linkend=\"random\">random</link>, <link linkend=\"sqrt\">sqrt</link> , <link "
+"linkend=\"pi\">pi</link>, <link linkend=\"sin\">sin</link>, <link linkend="
+"\"cos\">cos</link>, <link linkend=\"tan\">tan</link>, <link linkend=\"arcsin"
+"\">arcsin</link>, <link linkend=\"arccos\">arccos</link>, <link linkend="
+"\"arctan\">arctan</link>."
+msgstr ""
+"&kturtle; posiada także bardziej zaawansowane działania w formie poleceń. "
+"Spójrz na poniższe polecenia, pamiętaj, że dotyczą zaawansowanych operacji: "
+"<link linkend=\"round\">zaokrąglij</link>, <link linkend=\"random\">los</"
+"link>, <link linkend=\"sqrt\">sqrt</link> , <link linkend=\"pi\">pi</link>, "
+"<link linkend=\"sin\">sin</link>, <link linkend=\"cos\">cos</link>, <link "
+"linkend=\"tan\">tan</link>, <link linkend=\"arcsin\">arcsin</link>, <link "
+"linkend=\"arccos\">arccos</link>, <link linkend=\"arctan\">arctan</link>."
+
+#. Tag: title
+#: programming-reference.docbook:87
+#, no-c-format
+msgid "Boolean (true/false) operators"
+msgstr "Operatory logiczne (prawda/fałsz)"
+
+#. Tag: para
+#: programming-reference.docbook:88
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Where <link linkend=\"mathematical-operators\">mathematical operators</"
+#| "link> are mainly for <link linkend=\"number\">numbers</link>, boolean "
+#| "operators are for <link linkend=\"boolean-value\">boolean values</link> "
+#| "(<userinput>true</userinput> and <userinput>false</userinput>). There are "
+#| "only three boolean operators, namely: <userinput>and</userinput>, "
+#| "<userinput>or</userinput>, and <userinput>not</userinput>. The following "
+#| "piece of &turtlescript; shows how to use them: <screen>\n"
+#| "$and_1_1 = true and true    # -> true\n"
+#| "$and_1_0 = true and false   # -> false\n"
+#| "$and_0_1 = false and true   # -> false\n"
+#| "$and_0_0 = false and false  # -> false\n"
+#| "\n"
+#| "$or_1_1 = true or true    # -> true\n"
+#| "$or_1_0 = true or false   # -> true\n"
+#| "$or_0_1 = false or true   # -> true\n"
+#| "$or_0_0 = false or false  # -> false\n"
+#| "\n"
+#| "$not_1 = not true   # -> false\n"
+#| "$not_0 = not false  # -> true\n"
+#| "</screen> Using the <link linkend=\"the-inspector\">inspector</link> you "
+#| "can see the values, yet we also supply these results as little comments "
+#| "at the end of the lines. <userinput>and</userinput> evaluates "
+#| "<userinput>true</userinput> only if both sides are <userinput>true</"
+#| "userinput>. <userinput>or</userinput> evaluates <userinput>true</"
+#| "userinput> if either side is <userinput>true</userinput>. And "
+#| "<userinput>not</userinput> turns a <userinput>true</userinput> into "
+#| "<userinput>false</userinput> and a <userinput>false</userinput> into "
+#| "<userinput>true</userinput>."
+msgid ""
+"Where <link linkend=\"mathematical-operators\">mathematical operators</link> "
+"are mainly for <link linkend=\"number\">numbers</link>, boolean operators "
+"are for <link linkend=\"boolean-value\">boolean values</link> "
+"(<userinput>true</userinput> and <userinput>false</userinput>). There are "
+"only three boolean operators, namely: <userinput>and</"
+"userinput><indexterm><primary>and</primary></indexterm>, <userinput>or</"
+"userinput><indexterm><primary>or</primary></indexterm>, and <userinput>not</"
+"userinput><indexterm><primary>not</primary></indexterm>. The following piece "
+"of &turtlescript; shows how to use them: <screen>\n"
+"$and_1_1 = true and true    # -> true\n"
+"$and_1_0 = true and false   # -> false\n"
+"$and_0_1 = false and true   # -> false\n"
+"$and_0_0 = false and false  # -> false\n"
+"\n"
+"$or_1_1 = true or true    # -> true\n"
+"$or_1_0 = true or false   # -> true\n"
+"$or_0_1 = false or true   # -> true\n"
+"$or_0_0 = false or false  # -> false\n"
+"\n"
+"$not_1 = not true   # -> false\n"
+"$not_0 = not false  # -> true\n"
+"</screen> Using the <link linkend=\"the-inspector\">inspector</link> you can "
+"see the values, yet we also supply these results as little comments at the "
+"end of the lines. <userinput>and</userinput> evaluates <userinput>true</"
+"userinput> only if both sides are <userinput>true</userinput>. "
+"<userinput>or</userinput> evaluates <userinput>true</userinput> if either "
+"side is <userinput>true</userinput>. And <userinput>not</userinput> turns a "
+"<userinput>true</userinput> into <userinput>false</userinput> and a "
+"<userinput>false</userinput> into <userinput>true</userinput>."
+msgstr ""
+"<link linkend=\"mathematical-operators\">Operatory matematyczne</link> są "
+"stosowane głównie do <link linkend=\"number\">liczb</link>, a operatory "
+"logiczne do <link linkend=\"boolean-value\">wartości logicznych</link> "
+"(<userinput>prawda</userinput> i <userinput>fałsz</userinput>). Są tylko "
+"trzy operatory logiczne, mianowicie: <userinput>i</userinput>, "
+"<userinput>lub</userinput> oraz <userinput>nie</userinput>. Poniższy "
+"fragment kodu &turtlescript; pokazuje, jak je stosować: <screen>\n"
+"$i_1_1 = prawda i prawda  # -> prawda\n"
+"$i_1_0 = prawda i fałsz   # -> fałsz\n"
+"$i_0_1 = fałsz i prawda   # -> fałsz\n"
+"$i_0_0 = fałsz i fałsz    # -> fałsz\n"
+"\n"
+"$lub_1_1 = prawda lub prawda  # ->prawda\n"
+"$lub_1_0 = prawda lub fałsz   # -> prawda\n"
+"$lub_0_1 = fałsz lub prawda   # -> prawda\n"
+"$lub_0_0 = fałsz lub fałsz    # -> fałsz\n"
+"\n"
+"$nie_1 = nie prawda  # -> fałsz\n"
+"$nie_0 = nie fałsz   # -> prawda\n"
+"</screen> Używając <link linkend=\"the-inspector\">podglądu</link> zobaczysz "
+"wartości, ponadto dopisaliśmy je w małych komentarzach na  końcach wierszy. "
+"<userinput>i</userinput> zwraca <userinput>prawda</userinput> tylko, kiedy "
+"po oby stronach jest <userinput>prawda</userinput>. <userinput>lub</"
+"userinput> zwraca <userinput>prawda</userinput> jeśli przynajmniej jedna "
+"strona to <userinput>prawda</userinput>. Operator <userinput>nie</userinput> "
+"zamienia <userinput>prawda</userinput> na <userinput>fałsz</userinput> oraz "
+"<userinput>fałsz</userinput> na <userinput>prawda</userinput>."
+
+#. Tag: para
+#: programming-reference.docbook:91
+#, no-c-format
+msgid "Boolean operators are <glossterm>highlighted</glossterm> with pink."
+msgstr ""
+"Operatory logiczne są <glossterm>podświetlone</glossterm> kolorem różowym."
+
+#. Tag: title
+#: programming-reference.docbook:94
+#, no-c-format
+msgid "Some more advanced examples"
+msgstr "Więcej, bardziej zaawansowanych przykładów"
+
+#. Tag: para
+#: programming-reference.docbook:95
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Consider the following example with <userinput>and</userinput>: <screen>\n"
+#| "$a = 1\n"
+#| "$b = 5\n"
+#| "if (($a &lt; 10) and ($b == 5)) and ($a &lt; $b) {\n"
+#| "  print \"hello\"\n"
+#| "}\n"
+#| "</screen> In this piece of &turtlescript; the result of three <link "
+#| "linkend=\"comparing-operators\">comparing operators</link> are merged "
+#| "using <userinput>and</userinput> operators. This means that all three "
+#| "have to evaluate \"true\" in order for the \"hello\" to be printed."
+msgid ""
+"Consider the following example with <userinput>and</userinput>: <screen>\n"
+"$a = 1\n"
+"$b = 5\n"
+"if (($a &lt; 10) and ($b == 5)) and ($a &lt; $b) {\n"
+"  print \"hello\"\n"
+"}\n"
+"</screen> In this piece of &turtlescript; the result of three <link linkend="
+"\"comparing-operators\">comparing operators</link> are merged using "
+"<userinput>and</userinput> operators. This means that all three have to "
+"evaluate <quote>true</quote> in order for the <quote>hello</quote> to be "
+"printed."
+msgstr ""
+"Przemyśl poniższy przykład, który korzysta z <userinput>i</userinput>: "
+"<screen>\n"
+"$a = 1\n"
+"$b = 5\n"
+"jeśli (($a &lt; 10) i ($b == 5)) i ($a &lt; $b) {\n"
+"  pisz \"cześć\"\n"
+"}\n"
+"</screen> W tym fragmencie programu &turtlescript; trzy wyniki <link linkend="
+"\"comparing-operators\">operatorów porównania</link> są połączone operatorem "
+"<userinput>i</userinput>. To znaczy, że wszystkie trzy muszą mieć wartość "
+"\"prawda\", aby wypisać napis \"cześć\"."
+
+#. Tag: para
+#: programming-reference.docbook:99
+#, fuzzy, no-c-format
+#| msgid ""
+#| "An example with <userinput>or</userinput>: <screen>\n"
+#| "$n = 1\n"
+#| "if ($n &lt; 10) or ($n == 2) {\n"
+#| "  print \"hello\"\n"
+#| "}\n"
+#| "</screen> In this piece of &turtlescript; the left side of the "
+#| "<userinput>or</userinput> is evaluating to 'true', the right side to "
+#| "'false'. Since one of the two sides of the <userinput>or</userinput> "
+#| "operator is 'true', the <userinput>or</userinput> operator evaluates "
+#| "'true'. That means \"hello\" gets printed."
+msgid ""
+"An example with <userinput>or</userinput>: <screen>\n"
+"$n = 1\n"
+"if ($n &lt; 10) or ($n == 2) {\n"
+"  print \"hello\"\n"
+"}\n"
+"</screen> In this piece of &turtlescript; the left side of the "
+"<userinput>or</userinput> is evaluating to <quote>true</quote>, the right "
+"side to <quote>false</quote>. Since one of the two sides of the "
+"<userinput>or</userinput> operator is <quote>true</quote>, the "
+"<userinput>or</userinput> operator evaluates <quote>true</quote>. That means "
+"<quote>hello</quote> gets printed."
+msgstr ""
+"Przykład z użyciem <userinput>lub</userinput>: <screen>\n"
+"$n = 1\n"
+"jeśli ($n &lt; 10) lub ($n == 2) {\n"
+"  pisz \"cześć\"\n"
+"}\n"
+"</screen> W tym programie &turtlescript; lewa strona <userinput>lub</"
+"userinput> ma wartość 'prawda', a prawa 'fałsz'. Ponieważ chociaż jedna "
+"strona operatora <userinput>lub</userinput> ma wartość 'prawda', "
+"<userinput>lub</userinput> zwraca prawda. To znaczy, że napis \"cześć\" jest "
+"wypisany."
+
+#. Tag: para
+#: programming-reference.docbook:103
+#, fuzzy, no-c-format
+#| msgid ""
+#| "And finally an example with <userinput>not</userinput> which changes "
+#| "'true' into 'false' and 'false' into 'true'. Have a look:"
+msgid ""
+"And finally an example with <userinput>not</userinput> which changes "
+"<quote>true</quote> into <quote>false</quote> and <quote>false</quote> into "
+"<quote>true</quote>. Have a look:"
+msgstr ""
+"Ostatni przykład, tym razem z użyciem operatora <userinput>nie</userinput>, "
+"który zmienia \"prawda\" na \"fałsz\" i \"fałsz\" na \"prawda\". Spójrz:"
+
+#. Tag: screen
+#: programming-reference.docbook:104
+#, no-c-format
+msgid ""
+"$n = 1\n"
+"if not ($n == 3) {\n"
+"  print \"hello\"\n"
+"} else {\n"
+"  print \"not hello ;-)\"\n"
+"}"
+msgstr ""
+"$n = 1\n"
+"jeśli nie ($n == 3) {\n"
+"  pisz \"cześć\"\n"
+"} jeśliNie {\n"
+"  pisz \"nie cześć ;-)\"\n"
+"}"
+
+#. Tag: title
+#: programming-reference.docbook:109
+#, no-c-format
+msgid "Comparing operators"
+msgstr "Operatory porównania"
+
+#. Tag: para
+#: programming-reference.docbook:110
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Consider this simple comparison: <screen>\n"
+#| "$answer = 10 &gt; 3\n"
+#| "</screen> Here <userinput>10</userinput> is compared to <userinput>3</"
+#| "userinput> with the 'greater than' operator. The result of this "
+#| "comparison, the <link linkend=\"boolean-value\">boolean value</link> "
+#| "<userinput>true</userinput> is stored in the <link linkend=\"assignment-"
+#| "of-variables\">variable</link> <userinput>$answer</userinput>."
+msgid ""
+"Consider this simple comparison: <screen>\n"
+"$answer = 10 &gt; 3\n"
+"</screen> Here <userinput>10</userinput> is compared to <userinput>3</"
+"userinput> with the <quote>greater than</quote> operator. The result of this "
+"comparison, the <link linkend=\"boolean-value\">boolean value</link> "
+"<userinput>true</userinput> is stored in the <link linkend=\"assignment-of-"
+"variables\">variable</link> <userinput>$answer</userinput>."
+msgstr ""
+"Rozważ te proste porównanie: <screen>\n"
+"$odpowiedź = 10 &gt; 3\n"
+"</screen> Tutaj <userinput>10</userinput> jest porównane z <userinput>3</"
+"userinput> poprzez operator \"większy od\". Wynik tego porównania to  <link "
+"linkend=\"boolean-value\">wartość logiczna</link> <userinput>prawda</"
+"userinput>, która jest przypisana do <link linkend=\"assignment-of-variables"
+"\">zmiennej</link> <userinput>$odpowiedź</userinput>."
+
+#. Tag: para
+#: programming-reference.docbook:113
+#, no-c-format
+msgid ""
+"All <link linkend=\"number\">numbers</link> and <link linkend=\"assignment-"
+"of-variables\">variables</link> (that contain numbers) can be compared to "
+"each other with comparing operators."
+msgstr ""
+"Wszystkie <link linkend=\"number\">liczby</link> i <link linkend="
+"\"assignment-of-variables\">zmienne</link> (zawierające liczby) mogą być "
+"porównywane dzięki operatorom porównania."
+
+#. Tag: para
+#: programming-reference.docbook:114
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Here are all possible comparing operators: <table> <title>Types of "
+#| "questions</title> <tgroup cols=\"3\"> <tbody> <row> <entry><userinput>$A "
+#| "== $B</userinput></entry> <entry>equals</entry> <entry>answer is "
+#| "<quote>true</quote> if <userinput>$A</userinput> equals <userinput>$B</"
+#| "userinput></entry> </row> <row> <entry><userinput>$A != $B</userinput></"
+#| "entry> <entry>not-equals</entry> <entry>answer is <quote>true</quote> if "
+#| "<userinput>$A</userinput> does not equal <userinput>$B</userinput></"
+#| "entry> </row> <row> <entry><userinput>$A &gt; $B</userinput></entry> "
+#| "<entry>greater than</entry> <entry>answer is <quote>true</quote> if "
+#| "<userinput>$A</userinput> is greater than <userinput>$B</userinput></"
+#| "entry> </row> <row> <entry><userinput>$A &lt; $B</userinput></entry> "
+#| "<entry>smaller than</entry> <entry>answer is <quote>true</quote> if "
+#| "<userinput>$A</userinput> is smaller than <userinput>$B</userinput></"
+#| "entry> </row> <row> <entry><userinput>$A &gt;= $B</userinput></entry> "
+#| "<entry>greater than or equals</entry> <entry>answer is <quote>true</"
+#| "quote> if <userinput>$A</userinput> is greater than or equals <userinput>"
+#| "$B</userinput></entry> </row> <row> <entry><userinput>$A &lt;= $B</"
+#| "userinput></entry> <entry>smaller than or equals</entry> <entry>answer is "
+#| "<quote>true</quote> if <userinput>$A</userinput> is smaller than or "
+#| "equals <userinput>$B</userinput></entry> </row> </tbody> </tgroup> </"
+#| "table> Please note that $A and $B have to be <link linkend=\"number"
+#| "\">numbers</link> or <link linkend=\"assignment-of-variables\">variables</"
+#| "link> that contain numbers."
+msgid ""
+"Here are all possible comparing operators: <table> <title>Types of "
+"questions</title> <tgroup cols=\"3\"> <tbody> <row> <entry><userinput>$A == "
+"$B</userinput></entry> <entry>equals</entry> <entry>answer is <quote>true</"
+"quote> if <userinput>$A</userinput> equals <userinput>$B</userinput></entry> "
+"</row> <row> <entry><userinput>$A != $B</userinput></entry> <entry>not-"
+"equals</entry> <entry>answer is <quote>true</quote> if <userinput>$A</"
+"userinput> does not equal <userinput>$B</userinput></entry> </row> <row> "
+"<entry><userinput>$A &gt; $B</userinput></entry> <entry>greater than</entry> "
+"<entry>answer is <quote>true</quote> if <userinput>$A</userinput> is greater "
+"than <userinput>$B</userinput></entry> </row> <row> <entry><userinput>$A "
+"&lt; $B</userinput></entry> <entry>smaller than</entry> <entry>answer is "
+"<quote>true</quote> if <userinput>$A</userinput> is smaller than <userinput>"
+"$B</userinput></entry> </row> <row> <entry><userinput>$A &gt;= $B</"
+"userinput></entry> <entry>greater than or equals</entry> <entry>answer is "
+"<quote>true</quote> if <userinput>$A</userinput> is greater than or equals "
+"<userinput>$B</userinput></entry> </row> <row> <entry><userinput>$A &lt;= "
+"$B</userinput></entry> <entry>smaller than or equals</entry> <entry>answer "
+"is <quote>true</quote> if <userinput>$A</userinput> is smaller than or "
+"equals <userinput>$B</userinput></entry> </row> </tbody> </tgroup> </table> "
+"Please note that <userinput>$A</userinput> and <userinput>$B</userinput> "
+"have to be <link linkend=\"number\">numbers</link> or <link linkend="
+"\"assignment-of-variables\">variables</link> that contain numbers."
+msgstr ""
+"Oto wszystkie możliwe operatory porównania: <table> <title>Typy pytań</"
+"title> <tgroup cols=\"3\"> <tbody> <row> <entry><userinput>$A == $B</"
+"userinput></entry> <entry>równy</entry> <entry>wynikiem jest <quote>prawda</"
+"quote>, kiedy <userinput>$A</userinput> jest równe <userinput>$B</"
+"userinput></entry> </row> <row> <entry><userinput>$A != $B</userinput></"
+"entry> <entry>nierówny</entry> <entry>wynikiem jest <quote>prawda</quote>, "
+"kiedy <userinput>$A</userinput> jest różne od <userinput>$B</userinput></"
+"entry> </row> <row> <entry><userinput>$A &gt; $B</userinput></entry> "
+"<entry>większe od</entry> <entry> wynikiem jest <quote>prawda</quote>, kiedy "
+"<userinput>$A</userinput> jest większe od <userinput>$B</userinput></entry> "
+"</row> <row> <entry><userinput>$A &lt; $B</userinput></entry> "
+"<entry>mniejsze od</entry> <entry>wynikiem jest <quote>prawda</quote>, kiedy "
+"<userinput>$A</userinput> jest mniejsze od <userinput>$B</userinput></entry> "
+"</row> <row> <entry><userinput>$A &gt;= $B</userinput></entry> "
+"<entry>większe od lub równe</entry> <entry>wynikiem jest <quote>prawda</"
+"quote>, kiedy <userinput>$A</userinput> jest większe lub równe <userinput>"
+"$B</userinput></entry> </row> <row> <entry><userinput>$A &lt;= $B</"
+"userinput></entry> <entry>mniejsze od lub równe</entry> <entry>wynikiem jest "
+"<quote>prawda</quote>, kiedy <userinput>$A</userinput> jest mniejsze lub  "
+"równe <userinput>$B</userinput></entry> </row> </tbody> </tgroup> </table> "
+"Pamiętaj, że $A i $B muszą być <link linkend=\"number\">liczbami</link> lub "
+"<link linkend=\"assignment-of-variables\">zmiennymi</link>, które zawierają "
+"liczby."
+
+#. Tag: para
+#: programming-reference.docbook:163
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Using commands you tell the turtle or &kturtle; to do something. Some "
+#| "commands need input, some give output. In this section we explain all the "
+#| "built-in commands of &kturtle;. Alternatively, using <link linkend=\"learn"
+#| "\">learn</link>, you can create your own commands. Built-in commands we "
+#| "discuss here are <glossterm>highlighted</glossterm> with dark blue."
+msgid ""
+"Using commands you tell the turtle or &kturtle; to do something. Some "
+"commands need input, some give output. In this section we explain all the "
+"built-in commands of &kturtle;. Alternatively, using <link linkend=\"learn"
+"\"><userinput>learn</userinput></link>, you can create your own commands. "
+"Built-in commands we discuss here are <glossterm>highlighted</glossterm> "
+"with dark blue."
+msgstr ""
+"Używając poleceń mówimy żółwiowi lub &kturtle; by wykonywał konkretne "
+"rozkazy. Niektóre polecenia wymagają argumentów wyjściowych, a niektóre dają "
+"coś na wyjściu. W tej sekcji wyjaśniamy działanie wszystkich wbudowanych "
+"poleceń używanych przez &kturtle;. Możesz również użyć <link linkend=\"learn"
+"\">poznaj</link> do tworzenia własnych poleceń. Wbudowane polecenia są "
+"<glossterm>podświetlone</glossterm> kolorem ciemnoniebieskim."
+
+#. Tag: title
+#: programming-reference.docbook:166
+#, no-c-format
+msgid "Moving the turtle"
+msgstr "Poruszanie żółwia"
+
+#. Tag: para
+#: programming-reference.docbook:167
+#, no-c-format
+msgid "There are several commands to move the turtle over the screen."
+msgstr "Do poruszania żółwia po ekranie służy kilka poleceń."
+
+#. Tag: term
+#: programming-reference.docbook:172
+#, no-c-format
+msgid "<term>forward (fw)</term>"
+msgstr "<term>naprzód (np)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:172
+#, no-c-format
+msgid "<primary>forward (fw)</primary>"
+msgstr "<primary>naprzód (np)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:173
+#, no-c-format
+msgid "forward X"
+msgstr "naprzód X"
+
+#. Tag: para
+#: programming-reference.docbook:173
+#, fuzzy, no-c-format
+#| msgid ""
+#| "<userinput>forward</userinput> moves the turtle forward by the amount of "
+#| "X pixels. When the pen is down the turtle will leave a trail. "
+#| "<userinput>forward</userinput> can be abbreviated to <userinput>fw</"
+#| "userinput>"
+msgid ""
+"<userinput>forward</userinput> moves the turtle forward by the amount of X "
+"pixels. When the pen is down the turtle will leave a trail. "
+"<userinput>forward</userinput> can be abbreviated to <userinput>fw</"
+"userinput>."
+msgstr ""
+"<userinput>naprzód</userinput> przesuwa żółwia do przodu o X pikseli. Gdy "
+"ołówek jest skierowany w dół żółw zostawia ślad. <userinput>naprzód</"
+"userinput> może być użyty za pomocą skrótu <userinput>np</userinput>"
+
+#. Tag: term
+#: programming-reference.docbook:180
+#, no-c-format
+msgid "<term>backward (bw)</term>"
+msgstr "<term>wstecz (ws)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:180
+#, no-c-format
+msgid "<primary>backward (bw)</primary>"
+msgstr "<primary>wstecz (ws)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:181
+#, no-c-format
+msgid "backward X"
+msgstr "wstecz X"
+
+#. Tag: para
+#: programming-reference.docbook:181
+#, no-c-format
+msgid ""
+"<userinput>backward</userinput> moves the turtle backward by the amount of X "
+"pixels. When the pen is down the turtle will leave a trail. "
+"<userinput>backward</userinput> can be abbreviated to <userinput>bw</"
+"userinput>."
+msgstr ""
+"<userinput>wstecz</userinput> przesuwa żółwia do tyłu o X pikseli. Gdy "
+"ołówek jest skierowany w dół żółw zostawia ślad. <userinput>wstecz</"
+"userinput> może być użyty za pomocą skrótu <userinput>ws</userinput>."
+
+#. Tag: term
+#: programming-reference.docbook:188
+#, no-c-format
+msgid "<term>turnleft (tl)</term>"
+msgstr "<term>lewo (lw)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:188
+#, no-c-format
+msgid "<primary>turnleft (tl)</primary>"
+msgstr "<primary>lewo (lw)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:189
+#, no-c-format
+msgid "turnleft X"
+msgstr "lewo X"
+
+#. Tag: para
+#: programming-reference.docbook:189
+#, no-c-format
+msgid ""
+"<userinput>turnleft</userinput> commands the turtle to turn an amount of X "
+"degrees to the left. <userinput>turnleft</userinput> can be abbreviated to "
+"<userinput>tl</userinput>."
+msgstr ""
+"<userinput>lewo</userinput> powoduje, że żółw skręca w lewo o X stopni. "
+"<userinput>lewo</userinput> może być użyty za pomocą skrótu <userinput>lw</"
+"userinput>."
+
+#. Tag: term
+#: programming-reference.docbook:196
+#, no-c-format
+msgid "<term>turnright (tr)</term>"
+msgstr "<term>prawo (pw)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:196
+#, no-c-format
+msgid "<primary>turnright (tr)</primary>"
+msgstr "<primary>prawo (pw)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:197
+#, no-c-format
+msgid "turnright X"
+msgstr "prawo X"
+
+#. Tag: para
+#: programming-reference.docbook:197
+#, no-c-format
+msgid ""
+"<userinput>turnright</userinput> the turtle to turn an amount of X degrees "
+"to the right. <userinput>turnright</userinput> can be abbreviated to "
+"<userinput>tr</userinput>."
+msgstr ""
+"<userinput>prawo</userinput> powoduje, że żółw skręca w prawo o X stopni. "
+"<userinput>prawo</userinput> może być użyty za pomocą skrótu <userinput>pw</"
+"userinput>."
+
+#. Tag: term
+#: programming-reference.docbook:204
+#, no-c-format
+msgid "<term>direction (dir)</term>"
+msgstr "<term>ustalKierunek (uk)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:204
+#, no-c-format
+msgid "<primary>direction (dir)</primary>"
+msgstr "<primary>ustalKierunek (uk)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:205
+#, no-c-format
+msgid "direction X"
+msgstr "ustalKierunek X"
+
+#. Tag: para
+#: programming-reference.docbook:205
+#, no-c-format
+msgid ""
+"<userinput>direction</userinput> set the turtle's direction to an amount of "
+"X degrees counting from zero, and thus is not relative to the turtle's "
+"previous direction. <userinput>direction</userinput> can be abbreviated to "
+"<userinput>dir</userinput>."
+msgstr ""
+"<userinput>ustalKierunek</userinput> ustawia kierunek ruchu żółwia na X "
+"stopni licząc od zera, nie wiąże się to z poprzednim kierunkiem ruchu "
+"żółwia. <userinput>ustalKierunek</userinput> może być użyty za pomocą skrótu "
+"<userinput>uk</userinput>."
+
+#. Tag: term
+#: programming-reference.docbook:212
+#, fuzzy, no-c-format
+#| msgid "<term>direction (dir)</term>"
+msgid "<term>getdirection</term>"
+msgstr "<term>ustalKierunek (uk)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:212
+#, fuzzy, no-c-format
+#| msgid "<primary>direction (dir)</primary>"
+msgid "<primary>getdirection</primary>"
+msgstr "<primary>ustalKierunek (uk)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:213
+#, fuzzy, no-c-format
+#| msgid "<screen>exit</screen>"
+msgid "<screen>getdirection</screen>"
+msgstr "<screen>wyjdź</screen>"
+
+#. Tag: para
+#: programming-reference.docbook:213
+#, fuzzy, no-c-format
+#| msgid ""
+#| "<userinput>direction</userinput> set the turtle's direction to an amount "
+#| "of X degrees counting from zero, and thus is not relative to the turtle's "
+#| "previous direction. <userinput>direction</userinput> can be abbreviated "
+#| "to <userinput>dir</userinput>."
+msgid ""
+"<userinput>getdirection</userinput> returns the turtle's direction as an "
+"amount of degrees counting from zero, where zero is the direction when the "
+"turtle is pointing upwards."
+msgstr ""
+"<userinput>ustalKierunek</userinput> ustawia kierunek ruchu żółwia na X "
+"stopni licząc od zera, nie wiąże się to z poprzednim kierunkiem ruchu "
+"żółwia. <userinput>ustalKierunek</userinput> może być użyty za pomocą skrótu "
+"<userinput>uk</userinput>."
+
+#. Tag: term
+#: programming-reference.docbook:220
+#, no-c-format
+msgid "<term>center</term>"
+msgstr "<term>środek</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:220
+#, no-c-format
+msgid "<primary>center</primary>"
+msgstr "<primary>środek</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:221
+#, no-c-format
+msgid "<screen>center</screen>"
+msgstr "<screen>środek</screen>"
+
+#. Tag: para
+#: programming-reference.docbook:221
+#, no-c-format
+msgid ""
+"<userinput>center</userinput> moves the turtle to the center on the canvas."
+msgstr "<userinput>środek</userinput> przesuwa żółwia na środek płótna."
+
+#. Tag: term
+#: programming-reference.docbook:228
+#, no-c-format
+msgid "<term>go</term>"
+msgstr "<term>idź</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:228
+#, no-c-format
+msgid "<primary>go</primary>"
+msgstr "<primary>idź</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:229
+#, no-c-format
+msgid "go X,Y"
+msgstr "idź X,Y"
+
+#. Tag: para
+#: programming-reference.docbook:229
+#, fuzzy, no-c-format
+#| msgid ""
+#| "<userinput>go</userinput> commands the turtle to go to a certain place on "
+#| "the canvas. This place is X <glossterm linkend=\"pixels\">pixels</"
+#| "glossterm> from the left of the canvas, and Y <glossterm linkend=\"pixels"
+#| "\">pixels</glossterm> form the top of the canvas."
+msgid ""
+"<userinput>go</userinput> commands the turtle to go to a certain place on "
+"the canvas. This place is X <glossterm linkend=\"pixels\">pixels</glossterm> "
+"from the left of the canvas, and Y <glossterm linkend=\"pixels\">pixels</"
+"glossterm> from the top of the canvas."
+msgstr ""
+"Polecenie <userinput>idź</userinput> przesuwa żółwia na wskazaną lokalizację "
+"na płótnie. Ta lokalizacja to X <glossterm linkend=\"pixels\">pikseli</"
+"glossterm> od lewej strony płótna oraz Y <glossterm linkend=\"pixels"
+"\">pikseli</glossterm> od góry płótna."
+
+#. Tag: term
+#: programming-reference.docbook:236
+#, no-c-format
+msgid "<term>gox</term>"
+msgstr "<term>idźx</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:236
+#, fuzzy, no-c-format
+#| msgid "gox X"
+msgid "gox (gx)"
+msgstr "idźx X"
+
+#. Tag: screen
+#: programming-reference.docbook:237
+#, no-c-format
+msgid "gox X"
+msgstr "idźx X"
+
+#. Tag: para
+#: programming-reference.docbook:237
+#, fuzzy, no-c-format
+#| msgid ""
+#| "<userinput>gox</userinput> using this command the turtle will move to X "
+#| "<glossterm linkend=\"pixels\">pixels</glossterm> from the left of the "
+#| "canvas whilst staying at the same height."
+msgid ""
+"<userinput>gox</userinput> using this command the turtle will move to X "
+"<glossterm linkend=\"pixels\">pixels</glossterm> from the left of the canvas "
+"whilst staying at the same height. <userinput>gox</userinput> can be "
+"abbreviated to <userinput>gx</userinput>."
+msgstr ""
+"<userinput>idźx</userinput> powoduje przesunięcie żółwia do pozycji X "
+"<glossterm linkend=\"pixels\">pikseli</glossterm> od lewej strony płótna, "
+"podczas gdy wysokość pozostaje bez zmiany."
+
+#. Tag: term
+#: programming-reference.docbook:244
+#, no-c-format
+msgid "<term>goy</term>"
+msgstr "<term>idźy</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:244
+#, fuzzy, no-c-format
+#| msgid "goy Y"
+msgid "goy (gy)"
+msgstr "idźy Y"
+
+#. Tag: screen
+#: programming-reference.docbook:245
+#, no-c-format
+msgid "goy Y"
+msgstr "idźy Y"
+
+#. Tag: para
+#: programming-reference.docbook:245
+#, fuzzy, no-c-format
+#| msgid ""
+#| "<userinput>gox</userinput> using this command the turtle will move to Y "
+#| "<glossterm linkend=\"pixels\">pixels</glossterm> from the top of the "
+#| "canvas whilst staying at the same distance from the left border of the "
+#| "canvas."
+msgid ""
+"<userinput>goy</userinput> using this command the turtle will move to Y "
+"<glossterm linkend=\"pixels\">pixels</glossterm> from the top of the canvas "
+"whilst staying at the same distance from the left border of the canvas. "
+"<userinput>goy</userinput> can be abbreviated to <userinput>gy</userinput>."
+msgstr ""
+"<userinput>idźy</userinput> powoduje przesunięcie żółwia do pozycji Y "
+"<glossterm linkend=\"pixels\">pikseli</glossterm> od góry płótna, podczas "
+"gdy odległość od lewego brzegu pozostaje bez zmian."
+
+#. Tag: para
+#: programming-reference.docbook:249
+#, no-c-format
+msgid ""
+"Using the commands <userinput>go</userinput>, <userinput>gox</userinput>, "
+"<userinput>goy</userinput> and <userinput>center</userinput> the turtle will "
+"not draw a line, no matter if the pen is up or down."
+msgstr ""
+"Polecenia <userinput>idź</userinput>, <userinput>idźx</userinput>, "
+"<userinput>idźy</userinput> i <userinput>środek</userinput> nie rysują "
+"linii, niezależnie od tego, czy pisak jest włączony, czy nie."
+
+#. Tag: title
+#: programming-reference.docbook:254
+#, no-c-format
+msgid "Where is the turtle?"
+msgstr "Gdzie jest żółw?"
+
+#. Tag: para
+#: programming-reference.docbook:255
+#, no-c-format
+msgid ""
+"There are two commands which return the position of the turtle on the screen."
+msgstr "Istnieją dwa polecenia, zwracające pozycję żółwia na ekranie."
+
+#. Tag: term
+#: programming-reference.docbook:260
+#, no-c-format
+msgid "<term>getx</term>"
+msgstr "<term>pozx</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:260
+#, no-c-format
+msgid "<primary>getx</primary>"
+msgstr "<primary>pozx</primary>"
+
+#. Tag: para
+#: programming-reference.docbook:261
+#, no-c-format
+msgid ""
+"<userinput>getx</userinput> returns the number of pixels from the left of "
+"the canvas to the current position of the turtle."
+msgstr ""
+"<userinput>pozx</userinput> zwraca liczbę pikseli od lewej na płótnie do "
+"bieżącej pozycji żółwia."
+
+#. Tag: term
+#: programming-reference.docbook:268
+#, no-c-format
+msgid "<term>gety</term>"
+msgstr "<term>pozy</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:268
+#, no-c-format
+msgid "<primary>gety</primary>"
+msgstr "<primary>pozy</primary>"
+
+#. Tag: para
+#: programming-reference.docbook:269
+#, no-c-format
+msgid ""
+"<userinput>gety</userinput> returns the number of pixels from the top of the "
+"canvas to the current position of the turtle."
+msgstr ""
+"<userinput>pozy</userinput> zwraca liczbę pikseli od góry płótna do bieżącej "
+"pozycji żółwia."
+
+#. Tag: title
+#: programming-reference.docbook:276
+#, no-c-format
+msgid "The turtle has a pen"
+msgstr "Żółw posiada ołówek"
+
+#. Tag: para
+#: programming-reference.docbook:277
+#, no-c-format
+msgid ""
+"The turtle has a pen that draws a line when the turtle moves. There are a "
+"few commands to control the pen. In this section we explain these commands."
+msgstr ""
+"Żółw posiada ołówek, który rysuje linię gdy żółw się przesuwa. Istnieje "
+"kilka poleceń zarządzających ołówkiem. W tej sekcji wyjaśniamy te polecenia."
+
+#. Tag: term
+#: programming-reference.docbook:281
+#, no-c-format
+msgid "<term>penup (pu)</term>"
+msgstr "<term>podnieś (pod)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:281
+#, no-c-format
+msgid "<primary>penup (pu)</primary>"
+msgstr "<primary>podnieś (pod)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:282
+#, no-c-format
+msgid "penup"
+msgstr "podnieś"
+
+#. Tag: para
+#: programming-reference.docbook:282
+#, no-c-format
+msgid ""
+"<userinput>penup</userinput> lifts the pen from the canvas. When the pen is "
+"<quote>up</quote> no line will be drawn when the turtle moves. See also "
+"<userinput>pendown</userinput>. <userinput>penup</userinput> can be "
+"abbreviated to <userinput>pu</userinput>."
+msgstr ""
+"<userinput>podnieś</userinput> podnosi ołówek z płótna. Gdy ołówek jest "
+"<quote>podniesiony</quote>, nie będzie rysowana linia w czasie poruszania "
+"się żółwia. Zobacz także <userinput>opuść</userinput>. <userinput>podnieś</"
+"userinput> może być użyte za pomocą skrótu <userinput>pod</userinput>."
+
+#. Tag: term
+#: programming-reference.docbook:289
+#, no-c-format
+msgid "<term>pendown (pd)</term>"
+msgstr "<term>opuść (opu)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:289
+#, no-c-format
+msgid "<primary>pendown (pd)</primary>"
+msgstr "<primary>opuść (opu)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:290
+#, no-c-format
+msgid "pendown"
+msgstr "opuść"
+
+#. Tag: para
+#: programming-reference.docbook:290
+#, no-c-format
+msgid ""
+"<userinput>pendown</userinput> presses the pen down on the canvas. When the "
+"pen is press <quote>down</quote> on the canvas a line will be drawn when the "
+"turtle moves. See also <userinput>penup</userinput>. <userinput>pendown</"
+"userinput> can be abbreviated to <userinput>pd</userinput>."
+msgstr ""
+"<userinput>opuść</userinput> kładzie ołówek na płótnie. Gdy ołówek jest "
+"<quote>położony</quote>, będzie rysowana linia w czasie poruszania się "
+"żółwia. Zobacz także <userinput>podnieś</userinput>. <userinput>opuść</"
+"userinput> może być użyte za pomocą skrótu <userinput>opu</userinput>."
+
+#. Tag: term
+#: programming-reference.docbook:297
+#, no-c-format
+msgid "<term>penwidth (pw)</term>"
+msgstr "<term>ustalGrubość (ugp)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:297
+#, no-c-format
+msgid "<primary>penwidth (pw)</primary>"
+msgstr "<primary>ustalGrubość (ugp)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:298
+#, no-c-format
+msgid "penwidth X"
+msgstr "ustalGrubość X"
+
+#. Tag: para
+#: programming-reference.docbook:298
+#, no-c-format
+msgid ""
+"<userinput>penwidth</userinput> sets the width of the pen (the line width) "
+"to an amount of X <glossterm linkend=\"pixels\">pixels</glossterm>. "
+"<userinput>penwidth</userinput> can be abbreviated to <userinput>pw</"
+"userinput>."
+msgstr ""
+"<userinput>ustalGrubość</userinput> ustawia grubość ołówka (grubość "
+"rysowanej linii) na X <glossterm linkend=\"pixels\">pikseli</glossterm>. "
+"<userinput>ustalGrubość</userinput> może być użyte za pomocą skrótu "
+"<userinput>ugp</userinput>."
+
+#. Tag: term
+#: programming-reference.docbook:305
+#, no-c-format
+msgid "<term>pencolor (pc)</term>"
+msgstr "<term>ustalKolPis (ukp)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:305
+#, no-c-format
+msgid "<primary>pencolor (pc)</primary>"
+msgstr "<primary>ustalKolPis (ukp)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:306
+#, no-c-format
+msgid "pencolor R,G,B"
+msgstr "ustalKolPis R,G,B"
+
+#. Tag: para
+#: programming-reference.docbook:306
+#, no-c-format
+msgid ""
+"<userinput>pencolor</userinput> sets the color of the pen. "
+"<userinput>pencolor</userinput> takes an <glossterm linkend=\"rgb\">RGB "
+"combination</glossterm> as input. <userinput>pencolor</userinput> can be "
+"abbreviated to <userinput>pc</userinput>."
+msgstr ""
+"<userinput>ustalKolPis</userinput> ustawia kolor ołówka. "
+"<userinput>ustalKolPis</userinput> przyjmuje <glossterm linkend=\"rgb"
+"\">kombinację RGB</glossterm> jako argument wejściowy. "
+"<userinput>ustalKolPis</userinput> może być użyty za pomocą skrótu "
+"<userinput>ukp</userinput>."
+
+#. Tag: title
+#: programming-reference.docbook:313
+#, no-c-format
+msgid "Commands to control the canvas"
+msgstr "Polecenia do zarządzania płótnem"
+
+#. Tag: para
+#: programming-reference.docbook:314
+#, no-c-format
+msgid "There are several commands to control the canvas."
+msgstr "Istnieje kilka poleceń sterujących płótnem."
+
+#. Tag: term
+#: programming-reference.docbook:318
+#, no-c-format
+msgid "<term>canvassize (cs)</term>"
+msgstr "<term>ustalRozmiar (urt)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:318
+#, no-c-format
+msgid "<primary>canvassize (cs)</primary>"
+msgstr "<primary>ustalRozmiar (urt)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:319
+#, no-c-format
+msgid "canvassize X,Y"
+msgstr "ustalRozmiar X,Y"
+
+#. Tag: para
+#: programming-reference.docbook:319
+#, no-c-format
+msgid ""
+"With the <userinput>canvassize</userinput> command you can set the size of "
+"the canvas. It takes X and Y as input, where X is the new canvas width in "
+"<glossterm linkend=\"pixels\">pixels</glossterm>, and Y is the new height of "
+"the canvas in <glossterm linkend=\"pixels\">pixels</glossterm>. "
+"<userinput>canvassize</userinput> can be abbreviated to <userinput>cs</"
+"userinput>."
+msgstr ""
+"Za pomocą polecenia <userinput>ustalRozmiar</userinput> można ustawić "
+"rozmiar płótna. Polecenie przyjmuje jako argumenty wejściowe liczby X i Y, "
+"gdzie X jest nową szerokością płótna w <glossterm linkend=\"pixels"
+"\">pikselach</glossterm>, a Y jest nową wysokością płótna w <glossterm "
+"linkend=\"pixels\">pikselach</glossterm>. <userinput>ustalRozmiar</"
+"userinput> może być użyte za pomocą skrótu <userinput>urt</userinput>."
+
+#. Tag: term
+#: programming-reference.docbook:326
+#, no-c-format
+msgid "<term>canvascolor (cc)</term>"
+msgstr "<term>ustalKolTła (ukt)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:326
+#, no-c-format
+msgid "<primary>canvascolor (cc)</primary>"
+msgstr "<primary>ustalKolTła (ukt)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:327
+#, no-c-format
+msgid "canvascolor R,G,B"
+msgstr "ustalKolTła R,G,B"
+
+#. Tag: para
+#: programming-reference.docbook:327
+#, no-c-format
+msgid ""
+"<userinput>canvascolor</userinput> set the color of the canvas. "
+"<userinput>canvascolor</userinput> takes an <glossterm linkend=\"rgb\">RGB "
+"combination</glossterm> as input. <userinput>canvascolor</userinput> can be "
+"abbreviated to <userinput>cc</userinput>."
+msgstr ""
+"Polecenie <userinput>ustalKolTła</userinput> ustawia kolor płótna. "
+"<userinput>ustalKolTła</userinput> przyjmuje <glossterm linkend=\"rgb"
+"\">kombinację RGB</glossterm> jako argument wejściowy. "
+"<userinput>ustalKolTła</userinput> może być użyty za pomocą skrótu "
+"<userinput>ukt</userinput>."
+
+#. Tag: title
+#: programming-reference.docbook:334
+#, no-c-format
+msgid "Commands to clean up"
+msgstr "polecenia czyszczenia"
+
+#. Tag: para
+#: programming-reference.docbook:335
+#, no-c-format
+msgid ""
+"There are two commands to clean up the canvas after you have made a mess."
+msgstr "Istnieją dwa polecenia czyszczące płótno."
+
+#. Tag: term
+#: programming-reference.docbook:339
+#, no-c-format
+msgid "<term>clear (ccl)</term>"
+msgstr "<term>zmaż (cbg)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:339
+#, no-c-format
+msgid "<primary>clear (ccl)</primary>"
+msgstr "<primary>zmaż (cbg)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:340
+#, no-c-format
+msgid "clear"
+msgstr "zmaż"
+
+#. Tag: para
+#: programming-reference.docbook:340
+#, no-c-format
+msgid ""
+"With <userinput>clear</userinput> you can clean all drawings from the "
+"canvas. All other things remain: the position and angle of the turtle, the "
+"canvascolor, the visibility of the turtle, and the canvas size."
+msgstr ""
+"Polecenie <userinput>zmaż</userinput> usuwa wszystkie rysunki z płótna. "
+"Pozostałe rzeczy zostają: pozycja i kąt ruchu żółwia, kolor płótna, "
+"widoczność żółwia i rozmiar płótna."
+
+#. Tag: term
+#: programming-reference.docbook:347
+#, no-c-format
+msgid "<term>reset</term>"
+msgstr "<term>czyść</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:347
+#, no-c-format
+msgid "<primary>reset</primary>"
+msgstr "<primary>czyść</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:348
+#, no-c-format
+msgid "<screen>reset</screen>"
+msgstr "<screen>czyść</screen>"
+
+#. Tag: para
+#: programming-reference.docbook:348
+#, no-c-format
+msgid ""
+"<userinput>reset</userinput> cleans much more thoroughly than the "
+"<userinput>clear</userinput> command. After a <userinput>reset</userinput> "
+"command everything is like is was when you had just started &kturtle;. The "
+"turtle is positioned at the middle of the screen, the canvas color is white, "
+"the turtle draws a black line on the canvas and the canvassize is set to 400 "
+"x 400 pixels."
+msgstr ""
+"Polecenie <userinput>czyść</userinput> czyści bardziej dokładnie niż "
+"polecenie <userinput>zmaż</userinput>. Po wykonaniu polecenia "
+"<userinput>czyść</userinput> płótno wygląda jak po rozpoczęciu pracy "
+"&kturtle;. Żółw umieszczony jest na środku ekranu, kolor płótna jest biały, "
+"żółw rysuje czarną linię na płótnie, a rozmiar płótna jest ustawiony na 400 "
+"x 400 pikseli."
+
+#. Tag: title
+#: programming-reference.docbook:355
+#, no-c-format
+msgid "The turtle is a sprite"
+msgstr "Żółw jest sprajtem"
+
+#. Tag: para
+#: programming-reference.docbook:356
+#, no-c-format
+msgid ""
+"First a brief explanation of what sprites are: sprites are small pictures "
+"that can be moved around the screen, like we often see in computer games. "
+"Our turtle is also a sprite. For more info see the glossary on <glossterm "
+"linkend=\"sprites\">sprites</glossterm>."
+msgstr ""
+"Najpierw krótkie wytłumaczenie, czym jest sprajt: sprajty to małe obrazki, "
+"które mogą być przesuwane po ekranie, jak często to widzimy w grach "
+"komputerowych. Nasz żółwik jest także sprajtem. Dokładniejsze wyjaśnienie "
+"znajduje się w słowniku pod hasłem <glossterm linkend=\"sprites\">sprajty</"
+"glossterm>."
+
+#. Tag: para
+#: programming-reference.docbook:357
+#, no-c-format
+msgid ""
+"Next you will find a full overview on all commands to work with sprites."
+msgstr "Poniżej znajduje się pełen przegląd poleceń do pracy ze sprajtami."
+
+#. Tag: para
+#: programming-reference.docbook:358
+#, fuzzy, no-c-format
+#| msgid ""
+#| "[The current version of &kturtle; does not yet support the use of sprites "
+#| "other than the turtle. With future versions you will be able to change "
+#| "the turtle into something of your own design]"
+msgid ""
+"The current version of &kturtle; does not yet support the use of sprites "
+"other than the turtle. With future versions you will be able to change the "
+"turtle into something of your own design."
+msgstr ""
+"[Obecna wersja &kturtle; nie obsługuje jeszcze użycia sprajtów innych niż "
+"żółw. Kolejne wersje będą umożliwiać zmianę żółwia na coś zaprojektowanego "
+"przez siebie]"
+
+#. Tag: term
+#: programming-reference.docbook:362
+#, no-c-format
+msgid "<term>spriteshow (ss)</term>"
+msgstr "<term>pokaż (pż)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:362
+#, no-c-format
+msgid "<primary>spriteshow (ss)</primary>"
+msgstr "<primary>pokaż (pż)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:363
+#, no-c-format
+msgid "spriteshow"
+msgstr "pokaż"
+
+#. Tag: para
+#: programming-reference.docbook:363
+#, no-c-format
+msgid ""
+"<userinput>spriteshow</userinput> makes the turtle visible again after it "
+"has been hidden. <userinput>spriteshow</userinput> can be abbreviated to "
+"<userinput>ss</userinput>."
+msgstr ""
+"Polecenie <userinput>pokaż</userinput> sprawia, że żółw staje się widoczny "
+"(gdy był ukryty). <userinput>pokaż</userinput> może być użyty za pomocą "
+"skrótu <userinput>pż</userinput>."
+
+#. Tag: term
+#: programming-reference.docbook:370
+#, no-c-format
+msgid "<term>spritehide (sh)</term>"
+msgstr "<term>ukryj (sż)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:370
+#, no-c-format
+msgid "<primary>spritehide (sh)</primary>"
+msgstr "<primary>ukryj (sż)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:371
+#, no-c-format
+msgid "spritehide"
+msgstr "ukryj"
+
+#. Tag: para
+#: programming-reference.docbook:371
+#, no-c-format
+msgid ""
+"<userinput>spritehide</userinput> hides the turtle. This can be used if the "
+"turtle does not fit in your drawing. <userinput>spritehide</userinput> can "
+"be abbreviated to <userinput>sh</userinput>."
+msgstr ""
+"Polecenie <userinput>ukryj</userinput> sprawia, że żółw jest ukrywany. Opcja "
+"używana gdy żółw nie pasuje do rysunku. <userinput>ukryj</userinput> może "
+"być użyty za pomocą skrótu <userinput>sż</userinput>."
+
+#. Tag: title
+#: programming-reference.docbook:378
+#, no-c-format
+msgid "Can the turtle write?"
+msgstr "Czy żółw może pisać?"
+
+#. Tag: para
+#: programming-reference.docbook:379
+#, no-c-format
+msgid ""
+"The answer is: <quote>yes</quote>. The turtle can write: it writes just "
+"about everything you command it to."
+msgstr ""
+"Odpowiedź brzmi: <quote>tak</quote>. Żółw potrafi pisać: wszystko co każe mu "
+"się pisać."
+
+#. Tag: term
+#: programming-reference.docbook:383
+#, no-c-format
+msgid "<term>print</term>"
+msgstr "<term>pisz</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:383
+#, no-c-format
+msgid "<primary>print</primary>"
+msgstr "<primary>pisz</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:384
+#, no-c-format
+msgid "print X"
+msgstr "pisz X"
+
+#. Tag: para
+#: programming-reference.docbook:384
+#, no-c-format
+msgid ""
+"The <userinput>print</userinput> command is used to command the turtle to "
+"write something on the canvas. <userinput>print</userinput> takes numbers "
+"and strings as input. You can <userinput>print</userinput> various numbers "
+"and strings using the <quote>+</quote> symbol. See here a small example:"
+msgstr ""
+"<userinput>pisz</userinput> każe żółwiowi pisać podany tekst na płótnie. "
+"<userinput>pisz</userinput> przyjmuje jako argumenty wejściowe liczby i/lub "
+"teksty. Używając symbolu <quote>+</quote> można <userinput>napisać</"
+"userinput> kilka liczb i tekstów. Oto mały przykład:"
+
+#. Tag: screen
+#: programming-reference.docbook:386
+#, no-c-format
+msgid ""
+"$year = 2003\n"
+"$author = \"Cies\"\n"
+"print $author + \" started the KTurtle project in \" + $year + \" and still "
+"enjoys working on it!\""
+msgstr ""
+"$rok = 2003\n"
+"$autor = \"Cies\"\n"
+"pisz $autor + \" rozpoczął projekt KTurtle w roku \" + $rok + \" i dalej z "
+"radością nad nim pracuje!\""
+
+#. Tag: term
+#: programming-reference.docbook:393
+#, no-c-format
+msgid "<term>fontsize</term>"
+msgstr "<term>rozmiarTekstu</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:393
+#, no-c-format
+msgid "<primary>fontsize</primary>"
+msgstr "<term>rozmiarTekstu</term>"
+
+#. Tag: screen
+#: programming-reference.docbook:394
+#, no-c-format
+msgid "fontsize X"
+msgstr "rozmiarTekstu X"
+
+#. Tag: para
+#: programming-reference.docbook:394
+#, no-c-format
+msgid ""
+"<userinput>fontsize</userinput> sets the size of the font that is used by "
+"<userinput>print</userinput>. <userinput>fontsize</userinput> takes one "
+"input which should be a number. The size is set in <glossterm linkend="
+"\"pixels\">pixels</glossterm>."
+msgstr ""
+"<userinput>rozmiarTekstu</userinput> ustawia rozmiar czcionki używany przy "
+"poleceniu <userinput>pisz</userinput>. <userinput>rozmiarTekstu</userinput> "
+"przyjmuje liczbę jako argument wejściowy. Rozmiar czcionki podawany jest w "
+"<glossterm linkend=\"pixels\">pikselach</glossterm>."
+
+#. Tag: title
+#: programming-reference.docbook:401
+#, no-c-format
+msgid "Mathematical commands"
+msgstr "Polecenia matematyczne"
+
+#. Tag: para
+#: programming-reference.docbook:402
+#, no-c-format
+msgid ""
+"The following commands are &kturtle;'s more advanced mathematical commands."
+msgstr ""
+"Poniższe polecenia programu &kturtle; służą do bardziej zaawansowanych "
+"operacji matematycznych."
+
+#. Tag: term
+#: programming-reference.docbook:406
+#, no-c-format
+msgid "<term>round</term>"
+msgstr "<term>zaokrąglij</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:406
+#, no-c-format
+msgid "<primary>round</primary>"
+msgstr "<primary>zaokrąglij</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:407
+#, no-c-format
+msgid "round(x)"
+msgstr "zaokrąglij(x)"
+
+#. Tag: para
+#: programming-reference.docbook:407
+#, no-c-format
+msgid ""
+"<userinput>round</userinput> the given number to the nearest integer. "
+"<screen>\n"
+"print round(10.8)\n"
+"forward 20\n"
+"print round(10.3)\n"
+"</screen> With this code the turtle will print the numbers 11 and 10."
+msgstr ""
+"<userinput>zaokrąglij</userinput> daną liczbę do najbliższej liczby "
+"całkowitej. <screen>\n"
+"pisz zaokrąglij(10.8)\n"
+"naprzód 20\n"
+"pisz zaokrąglij(10.3)\n"
+"</screen>Ten kod spowoduje wypisanie przez żółwia liczb 11 i 10."
+
+#. Tag: term
+#: programming-reference.docbook:416
+#, no-c-format
+msgid "<term>random (rnd)</term>"
+msgstr "<term>losowa (los)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:416
+#, no-c-format
+msgid "<primary>random (rnd)</primary>"
+msgstr "<primary>losowa (los)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:417
+#, no-c-format
+msgid "random X,Y"
+msgstr "losowa X,Y"
+
+#. Tag: para
+#: programming-reference.docbook:417
+#, no-c-format
+msgid ""
+"<userinput>random</userinput> is a command that takes input and gives "
+"output. As input are required two numbers, the first (X) sets the minimum "
+"output, the second (Y) sets the maximum. The output is a randomly chosen "
+"number that is equal or greater than the minimum and equal or smaller than "
+"the maximum. Here a small example: <screen>\n"
+"repeat 500 {\n"
+"  $x = random 1,20\n"
+"  forward $x\n"
+"  turnleft 10 - $x\n"
+"}\n"
+"</screen> Using the <userinput>random</userinput> command you can add a bit "
+"of chaos to your program."
+msgstr ""
+"<userinput>losowa</userinput> przyjmuje argumenty wejściowe i daje argumenty "
+"wyjściowe. Jako argumenty wejściowe wymagane są dwie liczby, pierwsza (X) "
+"określa minimum argumentu wyjściowego, natomiast druga (Y) określa maksimum. "
+"Argument wyjściowy jest losowo wybraną liczbą z przedziału ograniczonego "
+"przez podane minimum i maksimum. Oto przykład: <screen>\n"
+"powtórz 500 {\n"
+"  $x = losowa 1,20\n"
+"  naprzód $x\n"
+"  lewo 10 - $x\n"
+"}\n"
+"</screen> Używając polecenia <userinput>losowa</userinput> można dodać "
+"odrobiny chaosu do programu."
+
+#. Tag: term
+#: programming-reference.docbook:426
+#, fuzzy, no-c-format
+#| msgid "<term>go</term>"
+msgid "<term>mod</term>"
+msgstr "<term>idź</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:426
+#, fuzzy, no-c-format
+#| msgid "<primary>go</primary>"
+msgid "<primary>mod</primary>"
+msgstr "<primary>idź</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:427
+#, fuzzy, no-c-format
+#| msgid "go X,Y"
+msgid "mod X,Y"
+msgstr "idź X,Y"
+
+#. Tag: para
+#: programming-reference.docbook:427
+#, fuzzy, no-c-format
+#| msgid ""
+#| "The <userinput>sqrt</userinput> command is sued to find the square root "
+#| "of a number, X."
+msgid ""
+"The <userinput>mod</userinput> returns remainder of the division of first "
+"number by the second number."
+msgstr ""
+"Polecenie <userinput>sqrt</userinput> służy do znalezienia pierwiastka "
+"kwadratowego liczby X."
+
+#. Tag: term
+#: programming-reference.docbook:434
+#, no-c-format
+msgid "<term>sqrt</term>"
+msgstr "<term>sqrt</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:434
+#, no-c-format
+msgid "<primary>sqrt</primary>"
+msgstr "<primary>sqrt</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:435
+#, no-c-format
+msgid "sqrt X"
+msgstr "sqrt X"
+
+#. Tag: para
+#: programming-reference.docbook:435
+#, no-c-format
+msgid ""
+"The <userinput>sqrt</userinput> command is sued to find the square root of a "
+"number, X."
+msgstr ""
+"Polecenie <userinput>sqrt</userinput> służy do znalezienia pierwiastka "
+"kwadratowego liczby X."
+
+#. Tag: term
+#: programming-reference.docbook:452
+#, no-c-format
+msgid "<term>pi</term>"
+msgstr "<term>pi</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:452
+#, no-c-format
+msgid "<primary>pi</primary>"
+msgstr "<primary>pi</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:453
+#, no-c-format
+msgid "<screen>pi</screen>"
+msgstr "<screen>pi</screen>"
+
+#. Tag: para
+#: programming-reference.docbook:453
+#, no-c-format
+msgid "This command returns the constant Pi, <userinput>3.14159</userinput>."
+msgstr "To polecenie zwraca stałą Pi, czyli <userinput>3.14159</userinput>."
+
+#. Tag: term
+#: programming-reference.docbook:462
+#, no-c-format
+msgid ""
+"sin<indexterm><primary>sin</primary></indexterm>, "
+"cos<indexterm><primary>cos</primary></indexterm>, tan"
+msgstr ""
+"sin<indexterm><primary>sin</primary></indexterm>, "
+"cos<indexterm><primary>cos</primary></indexterm>, tan"
+
+#. Tag: primary
+#: programming-reference.docbook:462
+#, no-c-format
+msgid "<primary>tan</primary>"
+msgstr "<primary>tan</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:464
+#, no-c-format
+msgid ""
+"sin X\n"
+"cos X\n"
+"tan X"
+msgstr ""
+"sin X\n"
+"cos X\n"
+"tan X"
+
+#. Tag: para
+#: programming-reference.docbook:464
+#, no-c-format
+msgid ""
+"These three commands represent the world famous trigoniometrical functions "
+"<userinput>sin</userinput>, <userinput>cos</userinput> and <userinput>tan</"
+"userinput>. The input argument of these commands, X, is a <link linkend="
+"\"number\">number</link>."
+msgstr ""
+"Te trzy polecenia reprezentują znane na całym świecie funkcje "
+"trygonometryczne <userinput>sin</userinput>, <userinput>cos</userinput> i "
+"<userinput>tan</userinput>. Wejściem tych poleceń jest <link linkend=\"number"
+"\">liczba</link> X."
+
+#. Tag: term
+#: programming-reference.docbook:473
+#, no-c-format
+msgid ""
+"arcsin<indexterm><primary>arcsin</primary></indexterm>, "
+"arccos<indexterm><primary>arccos</primary></indexterm>, arctan"
+msgstr ""
+"arcsin<indexterm><primary>arcsin</primary></indexterm>, "
+"arccos<indexterm><primary>arccos</primary></indexterm>, arctan"
+
+#. Tag: primary
+#: programming-reference.docbook:473
+#, no-c-format
+msgid "arctan"
+msgstr "arctan"
+
+#. Tag: screen
+#: programming-reference.docbook:475
+#, no-c-format
+msgid ""
+"arcsin X\n"
+"arccos X\n"
+"arctan X"
+msgstr ""
+"arcsin X\n"
+"arccos X\n"
+"arctan X"
+
+#. Tag: para
+#: programming-reference.docbook:475
+#, no-c-format
+msgid ""
+"These commands are the inverse functions of <link linkend=\"sin\">sin</"
+"link>, <link linkend=\"cos\">cos</link> and <link linkend=\"tan\">tan</"
+"link>. The input argument of these commands, X, is a <link linkend=\"number"
+"\">number</link>."
+msgstr ""
+"Te trzy polecenia są odwrotnościami funkcji <link linkend=\"sin\">sin</"
+"link>, <link linkend=\"cos\">cos</link> i <link linkend=\"tan\">tan</link>. "
+"Wejściem tych poleceń jest <link linkend=\"number\">liczba</link> X."
+
+#. Tag: title
+#: programming-reference.docbook:482
+#, fuzzy, no-c-format
+#| msgid "Input and feedback though dialogs"
+msgid "Input and feedback through dialogs"
+msgstr "Argumenty wejściowe i pomoc przez okna dialogowe"
+
+#. Tag: para
+#: programming-reference.docbook:483
+#, no-c-format
+msgid ""
+"A dialog is a small pop-up window that provides some feedback or asks for "
+"some input. &kturtle; has two commands for dialogs, namely: "
+"<userinput>message</userinput> and <userinput>ask</userinput>"
+msgstr ""
+"Okno dialogowe jest małym, wyskakującym okienkiem, które zawiera pomoc "
+"dotyczącą argumentów wejściowych. &kturtle; posiada dwa polecenia do okien "
+"dialogowych, mianowicie: <userinput>wiadomość</userinput> i "
+"<userinput>spytaj</userinput>"
+
+#. Tag: term
+#: programming-reference.docbook:487
+#, no-c-format
+msgid "<term>message</term>"
+msgstr "<term>wiadomość</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:487
+#, no-c-format
+msgid "<primary>message</primary>"
+msgstr "<primary>wiadomość</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:488
+#, no-c-format
+msgid "message X"
+msgstr "wiadomość X"
+
+#. Tag: para
+#: programming-reference.docbook:488
+#, no-c-format
+msgid ""
+"The <userinput>message</userinput> command takes a <link linkend=\"string"
+"\">string</link> as input. It shows a pop-up dialog containing the text from "
+"the <link linkend=\"string\">string</link>."
+msgstr ""
+"Polecenie <userinput>wiadomość</userinput> przyjmuje jako argument wejściowy "
+"<link linkend=\"string\">tekst</link>. Pokazuje się okno dialogowe "
+"zawierające właśnie ten <link linkend=\"string\">tekst</link>."
+
+#. Tag: screen
+#: programming-reference.docbook:490
+#, no-c-format
+msgid ""
+"message \"Cies started KTurtle in 2003 and still enjoys working on it!\""
+msgstr ""
+"wiadomość \"Cies rozpoczął projekt KTurtle w roku 2003 i dalej z radością "
+"nad nim pracuje!\""
+
+#. Tag: term
+#: programming-reference.docbook:497
+#, no-c-format
+msgid "<term>ask</term>"
+msgstr "<term>spytaj</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:497
+#, no-c-format
+msgid "<primary>ask</primary>"
+msgstr "<primary>spytaj</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:498
+#, no-c-format
+msgid "ask X"
+msgstr "spytaj X"
+
+#. Tag: para
+#: programming-reference.docbook:498
+#, no-c-format
+msgid ""
+"<userinput>ask</userinput> takes a <link linkend=\"string\">string</link> as "
+"input. It shows this string in a pop-up dialog (similar to <link linkend="
+"\"message\">message</link>), along with an input field. After the user has "
+"entered a <link linkend=\"number\">number</link> or a <link linkend=\"string"
+"\">string</link> into this, the result can be stored in a <link linkend="
+"\"assignment-of-variables\">variable</link> or passed as an argument to a "
+"<link linkend=\"commands\">command</link>. For example: <screen>\n"
+"$in = ask \"What is your year of birth?\"\n"
+"$out = 2003 - $in\n"
+"print \"In 2003 you were \" + $out + \" years old at some point.\"\n"
+"</screen> If the user cancels the input dialog, or does not enter anything "
+"at all, the <link linkend=\"assignment-of-variables\">variable</link> is "
+"empty."
+msgstr ""
+"<userinput>spytaj</userinput> przyjmuje jako wejście <link linkend=\"string"
+"\">tekst</link>. Pokazuje go w oknie dialogowym (podobnie jak <link linkend="
+"\"message\">wiadomość</link>), ale zawiera dodatkowo pole wejściowe. Po "
+"wpisaniu tam przez użytkownika <link linkend=\"number\">liczby</link> lub "
+"<link linkend=\"string\">tekstu</link>, zostanie on zapisany do <link "
+"linkend=\"assignment-of-variables\">zmiennej</link> lub zwrócony jako "
+"wejście dla innego <link linkend=\"commands\">polecenia</link>. Na przykład: "
+"<screen>\n"
+"$wejście = spytaj \"W którym roku się urodziłeś?\"\n"
+"$wyjście = 2003 - $wejście\n"
+"pisz \"W 2003 roku miałeś \" + $wyjście + \" lat.\"\n"
+"</screen> Jeśli użytkownik anuluje okno lub nie wprowadzi  nic, <link "
+"linkend=\"assignment-of-variables\">zmienna</link> będzie pusta."
+
+#. Tag: title
+#: programming-reference.docbook:511
+#, no-c-format
+msgid "Assignment of variables"
+msgstr "Przypisanie do zmiennych"
+
+#. Tag: para
+#: programming-reference.docbook:512
+#, no-c-format
+msgid ""
+"First we have a look at variables, then we look at assigning values to those "
+"variables."
+msgstr ""
+"Najpierw zobaczmy jak wyglądają zmienne, a później jak przypisywać do nich "
+"wartości."
+
+#. Tag: para
+#: programming-reference.docbook:516
+#, no-c-format
+msgid ""
+"Variables are words that start with a <quote>$</quote>, in the <link linkend="
+"\"the-editor\">editor</link> they are <glossterm>highlighted</glossterm> "
+"with purple."
+msgstr ""
+"Zmienne są słowami, które zaczynają się znakiem <quote>$</quote>, w <link "
+"linkend=\"the-editor\">edytorze</link> są <glossterm>podświetlone</"
+"glossterm> kolorem purpurowym."
+
+#. Tag: para
+#: programming-reference.docbook:518
+#, no-c-format
+msgid ""
+"Variables can contain any <link linkend=\"number\">number</link>, <link "
+"linkend=\"string\">string</link> or <link linkend=\"boolean-value\">boolean "
+"(true/false) value</link>. Using the assignment, <userinput>=</userinput>, a "
+"variable is given its content. It will keep that content until the program "
+"finishes executing or until the variable is reassigned to something else."
+msgstr ""
+"Zmienne mogą przechowywać <link linkend=\"number\">liczby</link>, <link "
+"linkend=\"string\">teksty</link> lub <link linkend=\"boolean-value"
+"\">wartości logiczne (prawda/fałsz)</link>. Dzięki przypisaniu, "
+"<userinput>=</userinput>,  zmienne zyskują wartość. Przechowują ją, dopóki "
+"program działa lub do czasu, kiedy zostanie przypisana inna wartość."
+
+#. Tag: para
+#: programming-reference.docbook:520
+#, no-c-format
+msgid ""
+"You can use variables, once assigned, just as if they are their content. For "
+"instance in the following piece of &turtlescript;: <screen>\n"
+"$x = 10\n"
+"$x = $x / 3\n"
+"print $x\n"
+"</screen> First the variable <userinput>$x</userinput> is assigned to "
+"<userinput>10</userinput>. Then <userinput>$x</userinput> is reassigned to "
+"itself divided by <userinput>3</userinput> &mdash; this effectively means "
+"<userinput>$x</userinput> is reassigned to product of <userinput>10 / 3</"
+"userinput>. Finally <userinput>$x</userinput> is printed. In line two and "
+"three you see that <userinput>$x</userinput> is used as if it is its "
+"contents."
+msgstr ""
+"Możesz używać raz przypisanych zmiennych, jakby były wartościami.  "
+"Przykładowo jak w poniższym fragmencie kodu &turtlescript;: <screen>\n"
+"$x = 10\n"
+"$x = $x / 3\n"
+"pisz $x\n"
+"</screen> Na początku do zmiennej <userinput>$x</userinput> jest przypisana "
+"liczba <userinput>10</userinput>. Później <userinput>$x</userinput> jest "
+"nadpisana jej wartością podzieloną przez <userinput>3</userinput> &mdash;  "
+"<userinput>$x</userinput>, czyli wynikiem działania <userinput>10 / 3</"
+"userinput>. Na koniec <userinput>$x</userinput> jest wypisywana. W wierszu "
+"drugim i  trzecim możesz zobaczyć jak <userinput>$x</userinput> jest użyte "
+"jako wartość."
+
+#. Tag: para
+#: programming-reference.docbook:524
+#, no-c-format
+msgid ""
+"Variables have to be assigned in order to be used. For example: <screen>\n"
+"print $n\n"
+"</screen> Will result in an error message."
+msgstr ""
+"Zmienne muszą mieć przypisane wartości, przed użyciem. Na przykład: "
+"<screen>\n"
+"wypisz $n\n"
+"</screen> Wystąpi błąd przy wykonaniu."
+
+#. Tag: para
+#: programming-reference.docbook:528
+#, no-c-format
+msgid ""
+"Please consider the following piece of &turtlescript;: <screen>\n"
+"$a = 2004\n"
+"$b = 25\n"
+"\n"
+"# the next command prints \"2029\"\n"
+"print $a + $b\n"
+"backward 30\n"
+"# the next command prints \"2004 plus 25 equals 2029\"\n"
+"print $a + \" plus \" + $b + \" equals \" + ($a + $b)\n"
+"</screen> In the first two lines the variables <userinput>$a</userinput> and "
+"<userinput>$b</userinput> are set to 2004 and 25. Then in two "
+"<userinput>print</userinput> commands with a <userinput>backward 30</"
+"userinput> in between are executed. The comments before the "
+"<userinput>print</userinput> commands explain what they are doing. The "
+"command <userinput>backward 30</userinput> is there to make sure every "
+"output is on a new line. As you see variables can be used just as if their "
+"where what they contain, you can use them with any kind of <link linkend="
+"\"operators\">operators</link> or give them as input when invoking <link "
+"linkend=\"commands\">commands</link>."
+msgstr ""
+"Zwróć uwagę na następujący fragment kodu &turtlescript;: <screen>\n"
+"$a = 2004\n"
+"$b = 25\n"
+"\n"
+"# następne polecenie wypisze \"2029\"\n"
+"pisz $a + $b\n"
+"wstecz 30\n"
+"# następne polecenie wypisze \"2004 plus 25 równa się 2029\"\n"
+"pisz $a + \" plus \" + $b + \" równa się \" + ($a + $b)\n"
+"</screen> W pierwszych dwóch wierszach do <userinput>$a</userinput> i "
+"<userinput>$b</userinput> są przypisane na 2004 i 25. Następnie są dwa "
+"polecenia <userinput>pisz</userinput> oraz <userinput>wstecz 30</userinput> "
+"pomiędzy nimi. Komentarze przed <userinput>pisz</userinput> wyjaśniają, co "
+"mają robić.  Polecenie <userinput>wstecz 30</userinput> sprawia, że każde "
+"wypisanie jest w osobnym wierszu. Jak widzisz zmienne mogą być użyte, jak to "
+"co zawierają, mogą być łączone z każdego rodzaju <link linkend=\"operators"
+"\">operatorami</link> lub być wejściem przy wywołaniu <link linkend="
+"\"commands\">poleceń</link>."
+
+#. Tag: para
+#: programming-reference.docbook:534
+#, no-c-format
+msgid ""
+"One more example: <screen>\n"
+"$name = ask \"What is your name?\"\n"
+"print \"Hi \" + $name + \"! Good luck while learning the art of "
+"programming...\"\n"
+"</screen> Pretty straight forward. Again you can see that the variable "
+"<userinput>$name</userinput>, treated just like a string."
+msgstr ""
+"Jeszcze jeden przykład: <screen>\n"
+"$imię = spytaj \"Jakie jest Twoje imię?\"\n"
+"pisz \"Cześć \" + $imię + \"! Powodzenia w w czasie nauki  programowania..."
+"\"\n"
+"</screen> Całkiem prosty. Ponownie możesz zobaczyć jak zmienna <userinput>"
+"$imię</userinput> jest traktowana jak tekst."
+
+#. Tag: para
+#: programming-reference.docbook:538
+#, no-c-format
+msgid ""
+"When using variables the <link linkend=\"the-inspector\">inspector</link> is "
+"very helpful. It shows you the contents of all variables that are currently "
+"in use."
+msgstr ""
+"Kiedy używasz zmiennych, <link linkend=\"the-inspector\">podgląd</link> jest "
+"bardzo pomocny. Pokazuje wartości zmiennych, które są aktualnie używane."
+
+#. Tag: title
+#: programming-reference.docbook:544
+#, no-c-format
+msgid "Controlling execution"
+msgstr "Kontrola wykonywania"
+
+#. Tag: para
+#: programming-reference.docbook:545
+#, no-c-format
+msgid ""
+"The execution controllers enable you &mdash; as their name implies &mdash; "
+"to control execution."
+msgstr ""
+"Kontrolery wykonania umożliwiają użytkownikowi sterowanie wykonywaniem "
+"programu przez &mdash;."
+
+#. Tag: para
+#: programming-reference.docbook:546
+#, no-c-format
+msgid ""
+"Execution controlling commands are <glossterm>highlighted</glossterm> with "
+"dark green in a bold font type. The brackets are mostly used together with "
+"execution controllers and they are <glossterm>highlighted</glossterm> with "
+"black."
+msgstr ""
+"Polecenia kontrolujące wykonanie programu  <glossterm>podświetlone</"
+"glossterm> są na ciemnozielony kolor oraz mają pogrubioną czcionkę. Nawiasy "
+"używane są głównie z poleceniami kontrolującymi wykonanie i są "
+"<glossterm>podświetlone</glossterm> na czarno."
+
+#. Tag: title
+#: programming-reference.docbook:549
+#, no-c-format
+msgid "Have the turtle wait"
+msgstr "Zatrzymanie żółwia"
+
+#. Tag: para
+#: programming-reference.docbook:550
+#, no-c-format
+msgid ""
+"If you have done some programming in &kturtle; you have might noticed that "
+"the turtle can be very quick at drawing. This command makes the turtle wait "
+"for a given amount of time."
+msgstr ""
+"Napisawszy jakiś program w &kturtle; można zauważyć, że żółw bardzo szybko "
+"wykonuje rysunki. Poniższe polecenie zatrzymuje żółwia na określoną ilość "
+"czasu."
+
+#. Tag: term
+#: programming-reference.docbook:553
+#, no-c-format
+msgid "<term>wait</term>"
+msgstr "<term>czekaj</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:553
+#, no-c-format
+msgid "<primary>wait</primary>"
+msgstr "<primary>czekaj</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:554
+#, no-c-format
+msgid "wait X"
+msgstr "czekaj X"
+
+#. Tag: para
+#: programming-reference.docbook:554
+#, no-c-format
+msgid ""
+"<userinput>wait</userinput> makes the turtle wait for X seconds. <screen>\n"
+"repeat 36 {\n"
+"  forward 5\n"
+"  turnright 10\n"
+"  wait 0.5\n"
+"}\n"
+"</screen> This code draws a circle, but the turtle will wait half a second "
+"after each step. This gives the impression of a slow-moving turtle."
+msgstr ""
+"<userinput>czekaj</userinput> zatrzymuje żółwia na X sekund. <screen>\n"
+"powtórz 36 {\n"
+"  naprzód 5\n"
+"  prawo 10\n"
+"  czekaj 0.5\n"
+"}\n"
+"</screen> Kod powoduje rysowanie okręgu, ale po każdym kroku żółw zatrzymuje "
+"się na pół sekundy. Daje to wrażenie poruszania się żółwia w zwolnionym "
+"tempie."
+
+#. Tag: title
+#: programming-reference.docbook:564
+#, no-c-format
+msgid "Execute <quote>if</quote>"
+msgstr ""
+
+#. Tag: term
+#: programming-reference.docbook:567
+#, no-c-format
+msgid "<term>if</term>"
+msgstr "<term>jeśli</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:567
+#, no-c-format
+msgid "<primary>if</primary>"
+msgstr "<primary>jeśli</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:568
+#, no-c-format
+msgid "if <link linkend=\"boolean-value\">boolean</link> { ... }"
+msgstr "if <link linkend=\"boolean-value\">wartość logiczna</link> { ... }"
+
+#. Tag: para
+#: programming-reference.docbook:568
+#, no-c-format
+msgid ""
+"The code that is placed between the brackets will only be executed "
+"<userinput>if</userinput> the <link linkend=\"boolean-value\">boolean value</"
+"link> evaluates <quote>true</quote>. <screen>\n"
+"$x = 6\n"
+"if $x &gt; 5 {\n"
+"  print \"$x is greater than five!\"\n"
+"}\n"
+"</screen> On the first line <userinput>$x</userinput> is set to 6. On the "
+"second line a <link linkend=\"comparing-operators\">comparing operator</"
+"link> is used to evaluate <userinput>$x &gt; 5</userinput>. Since this "
+"evaluates <quote>true</quote>, 6 is larger than 5, the execution controller "
+"<userinput>if</userinput> will allow the code between the brackets to be "
+"executed."
+msgstr ""
+"Kod umieszczony w nawiasach jest wykonywany jedynie wtedy,  "
+"<userinput>jeśli</userinput> <link linkend=\"boolean-value\">wartość "
+"logiczna</link> to <quote>prawda</quote>. <screen>\n"
+"$x = 6\n"
+"jeśli $x &gt; 5 {\n"
+"  pisz \"$x jest większe od 5!\"\n"
+"}\n"
+"</screen> W pierwszym wierszu <userinput>$x</userinput> jest ustawione jako "
+"6. W drugim wierszu <link linkend=\"comparing-operators\">operator "
+"porównania</link> jest wykorzystany do sprawdzenia <userinput>$x &gt; 5</"
+"userinput>. Jako, że wartością jest <quote>prawda</quote>, bo 6 jest większe "
+"od 5, kontroler wykonania <userinput>jeśli</userinput> pozwoli na wykonanie "
+"kodu pomiędzy nawiasami. "
+
+#. Tag: title
+#: programming-reference.docbook:577
+#, fuzzy, no-c-format
+#| msgid "If not, in other words: \"else\""
+msgid "If not, in other words: <quote>else</quote>"
+msgstr "Jeżeli nie, innymi słowy: \"przeciwnie\""
+
+#. Tag: term
+#: programming-reference.docbook:580
+#, no-c-format
+msgid "<term>else</term>"
+msgstr "<term>jeśliNie</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:580
+#, no-c-format
+msgid "<primary>else</primary>"
+msgstr "<primary>jeśliNie</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:581
+#, no-c-format
+msgid "if <link linkend=\"boolean-value\">boolean</link> { ... } else { ... }"
+msgstr ""
+"jeśli <link linkend=\"boolean-value\">wartość logiczna</link> { ... } "
+"jeśliNie { ... }"
+
+#. Tag: para
+#: programming-reference.docbook:581
+#, no-c-format
+msgid ""
+"<userinput>else</userinput> can be used in addition to the execution "
+"controller <link linkend=\"if\"><userinput>if</userinput></link>. The code "
+"between the brackets after <userinput>else</userinput> is only executed if "
+"the <link linkend=\"boolean-value\">boolean</link> evaluates <quote>false</"
+"quote>. <screen>\n"
+"reset\n"
+"$x = 4\n"
+"if $x &gt; 5 {\n"
+"  print \"$x is greater than five!\"\n"
+"} else {\n"
+"  print \"$x is smaller than six!\"\n"
+"}\n"
+"</screen> The <link linkend=\"comparing-operators\">comparing operator</"
+"link> evaluates the expression <userinput>$x &gt; 5</userinput>. Since 4 is "
+"not greater than 5 the expression evaluates <quote>false</quote>. This means "
+"the code between the brackets after <userinput>else</userinput> gets "
+"executed."
+msgstr ""
+"<userinput>jeśliNie</userinput> może być użyte w dodatku do wyrażenia "
+"sterującego <link linkend=\"if\"><userinput>jeśli</userinput></link>. Kod "
+"pomiędzy nawiasami po <userinput>jeśliNie</userinput> jest wykonany tylko "
+"wtedy, gdy <link linkend=\"boolean-value\">wartość logiczna</link> to "
+"<quote>fałsz</quote>. <screen>\n"
+"czyść\n"
+"$x = 4\n"
+"jeśli $x &gt; 5 {\n"
+"  pisz \"$x jest większe od 5!\"\n"
+"} jeśliNie {\n"
+"  pisz \"$x jest mniejsze od 5!\"\n"
+"}\n"
+"</screen> <link linkend=\"comparing-operators\">Operator porównania</link> "
+"sprawdza wartość <userinput>$x &gt; 5</userinput>. Jako że 4 nie jest "
+"większe od 5 przyjmuje wartość <quote>fałsz</quote>. To znaczy, że kod "
+"pomiędzy nawiasami po <userinput>jeśliNie</userinput> zostaje wykonana."
+
+#. Tag: title
+#: programming-reference.docbook:590
+#, fuzzy, no-c-format
+#| msgid "The \"while\" loop"
+msgid "The <quote>while</quote> loop"
+msgstr "Pętla \"dopóki\""
+
+#. Tag: term
+#: programming-reference.docbook:593
+#, no-c-format
+msgid "<term>while</term>"
+msgstr "<term>dopóki</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:593
+#, no-c-format
+msgid "<primary>while</primary>"
+msgstr "<primary>dopóki</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:594
+#, no-c-format
+msgid "while <link linkend=\"boolean-value\">boolean</link> { ... }"
+msgstr "dopóki <link linkend=\"boolean-value\">wartość logiczna</link> { ... }"
+
+#. Tag: para
+#: programming-reference.docbook:594
+#, no-c-format
+msgid ""
+"The execution controller <userinput>while</userinput> is a lot like <link "
+"linkend=\"if\"><userinput>if</userinput></link>. The difference is that "
+"<userinput>while</userinput> keeps repeating (looping) the code between the "
+"brackets until the <link linkend=\"boolean-value\">boolean</link> evaluates "
+"<quote>false</quote>. <screen>\n"
+"$x = 1\n"
+"while $x &lt; 5 {\n"
+"  forward 10\n"
+"  wait 1\n"
+"  $x = $x + 1\n"
+"}\n"
+"</screen> On the first line <userinput>$x</userinput> is set to 1. On the "
+"second line <userinput>$x &lt; 5</userinput> is evaluated. Since the answer "
+"to this question is <quote>true</quote> the execution controller "
+"<userinput>while</userinput> starts executing the code between the brackets "
+"until the <userinput>$x &lt; 5</userinput> evaluates <quote>false</quote>. "
+"In this case the code between the brackets will be executed 4 times, because "
+"every time the fifth line is executed <userinput>$x</userinput> increases by "
+"1."
+msgstr ""
+"Wyrażenie sterujące <userinput>dopóki</userinput> jest podobne do <link "
+"linkend=\"if\"><userinput>jeśli</userinput></link>. Różnica polega na tym, "
+"że <userinput>dopóki</userinput> powtarza wykonywanie kodu między nawiasami "
+"dopóki <link linkend=\"boolean-value\">wartość logiczna</link> nie będzie "
+"<quote>fałszem</quote>. <screen>\n"
+"$x = 1\n"
+"dopóki $x &lt; 5 {\n"
+"  naprzód 10\n"
+"  czekaj 1\n"
+"  $x = $x + 1\n"
+"}\n"
+"</screen> W pierwszym wierszu <userinput>$x</userinput> zyskuje wartość 1. W "
+"następnym wierszu <userinput>$x &lt; 5</userinput> jest sprawdzane. Jako, że "
+"to wyrażenie  jest <quote>prawdą</quote> wyrażenie sterujące "
+"<userinput>dopóki</userinput> rozpoczyna wykonywanie kodu między nawiasami "
+"dopóki wartość <userinput>$x &lt; 5</userinput> nie będzie <quote>fałszem</"
+"quote>. W tym przypadku kod w nawiasie zostanie wykonany 4 razy, gdyż po "
+"każdym wykonaniu piątym wierszu <userinput>$x</userinput> wzrasta o 1."
+
+#. Tag: title
+#: programming-reference.docbook:603
+#, fuzzy, no-c-format
+#| msgid "The \"repeat\" loop"
+msgid "The <quote>repeat</quote> loop"
+msgstr "Pętla \"powtórz\""
+
+#. Tag: term
+#: programming-reference.docbook:606
+#, no-c-format
+msgid "<term>repeat</term>"
+msgstr "<term>powtórz</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:606
+#, no-c-format
+msgid "<primary>repeat</primary>"
+msgstr "<primary>powtórz</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:607
+#, no-c-format
+msgid "repeat <link linkend=\"number\">number</link> { ... }"
+msgstr "powtórz <link linkend=\"number\">liczba</link> { ... }"
+
+#. Tag: para
+#: programming-reference.docbook:607
+#, no-c-format
+msgid ""
+"The execution controller <userinput>repeat</userinput> is a lot like <link "
+"linkend=\"while\"><userinput>while</userinput></link>. The difference is "
+"that <userinput>repeat</userinput> keeps repeating (looping) the code "
+"between the brackets for as many times as the given number."
+msgstr ""
+"Kontroler wykonawczy <userinput>powtórz</userinput> przypomina w dużej "
+"mierze <link linkend=\"while\"><userinput>dopóki</userinput></link>. Różnica "
+"polega na tym, że <userinput>powtórz</userinput> powtarza (w pętli) kod "
+"między nawiasami tyle razy, jaką ma wartość przekazana liczba."
+
+#. Tag: title
+#: programming-reference.docbook:614
+#, fuzzy, no-c-format
+#| msgid "The \"for\" loop, a counting loop"
+msgid "The <quote>for</quote> loop, a counting loop"
+msgstr "Pętla \"dla\", pętla zliczająca"
+
+#. Tag: term
+#: programming-reference.docbook:617
+#, no-c-format
+msgid "<term>for</term>"
+msgstr "<term>dla</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:617
+#, no-c-format
+msgid "<primary>for</primary>"
+msgstr "<primary>dla</primary>"
+
+#. Tag: primary
+#: programming-reference.docbook:617
+#, fuzzy, no-c-format
+#| msgid "<primary>go</primary>"
+msgid "<primary>to</primary>"
+msgstr "<primary>idź</primary>"
+
+#. Tag: primary
+#: programming-reference.docbook:617
+#, no-c-format
+msgid "step"
+msgstr "co"
+
+#. Tag: screen
+#: programming-reference.docbook:618
+#, no-c-format
+msgid ""
+"for <link linkend=\"assignment-of-variables\">variable</link> = <link "
+"linkend=\"number\">number</link> to <link linkend=\"number\">number</link> "
+"{ ... }"
+msgstr ""
+"dla <link linkend=\"assignment-of-variables\">zmienna</link> = <link linkend="
+"\"number\">liczba</link> do <link linkend=\"number\">liczba</link> { ... }"
+
+#. Tag: para
+#: programming-reference.docbook:618
+#, no-c-format
+msgid ""
+"The <userinput>for</userinput> loop is a <quote>counting loop</quote>, &ie; "
+"it keeps count for you. The first number sets the variable to the value in "
+"the first loop. Every loop the number is increased until the second number "
+"is reached. <screen>\n"
+"for $x = 1 to 10 {\n"
+"  print $x * 7\n"
+"  forward 15\n"
+"}\n"
+"</screen> Every time the code between the brackets is executed the "
+"<userinput>$x</userinput> is increased by 1, until <userinput>$x</userinput> "
+"reaches the value of 10. The code between the brackets prints the <userinput>"
+"$x</userinput> multiplied by 7. After this program finishes its execution "
+"you will see the times table of 7 on the canvas."
+msgstr ""
+"Pętla <userinput>dla</userinput> jest <quote>pętlą zliczającą</quote>, czyli "
+"zlicza za użytkownika. Pierwsza liczba przypisywana jest do zmiennej przy "
+"pierwszym obiegu pętli. W każdym obiegu liczba jest powiększana aż do "
+"osiągnięcia wartości drugiej liczby.<screen>\n"
+"dla $x = 1 do 10 {\n"
+"  pisz $x * 7\n"
+"  naprzód 15\n"
+"}\n"
+"</screen> Za każdym razem gdy kod w nawiasach jest wykonywany wartość "
+"zmiennej <userinput>$x</userinput> zwiększa się o 1, dopóki zmienna "
+"<userinput>$x</userinput> nie osiągnie wartości 10. Kod w nawiasach wypisuje "
+"wartość zmiennej <userinput>$x</userinput> pomnożonej przez 7. Po wykonaniu "
+"programu na płótnie będzie można zobaczyć tabele wielokrotności liczby 7."
+
+#. Tag: para
+#: programming-reference.docbook:623
+#, no-c-format
+msgid "The default step size of a loop is 1, you can use an other value with"
+msgstr "Domyślny rozmiar polecenia co pętli to 1 możesz użyć innej wartości z"
+
+#. Tag: screen
+#: programming-reference.docbook:625
+#, no-c-format
+msgid ""
+"for <link linkend=\"assignment-of-variables\">variable</link> = <link "
+"linkend=\"number\">number</link> to <link linkend=\"number\">number</link> "
+"step <link linkend=\"number\">number</link> { ... }"
+msgstr ""
+"dla <link linkend=\"assignment-of-variables\">zmienna</link> = <link linkend="
+"\"number\">liczba</link> do <link linkend=\"number\">liczba</link> co <link "
+"linkend=\"number\">liczba</link> { ... }"
+
+#. Tag: title
+#: programming-reference.docbook:631
+#, no-c-format
+msgid "Leave a loop"
+msgstr "Zostaw pętlę"
+
+#. Tag: term
+#: programming-reference.docbook:634
+#, no-c-format
+msgid "<term>break</term>"
+msgstr "<term>przerwij</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:634
+#, no-c-format
+msgid "<primary>break</primary>"
+msgstr "<primary>przerwij</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:635
+#, no-c-format
+msgid "<screen>break</screen>"
+msgstr "<screen>przerwij</screen>"
+
+#. Tag: para
+#: programming-reference.docbook:635
+#, no-c-format
+msgid ""
+"Terminates the current loop immediately and transfers control to the "
+"statement immediately following that loop."
+msgstr ""
+"Kończy niezwłocznie bieżącą pętlę i przenosi kontrolę do wyrażenia obecnego "
+"przy tej pętli."
+
+#. Tag: title
+#: programming-reference.docbook:642
+#, no-c-format
+msgid "Stop executing your program"
+msgstr "Zatrzymanie wykonania Twojego programu"
+
+#. Tag: term
+#: programming-reference.docbook:645
+#, no-c-format
+msgid "<term>exit</term>"
+msgstr "<term>wyjdź</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:645
+#, no-c-format
+msgid "<primary>exit</primary>"
+msgstr "<primary>wyjdź</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:646
+#, no-c-format
+msgid "<screen>exit</screen>"
+msgstr "<screen>wyjdź</screen>"
+
+#. Tag: para
+#: programming-reference.docbook:646
+#, no-c-format
+msgid "Finishes the execution of your program."
+msgstr "Kończy wykonywanie Twojego programu."
+
+#. Tag: title
+#: programming-reference.docbook:653
+#, no-c-format
+msgid "Checking assertions at runtime"
+msgstr ""
+
+#. Tag: term
+#: programming-reference.docbook:656
+#, fuzzy, no-c-format
+#| msgid "<term>sqrt</term>"
+msgid "<term>assert</term>"
+msgstr "<term>sqrt</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:656
+#, fuzzy, no-c-format
+#| msgid "<primary>sqrt</primary>"
+msgid "<primary>assert</primary>"
+msgstr "<primary>sqrt</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:657
+#, fuzzy, no-c-format
+#| msgid "if <link linkend=\"boolean-value\">boolean</link> { ... }"
+msgid "assert <link linkend=\"boolean-value\">boolean</link>"
+msgstr "if <link linkend=\"boolean-value\">wartość logiczna</link> { ... }"
+
+#. Tag: para
+#: programming-reference.docbook:657
+#, no-c-format
+msgid "Can be used to reason about program or input correctness."
+msgstr ""
+
+#. Tag: screen
+#: programming-reference.docbook:659
+#, no-c-format
+msgid ""
+"$in = ask \"What is your year of birth?\"\n"
+"# the year must be positive\n"
+"assert $in > 0"
+msgstr ""
+
+#. Tag: title
+#: programming-reference.docbook:668
+#, no-c-format
+msgid "Create your own commands with <quote>learn</quote>"
+msgstr "Tworzenie własnych poleceń za pomocą <quote>nauczyciela</quote>"
+
+#. Tag: para
+#: programming-reference.docbook:669
+#, fuzzy, no-c-format
+#| msgid ""
+#| "<userinput>learn</userinput> is special as it is used to create your own "
+#| "commands. The commands you create can take <glossterm linkend=\"input-"
+#| "output\">input</glossterm> and return <glossterm linkend=\"input-output"
+#| "\">output</glossterm>. Let us take a look at how a new command is "
+#| "created: <screen>\n"
+#| "learn circle $x {\n"
+#| "  repeat 36 {\n"
+#| "    forward $x\n"
+#| "    turnleft 10\n"
+#| "  }\n"
+#| "}\n"
+#| "</screen> The new command is called <userinput>circle</userinput>. "
+#| "<userinput>circle</userinput> takes one <glossterm linkend=\"input-output"
+#| "\">input</glossterm> argument, to set the size of the circle. "
+#| "<userinput>circle</userinput> returns no <glossterm linkend=\"input-output"
+#| "\">output</glossterm>. The <userinput>circle</userinput> command can now "
+#| "be used like a normal command in the rest of the code. See this example:"
+msgid ""
+"<userinput>learn</userinput><indexterm><primary>learn</primary></indexterm> "
+"is special as it is used to create your own commands. The commands you "
+"create can take <glossterm linkend=\"input-output\">input</glossterm> and "
+"return <glossterm linkend=\"input-output\">output</glossterm>. Let us take a "
+"look at how a new command is created: <screen>\n"
+"learn circle $x {\n"
+"  repeat 36 {\n"
+"    forward $x\n"
+"    turnleft 10\n"
+"  }\n"
+"}\n"
+"</screen> The new command is called <userinput>circle</userinput>. "
+"<userinput>circle</userinput> takes one <glossterm linkend=\"input-output"
+"\">input</glossterm> argument, to set the size of the circle. "
+"<userinput>circle</userinput> returns no <glossterm linkend=\"input-output"
+"\">output</glossterm>. The <userinput>circle</userinput> command can now be "
+"used like a normal command in the rest of the code. See this example:"
+msgstr ""
+"<userinput>poznaj</userinput> jest specjalnym poleceniem, służącą do "
+"tworzenia własnych poleceń. Utworzone polecenia mogą przyjmować argumenty "
+"<glossterm linkend=\"input-output\">wejściowe</glossterm> i zwracać "
+"<glossterm linkend=\"input-output\">argumenty wyjściowe</glossterm>. "
+"Zobaczmy jak tworzone są nowe polecenia: <screen>\n"
+"poznaj okrąg $x {\n"
+"  powtórz 36 {\n"
+"    naprzód $x\n"
+"    lewo 10\n"
+"  }\n"
+"}\n"
+"</screen> Nowe polecenie zostanie nazwane <userinput>okrąg</userinput>. "
+"<userinput>okrąg</userinput> oczekuje jednego <glossterm linkend=\"input-"
+"output\">argumentu wejściowego</glossterm>, liczby określającej rozmiar "
+"okręgu. <userinput>okrąg</userinput> nie zwraca żadnego <glossterm linkend="
+"\"input-output\">argumentu wyjściowego</glossterm>. Polecenie "
+"<userinput>okrąg</userinput> może być teraz używane jak normalne polecenie w "
+"reszcie kodu. Oto przykład:"
+
+#. Tag: screen
+#: programming-reference.docbook:672
+#, no-c-format
+msgid ""
+"learn circle $X {\n"
+"  repeat 36 {\n"
+"    forward $X \n"
+"    turnleft 10 \n"
+"  }\n"
+"}\n"
+"\n"
+"go 200,200 \n"
+"circle 20\n"
+"\n"
+"go 300,200 \n"
+"circle 40"
+msgstr ""
+"poznaj okrąg $X {\n"
+"  powtórz 36 { \n"
+"    naprzód $X \n"
+"    lewo 10 \n"
+"  } \n"
+"} \n"
+"\n"
+"idź 200,200 \n"
+"okrąg 20\n"
+"\n"
+"idź 300,200 \n"
+"okrąg 40"
+
+#. Tag: para
+#: programming-reference.docbook:674
+#, fuzzy, no-c-format
+#| msgid ""
+#| "In the next example, a command with a return value is created. <screen>\n"
+#| "learn faculty $x {\n"
+#| "  $r = 1\n"
+#| "  for $i = 1 to $x {\n"
+#| "    $r = $r * $i\n"
+#| "  }\n"
+#| "  return $r\n"
+#| "}\n"
+#| "\n"
+#| "print faculty 5\n"
+#| "</screen> In this example a new command called <userinput>faculty</"
+#| "userinput> is created. If the input of this command is <userinput>5</"
+#| "userinput> then the output is <userinput>5*4*3*2*1</userinput>. By using "
+#| "<userinput>return</userinput> the <glossterm linkend=\"input-output"
+#| "\">output</glossterm> value is specified and the execution is returned."
+msgid ""
+"In the next example, a command with a return<indexterm><primary>return</"
+"primary></indexterm> value is created. <screen>\n"
+"learn faculty $x {\n"
+"  $r = 1\n"
+"  for $i = 1 to $x {\n"
+"    $r = $r * $i\n"
+"  }\n"
+"  return $r\n"
+"}\n"
+"\n"
+"print faculty 5\n"
+"</screen> In this example a new command called <userinput>faculty</"
+"userinput> is created. If the input of this command is <userinput>5</"
+"userinput> then the output is <userinput>5*4*3*2*1</userinput>. By using "
+"<userinput>return</userinput> the <glossterm linkend=\"input-output"
+"\">output</glossterm> value is specified and the execution is returned."
+msgstr ""
+"W następnym przykładzie tworzone jest polecenie zwracające wartość. "
+"<screen>\n"
+"poznaj silnia $x {\n"
+"  $s = 1\n"
+"  dla $i = 1 do $x {\n"
+"    $s = $s * $i\n"
+"  }\n"
+"  wynik $s\n"
+"}\n"
+"\n"
+"pisz silnia 5\n"
+"</screen> W tym przykładzie zostało stworzone nowe polecenie o nazwie "
+"<userinput>silnia</userinput>. Jeśli wejściem tego polecenia jest "
+"<userinput>5</userinput>, to wyjściem jest <userinput>5*4*3*2*1</userinput>. "
+"Dzięki użyciu <userinput>wynik</userinput> <glossterm linkend=\"input-output"
+"\">wyjście</glossterm> jest określone i zwracane przy wykonaniu."
+
+#. Tag: para
+#: programming-reference.docbook:677
+#, no-c-format
+msgid ""
+"Commands can have more than one <glossterm linkend=\"input-output\">input</"
+"glossterm>. In the next example, a command that draws a rectangle is "
+"created: <screen>\n"
+"learn box $x, $y {\n"
+"  forward $y\n"
+"  turnright 90\n"
+"  forward $x\n"
+"  turnright 90\n"
+"  forward $y\n"
+"  turnright 90\n"
+"  forward $x\n"
+"  turnright 90\n"
+"}\n"
+"</screen> Now you can run <userinput>box 50, 100</userinput> and the turtle "
+"will draw a rectangle on the canvas."
+msgstr ""
+"Polecenia mogą mieć więcej niż jedno <glossterm linkend=\"input-output\"> "
+"wejście</glossterm>. W następnym przykładzie utworzona zostanie polecenie "
+"rysujące prostokąt. <screen>\n"
+"poznaj prostokąt $x, $y {\n"
+"  naprzód $y\n"
+"  prawo 90\n"
+"  naprzód $x\n"
+"  prawo 90\n"
+"  naprzód $y\n"
+"  prawo 90\n"
+"  naprzód $x\n"
+"  prawo 90\n"
+"}\n"
+"</screen> Możesz teraz uruchomić <userinput>prostokąt 50, 100</userinput>, a "
+"żółw narysuje prostokąt na płótnie."
+
+#~ msgid "Execute \"if\""
+#~ msgstr "Instrukcja \"jeśli\""
+
+#~ msgid "<primary>gox</primary>"
+#~ msgstr "<primary>idźx</primary>"
+
+#~ msgid "<primary>goy</primary>"
+#~ msgstr "<primary>idźy</primary>"
+
+#, fuzzy
+#~| msgid "<term>getx</term>"
+#~ msgid "<term>exp</term>"
+#~ msgstr "<term>pozx</term>"
+
+#, fuzzy
+#~| msgid "<primary>getx</primary>"
+#~ msgid "<primary>exp</primary>"
+#~ msgstr "<primary>pozx</primary>"
+
+#~ msgid ""
+#~ "This is the reference for &kturtle;'s &turtlelang;. In this chapter we "
+#~ "first briefly touch all the <link linkend=\"different-instructions"
+#~ "\">different instruction types</link>. Then the <link linkend=\"commands"
+#~ "\">commands</link> are explained one by one. Then <link linkend="
+#~ "\"containers\">containers</link>, <link linkend=\"math\">math</link>, "
+#~ "<link linkend=\"questions\">questions</link> and <link linkend="
+#~ "\"controlling-execution\">execution controllers</link> are explained. At "
+#~ "last you are shown how to create you own commands with <link linkend="
+#~ "\"learn\">learn</link>."
+#~ msgstr ""
+#~ "Poniżej znajduje się dokumentacja języka &turtlelang; używanego przez "
+#~ "&kturtle;. W tym rozdziale najpierw zostaną krótko wymienione <link "
+#~ "linkend=\"different-instructions\">różne typy instrukcji</link>. "
+#~ "Następnie zostaną objaśnione <link linkend=\"commands\">komendy</link>. "
+#~ "Po nich <link linkend=\"containers\">kontenery</link>, <link linkend="
+#~ "\"math\">terminy matematyczne</link>, <link linkend=\"questions"
+#~ "\">zapytania</link> oraz <link linkend=\"controlling-execution"
+#~ "\">kontrolery wykonawcze</link>. Na końcu pokazane zostanie jak za pomocą "
+#~ "<link linkend=\"learn\">nauczyciela</link> tworzyć własne komendy."
+
+#~ msgid "Different Instruction Types"
+#~ msgstr "Różne typy instrukcji"
+
+#~ msgid ""
+#~ "As in any language, &turtlelang; has different types of words and "
+#~ "symbols. Here the differences between the types are briefly explained."
+#~ msgstr ""
+#~ "Jak każdy inny język programowania, &turtlelang; posiada różne typy "
+#~ "wyrazów i symboli. Oto różnice pomiędzy typami i krótkie wyjaśnienia."
+
+#~ msgid ""
+#~ "Using commands you tell the turtle or &kturtle; to do something. Some "
+#~ "commands need input, some give output."
+#~ msgstr ""
+#~ "Przy użyciu komend wskazujemy &kturtle; czynności do wykonania. Niektóre "
+#~ "z komend potrzebują argumentów wejściowych a inne wyjściowych."
+
+#~ msgid ""
+#~ "# forward is a command that needs input, in this case the number 100:\n"
+#~ "forward 100"
+#~ msgstr ""
+#~ "# naprzód to komenda z argumentem wejściowym, tutaj jest to liczba 100:\n"
+#~ "naprzód 100"
+
+#~ msgid ""
+#~ "Numbers are <glossterm>highlighted</glossterm> with dark red in the <link "
+#~ "linkend=\"the-code-editor\">code editor</link>."
+#~ msgstr ""
+#~ "W <link linkend=\"the-code-editor\">edytorze kodów</link> liczby są "
+#~ "<glossterm>podświetlone</glossterm> na kolor ciemnoczerwony."
+
+#~ msgid ""
+#~ "Strings can be put in <link linkend=\"containers\">containers</link>. Yet "
+#~ "they cannot be used in <link linkend=\"math\">mathematical calculations</"
+#~ "link> and <link linkend=\"questions\">questions</link>."
+#~ msgstr ""
+#~ "Łańcuchy mogą być wkładane do <link linkend=\"containers\">kontenerów</"
+#~ "link>. ale nie mogą być używane w <link linkend=\"math\">obliczeniach "
+#~ "matematycznych</link> i <link linkend=\"questions\">zapytaniach</link>."
+
+#~ msgid ""
+#~ "Strings are <glossterm>highlighted</glossterm> with red in the <link "
+#~ "linkend=\"the-code-editor\">code editor</link>."
+#~ msgstr ""
+#~ "W <link linkend=\"the-code-editor\">edytorze kodów</link> tekst jest "
+#~ "<glossterm>podświetlony</glossterm> na kolor czerwony."
+
+#~ msgid "Names"
+#~ msgstr "Nazwy"
+
+#~ msgid ""
+#~ "When using the &turtlelang; programming language you create new things. "
+#~ "If you write a program you will often need <link linkend=\"containers"
+#~ "\">containers</link> and in some cases you need <link linkend=\"learn"
+#~ "\">learn</link> to create new commands. When making a new command with "
+#~ "<link linkend=\"learn\">learn</link> you will have to specify a name."
+#~ msgstr ""
+#~ "Przy użyciu języka programowania &turtlelang; tworzy się nowe obiekty. "
+#~ "Pisząc programy często potrzebować będziemy <link linkend=\"containers"
+#~ "\">kontenerów</link> a w  niektórych przypadkach <link linkend=\"learn"
+#~ "\">nauczyciela</link> do tworzenia nowych komend. Tworząc nową komendę za "
+#~ "pomocą <link linkend=\"learn\">nauczyciela</link> należy określić ich "
+#~ "nazwę."
+
+#~ msgid ""
+#~ "You can choose any name, as long as it does not already have a meaning. "
+#~ "For instance you cannot name a function <link linkend=\"forward"
+#~ "\">forward</link>, since that name is already used for an internal "
+#~ "command. <screen>\n"
+#~ "# here forward is used as a new command, \n"
+#~ "# but it already has a meaning so \n"
+#~ "# this will produce an error:\n"
+#~ "learn forward {\n"
+#~ "  print \"this is invalid\"\n"
+#~ "}\n"
+#~ "\n"
+#~ "# this works:\n"
+#~ "learn myforward {\n"
+#~ "  print \"this is ok\"\n"
+#~ "}\n"
+#~ "</screen> Names can contain only letters, numbers and underscores (_). "
+#~ "Yet they have to start with a letter. Container names have to start with "
+#~ "the container prefix ($)."
+#~ msgstr ""
+#~ "Można wybrać dowolną nazwę, pod warunkiem, iż nie odnosi się ona już do "
+#~ "niczego. Np. nie można nazwać funkcji <link linkend=\"forward\">naprzód</"
+#~ "link>, jako, że jest to nazwa komendy. <screen>\n"
+#~ "# tutaj naprzód jest używane jako nowe polecenie, \n"
+#~ "# ale takie już istnieje, \n"
+#~ "# zatem pokaże się komunikat błędu:\n"
+#~ "poznaj naprzód {\n"
+#~ "  pisz \"to jest źle\"\n"
+#~ "}\n"
+#~ "\n"
+#~ "# natomiast działać będzie:\n"
+#~ "poznaj moje_naprzód {\n"
+#~ "  pisz \"to jest dobrze\"\n"
+#~ "}\n"
+#~ "</screen> Nazwy mogą zawierać tylko litery, cyfry oraz podkreślenia (_), "
+#~ "ale muszą zaczynać się od litery. Nazwy kontenerów muszą się zaczynać od "
+#~ "prefiksu kontenera ($)."
+
+#~ msgid ""
+#~ "# here forward is used as a container, \n"
+#~ "# starting with the $ prefix, so it does\n"
+#~ "# not conflict with the forward command\n"
+#~ "$forward = 20\n"
+#~ "print $forward"
+#~ msgstr ""
+#~ "# tu naprzód używane jest jako kontener,\n"
+#~ "# rozpoczynający się prefiksem $, więc nie\n"
+#~ "# wchodzi on w konflikt z komendą\n"
+#~ "$naprzód = 20\n"
+#~ "pisz $naprzód"
+
+#~ msgid ""
+#~ "Containers are <glossterm>highlighted</glossterm> with bolded purple in "
+#~ "the <link linkend=\"the-code-editor\">code editor</link>."
+#~ msgstr ""
+#~ "W <link linkend=\"the-code-editor\">edytorze kodów</link> kontenery są "
+#~ "<glossterm>podświetlone</glossterm> na fioletowo i są pogrubione."
+
+#~ msgid ""
+#~ "Please read the documentation on <link linkend=\"containers\">containers</"
+#~ "link> and the <link linkend=\"learn\">learn</link> command for a better "
+#~ "explanation and more examples."
+#~ msgstr ""
+#~ "Więcej przykładów oraz dokładniejsze wyjaśnienie znajduje się w "
+#~ "dokumentacji <link linkend=\"containers\">kontenerów</link> oraz <link "
+#~ "linkend=\"learn\">nauczyciela</link>."
+
+#~ msgid ""
+#~ "Assignment are done with the <userinput>=</userinput> symbol. In "
+#~ "programming languages it is better to read the single <userinput>=</"
+#~ "userinput> not as 'equals' but as 'becomes'. The word 'equals' is more "
+#~ "appropriate for the <userinput>==</userinput> which is a <link linkend="
+#~ "\"questions\">question</link>."
+#~ msgstr ""
+#~ "Przypisań dokonuje się za pomocą symbolu <userinput>=</userinput>. W "
+#~ "językach programowania zaleca się czytanie symbolu <userinput>=</"
+#~ "userinput> nie jako równa się ale jako oznacza. Zwrot równa się bardziej  "
+#~ "odpowiada symbolowi <userinput>==</userinput> będącemu <link linkend="
+#~ "\"questions\">zapytaniem</link>."
+
+#~ msgid ""
+#~ "Assignments are generally use for two reasons, (1) to add content <link "
+#~ "linkend=\"containers\">containers</link>, and (2) to modify the content "
+#~ "of a container. For example:"
+#~ msgstr ""
+#~ "Przypisań dokonuje się z dwóch powodów, (1) by dodać zawartość do <link "
+#~ "linkend=\"containers\">kontenerów</link>, oraz (2) by zmodyfikować "
+#~ "zawartość kontenerów. Na przykład:"
+
+#~ msgid ""
+#~ "$x = 10\n"
+#~ "# the container x now contains the number 10\n"
+#~ "$W = \"My age is: \"\n"
+#~ "# the container W now contains the string \"My age is: \"\n"
+#~ "# this prints the content of the containers 'W' and 'x' on the canvas\n"
+#~ "print $W + $x"
+#~ msgstr ""
+#~ "$x = 10\n"
+#~ "# kontener x zawiera teraz liczbę 10\n"
+#~ "$W = \"Mój wiek to: \"\n"
+#~ "# kontener W zawiera teraz łańcuch \"Mój wiek to: \"\n"
+#~ "# poniższa instrukcja drukuje na płótnie zawartość kontenerów 'W' i 'x'\n"
+#~ "pisz $W + $x"
+
+#~ msgid ""
+#~ "For more examples see the section that explains <link linkend=\"containers"
+#~ "\">containers</link>."
+#~ msgstr ""
+#~ "Więcej przykładów znajduje się z sekcji wyjaśniającej <link linkend="
+#~ "\"containers\">kontenery</link>."
+
+#~ msgid "Math Symbols"
+#~ msgstr "Symbole matematyczne"
+
+#~ msgid ""
+#~ "For a complete explanation and more examples see the <link linkend=\"math"
+#~ "\">math</link> section."
+#~ msgstr ""
+#~ "Dokładniejsze wyjaśnienie i więcej przykładów znajduje się w sekcji <link "
+#~ "linkend=\"math\">matematyka</link>."
+
+#~ msgid "Questions"
+#~ msgstr "Zapytania"
+
+#~ msgid ""
+#~ "We can ask simple questions on which the answer will be 'true' or 'false'."
+#~ msgstr ""
+#~ "Możemy zadać proste pytania, na które możliwe są jedynie odpowiedzi "
+#~ "'prawda' lub 'fałsz'."
+
+#~ msgid ""
+#~ "Using questions is extensively explained in the <link linkend=\"questions"
+#~ "\">questions</link> section."
+#~ msgstr ""
+#~ "Użycie pytań jest dokładniej wyjaśnione w sekcji <link linkend=\"questions"
+#~ "\">zapytania</link>."
+
+#~ msgid "Question Glue-Words"
+#~ msgstr "Wyrazy łączące pytania"
+
+#~ msgid ""
+#~ "Questions can be glued together with so called 'question glue'. The glue "
+#~ "words are <userinput>and</userinput>, <userinput>or</userinput>, and a "
+#~ "special glue-word: <userinput>not</userinput>."
+#~ msgstr ""
+#~ "Zapytania mogą być składane razem dzięki tak zwanym wyrazom łączącym. "
+#~ "Takimi wyrazami są <userinput>i</userinput>, <userinput>lub</userinput>, "
+#~ "oraz: <userinput>nie</userinput>."
+
+#~ msgid ""
+#~ "Using question-glue is explained in the <link linkend=\"question-glue"
+#~ "\">Question Glue</link> section."
+#~ msgstr ""
+#~ "Użycie wyrazów łączących pytania wyjaśnione jest w sekcji <link linkend="
+#~ "\"question-glue\">Łączenie pytań</link>."
+
+#~ msgid ""
+#~ "Comments are lines that start with a <userinput>#</userinput>. For "
+#~ "example: <screen>\n"
+#~ "# this is a comment!\n"
+#~ "print \"this is not a comment\"\n"
+#~ "# the previous line is not a comment, but the next line is:\n"
+#~ "# print \"this is not a comment\"\n"
+#~ "</screen> We can add comments to the code for ourselves or for someone "
+#~ "else to read. Comments are used for: (1) adding a small description to "
+#~ "the program, (2) explaining how a piece of code works if it is a bit "
+#~ "cryptic, and (3) to 'comment-out' lines of code that should be "
+#~ "(temporarily) ignored (see the last line of the example)."
+#~ msgstr ""
+#~ "Komentarzami są linie zaczynające się od <userinput>#</userinput>. Na "
+#~ "przykład: <screen>\n"
+#~ "# to jest komentarz!\n"
+#~ "pisz \"to nie jest komentarz\"\n"
+#~ "# poprzednia linia nie jest komentarzem natomiast wcześniejsza jest:\n"
+#~ "# pisz \"to nie jest komentarz\"\n"
+#~ "</screen> Do kodu możemy dodawać komentarze dla nas bądź dla innych "
+#~ "czytających. Komentarzy używa się do: (1) dodawania krótkich opisów "
+#~ "programu, (2) wyjaśniania jak działa dany fragment kodu, oraz (3) "
+#~ "wykomentowania linii kodu, które powinny być ignorowane (chwilowo) (patrz "
+#~ "ostatnia linia przykładu)."
+
+#~ msgid "A command that rolls dice for you"
+#~ msgstr "Komenda rzucająca kości za użytkownika"
+
+#~ msgid ""
+#~ "There is one command that rolls dice for you, it is called "
+#~ "<userinput>random</userinput>, and it is very useful for some unexpected "
+#~ "results."
+#~ msgstr ""
+#~ "Komenda rzucająca kości za użytkownika, nazywa się <userinput>losowo</"
+#~ "userinput>, i jest bardzo użyteczna różnych przypadkach."
+
+#~ msgid "Containers"
+#~ msgstr "Kontenery"
+
+#~ msgid ""
+#~ "Containers are letters or words that can be used by the programmer to "
+#~ "store a number or a text. Containers that contain a number are called "
+#~ "<link linkend=\"variables\">variables</link>, containers that can contain "
+#~ "text are called <link linkend=\"string\">string</link>. Containers can be "
+#~ "identified by the container character <quote>$</quote> that precedes "
+#~ "their usage."
+#~ msgstr ""
+#~ "Kontenery są znakami bądź wyrazami używanymi przez programistów do "
+#~ "przechowywania liczb lub tekstu. Kontenery zawierające liczby nazywane są "
+#~ "<link linkend=\"variables\">zmiennymi</link>, kontenery zawierające tekst "
+#~ "nazywane są <link linkend=\"string\">łańcuchami</link>. Kontenery mogą "
+#~ "być identyfikowane poprzez znak <quote>$</quote>, który warunkuje ich "
+#~ "użycie."
+
+#~ msgid "Variables: number containers"
+#~ msgstr "Zmienne: kontenery liczbowe"
+
+#~ msgid ""
+#~ "Let us start with an example: <screen>\n"
+#~ "$x = 3\n"
+#~ "print $x\n"
+#~ "</screen> In the first line the letter <userinput>x</userinput> is made "
+#~ "into a variable (number container). As you see the value of the variable "
+#~ "<userinput>x</userinput> is set to 3. On the second line the value is "
+#~ "printed."
+#~ msgstr ""
+#~ "Rozpoczniemy od przykładu: <screen>\n"
+#~ "$x = 3\n"
+#~ "pisz $x\n"
+#~ "</screen> W pierwszej linii litera <userinput>x</userinput> staje się "
+#~ "zmienną (kontenerem liczbowym). Jak widać wartość zmiennej <userinput>x</"
+#~ "userinput> ustawiona jest na 3. W drugiej linii wartość jest wypisywana."
+
+#~ msgid ""
+#~ "Note that if we wanted to print an <quote>x</quote> that we should have "
+#~ "written"
+#~ msgstr ""
+#~ "Jeżeli chcielibyśmy wypisać znak <quote>x</quote> powinniśmy napisać"
+
+#~ msgid "print \"x\""
+#~ msgstr "pisz \"x\""
+
+#~ msgid "Containers that contain text (strings)"
+#~ msgstr "Kontenery zawierające tekst (łańcuchy)"
+
+#~ msgid ""
+#~ "In programming code the regular text is usually started and ended with "
+#~ "quotes. As we have already seen: <screen>\n"
+#~ "print \"Hello programmer!\"\n"
+#~ "</screen> The regular is delimited with quotes. These pieces of regular "
+#~ "text we call <link linkend=\"strings\">strings</link>."
+#~ msgstr ""
+#~ "W kodzie programistycznym zwykły tekst rozpoczyna się i kończy zazwyczaj "
+#~ "cudzysłowami. Do tej pory widzieliśmy: <screen>\n"
+#~ "pisz \"Cześć programisto!\"\n"
+#~ "</screen> Tekst jest ograniczony cudzysłowami. Kawałki tego tekstu "
+#~ "nazywamy <link linkend=\"strings\">łańcuchami</link>."
+
+#~ msgid ""
+#~ "Strings can also be stored in <link linkend=\"containers\">containers</"
+#~ "link> just like <link linkend=\"number\">numbers</link> Strings are a lot "
+#~ "like variables. The biggest difference is that they contain text in stead "
+#~ "of numbers. For this reason strings cannot be used in <link linkend=\"math"
+#~ "\">mathematical calculations</link> and <link linkend=\"questions"
+#~ "\">questions</link>. An example of the use of strings: <screen>\n"
+#~ "$x = \"Hello \"\n"
+#~ "$name = ask \"Please enter your name...\"\n"
+#~ "print $x + $name + \", how are you?\"\n"
+#~ "</screen> On the first line the string <userinput>x</userinput> is set to "
+#~ "<quote>Hello </quote>. On the second line the string <userinput>name</"
+#~ "userinput> is set to the output of the <userinput>ask</userinput> "
+#~ "command. On the third line the program prints a composition of three "
+#~ "strings on the canvas."
+#~ msgstr ""
+#~ "Łańcuchy mogą być przechowywane w <link linkend=\"containers"
+#~ "\">kontenerach</link> tak jak <link linkend=\"number\">liczby</link>. "
+#~ "Łańcuchy są bardzo podobne do zmiennych. Największą różnicą jest to, że "
+#~ "zamiast liczb zawierają tekst. Z tego powodu łańcuchy nie mogą być "
+#~ "używane w <link linkend=\"math\">wyrażeniach matematycznych</link> i "
+#~ "<link linkend=\"questions\">pytaniach</link>. Przykład użycia łańcuchów: "
+#~ "<screen>\n"
+#~ "$x = \"Cześć \"\n"
+#~ "$imię = spytaj \"Podaj swoje imię...\"\n"
+#~ "pisz $x + $imię + \", jak się masz?\"\n"
+#~ "</screen> W pierwszej linii <userinput>x</userinput> jest ustawiane jako "
+#~ "<quote>Cześć </quote>. W drugiej linii łańcuch <userinput>imię</"
+#~ "userinput> jest ustawiany jako wyjście komendy <userinput>spytaj</"
+#~ "userinput>. W kolejnej linii program wypisuje kompozycję trzech linii na "
+#~ "płótnie."
+
+#~ msgid ""
+#~ "This program ask you to enter your name. When you, for instance, enter "
+#~ "the name <quote>Paul</quote>, the program prints <quote>Hello Paul, how "
+#~ "are you?</quote>. Please note that the plus (+) is the only math symbol "
+#~ "that you can use with strings."
+#~ msgstr ""
+#~ "Program poprosi o podanie imienia. Po wprowadzeniu np. imienia "
+#~ "<quote>Paweł</quote>, program wypisuje <quote>Cześć Paweł jak się masz?</"
+#~ "quote>. Należy zauważyć, że plus (+) jest jedynym symbolem matematycznym "
+#~ "używanym z łańcuchami."
+
+#~ msgid "Can the Turtle do math?"
+#~ msgstr "Czy żółw zna matematykę?"
+
+#~ msgid ""
+#~ "Yes, &kturtle; will do your math. You can add (+), subtract (-), multiply "
+#~ "(*), and divide (/). Here is an example in which we use all of them: "
+#~ "<screen>\n"
+#~ "$a = 20 - 5\n"
+#~ "$b = 15 * 2\n"
+#~ "$c = 30 / 30\n"
+#~ "$d = 1 + 1\n"
+#~ "print \"a: \"+$a+\", b: \"+$b+\", c: \"+$c+\", d: \"+$d \n"
+#~ "</screen> Do you know what value a, b, c and d have? Please note the use "
+#~ "of the <link linkend=\"assignment\">assignment</link> symbol "
+#~ "<userinput>=</userinput>."
+#~ msgstr ""
+#~ "Tak, &kturtle; zna matematykę. Potrafi dodawać (+), odejmować (-), mnożyć "
+#~ "(*), a także dzielić (/). Oto przykład, który korzysta ze wszystkich tych "
+#~ "działań: <screen>\n"
+#~ "$a = 20 - 5\n"
+#~ "$b = 15 * 2\n"
+#~ "$c = 30 / 30\n"
+#~ "$d = 1 + 1\n"
+#~ "pisz \"a: \"+$a+\", b: \"+$b+\", c: \"+$c+\", d: \"+$d \n"
+#~ "</screen> Czy wiesz jakie wartości mają zmienne a, b, c oraz d? Proszę "
+#~ "zauważyć <link linkend=\"assignment\">przypisanie wartości zmiennej</"
+#~ "link> za pomocą symbolu <userinput>=</userinput>."
+
+#~ msgid ""
+#~ "&kturtle; has advanced mathematical features. It knows the number "
+#~ "<userinput>pi</userinput> and trigonometrical functions like "
+#~ "<userinput>sin</userinput>, <userinput>cos</userinput>, <userinput>tan</"
+#~ "userinput>, <userinput>arcsin</userinput>, <userinput>arccos</userinput>, "
+#~ "<userinput>arctan</userinput> and the functions <userinput>sqrt</"
+#~ "userinput> and <userinput>exp</userinput>."
+#~ msgstr ""
+#~ "&kturtle; posiada zaawansowane funkcje matematyczne. Zna liczbę "
+#~ "<userinput>pi</userinput> i funkcje trygonometryczne, jak na przykład "
+#~ "<userinput>sin</userinput>, <userinput>cos</userinput>, <userinput>tan</"
+#~ "userinput>, <userinput>arcsin</userinput>, <userinput>arccos</userinput>, "
+#~ "<userinput>arctan</userinput> oraz funkcje <userinput>sqrt</userinput> i "
+#~ "<userinput>exp</userinput>."
+
+#~ msgid "Let the turtle round your numbers"
+#~ msgstr "Niech żółw zaokrągli liczby"
+
+#~ msgid "If you need integers in calculations, use this function."
+#~ msgstr ""
+#~ "Jeśli potrzebujesz liczb całkowitych w swoich obliczeniach, użyj tej "
+#~ "funkcji."
+
+#~ msgid "Asking questions, getting answers..."
+#~ msgstr "Zadawanie pytań, otrzymywanie odpowiedzi..."
+
+#~ msgid ""
+#~ "<link linkend=\"if\"><userinput>if</userinput></link> and <link linkend="
+#~ "\"while\"><userinput>while</userinput></link> are <link linkend="
+#~ "\"controlling-execution\">execution controllers</link> that we will "
+#~ "discuss in the next section. In this section we use the <link linkend=\"if"
+#~ "\"><userinput>if</userinput></link> command to explain questions."
+#~ msgstr ""
+#~ "<link linkend=\"if\"><userinput>jeśli</userinput></link> i <link linkend="
+#~ "\"while\"><userinput>dopóki</userinput></link> są <link linkend="
+#~ "\"controlling-execution\">instrukcjami sterującymi</link> które będą "
+#~ "omawiane w następnej sekcji. W tej sekcji używamy instrukcji <link "
+#~ "linkend=\"if\"><userinput>jeśli</userinput></link> by wyjaśnić zapytania."
+
+#~ msgid ""
+#~ "A simple example of a question: <screen>\n"
+#~ "$x = 6\n"
+#~ "if $x &gt; 5 {\n"
+#~ "  print \"hello\"\n"
+#~ "}\n"
+#~ "</screen> In this example the question is the <userinput>x &gt; 5</"
+#~ "userinput> part. If the answer to this question is 'true' the code "
+#~ "between the brackets will be executed. Questions are an important part of "
+#~ "programming and often used together with <link linkend=\"controlling-"
+#~ "execution\">execution controllers</link>, like <link linkend=\"if"
+#~ "\"><userinput>if</userinput></link>. All numbers and <link linkend="
+#~ "\"variables\">variables</link> (number containers) can be compared to "
+#~ "each other with questions."
+#~ msgstr ""
+#~ "Przykład prostego pytania: <screen>\n"
+#~ "$x = 6\n"
+#~ "jeśli $x &gt; 5 {\n"
+#~ "  pisz \"cześć\"\n"
+#~ "]\n"
+#~ "</screen> Pytaniem w tym przykładzie jest <userinput>x &gt; 5</"
+#~ "userinput> . Jeżeli odpowiedź jest prawdziwa wykonywany jest kod w "
+#~ "nawiasach. Zapytania są bardzo istotną częścią częścią programowania i są "
+#~ "często używane z <link linkend=\"controlling-execution\">instrukcjami "
+#~ "sterującymi</link>, jak np. <link linkend=\"if\"><userinput>jeśli</"
+#~ "userinput></link>. Wszystkie liczby i <link linkend=\"variables"
+#~ "\">zmienne</link> (kontenery liczbowe) mogą być porównywane ze sobą przy "
+#~ "pomocy zapytań."
+
+#~ msgid "Here are all possible questions:"
+#~ msgstr "Poniżej znajdują się wszystkie możliwe pytania:"
+
+#~ msgid "Types of questions"
+#~ msgstr "Typy zapytań"
+
+#~ msgid "a == b"
+#~ msgstr "a == b"
+
+#~ msgid "equals"
+#~ msgstr "równa się"
+
+#~ msgid ""
+#~ "answer is <quote>true</quote> if <userinput>a</userinput> equals "
+#~ "<userinput>b</userinput>"
+#~ msgstr ""
+#~ "odpowiedź jest <quote>prawdą</quote> gdy <userinput>a</userinput> równa "
+#~ "się <userinput>b</userinput>"
+
+#~ msgid "a != b"
+#~ msgstr "a != b"
+
+#~ msgid "not-equals"
+#~ msgstr "nie równa się"
+
+#~ msgid ""
+#~ "answer is <quote>true</quote> if <userinput>a</userinput> does not equal "
+#~ "<userinput>b</userinput>"
+#~ msgstr ""
+#~ "odpowiedź jest <quote>prawdą</quote> gdy <userinput>a</userinput> nie "
+#~ "równa się <userinput>b</userinput>"
+
+#~ msgid "a &gt; b"
+#~ msgstr "a &gt; b"
+
+#~ msgid "greater than"
+#~ msgstr "większe niż"
+
+#~ msgid ""
+#~ "answer is <quote>true</quote> if <userinput>a</userinput> is greater than "
+#~ "<userinput>b</userinput>"
+#~ msgstr ""
+#~ "odpowiedź jest <quote>prawdą</quote> gdy <userinput>a</userinput> jest "
+#~ "większe niż <userinput>b</userinput>"
+
+#~ msgid "a &lt; b"
+#~ msgstr "a &lt; b"
+
+#~ msgid "smaller than"
+#~ msgstr "mniejsze niż"
+
+#~ msgid ""
+#~ "answer is <quote>true</quote> if <userinput>a</userinput> is smaller than "
+#~ "<userinput>b</userinput>"
+#~ msgstr ""
+#~ "odpowiedź jest <quote>prawdą</quote> gdy <userinput>a</userinput> jest "
+#~ "mniejsze niż <userinput>b</userinput>"
+
+#~ msgid "a &gt;= b"
+#~ msgstr "a &gt;= b"
+
+#~ msgid "greater than or equals"
+#~ msgstr "większe lub równe"
+
+#~ msgid ""
+#~ "answer is <quote>true</quote> if <userinput>a</userinput> is greater than "
+#~ "or equals <userinput>b</userinput>"
+#~ msgstr ""
+#~ "odpowiedź jest <quote>prawdą</quote> gdy <userinput>a</userinput> jest "
+#~ "większe lub równe <userinput>b</userinput>"
+
+#~ msgid "a &lt;= b"
+#~ msgstr "a &lt;= b"
+
+#~ msgid "smaller than or equals"
+#~ msgstr "mniejsze lub równe"
+
+#~ msgid ""
+#~ "answer is <quote>true</quote> if <userinput>a</userinput> is smaller than "
+#~ "or equals <userinput>b</userinput>"
+#~ msgstr ""
+#~ "odpowiedź jest <quote>prawdą</quote> gdy <userinput>a</userinput> "
+#~ "mniejsze lub równe <userinput>b</userinput>"
+
+#~ msgid "Question Glue"
+#~ msgstr "Łączniki pytań"
+
+#~ msgid ""
+#~ "Question glue-words enable us to glue questions into one big question. "
+#~ "<screen>\n"
+#~ "$a = 1\n"
+#~ "$b = 5\n"
+#~ "if ($a &lt; $b) and ($b == 5) {\n"
+#~ "  print \"hello\"\n"
+#~ "}\n"
+#~ "</screen> In this example the glue-word <userinput>and</userinput> is "
+#~ "used to glue 2 questions (<userinput>a &lt; 5</userinput>, <userinput>b "
+#~ "== 5</userinput>) together. If one side of the <userinput>and</userinput> "
+#~ "would answer <quote>false</quote> the whole question would answer "
+#~ "<quote>false</quote>, because with the glue-word <userinput>and</"
+#~ "userinput> both sides need to be <quote>true</quote> in order to answer "
+#~ "<quote>true</quote>. Please do not forget to use the brackets around the "
+#~ "questions!"
+#~ msgstr ""
+#~ "Wyrazy łączące pytania umożliwiają łączenie kilku małych pytań w jedno "
+#~ "duże. <screen>\n"
+#~ "$a = 1\n"
+#~ "$b = 5\n"
+#~ "jeśli ($a &lt; 5) i ($b == 5) {\n"
+#~ "  pisz \"cześć\"\n"
+#~ "}\n"
+#~ "</screen> W tym przykładzie wyraz łączący <userinput>i</userinput> jest "
+#~ "użyty do połączenia dwóch pytań (<userinput>a &lt; 5</userinput>, "
+#~ "<userinput>b == 5</userinput>). Jeżeli po jednej stronie <userinput>i</"
+#~ "userinput> odpowiedź będzie <quote>fałszywa</quote> odpowiedź na całe "
+#~ "pytanie będzie <quote>fałszem</quote>, gdyż używając wyrazu <userinput>i</"
+#~ "userinput> obie strony muszą być <quote>prawdziwe</quote> by całe pytanie "
+#~ "było <quote>prawdą</quote>. Proszę nie zapominać o użyciu nawiasów wokół "
+#~ "pytań!"
+
+#~ msgid ""
+#~ "Here is a schematic overview; a more detailed explanation follows below:"
+#~ msgstr "Poniżej znajduje się schematyczne wytłumaczenie:"
+
+#~ msgid "Question glue-words"
+#~ msgstr "Wyrazy łączące pytania"
+
+#~ msgid "<userinput>and</userinput>"
+#~ msgstr "<userinput>i</userinput>"
+
+#~ msgid "Both sides need to be 'true' in order to answer 'true'"
+#~ msgstr "By wyrażenie było prawdziwe obie strony muszą być prawdziwe"
+
+#~ msgid "<userinput>or</userinput>"
+#~ msgstr "<userinput>lub</userinput>"
+
+#~ msgid "If one of the sides is 'true' the answer is 'true'"
+#~ msgstr ""
+#~ "By wyrażenie było prawdziwe, wystarczy by jedna strona była prawdziwa"
+
+#~ msgid "<userinput>not</userinput>"
+#~ msgstr "<userinput>nie</userinput>"
+
+#~ msgid "<title>and</title>"
+#~ msgstr "<title>i</title>"
+
+#~ msgid ""
+#~ "When two questions are glued together with <userinput>and</userinput>, "
+#~ "both sides of the <userinput>and</userinput> have to be 'true' in order "
+#~ "to result in 'true'. An example: <screen>\n"
+#~ "$a = 1\n"
+#~ "$b = 5\n"
+#~ "if (($a &lt; 10) and ($b == 5)) and ($a &lt; $b) {\n"
+#~ "  print \"hello\"\n"
+#~ "}\n"
+#~ "</screen> In this example you see a glued question glued onto an other "
+#~ "question."
+#~ msgstr ""
+#~ "Gdy dwa pytania są połączone za pomocą <userinput>i</userinput>, obie "
+#~ "strony <userinput>i</userinput> muszą być prawdziwe by wynik był "
+#~ "prawdziwy. Na przykład: <screen>\n"
+#~ "$a = 1\n"
+#~ "$b = 5\n"
+#~ "jeśli (($a &lt; 10) i ($b == 5)) i ($a &lt; $b) {\n"
+#~ "  pisz \"cześć\"\n"
+#~ "}\n"
+#~ "</screen> W tym przykładzie można zaobserwować pytanie zagnieżdżone w "
+#~ "pytaniu."
+
+#~ msgid "<title>or</title>"
+#~ msgstr "<title>lub</title>"
+
+#~ msgid ""
+#~ "If one of the two questions that are glued together with <userinput>or</"
+#~ "userinput> is 'true' the result will be 'true'. An example: <screen>\n"
+#~ "$a = 1\n"
+#~ "$b = 5\n"
+#~ "if (($a &lt; 10) or ($b == 10)) or ($a == 0) {\n"
+#~ "  print \"hello\"\n"
+#~ "}\n"
+#~ "</screen> In this example you see a glued question glued onto an other "
+#~ "question."
+#~ msgstr ""
+#~ "Gdy jedno z dwóch wyrażeń połączonych wyrazem <userinput>lub</userinput> "
+#~ "jest prawdziwe wynik jest prawdziwy. Na przykład: <screen>\n"
+#~ "$a = 1\n"
+#~ "$b = 5\n"
+#~ "jeśli (($a &lt; 10) lub ($b == 10)) lub ($a == 0) {\n"
+#~ "  pisz \"cześć\"\n"
+#~ "}\n"
+#~ "</screen> W tym przykładzie można zaobserwować pytanie zagnieżdżone w "
+#~ "pytaniu."
+
+#~ msgid "<title>not</title>"
+#~ msgstr "<title>nie</title>"
+
+#~ msgid "<primary>not</primary>"
+#~ msgstr "<primary>nie</primary>"
+
+#~ msgid ""
+#~ "<userinput>not</userinput> is a special question glue-word because it "
+#~ "only works for one question at the time. <userinput>not</userinput> "
+#~ "changes 'true' into 'false' and 'false' into 'true'. An example: "
+#~ "<screen>\n"
+#~ "$a = 1\n"
+#~ "$b = 5\n"
+#~ "if not (($a &lt; 10) and ($b == 5)) {\n"
+#~ "  print \"hello\"\n"
+#~ "}\n"
+#~ "else\n"
+#~ "{\n"
+#~ "  print \"not hello ;-)\"\n"
+#~ "}\n"
+#~ "</screen> In this example the glued question is 'true' yet the "
+#~ "<userinput>not</userinput> changes it to 'false'. So in the end "
+#~ "<userinput>\"not hello ;-)\"</userinput> is printed on the <link linkend="
+#~ "\"the-canvas\">canvas</link>."
+#~ msgstr ""
+#~ "<userinput>nie</userinput> jest specjalnym wyrazem, gdyż odnosi się tylko "
+#~ "do jednego wyrażenia. <userinput>nie</userinput> zamienia fałsz na prawdę "
+#~ "a prawdę na fałsz. Na przykład: <screen>\n"
+#~ "$a = 1\n"
+#~ "$b = 5\n"
+#~ "jeśli nie (($a &lt; 10) i ($b == 5)) {\n"
+#~ "  pisz \"cześć\"\n"
+#~ "} przeciwnie {\n"
+#~ "  pisz \"nie cześć ;-)\"\n"
+#~ "}\n"
+#~ "</screen> W tym przykładzie wyrażenie jest prawdziwe, ale <userinput>nie</"
+#~ "userinput> zamienia je na fałszywe. Więc na końcu na<link linkend=\"the-"
+#~ "canvas\">płótnie</link><userinput>\"nie cześć ;-)\"</userinput>."
+
+#~ msgid "if question { ... } else { ... }"
+#~ msgstr "jeśli wyrażenie { ... } jeśliNie { ... }"
+
+#~ msgid "repeat number { ... }"
+#~ msgstr "powtórz liczba { ... }"
+
+#~ msgid ""
+#~ "for <userinput>start point</userinput> to <userinput>end point</"
+#~ "userinput> { ... }"
+#~ msgstr ""
+#~ "dla <userinput>punkt początkowy</userinput> do <userinput>punkt końcowy</"
+#~ "userinput> { ... }"
+
+#~ msgid ""
+#~ "for <userinput>start point</userinput> to <userinput>end point</"
+#~ "userinput> step <userinput>step size</userinput> { ... }"
+#~ msgstr ""
+#~ "dla <userinput>punkt początkowy</userinput> do <userinput>punkt końcowy</"
+#~ "userinput> co <userinput>co ile</userinput> { ... }"
+
+#~ msgid "Stop the turtle"
+#~ msgstr "Zatrzymaj żółwia"

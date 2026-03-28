@@ -1,0 +1,276 @@
+# translation of partitionmanager_installoshowto.po to Swedish
+#
+# Stefan Asserhäll <stefan.asserhall@gmail.com>, 2008, 2010.
+# Stefan Asserhall <stefan.asserhall@gmail.com>, 2010, 2023.
+msgid ""
+msgstr ""
+"Project-Id-Version: partitionmanager_installoshowto\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 12:04+0000\n"
+"PO-Revision-Date: 2023-09-29 20:09+0200\n"
+"Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
+"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-KDE-DocBook-SVN-URL: trunk/kdereview/doc/partitionmanager/installoshowto."
+"docbook\n"
+"X-KDE-DocBook-SVN-Changed-Revision: 867075\n"
+"X-KDE-Associated-UI-Catalogs: \n"
+"X-Generator: Lokalize 23.04.3\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#. Tag: title
+#: installoshowto.docbook:2
+#, no-c-format
+msgid "How-To: Installing a New Operating System"
+msgstr "Handledning: Installera ett nytt operativsystem"
+
+#. Tag: para
+#: installoshowto.docbook:4
+#, no-c-format
+msgid ""
+"This how-to describes the preparation of a new hard disk device for an OS "
+"installation: Suppose you bought a new hard disk and now intend to use it as "
+"a replacement for the old one that currently holds your OS and data "
+"partitions. You would also like to take this opportunity to install a new "
+"operating system. Several steps will have to be taken to make the transition "
+"from the old to the new system and drive."
+msgstr ""
+"Handledningen beskriver hur man förbereder en ny hårddiskenhet för "
+"installation av ett operativsystem: Antag att du köpt en ny hårddisk och nu "
+"har för avsikt att använda det som ersättning av den gamla som för "
+"närvarande innehåller ditt operativsystem och datapartitioner. Du skulle "
+"också vilja ta tillfället i akt att installera ett nytt operativsystem. "
+"Flera åtgärder måste utföras för att göra övergången från det gamla till det "
+"nya systemet och enheten."
+
+#. Tag: para
+#: installoshowto.docbook:8
+#, no-c-format
+msgid ""
+"In the following, <quote>/dev/sdb</quote> is the old hard disk and <quote>/"
+"dev/sdc</quote> is the new one. This screenshot shows the situation on the "
+"source device:"
+msgstr ""
+"I det följande, är <quote>/dev/sdb</quote> den gamla hårddisken och <quote>/"
+"dev/sdc</quote> är den nya. Skärmbilden visar tillståndet i källenheten:"
+
+#. Tag: phrase
+#: installoshowto.docbook:16
+#, no-c-format
+msgid "Main window with source device"
+msgstr "Huvudfönster med källenhet"
+
+#. Tag: para
+#: installoshowto.docbook:21
+#, no-c-format
+msgid ""
+"The new device will look like this. Note that it doesn't yet have valid "
+"partition table, thus the first step to take is to create one by selecting "
+"<xref linkend=\"menu-device-createpartitiontable\"/>:"
+msgstr ""
+"Den nya enheten kommer att se ut så här. Observera att den inte ännu har en "
+"giltig partitionstabell, alltså är det första steget att skapa en genom att "
+"välja <xref linkend=\"menu-device-createpartitiontable\"/>:"
+
+#. Tag: phrase
+#: installoshowto.docbook:29
+#, no-c-format
+msgid "Main window with destination device"
+msgstr "Huvudfönster med målenhet"
+
+#. Tag: para
+#: installoshowto.docbook:34
+#, no-c-format
+msgid ""
+"After confirming the warning dialog you can begin creating partitions on the "
+"new device by clicking the extended partition and selecting <xref linkend="
+"\"menu-partition-new\"/>. Begin with an extended partition at the end of the "
+"device to later hold the home and swap partitions:"
+msgstr ""
+"Efter att ha kontrollerat varningsdialogrutan kan du börja skapa partitioner "
+"på den nya enheten genom att klicka på den utökade partitionen och välja "
+"<xref linkend=\"menu-partition-new\"/>. Börja med en utökad partition i "
+"slutet av enheten, som senare ska innehålla partitioner för home och "
+"växlingsutrymme:"
+
+#. Tag: phrase
+#: installoshowto.docbook:42
+#, no-c-format
+msgid "Creating an extended partition"
+msgstr "Skapa en utökad partition"
+
+#. Tag: para
+#: installoshowto.docbook:47
+#, no-c-format
+msgid ""
+"Click <guibutton>OK</guibutton> and the operation to create this extended "
+"partition is added to the list."
+msgstr ""
+"Klicka på <guibutton>Ok</guibutton> så läggs åtgärden för att skapa den "
+"utökade partitionen till i listan."
+
+#. Tag: para
+#: installoshowto.docbook:51
+#, no-c-format
+msgid ""
+"Now create a primary partition on the rest of the device where the new OS "
+"will be installed. Make it as large as the unallocated area in front of the "
+"extended partition:"
+msgstr ""
+"Skapa nu en primär partition på resten av den enhet där det nya "
+"operativsystemet kommer att installeras. Gör den så stor som det icke "
+"tilldelade området framför den utökad partitionen:"
+
+#. Tag: phrase
+#: installoshowto.docbook:59
+#, no-c-format
+msgid "Creating a primary partition"
+msgstr "Skapa en primär partition"
+
+#. Tag: para
+#: installoshowto.docbook:64
+#, no-c-format
+msgid ""
+"Click <guibutton>OK</guibutton> in the dialog to accept your choice. The "
+"operation to create the new primary partition is then added to the operation "
+"list."
+msgstr ""
+"Klicka på <guibutton>Ok</guibutton> i dialogrutan för att acceptera ditt "
+"val. Åtgärden för att skapa den nya primära partitionen läggs då till i "
+"åtgärdslistan."
+
+#. Tag: para
+#: installoshowto.docbook:68
+#, no-c-format
+msgid ""
+"Now it is time to copy the home partition from the old device to the "
+"extended partition on the new device. Select the old device in the Device "
+"List panel, click on partition <quote>sdb5</quote> and pick <xref linkend="
+"\"menu-partition-copy\"/>."
+msgstr ""
+"Nu är det dags att kopiera partitionen home från den gamla enheten till den "
+"utökad partition på den nya enheten. Markera den gamla enheten i "
+"enhetslistan, klicka på partitionen <quote>sdb5</quote> och välj <xref "
+"linkend=\"menu-partition-copy\"/>."
+
+#. Tag: para
+#: installoshowto.docbook:72
+#, no-c-format
+msgid ""
+"Then go back to the new device and click the extended partition. Select "
+"<xref linkend=\"menu-partition-paste\"/>. The following dialog will come up:"
+msgstr ""
+"Gå därefter tillbaka till den nya enheten och klicka på den utökade "
+"partitionen. Välj <xref linkend=\"menu-partition-paste\"/>. Följande "
+"dialogruta dyker då upp:"
+
+#. Tag: phrase
+#: installoshowto.docbook:80
+#, no-c-format
+msgid "Pasting the home partition"
+msgstr "Klistra in hempartitionen"
+
+#. Tag: para
+#: installoshowto.docbook:85
+#, no-c-format
+msgid ""
+"This already looks mostly okay but you already know that you will not need "
+"that much free space after the home partition because you will later create "
+"a swap partition there."
+msgstr ""
+"Det ser redan i stort sätt bra ut, men du vet redan att du inte behöver så "
+"mycket ledigt utrymme efter partitionen home, eftersom du senare kommer att "
+"skapa en partition för växlingsutrymme där."
+
+#. Tag: para
+#: installoshowto.docbook:89
+#, no-c-format
+msgid ""
+"So grab the right resize handle in the dialog's resizer widget and move it "
+"to the right until the free space after the pasted partition has a size more "
+"suitable for a swap partition:"
+msgstr ""
+"Så ta det högra greppet för storleksändring och flytta det åt höger till det "
+"fria utrymmet efter den inklistrade partitionen har en storlek som är "
+"lämpligare för ett växlingsutrymme:"
+
+#. Tag: phrase
+#: installoshowto.docbook:97
+#, no-c-format
+msgid "Resizing a pasted partition"
+msgstr "Ändra storlek på en inklistrad partition"
+
+#. Tag: para
+#: installoshowto.docbook:102
+#, no-c-format
+msgid ""
+"This looks fine. Click <guibutton>OK</guibutton> to accept and close the "
+"dialog. A new operation to paste the copied partition to the extended "
+"partition on <quote>sdc</quote> is added to the operation list. Note that "
+"this operation will also set the new size."
+msgstr ""
+"Det ser bra ut. Klicka på <guibutton>Ok</guibutton> för att acceptera det "
+"och stänga dialogrutan. En ny åtgärd för att klistra in den kopierade "
+"partitionen i den utökade partitionen på <quote>sdc</quote> läggs till i "
+"åtgärdslistan. Observera att åtgärden också ställer in den nya storleken."
+
+#. Tag: para
+#: installoshowto.docbook:106
+#, no-c-format
+msgid ""
+"Finally you will want to create a new swap partition at the end of the "
+"extended partition on <quote>sdc</quote>. There is no need to copy the "
+"existing swap partition from <quote>sdb</quote> because swap does not hold "
+"any permanent information worth keeping. Simply create a new partition with "
+"type linuxswap that fills the whole of the unallocated area after the new "
+"home partition."
+msgstr ""
+"Till sist behöver du skapa en ny partition för växlingsutrymme i slutet av "
+"den utökade partitionen på <quote>sdc</quote>. Det finns ingen anledning att "
+"kopiera den befintliga partitionen med växlingsutrymme från <quote>sdb</"
+"quote> eftersom växlingsutrymmet inte innehåller någon permanent information "
+"värd att behålla. Skapa helt enkelt den nya partitionen med typen linuxswap "
+"som fyller hela det icke tilldelade området efter den nya partitionen home."
+
+#. Tag: para
+#: installoshowto.docbook:110
+#, no-c-format
+msgid ""
+"The main window with all operations and the preview of how <quote>sdc</"
+"quote> will look like once they are applied now looks like this:"
+msgstr ""
+"Huvudfönstret med alla åtgärder och förhandsgranskningen av hur <quote>sdc</"
+"quote> kommer att se ut när de väl har verkställts ser nu ut så här:"
+
+#. Tag: phrase
+#: installoshowto.docbook:118
+#, no-c-format
+msgid "Main window after setting up all operations"
+msgstr "Huvudfönstret efter alla åtgärder är inställda"
+
+#. Tag: para
+#: installoshowto.docbook:123
+#, no-c-format
+msgid ""
+"This looks great so select <xref linkend=\"menu-edit-apply\"/>, confirm the "
+"warning dialog and wait until the operations have all been executed. For "
+"details on executing operations see <link linkend=\"howto-resizepartition"
+"\">the how-to on resizing partitions</link>."
+msgstr ""
+"Det ser utmärkt ut, så välj <xref linkend=\"menu-edit-apply\"/>, bekräfta "
+"varningsdialogrutorna och vänta till alla åtgärder har utförts. Se <link "
+"linkend=\"howto-resizepartition\">handledningen óm att ändra en partitions "
+"storlek</link> för detaljinformation om att verkställa åtgärder."
+
+#. Tag: para
+#: installoshowto.docbook:127
+#, no-c-format
+msgid ""
+"Your new hard disk device is now ready for the installation of your new "
+"operating system."
+msgstr ""
+"Den nya hårddiskenheten är nu klar för att installera det nya "
+"operativsystemet."

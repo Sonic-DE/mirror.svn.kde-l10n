@@ -1,0 +1,664 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kturtle_glossary\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 12:04+0000\n"
+"PO-Revision-Date: 2021-01-22 18:34+0000\n"
+"Last-Translator: Pedro Morais <morais@kde.org>\n"
+"Language-Team: pt <kde-i18n-pt@kde.org>\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-POFile-CheckAccelerator: 0\n"
+"X-POFile-IgnoreConsistency: print\n"
+"X-POFile-SpellExtra: go gox goy canvassize learn backward inputwindow penup\n"
+"X-POFile-SpellExtra: forward turnright turnleft wrapoff wrapon direction\n"
+"X-POFile-SpellExtra: pencolor penwidth clear canvascolor hide print random\n"
+"X-POFile-SpellExtra: green red blue and or not\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#. Tag: title
+#: glossary.docbook:2
+#, no-c-format
+msgid "Glossary"
+msgstr "Glossário"
+
+#. Tag: para
+#: glossary.docbook:4
+#, no-c-format
+msgid ""
+"In this chapter you will find an explanation of most of the <quote>uncommon</"
+"quote> words that are used in the handbook."
+msgstr ""
+"Neste capítulo, você irá obter uma explicação para a maioria das palavras "
+"<quote>pouco comuns</quote> que são usadas no manual."
+
+#. Tag: glossterm
+#: glossary.docbook:8
+#, no-c-format
+msgid "degrees"
+msgstr "graus"
+
+#. Tag: para
+#: glossary.docbook:9
+#, no-c-format
+msgid ""
+"Degrees are units to measure angles or turns. A full turn is 360 degrees, a "
+"half turn 180 degrees and a quarter turn 90 degrees. The commands "
+"<userinput>turnleft</userinput>, <userinput>turnright</userinput> and "
+"<userinput>direction</userinput> need an input in degrees."
+msgstr ""
+"Os graus são uma unidade para medir ângulos ou voltas. Uma volta completa "
+"corresponde a 360 graus, o que corresponde a uma meia-volta como 180 graus e "
+"um quarto-de-volta como 90 graus. Os comandos <userinput>turnleft</"
+"userinput>, <userinput>turnright</userinput> e <userinput>direction</"
+"userinput> necessitam de um parâmetro em graus."
+
+#. Tag: glossterm
+#: glossary.docbook:13
+#, no-c-format
+msgid "input and output of commands"
+msgstr "parâmetros e resultado dos comandos"
+
+#. Tag: para
+#: glossary.docbook:14
+#, no-c-format
+msgid ""
+"Some commands take input, some commands give output, some commands take "
+"input <emphasis>and</emphasis> give output and some commands neither take "
+"input nor give output."
+msgstr ""
+"Alguns comandos recebem parâmetros, outros devolvem resultados, outros fazem "
+"<emphasis>ambas</emphasis> as coisas e finalmente existem outros que não "
+"fazem nenhuma delas."
+
+#. Tag: para
+#: glossary.docbook:15
+#, no-c-format
+msgid ""
+"Some examples of commands that only take input are: <screen>\n"
+"forward 50\n"
+"pencolor 255,0,0\n"
+"print \"Hello!\"\n"
+"</screen> The <userinput>forward</userinput> command takes <userinput>50</"
+"userinput> as input. <userinput>forward</userinput> needs this input to know "
+"how many <glossterm linkend=\"pixels\">pixels</glossterm> it should go "
+"forward. <userinput>pencolor</userinput> takes a color as input and "
+"<userinput>print</userinput> takes a string (a piece of text) as input. "
+"Please note that the input can also be a container. The next example "
+"illustrates this:"
+msgstr ""
+"Alguns exemplos de comandos que só recebem parâmetros são: <screen>\n"
+"forward 50\n"
+"pencolor 255,0,0\n"
+"print \"olá!\"\n"
+"</screen> O comando <userinput>forward</userinput> recebe o <userinput>50</"
+"userinput> como parâmetro, porque o <userinput>forward</userinput> precisa "
+"deste parâmetro para saber quantos <glossterm linkend=\"pixels\">pontos</"
+"glossterm> deverá andar em frente. O <userinput>pencolor</userinput> recebe "
+"um parâmetro e o <userinput>print</userinput> recebe uma cadeia de "
+"caracteres com parâmetro. Lembre-se que o parâmetro também poderá ser um "
+"contentor. O próximo exemplo ilustra isto:"
+
+#. Tag: screen
+#: glossary.docbook:18
+#, no-c-format
+msgid ""
+"$x = 50\n"
+"print $x\n"
+"forward 50\n"
+"$str = \"hello!\"\n"
+"print $str"
+msgstr ""
+"$x = 50\n"
+"print $x\n"
+"forward 50\n"
+"$texto = \"olá!\"\n"
+"print $texto"
+
+#. Tag: para
+#: glossary.docbook:20
+#, no-c-format
+msgid ""
+"Now some examples of commands that give output: <screen>\n"
+"$x = ask \"Please type something and press OK... thanks!\"\n"
+"$r = random 1,100\n"
+"</screen> The <userinput>ask</userinput> command takes a string as input, "
+"and outputs the number or string that is entered. As you can see, the output "
+"of <userinput>ask</userinput> is stored in the container <userinput>x</"
+"userinput>. The <userinput>random</userinput> command also gives output. In "
+"this case it outputs a number between 1 and 100. The output of the random is "
+"again stored in a container, named <userinput>r</userinput>. Note that the "
+"containers <userinput>x</userinput> and <userinput>r</userinput> are not "
+"used in the example code above."
+msgstr ""
+"Agora alguns exemplos de comandos que devolvam resultados: <screen>\n"
+"$x = inputwindow \"por favor escreva algo e carregue em OK... obrigado!\"\n"
+"$r = random 1,100\n"
+"</screen> O comando <userinput>inputwindow</userinput> recebe um texto como "
+"parâmetro e devolve o número ou o texto que é introduzido. Como poderá ver, "
+"o resultado do <userinput>inputwindow</userinput> é guardado no contentor "
+"<userinput>x</userinput>. O comando <userinput>random</userinput> também "
+"devolve um resultado. Neste caso, devolve um número entre 1 e 100. O "
+"resultado do <userinput>random</userinput> é de novo guardado num contentor, "
+"chamado <userinput>r</userinput>. Lembre-se que os contentores <userinput>x</"
+"userinput> e <userinput>r</userinput> não são usados no código de exemplo "
+"acima."
+
+#. Tag: para
+#: glossary.docbook:24
+#, no-c-format
+msgid ""
+"There are also commands that neither need input nor give output. Here are "
+"some examples:"
+msgstr ""
+"Também há alguns comandos que não precisam de parâmetros nem devolvem nada. "
+"Alguns exemplos:"
+
+#. Tag: screen
+#: glossary.docbook:25
+#, no-c-format
+msgid ""
+"clear\n"
+"penup"
+msgstr ""
+"clear\n"
+"penup"
+
+#. Tag: glossterm
+#: glossary.docbook:30
+#, no-c-format
+msgid "intuitive highlighting"
+msgstr "realce intuitivo"
+
+#. Tag: para
+#: glossary.docbook:31
+#, no-c-format
+msgid ""
+"This is a feature of &kturtle; that makes coding even easier. With intuitive "
+"highlighting the code that you write gets a color that indicates what type "
+"of code it is. In the next list you will find the different types of code "
+"and the color they get in <link linkend=\"the-editor\">the editor</link>."
+msgstr ""
+"Esta é uma funcionalidade do &kturtle; que torna a codificação ainda mais "
+"simples. Com o realce intuitivo, o código que você escrever ganha uma cor "
+"que indica qual o tipo de código que é. Na próxima lista, você irá encontrar "
+"os diferentes tipos de código e a cor que obtêm no <link linkend=\"the-editor"
+"\">editor</link>."
+
+#. Tag: title
+#: glossary.docbook:33
+#, no-c-format
+msgid "Different types of code and their highlight color"
+msgstr "Os diferentes tipos de código e a sua cor de realce"
+
+#. Tag: entry
+#: glossary.docbook:37
+#, no-c-format
+msgid "regular commands"
+msgstr "comandos normais"
+
+#. Tag: entry
+#: glossary.docbook:38
+#, no-c-format
+msgid "dark blue"
+msgstr "azul escuro"
+
+#. Tag: entry
+#: glossary.docbook:39
+#, no-c-format
+msgid ""
+"The regular commands are described <link linkend=\"commands\">here</link>."
+msgstr ""
+"Os comandos normais estão descritos <link linkend=\"commands\">aqui</link>."
+
+#. Tag: entry
+#: glossary.docbook:42
+#, no-c-format
+msgid "execution controlling commands"
+msgstr "Comandos de controlo da execução"
+
+#. Tag: entry
+#: glossary.docbook:43
+#, no-c-format
+msgid "black (bold)"
+msgstr "preto (negrito)"
+
+#. Tag: entry
+#: glossary.docbook:44
+#, no-c-format
+msgid ""
+"These special commands control execution, read more on them <link linkend="
+"\"controlling-execution\">here</link>."
+msgstr ""
+"Estes comandos especiais controlam a execução; poderá ler mais sobre eles "
+"<link linkend=\"controlling-execution\">aqui</link>."
+
+#. Tag: entry
+#: glossary.docbook:47
+#, no-c-format
+msgid "comments"
+msgstr "comentários"
+
+#. Tag: entry
+#: glossary.docbook:48 glossary.docbook:83
+#, no-c-format
+msgid "gray"
+msgstr "cinzento"
+
+#. Tag: entry
+#: glossary.docbook:49
+#, no-c-format
+msgid ""
+"Lines that are commented start with a comment characters (#). These lines "
+"are ignored when the code is executed. Comments allow the programmer to "
+"explain a bit about his code or can be used to temporarily prevent a certain "
+"piece of code from executing."
+msgstr ""
+"As linhas que estão comentadas começam por caracteres de comentário (#); "
+"estas linhas são ignoradas quando o código é executado. Os comentários "
+"permitem ao programador explicar um pouco do seu código ou podem ser usadas "
+"para evitar temporariamente que um pedaço de código seja executado."
+
+#. Tag: entry
+#: glossary.docbook:52
+#, no-c-format
+msgid "brackets {, }"
+msgstr "chavetas {, }"
+
+#. Tag: entry
+#: glossary.docbook:53
+#, no-c-format
+msgid "dark green (bold)"
+msgstr "verde escuro (negrito)"
+
+#. Tag: entry
+#: glossary.docbook:54
+#, no-c-format
+msgid ""
+"Brackets are used to group portions of code. Brackets are often used "
+"together with <link linkend=\"controlling-execution\">execution controllers</"
+"link>."
+msgstr ""
+"Os parêntesis rectos são usados para agrupar pedaços de código. Os "
+"parêntesis rectos são usados normalmente com os <link linkend=\"controlling-"
+"execution\">controladores de execução</link>."
+
+#. Tag: entry
+#: glossary.docbook:57
+#, no-c-format
+msgid "the <link linkend=\"learn\">learn</link> command"
+msgstr "o comando <link linkend=\"learn\">learn</link>"
+
+#. Tag: entry
+#: glossary.docbook:58
+#, no-c-format
+msgid "light green (bold)"
+msgstr "verde claro (negrito)"
+
+#. Tag: entry
+#: glossary.docbook:59
+#, no-c-format
+msgid ""
+"The <link linkend=\"learn\">learn</link> command is used to create new "
+"commands."
+msgstr ""
+"O comando <link linkend=\"learn\">learn</link> é usado para criar comandos "
+"novos."
+
+#. Tag: entry
+#: glossary.docbook:62
+#, no-c-format
+msgid "strings"
+msgstr "texto"
+
+#. Tag: entry
+#: glossary.docbook:63 glossary.docbook:125
+#, no-c-format
+msgid "<entry>red</entry>"
+msgstr "<entry>vermelho</entry>"
+
+#. Tag: entry
+#: glossary.docbook:64
+#, no-c-format
+msgid ""
+"Not much to say about (text) strings either, except that they always start "
+"and end with the double quotes (\")."
+msgstr ""
+"Também não há muito a dizer sobre o texto nas cadeias de caracteres, a não "
+"ser que começam e terminam com aspas (\")."
+
+#. Tag: entry
+#: glossary.docbook:67
+#, no-c-format
+msgid "numbers"
+msgstr "números"
+
+#. Tag: entry
+#: glossary.docbook:68 glossary.docbook:73 glossary.docbook:126
+#, no-c-format
+msgid "dark red"
+msgstr "vermelho escuro"
+
+#. Tag: entry
+#: glossary.docbook:69
+#, no-c-format
+msgid "Numbers, well not much to say about them."
+msgstr "Os números não têm muito que se lhe diga."
+
+#. Tag: entry
+#: glossary.docbook:72
+#, no-c-format
+msgid "boolean values"
+msgstr "valores booleanos"
+
+#. Tag: entry
+#: glossary.docbook:74
+#, no-c-format
+msgid "There are exactly two boolean values, namely: true and false."
+msgstr "Existem exactamente dois valores booleanos: verdadeiro e falso."
+
+#. Tag: entry
+#: glossary.docbook:77
+#, no-c-format
+msgid "variables"
+msgstr "variáveis"
+
+#. Tag: entry
+#: glossary.docbook:78
+#, no-c-format
+msgid "purple"
+msgstr "púrpura"
+
+#. Tag: entry
+#: glossary.docbook:79
+#, no-c-format
+msgid "Start with a '$' and can contain numbers, strings or boolean values."
+msgstr ""
+"Começa com um '$' e poderá conter números, textos ou valores booleanos."
+
+#. Tag: entry
+#: glossary.docbook:82
+#, no-c-format
+msgid "mathematical operators"
+msgstr "operadores matemáticos"
+
+#. Tag: entry
+#: glossary.docbook:84
+#, no-c-format
+msgid ""
+"These are the mathematical operators: <userinput>+</userinput>, <userinput>-"
+"</userinput>, <userinput>*</userinput>, <userinput>/</userinput> and "
+"<userinput>^</userinput>."
+msgstr ""
+"Estes são os operadores matemáticos: <userinput>+</userinput>, <userinput>-</"
+"userinput>, <userinput>*</userinput>, <userinput>/</userinput> e "
+"<userinput>^</userinput>."
+
+#. Tag: entry
+#: glossary.docbook:87
+#, no-c-format
+msgid "comparison operators"
+msgstr "operadores de comparação"
+
+#. Tag: entry
+#: glossary.docbook:88
+#, no-c-format
+msgid "light blue (bold)"
+msgstr "azul claro (negrito)"
+
+#. Tag: entry
+#: glossary.docbook:89
+#, no-c-format
+msgid ""
+"These are the comparison operators: <userinput>==</userinput>, <userinput>!"
+"=</userinput>, <userinput>&lt;</userinput>, <userinput>&gt;</userinput>, "
+"<userinput>&lt;=</userinput> and <userinput>&gt;=</userinput>."
+msgstr ""
+"Estes são os operadores de comparação: <userinput>==</userinput>, "
+"<userinput>!=</userinput>, <userinput>&lt;</userinput>, <userinput>&gt;</"
+"userinput>, <userinput>&lt;=</userinput> e <userinput>&gt;=</userinput>."
+
+#. Tag: entry
+#: glossary.docbook:92
+#, no-c-format
+msgid "boolean operators"
+msgstr "operadores booleanos"
+
+#. Tag: entry
+#: glossary.docbook:93
+#, no-c-format
+msgid "pink (bold)"
+msgstr "rosa (negrito)"
+
+#. Tag: entry
+#: glossary.docbook:94
+#, no-c-format
+msgid ""
+"These are the boolean operators: <userinput>and</userinput>, <userinput>or</"
+"userinput> and <userinput>not</userinput>."
+msgstr ""
+"Estes são os operadores booleanos: <userinput>and</userinput>, "
+"<userinput>or</userinput> e <userinput>not</userinput>."
+
+#. Tag: entry
+#: glossary.docbook:97
+#, no-c-format
+msgid "regular text"
+msgstr "texto normal"
+
+#. Tag: entry
+#: glossary.docbook:98 glossary.docbook:123
+#, no-c-format
+msgid "black"
+msgstr "preto"
+
+#. Tag: glossterm
+#: glossary.docbook:108
+#, no-c-format
+msgid "pixels"
+msgstr "pontos"
+
+#. Tag: para
+#: glossary.docbook:109
+#, no-c-format
+msgid ""
+"A pixel is a dot on the screen. If you look very close you will see that the "
+"screen of your monitor uses pixels. All images on the screen are built with "
+"these pixels. A pixel is the smallest thing that can be drawn on the screen."
+msgstr ""
+"Um ponto é um ponto no ecrã. Se você olhar muito de perto para o que vê no "
+"ecrã do seu monitor, irá constatar que ele usa pontos. Todas as imagens do "
+"ecrã são criadas com estes pontos. Um ponto é a menor coisa que poderá ser "
+"desenhada no ecrã."
+
+#. Tag: para
+#: glossary.docbook:110
+#, no-c-format
+msgid ""
+"A lot of commands need a number of pixels as input. These commands are: "
+"<userinput>forward</userinput>, <userinput>backward</userinput>, "
+"<userinput>go</userinput>, <userinput>gox</userinput>, <userinput>goy</"
+"userinput>, <userinput>canvassize</userinput> and <userinput>penwidth</"
+"userinput>."
+msgstr ""
+"Existem vários comandos que precisam de uma quantidade de pontos como "
+"parâmetro, e são: o <userinput>forward</userinput>, <userinput>backward</"
+"userinput>, <userinput>go</userinput>, <userinput>gox</userinput>, "
+"<userinput>goy</userinput>, <userinput>canvassize</userinput> e o "
+"<userinput>penwidth</userinput>."
+
+#. Tag: para
+#: glossary.docbook:111
+#, no-c-format
+msgid ""
+"In early versions of &kturtle; the canvas was essentially a raster image, "
+"yet for recent versions the canvas is a vector drawing. This means that the "
+"canvas can be zoomed in and out, therefore a pixel does not necessarily have "
+"to translate to one dot on the screen."
+msgstr ""
+"Nas versões anteriores do &kturtle;, a área de desenho era uma imagem "
+"rasterizada; agora, nas versões mais recentes, é um desenho vectorial. Isto "
+"significa que a área de desenho poderá ser ampliada ou reduzida, pelo que um "
+"ponto na área de desenho não corresponderá necessariamente a um ponto no "
+"ecrã."
+
+#. Tag: glossterm
+#: glossary.docbook:116
+#, no-c-format
+msgid "RGB combinations (color codes)"
+msgstr "Combinações de RGB (códigos de cores)"
+
+#. Tag: para
+#: glossary.docbook:117
+#, no-c-format
+msgid ""
+"RGB combinations are used to describe colors. The <quote>R</quote> stand for "
+"<quote>red</quote>, the <quote>G</quote> stands for <quote>green</quote> and "
+"the <quote>B</quote> stands for <quote>blue</quote>. An example of an RGB "
+"combination is <userinput>255,0,0</userinput>: the first value (<quote>red</"
+"quote>) is 255 and the others are 0, so this represents a bright shade of "
+"red. Each value of an RGB combination has to be in the range 0 to 255. Here "
+"a small list of some often used colors:"
+msgstr ""
+"As combinações de RGB são usadas para descrever cores. O <quote>R</quote> "
+"vem de <quote>red</quote> (vermelho), o <quote>G</quote> de <quote>green</"
+"quote> (verde) e o <quote>B</quote> de <quote>blue</quote> (azul). Um "
+"exemplo de uma combinação RGB é o <userinput>255,0,0</userinput>, onde o "
+"valor da componente vermelha é 255 e as outras são 0, o que resulta num tom "
+"claro de vermelho. Cada valor de uma combinação RGB terá de estar no "
+"intervalo entre 0 e 255. Aqui está uma lista com as cores mais usadas:"
+
+#. Tag: title
+#: glossary.docbook:119
+#, no-c-format
+msgid "Often used RGB combinations"
+msgstr "Combinações RGB mais usadas"
+
+#. Tag: userinput
+#: glossary.docbook:123
+#, no-c-format
+msgid "0,0,0"
+msgstr "0,0,0"
+
+#. Tag: userinput
+#: glossary.docbook:124
+#, no-c-format
+msgid "255,255,255"
+msgstr "255,255,255"
+
+#. Tag: entry
+#: glossary.docbook:124
+#, no-c-format
+msgid "white"
+msgstr "branco"
+
+#. Tag: userinput
+#: glossary.docbook:125
+#, no-c-format
+msgid "255,0,0"
+msgstr "255,0,0"
+
+#. Tag: userinput
+#: glossary.docbook:126
+#, no-c-format
+msgid "150,0,0"
+msgstr "150,0,0"
+
+#. Tag: userinput
+#: glossary.docbook:127
+#, no-c-format
+msgid "0,255,0"
+msgstr "0,255,0"
+
+#. Tag: entry
+#: glossary.docbook:127
+#, no-c-format
+msgid "green"
+msgstr "verde"
+
+#. Tag: userinput
+#: glossary.docbook:128
+#, no-c-format
+msgid "0,0,255"
+msgstr "0,0,255"
+
+#. Tag: entry
+#: glossary.docbook:128
+#, no-c-format
+msgid "blue"
+msgstr "azul"
+
+#. Tag: userinput
+#: glossary.docbook:129
+#, no-c-format
+msgid "0,255,255"
+msgstr "0,255,255"
+
+#. Tag: entry
+#: glossary.docbook:129
+#, no-c-format
+msgid "light blue"
+msgstr "azul claro"
+
+#. Tag: userinput
+#: glossary.docbook:130
+#, no-c-format
+msgid "255,0,255"
+msgstr "255,0,255"
+
+#. Tag: entry
+#: glossary.docbook:130
+#, no-c-format
+msgid "pink"
+msgstr "cor de rosa"
+
+#. Tag: userinput
+#: glossary.docbook:131
+#, no-c-format
+msgid "255,255,0"
+msgstr "255,255,0"
+
+#. Tag: entry
+#: glossary.docbook:131
+#, no-c-format
+msgid "yellow"
+msgstr "amarelo"
+
+#. Tag: para
+#: glossary.docbook:136
+#, no-c-format
+msgid ""
+"Two commands need an RGB combination as input: these commands are "
+"<userinput>canvascolor</userinput> and <userinput>pencolor</userinput>."
+msgstr ""
+"Dois comandos necessitam de uma combinação RGB como parâmetro, e são eles: o "
+"<userinput>canvascolor</userinput> e o <userinput>pencolor</userinput>."
+
+#. Tag: glossterm
+#: glossary.docbook:140
+#, no-c-format
+msgid "sprite"
+msgstr "imagem móvel"
+
+#. Tag: para
+#: glossary.docbook:141
+#, no-c-format
+msgid ""
+"A sprite is a small picture that can be moved around the screen. Our beloved "
+"turtle, for instance, is a sprite."
+msgstr ""
+"Uma imagem móvel é uma pequena imagem que pode ser movida pelo ecrã. A nossa "
+"tartaruga é uma imagem móvel, por exemplo."
+
+#. Tag: para
+#: glossary.docbook:142
+#, no-c-format
+msgid ""
+"With this version of &kturtle; the sprite cannot be changed from a turtle "
+"into something else. Future versions of &kturtle; will be able to do this."
+msgstr ""
+"Com esta versão do &kturtle;, a imagem móvel não consegue ser alterada de "
+"uma tartaruga para outra coisa. As versões futuras do &kturtle; serão "
+"capazes de o fazer."

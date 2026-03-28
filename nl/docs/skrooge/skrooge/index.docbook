@@ -1,0 +1,5256 @@
+<?xml version="1.0" ?>
+<!-- SPDX-FileCopyrightText: 2024 S. MANKOWSKI stephane@mankowski.fr -->
+<!-- SPDX-FileCopyrightText: 2024 G. DE BURE support@mankowski.fr -->
+<!-- SPDX-License-Identifier: GPL-3.0-or-later -->
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+<!ENTITY skrooge '<application
+>Skrooge</application
+>'
+> <!--remove when skrooge requires kdoctools 5.13-->
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Dutch "INCLUDE"
+><!-- change language only here -->
+<!ENTITY homepage "https://www.kde.org/applications/office/skrooge/">
+]>
+
+<book id="skrooge" lang="&language;">
+  <title
+>Het handboek van &skrooge;</title>
+  
+  <bookinfo>
+    
+    <authorgroup>
+      
+      <author
+><firstname
+>Stéphane</firstname
+> <surname
+>MANKOWSKI</surname
+> <affiliation
+> <address
+><email
+>stephane@mankowski.fr</email
+></address>
+	</affiliation>
+      </author>
+      
+      <othercredit role="developer"
+><firstname
+>Guillaume</firstname
+> <surname
+>DE BURE</surname
+> <affiliation
+> <address
+><email
+>guillaume.debure@gmail.com</email
+></address>
+	</affiliation>
+	<contrib
+>Ontwikkelaar</contrib>
+      </othercredit>
+      &Freek.de.Kruijf;&Ronald.Stroethoff; 
+    </authorgroup>
+    
+    <copyright>
+      <year
+>2007</year>
+      <year
+>2008</year>
+      <year
+>2009</year>
+      <year
+>2010</year>
+      <year
+>2011</year>
+      <year
+>2012</year>
+      <year
+>2013</year>
+      <year
+>2014</year>
+      <year
+>2015</year>
+      <year
+>2016</year
+>      
+      <year
+>2017</year
+>    
+      <year
+>2018</year>
+      <year
+>2019</year>
+      <year
+>2020</year>
+      <year
+>2021</year>
+      <year
+>2022</year>
+      <year
+>2023</year>
+      <year
+>2024</year>
+	  <year
+>2025</year>
+      <holder
+>Stéphane MANKOWSKI</holder>
+      <holder
+>Guillaume DE BURE</holder>
+    </copyright>
+    
+    <legalnotice
+>&FDLNotice;</legalnotice>
+    
+    <date
+>2020-04-11</date>
+    <releaseinfo
+>&skrooge; 2.22.1</releaseinfo>
+    
+    <abstract>
+      <para
+>Dit document is een handboek voor het gebruiken van &skrooge;, een toepassing voor het beheren van persoonlijke financiën. </para>
+    </abstract>
+    
+    <keywordset>
+      <keyword
+>KDE</keyword>
+      <keyword
+>extragear</keyword>
+      <keyword
+>office</keyword>
+      <keyword
+>skrooge</keyword>
+      <keyword
+>persoonlijke financiën</keyword>
+    </keywordset>
+    
+  </bookinfo>
+  
+  <chapter id="introduction">
+    <title
+>Inleiding</title>
+    
+    <sect1 id="skrooge-intro">
+      <title
+>&skrooge;</title>
+      
+      <para
+>&skrooge; is een toepassing voor beheer van uw persoonlijke financiën. Het kan uw inkomsten en uitgaven over een aantal rekeningen, in verschillende valuta bijhouden. Het bevat alle functies die u zou kunnen verwachten van zo'n hulpmiddel, zoals categorieën, geplande transacties, rapportages met grafieken en beheer van aandelen. Het heeft ook enkele minder gewone functies, zoals snel bewerken van transacties, zoeken terwijl u typt, bijhouden van terugbetalingen en aan te passen eigenschappen. </para>
+      
+      <screenshot>
+	<screeninfo
+>&skrooge; die taartdiagrammen toont van uitgaven per categorie</screeninfo>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="reports.png" format="PNG"/>
+	  </imageobject>
+	  <textobject
+><phrase
+>&skrooge; die taartdiagrammen toont van uitgaven per categorie</phrase
+></textobject>
+	</mediaobject>
+      </screenshot>
+      
+      
+      <sect2 id="what-skrooge-is">
+	<title
+>Wat &skrooge; is</title>
+	
+	<para
+>&skrooge; is een open-source persoonlijke beheerder voor financiën gebouwd op &kde;-frameworks. Het is bedoeld te worden gebruikt door individuen die zicht willen houden op inkomsten, uitgaven en investeringen. </para>
+	
+      </sect2>
+      
+      <sect2 id="what-skrooge-is-not">
+	<title
+>Wat &skrooge; niet is</title>
+	
+	<para
+>&skrooge; is geen professioneel hulpmiddel. Het heeft geen functies die u verwacht van software die u zou gebruiken om een klein bedrijf te runnen. Het beheert geen belastingen, gebruikt geen dubbele boekhouding of welke geavanceerde financiële functies ook. </para>
+	<para
+>Als u naar zo'n hulpmiddel op zoek bent, kijk dan in plaats daarvan eens naar Kmymoney of Kraft.</para>
+	
+      </sect2>
+    </sect1>
+    
+    <sect1 id="terminology">
+      <title
+>Terminologie</title>
+      
+      <sect2 id="terminology-document">
+	<title
+>Document</title>
+	<para
+>Een document is een &skrooge;-bestand (extensie .skg). Het kan een ongedefinieerd aantal <link linkend="terminology-account"
+>rekeningen</link
+> bevatten. U kunt een document gebruiken om al uw rekeningen in een keer te beheren. </para>
+      </sect2>
+      
+      <sect2 id="terminology-account">
+	<title
+>Account</title>
+	<para
+>Een account van &skrooge; is te vergelijken met uw bankrekening. Als u een persoonlijke rekening hebt, uw vrouw heeft een persoonlijke rekening en u beiden hebt een gemeenschappelijke rekening, dan kunt u deze drie rekeningen in &skrooge; aanmaken. Elke keer dat u iets uitgeeft of verdient, registreert u een <link linkend="terminology-transaction"
+>transactie</link
+> en geeft u aan op welke rekening deze transactie is gemaakt. </para>
+      </sect2>
+      
+      <sect2 id="terminology-transaction">
+	<title
+>Transactie</title>
+	<para
+>Een transactie is ofwel een credit of debet op een van uw rekeningen. Door een <link linkend="terminology-category"
+>categorie</link
+> of <link linkend="trackers"
+>volger</link
+>aan een transactie te hangen, kunt u analyseren hoe u uw geld hebt besteed.</para>
+	
+	<sect3 id="terminology_standard_transaction">
+	  <title
+>Standaard transactie</title>
+	  <para
+>Een standaard transactie is de basis transactie in &skrooge;. Bijvoorbeeld "Vandaag, € 20 met de creditcard betaald voor boodschappen".</para>
+	  <para
+></para>
+	</sect3>
+	
+	<sect3 id="terminology_split_transaction">
+	  <title
+>Transactie splitsen</title>
+	  <para
+>Een gesplitste transactie is een transactie waarvoor de totale hoeveelheid is gesplitst over verschillende <link linkend="terminology-category"
+>categorieën</link
+>, datums en/of <link linkend="trackers"
+>volgers</link
+>. Bijvoorbeeld, "Gisteren, € 100 in de supermarkt besteed, waarvan € 60 voor voedsel en € 40 voor kleding".</para>
+	</sect3>
+	
+	<sect3 id="terminology_transfer">
+	  <title
+>Overdracht</title>
+	  <para
+>Een overdracht in &skrooge; is het equivalent van het verplaatsen van een hoeveelheid geld van een van uw &skrooge; accounts naar een ander.</para>
+	  <para
+>Dit moet u niet verwarren met de gekozen betaalwijze: als u een overboeking maakt, bijvoorbeeld door gebruik van de website van uw bank, naar iemands bankrekening, dan is dit niet een overdracht transactie, omdat &skrooge; geen kennis heeft van de bankrekening van de andere persoon. Het is een <link linkend="terminology_standard_transaction"
+>standaard transactie</link
+> met een overboeking als betaalwijze.</para>
+	  <para
+>Lees het <link linkend="transfer"
+>hoofdstuk over overboeking</link
+> als de dingen nog steeds niet helder zijn.</para>
+	</sect3>
+	
+	<sect3 id="terminology_validated_transaction">
+	  <title
+>Gevalideerde transactie</title>
+	  <para
+>Wanneer u transacties <link linkend="import"
+>importeert</link
+> uit uw financiële instituut in &skrooge;, dan worden ze niet onmiddellijk als geldig beschouwd en verschijnen in blauw. U moet ze handmatig valideren. Zulke gevalideerde bewerkingen zullen niet langer in blauw verschijnen.</para>
+	  <para
+>Merk op dat het mogelijk is om de transacties automatisch te valideren bij het importeren, door bij de <link linkend="settings"
+>instellingen</link
+> de corresponderende optie in te schakelen.</para>
+	</sect3>
+	
+	<sect3 id="terminology_marked_transaction">
+	  <title
+>Gemarkeerde transactie</title>
+	  <para
+>Tijdens de <link linkend="reconciliation"
+>transactie-controle</link
+>,  kunt u in &skrooge; alle transacties markeren die in het rekeningoverzicht aanwezig zijn. Zulke gemarkeerde transacties tonen een half gevuld vierkant (of iets anders afhankelijk van uw kde-thema) in de kolom Status van een transactieweergave. Een gemarkeerde transactie is nog niet <link linkend="terminology_checked_transaction"
+>Gecontroleerd</link
+> totdat u met de transactie-controle klaar bent.</para>
+	</sect3>
+	
+	<sect3 id="terminology_checked_transaction">
+	  <title
+>Gecontroleerde transactie</title>
+	  <para
+>Wanneer alle transacties van uw bankrekening zijn gemarkeerd in &skrooge;, dan u kunt de transactie-controle afronden. &skrooge; zet alle <link linkend="terminology_marked_transaction"
+>gemarkeerde</link
+> transacties om naar gecontroleerde transacties, die een gevuld vierkantje tonen in de kolom Status van een transactieweergave.</para>
+	</sect3>
+	
+      </sect2>
+      
+      <sect2 id="terminology-category">
+	<title
+>Categorie</title>
+	<para
+>Een categorie is in feite een groep van transacties. Enkele klassieke voorbeelden zijn "Voedsel", "Belasting" en "Salaris". Een categorie kan weer andere categorieën bevatten: Het heeft een hiërarchische structuur. Bijvoorbeeld, de categorie "transport" kan bevatten de categorieën "bus", "auto" en "vliegtuig". &skrooge; kan een oneindig aantal categorieën hanteren. </para>
+      </sect2>
+      
+      <sect2 id="terminology-unit">
+	<title
+>Eenheid</title>
+	<para
+>Een eenheid in &skrooge; kan alles zijn wat een waarde heeft. Voorbeelden: <itemizedlist>
+	    <listitem
+><para
+>Valuta <itemizedlist>
+		  <listitem
+><para
+>$ (US Dollar)</para
+></listitem>
+		  <listitem
+><para
+>€ (euro)</para
+></listitem>
+		  <listitem
+><para
+>£ (Pond Sterling)</para
+></listitem>
+		</itemizedlist>
+	      </para>
+	    </listitem>
+	    <listitem
+><para
+>Aandeel of index <itemizedlist>
+		  <listitem
+><para
+>GOOG (Google)</para
+></listitem>
+		  <listitem
+><para
+>NASDAQ</para
+></listitem>
+		</itemizedlist>
+	      </para>
+	    </listitem>
+	    <listitem
+><para
+>Persoonlijk eigendom <itemizedlist>
+		  <listitem
+><para
+>Uw huis</para
+></listitem>
+		  <listitem
+><para
+>Uw auto</para
+></listitem>
+		</itemizedlist>
+	      </para>
+	    </listitem>
+	  </itemizedlist>
+	  
+	</para>
+      </sect2>
+    </sect1>
+  </chapter>
+  
+  <chapter id="main-concepts">
+    <title
+>Hoofdconcepten</title>
+    
+    <sect1 id="user_interface">
+      <title
+>Gebruikersinterface</title>
+      <para
+>Het &skrooge; venster bestaat uit een hoofdgebied, omringt door docks, en een statusbalk. Docks kunt u sluiten en heropenen, en links of rechts van het hoofdgebied plaatsen. </para>
+      
+      <sect2 id="main_area">
+	<title
+>Het hoofdgebied</title>
+	<para
+>Dit is de plek waar &skrooge; de informatie toont waarin u geïnteresseerd bent. Het kan <link linkend="multi-tabs"
+>vele tabs</link
+> hebben, elk met de de door u toegewezen weergave. </para>
+      </sect2>
+      
+      <sect2 id="docks">
+	<title
+>Docks</title>
+	<para
+>Vele &kde; programma's hebben docks. Ze zijn een onderdeel van het programmavenster, en u kunt ze verplaatsen, op elkaar stapelen, sluiten, of zelfs van het hoofdvenster losmaken. </para>
+	
+	<para
+>Enige voorbeelden van dock-indelingen: </para>
+	
+	<informaltable>
+	  <tgroup cols="3">
+	    <tbody>
+	      <row>
+		<entry>
+		  <inlinemediaobject>
+		    <imageobject>
+		      <imagedata fileref="docks_left_right.png"/>
+		    </imageobject>
+		  </inlinemediaobject>
+		</entry>
+		<entry>
+		  <inlinemediaobject>
+		    <imageobject>
+		      <imagedata fileref="docks_detached.png"/>
+		    </imageobject>
+		  </inlinemediaobject>
+		</entry>
+		<entry>
+		  <inlinemediaobject>
+		    <imageobject>
+		      <imagedata fileref="docks_stacked.png"/>
+		    </imageobject>
+		  </inlinemediaobject>
+		</entry>
+	      </row>
+	    </tbody>
+	  </tgroup>
+	</informaltable>
+	
+	<para
+>Docks van &skrooge; zijn: <itemizedlist>
+	    <listitem
+><para
+><link linkend="page_chooser"
+>De paginakiezer</link
+></para
+></listitem>
+	    <listitem
+><para
+><link linkend="bookmarks"
+>De lijst met bladwijzers</link
+></para
+></listitem>
+	    <listitem
+><para
+><link linkend="undo_redo"
+>De browser voor ongedaan maken / opnieuw doen</link
+></para
+></listitem>
+	    <listitem
+><para
+><link linkend="property_editor"
+>De eigenschappenbewerker</link
+></para
+></listitem>
+	    <listitem
+><para
+><link linkend="message_list"
+>De lijst met berichten</link
+></para
+></listitem>
+	  </itemizedlist>
+	</para>
+      </sect2>
+      
+      <sect2 id="page_chooser">
+	<title
+>Paginakiezer</title>
+	<para
+>De paginakiezer is een dock waar u de weergave kunt selecteren die ofwel in het geselecteerde tabblad of een nieuw tabblad te zien moet zijn. Om een nieuw tabblad te openen, houdt u de &Ctrl;-toets ingedrukt tijdens het klikken op de geselecteerde weergave.</para
+><tip
+><para
+>U kunt deze lijst aanpassen door het contextmenu bij deze lijst te gebruiken.</para
+></tip>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="context_chooser.png" format="PNG"/></imageobject>
+	    <textobject
+><phrase
+>De paginakiezer</phrase
+></textobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Elke context zal beschreven worden in een apart hoofdstuk van dit handboek.</para>
+      </sect2>
+       	
+      <sect2 id="bookmarks">
+	  <title
+>Bladwijzers</title>
+	  <para
+>Stelt u zich voor dat u de weergave per rekening moet aanpassen: elke rekening moet in een eigen tabblad weergeven worden, met misschien in elke tabel verschillende kolommen. De eerder genoemde methode zal dan niet werken omdat het van toepassing is op alle zelfde typen tabbladen. </para>
+	  <para
+>De oplossing is hier dat u elk individuele tabblad opslaat als een bladwijzer. Net zoals in een web browser, kunt u de bladwijzers in hiërarchische mappen met bladwijzers opslaan, die in de browser voor bladwijzers zichtbaar zijn, zoals onderstaand getoond:</para>
+	  
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject
+><imagedata fileref="bookmarks_browser.png" format="PNG"/></imageobject>
+	      <textobject
+><phrase
+>De browser voor bladwijzers</phrase
+></textobject>
+	    </mediaobject>
+	  </screenshot>
+	  
+	  <para
+>Om een bladwijzer te creëren, selecteert u een pagina in de <link linkend="page_chooser"
+>paginakiezer</link
+> waarvoor u een bladwijzer wilt maken, en wijzigt de inhoud totdat naar wens is. Als u hiermee klaar bent, in de <link linkend="docks"
+>dock</link
+> voor bladwijzers, dan opent u het contextmenu, en selecteert <menuchoice
+><guimenu
+>Bladwijzer aanmaken voor huidige pagina</guimenu
+></menuchoice
+>.</para>
+	  
+	  <para
+>Elke bladwijzer of map met bladwijzers kunt u laten "autostarten", &ie; het zal automatisch worden geopend bij het starten van &skrooge; in de volgorde van de bladwijzers. Op deze manier kunt u de standaardindeling van &skrooge; volledig aanpassen.</para>
+	  <para
+>U kunt voor elke bladwijzer en elke map met bladwijzers de tekst en het pictogram wijzigen.</para
+>	  
+	</sect2>
+      
+      <sect2 id="undo_redo">
+	<title
+>Ongedaan maken/opnieuw uitvoeren</title>
+	<para
+>&skrooge; voert het ongedaan maken/opnieuw uitvoeren op een nogal gewone manier uit, behalve dat u elke transactie ongedaan kan maken of opnieuw kan uitvoeren, zelfs als deze meerdere dagen geleden was uitgevoerd. De standaardinstelling is dat de geschiedenis bij het afsluiten van &skrooge; niet word verwijderd (u kunt dit gedrag in de <link linkend="settings"
+>instellingen</link
+> wijzigen), wat inhoudt dat u ongeveer alles tot aan de creatie van het document ongedaan kan maken. </para>
+	<para
+>Om de bestandsgrootte niet uit de hand te laten lopen, is de standaardinstelling van &skrooge; zodanig dat het een geschiedenis van 50 entries bewaart. U kunt in de <link linkend="settings"
+>instellingen</link
+> deze waarde wijzigen. </para>
+	<para
+>Dubbelklikken op een actie biedt u het bekijken van een lijst met alle transacties die gewijzigd zijn tijdens die actie. </para>
+	<para
+>Het menu <guimenuitem
+>Laatst gewijzigde openen...</guimenuitem
+> biedt u het bekijken van de transacties die gewijzigd zijn tijdens de laatste actie. </para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="history_browser.png" format="PNG"/></imageobject>
+	    <textobject
+><phrase
+>De geschiedenis-browser</phrase
+></textobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>De geschiedenis-browser heeft drie kolommen: </para>
+	
+	<itemizedlist
+>	  
+	  <listitem>
+	    <para
+>Een pictogram geeft de status van de actie aan. Een gele met de klok meedraaiende pijl <inlinemediaobject
+><imageobject
+><imagedata fileref="edit-undo.png" format="PNG"/></imageobject
+></inlinemediaobject
+> houdt in dat u de actie ongedaan kan maken. Een groene met de klok meedraaiende pijl <inlinemediaobject
+><imageobject
+><imagedata fileref="edit-redo.png" format="PNG"/></imageobject
+></inlinemediaobject
+> houdt in dat u de actie opnieuw kan uitvoeren. </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para
+>De beschrijving van de actie </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para
+>Het symbool van een floppy disk <inlinemediaobject
+><imageobject
+><imagedata fileref="document-save.png" format="PNG"/></imageobject
+></inlinemediaobject
+> houdt in dat deze actie correspondeert met een opgeslagen status, &ie; het document was onmiddellijk na deze actie opgeslagen. </para>
+	  </listitem>
+	</itemizedlist>
+	
+	<para
+>Om een actie ongedaan te maken, of een actie weer uit te voeren, dubbelklikt u erop. </para>
+      </sect2>
+      
+      <sect2 id="property_editor">
+	<title
+>Eigenschappenbewerker</title>
+	<para
+>Een minder bekende functionaliteit in &skrooge; is de mogelijkheid om eigen eigenschappen aan elk object toe te voegen. Bijvoorbeeld, u wilt wellicht de naam en telefoonnummer van een bankfunctionaris aan een bankrekening toevoegen, omdat deze uw contactpersoon is. Een ander voorbeeld is een bestand aan een transactie verbinden, zoals de scan van een kassabon. </para>
+	<para
+>Dit kunt u bereiken met de eigenschappenbewerker, wat een <link linkend="docks"
+>dock</link
+> op zichzelf is. </para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="property_editor.png" format="PNG"/></imageobject>
+	    <textobject
+><phrase
+>De eigenschappenbewerker, met een aanhangsel</phrase
+></textobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Als dit dock zichtbaar is, dan zal het de eigen eigenschappen van het geselecteerde object (Voor: Selectie) of van alle objecten (Voor: Alles) , of het een rekening is, een transactie, categorie, eenheid, etc. Met deze dock kan de gebruiker eigenschappen creëren, bijwerken of verwijderen. </para>
+	
+	<para
+>Een eigenschap kan zijn: </para>
+	  <itemizedlist>
+	    
+	    <listitem>
+	      <para
+>Een eenvoudige tekenreeks </para>
+	    </listitem>
+	    
+	    <listitem>
+	      <para
+>Een gekopieerd bestand ongeacht het formaat (odt, png, pdf, …). Dit houd in dat het bestand in het &skrooge; document is geplakt. Dit bestand kunt u daarna vanuit &skrooge; openen door op de betreffende knop te klikken. Let op, omdat alle wijzigingen in het originele bestand worden niet doorgegeven aan het exemplaar opgeslagen in het &skrooge; document. </para>
+	    </listitem>
+	    
+	    <listitem>
+	      <para
+>Een link naar een bestand onafhankelijk van het formaat (odt, png, pdf, …). Dit houd in dat het bestand niet in het &skrooge; document is geplakt en alleen maar is gelinkt. Dit bestand kunt u daarna vanuit &skrooge; openen door op de betreffende knop te klikken. </para>
+	    </listitem>
+	    
+	    <listitem>
+	      <para
+>Een link naar een http-pagina, bijvoorbeeld, de website van uw bank. </para>
+	    </listitem>
+	  </itemizedlist>
+	<para
+>Toegevoegde eigenschappen zijn in een kolom in de <link linkend="tables"
+>tabellen</link
+> te zien. </para
+>	
+      </sect2>
+
+      <sect2 id="message_list">
+	<title
+>Berichtenlijst</title>
+	<para
+>In dit dock kunt u alle getoonde berichten bestuderen.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="messages.png" format="PNG"/></imageobject>
+	    <textobject
+><phrase
+>De lijst met berichten</phrase
+></textobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Elke context zal beschreven worden in een apart hoofdstuk van dit handboek.</para>
+      </sect2>
+      
+      <sect2 id="multi-tabs">
+	<title
+>Meerdere tabbladen</title>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="multi_tabs.png" format="PNG"/></imageobject>
+	    <textobject
+><phrase
+>&skrooge; die verschillende tabbladen toont</phrase
+></textobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>&skrooge; kan verschillende tabbladen tonen. U kunt zoveel tabbladen toevoegen als u wilt, ieder met de door u gewenste informatie. De bovenstaande schermafbeelding toont 4 tabbladen (rekeningen, transacties en twee grafieken).</para>
+      </sect2>
+      
+      <sect2 id="editing_panels">
+	<title
+>Bewerkingspanelen</title>
+	<para
+>In de meeste weergaven van &skrooge;, bewerkt u items in een bewerkingspaneel onderaan de pagina.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="editing_panel_buttons.png" format="PNG"/></imageobject>
+	    <textobject
+><phrase
+>Knoppen voor het tonen of verbergen van de bewerkingspanelen van de transacties.</phrase
+></textobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Wanneer een weergave meer dan een bewerkmodus heeft, laten knoppen u er tussen kiezen. In de bovenstaande schermafdruk zijn er vier knoppen om verschillende bewerkmodi te kiezen voor <link linkend="transactions"
+>Transacties</link
+>: "Standaard", "Gesplitst", "Overmaken" en "Aandelen". Om maximale ruimte voor zichtbaar maken van informatie, speciaal op kleine schermen, kunt u bewerkingspanelen van weergaven verbergen of tonen. In de bovenstaande schermafdruk als u op de knop voor de huidige modus klikt om selectie ongedaan te maken, zal het bewerkingspaneel worden verborgen.</para>
+	
+	<para
+>In bewerkingspanelen worden alle numerieke velden geïnterpreteerd. Dit houd in dat u wiskundige uitdrukkingen zoals deze kunt invoeren: <itemizedlist>
+	    <listitem
+><para
+>5*3+10</para
+></listitem>
+	    <listitem
+><para
+>5*(3+10)</para
+></listitem>
+	    <listitem
+><para
+>Math.sin(10)</para
+></listitem>
+	  </itemizedlist
+>	  
+	</para
+>	
+      </sect2>
+      
+      <sect2 id="tables">
+	<title
+>Tabellen</title>
+	<para
+>In &skrooge;, kunt u alle tabellen aanpassen. Door boven de kop van een colum het contextmenu te openen (meestal door rechtsklikken) of te klikken op het pictogram voor instellingen in de tabelkop - u ziet een menu verschijnen, zoals in meer detail onderstaand beschreven:</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="table_menu.png" format="PNG"/></imageobject>
+	    <textobject
+><phrase
+>Een tabel aanpassen</phrase
+></textobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<variablelist>
+	  <varlistentry>
+	    <term
+><menuchoice
+><guimenu
+>Kolommen</guimenu
+></menuchoice
+></term>
+	    <listitem>
+	      <para
+>Het uiterlijk van de kolom aanpassen</para>
+	      <variablelist>
+		<varlistentry>
+		  <term
+><menuchoice
+><guimenu
+>Uiterlijk tonen</guimenu
+></menuchoice
+></term>
+		  <listitem>
+		    <para
+>Gebruik een voorgedefinieerde set kolommen. De "standaard" set toont meestal alle kolommen. Bij diverse soorten tabellen kunnen er ook andere voorgedefinieerde sets bestaan.</para>
+		  </listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+><menuchoice
+><guimenu
+>Grootte wijzigen naar inhoud</guimenu
+></menuchoice
+></term>
+		  <listitem
+><para
+>De grootte van alle kolommen aanpassen om de inhoud te laten passen.</para
+></listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+><menuchoice
+><guimenu
+>Grootte automatisch wijzigen</guimenu
+></menuchoice
+></term>
+		  <listitem
+><para
+>Indien ingeschakeld, kunt u niet meer handmatig de grootte van de kolommen instellen. &skrooge; zal dit automatisch doen gebaseerd op de inhoud van de kolommen.</para
+></listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+><guimenu
+>Lijst van getoonde kolommen</guimenu
+></term>
+		  <listitem
+><para
+>Toont een lijst met kolommen die u in deze tabel kan tonen. Diegene die op dit moment te zien zijn, hebben een vinkje. Verwijder het vinkje om te verbergen, plaats het vinkje om het weer te laten zien. De toegevoegde <link linkend="property_editor"
+>eigenschappen</link
+> zijn ook selecteerbaar om als kolom te tonen.</para
+></listitem>
+		</varlistentry
+>	
+	      </variablelist>
+	    </listitem>
+	  </varlistentry>
+	  
+	  <varlistentry>
+	    <term
+><menuchoice
+><guimenu
+>Gegroepeerd op</guimenu
+></menuchoice
+></term>
+	    <listitem>
+	      <para
+>Kies hoe u de regels wilt groeperen.</para>
+	      <variablelist>
+		<varlistentry>
+		  <term
+><menuchoice
+><guimenu
+>Geen</guimenu
+></menuchoice
+></term>
+		  <listitem>
+		    <para
+>Geen groepering.</para>
+		  </listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+><menuchoice
+><guimenu
+>Gesorteerde kolom</guimenu
+></menuchoice
+></term>
+		  <listitem
+><para
+>De regels zullen worden gegroepeerd op de kolom waarop de sortering is toegepast.</para
+></listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+><guimenu
+>Lijst met kolommen</guimenu
+></term>
+		  <listitem
+><para
+>Toont een lijst van alle kolommen die u kunt gebruiken voor een groepering.</para
+></listitem>
+		</varlistentry>
+	      </variablelist>
+	    </listitem>
+	  </varlistentry
+>	  
+	  
+	  <varlistentry>
+	    <term
+><menuchoice
+><guimenu
+>Wisselende rijkleuren</guimenu
+></menuchoice
+></term>
+	    <listitem
+><para
+>Wisselt voor elke rij de gebruikte kleuren om. De gebruikte kleuren zijn gebaseerd op het gekozen &kde; kleurenschema.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+><menuchoice
+><guimenu
+>Exporteren</guimenu
+></menuchoice
+></term>
+	    <listitem
+><para
+><link linkend="export_table"
+>Exporteert de tabel</link
+> naar een extern bestand. Ondersteunde bestandsformaten zijn .pdf, .csv, .html, .SVG, .odt en .txt.</para
+></listitem>
+	  </varlistentry>
+	</variablelist>
+	
+	<para
+>U kunt ook op de kop van een kolom klikken om de kolom te selecteren waarop u wilt sorteren, of om de kolompositie te wijzigen door ze naar links of naar rechts te verslepen.</para>
+	
+	<sect3 id="show">
+	  <title
+>De tabel filteren</title>
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject
+><imagedata fileref="show.png" format="PNG"/></imageobject>
+	      <textobject
+><phrase
+>Tabelmenu tonen</phrase
+></textobject>
+	    </mediaobject>
+	  </screenshot
+>	  
+	  <para
+>In alle weergaven van &skrooge; zult u een afrolmenu "Tonen" vinden waarmee u beperkt wat de tabel toont. </para>
+	</sect3>
+	
+	<sect3 id="search">
+	  <title
+>Zoeken terwijl u typt</title>
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject
+><imagedata fileref="search.png" format="PNG"/></imageobject>
+	      <textobject
+><phrase
+>Zoekvak</phrase
+></textobject>
+	    </mediaobject>
+	  </screenshot
+>	  
+	  <para
+>In alle weergaven van &skrooge; zult u een zoekveld vinden waarmee u de tabel filtert om alleen de lijnen weer te geven die overeenkomen met wat u typt: <itemizedlist>
+	      <listitem
+><para
+>In een transactiesweergave zal het de transacties met de ingevoerde tekst filteren, uit welke kolom dan ook (datum, begunstigde, categorie, commentaar, etc.)</para
+></listitem>
+	      <listitem
+><para
+>In een rekeningweergave zal het de rekeningen met de ingevoerde tekst filteren, uit welke kolom dan ook (bank, rekeningnaam, nummer, etc.)</para
+></listitem>
+	      <listitem
+><para
+>In een getoond rapport zal het de grafiek, gebaseerd op dit filter, opnieuw tekenen</para
+></listitem>
+	      <listitem
+><para
+>In een wel…, u begrijpt het idee, toch?</para
+></listitem>
+	    </itemizedlist>
+	  </para>
+	  <tip>
+	  <para
+>De opdrachtregel voor het filter moet de volgende regels volgen: </para>
+	    <itemizedlist>
+		<listitem
+><para
+>Zoeken is hoofdletter-onafhankelijk. Daarom zijn table, Table, en TABLE allemaal hetzelfde.</para
+></listitem>
+		<listitem
+><para
+>Als u een woord of een aantal woorden in het zoekvak invoert, dan zal het programma de tabel doorzoeken om alleen die regels te tonen waarin deze woorden voorkomen (logische operator AND).</para
+></listitem>
+		<listitem
+><para
+>Als u (logische operator OR) enkel regels wilt toevoegen, dan moet u uw woord laten voorafgaan door een "+".</para
+></listitem>
+		<listitem
+><para
+>Als u regels wilt (logische operator NOT) verwijderen, dan moet u uw woord laten voorafgaan door "-".</para
+></listitem>
+		<listitem
+><para
+>Als u alleen een kolom wilt doorzoeken, dan moet u uw woord laten voorafgaan door de kolomnaam, zoals: col1:woord.</para
+></listitem>
+		<listitem
+><para
+>Als u het karakter ":" in de waarde wilt gebruiken, dan moet u de kolomnaam als volgt specificeren: col1:waarde:rest.</para
+></listitem>
+		<listitem
+><para
+>Als u wilt naar een zin of een uitdrukking waarin spaties voorkomen, dan moet u het in aanhalingstekens plaatsen, zoals: "ja, dit is een zin".</para
+></listitem>
+		<listitem
+><para
+>U kunt ook "&lt;" en "&gt;" als operator gebruiken.</para
+></listitem>
+	    </itemizedlist>
+	  <para
+>Hier onder zijn enige voorbeelden die deze regels kunnen illustreren op een intuïtievere manier: </para>
+	    <itemizedlist>
+	      <listitem
+><para
+>+val1 +val2 =&gt; Houd regels die val1 OF val2 bevatten</para
+></listitem>
+	      <listitem
+><para
+>+val1 -val2 =&gt; Houd regels die val1 maar NIET val2 bevatten</para
+></listitem>
+	      <listitem
+><para
+>"abc def" =&gt; Houd regels die de zin "abc def" bevatten</para
+></listitem>
+	      <listitem
+><para
+>"-att:abc def" =&gt; Verwijdert regels waarbij in een kolom genaamd abc de lettercombinatie "abc def" voorkomt</para
+></listitem>
+	      <listitem
+><para
+>abc:def =&gt; Houd regels waarbij in een kolom genaamd abc de lettercombinatie def voorkomt</para
+></listitem>
+	      <listitem
+><para
+>:abc:def =&gt; Houd regels waarbij de lettercombinatie "abc:def" voorkomt</para
+></listitem>
+	      <listitem
+><para
+>Date&gt;2015-03-01 =&gt; Houd regels waarbij de Date-eigenschap (datum) groter is dan 2015-03-01</para
+></listitem>
+	      <listitem
+><para
+>Amount&lt;10 =&gt;Houd regels waarbij de eigenschap Amount kleiner is dan 10</para
+></listitem>
+	    </itemizedlist>
+	</tip>
+	</sect3>
+      </sect2>
+      
+      <sect2 id="save_customized_content">
+	<title
+>Aangepaste inhoud opslaan</title>
+	
+	<para
+>Zoals in het <link linkend="tables"
+>vorige hoofdstuk</link
+> uitgelegd, kunt u tabellen compleet naar wens aanpassen. U wilt waarschijnlijk niet alle aanpassingen kwijt raken als u een tabblad sluit. Daarom zijn er twee manieren om deze aanpassingen te bewaren.</para>
+	
+	<sect3 id="save_default_context">
+	  <title
+>Paginastatus opslaan</title>
+	  <para
+>Met deze optie kunt u de huidige tabblad-instellingen opslaan als de standaardinstelling die altijd zal worden gebruikt bij het openen van deze pagina. Bijvoorbeeld, u wilt wellicht dat uw <link linkend="dashboard"
+>Dashboard</link
+> vier 4 widgets heeft, met de door u gekozen indeling. Nog belangrijker is dat u wilt dat het Dashboard er altijd hetzelfde uitziet, u wilt immers niet de aanpassingen iedere keer bij het openen herhalen.</para>
+	  <para
+>Om dit te doen, past u éénmaal de instellingen naar wens aan, waarna u voor de getoonde pagina de tabblad-instellingen als de standaardinstelling opslaat. U slaat de standaardinstelling op door het contextmenu te openen en daarna <guimenuitem
+>Paginastatus opslaan</guimenuitem
+> te selecteren. Als u voor een pagina meerdere instellingen wilt bewaren dan moet u <link linkend="bookmarks"
+>bladwijzers</link
+> gebruiken.</para>
+	  
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject
+><imagedata fileref="tab_state_management.png" format="PNG"/></imageobject>
+	      <textobject
+><phrase
+>Contextmenu bij tabs</phrase
+></textobject>
+	    </mediaobject>
+	  </screenshot>
+	  
+	  <para
+>Een snellere manier is het klikken op het symbool van een floppy disk <inlinemediaobject
+><imageobject
+><imagedata fileref="document-save.png" format="PNG"/></imageobject
+></inlinemediaobject
+> dat u links van de tabblad-titel ziet nadat u de standaardinstelling van een tabblad heeft gewijzigd.</para>
+	  
+	</sect3>
+	</sect2>
+ 
+      <sect2 id="mass_update">
+	<title
+>Massaal bijwerken</title>
+	<para
+>In &skrooge;, is het mogelijk om een groot aantal geselecteerde items in een keer bij te werken . Hoewel dit het meest bruikbaar is bij <link linkend="transactions"
+>transacties</link
+>, kunt u het ook gebruiken bij <link linkend="accounts"
+>rekeningen</link
+>, <link linkend="units"
+>eenheden</link
+>, <link linkend="scheduled"
+>geplande transacties</link
+>, etc.</para>
+	<para
+>De manier waarop u dit doet is vrij eenvoudig. Selecteer eerst de items die u wilt wijzigen, stel de eigenschappen in op de waarde die van toepassing is op alle items, en klik op <guibutton
+>Toepassen</guibutton
+>. Alle eigenschappen waar u geen waarde voor heeft ingesteld, worden bij deze items niet gewijzigd.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="before_mass_update.png"/></imageobject>
+	    <caption
+><para
+>Stel de betaalwijze in op "Credit Card" en de begunstigde als "ACME" bij de geselecteerde transacties.</para
+></caption>
+	  </mediaobject>
+	</screenshot>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="after_mass_update.png"/></imageobject>
+	    <caption
+><para
+>Bijgewerkte transacties.</para
+></caption>
+	  </mediaobject>
+	</screenshot>
+	
+	<note
+><para
+>Het is expres onmogelijk om de datum of de hoeveelheid te wijzigen bij massaal bijwerken</para
+></note>
+	<note
+><para
+>In tekstvelden kunt u speciale sleutelwoorden gebruiken (zoals =capitalize) om de bestaande waarden te transformeren. Bijvoorbeeld, als u 100 transacties selecteert, =lower invoert in het veld Commentaar en op Bijwerken klikt, dan zal het commentaar van alle geselecteerde transacties vervangen worden door hun versies in kleine letters.</para
+></note>
+	
+      </sect2>
+      
+      <sect2 id="status_bar">
+	<title
+>Statusbalk</title>
+	<para
+>De statusbalk is een kleine sectie aan de onderkant van het &skrooge;-venster, met diverse informatie tijdens uw werk. Het heeft een voortgangsbalk en een knop voor annuleren, voort het geval dat u een langdurige taak wilt onderbreken, zoals het importeren van een groot bestand. <screenshot
+> <mediaobject>
+	      <imageobject
+><imagedata fileref="progress-bar.png" format="PNG"/></imageobject>
+	      <textobject
+><phrase
+>De voortgangsbalk van &skrooge;</phrase
+></textobject>
+	    </mediaobject>
+	  </screenshot>
+	</para>
+      </sect2
+>     
+
+      </sect1>
+    
+    <sect1 id="import">
+      <title
+>Bestanden importeren</title>
+      
+      <para
+>&skrooge; is in staat om bestanden van andere financiële programma's of van uw bank te importeren. Als u dus van een ander programma overstapt, of eenvoudig geen zin heeft om uw transacties handmatig in te voeren, dan heeft &skrooge; hier een snellere manier voor.</para>
+      
+      <sect2 id="supported_file_formats">
+	<title
+>Ondersteunde bestandsformaten</title>
+	
+	<para
+>U kunt een van de volgende bestandsformaten gebruiken:</para>
+	
+	<itemizedlist>
+	    <listitem
+><para
+>AFB120: Een Franse standaard.</para
+></listitem
+>	  
+	    <listitem
+><para
+>CSV: Comma Separated Value. Ofschoon strict gesproken geen financieel bestandsformaat, is het vrij vaak beschikbaar als bestandsformaat voor een export bij banken of andere programma's, voornamelijk omdat het makkelijk in een spreadsheet te gebruiken is.</para
+></listitem>
+	    <listitem
+><para
+>GnuCash: Bestandsformaat van het programma GnuCash. Als u wilt overstappen van dit programma, dan is dit het aanbevolen bestandsformaat om te gebruiken.</para
+></listitem>
+	    <listitem
+><para
+>Grisbi: Bestandsformaat van het programma Grisbi. Als u wilt overstappen van dit programma, dan is dit het aanbevolen bestandsformaat om te gebruiken.</para
+></listitem>
+	    <listitem
+><para
+>Homebank: Bestandsformaat van het programma Homebank. Als u wilt overstappen van dit programma, dan is dit het aanbevolen bestandsformaat om te gebruiken.</para
+></listitem>
+	    <listitem
+><para
+>Kmymoney: Bestandsformaat van het programma Kmymoney. Als u wilt overstappen van dit programma, dan is dit het aanbevolen bestandsformaat om te gebruiken.</para
+></listitem>
+	    <listitem
+><para
+>MT940: Een internationale standaard gedefinieerd door SWIFT.</para
+></listitem>
+	    <listitem
+><para
+>&Microsoft; Money: Bestandsformaat van het programma Money van &Microsoft;. Als u wilt overstappen van dit programma, dan is dit het aanbevolen bestandsformaat om te gebruiken.</para
+></listitem>
+	    <listitem
+><para
+>Money Manager Ex: Bestandsformaat van het programma Money Manager Ex. Als u wilt overstappen van dit programma, dan is dit het aanbevolen bestandsformaat om te gebruiken.</para
+></listitem>
+	    <listitem
+><para
+>OFX: Open Financial eXchange. Dit is een goed gedefinieerd en gedocumenteerd bestandsformaat, dat &skrooge; gebruikt voor importeren met de hulp van een door anderen gemaakte bibliotheek (libofx). Dit is het aanbevolen bestandsformaat voor importeren.</para
+></listitem>
+	    <listitem
+><para
+>QFX: QFX is een aangepaste versie van OFX van het commerciele programma <trademark
+>Quicken</trademark
+>.</para
+></listitem>
+	    <listitem
+><para
+>QIF: <trademark
+>Quicken</trademark
+> Import File. Misschien het meest bekende financiële bestandsformaat. Maar het heeft wel enkele beperkingen, zoals het ontbreken van de eenheid bij transacties of geen strikte datumopmaak.</para
+></listitem>
+	    <listitem
+><para
+>IIF: <trademark
+>Intuit</trademark
+> Interchange Format gebruikt door <trademark
+>QuickBooks</trademark
+>.</para
+></listitem>
+	    <listitem
+><para
+>SKG: Deze is handig om twee &skrooge; documenten samen te voegen</para
+></listitem>
+            <listitem
+><para
+>&PDF;: hiermee kunt u de transactie van een rekening als PDF creëren. De rekening is dan geassocieerd als eigenschap van de transactie. Leest de <link linkend="howto_extractor"
+>Hoe te gebruiken</link
+> als u wilt weten hoe u informatie uit een nog niet ondersteunde rekening kunt krijgen.</para
+></listitem>
+	    <listitem
+><para
+>Backend: &skrooge; kan ook transacties importeren met de hulp van een backend. Op dit moment kunt u de volgende drie backends gebruiken: <itemizedlist>
+	       <listitem
+><para
+><ulink url="http://weboob.org/"
+>weboob</ulink
+>: Door deze backend te gebruiken kunt u met een klik al uw transacties van al uw bankrekeningen importeren. Hiervoor moet u <ulink url="http://weboob.org/"
+>weboob</ulink
+> installeren en de bijbehorende backend via de <link linkend="settings"
+>instellingen</link
+> inschakelen.</para
+></listitem>
+	       <listitem
+><para
+><ulink url="http://weboob.org/"
+>weboob_coming</ulink
+>: Door deze backend te gebruiken kunt u met een klik al uw inkomende transacties van al uw bankrekeningen importeren. Dit kunt u gebruiken voor kaarten met uitgestelde opnames. Hiervoor moet u <ulink url="http://weboob.org/"
+>weboob</ulink
+> installeren en de bijbehorende backend via de <link linkend="settings"
+>instellingen</link
+> inschakelen.</para
+></listitem
+>               
+	       <listitem
+><para
+><ulink url="https://www.aquamaniac.de/sites/aqbanking/overview.php"
+>aqbanking</ulink
+>: Door deze backend te gebruiken kunt u met een klik al uw transacties van al uw bankrekeningen importeren. Hiervoor moet u <ulink url="https://www.aquamaniac.de/sites/aqbanking/cli.php"
+>aqbanking-cli</ulink
+> installeren en de bijbehorende backend via de instellingen inschakelen.</para
+></listitem>
+	    </itemizedlist
+></para>
+	    
+            <tip
+><para
+>Als u niet uw bank-wachtwoorden in het configuratiebestand van WEBOOB wilt opslaan, dan kunt u het met de volgende methode doen: <itemizedlist>
+	       <listitem
+><para
+>Voeg de wachtwoorden voor elke toe door het volgende commentaar uit te voeren <quote
+>kwallet-query -f Weboob kdewallet -w m_bank_name</quote
+></para
+></listitem>
+	       <listitem
+><para
+>Bewerk met uw favoriete tekstverwerker het bestand <quote
+>~/.config/weboob/backends</quote
+></para
+></listitem>
+	       <listitem
+><para
+>Vervang in het configuratiebestand <quote
+>password = my_password</quote
+> door<quote
+>password = `kwallet-query -f Weboob kdewallet -r m_bank_name `</quote
+></para
+></listitem>
+	    </itemizedlist
+>	    
+	    </para
+></tip>
+	      </listitem
+>	  
+	</itemizedlist>
+      </sect2>
+      
+      <sect2 id="csv_specificities">
+	<title
+>CSV Specifiek</title>
+	<para
+>Omdat CSV geen strict gedefinieerde opmaak heeft, heeft &skrooge; geen manier om te weten waar het datums, categorieën, waarden, etc. kan vinden. Daarom verwacht &skrooge; dat uw CSV-bestand enkele kolomtitels heeft die aangeven wat in de kolom staat. Het bestand moet tenminste de kolommen "Date" en "Amount" hebben.</para>
+	<para
+>U kunt handmatig definiëren hoe het bestand is opgezet (&ie; de kolomtitels in het bestand negerend) door ze op te geven in de <link linkend="settings"
+>instellingen</link
+> van het programma (<menuchoice
+><guimenu
+>Instellingen</guimenu
+> <guimenuitem
+>&skrooge; instellen</guimenuitem
+></menuchoice
+>), in de sectie <guilabel
+>Importeren / exporteren</guilabel
+>.</para>
+      </sect2>
+      
+      <sect2 id="import_transactions">
+	<title
+>Transacties importeren</title>
+	<para
+>Een van de principes van &skrooge; is het vermijden van meervoudige wizards en dialoogvensters. Dit geldt met name voor imports, waarbij andere programma's veel informatie van de gebruiker verwachten. Als u <menuchoice
+><guimenu
+>Bestand</guimenu
+><guimenuitem
+>Importeren</guimenuitem
+></menuchoice
+> selecteert, dan wordt u gevraagd om de bestanden te selecteren  (meerdere bestanden tegelijk importeren is toegestaan), en dat is alle informatie die vereist is. Achter de schermen zal &skrooge; het bestandsformaat ontdekken en de relevante importmethode toepassen.</para>
+	
+	<sect3 id="import_account">
+	  <title
+>Account</title>
+	  <para
+>Een ding dat misschien verrassend voor u is dat u niet wordt gevraagd in welke rekening het moet worden geïmporteerd. Dat komt omdat &skrooge; in het bestand het rekeningnummer zal lezen, en de geïmporteerde transacties met die rekening zal associëren.</para>
+	  <para
+>Als er geen rekening met dat rekeningnummer bestaat, of als in het bestand die informatie niet aanwezig is, dan zal &skrooge; de bestandsnaam als rekeningnummer gebruiken.</para>
+          <para
+>Als u een bezit genaamd <quote
+>alias</quote
+> in de rekening hebt aangemaakt, zal &skrooge; proberen de waarde van het bezit overeen te laten komen om de meest van toepassing zijnde rekening te vinden.</para>
+	  <para
+>Als er nog geen rekening is met dat rekeningnummer, dan zal &skrooge; een nieuwe rekening creëren die het bestandsnaam gebruikt als rekeningnummer, om daarna alle transacties naar die rekening te importeren. U bent daarna vrij om naar keuze die rekening te hernoemen, een <link linkend="mass_update"
+>Massaal bijwerk actie</link
+> uit te voeren, of het <link linkend="search_and_process"
+>Zoeken &amp; verwerken</link
+> te gebruiken om de bijbehorende geïmporteerde transacties naar een bestaande rekening te verplaatsen.</para>
+	</sect3>
+	
+	<sect3 id="import_unit">
+	  <title
+>Eenheid</title>
+	  <para
+>Als er in het geïmporteerde bestand geen eenheid is opgegeven (wat vaak het geval is bij QIF en CSV formaten), zal &skrooge; aannemen dat de eenheid uw <link linkend="unit_types"
+>primaire valuta</link
+> is. Als dat niet het geval is, gebruik dan de functie <link linkend="search_and_process"
+>Zoeken &amp; verwerken</link
+> om dat te corrigeren.</para>
+	</sect3>
+	
+	<sect3 id="import_date">
+	  <title
+>Datum</title>
+	  <para
+>Soms hebben de te importeren bestanden niet de datums opgemaakt zoals het in uw land de gewoonte is (dit kan gebeuren bij QIF en bij CSV, OFX heeft een opgelegd datum-indeling). &skrooge; zal zijn best doen om de datumopmaak te detecteren. Als het niet werkt zoals verwacht, dan kunt u de datumopmaak bij de <link linkend="settings"
+>instellingen</link
+> van het programma forceren.</para>
+	</sect3>
+	
+	<sect3 id="import_status">
+	  <title
+>Importstatus</title>
+	  <para
+>Geïmporteerde transacties hebben een speciale status. Onmiddellijk na de import, worden ze beschouwt als "Geïmporteerd, nog niet gevalideerd". Het idee is dat u wellicht wilt controleren of de import gegaan is zoals u verwachtte, en dat u daarom die transacties makkelijk moet kunnen identificeren. Met de standaard <link linkend="settings"
+>instellingen</link
+>, zullen ook deze transacties blauw verschijnen.</para>
+	  <tip
+><para
+>Als u dit gedrag ongewenst vindt, dan kunt de optie <guilabel
+>Automatisch valideren na importeren</guilabel
+> inschakelen in de <link linkend="settings"
+>instellingen</link
+> van het programma.</para
+></tip>
+	  <tip
+><para
+>Na een import kunt u de functie <link linkend="search_and_process"
+>Zoeken &amp; verwerken</link
+> automatisch laten opstarten om de transacties te categoriseren..</para
+></tip>
+	</sect3>
+      </sect2>
+      
+      <sect2 id="merge_transactions">
+	<title
+>Transacties samenvoegen na een import</title>
+	<para
+>Er kunnen gevallen zijn waar u handmatig een transactie heeft ingevoerd, en het ook van uw bank heeft geïmporteerd. In zulke gevallen zal de transactie dubbel in de lijst voorkomen.</para>
+	<para
+>U kunt deze twee transacties samenvoegen door ze selecteren, en daarna in het contextmenu of het bewerkingsmenu <guimenuitem
+>Ingevoerde transacties samenvoegen</guimenuitem
+> te selecteren. Dit zal alle handmatig ingevoerde informatie aan de geïmporteerde transactie toevoegen en daarna de handmatig ingevoerde transactie verwijderen.</para>
+      </sect2>
+    </sect1>
+    
+    <sect1 id="export">
+      <title
+>Exporteren</title>
+      <para
+>Afhankelijk van wat u nodig hebt, zijn er twee verschillende manieren om data uit &skrooge; te exporteren.</para>
+      
+      <sect2 id="export_file">
+	<title
+>Al uw data naar een bestand exporteren</title>
+	<para
+>Als u het menu <menuchoice
+><guimenu
+>Bestand</guimenu
+> <guimenuitem
+>Exporteren</guimenuitem
+></menuchoice
+> selecteert, dan zal een CSV, QIF, JSON, Kmymoney, Ledger, IIF, Sqlite, Sqlcipher of &XML;-bestand worden gecreëerd, met alle transacties in het huidige document. Selecteer deze optie als u uw data naar een ander programma wilt overzetten.</para>
+      </sect2>
+      
+      <sect2 id="export_partial_file">
+	<title
+>Een gedeelte van uw data naar een bestand exporteren</title>
+	<para
+>Als u enkele rekeningen of enkele transacties selecteert voordat u het menu <menuchoice
+><guimenu
+>Bestand</guimenu
+> <guimenuitem
+>Exporteren</guimenuitem
+></menuchoice
+> selecteert , dan zal een CSV, QIF, JSON, Kmymoney, Ledger, IIF, Sqlite, Sqlcipher of &XML;-bestand worden gecreëerd, met daarin de geselecteerde rekeningen (met de bijbehorende transacties) of de geselecteerde transacties. Selecteer deze optie als u uw data naar een ander programma wilt overzetten.</para>
+      </sect2>
+      
+      <sect2 id="export_table">
+	<title
+>Een specifieke tabel exporteren</title>
+	<para
+>Alle <link linkend="tables"
+>tabellen</link
+> in &skrooge; kunnen geëxporteerd worden, in CSV, platte tekst, &HTML;, ODT, &PDF; of SVG formaat. U kunt dat doen door rechts te klikken op de kolomkop of te klikken op het pictogram voor instellingen in de tabelkop om het contextmenu van de tabel te laten verschijnen en het kiezen van de optie <guimenu
+>Exporteren</guimenu
+>.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="export_table_menu.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Dit werkt als u een tabel heeft geopend, zodat u het kan gebruiken om iedere gewenste informatie in tabelvorm te exporteren.</para>
+      </sect2>
+      
+      <sect2 id="export_graph">
+	<title
+>Grafiek exporteren</title>
+	<para
+>Met &skrooge; kunt u een <link linkend="reports"
+>grafiek</link
+>, exporteren naar keuze in &PDF;, SVG of elk ander afbeeldingsbestand dat door &Qt; (PNG, JPG, &GIF;, TIFF…) wordt ondersteund. U doet dit door met de &RMB; op de grafiek te klikken, en daarna de optie <guimenu
+>Exporteren</guimenu
+> te selecteren.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="export_graph_menu.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	
+      </sect2>
+      
+    </sect1>
+  </chapter>
+  
+  <chapter id="using-skrooge-beginner">
+    <title
+>&skrooge; gebruiken (beginner)</title>
+
+    <sect1 id="menu-main">
+      <title
+>Het hoofdmenu</title>
+      <para
+>&skrooge; volgt het standaard menu-schema van &kde;. Het heeft dus veel menu-items die gemeenschappelijk zijn voor alle &kde; toepassingen. Meer informatie over deze menu-items zijn te vinden in <ulink url="help:/fundamentals/menus.html"
+>in deze help-sectie</ulink
+>. </para>
+      <para
+>Onderstaand vindt u beschrijvingen van menu-items specifiek voor &skrooge;. </para>
+      <sect2 id="menu-file">
+	<title
+>Het menu Bestand</title>
+      <para
+>In dit menu kunt u alle voor het &skrooge; document van toepassing zijnde functies vinden</para>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="menu_file.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+      <itemizedlist>
+	<listitem
+><para
+><guimenuitem
+>Wachtwoord wijzigen…</guimenuitem
+>: om het wachtwoord te wijzigen. Laat het veld leeg om het wachtwoord te verwijderen</para
+></listitem>
+	<listitem
+><para
+><guimenuitem
+>Afdrukken…</guimenuitem
+>: om de geopende pagina's af te drukken</para
+></listitem>
+	<listitem
+><para
+><guimenuitem
+>Afdrukvoorbeeld</guimenuitem
+>: om het voorbeeld te tonen voor het afdrukken</para
+></listitem>
+	<listitem
+><para
+><guimenuitem
+>Importeren</guimenuitem
+>: om gegevens te importeren <screenshot
+> <mediaobject
+> <imageobject
+><imagedata fileref="menu_import.png"/></imageobject>
+	  </mediaobject>
+	</screenshot
+>	    
+	<itemizedlist>
+	  <listitem
+><para
+><guimenuitem
+>Standaard bladwijzers importeren</guimenuitem
+>: om de standaard bladwijzers te importeren. Deze worden aangemaakt bij het aanmaken van een nieuw document</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Categorieën importeren</guimenuitem
+>: om een set van voorgedefinieerde categorieën te importeren. Deze optie hangt af van uw land</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Importeren</guimenuitem
+>: Om een <link linkend="import"
+>import</link
+> van transacties uit bestanden uit te voeren</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Met backends importeren</guimenuitem
+>: Om <link linkend="import"
+>import</link
+>-transacties met alle gedeclareerde backends uit te voeren</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Valutawaarden importeren…</guimenuitem
+>: om valutawaarden uit een bestand te importeren. Natuurlijk moet het csv-bestand de drie kolommen (eenheid, datum en hoeveelheid) hebben.</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Regels importeren…</guimenuitem
+>: om <link linkend="search_and_process"
+>Zoeken &amp; verwerken</link
+> regels die een categorie met een begunstigde associëren te importeren. Natuurlijk moet het csv-bestand de twee kolommen (begunstigde en categorie) hebben.</para
+></listitem
+>          
+	  </itemizedlist
+> </para
+></listitem>
+	<listitem
+><para
+><guimenuitem
+>Exporteren…</guimenuitem
+>: om transacties naar een bestand te <link linkend="export_file"
+>exporteren</link
+></para
+></listitem>
+	</itemizedlist>
+      </sect2
+>   
+      
+      <sect2 id="menu-edit">
+	<title
+>Het menu Bewerken</title>
+      <para
+>In dit menu kunt u alle voor het wijzigen van de geselecteerde objecten van toepassing zijnde functies vinden</para>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="menu_edit.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+      <itemizedlist>
+	  <listitem
+><para
+><guimenuitem
+>Ongedaan maken</guimenuitem
+>: annuleer de vorige wijziging</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Opnieuw</guimenuitem
+>: Pas de vorige geannuleerde wijziging opnieuw toe</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Document terugdraaien</guimenuitem
+>: annuleer de vorige wijzigingen tot op de laatste keer opslaan</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Verwijderen</guimenuitem
+>: Verwijdert de geselecteerde objecten (transacties, rekeningen, categorieën, etc.)</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Eigenschap toevoegen</guimenuitem
+>: Voegt een regelmatig gebruikte eigenschap toe aan de geselecteerde objecten</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Alles selecteren</guimenuitem
+>: Selecteert alle regels in de <link linkend="tables"
+>tabel</link
+> van het huidige pagina</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Snel invullen:</guimenuitem
+>: maakt de creatie van nieuwe <link linkend="transactions"
+>transacties</link
+> mogelijk door automatisch velden in te vullen aan de hand van eerder gecreëerde transacties</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Zoeken…</guimenuitem
+>: Opent de pagina voor <link linkend="search_and_process"
+>Zoeken &amp; verwerken</link
+> met een ingevuld filter overeenkomend met het geselecteerde object</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Markering omschakelen</guimenuitem
+>: Schakelt de markeringsstatus van de objecten om</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Sluiten omschakelen</guimenuitem
+>: De gesloten status van objecten omschakelen</para
+></listitem
+>          
+	  <listitem
+><para
+><guimenuitem
+>Transactie-controle…</guimenuitem
+>: Opent de pagina voor <link linkend="transactions"
+>Transacties</link
+> in de <link linkend="reconciliation"
+>transactie-controle</link
+> modus</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Markeer</guimenuitem
+>: markeer de geselecteerde transacties</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Groepeer transacties</guimenuitem
+>: Groepeer de geselecteerde transacties. Het dient ervoor om een koppeling te houden tussen transacties. Het wordt gebruikt in het geval van transfers tussen rekeningen of in het geval van kopen/verkopen van aandelen. U kunt het voor elk ander doel gebruiken. Let er op dat rapporten en grafieken u toestaan met de gegroepeerde transacties al dan niet rekening te houden</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Groeperen transacties ongedaan maken</guimenuitem
+>: maak de groepering van de gemarkeerde transacties ongedaan</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Dupliceren</guimenuitem
+>: Dupliceert de geselecteerde transactie om van de vorige een nieuwe te creëren</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Sjabloon aanmaken</guimenuitem
+>: Creëert van een geselecteerde transactie een <link linkend="templates"
+>sjabloon</link
+></para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Sjabloon toepassen</guimenuitem
+>: Pas een <link linkend="templates"
+>sjabloon</link
+> toe op geselecteerde transacties</para
+></listitem
+>          
+	  <listitem
+><para
+><guimenuitem
+>Sub-transacties samenvoegen</guimenuitem
+>: Voegt de geselecteerde transacties samen in een gesplitste transactie</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Plannen</guimenuitem
+>: plan de geselecteerde transactie</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Validatie geïmporteerde transacties omschakelen</guimenuitem
+>: Valideer de geselecteerde geïmporteerde transacties</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Geïmporteerde transacties samenvoegen</guimenuitem
+>: Voegt een geïmporteerde transactie samen met een ander handmatig ingevoerde transactie samen. Als de hoeveelheden verschillend zijn dan wordt om een bevestiging gevraagd</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Splits aandeel</guimenuitem
+>: Splits het geselecteerde <link linkend="units"
+>aandeel</link
+></para
+></listitem
+>	  
+      </itemizedlist>
+      </sect2
+>	
+      
+      <sect2 id="menu-view">
+	<title
+>Het menu Beeld</title>
+	<para
+>In dit menu kunt u alle voor de <link linkend="multi-tabs"
+>pagina's</link
+> van toepassing zijnde functies vinden</para
+>	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="menu_view.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+      <itemizedlist>
+	  <listitem
+><para
+><guimenuitem
+>Editor inschakelen</guimenuitem
+>: activeer de editor op de huidige pagina</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Nieuw tabblad</guimenuitem
+>: open een nieuw tabblad</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Laatste gesloten pagina heropenen</guimenuitem
+>: herstel de laatst gesloten pagina</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Sluiten</guimenuitem
+>: Sluit de huidige pagina</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Alles sluiten</guimenuitem
+>: alle pagina's sluiten behalve de vastgezette</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Alle anderen sluiten</guimenuitem
+>: alle pagina's sluiten behalve de huidige en de vastgezette</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Deze pagina vastzetten</guimenuitem
+>: Zet de huidige pagina vast. Dit voorkomt het vervangen door andere pagina of het sluiten ervan</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Paginastatus herstellen</guimenuitem
+>: Herstel de status van de huidige pagina</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Paginastatus opslaan</guimenuitem
+>: de status van de huidige pagina opslaan</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Bladwijzerstatus overschrijven</guimenuitem
+>: de status van de huidige pagina in de bladwijzers opslaan. De bladwijzer wordt bijgewerkt met de nieuwe status</para
+></listitem
+>	  
+      </itemizedlist>
+      </sect2
+>	 
+      
+      <sect2 id="menu-do">
+	<title
+>Het menu Ga naar</title>
+	<para
+>In dit menu kunt u alle voor de <link linkend="multi-tabs"
+>pagina's</link
+> van toepassing zijnde functies vinden</para
+>	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="menu_go1.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+
+      <itemizedlist>
+	  <listitem
+><para
+><guimenuitem
+>Startpagina</guimenuitem
+>: Sluit alle pagina's en heropent alle automatische bladwijzers net zoals wanneer u het document opent</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Vorige</guimenuitem
+>: Vervangt de inhoud van de huidige pagina door de inhoud van de vorige (zoals in een web browser)</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Volgende</guimenuitem
+>: Vervangt de inhoud van de huidige pagina door de inhoud van de volgende (zoals in een web browser)</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Geaccentueerde openen…</guimenuitem
+>: opent de geaccentueerde transacties</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Laatst gewijzigde openen…</guimenuitem
+>: opent transacties die zijn gewijzigd door de laatste actie</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Potentiële duplicaten openen…</guimenuitem
+>: open een pagina met transacties die gelijke hoeveelheden en zelfde datums heeft</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Sub-transacties openen…</guimenuitem
+>: sub-transacties openen van de geselecteerde transactie. Gelijk aan een dubbelklik</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Rapport openen…</guimenuitem
+>: Opent een rapport gebaseerd op de selectie. Dit is erg handig. Bijvoorbeeld: als u twee rekeningen heeft geselecteerd en u start deze actie dan zal de <link linkend="reports"
+>rapport</link
+> pagina met alleen de transacties van deze rekeningen worden geopend</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Geïmporteerde transacties die nog niet gevalideerd zijn openen…</guimenuitem
+>: niets aan toe te voegen</para
+></listitem
+>	    
+      </itemizedlist>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="menu_go2.png"/></imageobject>
+	  </mediaobject>
+	</screenshot
+>	
+      <itemizedlist>
+	  <listitem
+><para
+><guimenuitem
+>Transacties zonder categorie openen…</guimenuitem
+>: Opent alletransacties die nog geen categorie hebben</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Overdracht zonder categorie openen…</guimenuitem
+>: Opent alle overdrachten die nog geen categorie hebben</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Transacties zonder begunstigde openen…</guimenuitem
+>: opent alle transacties zonder begunstigde</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Open overboekingen zonder begunstigde…</guimenuitem
+>: alle overboekingen zonder begunstigde openen </para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Transacties zonder modus openen…</guimenuitem
+>: opent alle transacties zonder modus</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Transacties openen met niet uitgelijnde datums…</guimenuitem
+>: Opent alle enkele transacties waarvan de datum niet is uitgelijnd met zijn sub-transacties</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Transacties openen met niet uitgelijnde opmerkingen…</guimenuitem
+>: Opent alle enkele transacties waarvan het commentaar niet is uitgelijnd met zijn sub-transacties</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Transacties in groepen met alleen één transactie openen…</guimenuitem
+>: Opent alle enkele transacties die alleen zijn in een groep</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Zeer oude transacties openen</guimenuitem
+>: zoals de titel aangeeft</para
+></listitem>
+      </itemizedlist>
+      </sect2
+>      
+      
+      <sect2 id="menu-tools">
+	<title
+>Het menu Hulpmiddelen</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="menu_tools.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+      <itemizedlist>
+	  <listitem
+><para
+><guimenuitem
+>Overdrachten zoeken en groeperen</guimenuitem
+>: potentiële overdrachten aanmaken</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Import van bank wissen</guimenuitem
+>: transacties na importeren wissen</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Anoniem maken</guimenuitem
+>: uw document anoniem maken om te helpen bij debuggen van &skrooge; </para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Commentaar van sub-transactie uitlijnen</guimenuitem
+>: corrigeer enkelvoudige transacties waarvan het commentaar niet is uitgelijnd</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Datums van sub-transacties uitlijnen</guimenuitem
+>: corrigeer enkelvoudige transacties waarvan de datums niet zijn uitgelijnd</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Groepen met alleen één transactie verwijderen</guimenuitem
+>: corrigeer alleen in een groep</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Ongebruikte begunstigden verwijderen</guimenuitem
+>: zoals de titel aangeeft</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Ongebruikte categorieën verwijderen</guimenuitem
+>: zoals de titel aangeeft</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Ongebruikte eenheden verwijderen</guimenuitem
+>: zoals de titel aangeeft</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Transacties zonder verdere actie valideren</guimenuitem
+>: geïmporteerde transacties valideren </para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Budgetregels toepassen</guimenuitem
+>: Bereken de <link linkend="budgets"
+>budgets</link
+> opnieuw uit aan de hand van de opgestelde regels</para
+></listitem>
+      </itemizedlist>
+      </sect2
+>     
+      <sect2 id="menu-settings">
+	<title
+>Het menu Instellingen</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="menu_settings.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+      <itemizedlist>
+	  <listitem
+><para
+><guimenuitem
+>Menubalk tonen</guimenuitem
+>: om het menu te tonen of te verbergen</para
+></listitem>
+          <listitem
+><para
+><guimenuitem
+>Werkbalken worden getoond</guimenuitem
+>: om werkbalken te tonen of te verbergen</para
+></listitem>
+          <listitem
+><para
+><guimenuitem
+>Statusbalk tonen</guimenuitem
+>: om de statusbalk te tonen of te verbergen</para
+></listitem>
+          <listitem
+><para
+><guimenuitem
+>Sneltoetsen configureren…</guimenuitem
+>: om de sneltoetsen van elk commando te wijzigen</para
+></listitem>
+          <listitem
+><para
+><guimenuitem
+>Werkbalken configureren…</guimenuitem
+>: om de indeling van werkbalken te wijzigen</para
+></listitem>
+          <listitem
+><para
+><guimenuitem
+>Meldingen configureren…</guimenuitem
+>: om de meldingen te wijzigen </para
+></listitem>
+          <listitem
+><para
+><guimenuitem
+>&skrooge; configureren…</guimenuitem
+>: om toegang te geven tot de hoofd<link linkend="settings"
+>instellingen</link
+> van &skrooge;</para
+></listitem>
+      </itemizedlist>
+      </sect2
+>     
+    </sect1>
+    
+    <sect1 id="dashboard">
+      <title
+>Dashboard</title>
+      <para
+>Het Dashboard is een plugin in &skrooge; die een algemeen overzicht van uw financiële status laat zien.</para>
+      
+      <screenshot>
+	<mediaobject>
+	  <imageobject
+><imagedata fileref="dashboard.png"/></imageobject>
+	</mediaobject>
+      </screenshot>
+      
+      <para
+>U kunt nieuwe grafische items toevoegen met de knop in de rechterbovenhoek. U kunt elk grafische item configureren door op het pictogram daarvan te klikken. U kunt de indeling van de grafische items op het dashboard organiseren door middel van verslepen en loslaten.</para>
+      <tip
+><para
+>In combinatie met <link linkend="bookmarks"
+>bladwijzers</link
+>, is dit een goede manier om snel verschillende overzichten van uw financiële status te krijgen.</para
+></tip>
+      
+      <sect2 id="dashboard_advice">
+	<title
+>Adviezen</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_advice.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Dit grafische item toont adviezen op prioriteit gesorteerd. Bij elk advies kunt u het volgende doen: <itemizedlist>
+	  <listitem
+><para
+>Betreffende transacties openen of verwijderen</para
+></listitem>
+	  <listitem
+><para
+>Dit advies negeren</para
+></listitem>
+	  <listitem
+><para
+>Dit advies voor de komende maand negeren</para
+></listitem>
+	  <listitem
+><para
+>Dit soort advies negeren</para
+></listitem>
+	  <listitem
+><para
+>Dit soort advies voor de komende maand negeren</para
+></listitem>
+      </itemizedlist
+>	  
+	</para>
+      </sect2
+>      
+      
+      <sect2 id="dashboard_tip">
+	<title
+>Tip van de dag</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_tip.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Toont de tip van de dag. Als u op het pictogram klikt dan ziet u de volgende tip.</para>
+      </sect2
+>          
+
+      <sect2 id="dashboard_accounts_light">
+	<title
+>Rekeningen (licht)</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_accounts_light.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Toont de balans van elke rekening en het soort rekening. U kunt instellen wat deze tabel toont.</para>
+      </sect2
+>     
+      
+      <sect2 id="dashboard_accounts_full">
+	<title
+>Rekeningen (volledig)</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_accounts_full.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Toont de balans van elke rekening en het soort rekening. De balans is te vergelijken met de balans van een maand eerder of een jaar eerder.</para>
+      </sect2
+>    
+      
+      <sect2 id="dashboard_banks_light">
+	<title
+>Banken (licht)</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_banks_light.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Toont de balans van elke bank. U kunt het bijbehorende rapport direct vanuit het grafische item openen.</para>
+      </sect2
+>     
+      
+      <sect2 id="dashboard_banks_full">
+	<title
+>Banken (volledig)</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_banks_full.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Toont de balans van elke bank. U kunt de balans vergelijken met de balans van een maand eerder en een jaar eerder.</para>
+      </sect2
+>        
+      
+      <sect2 id="dashboard_income">
+	<title
+>Inkomsten &amp; uitgaven</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_income.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Toont de inkomsten, uitgaven en spaargelden voor twee verschillende perioden (bijvoorbeeld: huidige maand, huidig jaar, vorige maand, etc.). U kunt ook: <itemizedlist>
+	    <listitem
+><para
+>De twee gewenste perioden selecteren</para
+></listitem>
+	    <listitem
+><para
+>Kiezen of <link linkend="transfer"
+>overdrachten</link
+> worden meegenomen.</para
+></listitem>
+	    <listitem
+><para
+>Kiezen of de <link linkend="trackers"
+>gevolgde</link
+> transacties worden meegenomen.</para
+></listitem>
+	    <listitem
+><para
+>Het bijbehorende <link linkend="reports"
+>rapport</link
+> openen</para
+></listitem>
+	</itemizedlist
+>		  
+	</para>
+      </sect2
+>       
+
+      <sect2 id="dashboard_highlighted">
+	<title
+>Gemarkeerde transacties</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_highlighted.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Toont een lijst van de gemarkeerde transacties</para>
+      </sect2
+>      
+      
+      <sect2 id="dashboard_scheduled">
+	<title
+>Periodieke transacties</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_scheduled.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Toont een lijst met de <link linkend="scheduled"
+>geplande</link
+> transacties.</para>
+      </sect2
+>         
+      
+      <sect2 id="dashboard_categories">
+	<title
+>5 categorieën met grootste uitgaven</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_categories.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Toont de vijf hoofdcategorieën met uitgaven voor de gewenste periode.</para>
+      </sect2
+>       
+      
+      <sect2 id="dashboard_variations">
+	<title
+>5 grootste afwijkingen</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_variations.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Toont de vijf grootste afwijkingen wat betreft inkomsten en uitgaven voor de gewenste periode.</para>
+      </sect2
+>         
+      
+      <sect2 id="dashboard_budget">
+	<title
+>Budget</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_budget.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Toont het budget van de gewenste periode.</para>
+      </sect2
+>        
+      
+      <sect2 id="dashboard_alarms">
+	<title
+>Herinneringen</title
+>	
+	<para
+>Toont de herinneringen gedefinieerd in <link linkend="search_and_process"
+>Zoeken &amp; verwerken</link
+>.</para>
+      </sect2
+>    
+      
+      <sect2 id="dashboard_report">
+	<title
+>Rapporten</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_report.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Toont het door u gewenste <link linkend="reports"
+>rapport</link
+>.</para>
+      </sect2
+>         
+      
+      <sect2 id="dashboard_quotes">
+	<title
+>Koersen</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_quotes.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Toont de koersen van de ingestelde <link linkend="units"
+>eenheden</link
+> en de afwijkingen. U kunt het getoonde type eenheid instellen.</para>
+      </sect2
+>          
+      
+      <sect2 id="dashboard_portfolio">
+	<title
+>Portfolio</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_portfolio.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Toont alle informatie wat betreft de aandelen in uw bezit.</para>
+      </sect2
+>       
+      
+      <sect2 id="dashboard_interest">
+	<title
+>Geschatte rente</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_interest.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Toont een schatting van de rente voor elke rekening. U moet de <link linkend="simulations"
+>simulaties</link
+>-pagina gebruiken om voor elke rekening de rentepercentage in te stellen.</para>
+      </sect2
+>    
+      
+      <sect2 id="dashboard_pfs">
+	<title
+>Persoonlijke financiële score</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_pfs.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Toont uw persoonlijke financiële score.</para>
+      </sect2
+>        
+    </sect1>
+    
+    <sect1 id="accounts">
+      <title
+>Bank &amp; Rekeningen</title>
+      <para
+>Dit is de plugin speciaal bedoeld voor het beheer van uw verschillende rekeningen.</para>
+      
+      <screenshot>
+	<mediaobject>
+	  <imageobject
+><imagedata fileref="bank_accounts.png" format="PNG"/></imageobject>
+	  <textobject
+><phrase
+>De bank &amp; rekeningen weergave</phrase
+></textobject>
+	</mediaobject>
+      </screenshot>
+      
+      
+      <sect2 id="account_properties"
+> 
+	<title
+>Accounteigenschappen</title>
+	<para
+>In &skrooge;-rekening heeft de volgende eigenschappen: <variablelist>
+	    <varlistentry>
+	      <term
+>Bank</term>
+	      <listitem
+><para
+>U kunt een bank kiezen in de keuzelijst (met daarin een lijst van voor uw land bekende banken), of de naam invoeren als uw bank niet in de lijst voorkomt (Als de lijst leeg is, dan heeft nog niemand het &skrooge;-team voorzien van deze informatie. U kunt contact maken met ons om ons te helpen!).</para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Rekening</term>
+	      <listitem
+><para
+>De naam die u wilt gebruiken voor deze rekening.</para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Type</term>
+	      <listitem
+><para
+>Het type rekening dat het kan zijn <itemizedlist>
+		    <listitem
+><para
+>Lopende rekening</para
+></listitem>
+		    <listitem
+><para
+>Credit Card: deze soort rekening heeft een speciale modus voor<link linkend="reconciliation"
+>Transactie-controle</link
+>.</para
+></listitem>
+		    <listitem
+><para
+>Spaarrekening</para
+></listitem>
+		    <listitem
+><para
+>Investering</para
+></listitem>
+		    <listitem
+><para
+>Bezittingen</para
+></listitem>
+		    <listitem
+><para
+>Lening: De overdrachten naar dit type rekening worden niet in de rapporten meegenomen.</para
+></listitem>
+		    <listitem
+><para
+>Pensioen</para
+></listitem>
+		    <listitem
+><para
+>Portefeuille: deze soort rekening heeft geen bank-naam.</para
+></listitem>
+		    <listitem
+><para
+>Overig</para
+></listitem>
+		  </itemizedlist>
+		  </para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Banknummer</term>
+	      <listitem
+><para
+>Het identificatienummer van uw bank</para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Agentschapsnummer</term>
+	      <listitem
+><para
+>Het identificatienummer van het agentschap</para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Rekeningnummer</term>
+	      <listitem
+><para
+>Het identificatienummer van de rekening. Dit getal is erg belangrijk om tijdens de import de juiste rekening eraan te koppelen.</para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Adres</term>
+	      <listitem
+><para
+>Het adres van het agentschap</para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Toelichting</term>
+	      <listitem
+><para
+>Alles wat u wilt!</para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Initiële saldo</term>
+	      <listitem
+><para
+>Het initiële saldo van de rekening. Voor een leningrekening zou de hoeveelheid een negatieve hoeveelheid moeten zijn overeenkomend met de lening.</para
+></listitem>
+	    </varlistentry
+>	  
+	    <varlistentry>
+	      <term
+>Minimum niveau</term>
+	      <listitem
+><para
+>De minimum limiet voor wanneer &skrooge; een alarm moet geven </para
+></listitem>
+	    </varlistentry
+>	    
+	    <varlistentry>
+	      <term
+>Maximale niveau</term>
+	      <listitem
+><para
+>De maximum limiet voor wanneer &skrooge; een alarm moet geven </para
+></listitem>
+	    </varlistentry
+>	    
+	  </variablelist>
+	</para>
+      </sect2>
+      
+      <sect2 id="accounts_list">
+	<title
+>Rekeninglijst</title>
+	<para
+>De rekeningenlijst is in de vorm van een tabel met een regel per rekening. Naast de <link linkend="account_properties"
+>eigenschappen</link
+> die u voor deze rekening heeft ingevoerd, laat &skrooge; de volgende kolommen zien:</para>
+	
+	<variablelist>
+	  <varlistentry>
+	    <term
+>Hoeveelheid</term>
+	    <listitem
+><para
+>Het op de rekening overblijvende bedrag, nadat alle transacties zijn geregistreerd, onafhankelijk of ze zijn gevalideerd.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Gecontroleerd</term>
+	    <listitem
+><para
+>Het totaal bedrag van alle gevalideerde transacties. Dit zou gelijk moeten zijn aan het totaal bedrag op uw laatste afschrift van uw bank.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Toekomstig</term>
+	    <listitem
+><para
+>Het verschil tussen de twee vorige kolommen.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Aantal transacties</term>
+	    <listitem
+><para
+>Het totaal aantal transacties van de rekening</para
+></listitem>
+	  </varlistentry>
+	</variablelist>
+	
+	<para
+>Zoals bij alle lijsten in&skrooge;, kunt u het volledig <link linkend="tables"
+>naar wens de weergave van de lijst</link
+> aanpassen.</para>
+	
+      </sect2>
+      
+      <sect2 id="create_account">
+	<title
+>Een rekening aanmaken</title>
+	<para
+>U kunt rekeningen aanmaken in het bewerkingspaneel onder de lijst met rekeningen in de weergave Rekeningen.</para>
+	
+	<para
+>Om een rekening aan te maken, voert u de eigenschappen ervan in (de verplichtte zijn vetgedrukt), en klikt u op <guibutton
+>Toevoegen</guibutton
+>. In &skrooge; hoeft u voor deze rekening geen initieel bedrag op te geven. Om voor deze rekening het initiële bedrag in te stellen, creëert u een transactie met bedrag dat overeenkomt met het initiële bedrag.</para>
+      </sect2>
+      
+      <sect2 id="modify_account">
+	<title
+>Een rekening wijzigen</title>
+	<para
+>Om een rekening te wijzigen, selecteert u het, wijzigt zijn eigenschappen, en klikt u op "Wijzigen"</para>
+      </sect2>
+      
+      <sect2 id="delete_account">
+	<title
+>Rekeningen verwijderen</title>
+	<para
+>Om rekeningen te verwijderen, selecteert u ze en drukt naar keuze op <keycap
+>Delete</keycap
+> op het toetsenbord, gebruikt u het contextmenu, of gebruikt u het icoon op de werkbalk.</para>
+	<warning
+><para
+>Na het verwijderen van een rekening, zullen alle transacties die bij deze rekening horen ook worden verwijderd ! (U kunt echter altijd de verwijdering <link linkend="undo_redo"
+>ongedaan</link
+> maken)</para
+></warning>
+      </sect2>
+      
+    </sect1>
+    
+    <sect1 id="transactions">
+      <title
+>Transacties</title>
+      <para
+>Transacties zijn alle transacties die u bij een rekening uitvoert, dit kan een uitgave zijn, inkomsten, overboeking, verkoop, aankoop, etc. Hieraan besteed u waarschijnlijk de meeste tijd bij het gebruik van &skrooge;.</para>
+      
+      <para
+>Om transacties te kunnen invoeren, moet u tenminste een <link linkend="accounts"
+>rekening</link
+> gecreëerd hebben.</para>
+      
+      <screenshot>
+	<mediaobject>
+	  <imageobject
+><imagedata fileref="transactions.png" format="PNG"/></imageobject>
+	  <textobject
+><phrase
+>De transactie-weergave</phrase
+></textobject>
+	</mediaobject>
+      </screenshot>
+      
+      <sect2 id="transaction_properties">
+	<title
+>Eigenschappen van transacties</title>
+	
+	<variablelist>
+	  <varlistentry>
+	    <term
+>Rekening</term>
+	    <listitem
+><para
+>De rekening waarop de transactie is uitgevoerd. Selecteer het in de lijst met bestaande rekeningen.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Datum</term>
+	    <listitem
+><para
+>De datum waarop de transactie is uitgevoerd. U kunt een kalender openen met de omlaagwijzende pijl rechts van het invoerveld.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term id="quantity_field"
+>Hoeveelheid</term>
+	    <listitem>
+	      <para
+>Het bedrag dat u uitgaf of verdiende met deze transactie. In &skrooge; moet u dit in twee aparte velden invoeren: Aantal en Eenheid.</para>
+	      <para
+>De hoeveelheid is negatief voor een uitgave (-30, bijvoorbeeld), en positief voor inkomsten (+250, of eenvoudig 250). Dit veld werkt ook als een rekenmachine, &ie; als u een uitdrukking invoert zoals 10 + 3.23*2 dan zal het resultaat in het veld zijn 16.46.</para>
+              <para
+>Als het teken voor hoeveelheid niet is opgegeven, dan zal &skrooge; de categorie gebruiken om de meest toepasselijke te vinden.</para>
+	      <para
+>In &skrooge; is het vereist dat u de <link linkend="units"
+>eenheden</link
+> opgeeft omdat een transactie niet noodzakelijkerwijs in uw hoofd valuta is gedaan. Als voorbeeld, als u aandelen aankoopt of verkoopt, dan is de transactie een aandeel.</para>
+	    </listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Begunstigde</term>
+	    <listitem
+><para
+>Aan wie betaalde u, of wie gaf het geld aan u.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Betaalwijze</term>
+	    <listitem>
+	      <para
+>Wat was de gebruikte betaalwijze voor deze transactie. Iets in de lijn van Credit Card, Cheque, Storting… U geeft het maar een naam!</para>
+	      <para
+>Behorend bij een betaalwijze, het is een optioneel getal. Dit gebruikt men meestal om het chequenummer of een overboekingsnummer in te voeren.</para>
+	    </listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Categorie</term>
+	    <listitem>
+	      <para
+>In welke <link linkend="categories"
+>Categorie</link
+> valt deze transactie. Als u een transactie in meer dan een categorie wilt indelen, gebruik dan de <link linkend="split_transaction"
+>split</link
+> modus.</para>
+	      <para
+>U kunt kiezen of u een bestaande categorie gebruikt of een nieuwe typt. In dat geval, zal &skrooge; deze voor u creëren terwijl u verder gaat met de transactie.</para>
+	      <para
+>Het scheidingsteken tussen de hoofdcategorie en de subcategorie is het &gt;-karakter. Als u typt Kleding &gt; Schoenen, dan zal &skrooge; als het nog niet bestaat de categorie Kleding creëren, en de subcategorie Schoenen.</para>
+	      <para
+>Natuurlijk mag u complete categorie-bomen creëren, zoals Transport &gt; Auto &gt; Brandstof &gt; Ongelood, &skrooge; zal dan gewoon de hele hiërarchische structuur creëren.</para>
+	    </listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Toelichting</term>
+	    <listitem
+><para
+>Elk gewenste commentaar.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Volger</term>
+	    <listitem
+><para
+>Als u de onkostenvergoeding voor deze transactie wilt volgen, voer dan hier de naam van de <link linkend="trackers"
+>Volger</link
+> in. Als u met meer dan een volger deze transactie wilt volgen, gebruik dan de <link linkend="split_transaction"
+>splitsen</link
+> mode.</para
+></listitem>
+	  </varlistentry>
+	</variablelist>
+	
+      </sect2>
+      
+      <sect2 id="transactions_list">
+	<title
+>Lijst met transacties</title>
+	<para
+>De lijst met transacties neemt de vorm aan van een tabel die alle transacties die overeenkomen met het huidige <link linkend="show"
+>tabelfilter</link
+> en de zoektermen, met een rij voor elke transactie. Naast de standaard <link linkend="transaction_properties"
+>transactie-eigenschappen</link
+> en elke andere <link linkend="account_properties"
+>eigenschap</link
+> die u hebt gedefinieerd voor deze rekening, zal &skrooge; de volgende kolommen tonen:</para>
+	
+	<variablelist>
+	  <varlistentry>
+	    <term
+>Status</term>
+	    <listitem
+><para
+>Een gevuld vakje betekent dat deze transactie is bevestigd tijdens de <link linkend="reconciliation"
+>transactie-controle</link
+>. Een half gevuld vakje betekent dat de transactie is <link linkend="terminology_marked_transaction"
+>aangewezen</link
+> en <link linkend="reconciliation"
+>transactie-controle</link
+> bezig is.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Bladwijzer</term>
+	    <listitem
+><para
+>Markeer deze transactie als bladwijzer, een synoniem voor favoriet.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Gepland</term>
+	    <listitem
+><para
+>Als een transactie is gepland, dan toont deze kolom het pictogram voor een stopwatch.</para
+></listitem>
+	  </varlistentry>
+	</variablelist>
+	
+	<para
+>Deze kolommen hebben daarnaast nog enkele nadere aanduidingen hebben:</para>
+	
+	<variablelist>
+	  <varlistentry>
+	    <term
+>Betaalwijze</term>
+	    <listitem
+><para
+>Als de transactie een onderdeel is van een <link linkend="transfer"
+>overdracht</link
+>, dan wordt de modus voorafgegaan door het pictogram van een dubbele pijl.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Categorie</term>
+	    <listitem
+><para
+>Als de transactie is <link linkend="split_transaction"
+>gesplitst</link
+>, dan wordt de categorie voorafgegaan door het pictogram van een driedubbele pijl.</para
+></listitem>
+	  </varlistentry>
+	</variablelist>
+	
+	<para
+>Zoals bij alle lijsten in&skrooge;, kunt u het volledig <link linkend="tables"
+>naar wens de weergave van de lijst</link
+> aanpassen.</para>
+	
+      </sect2>
+      
+      <sect2 id="standard_transaction">
+	<title
+>Een transactie aanmaken</title>
+	<para
+>Om een gewone transactie aan te maken, kunt u de knop <guibutton
+>Wissen</guibutton
+> gebruiken om alle velden te legen en een nieuwe transactie vanaf nul te beginnen. U kunt dan de eigenschappen daarvan vullen (handmatig of met de hulp van <link linkend="fast_editing"
+>snel bewerken</link
+>), en op <guibutton
+>Toevoegen</guibutton
+> klikken.</para>
+        <para
+>Als de juiste instellingen zijn ingeschakeld, dan wordt de categorie ingesteld als u de begunstigde invoert.</para>
+	<para
+>U kunt ook in de bestaande transacties een vergelijkbare transactie selecteren, de noodzakelijke wijzigingen uitvoeren, en dan op <guibutton
+>Toevoegen</guibutton
+> klikken.</para>
+      </sect2>
+      
+      
+      <sect2 id="split_transaction">
+	<title
+>Transactie splitsen</title>
+	<para
+>Een gesplitste transactie is een transactie die meerdere datums, categorieën, commentaren of volgers heeft. U kunt omschakelen naar de bewerkmodus voor gesplitste transactie met de knop <guibutton
+>Splitsen</guibutton
+> onderaan het weergavevenster Transacties. Als u omschakelt naar de bewerkmodus voor gesplitste transactie, worden de velden voor Categorie, Commentaar en Volger vervangen door tabellen.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="split_transaction.png" format="PNG"/></imageobject>
+	    <textobject
+><phrase
+>Het bewerkingspaneel om transacties te splitsen.</phrase
+></textobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Om een cel in deze tabel te bewerken, dubbelklikt u erop.</para>
+	
+	<para
+>U kunt net zoveel regel toevoegen als u nodig heeft. Als u op een regel de hoeveelheid wijzigt, dan zal &skrooge; het verschil met de totale hoeveelheid transacties uitrekenen, en de overblijvende hoeveelheid in de laatste regel van de tabel laten zien. Als u de hoeveelheid in de laatste regel wijzigt, dan wordt een nieuwe regel toegevoegd met de overblijvende hoeveelheid.</para>
+	
+	<para
+>De velden gedragen zich hetzelfde als in de standaard bewerkmodus:</para>
+	
+	<itemizedlist>
+	  <listitem
+><para
+>De splitsing op datum kan handig zijn als u bijvoorbeeld, in een hypothetisch scenario, voor drie maanden uw sporttraining betaalt. U kunt in dat geval de betaling splitsen in drie maanden, wat weer van invloed is op de rapporten.</para
+></listitem>
+	  <listitem
+><para
+>De categorie is een keuzelijst met bestaande categorieën. U kunt een nieuwe categorie toevoegen, &skrooge; zal het creëren op het moment dat het de transactie creëert.</para
+></listitem>
+	  <listitem
+><para
+>De Hoeveelheid <link linkend="quantity_field"
+>werkt als rekenmachine</link
+>.</para
+></listitem>
+	  <listitem
+><para
+>De volger is een keuzelijst met bestaande volgers. U kunt een nieuwe volger toevoegen, &skrooge; zal het creëren op het moment dat het de transactie creëert.</para
+></listitem>
+	</itemizedlist>
+      </sect2>
+      
+      <sect2 id="transfer">
+	<title
+>Overdracht</title>
+	<para
+>Een overboeking is eigenlijk een dubbele transactie: bij het creëren van een overboeking, zal &skrooge; twee transacties creëren van tegengestelde bedragen (een positief, de andere negatief), bij twee verschillende rekeningen. De eigenschappen wijken hier een beetje af van een standaard transactie:</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="transfer_transaction.png" format="PNG"/></imageobject>
+	    <textobject
+><phrase
+>Het bewerkingspaneel voor overdrachten.</phrase
+></textobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>U vindt een lijst "Naar rekening" waar u de rekening zou moeten selecteren waar het geld naar moet gaan.</para>
+	
+	<para
+>Omdat een overboeking inhoud "Neem wat geld van rekening A en stop het op rekening B", zal als u een teken toevoegt in het veld voor hoeveelheid (+ of -), dit worden genegeerd. De transactie voor rekening A zal altijd negatief zijn, en positief voor rekening B.</para>
+      </sect2>
+      
+      <sect2 id="shares">
+	<title
+>Aandelen</title>
+	<para
+>Eerst moet u enkele aandelen in het systeem aanmaken voordat u ze kunt volgen, u kunt in de <link linkend="settings"
+>instellingen</link
+> ervoor kiezen om de data automatisch bij het openen van het bestand bij te laten werken. Wij raden ook aan een aparte rekening te creëren (&eg; "ETF") om de investeringen gescheiden te houden en ze op het dashboard te kunnen zien. </para>
+<para
+>Nu kunt u uw transacties als "aandelen" toevoegen: <screenshot
+> <mediaobject>
+	    <imageobject
+><imagedata fileref="shares.png" format="PNG"/></imageobject>
+	    <textobject
+><phrase
+>Het bewerkingspaneel voor aandelen.</phrase
+></textobject>
+	  </mediaobject>
+	</screenshot>
+	<itemizedlist>
+	  <listitem
+><para
+>Hoeveelheid is het aantal aandelen die u heeft gekocht (positief getal) of verkocht (negatief getal)</para
+></listitem>
+	  <listitem
+><para
+>Symbool is de vorige eenheid die u creëerde</para
+></listitem>
+	  <listitem
+><para
+>Aantal aandelen is de totale prijs die u voor de aandelen heeft betaalt / het bedrag dat u kreeg bij de verkoop, zonder provisie  en belasting</para
+></listitem>
+	  <listitem
+><para
+>Commissie is het bedrag dat u aan de bank betaalt als vergoeding voor het werk van die transactie</para
+></listitem>
+	  <listitem
+><para
+>Belasting is alle bedragen die u betaalde (meestal als er winst is)</para
+></listitem
+> 
+	</itemizedlist
+>	  
+	 </para>
+      </sect2>
+      
+      <sect2 id="schedule_transaction">
+	<title
+>Geplande transacties </title>
+	
+	<para
+>Als bekend is dat een transactie op regelmatige basis wordt herhaald, dan wilt u misschien dat &skrooge; dit automatisch voor u invult in de lijst met transacties. Dit kunt doen door een transactie te plannen, door de knop voor <guibutton
+>Planningen <inlinemediaobject
+><imageobject
+><imagedata fileref="schedule_transaction.png"/></imageobject
+></inlinemediaobject
+></guibutton
+> te gebruiken.</para>
+	
+	<para
+>De standaard mogelijkheden zijn:</para>
+	<itemizedlist>
+	  <listitem
+><para
+>Iedere maand herhalen</para
+></listitem>
+	  <listitem
+><para
+>Vijf dagen voor de termijn mij een herinnering sturen</para
+></listitem>
+	  <listitem
+><para
+>Automatisch invullen op afspraak</para
+></listitem>
+	</itemizedlist>
+	
+	<para
+>De standaardwaarden kunt u wijzigen in de <link linkend="settings"
+>instellingen</link
+> van &skrooge;.</para>
+	<para
+>U kunt ook van elke geplande transactie de waarden wijzigen in de <link linkend= "scheduled"
+>Plug-in voor planningen</link
+>.</para>
+	<para
+>&skrooge; gebruikt de waarden van de laatste invoer van de geplande transactie voor het vullen van de volgende. Als u, bijvoorbeeld, het bedrag van uw maandelijkse bijdrage aan de &kde; wijzigt van € 100 naar € 200, dan zullen de volgende door &skrooge; aangemaakte transacties automatisch het bedrag van € 200 hebben.</para>
+	
+      </sect2>
+      
+      <sect2 id="fast_editing">
+	<title
+>Snel bewerken</title>
+	
+	<para
+>Ongeacht de gekozen bewerkingsmethode, er is een nuttige functie genaamd Snel bewerken die het werk kan versnellen bij het aanmaken van nieuwe transacties. Het vult de eigenschappen van een transactie in op basis van eerder ingevoerde transacties. Voer een waarde in bij een willekeurig veld, en druk op <keycap
+>F10</keycap
+> of klik op het pictogram voor <guibutton
+>Snel bewerken<inlinemediaobject
+><imageobject
+><imagedata fileref="fast_editing.png" format="PNG"/></imageobject
+></inlinemediaobject
+></guibutton
+> (zonder het geselecteerde veld te verlaten).</para>
+	
+	<para
+>&skrooge; zal zoeken naar het eerste (&ie; de meest recente) transactie met dezelfde waarde in hetzelfde veld, en zal alle andere velden met dezelfde waarden van die transactie vullen. Dat zal gedaan worden bij elke aanroep.</para>
+	
+	<warning>
+	  <para
+>Snel bewerken kijkt niet naar de datum, omdat het onwaarschijnlijk is dat u exact dezelfde transactie wilt creëren, compleet met dezelfde datum.</para>
+	  <para
+>Velden die u al gewijzigd heeft voordat u Snel bewerken aanroept, daarvan wordt de inhoud niet gewijzigd. Dit kunt u zien doordat het veld een andere achtergrondkleur heeft, zodat u weet dat het "bevroren" is.</para>
+	</warning>
+	
+	<para
+>Hieronder zij de verschillen vergeleken met soortgelijke functies in andere persoonlijke financiële software:</para>
+	<itemizedlist>
+	  <listitem
+><para
+>De gebruiker roept het aan</para
+></listitem>
+	  <listitem
+><para
+>Het zoekt alle eerdere transacties met dezelfde waarde in dat veld op</para
+></listitem>
+	</itemizedlist>
+	
+	<para
+>En het werkt zelfs in gesplitste transacties !</para>
+      </sect2>
+      
+      <sect2 id="reconciliation">
+	<title
+>Transactiecontrole</title>
+	<para
+>Transactie-controle is een proces om u ervan te verzekeren dat alle transacties in een rekening overeenkomen met wat de bank ervan vindt. Daarbij zijn nodig u, de stand van uw rekening, en een pen. Transactiecontrole kan op een bepaald tijdstip gedaan worden.</para>
+	<para
+>Voer eerst alle transacties in voor de rekening tot dat punt in tijd; als u dat kunt, download transacties van de bank en <link linkend="import"
+>importeer</link
+> ze in &skrooge; om gegevensinvoer te beperken. Selecteer daarna in het venster met de transacties de via de keuzelijst de rekening waarvan u de consistentie wilt controleren; of in de rekeningweergave, klik dubbel op de rekeningnaam of breng het contextmenu op en kies <menuchoice
+><guimenu
+>Transacties openen…</guimenu
+></menuchoice
+>. Schakel om naar de modus voor transactie-controle met de knop voor <guibutton
+>Informatie wisselen <inlinemediaobject
+><imageobject
+><imagedata fileref="switch_information.png" format="PNG"/></imageobject
+></inlinemediaobject
+></guibutton
+> onder de tabel met transacties.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="reconciliation_information.png" format="PNG"/></imageobject>
+	    <textobject
+><phrase
+>Informatie over de transactie-controle.</phrase
+></textobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Voer in het betreffende vak het saldo in van uw rekening zoals het door uw bank is opgegeven. U kunt nu verdergaan door in &skrooge; elke transactie aan te wijzen in uw bankafschrift verschijnt: u kunt ofwel op zijn keuzevakje in de statuskolom klikken of het contextmenu opbrengen en <guimenuitem
+>Markeren</guimenuitem
+> kiezen. Het keuzevakje voor deze transactie zal gedeeltelijk gevuld zijn, totdat u de transactie-controle hebt voltooid.</para>
+	
+	<para
+>Tijdens het markeren van transacties, ziet u wat &skrooge; toont in de informatie-zone:</para>
+	<itemizedlist>
+	  <listitem
+><para
+>Delta: het verschil tussen het eerder ingevoerde saldo van de bankrekening en het totaal van alle gecontroleerde transacties</para
+></listitem
+><!--TODO: explain 'previously entered'; what happens-->
+	  <listitem
+><para
+>Uitgaven: het total bedrag van gemarkeerde uitgaven</para
+></listitem>
+	  <listitem
+><para
+>Inkomsten: het total bedrag aan gemarkeerde inkomsten</para
+></listitem>
+	</itemizedlist>
+	
+	<para
+>Deze wijzigende totalen helpen u transacties te zien die u mogelijk vergeten bent in &skrooge; in te voeren. Veel bankafschriften leveren vergelijkbare totalen zoals "Opnamen" of "Inleg en betalingen", hoewel ze aparte totalen kunne hebben voor "Rente", "Kosten". Wanneer de delta gelijk is aan 0, dan <emphasis
+>zou</emphasis
+> u alle transacties overeenkomend met de records van de bank hebben gemarkeerd. U zou bijvoorbeeld per ongeluk een debet van € 8 en een credit van € 2 over het hoofd hebben gezien en een bankdebet van € 6 - het netto is hetzelfde, min € 6. Wanneer de delta 0 is, de <guibutton
+>knop Gemarkeerde transacties valideren<inlinemediaobject
+><imageobject
+><imagedata fileref="validate.png" format="PNG"/></imageobject
+></inlinemediaobject
+></guibutton
+> is ingeschakeld. Klik op deze knop om uw transactie-controle te voltooien: alle aangewezen transacties zijn nu gecontroleerd.</para>
+	
+	<tip
+><para
+><inlinemediaobject
+><imageobject
+><imagedata fileref="fast_editing.png" format="PNG"/></imageobject
+></inlinemediaobject
+> Kan automatisch alle geïmporteerde transacties voor u markeren.</para
+></tip>
+	
+	<para
+>Als de optie <guibutton
+>Verberg gecontroleerde transacties</guibutton
+> voor de tabel is geselecteerd uit zijn menu "Tonen" (zie <link linkend="show"
+>Filter de tabel</link
+>), dan zullen deze transacties nu verborgen zijn.</para>
+	
+	<para
+>Als de transactie-controle niet mogelijk is om de een of andere reden, dan kunt u een gefingeerde transactie uitvoeren die in combinatie met de andere transacties uw gemarkeerde de delta op 0 zet, waarmee u in staat bent de transactie-controle te voltooien. Om dat te doen, klik op de knop "toevoegen" in de werkbalk voor de modus transactie-controle. U kunt de standaard waarden van deze gefingeerde transactie in de <link linkend="settings"
+>instellingen</link
+> van de toepassing zetten, in de sectie <guilabel
+>Transacties</guilabel
+>. Gedurende transactie-controle, als u de toepasselijke instelling activeert, zal &skrooge; automatisch alle aangemaakte transacties aanwijzen.</para>
+	
+      </sect2>
+      
+      <sect2 id="templates">
+	<title
+>Sjabloon-transacties</title>
+	<para
+>In &skrooge; kunt u transactie-sjablonen creëren, &ie; transacties die u als het nodig is kunt hergebruiken. Bijvoorbeeld, zeg dat vaak een &DVD; huurt om deze thuis te bekijken. De transactie is altijd hetzelfde:</para>
+	
+	<itemizedlist>
+	  <listitem
+><para
+>Hoeveelheid: -4.99</para
+></listitem>
+	  <listitem
+><para
+>Betaalwijze: Credit Card</para
+></listitem>
+	  <listitem
+><para
+>Begunstigde: Acme Video</para
+></listitem>
+	  <listitem
+><para
+>Categorie: Ontspanning 
+> Video</para
+></listitem>
+	  </itemizedlist>
+	  
+	  <para
+>Maar u kunt er geen periodieke transactie van maken, omdat u alleen een &DVD; huurt als u er zin in hebt, niet elke week. Het idee achter sjabloon transacties is dat u een basis geeft die u makkelijk en snel in uw lijst met transacties kunt toevoegen.</para>
+	  
+	  <para
+>Omdat sjabloon transacties gewoon nog een ander soort transacties zijn, kunt u ze gewoon selecteren via tabblad voor transacties, en de betreffende keuze in het menu <guimenu
+>Tonen</guimenu
+> gebruiken:</para>
+	  
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject
+><imagedata fileref="template_button.png" format="PNG"/></imageobject>
+	      <textobject
+><phrase
+>Omschakelen tussen sjablonen en transacties.</phrase
+></textobject>
+	    </mediaobject>
+	  </screenshot>
+	  
+	  <para
+>De creatie van een sjabloon verloopt hetzelfde als de creatie van een transactie, door zijn eigenschappen te definiëren. Merk op dat u ook van een bestaande transactie een sjabloon kan creëren (door bij een transactie het contextmenu te openen). In dat geval zal de sjabloon dezelfde eigenschappen als de transactie hebben.</para>
+	  
+	  <para
+>U gebruikt een sjabloon voor de creatie van een nieuwe transactie door erop te dubbelklikken. Er zal een nieuwe transactie met dezelfde eigenschappen als het sjabloon worden gecreëerd, maar wel met de huidige datum. Daarna kunt u de eigenschappen naar wens aanpassen</para>
+	  
+	  <para
+>Sjablonen kunt u ook <link linkend="scheduled"
+>plannen.</link
+></para>
+  </sect2>
+  <sect2 id="viewing_modified_transactions">
+	<title
+>Gewijzigde transacties bekijken</title>
+<para
+>U kunt Ga 
+> Laatst gewijzigde openen... gebruiken om de transacties te bekijken die gewijzigd zijn door uw laatste actie. Verder houdt &skrooge; een record van alle wijzigingen aan transactions in zijn <link linkend="undo_redo"
+>Geschiedenispaneel</link
+>. Om dit paneel te bekijken, kies <guimenuitem
+>Beeld 
+> Panelen 
+> Geschiedenis</guimenuitem
+>. U kunt dan rechts klikken op elke actie in de <link linkend="undo_redo"
+>Geschiedenislijst</link
+> en <guimenuitem
+>Transacties openen die gewijzigd zijn door deze actie</guimenuitem
+> kiezen. </para>
+	</sect2>
+	
+      </sect1>
+      
+      <sect1 id="payees">
+	<title
+>Begunstigden</title>
+	<para
+>In het begunstigdenvenster kunt u de lijst met begunstigden doorzoeken.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject>
+	      <imagedata fileref="payees.png" format="PNG"/>
+	    </imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Naast de naam van de begunstigde, krijgt u ook te zien:</para>
+	
+	<variablelist>
+	  <varlistentry>
+	    <term
+>Adres</term>
+	    <listitem
+><para
+>Het adres van deze begunstigde</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Categorie</term>
+	    <listitem
+><para
+>De standaard categorie voor deze begunstigde. Deze categorie wordt automatisch gebruikt als u de begunstigde invult op de pagina <link linkend="transactions"
+>Transacties</link
+>. als u het niet instelt dan wordt de standaard categorie berekent via de eerdere transacties.</para
+></listitem>
+	  </varlistentry
+>          
+	  <varlistentry>
+	    <term
+>Hoeveelheid</term>
+	    <listitem
+><para
+>Het totaal aantal transacties van deze begunstigde.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Aantal transacties</term>
+	    <listitem
+><para
+>Het aantal transacties van deze begunstigde.</para
+></listitem>
+	  </varlistentry>
+	</variablelist>
+	
+	<para
+>Door in deze tabel op een regel te dubbelklikken, krijgt u in een nieuwe tabblad een lijst met alle transacties van deze begunstigde te zien.</para>
+      </sect1>
+      
+      <sect1 id="categories">
+	<title
+>Categorieën</title>
+	<para
+>In het venster met categorieën kunt u door de boomstructuur van categorieën bladeren.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject>
+	      <imagedata fileref="categories.png" format="PNG"/>
+	    </imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Naast de namen van de categorieën, krijgt u ook te zien: </para>
+	
+	<variablelist>
+	  <varlistentry>
+	    <term
+>Hoeveelheid</term>
+	    <listitem
+><para
+>Het totale bedrag van alle transacties in deze categorie.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Aantal transacties</term>
+	    <listitem
+><para
+>Het totaal aantal transacties in deze categorie.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Aantal (cumulatief)</term>
+	    <listitem
+><para
+>Het totale bedrag van alle transacties in deze categorie en de subcategorieën (tot aan het laagste niveau) daarvan.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Aantal transacties (cumulatief)</term>
+	    <listitem
+><para
+>Het totale aantal transacties in deze categorie en de subcategorieën (tot aan het laagste niveau) daarvan.</para
+></listitem>
+	  </varlistentry>
+	</variablelist>
+	
+	<para
+>Als u in deze tabel op een regel dubbelklikt, dan opent in een nieuwe tabblad een lijst met alle transacties die in deze categorie vallen.</para>
+	<warning
+><para
+>Als u een categorie verwijdert, dan zullen alle transacties die aan deze categorie vastzaten hun categorie verliezen, en dus niet meer aan een categorie vastzitten.</para
+></warning>
+      </sect1>
+      
+      <sect1 id="reports">
+	<title
+>Rapporten</title>
+	<para
+>Bij &skrooge; heeft u veel mogelijkheden om uw rapporten aan te passen, voor een uitgebreide analyse van uw financiële status.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject>
+	      <imagedata fileref="reports.png" format="PNG"/>
+	    </imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Een rapport bestaat uit een tabel (aan de linkerkant) met alle data waarmee een grafiek (aan de rechterkant) wordt getoond. U kunt de tabel filteren met een speciaal veld bovenaan, zodat de grafiek opnieuw wordt getekend met de gefilterde data.</para>
+	
+	<para
+>U heeft de keuze om alleen de tabel, alleen de grafiek, of beide te tonen.</para>
+	
+	<sect2 id="setup_report">
+	  <title
+>Rapport instellen</title>
+	  
+	  <sect3 id="report_representation">
+	    <title
+>Weergave</title>
+	    <variablelist>
+	      <varlistentry>
+		<term
+>Tabel</term>
+		<listitem
+><para
+>Toont de tabel</para
+></listitem>
+	      </varlistentry>
+	      <varlistentry>
+		<term
+>Grafiek</term>
+		<listitem
+><para
+>Toont de grafiek</para
+></listitem>
+	      </varlistentry>
+	      <varlistentry>
+		<term
+>Tekst</term>
+		<listitem
+><para
+>Toont het tekstrapport, verbergt de tabel en de grafiek.</para
+></listitem>
+	      </varlistentry>
+	    </variablelist>
+	  </sect3>
+	  
+	  <sect3 id="report_data">
+	    <title
+>Gegevens</title>
+	    <para
+>Hier kunt u de data selecteren die u in het rapport wilt laten zien. Selecteer wat u wilt laten zien in de lijnen en de kolommen, en de berekeningsmethode. Er zijn twee verschillende waarden voor de modus:</para>
+	    <variablelist>
+	      <varlistentry>
+		<term
+>Totaal aantal transacties</term>
+		<listitem>
+		  <para
+>In this mode, zal voor elke maand het totale aantal transacties worden berekend. Als u in de regel "categorie", en in de kolom "maand" selecteert, dan zal voor elke categorie en voor elke maand het totaal aantal transacties worden berekent.</para>
+		</listitem>
+	      </varlistentry>
+	      <varlistentry>
+		<term
+>Opgeteld totaal van transacties</term>
+		<listitem>
+		  <para
+>Als we ons vorige voorbeeld opnieuw gebruiken (in de regel "categorie", inde kolom "maand"), dan hebben we hier de opgeteld totaal, &ie; voor elke maand, dan zal voor elke categorie het totaal aantal transacties van de afgelopen maanden tot aan deze maand worden berekent.</para>
+		  <para
+>Als praktisch voorbeeld, de auteur gebruikt deze modus om de ontwikkeling van de balans van zijn rekening te tonen door voor de regel"Rekeningen" en voor de kolommen "Maand" in te stellen.</para>
+		</listitem>
+	      </varlistentry>
+	      <varlistentry>
+		<term
+>Grondtal 100</term>
+		<listitem>
+		  <para
+>Zoals "Som van aantal transacties" op basis van 100.</para>
+		</listitem>
+	      </varlistentry>
+	      <varlistentry>
+		<term
+>Samengevat totaal met grondtal 100</term>
+		<listitem>
+		  <para
+>Hetzelfde als "Opgeteld totaal van transacties" maar met het grondtal 100.</para>
+		</listitem>
+	      </varlistentry>
+	      <varlistentry>
+		<term
+>Percentage kolommen</term>
+		<listitem>
+		  <para
+>De waarden worden uitgedrukt als percentage van de hoogste kolomwaarde.</para>
+		</listitem>
+	      </varlistentry>
+	      <varlistentry>
+		<term
+>Absoluut percentage kolommen</term>
+		<listitem>
+		  <para
+>De waarden worden uitgedrukt als absoluut percentage van de hoogste kolomwaarde.</para>
+		</listitem>
+	      </varlistentry>
+	      <varlistentry>
+		<term
+>Percentage regels</term>
+		<listitem>
+		  <para
+>De waarden worden uitgedrukt als percentage van de hoogste regelwaarde.</para>
+		</listitem>
+	      </varlistentry>
+	      <varlistentry>
+		<term
+>Absoluut percentage regels</term>
+		<listitem>
+		  <para
+>De waarden worden uitgedrukt als absoluut percentage van de hoogste regelwaarde.</para>
+		</listitem>
+	      </varlistentry>
+	      <varlistentry>
+		<term
+>Tel aantal transacties</term>
+		<listitem>
+		  <para
+>.</para>
+		</listitem>
+	      </varlistentry
+>		      
+	    </variablelist>
+	    
+	    <para
+>Bij regels en kolommen is het mogelijk om de gepresenteerde dataniveau uit te breiden met de <guibutton
+>plus</guibutton
+>-pictogram <inlinemediaobject
+><imageobject
+><imagedata fileref="plus.png"/></imageobject
+></inlinemediaobject
+> rechts van het veld. Gebruik deze om de subcategorieën in het rapport te tonen.</para>
+	  </sect3>
+	  
+	  <sect3 id="report_dates">
+	    <title
+>Datums</title>
+	    <para
+>Gebruik dit om de datumreeks in te stellen voor uw rapport. U kunt meerdere manieren gebruiken om de datumreeks in te stellen, zodat u elke gewenste datumreeks mogelijk is.</para>
+	  </sect3>
+	  
+	  <sect3 id="report_transaction_types">
+	    <title
+>Typen transactie</title>
+	    <para
+>Selecteer het type transacties die u in uw rapport wilt opnemen. Bijvoorbeeld, als u een grafiek wilt tonen die uw uitgaven per categorie toont, dan wilt u waarschijnlijk niet uw "Inkomsten" in uw rapport laten zien.</para>
+	  </sect3>
+	  
+	  <sect3 id="report_other_filters">
+	    <title
+>Andere filters</title>
+	    <para
+>In deze sectie kunt u andere filters selecteren die in andere pagina's zijn gedefinieerd. Als u alleen een rapport voor de categorieën "Voedsel" en "Cadeau" wilt, dan hoeft u alleen de pagina over <link linkend="categories"
+>categorieën</link
+> te openen, de 2 categorieën te selecteren en terug te gaan naar het rapport om daar het corresponderende filter te openen.</para>
+	  </sect3
+>	  
+	  
+	</sect2>
+	
+	<sect2 id="graph_types">
+	  <title
+>Grafiek typen</title>
+	  
+	  <para
+>Als u alles naar wens heeft ingesteld, dan zou u via de keuzelijst onder de grafiek het uiterlijk van de grafiek moeten instellen. Om beter de verschillen tussen de types te begrijpen, gaan we daarom een rapport maken die de uitgaven per categorie (regels) en per maand (kolommen) laat zien:</para>
+	  
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject>
+		<imagedata fileref="report_table.png"/>
+	      </imageobject>
+	    </mediaobject>
+	  </screenshot>
+	  
+	  <sect3 id="stack">
+	    <title
+>Stapel</title>
+	    <para
+>Een balk per lijn, gestapelde kolommen</para>
+	    
+	    <screenshot>
+	      <mediaobject>
+		<imageobject>
+		  <imagedata fileref="stack.png"/>
+		</imageobject>
+	      </mediaobject>
+	    </screenshot>
+	    
+	    <para
+>De tweede balk (geel gekleurd) toont de categorie "Security", alle maanden bij elkaar opgeteld op.</para>
+	    
+	  </sect3>
+	  
+	  <sect3 id="histogram">
+	    <title
+>Histogram</title>
+	    <para
+>Bij elke kolom heeft elke regel zijn eigen balk.</para>
+	    
+	    <screenshot>
+	      <mediaobject>
+		<imageobject>
+		  <imagedata fileref="histogram.png"/>
+		</imageobject>
+	      </mediaobject>
+	    </screenshot>
+	    
+	  </sect3>
+	  
+	  
+	  <sect3 id="line">
+	    <title
+>Lijn</title>
+	    <screenshot>
+	      <mediaobject>
+		<imageobject>
+		  <imagedata fileref="line_graph.png"/>
+		</imageobject>
+	      </mediaobject>
+	    </screenshot>
+	  </sect3>
+	  
+	  <sect3 id="point">
+	    <title
+>Markeren</title>
+	    <screenshot>
+	      <mediaobject>
+		<imageobject>
+		  <imagedata fileref="point_report.png"/>
+		</imageobject>
+	      </mediaobject>
+	    </screenshot>
+	  </sect3>
+	  
+	  
+	  <sect3 id="pie">
+	    <title
+>Taartdiagram</title>
+	    <para
+>De klassieke taartdiagram. als de geselecteerde waarde voor kolom niet "niets" is, dan krijgt u een taartpunt per kolom te zien.</para>
+	    
+	    <screenshot>
+	      <mediaobject>
+		<imageobject>
+		  <imagedata fileref="pie.png"/>
+		</imageobject>
+	      </mediaobject>
+	    </screenshot>
+	    
+	    
+	  </sect3>
+	  
+	  <sect3 id="concentric_pie">
+	    <title
+>Cirkeldiagram</title>
+	    <para
+>Deze is een beetje lastig, en moet waarschijnlijk door ons bewerkt worden. De intentie is om voor elk dataniveau een ring te tonen.</para>
+	    
+	    <screenshot>
+	      <mediaobject>
+		<imageobject>
+		  <imagedata fileref="concentric_pie.png"/>
+		</imageobject>
+	      </mediaobject>
+	    </screenshot>
+	    
+	  </sect3>
+	  
+	</sect2>
+	
+	
+	<sect2 id="zoom_graph">
+	  <title
+>Op de grafiek inzoomen</title>
+	  <para
+>Bij &skrooge; is het mogelijk om op de grafiek in te zoomen om de kleine details te bestuderen. Gebruik daarvoor de schuifbalk boven de grafiek:</para>
+	  
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject>
+		<imagedata fileref="zoom_graph.png"/>
+	      </imageobject>
+	    </mediaobject>
+	  </screenshot>
+	  
+	  
+	</sect2>
+	
+	<sect2 id="report_examples">
+	  <title
+>Voorbeeld rapporten</title>
+	  <para
+>Hier zijn enkele schermafdrukken met klassieke rapport configuraties. U kunt deze als inspiratie gebruiken voor uw eigen rapporten.</para>
+	  
+	  <sect3 id="income_expense">
+	    <title
+>Inkomsten en Uitgaven</title>
+	    <para
+>Voor elke maand een vergelijking van de totale bedrag aan inkomsten met de totale bedrag aan uitgaven. Inkomsten zijn blauw, uitgaven zijn geel.</para>
+	    <screenshot>
+	      <mediaobject>
+		<imageobject>
+		  <imagedata fileref="incomes_expenses.png"/>
+		</imageobject>
+	      </mediaobject>
+	    </screenshot>
+	  </sect3>
+	  
+	  <sect3 id="balance_evolution">
+	    <title
+>Balans ontwikkeling</title>
+	    <para
+>Toont de ontwikkeling van de balans op een maandelijkse basis.</para>
+	    <screenshot>
+	      <mediaobject>
+		<imageobject>
+		  <imagedata fileref="balance_evolution.png"/>
+		</imageobject>
+	      </mediaobject>
+	    </screenshot>
+	  </sect3>
+	  
+	  <sect3 id="category_distribution">
+	    <title
+>Inkomsten en Uitgaven</title>
+	    <para
+>Toont de verdeling van de uitgaven per categorie voor de vorige maand.</para>
+	    <screenshot>
+	      <mediaobject>
+		<imageobject>
+		  <imagedata fileref="category_distribution.png"/>
+		</imageobject>
+	      </mediaobject>
+	    </screenshot>
+	  </sect3>
+	  
+	  
+	</sect2>
+	
+	<sect2 id="going_deeper">
+	  <title
+>Uitgebreidere analyse</title>
+	  <para
+>Door te dubbelklikken op een item van de grafiek, opent u de transacties die bij dit item horen.</para>
+	  <para
+>U kunt ook een nieuw rapport gebaseerd op een item van de grafiek openen.</para>
+	  <para
+>Nu kunt u een uitgebreidere analyse maken van uw financiën dankzij de rapporten. Maar hoe uitgebreid is uitgebreid? Wel, dat is uitgebreider dan u dacht… Als u geïnteresseerd bent, lees dan de <link linkend="holidays_expenses_analysis"
+>Praktische oefening</link
+> die de uitgaven van de auteur tijdens zijn vakantie analyseert :)</para>
+	</sect2>
+	
+	
+      </sect1>
+      
+      <sect1 id="monthly_report">
+	<title
+>Maandelijks rapport</title>
+	
+	<para
+>Deze plugin geeft een overzicht van uw financiële situatie over een gekozen periode.</para>
+	
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject>
+		<imagedata fileref="monthly.png"/>
+	      </imageobject>
+	    </mediaobject>
+	  </screenshot
+>	
+	  
+	  <para
+>U kunt elk gewenst sjabloon kiezen. U kunt zelfs uw eigen sjabloon creëren door de naam van de sjabloon op te geven die u wilt creëren. Uw standaard tekstverwerker zal worden opgestart met een voorbeeld voor uw sjabloon. U hoeft alleen maar de commentaren in dit voorbeeld te volgen.</para>
+	  <para
+>Aarzel niet om uw sjablonen vrij te geven in de categorie <literal
+> &skrooge; report templates</literal
+> van de <ulink url="https://store.kde.org/browse/cat/338/"
+>KDE Store</ulink
+>.</para>
+      </sect1>
+      
+      <sect1 id="units">
+	<title
+>Eenheden</title>
+	<para
+>Een eenheid is iets waarin u een transactie in kunt uitdrukken. In de meeste gevallen is dit een valuta, maar het kan ook een aandeel zijn, of zelfs een auto of een huis. Een eenheid heeft in de loop van de tijd verschillende waarden, zijn waarde kunt u uitdrukken in een andere eenheid. Voorbeeld: het ACME aandeel is $ 31.2 waart op Januari 2009.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject>
+	      <imagedata fileref="units.png" format="PNG"/>
+	    </imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<sect2 id="edit_units">
+	  <title
+>Eenheden bewerken</title>
+	  <para
+>Eenheden kunt u op verschillende manieren bewerken:</para>
+	  <variablelist>
+	    <varlistentry>
+	      <term
+>Standaard</term>
+	      <listitem
+><para
+>In deze mode kunt u kiezen uit een aantal voorgedefinieerde eenheden welke u aan het huidige document wilt toevoegen.</para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Handmatig</term>
+	      <listitem
+><para
+>In deze mode kunt u uw eigen eenheid creëren. De parameters die u moet opgeven zijn:</para>
+		<itemizedlist>
+		  <listitem
+><para
+>Naam: de afgekorte naam van de eenheid.</para
+></listitem>
+		  <listitem
+><para
+>Symbool: het symbol voor de eenheid, in de meeste tabellen en keuzelijsten gebruikt.</para
+></listitem>
+		  <listitem
+><para
+>Type: zie <link linkend="unit_types"
+>Typen eenheden</link
+>.</para
+></listitem>
+		  <listitem
+><para
+>Referentie-eenheid: de (andere) eenheid gebruikt om de waarde van de (huidige) eenheid te berekenen. Bijvoorbeeld, als u aandelen EADS heeft, en u wilt de waarde daarvan in euros zien, dan moet u € als referentie-eenheid voor het aandeel EADS selecteren.</para
+></listitem>
+		  <listitem
+><para
+>Land</para
+></listitem>
+                  <listitem
+><para
+>Download bron: de bron waarvan u de koersen kunt downloaden. Wij raden "boursorama" aan. Door te klikken op de pijl rechts van het veld "Download" kunt u nieuwe bronnen vanuit <ulink url="https://store.kde.org/browse/cat/339/ord/latest/"
+>store.kde.org</ulink
+> downloaden.</para
+></listitem>
+		  <listitem
+><para
+>Internetcode: De Internetcode voor deze eenheid. Met deze code, is&skrooge; in staat om de waarden van een eenheid van de opgegeven bron te downloaden.</para
+></listitem>
+		</itemizedlist>
+	      </listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Waarden</term>
+	      <listitem
+><para
+>In deze bewerkingsmode kunt u waarden van een eenheid downloaden van het internet, of handmatig de waarden van een eenheid op een bepaalde datum invoeren.</para
+></listitem>
+	    </varlistentry>
+	  </variablelist>
+	</sect2>
+	
+	<sect2 id="unit_types">
+	  <title
+>Typen eenheden</title>
+	  <para
+>Hoewel &skrooge; bijna alles als een eenheid beschouwt, maakt het een onderscheid afhankelijk van het type eenheid:</para>
+	  
+	  <variablelist>
+	    <varlistentry>
+	      <term
+>Primaire valuta</term>
+	      <listitem
+><para
+>Dit is de valuta dat wordt gebruikt voor de weergave van de echte hoeveelheid in transacties.</para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Secundaire valuta</term>
+	      <listitem
+><para
+>Indien u een waarde heeft opgegeven, dan zal de secundaire valuta worden getoond als u met de muis boven een transactieshoeveelheid zweeft.</para>
+		
+		<screenshot>
+		  <mediaobject>
+		    <imageobject>
+		      <imagedata fileref="secondary_unit_display.png"/>
+		    </imageobject>
+		  </mediaobject>
+		</screenshot>
+		
+	      </listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Valuta</term>
+	      <listitem
+><para
+>Elke valuta, die niet specifiek voor de weergave is.</para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Aandeel</term>
+	      <listitem
+><para
+>Dit type eenheid kunt u gebruiken bij het beheren van aandelen.</para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Index</term>
+	      <listitem
+><para
+>Een aandelenindex, zoals de Dow Jones, NASDAQ, CAC40, SBF120…</para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Overig</term>
+	      <listitem
+><para
+>Alle andere eenheden die niet in bovengenoemde typen passen.</para
+></listitem>
+	    </varlistentry
+>    
+	  </variablelist
+>  
+	</sect2>
+      </sect1>
+    </chapter>
+    <chapter id="using-skrooge-advanced">
+      <title
+>&skrooge; gebruiken (geavanceerd)</title
+>     
+      
+      <sect1 id="scheduled">
+	<title
+>Gepland</title>
+	<para
+>Deze plugin toont een lijst met alle geplande transacties.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject>
+	      <imagedata fileref="scheduled.png" format="PNG"/>
+	    </imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Hier kunt u bij iedere geplande transactie zijn eigen parameters instellen.</para>
+	
+	<variablelist>
+	  <varlistentry>
+	    <term
+>Volgende keer</term>
+	    <listitem
+><para
+>Als informatie, maar u kunt het gebruiken om de datum van de volgende keer in te stellen.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Eenmaal iedere</term>
+	    <listitem
+><para
+>U kunt instellen dat een transactie gedurende een aantal dagen, maanden of jaren herhaald moet worden.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Aantal keren</term>
+	    <listitem
+><para
+>Als de gebeurtenis maar een beperkt aantal keren voorkomt, dan kunt u deze optie inschakelen en het aantal keren dat het nog gaat voorkomen instellen, of de datum van de laatste keer dat het voorkomt.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Stuur herinnering</term>
+	    <listitem
+><para
+>Als u wilt dat &skrooge; een herinnering toont om u aan de komende geplande transactie te herinneren, dan kunt u deze optie inschakelen en het aantal dagen instellen dat herinnering voor de gebeurtenis te zien is.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Automatisch schrijven</term>
+	    <listitem
+><para
+>Als u wilt dat &skrooge; automatisch de komende geplande transactie schrijft, dan kunt u deze optie inschakelen en het aantal dagen instellen voor de gebeurtenis wanneer het wordt geschreven.</para
+></listitem>
+	  </varlistentry>
+          <varlistentry>
+            <term
+>Sjabloon</term>
+            <listitem
+><para
+>U kunt een planning converteren naar sjabloon- of niet-sjabloonmodus. Dit zal een overeenkomstige sjabloonbewerking aanmaken/verwijderen.</para
+></listitem>
+          </varlistentry>
+	</variablelist>
+	<para
+>Als u de transactie wilt wijzigen (categorie, aantal, etc.), dan moet u klikken op <guilabel
+>Ga naar de transactie</guilabel
+>.</para>
+	
+	
+	<para
+>Als u dubbelklikt op een geplande transactie dan krijgt u in een nieuwe tabblad een lijst met transacties te zien die bij deze geplande transactie horen.</para>
+	
+	<sect2 id="scheduled_transactions">
+	  <title
+>Periodieke Transacties</title>
+	  
+	  <para
+>Als u een transactie plant, dan dient het als basis als u het nog een keer wilt laten voorkomen. Laten we een voorbeeld bekijken, met deze transactie:</para>
+	  
+	  <table>
+	    <title
+>Geplande transacties (stap 1)</title>
+	    <tgroup cols="4">
+	      <thead>
+		<row>
+		  <entry
+>Datum</entry>
+		  <entry
+>Begunstigde</entry>
+		  <entry
+>Categorie</entry>
+		  <entry
+>Hoeveelheid</entry>
+		</row>
+	      </thead>
+	      <tbody>
+		<row>
+		  <entry
+>20/06/2009</entry>
+		  <entry
+>&kde;</entry>
+		  <entry
+>Donaties &gt; Open Source</entry>
+		  <entry
+>20€</entry>
+		</row>
+	      </tbody>
+	    </tgroup>
+	  </table>
+	  
+	  <para
+>Als u deze transactie nog een keer plant, dan zal het de volgende keer exact op dezelfde manier worden geschreven:</para>
+	  
+	  <table>
+	    <title
+>Geplande transacties (stap 2)</title>
+	    <tgroup cols="4">
+	      <thead>
+		<row>
+		  <entry
+>Datum</entry>
+		  <entry
+>Begunstigde</entry>
+		  <entry
+>Categorie</entry>
+		  <entry
+>Hoeveelheid</entry>
+		</row>
+	      </thead>
+	      <tbody>
+		<row>
+		  <entry
+>20/06/2009</entry>
+		  <entry
+>&kde;</entry>
+		  <entry
+>Donaties &gt; Open Source</entry>
+		  <entry
+>20€</entry>
+		</row>
+		<row>
+		  <entry
+>20/07/2009</entry>
+		  <entry
+>&kde;</entry>
+		  <entry
+>Donaties &gt; Open Source</entry>
+		  <entry
+>20€</entry>
+		</row>
+	      </tbody>
+	    </tgroup>
+	  </table>
+	  
+	  <para
+>Als u iets wijzigt in de laatste keer dat de gebeurtenis voorkwam, dan wordt het de nieuwe basis voor de volgende keer dat de gebeurtenis voorkomt. Bijvoorbeeld, als u uw maandelijkse contributie aan &kde; in juli verhoogt naar € 25, dan zal de volgende keer het ook meteen een bedrag van € 25 zijn:</para>
+	  
+	  <table>
+	    <title
+>Geplande transacties (stap 3)</title>
+	    <tgroup cols="4">
+	      <thead>
+		<row>
+		  <entry
+>Datum</entry>
+		  <entry
+>Begunstigde</entry>
+		  <entry
+>Categorie</entry>
+		  <entry
+>Hoeveelheid</entry>
+		</row>
+	      </thead>
+	      <tbody>
+		<row>
+		  <entry
+>20/06/2009</entry>
+		  <entry
+>&kde;</entry>
+		  <entry
+>Donaties &gt; Open Source</entry>
+		  <entry
+>20€</entry>
+		</row>
+		<row>
+		  <entry
+>20/07/2009</entry>
+		  <entry
+>&kde;</entry>
+		  <entry
+>Donaties &gt; Open Source</entry>
+		  <entry
+>25€</entry>
+		</row>
+		<row>
+		  <entry
+>20/08/2009</entry>
+		  <entry
+>&kde;</entry>
+		  <entry
+>Donaties &gt; Open Source</entry>
+		  <entry
+>25€</entry>
+		</row>
+	      </tbody>
+	    </tgroup>
+	  </table>
+	  
+	  <para
+>Alles bij elkaar is een geplande transactie is een dynamisch object, waarbij de laatste gebeurtenis de basis is. Maar misschien wilt u dat alle gebeurtenissen statisch zijn, &ie; dat bij elke nieuwe gebeurtenis dezelfde waarden worden gebruikt ? In dat geval, kunt u beter <link linkend="scheduled_templates"
+>Geplande sjablonen</link
+> gebruiken.</para>
+	  
+	</sect2>
+	
+	
+	<sect2 id="scheduled_templates">
+	  <title
+>Geplande sjablonen</title>
+	  
+	  <para
+><link linkend="templates"
+>Sjablonen</link
+> zijn een soort standaard transacties. Als u een sjabloon plant, dan zal elke transactie precies gelijk zijn aan de sjabloon. Laten we ons voorbeeld uit het <link linkend="schedule_transaction"
+>vorige hoofdstuk</link
+> nog een keer gebruiken, door een sjabloon zoals deze te creëren:</para>
+	  
+	  <table>
+	    <title
+>Geplande sjablonen (stap 1)</title>
+	    <tgroup cols="4">
+	      <thead>
+		<row>
+		  <entry
+>Datum</entry>
+		  <entry
+>Begunstigde</entry>
+		  <entry
+>Categorie</entry>
+		  <entry
+>Hoeveelheid</entry>
+		</row>
+	      </thead>
+	      <tbody>
+		<row>
+		  <entry
+>20/06/2009</entry>
+		  <entry
+>&kde;</entry>
+		  <entry
+>Donaties &gt; Open Source</entry>
+		  <entry
+>20€</entry>
+		</row>
+	      </tbody>
+	    </tgroup>
+	  </table>
+	  
+	  <para
+>De volgende keer zal het zijn:</para>
+	  
+	  
+	  <table>
+	    <title
+>Geplande sjablonen (stap 2)</title>
+	    <tgroup cols="4">
+	      <thead>
+		<row>
+		  <entry
+>Datum</entry>
+		  <entry
+>Begunstigde</entry>
+		  <entry
+>Categorie</entry>
+		  <entry
+>Hoeveelheid</entry>
+		</row>
+	      </thead>
+	      <tbody>
+		<row>
+		  <entry
+>20/06/2009</entry>
+		  <entry
+>&kde;</entry>
+		  <entry
+>Donaties &gt; Open Source</entry>
+		  <entry
+>20€</entry>
+		</row>
+		<row>
+		  <entry
+>20/07/2009</entry>
+		  <entry
+>&kde;</entry>
+		  <entry
+>Donaties &gt; Open Source</entry>
+		  <entry
+>20€</entry>
+		</row>
+	      </tbody>
+	    </tgroup>
+	  </table>
+	  
+	  <para
+>Wijzig nu uw contributie voor juli voor &kde; naar 25€. Omdat u een sjabloon met 20€ als waarde heeft geplant, zal de volgende gebeurtenis ook een bedrag van 20€ hebben:</para>
+	  
+	  <table>
+	    <title
+>Geplande sjablonen (stap 3)</title>
+	    <tgroup cols="4">
+	      <thead>
+		<row>
+		  <entry
+>Datum</entry>
+		  <entry
+>Begunstigde</entry>
+		  <entry
+>Categorie</entry>
+		  <entry
+>Hoeveelheid</entry>
+		</row>
+	      </thead>
+	      <tbody>
+		<row>
+		  <entry
+>20/06/2009</entry>
+		  <entry
+>&kde;</entry>
+		  <entry
+>Donaties &gt; Open Source</entry>
+		  <entry
+>20€</entry>
+		</row>
+		<row>
+		  <entry
+>20/07/2009</entry>
+		  <entry
+>&kde;</entry>
+		  <entry
+>Donaties &gt; Open Source</entry>
+		  <entry
+>25€</entry>
+		</row>
+		<row>
+		  <entry
+>20/08/2009</entry>
+		  <entry
+>&kde;</entry>
+		  <entry
+>Donaties &gt; Open Source</entry>
+		  <entry
+>20€</entry>
+		</row>
+	      </tbody>
+	    </tgroup>
+	  </table>
+	  
+	  <para
+>Als het nodig is dat u de maandelijkse waarde wijzigt, bewerk dan gewoon het sjabloon, en alle toekomstige gebeurtenissen zullen de nieuwe waarde hebben.</para>
+	</sect2>
+	
+	<sect2 id="schedule_assign">
+	  <title
+>Planning toekennen</title>
+	  
+	  <para
+>Als u een transactie plant op basis van regelmatige herhaling, dan kunt u enige oude transacties aan deze planning koppelen met het contextmenu "Planning toekennen" van een transactie. Dit menu biedt ook het ontkoppelen van een transactie van een planning of het koppelen aan een andere.</para>
+	  
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject>
+	        <imagedata fileref="assign_schedule.png" format="PNG"/>
+	      </imageobject>
+	    </mediaobject>
+	  </screenshot>
+	</sect2>
+      </sect1>
+      
+      <sect1 id="trackers">
+	<title
+>Volgers</title>
+	<para
+>Met volgers kunt u enkele transacties in een groep verzamelen, zodat u ze nauwkeuriger kunt volgen. Dit kan handig zijn om de uitgaven te volgen waarvoor u een tegemoetkoming verwacht, of om eenvoudig te weten hoeveel u uitgaf tijdens uw laatste vakantie in Spanje.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject>
+	      <imagedata fileref="trackers.png" format="PNG"/>
+	    </imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Als voorbeeld, stelt u zich voor dat u door uw bedrijf naar Italië bent gestuurd. Daar eenmaal aangekomen, betaalt u voor uw hotelkamer: in &skrooge;, kunt u een transactie aanmaken in de categorie "Zakelijk &gt; Reizen &gt; Hotel", en een volger eraan koppelen genaamd "Zakenreis in Italië". U kunt aan deze volger alle zakelijke uitgaven die u daar maakte koppelen. En vervolgens, als alles goed gaat, zal uw bedrijf u voor al deze dingen een vergoeding geven, en kunt u een inkomsten-transactie creëren, en ook deze koppelen aan de "Zakenreis in Italië"-volger.</para>
+	<para
+>Dor volgers te gebruiken bij de transacties waarvoor een vergoeding komt, kunt u de voortgang van de vergoeding volgen.</para>
+	<para
+>Dit werkt natuurlijk ook de andere kant op: als iemand geld aan u heeft geleend, dan kunt u volgen hoeveel u nog moet terugbetalen.</para>
+	<para
+>Als u in de lijst met volgers dubbelklikt op een volger dan opent een nieuwe tabblad met alle transacties die aan deze volger zijn gekoppeld.</para>
+	
+	<tip
+><para
+>Soms, wilt u een vergoeding volgen voor een betaling die gedaan is voordat u &skrooge; ging gebruiken. Wat is de beste manier van doen, omdat het niet mogelijk is om een startbedrag op een volger te zetten?</para>
+
+	<para
+>U kunt een gesplitste transactie aanmaken met: <itemizedlist>
+	      <listitem
+><para
+>bedrag=0 om beïnvloeding van rapporten te vermijden.</para
+></listitem>
+	      <listitem
+><para
+>een splits met het verwachte bedrag gekoppeld aan de volger.</para
+></listitem>
+	      <listitem
+><para
+>een andere splits met het tegengestelde bedrag die niet gekoppeld is met een volger.</para
+></listitem>
+	    </itemizedlist
+>	  
+	</para
+></tip>
+	
+	<sect2 id="close_tracker">
+	  <title
+>Volger sluiten</title>
+	  
+	  <para
+>Wanneer u de volger niet langer nodig heeft, bijvoorbeeld omdat het volledig vergoed is, dan mag u het gewoon verwijderen. Maar als u dit doet, dan verwijdert u alle verzamelde informatie, wat u misschien niet wilt omdat die in de toekomst weer van nut kan zijn.</para>
+	  <para
+>Een betere oplossing is de volger sluiten: als een volger is gesloten, dan is het makkelijk om deze in het venster met volgers te verbergen door de betreffende instelling in te schakelen.</para>
+	</sect2>
+	
+      </sect1>
+      
+      <sect1 id="search_and_process">
+	<title
+>Zoeken &amp; verwerken</title>
+	
+	<para
+>Met deze plugin kunt u complexe zoekopdrachten maken om transacties te zoeken. U kunt ook desgewenst transformaties erop toepassen. Hier is een praktisch voorbeeld:</para>
+	
+	<blockquote
+><para
+>Jan download data van zijn bank. De data komt, natuurlijk, zonder indicatie over de categorie. In feite is alles in het commentaar-veld geschreven. Jan zou het prettig vinden als er een manier is om gebaseerd op de inhoud van het commentaar automatisch de categorie en andere eigenschappen correct in te stellen.</para
+></blockquote>
+
+	<para
+>Hoe werkt dit ? Eerst moet u de zoekcriteria definiëren, die u een lijst met transacties geeft. Daarna moet u de verwerkingen definiëren die u op deze transacties wilt toepassen.</para>
+	
+	<note
+><para
+>Een <link linkend="search_process_real_case"
+>praktisch voorbeeld</link
+> kunt u vinden in de appendix, waarmee u kunt oefenen voor het bovengenoemde geval.</para
+></note>
+	
+	<sect2 id="define_search_criteria">
+	  <title
+>Bepaal uw zoekcriteria</title>
+	  
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject>
+		<imagedata fileref="define_search.png" format="PNG"/>
+	      </imageobject>
+	    </mediaobject>
+	  </screenshot>
+	  
+	  <para
+>Hier kunt u de zoekopdracht definiëren voor het vinden van de transacties, met de hulp van een combinatie van parameters. In de bovenstaande afbeelding, kunt u een tabel zien met de eigenschappen van de transactie voor de header. Door een regel te bewerken, creëert u een nieuwe zoekterm in de zoekopdracht. Elke kolom combineert u met een andere kolom door een logische "en" :</para>
+	  <para
+>(column1 and column2)</para>
+	  <para
+>Als u een nieuwe regel toevoegt, dan creëert u een andere zoekterm die u combineert met de eerste regel door een logische "of":</para>
+	  <para
+>[line1] or [line2].</para>
+	  
+	  <para
+>Alles bij elkaar kunt u de combinatie van kolommen en regels als volgt lezen:</para>
+	  <para
+>(column1 and column3) or (column2 and column3)</para>
+	  
+	  <para
+>Natuurlijk kunt u in uw zoekopdracht net zo veel regels en kolommen maken als u nodig heeft.</para>
+	  
+	  <para
+>Als u tevreden bent met de zoekopdracht, dan kunt u het toevoegen aan de lijst met bestaande zoekopdrachten, of een bestaande zoekopdracht wijzigen.</para>
+	  
+	</sect2>
+	
+	
+	<sect2 id="view_search_result">
+	  <title
+>Zoekresultaten bekijken</title>
+	  
+	  <para
+>Bij het selecteren van een zoekopdracht in de lijst met zoekopdrachten, krijgt u het aantal gevonden transacties onderaan de tabel te zien:</para>
+	  
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject>
+		<imagedata fileref="preview_search_result.png" format="PNG"/>
+	      </imageobject>
+	    </mediaobject>
+	  </screenshot>
+	  
+	  
+	  <para
+>Als u dubbelklikt op een zoekopdracht in het venster met zoekopdrachten, dan krijgt u alle gevonden transacties in een nieuwe tabblad te zien:</para>
+	  
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject>
+		<imagedata fileref="search_result.png" format="PNG"/>
+	      </imageobject>
+	    </mediaobject>
+	  </screenshot>
+	  
+	</sect2>
+	
+	
+	<sect2 id="define_processing">
+	  <title
+>Verwerkingen definiëren</title>
+	  
+	  <para
+>Als u op alle gevonden transacties een verwerking moet toepassen, selecteer dan de betreffende zoekopdracht, en activeer het paneel voor de verwerking-definitie:</para>
+	  
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject>
+		<imagedata fileref="define_processing.png" format="PNG"/>
+	      </imageobject>
+	    </mediaobject>
+	  </screenshot>
+	  
+	  <para
+>In dit paneel, kunt u de verwerkingen definiëren die u op de transacties wilt toepassen. Merk op dat dat het expres onmogelijk is om in dit paneel het bedrag of de datum te wijzigen.</para>
+	  
+	</sect2>
+	
+	
+	<sect2 id="define_alarm">
+	  <title
+>Herinnering definiëren</title>
+	  <para
+>Een speciaal gebruik van de Zoeken &amp; verwerken plugin is de mogelijkheid om herinneringen te definiëren. Een herinnering is dat &skrooge; uw aandacht vraagt voor een bepaalt soort gebeurtenis, zoals het feit dat uw maandelijkse budget voor een categorie is opgebruikt.</para>
+	  
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject>
+		<imagedata fileref="alarm.png" format="PNG"/>
+	      </imageobject>
+	    </mediaobject>
+	  </screenshot>
+	  
+	  <para
+>Om een herinnering te definiëren, moet u eerst een zoekopdracht definiëren voor de transacties waarvoor u een herinnering wilt hebben. Bijvoorbeeld,  alle transacties in de huidige maand en in de categorie "Kleding". Definieer dan het bedrag waarvoor de herinnering moet komen, bijvoorbeeld € 100 en definieer tenslotte het bericht dat &skrooge; naar u moet versturen als het bedrag is bereikt.</para>
+	    <tip
+><para
+>Herinneringsberichten kunt parameters meegeven voor het totale bedrag (%1), aantal berichten (%2) en verschil (%3).</para
+></tip>
+	  
+	</sect2>
+	
+      </sect1>
+      
+      <sect1 id="budgets">
+	<title
+>Budgetten</title>
+	<para
+>Met dit plugin kunt u uw budget definiëren en beheren.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject>
+	      <imagedata fileref="budgets.png" format="PNG"/>
+	    </imageobject>
+	  </mediaobject>
+	</screenshot>
+	<para
+>Zoals in alle andere financiële software, kunt u in &skrooge; een budget definiëren. U kunt dit handmatig doen of automatisch laten doen.</para>
+	<sect2 id="budget_definition">
+	  <title
+>Budget definitie</title
+>	
+	  <para
+>In de handmatige mode, kunt u: <itemizedlist>
+	      <listitem
+><para
+>Definieer een budget voor een categorie per jaar.</para
+></listitem>
+	      <listitem
+><para
+>Definieer een budget voor een categorie voor alle maanden van een jaar.</para
+></listitem>
+	      <listitem
+><para
+>Definieer een budget voor een categorie voor een specifieke maand van een jaar.</para
+></listitem>
+	      <listitem
+><para
+>Bepaal of inkomsten dan wel uitgaven van de subcategorieën ook gelden bij het bepalen van het budget (voorbeeld: als u de optie inschakelt dan is een budget voor de categorie "Bestelwagen" ook geldig voor de subcategorie "Bestelwagen 
+> Brandstof").</para
+></listitem>
+	    </itemizedlist>
+	    <tip
+><para
+>U kunt een budget definiëren waarin alle inkomsten en uitgaven terechtkomen die niet in een ander budget zitten door de categorie leeg te laten. Dit is erg handig omdat u er dan zeker van bent dat u geen uitgave mist.</para
+></tip>
+	    </para>
+	    
+	  <para
+>In automatisch modus kunt u: <itemizedlist>
+	      <listitem
+><para
+>Voor een jaar een budget definiëren gebaseerd op de transactie en van het vorige jaar.</para
+></listitem>
+	      <listitem
+><para
+>Ontbrekende budget items definiëren om elke maand en/of jaar te balanceren (zelfs voor handmatig gedefinieerde budgetten).</para
+></listitem>
+	    </itemizedlist>
+	    </para>
+	</sect2>
+	
+	<sect2 id="budget_rules">
+	  <title
+>Budgetregels</title>
+	  <para
+>Om verder te gaan met budgetteren, nemen we als voorbeeld het volgende in balans zijnde budget: <itemizedlist>
+	      <listitem
+><para
+>-€ 500 per maand voor "Voedsel".</para
+></listitem>
+	      <listitem
+><para
+>+€ 500 per maand voor alle andere categorieën uitgaven en inkomsten.</para
+></listitem>
+	    </itemizedlist>
+	    </para>
+	    
+	    <para
+>Stelt u zich voor dat u tijdens de vorige maand € 600 voor "Voedsel" heeft uitgegeven! &skrooge; heeft u geïnformeerd dat u over het gedefinieerde budget bent heen gegaan maar u kunt niet stoppen met eten. U heeft dus meer uitgegeven dan verwacht! Hoe moeten we dat oplossen?</para>
+	    <para
+>Met Budgetregels is mogelijk om te definiëren wat u wilt doen met het verschil (positief of negatief). U kunt bijvoorbeeld ervoor kiezen om het verschil van een maand te transporteren naar de volgende maand. In dit geval zal dan uw nieuwe budget voor "Voedsel" voor de huidige maand zijn € -400 (-500+100). U heeft dus actie ondernomen om de situatie weer onder controle te krijgen.</para
+>	  
+	    <para
+>Budgetregels kunnen u ook bij een project helpen. U kunt bijvoorbeeld een regel zoals deze definiëren: Alle positieve verschil (besparingen) op "Voedsel" worden getransporteerd naar "Vakantie". Als u op deze manier het verwachte bedrag voor het "Vakantie"-budget bij elkaar heeft gespaard dan kunt u gaan.</para
+>	    
+	</sect2>
+      </sect1>
+      
+      <sect1 id="simulations">
+	<title
+>Simulaties</title>
+	<para
+>Met deze plug-in kunt u simulaties doen</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject>
+	      <imagedata fileref="simulations.png" format="PNG"/>
+	    </imageobject>
+	  </mediaobject>
+	</screenshot>
+	<para
+>U kunt voor elke rekening de rentepercentage instellen en berekenen hoeveel de jaarlijkse renteresultaat is. U kunt ook een aflossingstabel genereren.</para>
+      </sect1>
+      
+    </chapter>
+
+    <chapter id="settings">
+        <title
+>Instellingen</title>
+        <para
+>U kunt hier een beschrijving vinden van alle door &skrooge; gebruikte instellingen. Deze instellingen zijn gemeenschappelijk met al uw documenten.</para>
+        
+        <sect1 id="settings_general">
+        <title
+>Algemeen</title>
+        
+        <screenshot>
+            <mediaobject>
+            <imageobject>
+                <imagedata fileref="settings_general.png" format="PNG"/>
+            </imageobject>
+            </mediaobject>
+        </screenshot>
+        <para
+>U kunt hier de algemene hoofdinstellingen zetten. De belangrijksten zijn diegenen die beschrijven wat te doen wanneer een pagina of bladwijzer wordt gewijzigd.</para>
+        </sect1>
+        
+        <sect1 id="settings_file">
+        <title
+>Bestand</title>
+        
+        <screenshot>
+            <mediaobject>
+            <imageobject>
+                <imagedata fileref="settings_file.png" format="PNG"/>
+            </imageobject>
+            </mediaobject>
+        </screenshot>
+        <para
+>Al deze instellingen hebben betrekking op de opslag. U kunt kiezen hoe reservekopiebestanden aan te maken, als u de &kde; portefeuille wilt gebruiken om wachtwoorden op te slaan, etc.</para>
+        </sect1>
+
+        <sect1 id="settings_bookmarks">
+        <title
+>Bladwijzers</title>
+        
+        <screenshot>
+            <mediaobject>
+            <imageobject>
+                <imagedata fileref="settings_bookmarks.png" format="PNG"/>
+            </imageobject>
+            </mediaobject>
+        </screenshot>
+        <para
+>Slechts een optie hier om te kiezen of we wel of niet we automatisch geladen bladwijzers vast willen zetten.</para>
+        </sect1>
+
+        <sect1 id="settings_history">
+        <title
+>Geschiedenis</title>
+        
+        <screenshot>
+            <mediaobject>
+            <imageobject>
+                <imagedata fileref="settings_history.png" format="PNG"/>
+            </imageobject>
+            </mediaobject>
+        </screenshot>
+        <para
+>Deze opties zullen u helpen om beter uw geschiedenis van wijzigingen te beheren.</para>
+        </sect1>
+
+        <sect1 id="settings_transactions">
+        <title
+>Transacties</title>
+        
+        <screenshot>
+            <mediaobject>
+            <imageobject>
+                <imagedata fileref="settings_transactions.png" format="PNG"/>
+            </imageobject>
+            </mediaobject>
+        </screenshot>
+        <para
+>Hier vindt u opties voor bewerken van acties.</para>
+        <para
+>Merk op dat u prestaties kunt verbeteren als u de kolom "saldo" niet gebruikt door berekeningen zonder redenen te vermijden.</para>
+        <para
+>Wat te doen als een actie een transactie-controle breekt: er wordt gecontroleerd na elke wijziging of de wijziging de vorige transactie-controle breekt. Hier kunt u kiezen wat te doen als di gebeurt.</para
+>     
+        <para
+>Wat te doen als een actie een import breekt: Er wordt gecontroleerd na elke wijziging of de wijziging de vorige import breekt. Hier kunt u kiezen wat te doen als dat gebeurt.</para
+>          
+        </sect1>
+
+        <sect1 id="settings_scheduled">
+        <title
+>Periodieke transacties</title>
+        
+        <screenshot>
+            <mediaobject>
+            <imageobject>
+                <imagedata fileref="settings_scheduled.png" format="PNG"/>
+            </imageobject>
+            </mediaobject>
+        </screenshot>
+        <para
+>Hier vindt u opties voor bewerken van geplande acties.</para>
+        <para
+>Als u de optie sjabloon aanmaken omschakelt zal een extra optie verschijnen die u biedt om alle bestaande geplande bewerkingen te converteren.</para>
+        <screenshot>
+            <mediaobject>
+            <imageobject>
+                <imagedata fileref="settings_scheduled_convert.png" format="PNG"/>
+            </imageobject>
+            </mediaobject>
+        </screenshot>
+        </sect1>
+
+        <sect1 id="settings_search">
+        <title
+>Zoeken en verwerken</title>
+        
+        <screenshot>
+            <mediaobject>
+            <imageobject>
+                <imagedata fileref="settings_search.png" format="PNG"/>
+            </imageobject>
+            </mediaobject>
+        </screenshot>
+        <para
+>Slechts een optie hier om de frequentie van alarmen te kiezen.</para>
+        </sect1
+>     
+        
+        <sect1 id="settings_report">
+        <title
+>Rapporten</title>
+        
+        <screenshot>
+            <mediaobject>
+            <imageobject>
+                <imagedata fileref="settings_report.png" format="PNG"/>
+            </imageobject>
+            </mediaobject>
+        </screenshot>
+        <para
+>U kunt enige opties voor het tonen van rapporten hier kiezen.</para>
+        </sect1
+>   
+        
+        <sect1 id="settings_units">
+        <title
+>Eenheden</title>
+        
+        <screenshot>
+            <mediaobject>
+            <imageobject>
+                <imagedata fileref="settings_units.png" format="PNG"/>
+            </imageobject>
+            </mediaobject>
+        </screenshot>
+        <para
+>U kunt hier enige opties kiezen met betrekking tot het downloaden van koerseenheden.</para>
+        </sect1
+>   
+
+        <sect1 id="settings_import">
+        <title
+>Importeren / exporteren</title>
+        
+        <screenshot>
+            <mediaobject>
+            <imageobject>
+                <imagedata fileref="settings_import_1.png" format="PNG"/>
+            </imageobject>
+            </mediaobject>
+        </screenshot>
+        <para
+>De algemene importinstellingen.</para>
+        
+        <screenshot>
+            <mediaobject>
+            <imageobject>
+                <imagedata fileref="settings_import_2.png" format="PNG"/>
+            </imageobject>
+            </mediaobject>
+        </screenshot>
+        <para
+>Als u importeren met CSV gebruikt, zult u deze instellingen moeten wijzigen om &skrooge; te helpen de kolommen te identificeren.</para>
+        
+        <screenshot>
+            <mediaobject>
+            <imageobject>
+                <imagedata fileref="settings_import_3.png" format="PNG"/>
+            </imageobject>
+            </mediaobject>
+        </screenshot>
+        <para
+>In sommige specifieke gevallen zou u de datumopmaak moeten dwingen naar die van QIF-bestanden. Meestal is &skrooge; in staat het automatisch te vinden.</para>
+        
+        <screenshot>
+            <mediaobject>
+            <imageobject>
+                <imagedata fileref="settings_import_4.png" format="PNG"/>
+            </imageobject>
+            </mediaobject>
+        </screenshot>
+        <para
+>U kunt de backends voor importeren uit de lijst hier activeren.</para
+>        
+        </sect1
+>                
+    </chapter
+>    
+    
+    <chapter id="howto">
+      <title
+>Hoe…</title>
+	<qandaset id="faqlist">
+	<qandaentry>
+	<question id="howto_language">
+	<para
+>Hoe &skrooge; in mijn taal te gebruiken?</para>
+	</question>
+	<answer>
+	<para
+>Controleer of &skrooge; goed is <ulink url="http://l10n.kde.org/stats/gui/trunk-kf5/po/skrooge.po/"
+>vertaald naar uw taal</ulink
+> en of u alle pakketten van uw distributie voor &skrooge; heeft geïnstalleerd.</para>
+	</answer>
+	</qandaentry>
+
+	<qandaentry>
+	<question id="howto_currency">
+	<para
+>Hoe de standaard valuta en datumopmaak in te stellen?</para>
+	</question>
+	<answer>
+	<para
+>De standaard valuta en datumopmaak komen van &plasma;'s &systemsettings;. Sommige distributies leveren deze niet mee met &skrooge;. In een dergelijke geval moet u het zelf installeren via de pakketbeheerder van uw distributie.</para>
+
+	<para
+>Daarna kunt u het op de commandoregel opstarten: <userinput
+>systemsettings5</userinput
+></para>
+
+	<para
+>En selecteer uw voorkeur in de sectie <guilabel
+>Formaten</guilabel
+> .</para>
+	</answer>
+	</qandaentry>
+
+	<qandaentry>
+	<question id="howto_size">
+	<para
+>Hoe kan ik de grootte van mijn document verkleinen?</para>
+	</question>
+	<answer>
+	<para
+>De grootte van uw document kan zeer belangrijk zijn. Als u zeer oude overboekingen verwijderd, dan zal het groter worden. Dit is normaal omdat &skrooge; de geschiedenis van alle wijzigingen bewaart voor het ongedaan/ opnieuw uitvoeren mechanisme. Als u dus de grootte van uw document wilt verminderen, dan moet u de geschiedenis wissen.</para>
+	</answer>
+	</qandaentry>
+
+	<qandaentry>
+	<question id="howto_extractor">
+	<para
+>Hoe definieert u een nieuwe rekening extraheerder?</para>
+	</question>
+	<answer>
+	<para
+>&skrooge; gebruikt pdftotext om alle tekenreeksen uit een &PDF; te extraheren. Daarna gebruikt het een tekstbestand met daarin beschrijvingen over de key values. Als u een nieuwe rekening extraheerder wilt definiëren, dan moet u het volgende uitvoeren:</para>
+	<itemizedlist>
+	<listitem
+><para
+>Start <command
+>pdftotext</command
+> met uw &PDF;-bestand</para
+></listitem>
+	<listitem
+><para
+>Open het gegenereerde tekstbestand en het bijbehorende &PDF;-bestand.</para
+></listitem>
+	<listitem
+><para
+>Creëer een nieuw tekstbestand met de extensie <filename class="extension"
+>.extractor</filename
+>. Bijvoorbeeld: <filename
+>google.extractor</filename
+></para
+></listitem>
+	<listitem
+><para
+>In uw bestand moet het volgende staan:</para>
+	<programlisting
+>payee=REGEXPCAP:^(Biofan) SPRL$
+        date=REGEXPCAP:^Order Date: (.*)$
+        dateformat=dd MMM yyyy
+        number=REGEXPCAP:^N° de facture (.*)$
+        mode=SET:Carte
+        comment=REGEXPCAP:^N° de commande (.*)$|SET:Commande %1
+        amount=REGEXP:^Montant global:$|LINEOFFSET:2
+        </programlisting>
+	<para
+>Elke eigenschap (begunstigde, datum, nummer, mode, commentaar en bedrag) gebruikt dezelfde syntax: COMMAND:value|COMMAND:value|…</para>
+	<para
+>Het commando kan zijn:</para>
+	<itemizedlist>
+	<listitem
+><para
+><command
+>REGEXPCAP</command
+>: Dit is een reguliere expressie die een waarde verzamelt.</para
+></listitem>
+	<listitem
+><para
+><command
+>REGEXP</command
+>: Om in het bestand de regel te vinden die overeenkomt met de reguliere expressie.</para
+></listitem>
+	<listitem
+><para
+><command
+>LINEOFFSET</command
+>: Om de regel index te wijzigen.</para
+></listitem>
+	<listitem
+><para
+><command
+>SET</command
+>: Om de waarde te forceren. Is te gebruiken als eerste commando of na de REGEXPCAP (zie voorbeeld).</para
+></listitem>
+	</itemizedlist>
+	<para
+>dateformat is de opmaak van de geëxtraheerde datum.</para>
+	</listitem>
+	<listitem
+><para
+>Plaats dit bestand in dezelfde map als alle andere <filename class="extension"
+>.extractor</filename
+>-bestanden</para
+></listitem>
+	</itemizedlist>
+	</answer>
+	</qandaentry>
+	</qandaset>
+
+    </chapter
+>    
+    
+    <chapter id="credits">
+      <title
+>Dankbetuigingen en licentie</title>
+      <para
+>&skrooge; </para>
+      <para
+>Programma copyright 2008-2020 Stéphane Mankowski <email
+>stephane@mankowski.fr</email
+> </para>
+      <para
+>Documentatie copyright 2008-2020 Guillaume DE BURE <email
+>gdebure@yahoo.com</email
+> </para>
+      &meld.fouten;&vertaling.freek; &underFDL; &underGPL; </chapter
+>    
+    
+    <appendix id="search_process_real_case">
+      <title
+>Zoek &amp; verwerk echt studievoorbeeld</title>
+      
+      <para
+>OK, we moeten toegeven dat ondanks dat het erg krachtig is, de <link linkend="search_and_process"
+>Zoek &amp; Verwerk</link
+> plugin misschien een beetje moeilijk te begrijpen is. Hier is een kleine oefening die u helpt met het te begrijpen. Herinnert u zich het praktische voorbeeld voor Zoek &amp; Verwerken nog ?</para>
+      
+      <blockquote
+><para
+>Jan download data van zijn bank. De data komt, natuurlijk, zonder indicatie over de categorie. In feite is alles in het commentaar-veld geschreven. Jan zou het prettig vinden als er een manier is om gebaseerd op de inhoud van het commentaar automatisch de categorie en andere eigenschappen correct in te stellen.</para
+></blockquote>
+      
+      
+      <para
+>Jan weet dat zijn bank de naam van de begunstigde in het commentaarveld plaatst en hij wil dat al zijn betalingen aan &kde; terechtkomen in de categorie Donaties &amp; Open Source. We gaan daarom zoeken naar alle transacties waar in het commentaarveld &kde; aanwezig is:</para>
+      
+      <table>
+	<title
+>Zoekdefinitie</title>
+	<tgroup cols="1">
+	  <thead>
+	    <row>
+	      <entry
+>Toelichting</entry>
+	    </row>
+	  </thead>
+	  <tbody>
+	    <row>
+	      <entry
+>bevat '&kde;'</entry>
+	    </row>
+	  </tbody>
+	</tgroup>
+      </table>
+      
+      <para
+>Deze zoekdefinitie aan de lijst met bestaande zoekopdrachten toevoegen met de knop <guibutton
+>Toevoegen</guibutton
+>.</para>
+      
+      <para
+>Nu moeten we aan &skrooge; de opdracht geven om alle met deze zoekopdracht gevonden transacties in de categorie Donaties &gt; Open Source te plaatsen. Wijzig het type zoekopdracht naar Update met de keuzelijst, en definieer de toe te passen verwerking:</para>
+      
+      <table>
+	<title
+>Definitie bijwerken</title>
+	<tgroup cols="2">
+	  <thead>
+	    <row>
+	      <entry
+>Toelichting</entry>
+	      <entry
+>Categorie</entry>
+	    </row>
+	  </thead>
+	  <tbody>
+	    <row>
+	      <entry
+>=''</entry>
+	      <entry
+>='Donaties &gt; Open Source'</entry>
+	    </row>
+	  </tbody>
+	</tgroup>
+      </table>
+      
+      <tip
+><para
+>Merk op dat we ook het originele commentaar hebben verwijderd door het te vervangen met een lege tekenreeks. Dit hebben we voor de leesbaarheid gedaan, maar u wilt het misschien voor historische redenen houden.</para
+></tip>
+      
+      <para
+>Voeg dit proces toe aan de eerder gedefinieerde zoekopdracht met de knop <guibutton
+>Toevoegen</guibutton
+>.</para>
+      
+      <para
+>Zo ver, zo goed. We gaan nu het proces toepassen op alle geïmporteerde transacties die nog niet gevalideerd zijn (klik op de knop <guibutton
+>Toepassen</guibutton
+>):</para>
+      
+      <screenshot>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="apply_process.png" format="PNG"/>
+	  </imageobject>
+	</mediaobject>
+      </screenshot>
+      
+      <para
+>Dat is alles! Als u terug gaat naar de lijst met transacties, dan kunt u zien dat alle betreffende transacties zijn bijgewerkt. In het geval dat iets fout is gegaan, vergeet dan niet dat <link linkend="undo_redo"
+>Ongedaan maken</link
+> uw vriend is! Zelfs als er 2327 transacties zijn gewijzigd, dan is dit nog steeds een actie die u in &skrooge; ongedaan kunt maken.</para>
+      
+    </appendix>
+    
+    <appendix id="holidays_expenses_analysis">
+      <title
+>Oefening voor uitgebreidere analyses: Vakantie uitgaven</title>
+      <para
+>Om de analyse-mogelijkheden van &skrooge; te illustreren, gaan we de uitgaven van de auteur tijdens zijn vakanties analyseren :).</para>
+      
+      <sect1 id="analysis_context">
+	<title
+>Content van de analyse</title>
+	<para
+>Om de oefening te kunnen begrijpen, moet u een paar dingen weten over deze vakanties. Ze duurden bijna een volledige maand tijdens de zomer van 2009, en er werden meerdere kamers op verschillende locaties in Frankrijk gehuurd. Er was ook een flinke hoeveelheid brandstof gebruikt, omdat deze vakanties zich in een groot gedeelte van Frankrijk afspeelde.</para>
+      </sect1>
+      
+      <sect1 id="analysis_data_organisation">
+	<title
+>Organisatie van de data</title>
+	<para
+>De auteur voerde nauwkeurig zijn transacties in, deelde ze in categorieën in, maar voegde ze ook toe aan de "Holidays, summer 2009"-<link linkend="trackers"
+>volger</link
+>. Categorieën hebben vaak subcategorieën, zoals "Transport 
+> Auto 
+> Brandstof", voor een gedetailleerde analyse.</para>
+      <screenshot>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="analysis_transactions_view.png" format="PNG"/>
+	  </imageobject>
+	</mediaobject>
+      </screenshot>
+    </sect1>
+    
+    <sect1 id="analysis_total_cost">
+      <title
+>De totale vakantie-kosten vinden</title>
+      <para
+>Dit is zo makkelijk, dat het zelfs niet leuk is: open het venster voor volgen, kijk in de kolom "Waarde" van onze volger:</para>
+      <screenshot>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="analysis_trackers_view.png" format="PNG"/>
+	  </imageobject>
+	</mediaobject>
+      </screenshot>
+      <para
+>Laten we naar interessantere dingen gaan…</para>
+    </sect1>
+    
+    <sect1 id="analysis_expenses_distribution">
+      <title
+>Indeling van uitgaven</title>
+      <para
+>Dit is allemaal best, maar waar ging dat geld allemaal naar toe ? Om dit uit te vinden, gaan we een rapport van de tracker maken. Klik met de &RMB; op de volger-regel en selecteer <guimenuitem
+>Rapport openen…</guimenuitem
+>.</para>
+      <screenshot>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="analysis_build_report.png" format="PNG"/>
+	  </imageobject>
+	</mediaobject>
+      </screenshot>
+      
+      
+      <para
+>Dit opent een rapport in een nieuwe tabblad, met alleen de transacties die bij deze volger horen. De standaardindeling voor de datum is "Huidige maand", het kan daarom zijn dat het rapport leeg is als alle transacties daarvoor zijn gemaakt. Laten we het daarom veranderen naar "Alle datums":</para>
+      <screenshot>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="analysis_report_1.png" format="PNG"/>
+	  </imageobject>
+	</mediaobject>
+      </screenshot>
+      <para
+>Dit geeft een goed overzicht van de uitgaven per categorie. Laten we dit in een taartdiagram tonen, voor een meer natuurlijker presentatie:</para>
+      
+      <screenshot>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="analysis_report_2.png" format="PNG"/>
+	  </imageobject>
+	</mediaobject>
+      </screenshot>
+      
+      
+      <para
+>Het is nu vrij duidelijk dat de meest uitgaven tijdens de vakantie voor transport en voedsel waren. Meer informatie ? Natuurlijk, laten we een niveau dieper in de categorieën gaan, door de <guibutton
+>plus</guibutton
+> pictogram <inlinemediaobject
+><imageobject
+><imagedata fileref="category_one_level_more.png"/></imageobject
+></inlinemediaobject
+> te gebruiken.</para>
+      <screenshot>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="analysis_report_3.png" format="PNG"/>
+	  </imageobject>
+	</mediaobject>
+      </screenshot>
+      
+      <para
+>Hmm, niet veel meer informatie hier, behalve dat er in de categorie "Transport", alleen de subcategorie "Auto" is gebruikt. Laten we een grafiek van deze subcategorie maken, door de taartpunt te selecteren, en met de &RMB; erop te klikken, en daarna <guimenuitem
+>Rapport openen</guimenuitem
+> te selecteren:</para>
+      <screenshot>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="analysis_build_transport_report.png" format="PNG"/>
+	  </imageobject>
+	</mediaobject>
+      </screenshot>
+      
+      <para
+>Dit opent een andere tabblad met daarin een rapport over alleen de subcategorie "Transport 
+> Auto".</para>
+      <screenshot>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="analysis_report_4.png" format="PNG"/>
+	  </imageobject>
+	</mediaobject>
+      </screenshot>
+      <para
+>Hmm, niet echt interessant… Maar er zijn meer subcategorieën. Laten we het nog een keer uitleggen:</para>
+      <screenshot>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="analysis_report_5.png" format="PNG"/>
+	  </imageobject>
+	</mediaobject>
+      </screenshot>
+      <para
+>Ah, nu weten we dat we 362.27€ aan brandstof en 131.90€ aan tol (in Frankrijk, moet je betalen om op sommige snelwegen te mogen rijden). Ok, Ik weet dat we dit konden verwachten ;-). Ik wil ook weten hoe deze twee categorieën in de tijd zijn gebruikt:</para>
+      <screenshot>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="analysis_report_6.png" format="PNG"/>
+	  </imageobject>
+	</mediaobject>
+      </screenshot>
+      <para
+>Merk op dat we het grafiek-type hebben verandert naar "Lijn", en de kolommen naar "Week".</para>
+      
+    </sect1>
+    
+    <sect1 id="analysis_conclusion">
+      <title
+>Conclusie</title>
+      <para
+>Al hoe wel dit een eenvoudige oefening was, hebben we de mogelijkheden voor uitgebreidere rapportage van &skrooge; kunnen gebruiken om een uitgebreidere analyse te maken van de uitgaven tijdens de vakantie, specifiek van de  categorie "Transports". U kunt natuurlijk denken aan andere toepassingen: &skrooge; is waarschijnlijk in staat om daarmee om te gaan.</para>
+    </sect1>
+    
+  </appendix>
+  
+  &documentation.index;
+  
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->

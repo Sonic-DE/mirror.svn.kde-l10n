@@ -1,0 +1,1164 @@
+# Spanish translations for tellico_hacking.po package.
+# Copyright (C) 2009-2026 This file is copyright:
+# This file is distributed under the same license as the tellico package.
+#
+# SPDX-FileCopyrightText: 2009, 2011, 2020, 2021, 2025, 2026 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2010, 2011 Kira J. Fernandez <kirajfdez@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: tellico manual\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2026-01-02 00:56+0000\n"
+"PO-Revision-Date: 2026-01-02 16:31+0100\n"
+"Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
+"Language-Team: Spanish <kde-l10n-es@kde.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-KDE-DocBook-SVN-URL: trunk/playground/office/doc/tellico/hacking.docbook\n"
+"X-KDE-DocBook-SVN-Changed-Revision: 942831\n"
+"X-KDE-Associated-UI-Catalogs: \n"
+"X-Generator: Lokalize 25.12.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#. Tag: title
+#: hacking.docbook:2
+#, no-c-format
+msgid "Hacking &appname;"
+msgstr "Programar para &appname;"
+
+#. Tag: para
+#: hacking.docbook:4
+#, no-c-format
+msgid ""
+"In the spirit of Free Software, you are welcome to hack on &appname; as much "
+"as you like. You should be able to write scripts to import, export, or "
+"modify data very easily. This chapter gives you more information about doing "
+"that."
+msgstr ""
+"En el espíritu del Software Libre, se le anima a programar &appname; tanto "
+"como quiera. Debería poder escribir scripts para importar, exportar o "
+"modificar datos muy fácilmente. Este capítulo le da más información sobre "
+"cómo hacer eso."
+
+#. Tag: title
+#: hacking.docbook:9
+#, no-c-format
+msgid "File Format"
+msgstr "Formato de archivos"
+
+#. Tag: para
+#: hacking.docbook:11
+#, no-c-format
+msgid ""
+"The default &appname; data file is a zip archive, normally with a <literal "
+"role=\"extension\">.tc</literal> file extension. Inside the archive is a top-"
+"level <filename>tellico.xml</filename> file. Images may be included inside "
+"the <filename>images/</filename> folder in the archive, or they may be "
+"included in the &XML; data directly in a base64 encoding. Images may also be "
+"saved inside the application data folder, in which case, they are not in the "
+"data file at all. &appname; can also load the &XML; file, by itself, "
+"uncompressed."
+msgstr ""
+"El archivo de datos por defecto de &appname; es un archivo zip, normalmente "
+"con una extensión de archivo <literal role=\"extension\">.tc</literal>. "
+"Dentro del archivo hay un archivo de nivel superior <filename>tellico.xml</"
+"filename>. Las imágenes se pueden incluir dentro de la carpeta "
+"<filename>images/</filename> del archivo, o pueden incluirse en los datos "
+"&XML; directamente con una codificación base64. Las imágenes también pueden "
+"guardarse dentro de la carpeta de datos de la aplicación, en cuyo caso no "
+"estarán en el propio archivo de datos. &appname; puede también cargar el "
+"archivo &XML; tal cual, descomprimido."
+
+#. Tag: title
+#: hacking.docbook:16
+#, no-c-format
+msgid "&XML; Data"
+msgstr "Datos &XML;"
+
+#. Tag: title
+#: hacking.docbook:22
+#, no-c-format
+msgid "Collection"
+msgstr "Colección"
+
+#. Tag: programlisting
+#: hacking.docbook:23
+#, no-c-format
+msgid ""
+"<![CDATA[\n"
+"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
+"<!DOCTYPE tellico PUBLIC \"-//Robby Stephenson/DTD Tellico V11.0//EN\" "
+"\"http://periapsis.org/tellico/dtd/v11/tellico.dtd\">\n"
+"<tellico xmlns=\"http://periapsis.org/tellico/\" syntaxVersion=\"11\">\n"
+" <collection title=\"My Books\" type=\"2\">\n"
+" </collection>\n"
+"</tellico>\n"
+"]]>"
+msgstr ""
+"<![CDATA[\n"
+"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
+"<!DOCTYPE tellico PUBLIC \"-//Robby Stephenson/DTD Tellico V11.0//EN\" "
+"\"http://periapsis.org/tellico/dtd/v11/tellico.dtd\">\n"
+"<tellico xmlns=\"http://periapsis.org/tellico/\" syntaxVersion=\"11\">\n"
+" <collection title=\"My Books\" type=\"2\">\n"
+" </collection>\n"
+"</tellico>\n"
+"]]>"
+
+#. Tag: para
+#: hacking.docbook:25
+#, no-c-format
+msgid ""
+"The file begins with the required &XML; declaration and encoding, followed "
+"by the doctype. When a new field type is added or additional properties are "
+"set on the default fields, the doctype DTD version is incremented. &appname; "
+"is always able to open and read any previous DTD version, but will save "
+"files in the current version. The DTD location does point to an actual DTD "
+"file."
+msgstr ""
+"El archivo comienza con la declaración y la codificación &XML; requerida, "
+"seguida por el tipo de documento. Cuando se añade un nuevo tipo de campo o "
+"se establecen propiedades adicionales en los campos predeterminados, la "
+"versión DTD se incrementa. &appname; siempre puede abrir y leer cualquier "
+"versión anterior de DTD, pero guardará los archivos en la versión actual. La "
+"localización de DTD apunta a un archivo DTD real."
+
+#. Tag: para
+#: hacking.docbook:29
+#, no-c-format
+msgid ""
+"The top-level element is a <markup>&lt;tellico&gt;</markup> element, "
+"containing the default namespace declaration and the syntax version of the "
+"file, which should always match the DTD."
+msgstr ""
+"El elemento de nivel superior es un elemento <markup>&lt;tellico&gt;</"
+"markup> que contiene la declaración por defecto namespace y la versión de la "
+"sintaxis del archivo, que siempre debe coincidir con la de DTD."
+
+#. Tag: para
+#: hacking.docbook:33
+#, no-c-format
+msgid ""
+"The <markup>&lt;tellico&gt;</markup> element contains one <markup>&lt;"
+"collection&gt;</markup> element. Multiple collections are ignored, for now. "
+"The <markup>title</markup> attribute contains the collection title, while "
+"the <markup>type</markup> specifies what kinds of entries are contained in "
+"the collection. The allowable types are in <link linkend=\"collection-type-"
+"values\">listed in a later section</link>. An optional <markup>entryTitle</"
+"markup> attribute may be used to specify the title of the entries for a "
+"custom collection, and should be plural."
+msgstr ""
+"El elemento <markup>&lt;tellico&gt;</markup> contiene un elemento de "
+"<markup>&lt;collection&gt;</markup>. Las colecciones múltiples son ignoradas "
+"por ahora. El atributo <markup>title</markup> contiene el título de la "
+"colección, mientras que <markup>type</markup> especifica qué tipo de "
+"entradas están contenidas en la colección. Los tipos permitidos se <link "
+"linkend=\"collection-type-values\">listan en una sección posterior</link>. "
+"Un atributo opcional <markup>entryTitle</markup> se puede usar para "
+"especificar el título de las entradas para una colección personalizada, y "
+"debería ir en plural."
+
+#. Tag: title
+#: hacking.docbook:39
+#, no-c-format
+msgid "Fields"
+msgstr "Campos"
+
+#. Tag: programlisting
+#: hacking.docbook:41
+#, no-c-format
+msgid ""
+"<![CDATA[\n"
+"  <fields>\n"
+"   <field flags=\"8\" title=\"Title\" category=\"General\" format=\"1\" type="
+"\"1\" name=\"title\" />\n"
+"   <field flags=\"7\" title=\"Author\" category=\"General\" format=\"2\" "
+"type=\"1\" name=\"author\" />\n"
+"   <field flags=\"2\" title=\"Binding\" category=\"General\" allowed="
+"\"Hardback;Paperback;Trade Paperback;E-Book;Magazine;Journal\" format=\"4\" "
+"type=\"3\" name=\"binding\" >\n"
+"    <prop name=\"default\">Paperback</prop>\n"
+"   </field>\n"
+"   <field flags=\"6\" title=\"Publisher\" category=\"Publishing\" format="
+"\"0\" type=\"1\" name=\"publisher\" />\n"
+"   <field flags=\"4\" title=\"Edition\" category=\"Publishing\" format=\"0\" "
+"type=\"1\" name=\"edition\" />\n"
+"   <field flags=\"3\" title=\"Copyright Year\" category=\"Publishing\" "
+"format=\"4\" type=\"6\" name=\"cr_year\" />\n"
+"   <field flags=\"2\" title=\"Publication Year\" category=\"Publishing\" "
+"format=\"4\" type=\"6\" name=\"pub_year\" />\n"
+"   <field flags=\"0\" title=\"ISBN#\" category=\"Publishing\" format=\"4\" "
+"type=\"1\" name=\"isbn\" description=\"International Standard Book Number\" /"
+">\n"
+"   <field flags=\"7\" title=\"Genre\" category=\"Classification\" format="
+"\"0\" type=\"1\" name=\"genre\" />\n"
+"   <field flags=\"7\" title=\"Keywords\" category=\"Classification\" format="
+"\"0\" type=\"1\" name=\"keyword\" />\n"
+"   <field flags=\"0\" title=\"Front Cover\" category=\"Front Cover\" format="
+"\"4\" type=\"10\" name=\"cover\" />\n"
+"   <field flags=\"0\" title=\"Comments\" category=\"Personal\" format=\"4\" "
+"type=\"1\" name=\"comments\" />\n"
+"   <field title=\"Rating\" flags=\"2\" category=\"Personal\" format=\"4\" "
+"type=\"14\" name=\"rating\">\n"
+"    <prop name=\"maximum\">5</prop>\n"
+"    <prop name=\"minimum\">1</prop>\n"
+"   </field>\n"
+"   <field title=\"ID\" flags=\"32\" category=\"Personal\" format=\"4\" type="
+"\"6\" name=\"id\">\n"
+"    <prop name=\"template\">%{@id}</prop>\n"
+"   </field>\n"
+"\n"
+"  </fields>\n"
+"]]>"
+msgstr ""
+"<![CDATA[\n"
+"  <fields>\n"
+"   <field flags=\"8\" title=\"Title\" category=\"General\" format=\"1\" type="
+"\"1\" name=\"title\" />\n"
+"   <field flags=\"7\" title=\"Author\" category=\"General\" format=\"2\" "
+"type=\"1\" name=\"author\" />\n"
+"   <field flags=\"2\" title=\"Binding\" category=\"General\" allowed="
+"\"Hardback;Paperback;Trade Paperback;E-Book;Magazine;Journal\" format=\"4\" "
+"type=\"3\" name=\"binding\" >\n"
+"    <prop name=\"default\">Paperback</prop>\n"
+"   </field>\n"
+"   <field flags=\"6\" title=\"Publisher\" category=\"Publishing\" format="
+"\"0\" type=\"1\" name=\"publisher\" />\n"
+"   <field flags=\"4\" title=\"Edition\" category=\"Publishing\" format=\"0\" "
+"type=\"1\" name=\"edition\" />\n"
+"   <field flags=\"3\" title=\"Copyright Year\" category=\"Publishing\" "
+"format=\"4\" type=\"6\" name=\"cr_year\" />\n"
+"   <field flags=\"2\" title=\"Publication Year\" category=\"Publishing\" "
+"format=\"4\" type=\"6\" name=\"pub_year\" />\n"
+"   <field flags=\"0\" title=\"ISBN#\" category=\"Publishing\" format=\"4\" "
+"type=\"1\" name=\"isbn\" description=\"International Standard Book Number\" /"
+">\n"
+"   <field flags=\"7\" title=\"Genre\" category=\"Classification\" format="
+"\"0\" type=\"1\" name=\"genre\" />\n"
+"   <field flags=\"7\" title=\"Keywords\" category=\"Classification\" format="
+"\"0\" type=\"1\" name=\"keyword\" />\n"
+"   <field flags=\"0\" title=\"Front Cover\" category=\"Front Cover\" format="
+"\"4\" type=\"10\" name=\"cover\" />\n"
+"   <field flags=\"0\" title=\"Comments\" category=\"Personal\" format=\"4\" "
+"type=\"1\" name=\"comments\" />\n"
+"   <field title=\"Rating\" flags=\"2\" category=\"Personal\" format=\"4\" "
+"type=\"14\" name=\"rating\">\n"
+"    <prop name=\"maximum\">5</prop>\n"
+"    <prop name=\"minimum\">1</prop>\n"
+"   </field>\n"
+"   <field title=\"ID\" flags=\"32\" category=\"Personal\" format=\"4\" type="
+"\"6\" name=\"id\">\n"
+"    <prop name=\"template\">%{@id}</prop>\n"
+"   </field>\n"
+"\n"
+"  </fields>\n"
+"]]>"
+
+#. Tag: para
+#: hacking.docbook:43
+#, no-c-format
+msgid ""
+"All of the fields are defined inside a <markup>&lt;fields&gt;</markup> "
+"element, of which there can be only one. All of the information for a field, "
+"except for any properties, are included as attributes of the <markup>&lt;"
+"field&gt;</markup> element. The allowable values for the <markup>flags</"
+"markup>, <markup>format</markup>, and <markup>type</markup> attributes are "
+"given in a <link linkend=\"field-type-values\">following section</link>."
+msgstr ""
+"Todos los campos están definidos dentro de un elemento <markup>&lt;fields&gt;"
+"</markup>, del cual solo puede existir uno. toda la información sobre un "
+"campo, excepto de las propiedades, está incluida como atributos en el "
+"elemento <markup>&lt;field&gt;</markup>. Los valores permitidos para los "
+"atributos <markup>flags</markup>, <markup>format</markup>, y <markup>type</"
+"markup> vienen dados en la <link linkend=\"field-type-values\">sección "
+"siguiente</link>."
+
+#. Tag: para
+#: hacking.docbook:47
+#, no-c-format
+msgid ""
+"Field properties are used for setting default field values, rating value "
+"ranges, derived value templates, etc. The examples above include a default "
+"value, a maximum rating value, and a template for a derived ID field."
+msgstr ""
+"Las propiedades del campo se usan para establecer valores predeterminados "
+"para el campo, intervalos de valores de clasificación, plantillas de valores "
+"derivados, etc. Los ejemplos de arriba incluyen un valor por defecto, un "
+"valor máximo de clasificación  y una plantilla por un campo ID derivado."
+
+#. Tag: title
+#: hacking.docbook:58
+#, no-c-format
+msgid "Entries"
+msgstr "Entradas"
+
+#. Tag: programlisting
+#: hacking.docbook:60
+#, no-c-format
+msgid ""
+"<![CDATA[\n"
+"  <entry>\n"
+"   <title>C++ Programming Language, The</title>\n"
+"   <authors>\n"
+"    <author>Stroustrup, Bjarne</author>\n"
+"   </authors>\n"
+"   <publisher>Addison-Wesley Pub Co</publisher>\n"
+"   <edition>3rd</edition>\n"
+"   <pub_year>1997</pub_year>\n"
+"   <isbn>0-201-88954-4</isbn>\n"
+"   <genres>\n"
+"    <genre>Non-Fiction</genre>\n"
+"   </genres>\n"
+"   <keywords>\n"
+"    <keyword>Programming</keyword>\n"
+"    <keyword>Computers</keyword>\n"
+"   </keywords>\n"
+"   <cover>cf65a2f023b6cb9e9233323dca10ac7c.jpeg</cover>\n"
+"  </entry>\n"
+"]]>"
+msgstr ""
+"<![CDATA[\n"
+"  <entry>\n"
+"   <title>Lenguaje de programación C++, El</title>\n"
+"   <authors>\n"
+"    <author>Stroustrup, Bjarne</author>\n"
+"   </authors>\n"
+"   <publisher>Addison-Wesley Pub Co</publisher>\n"
+"   <edition>3ª</edition>\n"
+"   <pub_year>1997</pub_year>\n"
+"   <isbn>0-201-88954-4</isbn>\n"
+"   <genres>\n"
+"    <genre>No ficción</genre>\n"
+"   </genres>\n"
+"   <keywords>\n"
+"    <keyword>Programación</keyword>\n"
+"    <keyword>Informática</keyword>\n"
+"   </keywords>\n"
+"   <cover>cf65a2f023b6cb9e9233323dca10ac7c.jpeg</cover>\n"
+"  </entry>\n"
+"]]>"
+
+#. Tag: para
+#: hacking.docbook:62
+#, no-c-format
+msgid ""
+"For every field in the collection, an <markup>&lt;entry&gt;</markup> may "
+"contain an element whose name is identical to the field name. If multiple "
+"values are allowed for the field, then the letter <emphasis>s</emphasis> is "
+"added to the field name to create an element, and each value is added as a "
+"child of the element, as in the case of the author, genre, and keyword "
+"fields above."
+msgstr ""
+"Para cada campo de la colección, una <markup>&lt;entrada&gt;</markup> puede "
+"contener un elemento cuyo nombre sea idéntico al nombre del campo. Si se "
+"permiten valores múltiples para ese campo, entonces se añade la letra "
+"<emphasis>s</emphasis> al nombre del campo para crear un elemento, y cada "
+"valor se añade como un hijo de ese elemento, como en el caso de los campos "
+"de autor, género y palabra clave de arriba."
+
+#. Tag: para
+#: hacking.docbook:66
+#, no-c-format
+msgid ""
+"As a result, if additional fields are added to the collection, the data file "
+"will no longer conform to the DTD. However, &appname; uses a non-validating "
+"&XML; parser, so additional fields do not cause problems."
+msgstr ""
+"Como resultado, si se añaden campos adicionales a la colección, el archivo "
+"de datos ya no se ajustará al DTD. Sin embargo, &appname; usa un analizador "
+"&XML; no validante, de forma que los campos adicionales no causen problemas."
+
+#. Tag: title
+#: hacking.docbook:72
+#, no-c-format
+msgid "Images"
+msgstr "Imágenes"
+
+#. Tag: programlisting
+#: hacking.docbook:73
+#, no-c-format
+msgid ""
+"<![CDATA[\n"
+"  <images>\n"
+"   <image width=\"111\" format=\"JPEG\" height=\"140\" id="
+"\"cf65a2f023b6cb9e9233323dca10ac7c.jpeg\" />\n"
+"  </images>\n"
+"]]>"
+msgstr ""
+"<![CDATA[\n"
+"  <images>\n"
+"   <image width=\"111\" format=\"JPEG\" height=\"140\" id="
+"\"cf65a2f023b6cb9e9233323dca10ac7c.jpeg\" />\n"
+"  </images>\n"
+"]]>"
+
+#. Tag: para
+#: hacking.docbook:75
+#, no-c-format
+msgid ""
+"Inside the <markup>&lt;images&gt;</markup> element, each image referenced by "
+"an entry is listed, along with attributes describing the image's size, "
+"format, and id. If the image is contained inside the Zip file, the element "
+"is empty. Otherwise, the image data may be contained in the &XML; stream as "
+"base64-encoded text."
+msgstr ""
+"Dentro del elemento <markup>&lt;imágenes&gt;</markup>, cada imagen "
+"referenciada por una entrada se lista junto con los atributos que describen "
+"el tamaño de la imagen, su formato y su id. Si la imagen está contenida "
+"dentro de un archivo Zip, el elemento estará vacío. De otro modo, los datos "
+"de la imagen pueden estar contenidos en el &XML; como un texto codificado en "
+"base64."
+
+#. Tag: title
+#: hacking.docbook:85 hacking.docbook:92
+#, no-c-format
+msgid "Collection Type Values"
+msgstr "Valores de tipo de colección"
+
+#. Tag: para
+#: hacking.docbook:87
+#, no-c-format
+msgid ""
+"The type of collection is given in the type attribute of the collection "
+"element. The value is equal to the <type>Type</type> enum value in "
+"<filename>src/collection.h</filename>."
+msgstr ""
+"El tipo de la colección viene dado por el atributo tipo del elemento de la "
+"colección. El valor es igual al valor de enumeración de <type>Type</type> en "
+"<filename>src/collection.h</filename>."
+
+#. Tag: entry
+#: hacking.docbook:96
+#, no-c-format
+msgid "Collection Type"
+msgstr "Tipo de colección"
+
+#. Tag: entry
+#: hacking.docbook:97 hacking.docbook:137 hacking.docbook:165
+#: hacking.docbook:189
+#, no-c-format
+msgid "Value"
+msgstr "Valor"
+
+#. Tag: entry
+#: hacking.docbook:101
+#, no-c-format
+msgid "Custom Collection"
+msgstr "Colección personalizada"
+
+#. Tag: entry
+#: hacking.docbook:101 hacking.docbook:141 hacking.docbook:194
+#, no-c-format
+msgid "<entry>1</entry>"
+msgstr "<entry>1</entry>"
+
+#. Tag: entry
+#: hacking.docbook:102
+#, no-c-format
+msgid "Book Collection"
+msgstr "Colección de libros"
+
+#. Tag: entry
+#: hacking.docbook:102 hacking.docbook:142 hacking.docbook:195
+#, no-c-format
+msgid "<entry>2</entry>"
+msgstr "<entry>2</entry>"
+
+#. Tag: entry
+#: hacking.docbook:103
+#, no-c-format
+msgid "Video Collection"
+msgstr "Colección de vídeo"
+
+#. Tag: entry
+#: hacking.docbook:103 hacking.docbook:143 hacking.docbook:196
+#, no-c-format
+msgid "<entry>3</entry>"
+msgstr "<entry>3</entry>"
+
+#. Tag: entry
+#: hacking.docbook:104
+#, no-c-format
+msgid "Music Collection"
+msgstr "Colección de música"
+
+#. Tag: entry
+#: hacking.docbook:104 hacking.docbook:144 hacking.docbook:197
+#, no-c-format
+msgid "<entry>4</entry>"
+msgstr "<entry>4</entry>"
+
+#. Tag: entry
+#: hacking.docbook:105
+#, no-c-format
+msgid "Bibliography"
+msgstr "Bibliografía"
+
+#. Tag: entry
+#: hacking.docbook:105
+#, no-c-format
+msgid "<entry>5</entry>"
+msgstr "<entry>5</entry>"
+
+#. Tag: entry
+#: hacking.docbook:106
+#, no-c-format
+msgid "Comic Book Collection"
+msgstr "Colección de comics"
+
+#. Tag: entry
+#: hacking.docbook:106 hacking.docbook:145
+#, no-c-format
+msgid "<entry>6</entry>"
+msgstr "<entry>6</entry>"
+
+#. Tag: entry
+#: hacking.docbook:107
+#, no-c-format
+msgid "Wine Collection"
+msgstr "Colección de vinos"
+
+#. Tag: entry
+#: hacking.docbook:107 hacking.docbook:146
+#, no-c-format
+msgid "<entry>7</entry>"
+msgstr "<entry>7</entry>"
+
+#. Tag: entry
+#: hacking.docbook:108
+#, no-c-format
+msgid "Coin Collection"
+msgstr "Colección de monedas"
+
+#. Tag: entry
+#: hacking.docbook:108 hacking.docbook:147
+#, no-c-format
+msgid "<entry>8</entry>"
+msgstr "<entry>8</entry>"
+
+#. Tag: entry
+#: hacking.docbook:109
+#, no-c-format
+msgid "Stamp Collection"
+msgstr "Colección de sellos"
+
+#. Tag: entry
+#: hacking.docbook:109
+#, no-c-format
+msgid "<entry>9</entry>"
+msgstr "<entry>9</entry>"
+
+#. Tag: entry
+#: hacking.docbook:110
+#, no-c-format
+msgid "Trading Card Collection"
+msgstr "Colección de cromos"
+
+#. Tag: entry
+#: hacking.docbook:110 hacking.docbook:148
+#, no-c-format
+msgid "<entry>10</entry>"
+msgstr "<entry>10</entry>"
+
+#. Tag: entry
+#: hacking.docbook:111
+#, no-c-format
+msgid "Video Game Collection"
+msgstr "Colección de videojuegos"
+
+#. Tag: entry
+#: hacking.docbook:111
+#, no-c-format
+msgid "<entry>11</entry>"
+msgstr "<entry>11</entry>"
+
+#. Tag: entry
+#: hacking.docbook:112
+#, no-c-format
+msgid "File Catalog"
+msgstr "Catálogo de archivos"
+
+#. Tag: entry
+#: hacking.docbook:112 hacking.docbook:149
+#, no-c-format
+msgid "<entry>12</entry>"
+msgstr "<entry>12</entry>"
+
+#. Tag: entry
+#: hacking.docbook:113
+#, no-c-format
+msgid "Board Game Collection"
+msgstr "Colección de juegos de tablero"
+
+#. Tag: entry
+#: hacking.docbook:113
+#, no-c-format
+msgid "<entry>13</entry>"
+msgstr "<entry>13</entry>"
+
+#. Tag: title
+#: hacking.docbook:121 hacking.docbook:132
+#, no-c-format
+msgid "Field Type Values"
+msgstr "Valores de tipo de campo"
+
+#. Tag: para
+#: hacking.docbook:123
+#, no-c-format
+msgid ""
+"&appname; will include all the default fields for a collection if the first "
+"field element has the name <emphasis>_default</emphasis>. For "
+"<emphasis>Paragraph</emphasis>, <emphasis>Table</emphasis>, or "
+"<emphasis>Image</emphasis> fields, the field category should be identical to "
+"the field title."
+msgstr ""
+"&appname; incluirá todos los campos predeterminados para una colección si el "
+"primer elemento del campo tiene el nombre <emphasis>_default</emphasis>. "
+"Para los campos <emphasis>Párrafo</emphasis>, <emphasis>Tabla</emphasis>, o "
+"<emphasis>Imagen</emphasis>, la categoría del campo debería ser idéntica al "
+"título del campo."
+
+#. Tag: para
+#: hacking.docbook:127
+#, no-c-format
+msgid ""
+"The type of field is given in the type attribute of the field element. The "
+"value is equal to the <type>FieldType</type> enum value in <filename>src/"
+"field.h</filename>."
+msgstr ""
+"El tipo de campo viene dado por el atributo tipo del elemento del campo. El "
+"valor es igual al valor de enumeración de <type>FieldType</type>"
+
+#. Tag: entry
+#: hacking.docbook:136
+#, no-c-format
+msgid "Field Type"
+msgstr "Tipo de campo"
+
+#. Tag: entry
+#: hacking.docbook:141
+#, no-c-format
+msgid "Simple Text"
+msgstr "Texto sencillo"
+
+#. Tag: entry
+#: hacking.docbook:142
+#, no-c-format
+msgid "Paragraph"
+msgstr "Párrafo"
+
+#. Tag: entry
+#: hacking.docbook:143
+#, no-c-format
+msgid "Choice"
+msgstr "Elección"
+
+#. Tag: entry
+#: hacking.docbook:144
+#, no-c-format
+msgid "Checkbox"
+msgstr "Casilla de verificación"
+
+#. Tag: entry
+#: hacking.docbook:145
+#, no-c-format
+msgid "Number"
+msgstr "Número"
+
+#. Tag: entry
+#: hacking.docbook:146
+#, no-c-format
+msgid "&URL;"
+msgstr "&URL;"
+
+#. Tag: entry
+#: hacking.docbook:147
+#, no-c-format
+msgid "Table"
+msgstr "Tabla"
+
+#. Tag: entry
+#: hacking.docbook:148
+#, no-c-format
+msgid "Image"
+msgstr "Imagen"
+
+#. Tag: entry
+#: hacking.docbook:149
+#, no-c-format
+msgid "Date"
+msgstr "Fecha"
+
+#. Tag: entry
+#: hacking.docbook:150
+#, no-c-format
+msgid "Rating"
+msgstr "Clasificación"
+
+#. Tag: entry
+#: hacking.docbook:150
+#, no-c-format
+msgid "<entry>14</entry>"
+msgstr "<entry>14</entry>"
+
+#. Tag: para
+#: hacking.docbook:155
+#, no-c-format
+msgid ""
+"The field may have different flags set, given as a bitwise OR'd value in the "
+"flags attribute on the field element. The flag for preventing the user from "
+"deleting a field is intended for such things as the citation key for "
+"bibliographic entries."
+msgstr ""
+"El campo puede tener establecidos diferentes indicadores, dados como un "
+"valor de bit con OR en el atributo «indicador» del elemento del campo. El "
+"indicador para evitar que el usuario borre un campo está dirigido a esas "
+"cosas como la clave de cita para las entradas bibliográficas."
+
+#. Tag: title
+#: hacking.docbook:160
+#, no-c-format
+msgid "Field Flag Values"
+msgstr "Valores del indicador de campo"
+
+#. Tag: entry
+#: hacking.docbook:164
+#, no-c-format
+msgid "Field Flags"
+msgstr "Indicadores de campo"
+
+#. Tag: entry
+#: hacking.docbook:169
+#, no-c-format
+msgid "Allow Multiple Values"
+msgstr "Permitir múltiples valores"
+
+#. Tag: constant
+#: hacking.docbook:169
+#, no-c-format
+msgid "0x01"
+msgstr "0x01"
+
+#. Tag: entry
+#: hacking.docbook:170
+#, no-c-format
+msgid "Allow Grouping"
+msgstr "Permitir agrupamiento"
+
+#. Tag: constant
+#: hacking.docbook:170
+#, no-c-format
+msgid "0x02"
+msgstr "0x02"
+
+#. Tag: entry
+#: hacking.docbook:171
+#, no-c-format
+msgid "Allow Completion"
+msgstr "Permitir completado"
+
+#. Tag: constant
+#: hacking.docbook:171
+#, no-c-format
+msgid "0x04"
+msgstr "0x04"
+
+#. Tag: emphasis
+#: hacking.docbook:172
+#, no-c-format
+msgid "Disallow Deleting"
+msgstr "No permitir el borrado"
+
+#. Tag: constant
+#: hacking.docbook:172
+#, no-c-format
+msgid "0x08"
+msgstr "0x08"
+
+#. Tag: emphasis
+#: hacking.docbook:173
+#, no-c-format
+msgid "Disallow Editing"
+msgstr "No permitir la edición"
+
+#. Tag: constant
+#: hacking.docbook:173
+#, no-c-format
+msgid "0x10"
+msgstr "0x10"
+
+#. Tag: entry
+#: hacking.docbook:174
+#, no-c-format
+msgid "Derived Value"
+msgstr "Valor derivado"
+
+#. Tag: constant
+#: hacking.docbook:174
+#, no-c-format
+msgid "0x20"
+msgstr "0x20"
+
+#. Tag: para
+#: hacking.docbook:179
+#, no-c-format
+msgid ""
+"The format of the field is given in the format attribute on the field "
+"element. <emphasis>Date Formatting</emphasis> is not currently used. "
+"Grouping by <emphasis>People</emphasis> uses all the fields which use "
+"<emphasis>Name Formatting</emphasis>. Setting the <emphasis>Derived Value</"
+"emphasis> flag implies the value for the field is generated from the "
+"template property from other field values."
+msgstr ""
+"El formato del campo viene dado por el atributo «formato» del elemento del "
+"campo. El <emphasis>formato de fecha</emphasis> no se usa actualmente. "
+"Agrupar por <emphasis>personas</emphasis> usa todos los campos que utilizan "
+"<emphasis>formateo de nombres</emphasis>. Establecer el marcador de "
+"<emphasis>Valor derivado</emphasis> implica que el valor de ese campo se "
+"genera desde la propiedad de plantilla de otros valores de campo."
+
+#. Tag: title
+#: hacking.docbook:184
+#, no-c-format
+msgid "Field Format Values"
+msgstr "Valores del formato de campo"
+
+#. Tag: entry
+#: hacking.docbook:188
+#, no-c-format
+msgid "Field Format"
+msgstr "Formato de campo"
+
+#. Tag: entry
+#: hacking.docbook:193
+#, no-c-format
+msgid "Capitalization Only"
+msgstr "Solo capitalización"
+
+#. Tag: entry
+#: hacking.docbook:193
+#, no-c-format
+msgid "<entry>0</entry>"
+msgstr "<entry>0</entry>"
+
+#. Tag: entry
+#: hacking.docbook:194
+#, no-c-format
+msgid "Title Formatting"
+msgstr "Formateo de título"
+
+#. Tag: entry
+#: hacking.docbook:195
+#, no-c-format
+msgid "Name Formatting"
+msgstr "Formateo de nombres"
+
+#. Tag: emphasis
+#: hacking.docbook:196
+#, no-c-format
+msgid "Date Formatting"
+msgstr "Formateo de fecha"
+
+#. Tag: entry
+#: hacking.docbook:197
+#, no-c-format
+msgid "No Formatting"
+msgstr "Sin formateo"
+
+#. Tag: title
+#: hacking.docbook:205
+#, no-c-format
+msgid "Hidden Configuration Options"
+msgstr "Opciones ocultas de configuración"
+
+#. Tag: para
+#: hacking.docbook:207
+#, no-c-format
+msgid ""
+"&appname; has some additional configuration options that are not visible in "
+"the <interface>Configuration Dialog</interface>. They are not important "
+"enough to warrant cluttering the dialog with more settings, but as they "
+"represent options which may appeal to various users, the application does "
+"read them from the configuration file."
+msgstr ""
+"&appname; tiene algunas opciones de configuración adicionales que no son "
+"visibles en el <interface>Diálogo de configuración</interface>. No son lo "
+"suficientemente importantes para garantizar masificar el diálogo con más "
+"opciones, pero como representan opciones que pueden ser interesantes para "
+"varios usuarios, la aplicación las lee desde el archivo de configuración."
+
+#. Tag: para
+#: hacking.docbook:211
+#, no-c-format
+msgid ""
+"The settings for &appname; are saved in a file in the user's home folder, "
+"typically <filename>~/.config/tellicorc</filename>. Within that file, "
+"settings are put in groups, which appear with bracketed names, such as "
+"[General Options]. To add a setting to the <emphasis>General Options</"
+"emphasis> group, find the line in the settings file with that group name. If "
+"it does not appear, then create it yourself by adding a line saying [General "
+"Options]. Then, the setting can be added underneath the group name."
+msgstr ""
+"Los ajustes para &appname; se guardan en un archivo del directorio local del "
+"usuario, normalmente <filename>~/.config/tellicorc</filename>. Dentro de ese "
+"archivo, los ajustes se ponen en grupos, que aparecen con nombres entre "
+"corchetes, como en [Opciones generales]. Para añadir un ajuste al grupo "
+"<emphasis>Opciones generales</emphasis>, encuentre la línea en el archivo de "
+"ajustes que contenga el nombre del grupo. Si no aparece, créelo usted mismo "
+"añadiendo una línea que diga [Opciones generales]. Entonces, el ajuste se "
+"puede añadir bajo el nombre del grupo."
+
+#. Tag: title
+#: hacking.docbook:216
+#, no-c-format
+msgid "[General Options]"
+msgstr "[Opciones generales]"
+
+#. Tag: para
+#: hacking.docbook:218
+#, no-c-format
+msgid ""
+"These settings should be placed in the <emphasis>General Options</emphasis> "
+"group."
+msgstr ""
+"Estos ajustes deberían colocarse en el grupo <emphasis>Opciones generales</"
+"emphasis>."
+
+#. Tag: title
+#: hacking.docbook:223
+#, no-c-format
+msgid "Max Icon Size"
+msgstr "Máx. tamaño de icono"
+
+#. Tag: para
+#: hacking.docbook:225
+#, no-c-format
+msgid ""
+"The maximum size of the icons in the <interface>Icon View</interface> may be "
+"changed with this setting. The default value is 96. The size must be in the "
+"range of 32 to 512."
+msgstr ""
+"El tamaño máximo de los iconos en la <interface>Vista de iconos</interface> "
+"se puede cambiar mediante este ajuste. El valor por defecto es de 96. El "
+"tamaño debe estar entre 32 y 256."
+
+#. Tag: title
+#: hacking.docbook:231 hacking.docbook:246 hacking.docbook:261
+#: hacking.docbook:285 hacking.docbook:304 hacking.docbook:328
+#, no-c-format
+msgid "Example"
+msgstr "Ejemplo"
+
+#. Tag: userinput
+#: hacking.docbook:233
+#, no-c-format
+msgid "Max Icon Size=128"
+msgstr "Max Icon Size=128"
+
+#. Tag: title
+#: hacking.docbook:238
+#, no-c-format
+msgid "Icon Cache Size"
+msgstr "Tamaño de la caché de iconos"
+
+#. Tag: para
+#: hacking.docbook:240
+#, no-c-format
+msgid ""
+"The maximum numbers of icons cached in memory may be changed with this "
+"setting. The default value is 1000."
+msgstr ""
+"El número máximo de iconos almacenados en la memoria se puede cambiar "
+"mediante este ajuste. El valor por defecto es 1000."
+
+#. Tag: userinput
+#: hacking.docbook:248
+#, no-c-format
+msgid "Icon Cache Size=100"
+msgstr "Icon Cache Size=100"
+
+#. Tag: title
+#: hacking.docbook:253
+#, no-c-format
+msgid "Image Cache Size"
+msgstr "Tamaño de la caché de imágenes"
+
+#. Tag: para
+#: hacking.docbook:255
+#, no-c-format
+msgid ""
+"The maximum amount of memory in bytes used for caching all the images may be "
+"changed with this setting. The default value is 512 MiB."
+msgstr ""
+"La cantidad máxima de memoria en bytes usada para almacenar todas las "
+"imágenes se puede cambiar con este ajuste. El valor por defecto es 512 MiB."
+
+#. Tag: userinput
+#: hacking.docbook:263
+#, no-c-format
+msgid "Image Cache Size=256000000"
+msgstr "Image Cache Size=256000000"
+
+#. Tag: title
+#: hacking.docbook:270
+#, no-c-format
+msgid "[Options - bibtex]"
+msgstr "[Opciones - bibtex]"
+
+#. Tag: para
+#: hacking.docbook:272
+#, no-c-format
+msgid ""
+"These settings should be placed in the <emphasis>Options - bibtex</emphasis> "
+"group."
+msgstr ""
+"Estos ajustes deberían colocarse en el grupo <emphasis>Opciones - bibtex</"
+"emphasis>."
+
+#. Tag: title
+#: hacking.docbook:277
+#, no-c-format
+msgid "lyxpipe"
+msgstr "lyxpipe"
+
+#. Tag: para
+#: hacking.docbook:279
+#, no-c-format
+msgid ""
+"This setting is for the location of the lyxpipe for sending bibliographic "
+"citations. It should not include the <literal role=\"extension\">.in</"
+"literal> suffix."
+msgstr ""
+"Este ajuste es para la localización de lyxpipe para enviar citas "
+"bibliográficas. No debería incluir el sufijo <literal role=\"extension\">."
+"in</literal>"
+
+#. Tag: userinput
+#: hacking.docbook:287
+#, no-c-format
+msgid "lyxpipe=$HOME/.lyx/lyxpipe"
+msgstr "lyxpipe=$HOME/.lyx/lyxpipe"
+
+#. Tag: title
+#: hacking.docbook:293
+#, no-c-format
+msgid "[File Reader Options]"
+msgstr "[Opciones del lector de archivos]"
+
+#. Tag: para
+#: hacking.docbook:295
+#, no-c-format
+msgid ""
+"These settings should be placed in the <emphasis>File Reader Options</"
+"emphasis> group."
+msgstr ""
+"Estos ajustes deberían colocarse en el grupo <emphasis>Opciones del lector "
+"de archivos</emphasis>."
+
+#. Tag: title
+#: hacking.docbook:298
+#, no-c-format
+msgid "Preview Size"
+msgstr "Tamaño de la vista previa"
+
+#. Tag: para
+#: hacking.docbook:300
+#, no-c-format
+msgid "This setting is for the maximum size of the generated file preview."
+msgstr "Este ajuste es para el tamaño máximo de la vista previa del archivo."
+
+#. Tag: userinput
+#: hacking.docbook:306
+#, no-c-format
+msgid "Preview Size=523"
+msgstr "Tamaño de la vista previa=523"
+
+#. Tag: title
+#: hacking.docbook:312
+#, no-c-format
+msgid "Multi-Disc Options"
+msgstr "Opciones multidisco"
+
+#. Tag: para
+#: hacking.docbook:314
+#, no-c-format
+msgid ""
+"The <link linkend=\"musicbrainz\">MusicBrainz</link>, <link linkend=\"discogs"
+"\">Discogs</link>, and <link linkend=\"itunes\">iTunes</link> data sources "
+"can fetch multi-disc album information, specifying which tracks each disc "
+"contains. By default, the track lists are inserted into separate field, one "
+"for each disc. Prior to version 4.0, the track lists were combined. This "
+"option provides the pre-4.0 behavior on an individual data source level. Add "
+"it to each <emphasis>Data Source</emphasis> section where it is desired."
+msgstr ""
+"Las fuentes de datos <link linkend=\"musicbrainz\">MusicBrainz</link>, <link "
+"linkend=\"discogs\">Discogs</link> e <link linkend=\"itunes\">iTunes</link> "
+"pueden extraer información de álbumes multidisco, especificando las pistas "
+"que contiene cada álbum. De forma predeterminada, las listas de pistas se "
+"insertan en un campo separado (uno para cada disco). Antes de la versión "
+"4.0, las listas de pistas se combinaban. Esta opción proporciona el "
+"comportamiento previo a la versión 4.0 a nivel de fuente de datos "
+"individual. Añádala a cada sección <emphasis>Fuente de datos</emphasis> "
+"donde la necesite."
+
+#. Tag: title
+#: hacking.docbook:322
+#, no-c-format
+msgid "Split Tracks By Disc"
+msgstr "Dividir pistas por disco"
+
+#. Tag: para
+#: hacking.docbook:324
+#, no-c-format
+msgid ""
+"Setting this to <emphasis>false</emphasis> reverts to pre-4.0 behavior where "
+"the tracks are collapsed into a single track list."
+msgstr ""
+"Si define esta opción a <emphasis>falso</emphasis> se revierte el "
+"comportamiento previo a la versión 4.0, donde las pistas se compactan en una "
+"única lista de pistas."
+
+#. Tag: userinput
+#: hacking.docbook:330
+#, no-c-format
+msgid "Split Tracks By Disc=false"
+msgstr "Dividir pistas por disco=falso"
+
+#. Tag: title
+#: hacking.docbook:338
+#, no-c-format
+msgid "Bibtex Character Translation"
+msgstr "Traducción de caracteres Bibtex"
+
+#. Tag: para
+#: hacking.docbook:340
+#, no-c-format
+msgid ""
+"When bibtex files are imported or exported, certain characters are "
+"translated between their TeX equivalents and the Unicode characters. Those "
+"character mappings are contained in the <filename>bibtex-translation.xml</"
+"filename> file, located in the installation data directory. The mappings can "
+"be modified, as desired. The key element contains the Unicode character, and "
+"the string elements within contain the TeX equivalents, which may be a one-"
+"to-many mapping. The first one is the one used when exporting to bibtex."
+msgstr "Cuando se importan o exportan archivos de bibtex, ciertos caracteres "
+
+#. Tag: programlisting
+#: hacking.docbook:344
+#, no-c-format
+msgid ""
+"<![CDATA[\n"
+"  <key char=\"À\">\n"
+"    <string>{\\`A}</string>\n"
+"    <string>\\`{A}</string>\n"
+"  </key>\n"
+"]]>"
+msgstr ""
+"<![CDATA[\n"
+"  <key char=\"À\">\n"
+"    <string>{\\`A}</string>\n"
+"    <string>\\`{A}</string>\n"
+"  </key>\n"
+"]]>"

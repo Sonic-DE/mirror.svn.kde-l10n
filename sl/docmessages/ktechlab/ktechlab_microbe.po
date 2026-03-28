@@ -1,0 +1,1024 @@
+# SPDX-FileCopyrightText: 2024 Matjaž Jeran <matjaz.jeran@amis.net>
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 12:04+0000\n"
+"PO-Revision-Date: 2024-03-19 10:31+0100\n"
+"Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
+"Language-Team: Slovenian <lugos-slo@lugos.si>\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 23.08.5\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
+
+#. Tag: title
+#: microbe.docbook:3
+#, no-c-format
+msgid "&microbe;"
+msgstr "&microbe;"
+
+#. Tag: title
+#: microbe.docbook:5
+#, no-c-format
+msgid "Introduction and General Syntax"
+msgstr "Uvod in splošna sintaksa"
+
+#. Tag: para
+#: microbe.docbook:6
+#, no-c-format
+msgid ""
+"<application>Microbe</application> compiles programs written in the custom "
+"language for PICs, as a companion program to &ktechlab;. The syntax has been "
+"designed to suit a &flowcode; program. The syntax for running "
+"<command>microbe</command> from the command line is: <programlisting>microbe "
+"[options] [input.microbe] [output.asm]</programlisting> where options are:"
+msgstr ""
+"<application>Microbe</application> prevaja programe, napisane v jeziku po "
+"meri za PIC, kot spremljevalni program za &ktechlab;. Sintaksa je bila "
+"zasnovana tako, da ustreza &flowcode; programu. Sintaksa za zagon "
+"<command>microbe</command> iz ukazne vrstice je: <programlisting>microbe "
+"[možnosti] [input.microbe] [output.asm]</programlisting>, kjer so možnosti:"
+
+#. Tag: para
+#: microbe.docbook:16
+#, no-c-format
+msgid ""
+"<function>--show-source</function> - Puts each line of &microbe; source code "
+"as a comment in the assembly output before the assembly instructions "
+"themselves for that line."
+msgstr ""
+"<function>--show-source</function> - postavi vsako vrstico &microbe; izvorno "
+"kodo kot komentar v izhodu sestavljanja pred samimi ukazi zbirnika za to "
+"vrstico."
+
+#. Tag: para
+#: microbe.docbook:17
+#, no-c-format
+msgid ""
+"<function>--no-optimize</function> - Prevent optimization of the "
+"instructions generated from the source. Optimization is usually safe, and so "
+"this option is mainly used for debugging."
+msgstr ""
+"<function>--no-optimize</function> – Prepreči optimizacijo ukazov, "
+"ustvarjenih iz vira. Optimizacija je običajno varna, zato se ta možnost "
+"uporablja predvsem za odpravljanje napak."
+
+#. Tag: para
+#: microbe.docbook:20
+#, no-c-format
+msgid ""
+"The .microbe input file must identify the target PIC by inserting the PIC "
+"name at the top of the .microbe file; &eg; the name of a PIC16F84 is "
+"\"P16F84\"."
+msgstr ""
+"Vhodna datoteka .microbe mora identificirati ciljni PIC tako, da vstavi ime "
+"PIC na vrh datoteke .microbe; &eg; ime PIC16F84 je \"P16F84\"."
+
+#. Tag: title
+#: microbe.docbook:23
+#, no-c-format
+msgid "Simple complete &microbe; program"
+msgstr "Enostavni popoln &microbe; program"
+
+#. Tag: programlisting
+#: microbe.docbook:24
+#, no-c-format
+msgid ""
+"P16F84\n"
+"\n"
+"a = 0\n"
+"repeat\n"
+"{\n"
+"        PORTA = a\n"
+"        a = a + 1\n"
+"}\n"
+"until a == 5\n"
+"\n"
+"end"
+msgstr ""
+"P16F84\n"
+"\n"
+"a = 0\n"
+"repeat\n"
+"{\n"
+"        PORTA = a\n"
+"        a = a + 1\n"
+"}\n"
+"until a == 5\n"
+"\n"
+"end"
+
+#. Tag: title
+#: microbe.docbook:29
+#, no-c-format
+msgid "Naming conventions"
+msgstr "Pravila poimenovanja"
+
+#. Tag: para
+#: microbe.docbook:30
+#, no-c-format
+msgid "The following rules apply to variable names and labels:"
+msgstr "Za imena in oznake spremenljivk veljajo naslednja pravila:"
+
+#. Tag: para
+#: microbe.docbook:33
+#, no-c-format
+msgid ""
+"They can only contain alphanumerical characters [a..z][A..Z][0..9] and the "
+"underscore \"_\"."
+msgstr ""
+"Vsebujejo lahko samo alfanumerične znake [a..z][A..Z][0..9] in podčrtaj \"_\""
+
+#. Tag: para
+#: microbe.docbook:34
+#, no-c-format
+msgid "They are case-sensitive."
+msgstr "Razlikujejo med velikimi in malimi črkami.."
+
+#. Tag: para
+#: microbe.docbook:35
+#, no-c-format
+msgid "They cannot start with a number."
+msgstr "Ne morejo se začeti s številko."
+
+#. Tag: para
+#: microbe.docbook:36
+#, no-c-format
+msgid ""
+"They should not start with <quote>__</quote> (double underscore), as this is "
+"reserved for use by the compiler."
+msgstr ""
+"Ne smejo se začeti z <quote>__</quote> (dvojni podčrtaj), saj je to "
+"rezervirano za uporabo s strani prevajalnika."
+
+#. Tag: title
+#: microbe.docbook:42
+#, no-c-format
+msgid "Bracing conventions"
+msgstr "Konvencije oklepajev"
+
+#. Tag: para
+#: microbe.docbook:43
+#, no-c-format
+msgid ""
+"Curly braces, {}, indicate the start and end of a code block. They can "
+"appear anywhere before the start and after the end of the code block. "
+"Examples of acceptable code blocks:"
+msgstr ""
+"Zavita oklepaja, {}, označujeta začetek in konec bloka kode. Lahko se "
+"pojavita kjerkoli pred začetkom in po koncu bloka kode. Primeri "
+"sprejemljivih kodnih blokov:"
+
+#. Tag: programlisting
+#: microbe.docbook:49
+#, no-c-format
+msgid ""
+"statement1 {\n"
+"        some code\n"
+"}"
+msgstr ""
+"statement1 {\n"
+"        some code\n"
+"}"
+
+#. Tag: programlisting
+#: microbe.docbook:50
+#, no-c-format
+msgid ""
+"statement2 {\n"
+"        other code }"
+msgstr ""
+"statement2 {\n"
+"        other code }"
+
+#. Tag: programlisting
+#: microbe.docbook:52
+#, no-c-format
+msgid ""
+"statement3\n"
+"{\n"
+"        other code\n"
+"}"
+msgstr ""
+"statement3\n"
+"{\n"
+"        other code\n"
+"}"
+
+#. Tag: programlisting
+#: microbe.docbook:54
+#, no-c-format
+msgid ""
+"statement5 {\n"
+"        code block\n"
+"} statement6"
+msgstr ""
+"statement5 {\n"
+"        code block\n"
+"} statement6"
+
+#. Tag: title
+#: microbe.docbook:58
+#, no-c-format
+msgid "Commenting"
+msgstr "Komentiranje"
+
+#. Tag: para
+#: microbe.docbook:59
+#, no-c-format
+msgid ""
+"Commenting is similar to C. // comments out the rest of the line. /* and */ "
+"denote a multiline comment."
+msgstr ""
+"Komentiranje je podobno C. // komentar v preostaneku vrstice. /* in */"
+"označujejo večvrstični komentar."
+
+#. Tag: programlisting
+#: microbe.docbook:61
+#, no-c-format
+msgid ""
+"// This is a comment\n"
+"x = 2 \n"
+"/* As is this\n"
+"multiline comment */"
+msgstr ""
+"// This is a comment\n"
+"x = 2 \n"
+"/* As is this\n"
+"multiline comment */"
+
+#. Tag: title
+#: microbe.docbook:66
+#, no-c-format
+msgid "Program Structure"
+msgstr "Struktura programa"
+
+#. Tag: para
+#: microbe.docbook:67
+#, no-c-format
+msgid ""
+"The PIC id must be inserted at the top of the program. The end of the main "
+"program is denoted with <quote>end</quote>. Subroutines must placed after "
+"<quote>end</quote>."
+msgstr ""
+"PIC ID mora biti vstavljen na vrh programa. Konec glavnega programa je "
+"označen z <quote>end</quote>. Podprogrami morajo biti postavljeni za "
+"<quote>end</quote>."
+
+#. Tag: title
+#: microbe.docbook:73
+#, no-c-format
+msgid "Subroutines"
+msgstr "Podprogrami"
+
+#. Tag: para
+#: microbe.docbook:74
+#, no-c-format
+msgid "A subroutine can be called from anywhere in the code. Syntax:"
+msgstr "Podprogram je mogoče poklicati od kjer koli v kodi. Sintaksa:"
+
+#. Tag: programlisting
+#: microbe.docbook:77
+#, no-c-format
+msgid ""
+"sub SubName\n"
+"{\n"
+"        // Code...\n"
+"}"
+msgstr ""
+"sub SubName\n"
+"{\n"
+"        // Code...\n"
+"}"
+
+#. Tag: para
+#: microbe.docbook:78
+#, no-c-format
+msgid ""
+"The subroutine is called with <quote>call <replaceable>SubName</"
+"replaceable></quote>."
+msgstr ""
+"Podprogram se pokliče s <quote>call <replaceable>SubName</replaceable></"
+"quote>."
+
+#. Tag: title
+#: microbe.docbook:83
+#, no-c-format
+msgid "&microbe; language reference"
+msgstr "&microbe; jezikovna referenca"
+
+#. Tag: title
+#: microbe.docbook:85 microbe.docbook:99
+#, no-c-format
+msgid "<title>if</title>"
+msgstr "<title>if</title>"
+
+#. Tag: para
+#: microbe.docbook:86
+#, no-c-format
+msgid ""
+"Conditional branching. Syntax: <programlisting role=\"correct\">if "
+"[expression] then [statement]</programlisting> or <programlisting role="
+"\"correct\">\n"
+"if [expression] then\n"
+"{\n"
+"        [statement block]\n"
+"}</programlisting> Similarly for else: <programlisting role=\"correct\">else "
+"[statement]</programlisting> or"
+msgstr ""
+"Pogojno razvejanje. Sintaksa: <programlisting role=\"correct\">if "
+"[expression] then [statement]</programlisting> or <programlisting role="
+"\"correct\">\n"
+"if [expression] then\n"
+"{\n"
+"        [statement block]\n"
+"}</programlisting> Similarly for else: <programlisting role=\"correct\">else "
+"[statement]</programlisting> or"
+
+#. Tag: programlisting
+#: microbe.docbook:96
+#, no-c-format
+msgid ""
+"else\n"
+"{\n"
+"        [statement block]\n"
+"}"
+msgstr ""
+"else\n"
+"{\n"
+"        [statement block]\n"
+"}"
+
+#. Tag: programlisting
+#: microbe.docbook:100
+#, no-c-format
+msgid ""
+"if porta.0 is high then\n"
+"{\n"
+"        delay 200\n"
+"}\n"
+"else\n"
+"{\n"
+"        delay 300\n"
+"}"
+msgstr ""
+"if porta.0 is high then\n"
+"{\n"
+"        delay 200\n"
+"}\n"
+"else\n"
+"{\n"
+"        delay 300\n"
+"}"
+
+#. Tag: title
+#: microbe.docbook:105
+#, no-c-format
+msgid "alias"
+msgstr "vzdevek"
+
+#. Tag: para
+#: microbe.docbook:106
+#, no-c-format
+msgid "Aliases one string to another. Syntax:"
+msgstr "Vzdevek enega niza v drugega. Sintaksa:"
+
+#. Tag: programlisting
+#: microbe.docbook:107
+#, no-c-format
+msgid "alias [from] [to]"
+msgstr "alias [from] [to]"
+
+#. Tag: title
+#: microbe.docbook:112
+#, no-c-format
+msgid "repeat"
+msgstr "repeat"
+
+#. Tag: para
+#: microbe.docbook:113
+#, no-c-format
+msgid ""
+"Executes the statement block repeatedly until expression evaluates to true. "
+"The evaluation of the expression is performed after the statement block, so "
+"the statement block will always be executed at least once. Syntax:"
+msgstr ""
+"Ponavljajoče izvaja blok stavkov, dokler izraz ni ocenjen kot resničen. "
+"Vrednotenje izraza se izvede po bloku stavkov, tako da bo blok stavkov vedno "
+"izveden vsaj enkrat. Sintaksa:"
+
+#. Tag: programlisting
+#: microbe.docbook:116
+#, no-c-format
+msgid ""
+"repeat\n"
+"{\n"
+"        [statement block]\n"
+"}\n"
+"until [expression]"
+msgstr ""
+"repeat\n"
+"{\n"
+"        [statement block]\n"
+"}\n"
+"until [expression]"
+
+#. Tag: title
+#: microbe.docbook:121
+#, no-c-format
+msgid "while"
+msgstr "while"
+
+#. Tag: para
+#: microbe.docbook:122
+#, no-c-format
+msgid ""
+"Similar to repeat, this repeatedly executes the statement block. However, "
+"the expression is evaluated before execution, not after. So if the "
+"expression evaluates to false on the first pass, then the statement block "
+"will not get executed. Syntax:"
+msgstr ""
+"Podobno kot ponavljanje, to večkrat izvede blok stavkov. Vendar je izraz "
+"ovrednoten pred izvedbo, ne po njej. Torej, če je izraz ob prvem prehodu "
+"ovrednoten kot false, se blok stavkov ne bo izvedel. Sintaksa:"
+
+#. Tag: programlisting
+#: microbe.docbook:126
+#, no-c-format
+msgid ""
+"while [expression]\n"
+"{\n"
+"        [statement block]\n"
+"}"
+msgstr ""
+"while [expression]\n"
+"{\n"
+"        [statement block]\n"
+"}"
+
+#. Tag: title
+#: microbe.docbook:132 microbe.docbook:145
+#, no-c-format
+msgid "goto"
+msgstr "goto"
+
+#. Tag: para
+#: microbe.docbook:133
+#, no-c-format
+msgid ""
+"This causes execution of the code to continue at the next statement after "
+"the label specified. Goto syntax: <programlisting role=\"correct"
+"\"><function>goto</function> [labelname]</programlisting> Label syntax: "
+"<programlisting role=\"correct\"><function>labelname:</function></"
+"programlisting> It is often considered good programming practice to avoid "
+"the use of goto. Use of control statements and subroutines will result in a "
+"much more readable program."
+msgstr ""
+"To povzroči, da se izvajanje kode nadaljuje pri naslednjem stavku za "
+"navedeno oznako. Sintaksa Goto: <programlisting role=\"correct"
+"\"><function>goto</function> [labelname]</programlisting> Sintaksa oznake: "
+"<programlisting role=\"correct\"><function>labelname:</function></"
+"programlisting> Izogibanje uporabi goto se pogosto šteje za dobro programsko "
+"prakso. Uporaba kontrolnih stavkov in podprogramov bo povzročila veliko bolj "
+"berljiv program."
+
+#. Tag: programlisting
+#: microbe.docbook:146
+#, no-c-format
+msgid ""
+"goto MyLabel\n"
+"\n"
+"...\n"
+"\n"
+"[MyLabel]:\n"
+"// Code will continue at this point"
+msgstr ""
+"goto MyLabel\n"
+"\n"
+"...\n"
+"\n"
+"[MyLabel]:\n"
+"// Code will continue at this point"
+
+#. Tag: title
+#: microbe.docbook:151
+#, no-c-format
+msgid "call"
+msgstr "call"
+
+#. Tag: para
+#: microbe.docbook:152
+#, no-c-format
+msgid ""
+"Calls a subroutine. Syntax: <programlisting role=\"correct\"><function>call</"
+"function> [SubName]</programlisting> where <replaceable>SubName</"
+"replaceable> is the name of the subroutine to be called."
+msgstr ""
+"Pokliče podprogram. Sintaksa: <programlisting role=\"correct"
+"\"><function>call</function> [SubName]</programlisting>, kjer je "
+"<replaceable>SubName</replaceable> ime podprograma, ki ga želite poklicati."
+
+#. Tag: title
+#: microbe.docbook:162
+#, no-c-format
+msgid "delay"
+msgstr "delay"
+
+#. Tag: para
+#: microbe.docbook:163
+#, no-c-format
+msgid ""
+"This causes the code execution to stop for the given period of time. The "
+"interval is in milliseconds. Syntax:"
+msgstr ""
+"To povzroči, da se izvajanje kode ustavi za dano časovno obdobje. Interval "
+"je v milisekundah. Sintaksa:"
+
+#. Tag: programlisting
+#: microbe.docbook:167
+#, no-c-format
+msgid "<function>delay</function> [interval]"
+msgstr "<function>delay</function> [interval]"
+
+#. Tag: para
+#: microbe.docbook:169
+#, no-c-format
+msgid ""
+"At present, &microbe; assumes that the PIC is operating at a frequency of "
+"4MHz - &ie; each instruction takes 1 microsecond to execute. If this is not "
+"the case, the interval must be adjusted proportionately."
+msgstr ""
+"Trenutno &microbe; predpostavlja, da PIC deluje na frekvenci 4MHz - &ie; "
+"vsako navodilo traja 1 mikrosekundo za izvedbo. Če temu ni tako, je treba "
+"interval sorazmerno prilagoditi."
+
+#. Tag: title
+#: microbe.docbook:174
+#, no-c-format
+msgid "sevenseg"
+msgstr "sevenseg"
+
+#. Tag: para
+#: microbe.docbook:175
+#, no-c-format
+msgid ""
+"This is used to define the pin mapping for a (common cathode) seven segment "
+"display connected to the PIC. Syntax: <programlisting role=\"correct"
+"\"><function>sevenseg</function> [name] [a] [b] [c] [d] [e] [f] [g]</"
+"programlisting> where [a]...[g] are the PIC pins to which the respective "
+"segments of the seven segment display are attached. The pins can be written "
+"either as PORTX.N or RXN."
+msgstr ""
+"To se uporablja za definiranje preslikave nogic za katodni sedemsegmentni "
+"zaslon (s skupno katodo), povezan s PIC. Sintaksa: <programlisting role="
+"\"correct\"><function>sevenseg</function> [ime] [a] [b] [c] [d] [e] [f] [g]</"
+"programlisting> kjer je [a] ...[g] so nogice PIC, na katere so pritrjeni "
+"ustrezni segmenti sedemsegmentnega zaslona. Nogice so lahko zapisane kot "
+"PORTX.N ali RXN."
+
+#. Tag: para
+#: microbe.docbook:181
+#, no-c-format
+msgid ""
+"To display a number on the seven segment, the pin mapping is treated as a "
+"write only variable."
+msgstr ""
+"Za prikaz številke na segmentu sedmih se preslikava nogice obravnava kot "
+"spremenljivka samo za pisanje."
+
+#. Tag: title
+#: microbe.docbook:183
+#, no-c-format
+msgid "Defining and outputting to a seven segment"
+msgstr "Definiranje in izpis v sedem segmentov"
+
+#. Tag: programlisting
+#: microbe.docbook:184
+#, no-c-format
+msgid ""
+"sevenseg seg1 RB0 RB1 RB2 RB3 RB4 RB5 RB6\n"
+"seg1 = x + 2"
+msgstr ""
+"sevenseg seg1 RB0 RB1 RB2 RB3 RB4 RB5 RB6\n"
+"seg1 = x + 2"
+
+#. Tag: title
+#: microbe.docbook:190
+#, no-c-format
+msgid "keypad"
+msgstr "keypad"
+
+#. Tag: para
+#: microbe.docbook:191
+#, no-c-format
+msgid ""
+"This is used to define the pin mapping for a keypad connected to the PIC. "
+"Syntax: <programlisting role=\"correct\"><function>keypad</function> [name] "
+"[row 1] ... [row 4] [column 1] ... [column n]</programlisting> where [row "
+"1] ... [row 4] and [column 1] ... [column n] are the PIC pins to which the "
+"respective rows and columns of the keypad are attached (at the moment, the "
+"number of rows is not changeable). See <xref linkend=\"sevenseg\"/> (above) "
+"for more information on pin mappings."
+msgstr ""
+"To se uporablja za definiranje preslikave nogic za tipkovnico, povezano s "
+"PIC. Sintaksa: <programlisting role=\"correct\"><function>keypad</function> "
+"[ime] [vrstica 1] ... [vrstica 4] [stolpec 1] ... [stolpec n]</"
+"programlisting> kjer [vrstica 1] ... [vrstica 4] in [stolpec 1] ... [stolpec "
+"n] so nogice PIC, na katere so pritrjene ustrezne vrstice in stolpci "
+"tipkovnice (trenutno število vrstic ni spremenljivo) . Glejte <xref linkend="
+"\"sevenseg\"/> (zgoraj) za več informacij o preslikavah nogic."
+
+#. Tag: para
+#: microbe.docbook:197
+#, no-c-format
+msgid ""
+"The columns of the keypad should be pulled down via 100k resistors to "
+"ground. The row pins must be configured as outputs and the column pins as "
+"inputs. Once the keypad has been defined, it is treated as a read only "
+"variable."
+msgstr ""
+"Stolpce tipkovnice je treba potegniti navzdol preko 100k uporov na maso. "
+"Nogice vrstic morajo biti konfigurirane kot izhodi, nogice stolpcev pa kot "
+"vhodi. Ko je tipkovnica definirana, se obravnava kot spremenljivka samo za "
+"branje."
+
+#. Tag: title
+#: microbe.docbook:199
+#, no-c-format
+msgid "Defining and reading from a keypad"
+msgstr "Definiranje in branje s tipkovnice"
+
+#. Tag: programlisting
+#: microbe.docbook:200
+#, no-c-format
+msgid ""
+"keypad keypad1 RB0 RB1 RB2 RB3 RB4 RB5 RB6\n"
+"x = keypad1"
+msgstr ""
+"keypad keypad1 RB0 RB1 RB2 RB3 RB4 RB5 RB6\n"
+"x = keypad1"
+
+#. Tag: para
+#: microbe.docbook:204
+#, no-c-format
+msgid ""
+"By default, the values returned for a keypad are: <itemizedlist> "
+"<listitem><para>The value of the number if it is a numeric key (1 to 3 along "
+"top row; hexadecimal A to D down the fourth column and continuing for each "
+"extra column).</para></listitem> <listitem><para>253 for the key in row 4, "
+"column 1.</para></listitem> <listitem><para>254 for the key in row 4, column "
+"3.</para></listitem> </itemizedlist> These values can be redefined by using "
+"the alias command, where the name of the key in row x, column y (rows and "
+"columns starting at 1), is Keypad_x_y. For example, to give the star key on "
+"a 4x3 keypad the value zero, the following alias would be used:"
+msgstr ""
+"Privzeto so vrnjene vrednosti za tipkovnico: <itemizedlist> "
+"<listitem><para>Vrednost številke, če je številska tipka (1 do 3 v zgornji "
+"vrstici; šestnajstiški A do D navzdol v četrtem stolpcu in nadaljevanje za "
+"vsak dodatni stolpec).</para></listitem> <listitem><para>253 za tipko v "
+"vrstici 4, stolpec 1.</para></listitem> <listitem><para>254 za tipko v "
+"vrstici 4, stolpec 3.</para></listitem> </itemizedlist> Te vrednosti je "
+"mogoče na novo definirati z uporabo ukaza alias, kjer je ime tipke v vrstici "
+"x, stolpcu y (vrstice in stolpci, ki se začnejo pri 1), Keypad_x_y. Če "
+"želite na primer tipki zvezdica na tipkovnici 4x3 dati vrednost nič, bi "
+"uporabili naslednji vzdevek:"
+
+#. Tag: title
+#: microbe.docbook:213
+#, no-c-format
+msgid "Aliasing a keypad key to a value"
+msgstr "Določanje vzdevka tipke na tipkovnici za vrednost"
+
+#. Tag: programlisting
+#: microbe.docbook:214
+#, no-c-format
+msgid "alias Keypad_4_1 0"
+msgstr "alias Keypad_4_1 0"
+
+#. Tag: title
+#: microbe.docbook:221
+#, no-c-format
+msgid "PIC I/O"
+msgstr "PIC I/O"
+
+#. Tag: title
+#: microbe.docbook:224
+#, no-c-format
+msgid "Port Direction"
+msgstr "Smer vrat"
+
+#. Tag: para
+#: microbe.docbook:225
+#, no-c-format
+msgid ""
+"The port direction is set by assigning a value to TRIS*, where * is the port "
+"letter. For example:"
+msgstr ""
+"Smer vrat se nastavi tako, da se TRIS* dodeli vrednost, kjer je * črka vrat. "
+"Na primer:"
+
+#. Tag: title
+#: microbe.docbook:228
+#, no-c-format
+msgid "Setting port directions"
+msgstr "Nastavitev smeri vrat"
+
+#. Tag: programlisting
+#: microbe.docbook:229
+#, no-c-format
+msgid "TRISB = b'01111001'"
+msgstr "TRISB = b'01111001'"
+
+#. Tag: para
+#: microbe.docbook:231
+#, no-c-format
+msgid ""
+"The above sets pins RB1, RB2 and RB7 on PORTB as outputs, and the other pins "
+"on PORTB as inputs. In this example, b'01111001' is a binary representation "
+"of the output type. The 1 on the right represents an output on RB0, and the "
+"0 on the left represents an input on RB7."
+msgstr ""
+"Zgornje nastavi nogice RB1, RB2 in RB7 na PORTB kot izhode, druge nogice na "
+"PORTB pa kot vhode. V tem primeru je b'01111001' binarna predstavitev vrste "
+"izhoda. 1 na desni predstavlja izhod na RB0, 0 na levi pa vhod na RB7."
+
+#. Tag: title
+#: microbe.docbook:237
+#, no-c-format
+msgid "Port I/O"
+msgstr "Vrata I/O"
+
+#. Tag: para
+#: microbe.docbook:238
+#, no-c-format
+msgid "The port can be treated as a variable. For example:"
+msgstr "Vrata je mogoče obravnavati kot spremenljivko. Na primer:"
+
+#. Tag: title
+#: microbe.docbook:242
+#, no-c-format
+msgid "Writing to a port"
+msgstr "Pisanje na vrata"
+
+#. Tag: programlisting
+#: microbe.docbook:243
+#, no-c-format
+msgid "x = PORTA"
+msgstr "x = PORTA"
+
+#. Tag: para
+#: microbe.docbook:246
+#, no-c-format
+msgid "The above assigns the value of PORTA to the variable x."
+msgstr "Zgornje dodeljuje vrednost PORTA spremenljivki x."
+
+#. Tag: title
+#: microbe.docbook:252
+#, no-c-format
+msgid "Pin I/O"
+msgstr "Pin I/O"
+
+#. Tag: para
+#: microbe.docbook:253
+#, no-c-format
+msgid ""
+"Each pin on a port is obtained by prefixing the pin number by the port name; "
+"&eg; Pin 2 (starting from Pin 0) on PORTA is known as <emphasis>PORTA.0</"
+"emphasis>. The syntax to set a pin state is: <programlisting role=\"correct"
+"\">PORTX.N = <emphasis>STATE</emphasis></programlisting> where "
+"<emphasis>STATE</emphasis> can be <emphasis>high</emphasis> or "
+"<emphasis>low</emphasis>. The syntax to test a pin state is: <programlisting "
+"role=\"correct\"><function>if</function> PORTX.N is <emphasis>STATE</"
+"emphasis> <function>then</function></programlisting> Combining these "
+"examples, we have:"
+msgstr ""
+"Vsako nogico na vratih dobimo tako, da pred številko nogice dodamo ime vrat; "
+"&eg; Pin 2 (začenši z nogico 0) na PORTA je znan kot <emphasis>PORTA.0</"
+"emphasis>. Sintaksa za nastavitev stanja nogice je: <programlisting role="
+"\"correct\">PORTX.N = <emphasis>STATE</emphasis></programlisting>, kjer je "
+"<emphasis>STATE</emphasis> lahko <emphasis>high</emphasis> ali "
+"<emphasis>low</emphasis>. Sintaksa za preizkus stanja nogice je: "
+"<programlisting role=\"correct\"><function>if</function> PORTX.N je "
+"<emphasis>STATE</emphasis> <function>then</function></programlisting> S "
+"kombiniranjem teh primerov imamo:"
+
+#. Tag: title
+#: microbe.docbook:266
+#, no-c-format
+msgid "Setting and testing pin state"
+msgstr "Nastavitev in testiranje stanja nogice"
+
+#. Tag: programlisting
+#: microbe.docbook:267
+#, no-c-format
+msgid ""
+"TRISA = 0\n"
+"TRISB = 255\n"
+"<function>if</function> PORTA.3 is <function>high</function> <function>then</"
+"function>\n"
+"{\n"
+"        PORTB.5 = <function>low</function>\n"
+"}\n"
+"<function>else</function>\n"
+"{\n"
+"        PORTB = PORTA + 15\n"
+"}"
+msgstr ""
+"TRISA = 0\n"
+"TRISB = 255\n"
+"<function>if</function> PORTA.3 is <function>high</function> <function>then</"
+"function>\n"
+"{\n"
+"        PORTB.5 = <function>low</function>\n"
+"}\n"
+"<function>else</function>\n"
+"{\n"
+"        PORTB = PORTA + 15\n"
+"}"
+
+#. Tag: title
+#: microbe.docbook:273
+#, no-c-format
+msgid "Variables"
+msgstr "Spremenljivke"
+
+#. Tag: para
+#: microbe.docbook:274
+#, no-c-format
+msgid ""
+"All variables are 8-bit unsigned integers, giving a range from 0 to 255. "
+"<application>&microbe;</application> supports the typical unary operations "
+"(acting on one variable) and binary operations (acting on two variables) "
+"that are supported by the PIC. In addition, &microbe; also supports division "
+"and multiplication."
+msgstr ""
+"Vse spremenljivke so 8-bitna nepredznačena cela števila, ki v obsegu od 0 do "
+"255. <application>&microbe;</application> podpira tipične unarne operacije "
+"(delujejo na eno spremenljivko) in binarne operacije (delujejo na dve "
+"spremenljivki), ki jih podpira PIC. Poleg tega &microbe; podpira tudi "
+"deljenje in množenje."
+
+#. Tag: title
+#: microbe.docbook:280
+#, no-c-format
+msgid "Unary Operations"
+msgstr "Unarne operacije"
+
+#. Tag: para
+#: microbe.docbook:283
+#, no-c-format
+msgid ""
+"<emphasis>rotateleft x</emphasis> - Rotates the variable x left through "
+"carry."
+msgstr ""
+"<emphasis>rotateleft x</emphasis> – Zasuka spremenljivko x levo skozi prenos."
+
+#. Tag: para
+#: microbe.docbook:284
+#, no-c-format
+msgid ""
+"<emphasis>rotateright x</emphasis> - Rotates the variable x right through "
+"carry."
+msgstr ""
+"<emphasis>rotateright x</emphasis> – Zasuka spremenljivko x desno skozi "
+"prenos."
+
+#. Tag: para
+#: microbe.docbook:285
+#, no-c-format
+msgid ""
+"<emphasis>increment x</emphasis> - Increments the variable x. If x has a "
+"value of 255, then x wraps round to 0."
+msgstr ""
+"<emphasis>inkrement x</emphasis> – Poveča spremenljivko x. Če ima x vrednost "
+"255, se x zaokroži na 0."
+
+#. Tag: para
+#: microbe.docbook:286
+#, no-c-format
+msgid ""
+"<emphasis>decrement x</emphasis> - Decrements the variable x. If x has a "
+"value of 0, then x wraps round to 255."
+msgstr ""
+"<emphasis>zmanjšaj x</emphasis> – Zmanjša spremenljivko x. Če ima x vrednost "
+"0, se x zaokroži na 255."
+
+#. Tag: title
+#: microbe.docbook:292
+#, no-c-format
+msgid "Arithmetic"
+msgstr "Aritmetika"
+
+#. Tag: para
+#: microbe.docbook:293 microbe.docbook:309
+#, no-c-format
+msgid "Supported operations:"
+msgstr "Podprte operacije:"
+
+#. Tag: para
+#: microbe.docbook:296
+#, no-c-format
+msgid "<emphasis>Addition:</emphasis> x + y"
+msgstr "<emphasis>Seštevanje:</emphasis> x + y"
+
+#. Tag: para
+#: microbe.docbook:297
+#, no-c-format
+msgid "<emphasis>Subtraction:</emphasis> x - y"
+msgstr "<emphasis>Odštevanje:</emphasis> x - y"
+
+#. Tag: para
+#: microbe.docbook:298
+#, no-c-format
+msgid "<emphasis>Multiplication:</emphasis> x * y"
+msgstr "<emphasis>Množenje:</emphasis> x * y"
+
+#. Tag: para
+#: microbe.docbook:299
+#, no-c-format
+msgid "<emphasis>Division:</emphasis> x / y"
+msgstr "<emphasis>Deljenje:</emphasis> x / y"
+
+#. Tag: para
+#: microbe.docbook:300
+#, no-c-format
+msgid "<emphasis>Binary XOR:</emphasis> x XOR y"
+msgstr "<emphasis>Binarni XOR:</emphasis> x XOR y"
+
+#. Tag: para
+#: microbe.docbook:301
+#, no-c-format
+msgid "<emphasis>Binary AND:</emphasis> x AND y"
+msgstr "<emphasis>Binarni AND:</emphasis> x AND y"
+
+#. Tag: para
+#: microbe.docbook:302
+#, no-c-format
+msgid "<emphasis>Binary OR:</emphasis> x OR y"
+msgstr "<emphasis>Binarni OR:</emphasis> x OR y"
+
+#. Tag: title
+#: microbe.docbook:308 microbe.docbook:324
+#, no-c-format
+msgid "Comparison"
+msgstr "Primerjava"
+
+#. Tag: para
+#: microbe.docbook:313
+#, no-c-format
+msgid "<emphasis>Equals:</emphasis> x == y"
+msgstr "<emphasis>Enakost:</emphasis> x == y"
+
+#. Tag: para
+#: microbe.docbook:314
+#, no-c-format
+msgid "<emphasis>Does not equal:</emphasis> x != y"
+msgstr "<emphasis>Neenakost:</emphasis> x != y"
+
+#. Tag: para
+#: microbe.docbook:315
+#, no-c-format
+msgid "<emphasis>Is greater than:</emphasis> x > y"
+msgstr "<emphasis>Je večje od:</emphasis> x > y"
+
+#. Tag: para
+#: microbe.docbook:316
+#, no-c-format
+msgid "<emphasis>Is less than:</emphasis> x &lt; y"
+msgstr "<emphasis>Je manjše kot:</emphasis> x &lt; l"
+
+#. Tag: para
+#: microbe.docbook:317
+#, no-c-format
+msgid "<emphasis>Is greater than or equal to:</emphasis> x &gt;= y"
+msgstr "<emphasis>Je večje ali enako:</emphasis> x &gt;= y"
+
+#. Tag: para
+#: microbe.docbook:318
+#, no-c-format
+msgid "<emphasis>Is less than or equal to:</emphasis> x &lt;= y"
+msgstr "<emphasis>Je manjše ali enako:</emphasis> x &lt;= y"
+
+#. Tag: para
+#: microbe.docbook:321
+#, no-c-format
+msgid "For example:"
+msgstr "Na primer:"
+
+#. Tag: programlisting
+#: microbe.docbook:325
+#, no-c-format
+msgid ""
+"<function>if</function> PORTA >= 5 <function>then</function>\n"
+"{\n"
+"        ...\n"
+"}"
+msgstr ""
+"<function>if</function> PORTA >= 5 <function>then</function>\n"
+"{\n"
+"        ...\n"
+"}"

@@ -1,0 +1,5222 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+<!ENTITY skrooge '<application
+>Skrooge</application
+>'
+> <!--remove when skrooge requires kdoctools 5.13-->
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % German "INCLUDE"
+><!-- change language only here -->
+<!ENTITY homepage "https://www.kde.org/applications/office/skrooge/">
+]>
+
+<book id="skrooge" lang="&language;">
+  <title
+>Das Handbuch zu &skrooge;</title>
+  
+  <bookinfo>
+    
+    <authorgroup>
+      
+      <author
+><firstname
+>Stéphane</firstname
+> <surname
+>MANKOWSKI</surname
+> <affiliation
+> <address
+><email
+>stephane@mankowski.fr</email
+></address>
+	</affiliation>
+      </author>
+      
+      <othercredit role="developer"
+><firstname
+>Guillaume</firstname
+> <surname
+>DE BURE</surname
+> <affiliation
+> <address
+><email
+>guillaume.debure@gmail.com</email
+></address>
+	</affiliation>
+	<contrib
+>Entwickler</contrib>
+      </othercredit>
+      <othercredit role="translator"
+><firstname
+>Burkhard</firstname
+><surname
+>Lück</surname
+><affiliation
+><address
+><email
+>lueck@hube-lueck.de</email
+></address
+></affiliation
+><contrib
+>Übersetzung</contrib
+></othercredit
+> 
+    </authorgroup>
+    
+    <copyright>
+      <year
+>2007</year>
+      <year
+>2008</year>
+      <year
+>2009</year>
+      <year
+>2010</year>
+      <year
+>2011</year>
+      <year
+>2012</year>
+      <year
+>2013</year>
+      <year
+>2014</year>
+      <year
+>2015</year>
+      <year
+>2016</year
+>      
+      <year
+>2017</year
+>    
+      <year
+>2018</year>
+      <year
+>2019</year>
+      <year
+>2020</year>
+      <holder
+>Stéphane MANKOWSKI</holder>
+      <holder
+>Guillaume DE BURE</holder>
+    </copyright>
+    
+    <legalnotice
+>&FDLNotice;</legalnotice>
+    
+    <date
+>2020-04-11</date>
+    <releaseinfo
+>&skrooge; 2.22.1</releaseinfo>
+    
+    <abstract>
+      <para
+>Dieses Dokument ist ein Handbuch für &skrooge;, ein Programm zur Verwaltung persönlicher Finanzen. </para>
+    </abstract>
+    
+    <keywordset>
+      <keyword
+>KDE</keyword>
+      <keyword
+>extragear</keyword>
+      <keyword
+>Büro</keyword>
+      <keyword
+>skrooge</keyword>
+      <keyword
+>Persönliche Finanzen</keyword>
+    </keywordset>
+    
+  </bookinfo>
+  
+  <chapter id="introduction">
+    <title
+>Einführung</title>
+    
+    <sect1 id="skrooge-intro">
+      <title
+>&skrooge;</title>
+      
+      <para
+>&skrooge; ist eine Anwendung zur Verwaltung ihrer persönlichen Finanzen. &skrooge; kann Ihre Ein- und Ausgaben über mehrere Konten in mehreren Währungen überwachen. &skrooge; hat Funktionen wie Kategorien, geplante Vorgänge, grafische Berichte und Aktienverwaltung. &skrooge; hat sogar weniger gebräuchliche Funktionen wie die schnelle Bearbeitung von Vorgängen, Suche bei der Eingabe, Rückerstattung mit Vorgangsgruppen, benutzerdefinierte Attribute und mehr. </para>
+      
+      <screenshot>
+	<screeninfo
+>&skrooge; zeigt ein Kreisdiagramm der Ausgaben je Kategorie</screeninfo>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="reports.png" format="PNG"/>
+	  </imageobject>
+	  <textobject
+><phrase
+>&skrooge; zeigt ein Kreisdiagramm der Ausgaben je Kategorie</phrase
+></textobject>
+	</mediaobject>
+      </screenshot>
+      
+      
+      <sect2 id="what-skrooge-is">
+	<title
+>Was ist &skrooge;</title>
+	
+	<para
+>&skrooge; ist ein quelloffenes Verwaltungsprogramm für persönliche Finanzen für &kde; Frameworks. Es sollte von einzelnen Personen benutzt werden, die Ihre Einnahmen, Ausgaben und Investitionen überwachen möchten. </para>
+	
+      </sect2>
+      
+      <sect2 id="what-skrooge-is-not">
+	<title
+>Was &skrooge; nicht ist</title>
+	
+	<para
+>&skrooge; ist kein professionelles Programm zur Verwaltung von Finanzen. Es hat keine Funktionen für kleine Unternehmen, verwaltet keine Steuern, benutzt keine doppelte Buchführung oder erweiterte Finanzfunktionen. </para>
+	<para
+>Suchen Sie nach einem solchen Programm, sollten Sie stattdessen einen Blick auf KMyMoney oder Kraft werfen.</para>
+	
+      </sect2>
+    </sect1>
+    
+    <sect1 id="terminology">
+      <title
+>Fachbegriffe</title>
+      
+      <sect2 id="terminology-document">
+	<title
+>Dokument</title>
+	<para
+>Ein Dokument ist eine &skrooge;-Datei mit der Erweiterung „.skg“. Dieses Dokument kann eine unbegrenzte Anzahl von <link linkend="terminology-account"
+>Konten</link
+> enthalten. Sie können ein einziges Dokument für alle Ihre Konten verwenden. </para>
+      </sect2>
+      
+      <sect2 id="terminology-account">
+	<title
+>Konto</title>
+	<para
+>Ein Konto in &skrooge; entspricht einem Konto bei Ihrer Bank. Wenn Sie bei der Bank zum Beispiel eine eigenes Konto, ein Konto Ihrer Frau und ein gemeinsames Konto haben, sollten Sie diese Konten auch in &skrooge; anlegen. Jedes mal wenn Sie Geld ausgeben oder einnehmen, registrieren Sie einen <link linkend="terminology-operation"
+>Vorgang</link
+> und geben das Konto für diesen Vorgang an. </para>
+      </sect2>
+      
+      <sect2 id="terminology-operation">
+	<title
+>Vorgang</title>
+	<para
+>Ein Vorgang ist entweder eine Einzahlung oder Abhebung von einer Ihrer Konten. Durch die Zuweisung einer <link linkend="terminology-category"
+>Kategorie</link
+> oder einer <link linkend="trackers"
+>Vorgangsgruppe</link
+> für einen Vorgang können Sie analysieren, wofür Sie Ihre Geld ausgegeben haben.</para>
+	
+	<sect3 id="terminology_standard_operation">
+	  <title
+>Standard-Vorgang</title>
+	  <para
+>Ein Standard-Vorgang ist der grundlegende Vorgang in &skrooge; wie zum Beispiel „Heute 20 € mit der Kreditkarte für Lebensmittel ausgegeben“.</para>
+	  <para
+></para>
+	</sect3>
+	
+	<sect3 id="terminology_split_operation">
+	  <title
+>Split-Vorgang</title>
+	  <para
+>Ein Split-Vorgang ist ein Vorgang, bei dem der gesamte Betrag auf mehrere <link linkend="terminology-category"
+>Kategorien</link
+>, Daten und/oder <link linkend="trackers"
+>Vorgangsgruppen</link
+>  aufgeteilt wird. Zum Beispiel „Gestern in Supermarkt 100 € bezahlt, davon 60 @ für Essen und 40 € für Kleidung“.</para>
+	</sect3>
+	
+	<sect3 id="terminology_transfer">
+	  <title
+>Buchung</title>
+	  <para
+>Eine Buchung in &skrooge; entspricht der Verschiebung eines Geldbetrags von einem Konto in &skrooge; in ein anderes Konto in &skrooge;.</para>
+	  <para
+>Dies sollten Sie nicht mit der ausgewählten Zahlungsweise verwechseln: Wenn Sie eine Übertragung zu einem anderen Konto durchführen, zum Beispiel indem Sie die Webseite Ihrer Bank verwenden, dann ist dies kein Übertragungsvorgang, da &skrooge; das Konto der anderen Person nicht kennt. Dies ist ein <link linkend="terminology_standard_operation"
+>Standard-Vorgang</link
+> mit einer Übertragung als Zahlungsmodus.</para>
+	  <para
+>Lesen Sie das Kapitel <link linkend="transfer"
+>Überweisung</link
+>, wenn Sie noch Fragen haben.</para>
+	</sect3>
+	
+	<sect3 id="terminology_validated_operation">
+	  <title
+>Bestätigte Vorgänge</title>
+	  <para
+>Beim <link linkend="import"
+>Import</link
+> von Vorgängen von Ihren Finanzinstitut werden Sie nicht automatisch als gültig angesehen und werden blau angezeigt. Sie müssen diese Vorgänge manuell bestätigen. Ein bestätigter Vorgang wird dann nicht mehr in Blau angezeigt.</para>
+	  <para
+>Beachten Sie, dass Sie beim Importieren Vorgänge automatisch bestätigen können, wenn die entsprechende Einstellung im <link linkend="settings"
+>Einrichtungsdialog</link
+> aktiviert wurden.</para>
+	</sect3>
+	
+	<sect3 id="terminology_pointed_operation">
+	  <title
+>Markierter Vorgang</title>
+	  <para
+>Während des <link linkend="reconciliation"
+>Abgleichs</link
+> markieren sie in &skrooge; alle Vorgänge, die in der zugehörigen Konto-Position erscheinen. Dies ist dann eine markierte Position. Solche markierten Vorgänge zeigen ein halbgefülltes Quadrat in der Statusspalte einer Vorgangsansicht. Diese Vorgänge sind nicht nicht <link linkend="terminology_checked_operation"
+>überprüft</link
+>, bis der Abgleich abgeschlossen wurde.</para>
+	</sect3>
+	
+	<sect3 id="terminology_checked_operation">
+	  <title
+>Überprüfter Vorgang</title>
+	  <para
+>Wenn alle Vorgänge in Ihrer Konto-Position in &skrooge; markiert wurden, können Sie den Abgleich abschließen. Alle <link linkend="terminology_pointed_operation"
+>markierten</link
+> Vorgänge erhalten dann den Status von überprüften Vorgängen und werden mit gefüllten Quadraten in der Statusspalte einer Vorgangsansicht angezeigt..</para>
+	</sect3>
+	
+      </sect2>
+      
+      <sect2 id="terminology-category">
+	<title
+>Kategorie</title>
+	<para
+>Eine Kategorie besteht im wesentlichen aus einer Gruppe von Vorgängen. Typische Beispiele sind „Essen“, „Steuern“, „Gehalt “ usw. Eine Kategorie kann weitere Kategorien enthalten, sie hat eine hierarchische Struktur. Eine Kategorie „Verkehrsmittel“ kann zum Beispiel weitere Unterkategorien wie „Bus“, „Auto“ oder „Flugzeug“ enthalten. &skrooge; kann eine unbegrenzte Anzahl von Unterkategorien verarbeiten. </para>
+      </sect2>
+      
+      <sect2 id="terminology-unit">
+	<title
+>Einheit</title>
+	<para
+>Eine Einheit in &skrooge; kann alles sein, was einen Wert hat, zum Beispiel: <itemizedlist>
+	    <listitem
+><para
+>Währung <itemizedlist>
+		  <listitem
+><para
+>$ (US-Dollar)</para
+></listitem>
+		  <listitem
+><para
+>€ (Euro)</para
+></listitem>
+		  <listitem
+><para
+>£ (Pfund Sterling)</para
+></listitem>
+		</itemizedlist>
+	      </para>
+	    </listitem>
+	    <listitem
+><para
+>Aktie oder Index <itemizedlist>
+		  <listitem
+><para
+>GOOG (Google)</para
+></listitem>
+		  <listitem
+><para
+>NASDAQ</para
+></listitem>
+		</itemizedlist>
+	      </para>
+	    </listitem>
+	    <listitem
+><para
+>Alles was Sie besitzen <itemizedlist>
+		  <listitem
+><para
+>Ihr Haus</para
+></listitem>
+		  <listitem
+><para
+>Ihr Auto</para
+></listitem>
+		</itemizedlist>
+	      </para>
+	    </listitem>
+	  </itemizedlist>
+	  
+	</para>
+      </sect2>
+    </sect1>
+  </chapter>
+  
+  <chapter id="main-concepts">
+    <title
+>Grundlegende Konzepte</title>
+    
+    <sect1 id="user_interface">
+      <title
+>Benutzeroberfläche</title>
+      <para
+>Das Fenster von &skrooge; besteht aus dem Hauptbereich, umgeben von Seitenleisten und der Statusleiste. Die Seitenleisten können ein- oder ausgeblendet und rechts oder links vom Hauptbereich angezeigt werden. </para>
+      
+      <sect2 id="main_area">
+	<title
+>Das Hauptfenster</title>
+	<para
+>In diesem Bereich zeigt &skrooge; die Informationen an. Hier kann es mehrere <link linkend="multi-tabs"
+>Unterfenster geben</link
+>, jedes mit der von Ihnen zugewiesenen Ansicht. </para>
+      </sect2>
+      
+      <sect2 id="docks">
+	<title
+>Seitenleisten</title>
+	<para
+>Seitenleisten finden Sie in vielen &kde;-Programmen. Sie sind ein Teilbereich des Hauptfensters und können verschoben, gestapelt, geschlossen und sogar vom Hauptfenster gelöst werden. </para>
+	
+	<para
+>Einige Beispiele für die Anordnung von Seitenleisten: </para>
+	
+	<informaltable>
+	  <tgroup cols="3">
+	    <tbody>
+	      <row>
+		<entry>
+		  <inlinemediaobject>
+		    <imageobject>
+		      <imagedata fileref="docks_left_right.png"/>
+		    </imageobject>
+		  </inlinemediaobject>
+		</entry>
+		<entry>
+		  <inlinemediaobject>
+		    <imageobject>
+		      <imagedata fileref="docks_detached.png"/>
+		    </imageobject>
+		  </inlinemediaobject>
+		</entry>
+		<entry>
+		  <inlinemediaobject>
+		    <imageobject>
+		      <imagedata fileref="docks_stacked.png"/>
+		    </imageobject>
+		  </inlinemediaobject>
+		</entry>
+	      </row>
+	    </tbody>
+	  </tgroup>
+	</informaltable>
+	
+	<para
+>In &skrooge; gibt es folgende Seitenleisten: <itemizedlist>
+	    <listitem
+><para
+><link linkend="page_chooser"
+>Die Seitenauswahl</link
+></para
+></listitem>
+	    <listitem
+><para
+><link linkend="bookmarks"
+>Die Lesezeichenliste</link
+></para
+></listitem>
+	    <listitem
+><para
+><link linkend="undo_redo"
+>Der Verlauf</link
+></para
+></listitem>
+	    <listitem
+><para
+><link linkend="property_editor"
+>Der Eigenschaften-Editor</link
+></para
+></listitem>
+	    <listitem
+><para
+><link linkend="message_list"
+>Die Nachrichtenliste</link
+></para
+></listitem>
+	  </itemizedlist>
+	</para>
+      </sect2>
+      
+      <sect2 id="page_chooser">
+	<title
+>Seitenauswahl</title>
+	<para
+>Die Seitenauswahl ist eine Leiste, in der Sie die Ansicht auswählen können, die im aktuellen oder in einem neuen Unterfenster angezeigt werden. Um eine Ansicht in einem neuen Unterfenster zu öffnen, halten Sie die &Ctrl;-Taste während Sie auf die gewünschte Ansicht klicken.</para
+><tip
+><para
+>Sie können diese Liste über ein Kontextmenü anpassen.</para
+></tip>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="context_chooser.png" format="PNG"/></imageobject>
+	    <textobject
+><phrase
+>Die Seitenauswahl</phrase
+></textobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Jede Seite wird in diesem Handbuch in einem eigenen Kapitel erläutert.</para>
+      </sect2>
+       	
+      <sect2 id="bookmarks">
+	  <title
+>Lesezeichen</title>
+	  <para
+>Angenommen Sie möchten die Vorgangsansicht getrennt für jedes Konto anpassen: Jedes Konto wird in einem eigenen Unterfenster angezeigt, vielleicht mit verschiedenen Spalten in jeder Tabelle. Die vorher genannte Methode funktioniert hierfür nicht, da sie alle Unterfenster des gleichen Typs betrifft. </para>
+	  <para
+>Um diese Problem zu lösen, sollten Sie alle einzelnen Unterfenster als Lesezeichen speichern. Ähnlich wie in Webbrowsern können Lesezeichen in einer Hierarchie angeordnet werden, die Sie im Lesezeichen-Browser anzeigen können:</para>
+	  
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject
+><imagedata fileref="bookmarks_browser.png" format="PNG"/></imageobject>
+	      <textobject
+><phrase
+>Der Lesezeichen-Browser</phrase
+></textobject>
+	    </mediaobject>
+	  </screenshot>
+	  
+	  <para
+>Um ein Lesezeichen zu erstellen, wählen Sie einen Eintrag aus der <link linkend="page_chooser"
+>Seitenauswahl</link
+>, für den Sie ein Lesezeichen anlegen möchten, und passen den Inhalt nach Ihren Vorlieben an. Haben Sie alles wie gewünscht eingestellt, wechseln Sie zum Unterfenster <link linkend="docks"
+>Lesezeichen</link
+> und wählen im Kontextmenü <menuchoice
+><guimenu
+>Lesezeichen für die aktuelle Seite anlegen</guimenu
+></menuchoice
+>.</para>
+	  
+	  <para
+>Jedes Lesezeichen oder jeder Lesezeichenordner kann automatisch geöffnet werden, &ie; er wird beim Starten von &skrooge; automatisch geöffnet. Damit können Sie das Layout von &skrooge; vollständig anpassen.</para>
+	  <para
+>Sie können den Text und das Symbol für jedes Lesezeichen oder Lesezeichenordner auswählen.</para
+>	  
+	</sect2>
+      
+      <sect2 id="undo_redo">
+	<title
+>Rückgängigmachen / Wiederherstellen</title>
+	<para
+>&skrooge; behandelt das Rückgängigmachen oder Wiederherstellen in bekannter Weise, außer dass Sie jeder Aktion unbegrenzt rückgängig machen oder wiederherstellen können, sogar Aktionen von vorherigen Tagen. In der <link linkend="settings"
+>Voreinstellung</link
+> wird der Verlauf beim Beenden von &skrooge; nicht geleert, aber dieses Verhalten können Sie in den <link linkend="settings"
+>Einstellungen</link
+> ändern. D. h. Sie können theoretisch alle Aktionen bis zur Erstellung des Dokuments zurücknehmen. </para>
+	<para
+>Um die Einfluss auf die Dateigröße zu begrenzen, ist in der Voreinstellung ein Verlaufspeicher mit 50 Einträgen eingestellt. Diese Werte können Sie im <link linkend="settings"
+>Einrichtungsdialog</link
+> ändern. </para>
+	<para
+>&skrooge; hat eine <link linkend="docks"
+>Seitenleiste</link
+>, in der alle Aktionen aufgelistet werden, die zurückgenommen werden können. </para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="history_browser.png" format="PNG"/></imageobject>
+	    <textobject
+><phrase
+>Die Verlaufsansicht</phrase
+></textobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Die Verlaufsansicht zeigt drei Spalten: </para>
+	
+	<itemizedlist
+>	  
+	  <listitem>
+	    <para
+>ein Symbol, das den Status der Aktion anzeigt. Ein gelber Pfeil gegen den Uhrzeigersinn <inlinemediaobject
+><imageobject
+><imagedata fileref="edit-undo.png" format="PNG"/></imageobject
+></inlinemediaobject
+> bedeutet, dass die Aktion zurückgenommen werden kann. Ein grüner Pfeil im Uhrzeigersinn <inlinemediaobject
+><imageobject
+><imagedata fileref="edit-redo.png" format="PNG"/></imageobject
+></inlinemediaobject
+> bedeutet, dass die Aktion wiederhergestellt werden kann. </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para
+>die Beschreibung dieser Aktion </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para
+>das Datum, an dem diese Aktion ausgeführt wurde </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para
+>ein Diskettensymbol <inlinemediaobject
+><imageobject
+><imagedata fileref="document-save.png" format="PNG"/></imageobject
+></inlinemediaobject
+> zeigt an, dass diese Aktion einen gespeicherten Status hat, &ie; das Dokument wurde sofort nach dieser Aktion gespeichert. </para>
+	  </listitem>
+	</itemizedlist>
+	
+	<para
+>Um einen Vorgang zurückzunehmen oder wieder herzustellen, doppelklicken Sie darauf. </para>
+      </sect2>
+      
+      <sect2 id="property_editor">
+	<title
+>Eigenschaften-Editor</title>
+	<para
+>Eine der ziemlich ungewöhnlichen Funktionen von &skrooge; ist die Möglichkeit, Objekten benutzerdefinierte Eigenschaften hinzuzufügen. Sie können zum Beispiel Namen und Telefonnummer eines Bankangestellten, die Ihre Kontaktperson ist, zu einem Konto hinzufügen oder eine Datei an einen Vorgang anhängen wie zum Beispiel eine eingescannte Rechnung. </para>
+	<para
+>Dies können Sie mit dem Eigenschaften-Editor erreichen, der als eigene <link linkend="docks"
+>Seitenleiste</link
+> angezeigt wird. </para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="property_editor.png" format="PNG"/></imageobject>
+	    <textobject
+><phrase
+>Der Eigenschaften-Editor mit einem Anhang</phrase
+></textobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Wird diese Seitenleiste eingeblendet, werden auf ihr benutzerdefinierte Eigenschaften des ausgewählten Objekts oder aller Objekte angezeigt, wie zum Beispiel ein Konto, ein Vorgang, eine Kategorie oder eine Einheit. In dieser Seitenleiste können Sie Eigenschaften erstellen, aktualisieren oder löschen. </para>
+	
+	<para
+>Folgende Eigenschaften sind möglich: </para>
+	  <itemizedlist>
+	    
+	    <listitem>
+	      <para
+>Eine einfache Zeichenfolge </para>
+	    </listitem>
+	    
+	    <listitem>
+	      <para
+>Eine kopierte Datei in einem beliebigen Format (odt, png, pdf, ...). Die Datei wird in das &skrooge;-Dokument kopiert. Diese Datei kann von &skrooge; geöffnet werden, indem Sie auf den entsprechenden Knopf klicken. Beachten Sie, dass alle Änderungen der Originaldatei nicht in das &skrooge;-Dokument übernommen werden. </para>
+	    </listitem>
+	    
+	    <listitem>
+	      <para
+>Eine Verknüpfung zu einer vorhandenen Datei in einem beliebigen Format (odt, png, pdf, .). Die Datei wird nicht in das &skrooge;-Dokument kopiert. Diese Datei kann von &skrooge; geöffnet werden, indem Sie auf den entsprechenden Knopf klicken. </para>
+	    </listitem>
+	    
+	    <listitem>
+	      <para
+>Eine Verknüpfung zu einer HTTP-Seite, zum Beispiel die Webseite Ihrer Bank. </para>
+	    </listitem>
+	  </itemizedlist>
+	<para
+>Hinzugefügte Eigenschaften können als Spalten in einer <link linkend="tables"
+>Tabelle</link
+> angezeigt werden. </para
+>	
+      </sect2>
+
+      <sect2 id="message_list">
+	<title
+>Die Nachrichtenliste</title>
+	<para
+>In dieser Liste können Sie eine Anzeige aller Nachrichten sehen.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="messages.png" format="PNG"/></imageobject>
+	    <textobject
+><phrase
+>Die Nachrichtenliste</phrase
+></textobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Jede Seite wird in diesem Handbuch in einem eigenen Kapitel erläutert.</para>
+      </sect2>
+      
+      <sect2 id="multi-tabs">
+	<title
+>Mehrere Unterfenster</title>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="multi_tabs.png" format="PNG"/></imageobject>
+	    <textobject
+><phrase
+>&skrooge; mit mehreren Unterfenstern</phrase
+></textobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>&skrooge; kann mehrere Unterfenster anzeigen. Sie können beliebig viele Unterfenster hinzufügen, jedes mit den von Ihnen benötigten Informationen. Das Bildschirmfoto oben zeigt vier Unterfenster, Konten, Vorgänge, und zwei Diagramme.</para>
+      </sect2>
+      
+      <sect2 id="editing_panels">
+	<title
+>Bearbeitungsleisten</title>
+	<para
+>In den meisten Ansichten von &skrooge; bearbeiten Sie Einträge in einer Bearbeitungsleiste unten auf der Seite.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="editing_panel_buttons.png" format="PNG"/></imageobject>
+	    <textobject
+><phrase
+>Knöpfe zum Ein- und Ausblenden von Bearbeitungsleisten für Vorgänge.</phrase
+></textobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Wenn eine Ansicht mehr als einen Bearbeitungsmodus hat, können Sie mit den Knöpfen dazwischen wählen. Im obigen Bildschirmfoto gibt es vier Knöpfe zur Auswahl verschiedener Bearbeitungsmodi für <link linkend=" operations" 
+>Vorgänge</link
+>: „Standard“, „Teilen“, „Überweisung“ und „Aktien“. Um den maximalen Platz für die Darstellung von Informationen zu erhalten, besonders auf kleinen Bildschirmen, können Sie das Bearbeitungsfeld einiger Ansichten ein- oder ausblenden. Wenn Sie im obigen Bildschirmfoto auf den Knopf für den aktuellen Modus klicken, um die Auswahl aufzuheben, wird das Bearbeitungsfeld ausgeblendet.</para>
+	
+	<para
+>In Bearbeitungsleisten werden alle Eingaben in numerischen Feldern interpretiert. Daher können Sie mathematische Ausdrücke eingeben wie zum Beispiel: <itemizedlist>
+	    <listitem
+><para
+>5*3+10</para
+></listitem>
+	    <listitem
+><para
+>5*(3+10)</para
+></listitem>
+	    <listitem
+><para
+>Math.sin(10)</para
+></listitem>
+	  </itemizedlist
+>	  
+	</para
+>	
+      </sect2>
+      
+      <sect2 id="tables">
+	<title
+>Tabellen</title>
+	<para
+>In &skrooge; können alle Tabellen angepasst werden. Öffnen Sie das Kontextmenü durch Klicken mit der &RMBn; auf den Spaltenkopf, dann erscheint folgendes Menü:</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="table_menu.png" format="PNG"/></imageobject>
+	    <textobject
+><phrase
+>Anpassung einer Tabelle</phrase
+></textobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<variablelist>
+	  <varlistentry>
+	    <term
+><menuchoice
+><guimenu
+>Spalten</guimenu
+></menuchoice
+></term>
+	    <listitem>
+	      <para
+>Das Erscheinungsbild der Spalten anpassen.</para>
+	      <variablelist>
+		<varlistentry>
+		  <term
+><menuchoice
+><guimenu
+>Erscheinungsbild</guimenu
+></menuchoice
+></term>
+		  <listitem>
+		    <para
+>Verwendet eine vordefinierte Gruppe von Spalten. In der Standardeinstellung werden normalerweise alle Spalten angezeigt. Andere vordefinierte Gruppen können für jede Tabelle vorhanden sein.</para>
+		  </listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+><menuchoice
+><guimenu
+>An Inhalt anpassen</guimenu
+></menuchoice
+></term>
+		  <listitem
+><para
+>Ändert die Größe aller Spalten passend zum Inhalt.</para
+></listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+><menuchoice
+><guimenu
+>Größe automatisch anpassen</guimenu
+></menuchoice
+></term>
+		  <listitem
+><para
+>Ist diese Einstellung aktiviert, können Sie die Breite der Spalten nicht manuell ändern. Das wird durch &skrooge; automatisch anhand der Inhalte der Spalten festgelegt.</para
+></listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+><guimenu
+>Liste angezeigter Spalten</guimenu
+></term>
+		  <listitem
+><para
+>Zeigt die Liste aller Spalten, die in dieser Tabelle angezeigt werden können. Die aktuell angezeigten Spalten sind angekreuzt. Entfernen Sie das Kreuz, um die Spalte auszublenden oder kreuzen Sie eine Spalte an, um sie anzuzeigen. Die hinzugefügten <link linkend="property_editor"
+>Eigenschaften</link
+> können zur Anzeige als Spalte ausgewählt werden.</para
+></listitem>
+		</varlistentry
+>	
+	      </variablelist>
+	    </listitem>
+	  </varlistentry>
+	  
+	  <varlistentry>
+	    <term
+><menuchoice
+><guimenu
+>Gruppieren nach</guimenu
+></menuchoice
+></term>
+	    <listitem>
+	      <para
+>Wählen Sie aus, wie Sie die Zeilen gruppieren möchten.</para>
+	      <variablelist>
+		<varlistentry>
+		  <term
+><menuchoice
+><guimenu
+>Keine</guimenu
+></menuchoice
+></term>
+		  <listitem>
+		    <para
+>Keine Gruppierung.</para>
+		  </listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+><menuchoice
+><guimenu
+>Sortierte Spalten</guimenu
+></menuchoice
+></term>
+		  <listitem
+><para
+>Die Zeilen werden nach der Spalte gruppiert, auf die die Sortierung angewendet wird.</para
+></listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+><guimenu
+>Liste der Spalten</guimenu
+></term>
+		  <listitem
+><para
+>Zeigt die Liste aller Spalten, die zur Gruppierung verwendet werden können.</para
+></listitem>
+		</varlistentry>
+	      </variablelist>
+	    </listitem>
+	  </varlistentry
+>	  
+	  
+	  <varlistentry>
+	    <term
+><menuchoice
+><guimenu
+>Wechselnde Zeilenfarben</guimenu
+></menuchoice
+></term>
+	    <listitem
+><para
+>Für jede Zeile werden wechselnde Farben verwendet. Die verwendeten Farben hängen vom ausgewählten &kde;-Farbschema ab.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+><menuchoice
+><guimenu
+>Exportieren</guimenu
+></menuchoice
+></term>
+	    <listitem
+><para
+><link linkend="export_table"
+>Exportiert die Tabelle</link
+> als eigene Datei in die Formate pdf, csv, html, SVG, odt oder txt.</para
+></listitem>
+	  </varlistentry>
+	</variablelist>
+	
+	<para
+>Sie können auch auf die Kopfzeile einer Spalte klicken, um die Sortierrichtung zu ändern oder die Spalten zur Ziehen nach rechts oder links neu anordnen.</para>
+	
+	<sect3 id="show">
+	  <title
+>Filtern der Tabelle</title>
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject
+><imagedata fileref="show.png" format="PNG"/></imageobject>
+	      <textobject
+><phrase
+>Tabellenmenü anzeigen</phrase
+></textobject>
+	    </mediaobject>
+	  </screenshot
+>	  
+	  <para
+>In allen Ansichten von &skrooge; finden Sie ein Auswahlfeld „Suche“, mit dem Sie die Anzeige in der Tabelle einschränken können. </para>
+	</sect3>
+	
+	<sect3 id="search">
+	  <title
+>Während der Eingabe suchen</title>
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject
+><imagedata fileref="search.png" format="PNG"/></imageobject>
+	      <textobject
+><phrase
+>Suchfeld</phrase
+></textobject>
+	    </mediaobject>
+	  </screenshot
+>	  
+	  <para
+>In allen Ansichten von &skrooge; finden Sie ein Suchfeld, das die Zeilen in der Tabelle entsprechend Ihrer Eingabe filtert. <itemizedlist>
+	      <listitem
+><para
+>In einer Vorgangsansicht werden damit alle Vorgänge gefiltert, die den eingegebenen Text in einer beliebigen Spalte (Datum, Zahlungsempfänger, Kategorie, Kommentar usw.) enthalten.</para
+></listitem>
+	      <listitem
+><para
+>In einer Kontenansicht werden damit alle Konten gefiltert, die den eingegebenen Text in einer beliebigen Spalte (Bank, Kontenname, Kontonummer usw.) enthalten.</para
+></listitem>
+	      <listitem
+><para
+>In einer Berichtansicht wird das Diagramm auf der Basis dieses Filters neu gezeichnet.</para
+></listitem>
+	      <listitem
+><para
+>Dies funktioniert für andere Ansichten auf die gleiche Art.</para
+></listitem>
+	    </itemizedlist>
+	  </para>
+	  <tip>
+	  <para
+>Für das Filtern werden folgende Regeln verwendet: </para>
+	    <itemizedlist>
+		<listitem
+><para
+>Bei der Suche wird Groß- oder Kleinschreibung nicht berücksichtigt. Daher liefern table, Table und TABLE das gleiche Ergebnis.</para
+></listitem>
+		<listitem
+><para
+>Wenn Sie ein oder mehrere in das Suchfeld eingeben, wird die Tabelle so gefiltert, dass nur Zeilen mit diesen Wörtern angezeigt werden (logischer Operator UND).</para
+></listitem>
+		<listitem
+><para
+>Möchten Sie einige Zeilen hinzufügen (logischer Operator ODER), müssen Sie dem Wort ein „+“-Zeichen voranstellen.</para
+></listitem>
+		<listitem
+><para
+>Möchten Sie einige Zeilen entfernen (logischer Operator NOT), müssen Sie dem Wort ein „-“-Zeichen voranstellen.</para
+></listitem>
+		<listitem
+><para
+>Wenn Sie nur in einer Spalte suchen wollen, müssen Sie dem Wort den Spaltennamen voranstellen, z. B.: spalte1:wort.</para
+></listitem>
+		<listitem
+><para
+>Möchten Sie das Zeichen ":" in einem Wert verwenden, müssen Sie den Spaltennamen angeben, z. B.: spalte1:wert:rest.</para
+></listitem>
+		<listitem
+><para
+>Möchten Sie nach einer Wortfolge oder nach einer Eingabe mit Leerzeichen suchen, müssen Sie müssen Sie dies in Anführungszeichen setzen, z. B.: "Ja, dies ist eine Wortfolge".</para
+></listitem>
+		<listitem
+><para
+>Sie können ebenfalls die Operatoren „&lt;“ und „&gt;“ benutzen.</para
+></listitem>
+	    </itemizedlist>
+	  <para
+>Einige Beispiele zur Erläuterung: </para>
+	    <itemizedlist>
+	      <listitem
+><para
+>+val1 +val2 =&gt; Zeigt Zeilen an, die val1 ODER val2 enthalten</para
+></listitem>
+	      <listitem
+><para
+>+val1 -val2 =&gt; Zeigt Zeilen an, die val1 aber NICHT val2 enthalten</para
+></listitem>
+	      <listitem
+><para
+>"abc def" =&gt; Zeigt Zeilen an, die die Zeichenfolge "abc def" enthalten</para
+></listitem>
+	      <listitem
+><para
+>"-att:abc def" =&gt; entfernt Zeilen, deren Spaltenname mit att beginnt und die "abc def" enthalten</para
+></listitem>
+	      <listitem
+><para
+>abc:def =&gt; Zeigt Zeilen an, deren Spaltenname mit abc beginnt und die def enthalten</para
+></listitem>
+	      <listitem
+><para
+>:abc:def =&gt; Zeigt Zeilen an, die die Zeichenfolge "abc:def" enthalten</para
+></listitem>
+	      <listitem
+><para
+>Date&gt;01.03.2015 =&gt; zeigt Zeilen an, deren Attribut Datum nach dem 01.03.2015 liegt</para
+></listitem>
+	      <listitem
+><para
+>Betrag&lt;10 =&gt; Zeilen anzeigen, in denen das Attribut Betrag kleiner als 10 ist</para
+></listitem>
+	    </itemizedlist>
+	</tip>
+	</sect3>
+      </sect2>
+      
+      <sect2 id="save_customized_content">
+	<title
+>Angepassten Inhalt speichern</title>
+	
+	<para
+>Wie bereits im <link linkend="tables"
+>vorherigen Kapitel</link
+> erklärt, können Sie Tabellen vollständig an Ihre Bedürfnisse anpassen. Aber wahrscheinlich möchten Sie nicht alle Ihre Anpassungen verlieren, wenn Sie ein Unterfenster schließen. Es gibt zwei Möglichkeiten, die Anpassungen zu speichern.</para>
+	
+	<sect3 id="save_default_context">
+	  <title
+>Seitenstatus speichern</title>
+	  <para
+>Mit dieser Einstellung können Sie den Status des aktuellen Unterfensters als Standard speichern, der immer beim Öffnen dieser Seite als Voreinstellung benutzt wird. Sie möchten zum Beispiel auf Ihrem <link linkend="dashboard"
+>Übersichtsseite</link
+> vier Fenster in der gewünschten Anordnung. Wenn Sie für die Übersichtsseite immer das gleiche Erscheinungsbild möchten, wollen Sie wahrscheinlich die Anpassung nicht bei jedem Öffnen wiederholen.</para>
+	  <para
+>Dazu führen Sie Ihre Anpassung einmal durch und speichern Sie dann den Status des Unterfensters als Standard für die angezeigte Seite. Den Standardstatus können Sie durch Klicken mit der &RMBn; auf den Karteireiter und Auswahl von <guimenuitem
+>Seitenstatus speichern</guimenuitem
+> auswählen. Möchten Sie mehr als einen Status für eine Seite verwenden, müssen Sie <link linkend="bookmarks"
+>Lesezeichen</link
+> benutzen.</para>
+	  
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject
+><imagedata fileref="tab_state_management.png" format="PNG"/></imageobject>
+	      <textobject
+><phrase
+>Kontextmenü der Karteireiter</phrase
+></textobject>
+	    </mediaobject>
+	  </screenshot>
+	  
+	  <para
+>Ein schneller Weg ist es, auf das Speichern-Symbol <inlinemediaobject
+><imageobject
+><imagedata fileref="document-save.png" format="PNG"/></imageobject
+></inlinemediaobject
+> links auf dem Titel des Karteireiters klicken, wenn Sie den Standardstatus in einem Unterfenster ändern.</para>
+	  
+	</sect3>
+	</sect2>
+ 
+      <sect2 id="mass_update">
+	<title
+>Massenaktualisierung</title>
+	<para
+>In &skrooge; ist es möglich, eine große Zahl von ausgewählten Einträgen auf einmal zu aktualisieren. Obwohl dieses Vorgehen am sinnvollsten für <link linkend="operations"
+>Vorgänge</link
+> angewendet werden kann, können Sie sie auch für <link linkend="accounts"
+>Konten</link
+>, <link linkend="units"
+>Einheiten</link
+> und <link linkend="scheduled"
+>geplante Vorgänge</link
+> benutzen.</para>
+	<para
+>Die Methode dazu funktioniert ziemlich unkompliziert: Wählen Sie die zu aktualisieren Einträge, geben Sie Werte für alle Attribute an, die geändert werden sollen und drücken Sie auf <guibutton
+>Anwenden</guibutton
+>. Alle Attribute, für die Sie keinen Wert eingegeben haben, bleiben unverändert.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="before_mass_update.png"/></imageobject>
+	    <caption
+><para
+>Geben Sie als Modus „Kreditkarte“ und als Zahlungsempfänger „ACME“ für ausgewählte Vorgänge an.</para
+></caption>
+	  </mediaobject>
+	</screenshot>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="after_mass_update.png"/></imageobject>
+	    <caption
+><para
+>Aktualisierte Vorgänge.</para
+></caption>
+	  </mediaobject>
+	</screenshot>
+	
+	<note
+><para
+>Es ist mit Absicht unmöglich, Datum oder Menge mit einer Massenaktualisierung zu ändern.</para
+></note>
+	
+      </sect2>
+      
+      <sect2 id="status_bar">
+	<title
+>Statusleiste</title>
+	<para
+>Die Statusleiste ist eine schmaler Bereich unten im Hauptfenster von &skrooge;, in der verschiedene Informationen bei Ihrer Arbeit angezeigt werden. Es ist eine Fortschrittsanzeige und ein Knopf zum Abbrechen enthalten, damit Sie einen lang andauernde Vorgang wie den Import einer großen Datei unterbrechen können. <screenshot
+> <mediaobject>
+	      <imageobject
+><imagedata fileref="progress-bar.png" format="PNG"/></imageobject>
+	      <textobject
+><phrase
+>Die Fortschrittsanzeige in &skrooge;</phrase
+></textobject>
+	    </mediaobject>
+	  </screenshot>
+	</para>
+      </sect2
+>     
+
+      </sect1>
+    
+    <sect1 id="import">
+      <title
+>Dateien importieren</title>
+      
+      <para
+>&skrooge;kann Dateien von anderen Finanz-Programmen oder von Ihrer Bank importieren. Wenn Sie also von einem anderen Programm zu &skrooge; wechseln möchten oder Ihre Vorgänge nicht manuell eingeben möchten, kann &skrooge; Sie dabei unterstützen.</para>
+      
+      <sect2 id="supported_file_formats">
+	<title
+>Unterstützte Dateiformate</title>
+	
+	<para
+>Eins der folgenden Formate kann benutzt werden:</para>
+	
+	<itemizedlist>
+	    <listitem
+><para
+>AFB120: Ein Format aus Frankreich.</para
+></listitem
+>	  
+	    <listitem
+><para
+>CSV = Comma Separated Value (Durch Komma getrennte Werte). Obwohl es sich hierbei nicht um ein spezielles Format für Finanzdaten handelt, ist es häufig als Exportformat von Banken und anderen Anwendungen verfügbar, besonders weil es so einfach in einer Tabellenkalkulation weiter benutzt werden kann.</para
+></listitem>
+	    <listitem
+><para
+>GnuCash: Format der Anwendung GnuCash. Wenn Sie von dieser Anwendung migrieren möchten, ist dies das empfohlene Format, das Sie verwenden sollten.</para
+></listitem>
+	    <listitem
+><para
+>Grisbi: Format der Anwendung Grisbi. Wenn Sie von dieser Anwendung migrieren möchten, ist dies das empfohlene Format, das Sie verwenden sollten.</para
+></listitem>
+	    <listitem
+><para
+>Homebank: Format der Anwendung Homebank. Wenn Sie von dieser Anwendung migrieren möchten, ist dies das empfohlene Format, das Sie verwenden sollten.</para
+></listitem>
+	    <listitem
+><para
+>Kmymoney: Format der Anwendung Kmymoney. Wenn Sie von dieser Anwendung migrieren möchten, ist dies das empfohlene Format, das Sie verwenden sollten.</para
+></listitem>
+	    <listitem
+><para
+>MT940: Eine internationale Norm definiert durch SWIFT.</para
+></listitem>
+	    <listitem
+><para
+>&Microsoft; Money: Format der Anwendung &Microsoft; Money. Wenn Sie von dieser Anwendung migrieren möchten, ist dies das empfohlene Format, das Sie verwenden sollten.</para
+></listitem>
+	    <listitem
+><para
+> Money Manager Ex: Format der Anwendung  Money Manager Ex. Wenn Sie von dieser Anwendung migrieren möchten, ist dies das empfohlene Format, das Sie verwenden sollten.</para
+></listitem>
+	    <listitem
+><para
+>OFX: Open Financial Exchange. Dies ist ein gut definiertes &amp; dokumentiertes Format, das in &skrooge; mit Hilfe der externen Bibliothek „libofx“ importiert wird. Die ist das empfohlenen Format zum Importieren.</para
+></listitem>
+	    <listitem
+><para
+>QFX ist eine Anpassung des Formats OFX der kommerziellen Software <trademark
+>Quicken</trademark
+>.</para
+></listitem>
+	    <listitem
+><para
+>QIF: <trademark
+>Quicken</trademark
+>-Importdatei. Dies ist das gebräuchlichste Dateiformat für Finanzdaten. Es gibt jedoch einige unerfreuliche Einschränkungen wie zum Beispiel Vorgänge ohne Einheiten und ein ungenaues Format für das Datum.</para
+></listitem>
+	    <listitem
+><para
+>IIF: <trademark
+>Intuit</trademark
+> Das Interchange-Format wird von <trademark
+>QuickBooks</trademark
+> verwendet.</para
+></listitem>
+	    <listitem
+><para
+>SKG: Nützlich um zwei &skrooge;-Dokumente zusammenzuführen</para
+></listitem>
+            <listitem
+><para
+>&PDF;: Damit können Sie einen Vorgang aus einer &PDF;-Rechnung erstellen. Die Rechnung ist ebenfalls als Eigenschaft mit dem Vorgang verknüpft. Lesen Sie im Abschnitt <link linkend="howto_extractor"
+>Wie definiert man ein neues Extraktionsprogramm für Rechnungen</link
+>, wie Sie Informationen aus einer noch nicht unterstützten Rechnung extrahieren können.</para
+></listitem>
+	    <listitem
+><para
+>Modul: &skrooge; kann Vorgänge auch mit Hilfe eines Moduls importieren. Zurzeit können die drei folgenden Module verwendet werden: <itemizedlist>
+	       <listitem
+><para
+><ulink url="http://weboob.org/"
+>weboob</ulink
+>: Mit diesem Modul können Sie alle Vorgänge aus allen Ihren Banken mit nur einem Klick importieren. Dazu müssen Sie nur <ulink url="http://weboob.org/"
+>weboob</ulink
+> installieren und das entsprechende Modul unter <link linkend="settings"
+>Einstellungen</link
+> aktivieren.</para
+></listitem>
+	       <listitem
+><para
+><ulink url="http://weboob.org/"
+>weboob_coming</ulink
+>: Mit diesem Modul können Sie alle kommenden Vorgänge von allen Ihren Banken mit nur einem Klick importieren. Dies kann für Kreditkarten mit verzögerter Abbuchung verwendet werden. Dazu müssen Sie nur <ulink url="http://weboob.org/"
+>weboob</ulink
+> installieren und das entsprechende Modul unter <link linkend="settings"
+>Einstellungen</link
+> aktivieren.</para
+></listitem
+>               
+	       <listitem
+><para
+><ulink url="https://www.aquamaniac.de/sites/aqbanking/overview.php"
+>AqBanking</ulink
+>: Mit diesem Modul können Sie alle Vorgänge von all Ihren Banken mit nur einem Klick importieren. Dazu müssen Sie nur <ulink url="https://www.aquamaniac.de/sites/aqbanking/cli.php"
+>AqBanking-CLI</ulink
+> installieren und einrichten.</para
+></listitem>
+	    </itemizedlist
+></para>
+	    
+            <tip
+><para
+>Wenn Sie Ihre Bankpasswörter nicht in der Einrichtungsdatei von WEBOOB speichern möchten, führen Sie folgendes aus: <itemizedlist>
+	       <listitem
+><para
+>Fügen Sie für jede Bank mit dem Befehl <quote
+>kwallet-query -f Weboob kdewallet -w m_bank_name</quote
+> ein Passwort hinzu</para
+></listitem>
+	       <listitem
+><para
+>Bearbeiten Sie die Datei <quote
+>~/.config/weboob/backends</quote
+> in Ihrem bevorzugten Texteditor</para
+></listitem>
+	       <listitem
+><para
+>Ersetzen Sie in der Einrichtungsdatei <quote
+>password = my_password</quote
+> durch <quote
+>password = `kwallet-query -f Weboob kdewallet -r m_bank_name `</quote
+></para
+></listitem>
+	    </itemizedlist
+>	    
+	    </para
+></tip>
+	      </listitem
+>	  
+	</itemizedlist>
+      </sect2>
+      
+      <sect2 id="csv_specificities">
+	<title
+>CSV-Besonderheiten</title>
+	<para
+>Das CSV-Dateien kein strikt definiertes Format haben, kann &skrooge; nicht erkennen, welche Informationen in der Datei Datum, Kategorien oder Werte sind. Dazu muss die Datei einige Kopfzeileneinträge haben, die den Typ der Spalte definieren. Die Datei muss mindestens die Spalten „Datum“ und „Betrag“ enthalten.</para>
+	<para
+>Sie können manuell angeben, wie die Datei eingerichtet ist, &ie; ob Kopfzeilen in der Datei ignoriert werden, indem Sie dies auf der Seite <guilabel
+>Import/Export</guilabel
+> im <link linkend="settings"
+>Einrichtungsdialog</link
+> ändern.</para>
+      </sect2>
+      
+      <sect2 id="import_operations">
+	<title
+>Vorgänge importieren</title>
+	<para
+>Eines der in &skrooge; angewendeten Prinzipien ist es, mehrfache Assistenten oder Dialoge zu vermeiden. Dies wird besonders beim Import berücksichtigt, bei dem vom Benutzer viele Informationen bereitgestellt werden müssen. Wenn Sie in &skrooge; <menuchoice
+><guimenu
+>Datei</guimenu
+><guimenuitem
+>Importieren</guimenuitem
+></menuchoice
+> wählen, müssen Sie nur eine oder mehrere Dateien auswählen. Das ist alle. Im Hintergrund ermittelt &skrooge; das Dateiformat und verwendet den entsprechenden Importmodus,</para>
+	
+	<sect3 id="import_account">
+	  <title
+>Konto</title>
+	  <para
+>Sie müssen noch nicht einmal ein Konto für den Import angeben. &skrooge; liest die Kontonummer und der Datei und weist dann die importierten Vorgänge diesem Konto zu.</para>
+	  <para
+>Gibt es kein Konto mit dieser Nummer oder enthält die Datei diese Information nicht, verwendet &skrooge; den Dateinamen als Nummer für das Konto.</para>
+          <para
+>Wenn Sie eine Eigenschaft namens <quote
+>alias</quote
+> für das Konto erstellen, versucht &skrooge; über den Wert der Eigenschaft ebenfalls das am besten passende Konto zu finden.</para>
+	  <para
+>Gibt es immer noch kein Konto mit dieser Nummer, wird ein neues Konto mit dem Dateinamen als Ersatz der Kontonummer erstellt und alle Vorgänge in dieses Konto importiert. Sie können das später das Konto umbenennen, eine <link linkend="mass_update"
+>Massenaktualisierung</link
+> durchführen oder die Funktion <link linkend="search_and_process"
+>Suchen &amp; Bearbeiten</link
+> verwenden, um importierte Vorgänge einem vorhandenen Konto zuzuweisen.</para>
+	</sect3>
+	
+	<sect3 id="import_unit">
+	  <title
+>Einheit</title>
+	  <para
+>Ist in der importierten Datei keine Einheit definiert, was häufig bei QIF- und CSV-Dateien vorkommt, wird als Einheit Ihre <link linkend="unit_types"
+>Hauptwährung</link
+> angenommen. Möchten Sie das nach dem Import ändern, verwenden Sie die Funktion <link linkend="search_and_process"
+>Suchen &amp; Bearbeiten</link
+> zur Korrektur.</para>
+	</sect3>
+	
+	<sect3 id="import_date">
+	  <title
+>Datum</title>
+	  <para
+>Manchmal hat das Datum in der Eingabedatei nicht das in Ihrem Land verwendete Format, dies kann mit QIF- oder CSV-Dateien passieren. OFX hat dagegen ein definiertes Datumsformat. &skrooge; versucht das Format zu erkennen. Wenn dies nicht nicht wie erwartet funktioniert, können Sie das Datumsformat in den <link linkend="settings"
+>Einstellungen</link
+> der Anwendung vorgeben.</para>
+	</sect3>
+	
+	<sect3 id="import_status">
+	  <title
+>Importstatus</title>
+	  <para
+>Importierte Vorgänge haben einen besonderen Status. Direkt nach dem Import werden Sie als importiert, aber noch nicht bestätigt eingestuft. Dadurch haben Sie die Möglichkeit, den Import auf Fehler zu überprüfen, indem Sie diese Vorgänge leicht erkennen können. In der <link linkend="settings"
+>Voreinstellung</link
+> werden solche Vorgänge auch in blau angezeigt.</para>
+	  <tip
+><para
+>Möchten Sie dieses Verhalten ändern, können Sie die Einstellung <guilabel
+>Automatische Überprüfung nach dem Import</guilabel
+> im <link linkend="settings"
+>Einstellungsdialog</link
+> ankreuzen.</para
+></tip>
+	  <tip
+><para
+>Die Funktion <link linkend="search_and_process"
+>Suchen und Bearbeiten</link
+> kann automatisch nach dem Import gestartet werde, um Vorgänge in Kategorien abzulegen.</para
+></tip>
+	</sect3>
+      </sect2>
+      
+      <sect2 id="merge_operations">
+	<title
+>Vorgänge nach dem Import zusammenführen</title>
+	<para
+>Es kann manchmal vorkommen, dass Sie einen Vorgang manuell eingegeben und auch von Ihrer Bank importiert haben. In diesen Fällen erscheint der Vorgang zweimal in der Liste.</para>
+	<para
+>Sie können diese beiden Vorgänge zusammenführen, indem Sie sie auswählen und dann im Menü oder Kontextmenü <guimenuitem
+>Importierte Vorgänge zusammenführen</guimenuitem
+> wählen. Damit werden alle manuell eingegebenen Informationen zum importierten Vorgang hinzugefügt und der manuell eingegebene Vorgang gelöscht.</para>
+      </sect2>
+    </sect1>
+    
+    <sect1 id="export">
+      <title
+>Exportieren</title>
+      <para
+>Es gibt mehrere Möglichkeiten, Daten aus &skrooge; zu exportieren, abhängig von Ihren Absichten.</para>
+      
+      <sect2 id="export_file">
+	<title
+>Alle Daten in eine Datei exportieren</title>
+	<para
+>Mit dem Menüeintrag <menuchoice
+><guimenu
+>Datei</guimenu
+><guimenuitem
+>Exportieren</guimenuitem
+></menuchoice
+> können Sie eine CSV- , QIF-, JSON-, Kmymoney-, Ledger-, IIF-, Sqlite-, Sqlcipher oder &XML;-Datei mit allen Vorgängen im aktuell geöffneten Dokument erzeugen. Diese Aktion sollten Sie verwenden, wenn Sie Ihre Daten in ein anderes Programm exportieren möchten.</para>
+      </sect2>
+      
+      <sect2 id="export_partial_file">
+	<title
+>Daten teilweise in eine Datei exportieren</title>
+	<para
+>Wenn Sie einige Konten oder Vorgänge auswählen, ehe Sie den Menüeintrag <menuchoice
+><guimenu
+>Datei</guimenu
+><guimenuitem
+>Exportieren</guimenuitem
+></menuchoice
+> aufrufen, können Sie eine CSV- , QIF-, JSON-, Kmymoney-, Ledger-, IIF-, Sqlite-, Sqlcipher- oder &XML;-Datei mit allen gewählten Konten einschließlich der Vorgänge oder mit allen gewählten Vorgängen erstellen. Diese Aktion sollten Sie verwenden, wenn Sie Ihre Daten in ein anderes Programm exportieren möchten.</para>
+      </sect2>
+      
+      <sect2 id="export_table">
+	<title
+>Eine bestimmte Tabelle exportieren</title>
+	<para
+>Alle <link linkend="tables"
+>Tabellen</link
+> in &skrooge; können im CSV-, &HTML;-, ODT-, &PDF;-, SVG- oder TXT-Format exportiert werden. </para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="export_table_menu.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Dies funktioniert immer, wenn eine Tabelle angezeigt wird, daher können Sie mit dieser Aktion alle nötigen Informationen aus Tabellen exportieren.</para>
+      </sect2>
+      
+      <sect2 id="export_graph">
+	<title
+>Diagramme exportieren</title>
+	<para
+>&skrooge; ermöglicht den Export eines <link linkend="reports"
+>Diagramms</link
+> entweder in &PDF;, SVG oder in jedes von &Qt; unterstützte Grafikformat wie PNG, JPG, &GIF;, TIFF usw. Klicken Sie dazu mit der &RMBn; auf das Diagramm und wählen Sie im Kontextmenü die Aktion <guimenu
+>Exportieren</guimenu
+>.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="export_graph_menu.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	
+      </sect2>
+      
+    </sect1>
+  </chapter>
+  
+  <chapter id="using-skrooge-beginner">
+    <title
+>&skrooge; verwenden (Anfänger)</title>
+
+    <sect1 id="menu-main">
+      <title
+>Das Hauptmenü</title>
+      <para
+>&skrooge; verwendet die bekannten Standard-Menüeinträge für &kde;. Weitere Informationen dazu finden Sie in den <ulink url="help:/fundamentals/menus.html"
+>&kde;-Grundlagen</ulink
+>. </para>
+      <para
+>Im folgenden finden Sie die speziellen Menüeinträge für &skrooge;. </para>
+      <sect2 id="menu-file">
+	<title
+>Das Menü Datei</title>
+      <para
+>In diesem Menü finden Sie alle Funktionen für das &skrooge;-Dokument</para>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="menu_file.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+      <itemizedlist>
+	<listitem
+><para
+><guimenuitem
+>Passwort ändern ...</guimenuitem
+>: Zur Änderung des Passworts. Bei einer leeren Eingabe wird das Passwort entfernt</para
+></listitem>
+	<listitem
+><para
+><guimenuitem
+>Drucken ...</guimenuitem
+>: Druckt alle geöffneten Seiten</para
+></listitem>
+	<listitem
+><para
+><guimenu
+>Druckvorschau</guimenu
+>: Zeigt eine Vorschau vor dem Drucken</para
+></listitem>
+	<listitem
+><para
+><guimenu
+>Importieren</guimenu
+>: Zum Import von Daten. <screenshot
+> <mediaobject
+> <imageobject
+><imagedata fileref="menu_import.png"/></imageobject>
+	  </mediaobject>
+	</screenshot
+>	    
+	<itemizedlist>
+	  <listitem
+><para
+><guimenuitem
+>Standard-Lesezeichen importieren</guimenuitem
+>: Importiert die Standard-Lesezeichen, die bei der Erstellung eines neuen Dokuments erzeugt werden</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Kategorien importieren</guimenuitem
+>: Zum Importieren von vordefinierten Kategorien. Die hängt von Ihren Spracheinstellungen ab</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Importieren</guimenuitem
+>: <link linkend="import"
+>Importiert</link
+> Vorgänge aus Dateien</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Mit Modulen importieren</guimenuitem
+>: <link linkend="import"
+>Importiert</link
+> Vorgänge mit allen deklarierten Modulen</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Währungswerte importieren ...</guimenuitem
+>: Importiert Währungswerte aus Dateien. Die CSV-Datei muss die drei Spalten Einheit, Datum und Betrag enthalten.</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Regeln importieren ...</guimenuitem
+>: Import von Regeln für <link linkend="search_and_process"
+>Suchen und Bearbeiten</link
+>, um eine Kategorie einem Zahlungsempfänger zuzuweisen. Die CSV-Datei muss die beiden Spalten Zahlungsempfänger und Kategorie enthalten.</para
+></listitem
+>          
+	  </itemizedlist
+> </para
+></listitem>
+	<listitem
+><para
+><guimenuitem
+>Exportieren ...</guimenuitem
+>: <link linkend="export_file"
+>Exportiert</link
+> Vorgänge in eine Datei</para
+></listitem>
+	</itemizedlist>
+      </sect2
+>   
+      
+      <sect2 id="menu-edit">
+	<title
+>Das Menü Bearbeiten</title>
+      <para
+>In diesem Menü finden Sie alle Funktionen für das Ändern von ausgewählten Objekten</para>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="menu_edit.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+      <itemizedlist>
+	  <listitem
+><para
+><guimenuitem
+>Zurücknehmen</guimenuitem
+>: Verwirft die vorherige Änderung</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Wiederherstellen</guimenuitem
+>: Vorher zurückgenommene Änderungen wiederherstellen</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Dokument zurücksetzen</guimenuitem
+>: Alle vorherigen Änderungen bis zum letzten Speichern des Dokuments verwerfen. </para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Löschen</guimenuitem
+>: Löscht die ausgewählten Objekte (Vorgänge, Konten, Kategorien ...)</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Eigenschaft hinzufügen</guimenuitem
+>: Fügt einer Eigenschaft hinzu, die regelmäßig für die ausgewählten Objekten angewendet wird</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Alle auswählen</guimenuitem
+>: Wählt alle Zeilen der <link linkend="tables"
+>Tabelle</link
+> der aktuellen Seite</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Schnelles Bearbeiten</guimenuitem
+>: Erleichtert das Anlegen neuer <link linkend="operations"
+>Vorgänge</link
+> durch automatisches Ausfüllen von Feldern basierend auf zuvor erstellten Vorgängen</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Suchen ...</guimenuitem
+>: Öffnet die Seite <link linkend="search_and_process"
+>Suchen und Bearbeiten</link
+> mit einem vordefinierten Filter passend zu den ausgewählten Objekten</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Hervorhebung wechseln</guimenuitem
+>: Schaltet den Hervorhebungsstatus von Objekten um</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Schließen wechseln</guimenuitem
+>: Wechselt den Schließen-Status von Objekten</para
+></listitem
+>          
+	  <listitem
+><para
+><guimenuitem
+>Abgleichen ...</guimenuitem
+>: Öffnet die Seite <link linkend="operations"
+>Vorgänge</link
+> im <link linkend="reconciliation"
+>Abgleich</link
+>-Modus</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Markieren</guimenuitem
+>: Markiert die ausgewählten Vorgänge</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Vorgänge gruppieren</guimenuitem
+>: Gruppiert die ausgewählten Vorgänge, um eine Verbindung zwischen den Vorgängen herzustellen. Das wird zum Beispiel bei Überweisungen zwischen Konten oder beim Kauf/Verkauf von Aktien verwendet, kann aber auch für jeden anderen Zweck verwendet werden. In Berichten und Grafiken können Sie die gruppierten Vorgänge entweder ignorieren oder  berücksichtigen</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Gruppierung der Vorgänge aufheben</guimenuitem
+>: Hebt die Gruppierung der ausgewählten Vorgänge auf</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Duplizieren</guimenuitem
+>: Dupliziert den ausgewählten Vorgang und erstellt einen neuen Vorgang auf der Basis des ausgewählten Vorgangs</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Vorlage erstellen</guimenuitem
+>: Erstellt eine <link linkend="templates"
+>Vorlage</link
+> vom ausgewählten Vorgang</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Vorlage anwenden</guimenuitem
+>: Wendet eine <link linkend="templates"
+>Vorlage</link
+> auf ausgewählte Vorgänge an</para
+></listitem
+>          
+	  <listitem
+><para
+><guimenuitem
+>Untervorgänge zusammenführen</guimenuitem
+>: Führt ausgewählte Vorgänge in einen Split-Vorgangs zusammen</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Planen</guimenuitem
+>: Erstellt eine geplanten Vorgang aus den gewählten Vorgang</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Bestätigung der importierten Vorgänge wechseln</guimenuitem
+>: Bestätigt alle ausgewählten importierten Vorgänge</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Importierte Vorgänge zusammenführen</guimenuitem
+>: Zusammenführen eines importierten Vorgangs mit einem anderen manuell eingegebenen Vorgang. Wenn die Beträge unterschiedlich sind, wird eine Bestätigung angefordert</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Aktie teilen</guimenuitem
+>: Teilt die ausgewählte <link linkend="units"
+>Aktie</link
+></para
+></listitem
+>	  
+      </itemizedlist>
+      </sect2
+>	
+      
+      <sect2 id="menu-view">
+	<title
+>Das Menü Ansicht</title>
+	<para
+>In diesem Menü finden Sie alle Funktionen für <link linkend="multi-tabs"
+>Seiten</link
+></para
+>	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="menu_view.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+      <itemizedlist>
+	  <listitem
+><para
+><guimenuitem
+>Editor aktivieren</guimenuitem
+>: Öffnet die Editorleiste auf der aktuellen Seite</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenu
+>Neues Unterfenster</guimenu
+>: Öffnet ein neues Unterfenster</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Zuletzt geschlossene Seite wieder öffnen</guimenuitem
+>: Stellt die zuletzt geschlossene Seite wieder her</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Schließen</guimenuitem
+>: Schließt die aktuelle Seite</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Alle schließen</guimenuitem
+>: Schließt alle Seiten außer den angehefteten</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Alle anderen schließen</guimenuitem
+>: Schließt alle Seiten außer der aktuellen und den angehefteten Seiten</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Diese Seite anheften</guimenuitem
+>: Heftet die aktuelle Seite an. Das verhindert das Ersetzen durch eine andere Seite und das Schließen</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Seitenstatus zurücksetzen</guimenuitem
+>: Setzt den Status der aktuellen Seite zurück</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Seitenstatus speichern</guimenuitem
+>: Speichert den Status der aktuellen Seite</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Lesezeichen-Status überschreiben</guimenuitem
+>: Speichert den Lesezeichen-Status der aktuellen Seite. Das Lesezeichen wird mit dem neuen Status aktualisiert</para
+></listitem
+>	  
+      </itemizedlist>
+      </sect2
+>	 
+      
+      <sect2 id="menu-do">
+	<title
+>Das Menü Gehe zu</title>
+	<para
+>In diesem Menü finden Sie alle Funktionen für <link linkend="multi-tabs"
+>Seiten</link
+></para
+>	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="menu_go1.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+
+      <itemizedlist>
+	  <listitem
+><para
+><guimenuitem
+>Startseite</guimenuitem
+>: Schließt alle Seiten und öffnet wieder alle automatisch gestarteten Lesezeichen wie beim Öffnen des Dokuments</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Zurück</guimenuitem
+>: Ersetzt den Inhalt der aktuellen Seite durch den Inhalt der vorherigen Seite wie in einem Webbrowser</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Vorwärts</guimenuitem
+>: Ersetzt den Inhalt der aktuellen Seite durch den Inhalt der nächsten Seite wie in einem Webbrowser</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Hervorgehobene öffnen ...</guimenuitem
+>: Öffnet hervorgehobene Vorgänge</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Zuletzt geänderte öffnen ...</guimenuitem
+>: Öffnet Vorgänge, die durch die letzte Aktion geändert wurden</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Mögliche Duplikate öffnen </guimenuitem
+>:Öffnet eine Seite mit Vorgängen mit dem gleichen Betrag und Datum</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Untervorgänge öffnen ...</guimenuitem
+>: Öffnet Untervorgänge des aktuellen Vorgangs wie beim Doppelklicken.</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Bericht öffnen ...</guimenuitem
+>: Öffnet einen Bericht basierend auf der Auswahl. Beispiel: Wenn Sie 2 Konten auswählen und diese Aktion starten, wird die Seite <link linkend="reports"
+>Bericht</link
+> geöffnet, aber nur für Vorgänge dieser Konten</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Importierte Vorgänge öffnen, die bisher noch nicht bestätigt wurden ...</guimenuitem
+></para
+></listitem
+>	    
+      </itemizedlist>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="menu_go2.png"/></imageobject>
+	  </mediaobject>
+	</screenshot
+>	
+      <itemizedlist>
+	  <listitem
+><para
+><guimenuitem
+>Vorgänge ohne Kategorie öffnen ...</guimenuitem
+>: Öffnet alle Vorgänge, denen keine Kategorie zugewiesen ist</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Überweisungen ohne Kategorie öffnen ...</guimenuitem
+>: Öffnet alle Überweisungen, denen keine Kategorie zugewiesen ist</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Vorgänge ohne Empfänger öffnen ...</guimenuitem
+> : Öffnet alle Vorgänge ohne Empfänger</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Überweisungen ohne Empfänger öffnen ...</guimenuitem
+> : Öffnet alle Überweisungen ohne Empfänger</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Vorgänge ohne Modus öffnen ...</guimenuitem
+> : Öffnet alle Vorgänge ohne Modus</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Vorgänge mit nicht ausgerichtetem Datum öffnen ...</guimenuitem
+>: Öffnet alle Vorgänge, in denen das Datum nicht mit den Untervorgängen ausgerichtet ist</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Vorgänge mit nicht ausgerichteten Kommentaren öffnen ...</guimenuitem
+>: Öffnet alle Vorgänge, in denen der Kommentar nicht mit den Untervorgängen ausgerichtet ist</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Vorgänge in Gruppen mit nur einem Vorgang öffnen ...</guimenuitem
+>: Öffnet einen einzelnen Vorgang, der als einziger in einer Gruppe vorhanden ist</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Sehr alte Vorgänge öffnen</guimenuitem
+></para
+></listitem>
+      </itemizedlist>
+      </sect2
+>      
+      
+      <sect2 id="menu-tools">
+	<title
+>Das Menü Extras</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="menu_tools.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+      <itemizedlist>
+	  <listitem
+><para
+><guimenuitem
+>Überweisungen suchen und gruppieren</guimenuitem
+>: Erstellt mögliche Überweisungen</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Bankimporte bereinigen</guimenuitem
+>: Vorgänge nach dem Import bereinigen</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Anonymisieren</guimenuitem
+>: Anonymisiert ein Dokument für die Fehlersuche in &skrooge;. </para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Kommentar von Untervorgängen ausrichten</guimenuitem
+>: Korrigiert einzelne Vorgänge, deren Kommentare nicht ausgerichtet sind</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Datum von Untervorgängen ausrichten</guimenuitem
+>: Korrigiert einzelne Vorgänge, deren Datum nicht ausgerichtet ist</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Gruppen mit nur einem Vorgang entfernen</guimenuitem
+>: Entfernt nutzlose Gruppen mit nur einem Vorgang</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Nicht verwendete Empfänger löschen</guimenuitem
+></para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Nicht verwendete Kategorien löschen</guimenuitem
+></para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Ungenutzte Einheiten löschen</guimenuitem
+></para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Vorgänge bestätigen, für die keine weitere Bearbeitung nötig ist</guimenuitem
+>: Bestätigt importierte Vorgänge </para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Regeln für Budget verarbeiten</guimenuitem
+>: Berechnet die <link linkend="budgets"
+>Budgets</link
+> auf der Basis der definierten Regeln neu.</para
+></listitem>
+      </itemizedlist>
+      </sect2
+>     
+      <sect2 id="menu-settings">
+	<title
+>Das Menü Einstellungen</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="menu_settings.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+      <itemizedlist>
+	  <listitem
+><para
+><guimenu
+>Menüleiste anzeigen</guimenu
+>: Menüleiste anzeigen oder ausblenden</para
+></listitem>
+          <listitem
+><para
+><guimenuitem
+>Angezeigte Werkzeugleisten</guimenuitem
+>: Werkzeugleisten anzeigen oder ausblenden</para
+></listitem>
+          <listitem
+><para
+><guimenu
+>Statusleiste anzeigen</guimenu
+>: Statusleiste anzeigen oder ausblenden</para
+></listitem>
+          <listitem
+><para
+><guimenuitem
+>Tastaturkurzbefehle festlegen ...</guimenuitem
+>: Öffnet den Einrichtungsdialog für Kurzbefehle</para
+></listitem>
+          <listitem
+><para
+><guimenuitem
+>Werkzeugleisten einrichten ...</guimenuitem
+>: Öffnet den Einrichtungsdialog für die Werkzeugleisten</para
+></listitem>
+          <listitem
+><para
+><guimenuitem
+>Benachrichtigungen festlegen ...</guimenuitem
+>: Öffnet den Einrichtungsdialog für Benachrichtigungen </para
+></listitem>
+          <listitem
+><para
+><guimenuitem
+>&skrooge; einrichten ...</guimenuitem
+>: Öffnet den <link linkend="settings"
+>Einrichtungsdialog</link
+> von &skrooge;</para
+></listitem>
+      </itemizedlist>
+      </sect2
+>     
+    </sect1>
+    
+    <sect1 id="dashboard">
+      <title
+>Übersichtsseite</title>
+      <para
+>Die Übersichtsseite ist ein &skrooge;-Modul, das allgemeine Informationen über Ihre finanzielle Situation anzeigt.</para>
+      
+      <screenshot>
+	<mediaobject>
+	  <imageobject
+><imagedata fileref="dashboard.png"/></imageobject>
+	</mediaobject>
+      </screenshot>
+      
+      <para
+>Sie können neue grafische Elemente über den Knopf in der oberen rechten Ecke hinzufügen. Sie können jedes grafische Element einrichten, indem Sie auf das entsprechende Symbol klicken. Sie können die grafischen Elemente auf der Übersichtsseite durch Ziehen und Ablegen organisieren.</para>
+      <tip
+><para
+>Kombiniert mit <link linkend="bookmarks"
+>Lesezeichen</link
+> zeigt dies verschiedene Ansichten über Ihren Finanzstatus.</para
+></tip>
+      
+      <sect2 id="dashboard_advice">
+	<title
+>Empfehlung</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_advice.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Dies zeigt einige Empfehlungen in der Reihenfolge ihrer Priorität an. Für jede dieser Empfehlungen gibt es folgende Aktionen: <itemizedlist>
+	  <listitem
+><para
+>Betroffene Vorgänge öffnen oder bereinigen</para
+></listitem>
+	  <listitem
+><para
+>Diese Empfehlung ablehnen</para
+></listitem>
+	  <listitem
+><para
+>Diese Empfehlung für den aktuellen Monat ablehnen</para
+></listitem>
+	  <listitem
+><para
+>Diese Art von Empfehlungen ablehnen</para
+></listitem>
+	  <listitem
+><para
+>Diese Art von Empfehlung für den aktuellen Monat ablehnen</para
+></listitem>
+      </itemizedlist
+>	  
+	</para>
+      </sect2
+>      
+      
+      <sect2 id="dashboard_tip">
+	<title
+>Tipp des Tages</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_tip.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Zeigt den Tipp des Tages an. Klicken Sie, um den den nächsten Tipp zu sehen.</para>
+      </sect2
+>          
+
+      <sect2 id="dashboard_accounts_light">
+	<title
+>Konten (Einfach)</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_accounts_light.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Zeigt den Kontostand der einzelnen Konten und Kontoarten an. Sie können auszuwählen, was angezeigt werden soll.</para>
+      </sect2
+>     
+      
+      <sect2 id="dashboard_accounts_full">
+	<title
+>Konten (Vollständig)</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_accounts_full.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Zeigt den Kontostand der einzelnen Konten und Kontoarten an. Der Kontostand kann mit dem Wert vor einem Monat und vor einem Jahr verglichen werden.</para>
+      </sect2
+>    
+      
+      <sect2 id="dashboard_banks_light">
+	<title
+>Banken (Einfach)</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_banks_light.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Zeigt den Kontostand der einzelnen Banken an, der zugehörige Bericht kann direkt geöffnet werden.</para>
+      </sect2
+>     
+      
+      <sect2 id="dashboard_banks_full">
+	<title
+>Banken (Vollständig)</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_banks_full.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Zeigt den Kontostand der einzelnen Banken an. Der Kontostand kann mit dem Wert vor einem Monat und vor einem Jahr verglichen werden.</para>
+      </sect2
+>        
+      
+      <sect2 id="dashboard_income">
+	<title
+>Einnahmen &amp; Ausgaben</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_income.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Zeigt Einnahmen, Ausgaben und Ersparnisse für zwei verschiedene Zeiträume an, zum Beispiel: aktueller Monat, aktuelles Jahr, Vormonat usw.. Außerdem können Sie: <itemizedlist>
+	    <listitem
+><para
+>Zwei gewünschte Zeiträume auswählen</para
+></listitem>
+	    <listitem
+><para
+>Auswählen, ob <link linkend="transfer"
+>Überweisungen</link
+> berücksichtigt werden</para
+></listitem>
+	    <listitem
+><para
+>Auswählen, ob <link linkend="trackers"
+>Vorgangsgruppen</link
+> berücksichtigt werden.</para
+></listitem>
+	    <listitem
+><para
+>Den zugehörigen <link linkend="reports"
+>Bericht</link
+> öffnen</para
+></listitem>
+	</itemizedlist
+>		  
+	</para>
+      </sect2
+>       
+
+      <sect2 id="dashboard_highlighted">
+	<title
+>Hervorgehobene Vorgänge</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_highlighted.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Zeigt die Liste aller hervorgehobenen Vorgänge.</para>
+      </sect2
+>      
+      
+      <sect2 id="dashboard_scheduled">
+	<title
+>Geplante Vorgänge</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_scheduled.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Zeigt die Liste der <link linkend="scheduled"
+>geplanten</link
+> Vorgänge.</para>
+      </sect2
+>         
+      
+      <sect2 id="dashboard_categories">
+	<title
+>5 Hauptkategorien von Ausgaben</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_categories.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Zeigt die 5 Hauptkategorien von Ausgaben für den gewählten Zeitraum.</para>
+      </sect2
+>       
+      
+      <sect2 id="dashboard_variations">
+	<title
+>5 Hauptvarianten</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_variations.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Zeigt die 5 Hauptvarianten von Ein Ausgaben für den gewählten Zeitraum.</para>
+      </sect2
+>         
+      
+      <sect2 id="dashboard_budget">
+	<title
+>Budget</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_budget.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Zeigt das Budget für den gewünschten Zeitraum.</para>
+      </sect2
+>        
+      
+      <sect2 id="dashboard_alarms">
+	<title
+>Erinnerungen</title
+>	
+	<para
+>Zeigt die in <link linkend="search_and_process"
+>Suchen und Bearbeiten</link
+> definierten Erinnerungen.</para>
+      </sect2
+>    
+      
+      <sect2 id="dashboard_report">
+	<title
+>Bericht</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_report.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Zeigt Ihre <link linkend="reports"
+>Berichte</link
+> an.</para>
+      </sect2
+>         
+      
+      <sect2 id="dashboard_quotes">
+	<title
+>Kursnotizen</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_quotes.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Zeigt den Preis der definierten <link linkend="units"
+>Einheiten</link
+> und die Varianten. Die Art der angezeigten Einheiten kann ausgewählt werden.</para>
+      </sect2
+>          
+      
+      <sect2 id="dashboard_portfolio">
+	<title
+>Portfolio</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_portfolio.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Zeigt alle Informationen zu Ihren Aktien.</para>
+      </sect2
+>       
+      
+      <sect2 id="dashboard_interest">
+	<title
+>Geschätzte Zinsen</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_interest.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Zeigt die Schätzung der Zinsen für jedes Konto an. Sie müssen auf der Seite <link linkend="simulations"
+>Simulation</link
+> die Rate für jedes Kontos angeben.</para>
+      </sect2
+>    
+      
+      <sect2 id="dashboard_pfs">
+	<title
+>Persönliche Finanzbewertung</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_pfs.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Zeigt Ihre persönliche Finanzbewertung an.</para>
+      </sect2
+>        
+    </sect1>
+    
+    <sect1 id="accounts">
+      <title
+>Banken &amp; Konten</title>
+      <para
+>Dies ist das Modul für die Verwaltung Ihrer Konten.</para>
+      
+      <screenshot>
+	<mediaobject>
+	  <imageobject
+><imagedata fileref="bank_accounts.png" format="PNG"/></imageobject>
+	  <textobject
+><phrase
+>Die Bank- &amp; Kontenansicht</phrase
+></textobject>
+	</mediaobject>
+      </screenshot>
+      
+      
+      <sect2 id="account_properties"
+> 
+	<title
+>Konteneinstellungen</title>
+	<para
+>In &skrooge; hat ein Konto folgende Eigenschaften: <variablelist>
+	    <varlistentry>
+	      <term
+>Bank</term>
+	      <listitem
+><para
+>Sie können eine Bank aus dem Auswahlfeld mit einer Liste der bekannten Banken in Ihrem Land auswählen oder den Namen Ihrer Bank direkt eingeben, wenn sie in der Liste nicht enthalten ist. Ist diese Liste leer, hat das &skrooge;-Team diese Informationen noch nicht zur Verfügung gestellt. Nehmen Sie mit uns Kontakt auf, um dabei zu helfen.</para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Konto</term>
+	      <listitem
+><para
+>Der Name, den Sie für dieses Konto benutzen möchten.</para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Art</term>
+	      <listitem
+><para
+>Es gibt folgende Kontoarten: <itemizedlist>
+		    <listitem
+><para
+>Aktuell</para
+></listitem>
+		    <listitem
+><para
+>Kreditkarte: Diese Art von Konto hat einen speziellen <link linkend="reconciliation"
+>Abgleich</link
+>-Modus.</para
+></listitem>
+		    <listitem
+><para
+>Sparkonto</para
+></listitem>
+		    <listitem
+><para
+>Investition</para
+></listitem>
+		    <listitem
+><para
+>Anlagen</para
+></listitem>
+		    <listitem
+><para
+>Kredit: Die Überweisungen zur diesen Kontoarten werden bei Berichten nicht berücksichtigt.</para
+></listitem>
+		    <listitem
+><para
+>Rente</para
+></listitem>
+		    <listitem
+><para
+>Bargeld: Für diese Kontoart gibt es keinen Banknamen.</para
+></listitem>
+		    <listitem
+><para
+>Andere</para
+></listitem>
+		  </itemizedlist>
+		  </para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Bankleitzahl</term>
+	      <listitem
+><para
+>Die Bankleitzahl Ihrer Bank</para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Filialnummer</term>
+	      <listitem
+><para
+>Die Kennnummer Ihrer Bankfiliale</para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Kontonummer</term>
+	      <listitem
+><para
+>Die Kennnummer des Kontos. Dieser Wert ist wichtig, um bei Importen das richtige Konto zu finden </para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Adresse</term>
+	      <listitem
+><para
+>Die Adresse der Filiale</para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Kommentar</term>
+	      <listitem
+><para
+>Ein beliebiger Text.</para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Anfangskontostand</term>
+	      <listitem
+><para
+>Der Anfangsbetrag des Kontos</para
+></listitem>
+	    </varlistentry
+>	  
+	    <varlistentry>
+	      <term
+>Unterer Grenzwert</term>
+	      <listitem
+><para
+>Der untere Grenzwert, bei dem &skrooge; eine Erinnerung auslösen soll </para
+></listitem>
+	    </varlistentry
+>	    
+	    <varlistentry>
+	      <term
+>Oberer Grenzwert</term>
+	      <listitem
+><para
+>Der obere Grenzwert, bei dem &skrooge; eine Erinnerung auslösen soll </para
+></listitem>
+	    </varlistentry
+>	    
+	  </variablelist>
+	</para>
+      </sect2>
+      
+      <sect2 id="accounts_list">
+	<title
+>Kontenliste</title>
+	<para
+>Die Kontenliste besteht aus einer Tabelle mit einer Zeile je Konto. Zusätzlich zu den von Ihnen definierten <link linkend="account_properties"
+>Eigenschaften</link
+> für ein Konto werden folgende Spalten in &skrooge; angezeigt:</para>
+	
+	<variablelist>
+	  <varlistentry>
+	    <term
+>Betrag</term>
+	    <listitem
+><para
+>Der verfügbare Betrag auf dem Konto unter Berücksichtigung alle registrierten Vorgänge, egal ob Sie bestätigt wurden.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Überprüft</term>
+	    <listitem
+><para
+>Der Betrag aller geprüften Vorgänge. Dies sollte dem Betrag auf dem letzten Kontoauszug von Ihrer Bank entsprechen.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Prognostiziert</term>
+	    <listitem
+><para
+>Die Differenz zwischen den beiden vorherigen Spalten</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Anzahl an Vorgängen</term>
+	    <listitem
+><para
+>Die gesamte Anzahl der Vorgänge für dieses Konto</para
+></listitem>
+	  </varlistentry>
+	</variablelist>
+	
+	<para
+>Wie alle Listenansichten von &skrooge; kann das <link linkend="tables"
+>Erscheinungsbild der Tabelle</link
+> vollständig angepasst werden.</para>
+	
+      </sect2>
+      
+      <sect2 id="create_account">
+	<title
+>Konto erstellen</title>
+	<para
+>Das Erstellen von Konten erfolgt in der Bearbeitungsleiste unter der Kontenliste.</para>
+	
+	<para
+>Um ein Konto zu erstellen, geben Sie dessen Attribute ein. Die zwingend erforderlichen Eingaben sind fett markiert. Drücken Sie dann auf den Knopf hinzufügen. Sie müssen keinen Eröffnungssaldo für ein Konto eingeben. Möchten Sie aber einen Eröffnungssaldo verwenden, erstellen Sie einen Vorgang mit dem entsprechenden Betrag.</para>
+      </sect2>
+      
+      <sect2 id="modify_account">
+	<title
+>Ein Konto bearbeiten</title>
+	<para
+>Um ein Konto zu bearbeiten, wählen Sie es aus, bearbeiten Sie die Attribute und klicken Sie auf „Ändern“.</para>
+      </sect2>
+      
+      <sect2 id="delete_account">
+	<title
+>Konten löschen</title>
+	<para
+>Um Konten zu löschen, wählen Sie sie aus und drücken <keycap
+>Entf</keycap
+> auf der Tastatur, nutzen diese Aktion aus dem Kontextmenü oder das Symbol in der Werkzeugleiste.</para>
+	<warning
+><para
+>Beim Löschen eines Kontos, werden alle Vorgänge für dieses Konto gleichfalls gelöscht, aber Sie können dies immer <link linkend="undo_redo"
+>rückgängig</link
+> machen.</para
+></warning>
+      </sect2>
+      
+    </sect1>
+    
+    <sect1 id="operations">
+      <title
+>Vorgänge</title>
+      <para
+>Vorgänge sind alle Bearbeitungen eines Kontos, d. h. Ausgaben, Einnahmen, Überweisungen, Verkäufe, Zahlungen &etc; Mit Vorgängen werden Sie die meiste Zeit in &skrooge; arbeiten.</para>
+      
+      <para
+>Um Vorgänge eingeben zu können, müssen Sie mindestens ein <link linkend="accounts"
+>Konto</link
+> erstellen.</para>
+      
+      <screenshot>
+	<mediaobject>
+	  <imageobject
+><imagedata fileref="operations.png" format="PNG"/></imageobject>
+	  <textobject
+><phrase
+>Die Ansicht „Vorgänge“</phrase
+></textobject>
+	</mediaobject>
+      </screenshot>
+      
+      <sect2 id="operation_properties">
+	<title
+>Vorgangseigenschaften</title>
+	
+	<variablelist>
+	  <varlistentry>
+	    <term
+>Konto</term>
+	    <listitem
+><para
+>Das Konto für diesen Vorgang. Wählen Sie es aus einer Liste vorhandener Konten.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Datum</term>
+	    <listitem
+><para
+>Das Datum, an dem der Vorgang ausgeführt wurde. Es gibt einen Kalender zur Datumsauswahl, der mit dem Pfeil abwärts rechts neben dem Feld geöffnet wird.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term id="quantity_field"
+>Betrag</term>
+	    <listitem>
+	      <para
+>Der Betrag gibt an, wie viel Sie mit diesem Vorgang ausgegeben oder eingenommen haben. Dafür müssen Sie zwei Felder ausfüllen, Menge und Einheit.</para>
+	      <para
+>Die Menge ist für eine Ausgabe negativ, zum Beispiel -30, und für eine Einnahme positiv, zum Beispiel +250 oder einfach 250. Dieses Eingabefeld funktioniert als Rechner, &ie; die Eingabe eines Ausdrucks wie 10 + 3,23*2 ergibt als Ergebnis im Feld den Wert 16,46.</para>
+              <para
+>Wenn das Vorzeichen der Zahl nicht angegeben ist, verwendet &skrooge; die Kategorie, um das am besten passende Vorzeichen zu finden.</para>
+	      <para
+>In &skrooge; müssen Sie die <link linkend="units"
+>Einheit</link
+> angeben, da ein Vorgang nicht zwingend in der Hauptwährung durchgeführt werden muss. Wenn Sie zum Beispiel Aktien erwerben oder kaufen, ist die Einheit für den Vorgang die die Aktieneinheit.</para>
+	    </listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Zahlungsempfänger</term>
+	    <listitem
+><para
+>Wem Sie dies gezahlt haben oder wer Ihnen diesen Betrag zahlte.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Modus</term>
+	    <listitem>
+	      <para
+>Die Zahlungsart für diesen Vorgang, wie zum Beispiel Kreditkarte, Scheck, Überweisung usw.</para>
+	      <para
+>Zum Vorgangsmodus gehört eine optionale Nummer. Dafür wird häufig eine Schecknummer oder eine Buchungsnummer verwendet.</para>
+	    </listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Kategorie</term>
+	    <listitem>
+	      <para
+>Die <link linkend="categories"
+>Kategorie</link
+>, in die dieser Vorgang gehört. Möchten Sie einen Vorgang mehr als einer Kategorie zuweisen, benutzen Sie den <link linkend="split_operation"
+>Split</link
+>-Modus.</para>
+	      <para
+>Sie können entweder eine vorhandene Kategorie auswählen oder eine neue eingeben. in diesem Fall wird die Kategorie durch &skrooge; zusammen mit dem Vorgang erstellt.</para>
+	      <para
+>Das Trennzeichen zwischen einer Kategorie und den Unterkategorien ist das „&gt;“-Zeichen. Geben Sie „Kleidung &gt; Schuhe“ ein, erstellt &skrooge; die Kategorie „Kleidung“, wenn Sie noch nicht existiert, und auch die Kategorie „Schuhe“.</para>
+	      <para
+>Natürlich können Sie auch einen gesamten Kategorienbaum wie zum Beispiel Verkehrsmittel &gt; Auto &gt; Benzin &gt; Bleifrei eingeben, &skrooge; erstellt die vollständige Hierarchiestruktur erstellen.</para>
+	    </listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Kommentar</term>
+	    <listitem
+><para
+>Ein beliebiger Kommentar.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Vorgangsgruppe</term>
+	    <listitem
+><para
+>Möchten Sie die Erstattung für diesen Vorgang überwachen, geben Sie den Namen der <link linkend="trackers"
+>Vorgangsgruppe</link
+> hier ein. Möchten Sie einen Vorgang mehreren Gruppen zuweisen, können Sie den <link linkend="split_operation"
+>Split</link
+>-Modus verwenden.</para
+></listitem>
+	  </varlistentry>
+	</variablelist>
+	
+      </sect2>
+      
+      <sect2 id="operations_list">
+	<title
+>Vorgangsliste</title>
+	<para
+>Die Vorgangsliste besteht aus einer Tabelle mit allen Vorgängen, die zum aktuellen <link linkend="show"
+>Tabellenfilter</link
+> und Suchbegriffen passen, mit einer Zeile je Vorgang. Zusätzlich zu den Standard-<link linkend="operation_properties"
+>Vorgangs-Eigenschaften</link
+> und den von Ihnen für ein Konto definierten <link linkend="account_properties"
+>Eigenschaften</link
+> werden folgende Spalten in &skrooge; angezeigt:</para>
+	
+	<variablelist>
+	  <varlistentry>
+	    <term
+>Status</term>
+	    <listitem
+><para
+>Ein gefülltes Quadrat zeigt an, dass der Vorgang während des <link linkend="reconciliation"
+>Kontenabgleichs</link
+> bestätigt wurde. Ein halb gefülltes Quadrat bedeutet, dass dieser Vorgang <link linkend="terminology_pointed_operation"
+>markiert</link
+> wurde und der <link linkend="reconciliation"
+>Abgleich</link
+> fortgeführt wird.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Lesezeichen</term>
+	    <listitem
+><para
+>Markiert diesen Vorgang als Lesezeichen.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Geplant</term>
+	    <listitem
+><para
+>Wenn ein Vorgang geplant ist, wird in dieser Spalte ein Uhrensymbol angezeigt.</para
+></listitem>
+	  </varlistentry>
+	</variablelist>
+	
+	<para
+>Diese Spalten haben einige Besonderheiten:</para>
+	
+	<variablelist>
+	  <varlistentry>
+	    <term
+>Modus</term>
+	    <listitem
+><para
+>Wenn der Vorgang ein Teil einer <link linkend="transfer"
+>Buchung</link
+> ist, wird dem Modus ein Symbol mit einem Doppelpfeil vorangestellt.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Kategorie</term>
+	    <listitem
+><para
+>Wenn der Vorgang ein Teil eines <link linkend="split_operation"
+>Split</link
+> ist, wird dem Modus ein Symbol mit einem dreifachen Pfeil vorangestellt.</para
+></listitem>
+	  </varlistentry>
+	</variablelist>
+	
+	<para
+>Wie alle Listenansichten von &skrooge; kann das <link linkend="tables"
+>Erscheinungsbild der Tabelle</link
+> vollständig angepasst werden.</para>
+	
+      </sect2>
+      
+      <sect2 id="standard_operation">
+	<title
+>Vorgang erstellen</title>
+	<para
+>Um einen Standardvorgang zu erstellen, können Sie den Knopf <guibutton
+>Editor löschen</guibutton
+> verwenden, um alle Felder zu leeren und einen neuen Vorgang ohne Daten einzugeben. Dann füllen Sie die Felder manuell oder mit der <link linkend="fast_editing"
+>Schnellen Bearbeitung</link
+> aus und klicken auf den Knopf <guibutton
+>Hinzufügen</guibutton
+>.</para>
+        <para
+>Wenn die entsprechende Einstellung aktiviert ist, dann wird die Kategorie automatisch gesetzt, wenn der Zahlungsempfänger eingestellt wird.</para>
+	<para
+>Sie können auch einen ähnlichen Vorgang aus vorhandenen Vorgängen auswählen, die nötigen Daten ändern und dann auf den Knopf <guibutton
+>Hinzufügen</guibutton
+> drücken.</para>
+      </sect2>
+      
+      
+      <sect2 id="split_operation">
+	<title
+>Split-Vorgang</title>
+	<para
+>Ein Split-Vorgang ist ein Vorgang, der zu mehreren Daten, Kategorien, Kommentaren oder Vorgangsgruppen gehört. Sie können mit dem Knopf <guibutton
+>Teilen</guibutton
+> unten in der Vorgangsansicht in den Bearbeitungsmodus für Split-Vorgänge wechseln. Dann werden die Felder Kategorie und Vorgangsgruppe durch eine Tabelle ersetzt.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="split_operation.png" format="PNG"/></imageobject>
+	    <textobject
+><phrase
+>Die Bearbeitungsleiste für Split-Vorgänge.</phrase
+></textobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Um eine Zelle in dieser Tabelle zu bearbeiten, doppelklicken sie darauf.</para>
+	
+	<para
+>Sie können beliebig viele Zeilen in dieser Tabelle hinzufügen. Wenn Sie die Menge in einer Zeile ändern, dann wird die Differenz zur gesamten Summe berechnet und die verbleibende Menge in der letzten Tabellenzeile angezeigt. Ändern Sie die Menge in der letzten Zeile, wird eine neue Zeile mit der Restmenge angehängt.</para>
+	
+	<para
+>Die Felder haben das gleiche Verhalten wie im normalen Bearbeitungsmodus für Vorgänge:</para>
+	
+	<itemizedlist>
+	  <listitem
+><para
+>Die Aufteilung nach Datum ist z. B. sinnvoll, wenn Sie Ihr Sporttraining für 3 Monate bezahlt haben. In diesem Fall können Sie die Zahlung auf 3 Monate aufteilen, dies hat Auswirkungen auf die Berichte.</para
+></listitem>
+	  <listitem
+><para
+>Die Kategorie können Sie aus einem Auswahlfeld mit vorhandenen Kategorien auswählen. Sie können eine Kategorie hinzufügen, dann wird &skrooge; sie bei einem neuen Vorgang mit erstellen.</para
+></listitem>
+	  <listitem
+><para
+>Das Feld Betrag <link linkend="quantity_field"
+>funktioniert wie ein Rechner</link
+>.</para
+></listitem>
+	  <listitem
+><para
+>Die Vorgangsgruppe können Sie aus einem Auswahlfeld mit vorhandenen Gruppen auswählen. Sie können eine  Vorgangsgruppe hinzufügen, dann wird &skrooge; sie bei einem neuen Vorgang mit erstellen.</para
+></listitem>
+	</itemizedlist>
+      </sect2>
+      
+      <sect2 id="transfer">
+	<title
+>Buchung</title>
+	<para
+>Ein Buchungsvorgang ist tatsächlich eine doppelter Vorgang: Bein Erstellen der Buchung werden zwei Vorgänge mit gleichen Betrag mit unterschiedlichem Vorzeichen, also ein negativer und ein positiver Betrag, für zwei verschiedene Konten erstellt. Die hier anzugebenden Attribute unterscheiden sich etwas von den Standardvorgängen:</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="transfer_operation.png" format="PNG"/></imageobject>
+	    <textobject
+><phrase
+>Die Bearbeitungsleiste Buchungsvorgang.</phrase
+></textobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Es gibt es eine Auswahlfeld <guilabel
+>An Konto</guilabel
+>, im dem Sie das Konto auswählen, in das das Geld übertragen wird.</para>
+	
+	<para
+>Eine Buchung ist das Entnehmen von Geld aus Konto A und Eingeben in Konto B. Daher wird eine Vorzeichen in einem Wertefeld ignoriert. Der Vorgang für Konto A ist immer negativ und für Konto B immer positiv.</para>
+      </sect2>
+      
+      <sect2 id="shares">
+	<title
+>Aktien</title>
+	<para
+>Zuerst müssen Sie einige Einheiten mit den Aktien erstellen, die Sie überwachen möchten. In den <link linkend="settings"
+>Einstellungen</link
+> können Sie wählen, dass die Daten automatisch aktualisiert werden, wenn die Datei geöffnet wird. Es ist auch empfehlenswert, ein anderes Konto (&eg; „ETF“) zu erstellen, um die Investitionen getrennt zu halten und sie von der Übersichtsseite aus sehen zu können. </para>
+<para
+>Jetzt können Sie Ihre Vorgänge als Aktien hinzufügen. <screenshot
+> <mediaobject>
+	    <imageobject
+><imagedata fileref="shares.png" format="PNG"/></imageobject>
+	    <textobject
+><phrase
+>Die Bearbeitungsleiste für Aktien.</phrase
+></textobject>
+	  </mediaobject>
+	</screenshot>
+	<itemizedlist>
+	  <listitem
+><para
+>Der Betrag ist die Anzahl der Aktien, die Sie gekauft (positiver Wert) oder verkauft (negativer Wert) haben</para
+></listitem>
+	  <listitem
+><para
+>Das Symbol ist die vorherige Einheit, die Sie erstellt haben</para
+></listitem>
+	  <listitem
+><para
+>Der Betrag der Aktien ist der Gesamtpreis, den Sie für die Aktien bezahlt haben oder der gesamte Betrag, den Sie durch den Verkauf erhalten haben, ohne Provisionen und Steuern</para
+></listitem>
+	  <listitem
+><para
+>Provision ist der Betrag, den Sie der Bank für diesen Vorgang bezahlt haben</para
+></listitem>
+	  <listitem
+><para
+>Steuern sind alle Beträge, die Sie gezahlt haben (normalerweise bei Einkünften)</para
+></listitem
+> 
+	</itemizedlist
+>	  
+	 </para>
+      </sect2>
+      
+      <sect2 id="schedule_operation">
+	<title
+>Geplante Vorgänge</title>
+	
+	<para
+>Wenn ein Vorgang regelmäßig wiederholt werden soll, kann er in der Vorgangsliste automatisch für Sie ausgefüllt werden. Dies erfolgt durch einen geplanten Vorgang, den Sie mit dem Knopf <guibutton
+>Planen <inlinemediaobject
+><imageobject
+><imagedata fileref="schedule_operation.png"/></imageobject
+></inlinemediaobject
+></guibutton
+> verwenden.</para>
+	
+	<para
+>Es gibt folgende Standardparameter für geplante Vorgänge:</para>
+	<itemizedlist>
+	  <listitem
+><para
+>Jeden Monat wiederholen</para
+></listitem>
+	  <listitem
+><para
+>5 Tage vor der Frist erinnern</para
+></listitem>
+	  <listitem
+><para
+>Automatisch zum Termin ausführen</para
+></listitem>
+	</itemizedlist>
+	
+	<para
+>Die Standardeinstellungen können im <link linkend="settings"
+>Einrichtungsdialog</link
+> von &skrooge; geändert werden.</para>
+	<para
+>Sie können die Parameter für geplante Vorgänge im Modul <link linkend="scheduled"
+>Geplante Vorgänge</link
+> ändern.</para>
+	<para
+>&skrooge; verwendet die Werte der letzten Einträge des geplanten Vorgangs für das Ausfüllen des neuen Vorgangs. Wenn Sie zum Beispiel den Betrag Ihrer monatlichen Spende an &kde; von 100 € auf 200 € erhöhen. wird der nächste Vorgang automatisch durch &skrooge; mit einem Betrag von 200 € ausgefüllt.</para>
+	
+      </sect2>
+      
+      <sect2 id="fast_editing">
+	<title
+>Schnelles Bearbeiten</title>
+	
+	<para
+>In jedem ausgewählten Bearbeitungsmodus gibt es eine Funktion für schnelle Bearbeitung. Die beschleunigt die Arbeit bei der Erstellung neuer Vorgänge. Mit dieser Funktion werden die Attribute von Vorgängen auf der Basis von vorher eingegebenen Vorgängen ausgefüllt. Geben Sie einen Wert in ein beliebiges Feld im Editor ein und drücken Sie den Kurzbefehl <keycap
+>F10</keycap
+> oder klicken Sie auf das Symbol für <guibutton
+>Schnelles Bearbeiten <inlinemediaobject
+><imageobject
+><imagedata fileref="fast_editing.png" format="PNG"/></imageobject
+></inlinemediaobject
+></guibutton
+>, ohne das gewählte Feld zu verlassen.</para>
+	
+	<para
+>&skrooge; sucht nach dem ersten, &ie; dem aktuellsten Vorgang, der den gleichen Wert im gleichen Feld enthält und füllt alle anderen Felder mit den werten aus diesem Vorgang. Rufen Sie das schnelle Bearbeiten erneut auf, wird nach dem nächsten Vorgang gesucht usw.</para>
+	
+	<warning>
+	  <para
+>Schnelles  Bearbeiten funktioniert nicht für das Datum, das es ziemlich unwahrscheinlich ist, dass Sie genau den gleichen Vorgang vollständig mit dem gleichen Datum ausfüllen wollen.</para>
+	  <para
+>Wenn Sie den Wert eines Felds geändert haben, ehe Sie die schnelle Bearbeitung aufrufen, wird der Inhalt dieses Felds nicht geändert. Die wird durch eine andere Hintergrundfarbe im Feld gekennzeichnet, so das erkennbar ist, dass das Feld „eingefroren“ ist.</para>
+	</warning>
+	
+	<para
+>Unterschied zu ähnlichen Funktionen in anderen Programmen für die persönliche Finanzen:</para>
+	<itemizedlist>
+	  <listitem
+><para
+>Wird auf Anforderung des Benutzers aufgerufen</para
+></listitem>
+	  <listitem
+><para
+>Bearbeitet alle vergangenen Vorgänge mit dem gleichen Betrag im Feld</para
+></listitem>
+	</itemizedlist>
+	
+	<para
+>Funktioniert auch für Split-Vorgänge</para>
+      </sect2>
+      
+      <sect2 id="reconciliation">
+	<title
+>Kontenabgleich</title>
+	<para
+>Abgleichen ist der Vorgang, durch den sichergestellt wird, dass alle Vorgänge mit den Position auf dem Kontoauszug Ihrer Bank übereinstimmen. Dazu brauchen Sie die Kontoauszüge und einen Stift. Das Abgleichen eines Konto kann nur einmalig durchgeführt werden.</para>
+	<para
+>Geben Sie zunächst alle Vorgänge für das Konto bis zu diesem Zeitpunkt ein, wenn möglich laden Sie die Überweisungen von der Bank herunter und <link linkend="import"
+>importieren</link
+> sie in &skrooge;, um die Dateneingabe zu minimieren. Dann wählen Sie in der Vorgangsansicht im Auswahlfeld das Konto, das Sie abgleichen möchten, oder doppelklicken Sie in der Kontenansicht auf den Kontennamen oder benutzen das Kontextmenü und wählen <guimenu
+>Vorgänge öffnen</guimenu
+>. Wechseln Sie dann in den Abgleichmodus mit dem Knopf <guibutton
+>Zwischen Informationen umschalten<inlinemediaobject
+><imageobject
+><imagedata fileref="switch_information.png" format="PNG"/></imageobject
+></inlinemediaobject
+></guibutton
+> unter der Tabelle mit den Vorgängen.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="reconciliation_information.png" format="PNG"/></imageobject>
+	    <textobject
+><phrase
+>Die Informationen im Modus Kontenabgleich</phrase
+></textobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Geben Sie die einzelnen Positionen aus dem Kontoauszug Ihrer Bank in die zugehörigen Felder ein. Dann können überprüfen, ob jeder Vorgang auch in Ihrem Kontoauszug auftaucht. Sie können entweder auf das Ankreuzfeld in der Statusspalte klicken oder im Kontextmenü <guimenuitem
+>Markieren</guimenuitem
+> wählen. Dann ist das Ankreuzfeld für diesen Vorgang noch halb gefüllt, bis Sie den Abgleich tatsächlich fertigstellen.</para>
+	
+	<para
+>Wenn Sie Vorgänge markieren, wird im Informationsbereich folgendes angezeigt:</para>
+	<itemizedlist>
+	  <listitem
+><para
+>Differenz: Der Unterschied zwischen der vorher eingegebenen Position des Kontos und der Summe aller überprüften Vorgänge.</para
+></listitem
+><!--TODO: explain 'previously entered'; what happens-->
+	  <listitem
+><para
+>Ausgaben: Der gesamte Betrag aller markierten Ausgaben</para
+></listitem>
+	  <listitem
+><para
+>Einnahmen: Der gesamte Betrag aller markierten Einnahmen</para
+></listitem>
+	</itemizedlist>
+	
+	<para
+>Mit diesen Summen erkennen Sie Vorgänge, deren Eingabe Sie vielleicht vergessen haben. Viele Kontoauszüge enthalten ähnliche Summen wie "Abhebungen" oder "Einzahlungen und Gutschriften", obwohl sie auch separate Summen für "Zinsen" und "Gebühren" haben können. Wenn die Differenz null ist, haben Sie <emphasis
+>vielleicht</emphasis
+> alle Vorgänge markiert, die mit dem Datensatz der Bank übereinstimmen. Zum Beispiel könnten Sie fälschlicherweise eine Belastung von 8 € und eine Gutschrift von 2 € markiert haben und eine Bankbelastung von 6 € übersehen haben, das ergibt in beiden Fällen eine Differenz von minus 6 €. Wenn die Differenz gleich Null ist, wird der Knopf <guibutton
+>Vorgänge bestätigen<inlinemediaobject
+><imageobject
+><imagedata fileref="validate.png" format="PNG"/></imageobject
+></inlinemediaobject
+></guibutton
+> aktiviert. Klicken Sie auf diesen Knöpf, um den Abgleich fertigzustellen. Alle markierten Vorgänge haben dann den Status „Bestätigt“.</para>
+	
+	<tip
+><para
+><inlinemediaobject
+><imageobject
+><imagedata fileref="fast_editing.png" format="PNG"/></imageobject
+></inlinemediaobject
+> Kann automatisch alle importierten Vorgänge markieren.</para
+></tip>
+	
+	<para
+>Ist die Einstellung <guibutton
+>Überprüfte Vorgänge ausblenden</guibutton
+> für die Tabelle aus dem Menü „Anzeigen“ (<link linkend="show"
+>Tabelle filtern</link
+>) ausgewählt, werden diese Vorgänge jetzt ausgeblendet.</para>
+	
+	<para
+>Wenn der Abgleich aus irgendeinem Grund nicht möglich ist, können Sie einen unechten Vorgang erstellen, der in Kombination mit den anderen markierten Vorgängen, die Differenz auf 0 setzt, so dass Sie den Abgleich abschließen können. Klicken Sie dazu auf den Knopf „Hinzufügen“ in der Symbolleiste des Abgleichmodus. Sie können die Standardwerte dieses unechten Vorgangs in den <link linkend="settings"
+>Einstellungen</link
+> im Abschnitt <guilabel
+>Vorgänge</guilabel
+> einstellen. Wenn Sie beim Abgleich die entsprechende Einstellung aktivieren, markiert &skrooge; automatisch alle erstellten Vorgänge.</para>
+	
+      </sect2>
+      
+      <sect2 id="templates">
+	<title
+>Vorlagen für Vorgänge</title>
+	<para
+>Mit &skrooge; können Sie Vorlagen für Vorgänge erstellen, &ie; Vorgänge können jederzeit wiederverwendet werden, wenn Sie sie brauchen. Wenn Sie zum Beispiel manchmal eine &DVD; für Zuhause ausleihen, wird immer wieder der gleiche Vorgang verwendet:</para>
+	
+	<itemizedlist>
+	  <listitem
+><para
+>Betrag: -4,99</para
+></listitem>
+	  <listitem
+><para
+>Modus: Kreditkarte</para
+></listitem>
+	  <listitem
+><para
+>Zahlungsempfänger: Acme Video</para
+></listitem>
+	  <listitem
+><para
+>Kategorie: Freizeit -> Video</para
+></listitem>
+	  </itemizedlist>
+	  
+	  <para
+>Sie können dafür jedoch keinen regelmäßig wiederkehrenden Vorgang erstellen, da Sie nur ab und zu und nicht regelmäßig jede Woche eine &DVD; ausleihen. Eine Vorgangsvorlage dient in so einem Fall als Muster, die schnell in Ihre Vorgangsliste eingefügt werden kann.</para>
+	  
+	  <para
+>Da es sich bei Vorlagen nur um eine besondere Art von Vorgängen handelt, können Sie darauf im Unterfenster <guilabel
+>Vorgänge</guilabel
+> zugreifen, indem Sie die Aktionen im Menü <guimenu
+>Anzeigen</guimenu
+> benutzen:</para>
+	  
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject
+><imagedata fileref="template_button.png" format="PNG"/></imageobject>
+	      <textobject
+><phrase
+>Wechseln zwischen Vorlagen und Vorgängen.</phrase
+></textobject>
+	    </mediaobject>
+	  </screenshot>
+	  
+	  <para
+>Das Erstellen einer Vorlage funktioniert genauso wie bei Vorgängen, indem Sie die Attribute definieren. Sie können außerdem auch eine Vorlage aus einem vorhandenen Vorgang erstellen, indem Sie diesen Vorgang aus dem Kontextmenü des Vorgangs auswählen. In diesen Fall hat die Vorlage die gleichen Attribute wie der Vorgang.</para>
+	  
+	  <para
+>Um eine Vorlage zu verwenden und daraus einen neuen Vorgang zu erstellen, klicken Sie doppelt darauf. Dann wird ein neuer Vorgang mit den Attributen der Vorlage, aber dem aktuellen Datum erstellt. Dann können Sie die Attribute verändern, falls nötig.</para>
+	  
+	  <para
+>Vorlagen können auch <link linkend="scheduled"
+>geplant</link
+> werden.</para>
+	  
+	</sect2>
+	
+      </sect1>
+      
+      <sect1 id="payees">
+	<title
+>Zahlungsempfänger</title>
+	<para
+>In der Ansicht Zahlungsempfänger können Sie die Liste der Zahlungsempfänger durchsehen.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject>
+	      <imagedata fileref="payees.png" format="PNG"/>
+	    </imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Zusätzlich zu den Namen der Zahlungsempfänger wird in der Tabelle noch folgendes angezeigt: </para>
+	
+	<variablelist>
+	  <varlistentry>
+	    <term
+>Adresse</term>
+	    <listitem
+><para
+>Die Adresse dieses Zahlungsempfängers.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Kategorie</term>
+	    <listitem
+><para
+>Die Standardkategorie für diesen Zahlungsempfänger. Diese Kategorie wird automatisch verwendet, wenn der Zahlungsempfänger auf der Seite<link linkend="operations"
+>
+>Vorgang</link
+> eingegeben wird. Wenn Sie keine Standardkategorie festlegen, wird sie aus den vorhandenen Vorgängen ermittelt.</para
+></listitem>
+	  </varlistentry
+>          
+	  <varlistentry>
+	    <term
+>Betrag</term>
+	    <listitem
+><para
+>Die Summe aller Vorgänge für diesen Zahlungsempfänger.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Anzahl an Vorgängen</term>
+	    <listitem
+><para
+>Die Anzahl der Vorgänge für diesen Zahlungsempfänger.</para
+></listitem>
+	  </varlistentry>
+	</variablelist>
+	
+	<para
+>Durch Doppelklicken auf eine Zeile in dieser Tabelle wird eine Liste aller Vorgänge für diesen Zahlungsempfänger in einem neuen Unterfenster geöffnet.</para>
+      </sect1>
+      
+      <sect1 id="categories">
+	<title
+>Kategorien</title>
+	<para
+>In der Kategorienansicht können Sie den Kategorienbaum durchsehen.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject>
+	      <imagedata fileref="categories.png" format="PNG"/>
+	    </imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Zusätzlich zu den Namen der Kategorien wird in der Tabelle noch folgendes angezeigt: </para>
+	
+	<variablelist>
+	  <varlistentry>
+	    <term
+>Betrag</term>
+	    <listitem
+><para
+>Die Summe aller Vorgänge in dieser Kategorie.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Anzahl an Vorgängen</term>
+	    <listitem
+><para
+>Die Anzahl der Vorgänge in dieser Kategorie.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Betrag (kumuliert)</term>
+	    <listitem
+><para
+>Die Summe aller Vorgänge in dieser Kategorie und in allen Unterkategorien bis zur letzten Ebene.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Anzahl der Vorgänge (kumuliert)</term>
+	    <listitem
+><para
+>Die Anzahl aller Vorgänge in dieser Kategorie und in allen Unterkategorien bis zur letzten Ebene.Die Summe aller Vorgänge in dieser Kategorie und in allen Unterkategorien bis zur letzten Ebene.</para
+></listitem>
+	  </varlistentry>
+	</variablelist>
+	
+	<para
+>Durch Doppelklicken auf eine Zeile in dieser Tabelle wird eine Liste aller Vorgänge in dieser Kategorie in einem neuen Unterfenster geöffnet.</para>
+	<warning
+><para
+>Wenn eine Kategorie gelöscht wird, wird sie auch in allen Vorgängen mit dieser Kategorie entfernt und diese Vorgänge sind dann keinen Kategorien mehr zugewiesen.</para
+></warning>
+      </sect1>
+      
+      <sect1 id="reports">
+	<title
+>Berichte</title>
+	<para
+>&skrooge; ermöglicht angepasste eigene Berichte, um Ihre finanzielle Situation umfassend zu analysieren.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject>
+	      <imagedata fileref="reports.png" format="PNG"/>
+	    </imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Ein Bericht besteht aus einer Tabelle (links) mit allen Daten, mit denen das Diagramm rechts gezeichnet wird. Die Tabelle kann mit dem Eingabefeld darüber gefiltert werden, dann wird das Diagramm mit den gefilterten Daten neu gezeichnet.</para>
+	
+	<para
+>Sie können auswählen, ob nur die Tabelle, nur das Diagramm oder beides angezeigt werden.</para>
+	
+	<sect2 id="setup_report">
+	  <title
+>Einstellungen für den Bericht</title>
+	  
+	  <sect3 id="report_representation">
+	    <title
+>Darstellung</title>
+	    <variablelist>
+	      <varlistentry>
+		<term
+>Tabelle</term>
+		<listitem
+><para
+>Zeigt die Tabelle.</para
+></listitem>
+	      </varlistentry>
+	      <varlistentry>
+		<term
+>Diagramm</term>
+		<listitem
+><para
+>Zeigt das Diagramm.</para
+></listitem>
+	      </varlistentry>
+	      <varlistentry>
+		<term
+>Text</term>
+		<listitem
+><para
+>Zeigt den Bericht als Text ohne Tabelle und Diagramm.</para
+></listitem>
+	      </varlistentry>
+	    </variablelist>
+	  </sect3>
+	  
+	  <sect3 id="report_data">
+	    <title
+>Daten</title>
+	    <para
+>Hier wählen Sie die Daten aus, die in Ihrem Bericht präsentiert werden. Wählen Sie die anzuzeigenden Daten in Zeilen und Spalten und den Modus der Berechnung aus. Für den Modus gibt es zwei unterschiedliche Verfahren.</para>
+	    <variablelist>
+	      <varlistentry>
+		<term
+>Summe der Vorgänge</term>
+		<listitem>
+		  <para
+>In diesem Modus wird der gesamte Betrag von Vorgängen für jeden Monat berechnet. Ist „Kategorie“ als Zeile und „Monat“ als Spalte ausgewählt, dann wird der gesamte Betrag von Vorgängen für jede Kategorie und jeden Monat berechnet.</para>
+		</listitem>
+	      </varlistentry>
+	      <varlistentry>
+		<term
+>Kumulierte Summe der Vorgänge</term>
+		<listitem>
+		  <para
+>Wird das vorherige Beispiel mit „Kategorie“ als Zeile und „Monat“ als Spalte wiederverwendet, ergibt sich hier eine kumulierte Summe, &ie; für jeden Monat wird der gesamte Betrag der Vorgänge bis zu diesem Monat für jede Kategorie berechnet.</para>
+		  <para
+>Sie können diesen Modus zum Beispiel verwenden, um die Entwicklung aller Kontostände zu zeichnen, indem „Konten“ als Zeilen und „Monate“ als Spalten benutzt werden.</para>
+		</listitem>
+	      </varlistentry>
+	      <varlistentry>
+		<term
+>Basis 100</term>
+		<listitem>
+		  <para
+>Wie „Summe der Vorgänge“, aber mit der Basis 100.</para>
+		</listitem>
+	      </varlistentry>
+	      <varlistentry>
+		<term
+>Kumulierte Summe zur Basis 100</term>
+		<listitem>
+		  <para
+>Wie „Kumulierte Summe der Vorgänge“, aber mit der Basis 100.</para>
+		</listitem>
+	      </varlistentry>
+	      <varlistentry>
+		<term
+>Prozent der Spalten</term>
+		<listitem>
+		  <para
+>Die Werte werden in Prozent des höchsten Spaltenwertes angegeben.</para>
+		</listitem>
+	      </varlistentry>
+	      <varlistentry>
+		<term
+>Absoluter Prozentbetrag der Spalten</term>
+		<listitem>
+		  <para
+>Die Werte werden als absolute Prozentwerte des höchsten Spaltenwertes angegeben.</para>
+		</listitem>
+	      </varlistentry>
+	      <varlistentry>
+		<term
+>Prozent der Zeilen</term>
+		<listitem>
+		  <para
+>Die Werte werden in Prozent des höchsten Zeilenwertes angegeben.</para>
+		</listitem>
+	      </varlistentry>
+	      <varlistentry>
+		<term
+>Absoluter Prozentbetrag der Zeilen</term>
+		<listitem>
+		  <para
+>Die Werte werden als absolute Prozentwerte des höchsten Zeilenwertes angegeben.</para>
+		</listitem>
+	      </varlistentry>
+	      <varlistentry>
+		<term
+>Anzahl von Vorgängen zählen</term>
+		<listitem>
+		  <para
+>.</para>
+		</listitem>
+	      </varlistentry
+>		      
+	    </variablelist>
+	    
+	    <para
+>Bei Zeilen und Spalten können Sie die Ebenen der angezeigten Daten erweitern, indem Sie auf das <guibutton
+>Plus</guibutton
+>-Symbol <inlinemediaobject
+><imageobject
+><imagedata fileref="plus.png"/></imageobject
+></inlinemediaobject
+> rechts neben dem Feld klicken. Verwenden Sie dies, um Unterkategorien im Bericht anzuzeigen.</para>
+	  </sect3>
+	  
+	  <sect3 id="report_dates">
+	    <title
+>Datum</title>
+	    <para
+>Benutzen Sie dies, Um den Datumsbereich für Ihren Bericht festzulegen. Es gibt mehrere Möglichkeiten, einen Datumsbereich festzulegen, damit sollten Sie jeden gewünschten Bereich abdecken können.</para>
+	  </sect3>
+	  
+	  <sect3 id="report_operation_types">
+	    <title
+>Vorgangsarten</title>
+	    <para
+>Wählen die Art der Vorgänge, die Sie in Ihrem Bericht einschließen möchten. Möchten Sie zum Beispiel ein Diagramm mit der Verteilung Ihrer Ausgaben je Kategorie sehen, wollen sie Ihre „Einnahmen“ bestimmt nicht in den Bericht einschließen.</para>
+	  </sect3>
+	  
+	  <sect3 id="report_other_filters">
+	    <title
+>Andere Filter</title>
+	    <para
+>hier können Sie einige andere Filter auswählen, die durch die Auswahl auf anderen Seiten definiert wurden. Wenn Sie einen Bericht nur für die Kategorien „Lebensmittel“ und „Geschenk“ möchten, müssen Sie nur die Seite <link linkend="categories"
+>Kategorien</link
+> öffnen, diese zwei Kategorien auswählen und zum Bericht zurückkehren, um den entsprechenden Filter zu aktivieren.</para>
+	  </sect3
+>	  
+	  
+	</sect2>
+	
+	<sect2 id="graph_types">
+	  <title
+>Diagrammarten</title>
+	  
+	  <para
+>Haben Sie alles nach Ihren Wünschen eingestellt, sollten Sie das Erscheinungsbild mit dem Auswahlfeld und dem Diagramm auswählen. Um die Unterschiede zwischen den Diagrammarten zu zeigen, wird ein Bericht erstellt, in dem die Ausgaben je Kategorie (Zeilen) und Monaten (Spalten):</para>
+	  
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject>
+		<imagedata fileref="report_table.png"/>
+	      </imageobject>
+	    </mediaobject>
+	  </screenshot>
+	  
+	  <sect3 id="stack">
+	    <title
+>Säule</title>
+	    <para
+>Ein Balken je Zeile, die Spalten werden gestapelt</para>
+	    
+	    <screenshot>
+	      <mediaobject>
+		<imageobject>
+		  <imagedata fileref="stack.png"/>
+		</imageobject>
+	      </mediaobject>
+	    </screenshot>
+	    
+	    <para
+>Der zweite gelbe Balken zeigt die Kategorie „Wertpapier“, alle Monate gestapelt.</para>
+	    
+	  </sect3>
+	  
+	  <sect3 id="histogram">
+	    <title
+>Histogramm</title>
+	    <para
+>Für jede Spalte hat jede Zeile einen eigenen Balken.</para>
+	    
+	    <screenshot>
+	      <mediaobject>
+		<imageobject>
+		  <imagedata fileref="histogram.png"/>
+		</imageobject>
+	      </mediaobject>
+	    </screenshot>
+	    
+	  </sect3>
+	  
+	  
+	  <sect3 id="line">
+	    <title
+>Linie</title>
+	    <screenshot>
+	      <mediaobject>
+		<imageobject>
+		  <imagedata fileref="line_graph.png"/>
+		</imageobject>
+	      </mediaobject>
+	    </screenshot>
+	  </sect3>
+	  
+	  <sect3 id="point">
+	    <title
+>Punkt</title>
+	    <screenshot>
+	      <mediaobject>
+		<imageobject>
+		  <imagedata fileref="point_report.png"/>
+		</imageobject>
+	      </mediaobject>
+	    </screenshot>
+	  </sect3>
+	  
+	  
+	  <sect3 id="pie">
+	    <title
+>Kreisdiagramm</title>
+	    <para
+>Das klassische Kreisdiagramm. Ist der eingestellte Wert für Spalten größer als Null, dann wird ein Kreisausschnitt je Spalte angezeigt.</para>
+	    
+	    <screenshot>
+	      <mediaobject>
+		<imageobject>
+		  <imagedata fileref="pie.png"/>
+		</imageobject>
+	      </mediaobject>
+	    </screenshot>
+	    
+	    
+	  </sect3>
+	  
+	  <sect3 id="concentric_pie">
+	    <title
+>Ringdiagramm</title>
+	    <para
+>Dies ist noch nicht vollständig implementiert. Die Absicht dabei ist, einen Ring je Datenebene zu zeigen.</para>
+	    
+	    <screenshot>
+	      <mediaobject>
+		<imageobject>
+		  <imagedata fileref="concentric_pie.png"/>
+		</imageobject>
+	      </mediaobject>
+	    </screenshot>
+	    
+	  </sect3>
+	  
+	</sect2>
+	
+	
+	<sect2 id="zoom_graph">
+	  <title
+>Diagramme vergrößern</title>
+	  <para
+>In &skrooge; können Sie ein Diagramm vergrößern, um alle interessanten Details zu erkennen. Benutzen Sie die Steuerungselemente für die Vergrößerung über dem Diagramm:</para>
+	  
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject>
+		<imagedata fileref="zoom_graph.png"/>
+	      </imageobject>
+	    </mediaobject>
+	  </screenshot>
+	  
+	  
+	</sect2>
+	
+	<sect2 id="report_examples">
+	  <title
+>Beispielberichte</title>
+	  <para
+>Hier sind einige Bildschirmfotos, die einige klassische Einstellungen für Berichte zeigen. Sie können als Referenz für eigene Berichte benutzt werden.</para>
+	  
+	  <sect3 id="income_expense">
+	    <title
+>Einnahmen und Ausgaben</title>
+	    <para
+>Für jeden Monat wird der gesamte Betrag der Einnahmen mit den gesamten Ausgaben verglichen. Einnahmen werden blau und Ausgaben gelb dargestellt.</para>
+	    <screenshot>
+	      <mediaobject>
+		<imageobject>
+		  <imagedata fileref="incomes_expenses.png"/>
+		</imageobject>
+	      </mediaobject>
+	    </screenshot>
+	  </sect3>
+	  
+	  <sect3 id="balance_evolution">
+	    <title
+>Entwicklung des Kontostands</title>
+	    <para
+>Zeigt die Entwicklung des Schlusskontostands auf monatlicher Basis.</para>
+	    <screenshot>
+	      <mediaobject>
+		<imageobject>
+		  <imagedata fileref="balance_evolution.png"/>
+		</imageobject>
+	      </mediaobject>
+	    </screenshot>
+	  </sect3>
+	  
+	  <sect3 id="category_distribution">
+	    <title
+>Einnahmen und Ausgaben</title>
+	    <para
+>Zeigt den Verlauf der Ausgaben je Kategorie für den vorherigen Monat.</para>
+	    <screenshot>
+	      <mediaobject>
+		<imageobject>
+		  <imagedata fileref="category_distribution.png"/>
+		</imageobject>
+	      </mediaobject>
+	    </screenshot>
+	  </sect3>
+	  
+	  
+	</sect2>
+	
+	<sect2 id="going_deeper">
+	  <title
+>Weitergehende Informationen</title>
+	  <para
+>Durch Doppelklicken auf einen Eintrag wird eine Liste aller Vorgänge darin geöffnet.</para>
+	  <para
+>Sie können auch einen neuen Bericht auf der Basis eines Eintrags öffnen.</para>
+	  <para
+>Jetzt wissen Sie, wie einer weitergehende Analyse Ihrer Finanzen mit der Hilfe von Berichten erstellen können. Lesen Sie dazu auch das Beispiel der <link linkend="holidays_expenses_analysis"
+>Analyse von Urlaubsausgaben</link
+> im Anhang.</para>
+	</sect2>
+	
+	
+      </sect1>
+      
+      <sect1 id="monthly_report">
+	<title
+>Monatsbericht</title>
+	
+	<para
+>Dieses Modul zeigt eine Übersicht Ihrer finanziellen Situation für eine ausgewählte Periode.</para>
+	
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject>
+		<imagedata fileref="monthly.png"/>
+	      </imageobject>
+	    </mediaobject>
+	  </screenshot
+>	
+	  
+	  <para
+>Sie können jede beliebige Vorlage auswählen. Sie können sogar Ihre eigene Vorlage erstellen, indem Sie den Namen der Vorlage eingeben. Ihr Standard-Texteditor wird mit einem Beispiel für Ihre Vorlage gestartet. Sie müssen dann nur die Anweisungen in den Kommentaren befolgen.</para>
+	  <para
+>Teilen Sie Ihre Vorlagen in der Kategorie <literal
+>&skrooge;Berichtvorlagen</literal
+> des <ulink url="https://store.kde.org/browse/cat/338/"
+>KDE Store</ulink
+>.</para>
+      </sect1>
+      
+      <sect1 id="units">
+	<title
+>Einheiten</title>
+	<para
+>Eine Einheit ist irgendetwas, mit dem Sie einen Vorgang ausdrücken können. In den meisten Fällen ist dies eine Währung, aber es kann auch eine Aktie, ein Auto oder sogar ein Haus sein. Eine Einheit hat im Lauf der Zeit verschiedene Werte und der Wert kann in anderen Einheiten ausgedrückt werden. Zum Beispiel ist die ACME-Aktie im Januar 2009 31,2 $ wert.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject>
+	      <imagedata fileref="units.png" format="PNG"/>
+	    </imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<sect2 id="edit_units">
+	  <title
+>Einheiten bearbeiten</title>
+	  <para
+>Einheiten können auf unterschiedliche Arten bearbeitet werden:</para>
+	  <variablelist>
+	    <varlistentry>
+	      <term
+>Standard</term>
+	      <listitem
+><para
+>In diesem Modus können Sie aus vordefinierten Einheiten auswählen, um Sie zum aktuellen Dokument hinzufügen.</para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Manuell</term>
+	      <listitem
+><para
+>In diesem Modus können Sie Ihre eigenen Einheit erstellen. Dazu müssen folgende Parameter angeben werden:</para>
+		<itemizedlist>
+		  <listitem
+><para
+>Name: der ausführliche Name der Einheit</para
+></listitem>
+		  <listitem
+><para
+>Symbol: das Symbol der Einheit, das in den meisten Tabellen und Auswahlfelder angezeigt wird.</para
+></listitem>
+		  <listitem
+><para
+>Typ: siehe <link linkend="unit_types"
+>Einheitentypen</link
+>.</para
+></listitem>
+		  <listitem
+><para
+>Referenzeinheit: Die andere Einheit, die zur Berechnung des Werts der aktuellen Einheit benutzt wird. Wenn Sie zum Beispiel EADS-Aktion haben und deren Wert in Euro sehen möchten, wählen Sie € als Referenzeinheit für EADS.</para
+></listitem>
+		  <listitem
+><para
+>Land</para
+></listitem>
+                  <listitem
+><para
+>Quelle herunterladen: Die Quelle zum Herunterladen von Preisen. Empfohlene wird „Yahoo“. Wenn Sie auf den Pfeil rechts neben dem Feld „Herunterladen“ klicken, können Sie neue Quellen direkt von <ulink url="https://store.kde.org/browse/cat/339/ord/latest/"
+>store.kde.org</ulink
+> herunterladen.</para
+></listitem>
+		  <listitem
+><para
+>Internetcode: Der Internetcode dieser Einheit. Mit diesem Code kann &skrooge; die Werte der Einheit von ausgewählten Quellen herunterladen.</para
+></listitem>
+		</itemizedlist>
+	      </listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Werte</term>
+	      <listitem
+><para
+>In diesem Bearbeitungsmodus können Sie Werte für Einheiten aus dem Internet herunterladen oder Werte für eine Einheit zu einem bestimmten Datum manuell eingeben.</para
+></listitem>
+	    </varlistentry>
+	  </variablelist>
+	</sect2>
+	
+	<sect2 id="unit_types">
+	  <title
+>Einheitentypen</title>
+	  <para
+>Sogar wenn in &skrooge; alles als eine Einheit behandelt wird, gibt es Unterschiede abhängig von der Art:</para>
+	  
+	  <variablelist>
+	    <varlistentry>
+	      <term
+>Hauptwährung</term>
+	      <listitem
+><para
+>Dies ist die Währung, die für die Anzeige des tatsächlichen Betrags von Vorgängen benutzt wird.</para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Zweitwährung</term>
+	      <listitem
+><para
+>Ist dies definiert, wird der Betrag in der zweiten Währung angezeigt, wenn Sie mit dem Mauszeiger über den Betrag eines Vorgangs fahren.</para>
+		
+		<screenshot>
+		  <mediaobject>
+		    <imageobject>
+		      <imagedata fileref="secondary_unit_display.png"/>
+		    </imageobject>
+		  </mediaobject>
+		</screenshot>
+		
+	      </listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Währung</term>
+	      <listitem
+><para
+>Eine beliebige Währung ohne spezielle Rolle bei der Anzeige.</para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Aktie</term>
+	      <listitem
+><para
+>Diese Einheit kann zur Verwaltung von Aktien verwendet werden.</para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Index</term>
+	      <listitem
+><para
+>Ein Börsenindex wie zum Beispiel Dow Jones, Nasdaq, CAC40, SBF120 &etc;</para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Weitere</term>
+	      <listitem
+><para
+>Jede Einheit, die nicht in die oben genannten Kategorien passt.</para
+></listitem>
+	    </varlistentry
+>    
+	  </variablelist
+>  
+	</sect2>
+      </sect1>
+    </chapter>
+    <chapter id="using-skrooge-advanced">
+      <title
+>&skrooge; verwenden (Fortgeschritten)</title
+>     
+      
+      <sect1 id="scheduled">
+	<title
+>Geplante Vorgänge</title>
+	<para
+>Dieses Modul zeigt die Liste aller geplanten Vorgänge.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject>
+	      <imagedata fileref="scheduled.png" format="PNG"/>
+	    </imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Hier können Sie für alle geplanten Vorgänge eigene Parameter angeben.</para>
+	
+	<variablelist>
+	  <varlistentry>
+	    <term
+>Nächstes Vorkommen</term>
+	    <listitem
+><para
+>Angezeigt zur Informationen, kann aber auch benutzt werden, um das Datum des nächsten Vorkommens festzusetzen.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Einmal alle</term>
+	    <listitem
+><para
+>Sie können festlegen, dass ein Vorgang für eine angegebene Anzahl von Tagen. Monaten oder Jahren wiederholt werden soll.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Anzahl an Vorkommen</term>
+	    <listitem
+><para
+>Wenn ein Vorgang nur eine begrenzte Anzahl von Vorkommen hat, können Sie diese Einstellung ankreuzen und entweder die Anzahl der verbleibenden Vorkommen oder das Datum des letzten Vorkommens definieren.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Erinnern</term>
+	    <listitem
+><para
+>Möchten Sie, dass &skrooge; eine Benachrichtigung anzeigt, mit der Sie an den anstehenden geplanten Vorgang erinnert werden, kreuzen Sie diese Einstellung an und geben Sie die Anzahl der Tage vor der Ausführung an, wenn die Benachrichtigung angezeigt werden soll.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Automatisch schreiben</term>
+	    <listitem
+><para
+>Möchten Sie, dass &skrooge; automatisch den anstehenden geplanten Vorgang ausfüllt, kreuzen Sie diese Einstellung an und geben Sie die Anzahl der Tage vor der Ausführung an, wenn der Vorgang ausgefüllt werden soll.</para
+></listitem>
+	  </varlistentry>
+	</variablelist>
+	<para
+>Um einen Vorgang (Kategorie, Betrag usw.) zu ändern, klicken Sie auf <guilabel
+>Zum Vorgang gehen</guilabel
+>.</para>
+	
+	
+	<para
+>Durch Doppelklicken auf einen geplanten Vorgang wird eine Liste der Vorgänge in einem neuen Unterfenster angezeigt, die bereits für diesen geplanten Vorgang registriert sind.</para>
+	
+	<sect2 id="scheduled_operations">
+	  <title
+>Geplante Vorgänge</title>
+	  
+	  <para
+>Wenn Sie einen Vorgang planen, wird er als Referenz beim Einfügen des nächsten Vorkommens benutzt. Dazu ein Beispiel mit diesem Vorgang:</para>
+	  
+	  <table>
+	    <title
+>Geplante Vorgänge (1. Schritt)</title>
+	    <tgroup cols="4">
+	      <thead>
+		<row>
+		  <entry
+>Datum</entry>
+		  <entry
+>Zahlungsempfänger</entry>
+		  <entry
+>Kategorie</entry>
+		  <entry
+>Betrag</entry>
+		</row>
+	      </thead>
+	      <tbody>
+		<row>
+		  <entry
+>20.06.2009</entry>
+		  <entry
+>&kde;</entry>
+		  <entry
+>Spenden &gt; Open Source</entry>
+		  <entry
+>20€</entry>
+		</row>
+	      </tbody>
+	    </tgroup>
+	  </table>
+	  
+	  <para
+>Wenn Sie jetzt diesen Vorgang planen, wie er wie folgt für das nächste Vorkommen ausgefüllt:</para>
+	  
+	  <table>
+	    <title
+>Geplante Vorgänge (2. Schritt)</title>
+	    <tgroup cols="4">
+	      <thead>
+		<row>
+		  <entry
+>Datum</entry>
+		  <entry
+>Zahlungsempfänger</entry>
+		  <entry
+>Kategorie</entry>
+		  <entry
+>Betrag</entry>
+		</row>
+	      </thead>
+	      <tbody>
+		<row>
+		  <entry
+>20.06.2009</entry>
+		  <entry
+>&kde;</entry>
+		  <entry
+>Spenden &gt; Open Source</entry>
+		  <entry
+>20€</entry>
+		</row>
+		<row>
+		  <entry
+>20.07.2009</entry>
+		  <entry
+>&kde;</entry>
+		  <entry
+>Spenden &gt; Open Source</entry>
+		  <entry
+>20€</entry>
+		</row>
+	      </tbody>
+	    </tgroup>
+	  </table>
+	  
+	  <para
+>Wenn Sie einiges beim letzten Vorkommen ändern, wird das die Referenz für das nächste Mal. Wenn Sie zum Beispiel Ihren monatlichen Beitrag an &kde; auf 25 € im Juli, hat das nächste Vorkommen auch wieder einen Betrag von 25 €. </para>
+	  
+	  <table>
+	    <title
+>Geplante Vorgänge (3. Schritt)</title>
+	    <tgroup cols="4">
+	      <thead>
+		<row>
+		  <entry
+>Datum</entry>
+		  <entry
+>Zahlungsempfänger</entry>
+		  <entry
+>Kategorie</entry>
+		  <entry
+>Betrag</entry>
+		</row>
+	      </thead>
+	      <tbody>
+		<row>
+		  <entry
+>20.06.2009</entry>
+		  <entry
+>&kde;</entry>
+		  <entry
+>Spenden &gt; Open Source</entry>
+		  <entry
+>20€</entry>
+		</row>
+		<row>
+		  <entry
+>20.07.2009</entry>
+		  <entry
+>&kde;</entry>
+		  <entry
+>Spenden &gt; Open Source</entry>
+		  <entry
+>25€</entry>
+		</row>
+		<row>
+		  <entry
+>20.08.2009</entry>
+		  <entry
+>&kde;</entry>
+		  <entry
+>Spenden &gt; Open Source</entry>
+		  <entry
+>25€</entry>
+		</row>
+	      </tbody>
+	    </tgroup>
+	  </table>
+	  
+	  <para
+>Zusammengefasst ist ein geplanter Vorgang ein dynamisches Objekt mit dem letzten Vorkommen als Referenz. Wenn Sie alle Vorkommen als statisches unverändertes Objekt haben möchten, &ie; den gleichen Werte bei jedem Vorkommen, sollten Sie <link linkend="scheduled_templates"
+>geplante Vorgänge</link
+> verwenden.</para>
+	  
+	</sect2>
+	
+	
+	<sect2 id="scheduled_templates">
+	  <title
+>Geplante Vorlagen</title>
+	  
+	  <para
+><link linkend="templates"
+>Vorlagen</link
+> sind eine Art von Referenz-Vorgängen. Wenn Sie eine Vorlage planen, wird jedes neue Vorkommen genau der Vorlage gleichen. Mit dem Beispiel aus dem <link linkend="schedule_operation"
+>vorherigen Kapitel</link
+> wird jetzt die folgende Vorlage erstellt:</para>
+	  
+	  <table>
+	    <title
+>Geplante Vorlagen (Schritt 1)</title>
+	    <tgroup cols="4">
+	      <thead>
+		<row>
+		  <entry
+>Datum</entry>
+		  <entry
+>Zahlungsempfänger</entry>
+		  <entry
+>Kategorie</entry>
+		  <entry
+>Betrag</entry>
+		</row>
+	      </thead>
+	      <tbody>
+		<row>
+		  <entry
+>20.06.2009</entry>
+		  <entry
+>&kde;</entry>
+		  <entry
+>Spenden &gt; Open Source</entry>
+		  <entry
+>20€</entry>
+		</row>
+	      </tbody>
+	    </tgroup>
+	  </table>
+	  
+	  <para
+>Das nächste Vorkommen ist:</para>
+	  
+	  
+	  <table>
+	    <title
+>Geplante Vorlagen (Schritt 2)</title>
+	    <tgroup cols="4">
+	      <thead>
+		<row>
+		  <entry
+>Datum</entry>
+		  <entry
+>Zahlungsempfänger</entry>
+		  <entry
+>Kategorie</entry>
+		  <entry
+>Betrag</entry>
+		</row>
+	      </thead>
+	      <tbody>
+		<row>
+		  <entry
+>20.06.2009</entry>
+		  <entry
+>&kde;</entry>
+		  <entry
+>Spenden &gt; Open Source</entry>
+		  <entry
+>20€</entry>
+		</row>
+		<row>
+		  <entry
+>20.07.2009</entry>
+		  <entry
+>&kde;</entry>
+		  <entry
+>Spenden &gt; Open Source</entry>
+		  <entry
+>20€</entry>
+		</row>
+	      </tbody>
+	    </tgroup>
+	  </table>
+	  
+	  <para
+>Ändern Sie jetzt den &kde;-Beitrag auf 25€. Da Sie eine Vorlage mit 20 € geplant haben, hat das nächste Vorkommen wieder einen Betrag von 20 €.</para>
+	  
+	  <table>
+	    <title
+>Geplante Vorlagen (Schritt 3)</title>
+	    <tgroup cols="4">
+	      <thead>
+		<row>
+		  <entry
+>Datum</entry>
+		  <entry
+>Zahlungsempfänger</entry>
+		  <entry
+>Kategorie</entry>
+		  <entry
+>Betrag</entry>
+		</row>
+	      </thead>
+	      <tbody>
+		<row>
+		  <entry
+>20.06.2009</entry>
+		  <entry
+>&kde;</entry>
+		  <entry
+>Spenden &gt; Open Source</entry>
+		  <entry
+>20€</entry>
+		</row>
+		<row>
+		  <entry
+>20.07.2009</entry>
+		  <entry
+>&kde;</entry>
+		  <entry
+>Spenden &gt; Open Source</entry>
+		  <entry
+>25€</entry>
+		</row>
+		<row>
+		  <entry
+>20.08.2009</entry>
+		  <entry
+>&kde;</entry>
+		  <entry
+>Spenden &gt; Open Source</entry>
+		  <entry
+>20€</entry>
+		</row>
+	      </tbody>
+	    </tgroup>
+	  </table>
+	  
+	  <para
+>Möchten Sie den monatlichen Betrag ändern, bearbeiten Sie die Vorlage und alle weiteren Vorkommen haben den neuen Wert.</para>
+	</sect2>
+	
+      </sect1>
+      
+      <sect1 id="trackers">
+	<title
+>Vorgangsgruppen</title>
+	<para
+>Mit Vorgangsgruppen können Sie Vorgänge in einer Gruppe zusammenfassen, um sie besser überwachen zu können. Dies erleichtert die Überwachung von Auslagen, für die Sie eine Erstattung erwarten, oder um festzustellen, wie viel Sie im letzten Urlaub auf den Bahamas ausgegeben haben.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject>
+	      <imagedata fileref="trackers.png" format="PNG"/>
+	    </imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Angenommen, Sie gehen für Ihre Firma nach Italien. Dort bezahlen Sie ein Hotelzimmer. In &skrooge; können Sie dann einen Vorgang in der Kategorie „Arbeit &gt; Reisen &gt; Hotel“ anlegen und einer Vorgangsgruppe mit der Bezeichnung „Geschäftsreise in Italien“ zuweisen. Alle beruflich bedingten Ausgaben auf dieser Reise können Sie dann in diese Vorgangsgruppe einordnen. Wenn Ihre Firma dann diese Auslagen erstattet, können Sie einen Einnahmevorgang erstellen und ebenfalls der Vorgangsgruppe zuordnen.</para>
+	<para
+>Wenn Sie Vorgänge mit Erstattungen einer Vorgangsgruppe zuweisen, können Sie den Ablauf der Erstattung verfolgen.</para>
+	<para
+>Dies funktioniert natürlich auch anders herum: Wenn Ihnen jemand Geld leiht, können Sie überwachen, wie viel Sie noch zurückzahlen müssen.</para>
+	<para
+>Durch Doppelklicken auf eine Vorgangsgruppe in der Ansicht öffnet ein neues Unterfenster mit allen Vorgängen in dieser Gruppe.</para>
+	
+	<tip
+><para
+>Manchmal möchten Sie die Rückzahlung einer Zahlung verfolgen, die vor der Verwendung von &skrooge; ausgeführt wurde. Es ist nicht möglich, einen Anfangsbetrag auf einer Vorgangsgruppe einzustellen. Wie können Sie dieses Problem lösen?</para>
+
+	<para
+>Sie können einen Split-Vorgang erstellen mit: <itemizedlist>
+	      <listitem
+><para
+>Betrag=0, um Auswirkungen auf Berichte zu vermeiden.</para
+></listitem>
+	      <listitem
+><para
+>einen Split mit dem erwarteten Betrag, der der Vorgangsgruppe zugeordnet ist.</para
+></listitem>
+	      <listitem
+><para
+>der andere Split mit dem entgegengesetzten Betrag, der nicht einer Vorgangsgruppe zugeordnet ist.</para
+></listitem>
+	    </itemizedlist
+>	  
+	</para
+></tip>
+	
+	<sect2 id="close_tracker">
+	  <title
+>Vorgangsgruppe schließen</title>
+	  
+	  <para
+>Benötigen Sie eine Vorgangsgruppe nicht mehr, können Sie sie einfach löschen. Damit verlieren Sie jedoch alle eingegebenen Informationen, die Sie eventuell später noch mal benötigen.</para>
+	  <para
+>Es wird empfohlen, die Vorgangsgruppe zu schließen, Dann kann die Gruppe mit der zugehörigen Aktion einfach in der Ansicht der Vorgangsgruppen ausgeblendet werden.</para>
+	</sect2>
+	
+      </sect1>
+      
+      <sect1 id="search_and_process">
+	<title
+>Suchen &amp; Bearbeiten</title>
+	
+	<para
+>Mit diesem Modul können Sie komplexe Abfrage erstellen, um Vorgänge zu finden und optional einige Bearbeitungen anzuwenden. Hier ist ein Anwendungsfall:</para>
+	
+	<blockquote
+><para
+>Johann lädt einige Daten von seiner Bank herunter. Die Daten sind offensichtlich nicht in Kategorien eingeteilt. Tatsächlich finden sich alle Angaben nur im Kommentarfeld. Johann möchte automatisch die richtige Kategorie und andere Attribute anhand des Inhalts des Kommentars festlegen.</para
+></blockquote>
+
+	<para
+>Zuerst definieren Sie ein Kriterium für die Suche, damit erhalten Sie eine Liste aller Vorgänge. Definieren Sie dann die Bearbeitungen, die auf diese Vorgänge angewendet werden. </para>
+	
+	<note
+><para
+>Einen <link linkend="search_process_real_case"
+>tatsächlichen Anwendungsfall</link
+> finden Sie im Anhang, mit einigen Übungen für den hier aufgezeigten Anwendungsfall.</para
+></note>
+	
+	<sect2 id="define_search_criteria">
+	  <title
+>Suchkriterien bestimmen</title>
+	  
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject>
+		<imagedata fileref="define_search.png" format="PNG"/>
+	      </imageobject>
+	    </mediaobject>
+	  </screenshot>
+	  
+	  <para
+>Hier können Sie eine Abfrage zur Suche von Vorgängen mit einer Kombination von Parameters definieren. Im Bildschirmfoto oben sehen Sie eine Tabelle mit Vorgangsattributen in der Kopfzeile. Durch das Bearbeiten einer Zeile erstellen Sie eine neue Bedingung für die Abfrage. Jede Spalte wird mit anderen Spalten durch ein logisches „Und“ verknüpft:</para>
+	  <para
+>(spalte1 und spalte2)</para>
+	  <para
+>Wenn Sie eine neue Zeile hinzufügen, erstellen Sie eine weitere abhängige Kombination mit der ersten Zeile durch ein logisches „Oder“:</para>
+	  <para
+>[zeile1] oder [zeile2].</para>
+	  
+	  <para
+>Insgesamt kann die Kombination von Spalten und Zeilen gelesen werden als:</para>
+	  <para
+>(spalte1 und spalte3) oder (spalte2 und spalte3)</para>
+	  
+	  <para
+>Natürlich können Sie in einer Such-Anfrage beliebig viele Zeilen und Spalten angeben.</para>
+	  
+	  <para
+>Sind Sie mit der Definition einer Such-Anfrage zufrieden, können Sie sie zur Liste der vorhandenen Suchkriterien hinzufügen oder eine vorhandene Definition bearbeiten.</para>
+	  
+	</sect2>
+	
+	
+	<sect2 id="view_search_result">
+	  <title
+>Suchergebnisse anzeigen</title>
+	  
+	  <para
+>Bei der Auswahl einer Such-Abfrage in der Abfrage-Ansicht wird die Anzahl der gefundenen Vorgänge unter der Tabelle angezeigt:</para>
+	  
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject>
+		<imagedata fileref="preview_search_result.png" format="PNG"/>
+	      </imageobject>
+	    </mediaobject>
+	  </screenshot>
+	  
+	  
+	  <para
+>Beim Doppelklick auf eine Such-Abfrage in der Abfrage-Ansicht werden alle gefundenen Vorgänge in einem neuen Unterfenster angezeigt:</para>
+	  
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject>
+		<imagedata fileref="search_result.png" format="PNG"/>
+	      </imageobject>
+	    </mediaobject>
+	  </screenshot>
+	  
+	</sect2>
+	
+	
+	<sect2 id="define_processing">
+	  <title
+>Bearbeitung definieren</title>
+	  
+	  <para
+>Möchten Sie einige Bearbeitungen auf alle gefundenen Vorgänge anwenden, wählen Sie die betroffene Abfrage und aktivieren die Prozessbearbeitungsleiste:</para>
+	  
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject>
+		<imagedata fileref="define_processing.png" format="PNG"/>
+	      </imageobject>
+	    </mediaobject>
+	  </screenshot>
+	  
+	  <para
+>In dieser Leiste können Sie die Umformungen für Vorgänge definieren. Beachten Sie, dass es absichtlich unmöglich ist, den Betrag oder Datum eines Vorgangs zu ändern.</para>
+	  
+	</sect2>
+	
+	
+	<sect2 id="define_alarm">
+	  <title
+>Erinnerungen definieren</title>
+	  <para
+>Eine spezielle Anwendung des Moduls Suchen &amp; Bearbeiten ist die Möglichkeit Erinnerungen zu definieren. Mit diesen Erinnerungen kann &skrooge; Ihnen eine Nachricht über ein Ereignis schicken, wie zum Beispiel, dass Ihre monatliche Budget für eine Kategorie erreicht wurde.</para>
+	  
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject>
+		<imagedata fileref="alarm.png" format="PNG"/>
+	      </imageobject>
+	    </mediaobject>
+	  </screenshot>
+	  
+	  <para
+>Um eine Erinnerung festzulegen, müssen Sie zuerst ein Suchkriterium für eine Gruppe von Vorgängen festlegen. zum Beispiel für alle Vorgänge im aktuellen Monat und in der Kategorie „Kleidung“. Dann legen Sie den Betrag fest, bei dem die Erinnerung ausgelöst werden soll, wie zum Beispiel 100 € und geben eine Nachricht für die Erinnerung ein. Diese Nachricht wird durch &skrooge; versendet, wenn der Betrag erreicht ist.</para>
+	    <tip
+><para
+>Bei Nachrichten für Erinnerungen können Sie als Parameter den Gesamtbetrag (%1), den Betrag der Erinnerung (%2) und die Differenz (%3) verwenden.</para
+></tip>
+	  
+	</sect2>
+	
+      </sect1>
+      
+      <sect1 id="budgets">
+	<title
+>Budgets</title>
+	<para
+>Mit diesem Modul können Sie Budgets definieren und verwalten.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject>
+	      <imagedata fileref="budgets.png" format="PNG"/>
+	    </imageobject>
+	  </mediaobject>
+	</screenshot>
+	<para
+>Wie in jeder anderen Finanzsoftware können Sie mit &skrooge; ein Budget definieren, entweder manuell oder automatisch.</para>
+	<sect2 id="budget_definition">
+	  <title
+>Budget-Definition</title
+>	
+	  <para
+>Im manuellen Modus können Sie: <itemizedlist>
+	      <listitem
+><para
+>Einen Budgetbetrag für eine Kategorie für ein Jahr definieren.</para
+></listitem>
+	      <listitem
+><para
+>Einen Budgetbetrag für eine Kategorie für alle Monate eines Jahres definieren.</para
+></listitem>
+	      <listitem
+><para
+>Einen Budgetbetrag für eine Kategorie für einen bestimmten Monat eines Jahres definieren.</para
+></listitem>
+	      <listitem
+><para
+>Festlegen, ob Einnahmen oder Ausgaben von Unterkategorien im definierten Budget berücksichtigt werden müssen. Beispiel: Wenn dies ausgewählt ist, wird ein Budget für die Kategorie „Auto“ die Kategorie „Auto 
+> Kraftstoff“ berücksichtigen.</para
+></listitem>
+	    </itemizedlist>
+	    <tip
+><para
+>Ein Budget definieren, das alle Einnahmen oder Ausgaben erfasst, die nicht in einem anderen Budget definiert sind, indem Sie die Kategorie leer lassen. Dies ist wirklich nützlich, damit Sie keine Ausgabe übersehen.</para
+></tip>
+	    </para>
+	    
+	  <para
+>Im automatischen Modus können Sie folgendes ausführen: <itemizedlist>
+	      <listitem
+><para
+>Ein Budget für ein Jahr auf der Grundlage der Vorgänge des Vorjahres definieren.</para
+></listitem>
+	      <listitem
+><para
+>Fehlende Budgetposten definieren, um einen Monat und/oder ein Jahr auszugleichen. Das ist auch bei manuell definierten Budgets möglich.</para
+></listitem>
+	    </itemizedlist>
+	    </para>
+	</sect2>
+	
+	<sect2 id="budget_rules">
+	  <title
+>Budget-Regeln</title>
+	  <para
+>Weitere Anleitung zum Budget finden Sie im folgenden Beispiel eines ausgeglichenen Budgets: <itemizedlist>
+	      <listitem
+><para
+>-500 € / Monat für „Lebensmittel“.</para
+></listitem>
+	      <listitem
+><para
+>+500 € / Monat für alle anderen Kategorien von Ausgaben und Einnahmen.</para
+></listitem>
+	    </itemizedlist>
+	    </para>
+	    
+	    <para
+>Stellen Sie sich nun vor, dass Sie im letzten Monat 600 € für „Lebensmittel“ ausgegeben haben. &skrooge; hat Ihnen mitgeteilt, dass Sie über dem festgelegten Budget liegen, aber Sie können nicht aufhören zu essen. Sie haben also mehr ausgegeben als erwartet! Wie gehen Sie damit um?</para>
+	    <para
+>Mit den Budgetregeln können Sie festlegen, wie Sie mit der Differenz  (positiv oder negativ) verfahren wollen. Zum Beispiel können Sie wählen, die Differenz eines Monats auf den nächsten Monat zu übertragen. In diesem Fall ist Ihr neues Budget für „Lebensmittel“ für den aktuellen Monat -400 € (-500+100). Sie müssen also darauf achten, dass Sie die Situation wieder ausgleichen.</para
+>	  
+	    <para
+>Auch Budgetregeln können Ihnen bei Ihrem Projekt helfen. Sie können zum Beispiel eine Regel wie diese definieren: Alle positiven Differenzen (Einsparungen) von „Lebensmittel“ werden in „Urlaub“ übertragen. Wenn Sie dann den erwarteten Betrag im Budget „Urlaub“ haben, können Sie den Urlaub antreten.</para
+>	    
+	</sect2>
+      </sect1>
+      
+      <sect1 id="simulations">
+	<title
+>Simulationen</title>
+	<para
+>Mit diesem Modul können Sie Simulationen durchführen</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject>
+	      <imagedata fileref="simulations.png" format="PNG"/>
+	    </imageobject>
+	  </mediaobject>
+	</screenshot>
+	<para
+>Sie können die Zinssätze für jedes Konto festlegen und die jährlichen Zinsen schätzen. Sie können auch eine Amortisationstabelle erzeugen.</para>
+      </sect1>
+      
+    </chapter>
+
+    <chapter id="settings">
+        <title
+>Einstellungen</title>
+        <para
+>Hier finden Sie eine Beschreibung aller von &skrooge; verwendeten Einstellungen. Diese Einstellungen sind für alle Ihre Dokumente gleich.</para>
+        
+        <sect1 id="settings_general">
+        <title
+>Allgemein</title>
+        
+        <screenshot>
+            <mediaobject>
+            <imageobject>
+                <imagedata fileref="settings_general.png" format="PNG"/>
+            </imageobject>
+            </mediaobject>
+        </screenshot>
+        <para
+>Hier können Sie die wichtigsten allgemeinen Einstellungen vornehmen, zum Beispiel was passiert, wenn eine Seite oder ein Lesezeichen geändert wird.</para>
+        </sect1>
+        
+        <sect1 id="settings_file">
+        <title
+>Datei</title>
+        
+        <screenshot>
+            <mediaobject>
+            <imageobject>
+                <imagedata fileref="settings_file.png" format="PNG"/>
+            </imageobject>
+            </mediaobject>
+        </screenshot>
+        <para
+>Diese Einstellungen beziehen sich auf die Speicherung. Sie können wählen, wie Sie Sicherungsdateien erstellen, ob Sie den &kde;-Passwortspeicher zum Speichern von Passwörtern verwenden möchten usw.</para>
+        </sect1>
+
+        <sect1 id="settings_bookmarks">
+        <title
+>Lesezeichen</title>
+        
+        <screenshot>
+            <mediaobject>
+            <imageobject>
+                <imagedata fileref="settings_bookmarks.png" format="PNG"/>
+            </imageobject>
+            </mediaobject>
+        </screenshot>
+        <para
+>Hier können Sie einstellen, ob eigene automatisch geladene Lesezeichen angeheftet werden sollen.</para>
+        </sect1>
+
+        <sect1 id="settings_history">
+        <title
+>Verlauf</title>
+        
+        <screenshot>
+            <mediaobject>
+            <imageobject>
+                <imagedata fileref="settings_history.png" format="PNG"/>
+            </imageobject>
+            </mediaobject>
+        </screenshot>
+        <para
+>Mit diesen Einstellungen können Sie Ihren Änderungsverlauf besser verwalten.</para>
+        </sect1>
+
+        <sect1 id="settings_dashboard">
+        <title
+>Übersichtsseite</title>
+        
+        <screenshot>
+            <mediaobject>
+            <imageobject>
+                <imagedata fileref="settings_dashboard.png" format="PNG"/>
+            </imageobject>
+            </mediaobject>
+        </screenshot>
+        <para
+>Hier können Sie nur einstellen, ob die Übersichtsseite im QML-Modus gestartet wird.</para>
+        </sect1>
+
+        <sect1 id="settings_operations">
+        <title
+>Vorgänge</title>
+        
+        <screenshot>
+            <mediaobject>
+            <imageobject>
+                <imagedata fileref="settings_operations.png" format="PNG"/>
+            </imageobject>
+            </mediaobject>
+        </screenshot>
+        <para
+>Hier finden Sie Einstellungen zu Bearbeitung von Vorgängen.</para>
+        <para
+>Sie können die Leistung verbessern, wenn Sie die Spalte "Kontostand" nicht verwenden, um unnötige Berechnungen zu vermeiden.</para>
+        <para
+><guilabel
+>Was tun, wenn eine Aktion den Abgleich unterbricht</guilabel
+>: Nach jeder Änderung wird geprüft, ob der vorherige Abgleich dadurch unterbrochen wird. Hier können Sie eine Aktion für diesen Fall auswählen.</para
+>     
+        <para
+><guilabel
+>Was tun, wenn eine Aktion den Import unterbricht</guilabel
+>: Nach jeder Änderung wird geprüft, ob der vorherige Import dadurch unterbrochen wird. Hier können Sie eine Aktion für diesen Fall auswählen.</para
+>          
+        </sect1>
+
+        <sect1 id="settings_scheduled">
+        <title
+>Geplante Vorgänge</title>
+        
+        <screenshot>
+            <mediaobject>
+            <imageobject>
+                <imagedata fileref="settings_scheduled.png" format="PNG"/>
+            </imageobject>
+            </mediaobject>
+        </screenshot>
+        <para
+>Hier finden Sie Einstellungen zu Bearbeitung von geplanten Vorgängen.</para>
+        </sect1>
+
+        <sect1 id="settings_search">
+        <title
+>Suchen und Bearbeiten</title>
+        
+        <screenshot>
+            <mediaobject>
+            <imageobject>
+                <imagedata fileref="settings_search.png" format="PNG"/>
+            </imageobject>
+            </mediaobject>
+        </screenshot>
+        <para
+>Hier können Sie nur die Häufigkeit von Erinnerungen einstellen.</para>
+        </sect1
+>     
+        
+        <sect1 id="settings_report">
+        <title
+>Bericht</title>
+        
+        <screenshot>
+            <mediaobject>
+            <imageobject>
+                <imagedata fileref="settings_report.png" format="PNG"/>
+            </imageobject>
+            </mediaobject>
+        </screenshot>
+        <para
+>Sie können hier einige Anzeigeeinstellungen für Berichte auswählen.</para>
+        </sect1
+>   
+        
+        <sect1 id="settings_units">
+        <title
+>Einheiten</title>
+        
+        <screenshot>
+            <mediaobject>
+            <imageobject>
+                <imagedata fileref="settings_units.png" format="PNG"/>
+            </imageobject>
+            </mediaobject>
+        </screenshot>
+        <para
+>Hier können Sie einige Einstellungen für das Herunterladen von Preisen wählen.</para>
+        </sect1
+>   
+
+        <sect1 id="settings_import">
+        <title
+>Import/Export</title>
+        
+        <screenshot>
+            <mediaobject>
+            <imageobject>
+                <imagedata fileref="settings_import_1.png" format="PNG"/>
+            </imageobject>
+            </mediaobject>
+        </screenshot>
+        <para
+>Allgemeine Importeinstellungen.</para>
+        
+        <screenshot>
+            <mediaobject>
+            <imageobject>
+                <imagedata fileref="settings_import_2.png" format="PNG"/>
+            </imageobject>
+            </mediaobject>
+        </screenshot>
+        <para
+>Wenn Sie den CSV-Import verwenden, müssen Sie diese Einstellungen anpassen, damit &skrooge; die Bedeutung der Spalten erkennen kann.</para>
+        
+        <screenshot>
+            <mediaobject>
+            <imageobject>
+                <imagedata fileref="settings_import_3.png" format="PNG"/>
+            </imageobject>
+            </mediaobject>
+        </screenshot>
+        <para
+>In einigen besonderen Fällen kann es nötig sein, dass Datumsformat für QIF-Dateien einzustellen. In den meisten Fällen kann &skrooge; das Format automatisch erkennen.</para>
+        
+        <screenshot>
+            <mediaobject>
+            <imageobject>
+                <imagedata fileref="settings_import_4.png" format="PNG"/>
+            </imageobject>
+            </mediaobject>
+        </screenshot>
+        <para
+>Hier können Sie die Import-Module aus der Liste aktivieren.</para
+>        
+        </sect1
+>                
+    </chapter
+>    
+    
+    <chapter id="howto">
+      <title
+>Wie kann ich ...</title>
+	<qandaset id="faqlist">
+	<qandaentry>
+	<question id="howto_language">
+	<para
+>Wie kann ich &skrooge; auf meine Sprache umstellen?</para>
+	</question>
+	<answer>
+	<para
+>Überprüfen Sie, ob &skrooge;ausreichend <ulink url="http://l10n.kde.org/stats/gui/trunk-kf5/po/skrooge.po/"
+>in Ihre Sprache übersetzt ist</ulink
+> und ob Sie alle Pakete für &skrooge; von Ihrer Distribution installiert haben.</para>
+	</answer>
+	</qandaentry>
+
+	<qandaentry>
+	<question id="howto_currency">
+	<para
+>Wie wird das Standardformat für Währung und Datum eingestellt?</para>
+	</question>
+	<answer>
+	<para
+>Das Standardformat für Währung und Datum wird aus den &systemsettings; von &plasma; entnommen. Einige Distributionen liefern die &systemsettings; nicht mit &skrooge; aus. In diesem Fall sollten Sie es über die Paketverwaltung Ihrer Distribution installieren.</para>
+
+	<para
+>Geben Sie in einer Konsole <userinput
+>systemsettings5</userinput
+> ein.</para>
+
+	<para
+>Wählen Sie dann auf der Seite <guilabel
+>Formate</guilabel
+> Ihre gewünschte Einstellung aus.</para>
+	</answer>
+	</qandaentry>
+
+	<qandaentry>
+	<question id="howto_size">
+	<para
+>Wie kann ich die Größe meines Dokuments verringern?</para>
+	</question>
+	<answer>
+	<para
+>Wenn Sie einige alte Buchungen löschen, wird die Größe des Dokuments zunehmen. Das ist normal, weil &skrooge; den Verlauf aller Änderungen für den Rückgängig/Wiederherstellen aufbewahrt. Wenn Sie also die Größe Ihres Dokuments verringern möchten, müssen Sie den Verlauf löschen.</para>
+	</answer>
+	</qandaentry>
+
+	<qandaentry>
+	<question id="howto_extractor">
+	<para
+>Wie definiert man ein neues Extraktionsprogramm für Rechnungen?</para>
+	</question>
+	<answer>
+	<para
+>&skrooge; verwendet pdftotext, um alle Zeichenfolgen eines &PDF; zu extrahieren. Danach wird eine Textdatei verwendet, in der festgelegt ist, wie die Schlüsselwerte zu finden sind. Wenn Sie ein neues Extraktionsprogramm verwenden möchten, Gehen Sie folgendermaßen vor:</para>
+	<itemizedlist>
+	<listitem
+><para
+>Führen Sie <command
+>pdftotext</command
+> mit Ihrer &PDF;-Datei aus</para
+></listitem>
+	<listitem
+><para
+>Öffnen Sie die generierte Textdatei und die zugehörige &PDF;-Datei</para
+></listitem>
+	<listitem
+><para
+>Erstellen Sie einen neuen Text mit der Dateierweiterung <filename class="extension"
+>extractor</filename
+>. Beispiel: <filename
+>google.extractor</filename
+></para
+></listitem>
+	<listitem
+><para
+>Ihre Datei muss folgenden Inhalt haben:</para>
+	<programlisting
+>payee=REGEXPCAP:^(Biofan) SPRL$
+        date=REGEXPCAP:^Order Date: (.*)$
+        dateformat=dd MMM yyyy
+        number=REGEXPCAP:^N° de facture (.*)$
+        mode=SET:Carte
+        comment=REGEXPCAP:^N° de commande (.*)$|SET:Commande %1
+        amount=REGEXP:^Montant global:$|LINEOFFSET:2
+        </programlisting>
+	<para
+>Jedes Attribut (Zahlungsempfänger, Datum, Zahl, Modus, Kommentar und Betrag) verwendet die gleiche Syntax: COMMAND:value|COMMAND:value|...</para>
+	<para
+>Folgende Befehle sind möglich:</para>
+	<itemizedlist>
+	<listitem
+><para
+><command
+>REGEXPCAP</command
+>: Dies ist ein regulärer Ausdruck, der auf einen Wert passt.</para
+></listitem>
+	<listitem
+><para
+><command
+>REGEXP</command
+>: Findet die Zeilen in einer Datei, auf die der reguläre Ausdruck pass.</para
+></listitem>
+	<listitem
+><para
+><command
+>LINEOFFSET</command
+>:  Ändert den Zeilenindex.</para
+></listitem>
+	<listitem
+><para
+><command
+>SET</command
+>: Legt einen Wert fest. Kann als erster Befehl verwendet werden oder nach dem REGEXPCAP (siehe Beispiel).</para
+></listitem>
+	</itemizedlist>
+	<para
+>dateformat ist das Format des extrahierten Datums.</para>
+	</listitem>
+	<listitem
+><para
+>Speichern Sie diese Datei in denselben Ordner wie alle anderen <filename class="extension"
+>.extractor</filename
+>-Dateien.</para
+></listitem>
+	</itemizedlist>
+	</answer>
+	</qandaentry>
+	</qandaset>
+
+    </chapter
+>    
+    
+    <chapter id="credits">
+      <title
+>Danksagungen und Lizenz</title>
+      <para
+>&skrooge; </para>
+      <para
+>Programm Copyright 2008-2020 Stéphane Mankowski <email
+>stephane@mankowski.fr</email
+> </para>
+      <para
+>Dokumentation Copyright 2008-2020 Guillaume DE BURE <email
+>gdebure@yahoo.com</email
+> </para>
+      <para
+>Übersetzung Burkhard Lück<email
+>lueck@hube-lueck.de</email
+></para
+> &underFDL; &underGPL; </chapter
+>    
+    
+    <appendix id="search_process_real_case">
+      <title
+>Suchen &amp; Bearbeiten, ein Fallbeispiel</title>
+      
+      <para
+>Das Modul <link linkend="search_and_process"
+>Suchen &amp; Bearbeiten</link
+> ist sehr leistungsfähig, aber zu Anfang etwas schwierig zu verstehen. In diesem kurzen Beispiel erhalten Sie eine Anleitung für folgenden Anwendungsfall:</para>
+      
+      <blockquote
+><para
+>Johann lädt einige Daten von seiner Bank herunter. Die Daten sind offensichtlich nicht in Kategorien eingeteilt. Tatsächlich finden sich alle Angaben nur im Kommentarfeld. Johann möchte automatisch die richtige Kategorie und andere Attribute anhand des Inhalts des Kommentars festlegen.</para
+></blockquote>
+      
+      
+      <para
+>Johann weiß, das seine Bank den Namen des Zahlungsempfängers im Kommentarfeld angibt. Er möchten für alle seine Zahlungen an &kde; die Kategorie Spenden&amp; Open Source einstellen. Daher wird zuerst nach alle Vorgängen gesucht, deren Kommentarfeld &kde; enthält:</para>
+      
+      <table>
+	<title
+>Suchdefinitionen</title>
+	<tgroup cols="1">
+	  <thead>
+	    <row>
+	      <entry
+>Kommentar</entry>
+	    </row>
+	  </thead>
+	  <tbody>
+	    <row>
+	      <entry
+>enthält '&kde;'</entry>
+	    </row>
+	  </tbody>
+	</tgroup>
+      </table>
+      
+      <para
+>Fügen Sie diese Suchdefinition zur Liste der vorhandenen Definitionen mit dem Knopf <guibutton
+>Hinzufügen</guibutton
+> ein.</para>
+      
+      <para
+>Dann müssen Sie angeben, dass &skrooge; allen in dieser Abfrage gefundenen Vorgängen die Kategorie Spenden &gt; Open Source zuweist. Ändern Sie den Abfragetyp im Auswahlfeld auf Aktualisieren und definieren Sie die anzuwendenden Umformung: </para>
+      
+      <table>
+	<title
+>Definition aktualisieren</title>
+	<tgroup cols="2">
+	  <thead>
+	    <row>
+	      <entry
+>Kommentar</entry>
+	      <entry
+>Kategorie</entry>
+	    </row>
+	  </thead>
+	  <tbody>
+	    <row>
+	      <entry
+>=''</entry>
+	      <entry
+>='Spenden &gt; Open Source'</entry>
+	    </row>
+	  </tbody>
+	</tgroup>
+      </table>
+      
+      <tip
+><para
+>Beachten Sie, dass der ursprüngliche Kommentar ebenfalls entfernt wurde, indem dafür ein leerer Text eingegeben wurde. Dies erleichtert die Lesbarkeit, Sie können den Kommentar aber auch belassen, um den Verlauf verfolgen zu können.</para
+></tip>
+      
+      <para
+>Fügen Sie diesen Vorgang zur vorher definierten Suche mit dem Knopf <guibutton
+>Hinzufügen</guibutton
+> hinzu.</para>
+      
+      <para
+>Wenden Sie jetzt den Prozess für alle importierten aber noch nicht bestätigten Vorgänge an, klicken Sie dazu auf den Knopf <guibutton
+>Anwenden</guibutton
+>:</para>
+      
+      <screenshot>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="apply_process.png" format="PNG"/>
+	  </imageobject>
+	</mediaobject>
+      </screenshot>
+      
+      <para
+>Gehen Sie jetzt zurück zur Vorgangsansicht, dann werden Sie feststellen, dass alle betroffenen Vorgänge aktualisiert wurden. Haben Sie dabei falsche Daten eingegeben, können Sie alles <link linkend="undo_redo"
+>wieder rückgängig machen</link
+>. Auch wenn Sie 2327 Vorgänge aktualisiert haben, kann das in &skrooge; immer noch rückgängig gemacht werden.</para>
+      
+    </appendix>
+    
+    <appendix id="holidays_expenses_analysis">
+      <title
+>Ausführliche Analyseübung: Urlaubsausgaben</title>
+      <para
+>Um die Analysefähigkeiten von &skrooge; zu zeigen, werden die Urlaubsausgaben des Autors untersucht.</para>
+      
+      <sect1 id="analysis_context">
+	<title
+>Kontext der Analyse</title>
+	<para
+>Um diese Übung zu verstehen, brauchen Sie ein wenig mehr Hintergrundinformationen über den Urlaub. Der Urlaub im Jahr 2009 dauerte fast einen Monat mit Übernachtungen in mehreren gemieteten Unterkünften an verschiedenen Orten in Frankreich. Es gab auch viele Ausgaben für Benzin, da die Tour sich über einen großen Teil von Frankreich erstreckte.</para>
+      </sect1>
+      
+      <sect1 id="analysis_data_organisation">
+	<title
+>Organisation der Daten</title>
+	<para
+>Alle Vorgänge wurden sorgfältig in Kategorien eingetragen, aber auch in die <link linkend="trackers"
+>Vorgangsgruppe</link
+> „Urlaub Sommer 2009“. Kategorien haben häufig Unterkategorien wie zum Beispiel "Verkehrsmittel 
+> Auto 
+> Benzin", das ermöglicht eine ausführliche Analyse.</para>
+      <screenshot>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="analysis_operations_view.png" format="PNG"/>
+	  </imageobject>
+	</mediaobject>
+      </screenshot>
+    </sect1>
+    
+    <sect1 id="analysis_total_cost">
+      <title
+>Gesamtkosten des Urlaubs ermitteln</title>
+      <para
+>Dies ist einfach, aber nicht immer erfreulich: Öffnen Sie die Ansicht der Vorgangsgruppe und lesen Sie die Spalte „Betrag“ für die Vorgangsgruppe:</para>
+      <screenshot>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="analysis_trackers_view.png" format="PNG"/>
+	  </imageobject>
+	</mediaobject>
+      </screenshot>
+      <para
+>Nun weiter zu den interessanten Dingen...</para>
+    </sect1>
+    
+    <sect1 id="analysis_expenses_distribution">
+      <title
+>Verteilung der Ausgaben</title>
+      <para
+>Wofür wurde das ganze Geld ausgegeben? Um das herauszufinden, erstellen Sie einen Bericht von der Vorgangsgruppe. Klicken Sie mit der &RMBn; auf die Zeile mit der Vorgangsgruppe und wählen Sie <guimenuitem
+>Bericht öffnen</guimenuitem
+>.</para>
+      <screenshot>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="analysis_build_report.png" format="PNG"/>
+	  </imageobject>
+	</mediaobject>
+      </screenshot>
+      
+      
+      <para
+>Dann wird ein Bericht in einem neuen Unterfenster geöffnet. Dieser Bericht enthält Vorgänge aus dieser Gruppe. Als Standardparameter für das Datum ist „Aktueller Monat“. Daher kann der Bericht auch leer sein, wenn alle Ausgaben früher erfolgten. Ändern Sie daher diese Einstellung zu „Alle Daten”.</para>
+      <screenshot>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="analysis_report_1.png" format="PNG"/>
+	  </imageobject>
+	</mediaobject>
+      </screenshot>
+      <para
+>Dies gibt einen ersten Überblick über die Ausgaben je Kategorie. Dies wird jetzt als Kreisdiagramm angezeigt.</para>
+      
+      <screenshot>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="analysis_report_2.png" format="PNG"/>
+	  </imageobject>
+	</mediaobject>
+      </screenshot>
+      
+      
+      <para
+>Es ist jetzt erkennbar, dass die meisten Ausgaben in diesem Urlaub für die Kategorien Verkehrsmittel und Essen angefallen sind. Um noch weiter Erkenntnisse zu erhalten, gehen Sie eine Ebene tiefer, indem Sie auf das Plus Symbol <inlinemediaobject
+><imageobject
+><imagedata fileref="category_one_level_more.png"/></imageobject
+></inlinemediaobject
+> klicken.</para>
+      <screenshot>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="analysis_report_3.png" format="PNG"/>
+	  </imageobject>
+	</mediaobject>
+      </screenshot>
+      
+      <para
+>Hier gibt es keine weiteren Informationen, außer dass es in der Kategorie „Verkehrsmittel“ nur den Eintrag „Auto“ gibt. Wählen Sie ein Kreisdiagramm, klicken Sie mit der &RMBn; darauf und wählen dann <guimenuitem
+>Bericht öffnen</guimenuitem
+>.</para>
+      <screenshot>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="analysis_build_transport_report.png" format="PNG"/>
+	  </imageobject>
+	</mediaobject>
+      </screenshot>
+      
+      <para
+>Damit wird ein anderes Unterfenster mit einem Bericht nur mit der Kategorie „Verkehrsmittel -> Auto“.</para>
+      <screenshot>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="analysis_report_4.png" format="PNG"/>
+	  </imageobject>
+	</mediaobject>
+      </screenshot>
+      <para
+>Das ist noch nicht wirklich interessant, aber es gibt weitere Unterkategorien. Erweitern Sie diese jetzt:</para>
+      <screenshot>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="analysis_report_5.png" format="PNG"/>
+	  </imageobject>
+	</mediaobject>
+      </screenshot>
+      <para
+>Jetzt sehen, Sie das 362,27€ für Benzin und 131,90 € für Straßengebühren ausgegeben wurden. Es ist auch interessant, den Verlauf für die Ausgaben in diesen Kategorien zu sehen:</para>
+      <screenshot>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="analysis_report_6.png" format="PNG"/>
+	  </imageobject>
+	</mediaobject>
+      </screenshot>
+      <para
+>Beachten Sie das der Diagrammtyp in „Linie“ und die Spalte in „Woche“ geändert wurde.</para>
+      
+    </sect1>
+    
+    <sect1 id="analysis_conclusion">
+      <title
+>Zusammenfassung</title>
+      <para
+>In diesem einfachem Beispiel wurden die erweiterten Fähigkeiten von Berichten in &skrooge; gezeigt, um eine genaue Analyse der Ausgaben im Urlaub besonders in der Kategorie „Verkehrsmittel“. Denken Sie jetzt an andere Anwendungsfälle, für die &skrooge; Sie wahrscheinlich benutzen können.</para>
+    </sect1>
+    
+  </appendix>
+  
+  &documentation.index;
+  
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->

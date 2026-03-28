@@ -1,0 +1,2059 @@
+# SPDX-FileCopyrightText: 2023, 2024 Matjaž Jeran <matjaz.jeran@amis.net>
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 12:04+0000\n"
+"PO-Revision-Date: 2024-03-24 22:09+0100\n"
+"Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
+"Language-Team: Slovenian <lugos-slo@lugos.si>\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 23.08.5\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
+
+#. Tag: title
+#: index.docbook:18
+#, no-c-format
+msgid "The &kcachegrind; Handbook"
+msgstr "&kcachegrind; Priročnik"
+
+#. Tag: author
+#: index.docbook:21
+#, no-c-format
+msgid "<firstname>Josef</firstname> <surname>Weidendorfer</surname>"
+msgstr "<firstname>Josef</firstname> <surname>Weidendorfer</surname>"
+
+#. Tag: email
+#: index.docbook:25
+#, no-c-format
+msgid "Josef.Weidendorfer@gmx.de"
+msgstr "Josef.Weidendorfer@gmx.de"
+
+#. Tag: contrib
+#: index.docbook:27
+#, no-c-format
+msgid "Original author of the documentation"
+msgstr "Izvirni avtor dokumentacije"
+
+#. Tag: author
+#: index.docbook:30
+#, no-c-format
+msgid "<firstname>Federico</firstname> <surname>Zenith</surname>"
+msgstr "<firstname>Federico</firstname> <surname>Zenith</surname>"
+
+#. Tag: email
+#: index.docbook:34
+#, no-c-format
+msgid "federico.zenith@member.fsf.org"
+msgstr "federico.zenith@member.fsf.org"
+
+#. Tag: contrib
+#: index.docbook:36
+#, no-c-format
+msgid "Updates and corrections"
+msgstr "Posodobitve in popravki"
+
+#. Tag: trans_comment
+#: index.docbook:39
+#, no-c-format
+msgid "ROLES_OF_TRANSLATORS"
+msgstr ""
+"<othercredit role=\"translator\"><firstname>Matjaž</"
+"firstname><surname>Jeran</surname><affiliation><address><email>matjaz."
+"jeran@amis.net</email></address></affiliation><contrib>Prevod</contrib></"
+"othercredit>"
+
+#. Tag: holder
+#: index.docbook:45
+#, no-c-format
+msgid "&Josef.Weidendorfer;"
+msgstr "&Josef.Weidendorfer;"
+
+#. Tag: holder
+#: index.docbook:49
+#, no-c-format
+msgid "Federico Zenith"
+msgstr "Federico Zenith"
+
+#. Tag: date
+#: index.docbook:53
+#, no-c-format
+msgid "2016-11-18"
+msgstr "18.11.2016"
+
+#. Tag: releaseinfo
+#: index.docbook:54
+#, no-c-format
+msgid "0.8.0 (Applications 17.04)"
+msgstr "0.8.0 (aplikacije 17.04)"
+
+#. Tag: para
+#: index.docbook:57
+#, no-c-format
+msgid ""
+"&kcachegrind; is a profile data visualization tool, written using &kde-"
+"frameworks;."
+msgstr ""
+"&kcachegrind; je orodje za vizualizacijo podatkov profila, napisano z "
+"uporabo &kde-frameworks;."
+
+#. Tag: keyword
+#: index.docbook:63
+#, no-c-format
+msgid "<keyword>KDE</keyword>"
+msgstr "<keyword>KDE</keyword>"
+
+#. Tag: keyword
+#: index.docbook:64
+#, no-c-format
+msgid "kdesdk"
+msgstr "kdesdk"
+
+#. Tag: keyword
+#: index.docbook:65
+#, no-c-format
+msgid "Cachegrind"
+msgstr "Cachegrind"
+
+#. Tag: keyword
+#: index.docbook:66
+#, no-c-format
+msgid "Callgrind"
+msgstr "Callgrind"
+
+#. Tag: keyword
+#: index.docbook:67
+#, no-c-format
+msgid "Valgrind"
+msgstr "Valgrind"
+
+#. Tag: keyword
+#: index.docbook:68
+#, no-c-format
+msgid "<keyword>Profiling</keyword>"
+msgstr "<keyword>Profiliranje</keyword>"
+
+#. Tag: title
+#: index.docbook:75
+#, no-c-format
+msgid "Introduction"
+msgstr "Uvod"
+
+#. Tag: para
+#: index.docbook:77
+#, no-c-format
+msgid ""
+"&kcachegrind; is a browser for data produced by profiling tools. This "
+"chapter explains what profiling is for, how it is done, and gives some "
+"examples of profiling tools available."
+msgstr ""
+"&kcachegrind; je brskalnik za podatke, ki so jih ustvarila orodja za "
+"profiliranje. V tem poglavju je razloženo, čemu je namenjeno profiliranje, "
+"kako se izvaja in podaja nekaj primerov razpoložljivih orodij za "
+"profiliranje."
+
+#. Tag: title
+#: index.docbook:84
+#, no-c-format
+msgid "<title>Profiling</title>"
+msgstr "<title>Profiliranje</title>"
+
+#. Tag: para
+#: index.docbook:86
+#, no-c-format
+msgid ""
+"When developing a program, one of the last steps often involves performance "
+"optimizations. As it makes no sense to optimize functions rarely used, "
+"because that would be a waste of time, one needs to know in which part of a "
+"program most of the time is spent."
+msgstr ""
+"Pri razvoju programa eden od zadnjih korakov pogosto vključuje optimizacijo "
+"delovanja. Ker redko uporabljenih funkcij nima smisla optimizirati, ker bi "
+"bila to izguba časa, je treba vedeti, v katerem delu programa se preživi "
+"največ časa."
+
+#. Tag: para
+#: index.docbook:93
+#, no-c-format
+msgid ""
+"For sequential code, collecting statistical data of the programs runtime "
+"characteristic like time numbers spent in functions and code lines usually "
+"is enough. This is called Profiling. The program is run under control of a "
+"profiling tool, which gives the summary of an execution run at the end. In "
+"contrast, for parallel code, performance problems typically are caused when "
+"one processor is waiting for data from another. As this waiting time usually "
+"cannot easily attributed, here it is better to generate timestamped event "
+"traces. &kcachegrind; cannot visualize this kind of data."
+msgstr ""
+"Za zaporedno kodo običajno zadostuje zbiranje statističnih podatkov o "
+"značilnostih izvajalnega časa programa, kot so številke časa, porabljenega v "
+"funkcijah in vrsticah kode. To se imenuje profiliranje. Program se izvaja "
+"pod nadzorom orodja za profiliranje, ki na koncu poda povzetek izvajanja. "
+"Nasprotno pa pri vzporedni kodi težave z zmogljivostjo običajno nastanejo, "
+"ko en procesor čaka na podatke drugega. Ker tega čakalnega časa običajno ni "
+"mogoče preprosto pripisati, je tukaj bolje ustvariti sledi dogodkov s "
+"časovnimi žigi. &kcachegrind; ne more vizualizirati te vrste podatkov."
+
+#. Tag: para
+#: index.docbook:105
+#, no-c-format
+msgid ""
+"After analyzing the produced profile data, it should be easy to see the hot "
+"spots and bottlenecks of the code: for example, assumptions about call "
+"counts can be checked, and identified code regions can be optimized. "
+"Afterwards, the success of the optimization should be verified with another "
+"profile run."
+msgstr ""
+"Po analizi ustvarjenih podatkov o profilu bi moralo biti enostavno videti "
+"vroče točke in ozka grla kode: preveriti je mogoče na primer predpostavke o "
+"številu klicev in optimizirati identificirana področja kode. Nato je treba "
+"uspešnost optimizacije preveriti z drugim zagonom profila."
+
+#. Tag: title
+#: index.docbook:115
+#, no-c-format
+msgid "Profiling Methods"
+msgstr "Metode profiliranja"
+
+#. Tag: para
+#: index.docbook:117
+#, no-c-format
+msgid ""
+"To exactly measure the time passed or record the events happening during the "
+"execution of a code region (&eg; a function), additional measurement code "
+"needs to be inserted before and after the given region. This code reads the "
+"time, or a global event count, and calculates differences. Thus, the "
+"original code has to be changed before execution. This is called "
+"instrumentation. Instrumentation can be done by the programmer itself, the "
+"compiler, or by the runtime system. As interesting regions usually are "
+"nested, the overhead of measurement always influences the measurement "
+"itself. Thus, instrumentation should be done selectively and results have to "
+"be interpreted with care. Of course, this makes performance analysis by "
+"exact measurement a very complex process."
+msgstr ""
+"Za natančno merjenje pretečenega časa ali beleženje dogodkov, ki se zgodijo "
+"med izvajanjem področja kode (&eg; funkcije), je treba pred in za danim "
+"območjem vstaviti dodatno kodo merjenja. Ta koda prebere čas ali globalno "
+"število dogodkov in izračuna razlike. Zato je treba prvotno kodo pred "
+"izvedbo spremeniti. To se imenuje instrumentacija. Instrumentacijo lahko "
+"izvede programer sam, prevajalnik ali izvajalni sistem. Ker so zanimiva "
+"območja običajno ugnezdena, režijski stroški merjenja vedno vplivajo na samo "
+"merjenje. Zato je treba instrumentacijo izvajati selektivno, rezultate pa je "
+"treba razlagati previdno. Seveda je zaradi tega analiza delovanja z "
+"natančnimi meritvami zelo zapleten proces."
+
+#. Tag: para
+#: index.docbook:129
+#, no-c-format
+msgid ""
+"Exact measurement is possible because of hardware counters (including "
+"counters incrementing on a time tick) provided in modern processors, which "
+"are incremented whenever an event is happening. As we want to attribute "
+"events to code regions, without the counters, we would have to handle every "
+"event by incrementing a counter for the current code region ourself. Doing "
+"this in software is, of course, not possible; but, on the assumption that "
+"the event distribution over source code is similar when looking only at "
+"every n-th event instead of every event, a measurement method whose overhead "
+"is tunable has been developed: it is called Sampling. Time Based Sampling "
+"(&TBS;) uses a timer to regularly look at the program counter to create a "
+"histogram over the program code. Event Based Sampling (&EBS;) exploits the "
+"hardware counters of modern processors, and uses a mode where an interrupt "
+"handler is called on counter underflow to generate a histogram of the "
+"corresponding event distribution: in the handler, the event counter is "
+"always reinitialized to the <symbol>n</symbol> of the sampling method. The "
+"advantage of sampling is that the code does not have to be changed, but it "
+"is still a compromise: the above assumption will be more correct if "
+"<symbol>n</symbol> is small, but the smaller the <symbol>n</symbol>, the "
+"higher the overhead of the interrupt handler."
+msgstr ""
+"Natančne meritve so možne zaradi števcev strojne opreme (vključno s števci, "
+"ki se povečujejo ob časovnem tiku), ki so na voljo v sodobnih procesorjih in "
+"se povečajo vsakič, ko se zgodi dogodek. Ker želimo dogodke pripisati "
+"regijam kode, bi morali brez števcev vsak dogodek obravnavati tako, da sami "
+"povečamo števec za trenutno regijo kode. Izvajanje tega v programski opremi "
+"seveda ni mogoče; toda ob predpostavki, da je porazdelitev dogodkov po "
+"izvorni kodi podobna, če gledamo samo vsak n-ti dogodek namesto vsakega "
+"dogodka, je bila razvita merilna metoda, katere režijski stroški so "
+"nastavljivi: imenuje se vzorčenje. Časovno zasnovano vzorčenje (&TBS;) "
+"uporablja časovnik za redno pregledovanje programskega števca za ustvarjanje "
+"histograma nad programsko kodo. Vzorčenje na podlagi dogodkov (&EBS;) "
+"izkorišča števce strojne opreme sodobnih procesorjev in uporablja način, v "
+"katerem se obdelovalnik prekinitev kliče ob pretoku števca, da ustvari "
+"histogram ustrezne porazdelitve dogodkov: v upravljalniku se števec dogodkov "
+"vedno znova inicializira na <symbol>n</symbol> metode vzorčenja. Prednost "
+"vzorčenja je, da kode ni treba spreminjati, vendar je še vedno kompromis: "
+"zgornja predpostavka bo pravilnejša, če je <symbol>n</symbol> majhen, manjši "
+"pa kot je <symbol>n</symbol>, višji so stroški obdelovalnika prekinitev."
+
+#. Tag: para
+#: index.docbook:148
+#, no-c-format
+msgid ""
+"Another measurement method is to simulate things happening in the computer "
+"system when executing a given code, &ie; execution driven simulation. The "
+"simulation is always derived from a more or less accurate machine model; "
+"however, with very detailed machine models, giving very close approximations "
+"to reality, the simulation time can be unacceptably high in practice. The "
+"advantage of simulation is that arbitrarily complex measurement/simulation "
+"code can be inserted in a given code without perturbing results. Doing this "
+"directly before execution (called runtime instrumentation), using the "
+"original binary, is very comfortable for the user: no re-compilation is "
+"necessary. Simulation becomes usable when simulating only parts of a machine "
+"with a simple model; another advantage is that the results produced by "
+"simple models are often easier to understand: often, the problem with real "
+"hardware is that results include overlapping effects from different parts of "
+"the machine."
+msgstr ""
+"Druga merilna metoda je simulacija stvari, ki se dogajajo v računalniškem "
+"sistemu pri izvajanju dane kode, &ie; simulacija, ki jo poganja izvajanje. "
+"Simulacija vedno izhaja iz bolj ali manj natančnega strojnega modela; pri "
+"zelo podrobnih modelih strojev, ki dajejo zelo blizu realnosti, pa je lahko "
+"čas simulacije v praksi nesprejemljivo visok. Prednost simulacije je, da je "
+"mogoče v dano kodo vstaviti poljubno zapleteno merilno/simulacijsko kodo "
+"brez motečih rezultatov. Izvajanje tega neposredno pred izvajanjem "
+"(imenovano instrumentacija izvajalnega časa) z uporabo izvirne binarne "
+"datoteke je zelo udobno za uporabnika: ponovno prevajanje ni potrebno. "
+"Simulacija postane uporabna, če simuliramo le dele stroja s preprostim "
+"modelom; druga prednost je, da so rezultati, ki jih ustvarijo preprosti "
+"modeli, pogosto lažje razumljivi: pogosto je težava z resnično strojno "
+"opremo v tem, da rezultati vključujejo prekrivajoče se učinke iz različnih "
+"delov stroja."
+
+#. Tag: title
+#: index.docbook:164
+#, no-c-format
+msgid "Profiling Tools"
+msgstr "Orodja za profiliranje"
+
+#. Tag: para
+#: index.docbook:166
+#, no-c-format
+msgid ""
+"Most known is the GCC profiling tool <application>gprof</application>: one "
+"needs to compile the program with option <option>-pg</option>; running the "
+"program generates a file <filename>gmon.out</filename>, which can be "
+"transformed into human-readable form with <command>gprof</command>. One "
+"disadvantage is the required re-compilation step to prepare the executable, "
+"which has to be statically linked. The method used here is compiler-"
+"generated instrumentation, which measures call arcs happening among "
+"functions and corresponding call counts, in conjunction with &TBS;, which "
+"gives a histogram of time distribution over the code. Using both pieces of "
+"information, it is possible to heuristically calculate inclusive time of "
+"functions, &ie; time spent in a function together with all functions called "
+"from it."
+msgstr ""
+"Najbolj znano je orodje za profiliranje GCC <application>gprof</"
+"application>: program je treba prevesti z možnostjo <option>-pg</option>; "
+"zagon programa generira datoteko <filename>gmon.out</filename>, ki jo je "
+"mogoče pretvoriti v človeku berljivo obliko z <command>gprof</command>. Ena "
+"pomanjkljivost je potreben korak ponovnega prevajanja za pripravo izvršljive "
+"datoteke, ki mora biti statično povezana. Tukaj uporabljena metoda je "
+"instrumentacija, ki jo ustvari prevajalnik, ki meri loke klicev, ki se "
+"dogajajo med funkcijami, in ustrezna števila klicev v povezavi z &TBS;, ki "
+"daje histogram časovne porazdelitve po kodi. Z uporabo obeh informacij je "
+"mogoče hevristično izračunati inkluzivni čas funkcij, &ie; čas, porabljen v "
+"funkciji, skupaj z vsemi funkcijami, ki so iz nje priklicane."
+
+#. Tag: para
+#: index.docbook:181
+#, no-c-format
+msgid ""
+"For exact measurement of events happening, libraries exist with functions "
+"able to read out hardware performance counters. Most known here is the "
+"PerfCtr patch for &Linux;, and the architecture independent libraries PAPI "
+"and PCL. Still, exact measurement needs instrumentation of code, as stated "
+"above. Either one uses the libraries itself or uses automatic "
+"instrumentation systems like ADAPTOR (for FORTRAN source instrumentation) or "
+"DynaProf (code injection via DynInst)."
+msgstr ""
+"Za natančno merjenje dogajanja obstajajo knjižnice s funkcijami, ki lahko "
+"preberejo števce zmogljivosti strojne opreme. Najbolj znan tukaj je popravek "
+"PerfCtr za &Linux; in arhitekturno neodvisni knjižnici PAPI in PCL. Kljub "
+"temu je za natančno merjenje potrebna instrumentacija kode, kot je navedeno "
+"zgoraj. Bodisi uporablja knjižnice same bodisi uporablja samodejne "
+"instrumentacijske sisteme, kot je ADAPTOR (za izvorne instrumente FORTRAN) "
+"ali DynaProf (vbrizgavanje kode prek DynInsta)."
+
+#. Tag: para
+#: index.docbook:189
+#, no-c-format
+msgid "&oprofile; is a system-wide profiling tool for &Linux; using Sampling."
+msgstr ""
+"&oprofile; je sistemsko orodje za profiliranje za &Linux; z uporabo "
+"vzorčenja."
+
+#. Tag: para
+#: index.docbook:193
+#, no-c-format
+msgid ""
+"In many aspects, a comfortable way of Profiling is using &cachegrind; or "
+"&callgrind;, which are simulators using the runtime instrumentation "
+"framework &valgrind;. Because there is no need to access hardware counters "
+"(often difficult with today's &Linux; installations), and binaries to be "
+"profiled can be left unmodified, it is a good alternative to other profiling "
+"tools. The disadvantage of simulation - slowdown - can be reduced by doing "
+"the simulation on only the interesting program parts, and perhaps only on a "
+"few iterations of a loop. Without measurement/simulation instrumentation, "
+"&valgrind;'s usage only has a slowdown factor in the range of 3 to 5. Also, "
+"when only the call graph and call counts are of interest, the cache "
+"simulator can be switched off."
+msgstr ""
+"V mnogih pogledih je udoben način profiliranja uporaba &cachegrind; ali "
+"&callgrind;, ki sta simulatorja, ki uporabljata okvir izvajalnega "
+"instrumentarija &valgrind;. Ker ni potrebe po dostopu do števcev strojne "
+"opreme (kar je pogosto težko pri današnjih namestitvah &Linux;), binarne "
+"datoteke, ki jih želite profilirati, pa lahko pustite nespremenjene, je "
+"dobra alternativa drugim orodjem za profiliranje. Pomanjkljivost simulacije "
+"- upočasnitev - lahko zmanjšamo tako, da simulacijo izvajamo samo na "
+"zanimivih delih programa in morda le na nekaj ponovitvah zanke. Brez "
+"merilnih/simulacijskih instrumentov ima uporaba &valgrind; le faktor "
+"upočasnitve v razponu od 3 do 5. Poleg tega, ko sta zanimiva samo graf "
+"klicev in štetje klicev, lahko simulator predpomnilnika izklopite."
+
+#. Tag: para
+#: index.docbook:207
+#, no-c-format
+msgid ""
+"Cache simulation is the first step in approximating real times, since "
+"runtime is very sensitive to the exploitation of so-called <emphasis>caches</"
+"emphasis>, small and fast buffers which accelerate repeated accesses to the "
+"same main memory cells, on modern systems. &cachegrind; does cache "
+"simulation by catching memory accesses. The data produced includes the "
+"number of instruction/data memory accesses and first- and second-level cache "
+"misses, and relates it to source lines and functions of the run program. By "
+"combining these miss counts, using miss latencies from typical processors, "
+"an estimation of spent time can be given."
+msgstr ""
+"Simulacija predpomnilnika je prvi korak pri približevanju realnega časa, saj "
+"je čas izvajanja zelo občutljiv na izkoriščanje tako imenovanih "
+"<emphasis>predpomnilnikov</emphasis>, majhnih in hitrih vmesnih pomnilnikov, "
+"ki pospešujejo ponavljajoče se dostope do istih glavnih pomnilniških celic v "
+"sodobnih sistemih. &cachegrind; izvaja simulacijo predpomnilnika z "
+"lovljenjem dostopov do pomnilnika. Proizvedeni podatki vključujejo število "
+"dostopov do pomnilnika ukazov/podatkov ter zgrešenih predpomnilnika prve in "
+"druge ravni ter jih povezujejo z izvornimi vrsticami in funkcijami zagnanega "
+"programa. Z združevanjem teh števila zamud in z uporabo zakasnitev tipičnih "
+"procesorjev je mogoče podati oceno porabljenega časa."
+
+#. Tag: para
+#: index.docbook:220
+#, no-c-format
+msgid ""
+"&callgrind; is an extension of &cachegrind; that builds up the call graph of "
+"a program on-the-fly, &ie; how the functions call each other and how many "
+"events happen while running a function. Also, the profile data to be "
+"collected can separated by threads and call chain contexts. It can provide "
+"profiling data on an instruction level to allow for annotation of "
+"disassembled code."
+msgstr ""
+"&callgrind; je razširitev &cachegrind; ki sproti gradi graf klicev programa, "
+"&ie; kako se funkciji kličeta in koliko dogodkov se zgodi med izvajanjem "
+"funkcije. Poleg tega je mogoče podatke o profilu, ki jih je treba zbrati, "
+"ločiti po nitih in kontekstih verige klicev. Zagotovi lahko podatke o "
+"profiliranju na ravni navodil, da omogoči zaznamovanje razstavljene kode."
+
+#. Tag: title
+#: index.docbook:230
+#, no-c-format
+msgid "Visualization"
+msgstr "Vizualizacija"
+
+#. Tag: para
+#: index.docbook:232
+#, no-c-format
+msgid ""
+"Profiling tools typically produce a large amount of data. The wish to easily "
+"browse down and up the call graph, together with fast switching of the "
+"sorting mode of functions and display of different event types, motivates a "
+"&GUI; application to accomplish this task."
+msgstr ""
+"Orodja za profiliranje običajno ustvarijo veliko količino podatkov. Želja po "
+"enostavnem brskanju navzdol in navzgor po grafu klicev, skupaj s hitrim "
+"preklapljanjem načina razvrščanja funkcij in prikazom različnih vrst "
+"dogodkov, motivira &GUI; aplikacijo za izpolnitev te naloge."
+
+#. Tag: para
+#: index.docbook:239
+#, no-c-format
+msgid ""
+"&kcachegrind; is a visualization tool for profile data fulfilling these "
+"wishes. Despite being programmed first with browsing the data from "
+"&cachegrind; and &calltree; in mind, there are converters available to be "
+"able to display profile data produced by other tools. In the appendix, a "
+"description of the &cachegrind;/&callgrind; file format is given."
+msgstr ""
+"&kcachegrind; je orodje za vizualizacijo podatkov profila, ki izpolnjuje te "
+"želje. Čeprav je bil najprej programiran z brskanjem po podatkih iz "
+"&cachegrind; in &calltree; v mislih so na voljo pretvorniki, ki lahko "
+"prikažejo podatke o profilu, ki jih ustvarijo druga orodja. V dodatku je "
+"opis datoteke &cachegrind;/&callgrind; podana oblika datoteke."
+
+#. Tag: para
+#: index.docbook:247
+#, no-c-format
+msgid ""
+"Besides a list of functions sorted according exclusive or inclusive cost "
+"metrics, and optionally grouped by source file, shared library or C++ class, "
+"&kcachegrind; features various views for a selected function, namely:"
+msgstr ""
+"Poleg seznama funkcij, razvrščenih glede na izključne ali vključujoče "
+"meritve stroškov in neobvezno razvrščenih glede na izvorno datoteko, "
+"knjižnico v skupni rabi ali razred C++, &kcachegrind; ponuja različne "
+"poglede za izbrano funkcijo, in sicer:"
+
+#. Tag: para
+#: index.docbook:252
+#, no-c-format
+msgid ""
+"a call-graph view, which shows a section of the call graph around the "
+"selected function,"
+msgstr ""
+"pogled grafa klicev, ki prikazuje del grafa klicev okoli izbrane funkcije,"
+
+#. Tag: para
+#: index.docbook:255
+#, no-c-format
+msgid ""
+"a tree-map view, which allows nested-call relations to be visualized, "
+"together with inclusive cost metric for fast visual detection of problematic "
+"functions,"
+msgstr ""
+"pogled drevesnega pogleda, ki omogoča vizualizacijo odnosov ugnezdenih "
+"klicev, skupaj z vključujočo stroškovno metriko za hitro vizualno odkrivanje "
+"problematičnih funkcij,"
+
+#. Tag: para
+#: index.docbook:259
+#, no-c-format
+msgid ""
+"source code and disassembler annotation views, allowing to see details of "
+"cost related to source lines and assembler instructions."
+msgstr ""
+"pogled izvorne kode in opomb razzbrinika, ki omogoča ogled podrobnosti o "
+"stroških, povezanih z izvornimi vrsticami in navodili za zbirnik."
+
+#. Tag: title
+#: index.docbook:269
+#, no-c-format
+msgid "Using &kcachegrind;"
+msgstr "Uporaba &kcachegrind;"
+
+#. Tag: title
+#: index.docbook:272
+#, no-c-format
+msgid "Generate Data to Visualize"
+msgstr "Ustvarite podatke za vizualizacijo"
+
+#. Tag: para
+#: index.docbook:274
+#, no-c-format
+msgid ""
+"First, one wants to generate performance data by measuring aspects of the "
+"runtime characteristics of an application, using a profiling tool. "
+"&kcachegrind; itself does not include any profiling tool, but is good in "
+"being used together with &callgrind;, and by using a converter, also can be "
+"used to visualize data produced with &oprofile;. Although the scope of this "
+"manual is not to document profiling with these tools, the next section "
+"provides short quickstart tutorials to get you started."
+msgstr ""
+"Prvič, želimo ustvariti podatke o zmogljivosti z merjenjem vidikov "
+"značilnosti časa izvajanja aplikacije z uporabo orodja za profiliranje. "
+"&kcachegrind; sama po sebi ne vključuje nobenega orodja za profiliranje, "
+"vendar je dobra za uporabo skupaj s &callgrind;, z uporabo pretvornika pa se "
+"lahko uporablja tudi za vizualizacijo podatkov, proizvedenih z &oprofile;. "
+"Čeprav namen tega priročnika ni dokumentiranje profiliranja s temi orodji, "
+"so v naslednjem razdelku kratke vadnice za hiter začetek, s katerimi lahko "
+"začnete."
+
+#. Tag: title
+#: index.docbook:284
+#, no-c-format
+msgid "&callgrind;"
+msgstr "&callgrind;"
+
+#. Tag: para
+#: index.docbook:286
+#, no-c-format
+msgid ""
+"&callgrind; is a part of <ulink url=\"http://valgrind.org\">&valgrind;</"
+"ulink>. Note that it previously was called &calltree;, but that name was "
+"misleading."
+msgstr ""
+"&callgrind; je del <ulink url=\"http://valgrind.org\">&valgrind;</ulink>. "
+"Upoštevajte, da se je prej imenoval &calltree;, vendar je bilo to ime "
+"zavajajoče."
+
+#. Tag: para
+#: index.docbook:291
+#, no-c-format
+msgid ""
+"The most common use is to prefix the command line to start your application "
+"with <userinput><command>valgrind</command> <option>--tool=callgrind</"
+"option> </userinput>, as in: <blockquote><para><userinput> "
+"<command>valgrind</command> <option>--tool=callgrind</option> "
+"<replaceable>myprogram</replaceable> <replaceable>myargs</replaceable> </"
+"userinput></para></blockquote> At program termination, a file "
+"<filename>callgrind.out.<replaceable>pid</replaceable></filename> will be "
+"generated, which can be loaded into &kcachegrind;."
+msgstr ""
+"Najpogostejša uporaba je predpona ukazne vrstice za zagon aplikacije z "
+"<userinput><command>valgrind</command> <option>--tool=callgrind</option> </"
+"userinput>, kot v: <blockquote><para><userinput> <command>valgrind</command> "
+"<option>--tool=callgrind</option> <replaceable>myprogram</replaceable> "
+"<replaceable>myargs</replaceable> </userinput></para></blockquote> Ob "
+"zaključku programa bo ustvarjena datoteka <filename>callgrind.out."
+"<replaceable>pid</replaceable></filename>, ki jo lahko naložite v "
+"&kcachegrind;."
+
+#. Tag: para
+#: index.docbook:306
+#, no-c-format
+msgid ""
+"More advanced use is to dump out profile data whenever a given function of "
+"your application is called. E.g. for &konqueror;, to see profile data only "
+"for the rendering of a Web page, you could decide to dump the data whenever "
+"you select the menu item <menuchoice><guimenu>View</"
+"guimenu><guimenuitem>Reload </guimenuitem></menuchoice>. This corresponds to "
+"a call to <methodname>KonqMainWindow::slotReload</methodname>. Use: "
+"<blockquote><para><userinput> <command>valgrind</command> <option>--"
+"tool=callgrind</option> <option>--dump-before=KonqMainWindow::slotReload</"
+"option> <replaceable>konqueror</replaceable> </userinput></para></"
+"blockquote> This will produce multiple profile data files with an additional "
+"sequential number at the end of the filename. A file without such an number "
+"at the end (only ending in the process PID) will also be produced; by "
+"loading this file into &kcachegrind;, all others are loaded too, and can be "
+"seen in the <guilabel>Parts Overview</guilabel> and <guilabel>Parts</"
+"guilabel> list."
+msgstr ""
+"Naprednejša uporaba je izpis podatkov profila vsakič, ko se pokliče določena "
+"funkcija vaše aplikacije. Npr. za &konqueror;, če si želite ogledati podatke "
+"profila samo za upodabljanje spletne strani, se lahko odločite za izpis "
+"podatkov vsakič, ko izberete menijski element <menuchoice><guimenu>Pogled</"
+"guimenu><guimenuitem>Znova naloži </guimenuitem></menuchoice>. To ustreza "
+"klicu <methodname>KonqMainWindow::slotReload</methodname>. Uporabite: "
+"<blockquote><para><userinput> <command>valgrind</command> <option>--"
+"tool=callgrind</option> <option>--dump-before=KonqMainWindow::slotReload</"
+"option> <replaceable >konqueror</replaceable> </userinput></para></"
+"blockquote> To bo ustvarilo več podatkovnih datotek profila z dodatno "
+"zaporedno številko na koncu imena datoteke. Izdelana bo tudi datoteka brez "
+"te številke na koncu (konča se le v PID procesa); z nalaganjem te datoteke v "
+"&kcachegrind;, se naložijo tudi vse druge in si jih lahko ogledate v "
+"<guilabel>Pregledu delov</guilabel> in seznamu <guilabel>Deli</guilabel>."
+
+#. Tag: title
+#: index.docbook:330
+#, no-c-format
+msgid "&oprofile;"
+msgstr "&oprofile;"
+
+#. Tag: para
+#: index.docbook:332
+#, no-c-format
+msgid ""
+"&oprofile; is available from <ulink url=\"http://oprofile.sf.net\">its home "
+"page</ulink>. Follow the installation instructions on the Web site, but, "
+"before you do, check whether your distribution does not already provide it "
+"as package (like &SuSE;)."
+msgstr ""
+"&oprofile; je na voljo na <ulink url=\"http://oprofile.sf.net\">njegovi "
+"domači strani</ulink>. Sledite navodilom za namestitev na spletnem mestu, "
+"vendar preden to storite, preverite, ali ga vaša distribucija že ponuja kot "
+"paket (kot &SuSE;)."
+
+#. Tag: para
+#: index.docbook:339
+#, no-c-format
+msgid ""
+"System-wide profiling is only permitted to the root user, as all actions on "
+"the system can be observed; therefore, the following has to be done as root. "
+"First, configure the profiling process, using the &GUI; "
+"<command>oprof_start</command> or the command-line tool <command>opcontrol</"
+"command>. Standard configuration should be timer mode (&TBS;, see "
+"introduction). To start the measurement, run <userinput><command>opcontrol</"
+"command> <option>-s</option></userinput>. Then run the application you are "
+"interested in and, afterwards, do a <userinput><command>opcontrol</command> "
+"<option>-d</option></userinput>. This will write out the measurement results "
+"into files under folder <filename class=\"directory\">/var/lib/oprofile/"
+"samples/</filename>. To be able to visualize the data in &kcachegrind;, do "
+"in an empty directory: <blockquote><para><userinput> <command>opreport</"
+"command> <option>-gdf</option> | <command>op2callgrind</command> </"
+"userinput></para></blockquote> This will produce a lot of files, one for "
+"every program which was running on the system. Each one can be loaded into "
+"&kcachegrind; on its own."
+msgstr ""
+"Sistemsko profiliranje je dovoljeno le korenskemu uporabniku, saj je mogoče "
+"opazovati vsa dejanja v sistemu; zato je treba kot root narediti naslednje. "
+"Najprej konfigurirajte postopek profiliranja z &GUI; <command>oprof_start</"
+"command> ali orodje ukazne vrstice <command>opcontrol</command>. Standardna "
+"konfiguracija mora biti način časovnika (&TBS;, glejte uvod). Za začetek "
+"meritve zaženite <userinput><command>opcontrol</command> <option>-s</"
+"option></userinput>. Nato zaženite aplikacijo, ki vas zanima, in nato "
+"naredite <userinput><command>opcontrol</command> <option>-d</option></"
+"userinput>. S tem boste rezultate meritev zapisali v datoteke v mapo "
+"<filename class=\"directory\">/var/lib/oprofile/samples/</filename>. Da bi "
+"lahko vizualizirali podatke v &kcachegrind;, naredite v praznem imeniku: "
+"<blockquote><para><userinput> <command>opreport</command> <option>-gdf</"
+"option> | <command>op2callgrind</command> </userinput></para></blockquote> "
+"To bo proizvedlo veliko datotek, eno za vsak program, ki se izvaja v "
+"sistemu. Vsakega lahko naložite v &kcachegrind; samega."
+
+#. Tag: title
+#: index.docbook:367
+#, no-c-format
+msgid "User Interface Basics"
+msgstr "Osnove uporabniškega vmesnika"
+
+#. Tag: para
+#: index.docbook:369
+#, no-c-format
+msgid ""
+"When starting &kcachegrind; with a profile data file as argument, or after "
+"loading one with <menuchoice><guimenu>File</guimenu> <guimenuitem>Open</"
+"guimenuitem></menuchoice>, you will see a navigation panel containing the "
+"function list at the left; and, on the right the main part, an area with "
+"views for a selected function. This view area can be arbitrarily configured "
+"to show multiple views at once."
+msgstr ""
+"Ko zaženete &kcachegrind; s podatkovno datoteko profila kot argumentom ali "
+"po nalaganju z <menuchoice><guimenu>Datoteka</guimenu> <guimenuitem>Odpri</"
+"guimenuitem></menuchoice> boste na levi strani videli navigacijsko ploščo s "
+"seznamom funkcij ; in na desni glavni del, območje s pogledi za izbrano "
+"funkcijo. To območje pogleda je mogoče poljubno konfigurirati za prikaz več "
+"pogledov hkrati."
+
+#. Tag: para
+#: index.docbook:378
+#, no-c-format
+msgid ""
+"At first start, this area will be divided into a top and a bottom part, each "
+"with different tab-selectable views. To move views, use the tabs' context "
+"menu, and adjust the splitters between views. To switch quickly between "
+"different viewing layouts, use <menuchoice><shortcut><keycombo action=\"simul"
+"\">&Ctrl;<keycap>→</keycap> </keycombo></shortcut> <guimenu>View</"
+"guimenu><guisubmenu>Layout</guisubmenu> <guimenuitem>Go to Next</"
+"guimenuitem></menuchoice> and <menuchoice><shortcut><keycombo action=\"simul"
+"\">&Ctrl;<keycap>←</keycap> </keycombo></shortcut> <guimenu>View</"
+"guimenu><guisubmenu>Layout</guisubmenu> <guimenuitem>Go to Previous</"
+"guimenuitem></menuchoice>."
+msgstr ""
+"Ob prvem zagonu bo to območje razdeljeno na zgornji in spodnji del, vsak z "
+"različnimi pogledi, ki jih je mogoče izbrati z zavihki. Za premikanje "
+"pogledov uporabite kontekstni meni zavihkov in prilagodite razdelilnike med "
+"pogledi. Če želite hitro preklapljati med različnimi postavitvami ogleda, "
+"uporabite <menuchoice><shortcut><keycombo action=\"simul\">&Ctrl;<keycap>→</"
+"keycap> </keycombo></shortcut> <guimenu>Pogled</"
+"guimenu><guisubmenu>Postavitev</guisubmenu> <guimenuitem>Pojdi na Naprej</"
+"guimenuitem></menuchoice> in <menuchoice><shortcut><keycombo action=\"simul"
+"\">&Ctrl;<keycap>←</keycap> </keycombo> </shortcut> <guimenu>Pogled</"
+"guimenu><guisubmenu>Postavitev</guisubmenu> <guimenuitem>Pojdi na prejšnji</"
+"guimenuitem></menuchoice>."
+
+#. Tag: para
+#: index.docbook:391
+#, no-c-format
+msgid ""
+"The active event type is important for visualization: for &callgrind;, this "
+"is, for example, cache misses or cycle estimation; for &oprofile;, this is "
+"<quote>Timer</quote> in the simplest case. You can change the event type via "
+"a combobox in the toolbar or in the <guilabel>Event Type</guilabel> view. A "
+"first overview of the runtime characteristics should be given when you "
+"select function <function>main</function> in the left list; look then at the "
+"call graph view. There, you see the calls occurring in your program. Note "
+"that the call graph view only shows functions with high event count. By "
+"double-clicking a function in the graph, it will change to show the called "
+"functions around the selected one."
+msgstr ""
+"Vrsta aktivnega dogodka je pomembna za vizualizacijo: za &callgrind; je to "
+"na primer zgrešeno predpomnilnik ali ocena cikla; za &oprofile; je to v "
+"najpreprostejšem primeru <quote>Timer</quote>. Vrsto dogodka lahko "
+"spremenite prek kombiniranega polja v orodni vrstici ali v pogledu "
+"<guilabel>Vrsta dogodka</guilabel>. Ko izberete funkcijo <function>main</"
+"function> na levem seznamu, morate dobiti prvi pregled značilnosti časa "
+"izvajanja; nato si oglejte pogled grafa klicev. Tam vidite klice, ki se "
+"pojavljajo v vašem programu. Upoštevajte, da pogled grafa klicev prikazuje "
+"samo funkcije z velikim številom dogodkov. Če dvokliknete funkcijo v grafu, "
+"se ta spremeni in prikaže klicane funkcije okoli izbrane."
+
+#. Tag: para
+#: index.docbook:404
+#, no-c-format
+msgid ""
+"To explore the &GUI; further, in addition to this manual, also have a look "
+"at the documentation section <ulink url=\"https://kcachegrind.github.io\">on "
+"the Web site</ulink>. Also, every widget in &kcachegrind; has <quote>What's "
+"this</quote> help."
+msgstr ""
+"Za raziskovanje &GUI; Poleg tega priročnika si oglejte tudi razdelek z "
+"dokumentacijo <ulink url=\"https://kcachegrind.github.io\">na spletnem "
+"mestu</ulink>. Prav tako vsak gradnik v &kcachegrind; ima <quote>Kaj je to</"
+"quote> pomoč."
+
+#. Tag: title
+#: index.docbook:416
+#, no-c-format
+msgid "Basic Concepts"
+msgstr "Osnovni pojmi"
+
+#. Tag: para
+#: index.docbook:418
+#, no-c-format
+msgid ""
+"This chapter explains some concepts of the &kcachegrind;, and introduces "
+"terms used in the interface."
+msgstr ""
+"To poglavje pojasnjuje nekatere koncepte &kcachegrind; in uvaja izraze, ki "
+"se uporabljajo v vmesniku."
+
+#. Tag: title
+#: index.docbook:423
+#, no-c-format
+msgid "The Data Model for Profile Data"
+msgstr "Podatkovni model za podatke o profilu"
+
+#. Tag: title
+#: index.docbook:426
+#, no-c-format
+msgid "Cost Entities"
+msgstr "Stroškovne entitete"
+
+#. Tag: para
+#: index.docbook:428
+#, no-c-format
+msgid ""
+"Cost counts of event types (like L2 Misses) are attributed to cost entities, "
+"which are items with relationship to source code or data structures of a "
+"given program. Cost entities not only can be simple code or data positions, "
+"but also position tuples. For example, a call has a source and a target, or "
+"a data address can have a data type and a code position where its allocation "
+"happened."
+msgstr ""
+"Štetje stroškov vrst dogodkov (kot so napake L2) se pripišejo stroškovnim "
+"entitetam, ki so postavke v povezavi z izvorno kodo ali podatkovnimi "
+"strukturami danega programa. Entitete stroškov niso lahko samo preprosta "
+"koda ali podatkovni položaji, ampak tudi pozicijska torka. Na primer, klic "
+"ima vir in cilj ali pa ima lahko podatkovni naslov vrsto podatkov in položaj "
+"kode, kjer je prišlo do njegove dodelitve."
+
+#. Tag: para
+#: index.docbook:436
+#, no-c-format
+msgid ""
+"The cost entities known to &kcachegrind; are given in the following. Simple "
+"Positions: <variablelist> <varlistentry> <term>Instruction</term> "
+"<listitem><para> An assembler instruction at a specified address. </para></"
+"listitem> </varlistentry> <varlistentry> <term>Source Line of a Function</"
+"term> <listitem><para> All instructions that the compiler (via debug "
+"information) maps to a given source line specified by source file name and "
+"line number, and which are executed in the context of some function. The "
+"latter is needed because a source line inside of an inlined function can "
+"appear in the context of multiple functions. Instructions without any "
+"mapping to an actual source line are mapped to line number 0 in file "
+"<filename>???</filename>. </para></listitem> </varlistentry> <varlistentry> "
+"<term>Function</term> <listitem><para> All source lines of a given function "
+"make up the function itself. A function is specified by its name and its "
+"location in some binary object if available. The latter is needed because "
+"binary objects of a single program each can hold functions with the same "
+"name (these can be accessed &eg; with <function>dlopen</function> or "
+"<function>dlsym</function>; the runtime linker resolves functions in a given "
+"search order of binary objects used). If a profiling tool cannot detect the "
+"symbol name of a function, &eg; because debug information is not available, "
+"either the address of the first executed instruction typically is used, or "
+"<function>???</function>. </para></listitem> </varlistentry> <varlistentry> "
+"<term>Binary Object</term> <listitem><para> All functions whose code is "
+"inside the range of a given binary object, either the main executable or a "
+"shared library. </para></listitem> </varlistentry> <varlistentry> "
+"<term>Source File</term> <listitem><para> All functions whose first "
+"instruction is mapped to a line of the given source file. </para></listitem> "
+"</varlistentry> <varlistentry> <term>Class</term> <listitem><para> Symbol "
+"names of functions typically are hierarchically ordered in name spaces, &eg; "
+"C++ namespaces, or classes of object-oriented languages; thus, a class can "
+"hold functions of the class or embedded classes itself. </para></listitem> </"
+"varlistentry> <varlistentry> <term>Profile Part</term> <listitem><para> Some "
+"time section of a profile run, with a given thread ID, process ID, and "
+"command line executed. </para></listitem> </varlistentry> </variablelist> As "
+"can be seen from the list, a set of cost entities often defines another cost "
+"entity; thus, there is a inclusion hierarchy of cost entities."
+msgstr ""
+"Entitete stroškov, ki jih pozna &kcachegrind; so podani v nadaljevanju. "
+"Preprosti položaji: <variablelist> <varlistentry> <term>Navodilo</term> "
+"<listitem><para> Navodilo za zbirnik na določenem naslovu. </para></"
+"listitem> </varlistentry> <varlistentry> <term>Izvorna vrstica funkcije</"
+"term> <listitem><para>Vsa navodila, ki jih prevajalnik (prek informacij o "
+"odpravljanju napak) preslika v dano navedeno izvorno vrstico z imenom "
+"izvorne datoteke in številko vrstice in ki se izvajajo v kontekstu neke "
+"funkcije. Slednje je potrebno, ker se izvorna vrstica znotraj vstavljene "
+"funkcije lahko pojavi v kontekstu več funkcij. Navodila brez preslikave v "
+"dejansko izvorno vrstico so preslikana v vrstico številka 0 v datoteki "
+"<filename>???</filename>. </para></listitem> </varlistentry> <varlistentry> "
+"<term>Funkcija</term> <listitem><para> Vse izvorne vrstice dane funkcije "
+"sestavljajo samo funkcijo. Funkcija je podana z imenom in lokacijo v nekem "
+"binarnem objektu, če je na voljo. Slednje je potrebno, ker lahko binarni "
+"objekti enega programa vsebujejo funkcije z enakim imenom (do teh je mogoče "
+"dostopati &eg; s <function>dlopen</function> ali <function>dlsym</function>; "
+"povezovalnik izvajalnega časa razreši funkcije v danem iskalnem vrstnem redu "
+"uporabljenih binarnih objektov). Če orodje za profiliranje ne more zaznati "
+"imena simbola funkcije, &eg; ker informacije o odpravljanju napak niso na "
+"voljo, se običajno uporabi naslov prvega izvedenega ukaza ali <function>???</"
+"function>. </para></listitem> </varlistentry> <varlistentry> <term>Binarni "
+"objekt</term> <listitem><para> Vse funkcije, katerih koda je znotraj obsega "
+"danega binarnega objekta, bodisi glavnega izvršljivega ali skupna knjižnica. "
+"</para></listitem> </varlistentry> <varlistentry> <term>Izvorna datoteka</"
+"term> <listitem><para> Vse funkcije, katerih prvi ukaz je preslikan v "
+"vrstico dane izvorne datoteke. </para></listitem> </varlistentry> "
+"<varlistentry> <term>Razred</term> <listitem><para>Imena simbolov funkcij so "
+"običajno hierarhično urejena v imenskih prostorih, &eg; Imenski prostori C++ "
+"ali razredi objektno orientiranih jezikov; tako lahko razred vsebuje "
+"funkcije razreda ali samih vdelanih razredov. </para></listitem> </"
+"varlistentry> <varlistentry> <term>Del profila</term> <listitem><para>Nek "
+"časovni odsek izvajanja profila z danim ID-jem niti, ID-jem procesa in "
+"ukazno vrstico izvedeno. </para></listitem> </varlistentry> </variablelist> "
+"Kot je razvidno iz seznama, niz stroškovnih entitet pogosto definira drugo "
+"stroškovno entiteto; tako obstaja hierarhija vključitve stroškovnih entitet."
+
+#. Tag: para
+#: index.docbook:505
+#, no-c-format
+msgid ""
+"Positions tuples: <itemizedlist> <listitem><para> Call from instruction "
+"address to target function. </para></listitem> <listitem><para> Call from "
+"source line to target function. </para></listitem> <listitem><para> Call "
+"from source function to target function. </para></listitem> <listitem><para> "
+"(Un)conditional jump from source to target instruction. </para></listitem> "
+"<listitem><para> (Un)conditional jump from source to target line. </para></"
+"listitem> </itemizedlist> Jumps between functions are not allowed, as this "
+"makes no sense in a call graph; thus, constructs like exception handling and "
+"long jumps in C have to be translated to popping the call stack as needed."
+msgstr ""
+"Pozicijske torke: <itemizedlist> <listitem><para> Klic z naslova ukaza na "
+"ciljno funkcijo. </para></listitem> <listitem><para>Klic iz izvorne vrstice "
+"v ciljno funkcijo. </para></listitem> <listitem><para>Klic iz izvorne "
+"funkcije v ciljno funkcijo. </para></listitem> <listitem><para> "
+"(Brez)pogojni skok od izvornega do ciljnega ukaza. </para></listitem> "
+"<listitem><para> (Brez)pogojni skok iz izvorne v ciljno vrstico. </para></"
+"listitem> </itemizedlist> Skoki med funkcijami niso dovoljeni, ker to nima "
+"smisla v grafu klicev; zato je treba konstrukte, kot so obravnavanje izjem "
+"in dolgi skoki v C, po potrebi prevesti v izpiranje klicnega sklada."
+
+#. Tag: title
+#: index.docbook:533
+#, no-c-format
+msgid "Event Types"
+msgstr "Vrste dogodkov"
+
+#. Tag: para
+#: index.docbook:535
+#, no-c-format
+msgid ""
+"Arbitrary event types can be specified in the profile data by giving them a "
+"name. Their cost related to a cost entity is a 64-bit integer."
+msgstr ""
+"Poljubne vrste dogodkov lahko določite v podatkih profila tako, da jim daste "
+"ime. Njihov strošek, povezan s stroškovno entiteto, je 64-bitno celo število."
+
+#. Tag: para
+#: index.docbook:539
+#, no-c-format
+msgid ""
+"Event types whose costs are specified in a profile data file are called real "
+"events. Additionally, one can specify formulas for event types calculated "
+"from real events, which are called inherited events."
+msgstr ""
+"Vrste dogodkov, katerih stroški so določeni v podatkovni datoteki profila, "
+"se imenujejo resnični dogodki. Poleg tega lahko podate formule za vrste "
+"dogodkov, izračunane iz resničnih dogodkov, ki se imenujejo podedovani "
+"dogodki."
+
+#. Tag: title
+#: index.docbook:549
+#, no-c-format
+msgid "Visualization State"
+msgstr "Stanje vizualizacije"
+
+#. Tag: para
+#: index.docbook:551
+#, no-c-format
+msgid ""
+"The visualization state of a &kcachegrind; window includes: <itemizedlist> "
+"<listitem><para> the primary and secondary event type chosen for display, </"
+"para></listitem> <listitem><para> the function grouping (used in the "
+"<guilabel>Function Profile</guilabel> list and entity coloring), </para></"
+"listitem> <listitem><para> the profile parts whose costs are to be included "
+"in visualization, </para></listitem> <listitem><para> an active cost entity "
+"(&eg; a function selected from the function profile sidedock), </para></"
+"listitem> <listitem><para> a selected cost entity. </para></listitem> </"
+"itemizedlist> This state influences the views."
+msgstr ""
+"Stanje vizualizacije &kcachegrind; okno vključuje: <itemizedlist> "
+"<listitem><para> primarni in sekundarni tip dogodka, izbran za prikaz, </"
+"para></listitem> <listitem><para> združevanje funkcij (uporabljeno v "
+"<guilabel>Function Profile</guilabel> seznam in barvanje entitet), </para></"
+"listitem> <listitem><para> deli profila, katerih stroški bodo vključeni v "
+"vizualizacijo, </para></listitem> <listitem><para> aktivni stroškovna "
+"entiteta (&eg; funkcija, izbrana iz stranske plošče profila funkcij), </"
+"para></listitem> <listitem><para> izbrana stroškovna entiteta. </para></"
+"listitem> </itemizedlist> To stanje vpliva na poglede."
+
+#. Tag: para
+#: index.docbook:575
+#, no-c-format
+msgid ""
+"Views are always shown for one cost entity, the active one. When a given "
+"view is inappropriate for a cost entity, it is disabled: when selecting &eg; "
+"an &ELF; object in the group list, source annotation makes no sense."
+msgstr ""
+"Pogledi so vedno prikazani za eno stroškovno entiteto, aktivno. Ko dani "
+"pogled ni primeren za stroškovno entiteto, je onemogočen: pri izbiri &eg; "
+"&ELF; predmet na seznamu skupine, izvorna opomba nima smisla."
+
+#. Tag: para
+#: index.docbook:581
+#, no-c-format
+msgid ""
+"For example, for an active function, the callee list shows all the functions "
+"called from the active one: one can select one of these functions without "
+"making it active. Also, if the call graph is shown beside, it will "
+"automatically select the same function."
+msgstr ""
+"Na primer, za aktivno funkcijo seznam klicanih prikazuje vse funkcije, ki so "
+"bile priklicane iz aktivne funkcije: eno od teh funkcij lahko izberete, ne "
+"da bi jo aktivirali. Če je zraven prikazan graf klicev, bo samodejno izbral "
+"isto funkcijo."
+
+#. Tag: title
+#: index.docbook:591
+#, no-c-format
+msgid "Parts of the &GUI;"
+msgstr "Deli &GUI;"
+
+#. Tag: title
+#: index.docbook:594 index.docbook:678
+#, no-c-format
+msgid "Sidedocks"
+msgstr "Stranski doki"
+
+#. Tag: para
+#: index.docbook:595
+#, no-c-format
+msgid ""
+"Sidedocks are side windows which can be placed at any border of a "
+"&kcachegrind; window. They always contain a list of cost entities sorted in "
+"some way."
+msgstr ""
+"Stranski doki so stranska okna, ki jih je mogoče postaviti na katero koli "
+"obrobo &kcachegrind; okna. Vedno vsebujejo na nek način razvrščen seznam "
+"stroškovnih entitet."
+
+#. Tag: para
+#: index.docbook:599
+#, no-c-format
+msgid ""
+"The <guilabel>Function Profile</guilabel> is a list of functions showing "
+"inclusive and exclusive cost, call count, name and position of functions."
+msgstr ""
+"<guilabel>Profil funkcije</guilabel> je seznam funkcij, ki prikazuje "
+"vključujoče in izključne stroške, število klicev, ime in položaj funkcij."
+
+#. Tag: guilabel
+#: index.docbook:604
+#, no-c-format
+msgid "<guilabel>Parts Overview</guilabel>"
+msgstr "<guilabel>Pregled delov</guilabel>"
+
+#. Tag: guilabel
+#: index.docbook:607
+#, no-c-format
+msgid "<guilabel>Call Stack</guilabel>"
+msgstr "<guilabel>Sklad klicev</guilabel>"
+
+#. Tag: title
+#: index.docbook:614
+#, no-c-format
+msgid "View Area"
+msgstr "Razgledno območje"
+
+#. Tag: para
+#: index.docbook:615
+#, no-c-format
+msgid ""
+"The view area, typically the right part of a &kcachegrind; main window, is "
+"made up of one (default) or more tabs, lined up either horizontally or "
+"vertically. Each tab holds different views of only one cost entity at a "
+"time. The name of this entity is given at the top of the tab. If there are "
+"multiple tabs, only one is active. The entity name in the active tab is "
+"shown in bold, and determines the active cost entity of the &kcachegrind; "
+"window."
+msgstr ""
+"Območje pogleda, običajno desni del &kcachegrind; glavno okno je sestavljeno "
+"iz enega (privzeto) ali več zavihkov, ki so poravnani vodoravno ali "
+"navpično. Vsak zavihek ima različne poglede samo ene stroškovne entitete "
+"naenkrat. Ime te entitete je navedeno na vrhu zavihka. Če je zavihkov več, "
+"je aktiven samo eden. Ime entitete v aktivnem zavihku je prikazano krepko in "
+"določa aktivno stroškovno entiteto datoteke &kcachegrind; oknu."
+
+#. Tag: title
+#: index.docbook:626
+#, no-c-format
+msgid "Areas of a Tab"
+msgstr "Območja zavihka"
+
+#. Tag: para
+#: index.docbook:627
+#, no-c-format
+msgid ""
+"Each tab can hold up to four view areas, namely Top, Right, Left, and "
+"Bottom. Each area can hold multiple stacked views. The visible part of an "
+"area is selected by a tab bar. The tab bars of the top and right area are at "
+"the top; the tab bars of the left and bottom area are at the bottom. You can "
+"specify which kind of view should go into which area by using the tabs' "
+"context menus."
+msgstr ""
+"Vsak zavihek lahko vsebuje do štiri področja pogleda, in sicer zgoraj, "
+"desno, levo in dno. Vsako območje lahko vsebuje več zloženih pogledov. Vidni "
+"del območja je izbran z vrstico z zavihki. Vrstici z zavihki zgornjega in "
+"desnega območja sta na vrhu; vrstici z zavihki levega in spodnjega območja "
+"sta na dnu. S kontekstnimi meniji zavihkov lahko določite, kateri pogled naj "
+"gre v katero področje."
+
+#. Tag: title
+#: index.docbook:637
+#, no-c-format
+msgid "Synchronized View with Selected Entity in a Tab"
+msgstr "Sinhroniziran pogled z izbrano entiteto v zavihku"
+
+#. Tag: para
+#: index.docbook:638
+#, no-c-format
+msgid ""
+"Besides an active entity, each tab has a selected entity. As most view types "
+"show multiple entities with the active one somehow centered, you can change "
+"the selected item by navigating inside a view (by clicking with the mouse or "
+"using the keyboard). Typically, selected items are shown in a highlighted "
+"state. By changing the selected entity in one of the views of a tab, all "
+"other views highlight the new selected entity accordingly."
+msgstr ""
+"Poleg aktivne entitete ima vsak zavihek izbrano entiteto. Ker večina vrst "
+"pogledov prikazuje več entitet, pri čemer je aktivna nekako na sredini, "
+"lahko izbrani element spremenite tako, da se pomaknete znotraj pogleda (s "
+"klikom z miško ali s tipkovnico). Običajno so izbrani elementi prikazani v "
+"označenem stanju. Če spremenite izbrano entiteto v enem od pogledov zavihka, "
+"vsi drugi pogledi ustrezno označijo novo izbrano entiteto."
+
+#. Tag: title
+#: index.docbook:649
+#, no-c-format
+msgid "Synchronization between Tabs"
+msgstr "Sinhronizacija med zavihki"
+
+#. Tag: para
+#: index.docbook:650
+#, no-c-format
+msgid ""
+"If there are multiple tabs, a selection change in one tab leads to an "
+"activation change in the next tab, be it right of the former or under it. "
+"This kind of linkage should, for example, allow for fast browsing in call "
+"graphs."
+msgstr ""
+"Če je zavihkov več, sprememba izbire na enem zavihku povzroči spremembo "
+"aktivacije na naslednjem zavihku, bodisi desno od prejšnjega ali pod njim. "
+"Tovrstna povezava naj bi na primer omogočala hitro brskanje po grafih klicev."
+
+#. Tag: title
+#: index.docbook:658
+#, no-c-format
+msgid "Layouts"
+msgstr "Postavitve"
+
+#. Tag: para
+#: index.docbook:659
+#, no-c-format
+msgid ""
+"The layout of all the tabs of a window can be saved "
+"(<menuchoice><guimenu>View </guimenu><guisubmenu>Layout</guisubmenu></"
+"menuchoice>). After duplicating the current layout "
+"(<menuchoice><shortcut><keycombo action=\"simul\">&Ctrl; <keycap>+</keycap></"
+"keycombo></shortcut> <guimenu>View</guimenu> <guisubmenu>Layout</"
+"guisubmenu><guimenuitem>Duplicate</guimenuitem> </menuchoice>) and changing "
+"some sizes or moving a view to another area of a tab, you can quickly switch "
+"between the old and the new layout via <keycombo action=\"simul\"> &Ctrl;"
+"<keycap>←</keycap></keycombo> and <keycombo action=\"simul\">&Ctrl; "
+"<keycap>→</keycap></keycombo>. The set of layouts will be stored between "
+"&kcachegrind; sessions of the same profiled command. You can make the "
+"current set of layouts the default one for new &kcachegrind; sessions, or "
+"restore the default layout set."
+msgstr ""
+"Postavitev vseh zavihkov v oknu je mogoče shraniti "
+"(<menuchoice><guimenu>Pogled </guimenu><guisubmenu>Postavitev</guisubmenu></"
+"menuchoice>). Po podvajanju trenutne postavitve "
+"(<menuchoice><shortcut><keycombo action=\"simul\">&Ctrl; <keycap>+</keycap></"
+"keycombo></shortcut> <guimenu>Pogled</guimenu> <guisubmenu>Postavitev </"
+"guisubmenu><guimenuitem>Dvojnik</guimenuitem> </menuchoice>) in spreminjanje "
+"nekaterih velikosti ali premikanje pogleda na drugo področje zavihka, lahko "
+"hitro preklapljate med staro in novo postavitvijo prek <keycombo action="
+"\"simul\"> &Ctrl;<keycap>←</keycap></keycombo> in <keycombo action=\"simul"
+"\">&Ctrl; <keycap>→</keycap></keycombo>. Nabor postavitev bo shranjen med "
+"&kcachegrind; seje istega profiliranega ukaza. Trenutni nabor postavitev "
+"lahko nastavite kot privzeto za novi &kcachegrind; seje ali obnovite "
+"privzeti nabor postavitve."
+
+#. Tag: title
+#: index.docbook:681
+#, no-c-format
+msgid "Flat Profile"
+msgstr "Ravni profil"
+
+#. Tag: para
+#: index.docbook:682
+#, no-c-format
+msgid ""
+"The <guilabel>Flat Profile</guilabel> contains a group list and a function "
+"list. The group list contains all groups where cost is spent in, depending "
+"on the chosen group type. The group list is hidden when grouping is switched "
+"off."
+msgstr ""
+"<guilabel>Ravni profil</guilabel> vsebuje seznam skupin in seznam funkcij. "
+"Seznam skupin vsebuje vse skupine, v katerih se porabljajo stroški, odvisno "
+"od izbrane vrste skupine. Seznam skupin je skrit, ko je združevanje "
+"izklopljeno."
+
+#. Tag: para
+#: index.docbook:687
+#, no-c-format
+msgid ""
+"The function list contains the functions of the selected group (or all "
+"functions if grouping is switched off), ordered by some column, &eg; "
+"inclusive or self costs spent therein. There is a maximum number of "
+"functions shown in the list, configurable in <menuchoice><guimenu>Settings</"
+"guimenu><guimenuitem>Configure KCachegrind</guimenuitem></menuchoice>."
+msgstr ""
+"Seznam funkcij vsebuje funkcije izbrane skupine (ali vse funkcije, če je "
+"združevanje izklopljeno), razvrščene po nekem stolpcu, &eg; vključno z "
+"lastnimi stroški. Na seznamu je prikazano največje število funkcij, ki jih "
+"je mogoče konfigurirati v <menuchoice><guimenu>Nastavitve</"
+"guimenu><guimenuitem>Konfiguriraj KCachegrind</guimenuitem></menuchoice>."
+
+#. Tag: title
+#: index.docbook:697
+#, no-c-format
+msgid "<title>Parts Overview</title>"
+msgstr "<title>Pregled delov</title>"
+
+#. Tag: para
+#: index.docbook:698
+#, no-c-format
+msgid ""
+"In a profile run, multiple profile data files can be produced, which can be "
+"loaded together into &kcachegrind;. The <guilabel>Parts Overview</guilabel> "
+"sidedock shows these, ordered horizontally according to creation time; the "
+"rectangle sizes are proportional to the cost spent each part. You can select "
+"one or several parts to constrain the costs shown in the other &kcachegrind; "
+"views to these parts only."
+msgstr ""
+"Pri izvajanju profila je mogoče ustvariti več podatkovnih datotek profila, "
+"ki jih je mogoče skupaj naložiti v &kcachegrind;. Stranski "
+"dok<guilabel>Pregled delov</guilabel> jih prikazuje, razvrščene vodoravno "
+"glede na čas ustvarjanja; velikosti pravokotnika so sorazmerne s stroški, "
+"porabljenimi za vsak del. Izberete lahko enega ali več delov, da omejite "
+"stroške, prikazane v drugem &kcachegrind; pogled samo na te dele."
+
+#. Tag: para
+#: index.docbook:706
+#, no-c-format
+msgid ""
+"The parts are further subdivided between a partitioning and an inclusive "
+"cost split mode:"
+msgstr ""
+"Deli so nadalje razdeljeni na razdelitev in vključujoč način delitve "
+"stroškov:"
+
+#. Tag: guilabel
+#: index.docbook:711
+#, no-c-format
+msgid "Partitioning Mode"
+msgstr "Način particioniranja"
+
+#. Tag: para
+#: index.docbook:712
+#, no-c-format
+msgid ""
+"The partitioning is shown in groups for a profile data part, according to "
+"the group type selected. For example, if &ELF; object groups are selected, "
+"you see colored rectangles for each used &ELF; object (shared library or "
+"executable), sized according to the cost spent therein."
+msgstr ""
+"Razdelitev je prikazana v skupinah za del podatkov profila glede na izbrano "
+"vrsto skupine. Na primer, če &ELF; so izbrane skupine predmetov, vidite "
+"barvne pravokotnike za vsak uporabljen &ELF; predmet (knjižnica v skupni "
+"rabi ali izvršljiva datoteka), velikosti glede na stroške, porabljene v njem."
+
+#. Tag: guilabel
+#: index.docbook:720
+#, no-c-format
+msgid "Diagram Mode"
+msgstr "Način diagrama"
+
+#. Tag: para
+#: index.docbook:721
+#, no-c-format
+msgid ""
+"A rectangle showing the inclusive cost of the current active function in the "
+"part is shown. This, again, is split up to show the inclusive costs of its "
+"callees."
+msgstr ""
+"Prikazan je pravokotnik, ki prikazuje vključujoče stroške trenutne aktivne "
+"funkcije v delu. To je spet razdeljeno, da prikaže vključujoče stroške "
+"klicanih."
+
+#. Tag: title
+#: index.docbook:732
+#, no-c-format
+msgid "<title>Call Stack</title>"
+msgstr "<title>Sklad klicev</title>"
+
+#. Tag: para
+#: index.docbook:733
+#, no-c-format
+msgid ""
+"This is a purely fictional <quote>most probable</quote> call stack. It is "
+"built up by starting with the current active function, and adds the callers "
+"and callees with highest cost at the top and to bottom."
+msgstr ""
+"To je čisto izmišljen <quote>najverjetnejši</quote> sklad klicev. Sestavi se "
+"tako, da se začne s trenutno aktivno funkcijo in doda klicatelje in klicane "
+"z najvišjimi stroški na vrhu in na dnu."
+
+#. Tag: para
+#: index.docbook:738
+#, no-c-format
+msgid ""
+"The <guilabel>Cost</guilabel> and <guilabel>Calls</guilabel> columns show "
+"the cost used for all calls from the function in the line above."
+msgstr ""
+"Stolpca <guilabel>Strošek</guilabel> in <guilabel>Klici</guilabel> "
+"prikazujeta stroške, uporabljene za vse klice funkcije v zgornji vrstici."
+
+#. Tag: title
+#: index.docbook:746
+#, no-c-format
+msgid "Views"
+msgstr "Pogledi"
+
+#. Tag: title
+#: index.docbook:749
+#, no-c-format
+msgid "<title>Event Type</title>"
+msgstr "<title>Vrsta dogodka</title>"
+
+#. Tag: para
+#: index.docbook:750
+#, no-c-format
+msgid ""
+"The <guilabel>Event Type</guilabel> list shows all cost types available and "
+"the corresponding self and inclusive cost of the current active function for "
+"that event type."
+msgstr ""
+"Seznam <guilabel>Vrsta dogodka</guilabel> prikazuje vse razpoložljive vrste "
+"stroškov ter ustrezne lastne in vključujoče stroške trenutne aktivne "
+"funkcije za to vrsto dogodka."
+
+#. Tag: para
+#: index.docbook:755
+#, no-c-format
+msgid ""
+"By choosing an event type from the list, you change the type of costs shown "
+"all over &kcachegrind; to the selected one."
+msgstr ""
+"Če na seznamu izberete vrsto dogodka, spremenite vrsto stroškov, prikazanih "
+"v celotnem &kcachegrind; izbranemu."
+
+#. Tag: title
+#: index.docbook:762
+#, no-c-format
+msgid "Call Lists"
+msgstr "Seznami klicev"
+
+#. Tag: para
+#: index.docbook:763
+#, no-c-format
+msgid ""
+"These lists show calls to and from the current active function. With "
+"<guilabel>All Callers</guilabel> and <guilabel>All Callees</guilabel> are "
+"meant those functions reachable in the caller and callee direction, even "
+"when other functions are in between."
+msgstr ""
+"Ti seznami prikazujejo klice do in iz trenutno aktivne funkcije. Z "
+"<guilabel>Vsi klicatelji</guilabel> in <guilabel>Vsi klicatelji</guilabel> "
+"so mišljene tiste funkcije, ki so dosegljive v smeri klicatelja in "
+"klicanega, tudi če so druge funkcije vmes."
+
+#. Tag: para
+#: index.docbook:770
+#, no-c-format
+msgid "Call list views include:"
+msgstr "Pogledi seznama klicev vključujejo:"
+
+#. Tag: para
+#: index.docbook:773
+#, no-c-format
+msgid "Direct <guilabel>Callers</guilabel>"
+msgstr "Neposredne <guilabel>Klicatelje</guilabel>"
+
+#. Tag: para
+#: index.docbook:774
+#, no-c-format
+msgid "Direct <guilabel>Callees</guilabel>"
+msgstr "Neposredne <guilabel>Klicane</guilabel>"
+
+#. Tag: guilabel
+#: index.docbook:775
+#, no-c-format
+msgid "All Callers"
+msgstr "Vsi klicatelji"
+
+#. Tag: guilabel
+#: index.docbook:776
+#, no-c-format
+msgid "All Callees"
+msgstr "Vsi klicani"
+
+#. Tag: title
+#: index.docbook:782
+#, no-c-format
+msgid "Maps"
+msgstr "Zemljevidi"
+
+#. Tag: para
+#: index.docbook:783
+#, no-c-format
+msgid ""
+"A treemap view of the primary event type, up or down the call hierarchy. "
+"Each colored rectangle represents a function; its size is approximately "
+"proportional to the cost spent therein while the active function is running "
+"(however, there are drawing constrains)."
+msgstr ""
+"Pogled drevesnega zemljevida primarne vrste dogodka, navzgor ali navzdol po "
+"hierarhiji klicev. Vsak barvni pravokotnik predstavlja funkcijo; njegova "
+"velikost je približno sorazmerna s stroški, porabljenimi za to, medtem ko "
+"aktivna funkcija teče (vendar obstajajo omejitve risanja)."
+
+#. Tag: para
+#: index.docbook:789
+#, no-c-format
+msgid ""
+"For the <guilabel>Caller Map</guilabel>, the graph shows the nested "
+"hierarchy of all callers of the currently activated function; for the "
+"<guilabel>Callee Map</guilabel>, it shows that of all callees."
+msgstr ""
+"Za <guilabel>Zemljevid klicateljev</guilabel> graf prikazuje ugnezdeno "
+"hierarhijo vseh klicateljev trenutno aktivirane funkcije; za "
+"<guilabel>Zemljevid klicanih</guilabel> prikazuje podatke vseh klicanih."
+
+#. Tag: para
+#: index.docbook:794
+#, no-c-format
+msgid ""
+"Appearance options can be found in the context menu. To get exact size "
+"proportions, choose <guimenuitem>Skip Incorrect Borders</guimenuitem>. As "
+"this mode can be very time-consuming, you may want to limit the maximum "
+"drawn nesting level before. <guilabel>Best</guilabel> determinates the split "
+"direction for children from the aspect ratio of the parent. <guilabel>Always "
+"Best</guilabel> decides on remaining space for each sibling. "
+"<guilabel>Ignore Proportions</guilabel> takes space for function name "
+"drawing before drawing children. Note that size proportions can get heavily "
+"wrong."
+msgstr ""
+"Možnosti videza najdete v kontekstnem meniju. Če želite dobiti natančna "
+"razmerja velikosti, izberite <guimenuitem>Preskoči nepravilne obrobe</"
+"guimenuitem>. Ker je ta način lahko zelo zamuden, boste morda želeli prej "
+"omejiti največjo narisano raven gnezdenja. <guilabel>Najboljše</guilabel> "
+"določa smer razdelitve za otroke glede na razmerje stranic starša. "
+"<guilabel>Vedno najboljše</guilabel> odloča o preostalem prostoru za vsakega "
+"brata ali sestro. <guilabel>Prezri razmerja</guilabel> zavzame prostor za "
+"risanje imena funkcije pred risanjem podrejenih elementov. Upoštevajte, da "
+"so razmerja velikosti lahko močno napačna."
+
+#. Tag: para
+#: index.docbook:804
+#, no-c-format
+msgid ""
+"Keyboard navigation is available with the left and right arrow keys for "
+"traversing siblings, and up and down arrow keys to go a nesting level up and "
+"down. &Enter; activates the current item."
+msgstr ""
+"Krmarjenje po tipkovnici je na voljo s puščičnimi tipkami levo in desno za "
+"premikanje po bratih in sestrah ter s puščičnima tipkama navzgor in navzdol "
+"za premikanje po ravni gnezdenja navzgor in navzdol. &Enter; aktivira "
+"trenutni element."
+
+#. Tag: title
+#: index.docbook:812
+#, no-c-format
+msgid "Call Graph"
+msgstr "Graf klicev"
+
+#. Tag: para
+#: index.docbook:813
+#, no-c-format
+msgid ""
+"This view shows the call graph around the active function. The cost shown is "
+"only the cost spent while the active function was actually running, &ie; the "
+"cost shown for <function>main()</function> (if it's visible) should be the "
+"same as the cost of the active function, as that is the part of inclusive "
+"cost of <function>main()</function> spent while the active function was "
+"running."
+msgstr ""
+"Ta pogled prikazuje graf klicev okoli aktivne funkcije. Prikazani stroški so "
+"samo stroški, porabljeni med dejanskim izvajanjem aktivne funkcije, &ie; "
+"strošek, prikazan za <function>main()</function> (če je viden), mora biti "
+"enak strošku aktivne funkcije, saj je to del vključujočega stroška "
+"<function>main()</function> porabljen, medtem ko je delovala aktivna "
+"funkcija."
+
+#. Tag: para
+#: index.docbook:820
+#, no-c-format
+msgid ""
+"For cycles, blue call arrows indicate that this is an artificial call, which "
+"never actually happened, added for correct drawing."
+msgstr ""
+"Pri ciklih modre puščice za klic kažejo, da gre za umeten klic, ki se "
+"dejansko nikoli ni zgodil, dodan za pravilno risanje."
+
+#. Tag: para
+#: index.docbook:824
+#, no-c-format
+msgid ""
+"If the graph is larger than the drawing area, a bird's eye view is shown on "
+"a side. There are view options similar to those of the call maps; the "
+"selected function is highlighted."
+msgstr ""
+"Če je graf večji od območja risanja, je ob strani prikazan pogled iz ptičje "
+"perspektive. Obstajajo možnosti pogleda, podobne tistim pri zemljevidih "
+"klicev; izbrana funkcija je označena."
+
+#. Tag: title
+#: index.docbook:832
+#, no-c-format
+msgid "Annotations"
+msgstr "Opombe"
+
+#. Tag: para
+#: index.docbook:833
+#, no-c-format
+msgid ""
+"The annotated source or assembler lists show the source lines or "
+"disassembled instructions of the current active function together with the "
+"(self) cost spent executing the code of a source line or instruction. If "
+"there was a call, lines with details on the call are inserted into the "
+"source: the (inclusive) cost spent inside of the call, the number of calls "
+"happening, and the call destination."
+msgstr ""
+"Označeni izvorni ali zbirniški seznami prikazujejo izvorne vrstice ali "
+"razstavljena navodila trenutne aktivne funkcije skupaj s (samo)stroški, "
+"porabljenimi za izvajanje kode izvorne vrstice ali navodila. Če je prišlo do "
+"klica, se v vir vstavijo vrstice s podrobnostmi o klicu: (vključno) stroški, "
+"porabljeni v klicu, število klicev in cilj klica."
+
+#. Tag: para
+#: index.docbook:841
+#, no-c-format
+msgid "Select such a call information line to activate the call destination."
+msgstr "Izberite takšno vrstico s podatki o klicu, da aktivirate cilj klica."
+
+#. Tag: title
+#: index.docbook:851
+#, no-c-format
+msgid "Command Reference"
+msgstr "Referenca ukazov"
+
+#. Tag: title
+#: index.docbook:854
+#, no-c-format
+msgid "The main &kcachegrind; window"
+msgstr "Glavno &kcachegrind; okno"
+
+#. Tag: title
+#: index.docbook:857
+#, no-c-format
+msgid "The File Menu"
+msgstr "Meni Datoteka"
+
+#. Tag: menuchoice
+#: index.docbook:862
+#, no-c-format
+msgid ""
+"<shortcut> <keycombo>&Ctrl;<keycap>N</keycap></keycombo> </shortcut> "
+"<guimenu>File</guimenu><guimenuitem>New</guimenuitem>"
+msgstr ""
+"<shortcut> <keycombo>&Ctrl;<keycap>N</keycap></keycombo> </shortcut> "
+"<guimenu>Datoteka</guimenu><guimenuitem>Novo</guimenuitem>"
+
+#. Tag: para
+#: index.docbook:868
+#, no-c-format
+msgid ""
+"<action>Opens an empty top-level window</action> in which you can load "
+"profile data. This action is not really necessary, as <menuchoice> "
+"<guimenu>File</guimenu><guimenuitem>Open</guimenuitem></menuchoice> gives "
+"you a new top-level window if the current one already shows some data."
+msgstr ""
+"<action>Odpre prazno okno najvišje ravni</action>, v katerega lahko naložite "
+"podatke profila. To dejanje pravzaprav ni potrebno, saj vam <menuchoice> "
+"<guimenu>Datoteka</guimenu><guimenuitem>Odpri</guimenuitem></menuchoice> "
+"odpre novo okno najvišje ravni, če trenutno že prikazuje nekaj podatkov."
+
+#. Tag: menuchoice
+#: index.docbook:877
+#, no-c-format
+msgid ""
+"<shortcut> <keycombo>&Ctrl;<keycap>O</keycap></keycombo> </shortcut> "
+"<guimenu>File</guimenu><guimenuitem>Open</guimenuitem>"
+msgstr ""
+"<shortcut> <keycombo>&Ctrl;<keycap>O</keycap></keycombo> </shortcut> "
+"<guimenu>Datoteka</guimenu><guimenuitem>Odpri</guimenuitem>"
+
+#. Tag: para
+#: index.docbook:884
+#, no-c-format
+msgid ""
+"<action>Pops up the &kde; file selector</action> to choose a profile data "
+"file to be loaded. If there is some data already shown in the current top-"
+"level window, this will open a new window; if you want to open additional "
+"profile data in the current window, use <menuchoice> <guimenu>File</"
+"guimenu><guimenuitem>Add</guimenuitem></menuchoice>."
+msgstr ""
+"<action>Odpre &kde; izbirnik datotek</action>, da izberete datoteko s "
+"podatki profila, ki jo želite naložiti. Če so nekateri podatki že prikazani "
+"v trenutnem oknu najvišje ravni, se bo odprlo novo okno; če želite odpreti "
+"dodatne podatke o profilu v trenutnem oknu, uporabite <menuchoice> "
+"<guimenu>Datoteka</guimenu><guimenuitem>Dodaj</guimenuitem></menuchoice>."
+
+#. Tag: para
+#: index.docbook:891
+#, no-c-format
+msgid ""
+"The name of profile data files usually ends in <literal role=\"extension\">."
+"<replaceable>pid</replaceable>.<replaceable>part</replaceable>-"
+"<replaceable>threadID</replaceable></literal>, where <replaceable>part</"
+"replaceable> and <replaceable>threadID</replaceable> are optional. "
+"<replaceable>pid</replaceable> and <replaceable>part</replaceable> are used "
+"for multiple profile data files belonging to one application run. By loading "
+"a file ending only in <literal role=\"extension\"><replaceable>pid</"
+"replaceable></literal>, any existing data files for this run with additional "
+"endings are loaded as well."
+msgstr ""
+"Ime podatkovnih datotek profila se običajno konča na <literal role="
+"\"extension\">.<replaceable>pid</replaceable>.<replaceable>part</"
+"replaceable>-<replaceable>threadID</replaceable></literal>, kjer "
+"<replaceable>del</replaceable> in <replaceable>threadID</replaceable> nista "
+"obvezna. <replaceable>pid</replaceable> in <replaceable>part</replaceable> "
+"se uporabljata za več podatkovnih datotek profila, ki pripadajo enemu "
+"izvajanju aplikacije. Z nalaganjem datoteke, ki se konča samo z <literal "
+"role=\"extension\"><replaceable>pid</replaceable></literal>, se naložijo "
+"tudi vse obstoječe podatkovne datoteke za ta zagon z dodatnimi končnicami."
+
+#. Tag: para
+#: index.docbook:899
+#, no-c-format
+msgid ""
+"If there exist profile data files <filename>cachegrind.out.123</filename> "
+"and <filename>cachegrind.out.123.1</filename>, by loading the first, the "
+"second will be automatically loaded too."
+msgstr ""
+"Če obstajata podatkovni datoteki profila <filename>cachegrind.out.123</"
+"filename> in <filename>cachegrind.out.123.1</filename>, se bo z nalaganjem "
+"prve samodejno naložila tudi druga."
+
+#. Tag: menuchoice
+#: index.docbook:907
+#, no-c-format
+msgid "<guimenu>File</guimenu><guimenuitem>Add</guimenuitem>"
+msgstr "<guimenu>Datoteka</guimenu><guimenuitem>Dodaj</guimenuitem>"
+
+#. Tag: para
+#: index.docbook:910
+#, no-c-format
+msgid ""
+"<action>Adds a profile data file</action> to the current window. Using this, "
+"you can force multiple data files to be loaded into the same top-level "
+"window even if they are not from the same run, as given by the profile data "
+"file naming convention. For example, this can be used for side-by-side "
+"comparison."
+msgstr ""
+"<action>Doda podatkovno datoteko profila</action> v trenutno okno. S tem "
+"lahko prisilite, da se več podatkovnih datotek naloži v isto okno najvišje "
+"ravni, tudi če niso iz istega izvajanja, kot določa konvencija o "
+"poimenovanju podatkovnih datotek profila. To lahko na primer uporabite za "
+"vzporedno primerjavo."
+
+#. Tag: menuchoice
+#: index.docbook:920
+#, no-c-format
+msgid ""
+"<shortcut> <keycombo><keycap>F5</keycap></keycombo> </shortcut> "
+"<guimenu>File</guimenu><guimenuitem>Reload</guimenuitem>"
+msgstr ""
+"<shortcut> <keycombo><keycap>F5</keycap></keycombo> </shortcut> "
+"<guimenu>Datoteka</guimenu><guimenuitem>Znova naloži</guimenuitem>"
+
+#. Tag: para
+#: index.docbook:926
+#, no-c-format
+msgid ""
+"<action>Reload the profile data</action>. This is useful when another "
+"profile data file was generated for an already loaded application run."
+msgstr ""
+"<action>Znova naloži podatke profila</action>. To je uporabno, če je bila "
+"ustvarjena druga podatkovna datoteka profila za že naloženo izvajanje "
+"aplikacije."
+
+#. Tag: menuchoice
+#: index.docbook:933
+#, no-c-format
+msgid ""
+"<shortcut> <keycombo>&Ctrl;<keycap>Q</keycap></keycombo> </shortcut> "
+"<guimenu>File</guimenu><guimenuitem>Quit</guimenuitem>"
+msgstr ""
+"<shortcut> <keycombo>&Ctrl;<keycap>Q</keycap></keycombo> </shortcut> "
+"<guimenu>Datoteka</guimenu><guimenuitem>Zapusti</guimenuitem>"
+
+#. Tag: para
+#: index.docbook:939
+#, no-c-format
+msgid "<action>Quits</action> &kcachegrind;"
+msgstr "<action>Zapusti</action> &kcachegrind;"
+
+#. Tag: title
+#: index.docbook:950
+#, no-c-format
+msgid "Questions and Answers"
+msgstr "Vprašanja in odgovori"
+
+#. Tag: para
+#: index.docbook:957
+#, no-c-format
+msgid "What is &kcachegrind; for? I have no idea."
+msgstr "Zakaj je &kcachegrind;? Nimam pojma."
+
+#. Tag: para
+#: index.docbook:962
+#, no-c-format
+msgid ""
+"&kcachegrind; is a helpful at a late stage in software development, called "
+"profiling. If you don't develop applications, you don't need &kcachegrind;."
+msgstr ""
+"&kcachegrind; je v pomoč v pozni fazi razvoja programske opreme, imenovani "
+"profiliranje. Če ne razvijate aplikacij, ne potrebujete &kcachegrind;."
+
+#. Tag: para
+#: index.docbook:971
+#, no-c-format
+msgid ""
+"What is the difference between <guilabel>Incl.</guilabel> and "
+"<guilabel>Self</guilabel>?"
+msgstr ""
+"Kakšna je razlika med <guilabel>Incl.</guilabel> in <guilabel>sam</guilabel>?"
+
+#. Tag: para
+#: index.docbook:977
+#, no-c-format
+msgid ""
+"These are cost attributes for functions regarding some event type. As "
+"functions can call each other, it makes sense to distinguish the cost of the "
+"function itself (<quote>Self Cost</quote>) and the cost including all called "
+"functions (<quote>Inclusive Cost</quote>). <quote>Self</quote> is sometimes "
+"also referred to as <quote>Exclusive</quote> costs."
+msgstr ""
+"To so atributi stroškov za funkcije glede neke vrste dogodka. Ker lahko "
+"funkcije kličejo druga drugo, je smiselno razlikovati med stroški same "
+"funkcije (<quote>Samo stroški</quote>) in stroški, vključno z vsemi "
+"klicanimi funkcijami (<quote>Vključni stroški</quote>). <quote>Samo</quote> "
+"se včasih imenuje tudi <quote>Izključni</quote> stroški."
+
+#. Tag: para
+#: index.docbook:983
+#, no-c-format
+msgid ""
+"So, for example, for <function>main()</function>, you will always have an "
+"inclusive cost of almost 100%, whereas the self cost is negligible when the "
+"real work is done in another function."
+msgstr ""
+"Tako boste na primer za <function>main()</function> vedno imeli vključujoče "
+"stroške skoraj 100 %, medtem ko so lastni stroški zanemarljivi, ko je "
+"dejansko delo opravljeno v drugi funkciji."
+
+#. Tag: para
+#: index.docbook:993
+#, no-c-format
+msgid ""
+"If I double-click on a function down in the <guilabel>Call Graph</guilabel> "
+"view, it shows for function <function>main()</function> the same cost as the "
+"selected function. Isn't this supposed to be constant at 100%?"
+msgstr ""
+"Če dvakrat kliknem na funkcijo spodaj v pogledu <guilabel>Grafa klicev</"
+"guilabel>, prikaže za funkcijo <function>main()</function> enako ceno kot "
+"izbrana funkcija. Ali ne bi to moralo biti konstantno pri 100%?"
+
+#. Tag: para
+#: index.docbook:1000
+#, no-c-format
+msgid ""
+"You have activated a function below <function>main()</function>, which "
+"obviously costs less than <function>main()</function> itself. For every "
+"function, it is shown only the part of the cost spent while the "
+"<emphasis>activated</emphasis> function is running; that is, the cost shown "
+"for any function can never be higher than the cost of the activated function."
+msgstr ""
+"Aktivirali ste funkcijo pod <function>main()</function>, ki očitno stane "
+"manj kot sama <function>main()</function>. Za vsako funkcijo je prikazan "
+"samo del stroškov, porabljen med izvajanjem <emphasis>aktivirane</emphasis> "
+"funkcije; to pomeni, da cena, prikazana za katero koli funkcijo, nikoli ne "
+"more biti višja od cene aktivirane funkcije."
+
+#. Tag: glossterm
+#: index.docbook:1018
+#, no-c-format
+msgid "Cost Entity"
+msgstr "Stroškovni subjekt"
+
+#. Tag: para
+#: index.docbook:1019
+#, no-c-format
+msgid ""
+"An abstract item related to source code to which event counts can be "
+"attributed. Dimensions for cost entities are code location (&eg; source "
+"line, function), data location (&eg; accessed data type, data object), "
+"execution location (&eg; thread, process), and tuples or triples of the "
+"aforementioned positions (&eg; calls, object access from statement, evicted "
+"data from cache)."
+msgstr ""
+"Abstraktna postavka, povezana z izvorno kodo, ki ji je mogoče pripisati "
+"dogodek. Dimenzije za stroškovne entitete so lokacija kode (&eg; izvorna "
+"vrstica, funkcija), lokacija podatkov (&eg; tip podatkov, do katerega se "
+"dostopa, podatkovni objekt), lokacija izvajanja (&eg; nit, proces) in "
+"torkeali trojke zgoraj omenjenih pozicij (&eg; klici, dostop do objekta iz "
+"izjave, izločeni podatki iz predpomnilnika)."
+
+#. Tag: glossterm
+#: index.docbook:1028
+#, no-c-format
+msgid "Event Costs"
+msgstr "Stroški dogodka"
+
+#. Tag: para
+#: index.docbook:1029
+#, no-c-format
+msgid ""
+"Sum of events of some event type occurring while the execution is related to "
+"some cost entity. The cost is attributed to the entity."
+msgstr ""
+"Vsota dogodkov neke vrste dogodka, ki se zgodijo, medtem ko je izvedba "
+"povezana z neko stroškovno entiteto. Stroški se pripišejo subjektu."
+
+#. Tag: glossterm
+#: index.docbook:1035
+#, no-c-format
+msgid "<glossterm>Event Type</glossterm>"
+msgstr "<glossterm>Vrsta dogodka</glossterm>"
+
+#. Tag: para
+#: index.docbook:1036
+#, no-c-format
+msgid ""
+"The kind of event of which costs can be attributed to a cost entity. There "
+"are real event types and inherited event types."
+msgstr ""
+"Vrsta dogodka, katerega stroške je mogoče pripisati stroškovni entiteti. "
+"Obstajajo pravi tipi dogodkov in podedovani tipi dogodkov."
+
+#. Tag: glossterm
+#: index.docbook:1041
+#, no-c-format
+msgid "Inherited Event Type"
+msgstr "Podedovani tip dogodka"
+
+#. Tag: para
+#: index.docbook:1042
+#, no-c-format
+msgid ""
+"A virtual event type only visible in the view, defined by a formula to be "
+"calculated from real event types."
+msgstr ""
+"Tip navideznega dogodka, viden le v pogledu, definiran s formulo, ki se "
+"izračuna iz dejanskih vrst dogodkov."
+
+#. Tag: glossterm
+#: index.docbook:1047
+#, no-c-format
+msgid "Profile Data File"
+msgstr "Podatkovna datoteka profila"
+
+#. Tag: para
+#: index.docbook:1048
+#, no-c-format
+msgid ""
+"A file containing data measured in a profile experiment, or part of one, or "
+"produced by post-processing a trace. Its size is typically linear with the "
+"code size of the program."
+msgstr ""
+"Datoteka, ki vsebuje podatke, izmerjene v eksperimentu s profilom, ali "
+"njegov del, ali pridobljene z naknadno obdelavo sledi. Njegova velikost je "
+"običajno linearna z velikostjo kode programa."
+
+#. Tag: glossterm
+#: index.docbook:1054
+#, no-c-format
+msgid "Profile Data Part"
+msgstr "Podatkovni del profila"
+
+#. Tag: para
+#: index.docbook:1055
+#, no-c-format
+msgid "Data from a profile data file."
+msgstr "Podatki iz podatkovne datoteke profila."
+
+#. Tag: glossterm
+#: index.docbook:1059
+#, no-c-format
+msgid "Profile Experiment"
+msgstr "Preizkus profila"
+
+#. Tag: para
+#: index.docbook:1060
+#, no-c-format
+msgid ""
+"A program run supervised by a profiling tool, producing possibly multiple "
+"profile data files from parts or threads of the run."
+msgstr ""
+"Zagon programa, ki ga nadzoruje orodje za profiliranje, ki po možnosti "
+"ustvari več podatkovnih datotek profila iz delov ali niti zagona."
+
+#. Tag: glossterm
+#: index.docbook:1065
+#, no-c-format
+msgid "Profile Project"
+msgstr "Profilni projekt"
+
+#. Tag: para
+#: index.docbook:1066
+#, no-c-format
+msgid ""
+"A configuration for profile experiments used for one program to profile, "
+"perhaps in multiple versions. Comparisons of profile data typically only "
+"makes sense between profile data produced in experiments of one profile "
+"project."
+msgstr ""
+"Konfiguracija za poskuse profilov, ki se uporablja za profiliranje enega "
+"programa, morda v več različicah. Primerjave podatkov o profilih so običajno "
+"smiselne le med podatki o profilih, proizvedenimi v poskusih enega projekta "
+"profila."
+
+#. Tag: glossterm
+#: index.docbook:1073
+#, no-c-format
+msgid "<glossterm>Profiling</glossterm>"
+msgstr "<glossterm>Profiliranje</glossterm>"
+
+#. Tag: para
+#: index.docbook:1074
+#, no-c-format
+msgid ""
+"The process of collecting statistical information about runtime "
+"characteristics of program runs."
+msgstr ""
+"Postopek zbiranja statističnih informacij o značilnostih izvajalnega časa "
+"izvajanja programa."
+
+#. Tag: glossterm
+#: index.docbook:1079
+#, no-c-format
+msgid "Real Event Type"
+msgstr "Vrsta resničnega dogodka"
+
+#. Tag: para
+#: index.docbook:1080
+#, no-c-format
+msgid ""
+"An event type that can be measured by a tool. This requires the existence of "
+"a sensor for the given event type."
+msgstr ""
+"Vrsta dogodka, ki ga je mogoče izmeriti z orodjem. To zahteva obstoj "
+"senzorja za dano vrsto dogodka."
+
+#. Tag: glossterm
+#: index.docbook:1085
+#, no-c-format
+msgid "Trace"
+msgstr "Sled"
+
+#. Tag: para
+#: index.docbook:1086
+#, no-c-format
+msgid ""
+"A sequence of timestamped events that occurred while tracing a program run. "
+"Its size is typically linear with the execution time of the program run."
+msgstr ""
+"Zaporedje dogodkov s časovnim žigom, ki so se zgodili med sledenjem "
+"izvajanju programa. Njegova velikost je običajno linearna glede na čas "
+"izvajanja programa."
+
+#. Tag: glossterm
+#: index.docbook:1092
+#, no-c-format
+msgid "Trace Part"
+msgstr "Del sledi"
+
+#. Tag: glossterm
+#: index.docbook:1097
+#, no-c-format
+msgid "Tracing"
+msgstr "Sledenje"
+
+#. Tag: para
+#: index.docbook:1098
+#, no-c-format
+msgid ""
+"The process of supervising a program run and storing its events, sorted by a "
+"timestamp, in an output file, the trace."
+msgstr ""
+"Postopek nadzora izvajanja programa in shranjevanja njegovih dogodkov, "
+"razvrščenih po časovnem žigu, v izhodno datoteko, sled."
+
+#. Tag: title
+#: index.docbook:1106
+#, no-c-format
+msgid "Credits and License"
+msgstr "Zasluge in licenca"
+
+#. Tag: para
+#: index.docbook:1108
+#, no-c-format
+msgid ""
+"Thanks to Julian Seward for his excellent &valgrind;, and Nicholas "
+"Nethercote for the &cachegrind; addition. Without these programs, "
+"&kcachegrind; would not exist. Some ideas for this &GUI; were from them, too."
+msgstr ""
+"Hvala Julianu Sewardu za njegov odličen &valgrind; in Nicholasu Nethercoteju "
+"za &cachegrind; dodatek. Brez teh programov &kcachegrind; ne bi obstajal. "
+"Nekaj idej za ta &GUI; so bili tudi od njih."
+
+#. Tag: para
+#: index.docbook:1113
+#, no-c-format
+msgid "Thanks for all the bug reports and suggestions from different users."
+msgstr "Hvala za vsa poročila o napakah in predloge različnih uporabnikov."
+
+#. Tag: trans_comment
+#: index.docbook:1117
+#, no-c-format
+msgid "CREDIT_FOR_TRANSLATORS"
+msgstr "<para>Prevod: Matjaž Jeran<email>matjaz.jeran@amis.net</email></para>"
+
+#. Tag: chapter
+#: index.docbook:1117
+#, no-c-format
+msgid "&underFDL;"
+msgstr "&underFDL;"

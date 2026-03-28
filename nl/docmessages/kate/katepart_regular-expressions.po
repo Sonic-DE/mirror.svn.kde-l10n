@@ -1,0 +1,2634 @@
+# Copyright (C) 2010 Free Software Foundation, Inc.
+#
+# Freek de Kruijf <freekdekruijf@kde.nl>, 2010, 2011, 2013, 2016, 2019, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: kate_regular-expressions\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 12:04+0000\n"
+"PO-Revision-Date: 2020-10-03 00:18+0200\n"
+"Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
+"Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 20.08.1\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#. Tag: author
+#: regular-expressions.docbook:4
+#, no-c-format
+msgid "&Anders.Lund; &Anders.Lund.mail;"
+msgstr "&Anders.Lund; &Anders.Lund.mail;"
+
+#. Tag: trans_comment
+#: regular-expressions.docbook:5
+#, no-c-format
+msgid "ROLES_OF_TRANSLATORS"
+msgstr "&Otto.Bruggeman;&Freek.de.Kruijf;"
+
+#. Tag: title
+#: regular-expressions.docbook:9
+#, no-c-format
+msgid "Regular Expressions"
+msgstr "Reguliere expressies"
+
+#. Tag: synopsis
+#: regular-expressions.docbook:11
+#, no-c-format
+msgid ""
+"This Appendix contains a brief but hopefully sufficient and\n"
+"covering introduction to the world of <emphasis>regular\n"
+"expressions</emphasis>. It documents regular expressions in the form\n"
+"available within &kappname;, which is not compatible with the regular\n"
+"expressions of perl, nor with those of for example\n"
+"<command>grep</command>."
+msgstr ""
+"Deze Appendix bevat een beknopte maar hopelijk voldoende en\n"
+"dekkende introductie tot de wereld van <emphasis>reguliere\n"
+"expressies</emphasis>. Het documenteert reguliere expressies in de vorm\n"
+"beschikbaar in &kappname;, wat niet compatibel is met de reguliere\n"
+"expressies van perl, noch met die van bijvoorbeeld\n"
+"<command>grep</command>."
+
+#. Tag: title
+#: regular-expressions.docbook:15
+#, no-c-format
+msgid "Introduction"
+msgstr "Inleiding"
+
+#. Tag: para
+#: regular-expressions.docbook:17
+#, no-c-format
+msgid ""
+"<emphasis>Regular Expressions</emphasis> provides us with a way to describe "
+"some possible contents of a text string in a way understood by a small piece "
+"of software, so that it can investigate if a text matches, and also in the "
+"case of advanced applications with the means of saving pieces or the "
+"matching text."
+msgstr ""
+"<emphasis>Reguliere expressies</emphasis> bieden ons een manier om mogelijke "
+"inhoud van een tekenreeks te beschrijven zodat deze verstaan wordt door een "
+"klein stukje software, waarmee het kan nagaan of een tekst overeenkomt en "
+"ook in het geval van geavanceerde toepassingen met de middelen om stukjes "
+"overeenkomende tekst op te slaan."
+
+#. Tag: para
+#: regular-expressions.docbook:23
+#, no-c-format
+msgid ""
+"An example: Say you want to search a text for paragraphs that starts with "
+"either of the names <quote>Henrik</quote> or <quote>Pernille</quote> "
+"followed by some form of the verb <quote>say</quote>."
+msgstr ""
+"Een voorbeeld: Zeg dat u naar een tekst in paragrafen wilt zoeken die begint "
+"met ofwel de namen <quote>Hendrik</quote> of <quote>Piet</quote> gevolgd "
+"door een werkwoordsvorm <quote>zegt</quote>."
+
+#. Tag: para
+#: regular-expressions.docbook:28
+#, no-c-format
+msgid ""
+"With a normal search, you would start out searching for the first name, "
+"<quote>Henrik</quote> maybe followed by <quote>sa</quote> like this: "
+"<userinput>Henrik sa</userinput>, and while looking for matches, you would "
+"have to discard those not being the beginning of a paragraph, as well as "
+"those in which the word starting with the letters <quote>sa</quote> was not "
+"either <quote>says</quote>, <quote>said</quote> or so. And then of course "
+"repeat all of that with the next name..."
+msgstr ""
+"Met een normale zoekopdracht, zou u beginnen met te zoeken naar de eerste "
+"naam, <quote>Hendrik</quote> misschien gevolgd door <quote>ze</quote> zoals "
+"dit: <userinput>Hendrik ze</userinput> en, terwijl u zoekt naar "
+"overeenkomsten, moet u diegene negeren die niet het begin van een paragraaf "
+"zijn, evenals die waarin het woord beginnend met de letters <quote>ze</"
+"quote> niet ofwel <quote>zegt</quote>, <quote>zei</quote> of zoiets is. En "
+"dan natuurlijk dat alles herhalen met de volgende naam..."
+
+#. Tag: para
+#: regular-expressions.docbook:37
+#, no-c-format
+msgid ""
+"With Regular Expressions, that task could be accomplished with a single "
+"search, and with a larger degree of preciseness."
+msgstr ""
+"Met reguliere expressies kan die taak worden gedaan met een enkele "
+"zoekopdracht en met een grotere graad van precisie."
+
+#. Tag: para
+#: regular-expressions.docbook:40
+#, no-c-format
+msgid ""
+"To achieve this, Regular Expressions defines rules for expressing in details "
+"a generalization of a string to match. Our example, which we might literally "
+"express like this: <quote>A line starting with either <quote>Henrik</quote> "
+"or <quote>Pernille</quote> (possibly following up to 4 blanks or tab "
+"characters) followed by a whitespace followed by <quote>sa</quote> and then "
+"either <quote>ys</quote> or <quote>id</quote></quote> could be expressed "
+"with the following regular expression:"
+msgstr ""
+"Om dit te bereiken definieert Reguliere Expressies regels voor het "
+"uitdrukken van details op een generaliserende manier van een overeenkomst "
+"met een tekenreeks. Ons voorbeeld, die we letterlijk als volgt uitdrukken: "
+"<quote>Een regel beginnend met ofwel <quote>Hendrik</quote> of <quote>Piet</"
+"quote> (mogelijk gevolgd door tot 4 spaties of een tab) gevolgd door een "
+"witruimte gevolgd door <quote>ze</quote> en dan ofwel <quote>gt</quote> of "
+"<quote>i</quote></quote> kan worden uitgedrukt met de volgende reguliere "
+"expressie:"
+
+#. Tag: userinput
+#: regular-expressions.docbook:47
+#, no-c-format
+msgid "^[ \\t]{0,4}(Henrik|Pernille) sa(ys|id)"
+msgstr "^[ \\t]{0,4}(Hendrik|Piet) ze(gt|i)"
+
+#. Tag: para
+#: regular-expressions.docbook:50
+#, no-c-format
+msgid ""
+"The above example demonstrates all four major concepts of modern Regular "
+"Expressions, namely:"
+msgstr ""
+"Het bovenstaande voorbeeld demonstreert alle vier belangrijkste concepten "
+"van moderne reguliere expressies namelijk:"
+
+#. Tag: para
+#: regular-expressions.docbook:54
+#, no-c-format
+msgid "<para>Patterns</para>"
+msgstr "<para>Patronen</para>"
+
+#. Tag: para
+#: regular-expressions.docbook:55
+#, no-c-format
+msgid "<para>Assertions</para>"
+msgstr "<para>Toekenningen</para>"
+
+#. Tag: para
+#: regular-expressions.docbook:56
+#, no-c-format
+msgid "<para>Quantifiers</para>"
+msgstr "<para>Aantallen</para>"
+
+#. Tag: para
+#: regular-expressions.docbook:57
+#, no-c-format
+msgid "Back references"
+msgstr "Achterwaartse verwijzingen"
+
+#. Tag: para
+#: regular-expressions.docbook:60
+#, no-c-format
+msgid ""
+"The caret (<literal>^</literal>) starting the expression is an assertion, "
+"being true only if the following matching string is at the start of a line."
+msgstr ""
+"Het dakje (<literal>^</literal>) waarmee de uitdrukking begint is een "
+"toekenning, die alleen waar is als de volgende overeenkomende tekenreeks "
+"zich aan het begin van de regel bevindt."
+
+#. Tag: para
+#: regular-expressions.docbook:64
+#, no-c-format
+msgid ""
+"The strings <literal>[ \\t]</literal> and <literal>(Henrik|Pernille) sa(ys|"
+"id)</literal> are patterns. The first one is a <emphasis>character class</"
+"emphasis> that matches either a blank or a (horizontal) tab character; the "
+"other pattern contains first a subpattern matching either <literal>Henrik</"
+"literal> <emphasis>or</emphasis> <literal>Pernille</literal>, then a piece "
+"matching the exact string <literal> sa</literal> and finally a subpattern "
+"matching either <literal>ys</literal> <emphasis>or</emphasis> <literal>id</"
+"literal>"
+msgstr ""
+"De tekenreeksen <literal>[ \\t]</literal> en <literal>(Hendrik|Piet) ze(gt|"
+"i)</literal> zijn patronen. De eerste is een <emphasis>tekenklasse</"
+"emphasis> die ofwel overeenkomt met een spatie of een teken (horizontale) "
+"tab; het andere patroon bevat eerst een subpatroonn overeenkomend met ofwel "
+"<literal>Hendrik</literal> <emphasis>of</emphasis> <literal>Piet</literal>, "
+"daarna iets wat exact overeenkomt met de tekenreeks <literal> ze</literal> "
+"en tenslotte een subpatroon overeenkomend met ofwel <literal>gt</literal> "
+"<emphasis>of</emphasis> <literal>e</literal>"
+
+#. Tag: para
+#: regular-expressions.docbook:74
+#, no-c-format
+msgid ""
+"The string <literal>{0,4}</literal> is a quantifier saying <quote>anywhere "
+"from 0 up to 4 of the previous</quote>."
+msgstr ""
+"De tekenreeks <literal>{0,4}</literal> is een aantal dat aangeeft "
+"<quote>ergens van 0 t/m 4 van de vorige</quote>."
+
+#. Tag: para
+#: regular-expressions.docbook:77
+#, no-c-format
+msgid ""
+"Because regular expression software supporting the concept of <emphasis>back "
+"references</emphasis> saves the entire matching part of the string as well "
+"as sub-patterns enclosed in parentheses, given some means of access to those "
+"references, we could get our hands on either the whole match (when searching "
+"a text document in an editor with a regular expression, that is often marked "
+"as selected) or either the name found, or the last part of the verb."
+msgstr ""
+"Omdat software voor reguliere expressies, die het concept van "
+"<emphasis>achterwaartse verwijzingen</emphasis> ondersteunt, het gehele deel "
+"van de tekenreeks, dat overeenkomt, evenals subpatronen tussen haakjes, "
+"opslaat, geeft dus ook toegang tot die verwijzingen, zodat we onze handen "
+"kunnen leggen op ofwel de gehele overeenkomst (bij het zoeken in een "
+"tekstdocument in een tekstbewerker met een reguliere expressie, die vaak "
+"gemarkeerd is als geselecteerd) of ofwel de gevonden naam of het laatste "
+"deel van de zin."
+
+#. Tag: para
+#: regular-expressions.docbook:85
+#, no-c-format
+msgid ""
+"All together, the expression will match where we wanted it to, and only "
+"there."
+msgstr ""
+"Samenvattend zal de uitdrukking overeenkomen met wat we willen waarmee deze "
+"moet overeenkomen en alleen daarmee."
+
+#. Tag: para
+#: regular-expressions.docbook:88
+#, no-c-format
+msgid ""
+"The following sections will describe in details how to construct and use "
+"patterns, character classes, assertions, quantifiers and back references, "
+"and the final section will give a few useful examples."
+msgstr ""
+"De volgende secties zullen in detail beschrijven hoe patronen, tekenklassen, "
+"toekenningen, aantallen en achterwaartse verwijzingen, te construeren en te "
+"gebruiken en de laatste sectie zal een paar bruikbare voorbeelden geven."
+
+#. Tag: title
+#: regular-expressions.docbook:97
+#, no-c-format
+msgid "<title>Patterns</title>"
+msgstr "<para>Patronen</para>"
+
+#. Tag: para
+#: regular-expressions.docbook:99
+#, no-c-format
+msgid ""
+"Patterns consists of literal strings and character classes. Patterns may "
+"contain sub-patterns, which are patterns enclosed in parentheses."
+msgstr ""
+"Patronen bestaan uit letterlijke tekenreeksen en tekenklassen. Patronen "
+"mogen subpatronen bevatten, die patronen zijn tussen haakjes."
+
+#. Tag: title
+#: regular-expressions.docbook:104
+#, no-c-format
+msgid "Escaping characters"
+msgstr "Escape-tekens"
+
+#. Tag: para
+#: regular-expressions.docbook:106
+#, no-c-format
+msgid ""
+"In patterns as well as in character classes, some characters have a special "
+"meaning. To literally match any of those characters, they must be marked or "
+"<emphasis>escaped</emphasis> to let the regular expression software know "
+"that it should interpret such characters in their literal meaning."
+msgstr ""
+"In patronen evenals in tekenklassen hebben sommige tekens een speciale "
+"betekenis. Om zulke tekens letterlijk overeen te laten komen met deze "
+"tekens, moeten ze zo gemarkeerd worden of <emphasis>escaped</emphasis> om de "
+"software  voor reguliere expressies te laten weten dat het zulke tekens "
+"letterlijk moet interpreteren."
+
+#. Tag: para
+#: regular-expressions.docbook:112
+#, no-c-format
+msgid ""
+"This is done by prepending the character with a backslash (<literal>\\</"
+"literal>)."
+msgstr ""
+"Dit wordt gedaan door het teken vooraf te laten gaan door een backslash "
+"(<literal>\\</literal>)."
+
+#. Tag: para
+#: regular-expressions.docbook:116
+#, no-c-format
+msgid ""
+"The regular expression software will silently ignore escaping a character "
+"that does not have any special meaning in the context, so escaping for "
+"example a <quote>j</quote> (<userinput>\\j</userinput>) is safe. If you are "
+"in doubt whether a character could have a special meaning, you can therefore "
+"escape it safely."
+msgstr ""
+"De software voor reguliere expressies zal stilletjes een teken met een "
+"escape-teken ervoor negeren die geen speciale betekenis heeft in de context, "
+"dus, bijvoorbeeld, een <quote>j</quote> met een escape ervoor (<userinput>"
+"\\j</userinput>) is veilig. Als u er niet zeker van bent of een teken een "
+"speciale betekenis heeft, dan kunt u er veilig een escape-teken voor zetten."
+
+#. Tag: para
+#: regular-expressions.docbook:122
+#, no-c-format
+msgid ""
+"Escaping of course includes the backslash character itself, to literally "
+"match a such, you would write <userinput>\\\\</userinput>."
+msgstr ""
+"Met het escape-teken werken omvat natuurlijk ook het teken backslash zelf, "
+"om letterlijk dat teken weer te geven, moet u schrijven <userinput>\\\\</"
+"userinput>."
+
+#. Tag: title
+#: regular-expressions.docbook:129
+#, no-c-format
+msgid "Character Classes and abbreviations"
+msgstr "Tekenklassen en afkortingen"
+
+#. Tag: para
+#: regular-expressions.docbook:131
+#, no-c-format
+msgid ""
+"A <emphasis>character class</emphasis> is an expression that matches one of "
+"a defined set of characters. In Regular Expressions, character classes are "
+"defined by putting the legal characters for the class in square brackets, "
+"<literal>[]</literal>, or by using one of the abbreviated classes described "
+"below."
+msgstr ""
+"Een <emphasis>tekenklasse</emphasis> is een uitdrukking die overeenkomt met "
+"een gedefinieerde set tekens. In Reguliere Expressies, worden tekenklassen "
+"gedefinieerd door de toegestane tekens voor de klasse tussen rechte haken te "
+"zetten, <literal>[]</literal>, of door een van de hieronder beschreven "
+"afgekorte klassen te gebruiken."
+
+#. Tag: para
+#: regular-expressions.docbook:137
+#, no-c-format
+msgid ""
+"Simple character classes just contains one or more literal characters, for "
+"example <userinput>[abc]</userinput> (matching either of the letters "
+"<quote>a</quote>, <quote>b</quote> or <quote>c</quote>) or "
+"<userinput>[0123456789]</userinput> (matching any digit)."
+msgstr ""
+"Eenvoudige tekenklassen bevatten letterlijk een of meer tekens, bijvoorbeeld "
+"<userinput>[abc]</userinput> (komt overeen met een van de letters <quote>a</"
+"quote>, <quote>b</quote> of <quote>c</quote>) of <userinput>[0123456789]</"
+"userinput> (komt overeen met een cijfer)."
+
+#. Tag: para
+#: regular-expressions.docbook:142
+#, no-c-format
+msgid ""
+"Because letters and digits have a logical order, you can abbreviate those by "
+"specifying ranges of them: <userinput>[a-c]</userinput> is equal to "
+"<userinput>[abc]</userinput> and <userinput>[0-9]</userinput> is equal to "
+"<userinput>[0123456789]</userinput>. Combining these constructs, for example "
+"<userinput>[a-fynot1-38]</userinput> is completely legal (the last one would "
+"match, of course, either of <quote>a</quote>,<quote>b</quote>,<quote>c</"
+"quote>,<quote>d</quote>, <quote>e</quote>,<quote>f</quote>,<quote>y</quote>,"
+"<quote>n</quote>,<quote>o</quote>,<quote>t</quote>, <quote>1</quote>,"
+"<quote>2</quote>,<quote>3</quote> or <quote>8</quote>)."
+msgstr ""
+"Omdat letters en cijfers een logische volgorde hebben, kunt u deze afbreken "
+"door er reeksen van te specificeren: <userinput>[a-c]</userinput> is gelijk "
+"aan <userinput>[abc]</userinput> en <userinput>[0-9]</userinput> is gelijk "
+"aan <userinput>[0123456789]</userinput>. Combineren van deze constructies, "
+"bijvoorbeeld <userinput>[a-fynot1-38]</userinput> is geheel toegestaan (de "
+"laatste zou natuurlijk overeenkomen met ofwel <quote>a</quote>,<quote>b</"
+"quote>,<quote>c</quote>,<quote>d</quote>, <quote>e</quote>,<quote>f</quote>,"
+"<quote>y</quote>,<quote>n</quote>,<quote>o</quote>,<quote>t</quote>,"
+"<quote>1</quote>,<quote>2</quote>,<quote>3</quote> of <quote>8</quote>)."
+
+#. Tag: para
+#: regular-expressions.docbook:154
+#, no-c-format
+msgid ""
+"As capital letters are different characters from their non-capital "
+"equivalents, to create a caseless character class matching <quote>a</quote> "
+"or <quote>b</quote>, in any case, you need to write it <userinput>[aAbB]</"
+"userinput>."
+msgstr ""
+"Omdat hoofdletters andere tekens zijn dan hun kleine letter equivalenten, is "
+"het nodig om overeenkomsten zonder onderscheid van hoofd- en kleine letters "
+"te maken tussen <quote>a</quote> of <quote>b</quote>, moet u het schrijven "
+"als <userinput>[aAbB]</userinput>."
+
+#. Tag: para
+#: regular-expressions.docbook:159
+#, no-c-format
+msgid ""
+"It is of course possible to create a <quote>negative</quote> class matching "
+"as <quote>anything but</quote> To do so put a caret (<literal>^</literal>) "
+"at the beginning of the class:"
+msgstr ""
+"Het is natuurlijk mogelijk om een <quote>negatieve</quote> klasse "
+"overeenkomst te maken zoals <quote>alles behalve</quote>. Er moet dan een "
+"dakje (<literal>^</literal>) aan het begin van de klasse staan:"
+
+#. Tag: para
+#: regular-expressions.docbook:163
+#, no-c-format
+msgid ""
+"<userinput>[^abc]</userinput> will match any character <emphasis>but</"
+"emphasis> <quote>a</quote>, <quote>b</quote> or <quote>c</quote>."
+msgstr ""
+"<userinput>[^abc]</userinput> komt overeen met elk teken <emphasis>behalve</"
+"emphasis> <quote>a</quote>, <quote>b</quote> of <quote>c</quote>."
+
+#. Tag: para
+#: regular-expressions.docbook:167
+#, no-c-format
+msgid ""
+"In addition to literal characters, some abbreviations are defined, making "
+"life still a bit easier:"
+msgstr ""
+"Naast letterlijke tekens, zijn er ook enige afkortingen gedefinieerd, om het "
+"leven een beetje gemakkelijker te maken:"
+
+#. Tag: userinput
+#: regular-expressions.docbook:173
+#, no-c-format
+msgid "<userinput>\\a</userinput>"
+msgstr "<userinput>\\a</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:174
+#, no-c-format
+msgid "This matches the &ASCII; bell character (BEL, 0x07)."
+msgstr "Dit komt overeen met het &ASCII; bel-teken (BEL, 0x07)."
+
+#. Tag: userinput
+#: regular-expressions.docbook:178
+#, no-c-format
+msgid "<userinput>\\f</userinput>"
+msgstr "<userinput>\\f</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:179
+#, no-c-format
+msgid "This matches the &ASCII; form feed character (FF, 0x0C)."
+msgstr "Dit komt overeen met het &ASCII; formfeed-teken (FF, 0x0C)."
+
+#. Tag: userinput
+#: regular-expressions.docbook:183
+#, no-c-format
+msgid "<userinput>\\n</userinput>"
+msgstr "<userinput>\\n</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:184
+#, no-c-format
+msgid "This matches the &ASCII; line feed character (LF, 0x0A, Unix newline)."
+msgstr ""
+"Dit komt overeen met het &ASCII; linefeed-teken (LF, 0x0A, Unix nieuwe-"
+"regel)."
+
+#. Tag: userinput
+#: regular-expressions.docbook:188
+#, no-c-format
+msgid "<userinput>\\r</userinput>"
+msgstr "<userinput>\\r</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:189
+#, no-c-format
+msgid "This matches the &ASCII; carriage return character (CR, 0x0D)."
+msgstr "Dit komt overeen met het &ASCII; carriage-return-teken (CR, 0x0D)."
+
+#. Tag: userinput
+#: regular-expressions.docbook:193
+#, no-c-format
+msgid "<userinput>\\t</userinput>"
+msgstr "<userinput>\\t</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:194
+#, no-c-format
+msgid "This matches the &ASCII; horizontal tab character (HT, 0x09)."
+msgstr "Dit komt overeen met het &ASCII; horizontale tab-teken (HT, 0x09)."
+
+#. Tag: userinput
+#: regular-expressions.docbook:198
+#, no-c-format
+msgid "<userinput>\\v</userinput>"
+msgstr "<userinput>\\v</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:199
+#, no-c-format
+msgid "This matches the &ASCII; vertical tab character (VT, 0x0B)."
+msgstr "Dit komt overeen met het &ASCII; verticale tab-teken (VT, 0x0B)."
+
+#. Tag: userinput
+#: regular-expressions.docbook:202
+#, no-c-format
+msgid "\\xhhhh"
+msgstr "\\xhhhh"
+
+#. Tag: para
+#: regular-expressions.docbook:204
+#, no-c-format
+msgid ""
+"This matches the Unicode character corresponding to the hexadecimal number "
+"hhhh (between 0x0000 and 0xFFFF). \\0ooo (&ie;, \\zero ooo) matches the "
+"&ASCII;/Latin-1 character corresponding to the octal number ooo (between 0 "
+"and 0377)."
+msgstr ""
+"Dit komt overeen met het Unicode-teken overeenkomend met het hexadecimale "
+"getal hhhh (tussen 0x0000 en 0xFFFF). \\0ooo (&ie;, \\zero ooo) komt overeen "
+"met het &ASCII;/Latin-1 teken overeenkomend met het octale getal ooo (tussen "
+"0 en 0377)."
+
+#. Tag: term
+#: regular-expressions.docbook:212
+#, no-c-format
+msgid "<userinput>.</userinput> (dot)"
+msgstr "<userinput>.</userinput> (punt)"
+
+#. Tag: para
+#: regular-expressions.docbook:213
+#, no-c-format
+msgid "This matches any character (including newline)."
+msgstr "Dit komt overeen met elk teken (inclusief nieuwe-regel)."
+
+#. Tag: userinput
+#: regular-expressions.docbook:217
+#, no-c-format
+msgid "<userinput>\\d</userinput>"
+msgstr "<userinput>\\d</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:218
+#, no-c-format
+msgid "This matches a digit. Equal to <literal>[0-9]</literal>"
+msgstr "Dit komt overeen met een cijfer. Gelijk aan <literal>[0-9]</literal>"
+
+#. Tag: userinput
+#: regular-expressions.docbook:222
+#, no-c-format
+msgid "<userinput>\\D</userinput>"
+msgstr "<userinput>\\D</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:223
+#, no-c-format
+msgid ""
+"This matches a non-digit. Equal to <literal>[^0-9]</literal> or <literal>[^"
+"\\d]</literal>"
+msgstr ""
+"Dit komt overeen met een niet-cijfer. Gelijk aan <literal>[^0-9]</literal> "
+"of <literal>[^\\d]</literal>"
+
+#. Tag: userinput
+#: regular-expressions.docbook:227
+#, no-c-format
+msgid "<userinput>\\s</userinput>"
+msgstr "<userinput>\\s</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:228
+#, no-c-format
+msgid ""
+"This matches a whitespace character. Practically equal to <literal>[ \\t\\n"
+"\\r]</literal>"
+msgstr ""
+"Dit komt overeen met een witruimte-teken. Praktisch gelijk aan <literal>[ \\t"
+"\\n\\r]</literal>"
+
+#. Tag: userinput
+#: regular-expressions.docbook:232
+#, no-c-format
+msgid "<userinput>\\S</userinput>"
+msgstr "<userinput>\\S</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:233
+#, no-c-format
+msgid ""
+"This matches a non-whitespace. Practically equal to <literal>[^ \\t\\r\\n]</"
+"literal>, and equal to <literal>[^\\s]</literal>"
+msgstr ""
+"Dit komt overeen met een niet-witruimte-teken. Praktisch gelijk aan "
+"<literal>[^ \\t\\r\\n]</literal> en gelijk aan <literal>[^\\s]</literal>"
+
+#. Tag: userinput
+#: regular-expressions.docbook:237
+#, no-c-format
+msgid "<userinput>\\w</userinput>"
+msgstr "<userinput>\\w</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:238
+#, no-c-format
+msgid ""
+"Matches any <quote>word character</quote> - in this case any letter, digit "
+"or underscore. Equal to <literal>[a-zA-Z0-9_]</literal>"
+msgstr ""
+"Komt overeen met elk <quote>woordteken</quote> - in dit geval elke letter, "
+"elk cijfer of underscore. Gelijk aan <literal>[a-zA-Z0-9_]</literal>"
+
+#. Tag: userinput
+#: regular-expressions.docbook:243
+#, no-c-format
+msgid "<userinput>\\W</userinput>"
+msgstr "<userinput>\\W</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:244
+#, no-c-format
+msgid ""
+"Matches any non-word character - anything but letters, numbers or "
+"underscore. Equal to <literal>[^a-zA-Z0-9_]</literal> or <literal>[^\\w]</"
+"literal>"
+msgstr ""
+"Dit komt overeen met een niet-woord-teken - alles behalve letters, cijfers "
+"of underscore. Gelijk aan <literal>[^a-zA-Z0-9_]</literal> of <literal>[^"
+"\\w]</literal>"
+
+#. Tag: para
+#: regular-expressions.docbook:253
+#, no-c-format
+msgid ""
+"The <emphasis>POSIX notation of classes</emphasis>, <userinput>[:&lt;class "
+"name&gt;:]</userinput> are also supported. For example, <userinput>[:"
+"digit:]</userinput> is equivalent to <userinput>\\d</userinput>, and "
+"<userinput>[:space:]</userinput> to <userinput>\\s</userinput>. See the full "
+"list of POSIX character classes <ulink url=\"https://www.regular-expressions."
+"info/posixbrackets.html\">here</ulink>."
+msgstr ""
+"De <emphasis>POSIX-notatie van klassen</emphasis>, <userinput>[:&lt;class "
+"name&gt;:]</userinput> wordt ook ondersteund. Bijvoorbeeld, <userinput>[:"
+"digit:]</userinput> is equivalent met <userinput>\\d</userinput> en "
+"<userinput>[:space:]</userinput> met <userinput>\\s</userinput>. Zie de "
+"volledige lijst met POSIX-tekenklassen <ulink url=\"https://www.regular-"
+"expressions.info/posixbrackets.html\">hier</ulink>."
+
+#. Tag: para
+#: regular-expressions.docbook:260
+#, no-c-format
+msgid ""
+"The abbreviated classes can be put inside a custom class, for example to "
+"match a word character, a blank or a dot, you could write <userinput>[\\w "
+"\\.]</userinput>"
+msgstr ""
+"De afgekorte klassen kunnen in een zelf gemaakte klasse worden gezet, "
+"bijvoorbeeld om overeen te komen met een woord-teken, een spatie of een "
+"punt, u kunt dan schrijven <userinput>[\\w \\.]</userinput>"
+
+#. Tag: title
+#: regular-expressions.docbook:265
+#, no-c-format
+msgid "Characters with special meanings inside character classes"
+msgstr "Tekens met een speciale betekenis in tekenklassen"
+
+#. Tag: para
+#: regular-expressions.docbook:267
+#, no-c-format
+msgid ""
+"The following characters has a special meaning inside the <quote>[]</quote> "
+"character class construct, and must be escaped to be literally included in a "
+"class:"
+msgstr ""
+"De volgende tekens hebben een speciale betekenis binnen de constructie "
+"<quote>[]</quote> van de tekenklasse en er moet een escape-teken voor om "
+"letterlijk ingevoegd te worden in een klasse:"
+
+#. Tag: userinput
+#: regular-expressions.docbook:273
+#, no-c-format
+msgid "<userinput>]</userinput>"
+msgstr "<userinput>]</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:274
+#, no-c-format
+msgid ""
+"Ends the character class. Must be escaped unless it is the very first "
+"character in the class (may follow an unescaped caret)."
+msgstr ""
+"Beëindigt de tekenklasse. Moet een escape-teken voor tenzij het het "
+"allereerste teken in de klasse is (mag na een dakje zonder escape-teken)."
+
+#. Tag: term
+#: regular-expressions.docbook:278 regular-expressions.docbook:415
+#, no-c-format
+msgid "<userinput>^</userinput> (caret)"
+msgstr "<userinput>^</userinput> (dakje)"
+
+#. Tag: para
+#: regular-expressions.docbook:279
+#, no-c-format
+msgid ""
+"Denotes a negative class, if it is the first character. Must be escaped to "
+"match literally if it is the first character in the class."
+msgstr ""
+"Geeft een negatieve klasse aan als het het eerste teken is. Moet een escape-"
+"teken voor om letterlijk overeen te komen als het het eerste teken in de "
+"klasse is."
+
+#. Tag: term
+#: regular-expressions.docbook:282
+#, no-c-format
+msgid "<userinput>-</userinput> (dash)"
+msgstr "<userinput>-</userinput> (streepje)"
+
+#. Tag: para
+#: regular-expressions.docbook:283
+#, no-c-format
+msgid ""
+"Denotes a logical range. Must always be escaped within a character class."
+msgstr ""
+"Geeft een logische reeks aan. Moet altijd een escape-teken voor binnen een "
+"tekenklasse."
+
+#. Tag: term
+#: regular-expressions.docbook:286 regular-expressions.docbook:410
+#, no-c-format
+msgid "<userinput>\\</userinput> (backslash)"
+msgstr "<userinput>\\</userinput> (backslash)"
+
+#. Tag: para
+#: regular-expressions.docbook:287
+#, no-c-format
+msgid "The escape character. Must always be escaped."
+msgstr "Het escape-teken. Moet altijd een escape-teken voor."
+
+#. Tag: title
+#: regular-expressions.docbook:298
+#, no-c-format
+msgid "Alternatives: matching <quote>one of</quote>"
+msgstr "Alternatieven: overeenkomen met <quote>één van</quote>"
+
+#. Tag: para
+#: regular-expressions.docbook:300
+#, no-c-format
+msgid ""
+"If you want to match one of a set of alternative patterns, you can separate "
+"those with <literal>|</literal> (vertical bar character)."
+msgstr ""
+"Als u met een set van alternatieve patronen overeen wilt komen, dan kunt u "
+"die scheiden door <literal>|</literal> (teken verticale streep)."
+
+#. Tag: para
+#: regular-expressions.docbook:303
+#, no-c-format
+msgid ""
+"For example to find either <quote>John</quote> or <quote>Harry</quote> you "
+"would use an expression <userinput>John|Harry</userinput>."
+msgstr ""
+"Om bijvoorbeeld ofwel <quote>Jan</quote> of <quote>Harry</quote> te zoeken, "
+"zou u een expressie <userinput>Jan|Harry</userinput> moeten gebruiken."
+
+#. Tag: title
+#: regular-expressions.docbook:309
+#, no-c-format
+msgid "Sub Patterns"
+msgstr "Subpatronen"
+
+#. Tag: para
+#: regular-expressions.docbook:311
+#, no-c-format
+msgid ""
+"<emphasis>Sub patterns</emphasis> are patterns enclosed in parentheses, and "
+"they have several uses in the world of regular expressions."
+msgstr ""
+"<emphasis>Subpatronen</emphasis> zijn patronen omgeven door haakjes, ze "
+"kunnen op verschillende manieren in de wereld van de reguliere expressies "
+"worden gebruikt."
+
+#. Tag: title
+#: regular-expressions.docbook:317
+#, no-c-format
+msgid "Specifying alternatives"
+msgstr "Alternatieven specificeren"
+
+#. Tag: para
+#: regular-expressions.docbook:319
+#, no-c-format
+msgid ""
+"You may use a sub pattern to group a set of alternatives within a larger "
+"pattern. The alternatives are separated by the character <quote>|</quote> "
+"(vertical bar)."
+msgstr ""
+"U kunt een subpatroon gebruiken om een set alternatieven in een groter "
+"patroon te groeperen. De alternatieven zijn gescheiden door het teken "
+"<quote>|</quote> (verticale streep)."
+
+#. Tag: para
+#: regular-expressions.docbook:323
+#, no-c-format
+msgid ""
+"For example to match either of the words <quote>int</quote>, <quote>float</"
+"quote> or <quote>double</quote>, you could use the pattern <userinput>int|"
+"float|double</userinput>. If you only want to find one if it is followed by "
+"some whitespace and then some letters, put the alternatives inside a "
+"subpattern: <userinput>(int|float|double)\\s+\\w+</userinput>."
+msgstr ""
+"Om de woorden <quote>int</quote>, <quote>float</quote> of <quote>double</"
+"quote> te laten overeenkomen, kunt u het patroon <userinput>int|float|"
+"double</userinput> gebruiken. Als u het alleen wilt vinden wanneer het "
+"gevolgd wordt door enige witruimte en dan enige letters, stop de "
+"alternatieven dan in een subpatroon: <userinput>(int|float|double)\\s+\\w+</"
+"userinput>."
+
+#. Tag: title
+#: regular-expressions.docbook:334
+#, no-c-format
+msgid "Capturing matching text (back references)"
+msgstr "Overeenkomende tekst vangen (achterwaartse verwijzingen)"
+
+#. Tag: para
+#: regular-expressions.docbook:336
+#, no-c-format
+msgid ""
+"If you want to use a back reference, use a sub pattern <userinput>(PATTERN)</"
+"userinput> to have the desired part of the pattern remembered. To prevent "
+"the sub pattern from being remembered, use a non-capturing group "
+"<userinput>(?:PATTERN)</userinput>."
+msgstr ""
+"Als u een achterwaartse referentie wilt gebruiken, gebruik dan een "
+"subpatroon <userinput>(PATTERN)</userinput> om het gewenste deel van het "
+"patroon te onthouden. Om te verhinderen het subpatroon te onthouden, gebruik "
+"een non-capturing groep <userinput>(?:PATTERN)</userinput>."
+
+#. Tag: para
+#: regular-expressions.docbook:341
+#, no-c-format
+msgid ""
+"For example, if you want to find two occurrences of the same word separated "
+"by a comma and possibly some whitespace, you could write <userinput>(\\w+),"
+"\\s*\\1</userinput>. The sub pattern <literal>\\w+</literal> would find a "
+"chunk of word characters, and the entire expression would match if those "
+"were followed by a comma, 0 or more whitespace and then an equal chunk of "
+"word characters. (The string <literal>\\1</literal> references <emphasis>the "
+"first sub pattern enclosed in parentheses</emphasis>.)"
+msgstr ""
+"U wilt bijvoorbeeld twee exemplaren van hetzelfde woord gescheiden door een "
+"komma en mogelijk enige witruimte, dan kunt u schrijven <userinput>(\\w+),"
+"\\s*\\1</userinput>. Het subpatroon <literal>\\w+</literal> zou een groep "
+"tekens in een woord vinden en de gehele expressie zou overeenkomen als die "
+"gevolgd worden door een komma, 0 of meer witruimtes en dan een gelijke groep "
+"woordtekens. (De tekenreeks <literal>\\1</literal> refereert naar "
+"<emphasis>het eerste subpatroon ingesloten in haakjes</emphasis>)."
+
+#. Tag: para
+#: regular-expressions.docbook:351
+#, no-c-format
+msgid ""
+"To avoid ambiguities with usage of <userinput>\\1</userinput> with some "
+"digits behind it (&eg; <userinput>\\12</userinput> can be 12th subpattern or "
+"just the first subpattern with <userinput>2</userinput>) we use <userinput>"
+"\\{12}</userinput> as syntax for multi-digit subpatterns."
+msgstr ""
+"Om meerduidigheid met het gebruik van <userinput>\\1</userinput> met enige "
+"cijfers erachter (&eg; <userinput>\\12</userinput> kan het 12de subpatroon "
+"zijn of gewoon het eerste subpatroon met <userinput>2</userinput>) we "
+"gebruiken <userinput>\\{12}</userinput> als syntaxis voor subpatronen met "
+"meerdere cijfers."
+
+#. Tag: para
+#: regular-expressions.docbook:352
+#, no-c-format
+msgid "Examples:"
+msgstr "Voorbeelden:"
+
+#. Tag: para
+#: regular-expressions.docbook:354
+#, no-c-format
+msgid "<userinput>\\{12}1</userinput> is <quote>use subpattern 12</quote>"
+msgstr "<userinput>\\{12}1</userinput> is <quote>gebruik subpatroon 12</quote>"
+
+#. Tag: para
+#: regular-expressions.docbook:355
+#, no-c-format
+msgid ""
+"<userinput>\\123</userinput> is <quote>use capture 1 then 23 as the normal "
+"text</quote>"
+msgstr ""
+"<userinput>\\123</userinput> is <quote>gebruik gevangen 1 daarna 23 als de "
+"normale tekst</quote>"
+
+#. Tag: title
+#: regular-expressions.docbook:365
+#, no-c-format
+msgid "Lookahead Assertions"
+msgstr "Vooruitblik-toekenningen"
+
+#. Tag: para
+#: regular-expressions.docbook:367
+#, no-c-format
+msgid ""
+"A lookahead assertion is a sub pattern, starting with either <literal>?=</"
+"literal> or <literal>?!</literal>."
+msgstr ""
+"Een vooruitblik-toekenning is een subpatroon die begint met ofwel <literal>?"
+"=</literal> of <literal>?!</literal>."
+
+#. Tag: para
+#: regular-expressions.docbook:370
+#, no-c-format
+msgid ""
+"For example to match the literal string <quote>Bill</quote> but only if not "
+"followed by <quote> Gates</quote>, you could use this expression: "
+"<userinput>Bill(?! Gates)</userinput>. (This would find <quote>Bill Clinton</"
+"quote> as well as <quote>Billy the kid</quote>, but silently ignore the "
+"other matches.)"
+msgstr ""
+"Om bijvoorbeeld een overeenkomst te vinden met de letterlijke tekenreeks "
+"<quote>Bill</quote> maar alleen als deze niet wordt gevolgd door <quote> "
+"Gates</quote>, dan kunt u deze expressie gebruiken: <userinput>Bill(?! "
+"Gates)</userinput>. (Dit vindt <quote>Bill Clinton</quote> evenals "
+"<quote>Billy the kid</quote>, maar negeert stilletjes de andere "
+"overeenkomsten.)"
+
+#. Tag: para
+#: regular-expressions.docbook:376 regular-expressions.docbook:393
+#, no-c-format
+msgid "Sub patterns used for assertions are not captured."
+msgstr "Subpatronen voor toekenningen worden niet gevangen."
+
+#. Tag: para
+#: regular-expressions.docbook:378
+#, no-c-format
+msgid "See also <link linkend=\"assertions\">Assertions</link>."
+msgstr "Zie ook <link linkend=\"assertions\">Toekenningen</link>."
+
+#. Tag: title
+#: regular-expressions.docbook:383
+#, no-c-format
+msgid "Lookbehind Assertions"
+msgstr "Achteruitblik-toekenningen"
+
+#. Tag: para
+#: regular-expressions.docbook:385
+#, no-c-format
+msgid ""
+"A lookbehind assertion is a sub pattern, starting with either <literal>?&lt;"
+"=</literal> or <literal>?&lt;!</literal>."
+msgstr ""
+"Een achteruitblik-toekenning is een subpatroon dat begint met ofwel "
+"<literal>?&lt;=</literal> of <literal>?&lt;!</literal>."
+
+#. Tag: para
+#: regular-expressions.docbook:388
+#, no-c-format
+msgid ""
+"Lookbehind has the same effect as the lookahead, but works backwards. For "
+"example to match the literal string <quote>fruit</quote> but only if not "
+"preceded by <quote>grape</quote>, you could use this expression: "
+"<userinput>(?&lt;!grape)fruit</userinput>."
+msgstr ""
+"Achteruitblik heeft hetzelfde effect als de vooruitblik, maar werkt "
+"achterwaarts. Om de letterlijke tekenreeks <quote>fruit</quote> overeen te "
+"laten komen maar alleen indien niet vooraf gegaan door <quote>grape</quote>, "
+"dan kunt u deze expressie gebruiken: <userinput>(?&lt;!grape)fruit</"
+"userinput>."
+
+#. Tag: para
+#: regular-expressions.docbook:395
+#, no-c-format
+msgid "See also <link linkend=\"assertions\">Assertions</link>"
+msgstr "Zie ook <link linkend=\"assertions\">Toekenningen</link>"
+
+#. Tag: title
+#: regular-expressions.docbook:402
+#, no-c-format
+msgid "Characters with a special meaning inside patterns"
+msgstr "Tekens met een speciale betekenis in patronen"
+
+#. Tag: para
+#: regular-expressions.docbook:404
+#, no-c-format
+msgid ""
+"The following characters have meaning inside a pattern, and must be escaped "
+"if you want to literally match them:"
+msgstr ""
+"De volgende tekens hebben een speciale betekenis binnen een patroon en er "
+"moet een escape-teken voor om letterlijk met ze overeen te komen:"
+
+#. Tag: para
+#: regular-expressions.docbook:411
+#, no-c-format
+msgid "The escape character."
+msgstr "Het escape-teken."
+
+#. Tag: para
+#: regular-expressions.docbook:416
+#, no-c-format
+msgid "Asserts the beginning of the string."
+msgstr "Kent het begin van de tekenreeks toe."
+
+#. Tag: userinput
+#: regular-expressions.docbook:420
+#, no-c-format
+msgid "<userinput>$</userinput>"
+msgstr "<userinput>$</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:421
+#, no-c-format
+msgid "Asserts the end of string."
+msgstr "Kent het einde van de tekenreeks toe."
+
+#. Tag: term
+#: regular-expressions.docbook:425
+#, no-c-format
+msgid "<userinput>()</userinput> (left and right parentheses)"
+msgstr "<userinput>()</userinput> (linker en rechter haakje)"
+
+#. Tag: para
+#: regular-expressions.docbook:426
+#, no-c-format
+msgid "Denotes sub patterns."
+msgstr "Geeft subpatronen aan."
+
+#. Tag: term
+#: regular-expressions.docbook:430
+#, no-c-format
+msgid "<userinput>{}</userinput> (left and right curly braces)"
+msgstr "<userinput>{}</userinput> (linker en rechter accolade)"
+
+#. Tag: para
+#: regular-expressions.docbook:431
+#, no-c-format
+msgid "Denotes numeric quantifiers."
+msgstr "Geeft numerieke aantallen aan."
+
+#. Tag: term
+#: regular-expressions.docbook:435
+#, no-c-format
+msgid "<userinput>[]</userinput> (left and right square brackets)"
+msgstr "<userinput>[]</userinput> (linker en rechter rechte haakje)"
+
+#. Tag: para
+#: regular-expressions.docbook:436
+#, no-c-format
+msgid "Denotes character classes."
+msgstr "Geeft tekenklassen aan."
+
+#. Tag: term
+#: regular-expressions.docbook:440
+#, no-c-format
+msgid "<userinput>|</userinput> (vertical bar)"
+msgstr "<userinput>|</userinput> (verticale streep)"
+
+#. Tag: para
+#: regular-expressions.docbook:441
+#, no-c-format
+msgid "logical OR. Separates alternatives."
+msgstr "logische OR. Scheidt alternatieven."
+
+#. Tag: term
+#: regular-expressions.docbook:445 regular-expressions.docbook:522
+#, no-c-format
+msgid "<userinput>+</userinput> (plus sign)"
+msgstr "<userinput>+</userinput> (plusteken)"
+
+#. Tag: para
+#: regular-expressions.docbook:446
+#, no-c-format
+msgid "Quantifier, 1 or more."
+msgstr "Aantal, 1 of meer."
+
+#. Tag: term
+#: regular-expressions.docbook:450 regular-expressions.docbook:517
+#, no-c-format
+msgid "<userinput>*</userinput> (asterisk)"
+msgstr "<userinput>*</userinput> (sterretje)"
+
+#. Tag: para
+#: regular-expressions.docbook:451
+#, no-c-format
+msgid "Quantifier, 0 or more."
+msgstr "Aantal, 0 of meer."
+
+#. Tag: term
+#: regular-expressions.docbook:455 regular-expressions.docbook:527
+#, no-c-format
+msgid "<userinput>?</userinput> (question mark)"
+msgstr "<userinput>?</userinput> (vraagteken)"
+
+#. Tag: para
+#: regular-expressions.docbook:456
+#, no-c-format
+msgid "An optional character. Can be interpreted as a quantifier, 0 or 1."
+msgstr ""
+"Een optioneel teken. Kan geïnterpreteerd worden als een aantal, 0 of 1."
+
+#. Tag: title
+#: regular-expressions.docbook:468
+#, no-c-format
+msgid "<title>Quantifiers</title>"
+msgstr "<title>Aantallen</title>"
+
+#. Tag: para
+#: regular-expressions.docbook:470
+#, no-c-format
+msgid ""
+"<emphasis>Quantifiers</emphasis> allows a regular expression to match a "
+"specified number or range of numbers of either a character, character class "
+"or sub pattern."
+msgstr ""
+"<emphasis>Aantallen</emphasis> biedt een reguliere expressie de mogelijkheid "
+"om een gespecificeerd aantal of reeks aantallen van ofwel een teken, "
+"tekenklasse of subpatroon."
+
+#. Tag: para
+#: regular-expressions.docbook:474
+#, no-c-format
+msgid ""
+"Quantifiers are enclosed in curly brackets (<literal>{</literal> and "
+"<literal>}</literal>) and have the general form <literal>{[minimum-"
+"occurrences][,[maximum-occurrences]]}</literal>"
+msgstr ""
+"Aantallen worden omgeven door accolades (<literal>{</literal> en <literal>}</"
+"literal>) en hebben de algemene vorm <literal>{[minimum-aantal][,[maximum-"
+"aantal]]}</literal>"
+
+#. Tag: para
+#: regular-expressions.docbook:479
+#, no-c-format
+msgid "The usage is best explained by example:"
+msgstr "Het gebruik wordt het beste uitgelegd door een voorbeeld:"
+
+#. Tag: userinput
+#: regular-expressions.docbook:484
+#, no-c-format
+msgid "<userinput>{1}</userinput>"
+msgstr "<userinput>{1}</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:485
+#, no-c-format
+msgid "Exactly 1 occurrence"
+msgstr "Exact 1 keer"
+
+#. Tag: userinput
+#: regular-expressions.docbook:489
+#, no-c-format
+msgid "{0,1}"
+msgstr "{0,1}"
+
+#. Tag: para
+#: regular-expressions.docbook:490
+#, no-c-format
+msgid "Zero or 1 occurrences"
+msgstr "Nul of 1 keer"
+
+#. Tag: userinput
+#: regular-expressions.docbook:494
+#, no-c-format
+msgid "{,1}"
+msgstr "{,1}"
+
+#. Tag: para
+#: regular-expressions.docbook:495
+#, no-c-format
+msgid "The same, with less work;)"
+msgstr "Hetzelfde, met minder werk;)"
+
+#. Tag: userinput
+#: regular-expressions.docbook:499
+#, no-c-format
+msgid "{5,10}"
+msgstr "{5,10}"
+
+#. Tag: para
+#: regular-expressions.docbook:500
+#, no-c-format
+msgid "At least 5 but maximum 10 occurrences."
+msgstr "Minstens 5 maar maximaal 10 keer."
+
+#. Tag: userinput
+#: regular-expressions.docbook:504
+#, no-c-format
+msgid "{5,}"
+msgstr "{5,}"
+
+#. Tag: para
+#: regular-expressions.docbook:505
+#, no-c-format
+msgid "At least 5 occurrences, no maximum."
+msgstr "Minstens 5 keer, geen maximum."
+
+#. Tag: para
+#: regular-expressions.docbook:512
+#, no-c-format
+msgid "Additionally, there are some abbreviations:"
+msgstr "Verder zijn er enkele afkortingen:"
+
+#. Tag: para
+#: regular-expressions.docbook:518
+#, no-c-format
+msgid "similar to <literal>{0,}</literal>, find any number of occurrences."
+msgstr "gelijk aan <literal>{0,}</literal>, elk aantal keren."
+
+#. Tag: para
+#: regular-expressions.docbook:523
+#, no-c-format
+msgid "similar to <literal>{1,}</literal>, at least 1 occurrence."
+msgstr "gelijk aan <literal>{1,}</literal>, minstens 1 keer."
+
+#. Tag: para
+#: regular-expressions.docbook:528
+#, no-c-format
+msgid "similar to <literal>{0,1}</literal>, zero or 1 occurrence."
+msgstr "gelijk aan <literal>{0,1}</literal>, nul of 1 keer."
+
+#. Tag: title
+#: regular-expressions.docbook:537
+#, no-c-format
+msgid "Greed"
+msgstr "Happig"
+
+#. Tag: para
+#: regular-expressions.docbook:539
+#, no-c-format
+msgid ""
+"When using quantifiers with no maximum, regular expressions defaults to "
+"match as much of the searched string as possible, commonly known as "
+"<emphasis>greedy</emphasis> behavior."
+msgstr ""
+"Bij het gebruik van aantallen zonder maximum, is de standaard bij reguliere "
+"expressies om overeen te komen met zo veel als mogelijk van de gezochte "
+"tekenreeks, algemeen bekend staand als <emphasis>happig</emphasis> gedrag."
+
+#. Tag: para
+#: regular-expressions.docbook:543
+#, no-c-format
+msgid ""
+"Modern regular expression software provides the means of <quote>turning off "
+"greediness</quote>, though in a graphical environment it is up to the "
+"interface to provide you with access to this feature. For example a search "
+"dialog providing a regular expression search could have a check box labeled "
+"<quote>Minimal matching</quote> as well as it ought to indicate if "
+"greediness is the default behavior."
+msgstr ""
+"Moderne software voor reguliere expressies levert de middelen om "
+"<quote>happigheid uit te zetten</quote>, hoewel in een grafische omgeving "
+"het aan het interface is om toegang tot deze functie te leveren. Een "
+"zoekdialoog bijvoorbeeld, die een reguliere expressie biedt bij het zoeken, "
+"kan een keuzevakje hebben met het label <quote>Minimale overeenkomst</quote> "
+"evenals het zou moeten aangeven of happigheid het standaard gedrag."
+
+#. Tag: title
+#: regular-expressions.docbook:554
+#, no-c-format
+msgid "In context examples"
+msgstr "In voorbeelden van context"
+
+#. Tag: para
+#: regular-expressions.docbook:556
+#, no-c-format
+msgid "Here are a few examples of using quantifiers:"
+msgstr "Hier zijn een paar voorbeelden van het gebruik van aantallen:"
+
+#. Tag: userinput
+#: regular-expressions.docbook:561
+#, no-c-format
+msgid "^\\d{4,5}\\s"
+msgstr "^\\d{4,5}\\s"
+
+#. Tag: para
+#: regular-expressions.docbook:562
+#, no-c-format
+msgid ""
+"Matches the digits in <quote>1234 go</quote> and <quote>12345 now</quote>, "
+"but neither in <quote>567 eleven</quote> nor in <quote>223459 somewhere</"
+"quote>."
+msgstr ""
+"Komt overeen met de cijfers in <quote>1234 ga</quote> en <quote>12345 nu</"
+"quote>, maar niet in <quote>567 elf</quote> of in <quote>223459 ergens</"
+"quote>."
+
+#. Tag: userinput
+#: regular-expressions.docbook:567
+#, no-c-format
+msgid "<userinput>\\s+</userinput>"
+msgstr "<userinput>\\s+</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:568
+#, no-c-format
+msgid "Matches one or more whitespace characters."
+msgstr "Komt overeen met één of meer witruimte tekens."
+
+#. Tag: userinput
+#: regular-expressions.docbook:572
+#, no-c-format
+msgid "(bla){1,}"
+msgstr "(bla){1,}"
+
+#. Tag: para
+#: regular-expressions.docbook:573
+#, no-c-format
+msgid ""
+"Matches all of <quote>blablabla</quote> and the <quote>bla</quote> in "
+"<quote>blackbird</quote> or <quote>tabla</quote>."
+msgstr ""
+"Komt overeen met alles van <quote>blablabla</quote> en de <quote>bla</quote> "
+"in <quote>blackbird</quote> of <quote>tabla</quote>."
+
+#. Tag: userinput
+#: regular-expressions.docbook:577
+#, no-c-format
+msgid "/?&gt;"
+msgstr "/?&gt;"
+
+#. Tag: para
+#: regular-expressions.docbook:578
+#, no-c-format
+msgid ""
+"Matches <quote>/&gt;</quote> in <quote>&lt;closeditem/&gt;</quote> as well "
+"as <quote>&gt;</quote> in <quote>&lt;openitem&gt;</quote>."
+msgstr ""
+"Komt overeen met <quote>/&gt;</quote> in <quote>&lt;closeditem/&gt;</quote> "
+"evenals <quote>&gt;</quote> in <quote>&lt;openitem&gt;</quote>."
+
+#. Tag: title
+#: regular-expressions.docbook:589
+#, no-c-format
+msgid "<title>Assertions</title>"
+msgstr "<title>Toekenningen</title>"
+
+#. Tag: para
+#: regular-expressions.docbook:591
+#, no-c-format
+msgid ""
+"<emphasis>Assertions</emphasis> allows a regular expression to match only "
+"under certain controlled conditions."
+msgstr ""
+"<emphasis>Toekenningen</emphasis> bieden de mogelijkheid om een reguliere "
+"expressie alleen te laten overeenkomen onder bepaalde gecontroleerde "
+"condities."
+
+#. Tag: para
+#: regular-expressions.docbook:594
+#, no-c-format
+msgid ""
+"An assertion does not need a character to match, it rather investigates the "
+"surroundings of a possible match before acknowledging it. For example the "
+"<emphasis>word boundary</emphasis> assertion does not try to find a non word "
+"character opposite a word one at its position, instead it makes sure that "
+"there is not a word character. This means that the assertion can match where "
+"there is no character, &ie; at the ends of a searched string."
+msgstr ""
+"Een toekenning heeft geen teken nodig om mee overeen te komen, in plaats "
+"daarvan onderzoekt het de omgeving voor een mogelijke overeenkomst alvorens "
+"deze toe te kennen. Bijvoorbeeld de <emphasis>woordgrens</emphasis> "
+"toekenning probeert geen niet-woord-teken ten opzichte van een woordteken op "
+"zijn positie te vinden, in plaats daarvan moet er geen woordteken zijn. Dit "
+"betekent dat de toekenning overeen kan komen met iets waar geen teken is, "
+"&ie; aan het eind van een te zoeken tekenreeks."
+
+#. Tag: para
+#: regular-expressions.docbook:602
+#, no-c-format
+msgid ""
+"Some assertions actually do have a pattern to match, but the part of the "
+"string matching that will not be a part of the result of the match of the "
+"full expression."
+msgstr ""
+"Sommige toekenningen hebben in werkelijkheid een patroon waarmee overeen "
+"gekomen moet worden, maar het deel van de overeenkomst met de tekenreeks "
+"behoort niet bij een deel van het resultaat van overeenkomst met de "
+"volledige expressie."
+
+#. Tag: para
+#: regular-expressions.docbook:606
+#, no-c-format
+msgid ""
+"Regular Expressions as documented here supports the following assertions:"
+msgstr ""
+"Reguliere expressies zoals hier gedocumenteerd ondersteunt de volgende "
+"toekenningen:"
+
+#. Tag: term
+#: regular-expressions.docbook:612
+#, no-c-format
+msgid "<userinput>^</userinput> (caret: beginning of string)"
+msgstr "<userinput>^</userinput> (dakje: begin van de tekenreeks)"
+
+#. Tag: para
+#: regular-expressions.docbook:614
+#, no-c-format
+msgid "Matches the beginning of the searched string."
+msgstr "Komt overeen met het begin van de tekenreeks."
+
+#. Tag: para
+#: regular-expressions.docbook:615
+#, no-c-format
+msgid ""
+"The expression <userinput>^Peter</userinput> will match at <quote>Peter</"
+"quote> in the string <quote>Peter, hey!</quote> but not in <quote>Hey, Peter!"
+"</quote>"
+msgstr ""
+"De expressie <userinput>^Peter</userinput> komt overeen met <quote>Peter</"
+"quote> in de tekenreeks <quote>Peter, hey!</quote> maar niet in <quote>Hey, "
+"Peter!</quote>"
+
+#. Tag: term
+#: regular-expressions.docbook:621
+#, no-c-format
+msgid "<userinput>$</userinput> (end of string)"
+msgstr "<userinput>$</userinput> (eind van de tekenreeks)"
+
+#. Tag: para
+#: regular-expressions.docbook:622
+#, no-c-format
+msgid "Matches the end of the searched string."
+msgstr "Komt overeen met het eind van de tekenreeks."
+
+#. Tag: para
+#: regular-expressions.docbook:624
+#, no-c-format
+msgid ""
+"The expression <userinput>you\\?$</userinput> will match at the last you in "
+"the string <quote>You didn't do that, did you?</quote> but nowhere in "
+"<quote>You didn't do that, right?</quote>"
+msgstr ""
+"De expressie <userinput>you\\?$</userinput> komt overeen met de laatste you "
+"in de tekenreeks <quote>You didn't do that, did you?</quote> maar nergens in "
+"<quote>You didn't do that, right?</quote>"
+
+#. Tag: term
+#: regular-expressions.docbook:632
+#, no-c-format
+msgid "<userinput>\\b</userinput> (word boundary)"
+msgstr "<userinput>\\b</userinput> (woordgrens)"
+
+#. Tag: para
+#: regular-expressions.docbook:633
+#, no-c-format
+msgid ""
+"Matches if there is a word character at one side and not a word character at "
+"the other."
+msgstr ""
+"Komt overeen als er een woordteken is aan één kant en niet aan de andere "
+"kant."
+
+#. Tag: para
+#: regular-expressions.docbook:635
+#, no-c-format
+msgid ""
+"This is useful to find word ends, for example both ends to find a whole "
+"word. The expression <userinput>\\bin\\b</userinput> will match at the "
+"separate <quote>in</quote> in the string <quote>He came in through the "
+"window</quote>, but not at the <quote>in</quote> in <quote>window</quote>."
+msgstr ""
+"Dit is nuttig om woordeinden te vinden, bijvoorbeeld beide einden om een  "
+"heel woord te vinden. De expressie <userinput>\\bin\\b</userinput> komt "
+"overeen met het aparte <quote>in</quote> in de tekenreeks <quote>He came in "
+"through the window</quote>, maar niet met het <quote>in</quote> in "
+"<quote>window</quote>."
+
+#. Tag: term
+#: regular-expressions.docbook:644
+#, no-c-format
+msgid "<userinput>\\B</userinput> (non word boundary)"
+msgstr "<userinput>\\B</userinput> (niet-woordgrens)"
+
+#. Tag: para
+#: regular-expressions.docbook:645
+#, no-c-format
+msgid "Matches wherever <quote>\\b</quote> does not."
+msgstr "Komt overeen waar <quote>\\b</quote> dat niet doet."
+
+#. Tag: para
+#: regular-expressions.docbook:646
+#, no-c-format
+msgid ""
+"That means that it will match for example within words: The expression "
+"<userinput>\\Bin\\B</userinput> will match at in <quote>window</quote> but "
+"not in <quote>integer</quote> or <quote>I'm in love</quote>."
+msgstr ""
+"Dit betekent dat het zal overeenkomen bijvoorbeeld in woorden: De expressie "
+"<userinput>\\Bin\\B</userinput> komt overeen in <quote>window</quote> maar "
+"niet in <quote>integer</quote> of <quote>I'm in love</quote>."
+
+#. Tag: term
+#: regular-expressions.docbook:652
+#, no-c-format
+msgid "<userinput>(?=PATTERN)</userinput> (Positive lookahead)"
+msgstr "<userinput>(?=PATROON)</userinput> (Positief vooruitkijken)"
+
+#. Tag: para
+#: regular-expressions.docbook:653
+#, no-c-format
+msgid ""
+"A lookahead assertion looks at the part of the string following a possible "
+"match. The positive lookahead will prevent the string from matching if the "
+"text following the possible match does not match the <emphasis>PATTERN</"
+"emphasis> of the assertion, but the text matched by that will not be "
+"included in the result."
+msgstr ""
+"Een vooruitkijktoekenning kijkt naar het deel van de tekenreeks die volgt op "
+"een mogelijke overeenkomst. Het positieve vooruitkijken voorkomt dat de "
+"tekenreeks overeenkomt als de tekst die volgt op de mogelijke overeenkomst "
+"niet overeenkomt met het <emphasis>PATROON</emphasis> van de toekenning, "
+"maar voorkomt dat de tekst daarmee overeenkomt en zal niet meegenomen worden "
+"in het resultaat."
+
+#. Tag: para
+#: regular-expressions.docbook:657
+#, no-c-format
+msgid ""
+"The expression <userinput>handy(?=\\w)</userinput> will match at "
+"<quote>handy</quote> in <quote>handyman</quote> but not in <quote>That came "
+"in handy!</quote>"
+msgstr ""
+"De expressie <userinput>handy(?=\\w)</userinput> komt overeen met "
+"<quote>handy</quote> in <quote>handyman</quote> maar niet in <quote>That "
+"came in handy!</quote>"
+
+#. Tag: term
+#: regular-expressions.docbook:663
+#, no-c-format
+msgid "<userinput>(?!PATTERN)</userinput> (Negative lookahead)"
+msgstr "<userinput>(?!PATROON)</userinput> (Negatieve vooruitblik)"
+
+#. Tag: para
+#: regular-expressions.docbook:665
+#, no-c-format
+msgid ""
+"The negative lookahead prevents a possible match to be acknowledged if the "
+"following part of the searched string does match its <emphasis>PATTERN</"
+"emphasis>."
+msgstr ""
+"Het negatieve vooruitkijken voorkomt dat de tekenreeks overeenkomt als de "
+"tekst die volgt op de mogelijke overeenkomst overeenkomt met het "
+"<emphasis>PATROON</emphasis> van de toekenning."
+
+#. Tag: para
+#: regular-expressions.docbook:668
+#, no-c-format
+msgid ""
+"The expression <userinput>const \\w+\\b(?!\\s*&amp;)</userinput> will match "
+"at <quote>const char</quote> in the string <quote>const char* foo</quote> "
+"while it can not match <quote>const QString</quote> in <quote>const "
+"QString&amp; bar</quote> because the <quote>&amp;</quote> matches the "
+"negative lookahead assertion pattern."
+msgstr ""
+"De expressie <userinput>const \\w+\\b(?!\\s*&amp;)</userinput> zal "
+"overeenkomen met <quote>const char</quote> in de tekenreeks <quote>const "
+"char* foo</quote> terwijl het niet kan overeenkomen met <quote>const "
+"QString</quote> in <quote>const QString&amp; bar</quote> omdat de "
+"<quote>&amp;</quote> overeenkomt met het patroon in de negatieve "
+"vooruitkijktoekenning."
+
+#. Tag: term
+#: regular-expressions.docbook:678
+#, no-c-format
+msgid "<userinput>(?&lt;=PATTERN)</userinput> (Positive lookbehind)"
+msgstr "<userinput>(?&lt;=PATROON)</userinput> (Positief achteruit kijken)"
+
+#. Tag: para
+#: regular-expressions.docbook:679
+#, no-c-format
+msgid ""
+"Lookbehind has the same effect as the lookahead, but works backwards. A "
+"lookbehind looks at the part of the string previous a possible match. The "
+"positive lookbehind will match a string only if it is preceded by the "
+"<emphasis>PATTERN</emphasis> of the assertion, but the text matched by that "
+"will not be included in the result."
+msgstr ""
+"Een achteruitkijktoekenning heeft hetzelfde effect als de vooruitkijk, maar "
+"werkt achterwaarts. Een achteruitkijktoekenning kijkt naar het deel van de "
+"vorige tekenreeks met een mogelijke overeenkomst. Het positieve "
+"achteruitkijken zal alleen overeenkomen met een tekenreeks als het "
+"voorafgegaan wordt door het <emphasis>PATROON</emphasis> van de toekenning, "
+"maar voorkomt dat de tekst daarmee overeenkomt en zal niet meegenomen worden "
+"in het resultaat."
+
+#. Tag: para
+#: regular-expressions.docbook:683
+#, no-c-format
+msgid ""
+"The expression <userinput>(?&lt;=cup)cake</userinput> will match at "
+"<quote>cake</quote> if it is succeeded by <quote>cup</quote> (in "
+"<quote>cupcake</quote> but not in <quote>cheesecake</quote> or in "
+"<quote>cake</quote> alone)."
+msgstr ""
+"De expressie <userinput>(?&lt;=cup)cake</userinput> zal overeenkomen met "
+"<quote>cake</quote> als het volgt op <quote>cup</quote> (in <quote>cupcake</"
+"quote> maar niet in <quote>cheesecake</quote> of in alleen <quote>cake</"
+"quote>)."
+
+#. Tag: term
+#: regular-expressions.docbook:690
+#, no-c-format
+msgid "<userinput>(?&lt;!PATTERN)</userinput> (Negative lookbehind)"
+msgstr "<userinput>(?&lt;!PATROON)</userinput> (Negatieve achteruitblik)"
+
+#. Tag: para
+#: regular-expressions.docbook:691
+#, no-c-format
+msgid ""
+"The negative lookbehind prevents a possible match to be acknowledged if the "
+"previous part of the searched string does match its <emphasis>PATTERN</"
+"emphasis>."
+msgstr ""
+"Het negatieve achteruitkijken voorkomt dat de tekenreeks overeenkomt als het "
+"voorgaande deel van de zoektekst overeenkomt met het <emphasis>PATROON</"
+"emphasis>."
+
+#. Tag: para
+#: regular-expressions.docbook:693
+#, no-c-format
+msgid ""
+"The expression <userinput>(?&lt;![\\w\\.])[0-9]+</userinput> will match at "
+"<quote>123</quote> in the strings <quote>=123</quote> and <quote>-123</"
+"quote> while it can not match <quote>123</quote> in <quote>.123</quote> or "
+"<quote>word123</quote>."
+msgstr ""
+"De expressie <userinput>(?&lt;![\\w\\.])[0-9]+</userinput> zal overeenkomen "
+"met <quote>123</quote> in de tekenreeksen <quote>=123</quote> en "
+"<quote>-123</quote> terwijl het niet kan overeenkomen met <quote>123</quote> "
+"in <quote>.123</quote> of <quote>word123</quote>."
+
+#. Tag: term
+#: regular-expressions.docbook:700
+#, no-c-format
+msgid "<userinput>(PATTERN)</userinput> (Capturing group)"
+msgstr "<userinput>(PATROON)</userinput> (Vanggroep)"
+
+#. Tag: para
+#: regular-expressions.docbook:702
+#, no-c-format
+msgid ""
+"The sub pattern within the parentheses is captured and remembered, so that "
+"it can be used in back references. For example, the expression "
+"<userinput>(&amp;quot;+)[^&amp;quot;]*\\1</userinput> matches "
+"<userinput>&quot;&quot;&quot;&quot;text&quot;&quot;&quot;&quot;</userinput> "
+"and <userinput>&quot;text&quot;</userinput>."
+msgstr ""
+"Het subpatroon in de haakjes wordt gevangen en onthouden, zodat het gebruikt "
+"kan worden in achterwaartse referentie. Bijvoorbeeld, de expressie "
+"<userinput>(&amp;quot;+)[^&amp;quot;]*\\1</userinput> komt overeeen met "
+"<userinput>&quot;&quot;&quot;&quot;tekst&quot;&quot;&quot;&quot;</userinput> "
+"en <userinput>&quot;tekst&quot;</userinput>."
+
+#. Tag: para
+#: regular-expressions.docbook:707
+#, no-c-format
+msgid ""
+"See the section <link linkend=\"regex-capturing\">Capturing matching text "
+"(back references)</link> for more information."
+msgstr ""
+"Zie de sectie <link linkend=\"regex-capturing\">Overeenkomende tekst vangen "
+"(achterwaartse referenties)</link> voor meer informatie."
+
+#. Tag: term
+#: regular-expressions.docbook:713
+#, no-c-format
+msgid "<userinput>(?:PATTERN)</userinput> (Non-capturing group)"
+msgstr "<userinput>(?:PATROON)</userinput> (Non-capturing groep)"
+
+#. Tag: para
+#: regular-expressions.docbook:715
+#, no-c-format
+msgid ""
+"The sub pattern within the parentheses is not captured and is not "
+"remembered. It is preferable to always use non-capturing groups if the "
+"captures will not be used."
+msgstr ""
+"Het subpatroon in de haakjes wordt niet gevangen en niet onthouden. Het "
+"heeft de voorkeur om altijd non-capturing groepen te gebruiken als de vangst "
+"niet zal worden gebruikt."
+
+#~ msgid ""
+#~ "The POSIX notation of classes, <userinput>[:&lt;class name&gt;:]</"
+#~ "userinput> is currently not supported."
+#~ msgstr ""
+#~ "De POSIX-notatie van klassen, <userinput>[:&lt;class name&gt;:]</"
+#~ "userinput> wordt op dit moment niet ondersteund."
+
+#~ msgid ""
+#~ "If you want to use a back reference, use a sub pattern to have the "
+#~ "desired part of the pattern remembered."
+#~ msgstr ""
+#~ "Als u achterwaartse verwijzing wilt gebruiken, gebruik dan een subpatroon "
+#~ "om het gewenste deel van het patroon te onthouden."
+
+#~ msgid "The &kate; Handbook"
+#~ msgstr "Het &kate; handboek"
+
+#~ msgid ""
+#~ "<firstname>Seth</firstname> <surname>Rothberg</surname> <affiliation> "
+#~ "<address><email>sethmr@bellatlantic.net</email></address> </affiliation>"
+#~ msgstr ""
+#~ "<firstname>Seth</firstname> <surname>Rothberg</surname> <affiliation> "
+#~ "<address><email>sethmr@bellatlantic.net</email></address> </affiliation>"
+
+#~ msgid ""
+#~ "<firstname>Anders</firstname> <surname>Lund</surname> <affiliation> "
+#~ "<address><email>anders@alweb.dk</email></address> </affiliation>"
+#~ msgstr ""
+#~ "<firstname>Anders</firstname> <surname>Lund</surname> <affiliation> "
+#~ "<address><email>anders@alweb.dk</email></address> </affiliation>"
+
+#~ msgid "Seth M. Rothberg"
+#~ msgstr "Seth M. Rothberg"
+
+#~ msgid "Anders Lund"
+#~ msgstr "Anders Lund"
+
+#~ msgid "&kate; is a programmer's text editor for &kde; 2.2 and above."
+#~ msgstr "&kate; is een editor voor programmeurs voor &kde; 2.2 en hoger."
+
+#~ msgid "This handbook documents &kate; Version 1.0"
+#~ msgstr "Deze handleiding beschrijft &kate; versie 1.0"
+
+#~ msgid "<keyword>KDE</keyword>"
+#~ msgstr "<keyword>KDE</keyword>"
+
+#~ msgid "kdebase"
+#~ msgstr "kdebase"
+
+#~ msgid "Kate"
+#~ msgstr "Kate"
+
+#~ msgid "text"
+#~ msgstr "tekst"
+
+#~ msgid "editor"
+#~ msgstr "editor"
+
+#~ msgid "programmer"
+#~ msgstr "programmeur"
+
+#~ msgid "programming"
+#~ msgstr "programmeren"
+
+#~ msgid "projects"
+#~ msgstr "projecten"
+
+#~ msgid "<keyword>MDI</keyword>"
+#~ msgstr "<keyword>MDI</keyword>"
+
+#~ msgid "Multi"
+#~ msgstr "Multi"
+
+#~ msgid "Document"
+#~ msgstr "Document"
+
+#~ msgid "Interface"
+#~ msgstr "Interface"
+
+#~ msgid "terminal"
+#~ msgstr "terminal"
+
+#~ msgid "console"
+#~ msgstr "console"
+
+#~ msgid ""
+#~ "Welcome to &kate;, a programmer's text editor for &kde; version 2.2 and "
+#~ "above. Some of &kate;'s many features include configurable syntax "
+#~ "highlighting for languages ranging from C and C++ to <acronym>HTML</"
+#~ "acronym> to bash scripts, the ability to create and maintain projects, a "
+#~ "multiple document interface (<acronym>MDI</acronym>), and a self-"
+#~ "contained terminal emulator."
+#~ msgstr ""
+#~ "Welkom bij &kate; een editor voor programmeurs voors &kde; versie 2.2 en "
+#~ "hoger. Sommige van &kate;'s vele mogelijkheden zijn configureerbare "
+#~ "syntaxis accentuering voor (programmeer)talen van C en C++ tot "
+#~ "<acronym>HTML</acronym> en bash scripts, de mogelijkheid om prpjecten te "
+#~ "maken en onderhouden, een meervoudige document interface (<acronym>MDI</"
+#~ "acronym>) en een ingebouwde terminal."
+
+#~ msgid ""
+#~ "But &kate; is more than a programmer's editor. Its ability to open "
+#~ "several files at once makes it ideal for editing &UNIX;'s many "
+#~ "configuration files. This document was written in &kate;."
+#~ msgstr ""
+#~ "Maar &kate; is meer dan een editor voor programmeurs. Zijn mogelijkheid "
+#~ "om meerdere bestanden tegelijk te openen maakt het ideaal om &UNIX;'s "
+#~ "vele configuratie bestanden te bewerken. Dit document was geschreven in "
+#~ "&kate;."
+
+#~ msgid "Editing this manual..."
+#~ msgstr "Het bewerken van deze handleiding..."
+
+#~ msgid "The Fundamentals"
+#~ msgstr "De basisbeginselen"
+
+#~ msgid ""
+#~ "If you have ever used a text editor, you will have no problem using "
+#~ "&kate;. In the next two sections, <link linkend=\"starting-kate"
+#~ "\">Starting &kate; </link> and in <link linkend=\"working-with-kate"
+#~ "\">Working with &kate;</link>, we'll show you everything you need to get "
+#~ "up and running quickly."
+#~ msgstr ""
+#~ "Als u ooit een teksteditor heeft gebruikt dan zult u geen problemen "
+#~ "hebben bij het gebruik van &kate;. In de volgende twee secties, <link "
+#~ "linkend=\"starting-kate\">&kate; starten</link> en in <link linkend="
+#~ "\"working-with-kate\">Werken met &kate;</link> tonen we u alles wat u "
+#~ "nodig heeft om snel aan het werk te kunnen."
+
+#~ msgid "Starting &kate;"
+#~ msgstr "&kate; starten"
+
+#~ msgid ""
+#~ "You can start &kate; from the <guimenu>K menu</guimenu> or from the "
+#~ "command line."
+#~ msgstr ""
+#~ "U kunt &kate; starten het vanuit het <guimenu>K menu</guimenu> of vanaf "
+#~ "de commando regel."
+
+#~ msgid "From the Menu"
+#~ msgstr "Vanuit het menu"
+
+#~ msgid ""
+#~ "Open the &kde; program menu by clicking on the <guiicon>big K</guiicon> "
+#~ "icon on the toolbar at the bottom left of your screen. This will raise "
+#~ "the <guimenu>program menu</guimenu>. Move your cursor up the menu to the "
+#~ "<guimenu>Editors</guimenu> menu item. A list of available editors will "
+#~ "appear. Choose <guimenuitem>&kate;</guimenuitem>."
+#~ msgstr ""
+#~ "Open het &kde; programma menu door op de <guiicon>big K</guiicon> "
+#~ "pictogram op de werkbalk aan de linker onderkant van uw scherm te "
+#~ "klikken. Dit zal een <guimenu>programma menu</guimenu> laten verschijnen. "
+#~ "Beweeg uw cursor naar de <guimenu>Editors</guimenu> menu ingang. Een "
+#~ "lijst met beschikbare editors zal verschijnen. Kies vervolgens "
+#~ "<guimenuitem>&kate;</guimenuitem>."
+
+#~ msgid ""
+#~ "Unless you configure &kate; not to, it will load the last files you "
+#~ "edited. See <link linkend=\"configure\">Configuring &kate;</link> to "
+#~ "learn how to toggle this feature on and off."
+#~ msgstr ""
+#~ "Tenzij u &kate; zo instelt dat het dit niet doet, zal het de laatste "
+#~ "bestanden die u heeft bewerkt inladen. Zie <link linkend=\"configure"
+#~ "\">&kate; instellen</link> om te leren hoe u deze mogelijk kunt aan en "
+#~ "uitzetten."
+
+#~ msgid "From the Command Line"
+#~ msgstr "Vanaf de commando regel"
+
+#~ msgid ""
+#~ "You can start &kate; by typing its name on the command line. If you give "
+#~ "it a file name, as in the example below, it will open or create that file."
+#~ msgstr ""
+#~ "U kunt &kate; starten door zijn naam op de commando regel in te typen. "
+#~ "Als u het een bestandsnaam als argument geeft zoals in onderstaande "
+#~ "voorbeeld, dan zal &kate; dit bestand openen of aanmaken als het niet "
+#~ "bestaat."
+
+#~ msgid ""
+#~ "<prompt>%</prompt><userinput><command>kate</command> "
+#~ "<option><replaceable>myfile.txt</replaceable></option></userinput>"
+#~ msgstr ""
+#~ "<prompt>%</prompt><userinput><command>kate</command> "
+#~ "<option><replaceable>mijnbestand.txt</replaceable></option></userinput>"
+
+#~ msgid ""
+#~ "If you have an active connection, and permission, you can take advantage "
+#~ "of &kde;'s network transparency to open files on the internet."
+#~ msgstr ""
+#~ "als u een actieve verbinding heeft, en toestemming, kan kunt u uw "
+#~ "voordeel doen met de voordelen van &kde;'s netwerk transparantie om "
+#~ "bestanden op het Interet te openen."
+
+#~ msgid ""
+#~ "<prompt>%</prompt><userinput><command>kate</command> "
+#~ "<option><replaceable>ftp://ftp.kde.org/pub/kde/README_FIRST</"
+#~ "replaceable></option></userinput>"
+#~ msgstr ""
+#~ "<prompt>%</prompt><userinput><command>kate</command> "
+#~ "<option><replaceable>ftp://ftp.kde.org/pub/kde/README_FIRST</"
+#~ "replaceable></option></userinput>"
+
+#~ msgid "Command Line Options"
+#~ msgstr "Commandoregel opties"
+
+#~ msgid "&kate; accepts following command line options:"
+#~ msgstr "&kate; accepteert de volgende commandoregel opties:"
+
+#~ msgid "<command>kate</command> <option>--help</option>"
+#~ msgstr "<command>kate</command> <option>--help</option>"
+
+#~ msgid "This lists the most basic options available at the command line."
+#~ msgstr ""
+#~ "Deze optie somt de meest basis opties op die beschikbaar zijn op de "
+#~ "commandoregel."
+
+#~ msgid "<command>kate</command> <option>--help-qt</option>"
+#~ msgstr "<command>kate</command> <option>--help-qt</option>"
+
+#~ msgid ""
+#~ "This lists the options available for changing the way &kate; interacts "
+#~ "with &Qt;."
+#~ msgstr ""
+#~ "Deze optie somt alle opties op die beschikbaar zijn om de manier waarop "
+#~ "&kate; interageert met &Qt;"
+
+#~ msgid "<command>kate</command> <option>--help-kde</option>"
+#~ msgstr "<command>kate</command> <option>--help-kde</option>"
+
+#~ msgid ""
+#~ "This lists the options available for changing the way &kate; interacts "
+#~ "with &kde;."
+#~ msgstr ""
+#~ "Deze optie somt de mogelijkheden op die beschikbaar zijn voor hoe &kate; "
+#~ "interageert met &kde;."
+
+#~ msgid "<command>kate</command> <option>--help-all</option>"
+#~ msgstr "<command>kate</command> <option>--help-all</option>"
+
+#~ msgid "This lists all of the command line options."
+#~ msgstr "Deze optie somt alle commando regel opties op die er zijn."
+
+#~ msgid "<command>kate</command> <option>--author</option>"
+#~ msgstr "<command>kate</command> <option>--author</option>"
+
+#~ msgid "Lists &kate;'s authors in the terminal window."
+#~ msgstr "Deze optie toont de auteurs van &kate; in het terminal venster."
+
+#~ msgid "<command>kate</command> <option>--version</option>"
+#~ msgstr "<command>kate</command> <option>--version</option>"
+
+#~ msgid ""
+#~ "Lists version information for &Qt;, &kde;, and &kate;. Also available "
+#~ "through <userinput><command>kate</command> <option>-V</option></userinput>"
+#~ msgstr ""
+#~ "Deze optie toont de versie informatie voor &Qt;, &kde; en &kate;. Deze "
+#~ "informate is ook beschikbaar met de optie <userinput><command>kate</"
+#~ "command> <option>-V</option></userinput>."
+
+#~ msgid "<command>kate</command> <option>--license</option>"
+#~ msgstr "<command>kate</command> <option>--license</option>"
+
+#~ msgid "Shows license information."
+#~ msgstr "Deze optie toont de licentie informatie."
+
+#~ msgid "Drag and Drop"
+#~ msgstr "Drag and Drop (slepen en laten vallen)"
+
+#~ msgid ""
+#~ "&kate; uses the &kde; Drag and Drop protocol. Files may be dragged and "
+#~ "dropped onto &kate; from the Desktop, &konqueror; or some remote ftp site "
+#~ "opened in one of &konqueror;'s windows."
+#~ msgstr ""
+#~ "&kate; gebruikt het &kde; Drag and Drop protocol. Bestanden die worden en "
+#~ "gesleept en op &kate; worden losgelaten van af het bureaublad, "
+#~ "&konqueror; of vanaf een ftp server in een van &konqueror;'s vensters."
+
+#~ msgid "Working with &kate;"
+#~ msgstr "Werken met &kate;"
+
+#~ msgid "Show Filelist"
+#~ msgstr "Bestandslijst tonen"
+
+#~ msgid "Show Fileselector"
+#~ msgstr "Bestandsselectie tonen"
+
+#~ msgid "Show Console"
+#~ msgstr "Console tonen"
+
+#~ msgid "Insert"
+#~ msgstr "Invoegen"
+
+#~ msgid "Left Arrow"
+#~ msgstr "Linkerpijl"
+
+#~ msgid "Right Arrow"
+#~ msgstr "Rechterpijl"
+
+#~ msgid "Up Arrow"
+#~ msgstr "Omhoogpijl"
+
+#~ msgid "Down Arrow"
+#~ msgstr "Omlaagpijl"
+
+#~ msgid "Page Up"
+#~ msgstr "Page Up"
+
+#~ msgid "Page Down"
+#~ msgstr "Page Down"
+
+#~ msgid "Backspace"
+#~ msgstr "Backspace"
+
+#~ msgid "Home"
+#~ msgstr "Thuis"
+
+#~ msgid "<keycap>End</keycap>"
+#~ msgstr "<keycap>End</keycap>"
+
+#~ msgid "Delete"
+#~ msgstr "Verwijderen"
+
+#~ msgid "&Shift;<keycap>Left Arrow</keycap>"
+#~ msgstr "&Shift;<keycap>Linkerpijl</keycap>"
+
+#~ msgid "&Shift;<keycap>Right Arrow</keycap>"
+#~ msgstr "&Shift;<keycap>Rechterpijl</keycap>"
+
+#~ msgid "<keycap>F1</keycap>"
+#~ msgstr "<keycap>F1</keycap>"
+
+#~ msgid "Help"
+#~ msgstr "Help"
+
+#~ msgid "&Shift;<keycap>F1</keycap>"
+#~ msgstr "&Shift;<keycap>F1</keycap>"
+
+#~ msgid "What's this?"
+#~ msgstr "Wat is dit?"
+
+#~ msgid "&Ctrl;<keycap>F</keycap>"
+#~ msgstr "&Ctrl;<keycap>F</keycap>"
+
+#~ msgid "Find"
+#~ msgstr "Zoeken"
+
+#~ msgid "<keycap>F3</keycap>"
+#~ msgstr "<keycap>F3</keycap>"
+
+#~ msgid "&Ctrl;<keycap>B</keycap>"
+#~ msgstr "&Ctrl;<keycap>B</keycap>"
+
+#~ msgid "&Ctrl;<keycap>C</keycap>"
+#~ msgstr "&Ctrl;<keycap>C</keycap>"
+
+#~ msgid "&Ctrl;<keycap>N</keycap>"
+#~ msgstr "&Ctrl;<keycap>N</keycap>"
+
+#~ msgid "<link linkend=\"new\">New</link> document"
+#~ msgstr "<link linkend=\"new\">Nieuw</link> document"
+
+#~ msgid "&Ctrl;<keycap>P</keycap>"
+#~ msgstr "&Ctrl;<keycap>P</keycap>"
+
+#~ msgid "Print"
+#~ msgstr "Afdrukken"
+
+#~ msgid "&Ctrl;<keycap>Q</keycap>"
+#~ msgstr "&Ctrl;<keycap>Q</keycap>"
+
+#~ msgid "&Ctrl;<keycap>R</keycap>"
+#~ msgstr "&Ctrl;<keycap>R</keycap>"
+
+#~ msgid "Replace"
+#~ msgstr "Vervangen"
+
+#~ msgid "&Ctrl;<keycap>S</keycap>"
+#~ msgstr "&Ctrl;<keycap>S</keycap>"
+
+#~ msgid "&Ctrl;<keycap>V</keycap>"
+#~ msgstr "&Ctrl;<keycap>V</keycap>"
+
+#~ msgid "Paste."
+#~ msgstr "Plakken."
+
+#~ msgid "&Ctrl;<keycap>X</keycap>"
+#~ msgstr "&Ctrl;<keycap>X</keycap>"
+
+#~ msgid "&Ctrl;<keycap>Z</keycap>"
+#~ msgstr "&Ctrl;<keycap>Z</keycap>"
+
+#~ msgid "Undo"
+#~ msgstr "Ongedaan maken"
+
+#~ msgid "&Ctrl;&Shift;<keycap>Z</keycap>"
+#~ msgstr "&Ctrl;&Shift;<keycap>Z</keycap>"
+
+#~ msgid "Redo"
+#~ msgstr "Opnieuw"
+
+#~ msgid "Getting Help"
+#~ msgstr "Help verkrijgen"
+
+#~ msgid "With &kate;"
+#~ msgstr "Met &kate;"
+
+#~ msgid "This manual"
+#~ msgstr "Deze handleiding"
+
+#~ msgid "What's This Help"
+#~ msgstr "Wat is dit help"
+
+#~ msgid "The Editor area"
+#~ msgstr "Het bewerk gebied"
+
+#~ msgid "The File List"
+#~ msgstr "De bestandslijst"
+
+#~ msgid "The File Selector"
+#~ msgstr "De bestandskiezer"
+
+#~ msgid "The editing area"
+#~ msgstr "Het bewerk gebied"
+
+#, fuzzy
+#~ msgid "Using Block Selection"
+#~ msgstr "Blijvende selecties"
+
+#, fuzzy
+#~ msgid "Using Overwrite Selection"
+#~ msgstr "Selecties overschrijven"
+
+#, fuzzy
+#~ msgid "Overwrite Selection is enabled by default."
+#~ msgstr "Selecties overschrijven"
+
+#, fuzzy
+#~ msgid "Using Persistent Selection"
+#~ msgstr "Blijvende selecties"
+
+#, fuzzy
+#~ msgid "Persistent Selection is disabled by default."
+#~ msgstr "Blijvende selecties"
+
+#, fuzzy
+#~ msgid "Working with Plugins"
+#~ msgstr "Werken met &kate;"
+
+#, fuzzy
+#~ msgid "Working with Syntax Higlighting"
+#~ msgstr "KWrite XML syntaxis accentuering ondersteuning"
+
+#, fuzzy
+#~ msgid "A perl function, rendered with syntax highlighting."
+#~ msgstr "Kernontwikkelaar, syntaxis accentuering"
+
+#, fuzzy
+#~ msgid "Default Styles"
+#~ msgstr "De standaard stijlen tab"
+
+#, fuzzy
+#~ msgid "The Highlight Definition &XML; Format"
+#~ msgstr "Het Syntaxmarkerings Definitie XML Formaat"
+
+#~ msgid "The <guimenu>File</guimenu> Menu"
+#~ msgstr "Het <guimenu>Bestand</guimenu>-menu"
+
+#, fuzzy
+#~ msgid "<guimenu>File</guimenu> <guimenuitem>Open Recent</guimenuitem>"
+#~ msgstr ""
+#~ "<guimenu>Bestand</guimenu> <guimenuitem>Opslaan als...</guimenuitem>"
+
+#~ msgid "<guimenu>File</guimenu> <guimenuitem>Save As</guimenuitem>"
+#~ msgstr ""
+#~ "<guimenu>Bestand</guimenu> <guimenuitem>Opslaan als...</guimenuitem>"
+
+#, fuzzy
+#~ msgid "<guimenu>File</guimenu> <guimenuitem>Open with</guimenuitem>"
+#~ msgstr ""
+#~ "<guimenu>Bestand</guimenu> <guimenuitem>Opslaan als...</guimenuitem>"
+
+#, fuzzy
+#~ msgid "<guimenu>File</guimenu> <guimenuitem>Close All</guimenuitem>"
+#~ msgstr ""
+#~ "<guimenu>Bestand</guimenu> <guimenuitem>Opslaan als...</guimenuitem>"
+
+#, fuzzy
+#~ msgid "<guimenu>File</guimenu> <guimenuitem>New Window</guimenuitem>"
+#~ msgstr ""
+#~ "<guimenu>Bestand</guimenu> <guimenuitem>Opslaan als...</guimenuitem>"
+
+#~ msgid "The <guimenu>Edit</guimenu> Menu"
+#~ msgstr "Het <guimenu>Bewerken</guimenu>-menu"
+
+#, fuzzy
+#~ msgid ""
+#~ "The <guimenu>Edit</guimenu> menu contains a host of commands, all to work "
+#~ "with the currently active document."
+#~ msgstr ""
+#~ "Het <guimenu>Hulpmiddel</guimenu>-menu bevat commando's in twee "
+#~ "categorieen:"
+
+#, fuzzy
+#~ msgid ""
+#~ "See also <link linkend=\"edit-comment\"><guimenu>Edit</"
+#~ "guimenu><guimenuitem>Comment</guimenuitem></link>"
+#~ msgstr ""
+#~ "<guimenu>Bestand</guimenu> <guimenuitem>Opslaan als...</guimenuitem>"
+
+#~ msgid "The <guimenu>Document</guimenu>Menu"
+#~ msgstr "Het <guimenu>Document</guimenu>-menu"
+
+#~ msgid "The <guimenu>Document</guimenu> menu has two purposes:"
+#~ msgstr "Het <guimenu>Document</guimenu>-menu heeft 2 doelen:"
+
+#, fuzzy
+#~ msgid "<guimenu>Document</guimenu> <guisubmenu>Highlight Mode</guisubmenu>"
+#~ msgstr "<guimenu>Weergave</guimenu> <guisubmenu>Starten</guisubmenu>"
+
+#, fuzzy
+#~ msgid "<guimenu>Document</guimenu> <guisubmenu>End of Line</guisubmenu>"
+#~ msgstr "<guimenu>Weergave</guimenu> <guisubmenu>Starten</guisubmenu>"
+
+#~ msgid "The <guimenu>View</guimenu> menu"
+#~ msgstr "Het <guimenu>Weergave</guimenu>-menu"
+
+#~ msgid "<guimenu>View</guimenu> <guisubmenu>Go</guisubmenu>"
+#~ msgstr "<guimenu>Weergave</guimenu> <guisubmenu>Starten</guisubmenu>"
+
+#~ msgid "The <guimenu>Bookmarks</guimenu> Menu"
+#~ msgstr "Het <guimenu>Bladwijzer</guimenu>-menu"
+
+#, fuzzy
+#~ msgid ""
+#~ "<guimenu>Bookmarks</guimenu> <guimenuitem>Clear Bookmarks</guimenuitem>"
+#~ msgstr ""
+#~ "<guimenu>Bestand</guimenu> <guimenuitem>Opslaan als...</guimenuitem>"
+
+#~ msgid "The <guimenu>Tools</guimenu> Menu"
+#~ msgstr "Het <guimenu>Hulpmiddel</guimenu>-menu"
+
+#~ msgid ""
+#~ "The <guimenu>Tools</guimenu> menu contains commands of two categories:"
+#~ msgstr ""
+#~ "Het <guimenu>Hulpmiddel</guimenu>-menu bevat commando's in twee "
+#~ "categorieen:"
+
+#, fuzzy
+#~ msgid ""
+#~ "Tools doing advanced editing of the current document, for example <link "
+#~ "linkend=\"tools-menu-editing_command\"><guimenuitem>Editing Command</"
+#~ "guimenuitem></link>."
+#~ msgstr ""
+#~ "Hulpmiddelen die geavanceerde bewerkingen op het huidge document kunnen "
+#~ "uitvoeren, zoals bijvoorbeeld <link linkend=\"tools-menu-editing_command"
+#~ "\"><guimenuitem>Bewerken Commando</guimenuitem></link>."
+
+#, fuzzy
+#~ msgid ""
+#~ "Tools adding functionality to the application, for example the <link "
+#~ "linkend=\"tools-menu-find_in_files\"><guimenuitem>Find in Files</"
+#~ "guimenuitem></link> tool."
+#~ msgstr ""
+#~ "Hulpmiddelen die geavanceerde bewerkingen op het huidge document kunnen "
+#~ "uitvoeren, zoals bijvoorbeeld <link linkend=\"tools-menu-editing_command"
+#~ "\"><guimenuitem>Bewerken Commando</guimenuitem></link>."
+
+#, fuzzy
+#~ msgid "<guimenu>Edit</guimenu> <guimenuitem>Apply Word Wrap</guimenuitem>"
+#~ msgstr ""
+#~ "<guimenu>Bestand</guimenu> <guimenuitem>Opslaan als...</guimenuitem>"
+
+#, fuzzy
+#~ msgid "<guimenu>Edit</guimenu> <guimenuitem>Spelling...</guimenuitem>"
+#~ msgstr ""
+#~ "<guimenu>Bestand</guimenu> <guimenuitem>Opslaan als...</guimenuitem>"
+
+#, fuzzy
+#~ msgid "The <guimenu>Settings</guimenu> Menu"
+#~ msgstr "Het <guimenu>Instellingen</guimenu>-menu"
+
+#, fuzzy
+#~ msgid "<guimenu>Settings</guimenu> <guimenuitem>Show Toolbar</guimenuitem>"
+#~ msgstr ""
+#~ "<guimenu>Bestand</guimenu> <guimenuitem>Opslaan als...</guimenuitem>"
+
+#, fuzzy
+#~ msgid "<guimenu>Settings</guimenu> <guimenuitem>Show Filelist</guimenuitem>"
+#~ msgstr ""
+#~ "<guimenu>Bestand</guimenu> <guimenuitem>Opslaan als...</guimenuitem>"
+
+#, fuzzy
+#~ msgid ""
+#~ "<guimenu>Settings</guimenu> <guimenuitem>Show Fileselector</guimenuitem>"
+#~ msgstr ""
+#~ "<guimenu>Bestand</guimenu> <guimenuitem>Opslaan als...</guimenuitem>"
+
+#, fuzzy
+#~ msgid ""
+#~ "<guimenu>Settings</guimenu> <guimenuitem>Configure Shortcuts</guimenuitem>"
+#~ msgstr ""
+#~ "<guimenu>Bestand</guimenu> <guimenuitem>Opslaan als...</guimenuitem>"
+
+#, fuzzy
+#~ msgid ""
+#~ "<guimenu>Settings</guimenu> <guimenuitem>Configure Toolbars</guimenuitem>"
+#~ msgstr ""
+#~ "<guimenu>Bestand</guimenu> <guimenuitem>Opslaan als...</guimenuitem>"
+
+#, fuzzy
+#~ msgid ""
+#~ "<guimenu>Settings</guimenu> <guimenuitem>Configure &kate;</guimenuitem>"
+#~ msgstr ""
+#~ "<guimenu>Bestand</guimenu> <guimenuitem>Opslaan als...</guimenuitem>"
+
+#~ msgid "The <guimenu>Help</guimenu> Menu"
+#~ msgstr "Het <guimenu>Help</guimenu>-menu"
+
+#, fuzzy
+#~ msgid "<guimenu>Help</guimenu> <guimenuitem>About &kate;</guimenuitem>"
+#~ msgstr ""
+#~ "<guimenu>Bestand</guimenu> <guimenuitem>Opslaan als...</guimenuitem>"
+
+#, fuzzy
+#~ msgid "<guimenu>Help</guimenu> <guimenuitem>About KDE</guimenuitem>"
+#~ msgstr ""
+#~ "<guimenu>Bestand</guimenu> <guimenuitem>Opslaan als...</guimenuitem>"
+
+#~ msgid "Configuring &kate;"
+#~ msgstr "&kate; instellen"
+
+#, fuzzy
+#~ msgid "The Settings Menu"
+#~ msgstr "Het bewerk gebied"
+
+#~ msgid "The &kate; group"
+#~ msgstr "De &kate; groep"
+
+#, fuzzy
+#~ msgid "The General Page"
+#~ msgstr "De inspring pagina"
+
+#~ msgid "Application Mode"
+#~ msgstr "Applicatiemodus"
+
+#~ msgid "At Startup"
+#~ msgstr "Bij het starten"
+
+#~ msgid "The Editor Group"
+#~ msgstr "Het Editors groep"
+
+#, fuzzy
+#~ msgid "The <guilabel>Colors</guilabel> Page"
+#~ msgstr "Het <guimenu>Hulpmiddel</guimenu>-menu"
+
+#~ msgid "The Fonts Page"
+#~ msgstr "De lettertypen pagina"
+
+#~ msgid "The Indent Page"
+#~ msgstr "De inspring pagina"
+
+#~ msgid "Indent Options"
+#~ msgstr "Inspring opties"
+
+#~ msgid "Backspace key indents"
+#~ msgstr "Backspace toets springt in"
+
+#, fuzzy
+#~ msgid "Tab key indents"
+#~ msgstr "Backspace toets springt in"
+
+#~ msgid "The Select Page"
+#~ msgstr "De selectie pagina"
+
+#~ msgid "Select Options"
+#~ msgstr "Selectie opties"
+
+#~ msgid "Persistent Selections"
+#~ msgstr "Blijvende selecties"
+
+#~ msgid "Overwrite Selection"
+#~ msgstr "Selecties overschrijven"
+
+#~ msgid "The Edit Page"
+#~ msgstr "De bewerken pagina"
+
+#~ msgid "Editor Options"
+#~ msgstr "Editor opties"
+
+#~ msgid "The Keyboard Page"
+#~ msgstr "De toetsenbord pagina"
+
+#~ msgid "The Spelling Page"
+#~ msgstr "De spelling pagina"
+
+#, fuzzy
+#~ msgid "The Highligting Page"
+#~ msgstr "De accentuerings pagina"
+
+#~ msgid "Context"
+#~ msgstr "Context"
+
+#~ msgid "Selected"
+#~ msgstr "Geselecteerd"
+
+#~ msgid "The Default Styles Tab"
+#~ msgstr "De standaard stijlen tab"
+
+#~ msgid "The Highlight Modes Tab"
+#~ msgstr "De syntaxaccentuerings mode tab"
+
+#~ msgid "The Plugins Group"
+#~ msgstr "De plugins groep"
+
+#~ msgid "The Plugin Manager Page"
+#~ msgstr "De plugin beheerder pagina"
+
+#~ msgid ""
+#~ "To view a minimal description and information about a plugin, select it "
+#~ "and the information will be available below the lists."
+#~ msgstr ""
+#~ "Om een minimale beschrijving van en informatie over de plugin te zien, "
+#~ "selecteert u de plugin en de informatie onder de lijst zal worden getoond."
+
+#~ msgid "Credits and License"
+#~ msgstr "Aftiteling en licentie"
+
+#~ msgid ""
+#~ "&kate;. Program copyright 2000, 2001, 2002 by the &kate; developer team."
+#~ msgstr ""
+#~ "&kate;. Programma copyright 2000, 2001, 2002 het &kate; ontwikkelaars "
+#~ "team."
+
+#~ msgid "The &kate; team:"
+#~ msgstr "Het &kate; team:"
+
+#~ msgid "Christoph Cullmann <email>cullmann@kde.org</email>"
+#~ msgstr "Christoph Cullmann <email>cullmann@kde.org</email>"
+
+#~ msgid "Project Manager &amp; Core Developer"
+#~ msgstr "Projectbeheerder &amp; Kernontwikkelaar"
+
+#~ msgid "Anders Lund <email>anders@alweb.dk</email>"
+#~ msgstr "Anders Lund <email>anders@alweb.dk</email>"
+
+#~ msgid "Core Developer, Perl syntax highlighting, documentation"
+#~ msgstr "Kernontwikkelaar, Perl syntaxis accentuering, documentatie"
+
+#~ msgid "Joseph Wenninger <email>jowenn@kde.org</email>"
+#~ msgstr "Joseph Wenninger <email>jowenn@kde.org</email>"
+
+#~ msgid "Core Developer, syntax highlighting"
+#~ msgstr "Kernontwikkelaar, syntaxis accentuering"
+
+#~ msgid "Michael Bartl <email>michael.bartl1@chello.at</email>"
+#~ msgstr "Michael Bartl <email>michael.bartl1@chello.at</email>"
+
+#~ msgid "Core Developer"
+#~ msgstr "Kernontwikkelaar"
+
+#~ msgid "Phlip <email>phlip_cpp@my-deja.com</email>"
+#~ msgstr "Phlip <email>phlip_cpp@my-deja.com</email>"
+
+#~ msgid "The project compiler"
+#~ msgstr "De project compiler"
+
+#~ msgid "Waldo Bastian <email>bastian@kde.org</email>"
+#~ msgstr "Waldo Bastian <email>bastian@kde.org</email>"
+
+#~ msgid "The cool buffer system"
+#~ msgstr "Het schitterende buffer systeem"
+
+#~ msgid "Matt Newell <email>newellm@proaxis.com</email>"
+#~ msgstr "Matt Newell <email>newellm@proaxis.com</email>"
+
+#~ msgid "Testing..."
+#~ msgstr "Testen..."
+
+#~ msgid "Michael McCallum <email>gholam@xtra.co.nz</email>"
+#~ msgstr "Michael McCallum <email>gholam@xtra.co.nz</email>"
+
+#~ msgid "Jochen Wilhemly <email>digisnap@cs.tu-berlin.de</email>"
+#~ msgstr "Jochen Wilhemly <email>digisnap@cs.tu-berlin.de</email>"
+
+#~ msgid "KWrite Author"
+#~ msgstr "KWrite-auteur"
+
+#~ msgid "Michael Koch <email>koch@kde.org</email>"
+#~ msgstr "Michael Koch <email>koch@kde.org</email>"
+
+#~ msgid "KWrite port to KParts"
+#~ msgstr "Kwrite-omzetting naar KParts"
+
+#~ msgid "Christian Gebauer <email>gebauer@bigfoot.com</email>"
+#~ msgstr "Christian Gebauer <email>gebauer@bigfoot.com</email>"
+
+#~ msgid "Unspecified"
+#~ msgstr "Niet opgegeven"
+
+#~ msgid "Simon Hausmann <email>hausmann@kde.org</email>"
+#~ msgstr "Simon Hausmann <email>hausmann@kde.org</email>"
+
+#~ msgid "Glen Parker <email>glenebob@nwlink.com</email>"
+#~ msgstr "Glen Parker <email>glenebob@nwlink.com</email>"
+
+#~ msgid "KWrite Undo History, KSpell integration"
+#~ msgstr "KWrite Ongedaan maken geschiedenis, KSpell integratie"
+
+#~ msgid "Scott Manson <email>sdmanson@alltel.net</email>"
+#~ msgstr "Scott Manson <email>sdmanson@alltel.net</email>"
+
+#~ msgid "KWrite XML syntax highlighting support"
+#~ msgstr "KWrite XML syntaxis accentuering ondersteuning"
+
+#~ msgid "John Firebaugh <email>jfire@uclink.berkeley.edu</email>"
+#~ msgstr "John Firebaugh <email>jfire@uclink.berkeley.edu</email>"
+
+#~ msgid "Various Patches"
+#~ msgstr "Verschillende patches"
+
+#~ msgid "Many other people have contributed:"
+#~ msgstr "Vele anderen hebben bijgedragen:"
+
+#~ msgid "Matteo Merli <email>merlim@libero.it</email>"
+#~ msgstr "Matteo Merli <email>merlim@libero.it</email>"
+
+#~ msgid "Highlighting for RPM Spec-Files, Diff and more"
+#~ msgstr "Syntaxisaccentuatie voor RPM Spec-bestanden, Diff en meer"
+
+#~ msgid "Rocky Scaletta <email>rocky@purdue.edu</email>"
+#~ msgstr "Rocky Scaletta <email>rocky@purdue.edu</email>"
+
+#~ msgid "Highlighting for VHDL"
+#~ msgstr "Syntaxisaccentuatie voor VHDL"
+
+#~ msgid "Yury Lebedev"
+#~ msgstr "Yury Lebedev"
+
+#~ msgid "Highlighting for SQL"
+#~ msgstr "Syntaxisaccentuatie voor SQL"
+
+#~ msgid "Chris Ross"
+#~ msgstr "Chris Ross"
+
+#~ msgid "Highlighting for Ferite"
+#~ msgstr "Syntaxisaccentuatie voor Ferite"
+
+#~ msgid "Nick Roux"
+#~ msgstr "Nick Roux"
+
+#~ msgid "Highlighting for ILERPG"
+#~ msgstr "Syntaxisaccentuatie voor ILERPG"
+
+#~ msgid "John Firebaugh"
+#~ msgstr "John Firebaugh"
+
+#~ msgid "Highlighting for Java, and much more"
+#~ msgstr "Syntaxisaccentuatie voor Java, en nog veel meer"
+
+#~ msgid "Carsten Niehaus"
+#~ msgstr "Carsten Niehaus"
+
+#~ msgid "Highlighting for LaTeX"
+#~ msgstr "Syntaxisaccentuatie voor LaTeX"
+
+#~ msgid "Per Wigren"
+#~ msgstr "Per Wigren"
+
+#~ msgid "Highlighting for Makefiles, Python"
+#~ msgstr "Syntaxisaccentuatie voor Make-bestanden, Python"
+
+#~ msgid "Jan Fritz"
+#~ msgstr "Jan Fritz"
+
+#~ msgid "Highlighting for Python"
+#~ msgstr "Syntaxisaccentuatie voor Python"
+
+#~ msgid "Daniel Naber"
+#~ msgstr "Daniel Naber"
+
+#~ msgid "Small bugfixes, XML plugin"
+#~ msgstr "Kleine bugfixes, XML plugin"
+
+#~ msgid ""
+#~ "Documentation copyright 2000,2001 Seth Rothberg, "
+#~ "<email>sethmr@bellatlantic.net</email>"
+#~ msgstr ""
+#~ "Documentatie copyright 2000,2001 Seth Rothberg, "
+#~ "<email>sethmr@bellatlantic.net</email>"
+
+#~ msgid ""
+#~ "Documentation copyright 2002 Anders Lund, <email>anders@alweb.dk</email>"
+#~ msgstr ""
+#~ "Documentatie copyright 2002 Anders Lund, <email>anders@alweb.dk</email>"
+
+#~ msgid "CREDIT_FOR_TRANSLATORS"
+#~ msgstr "&meld.fouten;&vertaling.niels;"
+
+#~ msgid "Installation"
+#~ msgstr "Installatie"
+
+#~ msgid "<keycap>Shift</keycap><keycap>F1</keycap>"
+#~ msgstr "<keycap>Shift</keycap><keycap>F1</keycap>"
+
+#~ msgid "<keycap>Ctrl</keycap><keycap>F</keycap>"
+#~ msgstr "<keycap>Ctrl</keycap><keycap>F</keycap>"
+
+#~ msgid "<keycap>Ctrl</keycap><keycap>C</keycap>"
+#~ msgstr "<keycap>Ctrl</keycap><keycap>C</keycap>"
+
+#~ msgid "<keycap>Ctrl</keycap><keycap>N</keycap>"
+#~ msgstr "<keycap>Ctrl</keycap><keycap>N</keycap>"
+
+#~ msgid "<keycap>Ctrl</keycap><keycap>P</keycap>"
+#~ msgstr "<keycap>Ctrl</keycap><keycap>P</keycap>"
+
+#~ msgid "<keycap>Ctrl</keycap><keycap>Q</keycap>"
+#~ msgstr "<keycap>Ctrl</keycap><keycap>Q</keycap>"
+
+#~ msgid "<keycap>Ctrl</keycap><keycap>R</keycap>"
+#~ msgstr "<keycap>Ctrl</keycap><keycap>R</keycap>"
+
+#~ msgid "<keycap>Ctrl</keycap><keycap>S</keycap>"
+#~ msgstr "<keycap>Ctrl</keycap><keycap>S</keycap>"
+
+#~ msgid "<keycap>Ctrl</keycap><keycap>V</keycap>"
+#~ msgstr "<keycap>Ctrl</keycap><keycap>V</keycap>"
+
+#~ msgid "<keycap>Ctrl</keycap><keycap>X</keycap>"
+#~ msgstr "<keycap>Ctrl</keycap><keycap>X</keycap>"
+
+#~ msgid "<keycap>Ctrl</keycap><keycap>Z</keycap>"
+#~ msgstr "<keycap>Ctrl</keycap><keycap>Z</keycap>"
+
+#~ msgid "<keycap>Ctrl</keycap><keycap>Shift</keycap><keycap>Z</keycap>"
+#~ msgstr "<keycap>Ctrl</keycap><keycap>Shift</keycap><keycap>Z</keycap>"
+
+#~ msgid "&kate; Copyright 2000, 2001, Christoph Cullmann."
+#~ msgstr "&kate; Copyright 2000, 2001, Christoph Cullmann."

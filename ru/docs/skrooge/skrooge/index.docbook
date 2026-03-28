@@ -1,0 +1,3230 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "customization/dtd/kdedbx45.dtd" [
+  <!ENTITY appname '<application
+>Skrooge</application
+>'>
+  <!ENTITY kappname "&appname;">
+  <!ENTITY tbw "TO BE WRITTEN">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Russian "INCLUDE"
+><!-- change language only here -->
+
+  <!ENTITY homepage "http://extragear.kde.org/apps/skrooge/">
+
+]>
+
+
+<book id="skrooge" lang="&language;">
+<title
+>Руководство &appname;</title>
+
+
+<bookinfo>
+
+<authorgroup>
+
+<author
+><firstname
+>Stéphane</firstname
+> <surname
+>MANKOWSKI</surname
+> <affiliation
+> <address
+><email
+>stephane@mankowski.fr</email
+></address>
+</affiliation>
+</author>
+
+<othercredit role="developer"
+><firstname
+>Guillaume</firstname
+> <surname
+>DE BURE</surname
+> <affiliation
+> <address
+><email
+>guillaume.debure@gmail.com</email
+></address>
+</affiliation>
+<contrib
+>Разработчик</contrib>
+</othercredit>
+<othercredit role="translator"
+> <firstname
+>Юрий</firstname
+> <surname
+>Ефремов</surname
+> <affiliation
+><address
+><email
+>yur.arh@gmail.com</email
+></address
+></affiliation
+><contrib
+>Перевод на русский язык</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+<year
+>2007</year>
+<year
+>2008</year>
+<year
+>2009</year>
+<year
+>2010</year>
+<year
+>2011</year>
+<holder
+>Stéphane MANKOWSKI</holder>
+<holder
+>Guillaume DE BURE</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>30 января 2011 года</date>
+<releaseinfo
+>0.8.0</releaseinfo>
+
+
+<abstract>
+<para
+>Руководство по использованию финансового менеджера &appname;. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>extragear</keyword>
+<keyword
+>офис</keyword>
+<keyword
+>skrooge</keyword>
+<keyword
+>финансовый менеджер</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Введение</title>
+
+<sect1 id="skrooge-intro">
+<title
+>&appname;</title>
+
+<para
+>&appname; предназначен для управления финансами. С его помощью вы можете следить за вашими доходами и расходами на нескольких счетах в нескольких валютах. Он содержит всё необходимое: категории, планирование операций, создание графических отчётов, управление акциями и другое. Кроме того, есть и дополнительные возможности, например: быстрое редактирование операций, поиск при вводе, отслеживание возврата денег, настраиваемые параметры... </para>
+
+<screenshot>
+<screeninfo
+>В окне &appname; показаны круговые диаграммы расходов по категориям</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="reports.png" format="PNG"/>
+</imageobject>
+<textobject
+><phrase
+>В окне &appname; показаны круговые диаграммы расходов по категориям</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+
+<sect2 id="what-skrooge-is">
+<title
+>Что может &appname;?</title>
+
+<para
+>&appname; является личным финансовым менеджером для &kde; 4. Он предназначен для использования людьми, которые хотят отслеживать доходы, расходы и инвестиции. </para>
+
+</sect2>
+
+<sect2 id="what-skrooge-is-not">
+<title
+>Что не может &appname;?</title>
+
+<para
+>&appname; не является профессиональным инструментом и не предназначен для использования в малом бизнесе. Он не может вычислять налоги, не поддерживает систему двойной записи, а также отсутствуют расширенные финансовые возможности. </para>
+<para
+>Если вам нужна программа с описанными выше возможностями, лучше воспользуйтесь Kmymoney или Kraft.</para>
+
+</sect2>
+</sect1>
+
+<sect1 id="terminology">
+<title
+>Терминология</title>
+
+<sect2 id="terminology-document">
+<title
+>Документ</title>
+<para
+>Документ &appname; представляет собой файл с расширением .skg. Он может содержать неопределённое количество <link linkend="terminology-account"
+> счетов </link
+>. Вы можете использовать один документ для управления всеми своими счетами одновременно. </para>
+</sect2>
+
+<sect2 id="terminology-account">
+<title
+>Счёт</title>
+<para
+>Счёт в &appname; схож с вашим банковским счётом. Например, если у вас есть один счёт для вас, один для вашей жены, и один общий, то вы можете создать эти три счёта в &appname;. Каждый раз, когда вы будете тратить или получать денежные суммы, вы можете добавить <link linkend="terminology-operation"
+>операцию</link
+> и указать счёт, для которого эта банковская операция была выполнена. </para>
+</sect2>
+
+<sect2 id="terminology-operation">
+<title
+>Операция</title>
+<para
+>Операцией является внесение или снятие денежных сумм с одного из ваших счетов. Если вы будете указывать в ваших операциях <link linkend="terminology-category"
+>категорию</link
+>, то вы сможете анализировать, на что вы тратите деньги. </para>
+
+<sect3 id="terminology_standard_operation">
+<title
+>Обычная операция</title>
+<para
+>Обычная операция — это основная операция в &appname;. Например, «Сегодня потрачено 200 руб. на продукты».</para>
+<para
+></para>
+</sect3>
+
+<sect3 id="terminology_split_operation">
+<title
+>Разделённая операция</title>
+<para
+>Разделённая операция — это операция, для которой общая сумма разделена между несколькими <link linkend="terminology-category"
+>категориями</link
+> или <link linkend="trackers"
+>трекерами</link
+>.</para>
+<para
+>Например, «Вчера, потратил 1000 руб. в магазине, из которых 160 руб. были потрачены на продукты, и 840 руб. на одежду».</para>
+</sect3>
+
+<sect3 id="terminology_transfer">
+<title
+>Перевод</title>
+<para
+>Перевод в &appname; — это перевод денежной суммы между вашими счетами в &appname;.</para>
+<para
+>Эту операцию не следует путать с платежами. Если вы выполняете перевод денег на чужой счёт, то в &appname; это не является переводом. Эта операция в понимании программы является <link linkend="terminology_standard_operation"
+>обычной операцией</link
+> оплаты.</para>
+<para
+>Читайте <link linkend="transfer"
+>соответствующую главу</link
+> для получения дополнительной информации.</para>
+</sect3>
+
+<sect3 id="terminology_validated_operation">
+<title
+>Утверждённая операция</title>
+<para
+>Сразу после <link linkend="import"
+>импорта</link
+> операции программа считает её не утверждённой. Требуется вручную проверить и утвердить её. Утверждённая операция — это импортированная операция, которая была утверждена.</para>
+<para
+>Примечание: в параметрах программы можно включить автоматическое утверждение импортированных операций.</para>
+</sect3>
+
+<sect3 id="terminology_pointed_operation">
+<title
+>Отмеченные операции</title>
+<para
+>В процессе <link linkend="reconciliation"
+>проверки</link
+>, вы сравниваете операции в &appname; с реальными банковскими операциями. Отмеченная операция — это операция, которую следует проверить. Когда закончите проверку, то отмеченную операцию следует исправить на <link linkend="terminology_checked_operation"
+>проверенную</link
+>.</para>
+</sect3>
+
+<sect3 id="terminology_checked_operation">
+<title
+>Проверенная операция</title>
+<para
+>Когда все операции вашего счёта в &appname; отмечены, вам потребуется завершить проверку на соответствие операций, преобразовав все <link linkend="terminology_pointed_operation"
+>отмеченные</link
+> операции в проверенные.</para>
+</sect3>
+
+
+</sect2>
+
+<sect2 id="terminology-category">
+<title
+>Категория</title>
+<para
+>Категория — это класс операций. Среди классических примеров «Продукты питания», «Налоги», «Зарплата»... В категории могут содержаться другие категории, создавая иерархическую структуру. Например, категория «Транспорт» может содержать категории «Автобус», «Автомобиль», «Самолет»... &appname; способен обрабатывать любое количество вложенных категорий. </para>
+</sect2>
+
+<sect2 id="terminology-unit">
+<title
+>Единица</title>
+<para
+>Единицей в &appname; может быть всё что угодно, что имеет стоимость. Например: <itemizedlist>
+  <listitem
+><para
+>Валюта <itemizedlist>
+      <listitem
+><para
+>$ (доллар США)</para
+></listitem>
+      <listitem
+><para
+>€ (евро)</para
+></listitem>
+      <listitem
+><para
+>£ (фунтов стерлингов)</para
+></listitem>
+    </itemizedlist>
+    </para>
+  </listitem>
+  <listitem
+><para
+>Акции <itemizedlist
+> <listitem
+><para
+>GOOG (Google)</para
+></listitem>
+    </itemizedlist>
+    </para>
+  </listitem>
+  <listitem
+><para
+>Личное имущество <itemizedlist>
+      <listitem
+><para
+>Ваш дом</para
+></listitem>
+      <listitem
+><para
+>Ваша машина</para
+></listitem>
+    </itemizedlist>
+    </para>
+  </listitem>
+</itemizedlist>
+
+</para>
+</sect2>
+
+</sect1>
+
+</chapter>
+
+
+
+<chapter id="using-skrooge">
+<title
+>Использование &appname;</title>
+
+<sect1 id="user_interface">
+<title
+>Пользовательский интерфейс</title>
+<para
+>Интерфейс &appname; состоит из главного окна, панелей и строки состояния. Панели можно закрывать и открывать, а также располагать слева или справа от основной области. </para>
+
+<sect2 id="main_area">
+<title
+>Главное окно</title>
+<para
+>В этом окне отображается основная информация. В &appname; поддерживается работа с <link linkend="multi-tabs"
+>несколькими вкладками</link
+>, на каждой из которой будут показаны соответствующие данные. </para>
+</sect2>
+
+<sect2 id="docks">
+<title
+>Панели</title>
+<para
+>Панели есть во многих приложениях &kde;. Они являются вспомогательными частями окна программы, и могут быть перемещены, упорядочены, закрыты, или отсоединены от главного окна. </para>
+
+<para
+>Несколько примеров расположения панелей: </para>
+
+<informaltable>
+  <tgroup cols="3">
+    <tbody>
+      <row>
+        <entry>
+        <inlinemediaobject>
+        <imageobject>
+          <imagedata fileref="docks_left_right.png"/>
+        </imageobject>
+        </inlinemediaobject>
+        </entry>
+        <entry>
+        <inlinemediaobject>
+        <imageobject>
+          <imagedata fileref="docks_detached.png"/>
+        </imageobject>
+        </inlinemediaobject>
+        </entry>
+        <entry>
+        <inlinemediaobject>
+        <imageobject>
+          <imagedata fileref="docks_stacked.png"/>
+        </imageobject>
+        </inlinemediaobject>
+        </entry>
+      </row>
+    </tbody>
+  </tgroup>
+</informaltable>
+
+<para
+>Панели &appname;: <itemizedlist>
+<listitem
+><para
+><link linkend="context_chooser"
+>Страницы</link
+></para
+></listitem>
+<listitem
+><para
+><link linkend="bookmarks"
+>Закладки</link
+></para
+></listitem>
+<listitem
+><para
+><link linkend="undo_redo"
+>Журнал</link
+></para
+></listitem>
+<listitem
+><para
+><link linkend="property_editor"
+>Примечания</link
+></para
+></listitem>
+</itemizedlist>
+</para>
+</sect2>
+
+<sect2 id="status_bar">
+<title
+>Строка состояния</title>
+<para
+>Строка состояния — это небольшая область в нижней части окна &appname;, где отображаются разные сведения, касающиеся вашей работы. В этой области отображается индикатор выполнения и кнопка отмены, предназначенная для прерывания выполнения длительного задания, например импорт большого файла. <screenshot
+> <mediaobject>
+<imageobject
+><imagedata fileref="progress-bar.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Индикатор выполнения &appname;</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+</para>
+</sect2>
+
+<sect2 id="context_chooser">
+<title
+>Страницы</title>
+<para
+>Страница — это панель, где можно выбрать данные, которые следует отображать на текущей или в новой вкладке. Чтобы открыть новую вкладку, удерживайте клавишу &Ctrl; при щелчке левой кнопкой мыши по выбранной странице.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="context_chooser.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Страницы</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Каждой странице будет посвящена отдельная глава этого руководства.</para>
+</sect2>
+
+<sect2 id="multi-tabs">
+<title
+>Вкладки</title>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="multi_tabs.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>&appname; с несколькими открытыми вкладками</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>В &appname; может быть открыто любое количество вкладок, на каждой из которой будут нужные вам сведения. На приведённом выше снимке экрана показаны 4 вкладки (счета, операции и два графика).</para>
+
+</sect2>
+
+
+<sect2 id="edition_panels">
+<title
+>Панели редактирования</title>
+<para
+>На большинстве вкладок &appname; редактирование элементов можно осуществлять с помощью панели редактирования, расположенной в нижней части страницы. В целях экономии места, особенно на небольших экранах, вы можете скрыть панель нажатием соответствующей кнопки.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="edition_panel_buttons.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Кнопки для показа или скрытия панели редактирования операций.</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Если изменения можно осуществлять с помощью нескольких панелей, будет показано несколько кнопок выбора. На приведённом выше снимке экрана показаны четыре кнопки выбора панелей редактирования для <link linkend="operations"
+>Операций</link
+>: «Обычные», «Разделённые», «Перевод» и «Акции».</para>
+
+</sect2>
+
+
+<sect2 id="tables">
+<title
+>Таблицы</title>
+<para
+>В &appname; вы можете настроить вид любой таблицы. Наведите указатель мыши на заголовок столбца таблицы и вызовите контекстное меню (обычно щелчком правой кнопкой мыши):</para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="table_menu.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Настройка таблицы</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Столбцы</guimenu
+></menuchoice
+></term>
+<listitem>
+<para
+>Настройка вида столбцов.</para>
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Набор столбцов</guimenu
+></menuchoice
+></term>
+<listitem>
+<para
+>Предварительно определённый набор столбцов. Набор «По умолчанию» обычно отображает все столбцы. Для каждой из таблиц могут существовать другие предварительно определённые наборы.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Подогнать ширину столбцов</guimenu
+></menuchoice
+></term>
+<listitem
+><para
+>Изменение ширины всех столбцов по содержимому.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Автоматически подгонять ширину столбцов</guimenu
+></menuchoice
+></term>
+<listitem
+><para
+>Если выбрано, то вы не сможете изменять ширину столбцов вручную. &appname; будет автоматически менять ширину в зависимости от содержимого.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guimenu
+>Список отображаемых столбцов</guimenu
+></term>
+<listitem
+><para
+>Показывает список всех столбцов для данной таблицы. Отображаемые столбцы отмечены. Чтобы скрыть столбец, снимите отметку.</para
+></listitem>
+</varlistentry>
+</variablelist>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Плавная прокрутка</guimenu
+></menuchoice
+></term>
+<listitem
+><para
+>Если этот пункт отмечен, вы сможете прокручивать содержимое таблицы перетаскиванием её указателем мыши (достаточно нажать и удерживать левую кнопку мыши). Если вы быстро дёрните мышь в определённом направлении, как будто «бросаете», то содержимое таблицы также дернётся в этом направлении с эффектом замедления. Такой режим полезен в основном на сенсорных устройствах.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Показать сетку</guimenu
+></menuchoice
+></term>
+<listitem
+><para
+>Рисовать линии сетки в таблице.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Чередовать цвета строк</guimenu
+></menuchoice
+></term>
+<listitem
+><para
+>Чередование цвета строк. Цвета определяются текущей схемой цветов &kde;.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Экспорт</guimenu
+></menuchoice
+></term>
+<listitem
+><para
+><link linkend="export_table"
+>Экспорт таблицы</link
+> отдельным файлом. Поддерживаются форматы PDF, CSV и TXT.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Для того чтобы выполнить сортировку содержимого, нажмите на заголовок столбца. Для перемещения столбцов перетащите их влево или вправо.</para>
+
+</sect2>
+
+
+
+<sect2 id="save_customized_content">
+<title
+>Сохранение настроенной страницы</title>
+
+<para
+>Как уже пояснили в <link linkend="tables"
+>предыдущей главе</link
+>, таблицы можно настроить в соответствии с вашими потребностями. Чтобы настройка не пропала требуется до закрытия вкладки сохранить настроенную страницу. Для этого существует два способа.</para>
+
+<sect3 id="save_default_context">
+<title
+>Сохранение страницы по умолчанию</title>
+<para
+>С помощью этого пункта можно сохранить текущее состояние по умолчанию, которое всегда будет показано при открытии данной страницы. Например, вы можете настроить страницу <link linkend="dashboard"
+>Виджеты</link
+>, так чтобы на ней находились 4 виджета, упорядоченные по вашему желанию. И скорей всего, вы захотите, чтобы эта страница всегда выглядела так, как вы её настроили, и не повторять эту процедуру каждый раз.</para>
+<para
+>Чтобы сохранить состояние по умолчанию требуется щёлкнуть правой кнопкой мыши по заголовку вкладки и выбрать пункт <guimenuitem
+>Сохранить состояние страницы</guimenuitem
+>.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="tab_state_management.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Контекстное меню на вкладках</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Более быстрый способ, это нажать на значок с дискетой <inlinemediaobject
+> <imageobject
+><imagedata fileref="document-save.png" format="PNG"/> </imageobject
+></inlinemediaobject
+>, который появится слева от названия вкладки, после изменения состояния.</para>
+
+</sect3>
+
+
+<sect3 id="bookmarks">
+<title
+>Работа с закладками</title>
+<para
+>Допустим вам нужно настроить вид операций для каждого отдельного счёта, так чтобы они отображались в собственной вкладке и с собственным набором столбцов в таблице. Приведённый выше способ для подобной настройки неприменим, поскольку такая настройка будет применена ко всем страницам одного типа. </para>
+<para
+>Достичь нужного результата можно сохранив каждую вкладку в виде закладки. Так же, как в веб-браузере, закладки можно упорядочить в иерархическую структуру с папками. Управление закладками осуществляется через панель «Закладки»:</para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="bookmarks_browser.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Панель «Закладки»</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Чтобы создать закладку, выберите страницу, для которой вы хотите создать закладку и внесите необходимые изменения. После этого откройте контекстное меню <link linkend="docks"
+>панели</link
+> «Закладки» и выберите в нём пункт <menuchoice
+><guimenu
+>Создать закладку текущей страницы</guimenu
+></menuchoice
+>.</para>
+
+<para
+>Вы можете включить «автозапуск» закладки или папки закладок, и автоматически открывать нужные страницы после запуска &appname;. Таким образом, вы можете полностью изменить компоновку &appname; по умолчанию.</para>
+
+</sect3>
+
+</sect2>
+
+<sect2 id="undo_redo">
+<title
+>Журнал действий</title>
+<para
+>В &appname; отмена и повтор действий работает обычным способом, но, кроме того, можно отменить или повторить действие, даже если оно было выполнено несколько дней назад. По умолчанию, после завершения работы &appname; журнал не очищается (можно изменить в параметрах программы), то есть вы можете отменить практически все действия с момента создания документа. </para>
+<para
+>По умолчанию, журнал действий &appname; настроен на хранение 50 записей. Вы можете изменить это значение в параметрах программы. </para>
+<para
+>В &appname; предусмотрена <link linkend="docks"
+>панель</link
+> со списком действий, которые можно отменить. </para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="history_browser.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Журнал действий</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>В журнале действий показаны три столбца: </para>
+
+<itemizedlist>
+
+<listitem>
+<para
+>Значок, показывающий состояние действия. Жёлтая стрелка против часовой стрелки <inlinemediaobject
+><imageobject
+><imagedata fileref="edit-undo.png" format="PNG"/></imageobject
+></inlinemediaobject
+> означает, что действие можно отменить. А зелёная стрелка по часовой стрелке <inlinemediaobject
+><imageobject
+><imagedata fileref="edit-redo.png" format="PNG"/></imageobject
+></inlinemediaobject
+> означает, что действие можно повторить. </para>
+</listitem>
+
+<listitem>
+<para
+>Описание действия </para>
+</listitem>
+
+<listitem>
+<para
+>Дата, когда действие было выполнено </para>
+</listitem>
+
+<listitem>
+<para
+>Значок дискеты <inlinemediaobject
+><imageobject
+><imagedata fileref="document-save.png" format="PNG"/></imageobject
+></inlinemediaobject
+> означает, что действие было сохранено, то есть документ был сохранён после выполнения этого действия. </para>
+</listitem>
+</itemizedlist>
+
+<para
+>Чтобы отменить или повторить действие, дважды щёлкните по записи. </para>
+</sect2>
+
+
+<sect2 id="mass_update">
+<title
+>Групповое обновление</title>
+<para
+>В &appname; предусмотрена возможность группового обновления выбранных записей. Хотя такое обновление в основном применяется для <link linkend="operations"
+>операций</link
+>, им можно воспользоваться и для <link linkend="accounts"
+>счетов</link
+>, <link linkend="units"
+>единиц</link
+>, <link linkend="scheduled"
+>плановых операций</link
+>...</para>
+<para
+>Выполнить обновление очень просто: выберите записи, которые необходимо обновить, установите значения параметров, которые следует применить ко всем записям, и нажмите кнопку <guibutton
+>Изменить</guibutton
+>. Значения атрибутов, которые вы не меняли, останутся прежними.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="before_mass_update.png"/></imageobject>
+<caption
+><para
+>Установка способа оплаты «Кредитная карта» и получателя «ACME» для выбранных операций.</para
+></caption>
+</mediaobject>
+</screenshot>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="after_mass_update.png"/></imageobject>
+<caption
+><para
+>Операции обновлены.</para
+></caption>
+</mediaobject>
+</screenshot>
+
+<note
+><para
+>Невозможно поменять дату и сумму с помощью группового обновления</para
+></note>
+
+</sect2>
+
+
+<sect2 id="property_editor">
+<title
+>Редактор примечания</title>
+<para
+>Одной из особенностей &appname; является возможность добавлять любые данные к любому объекту. Например, вам потребуется добавить имя и телефонный номер сотрудника банка к записи счёта. Кроме того, вы можете прикрепить файл к операции, например отсканированное изображение выписки счёта. </para>
+<para
+>Воспользоваться этим можно с помощью редактора примечаний, который представляет собой <link linkend="docks"
+>панель</link
+>. </para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="property_editor.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Редактор примечаний с прикрепленным файлом</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Когда открыта панель, на ней будут показаны пользовательские примечания для выбранного объекта (счёта, операции, категории, единицы и т.д.). </para>
+</sect2>
+
+<sect2 id="search">
+<title
+>Поиск при наборе</title>
+<para
+>В &appname; вы найдете поле «Поиск», с помощью которого можно выполнять поиск на данной странице: <itemizedlist>
+<listitem
+><para
+>На странице операций вы можете найти операции, данные которых содержат введённый текст в любом из столбцов (дата, получатель, категория, комментарий...)</para
+></listitem>
+<listitem
+><para
+>На странице счетов вы можете найти счета, данные которых содержат введённый текст в любом из столбцов (банк, название счета, номер...)</para
+></listitem>
+<listitem
+><para
+>На странице отчёта, будет изменён график в зависимости от данных поиска.</para
+></listitem>
+<listitem
+><para
+>На странице... Ну, вы поняли, да?</para
+></listitem>
+</itemizedlist>
+</para>
+</sect2>
+
+</sect1>
+
+<sect1 id="import">
+<title
+>Импорт файлов</title>
+
+<para
+>Если вы раньше работали с другим финансовым менеджером и не хотите вводить данные вручную, в &appname; предусмотрена возможность импорта файлов.</para>
+
+<sect2 id="supported_file_formats">
+<title
+>Поддерживаемые форматы</title>
+
+<para
+>Доступны следующие форматы:</para>
+
+<variablelist>
+<varlistentry>
+  <term
+>OFX</term>
+  <listitem
+><para
+>Open Financial eXchange. Известный и хорошо документированный формат, данные в котором &appname; может импортировать с помощью сторонней библиотеки (libofx). Рекомендуется воспользоваться этим форматом для импорта.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+  <term
+>QFX</term>
+  <listitem
+><para
+>QFX — разновидность OFX для коммерческого приложения <trademark
+>Quicken</trademark
+>.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+  <term
+>QIF</term>
+  <listitem
+><para
+><trademark
+>Quicken</trademark
+> Import File (файл импорта <trademark
+>Quicken</trademark
+>). Возможно, самый распространённый формат файлов. У этого формата достаточно неприятные ограничения, в частности отсутствие возможности установки единицы операции и отсутствие строгого формата даты.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+  <term
+>CSV</term>
+  <listitem
+><para
+>Comma Separated Value (значения, разделённые запятыми). Хотя этот формат и не является, форматом финансовых данных, он часто используется для экспорта данных банков и других программ. В основном из-за простоты использования этих данных для создания электронной таблицы.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</sect2>
+
+<sect2 id="csv_specificities">
+<title
+>Особенность CSV</title>
+<para
+>Поскольку CSV не имеет строго определённых правил, &appname; не может предусмотреть расположение в файле данных дат, категорий, суммы... Для определения соответствующих полей &appname; предполагает, что в файле CSV содержатся определённые заголовки, указывающие на назначение данных с соответствующем столбце. Ваш файл должен содержать по крайней мере столбцы «Дата» и «Сумма».</para>
+<para
+>Вы можете вручную настроить автоматическое сопоставление каждого атрибута в параметрах программы (<guimenu
+>Настройка</guimenu
+> <guimenuitem
+>Настроить &appname;</guimenuitem
+>) в разделе  <guilabel
+>Импорт/Экспорт</guilabel
+>.</para>
+</sect2>
+
+<sect2 id="import_operations">
+<title
+>Операции импорта</title>
+<para
+>Одним из основных принципов работы &appname; является отсутствие множества мастеров и лишних диалоговых окон. Это особенно важно при импорте данных, когда другие программы пытаются получить достаточно много данных от пользователя. Если вы воспользуетесь пунктом меню <menuchoice
+><guimenu
+>Файл</guimenu
+> <guimenuitem
+>Импорт</guimenuitem
+></menuchoice
+>, то &appname; попросит вас выбрать файл (вы можете импортировать сразу несколько файлов), и всё! &appname; сам определит формат файлов и применит соответствующий режим импорта.</para>
+
+<sect3 id="import_account">
+<title
+>Счёт</title>
+<para
+>Одним из моментов, который может вас удивить, является то, что программа не будет спрашивать вас о том, к какому счёту следует импортировать данные операций. Причиной является то, что &appname; прочитает номер счёта из файла и свяжет импортированные записи операций с соответствующим счётом.</para>
+<para
+>Если счёта с номером найдено не будет, или если файл не содержит этих данных, то &appname; будет использовать имя файла в качестве номера счёта.</para>
+<para
+>Если счёта с соответствующим названием тоже будет не обнаружено, то &appname; создаст новую запись счёта с названием, соответствующим номеру счёта и свяжет все импортируемые операции с ним. После этого вы можете переименовать автоматически созданный счёт, выполнив <link linkend="mass_update"
+>групповое обновление</link
+> или использовать <link linkend="search_and_process"
+>Поиск и обработка</link
+>.</para>
+</sect3>
+
+<sect3 id="import_unit">
+<title
+>Единица</title>
+<para
+>Если в импортируемом файле не указана единица (такое случается с форматами QIF и CSV), то &appname; будет предполагать, что единицей является <link linkend="unit_types"
+>основная валюта</link
+>. Если это не так, используйте <link linkend="search_and_process"
+>Поиск и обработка</link
+> для исправления данных.</para>
+</sect3>
+
+<sect3 id="import_date">
+<title
+>Дата</title>
+<para
+>Бывает, что в входных файлах используется формат даты, который не используется в вашей стране (такое может случиться в файлах QIF и CSV, OFX имеет навязанный формат даты). &appname; попытается автоматически определить формат даты.</para>
+</sect3>
+
+<sect3 id="import_status">
+<title
+>Статус импорта</title>
+<para
+>Импортированные операции имеют особый статус. Сразу после импорта они помечаются, как «Не утверждённые импортированные операции». Сделано так для того, чтобы можно было проще найти эти операции и проверить правильность выполнения импорта. По умолчанию, такие операции обозначены синим цветом.</para>
+<tip
+><para
+>Если вы не хотите выполнять проверку, вы можете включить <guilabel
+>«Автоматическое подтверждение»</guilabel
+> в разделе «Импорт/Экспорт» в параметрах программы.</para
+></tip>
+</sect3>
+
+
+</sect2>
+
+<sect2 id="merge_operations">
+<title
+>Объединение операций после импорта</title>
+<para
+>Может произойти ситуация, когда вы ввели данные операции вручную, а затем импортировали выписку банка с такими же данными. Тогда в списке операций будет две одинаковых записи для одной операции.</para>
+<para
+>Объединить эти одинаковые записи можно, выделить их, а затем выбрать в контекстном меню пункт <guimenuitem
+>Объединить импортированные операции</guimenuitem
+>. Программа добавит данные из вручную введённых операций к импортируемым и удалит записи, введённые вручную.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="merge_operations_menu.png"/></imageobject>
+</mediaobject>
+</screenshot>
+
+</sect2>
+
+</sect1>
+
+<sect1 id="export">
+<title
+>Экспорт</title>
+<para
+>В &appname; предусмотрено несколько способов экспорта данных, в зависимости от назначения.</para>
+
+<sect2 id="export_file">
+<title
+>Экспорт всех данных в единый файл</title>
+<para
+>С помощью пункта меню <menuchoice
+><guimenu
+>Файл</guimenu
+> <guimenuitem
+>Экспорт</guimenuitem
+></menuchoice
+> можно создать файл CSV или QIF, содержащий все записи операций текущего документа. Этим вариантом следует воспользоваться, если вам нужно экспортировать данные в другие программы.</para>
+</sect2>
+
+<sect2 id="export_table">
+<title
+>Экспорт определённой таблицы</title>
+<para
+>В &appname; можно экспортировать любую <link linkend="tables"
+>таблицу</link
+> в формате CSV, PDF или TXT. </para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="export_table_menu.png"/></imageobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Экспортировать можно любую показанную таблицу, так что вы можете пользоваться этим для экспорта любой табличной информацией.</para>
+
+</sect2>
+
+<sect2 id="export_graph">
+<title
+>Экспорт графиков</title>
+<para
+>&appname; позволяет экспортировать <link linkend="reports"
+>графики</link
+> в форматах PDF, SVG или в других поддерживаемых форматов &kde; (PNG, JPG, GIF, TIFF...). Для экспорта, щёлкните правой кнопкой мыши по графику и выберите пункт <guimenu
+>Экспорт...</guimenu
+>.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="export_graph_menu.png"/></imageobject>
+</mediaobject>
+</screenshot>
+
+
+</sect2>
+
+</sect1>
+
+<sect1 id="dashboard">
+<title
+>Виджеты</title>
+<para
+>Виджеты &appname; — это дополнения, которые показывают общую информацию о вашем финансовом положении.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="dashboard.png"/></imageobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Вы можете добавить виджеты, нажав на значок в верхнем правом углу. Настроить их можно щелчком по значку возле названия.</para>
+
+</sect1>
+
+<sect1 id="accounts">
+<title
+>Банковские счета</title>
+<para
+>Этот модуль предназначен для управления вашими счетами.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="bank_accounts.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Окно банковского счёта</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+
+<sect2 id="account_properties"
+> 
+<title
+>Параметры счёта</title>
+<para
+>Счёт имеет следующие параметры: <variablelist>
+<varlistentry>
+<term
+>Банк</term>
+<listitem
+><para
+>Вы можете выбрать банк из выпадающего списка, содержащий список известных банков для вашей страны, или ввести название, если банка нет в списке. Если список пуст, то вы можете помочь разработчикам &appname;, отправив нужные сведения.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Счёт</term>
+<listitem
+><para
+>Название, которое вы хотите использовать для этого счёта</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Тип</term>
+<listitem
+><para
+>Тип может быть: <itemizedlist
+> <listitem
+><para
+>Текущий</para
+></listitem
+> <listitem
+><para
+>Кредитная карта</para
+></listitem
+> <listitem
+><para
+>Инвестиция</para
+></listitem
+> <listitem
+><para
+>Активы</para
+></listitem
+> <listitem
+><para
+>Прочее</para
+></listitem
+> </itemizedlist
+> На данный момент тип счёта не используется для обработки, он только для информационной цели. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Номер банка</term>
+<listitem
+><para
+>Идентификационный номер банка</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Номер агентства</term>
+<listitem
+><para
+>Идентификационный номер агентства</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Номер счёта</term>
+<listitem
+><para
+>Идентификационный номер счёта</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Адрес</term>
+<listitem
+><para
+>Адрес агентства</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Комментарий</term>
+<listitem
+><para
+>Всё что угодно!</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+<!--Shall we talk about the "RIB key" here ? Or maybe this is strictly french, and should be removed from skrooge ?-->
+
+</para>
+</sect2>
+
+<sect2 id="accounts_list">
+<title
+>Список счетов</title>
+<para
+>Список счетов выглядит таблицей, в которой каждому счёту отведена одна отдельная строка. Кроме <link linkend="account_properties"
+>параметров</link
+> счёта, отображаются следующие столбцы:</para>
+
+<variablelist>
+<varlistentry>
+<term
+>Сумма</term>
+<listitem
+><para
+>Денежная сумма, хранящаяся на счёте, с учётом осуществления всех операций.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Проверено</term>
+<listitem
+><para
+>Денежная сумма всех проверенных операций. Она должна равняться сумме, которая находится на счёте в банке.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Не проверено</term>
+<listitem
+><para
+>Разница между двумя предыдущими столбцами</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Количество операций</term>
+<listitem
+><para
+>Общее количество операций, выполняемых с этим счётом</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Как и с остальными таблицами &appname;, вы можете полностью <link linkend="tables"
+>настроить вид</link
+>.</para>
+
+</sect2>
+
+<sect2 id="create_account">
+<title
+>Создание счёта</title>
+<para
+>Создать счёт можно с помощью панели редактирования, расположенной под списком счетов.</para>
+
+<para
+>Чтобы создать счёт, введите параметры (обязательные поля выделены жирным шрифтом) и нажмите кнопку <guibutton
+>Добавить</guibutton
+>.</para>
+</sect2>
+
+<sect2 id="modify_account">
+<title
+>Редактирование счёта</title>
+<para
+>Чтобы отредактировать счёт, выделите его, измените параметры и нажмите кнопку «Изменить».</para>
+</sect2>
+
+<sect2 id="delete_account">
+<title
+>Удаление счёта</title>
+<para
+>Чтобы удалить счёт, выделите его и нажмите клавишу <keycap
+>Delete</keycap
+>, воспользуйтесь пунктом контекстного меню или используйте значок на панели инструментов.</para>
+<warning
+><para
+>После удаления счёта, все операции, принадлежащие к нему также будут удалены! Но вы можете <link linkend="undo_redo"
+>отменить</link
+> удаление.</para
+></warning>
+</sect2>
+
+</sect1>
+
+
+
+<sect1 id="operations">
+<title
+>Операции</title>
+<para
+>Операции — это любые действия, которые вы выполняете с счётом, например: расходы, доходы, переводы, продажи, покупки и другое. Основные действия в &appname; у вас будут связаны с операциями.</para>
+
+<para
+>Для того, чтобы создать операцию, следует сперва создать хотя бы один <link linkend="accounts"
+>счёт</link
+>.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="operations.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Страница операций</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<sect2 id="operation_properties">
+<title
+>Параметры операции</title>
+
+<variablelist>
+<varlistentry>
+<term
+>Счёт</term>
+<listitem
+><para
+>Счёт, с которым будет связана операция. Выберите его из списка существующих счетов.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Дата</term>
+<listitem
+><para
+>Дата, когда была сделана операция. При нажатии стрелки вниз, расположенной в поле ввода справа, будет показан календарь.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term id="quantity_field"
+>Сумма</term>
+<listitem>
+<para
+>Сумма, которую вы потратите или получите в результате выполнения этой операции. Значение суммы вводится в два отдельных поля: «Сумма» и «Единица».</para>
+<para
+>Сумма имеет отрицательное значение для расходов (например, -30) и положительное значение для доходов (+250 или просто 250). Это поле работает как калькулятор, то есть, если вы введёте выражение 10 + 3,23 * 2, то в поле будет показан результат вычисления: 16,46.</para>
+<para
+>В &appname; требуется вводить <link linkend="units"
+>единицу</link
+>, потому что операция может быть выполнена не в основной валюте. Например, если вы покупаете или продаёте акции, то единицей операции будет единица котировки акции.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Получатель</term>
+<listitem
+><para
+>Кому вы платите или кто дал вам денег.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Способ оплаты</term>
+<listitem>
+<para
+>Определяет способ оплаты, использованный для данной операции. Это может быть кредитная карта, чек, перевод... Названия вводятся в свободной форме.</para>
+<para
+>Со способом оплаты может быть связан дополнительный номер. Этим номером может быть номер чека или номер перевода.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Категория</term>
+<listitem>
+<para
+>Определяет <link linkend="categories"
+>категорию</link
+>, к которой принадлежит эта операция. Для <link linkend="split_operation"
+>разделённой операции</link
+> можно указать несколько категорий.</para>
+<para
+>Вы можете выбрать существующую категорию, или ввести новую. В последнем случае &appname; создаст эту категорию вместе с операцией.</para>
+<para
+>Категории по уровням разделяются символом &gt;. Если вы введёте «Одежда &gt; Обувь», то &appname; создаст категорию «Одежда», если её не существовало, и создаст её подкатегорию «Обувь».</para>
+<para
+>Вы можете создавать любые иерархические структуры категорий, например: «Транспорт &gt; Автомобиль &gt; Топливо &gt; Бензин».</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Комментарий</term>
+<listitem
+><para
+>Любой комментарий.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Трекер</term>
+<listitem
+><para
+>Если вы хотите контролировать расходы, связанные с данной операцией, то введите в этом поле название <link linkend="trackers"
+>Трекера</link
+>. Если вам нужно задействовать для операции несколько трекеров, то воспользуйтесь режимом <link linkend="split_operation"
+>Разделения операции</link
+>.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</sect2>
+
+<sect2 id="operations_list">
+<title
+>Список операций</title>
+<para
+>Список счетов выглядит таблицей, в которой каждому счёту отведена одна отдельная строка. Кроме <link linkend="account_properties"
+>параметров</link
+> счёта, отображаются следующие столбцы:</para>
+
+<variablelist>
+<varlistentry>
+<term
+>Статус</term>
+<listitem
+><para
+>Статус указывает, проверена ли операция в &appname; на соответствие с реальными операциями или нет. Штрих-пунктирный флажок означает, что операция отмечена для согласования, но ещё не проверена.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Избранное</term>
+<listitem
+><para
+>Отмечена ли операция, как избранная.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Запланировано</term>
+<listitem
+><para
+>Когда операция запланирована, то в этом столбце отображается значок секундомера.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Эти столбцы также имеют определенные особенности:</para>
+
+<variablelist>
+<varlistentry>
+<term
+>Способ оплаты</term>
+<listitem
+><para
+>Если операция является частью <link linkend="transfer"
+>перевода</link
+>, то перед названием способа оплаты отображается значок с двойной стрелкой.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Категория</term>
+<listitem
+><para
+>Если операция <link linkend="split_operation"
+>разделённая</link
+>, то перед названием категории отображается значок с разделяющейся стрелкой.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Как и с остальными таблицами &appname;, вы можете полностью <link linkend="tables"
+>настроить вид</link
+>.</para>
+
+</sect2>
+
+<sect2 id="standard_operation">
+<title
+>Создание операции</title>
+<para
+>Чтобы создать обычную операцию, вы можете использовать кнопку <guibutton
+>Очистить</guibutton
+> для очистки всех полей ввода и ввести новые данные. Укажите параметры операции (вручную или с помощью <link linkend="fast_edition"
+>Быстрого редактирования</link
+>), и нажмите кнопку <guibutton
+>Добавить</guibutton
+>.</para>
+<para
+>Также вы можете изменить на нужные параметры аналогичную существующую операцию, и нажать кнопку <guibutton
+>Добавить</guibutton
+>.</para>
+</sect2>
+
+
+<sect2 id="split_operation">
+<title
+>Разделённая операция</title>
+<para
+>Разделённая операция — это операция, которая имеет несколько категорий, комментариев или трекеров. Переключиться в режим редактирования разделённой операции можно с помощью кнопки <guibutton
+>Разделённые</guibutton
+>, расположенной в нижней части окна &appname;. После переключения в режим редактирования разделённой операции поля «Категория», «Комментарий» и «Трекер» превратятся в таблицу.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="split_operation.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Панель редактирования разделённой операции.</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Дважды щёлкните по ячейке таблицы для её редактирования.</para>
+
+<para
+>Вы можете добавлять любое количество строк в этой таблице. При изменении значения суммы в строке, &appname; вычислит разницу с общей суммой операции и покажет итоговую сумму в последней строке таблицы. Если вы измените сумму в последней строке, то будет добавлена ещё одна строка с итоговой суммой.</para>
+
+<para
+>Эти поля подобны аналогичным полям в стандартном режиме:</para>
+
+<itemizedlist>
+<listitem
+><para
+>Категория — выпадающий список существующих категорий. Вы можете добавить новую категорию, &appname; создаст её при создании операции.</para
+></listitem>
+<listitem
+><para
+>Сумма — <link linkend="quantity_field"
+>работает как калькулятор</link
+>.</para
+></listitem>
+<listitem
+><para
+>Трекер — выпадающий список существующих трекеров. Вы можете добавить новый трекер, &appname; создаст её при создании операции.</para
+></listitem>
+</itemizedlist>
+
+</sect2>
+
+
+<sect2 id="transfer">
+<title
+>Перевод</title>
+<para
+>Перевод — это двойная операция: при создании перевода, &appname; создаст две операции с одинаковыми противоположными суммами (одну с положительной и одну с отрицательной) на двух разных счетах. Параметры, которые следует указать в этом поле несколько отличаются от параметров стандартной операции:</para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="transfer_operation.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Панель редактирования переводов.</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Список «на счёт», в котором вы сможете указать счёт, на который будут перечислены деньги.</para>
+
+<para
+>Так как перевод означает «Снять деньги со счёта А и положить их на счёт Б», то если будет указан знак в поле суммы (+ или -), он будет проигнорирован. Баланс операции всегда будет отрицательным для счёта А и положительным для счёта Б.</para>
+
+<para
+>На данный момент, операции не имеют связи между собой и изменения в них не повлияют на другие операции.</para>
+
+</sect2>
+
+<sect2 id="shares">
+<title
+>Акции</title>
+<para
+>Ещё не написано (автор этого руководства ничего не знает об акциях и фондовых рынках ;-D... Вы можете помочь!).</para>
+</sect2>
+
+<sect2 id="schedule_operation">
+<title
+>Плановые операции</title>
+
+<para
+>Если известно, что одна и та же операция будет регулярно повторяться, то вы можете сделать так, чтобы &appname; автоматически добавлял её в список операций. Сделать это можно с помощью планирования операции, нажав кнопку <guibutton
+>Запланировать<inlinemediaobject
+><imageobject
+><imagedata fileref="schedule_operation.png"/></imageobject
+></inlinemediaobject
+></guibutton
+>.</para>
+
+<para
+>Параметрами по умолчанию являются:</para>
+<itemizedlist>
+<listitem
+><para
+>Повторять каждый месяц</para
+></listitem>
+<listitem
+><para
+>Предупредить за 5 дней до срока</para
+></listitem>
+<listitem
+><para
+>Автозапись в срок</para
+></listitem>
+</itemizedlist>
+
+<para
+>Вы можете изменить эти значения параметров в настройках &appname;.</para>
+<para
+>Также, вы можете изменить параметры любой запланированной операции на странице <link linkend="scheduled"
+>Плановые операции</link
+>.</para>
+<para
+>&appname; использует значения, для следующих предстоящих операций. Например, если вы увеличите сумму ваших ежемесячных взносов в поддержку проекта &kde; с 1000 руб. до 2000 руб., то следующие операции будут автоматически создаваться с этой суммой.</para>
+
+</sect2>
+
+<sect2 id="fast_edition">
+<title
+>Быстрое редактирование</title>
+
+<para
+>Какой бы режим редактирования вы бы не выбрали, существует интересная функциональная возможность, которая называется «Быстрое редактирование». С помощью неё вы можете ускорить создание новых операций. Эта возможность позволит вам заполнять параметры операций на основе параметров введённых ранее. Введите значение в любое поле редактора и нажмите <keycap
+>F10</keycap
+>, или нажмите на значок <guibutton
+>«Быстрого редактирования»<inlinemediaobject
+><imageobject
+><imagedata fileref="fast_edition.png" format="PNG"/></imageobject
+></inlinemediaobject
+></guibutton
+> (не покидая текущего поля).</para>
+
+<para
+>&appname; найдёт последнюю операцию, с таким же значением в этом поле и заполнит все остальные поля значениями из найденной операции. Если повторно использовать «Быстрое редактирование», то программа найдёт следующую операцию и так далее.</para>
+
+<warning>
+<para
+>При использовании «Быстрого редактирования» дата не меняется, поскольку создание одинаковой операции, с той же датой, маловероятно...</para>
+<para
+>Если вы поменяете значение в поле ввода до использования «Быстрого редактирования», то это значение не изменится. Это поле будет обозначено снежинкой <inlinemediaobject
+><imageobject
+><imagedata fileref="frozen.png" format="PNG"/></imageobject
+></inlinemediaobject
+> (такая снежинка означает, что поле ввода «заморожено»).</para>
+</warning>
+
+<para
+>Отличия от подобных функций в других финансовых менеджерах:</para>
+<itemizedlist>
+<listitem
+><para
+>Вызывается по запросу пользователя</para
+></listitem>
+<listitem
+><para
+>Перебор всех предыдущих операций с таким же значением</para
+></listitem>
+</itemizedlist>
+
+<para
+>И это работает с разделёнными операциями!</para>
+</sect2>
+
+<sect2 id="reconciliation">
+<title
+>Проверка на соответствие</title>
+<para
+>Проверка — это процесс, с помощью которого вы обеспечиваете полное соответствие всех операций с вашим банковским счётом. Для выполнения проверки вам потребуется, выписка вашего счёта и ручка. Проверку можно выполнить только по состоянию на определённую дату.</para>
+<para
+>На панели операций из выпадающего списка выберите счёт, который вы хотите проверить на соответствие. Переключите программу в режим проверки, нажав кнопку <guibutton
+>Переключить информацию <inlinemediaobject
+><imageobject
+><imagedata fileref="switch_information.png" format="PNG"/></imageobject
+></inlinemediaobject
+></guibutton
+>, расположенную под таблицей операций.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="reconciliation_information.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Информация о проверке</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>В данном поле введите сумму на вашем счёте согласно банковской выписки. После этого вы можете продолжить проверку в &appname; всех операций, которые были записаны для этого счёта. В нашем случае поле отметки для операции показано серым цветом, это означает, что проверка на соответствие ещё не выполнена.</para>
+
+<para
+>После проверки операций, вы увидите следующую информацию:</para>
+<itemizedlist>
+<listitem
+><para
+>Разность: предыдущий баланс минус сумма всех проверенных операций.</para
+></listitem>
+<listitem
+><para
+>Расходы: общая сумма расходов</para
+></listitem>
+<listitem
+><para
+>Доходы: общая сумма доходов</para
+></listitem>
+</itemizedlist>
+
+<para
+>После подтверждения всех операций Разность должна равняться 0, а кнопка <guibutton
+>Подтвердить отмеченные операции<inlinemediaobject
+><imageobject
+><imagedata fileref="validate.png" format="PNG"/></imageobject
+></inlinemediaobject
+></guibutton
+> должна быть активна. Нажмите на эту кнопку, чтобы подтвердить все операции.</para>
+
+<para
+>Если выбрать пункт <guibutton
+>Скрыть отмеченные операции</guibutton
+>, то все записи таких операций будут скрыты.</para>
+
+</sect2>
+
+<sect2 id="templates">
+<title
+>Шаблон операций</title>
+<para
+>В &appname; предусмотрена возможность создания шаблонов для операций, которые могут периодически повторяться. Например, представьте, что вы взяли в прокат диск с фильмом, чтобы посмотреть его дома. Для такой операции можно создать шаблон:</para>
+
+<itemizedlist>
+<listitem
+><para
+>Сумма: -4.99</para
+></listitem>
+<listitem
+><para
+>Способ оплаты: Кредитная карта</para
+></listitem>
+<listitem
+><para
+>Получатель: Видеопрокат</para
+></listitem>
+<listitem
+><para
+>Категория: Развлечения 
+> Видео</para
+></listitem>
+</itemizedlist>
+
+<para
+>Однако, вы не можете создать плановую операцию, так как вы берёте в прокате диск, когда вам этого захочется, а не по определённому расписанию. Идея шаблонов заключается в том, что вы создаёте основу записи, которую можно быстро вставить в ваш список операций.</para>
+
+<para
+>Получить доступ к шаблоны операций можно с помощью выпадающего списка, расположенного над панелью редактирования:</para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="template_button.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Переключение между шаблонами и операциями.</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Создание шаблона похоже на создание операции. Достаточно указать параметры шаблона. Также, вы можете создать шаблон на основе существующей операции (пункт контекстного меню на записи операции). В этом случае у  шаблона будут такие же параметры, что и у операции.</para>
+
+<para
+>Чтобы использовать шаблон и создать на его основе новую запись операции, дважды щелкните по записи шаблона. Новая операция будет создана с тем же параметрами, что и шаблон. Затем, если необходимо, можно изменить параметры.</para>
+
+<para
+>Шаблоны также могут быть <link linkend="scheduled"
+>запланированы</link
+>.</para>
+
+</sect2>
+
+</sect1>
+
+<sect1 id="scheduled">
+<title
+>Плановые операции</title>
+<para
+>Этот модуль показывает список всех плановых (запланированных) операций.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="scheduled.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Здесь вы можете настроить параметры для каждой плановой операции.</para>
+
+<variablelist>
+<varlistentry>
+<term
+>Дата выполнения</term>
+<listitem
+><para
+>Здесь вы можете указать дату следующего выполнения операции.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Раз через</term>
+<listitem
+><para
+>Здесь вы можете указать периодичность выполнения.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Кол-во операций</term>
+<listitem
+><para
+>Здесь вы можете указать количество операций, либо до какой даты должны происходить операции.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Предупредить за</term>
+<listitem
+><para
+>Если вы хотите, чтобы &appname; показывал уведомление о следующей запланированной операции, вам следует отметить этот пункт и указать за сколько дней до срока будет отображаться предупреждение.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Автозапись</term>
+<listitem
+><para
+>Если вы хотите, чтобы &appname; автоматически записывал следующую запланированную операцию, вам следует отметить этот пункт и указать за сколько дней до срока будет происходить запись.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Двойной щелчок по записи запланированной операции приведёт к показу в новой вкладке списка операций, которые к ней относятся.</para>
+
+<sect2 id="scheduled_operations">
+<title
+>Планирование операций</title>
+
+<para
+>При планировании операции, параметры планирования будут использованы при создании следующей операции. Рассмотрим пример:</para>
+
+<table>
+<title
+></title>
+<tgroup cols="4">
+<thead>
+<row>
+<entry
+>Дата</entry>
+<entry
+>Получатель</entry>
+<entry
+>Категория</entry>
+<entry
+>Сумма</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry
+>20.06.2013</entry>
+<entry
+>&kde;</entry>
+<entry
+>Вклад в СПО &gt; KDE</entry>
+<entry
+>200 руб.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+
+<para
+>Теперь, если вы запланируете эту операцию, её следующая запись будет создана таким же образом:</para>
+
+<table>
+<title
+></title>
+<tgroup cols="4">
+<thead>
+<row>
+<entry
+>Дата</entry>
+<entry
+>Получатель</entry>
+<entry
+>Категория</entry>
+<entry
+>Сумма</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry
+>20.06.2013</entry>
+<entry
+>&kde;</entry>
+<entry
+>Вклад в СПО &gt; KDE</entry>
+<entry
+>200 руб.</entry>
+</row>
+<row>
+<entry
+>20.07.2013</entry>
+<entry
+>&kde;</entry>
+<entry
+>Вклад в СПО &gt; KDE</entry>
+<entry
+>200 руб.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+
+<para
+>Если вы измените какой-то из параметров в последней записи, то это повлияет на следующие записи. Например, если вы увеличите месячную сумму вклада в проект &kde; до 250 руб. в июле, то в следующей записи появится сумма 250 руб.:</para>
+
+<table>
+<title
+></title>
+<tgroup cols="4">
+<thead>
+<row>
+<entry
+>Дата</entry>
+<entry
+>Получатель</entry>
+<entry
+>Категория</entry>
+<entry
+>Сумма</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry
+>20.06.2013</entry>
+<entry
+>&kde;</entry>
+<entry
+>Вклад в СПО &gt; KDE</entry>
+<entry
+>200 руб.</entry>
+</row>
+<row>
+<entry
+>20.07.2013</entry>
+<entry
+>&kde;</entry>
+<entry
+>Вклад в СПО &gt; KDE</entry>
+<entry
+>250 руб.</entry>
+</row>
+<row>
+<entry
+>20.08.2013</entry>
+<entry
+>&kde;</entry>
+<entry
+>Вклад в СПО &gt; KDE</entry>
+<entry
+>250 руб.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+
+<para
+>Запланированная операция является объектом, где последняя запись является эталонной. Но можно сделать так, чтобы все новые операции не зависели от параметров предыдущей записи. Для этого создайте <link linkend="scheduled_templates"
+>Плановый шаблон</link
+>.</para>
+
+</sect2>
+
+
+<sect2 id="scheduled_templates">
+<title
+>Плановый шаблон</title>
+
+<para
+><link linkend="templates"
+>Шаблоны</link
+> похожи на эталонные операции. Если запланировать шаблон, то каждая новая запись будет точно соответствовать этому шаблону. Воспользуемся примером из <link linkend="schedule_operation"
+>предыдущей главы</link
+>. Создадим шаблон:</para>
+
+<table>
+<title
+></title>
+<tgroup cols="4">
+<thead>
+<row>
+<entry
+>Дата</entry>
+<entry
+>Получатель</entry>
+<entry
+>Категория</entry>
+<entry
+>Сумма</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry
+>20.06.2013</entry>
+<entry
+>&kde;</entry>
+<entry
+>Вклад в СПО &gt; KDE</entry>
+<entry
+>200 руб.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+
+<para
+>Следующим выполнением будет:</para>
+
+
+<table>
+<title
+></title>
+<tgroup cols="4">
+<thead>
+<row>
+<entry
+>Дата</entry>
+<entry
+>Получатель</entry>
+<entry
+>Категория</entry>
+<entry
+>Сумма</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry
+>20.06.2013</entry>
+<entry
+>&kde;</entry>
+<entry
+>Вклад в СПО &gt; KDE</entry>
+<entry
+>200 руб.</entry>
+</row>
+<row>
+<entry
+>20.07.2013</entry>
+<entry
+>&kde;</entry>
+<entry
+>Вклад в СПО &gt; KDE</entry>
+<entry
+>200 руб.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+
+<para
+>Теперь изменим июльскую сумму вклада в проект &kde; до 250 руб. Поскольку вы запланировали шаблон с суммой 200 руб., то следующая запись также будет с суммой 200 руб.:</para>
+
+<table>
+<title
+></title>
+<tgroup cols="4">
+<thead>
+<row>
+<entry
+>Дата</entry>
+<entry
+>Получатель</entry>
+<entry
+>Категория</entry>
+<entry
+>Сумма</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry
+>20.06.2013</entry>
+<entry
+>&kde;</entry>
+<entry
+>Вклад в СПО &gt; KDE</entry>
+<entry
+>200 руб.</entry>
+</row>
+<row>
+<entry
+>20.07.2013</entry>
+<entry
+>&kde;</entry>
+<entry
+>Вклад в СПО &gt; KDE</entry>
+<entry
+>250 руб.</entry>
+</row>
+<row>
+<entry
+>20.08.2013</entry>
+<entry
+>&kde;</entry>
+<entry
+>Вклад в СПО &gt; KDE</entry>
+<entry
+>200 руб.</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+
+<para
+>Если вам потребуется изменить месячную сумму, то просто измените сумму в шаблоне, и все последующие записи будут содержать новую сумму.</para>
+</sect2>
+
+</sect1>
+
+
+<sect1 id="trackers">
+<title
+>Трекеры</title>
+<para
+>С помощью трекеров можно собрать определенные операции в группу, чтобы следить за ними более внимательно. Этой возможностью можно воспользоваться для контроля над расходами, которые впоследствии необходимо будет компенсировать, или просто для определения, скажем, ваших расходов во время отдыха на Багамах. </para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="trackers.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Например, представьте, что по работе вас направили в Италию. Оказавшись там,вы оплатили комнату в гостинице: в &appname; вы создаёте операцию с категорией «Бизнес &gt; Путешествия &gt; Отель», и привязываете к ней трекер с названием «Деловая поездка в Италию». Вы можете привязать этот трекер ко всем расходам, которые вам придётся сделать во время поездки. После завершения командировки, ваша компания возвращает вам все расходы и вы создаёте операцию с доходом, и также привязываете её к трекеру «Деловая поездка в Италию».</para>
+<para
+>Используя трекеры удобнее следить за операциями, суммы которых должны вам вернуть.</para>
+<para
+>Это работает и в обратном направлении: если кто-то одолжил вам деньги, вы можете контролировать возврат долга.</para>
+<para
+>Двойной щелчок мышью по записи трекера откроет новую вкладку со всеми операциями, которые связаны с этим трекером.</para>
+
+<sect2 id="close_tracker">
+<title
+>Закрытие трекера</title>
+
+<para
+>Когда трекер больше не нужен, например, долг был возвращён, вы можете просто удалить его. Но, если вы так сделаете, то будут потеряны все данные, которые вы ввели, и которые могут представлять интерес для вас в будущем.</para>
+<para
+>Более лучшим решением будет закрытие трекера. Когда трекер закрыт, его можно просто скрыть из списка трекеров, выбрав соответствующий пункт фильтра.</para>
+</sect2>
+
+</sect1>
+
+
+<sect1 id="categories">
+<title
+>Категории</title>
+<para
+>На данной странице вы можете просматривать иерархическое дерево категорий.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="categories.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Кроме названий категорий, в таблице также показано: </para>
+
+<variablelist>
+<varlistentry>
+<term
+>Сумма</term>
+<listitem
+><para
+>Сумма всех операций в этой категории.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Количество операций</term>
+<listitem
+><para
+>Количество операций в этой категории.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Сумма (общая)</term>
+<listitem
+><para
+>Сумма всех операций в этой категории и её подкатегориях (до самого низкого уровня).</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Количество операций (общее)</term>
+<listitem
+><para
+>Количество операций в этой категории и её подкатегориях (до самого низкого уровня).</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Двойной щелчок по записи в таблице откроет в новой вкладке список всех операций в этой категории.</para>
+
+<warning
+><para
+>После удаления категории все связанные с ней записи операций будут без категории.</para
+></warning>
+
+</sect1>
+
+
+<sect1 id="reports">
+<title
+>Отчёты</title>
+<para
+>В &appname; можно создавать различные отчёты для анализа финансовой ситуации.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="reports.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Отчёт содержит таблицу (слева), в которой содержатся все данные, использованные для построения графика (справа). Данные таблицы могут быть отфильтрованы с помощью соответствующего поля, расположенного выше. После изменения данных график будет построен заново.</para>
+
+<para
+>Можно выбрать для отображения таблицу с графиком вместе, либо по раздельности.</para>
+
+
+<sect2 id="setup_report">
+<title
+>Настройка отчёта</title>
+
+<sect3 id="report_representation">
+<title
+>Отображение</title>
+<variablelist>
+<varlistentry>
+<term
+>Только таблица</term>
+<listitem
+><para
+>Показывать только таблицу, скрыть график.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Только график</term>
+<listitem
+><para
+>Показывать только график, скрыть таблицу.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Таблица + График</term>
+<listitem
+><para
+>Показывать только график и таблицу.</para
+></listitem>
+</varlistentry>
+</variablelist>
+</sect3>
+
+<sect3 id="report_data">
+<title
+>Данные</title>
+<para
+>Здесь вы можете указать, какие данные следует использовать для формирования отчёта. Выберите содержимое строк и столбцов таблицы, а также режим вычисления. Предусмотрено несколько режимов:</para>
+<variablelist>
+<varlistentry>
+<term
+>Сумма операций</term>
+<listitem>
+<para
+>В этом режиме будет вычисляться сумма операций для каждого месяцев. Если вы укажете пункт «Категория» для строки и «Месяц» для столбца, то будет вычислена общая сумма операций по каждой категории и для каждого месяца.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Общая сумма операций</term>
+<listitem>
+<para
+>Если снова воспользоваться предыдущим примером («Категория» для строк и «Месяц» для столбцов), то для каждого месяца (включая текущий) будет вычислена общая сумма по каждой категории.</para>
+<para
+>В примере построения графиков автор руководства использовал этот режим с пунктом «Счёт» для строк и «Месяц» для столбцов.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Вы можете увеличить количество показанных уровней данных в строках и столбцах с помощью нажатия кнопки с изображением <guibutton
+>плюса</guibutton
+> <inlinemediaobject
+><imageobject
+><imagedata fileref="plus.png"/></imageobject
+></inlinemediaobject
+>, расположенной справа от поля. После нажатия этой кнопки будут показаны подкатегории в отчёте.</para>
+</sect3>
+
+<sect3 id="report_dates">
+<title
+>Даты</title>
+<para
+>Здесь вы можете указать дату отчёта. Можно использовать несколько способов указания даты, и определить почти любой нужный для вас диапазон дат.</para>
+</sect3>
+
+<sect3 id="report_operation_types">
+<title
+>Типы операций</title>
+<para
+>Здесь вы можете указать тип операций для составления отчёта. Например, если вы хотите просмотреть график с расходами по категориям, то вам не надо включать «Доходы».</para>
+</sect3>
+
+</sect2>
+
+<sect2 id="graph_types">
+<title
+>Типы графиков</title>
+
+<para
+>После определения содержания отчёта, надо выбрать тип графика с помощью выпадающего списка. Чтобы лучше понять различия между каждым из типов, давайте построим отчёт,  показывающий расходы по категориям (строка) и за месяц (столбец):</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="report_table.png"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+<sect3 id="stack">
+<title
+>Столбчатая</title>
+<para
+>Составление столбцов из строк</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="stack.png"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Во втором (жёлтом) столбце показана категория «Безопасность», с учётом всех месяцев.</para>
+
+</sect3>
+
+<sect3 id="histogram">
+<title
+>Гистограмма</title>
+<para
+>Столбцы отделены друг от друга.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="histogram.png"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+</sect3>
+
+
+<sect3 id="line">
+<title
+>Линейная</title>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="line_graph.png"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</sect3>
+
+<sect3 id="point">
+<title
+>Точечная</title>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="point_report.png"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</sect3>
+
+
+<sect3 id="pie">
+<title
+>Круговая</title>
+<para
+>Если значение для столбцов отличное от «Ничего», то будет показано по одной диаграмме на каждый столбец.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="pie.png"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+
+</sect3>
+
+<sect3 id="concentric_pie">
+<title
+>Концентрическая</title>
+<para
+>Этот график достаточно сложный, и в будущем, возможно, будет доработан. Он показывает одно кольцо на каждый уровень данных.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="concentric_pie.png"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+</sect3>
+
+</sect2>
+
+
+<sect2 id="zoom_graph">
+<title
+>Изменение масштаба графика</title>
+<para
+>В &appname; предусмотрена возможность увеличения графика для того, чтобы можно было разглядеть мельчайшие подробности. Для этого воспользуйтесь панелью управления масштабом, расположенной под графиком:</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="zoom_graph.png"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+
+</sect2>
+
+<sect2 id="report_examples">
+<title
+>Примеры отчётов</title>
+<para
+>Вот несколько снимков экрана, на которых продемонстрированы классические настройки отчётов. Вы можете воспользоваться ими, как образцами, для создания ваших собственных отчётов.</para>
+
+<sect3 id="income_expense">
+<title
+>Доходы и расходы</title>
+<para
+>Сравнение общей суммы доходов и общей суммы расходов для каждого месяца. Синие столбцы — доходы, жёлтые — расходы.</para>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="incomes_expenses.png"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</sect3>
+
+<sect3 id="balance_evolution">
+<title
+>Изменение баланса</title>
+<para
+>Показывает изменение баланса по месяцам.</para>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="balance_evolution.png"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</sect3>
+
+<sect3 id="category_distribution">
+<title
+>Доходы и расходы</title>
+<para
+>Показывает распределение расходов по категориям за предыдущий месяц.</para>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="category_distribution.png"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</sect3>
+
+
+</sect2>
+
+<sect2 id="going_deeper">
+<title
+>Углубление в отчёты</title>
+<para
+>Вы узнали, что можно сделать углублённый анализ ваших финансов с помощью отчётов. Но насколько думаете можно углубиться? Очень сильно, даже глубже, чем вам кажется... Если вам интересно, то прочтите раздел с <link linkend="holidays_expenses_analysis"
+>упражнением</link
+>, в котором проанализированы расходы автора руководства в отпуске. :)</para>
+</sect2>
+
+
+</sect1>
+
+
+<sect1 id="monthly_report">
+<title
+>Месячный отчёт</title>
+
+<para
+>Этот модуль показывает вашу финансовую ситуацию за выбранный месяц.</para>
+
+<!-- Sub par compared to the quality of other plugins and functionality partly covered by dashboard... Shall we deprecate it and extend dashboard instead ?-->
+
+</sect1>
+
+<sect1 id="units">
+<title
+>Платёжные единицы</title>
+<para
+>Единицей может быть любая ценность, с помощью которой можно осуществить операцию. В большинстве случаев это денежная единица, но также может быть акция, или даже автомобиль с домом. Стоимость единицы со временем меняется и выражается, как правило, в других единицах. Например: по состоянию на июль 2013 года стоимость акции ACME составляет 31.2$ .</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="units.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+<sect2 id="edit_units">
+<title
+>Изменение единиц</title>
+<para
+>Изменить единицы можно несколькими способами:</para>
+<variablelist>
+<varlistentry>
+<term
+>Обычный</term>
+<listitem
+><para
+>Этот режим позволяет выбрать нужную единицу среди множества стандартных единиц, и добавить её в текущий документ.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Вручную</term>
+<listitem
+><para
+>Этот режим позволяет создать вашу собственную единицу. Необходимые параметры:</para>
+  <itemizedlist>
+  <listitem
+><para
+>Имя: общее название единицы.</para
+></listitem>
+  <listitem
+><para
+>Символ: символ единицы, который отображается в большинстве таблиц и списках.</para
+></listitem>
+  <listitem
+><para
+>Тип: смотрите <link linkend="unit_types"
+>Типы единиц</link
+>.</para
+></listitem>
+  <listitem
+><para
+>Эталонная единица: другая единица, используемая для вычисления стоимости текущей единицы. Например, если вы являетесь владельцем акций EADS и хотите видеть их стоимость в евро, то вам следует выбрать эталонной единицей €.</para
+></listitem>
+  <listitem
+><para
+>Страна</para
+></listitem>
+  <listitem
+><para
+>Интернет-код: код с сайта Yahoo для загрузки стоимости единицы.</para
+></listitem>
+</itemizedlist>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Стоимость</term>
+<listitem
+><para
+>Этот режим позволяет загрузить стоимость единицы из интернета или ввести стоимость вручную для указанной даты.</para
+></listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+
+<sect2 id="unit_types">
+<title
+>Типы единиц</title>
+<para
+>Единицы имеют различия по типу:</para>
+
+<variablelist>
+<varlistentry>
+<term
+>Основная валюта</term>
+<listitem
+><para
+>Это валюта, которая будет использоваться для отображения суммы операций.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Вторичная валюта</term>
+<listitem
+><para
+>Если указана, то сумма в вторичной валюте будет отображаться при наведении указателя мыши на сумму операции.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="secondary_unit_display.png"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Валюта</term>
+<listitem
+><para
+>Любая валюта, без особой роли для отображения.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Акция</term>
+<listitem
+><para
+>Этим типом единиц можно воспользоваться для управления акциями.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Индекс</term>
+<listitem
+><para
+>Индекс фондовой биржи, например: Dow Jones, Nasdaq, CAC40, SBF120...</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Объекты</term>
+<listitem
+><para
+>Любая единица, которая не относится к вышеуказанным типам.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+</sect1>
+
+
+<sect1 id="search_and_process">
+<title
+>Поиск и обработка</title>
+
+<para
+>Этот модуль позволяет создавать сложные запросы для поиска операций, а также выполнять над этими операциями некоторые преобразования. Например:</para>
+
+<blockquote
+><para
+>Вы загружаете некоторые данные из вашего банка. Эти данные не распределены по категориям, но вся информация о категории содержится в комментарии. Вам потребуется какой-то автоматический способ назначения соответствующей категории и других параметров на основе комментария.</para
+></blockquote>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="search_and_process.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Как всё это работает? Во-первых, вам потребуется определить условия поиска, по которым программа предоставит вам список операций. После этого, для найденных операций надо будет применить нужные преобразования.</para>
+
+<note
+><para
+><link linkend="search_process_real_case"
+>Пример применения</link
+> можно найти в приложении. Там же вы найдёте упражнение, связанное с приведённым примером.</para
+></note>
+
+<sect2 id="define_search_criteria">
+<title
+>Условие поиска</title>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="define_search.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Здесь вы можете определить условия поиска операций, используя комбинации параметров. На приведённом выше снимке показана таблица с параметрами в заголовке. Если вы измените содержимое строки, вы создадите новые условия поиска. Каждый столбец будет комбинироваться с другими столбцом с помощью логической операции «И»:</para>
+<para
+>(столбец1 и столбец2)</para>
+<para
+>Если вы добавите новую строку, вы создадите новые условия поиска. Строки будут объединены логической операцией «ИЛИ»:</para>
+<para
+>[строка1] или [строка2].</para>
+
+<para
+>В целом, комбинацию столбцов и строк можно будет прочитать как:</para>
+<para
+>(столбец1 и столбец3) или (столбец2 и столбец3)</para>
+
+<para
+>В своём поисковом запросе вы можете создавать любое количество строк и столбцов.</para>
+
+<para
+>Определившись с условием, вы можете добавить его в список существующих условий поиска, или изменить один из существующих.</para>
+
+</sect2>
+
+
+<sect2 id="view_search_result">
+<title
+>Просмотр результатов поиска</title>
+
+<para
+>После поиска под таблицей просмотра запросов отображается количество найденных записей операций:</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="preview_search_result.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+
+<para
+>При двойном щелчке по строке в таблице просмотра запросов, будет открыта новая вкладка со всеми найденными операциями:</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="search_result.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+</sect2>
+
+
+<sect2 id="define_processing">
+<title
+>Обработка, найденных операций</title>
+
+<para
+>Если вам необходимо выполнить обработку найденных операций, то выберите нужный запрос и откройте панель обработки:</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="define_processing.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+<para
+>С помощью этой панели, вы можете указать преобразования, которые следует выполнить над операциями. Запрещено изменять дату и сумму операций.</para>
+
+</sect2>
+
+
+<sect2 id="define_alarm">
+<title
+>Напоминания</title>
+<para
+>Особой возможностью модуля «Поиск и обработка» является возможность устанавливать напоминания. При использовании напоминаний &appname; сможет обращать ваше внимание на определённые события, например при достижении месячного лимита затрат для определённой категории.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="alarm.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Для установки напоминания сначала следует указать условия поиска операций, о которых вам следует напомнить. Например, все операции в текущем месяце, которые относятся к категории «Одежда». После укажите сумму, например 1000 руб., и сообщение напоминания, которое будет показано при достижении указанной суммы.</para>
+
+</sect2>
+
+</sect1>
+
+
+</chapter>
+
+<chapter id="credits">
+<title
+>Авторы и лицензия</title>
+<para
+>&appname; </para>
+<para
+>Авторские права на программу: Stéphane Mankowski <email
+>stephane@miraks.com</email
+>, ©2001–2009. </para>
+<para
+>Авторские права на руководство: Guillaume DE BURE <email
+>gdebure@yahoo.com</email
+>, ©2001–2009. </para>
+<para
+>Перевод на русский: Юрий Ефремов <email
+>yur.arh@gmail.com</email
+></para
+> 
+&underFDL; &underGPL; </chapter>
+
+<appendix id="installation">
+<title
+>Установка</title>
+
+<sect1 id="getting-skrooge">
+<title
+>Как получить &appname;</title>
+
+<para
+>Домашняя страница &appname; расположена по адресу <ulink url="&homepage;"
+>&homepage;</ulink
+>. Там вы найдёте обновления и новости о программе. </para>
+</sect1>
+
+<sect1 id="requirements">
+<title
+>Требования</title>
+
+<para
+>Для работы &appname;, требуется &kde; 4, qt-sqlite3, libofx и qca. </para>
+
+</sect1>
+
+<sect1 id="Installation">
+<title
+>Установка &appname;</title>
+
+<para
+>Рекомендуется устанавливать &appname; с помощью системы управления пакетами вашего дистрибутива. Если по каким-либо причинам, вы хотите сами собрать и установить &appname;, то в этом разделе вы найдете всё необходимое. </para>
+
+<sect2 id="prerequisites">
+<title
+>Подготовка</title>
+<para
+>&appname; использует несколько компонентов, которые необходимо установить перед сборкой программы:</para>
+<itemizedlist>
+<listitem
+><para
+>sqlite3: лёгкая база данных SQL, используется файлами &appname;.</para
+></listitem>
+<listitem
+><para
+>libofx: библиотека, предназначенная для обработки файлов в формате OFX. OFX использует стандартный &XML;, и предназначен для обмена финансовыми данными.</para
+></listitem>
+<listitem
+><para
+>qca: криптографическая архитектура &Qt; (&Qt; Cryptographic Architecture). Используется для защиты документа паролем.</para
+></listitem>
+</itemizedlist>
+</sect2>
+
+<sect2 id="compilation">
+<title
+>Сборка и установка</title>
+
+<para
+>Чтобы собрать и установить &appname; на вашей системе, введите следующие команды из папки, в которой распакован архив с программой (команду make install следует выполнять от имени root, если вы хотите установить программу в системную папку): <screen width="40"
+><prompt
+>$</prompt
+> <userinput
+>cmake . <option
+>-DCMAKE_INSTALL_PREFIX=`kde4-config --prefix`</option
+></userinput>
+<prompt
+>$</prompt
+> <userinput
+>make</userinput>
+<prompt
+>$</prompt
+> <userinput
+>make install</userinput
+>
+</screen>
+</para>
+<para
+>Поскольку для сборки &appname; используется <command
+>cmake</command
+>, то у вас не должно возникнуть никаких проблем. Если всё же возникли проблемы, то сообщите о них авторам.</para>
+</sect2>
+
+</sect1>
+
+</appendix>
+
+
+<appendix id="search_process_real_case">
+<title
+>Пример применения поиска и обработки</title>
+
+<para
+>Надо признать, что хотя модуль <link linkend="search_and_process"
+>Поиск и обработка</link
+> достаточно мощный, работать с ним не так уж и просто. Вот небольшое упражнение, которое поможет вам понять работу модуля лучше. Помните наш пример поиска и обработки?</para>
+
+<blockquote
+><para
+>Вы загружаете некоторые данные из вашего банка. Эти данные не распределены по категориям, но вся информация о категории содержится в комментарии. Вам потребуется какой-то автоматический способ назначения соответствующей категории и других параметров на основе комментария.</para
+></blockquote>
+
+
+<para
+>Пусть нам известно, что в банковской выписке имя получателя содержится в поле комментария. Требуется, чтобы взносы в проект &kde; хранились в категории «Вклад в СПО &gt; KDE». Сначала найдём все операции, которые в поле комментария содержат слово «&kde;»:</para>
+
+<table>
+<title
+>Определение поиска</title>
+<tgroup cols="1">
+<thead>
+<row>
+<entry
+>Комментарий</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry
+>содержит «&kde;»</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+
+<para
+>Добавьте это условие в список вариантов поиска нажатием кнопки <guibutton
+>Добавить</guibutton
+>.</para>
+
+<para
+>Далее, нам нужно добавить все операции, найденные по указанному запросу, к категории «Вклад в СПО &gt; KDE». Перейдём на панель «Обработка» и укажем преобразования, которые следует применить:</para>
+
+<table>
+<title
+>Определение обработки</title>
+<tgroup cols="2">
+<thead>
+<row>
+<entry
+>Комментарий</entry>
+<entry
+>Категория</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry
+>=''</entry>
+<entry
+>=«Вклад в СПО &gt; KDE»</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+
+<tip
+><para
+>Заметьте, что мы также удалили исходный комментарий, оставив пустую строку. Это сделано ради удобства чтения, но вы можете сохранить комментарий для последующего просмотра.</para
+></tip>
+
+<para
+>Добавьте созданную обработку для предварительно определённого поиска, нажав <guibutton
+>Добавить</guibutton
+>.</para>
+
+<para
+>Теперь выполните обработку для не подтверждённых операций, выбрав соответствующий пункт из списка действий:</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="apply_process.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Вот и всё! Если вы вернетесь к странице операций, то вы заметите, что все нужные записи обновлены. В случае, если ошиблись, то вы можете всегда <link linkend="undo_redo"
+>Отменить</link
+> действие! Даже если во время обработки было изменено 2327 записей операций, вы всё равно можете вернуть изменения одним действием.</para>
+
+</appendix>
+
+<appendix id="holidays_expenses_analysis">
+<title
+>Упражнение: углублённый анализ расходов в отпуске</title>
+<para
+>Чтобы проиллюстрировать возможности по анализу в &appname;, мы рассмотрим расходы автора руководства в отпуске :).</para>
+
+<sect1 id="analysis_context">
+<title
+>Контекст анализа</title>
+<para
+>Чтобы понять суть упражнения, вам нужно знать некоторые данные об этом отпуске. Он длился почти месяц летом 2009 года. Автор снимал несколько квартир в разных местах Франции. Кроме того, пришлось значительно потратиться на топливо, при перемещении по стране.</para>
+</sect1>
+
+<sect1 id="analysis_data_organisation">
+<title
+>Организация данных</title>
+<para
+>Автор педантично добавил все операции, распределил их по категориям и связал с <link linkend="trackers"
+>трекером</link
+> «Отпуск, лето 2009». Чтобы анализ был подробнее, категории включали подкатегории, в частности «Транспорт 
+> Автомобиль 
+> Топливо».</para>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="analysis_operations_view.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</sect1>
+
+<sect1 id="analysis_total_cost">
+<title
+>Вычисление общих расходов в отпуске</title>
+<para
+>Это так просто, что вы даже не поверите: откройте страницу «Трекеры» и посмотрите на столбец «Сумма»:</para>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="analysis_trackers_view.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+<para
+>А теперь посмотрим на что-то более интересное...</para>
+</sect1>
+
+<sect1 id="analysis_expenses_distribution">
+<title
+>Распределение расходов</title>
+<para
+>Всё хорошо, но на что же ушли эти деньги? Чтобы выяснить это, следует создать отчёт из трекера. Щёлкните правой кнопкой мыши по строке трекера и выберите пункт в контекстном меню <guimenuitem
+>Открыть отчёт...</guimenuitem
+>.</para>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="analysis_build_report.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+
+<para
+>Отчёт будет отрыт в новой вкладке только с операциями, которые связаны с указанным трекером. Для даты по умолчанию будет указано значение «Текущий месяц». Его нужно изменить на значение «Все даты», чтобы отчёт не оказался пустым, поскольку все операции были осуществлены до начала текущего месяца.</para>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="analysis_report_1.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+<para
+>Теперь мы сможем увидеть все расходы по категориям. Давайте построим на основе данных круговую диаграмму, чтобы картина стала наглядней.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="analysis_report_2.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+
+<para
+>Теперь становится понятно, что большинство расходов в течение отпуска приходились на транспорт и еду. Можно ли получить больше информации? Конечно, давайте включим подкатегории, нажав кнопку с изображением <guibutton
+>плюса</guibutton
+> <inlinemediaobject
+><imageobject
+><imagedata fileref="category_one_level_more.png"/></imageobject
+></inlinemediaobject
+>.</para>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="analysis_report_3.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Хм, не сильно прибавилась информация, кроме категории «Транспорт». Построим отдельный график для подкатегории «Автомобиль». Для этого щелкните правой кнопкой по соответствующему сектору круговой диаграммы и выберите <guimenuitem
+>Открыть отчёт</guimenuitem
+>):</para>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="analysis_build_transport_report.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Откроется ещё одна вкладка с отчётом только для категории «Транспорт 
+> Автомобиль».</para>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="analysis_report_4.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+<para
+>Хм, не очень-то и интересно...Но есть ещё подкатегории. Давайте добавим их ещё раз:</para>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="analysis_report_5.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+<para
+>Хорошо, теперь мы знаем, что на топливо потрачено 362,27 €, а на дорожный налог 131,90 € (во Франции проезд по некоторым трассам является платным). Хорошо, я так и рассчитывал ;-). Кроме того, интересно посмотреть на график использования этих категорий по времени:</para>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="analysis_report_6.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+<para
+>Заметьте, что диаграмма изменена на «Линейную», а столбцы на «Неделю».</para>
+
+</sect1>
+
+<sect1 id="analysis_conclusion">
+<title
+>Заключение</title>
+<para
+>С помощью этого простого упражнения мы познакомились с дополнительными возможностями по созданию отчётов в &appname;. Эти возможности помогли нам подробно проанализировать расходы в течение отпуска, особенно для категории «Транспорт». Конечно же, для вашего случая возникнет другая задача и &appname;, вероятно, с ней справится.</para>
+</sect1>
+
+</appendix>
+
+&documentation.index;
+
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->

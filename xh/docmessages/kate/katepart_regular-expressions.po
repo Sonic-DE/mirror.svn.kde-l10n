@@ -1,0 +1,2421 @@
+# translation of kate_regular-expressions.po to 
+# translation of kate_regular-expressions.po to
+# translation of kate_regular-expressions.po to
+# translation of kate_regular-expressions.po to
+# translation of kate_regular-expressions.po to
+# K Desktop Environment - docs/kdebase
+# Copyright (C) 2001 translate.org.za
+# Antoinette Dekeni <antoinette@transalate.org.za>, 2001.
+# Lwandle Mgidlana <lwandle@translate.org.za>, 2002
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kate_regular-expressions\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 12:04+0000\n"
+"PO-Revision-Date: 2002-09-26 12:30+0200\n"
+"Last-Translator: Lwandle Mgidlana <lwandle@translate.org.za>\n"
+"Language-Team:  <xh@li.org>\n"
+"Language: xh\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0beta2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#. Tag: author
+#: regular-expressions.docbook:4
+#, no-c-format
+msgid "&Anders.Lund; &Anders.Lund.mail;"
+msgstr ""
+
+#. Tag: trans_comment
+#: regular-expressions.docbook:5
+#, no-c-format
+msgid "ROLES_OF_TRANSLATORS"
+msgstr ""
+"<othercredit role=\"translator\"><firstname>Antoinette</firstname> "
+"<surname>Dekeni</surname><affiliation><address><email>antoinette@translate."
+"org.za</email></address></affiliation><contrib>Translation</contrib></"
+"othercredit> "
+
+#. Tag: title
+#: regular-expressions.docbook:9
+#, no-c-format
+msgid "Regular Expressions"
+msgstr ""
+
+#. Tag: synopsis
+#: regular-expressions.docbook:11
+#, no-c-format
+msgid ""
+"This Appendix contains a brief but hopefully sufficient and\n"
+"covering introduction to the world of <emphasis>regular\n"
+"expressions</emphasis>. It documents regular expressions in the form\n"
+"available within &kappname;, which is not compatible with the regular\n"
+"expressions of perl, nor with those of for example\n"
+"<command>grep</command>."
+msgstr ""
+
+#. Tag: title
+#: regular-expressions.docbook:15
+#, no-c-format
+msgid "Introduction"
+msgstr "Ukwazisa"
+
+#. Tag: para
+#: regular-expressions.docbook:17
+#, no-c-format
+msgid ""
+"<emphasis>Regular Expressions</emphasis> provides us with a way to describe "
+"some possible contents of a text string in a way understood by a small piece "
+"of software, so that it can investigate if a text matches, and also in the "
+"case of advanced applications with the means of saving pieces or the "
+"matching text."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:23
+#, no-c-format
+msgid ""
+"An example: Say you want to search a text for paragraphs that starts with "
+"either of the names <quote>Henrik</quote> or <quote>Pernille</quote> "
+"followed by some form of the verb <quote>say</quote>."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:28
+#, no-c-format
+msgid ""
+"With a normal search, you would start out searching for the first name, "
+"<quote>Henrik</quote> maybe followed by <quote>sa</quote> like this: "
+"<userinput>Henrik sa</userinput>, and while looking for matches, you would "
+"have to discard those not being the beginning of a paragraph, as well as "
+"those in which the word starting with the letters <quote>sa</quote> was not "
+"either <quote>says</quote>, <quote>said</quote> or so. And then of course "
+"repeat all of that with the next name..."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:37
+#, no-c-format
+msgid ""
+"With Regular Expressions, that task could be accomplished with a single "
+"search, and with a larger degree of preciseness."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:40
+#, no-c-format
+msgid ""
+"To achieve this, Regular Expressions defines rules for expressing in details "
+"a generalization of a string to match. Our example, which we might literally "
+"express like this: <quote>A line starting with either <quote>Henrik</quote> "
+"or <quote>Pernille</quote> (possibly following up to 4 blanks or tab "
+"characters) followed by a whitespace followed by <quote>sa</quote> and then "
+"either <quote>ys</quote> or <quote>id</quote></quote> could be expressed "
+"with the following regular expression:"
+msgstr ""
+
+#. Tag: userinput
+#: regular-expressions.docbook:47
+#, no-c-format
+msgid "^[ \\t]{0,4}(Henrik|Pernille) sa(ys|id)"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:50
+#, no-c-format
+msgid ""
+"The above example demonstrates all four major concepts of modern Regular "
+"Expressions, namely:"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:54
+#, fuzzy, no-c-format
+msgid "<para>Patterns</para>"
+msgstr "<para></para>"
+
+#. Tag: para
+#: regular-expressions.docbook:55
+#, fuzzy, no-c-format
+msgid "<para>Assertions</para>"
+msgstr "<para></para>"
+
+#. Tag: para
+#: regular-expressions.docbook:56
+#, fuzzy, no-c-format
+msgid "<para>Quantifiers</para>"
+msgstr "<para></para>"
+
+#. Tag: para
+#: regular-expressions.docbook:57
+#, no-c-format
+msgid "Back references"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:60
+#, no-c-format
+msgid ""
+"The caret (<literal>^</literal>) starting the expression is an assertion, "
+"being true only if the following matching string is at the start of a line."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:64
+#, no-c-format
+msgid ""
+"The strings <literal>[ \\t]</literal> and <literal>(Henrik|Pernille) sa(ys|"
+"id)</literal> are patterns. The first one is a <emphasis>character class</"
+"emphasis> that matches either a blank or a (horizontal) tab character; the "
+"other pattern contains first a subpattern matching either <literal>Henrik</"
+"literal> <emphasis>or</emphasis> <literal>Pernille</literal>, then a piece "
+"matching the exact string <literal> sa</literal> and finally a subpattern "
+"matching either <literal>ys</literal> <emphasis>or</emphasis> <literal>id</"
+"literal>"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:74
+#, no-c-format
+msgid ""
+"The string <literal>{0,4}</literal> is a quantifier saying <quote>anywhere "
+"from 0 up to 4 of the previous</quote>."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:77
+#, no-c-format
+msgid ""
+"Because regular expression software supporting the concept of <emphasis>back "
+"references</emphasis> saves the entire matching part of the string as well "
+"as sub-patterns enclosed in parentheses, given some means of access to those "
+"references, we could get our hands on either the whole match (when searching "
+"a text document in an editor with a regular expression, that is often marked "
+"as selected) or either the name found, or the last part of the verb."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:85
+#, no-c-format
+msgid ""
+"All together, the expression will match where we wanted it to, and only "
+"there."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:88
+#, no-c-format
+msgid ""
+"The following sections will describe in details how to construct and use "
+"patterns, character classes, assertions, quantifiers and back references, "
+"and the final section will give a few useful examples."
+msgstr ""
+
+#. Tag: title
+#: regular-expressions.docbook:97
+#, no-c-format
+msgid "<title>Patterns</title>"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:99
+#, no-c-format
+msgid ""
+"Patterns consists of literal strings and character classes. Patterns may "
+"contain sub-patterns, which are patterns enclosed in parentheses."
+msgstr ""
+
+#. Tag: title
+#: regular-expressions.docbook:104
+#, no-c-format
+msgid "Escaping characters"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:106
+#, no-c-format
+msgid ""
+"In patterns as well as in character classes, some characters have a special "
+"meaning. To literally match any of those characters, they must be marked or "
+"<emphasis>escaped</emphasis> to let the regular expression software know "
+"that it should interpret such characters in their literal meaning."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:112
+#, no-c-format
+msgid ""
+"This is done by prepending the character with a backslash (<literal>\\</"
+"literal>)."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:116
+#, no-c-format
+msgid ""
+"The regular expression software will silently ignore escaping a character "
+"that does not have any special meaning in the context, so escaping for "
+"example a <quote>j</quote> (<userinput>\\j</userinput>) is safe. If you are "
+"in doubt whether a character could have a special meaning, you can therefore "
+"escape it safely."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:122
+#, no-c-format
+msgid ""
+"Escaping of course includes the backslash character itself, to literally "
+"match a such, you would write <userinput>\\\\</userinput>."
+msgstr ""
+
+#. Tag: title
+#: regular-expressions.docbook:129
+#, no-c-format
+msgid "Character Classes and abbreviations"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:131
+#, no-c-format
+msgid ""
+"A <emphasis>character class</emphasis> is an expression that matches one of "
+"a defined set of characters. In Regular Expressions, character classes are "
+"defined by putting the legal characters for the class in square brackets, "
+"<literal>[]</literal>, or by using one of the abbreviated classes described "
+"below."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:137
+#, no-c-format
+msgid ""
+"Simple character classes just contains one or more literal characters, for "
+"example <userinput>[abc]</userinput> (matching either of the letters "
+"<quote>a</quote>, <quote>b</quote> or <quote>c</quote>) or "
+"<userinput>[0123456789]</userinput> (matching any digit)."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:142
+#, no-c-format
+msgid ""
+"Because letters and digits have a logical order, you can abbreviate those by "
+"specifying ranges of them: <userinput>[a-c]</userinput> is equal to "
+"<userinput>[abc]</userinput> and <userinput>[0-9]</userinput> is equal to "
+"<userinput>[0123456789]</userinput>. Combining these constructs, for example "
+"<userinput>[a-fynot1-38]</userinput> is completely legal (the last one would "
+"match, of course, either of <quote>a</quote>,<quote>b</quote>,<quote>c</"
+"quote>,<quote>d</quote>, <quote>e</quote>,<quote>f</quote>,<quote>y</quote>,"
+"<quote>n</quote>,<quote>o</quote>,<quote>t</quote>, <quote>1</quote>,"
+"<quote>2</quote>,<quote>3</quote> or <quote>8</quote>)."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:154
+#, no-c-format
+msgid ""
+"As capital letters are different characters from their non-capital "
+"equivalents, to create a caseless character class matching <quote>a</quote> "
+"or <quote>b</quote>, in any case, you need to write it <userinput>[aAbB]</"
+"userinput>."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:159
+#, no-c-format
+msgid ""
+"It is of course possible to create a <quote>negative</quote> class matching "
+"as <quote>anything but</quote> To do so put a caret (<literal>^</literal>) "
+"at the beginning of the class:"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:163
+#, no-c-format
+msgid ""
+"<userinput>[^abc]</userinput> will match any character <emphasis>but</"
+"emphasis> <quote>a</quote>, <quote>b</quote> or <quote>c</quote>."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:167
+#, no-c-format
+msgid ""
+"In addition to literal characters, some abbreviations are defined, making "
+"life still a bit easier:"
+msgstr ""
+
+#. Tag: userinput
+#: regular-expressions.docbook:173
+#, no-c-format
+msgid "<userinput>\\a</userinput>"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:174
+#, no-c-format
+msgid "This matches the &ASCII; bell character (BEL, 0x07)."
+msgstr ""
+
+#. Tag: userinput
+#: regular-expressions.docbook:178
+#, no-c-format
+msgid "<userinput>\\f</userinput>"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:179
+#, no-c-format
+msgid "This matches the &ASCII; form feed character (FF, 0x0C)."
+msgstr ""
+
+#. Tag: userinput
+#: regular-expressions.docbook:183
+#, no-c-format
+msgid "<userinput>\\n</userinput>"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:184
+#, no-c-format
+msgid "This matches the &ASCII; line feed character (LF, 0x0A, Unix newline)."
+msgstr ""
+
+#. Tag: userinput
+#: regular-expressions.docbook:188
+#, no-c-format
+msgid "<userinput>\\r</userinput>"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:189
+#, no-c-format
+msgid "This matches the &ASCII; carriage return character (CR, 0x0D)."
+msgstr ""
+
+#. Tag: userinput
+#: regular-expressions.docbook:193
+#, no-c-format
+msgid "<userinput>\\t</userinput>"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:194
+#, no-c-format
+msgid "This matches the &ASCII; horizontal tab character (HT, 0x09)."
+msgstr ""
+
+#. Tag: userinput
+#: regular-expressions.docbook:198
+#, no-c-format
+msgid "<userinput>\\v</userinput>"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:199
+#, no-c-format
+msgid "This matches the &ASCII; vertical tab character (VT, 0x0B)."
+msgstr ""
+
+#. Tag: userinput
+#: regular-expressions.docbook:202
+#, no-c-format
+msgid "\\xhhhh"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:204
+#, no-c-format
+msgid ""
+"This matches the Unicode character corresponding to the hexadecimal number "
+"hhhh (between 0x0000 and 0xFFFF). \\0ooo (&ie;, \\zero ooo) matches the "
+"&ASCII;/Latin-1 character corresponding to the octal number ooo (between 0 "
+"and 0377)."
+msgstr ""
+
+#. Tag: term
+#: regular-expressions.docbook:212
+#, no-c-format
+msgid "<userinput>.</userinput> (dot)"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:213
+#, no-c-format
+msgid "This matches any character (including newline)."
+msgstr ""
+
+#. Tag: userinput
+#: regular-expressions.docbook:217
+#, no-c-format
+msgid "<userinput>\\d</userinput>"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:218
+#, no-c-format
+msgid "This matches a digit. Equal to <literal>[0-9]</literal>"
+msgstr ""
+
+#. Tag: userinput
+#: regular-expressions.docbook:222
+#, no-c-format
+msgid "<userinput>\\D</userinput>"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:223
+#, no-c-format
+msgid ""
+"This matches a non-digit. Equal to <literal>[^0-9]</literal> or <literal>[^"
+"\\d]</literal>"
+msgstr ""
+
+#. Tag: userinput
+#: regular-expressions.docbook:227
+#, no-c-format
+msgid "<userinput>\\s</userinput>"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:228
+#, no-c-format
+msgid ""
+"This matches a whitespace character. Practically equal to <literal>[ \\t\\n"
+"\\r]</literal>"
+msgstr ""
+
+#. Tag: userinput
+#: regular-expressions.docbook:232
+#, no-c-format
+msgid "<userinput>\\S</userinput>"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:233
+#, no-c-format
+msgid ""
+"This matches a non-whitespace. Practically equal to <literal>[^ \\t\\r\\n]</"
+"literal>, and equal to <literal>[^\\s]</literal>"
+msgstr ""
+
+#. Tag: userinput
+#: regular-expressions.docbook:237
+#, no-c-format
+msgid "<userinput>\\w</userinput>"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:238
+#, no-c-format
+msgid ""
+"Matches any <quote>word character</quote> - in this case any letter, digit "
+"or underscore. Equal to <literal>[a-zA-Z0-9_]</literal>"
+msgstr ""
+
+#. Tag: userinput
+#: regular-expressions.docbook:243
+#, no-c-format
+msgid "<userinput>\\W</userinput>"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:244
+#, no-c-format
+msgid ""
+"Matches any non-word character - anything but letters, numbers or "
+"underscore. Equal to <literal>[^a-zA-Z0-9_]</literal> or <literal>[^\\w]</"
+"literal>"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:253
+#, no-c-format
+msgid ""
+"The <emphasis>POSIX notation of classes</emphasis>, <userinput>[:&lt;class "
+"name&gt;:]</userinput> are also supported. For example, <userinput>[:"
+"digit:]</userinput> is equivalent to <userinput>\\d</userinput>, and "
+"<userinput>[:space:]</userinput> to <userinput>\\s</userinput>. See the full "
+"list of POSIX character classes <ulink url=\"https://www.regular-expressions."
+"info/posixbrackets.html\">here</ulink>."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:260
+#, no-c-format
+msgid ""
+"The abbreviated classes can be put inside a custom class, for example to "
+"match a word character, a blank or a dot, you could write <userinput>[\\w "
+"\\.]</userinput>"
+msgstr ""
+
+#. Tag: title
+#: regular-expressions.docbook:265
+#, no-c-format
+msgid "Characters with special meanings inside character classes"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:267
+#, no-c-format
+msgid ""
+"The following characters has a special meaning inside the <quote>[]</quote> "
+"character class construct, and must be escaped to be literally included in a "
+"class:"
+msgstr ""
+
+#. Tag: userinput
+#: regular-expressions.docbook:273
+#, no-c-format
+msgid "<userinput>]</userinput>"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:274
+#, no-c-format
+msgid ""
+"Ends the character class. Must be escaped unless it is the very first "
+"character in the class (may follow an unescaped caret)."
+msgstr ""
+
+#. Tag: term
+#: regular-expressions.docbook:278 regular-expressions.docbook:415
+#, no-c-format
+msgid "<userinput>^</userinput> (caret)"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:279
+#, no-c-format
+msgid ""
+"Denotes a negative class, if it is the first character. Must be escaped to "
+"match literally if it is the first character in the class."
+msgstr ""
+
+#. Tag: term
+#: regular-expressions.docbook:282
+#, no-c-format
+msgid "<userinput>-</userinput> (dash)"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:283
+#, no-c-format
+msgid ""
+"Denotes a logical range. Must always be escaped within a character class."
+msgstr ""
+
+#. Tag: term
+#: regular-expressions.docbook:286 regular-expressions.docbook:410
+#, no-c-format
+msgid "<userinput>\\</userinput> (backslash)"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:287
+#, no-c-format
+msgid "The escape character. Must always be escaped."
+msgstr ""
+
+#. Tag: title
+#: regular-expressions.docbook:298
+#, no-c-format
+msgid "Alternatives: matching <quote>one of</quote>"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:300
+#, no-c-format
+msgid ""
+"If you want to match one of a set of alternative patterns, you can separate "
+"those with <literal>|</literal> (vertical bar character)."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:303
+#, no-c-format
+msgid ""
+"For example to find either <quote>John</quote> or <quote>Harry</quote> you "
+"would use an expression <userinput>John|Harry</userinput>."
+msgstr ""
+
+#. Tag: title
+#: regular-expressions.docbook:309
+#, no-c-format
+msgid "Sub Patterns"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:311
+#, no-c-format
+msgid ""
+"<emphasis>Sub patterns</emphasis> are patterns enclosed in parentheses, and "
+"they have several uses in the world of regular expressions."
+msgstr ""
+
+#. Tag: title
+#: regular-expressions.docbook:317
+#, no-c-format
+msgid "Specifying alternatives"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:319
+#, no-c-format
+msgid ""
+"You may use a sub pattern to group a set of alternatives within a larger "
+"pattern. The alternatives are separated by the character <quote>|</quote> "
+"(vertical bar)."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:323
+#, no-c-format
+msgid ""
+"For example to match either of the words <quote>int</quote>, <quote>float</"
+"quote> or <quote>double</quote>, you could use the pattern <userinput>int|"
+"float|double</userinput>. If you only want to find one if it is followed by "
+"some whitespace and then some letters, put the alternatives inside a "
+"subpattern: <userinput>(int|float|double)\\s+\\w+</userinput>."
+msgstr ""
+
+#. Tag: title
+#: regular-expressions.docbook:334
+#, no-c-format
+msgid "Capturing matching text (back references)"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:336
+#, no-c-format
+msgid ""
+"If you want to use a back reference, use a sub pattern <userinput>(PATTERN)</"
+"userinput> to have the desired part of the pattern remembered. To prevent "
+"the sub pattern from being remembered, use a non-capturing group "
+"<userinput>(?:PATTERN)</userinput>."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:341
+#, no-c-format
+msgid ""
+"For example, if you want to find two occurrences of the same word separated "
+"by a comma and possibly some whitespace, you could write <userinput>(\\w+),"
+"\\s*\\1</userinput>. The sub pattern <literal>\\w+</literal> would find a "
+"chunk of word characters, and the entire expression would match if those "
+"were followed by a comma, 0 or more whitespace and then an equal chunk of "
+"word characters. (The string <literal>\\1</literal> references <emphasis>the "
+"first sub pattern enclosed in parentheses</emphasis>.)"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:351
+#, no-c-format
+msgid ""
+"To avoid ambiguities with usage of <userinput>\\1</userinput> with some "
+"digits behind it (&eg; <userinput>\\12</userinput> can be 12th subpattern or "
+"just the first subpattern with <userinput>2</userinput>) we use <userinput>"
+"\\{12}</userinput> as syntax for multi-digit subpatterns."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:352
+#, no-c-format
+msgid "Examples:"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:354
+#, no-c-format
+msgid "<userinput>\\{12}1</userinput> is <quote>use subpattern 12</quote>"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:355
+#, no-c-format
+msgid ""
+"<userinput>\\123</userinput> is <quote>use capture 1 then 23 as the normal "
+"text</quote>"
+msgstr ""
+
+#. Tag: title
+#: regular-expressions.docbook:365
+#, no-c-format
+msgid "Lookahead Assertions"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:367
+#, no-c-format
+msgid ""
+"A lookahead assertion is a sub pattern, starting with either <literal>?=</"
+"literal> or <literal>?!</literal>."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:370
+#, no-c-format
+msgid ""
+"For example to match the literal string <quote>Bill</quote> but only if not "
+"followed by <quote> Gates</quote>, you could use this expression: "
+"<userinput>Bill(?! Gates)</userinput>. (This would find <quote>Bill Clinton</"
+"quote> as well as <quote>Billy the kid</quote>, but silently ignore the "
+"other matches.)"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:376 regular-expressions.docbook:393
+#, no-c-format
+msgid "Sub patterns used for assertions are not captured."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:378
+#, no-c-format
+msgid "See also <link linkend=\"assertions\">Assertions</link>."
+msgstr ""
+
+#. Tag: title
+#: regular-expressions.docbook:383
+#, fuzzy, no-c-format
+#| msgid "Assertions"
+msgid "Lookbehind Assertions"
+msgstr "Izibango"
+
+#. Tag: para
+#: regular-expressions.docbook:385
+#, no-c-format
+msgid ""
+"A lookbehind assertion is a sub pattern, starting with either <literal>?&lt;"
+"=</literal> or <literal>?&lt;!</literal>."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:388
+#, no-c-format
+msgid ""
+"Lookbehind has the same effect as the lookahead, but works backwards. For "
+"example to match the literal string <quote>fruit</quote> but only if not "
+"preceded by <quote>grape</quote>, you could use this expression: "
+"<userinput>(?&lt;!grape)fruit</userinput>."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:395
+#, no-c-format
+msgid "See also <link linkend=\"assertions\">Assertions</link>"
+msgstr ""
+
+#. Tag: title
+#: regular-expressions.docbook:402
+#, no-c-format
+msgid "Characters with a special meaning inside patterns"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:404
+#, no-c-format
+msgid ""
+"The following characters have meaning inside a pattern, and must be escaped "
+"if you want to literally match them:"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:411
+#, no-c-format
+msgid "The escape character."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:416
+#, no-c-format
+msgid "Asserts the beginning of the string."
+msgstr ""
+
+#. Tag: userinput
+#: regular-expressions.docbook:420
+#, no-c-format
+msgid "<userinput>$</userinput>"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:421
+#, no-c-format
+msgid "Asserts the end of string."
+msgstr ""
+
+#. Tag: term
+#: regular-expressions.docbook:425
+#, no-c-format
+msgid "<userinput>()</userinput> (left and right parentheses)"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:426
+#, no-c-format
+msgid "Denotes sub patterns."
+msgstr ""
+
+#. Tag: term
+#: regular-expressions.docbook:430
+#, no-c-format
+msgid "<userinput>{}</userinput> (left and right curly braces)"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:431
+#, no-c-format
+msgid "Denotes numeric quantifiers."
+msgstr ""
+
+#. Tag: term
+#: regular-expressions.docbook:435
+#, no-c-format
+msgid "<userinput>[]</userinput> (left and right square brackets)"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:436
+#, no-c-format
+msgid "Denotes character classes."
+msgstr ""
+
+#. Tag: term
+#: regular-expressions.docbook:440
+#, no-c-format
+msgid "<userinput>|</userinput> (vertical bar)"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:441
+#, no-c-format
+msgid "logical OR. Separates alternatives."
+msgstr ""
+
+#. Tag: term
+#: regular-expressions.docbook:445 regular-expressions.docbook:522
+#, no-c-format
+msgid "<userinput>+</userinput> (plus sign)"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:446
+#, no-c-format
+msgid "Quantifier, 1 or more."
+msgstr ""
+
+#. Tag: term
+#: regular-expressions.docbook:450 regular-expressions.docbook:517
+#, no-c-format
+msgid "<userinput>*</userinput> (asterisk)"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:451
+#, no-c-format
+msgid "Quantifier, 0 or more."
+msgstr ""
+
+#. Tag: term
+#: regular-expressions.docbook:455 regular-expressions.docbook:527
+#, no-c-format
+msgid "<userinput>?</userinput> (question mark)"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:456
+#, no-c-format
+msgid "An optional character. Can be interpreted as a quantifier, 0 or 1."
+msgstr ""
+
+#. Tag: title
+#: regular-expressions.docbook:468
+#, no-c-format
+msgid "<title>Quantifiers</title>"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:470
+#, no-c-format
+msgid ""
+"<emphasis>Quantifiers</emphasis> allows a regular expression to match a "
+"specified number or range of numbers of either a character, character class "
+"or sub pattern."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:474
+#, no-c-format
+msgid ""
+"Quantifiers are enclosed in curly brackets (<literal>{</literal> and "
+"<literal>}</literal>) and have the general form <literal>{[minimum-"
+"occurrences][,[maximum-occurrences]]}</literal>"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:479
+#, no-c-format
+msgid "The usage is best explained by example:"
+msgstr ""
+
+#. Tag: userinput
+#: regular-expressions.docbook:484
+#, no-c-format
+msgid "<userinput>{1}</userinput>"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:485
+#, no-c-format
+msgid "Exactly 1 occurrence"
+msgstr ""
+
+#. Tag: userinput
+#: regular-expressions.docbook:489
+#, no-c-format
+msgid "{0,1}"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:490
+#, no-c-format
+msgid "Zero or 1 occurrences"
+msgstr ""
+
+#. Tag: userinput
+#: regular-expressions.docbook:494
+#, no-c-format
+msgid "{,1}"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:495
+#, no-c-format
+msgid "The same, with less work;)"
+msgstr ""
+
+#. Tag: userinput
+#: regular-expressions.docbook:499
+#, no-c-format
+msgid "{5,10}"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:500
+#, no-c-format
+msgid "At least 5 but maximum 10 occurrences."
+msgstr ""
+
+#. Tag: userinput
+#: regular-expressions.docbook:504
+#, no-c-format
+msgid "{5,}"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:505
+#, no-c-format
+msgid "At least 5 occurrences, no maximum."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:512
+#, no-c-format
+msgid "Additionally, there are some abbreviations:"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:518
+#, no-c-format
+msgid "similar to <literal>{0,}</literal>, find any number of occurrences."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:523
+#, no-c-format
+msgid "similar to <literal>{1,}</literal>, at least 1 occurrence."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:528
+#, no-c-format
+msgid "similar to <literal>{0,1}</literal>, zero or 1 occurrence."
+msgstr ""
+
+#. Tag: title
+#: regular-expressions.docbook:537
+#, no-c-format
+msgid "Greed"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:539
+#, no-c-format
+msgid ""
+"When using quantifiers with no maximum, regular expressions defaults to "
+"match as much of the searched string as possible, commonly known as "
+"<emphasis>greedy</emphasis> behavior."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:543
+#, no-c-format
+msgid ""
+"Modern regular expression software provides the means of <quote>turning off "
+"greediness</quote>, though in a graphical environment it is up to the "
+"interface to provide you with access to this feature. For example a search "
+"dialog providing a regular expression search could have a check box labeled "
+"<quote>Minimal matching</quote> as well as it ought to indicate if "
+"greediness is the default behavior."
+msgstr ""
+
+#. Tag: title
+#: regular-expressions.docbook:554
+#, no-c-format
+msgid "In context examples"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:556
+#, no-c-format
+msgid "Here are a few examples of using quantifiers:"
+msgstr ""
+
+#. Tag: userinput
+#: regular-expressions.docbook:561
+#, no-c-format
+msgid "^\\d{4,5}\\s"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:562
+#, no-c-format
+msgid ""
+"Matches the digits in <quote>1234 go</quote> and <quote>12345 now</quote>, "
+"but neither in <quote>567 eleven</quote> nor in <quote>223459 somewhere</"
+"quote>."
+msgstr ""
+
+#. Tag: userinput
+#: regular-expressions.docbook:567
+#, no-c-format
+msgid "<userinput>\\s+</userinput>"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:568
+#, no-c-format
+msgid "Matches one or more whitespace characters."
+msgstr ""
+
+#. Tag: userinput
+#: regular-expressions.docbook:572
+#, no-c-format
+msgid "(bla){1,}"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:573
+#, no-c-format
+msgid ""
+"Matches all of <quote>blablabla</quote> and the <quote>bla</quote> in "
+"<quote>blackbird</quote> or <quote>tabla</quote>."
+msgstr ""
+
+#. Tag: userinput
+#: regular-expressions.docbook:577
+#, no-c-format
+msgid "/?&gt;"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:578
+#, no-c-format
+msgid ""
+"Matches <quote>/&gt;</quote> in <quote>&lt;closeditem/&gt;</quote> as well "
+"as <quote>&gt;</quote> in <quote>&lt;openitem&gt;</quote>."
+msgstr ""
+
+#. Tag: title
+#: regular-expressions.docbook:589
+#, no-c-format
+msgid "<title>Assertions</title>"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:591
+#, no-c-format
+msgid ""
+"<emphasis>Assertions</emphasis> allows a regular expression to match only "
+"under certain controlled conditions."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:594
+#, no-c-format
+msgid ""
+"An assertion does not need a character to match, it rather investigates the "
+"surroundings of a possible match before acknowledging it. For example the "
+"<emphasis>word boundary</emphasis> assertion does not try to find a non word "
+"character opposite a word one at its position, instead it makes sure that "
+"there is not a word character. This means that the assertion can match where "
+"there is no character, &ie; at the ends of a searched string."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:602
+#, no-c-format
+msgid ""
+"Some assertions actually do have a pattern to match, but the part of the "
+"string matching that will not be a part of the result of the match of the "
+"full expression."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:606
+#, no-c-format
+msgid ""
+"Regular Expressions as documented here supports the following assertions:"
+msgstr ""
+
+#. Tag: term
+#: regular-expressions.docbook:612
+#, no-c-format
+msgid "<userinput>^</userinput> (caret: beginning of string)"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:614
+#, no-c-format
+msgid "Matches the beginning of the searched string."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:615
+#, no-c-format
+msgid ""
+"The expression <userinput>^Peter</userinput> will match at <quote>Peter</"
+"quote> in the string <quote>Peter, hey!</quote> but not in <quote>Hey, Peter!"
+"</quote>"
+msgstr ""
+
+#. Tag: term
+#: regular-expressions.docbook:621
+#, no-c-format
+msgid "<userinput>$</userinput> (end of string)"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:622
+#, no-c-format
+msgid "Matches the end of the searched string."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:624
+#, no-c-format
+msgid ""
+"The expression <userinput>you\\?$</userinput> will match at the last you in "
+"the string <quote>You didn't do that, did you?</quote> but nowhere in "
+"<quote>You didn't do that, right?</quote>"
+msgstr ""
+
+#. Tag: term
+#: regular-expressions.docbook:632
+#, no-c-format
+msgid "<userinput>\\b</userinput> (word boundary)"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:633
+#, no-c-format
+msgid ""
+"Matches if there is a word character at one side and not a word character at "
+"the other."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:635
+#, no-c-format
+msgid ""
+"This is useful to find word ends, for example both ends to find a whole "
+"word. The expression <userinput>\\bin\\b</userinput> will match at the "
+"separate <quote>in</quote> in the string <quote>He came in through the "
+"window</quote>, but not at the <quote>in</quote> in <quote>window</quote>."
+msgstr ""
+
+#. Tag: term
+#: regular-expressions.docbook:644
+#, no-c-format
+msgid "<userinput>\\B</userinput> (non word boundary)"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:645
+#, no-c-format
+msgid "Matches wherever <quote>\\b</quote> does not."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:646
+#, no-c-format
+msgid ""
+"That means that it will match for example within words: The expression "
+"<userinput>\\Bin\\B</userinput> will match at in <quote>window</quote> but "
+"not in <quote>integer</quote> or <quote>I'm in love</quote>."
+msgstr ""
+
+#. Tag: term
+#: regular-expressions.docbook:652
+#, no-c-format
+msgid "<userinput>(?=PATTERN)</userinput> (Positive lookahead)"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:653
+#, no-c-format
+msgid ""
+"A lookahead assertion looks at the part of the string following a possible "
+"match. The positive lookahead will prevent the string from matching if the "
+"text following the possible match does not match the <emphasis>PATTERN</"
+"emphasis> of the assertion, but the text matched by that will not be "
+"included in the result."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:657
+#, no-c-format
+msgid ""
+"The expression <userinput>handy(?=\\w)</userinput> will match at "
+"<quote>handy</quote> in <quote>handyman</quote> but not in <quote>That came "
+"in handy!</quote>"
+msgstr ""
+
+#. Tag: term
+#: regular-expressions.docbook:663
+#, no-c-format
+msgid "<userinput>(?!PATTERN)</userinput> (Negative lookahead)"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:665
+#, no-c-format
+msgid ""
+"The negative lookahead prevents a possible match to be acknowledged if the "
+"following part of the searched string does match its <emphasis>PATTERN</"
+"emphasis>."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:668
+#, no-c-format
+msgid ""
+"The expression <userinput>const \\w+\\b(?!\\s*&amp;)</userinput> will match "
+"at <quote>const char</quote> in the string <quote>const char* foo</quote> "
+"while it can not match <quote>const QString</quote> in <quote>const "
+"QString&amp; bar</quote> because the <quote>&amp;</quote> matches the "
+"negative lookahead assertion pattern."
+msgstr ""
+
+#. Tag: term
+#: regular-expressions.docbook:678
+#, no-c-format
+msgid "<userinput>(?&lt;=PATTERN)</userinput> (Positive lookbehind)"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:679
+#, no-c-format
+msgid ""
+"Lookbehind has the same effect as the lookahead, but works backwards. A "
+"lookbehind looks at the part of the string previous a possible match. The "
+"positive lookbehind will match a string only if it is preceded by the "
+"<emphasis>PATTERN</emphasis> of the assertion, but the text matched by that "
+"will not be included in the result."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:683
+#, no-c-format
+msgid ""
+"The expression <userinput>(?&lt;=cup)cake</userinput> will match at "
+"<quote>cake</quote> if it is succeeded by <quote>cup</quote> (in "
+"<quote>cupcake</quote> but not in <quote>cheesecake</quote> or in "
+"<quote>cake</quote> alone)."
+msgstr ""
+
+#. Tag: term
+#: regular-expressions.docbook:690
+#, no-c-format
+msgid "<userinput>(?&lt;!PATTERN)</userinput> (Negative lookbehind)"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:691
+#, no-c-format
+msgid ""
+"The negative lookbehind prevents a possible match to be acknowledged if the "
+"previous part of the searched string does match its <emphasis>PATTERN</"
+"emphasis>."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:693
+#, no-c-format
+msgid ""
+"The expression <userinput>(?&lt;![\\w\\.])[0-9]+</userinput> will match at "
+"<quote>123</quote> in the strings <quote>=123</quote> and <quote>-123</"
+"quote> while it can not match <quote>123</quote> in <quote>.123</quote> or "
+"<quote>word123</quote>."
+msgstr ""
+
+#. Tag: term
+#: regular-expressions.docbook:700
+#, no-c-format
+msgid "<userinput>(PATTERN)</userinput> (Capturing group)"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:702
+#, no-c-format
+msgid ""
+"The sub pattern within the parentheses is captured and remembered, so that "
+"it can be used in back references. For example, the expression "
+"<userinput>(&amp;quot;+)[^&amp;quot;]*\\1</userinput> matches "
+"<userinput>&quot;&quot;&quot;&quot;text&quot;&quot;&quot;&quot;</userinput> "
+"and <userinput>&quot;text&quot;</userinput>."
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:707
+#, no-c-format
+msgid ""
+"See the section <link linkend=\"regex-capturing\">Capturing matching text "
+"(back references)</link> for more information."
+msgstr ""
+
+#. Tag: term
+#: regular-expressions.docbook:713
+#, no-c-format
+msgid "<userinput>(?:PATTERN)</userinput> (Non-capturing group)"
+msgstr ""
+
+#. Tag: para
+#: regular-expressions.docbook:715
+#, no-c-format
+msgid ""
+"The sub pattern within the parentheses is not captured and is not "
+"remembered. It is preferable to always use non-capturing groups if the "
+"captures will not be used."
+msgstr ""
+
+#~ msgid "Patterns"
+#~ msgstr "Imilinganiselo"
+
+#~ msgid "The &kate; Handbook"
+#~ msgstr "I &kate; Incwadi yesandla"
+
+#~ msgid ""
+#~ "<firstname>Seth</firstname> <surname>Rothberg</surname> <affiliation> "
+#~ "<address><email>sethmr@bellatlantic.net</email></address> </affiliation>"
+#~ msgstr ""
+#~ "<firstname>Seth</firstname> <surname>Rothberg</surname> <affiliation> "
+#~ "<address><email>sethmr@bellatlantic.net</email></address> </affiliation>"
+
+#~ msgid ""
+#~ "<firstname>Anders</firstname> <surname>Lund</surname> <affiliation> "
+#~ "<address><email>anders@alweb.dk</email></address> </affiliation>"
+#~ msgstr ""
+#~ "<firstname>Anders</firstname> <surname>Lund</surname> <affiliation> "
+#~ "<address><email>anders@alweb.dk</email></address> </affiliation>"
+
+#~ msgid "&kate; is a programmer's text editor for &kde; 2.2 and above."
+#~ msgstr "&kate; ngumhleli wokubhaliweyo komdwelisi we &kde;2.2 nangaphezulu."
+
+#~ msgid "This handbook documents &kate; Version 1.0"
+#~ msgstr "La maxwebhu encwadi yesandla &kate; Uguqulelo 1.0"
+
+#~ msgid "<keyword>KDE</keyword>"
+#~ msgstr "<keyword>KDE</keyword>"
+
+#~ msgid "kdebase"
+#~ msgstr "kdebase"
+
+#~ msgid "Kate"
+#~ msgstr "Kate"
+
+#~ msgid "text"
+#~ msgstr "okubhaliweyo"
+
+#~ msgid "editor"
+#~ msgstr "umhleli"
+
+#~ msgid "programmer"
+#~ msgstr "umdwelisi"
+
+#~ msgid "programming"
+#~ msgstr "iyadwelisa"
+
+#~ msgid "projects"
+#~ msgstr "iiprojekti"
+
+#~ msgid "<keyword>MDI</keyword>"
+#~ msgstr "<keyword>MDI</keyword>"
+
+#~ msgid "Multi"
+#~ msgstr "Ezininzi"
+
+#~ msgid "Document"
+#~ msgstr "Uxwebhu"
+
+#~ msgid "Interface"
+#~ msgstr "Ujongano"
+
+#~ msgid "terminal"
+#~ msgstr "indlela yesiphelo"
+
+#~ msgid "console"
+#~ msgstr "console"
+
+#~ msgid ""
+#~ "Welcome to &kate;, a programmer's text editor for &kde; version 2.2 and "
+#~ "above. Some of &kate;'s many features include configurable syntax "
+#~ "highlighting for languages ranging from C and C++ to <acronym>HTML</"
+#~ "acronym> to bash scripts, the ability to create and maintain projects, a "
+#~ "multiple document interface (<acronym>MDI</acronym>), and a self-"
+#~ "contained terminal emulator."
+#~ msgstr ""
+#~ "Wamkelekile ku &kate;, umhleli wokubhaliweyo wabadwelisi we &kde; "
+#~ "uguqulelo 2.2 na ngaphezulu. Eminye ye &kate;imisebenzi emininzi iquka "
+#~ "isivakalisi esiqwalaselweyo uphawulo lwelwimi ukusuka ku C no C++ ukuya "
+#~ "<acronym>HTML</acronym> ukunqgubanisa izishicilelo, indlela yokwenza "
+#~ "nokulondoloza iiprojekti, oluninzi ujongano loxwebhu (<acronym>MDI</"
+#~ "acronym>), noziqulathe-ngokwakhe umlinganisi wendlela yesiphelo."
+
+#~ msgid ""
+#~ "But &kate; is more than a programmer's editor. Its ability to open "
+#~ "several files at once makes it ideal for editing &UNIX;'s many "
+#~ "configuration files. This document was written in &kate;."
+#~ msgstr ""
+#~ "Kodwa &kate; ingaphezu komhleli wabadwelisi. Yindlela yokuvula ezininzi "
+#~ "iifayile kubekanye kuyenza ilungele ukuhlela &UNIX; ezininzi iifayile "
+#~ "zoqwalaselo. Olu xwebhu labhalwa kwi &kate;."
+
+#~ msgid "The Fundamentals"
+#~ msgstr "Izakhelo"
+
+#~ msgid ""
+#~ "If you have ever used a text editor, you will have no problem using "
+#~ "&kate;. In the next two sections, <link linkend=\"starting-kate"
+#~ "\">Starting &kate; </link> and in <link linkend=\"working-with-kate"
+#~ "\">Working with &kate;</link>, we'll show you everything you need to get "
+#~ "up and running quickly."
+#~ msgstr ""
+#~ "Ukuba uke wasebenzisa umhleli wokubhaliweyo awuzukuba nangxaki usebenzisa "
+#~ "i &kate;. Kumacandelo amabini alandelayo, <link linkend=\"starting-kate"
+#~ "\">Iqala &kate; </link> nakwi <link linkend=\"working-with-kate"
+#~ "\">Usebenza nge &kate;</link> izakubonisa yonke into oyifunayo ukufumana "
+#~ "nokusebenza ngokukhawuleza."
+
+#~ msgid "Starting &kate;"
+#~ msgstr "Iqala i &kate;"
+
+#~ msgid ""
+#~ "You can start &kate; from the <guimenu>K menu</guimenu> or from the "
+#~ "command line."
+#~ msgstr ""
+#~ "Ungaqala i &kate; kwi <guimenu>K menu</guimenu> okanye kwilayini "
+#~ "yomyalelo."
+
+#~ msgid "Drag and Drop"
+#~ msgstr "Tsala kwaye Ulahle"
+
+#~ msgid "Show Filelist"
+#~ msgstr "Bonisa uluhlu lwefayile"
+
+#~ msgid "Show Fileselector"
+#~ msgstr "Bonisa umkhethi wefayile"
+
+#~ msgid "Show Console"
+#~ msgstr "Bonisa i Console"
+
+#~ msgid "Insert"
+#~ msgstr "Faka"
+
+#~ msgid "Home"
+#~ msgstr "Ikhaya"
+
+#~ msgid "Delete"
+#~ msgstr "Cima"
+
+#~ msgid "&Shift;<keycap>Left Arrow</keycap>"
+#~ msgstr "&Shift;<keycap>Utolo Lasekhohlo</keycap>"
+
+#~ msgid "&Shift;<keycap>Right Arrow</keycap>"
+#~ msgstr "&Shift;<keycap>Utolo Lasekunene</keycap>"
+
+#~ msgid "Help"
+#~ msgstr "Uncedo"
+
+#~ msgid "&Shift;<keycap>F1</keycap>"
+#~ msgstr "&Shift;<keycap>F1</keycap>"
+
+#~ msgid "What's this?"
+#~ msgstr "Yintoni le?"
+
+#~ msgid "&Ctrl;<keycap>F</keycap>"
+#~ msgstr "&Ctrl;<keycap>F</keycap>"
+
+#~ msgid "Find"
+#~ msgstr "Fumana"
+
+#~ msgid "<keycap>F3</keycap>"
+#~ msgstr "<keycap>F3</keycap>"
+
+#~ msgid "&Ctrl;<keycap>B</keycap>"
+#~ msgstr "&Ctrl;<keycap>B</keycap>"
+
+#~ msgid "&Ctrl;<keycap>C</keycap>"
+#~ msgstr "&Ctrl;<keycap>C</keycap>"
+
+#~ msgid "&Ctrl;<keycap>N</keycap>"
+#~ msgstr "&Ctrl;<keycap>N</keycap>"
+
+#~ msgid "&Ctrl;<keycap>P</keycap>"
+#~ msgstr "&Ctrl;<keycap>P</keycap>"
+
+#~ msgid "Print"
+#~ msgstr "Shicilela"
+
+#~ msgid "&Ctrl;<keycap>Q</keycap>"
+#~ msgstr "&Ctrl;<keycap>Q</keycap>"
+
+#~ msgid "&Ctrl;<keycap>R</keycap>"
+#~ msgstr "&Ctrl;<keycap>R</keycap>"
+
+#~ msgid "Replace"
+#~ msgstr "Buyisela"
+
+#~ msgid "&Ctrl;<keycap>S</keycap>"
+#~ msgstr "&Ctrl;<keycap>S</keycap>"
+
+#~ msgid "&Ctrl;<keycap>V</keycap>"
+#~ msgstr "&Ctrl;<keycap>V</keycap>"
+
+#~ msgid "&Ctrl;<keycap>X</keycap>"
+#~ msgstr "&Ctrl;<keycap>X</keycap>"
+
+#~ msgid "&Ctrl;<keycap>Z</keycap>"
+#~ msgstr "&Ctrl;<keycap>Z</keycap>"
+
+#~ msgid "Undo"
+#~ msgstr "Sukwenza"
+
+#~ msgid "&Ctrl;&Shift;<keycap>Z</keycap>"
+#~ msgstr "&Ctrl;&Shift;<keycap>Z</keycap>"
+
+#~ msgid "Redo"
+#~ msgstr "Yenza kwakhona"
+
+#~ msgid "With &kate;"
+#~ msgstr "Nge &kate;"
+
+#~ msgid "What's This Help"
+#~ msgstr "Yintoni Oluncedo?"
+
+#~ msgid "The File List"
+#~ msgstr "Uluhlu Lwefayile"
+
+#~ msgid "The File Selector"
+#~ msgstr "Umkhethi Wefayile"
+
+#~ msgid "Using Overwrite Selection"
+#~ msgstr "Isebenzisa Iinketho Ezibhalwa ngaphezulu"
+
+#~ msgid "Overwrite Selection is enabled by default."
+#~ msgstr "Ukhetho Lobhalo ngaphezulu lwenziwe ngokungagqibekanga."
+
+#~ msgid "Using Persistent Selection"
+#~ msgstr "Isebenzisa Iinketho Eziqhubekayo"
+
+#~ msgid "Menu Entries"
+#~ msgstr "Amangeno emenu"
+
+#~ msgid "The <guimenu>File</guimenu> Menu"
+#~ msgstr "I <guimenu>Fayile</guimenu> Menu"
+
+#~ msgid ""
+#~ "<shortcut> <keycombo action=\"simul\">&Ctrl;<keycap>N</keycap></keycombo> "
+#~ "</shortcut> <guimenu>File</guimenu> <guimenuitem>New</guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut> <keycombo action=\"simul\">&Ctrl;<keycap>N</keycap></keycombo> "
+#~ "</shortcut> <guimenu>Ifayile</guimenu> <guimenuitem>Entsha</guimenuitem>"
+
+#~ msgid ""
+#~ "<shortcut> <keycombo action=\"simul\">&Ctrl;<keycap>O</keycap></keycombo> "
+#~ "</shortcut> <guimenu>File</guimenu> <guimenuitem>Open</guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut> <keycombo action=\"simul\">&Ctrl;<keycap>O</keycap></keycombo> "
+#~ "</shortcut> <guimenu>Ifayile</guimenu> <guimenuitem>Vula</guimenuitem>"
+
+#~ msgid "<guimenu>File</guimenu> <guimenuitem>Open Recent</guimenuitem>"
+#~ msgstr ""
+#~ "<guimenu>Ifayile</guimenu> <guimenuitem>Vula esandukubakhona</guimenuitem>"
+
+#~ msgid ""
+#~ "<shortcut> <keycombo action=\"simul\">&Ctrl;<keycap>S</keycap></keycombo> "
+#~ "</shortcut> <guimenu>File</guimenu> <guimenuitem>Save</guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut> <keycombo action=\"simul\">&Ctrl;<keycap>S</keycap></keycombo> "
+#~ "</shortcut> <guimenu>Ifayile</guimenu> <guimenuitem>Gcina</guimenuitem>"
+
+#~ msgid "<guimenu>File</guimenu> <guimenuitem>Save As</guimenuitem>"
+#~ msgstr "<guimenu>Ifayile</guimenu> <guimenuitem>Gcina njenge</guimenuitem>"
+
+#~ msgid ""
+#~ "<shortcut> <keycombo action=\"simul\">&Ctrl;<keycap>L</keycap></keycombo> "
+#~ "</shortcut> <guimenu>File</guimenu> <guimenuitem>Save All</guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut> <keycombo action=\"simul\">&Ctrl;<keycap>L</keycap></keycombo> "
+#~ "</shortcut> <guimenu>Ifayile</guimenu> <guimenuitem>Gcina Zonke</"
+#~ "guimenuitem>"
+
+#~ msgid ""
+#~ "<shortcut> <keycombo action=\"simul\"><keycap>F5</keycap></keycombo> </"
+#~ "shortcut> <guimenu>File</guimenu> <guimenuitem>Reload</guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut> <keycombo action=\"simul\"><keycap>F5</keycap></keycombo> </"
+#~ "shortcut> <guimenu>Ifayile</guimenu> <guimenuitem>Layisha kwakhona</"
+#~ "guimenuitem>"
+
+#~ msgid "<guimenu>File</guimenu> <guimenuitem>Open with</guimenuitem>"
+#~ msgstr "<guimenu>Ifayile</guimenu> <guimenuitem>Vula nge</guimenuitem>"
+
+#~ msgid ""
+#~ "<shortcut> <keycombo action=\"simul\">&Ctrl;<keycap>P</keycap></keycombo> "
+#~ "</shortcut> <guimenu>File</guimenu> <guimenuitem>Print</guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut> <keycombo action=\"simul\">&Ctrl;<keycap>P</keycap></keycombo> "
+#~ "</shortcut> <guimenu>Ifayile</guimenu> <guimenuitem>Shicilela</"
+#~ "guimenuitem>"
+
+#~ msgid ""
+#~ "<shortcut> <keycombo action=\"simul\">&Ctrl;<keycap>W</keycap></keycombo> "
+#~ "</shortcut> <guimenu>File</guimenu> <guimenuitem>Close</guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut> <keycombo action=\"simul\">&Ctrl;<keycap>W</keycap></keycombo> "
+#~ "</shortcut> <guimenu>Ifayile</guimenu> <guimenuitem>Vala</guimenuitem>"
+
+#~ msgid ""
+#~ "<action>Close the active file</action> with this command. If you have "
+#~ "made unsaved changes, you will be prompted to save the file before &kate; "
+#~ "closes it."
+#~ msgstr ""
+#~ "<action>Vala ifayile esebenzayo</action> ngalomyalelo. Ukuba wenze "
+#~ "utshintsho olungagcinwanga, uzakucelwa ukuba ugcine lofayile phambi "
+#~ "kokuba u &kate; ayivale."
+
+#~ msgid "<guimenu>File</guimenu> <guimenuitem>Close All</guimenuitem>"
+#~ msgstr "<guimenu>Ifayile</guimenu> <guimenuitem>Vala Zonke</guimenuitem>"
+
+#~ msgid "<guimenu>File</guimenu> <guimenuitem>New Window</guimenuitem>"
+#~ msgstr "<guimenu>Ifayile</guimenu> <guimenuitem>Window Entsha</guimenuitem>"
+
+#~ msgid ""
+#~ "<shortcut> <keycombo action=\"simul\">&Ctrl;<keycap>Q</keycap></keycombo> "
+#~ "</shortcut> <guimenu>File</guimenu> <guimenuitem>Quit</guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut> <keycombo action=\"simul\">&Ctrl;<keycap>Q</keycap></keycombo> "
+#~ "</shortcut> <guimenu>Ifayile</guimenu> <guimenuitem>Iyakhupha</"
+#~ "guimenuitem>"
+
+#~ msgid ""
+#~ "This command <action>closes &kate;</action> and any files you were "
+#~ "editing. If you have made unsaved changes to any of the files you were "
+#~ "editing, you will be prompted to save them."
+#~ msgstr ""
+#~ "Lo myalelo <action>uvala &kate;</action> nezinye iifayile obuzihlela. "
+#~ "Ukuba wenze utshintsho olungagcinwanga nakweziphi iifayile obuzihlela, "
+#~ "uzaku ncedwa ukuzigcina."
+
+#~ msgid "The <guimenu>Edit</guimenu> Menu"
+#~ msgstr "I <guimenu>Hlela</guimenu> Menu"
+
+#~ msgid ""
+#~ "The <guimenu>Edit</guimenu> menu contains a host of commands, all to work "
+#~ "with the currently active document."
+#~ msgstr ""
+#~ "I <guimenu>Uhlelo</guimenu> i menu iqulathe imiyalelo exubiweyo, wonke "
+#~ "umsebenzi wexwebhu elisebenzayo ngoku."
+
+#~ msgid ""
+#~ "<shortcut><keycombo action=\"simul\">&Ctrl;<keycap>Z</keycap></keycombo></"
+#~ "shortcut> <guimenu>Edit</guimenu> <guimenuitem>Undo</guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut><keycombo action=\"simul\">&Ctrl;<keycap>Z</keycap></keycombo></"
+#~ "shortcut> <guimenu>Hlela</guimenu> <guimenuitem>Sukwenza</guimenuitem>"
+
+#~ msgid ""
+#~ "<shortcut><keycombo action=\"simul\">&Ctrl;&Shift;<keycap>Z</keycap></"
+#~ "keycombo></shortcut> <guimenu>Edit</guimenu> <guimenuitem>Redo</"
+#~ "guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut><keycombo action=\"simul\">&Ctrl;&Shift;<keycap>Z</keycap></"
+#~ "keycombo></shortcut> <guimenu>Hlela</guimenu> <guimenuitem>Yenza "
+#~ "kwakhona</guimenuitem>"
+
+#~ msgid ""
+#~ "<shortcut><keycombo action=\"simul\">&Ctrl;<keycap>X</keycap></keycombo></"
+#~ "shortcut> <guimenu>Edit</guimenu> <guimenuitem>Cut</guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut><keycombo action=\"simul\">&Ctrl;<keycap>X</keycap></keycombo></"
+#~ "shortcut> <guimenu>Hlela</guimenu> <guimenuitem>Sika</guimenuitem>"
+
+#~ msgid ""
+#~ "<shortcut><keycombo action=\"simul\">&Ctrl;<keycap>C</keycap></keycombo></"
+#~ "shortcut> <guimenu>Edit</guimenu> <guimenuitem>Copy</guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut><keycombo action=\"simul\">&Ctrl;<keycap>C</keycap></keycombo></"
+#~ "shortcut> <guimenu>Hlela</guimenu> <guimenuitem>Kuphela</guimenuitem>"
+
+#~ msgid ""
+#~ "<shortcut><keycombo action=\"simul\">&Ctrl;<keycap>V</keycap></keycombo></"
+#~ "shortcut> <guimenu>Edit</guimenu> <guimenuitem>Paste</guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut><keycombo action=\"simul\">&Ctrl;<keycap>V</keycap></keycombo></"
+#~ "shortcut> <guimenu>Hlela</guimenu> <guimenuitem>Cola</guimenuitem>"
+
+#~ msgid ""
+#~ "<shortcut><keycombo action=\"simul\">&Ctrl;<keycap>A</keycap></keycombo></"
+#~ "shortcut> <guimenu>Edit</guimenu> <guimenuitem>Select All</guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut><keycombo action=\"simul\">&Ctrl;<keycap>A</keycap></keycombo></"
+#~ "shortcut> <guimenu>Hlela</guimenu> <guimenuitem>Khetha Zonke</guimenuitem>"
+
+#~ msgid ""
+#~ "<shortcut><keycombo action=\"simul\">&Ctrl;&Shift;<keycap>A</keycap></"
+#~ "keycombo></shortcut> <guimenu>Edit</guimenu> <guimenuitem>Deselect</"
+#~ "guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut><keycombo action=\"simul\">&Ctrl;&Shift;<keycap>A</keycap></"
+#~ "keycombo></shortcut> <guimenu>Hlela</guimenu> <guimenuitem>Kupha ukhetho</"
+#~ "guimenuitem>"
+
+#~ msgid ""
+#~ "<shortcut><keycombo action=\"simul\"><keycap>F4</keycap></keycombo></"
+#~ "shortcut> <guimenu>Edit</guimenu> <guimenuitem>Toggle Block Selection</"
+#~ "guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut><keycombo action=\"simul\"><keycap>F4</keycap></keycombo></"
+#~ "shortcut> <guimenu>Hlela</guimenu> <guimenuitem>Qhobosha Ukhetho "
+#~ "lwesiqobo</guimenuitem>"
+
+#~ msgid ""
+#~ "<shortcut><keycombo action=\"simul\">&Ctrl;<keycap>F</keycap></keycombo></"
+#~ "shortcut> <guimenu>Edit</guimenu> <guimenuitem>Find</guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut><keycombo action=\"simul\">&Ctrl;<keycap>F</keycap></keycombo></"
+#~ "shortcut> <guimenu>Hlela</guimenu> <guimenuitem>Fumana</guimenuitem>"
+
+#~ msgid ""
+#~ "<shortcut><keycombo action=\"simul\"><keycap>F3</keycap></keycombo></"
+#~ "shortcut> <guimenu>Edit</guimenu> <guimenuitem>Find Next</guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut><keycombo action=\"simul\"><keycap>F3</keycap></keycombo></"
+#~ "shortcut> <guimenu>Hlela</guimenu> <guimenuitem>Fumana Elandelayo</"
+#~ "guimenuitem>"
+
+#~ msgid ""
+#~ "<shortcut><keycombo action=\"simul\">&Shift;<keycap>F3</keycap></"
+#~ "keycombo></shortcut> <guimenu>Edit</guimenu> <guimenuitem>Find Previous</"
+#~ "guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut><keycombo action=\"simul\">&Shift;<keycap>F3</keycap></"
+#~ "keycombo></shortcut> <guimenu>Hlela</guimenu> <guimenuitem>Fumana "
+#~ "Edlulileyo</guimenuitem>"
+
+#~ msgid ""
+#~ "<shortcut><keycombo action=\"simul\">&Ctrl;<keycap>R</keycap></keycombo></"
+#~ "shortcut> <guimenu>Edit</guimenu> <guimenuitem>Replace</guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut><keycombo action=\"simul\">&Ctrl;<keycap>R</keycap></keycombo></"
+#~ "shortcut> <guimenu>Hlela</guimenu> <guimenuitem>Buyisela</guimenuitem>"
+
+#~ msgid ""
+#~ "<shortcut><keycombo action=\"simul\">&Ctrl;<keycap>I</keycap></keycombo></"
+#~ "shortcut> <guimenu>Edit</guimenu> <guimenuitem>Indent</guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut><keycombo action=\"simul\">&Ctrl;<keycap>I</keycap></keycombo></"
+#~ "shortcut> <guimenu>Hlela</guimenu> <guimenuitem>Yenza amathanda</"
+#~ "guimenuitem>"
+
+#, fuzzy
+#~ msgid ""
+#~ "<shortcut><keycombo action=\"simul\">&Ctrl;&Shift;<keycap>i</keycap></"
+#~ "keycombo></shortcut> <guimenu>Edit</guimenu> <guimenuitem>Unindent</"
+#~ "guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut> <keycombo action=\"simul\"><keycap>Ctrl</keycap><keycap>N</"
+#~ "keycap></keycombo> </shortcut> <guimenu><accel>F</accel>ile</guimenu> "
+#~ "<guimenuitem><accel>N</accel>ew</guimenuitem>"
+
+#~ msgid ""
+#~ "<shortcut><keycombo action=\"simul\">&Ctrl;<keycap>#</keycap></keycombo></"
+#~ "shortcut> <guimenu>Edit</guimenu> <guimenuitem>Comment</guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut><keycombo action=\"simul\">&Ctrl;<keycap>#</keycap></keycombo></"
+#~ "shortcut> <guimenu>Hlela</guimenu> <guimenuitem>Ugqabazo</guimenuitem>"
+
+#~ msgid ""
+#~ "<shortcut><keycombo action=\"simul\">&Ctrl;&Shift;<keycap>#</keycap></"
+#~ "keycombo></shortcut> <guimenu>Edit</guimenu> <guimenuitem></guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut><keycombo action=\"simul\">&Ctrl;&Shift;<keycap>#</keycap></"
+#~ "keycombo></shortcut> <guimenu>Hlela</guimenu> <guimenuitem></guimenuitem>"
+
+#~ msgid ""
+#~ "See also <link linkend=\"edit-comment\"><guimenu>Edit</"
+#~ "guimenu><guimenuitem>Comment</guimenuitem></link>"
+#~ msgstr ""
+#~ "Bona futhi <link linkend=\"edit-comment\"><guimenu>Hlela</"
+#~ "guimenu><guimenuitem>Ugqabazo</guimenuitem></link>"
+
+#~ msgid ""
+#~ "<shortcut><keycombo action=\"simul\">&Ctrl;<keycap>G</keycap></keycombo></"
+#~ "shortcut> <guimenu>Edit</guimenu> <guimenuitem>Go to line...</guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut><keycombo action=\"simul\">&Ctrl;<keycap>G</keycap></keycombo></"
+#~ "shortcut> <guimenu>Hlela</guimenu> <guimenuitem>Yiya kwilayini...</"
+#~ "guimenuitem>"
+
+#~ msgid "The <guimenu>Document</guimenu>Menu"
+#~ msgstr "<guimenu>Uxwebhu</guimenu>Menu"
+
+#~ msgid "The <guimenu>Document</guimenu> menu has two purposes:"
+#~ msgstr "I <guimenu>Uxwebhu</guimenu> menu inenjongo ezimbini:"
+
+#~ msgid "Menu items"
+#~ msgstr "Menu yemiba"
+
+#, fuzzy
+#~ msgid ""
+#~ "<shortcut><keycombo action=\"simul\"><keycap>Alt</keycap><keycap>Left</"
+#~ "keycap></keycombo></shortcut> <guimenu>Document</guimenu> "
+#~ "<guimenuitem>Back</guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut> <keycombo action=\"simul\"><keycap>Ctrl</keycap><keycap>N</"
+#~ "keycap></keycombo> </shortcut> <guimenu><accel>F</accel>ile</guimenu> "
+#~ "<guimenuitem><accel>N</accel>ew</guimenuitem>"
+
+#, fuzzy
+#~ msgid ""
+#~ "<shortcut><keycombo action=\"simul\"><keycap>Alt</keycap><keycap>Right</"
+#~ "keycap></keycombo></shortcut> <guimenu>Document</guimenu> "
+#~ "<guimenuitem>Forward</guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut> <keycombo action=\"simul\"><keycap>Ctrl</keycap><keycap>N</"
+#~ "keycap></keycombo> </shortcut> <guimenu><accel>F</accel>ile</guimenu> "
+#~ "<guimenuitem><accel>N</accel>ew</guimenuitem>"
+
+#~ msgid "<guimenu>Document</guimenu> <guisubmenu>Highlight Mode</guisubmenu>"
+#~ msgstr ""
+#~ "<guimenu>Uxwebu</guimenu> <guisubmenu>Yenza uphawu lendlela</guisubmenu>"
+
+#~ msgid "<guimenu>Document</guimenu> <guisubmenu>End of Line</guisubmenu>"
+#~ msgstr ""
+#~ "<guimenu>Uxwebhu</guimenu> <guisubmenu>Isiphelo Selayini</guisubmenu>"
+
+#~ msgid "The <guimenu>View</guimenu> menu"
+#~ msgstr "I <guimenu>Bona</guimenu> menu"
+
+#~ msgid "Menu Items"
+#~ msgstr "Menu Imiba"
+
+#~ msgid ""
+#~ "<shortcut><keycombo action=\"simul\">&Ctrl;&Shift;<keycap>L</keycap></"
+#~ "keycombo></shortcut> <guimenu>View</guimenu> <guimenuitem>Split Vertical</"
+#~ "guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut><keycombo action=\"simul\">&Ctrl;&Shift;<keycap>L</keycap></"
+#~ "keycombo></shortcut> <guimenu>Boniselo</guimenu> <guimenuitem>Ucazululu "
+#~ "Oluthe nkqo</guimenuitem>"
+
+#~ msgid ""
+#~ "<shortcut><keycombo action=\"simul\">&Ctrl;&Shift;<keycap>T</keycap></"
+#~ "keycombo></shortcut> <guimenu>View</guimenu> <guimenuitem>Split "
+#~ "Horizontal</guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut><keycombo action=\"simul\">&Ctrl;&Shift;<keycap>T</keycap></"
+#~ "keycombo></shortcut> <guimenu>Imboniselo</guimenu> <guimenuitem>Ucazululu "
+#~ "Tye</guimenuitem>"
+
+#~ msgid ""
+#~ "<shortcut><keycombo action=\"simul\">&Ctrl;&Shift;<keycap>R</keycap></"
+#~ "keycombo></shortcut> <guimenu>View</guimenu> <guimenuitem>Close Current</"
+#~ "guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut><keycombo action=\"simul\">&Ctrl;&Shift;<keycap>R</keycap></"
+#~ "keycombo></shortcut> <guimenu>Imboniselo</guimenu> <guimenuitem>Vala "
+#~ "Eyangoku</guimenuitem>"
+
+#~ msgid ""
+#~ "<shortcut><keycombo action=\"simul\"><keycap>F6</keycap></keycombo></"
+#~ "shortcut> <guimenu>View</guimenu> <guimenuitem>Show Icon Border</"
+#~ "guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut><keycombo action=\"simul\"><keycap>F6</keycap></keycombo></"
+#~ "shortcut> <guimenu>Imboniselo</guimenu> <guimenuitem>Ibonisa Umda we "
+#~ "Icon</guimenuitem>"
+
+#~ msgid ""
+#~ "<shortcut><keycombo action=\"simul\"><keycap>F11</keycap></keycombo></"
+#~ "shortcut> <guimenu>View</guimenu> <guimenuitem>Show Line Numbers</"
+#~ "guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut><keycombo action=\"simul\"><keycap>F11</keycap></keycombo></"
+#~ "shortcut> <guimenu>Imboniselo</guimenu> <guimenuitem>Bonisela Inani "
+#~ "Lelayini</guimenuitem>"
+
+#~ msgid "<guimenu>View</guimenu> <guisubmenu>Go</guisubmenu>"
+#~ msgstr "<guimenu>Imboniselo</guimenu> <guisubmenu>Yiya</guisubmenu>"
+
+#~ msgid ""
+#~ "<shortcut><keycombo action=\"simul\"><keycap>F8</keycap></keycombo></"
+#~ "shortcut> <guimenuitem>Next View</guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut><keycombo action=\"simul\"><keycap>F8</keycap></keycombo></"
+#~ "shortcut> <guimenuitem>Imboniselo Elandelayo</guimenuitem>"
+
+#~ msgid ""
+#~ "<shortcut><keycombo action=\"simul\">&Shift;<keycap>F8</keycap></"
+#~ "keycombo></shortcut> <guimenuitem>Previous View</guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut><keycombo action=\"simul\">&Shift;<keycap>F8</keycap></"
+#~ "keycombo></shortcut> <guimenuitem>Imboniselo edlulileyo</guimenuitem>"
+
+#~ msgid "The <guimenu>Bookmarks</guimenu> Menu"
+#~ msgstr "I <guimenu>Amanqaku encwadi</guimenu> Menu"
+
+#~ msgid ""
+#~ "<shortcut><keycombo action=\"simul\">&Ctrl;<keycap>B</keycap></keycombo></"
+#~ "shortcut> <guimenu>Bookmarks</guimenu> <guimenuitem>Toggle Bookmark</"
+#~ "guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut><keycombo action=\"simul\">&Ctrl;<keycap>B</keycap></keycombo></"
+#~ "shortcut> <guimenu>Inqaku lencwadi</guimenu> <guimenuitem>Qhoboshela "
+#~ "Inqaku lencwadi</guimenuitem>"
+
+#~ msgid ""
+#~ "<guimenu>Bookmarks</guimenu> <guimenuitem>Clear Bookmarks</guimenuitem>"
+#~ msgstr ""
+#~ "<guimenu>Amanqaku encwadi</guimenu> <guimenuitem>Cacisa Amanqaku "
+#~ "lencwadi</guimenuitem>"
+
+#~ msgid "The <guimenu>Tools</guimenu> Menu"
+#~ msgstr "I <guimenu>Izixhobo</guimenu> Menu"
+
+#~ msgid ""
+#~ "The <guimenu>Tools</guimenu> menu contains commands of two categories:"
+#~ msgstr ""
+#~ "I <guimenu>Izixhobo</guimenu> ze menu ziqulathe imiyalelo yentlobo "
+#~ "ezimbini:"
+
+#~ msgid ""
+#~ "<shortcut><keycombo action=\"simul\">&Ctrl;<keycap>M</keycap></keycombo></"
+#~ "shortcut> <guimenu>Edit</guimenu> <guimenuitem>Editing Command...</"
+#~ "guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut><keycombo action=\"simul\">&Ctrl;<keycap>M</keycap></keycombo></"
+#~ "shortcut> <guimenu>Hlela</guimenu> <guimenuitem>Hlela Umyalelo...</"
+#~ "guimenuitem>"
+
+#~ msgid ""
+#~ "<shortcut><keycombo action=\"simul\">&Ctrl;&Shift;<keycap>F</keycap></"
+#~ "keycombo></shortcut> <guimenu>Edit</guimenu> <guimenuitem>Find in Files..."
+#~ "</guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut><keycombo action=\"simul\">&Ctrl;&Shift;<keycap>F</keycap></"
+#~ "keycombo></shortcut> <guimenu>Hlela</guimenu> <guimenuitem>Fumana "
+#~ "Iifayile...</guimenuitem>"
+
+#~ msgid "<guimenu>Edit</guimenu> <guimenuitem>Apply Word Wrap</guimenuitem>"
+#~ msgstr ""
+#~ "<guimenu>Hlela</guimenu> <guimenuitem>Faka Usongelo Lwegama</guimenuitem>"
+
+#~ msgid "<guimenu>Edit</guimenu> <guimenuitem>Spelling...</guimenuitem>"
+#~ msgstr "<guimenu>Hlela</guimenu> <guimenuitem>Upelo...</guimenuitem>"
+
+#~ msgid "The <guimenu>Settings</guimenu> Menu"
+#~ msgstr "I <guimenu>Izicwangciso</guimenu> Menu"
+
+#~ msgid "<guimenu>Settings</guimenu> <guimenuitem>Show Toolbar</guimenuitem>"
+#~ msgstr ""
+#~ "<guimenu>Izicwangciso</guimenu> <guimenuitem>Bonisa Isixhobo Sebhari</"
+#~ "guimenuitem>"
+
+#~ msgid "<guimenu>Settings</guimenu> <guimenuitem>Show Filelist</guimenuitem>"
+#~ msgstr ""
+#~ "<guimenu>Izicwangciso</guimenu> <guimenuitem>Bonisa Uluhlu lwefayile</"
+#~ "guimenuitem>"
+
+#~ msgid ""
+#~ "<guimenu>Settings</guimenu> <guimenuitem>Show Fileselector</guimenuitem>"
+#~ msgstr ""
+#~ "<guimenu>Izicwangciso</guimenu> <guimenuitem>Bonisa Umkhethi wefayile</"
+#~ "guimenuitem>"
+
+#~ msgid ""
+#~ "<shortcut><keycombo action=\"simul\"><keycap>F7</keycap></keycombo></"
+#~ "shortcut> <guimenu>Settings</guimenu> <guimenuitem>Show Konsole</"
+#~ "guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut><keycombo action=\"simul\"><keycap>F7</keycap></keycombo></"
+#~ "shortcut> <guimenu>Izicwangciso</guimenu> <guimenuitem>Bonisa i Konsole</"
+#~ "guimenuitem>"
+
+#~ msgid ""
+#~ "<guimenu>Settings</guimenu> <guimenuitem>Configure Shortcuts</guimenuitem>"
+#~ msgstr ""
+#~ "<guimenu>Izicwangciso</guimenu> <guimenuitem>Qwalasela Ezimfutshane</"
+#~ "guimenuitem>"
+
+#~ msgid ""
+#~ "<guimenu>Settings</guimenu> <guimenuitem>Configure Toolbars</guimenuitem>"
+#~ msgstr ""
+#~ "<guimenu>Izicwangciso</guimenu> <guimenuitem>Qwalasela Ibar zezixhobo</"
+#~ "guimenuitem>"
+
+#~ msgid ""
+#~ "<guimenu>Settings</guimenu> <guimenuitem>Configure &kate;</guimenuitem>"
+#~ msgstr ""
+#~ "<guimenu>Izicwangciso</guimenu> <guimenuitem>Qwalasela &kate;</"
+#~ "guimenuitem>"
+
+#~ msgid "The <guimenu>Help</guimenu> Menu"
+#~ msgstr "I <guimenu>Help</guimenu> Menu"
+
+#, fuzzy
+#~ msgid ""
+#~ "<shortcut><keycombo action=\"simul\"><keycap>F1</keycap></keycombo></"
+#~ "shortcut> <guimenu>Help</guimenu> <guimenuitem>&kate; Handbook</"
+#~ "guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut> <keycombo action=\"simul\"><keycap>Ctrl</keycap><keycap>O</"
+#~ "keycap></keycombo> </shortcut> <guimenu><accel>F</accel>ile</guimenu> "
+#~ "<guimenuitem><accel>O</accel>pen</guimenuitem>"
+
+#, fuzzy
+#~ msgid ""
+#~ "<shortcut><keycombo action=\"simul\">&Shift;<keycap>F1</keycap></"
+#~ "keycombo></shortcut> <guimenu>Help</guimenu> <guimenuitem>What's This?</"
+#~ "guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut> <keycombo action=\"simul\"><keycap>Ctrl</keycap><keycap>N</"
+#~ "keycap></keycombo> </shortcut> <guimenu><accel>F</accel>ile</guimenu> "
+#~ "<guimenuitem><accel>N</accel>ew</guimenuitem>"
+
+#, fuzzy
+#~ msgid "<guimenu>Help</guimenu> <guimenuitem>About &kate;</guimenuitem>"
+#~ msgstr "I <guimenu>Fayile</guimenu> Menu"
+
+#, fuzzy
+#~ msgid "<guimenu>Help</guimenu> <guimenuitem>About KDE</guimenuitem>"
+#~ msgstr "I <guimenu>Fayile</guimenu> Menu"
+
+#~ msgid "Configuring &kate;"
+#~ msgstr "Iqwalasela i &kate;"
+
+#~ msgid "The Configuration Dialog"
+#~ msgstr "Incoko yababini Yoqwalaselo"
+
+#~ msgid "The Settings Menu"
+#~ msgstr "Izicwangciso ze Menu"
+
+#~ msgid "The Main Configuration Dialog"
+#~ msgstr "Uqwalaselo Lwencoko yababaini Engundoqo"
+
+#~ msgid "The &kate; group"
+#~ msgstr "I &kate; iqela"
+
+#~ msgid "The General Page"
+#~ msgstr "Iphepha Lobubanzi"
+
+#~ msgid "Restore View Configuration"
+#~ msgstr "Buyisela Imboniselo Yoqwalaselo"
+
+#~ msgid "The Editor Group"
+#~ msgstr "Iqela Lohlelo"
+
+#~ msgid "The <guilabel>Colors</guilabel> Page"
+#~ msgstr "I <guimenu>Imibala</guimenu> Iphepha"
+
+#~ msgid "The Fonts Page"
+#~ msgstr "Iphepha Lemigca"
+
+#~ msgid "The Indent Page"
+#~ msgstr "Iphepha Lamathanda"
+
+#~ msgid "The Select Page"
+#~ msgstr "Iphepha Loketho"
+
+#~ msgid "Persistent Selections"
+#~ msgstr "Iinketho Eziqhubekayo"
+
+#~ msgid "Overwrite Selection"
+#~ msgstr "Bhalwa ngaphezulu Kwenketho"
+
+#~ msgid "The Edit Page"
+#~ msgstr "Iphepha Lohlelo"
+
+#~ msgid "The Keyboard Page"
+#~ msgstr "Iphepha Lebhodi yezitshixo"
+
+#~ msgid "The Spelling Page"
+#~ msgstr "Iphepha Lopelo"
+
+#~ msgid "Context"
+#~ msgstr "Intsingiselo"
+
+#~ msgid "Selected"
+#~ msgstr "Ikhethiwe"
+
+#~ msgid "The Plugins Group"
+#~ msgstr "Iqela Leplagi ezifakiweyo"
+
+#~ msgid "Credits and License"
+#~ msgstr "Amatyala Nelayisenisi"
+
+#~ msgid "The &kate; team:"
+#~ msgstr "I &kate; Iqela:"
+
+#~ msgid "Anders Lund <email>anders@alweb.dk</email>"
+#~ msgstr "Anders Lund <email>anders@alweb.dk</email>"
+
+#~ msgid ""
+#~ "Documentation copyright 2000,2001 Seth Rothberg, "
+#~ "<email>sethmr@bellatlantic.net</email>"
+#~ msgstr ""
+#~ "Uxwebhu copyright 2000,2001 Seth Rothberg, <email>sethmr@bellatlantic."
+#~ "net</email>"
+
+#~ msgid ""
+#~ "Documentation copyright 2002 Anders Lund, <email>anders@alweb.dk</email>"
+#~ msgstr ""
+#~ "Uxwebhu lokhuphelo olusemthethweni  2002 Anders Lund, <email>anders@alweb."
+#~ "dk</email>"
+
+#~ msgid "CREDIT_FOR_TRANSLATORS"
+#~ msgstr ""
+#~ "<para>Translation Antoinette Dekeni <email>antoinette@translate.org.za</"
+#~ "email></para>"
+
+#, fuzzy
+#~ msgid ""
+#~ "<shortcut> <keycombo action=\"simul\"><keycap>Ctrl</keycap><keycap>N</"
+#~ "keycap></keycombo> </shortcut> <guimenu>File</guimenu> <guimenuitem>New</"
+#~ "guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut> <keycombo action=\"simul\"><keycap>Ctrl</keycap><keycap>N</"
+#~ "keycap></keycombo> </shortcut> <guimenu><accel>F</accel>ile</guimenu> "
+#~ "<guimenuitem><accel>N</accel>ew</guimenuitem>"
+
+#, fuzzy
+#~ msgid ""
+#~ "<shortcut><keycombo action=\"simul\"><keycap>Ctrl</keycap><keycap>Z</"
+#~ "keycap></keycombo></shortcut> <guimenu>Edit</guimenu> <guimenuitem>Undo</"
+#~ "guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut> <keycombo action=\"simul\"><keycap>Ctrl</keycap><keycap>O</"
+#~ "keycap></keycombo> </shortcut> <guimenu><accel>F</accel>ile</guimenu> "
+#~ "<guimenuitem><accel>O</accel>pen</guimenuitem>"
+
+#, fuzzy
+#~ msgid ""
+#~ "<shortcut><keycombo action=\"simul\"><keycap>Ctrl</keycap><keycap>Shift</"
+#~ "keycap><keycap>Z</keycap></keycombo></shortcut> <guimenu>Edit</guimenu> "
+#~ "<guimenuitem>Redo</guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut> <keycombo action=\"simul\"><keycap>Ctrl</keycap><keycap>N</"
+#~ "keycap></keycombo> </shortcut> <guimenu><accel>F</accel>ile</guimenu> "
+#~ "<guimenuitem><accel>N</accel>ew</guimenuitem>"
+
+#, fuzzy
+#~ msgid ""
+#~ "<shortcut><keycombo action=\"simul\"><keycap>Ctrl</keycap><keycap>X</"
+#~ "keycap></keycombo></shortcut> <guimenu>Edit</guimenu> <guimenuitem>Cut</"
+#~ "guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut> <keycombo action=\"simul\"><keycap>Ctrl</keycap><keycap>N</"
+#~ "keycap></keycombo> </shortcut> <guimenu><accel>F</accel>ile</guimenu> "
+#~ "<guimenuitem><accel>N</accel>ew</guimenuitem>"
+
+#, fuzzy
+#~ msgid ""
+#~ "<shortcut><keycombo action=\"simul\"><keycap>Ctrl</keycap><keycap>C</"
+#~ "keycap></keycombo></shortcut> <guimenu>Edit</guimenu> <guimenuitem>Copy</"
+#~ "guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut> <keycombo action=\"simul\"><keycap>Ctrl</keycap><keycap>O</"
+#~ "keycap></keycombo> </shortcut> <guimenu><accel>F</accel>ile</guimenu> "
+#~ "<guimenuitem><accel>O</accel>pen</guimenuitem>"
+
+#, fuzzy
+#~ msgid ""
+#~ "<shortcut><keycombo action=\"simul\"><keycap>Ctrl</keycap><keycap>V</"
+#~ "keycap></keycombo></shortcut> <guimenu>Edit</guimenu> <guimenuitem>Paste</"
+#~ "guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut> <keycombo action=\"simul\"><keycap>Ctrl</keycap><keycap>N</"
+#~ "keycap></keycombo> </shortcut> <guimenu><accel>F</accel>ile</guimenu> "
+#~ "<guimenuitem><accel>N</accel>ew</guimenuitem>"
+
+#, fuzzy
+#~ msgid ""
+#~ "<shortcut><keycombo action=\"simul\"><keycap>Ctrl</keycap><keycap>A</"
+#~ "keycap></keycombo></shortcut> <guimenu>Edit</guimenu> <guimenuitem>Select "
+#~ "All</guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut> <keycombo action=\"simul\"><keycap>Ctrl</keycap><keycap>N</"
+#~ "keycap></keycombo> </shortcut> <guimenu><accel>F</accel>ile</guimenu> "
+#~ "<guimenuitem><accel>N</accel>ew</guimenuitem>"
+
+#, fuzzy
+#~ msgid ""
+#~ "<shortcut><keycombo action=\"simul\"><keycap>Ctrl</keycap><keycap>Shift</"
+#~ "keycap><keycap>A</keycap></keycombo></shortcut> <guimenu>Edit</guimenu> "
+#~ "<guimenuitem>Deselect</guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut> <keycombo action=\"simul\"><keycap>Ctrl</keycap><keycap>N</"
+#~ "keycap></keycombo> </shortcut> <guimenu><accel>F</accel>ile</guimenu> "
+#~ "<guimenuitem><accel>N</accel>ew</guimenuitem>"
+
+#, fuzzy
+#~ msgid ""
+#~ "<shortcut><keycombo action=\"simul\"><keycap>Ctrl</keycap><keycap>F</"
+#~ "keycap></keycombo></shortcut> <guimenu>Edit</guimenu> <guimenuitem>Find</"
+#~ "guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut> <keycombo action=\"simul\"><keycap>Ctrl</keycap><keycap>O</"
+#~ "keycap></keycombo> </shortcut> <guimenu><accel>F</accel>ile</guimenu> "
+#~ "<guimenuitem><accel>O</accel>pen</guimenuitem>"
+
+#, fuzzy
+#~ msgid ""
+#~ "<shortcut><keycombo action=\"simul\"><keycap>Shift</keycap><keycap>F3</"
+#~ "keycap></keycombo></shortcut> <guimenu>Edit</guimenu> <guimenuitem>Find "
+#~ "Previous</guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut> <keycombo action=\"simul\"><keycap>Ctrl</keycap><keycap>N</"
+#~ "keycap></keycombo> </shortcut> <guimenu><accel>F</accel>ile</guimenu> "
+#~ "<guimenuitem><accel>N</accel>ew</guimenuitem>"
+
+#, fuzzy
+#~ msgid ""
+#~ "<shortcut><keycombo action=\"simul\"><keycap>Ctrl</keycap><keycap>R</"
+#~ "keycap></keycombo></shortcut> <guimenu>Edit</guimenu> "
+#~ "<guimenuitem>Replace</guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut> <keycombo action=\"simul\"><keycap>Ctrl</keycap><keycap>N</"
+#~ "keycap></keycombo> </shortcut> <guimenu><accel>F</accel>ile</guimenu> "
+#~ "<guimenuitem><accel>N</accel>ew</guimenuitem>"
+
+#, fuzzy
+#~ msgid ""
+#~ "<shortcut><keycombo action=\"simul\"><keycap>Ctrl</keycap><keycap>I</"
+#~ "keycap></keycombo></shortcut> <guimenu>Edit</guimenu> "
+#~ "<guimenuitem>Indent</guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut> <keycombo action=\"simul\"><keycap>Ctrl</keycap><keycap>O</"
+#~ "keycap></keycombo> </shortcut> <guimenu><accel>F</accel>ile</guimenu> "
+#~ "<guimenuitem><accel>O</accel>pen</guimenuitem>"
+
+#, fuzzy
+#~ msgid ""
+#~ "<shortcut><keycombo action=\"simul\"><keycap>Ctrl</keycap><keycap>Shift</"
+#~ "keycap><keycap>i</keycap></keycombo></shortcut> <guimenu>Edit</guimenu> "
+#~ "<guimenuitem>Unindent</guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut> <keycombo action=\"simul\"><keycap>Ctrl</keycap><keycap>O</"
+#~ "keycap></keycombo> </shortcut> <guimenu><accel>F</accel>ile</guimenu> "
+#~ "<guimenuitem><accel>O</accel>pen</guimenuitem>"
+
+#, fuzzy
+#~ msgid ""
+#~ "<shortcut><keycombo action=\"simul\"><keycap>Ctrl</keycap><keycap>#</"
+#~ "keycap></keycombo></shortcut> <guimenu>Edit</guimenu> "
+#~ "<guimenuitem>Comment</guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut> <keycombo action=\"simul\"><keycap>Ctrl</keycap><keycap>O</"
+#~ "keycap></keycombo> </shortcut> <guimenu><accel>F</accel>ile</guimenu> "
+#~ "<guimenuitem><accel>O</accel>pen</guimenuitem>"
+
+#, fuzzy
+#~ msgid ""
+#~ "<shortcut><keycombo action=\"simul\"><keycap>Ctrl</keycap><keycap>Shift</"
+#~ "keycap><keycap>#</keycap></keycombo></shortcut> <guimenu>Edit</guimenu> "
+#~ "<guimenuitem></guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut> <keycombo action=\"simul\"><keycap>Ctrl</keycap><keycap>N</"
+#~ "keycap></keycombo> </shortcut> <guimenu><accel>F</accel>ile</guimenu> "
+#~ "<guimenuitem><accel>N</accel>ew</guimenuitem>"
+
+#, fuzzy
+#~ msgid ""
+#~ "<shortcut><keycombo action=\"simul\"><keycap>Ctrl</keycap><keycap>Shift</"
+#~ "keycap><keycap>L</keycap></keycombo></shortcut> <guimenu>View</guimenu> "
+#~ "<guimenuitem>Split Vertical</guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut> <keycombo action=\"simul\"><keycap>Ctrl</keycap><keycap>N</"
+#~ "keycap></keycombo> </shortcut> <guimenu><accel>F</accel>ile</guimenu> "
+#~ "<guimenuitem><accel>N</accel>ew</guimenuitem>"
+
+#, fuzzy
+#~ msgid ""
+#~ "<shortcut><keycombo action=\"simul\"><keycap>Ctrl</keycap><keycap>Shift</"
+#~ "keycap><keycap>T</keycap></keycombo></shortcut> <guimenu>View</guimenu> "
+#~ "<guimenuitem>Split Horizontal</guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut> <keycombo action=\"simul\"><keycap>Ctrl</keycap><keycap>N</"
+#~ "keycap></keycombo> </shortcut> <guimenu><accel>F</accel>ile</guimenu> "
+#~ "<guimenuitem><accel>N</accel>ew</guimenuitem>"
+
+#, fuzzy
+#~ msgid ""
+#~ "<shortcut><keycombo action=\"simul\"><keycap>Ctrl</keycap><keycap>Shift</"
+#~ "keycap><keycap>R</keycap></keycombo></shortcut> <guimenu>View</guimenu> "
+#~ "<guimenuitem>Close Current</guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut> <keycombo action=\"simul\"><keycap>Ctrl</keycap><keycap>O</"
+#~ "keycap></keycombo> </shortcut> <guimenu><accel>F</accel>ile</guimenu> "
+#~ "<guimenuitem><accel>O</accel>pen</guimenuitem>"
+
+#, fuzzy
+#~ msgid ""
+#~ "<shortcut><keycombo action=\"simul\"><keycap>Shift</keycap><keycap>F8</"
+#~ "keycap></keycombo></shortcut> <guimenuitem>Previous View</guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut> <keycombo action=\"simul\"><keycap>Ctrl</keycap><keycap>N</"
+#~ "keycap></keycombo> </shortcut> <guimenu><accel>F</accel>ile</guimenu> "
+#~ "<guimenuitem><accel>N</accel>ew</guimenuitem>"
+
+#, fuzzy
+#~ msgid ""
+#~ "<shortcut><keycombo action=\"simul\"><keycap>Ctrl</keycap><keycap>Shift</"
+#~ "keycap><keycap>F</keycap></keycombo></shortcut> <guimenu>Edit</guimenu> "
+#~ "<guimenuitem>Find in Files...</guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut> <keycombo action=\"simul\"><keycap>Ctrl</keycap><keycap>N</"
+#~ "keycap></keycombo> </shortcut> <guimenu><accel>F</accel>ile</guimenu> "
+#~ "<guimenuitem><accel>N</accel>ew</guimenuitem>"
+
+#~ msgid "<keycap>Shift</keycap><keycap>F1</keycap>"
+#~ msgstr "<keycap>Shift</keycap><keycap>F1</keycap>"
+
+#~ msgid "This chapter will show you all the options for configuring &kate;."
+#~ msgstr "Esi siqendu sizakubonisa zonke iinketho zokuqwalasela i &kate;."
+
+#~ msgid "&kate; Copyright 2000, 2001, Christoph Cullmann."
+#~ msgstr "&kate; Copyright 2000, 2001, Christoph Cullmann."

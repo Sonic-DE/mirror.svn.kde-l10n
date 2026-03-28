@@ -1,0 +1,1038 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Spanish "INCLUDE">
+
+  <!ENTITY gnugo "<application
+>&GNU; Go</application
+>">
+  <!ENTITY kigo  "<application
+>Kigo</application
+>">
+]>
+<!-- ................................................................ -->
+
+<book id="kigo" lang="&language;">
+<bookinfo>
+<title
+>Manual de &kigo;</title>
+
+<authorgroup>
+	<author
+><firstname
+></firstname
+> <surname
+>Sascha Peilicke</surname
+> <affiliation
+> <address
+>sasch.pe@gmx.de</address>
+		</affiliation>
+	</author>
+	<othercredit role="translator"
+><firstname
+>Rocío</firstname
+><surname
+>Gallego</surname
+><affiliation
+><address
+><email
+>traducciones@rociogallego.com</email
+></address
+></affiliation
+><contrib
+>Traducción</contrib
+></othercredit
+><othercredit role="translator"
+><firstname
+>Kira</firstname
+><surname
+>J. Fernández</surname
+><affiliation
+><address
+><email
+>kirajfdez@gmail.com</email
+></address
+></affiliation
+><contrib
+>Traductora</contrib
+></othercredit
+> <othercredit role="translator"
+><firstname
+>Eloy</firstname
+> <surname
+>Cuadra</surname
+> <affiliation
+><address
+><email
+>ecuadra@eloihr.net</email
+></address
+></affiliation
+> <contrib
+>Corrección de la traducción</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+	<year
+>2008-2010</year>
+	<holder
+>Sascha Peilicke</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2021-07-01</date>
+<releaseinfo
+>0.6.2 (KDE Gear 21.04)</releaseinfo>
+<abstract>
+	<para
+>&kigo; es una implementación de código abierto del popular juego <literal
+>Go</literal
+> (también conocido como <literal
+>Weiqi</literal
+>).</para>
+</abstract>
+<keywordset>
+    <keyword
+>KDE</keyword>
+    <keyword
+>kdegames</keyword>
+    <keyword
+>juego</keyword>
+    <keyword
+>kigo</keyword>
+    <keyword
+>lógica</keyword>
+    <keyword
+>tablero</keyword>
+    <keyword
+>un jugador</keyword>
+    <keyword
+>dos jugadores</keyword>
+</keywordset>
+</bookinfo>
+
+<chapter id="introduction">
+    <title
+>Introducción</title>
+
+    <note
+><title
+>Tipo de juego:</title>
+    <para
+>Lógica, Tablero</para
+></note>
+
+    <note
+><title
+>Número de jugadores posibles:</title>
+    <para
+>Dos</para
+></note>
+
+    <para
+>&kigo; es una implementación de código abierto del popular juego <literal
+>Go</literal
+> (también conocido como Weiqi). </para>
+
+    <para
+>El <literal
+>Go</literal
+> es un juego de estrategia para dos jugadores. También se conoce como <quote
+><literal
+>igo</literal
+></quote
+> (<foreignphrase lang="ja"
+>囲碁</foreignphrase
+> en japonés), <quote
+><literal
+>weiqi</literal
+></quote
+> o <quote
+><literal
+>wei ch'i</literal
+></quote
+> (<foreignphrase lang="zh"
+>圍棋</foreignphrase
+> o <foreignphrase lang="zh"
+>围棋</foreignphrase
+> en chino) o <quote
+><literal
+>baduk</literal
+></quote
+> (<foreignphrase lang="ko"
+>바둑</foreignphrase
+> en coreano). El <literal
+>Go</literal
+> destaca por ser rico en complejidad estratégica a pesar de sus sencillas reglas. </para>
+
+    <para
+>Se juega entre dos jugadores que alternativamente colocan «piedras» (piezas del juego, ahora normalmente hechas de cristal o de plástico) en las intersecciones libres de una rejilla de 19x19 líneas (o de 9x9 o 13x13 líneas en versiones más fáciles). </para>
+
+</chapter>
+
+<chapter id="howto">
+    <title
+>Cómo jugar</title>
+
+    <note
+><title
+>Objetivo:</title>
+    <para
+>El objetivo del juego es controlar una porción del tablero mayor que la del oponente. Una piedra o grupo de piedras es capturada y eliminada si no tiene intersecciones adyacentes vacías, resultado de haber sido completamente rodeada por piedras del color opuesto.</para
+></note>
+
+    <sect1 id="starting">
+    <title
+>Inicio de una partida</title>
+
+    <para
+>Tras lanzar &kigo;, tienes dos opciones para jugar al maravilloso juego del <literal
+>Go</literal
+>. Puedes empezar una partida nueva o continuar una anterior. </para>
+
+    <sect2 id="new_game">
+    <title
+>Configurar una partida nueva</title>
+
+    <para
+>Tras iniciar &kigo; deberías ver una pantalla similar a la que se muestra en la captura siguiente. Ahí puedes configurar el nombre de los jugadores de las fichas blancas y negras, así como el tamaño del tablero. Puedes escoger si uno o los dos jugadores deberían ser una máquina. Si decides jugar contra una máquina, también puedes seleccionar el nivel de juego de la misma. Puedes comenzar la partida usando la opción del menú <menuchoice
+><guimenu
+>Juego</guimenu
+> <guimenuitem
+>Empezar partida</guimenuitem
+></menuchoice
+>, pulsando el botón <guibutton
+>Empezar partida</guibutton
+> que hay en el panel <guilabel
+>Configuración del juego</guilabel
+> o pulsando la tecla <keycap
+>S</keycap
+>. </para>
+
+    <screenshot>
+        <screeninfo
+>Pantalla de partida nueva</screeninfo>
+        <mediaobject>
+            <imageobject
+><imagedata format="PNG" fileref="start-new-game.png"/></imageobject>
+            <textobject
+><phrase
+>Pantalla de partida nueva.</phrase
+></textobject>
+        </mediaobject>
+    </screenshot>
+    </sect2>
+
+    <sect2 id="load_game">
+    <title
+>Configurar una partida cargada</title>
+
+    <para
+>Si decides continuar una partida previa sin finalizar, puedes usar la opción del menú <menuchoice
+><guimenu
+>Juego</guimenu
+> <guimenuitem
+>Cargar…</guimenuitem
+></menuchoice
+> (el menú se muestra en la captura de pantalla anterior). Debería aparecer un selector de archivos; úsalo para seleccionar y cargar la partida guardada que quieras continuar. </para>
+
+    <para
+>Ahora deberías ver una pantalla similar a la que se muestra en la captura inferior. Si no quieres continuar con el último movimiento hecho, puedes revertir tantos movimientos como quieras. Deberías ver cómo cambia el tablero a medida que varía el número actual de movimientos. La pantalla de configuración también muestra información adicional sobre la partida guardada. </para>
+
+    <para
+>Solo tienes que pulsar <guibutton
+>Empezar partida</guibutton
+> para continuar. </para>
+
+    <screenshot>
+        <screeninfo
+>Pantalla de partida cargada</screeninfo>
+        <mediaobject>
+            <imageobject
+><imagedata format="PNG" fileref="start-loaded-game.png"/></imageobject>
+            <textobject
+><phrase
+>Pantalla de partida cargada.</phrase
+></textobject>
+        </mediaobject>
+    </screenshot>
+
+    <para
+>También existe la opción de descargar de internet partidas históricas de <literal
+>Go</literal
+> o partidas guardadas por otros usuarios. Usa la opción del menú <menuchoice
+><guimenu
+>Juego</guimenu
+> <guimenuitem
+>Obtener más partidas…</guimenuitem
+></menuchoice
+>. Deberías ver un diálogo que te permite elegir el contenido que se debe descargar. </para>
+
+    <screenshot>
+        <screeninfo
+>Obtener partidas nuevas</screeninfo>
+        <mediaobject>
+            <imageobject
+><imagedata format="PNG" fileref="get-new-games.png"/></imageobject>
+            <textobject
+><phrase
+>Pantalla de «Obtener partidas nuevas»</phrase
+></textobject>
+        </mediaobject>
+    </screenshot>
+
+    </sect2>
+    </sect1>
+
+    <sect1 id="playing">
+    <title
+>Cómo jugar</title>
+
+    <para
+>Ahora ya estás preparado para jugar tu primera ronda de <literal
+>Go</literal
+>. Si no estás familiarizado con las reglas, te recomendamos que leas el correspondiente <ulink url="https://es.wikipedia.org/wiki/Go"
+>artículo de la Wikipedia</ulink
+> o que sigas <ulink url="http://playgo.to/iwtg/en/"
+>El camino interactivo del <literal
+>Go</literal
+></ulink
+>, de Hiroki Mori. </para>
+
+    <para
+>Hacer un movimiento es sencillo. Solo tienes que hacer clic en una de las intersecciones del tablero de <literal
+>Go</literal
+>. Deberías ver un pequeño punto negro que muestra dónde caerá la piedra al hacer clic. </para>
+
+    <para
+>El jugador actual viene determinado por el cursor, que cambia a una piedra blanca o negra dependiendo de qué jugador es el siguiente. </para>
+
+    <para
+>También puedes comprobar la información del juego que muestra el movimiento anterior y algunas estadísticas. También existe un completo historial de movimientos. Si quieres recordar en qué orden se han colocado las piedras sobre el tablero, pulsa el botón <guibutton
+>Mostrar números de movimientos</guibutton
+>. Si crees que no puedes conseguir nada colocando otra piedra, pulsa <guibutton
+>Pasar movimiento</guibutton
+> y deja que tu oponente juegue su turno. Si ambos jugadores pasan, la partida puede terminar. ¡Aunque debes tener en cuenta que terminar un juego de <literal
+>Go</literal
+> es siempre un paso cooperativo! </para>
+
+    <screenshot>
+        <screeninfo
+>Jugar una partida nueva</screeninfo>
+        <mediaobject>
+            <imageobject
+><imagedata format="PNG" fileref="play-game.png"/></imageobject>
+            <textobject
+><phrase
+>Jugar una partida nueva.</phrase
+></textobject>
+        </mediaobject>
+    </screenshot>
+
+    <para
+>Ten en cuenta que puedes guardar la partida actual en cualquier momento. Para ello, usa la opción del menú <menuchoice
+><guimenu
+>Juego</guimenu
+> <guimenuitem
+>Guardar</guimenuitem
+></menuchoice
+>. </para>
+
+    <sect2 id="hint">
+    <title
+>Obtener pistas</title>
+
+    <para
+>A veces es difícil decidir el movimiento que se va a hacer. Si quieres que la máquina te dé una pista, pulsa el botón <guibutton
+>Pista</guibutton
+> que se muestra en la captura inferior. Deberían aparecer unas piedras transparentes con un número encima. Estas son las recomendaciones, con una puntuación que determina la calidad del movimiento. Siéntete libre de hacer clic en cualquiera de los movimientos recomendados o en cualquier otro espacio libre para colocar tu próxima piedra. </para>
+
+    <screenshot>
+        <screeninfo
+>Obtener pistas</screeninfo>
+        <mediaobject>
+            <imageobject
+><imagedata format="PNG" fileref="hint.png"/></imageobject>
+            <textobject
+><phrase
+>Obtener pistas.</phrase
+></textobject>
+        </mediaobject>
+    </screenshot>
+
+    </sect2>
+    </sect1>
+
+    <sect1 id="strattips">
+    <title
+>Estrategias y consejos</title>
+
+    <itemizedlist>
+        <listitem
+><para
+>El <literal
+>Go</literal
+> consiste más en rodear un territorio (espacio vacío) que en capturar las piezas de tu oponente.</para
+></listitem>
+        <listitem
+><para
+>Es más fácil rodear un territorio cercano a las esquinas (en dos lados), luego cerca de los bordes (en tres lados) y, finalmente, en el centro.</para
+></listitem>
+        <listitem
+><para
+>Al principio del juego, coloca tus piezas de un modo disperso. Solo debes construir tus fronteras cuando tu oponente empiece a hacer incursiones.</para
+></listitem>
+        <listitem
+><para
+>Cuando ataques, no juegues con piedras sin apoyo cerca de las de tu oponente. Tienden a ser capturadas, y &gnugo; es muy bueno en eso. A menudo es mejor atacar indirectamente.</para
+></listitem>
+        <listitem
+><para
+>Para evitar la captura, un grupo de piedras debe tener dos «ojos» o ser capaz de crearlos si se ve atacado. Los «ojos» son espacios desconectados. Piensa en un dónut con dos agujeros: tu oponente puede rodear el exterior, pero no puede rellenar los dos agujeros a la vez.</para
+></listitem>
+        <listitem
+><para
+>En un tablero de 19x19 suele haber varios territorios que están siendo creados, atacados o defendidos. Tendrás que librar varias batallas simultáneamente. La estrategia incluye evaluar las fuerzas y debilidades de varias áreas y asignar tus movimientos entre ellas. ¿Es mejor atacar aquí o defender allí?</para
+></listitem>
+        <listitem
+><para
+>A medida que el tablero se llena y se acerca el final del juego, se vuelve importante jugar más cerca, mordisqueando las fronteras de tu oponente o reforzando las tuyas propias. Los pequeños errores y las omisiones pueden resultar muy caros.</para
+></listitem>
+    </itemizedlist>
+
+    </sect1>
+</chapter>
+
+<chapter id="interface"
+><title
+>Vista general de la interfaz</title>
+    <sect1 id="menus">
+    <title
+>Los menús de &kigo;</title>
+    <para
+>&kigo; tiene las siguiente opciones: </para>
+
+    <variablelist>
+
+    <varlistentry id="game-menu-new">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Juego</guimenu
+> <guimenuitem
+>Nuevo</guimenuitem
+> </menuchoice
+></term>
+    <listitem
+><para
+><action
+>Empieza una partida nueva.</action
+></para
+></listitem>
+    </varlistentry>
+
+    <varlistentry id="game-menu-load">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>O</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Juego</guimenu
+> <guimenuitem
+>Cargar…</guimenuitem
+> </menuchoice
+></term>
+    <listitem
+><para
+>Abre el diálogo estándar de abrir archivos de &kde; para abrir un archivo <literal role="extension"
+>.sgf</literal
+> (un archivo de juego de &kigo;), que contiene una partida guardada.</para
+></listitem>
+    </varlistentry>
+
+    <varlistentry  id="game-menu-get-more">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>G</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Juego</guimenu
+> <guimenuitem
+>Obtener más partidas…</guimenuitem
+> </menuchoice
+></term>
+    <listitem
+><para
+><action
+>Abre el diálogo <guilabel
+>Obtener novedades</guilabel
+> para cargar partidas guardadas por otros usuarios.</action
+></para
+></listitem>
+    </varlistentry>
+
+    <varlistentry  id="game-menu-save">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>S</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Juego</guimenu
+> <guimenuitem
+>Guardar</guimenuitem
+> </menuchoice
+></term>
+    <listitem
+><para
+><action
+>Guarda</action
+> la partida actual.</para
+></listitem>
+    </varlistentry>
+
+    <varlistentry id="game-menu-start">
+    <term
+><menuchoice
+><shortcut
+><keycap
+>S</keycap
+></shortcut
+> <guimenu
+>Juego</guimenu
+> <guimenuitem
+>Empezar partida</guimenuitem
+> </menuchoice
+></term>
+    <listitem
+><para
+><action
+>Empieza</action
+> una partida nueva o una guardada.</para
+></listitem>
+    </varlistentry>
+
+    <varlistentry id="game-menu-finish">
+    <term
+><menuchoice
+><shortcut
+><keycap
+>F</keycap
+></shortcut
+> <guimenu
+>Juego</guimenu
+> <guimenuitem
+>Terminar partida</guimenuitem
+> </menuchoice
+></term>
+    <listitem
+><para
+><action
+>Termina</action
+> la partida actual. Recuerda que terminar una partida de <literal
+>Go</literal
+> es siempre un paso cooperativo.</para
+></listitem>
+    </varlistentry>
+
+    <varlistentry id="game-menu-quit">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Juego</guimenu
+> <guimenuitem
+>Salir</guimenuitem
+> </menuchoice
+></term>
+    <listitem
+><para
+><action
+>Sale</action
+> de &kigo;.</para
+></listitem>
+    </varlistentry>
+
+    <varlistentry id="move-menu-undo">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Z</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Mover</guimenu
+> <guimenuitem
+>Deshacer</guimenuitem
+> </menuchoice
+></term>
+    <listitem
+><para
+><action
+>Deshace</action
+> el último movimiento.</para
+></listitem>
+    </varlistentry>
+
+    <varlistentry id="move-menu-redo">
+    <term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>Z</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Mover</guimenu
+> <guimenuitem
+>Rehacer</guimenuitem
+> </menuchoice
+></term>
+    <listitem
+><para
+><action
+>Rehacer</action
+> el movimiento que se acaba de deshacer usando <guimenuitem
+>Deshacer</guimenuitem
+>.</para
+></listitem>
+    </varlistentry>
+
+    <varlistentry id="move-menu-pass">
+    <term
+><menuchoice
+><shortcut
+><keycap
+>P</keycap
+></shortcut
+> <guimenu
+>Movimiento</guimenu
+> <guimenuitem
+>Pasar movimiento</guimenuitem
+> </menuchoice
+></term>
+    <listitem
+><para
+>Permite <action
+>pasar</action
+> y no hacer tu movimiento.</para
+></listitem>
+    </varlistentry>
+
+    <varlistentry id="move-menu-hint">
+    <term
+><menuchoice
+><shortcut
+><keycap
+>H</keycap
+></shortcut
+> <guimenu
+>Movimiento</guimenu
+> <guimenuitem
+>Pista</guimenuitem
+> </menuchoice
+></term>
+    <listitem
+><para
+><action
+>Proporciona una pista</action
+> mostrando piezas transparentes con una puntuación sobre ellas.</para
+></listitem>
+    </varlistentry>
+
+    <varlistentry id="move-menu-numbers">
+    <term
+><menuchoice
+><shortcut
+><keycap
+>N</keycap
+></shortcut
+> <guimenu
+>Movimiento</guimenu
+> <guimenuitem
+>Mostrar números de movimientos</guimenuitem
+> </menuchoice
+></term>
+    <listitem
+><para
+><action
+>Activa o desactiva</action
+> la visibilidad de los números de los movimientos.</para
+></listitem>
+    </varlistentry>
+
+    <varlistentry id="settings-menu-info-docker">
+    <term
+><menuchoice
+><guimenu
+>Preferencias</guimenu
+> <guisubmenu
+>Paneles</guisubmenu
+> <guimenuitem
+>Información</guimenuitem
+> </menuchoice
+></term>
+    <listitem
+><para
+>Muestra u oculta la barra lateral de <guilabel
+>Información</guilabel
+>.</para
+></listitem>
+    </varlistentry>
+
+    <varlistentry id="settings-menu-moves-docker">
+    <term
+><menuchoice
+><guimenu
+>Preferencias</guimenu
+> <guisubmenu
+>Paneles</guisubmenu
+> <guimenuitem
+>Movimientos</guimenuitem
+> </menuchoice
+></term>
+    <listitem
+><para
+>Muestra u oculta la barra lateral de <guilabel
+>Movimientos</guilabel
+>.</para
+></listitem>
+    </varlistentry>
+
+    </variablelist>
+
+    <para
+>Además, &kigo; tiene las opciones de los menús <guimenu
+>Preferencias</guimenu
+> y <guimenu
+>Ayuda</guimenu
+> comunes de &kde;. Para obtener más información, consulta las secciones sobre el <ulink url="help:/fundamentals/menus.html#menus-settings"
+>Menú «Preferencias»</ulink
+> y <ulink url="help:/fundamentals/menus.html#menus-help"
+>Menú «Ayuda» </ulink
+> de «Aspectos básicos de &kde;». </para>
+
+    </sect1>
+
+    <sect1 id="keybindings">
+    <title id="keybindings-title"
+>Atajos de teclado</title>
+
+    <para
+>Los atajos de teclado predeterminados son:</para>
+
+    <table>
+        <title
+>Atajos de teclado</title>
+        <tgroup cols="2">
+        <tbody>
+            <row>
+                <entry
+>Terminar la partida actual</entry>
+                <entry
+><keycap
+>F</keycap
+></entry>
+            </row>
+            <row>
+                <entry
+>Obtener nuevas partidas subidas por otros usuarios</entry>
+                <entry>
+                    <keycombo action="simul"
+>&Ctrl;<keycap
+>G</keycap
+></keycombo>
+                </entry>
+            </row>
+            <row>
+                <entry
+>Ayuda</entry>
+                <entry
+><keycap
+>F1</keycap
+></entry>
+            </row>
+            <row>
+                <entry
+>Cargar partida guardada</entry>
+                <entry>
+                    <keycombo action="simul"
+>&Ctrl;<keycap
+>O</keycap
+></keycombo>
+                </entry>
+            </row>
+            <row>
+                <entry
+>Proporciona pistas sobre los posibles movimientos.</entry>
+                <entry
+><keycap
+>H</keycap
+></entry>
+            </row>
+            <row>
+                <entry
+>Pasar movimiento</entry>
+                <entry
+><keycap
+>P</keycap
+></entry>
+            </row>
+            <row>
+                <entry
+>Salir</entry>
+                <entry>
+                    <keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo>
+                </entry>
+            </row>
+            <row>
+                <entry
+>Rehacer un movimiento que se había deshecho</entry>
+                <entry>
+                    <keycombo action="simul"
+>&Ctrl;&Shift;<keycap
+>Z</keycap
+></keycombo>
+                </entry>
+            </row>
+            <row>
+                <entry
+>Guardar la partida actual</entry>
+                <entry>
+                    <keycombo action="simul"
+>&Ctrl;<keycap
+>S</keycap
+></keycombo>
+                </entry>
+            </row>
+            <row>
+                <entry
+>Empezar una partida nueva</entry>
+                <entry>
+                    <keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo>
+                </entry>
+            </row>
+            <row>
+                <entry
+>Empezar una partida nueva o guardada</entry>
+                <entry
+><keycap
+>S</keycap
+></entry>
+            </row>
+            <row>
+                <entry
+>Activa o desactiva la visibilidad de los números de los movimientos.</entry>
+                <entry
+><keycap
+>N</keycap
+></entry>
+            </row>
+            <row>
+                <entry
+>Deshacer tu último movimiento</entry>
+                <entry>
+                    <keycombo action="simul"
+>&Ctrl;<keycap
+>Z</keycap
+></keycombo>
+                </entry>
+            </row>
+            <row>
+                <entry
+>Ayuda «¿Qué es esto?»</entry>
+                <entry>
+                    <keycombo action="simul"
+>&Shift;<keycap
+>F1</keycap
+></keycombo>
+                </entry>
+            </row>
+        </tbody>
+        </tgroup>
+    </table>
+
+    </sect1>
+</chapter>
+
+<chapter id="configuration">
+    <title
+>Configuración del juego</title>
+
+    <para
+>Si quieres cambiar la configuración de &kigo;, puedes hacerlo usando la opción del menú <menuchoice
+><guimenu
+>Preferencias</guimenu
+> <guimenuitem
+>Configurar &kigo;…</guimenuitem
+></menuchoice
+>. </para>
+
+    <para
+>Deberías ver el diálogo de confirmación tal como se muestra en la captura inferior. También puedes mostrarlo pulsando la combinación de teclas <keycombo
+>&Alt;<keycap
+>S</keycap
+></keycombo
+> seguida de <keycombo
+>&Alt;<keycap
+>C</keycap
+></keycombo
+>. </para>
+
+    <para
+>&kigo; es extremadamente flexible y puede personalizarse tanto como quieras. Puedes cambiar la posición y el tamaño de todos los <emphasis
+>widgets</emphasis
+> próximos al área central de juego. También puedes personalizar la barra de herramientas si quieres tener varias acciones accesibles desde ella. Para ello, usa la opción del menú <menuchoice
+><guimenu
+>Preferencias</guimenu
+> <guimenuitem
+>Configurar barras de herramientas…</guimenuitem
+></menuchoice
+>. Puedes hacer lo mismo para todos los atajos de teclado que usa el juego. Si quieres tener el máximo espacio disponible para el campo de juego, también puedes ocultar la barra de herramientas y la mayoría de <emphasis
+>widgets</emphasis
+> de los paneles usando el menú <guimenu
+>Preferencias</guimenu
+>. </para>
+
+    <sect1 id="genconig">
+    <title
+>Configuración general</title>
+
+    <para
+>Lo más importante de este apartado es la configuración del motor de <literal
+>Go</literal
+>. &kigo; necesita un motor válido para funcionar correctamente. Como puedes ver en la captura de pantalla inferior, por defecto se usa &gnugo;. La lucecita que hay junto a la orden del motor está verde si todo funciona correctamente. Si no es el caso, o si prefieres usar un motor de <literal
+>Go</literal
+> diferente, deberías instalar otro motor de <literal
+>Go</literal
+> que pueda comunicarse con el protocolo de texto de <literal
+>Go</literal
+> (<acronym
+>GTP</acronym
+>) y configurar su orden de ejecución y los parámetros necesarios de forma adecuada. Los detalles sobre este paso deberían encontrarse en la documentación del correspondiente motor de <literal
+>Go</literal
+>. </para>
+
+    <screenshot>
+        <screeninfo
+>Configuración general</screeninfo>
+        <mediaobject>
+            <imageobject
+><imagedata format="PNG" fileref="setup-general.png"/></imageobject>
+            <textobject
+><phrase
+>Configuración general.</phrase
+></textobject>
+        </mediaobject>
+    </screenshot>
+
+    </sect1>
+
+    <sect1 id="configuration-theme">
+    <title
+>Configuración de temas</title>
+
+    <para
+>Esta página te permite cambiar el tema que usa &kigo;. </para>
+
+    <screenshot>
+        <screeninfo
+>Configurar &kigo; - Temas</screeninfo>
+        <mediaobject>
+            <imageobject
+><imagedata fileref="setup-theme.png" format="PNG"/></imageobject>
+            <textobject
+><phrase
+>Configuración de temas</phrase
+></textobject>
+        </mediaobject>
+    </screenshot>
+
+    </sect1>
+</chapter>
+
+<chapter id="credits">
+    <title
+>Créditos y licencia</title>
+
+    <para
+>&kigo; </para>
+
+    <para
+>Copyright del programa 2009 Sascha Peilicke <email
+>sasch.pe@gmx.de</email
+> </para>
+
+    <para
+>Copyright de la documentación 2009 Sascha Peilicke <email
+>sasch.pe@gmx.de</email
+> </para>
+
+    <para
+>Edición de la documentación y conversión de Docbook por Yuri chornoivan <email
+>yurchor@ukr.net</email
+> </para>
+
+    <para
+>Tema predeterminado diseñado por Arturo Silva <email
+>jasilva28@gmail.com</email
+> </para>
+
+<para
+>Documentación traducida por Rocío Gallego <email
+>traducciones@rociogallego.com</email
+> y Kira J. Fernández <email
+>kirajfdez@gmail.com</email
+>.</para
+><para
+>Corregida por Eloy Cuadra <email
+>ecuadra@eloihr.net</email
+>.</para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+sgml-general-insert-case: lower
+End:
+-->
+

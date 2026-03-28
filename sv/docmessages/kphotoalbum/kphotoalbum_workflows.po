@@ -1,0 +1,415 @@
+#
+# Stefan Asserhäll <stefan.asserhall@gmail.com>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 12:03+0000\n"
+"PO-Revision-Date: 2012-09-19 20:15+0200\n"
+"Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
+"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#. Tag: title
+#: workflows.docbook:10
+#, no-c-format
+msgid "Workflows with &kphotoalbum;"
+msgstr "Arbetsflöden i Kfotoalbum"
+
+#. Tag: para
+#: workflows.docbook:11
+#, no-c-format
+msgid ""
+"Workflow is rather important aspect in digital imaging. In this chapter we "
+"describe different workflows that fit on different needs. There are many "
+"different factors that must be considered when developing a workflow. "
+"Hopefully these examples will provide you with sufficient ideas of how to "
+"tune-up your own method of working with digital imaging."
+msgstr ""
+"Arbetsflödet är en rätt viktig aspekt av digital bildhantering. I det här "
+"kapilet beskriver vi olika arbetsflöden som passar olika behov. Det finns "
+"många olika faktorer som måste tas hänsyn till när ett arbetsflöde "
+"utvecklas. Förhoppningsvis ger dessa exempel dig tillräckligt med idéer om "
+"hur du kan trimma din egen metod vid arbete med digitala bilder."
+
+#. Tag: title
+#: workflows.docbook:19
+#, no-c-format
+msgid "RAW workflow using &kphotoalbum; and Bibble5/AfterShot Pro"
+msgstr ""
+"Arbetsflöde med obehandlade bilder i Kfotoalbum och Bibble5/AfterShot Pro"
+
+#. Tag: para
+#: workflows.docbook:20
+#, no-c-format
+msgid ""
+"When shooting RAW images the files from camera must be developed to commonly "
+"recognized format like JPEG or TIFF. There are a few options to choose from "
+"when working on Linux. For example RawTherapee and Ufraw are open-source "
+"alternatives when Bibble5/AfterShot Pro are commercial application for this "
+"purpose."
+msgstr ""
+"När obehandlade bilder tas måste kamerafilerna framkallas till vanligt "
+"igenkända format som JPEG eller TIFF. Det finns några alternativ att välja "
+"bland vid arbete på Linux. Exempelvis RawTherapee och Ufraw är alternativ "
+"med öppen källkod, medan Bibble5/AfterShot Pro är kommersiella program för "
+"syftet."
+
+#. Tag: para
+#: workflows.docbook:26
+#, no-c-format
+msgid ""
+"A few settings are recommended for a RAW workflow. First is to enable the "
+"using of the embedded thumbnail. This will give a tremendous speed boost "
+"over decoding each raw file each time they are viewed (check also the "
+"minimum dimension configuration to ensure decent quality). Second one is for "
+"the New Image Finder to automatically stack the developed versions over the "
+"RAW file (developed image must be on same directory as the original). This "
+"requires regular expressions as described in <xref linkend=\"opt-search-new"
+"\"/>. Two helper scripts are provided in &kphotoalbum; sources to help in "
+"RAW workflow. These are open-raw.desktop and open-raw.pl. The first one "
+"enables GUI applications to open the RAW files in the open-raw.pl script "
+"that tries to find the original RAW file and open that instead of the "
+"developed image."
+msgstr ""
+"Några inställningar rekommenderas för ett arbetsflöde med obehadlade bilder. "
+"Det första är att aktivera användning av den inbäddade miniatyrbilden. Det "
+"ger en enorm hastighetsförbättring mot att avkoda varje obehandlad fil varje "
+"gång den visas (kontrollera också inställningen av minimal dimension för att "
+"försäkra att kvaliteten är rimlig). Det andra är att den nya bildsökningen "
+"automatiskt lägger de framkallade versionerna ovanpå den obehandlade filen "
+"(den framkallade bilden måste vara i samma katalog som originalet). Det "
+"kräver reguljära uttryck som beskrivs i <xref linkend=\"opt-search-new\"/>. "
+"Två hjälpskript tillhandahålls i Kfotoalbums källkod för att hjälpa till med "
+"arbetsflödet för obehandlade bilder. De är open-raw.desktop och open-raw.pl. "
+"Det första gör det möjligt för program med grafiskt gränssnitt att öppna "
+"obehandlade filer med skriptet open-raw.pl som försöker hitta den "
+"ursprungliga obehandlade filen och öppna den istället för den framkallade "
+"bilden."
+
+#. Tag: title
+#: workflows.docbook:41
+#, no-c-format
+msgid "Sending Images to RAW Editor"
+msgstr "Skicka bilder till editorn för obehandlade bilder"
+
+#. Tag: para
+#: workflows.docbook:49
+#, no-c-format
+msgid ""
+"First step in actual workflow is to copy the images from camera to the "
+"computer. A simple copy on a terminal window is all that is needed:"
+msgstr ""
+"Det första steget i själva arbetsflödet är att kopiera bilderna från kameran "
+"till datorn. En enkel kopiering i ett terminalfönster är allt som behövs:"
+
+#. Tag: screen
+#: workflows.docbook:52
+#, no-c-format
+msgid ""
+"<userinput><command>cp</command> <option>-a</option> <filename>/"
+"media/.../101CANON/</filename> <filename>~/Pictures/2012/sample</filename>\n"
+"  </userinput>"
+msgstr ""
+"<userinput><command>cp</command> <option>-a</option> <filename>/"
+"media/.../101CANON/</filename> <filename>~/Pictures/2012/sample</filename>\n"
+"  </userinput>"
+
+#. Tag: para
+#: workflows.docbook:53
+#, no-c-format
+msgid ""
+"Then either start &kphotoalbum; or run <menuchoice><guimenu>Maintenance</"
+"guimenu><guimenuitem>Rescan for Images and Videos</guimenuitem></"
+"menuchoice>. New images should be found and now is time for initially "
+"tagging the images. As I usually photograph while traveling I first insert "
+"the place. Select <guilabel>Folder</guilabel> and browse to the new "
+"directory. Then go to the <guilabel>Show Thumbnails</guilabel>, select all "
+"and <guimenu>Annotate Multiple Items at a Time</guimenu> or <keycombo action="
+"\"simul\">&Ctrl;<keycap>2</keycap></keycombo>. Insert the proper place like "
+"Finland-Helsinki (see <xref linkend=\"sec-member-groups-in-property-editor\"/"
+">)."
+msgstr ""
+"Starta därefter antingen Kfotoalbum eller kör "
+"<menuchoice><guimenu>Underhåll</guimenu><guimenuitem>Sök efter bilder och "
+"videor igen</guimenuitem></menuchoice>. Nya bilder ska hittas och nu är det "
+"dags att göra den inledande taggningen av bilderna. Eftersom jag oftast tar "
+"fotografier under resor, börjar jag med att ange platsen. (Välj "
+"<guilabel>Katalog</guilabel> och bläddra till den nya katalogen. Gå därefter "
+"till <guilabel>Visa miniatyrbilder</guilabel>, markera allting och välj "
+"<guimenu>Beskriv flera objekt åt gången</guimenu> eller <keycombo action="
+"\"simul\">&Ctrl;<keycap>2</keycap></keycombo>. Infoga rätt plats, som "
+"Finland-Helsingfors (se <xref linkend=\"sec-member-groups-in-property-editor"
+"\"/>)."
+
+#. Tag: para
+#: workflows.docbook:67
+#, no-c-format
+msgid ""
+"Now that the new images are easy to find I do the initial ranking and "
+"deletion. For this I go to the thumbnail view and start the Viewer by "
+"hitting &Enter;. I use rating for good images, just press the appropriate "
+"number from <keycap>1</keycap> to <keycap>5</keycap>. I only give 3 to 5 "
+"ratings and hit <keycombo action=\"simul\">&Ctrl;<keycap>Del</keycap></"
+"keycombo> for the bad photos to delete them. At this point I might add also "
+"People names if there happens to be a diver in the photo. Once the first "
+"round is done I exit the Viewer by hitting &Esc; and select "
+"<guimenuitem>Delete file from disk</guimenuitem> to get rid off the bad "
+"images for good."
+msgstr ""
+"Nu då de nya bilderna är lätta att hitta, gör jag den inledande "
+"betygsättningen och borttagningen. För att göra det, går jag till "
+"miniatyrbildsvisningen och startar visningen genom att trycka på "
+"returtangenten. Jag använder betyg för bra bilder, genom att helt enkelt "
+"trycka på lämplig siffra från <keycap>1</keycap> till <keycap>5</keycap>. "
+"Jag ger bara betyge 3 till 5 och trycker på <keycombo action=\"simul\">&Ctrl;"
+"<keycap>Delete</keycap></keycombo> för de dåliga fotona för att ta bort dem. "
+"Vid detta tillfälle kanske jag också lägger till personnamn om det råkar "
+"finnas en dykare på fotot. När den första omgången är klar, avslutar jag "
+"visningen genom att trycka på Escape och välja <guimenuitem>Ta bort fil från "
+"disk</guimenuitem> för att bli av med de dåliga bilderna för gott."
+
+#. Tag: para
+#: workflows.docbook:81
+#, no-c-format
+msgid ""
+"Next I select only the images that have high enough rating using the search "
+"function. Naturally the Place has to be set if search is started with "
+"<keycombo action=\"simul\">&Ctrl;<keycap>F</keycap></keycombo>. However, if "
+"search is invoked from the Main Window the current selection is drilled down "
+"to the more precise match. Anyway, at this point I go through the better "
+"rated images again doing refining on the rating. E.g. if I have 5 similar "
+"photos of one Nudibranch species I generally decrease the rating of the "
+"poorer images and might increase the best one. Comparing images can be done "
+"by selecting the ones you want to compare and starting the Viewer. Removing "
+"images from the Viewer selection can be done with <keycap>Delete</keycap>. "
+"This only disables the viewing of the current image while within the Viewer, "
+"nothing is removed or deleted. This allows comparing 2 or 3 better images "
+"next to each other moving between them with <keycap>PgUp</keycap> and "
+"<keycap>PgDn</keycap>. I quite commonly use a <literal>tmp</literal> "
+"category to mark &eg; crabs and shrimps to be easily able to display only "
+"selected type of images during the later phases of selection and "
+"identification."
+msgstr ""
+"Därefter väljer jag bara bilderna som har tillräckligt högt betyg med "
+"sökfunktionen. Naturligtvis måste platsen vara angiven om sökningen startas "
+"med <keycombo action=\"simul\">&Ctrl;<keycap>F</keycap></keycombo>. Om "
+"sökningen startas från huvudfönstret är det nuvarande urvalet redan nere på "
+"den mer exakta matchningen. Hur som helst, vid detta tillfälle går jag "
+"igenom bilderna med bättre betyg och förfinar betygsättningen. Om jag t.ex. "
+"har fem liknande bilder av en art nakensnäckor minskar jag i allmänhet "
+"betyget för de sämre bilderna och kanske ökar den bästa. Jämföra bilder kan "
+"göras genom att välja de du jämföra och starta visningen. Att ta bort bilder "
+"från visningsurvalet kan göras med <keycap>Delete</keycap>. Det inaktiverar "
+"bara visningen av aktuell bild inne i visningen, ingenting tas bort. Det gör "
+"det möjligt att jämföra de två eller tre bästa bilderna intill varandra och "
+"gå mellan dem med <keycap>Page Up</keycap> och <keycap>Page Down</keycap>. "
+"Jag använder ofta kategorin <literal>temp</literal> för att t.ex. markera "
+"krabbor och räkor för att enkelt kunna visa vissa bildtyper under de senare "
+"faserna av urval och identifiering."
+
+#. Tag: para
+#: workflows.docbook:101
+#, no-c-format
+msgid ""
+"After a reduced amount of images is left I start tagging them. I add the "
+"Latin Name of the species and Common Name. Whenever I have these two "
+"categories completed I consider the image Done and get rid of the Untagged "
+"marking. Note that if you still need to do tagging after developing the RAW "
+"image (and auto-stacking them) you need to select the top of collapsed stack "
+"(or all images on expanded stack) and select <emphasis>Annotate Multiple "
+"Items at a Time</emphasis> to get the whole stack annotated instead of only "
+"the topmost image."
+msgstr ""
+"Efter ett reducerat antal bilder är kvar, börjar jag tagga dem. Jag lägger "
+"till artens latinska namn och det vanliga namnet. När väl dessa två "
+"kategorier är färdiga anser jag bilden klar, och gör mig av med markeringen "
+"otaggad. Observera att om du fortfarande behöver lägga till taggar efter "
+"framkallning av den obehandlade bilden (och automatiskt lägga dem i hög) "
+"måste den översta bilden i en hopsamlad hög (eller alla bilder i en utlagd "
+"hög) markeras och använda <emphasis>Beskriv flera objekt åt gången</"
+"emphasis> för att få hela högen beskriven istället för bara den översta "
+"bilden."
+
+#. Tag: para
+#: workflows.docbook:111
+#, no-c-format
+msgid ""
+"The best images are sent to external application for developing. With wanted "
+"images selected, right click on selected thumbnail and select "
+"<menuchoice><guimenuitem>Invoke External Program</"
+"guimenuitem><guimenuitem>All Selected Images</guimenuitem><guimenuitem>Send "
+"Bibble5</guimenuitem></menuchoice>. The application selected is actually my "
+"script that detects if there is a RAW file for the possibly already "
+"developed images available and uses that if possible. Within the external "
+"application I do some tuning up and cropping if required and then output the "
+"developed JPEGs next to the original RAW file. File naming is rather simple, "
+"change the extension or add underscore and running number if needed."
+msgstr ""
+"De bästa bilderna skickas till det externa programmet för framkallning. Med "
+"önskade bilder valda, högerklicka på markerade miniatyrbilder och välj "
+"<menuchoice><guimenuitem>Starta externt program</guimenuitem> "
+"<guimenuitem>Alla markerade bilder</guimenuitem> <guimenuitem>Bibble5</"
+"guimenuitem></menuchoice>. Programmet som väljes är i själva verket mitt "
+"skript som detekterar om det finns en obehandlad fil tillgänglig för de "
+"möjligen redan framkallade bilderna och använder den om möjligt. Inne i det "
+"externa programmet gör jag en del finjustering och beskärning om det behövs "
+"och därefter matar jag ut de framkallade JPEG-filerna bredvid de "
+"ursprungliga obehandlade filerna. Filnamngivningen är ganska enkel, ändra "
+"filändelsen och lägg till understreck och löpnummer om det behövs."
+
+#. Tag: para
+#: workflows.docbook:125
+#, no-c-format
+msgid ""
+"Now that there is plenty of new JPEGs in the image directories I let "
+"&kphotoalbum; search for new images and automatically stack the new ones on "
+"top of the original RAW (<xref linkend=\"fig-options-file-versions\"/>). "
+"Then a final round of selection with the developed images and adding some "
+"descriptions if needed."
+msgstr ""
+"Nu när det finns gott om nya JPEG-filer i bildbiblioteken, låter jag "
+"Kfotoalbum söka efter nya bilder, och automatiskt lägga de nya ovanpå de "
+"ursprungliga obehandlade bilderna (<xref linkend=\"fig-options-file-versions"
+"\"/>). Därefter en slutomgång med urval av de utvecklade bilderna, och "
+"tillägg av några beskrivningar om det behövs."
+
+#. Tag: para
+#: workflows.docbook:131
+#, no-c-format
+msgid ""
+"Final step is to generate static &HTML; pages and upload to my web server "
+"for the enjoyment of friends and colleagues. This I do with the stacks "
+"collapsed to only get the developed images to the web page. &HTML; "
+"generation is described in <xref linkend=\"chp-generating-html\"/>."
+msgstr ""
+"Det sista steget är att skapa statiska &HTML;-sidor och ladda upp dem till "
+"min webbserver för att vänner och kollegor ska kunna njuta av dem. Det gör "
+"jag med högarna hoplagda för att bara skicka de framkallade bilderna till "
+"webbsidan. Att skapa &HTML; beskrivs i <xref linkend=\"chp-generating-html\"/"
+">."
+
+#. Tag: title
+#: workflows.docbook:139
+#, no-c-format
+msgid "Panorama workflow"
+msgstr "Arbetsflöde för panoraman"
+
+#. Tag: para
+#: workflows.docbook:140
+#, no-c-format
+msgid ""
+"Panoramas require a bit different workflow than normal photo editing. This "
+"is due to the requirement for multiple source files. The tool of choice for "
+"panoramas is Autopano Pro but latest version of &digikam; should do well and "
+"fits zero budget. Following list describes the steps required:"
+msgstr ""
+"Panoraman kräver ett något annorlunda arbetsflöde än vanlig fotoredigering. "
+"Det beror på att de kräver flera ingående filer. Det bästa verktyget för "
+"panoraman är Autopano Pro, men den senaste versionen av &digikam; bör "
+"fungera bra och passar en nollbudget. Den följande listan beskriver "
+"nödvändiga steg:"
+
+#. Tag: para
+#: workflows.docbook:147
+#, no-c-format
+msgid ""
+"Tag the photos belonging to a panorama in &kphotoalbum; appropriately. This "
+"is done mainly to avoid discarding images by accident, when sorting out the "
+"garbage among the photos taken. You probably want also to stack the set of "
+"source images at this point."
+msgstr ""
+"Tagga de foton som hör till ett panorama på lämpligt sätt i Kfotoalbum. Det "
+"görs i huvudsak för att undvika att kasta bilder av misstag, när skräpet "
+"bland tagna foton rensas bort. Det är troligen också lämpligt att lägga "
+"uppsättningen med ingående bilder i hög vid detta tillfälle."
+
+#. Tag: para
+#: workflows.docbook:152
+#, no-c-format
+msgid "You have at least two simple options for next step:"
+msgstr "För nästa steg finns åtminstone två enkla alternativ:"
+
+#. Tag: para
+#: workflows.docbook:155
+#, no-c-format
+msgid ""
+"You can let Autopano Pro find the panoramas automatically from the photo "
+"directory."
+msgstr "Låt Autopano Pro hitta panoraman automatiskt från fotokatalogen."
+
+#. Tag: para
+#: workflows.docbook:158
+#, no-c-format
+msgid ""
+"Or send the proper images to Autopano Pro on command line to speed things "
+"up. This is handy if the image directory contains a lot of images, "
+"especially RAW ones. This requires one to fix the script that starts "
+"Autopano Pro to accept input and to create a desktop file or invoking "
+"external program with own command line."
+msgstr ""
+"Eller skicka rätt bilder till Autopano Pro på kommandoraden för att snabba "
+"upp hanteringen. Det är praktiskt om bildkatalogen innehåller många bilder, "
+"i synnerhet obehandlade. Det kräver att man ändrar skriptet som startar "
+"Autopano Pro så att det accepterar indata och skapa en skrivbordsfil. eller "
+"starta det externa programmet med sin egen kommandorad."
+
+#. Tag: para
+#: workflows.docbook:165
+#, no-c-format
+msgid ""
+"If it happens that the resulting panorama is missing a small part, you can "
+"try to craft it e.g. with the Gimp. Gimp works usually quite well if there "
+"is enough \"structure\" to be cloned but there is absolutely no guarantee "
+"you will get usable results."
+msgstr ""
+"Om det råkar vara så att det resulterande panoramat saknar en liten del, kan "
+"du försöka skapa det för hand, exempelvis med Gimp. Gimp fungerar oftast "
+"riktigt bra om det finns tillräckligt med \"struktur\" att repetera, men det "
+"finns ingen garanti för att du får ett användbart resultat."
+
+#. Tag: para
+#: workflows.docbook:170
+#, no-c-format
+msgid ""
+"Save the new image somewhere under &kphotoalbum;'s image directory and run "
+"<menuchoice><guimenu>Maintenance</guimenu><guimenuitem>Rescan for Images and "
+"Videos</guimenuitem></menuchoice>. This should notice the new panorama and "
+"include it in the picture gallery."
+msgstr ""
+"Spara den nya bilden någonstans under  Kfotoalbums bildkatalog och kör "
+"<menuchoice><guimenu>Underhåll</guimenu><guimenuitem>Sök efter bilder och "
+"videor igen</guimenuitem></menuchoice>. Då bör det nya panoramat hittas, och "
+"inkluderas i bildgalleriet."
+
+#. Tag: para
+#: workflows.docbook:176
+#, no-c-format
+msgid ""
+"If you have set the AutoStacking of new images properly and name of the new "
+"panorama matches the rules for this, the panorama should be on top of the "
+"stack. Otherwise sort the images by date, so the new panorama ends up at by "
+"the source images and stack them manually. (Autopano Pro seems to write the "
+"EXIF info of the first image into the panorama.)"
+msgstr ""
+"Om du har ställt in att lägga nya bilder på hög automatiskt riktigt, och "
+"namnet på det nya panoramat stämmer med dessa regler, bör panoramat vara "
+"överst i högen. Sortera annars bilderna enligt datum, så att det nya "
+"panoramat hamnar vid de ingående bilderna och lägg dem i hög manuellt "
+"(Autopano Pro verkar skriva EXIF-informationen i panoramats första bild)."
+
+#. Tag: para
+#: workflows.docbook:182
+#, no-c-format
+msgid ""
+"You can still add tagging at this point to the panorama or you might include "
+"all the source images also with <keycombo>&Ctrl;<keycap>2</keycap></"
+"keycombo>."
+msgstr ""
+"Du kan också lägga till taggar i panoramat vid detta tillfälle, eller också "
+"inkludera alla datafiler med <keycombo>&Ctrl;<keycap>2</keycap></keycombo>."

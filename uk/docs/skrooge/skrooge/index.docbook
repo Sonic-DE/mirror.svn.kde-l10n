@@ -1,0 +1,5280 @@
+<?xml version="1.0" ?>
+<!-- SPDX-FileCopyrightText: 2024 S. MANKOWSKI stephane@mankowski.fr -->
+<!-- SPDX-FileCopyrightText: 2024 G. DE BURE support@mankowski.fr -->
+<!-- SPDX-License-Identifier: GPL-3.0-or-later -->
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+<!ENTITY skrooge '<application
+>Skrooge</application
+>'
+> <!--remove when skrooge requires kdoctools 5.13-->
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Ukrainian "INCLUDE"
+><!-- change language only here -->
+<!ENTITY homepage "https://www.kde.org/applications/office/skrooge/">
+]>
+
+<book id="skrooge" lang="&language;">
+  <title
+>Підручник зі &skrooge;</title>
+  
+  <bookinfo>
+    
+    <authorgroup>
+      
+      <author
+><firstname
+>Stéphane</firstname
+> <surname
+>MANKOWSKI</surname
+> <affiliation
+> <address
+><email
+>stephane@mankowski.fr</email
+></address>
+	</affiliation>
+      </author>
+      
+      <othercredit role="developer"
+><firstname
+>Guillaume</firstname
+> <surname
+>DE BURE</surname
+> <affiliation
+> <address
+><email
+>guillaume.debure@gmail.com</email
+></address>
+	</affiliation>
+	<contrib
+>Розробник</contrib>
+      </othercredit>
+      <othercredit role="translator"
+><firstname
+>Юрій</firstname
+><surname
+>Чорноіван</surname
+><affiliation
+><address
+><email
+>yurchor@ukr.net</email
+></address
+></affiliation
+><contrib
+>Переклад українською</contrib
+></othercredit
+>  
+    </authorgroup>
+    
+    <copyright>
+      <year
+>2007</year>
+      <year
+>2008</year>
+      <year
+>2009</year>
+      <year
+>2010</year>
+      <year
+>2011</year>
+      <year
+>2012</year>
+      <year
+>2013</year>
+      <year
+>2014</year>
+      <year
+>2015</year>
+      <year
+>2016</year
+>      
+      <year
+>2017</year
+>    
+      <year
+>2018</year>
+      <year
+>2019</year>
+      <year
+>2020</year>
+      <year
+>2021</year>
+      <year
+>2022</year>
+      <year
+>2023</year>
+      <year
+>2024</year>
+	  <year
+>2025</year>
+      <holder
+>Stéphane MANKOWSKI</holder>
+      <holder
+>Guillaume DE BURE</holder>
+    </copyright>
+    
+    <legalnotice
+>&FDLNotice;</legalnotice>
+    
+    <date
+>11 квітня 2020 року</date>
+    <releaseinfo
+>&skrooge; 2.22.1</releaseinfo>
+    
+    <abstract>
+      <para
+>Цей документ є підручником з користування &skrooge;, програми, призначеної для керування особистими фінансами. </para>
+    </abstract>
+    
+    <keywordset>
+      <keyword
+>KDE</keyword>
+      <keyword
+>extragear</keyword>
+      <keyword
+>офіс</keyword>
+      <keyword
+>skrooge</keyword>
+      <keyword
+>особисті фінанси</keyword>
+    </keywordset>
+    
+  </bookinfo>
+  
+  <chapter id="introduction">
+    <title
+>Вступ</title>
+    
+    <sect1 id="skrooge-intro">
+      <title
+>&skrooge;</title>
+      
+      <para
+>Програму &skrooge; призначено для керування вашими особистими фінансами. За допомогою цієї програми ви можете стежити за вашими прибутками і витратами на декількох рахунках у декількох валютах. У програмі передбачено всі можливості, які можна очікувати від такого інструменту, зокрема категорії, планування операцій, створення звітів у графічній формі, керування капіталами... Крім того, у програми є і додаткові можливості, які не є такими поширеними, зокрема швидке редагування дій, пошук під час введення, стеження за поверненням грошей, придатні до налаштування атрибути... </para>
+      
+      <screenshot>
+	<screeninfo
+>У вікні &skrooge; показано кругові діаграми витрат за категоріями</screeninfo>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="reports.png" format="PNG"/>
+	  </imageobject>
+	  <textobject
+><phrase
+>У вікні &skrooge; показано кругові діаграми витрат за категоріями</phrase
+></textobject>
+	</mediaobject>
+      </screenshot>
+      
+      
+      <sect2 id="what-skrooge-is">
+	<title
+>Що може робити &skrooge;?</title>
+	
+	<para
+>&skrooge; є інструментом керування особистими фінансами, призначеним для роботи на основі бібліотек &kde;. Її призначено для користувачів, які бажають стежити за прибутками, витратами та інвестиціями. </para>
+	
+      </sect2>
+      
+      <sect2 id="what-skrooge-is-not">
+	<title
+>Що не може робити &skrooge;?</title>
+	
+	<para
+>&skrooge; не є професійним інструментом. У програмі не передбачено функціональних можливостей, яких ви можете очікувати від програмного забезпечення для ведення малого бізнесу. Програма не може обчислювати податки, вона не підтримує системи подвійного запису, а також жодних розширених фінансових функціональних можливостей. </para>
+	<para
+>Якщо вам потрібна програма з описаними вище можливостями, краще скористайтеся &kmymoney; або Kraft.</para>
+	
+      </sect2>
+    </sect1>
+    
+    <sect1 id="terminology">
+      <title
+>Термінологія</title>
+      
+      <sect2 id="terminology-document">
+	<title
+>Документ</title>
+	<para
+>Документом програми є файл &skrooge; (суфікс .skg). Такий файл може містити будь-яку кількість записів <link linkend="terminology-account"
+>рахунків</link
+>. Цим документом ви можете скористатися для одночасного керування всіма вашими рахунками. </para>
+      </sect2>
+      
+      <sect2 id="terminology-account">
+	<title
+>Рахунок</title>
+	<para
+>Рахунок у &skrooge; подібний до вашого банківського рахунку. Наприклад, якщо у вас є рахунок, у вашої жінки є рахунок, і, крім того, у вас є спільний рахунок, ви можете створити записи для всіх цих трьох рахунків у &skrooge;. Кожного разу, коли ви витрачатимете або отримуватимете грошові суми, ви можете зареєструвати  <link linkend="terminology-transaction"
+>операцію</link
+> і позначити рахунок, на якому цю банківську операцію було виконано. </para>
+      </sect2>
+      
+      <sect2 id="terminology-transaction">
+	<title
+>Операція</title>
+	<para
+>Операцією є внесення або зняття грошових сум з одного з ваших рахунків. Якщо ви пов’яжете ваш рахунок з <link linkend="terminology-category"
+>категорією</link
+> або <link linkend="trackers"
+>засобом стеження</link
+>, ви зможете проаналізувати спосіб, у який ви витрачаєте гроші.</para>
+	
+	<sect3 id="terminology_standard_transaction">
+	  <title
+>Стандартна операція</title>
+	  <para
+>Стандартна операція — це основна операція у &skrooge;. Щось подібне до «Сьогодні витрачено 20€ на бакалію».</para>
+	  <para
+></para>
+	</sect3>
+	
+	<sect3 id="terminology_split_transaction">
+	  <title
+>Дроблена операція</title>
+	  <para
+>Дроблена операція — це операція, у якій загальну суму поділено між декількома <link linkend="terminology-category"
+>категоріями</link
+>, датами і/або <link linkend="trackers"
+>стеженнями</link
+>. Наприклад, «Вчора було витрачено 100€ у супермаркеті, з яких 60€ витрачено на їжу, а 40€ — на одяг».</para>
+	</sect3>
+	
+	<sect3 id="terminology_transfer">
+	  <title
+>Переказ</title>
+	  <para
+>Переказ у &skrooge; — це запис переведення грошової суми з одного рахунку &skrooge; на інший.</para>
+	  <para
+>Цю операцію не слід плутати зі сплатами: якщо ви виконуєте переказ, наприклад, за допомогою вашого банківського вебсайта, на чийсь рахунок, — це не переказ у розумінні &skrooge;, оскільки &skrooge; нічого не відомо про рахунок, на який переказано гроші. Ця операція у розумінні програми є <link linkend="terminology_standard_transaction"
+>стандартною операцією</link
+> переказу у режимі сплати.</para>
+	  <para
+>Прочитайте <link linkend="transfer"
+>відповідний розділ</link
+>, якщо це пояснення здається вам незрозумілим.</para>
+	</sect3>
+	
+	<sect3 id="terminology_validated_transaction">
+	  <title
+>Звірена операція</title>
+	  <para
+>Коли ви <link linkend="import"
+>імпортуєте</link
+> записи операцій з вашої фінансової установи до &skrooge;, програма не одразу вважає їх чинними і показує синім кольором. Такі операції доведеться перевірити вручну. Після перевірки записи операцій набудуть звичайного кольору.</para>
+	  <para
+>Зауважте, що ви можете за допомогою відповідного пункту <link linkend="settings"
+>параметрів програми</link
+> дозволити автоматичне звірення операцій під час імпортування.</para>
+	</sect3>
+	
+	<sect3 id="terminology_marked_transaction">
+	  <title
+>Впорядкування даних</title>
+	  <para
+>Під час <link linkend="reconciliation"
+>процедури узгодження</link
+> ви вказуєте &skrooge; всі записи операцій, які має бути віднесено до відповідного пункту запису рахунку. Вказану операцію буде позначено напівзаповненим квадратиком у стовпчику стану панелі перегляду операцій (або якимось іншим способом, залежно від вибраної вами теми KDE). Вказану операцію не буде позначено як <link linkend="terminology_checked_transaction"
+>сплачену</link
+>, аж доки не буде завершено узгодження.</para>
+	</sect3>
+	
+	<sect3 id="terminology_checked_transaction">
+	  <title
+>Сплачена операція</title>
+	  <para
+>Після вказування позицій всіх записів вашого рахунку у &skrooge; ви можете завершити процедуру узгодження. Всі <link linkend="terminology_marked_transaction"
+>вказані</link
+> записи буде перетворено на записи сплачених операцій, які позначаються заповненими квадратиками у стовпчику стану панелі перегляду операцій.</para>
+	</sect3>
+	
+      </sect2>
+      
+      <sect2 id="terminology-category">
+	<title
+>Категорія</title>
+	<para
+>Категорія — це клас дій. Серед класичних прикладів «Їжа», «Податки», «Платня»… У категорії можуть міститися інші категорії: таким чином, можна створити ієрархічну структуру. Наприклад, категорія «Транспорт» може містити категорії «Автобус», «Автомобіль», «Літак»… Програма &skrooge; здатна обробляти будь-яку кількість вкладених категорій. </para>
+      </sect2>
+      
+      <sect2 id="terminology-unit">
+	<title
+>Одиниця</title>
+	<para
+>Одиницею у &skrooge; може бути будь-що, що має вартість. Приклади: <itemizedlist>
+	    <listitem
+><para
+>Валюта <itemizedlist>
+		  <listitem
+><para
+>$ (долар США)</para
+></listitem>
+		  <listitem
+><para
+>€ (євро)</para
+></listitem>
+		  <listitem
+><para
+>£ (фунт стерлінгів)</para
+></listitem>
+		</itemizedlist>
+	      </para>
+	    </listitem>
+	    <listitem
+><para
+>Курс або індекс <itemizedlist>
+		  <listitem
+><para
+>GOOG (Google)</para
+></listitem>
+		  <listitem
+><para
+>NASDAQ</para
+></listitem>
+		</itemizedlist>
+	      </para>
+	    </listitem>
+	    <listitem
+><para
+>Особиста власність <itemizedlist>
+		  <listitem
+><para
+>Ваш будинок</para
+></listitem>
+		  <listitem
+><para
+>Ваш автомобіль</para
+></listitem>
+		</itemizedlist>
+	      </para>
+	    </listitem>
+	  </itemizedlist>
+	  
+	</para>
+      </sect2>
+    </sect1>
+  </chapter>
+  
+  <chapter id="main-concepts">
+    <title
+>Основні поняття</title>
+    
+    <sect1 id="user_interface">
+      <title
+>Інтерфейс користувача</title>
+      <para
+>Вікно &skrooge; складається з основної області, оточеної панелями, та смужки стану. Панелі можна закривати і відкривати, а також розташовувати ліворуч або праворуч від основної області. </para>
+      
+      <sect2 id="main_area">
+	<title
+>Основна область</title>
+	<para
+>Тут програма &skrooge; показує відомості, що вас цікавлять. У цій області може міститися декілька <link linkend="multi-tabs"
+>вкладок</link
+>, на кожній з них буде показано відповідні дані. </para>
+      </sect2>
+      
+      <sect2 id="docks">
+	<title
+>Панелі</title>
+	<para
+>Панелі передбачено у багатьох програмах &kde;. Панелі є допоміжними частинами вікна програми, їх можна пересувати, впорядковувати, закривати і навіть від’єднувати від основного вікна. </para>
+	
+	<para
+>Ось декілька прикладів компонування панелей: </para>
+	
+	<informaltable>
+	  <tgroup cols="3">
+	    <tbody>
+	      <row>
+		<entry>
+		  <inlinemediaobject>
+		    <imageobject>
+		      <imagedata fileref="docks_left_right.png"/>
+		    </imageobject>
+		  </inlinemediaobject>
+		</entry>
+		<entry>
+		  <inlinemediaobject>
+		    <imageobject>
+		      <imagedata fileref="docks_detached.png"/>
+		    </imageobject>
+		  </inlinemediaobject>
+		</entry>
+		<entry>
+		  <inlinemediaobject>
+		    <imageobject>
+		      <imagedata fileref="docks_stacked.png"/>
+		    </imageobject>
+		  </inlinemediaobject>
+		</entry>
+	      </row>
+	    </tbody>
+	  </tgroup>
+	</informaltable>
+	
+	<para
+>Панелі &skrooge;: <itemizedlist>
+	    <listitem
+><para
+><link linkend="page_chooser"
+>Вибір сторінки</link
+></para
+></listitem>
+	    <listitem
+><para
+><link linkend="bookmarks"
+>Список закладок</link
+></para
+></listitem>
+	    <listitem
+><para
+><link linkend="undo_redo"
+>Переглядач списку скасованих/повернутих дій</link
+></para
+></listitem>
+	    <listitem
+><para
+><link linkend="property_editor"
+>Редактор властивостей</link
+></para
+></listitem>
+	    <listitem
+><para
+><link linkend="message_list"
+>Список повідомлень</link
+></para
+></listitem>
+	  </itemizedlist>
+	</para>
+      </sect2>
+      
+      <sect2 id="page_chooser">
+	<title
+>Вибір сторінки</title>
+	<para
+>Вибір сторінки — це панель, за допомогою якої ви можете обрати набір даних, які буде показано на поточній вкладці або на новій вкладці. Щоб відкрити нову вкладку, натисніть і утримуйте клавішу &Ctrl; під час клацання лівою кнопкою миші у вибраній області перегляду.</para
+><tip
+><para
+>Налаштувати список можна за допомогою контекстного меню списку.</para
+></tip>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="context_chooser.png" format="PNG"/></imageobject>
+	    <textobject
+><phrase
+>Вибір сторінки</phrase
+></textobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Про кожен з цих контекстів ми поговоримо у окремій главі цього підручника.</para>
+      </sect2>
+       	
+      <sect2 id="bookmarks">
+	  <title
+>Закладки</title>
+	  <para
+>Нехай вам потрібно налаштувати панель операцій для окремих рахунків: кожен з таких рахунків має бути показано на власній вкладці, можливо, відповідних таблицях буде різна кількість стовпчиків. Наведений вище спосіб для подібного налаштування непридатний, оскільки за його використання налаштування буде застосовано до всіх вкладок з однаковим типом. </para>
+	  <para
+>Досягти потрібного результату можна збереженням кожної з вкладок як закладки. Подібно до програм для перегляду сторінок інтернету, вкладки можна впорядкувати у ієрархічну структуру з теками. Переглянути таку структуру можна на допомогою панелі навігації закладками:</para>
+	  
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject
+><imagedata fileref="bookmarks_browser.png" format="PNG"/></imageobject>
+	      <textobject
+><phrase
+>Перегляд закладок</phrase
+></textobject>
+	    </mediaobject>
+	  </screenshot>
+	  
+	  <para
+>Щоб створити закладку, виберіть сторінку, для якого ви бажаєте створити закладку, за допомогою <link linkend="page_chooser"
+>інструменту вибору сторінки</link
+> і внесіть бажані зміни. Після цього викличте контекстне меню <link linkend="docks"
+>панелі</link
+> «Закладки» і оберіть у ньому пункт <menuchoice
+><guimenu
+>Створити закладку на поточній сторінці</guimenu
+></menuchoice
+>.</para>
+	  
+	  <para
+>Ви можете увімкнути «автоматичний запуск» закладки або теки закладок, тобто наказати програмі відкривати відповідні області перегляду після запуску &skrooge; за порядком закладок. Таким чином, ви можете повністю змінити типове компонування &skrooge;.</para>
+	  <para
+>Ви можете вибрати текст і піктограму для кожної із закладок або тек закладок.</para
+>	  
+	</sect2>
+      
+      <sect2 id="undo_redo">
+	<title
+>Скасування / Повторення</title>
+	<para
+>У &skrooge; скасування і повторення дій працює у звичний спосіб, але, крім того, ви зможете скасувати або повторити дію, навіть якщо її було виконано декілька днів тому. За типових <link linkend="settings"
+>налаштувань</link
+>, під час завершення роботи &skrooge; програма не спорожнює журнал (але ви можете змінити цю поведінку за допомогою діалогового вікна <link linkend="settings"
+>параметрів програми</link
+>), тобто ви можете скасувати фактично всі дії з часу створення документа. </para>
+	<para
+>З метою обмежити вплив такої поведінки на розмір файлів, &skrooge; типово налаштовано на зберігання журналу з 50 записів. Ви можете змінити це значення за допомогою діалогового вікна <link linkend="settings"
+>налаштовування програми</link
+>. </para>
+	<para
+>Якщо ви клацнете правою кнопкою миші на пункті дії, програма надасть вам змогу переглянути список усіх операцій, які було змінено під час виконання відповідної дії. </para>
+	<para
+>У меню пункт <guimenuitem
+>Перехід 
+> Відкрити останню змінену...</guimenuitem
+> надає вам змогу переглядати операції, які було змінено під час останньої дії. </para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="history_browser.png" format="PNG"/></imageobject>
+	    <textobject
+><phrase
+>Перегляд журналу</phrase
+></textobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>У списку журналу буде показано три стовпчики: </para>
+	
+	<itemizedlist
+>	  
+	  <listitem>
+	    <para
+>піктограми зі станом відповідної дії. Жовта стрілка проти годинникової стрілки <inlinemediaobject
+><imageobject
+><imagedata fileref="edit-undo.png" format="PNG"/></imageobject
+></inlinemediaobject
+> означає, що дію можна скасувати. Зелена стрілка за годинниковою стрілкою <inlinemediaobject
+><imageobject
+><imagedata fileref="edit-redo.png" format="PNG"/></imageobject
+></inlinemediaobject
+> означає, що дію можна повторити. </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para
+>опису дії </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para
+>піктограма з диском <inlinemediaobject
+><imageobject
+><imagedata fileref="document-save.png" format="PNG"/></imageobject
+></inlinemediaobject
+> означає, що дію було збережено, тобто документ було збережено одразу після виконання дії. </para>
+	  </listitem>
+	</itemizedlist>
+	
+	<para
+>Щоб скасувати придатну для скасування дію або повторити дію, придатну для повторення, наведіть на її пункт вказівник миші і двічі клацніть лівою кнопкою. </para>
+      </sect2>
+      
+      <sect2 id="property_editor">
+	<title
+>Редактор властивостей</title>
+	<para
+>Однією з незвичайних можливостей &skrooge; є здатність додавати нетипові властивості до кожного з записів об’єктів. Наприклад, у вас може виникнути потреба у додаванні імені і телефонного номера співробітника банку до запису рахунку, оскільки за його посередництвом ви працюєте з банком. Крім того, ви можете додати файл до запису операції, наприклад заскановане зображення фактури. </para>
+	<para
+>Досягти цього можна за допомогою редактора властивостей, який теж розташовано на <link linkend="docks"
+>панелі</link
+>. </para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="property_editor.png" format="PNG"/></imageobject>
+	    <textobject
+><phrase
+>Редактор властивостей з долученням</phrase
+></textobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Якщо цю панель буде показано, ви зможете бачити на ній нетипові властивості вибраного об’єкта (якщо вибрано об’єкт) або усіх об’єктів (якщо вибрано усі) для будь-яких типів, рахунку, операції, категорії, одиниці тощо. За допомогою цієї панелі можна створювати, оновлювати чи вилучати записи властивостей. </para>
+	
+	<para
+>Можливі властивості: </para>
+	  <itemizedlist>
+	    
+	    <listitem>
+	      <para
+>Простий рядок </para>
+	    </listitem>
+	    
+	    <listitem>
+	      <para
+>Скопійований файл у довільному форматі (odt, png, pdf, …). Це означає, що файл буде скопійовано до документа &skrooge;. Цей файл може бути відкрито з вікна &skrooge; натисканням відповідної кнопки. Зауважте, що зміни, внесені до початкової версії файла за допомогою сторонньої програми, не буде відтворено у версії, збереженій у документі &skrooge;. </para>
+	    </listitem>
+	    
+	    <listitem>
+	      <para
+>Посилання на наявний файл у довільному форматі (odt, png, pdf, …). Файл не буде скопійовано до документа &skrooge;, у документі зберігатиметься лише посилання на файл. Цей файл можна відкрити безпосередньо з вікна &skrooge; натисканням відповідної кнопки. </para>
+	    </listitem>
+	    
+	    <listitem>
+	      <para
+>Посилання на сторінку http. Приклад: посилання на сторінку вашого банку. </para>
+	    </listitem>
+	  </itemizedlist>
+	<para
+>Додані властивості може бути показано у стовпчиках <link linkend="tables"
+>таблиць</link
+>. </para
+>	
+      </sect2>
+
+      <sect2 id="message_list">
+	<title
+>Список повідомлень</title>
+	<para
+>За допомогою цієї бічної панелі ви можете бачити усі повідомлення.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="messages.png" format="PNG"/></imageobject>
+	    <textobject
+><phrase
+>Список повідомлень</phrase
+></textobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Про кожен з цих контекстів ми поговоримо у окремій главі цього підручника.</para>
+      </sect2>
+      
+      <sect2 id="multi-tabs">
+	<title
+>Вкладки</title>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="multi_tabs.png" format="PNG"/></imageobject>
+	    <textobject
+><phrase
+>&skrooge; з декількома відкритими вкладками</phrase
+></textobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>&skrooge; може показувати у вікні декілька вкладок. Ви можете додавати будь-яку кількість вкладок, на кожній з них міститимуться потрібні вам відомості. На наведеному вище знімку вікна показано 4 вкладки (рахунки, операції та два графіки).</para>
+      </sect2>
+      
+      <sect2 id="editing_panels">
+	<title
+>Панелі редагування</title>
+	<para
+>На більшості панелей перегляду &skrooge; ви можете редагувати запис за допомогою панелі редагування, яку розташовано у нижній частині вікна програми.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="editing_panel_buttons.png" format="PNG"/></imageobject>
+	    <textobject
+><phrase
+>Кнопки, призначені для показу або приховування панелей редагування операцій.</phrase
+></textobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Якщо для панелі перегляду передбачено декілька режимів редагування, ви можете вибрати потрібний режим за допомогою кнопок. На наведеному вище знімку показано чотири кнопки для вибору різних режимів редагування для <link linkend="transactions"
+>операцій</link
+>: «стандартний», «поділ», «переказ» та «акції». Для заощадження місця для візуальної інформації, особливо на малих екранах, ви можете приховати деякі з панелей редагування. На наведеному вище знімку, якщо ви натиснете кнопку поточного режиму, щоб вимкнути її, панель редагування буде приховано.</para>
+	
+	<para
+>Програма оброблятиме усіх математичні виразу у числових полях на панелях редагування. Тому ви можете вводити математичні вирази, подібні до таких: <itemizedlist>
+	    <listitem
+><para
+>5*3+10</para
+></listitem>
+	    <listitem
+><para
+>5*(3+10)</para
+></listitem>
+	    <listitem
+><para
+>Math.sin(10)</para
+></listitem>
+	  </itemizedlist
+>	  
+	</para
+>	
+      </sect2>
+      
+      <sect2 id="tables">
+	<title
+>Таблиці</title>
+	<para
+>У &skrooge; ви можете налаштувати вигляд будь-якої таблиці. Наведіть вказівник миші на заголовок стовпчика таблиці і викличте контекстне меню таблиці клацанням правою кнопкою миші:</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="table_menu.png" format="PNG"/></imageobject>
+	    <textobject
+><phrase
+>Налаштування таблиці</phrase
+></textobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<variablelist>
+	  <varlistentry>
+	    <term
+><menuchoice
+><guimenu
+>Стовпчики</guimenu
+></menuchoice
+></term>
+	    <listitem>
+	      <para
+>Налаштувати вигляд стовпчиків.</para>
+	      <variablelist>
+		<varlistentry>
+		  <term
+><menuchoice
+><guimenu
+>Вигляд</guimenu
+></menuchoice
+></term>
+		  <listitem>
+		    <para
+>Використовувати попередньо визначений набір стовпчиків. За типового набору стовпчиків, зазвичай, буде показано всі стовпчики. Для кожної з таблиць можуть існувати інші попередньо визначені набори.</para>
+		  </listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+><menuchoice
+><guimenu
+>Змінити розмір вмісту</guimenu
+></menuchoice
+></term>
+		  <listitem
+><para
+>Змінити ширину всіх стовпчиків за вмістом.</para
+></listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+><menuchoice
+><guimenu
+>Автоматична зміна</guimenu
+></menuchoice
+></term>
+		  <listitem
+><para
+>Якщо буде позначено цей пункт, ви не зможете змінювати ширину стовпчиків вручну, &skrooge; робитиме це у автоматичному режимі на основі вмісту стовпчиків.</para
+></listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+><guimenu
+>Список показаних стовпчиків</guimenu
+></term>
+		  <listitem
+><para
+>Показує список всіх стовпчиків, які може бути показано у цій таблиці. Пункти поточних показаних стовпчиків позначено. Для того, щоб приховати стовпчик, зніміть з його пункту позначку. Щоб наказати програмі показати стовпчик, позначте пункт. Додані <link linkend="property_editor"
+>властивості</link
+> можна наказати програмі показувати як стовпчики.</para
+></listitem>
+		</varlistentry
+>	
+	      </variablelist>
+	    </listitem>
+	  </varlistentry>
+	  
+	  <varlistentry>
+	    <term
+><menuchoice
+><guimenu
+>Групувати за</guimenu
+></menuchoice
+></term>
+	    <listitem>
+	      <para
+>Виберіть спосіб групування рядків.</para>
+	      <variablelist>
+		<varlistentry>
+		  <term
+><menuchoice
+><guimenu
+>Немає</guimenu
+></menuchoice
+></term>
+		  <listitem>
+		    <para
+>Без групування.</para>
+		  </listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+><menuchoice
+><guimenu
+>Стовпчик упорядкування</guimenu
+></menuchoice
+></term>
+		  <listitem
+><para
+>Рядки буде згруповано за стовпчиком, для якого застосовано упорядковування.</para
+></listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+><guimenu
+>Список стовпчиків</guimenu
+></term>
+		  <listitem
+><para
+>Показує список усіх стовпчиків, якими можна скористатися для групування.</para
+></listitem>
+		</varlistentry>
+	      </variablelist>
+	    </listitem>
+	  </varlistentry
+>	  
+	  
+	  <varlistentry>
+	    <term
+><menuchoice
+><guimenu
+>Чергувати кольори рядків</guimenu
+></menuchoice
+></term>
+	    <listitem
+><para
+>Чергувати кольори рядків. Кольори визначатимуться поточною схемою кольорів &kde;.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+><menuchoice
+><guimenu
+>Експорт</guimenu
+></menuchoice
+></term>
+	    <listitem
+><para
+><link linkend="export_table"
+>Експортувати таблицю</link
+> до окремого файла. Серед підтримуваних форматів pdf, csv, html, SVG, odt і txt.</para
+></listitem>
+	  </varlistentry>
+	</variablelist>
+	
+	<para
+>Крім того, ви можете навести вказівник миші на заголовок стовпчика і клацнути лівою кнопкою миші, щоб наказати програмі виконати впорядкування за цим стовпчиком, або перевпорядкувати стовпчики перетягуванням їх заголовків ліворуч чи праворуч.</para>
+	
+	<sect3 id="show">
+	  <title
+>Фільтрування таблиці</title>
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject
+><imagedata fileref="show.png" format="PNG"/></imageobject>
+	      <textobject
+><phrase
+>Показ меню таблиці</phrase
+></textobject>
+	    </mediaobject>
+	  </screenshot
+>	  
+	  <para
+>У всіх областях перегляду &skrooge; ви знайдете спадне меню показу, за допомогою якого можна обмежити перелік показаних у таблиці даних. </para>
+	</sect3>
+	
+	<sect3 id="search">
+	  <title
+>Пошук під час набирання</title>
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject
+><imagedata fileref="search.png" format="PNG"/></imageobject>
+	      <textobject
+><phrase
+>Поле пошуку</phrase
+></textobject>
+	    </mediaobject>
+	  </screenshot
+>	  
+	  <para
+>У всіх областях перегляду &skrooge; ви знайдете поле пошуку, за допомогою якого можна виконувати інтерактивне фільтрування в області перегляду: <itemizedlist>
+	      <listitem
+><para
+>У перегляді операцій ви можете знайти операції, дані яких містять введений вами текст у будь-якому зі стовпчиків (дата, отримувач, категорія, коментар...)</para
+></listitem>
+	      <listitem
+><para
+>У області перегляду рахунків ви можете знайти рахунки, дані яких містять введений вами текст у будь-якому зі стовпчиків (банк, назва рахунку, номер...)</para
+></listitem>
+	      <listitem
+><para
+>У області перегляду звіту за допомогою фільтрування ви можете змінити дані, показані на діаграмі.</para
+></listitem>
+	      <listitem
+><para
+>У... ну, ви здогадалися, чи не так?</para
+></listitem>
+	    </itemizedlist>
+	  </para>
+	  <tip>
+	  <para
+>Фільтрування за рядком відбувається відповідно до таких правил: </para>
+	    <itemizedlist>
+		<listitem
+><para
+>Пошук виконується без врахування регістру символів. Отже, слова «таблиця», «Таблиця» і «ТАБЛИЦЯ» вважатимуться тим самим критерієм пошуку.</para
+></listitem>
+		<listitem
+><para
+>Якщо ви вкажете одне або декілька слів у полі пошуку, програма виконає фільтрування таблиці і залишить у ній лише ті рядки, де є ці слова (використовуючи логічний оператор ТА).</para
+></listitem>
+		<listitem
+><para
+>Якщо вам потрібно додати якісь рядки (логічний оператор АБО), вам слід дописати до відповідного слова префікс «+».</para
+></listitem>
+		<listitem
+><para
+>Якщо потрібно вилучити якесь слово (логічний оператор НІ) із результатів пошуку, вам слід дописати до нього префікс «-».</para
+></listitem>
+		<listitem
+><para
+>Якщо ви хочете шукати лише у певному стовпчику, вам слід додати назву цього стовпчика як префікс, ось так: стовпчик1:слово.</para
+></listitem>
+		<listitem
+><para
+>Якщо у значенні міститься символ «:», слід вказувати стовпчик ось так: стовпчик1:значення:решта.</para
+></listitem>
+		<listitem
+><para
+>Якщо потрібно знайти фразу або словосполучення, що містить пробіли, його слід вказати у лапках, ось так: "так, це фраза".</para
+></listitem>
+		<listitem
+><para
+>Також ви можете використовувати оператори «&lt;» та «&gt;».</para
+></listitem>
+	    </itemizedlist>
+	  <para
+>Нижче наведено декілька прикладів, які ілюструють ці правила у більш інтуїтивно зрозумілий спосіб: </para>
+	    <itemizedlist>
+	      <listitem
+><para
+>+значення1 +значення2 =&gt; Знайти усі рядки, що містять значення1 АБО значення2</para
+></listitem>
+	      <listitem
+><para
+>+значення1 -значення2 =&gt; Знайти усі рядки, що містять значення1, але не містять значення2</para
+></listitem>
+	      <listitem
+><para
+>"abc def" =&gt; Знайти рядки, що містять словосполучення «abc def»</para
+></listitem>
+	      <listitem
+><para
+>"-att:abc def" =&gt; вилучити рядки, назва стовпчика у яких починається з att і містить рядок «abc def».</para
+></listitem>
+	      <listitem
+><para
+>abc:def =&gt; Знайти рядки, у яких назва стовпчика починається з «abc» і які містять слово «def»</para
+></listitem>
+	      <listitem
+><para
+>:abc:def =&gt; Знайти рядки, які містять комбінацію символів «abc:def»</para
+></listitem>
+	      <listitem
+><para
+>Date&gt;2015-03-01 =&gt; Знайти рядки, у яких атрибут Date (дата) перевищує 2015-03-01</para
+></listitem>
+	      <listitem
+><para
+>Amount&lt;10 =&gt; Знайти рядки, у яких атрибут Amount (сума) є меншим за 10</para
+></listitem>
+	    </itemizedlist>
+	</tip>
+	</sect3>
+      </sect2>
+      
+      <sect2 id="save_customized_content">
+	<title
+>Збереження налаштованого показу даних</title>
+	
+	<para
+>Як ми вже описували у <link linkend="tables"
+>попередній главі</link
+>, таблиці можна налаштувати відповідно до ваших потреб. Ймовірно, вам захочеться зберегти виконані вами налаштування до закриття вкладки. Існує декілька способів зберегти вашу роботу.</para>
+	
+	<sect3 id="save_default_context">
+	  <title
+>Зберегти стан сторінки</title>
+	  <para
+>За допомогою цього пункту можна зберегти поточний стан вкладки як типовий, такий, який завжди відтворюватиметься під час відкриття вкладки на відповідній сторінці. Наприклад, ви можете налаштувати вашу <link linkend="dashboard"
+>панель приладів</link
+> так, щоб на ній містилися 4 віджети, впорядковані відповідно до ваших побажань. Крім того, ви, звичайно ж, захочете, щоб панель прикладів завжди виглядала так, як ви її налаштували: вам навряд чи захочеться повторювати процедуру налаштування кожен раз, коли ви відкриватимете вкладку.</para>
+	  <para
+>Щоб досягти потрібного результату, вам просто слід виконати налаштування один раз, а потім зберегти стан вкладки як типовий для показаної сторінки. Вказати типовий стан можна за допомогою контекстного меню вкладки (його можна відкрити наведенням вказівника миші на вкладку з наступним клацанням правою кнопкою миші): виберіть у меню пункт <guimenuitem
+>Зберегти стан сторінки</guimenuitem
+>. Якщо вам потрібно зберегти декілька станів для сторінки, ви можете скористатися <link linkend="bookmarks"
+>закладками</link
+>.</para>
+	  
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject
+><imagedata fileref="tab_state_management.png" format="PNG"/></imageobject>
+	      <textobject
+><phrase
+>Контекстне меню на вкладках</phrase
+></textobject>
+	    </mediaobject>
+	  </screenshot>
+	  
+	  <para
+>Якщо ви бажаєте зробити те саме швидше, натисніть піктограму з диском <inlinemediaobject
+><imageobject
+><imagedata fileref="document-save.png" format="PNG"/></imageobject
+></inlinemediaobject
+>. Ця піктограма з’явиться ліворуч від заголовка вкладки після внесення змін до типових параметрів вкладки.</para>
+	  
+	</sect3>
+	</sect2>
+ 
+      <sect2 id="mass_update">
+	<title
+>Загальне оновлення</title>
+	<para
+>У &skrooge; передбачено можливість загального оновлення вибраних записів. Хоча таке оновлення здебільшого застосовується до <link linkend="transactions"
+>операцій</link
+>, ним можна скористатися і для <link linkend="accounts"
+>рахунків</link
+>, <link linkend="units"
+>одиниць</link
+>, <link linkend="scheduled"
+>запланованих операцій</link
+>…</para>
+	<para
+>Виконати оновлення дуже просто: позначте записи, які слід оновити, встановіть значення параметрів, які слід застосувати до всіх записів, і натисніть кнопку <guibutton
+>Застосувати</guibutton
+>. Для параметрів, значення яких ви не змінювали, програма теж не змінюватиме значень.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="before_mass_update.png"/></imageobject>
+	    <caption
+><para
+>Встановлення режиму «Кредитна картка» і отримувача «ACME» для позначених операцій.</para
+></caption>
+	  </mediaobject>
+	</screenshot>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="after_mass_update.png"/></imageobject>
+	    <caption
+><para
+>Оновлені операції.</para
+></caption>
+	  </mediaobject>
+	</screenshot>
+	
+	<note
+><para
+>Встановлення дати або суми за допомогою загального оновлення спеціально не передбачено.</para
+></note>
+	<note
+><para
+>У текстових полях ви можете скористатися спеціальними ключовими словами (наприклад, =capitalize) для перетворення наявних значень. Наприклад, якщо вами вибрано 100 операцій, введіть =lower у полі коментаря і натисніть кнопку «Оновити» — коментарі усіх вибраних операцій буде замінено на їхні версії, які записано малими літерами.</para
+></note>
+	
+      </sect2>
+      
+      <sect2 id="status_bar">
+	<title
+>Смужка стану</title>
+	<para
+>Смужка стану — це невеличка область у нижній частині вікна &skrooge;, де буде показано різноманітні відомості, що стосуються вашої роботи. У цій області буде показано панель поступу і кнопку скасування, призначену для переривання виконання тривалого завдання, наприклад імпортування великого файла. <screenshot
+> <mediaobject>
+	      <imageobject
+><imagedata fileref="progress-bar.png" format="PNG"/></imageobject>
+	      <textobject
+><phrase
+>Панель поступу &skrooge;</phrase
+></textobject>
+	    </mediaobject>
+	  </screenshot>
+	</para>
+      </sect2
+>     
+
+      </sect1>
+    
+    <sect1 id="import">
+      <title
+>Імпортування файлів</title>
+      
+      <para
+>У &skrooge; передбачено можливість імпорту файлів з інших програм обліку фінансів або вашого банку. Отже, якщо ви раніше працювали з іншою програмою або просто не бажаєте вводити дані записів вручну, у &skrooge; вам не потрібно буде витрачати свій час на зайві дії.</para>
+      
+      <sect2 id="supported_file_formats">
+	<title
+>Формати файлів, які підтримуються програмою</title>
+	
+	<para
+>Ви можете скористатися даними у одному з таких форматів:</para>
+	
+	<itemizedlist>
+	    <listitem
+><para
+>AFB120: французький стандарт.</para
+></listitem
+>	  
+	    <listitem
+><para
+>CSV: Comma Separated Value (значення, відокремлені комами). Хоча цей формат і не є, строго кажучи, форматом фінансових даних, він часто використовується для експорту даних банківськими та іншими програмами, здебільшого через простоту використання цих даних для створення електронної таблиці.</para
+></listitem>
+	    <listitem
+><para
+>GnuCash: формат програми GnuCash. Якщо ви переносите дані з відповідної програми, рекомендуємо скористатися цим форматом.</para
+></listitem>
+	    <listitem
+><para
+>Grisbi: формат програми Grisbi. Якщо ви переносите дані з відповідної програми, рекомендуємо скористатися цим форматом.</para
+></listitem>
+	    <listitem
+><para
+>Homebank: формат програми Homebank. Якщо ви переносите дані з відповідної програми, рекомендуємо скористатися цим форматом.</para
+></listitem>
+	    <listitem
+><para
+>Kmymoney: формат програми KMyMoney. Якщо ви переносите дані з відповідної програми, рекомендуємо скористатися цим форматом.</para
+></listitem>
+	    <listitem
+><para
+>MT940: міжнародний стандарт, визначений SWIFT.</para
+></listitem>
+	    <listitem
+><para
+>&Microsoft; Money: формат програми &Microsoft; Money. Якщо ви переносите дані з відповідної програми, рекомендуємо скористатися цим форматом.</para
+></listitem>
+	    <listitem
+><para
+>Money Manager Ex: формат програми Money Manager Ex. Якщо ви переносите дані з відповідної програми, рекомендуємо скористатися цим форматом.</para
+></listitem>
+	    <listitem
+><para
+>OFX: Open Financial eXchange. Відомий і добре документований формат, дані у якому &skrooge; може імпортувати за допомогою сторонньої бібліотеки (libofx). Автори програми рекомендують вам скористатися цим форматом для імпортування.</para
+></listitem>
+	    <listitem
+><para
+>QFX: QFX — різновид OFX для комерційного програмного забезпечення <trademark
+>Quicken</trademark
+>.</para
+></listitem>
+	    <listitem
+><para
+>QIF: <trademark
+>Quicken</trademark
+> Import File (файл імпортування <trademark
+>Quicken</trademark
+>). Можливо, найпоширеніший формат файлів. У цього формату є досить неприємні обмеження, зокрема неможливість встановлення одиниці операції та відсутність строгого формату дати.</para
+></listitem>
+	    <listitem
+><para
+>IIF: формат обміну <trademark
+>Intuit</trademark
+>, використовується у програмі <trademark
+>QuickBooks</trademark
+>.</para
+></listitem>
+	    <listitem
+><para
+>SKG: корисно для об’єднання двох документів &skrooge;.</para
+></listitem>
+            <listitem
+><para
+>&PDF;: надає змогу створювати записи операцій на основі накладних у форматі &PDF;. Саму накладну буде записано до властивості запису операції. Ознайомтеся із <link linkend="howto_extractor"
+>настановами</link
+>, якщо хочете дізнатися про те, як видобути дані із накладної, підтримки якої ще не передбачено.</para
+></listitem>
+	    <listitem
+><para
+>Модуль: крім того, &skrooge; може імпортувати записи операцій за допомогою модуля. У поточній версії передбачено можливість використання таких трьох модулів: <itemizedlist>
+	       <listitem
+><para
+><ulink url="http://weboob.org/"
+>weboob</ulink
+>: за допомогою цього модуля ви можете імпортувати усі записи операцій з усіх ваших банківських рахунків за допомогою лише одного клацання кнопкою миші. Для цього вам слід встановити <ulink url="http://weboob.org/"
+>weboob</ulink
+> і задіяти відповідний модуль у <link linkend="settings"
+>параметрах програми</link
+>.</para
+></listitem>
+	       <listitem
+><para
+><ulink url="http://weboob.org/"
+>weboob_coming</ulink
+>: за допомогою цього модуля ви можете імпортувати усі записи майбутніх операцій з усіх ваших банківських рахунків за допомогою лише одного клацання кнопкою миші. Цим модулем можна скористатися для карток із відкладеними витратами. Для цього вам слід встановити <ulink url="http://weboob.org/"
+>weboob</ulink
+> і задіяти відповідний модуль у <link linkend="settings"
+>параметрах програми</link
+>.</para
+></listitem
+>               
+	       <listitem
+><para
+><ulink url="https://www.aquamaniac.de/sites/aqbanking/overview.php"
+>aqbanking</ulink
+>: за допомогою цього модуля ви можете імпортувати усі операції з усіх ваших банківських рахунків одним клацанням кнопкою миші. Для цього вам слід встановити і налаштувати <ulink url="https://www.aquamaniac.de/sites/aqbanking/cli.php"
+>aqbanking-cli</ulink
+>.</para
+></listitem>
+	    </itemizedlist
+></para>
+	    
+            <tip
+><para
+>Якщо ви не хочете зберігати ваші паролі до облікових записів банківських установ у файлі налаштувань WEBOOB, можете зробити так: <itemizedlist>
+	       <listitem
+><para
+>Додайте пароль для кожної із банківських установ командою <userinput
+>kwallet-query -f Weboob kdewallet -w m_bank_name</userinput
+></para
+></listitem>
+	       <listitem
+><para
+>Виконайте редагування файла <filename
+>~/.config/weboob/backends</filename
+> у вашому улюбленому текстовому редакторі.</para
+></listitem>
+	       <listitem
+><para
+>Замініть у файлі налаштувань рядок <userinput
+>password = ваш_пароль</userinput
+> на <userinput
+>password = `kwallet-query -f Weboob kdewallet -r m_bank_name`</userinput
+></para
+></listitem>
+	    </itemizedlist
+>	    
+	    </para
+></tip>
+	      </listitem
+>	  
+	</itemizedlist>
+      </sect2>
+      
+      <sect2 id="csv_specificities">
+	<title
+>Особливості CSV</title>
+	<para
+>Оскільки CSV — формат без жорстких правил, &skrooge; не може передбачити розташування у файлі даних дат, категорій, значень... Для визначення відповідних полів &skrooge; припускає, що у файлі CSV містяться певні заголовки, що вказують на призначення даних з відповідного стовпчика. Ваш файл повинен містити принаймні стовпчики «Дата» і «Сума».</para>
+	<para
+>Налаштувати формат (тобто визначити, які заголовки слід пропустити) можна вручну визначенням параметрів у вікні <link linkend="settings"
+>налаштовування програми</link
+> (<menuchoice
+><guimenu
+>Параметри</guimenu
+> <guimenuitem
+>Налаштувати &skrooge;</guimenuitem
+></menuchoice
+>), сторінка <guilabel
+>Імпорт/Експорт</guilabel
+>.</para>
+      </sect2>
+      
+      <sect2 id="import_transactions">
+	<title
+>Імпортування операцій</title>
+	<para
+>Одним з основних принципів роботи &skrooge; є відсутність багатьох майстрів та зайвих діалогових вікон. Це особливо важливо під час імпортування даних, під час операції, коли інші програми намагаються отримати досить багато даних від користувача, але не &skrooge;. Якщо ви скористаєтеся пунктом меню <menuchoice
+><guimenu
+>Файл</guimenu
+> <guimenuitem
+>Імпортувати</guimenuitem
+></menuchoice
+>, програма попросить вас обрати файли (так, ви можете імпортувати одразу декілька файлів), і все! Програма &skrooge; сама визначить формат файлів і застосує відповідний режим імпортування.</para>
+	
+	<sect3 id="import_account">
+	  <title
+>Рахунок</title>
+	  <para
+>Одним з моментів, який може вас здивувати, є те, що програма не запитуватиме вас про те, до якого рахунку слід імпортувати дані операцій. Причиною є те, що &skrooge; прочитає номер рахунку з файла і пов’яже імпортовані записи операцій з відповідним рахунком.</para>
+	  <para
+>Якщо рахунку з відповідним номером знайдено не буде або якщо у файлі не міститиметься потрібних даних, &skrooge; вважатиме, що назва рахунку визначається назвою файла.</para>
+          <para
+>Якщо ви створите для рахунку властивість із назвою <quote
+>alias</quote
+>, &skrooge; спробує встановити відповідність значення властивості з метою виявлення найвідповіднішого рахунку.</para>
+	  <para
+>Якщо рахунку з відповідною назвою теж не буде знайдено, &skrooge; створить новий запис рахунку з назвою, що відповідатиме назві файла і імпортує всі записи операцій до цього рахунку. Після цього ви зможете перейменувати рахунок, виконати <link linkend="mass_update"
+>загальне оновлення</link
+> або скористатися можливістю <link linkend="search_and_process"
+>Пошук і обробка</link
+> для того, щоб пов’язати імпортовані записи операцій з вже існуючим рахунком.</para>
+	</sect3>
+	
+	<sect3 id="import_unit">
+	  <title
+>Одиниця</title>
+	  <para
+>Якщо у імпортованому файлі не вказано одиниці (таке трапляється у форматах QIF і CSV), &skrooge; припускатиме, що одиницею є вказана вами <link linkend="unit_types"
+>основна одиниця</link
+>. Якщо це не так, скористайтеся функціональною можливістю <link linkend="search_and_process"
+>Пошук і обробка</link
+> для виправлення даних.</para>
+	</sect3>
+	
+	<sect3 id="import_date">
+	  <title
+>Дата</title>
+	  <para
+>Іноді дані у вхідних файлах мають формат, відмінний від типового для вашої країни формату дат (таке може трапитися у файлах QIF і CSV, у файлах OFX формат дати вказано явним чином). &skrooge; спробує визначити формат дати. Якщо все працює не так, як потрібно, ви можете примусово вказати формат дати у <link linkend="settings"
+>параметрах програми</link
+>.</para>
+	</sect3>
+	
+	<sect3 id="import_status">
+	  <title
+>Стан імпортування</title>
+	  <para
+>Імпортовані записи операцій матимуть особливі позначки. Одразу після імпортування ці записи буде позначено, як «Імпортовані, ще не звірені». Після імпортування у вас може виникнути бажання перевірити, чи належним чином виконано імпортування. Отже за відповідною позначкою вам буде простіше знайти потрібні записи. За типових <link linkend="settings"
+>налаштувань</link
+> записи подібних операцій буде також позначено синім кольором.</para>
+	  <tip
+><para
+>Якщо ви не бажаєте виконувати перевірку, ви можете позначити пункт <guilabel
+>Автоматичне підтвердження після імпортування</guilabel
+> у <link linkend="settings"
+>параметрах програми</link
+>.</para
+></tip>
+	  <tip
+><para
+>Після імпортування з метою категоризації записів операцій можна автоматично запустити засіб обробки <link linkend="search_and_process"
+>Пошук і обробка</link
+>.</para
+></tip>
+	</sect3>
+      </sect2>
+      
+      <sect2 id="merge_transactions">
+	<title
+>Об’єднання операцій після імпортування</title>
+	<para
+>Інколи виникають ситуації, коли ви ввели дані операції вручну, а потім імпортували ці самі дані з виписки банку. У таких випадках у списку операцій буде два записи для одної операції.</para>
+	<para
+>Об’єднати ці два записи можна так: позначте їх, а потім виберіть у контекстному меню або меню змін пункт <guimenuitem
+>Об’єднати імпортовані операції</guimenuitem
+>. У відповідь програма додасть дані, які ви ввели вручну до імпортованого запису, а потім вилучить запис, введений вручну.</para>
+      </sect2>
+    </sect1>
+    
+    <sect1 id="export">
+      <title
+>Експорт</title>
+      <para
+>У &skrooge; передбачено декілька способів експортування даних, залежно від призначення даних.</para>
+      
+      <sect2 id="export_file">
+	<title
+>Експорт всіх ваших даних до єдиного файла</title>
+	<para
+>За допомогою пункту меню <menuchoice
+><guimenu
+>Файл</guimenu
+> <guimenuitem
+>Експортувати</guimenuitem
+></menuchoice
+> можна наказати програмі створити файл CSV, QIF, JSON, KMyMoney, Ledger, IIF, Sqlite, Sqlcipher або &XML;, де міститимуться всі записи операцій поточного документа. Цим варіантом слід скористатися, якщо вам потрібно експортувати дані до іншої програми.</para>
+      </sect2>
+      
+      <sect2 id="export_partial_file">
+	<title
+>Частковий експорт ваших даних до єдиного файла</title>
+	<para
+>За допомогою пункту меню <menuchoice
+><guimenu
+>Файл</guimenu
+> <guimenuitem
+>Експортувати</guimenuitem
+></menuchoice
+> можна наказати програмі створити файл CSV, QIF, JSON, Kmymoney, Ledger, IIF, Sqlite, Sqlcipher або &XML;, де міститимуться записи операцій з вибраних облікових записів або дані вибраної операції. Цим варіантом слід скористатися, якщо вам потрібно експортувати дані до іншої програми.</para>
+      </sect2>
+      
+      <sect2 id="export_table">
+	<title
+>Експорт певної таблиці</title>
+	<para
+>Усі <link linkend="tables"
+>таблиці</link
+> у &skrooge; можна експортувати до CSV, звичайного текстового формату, &HTML;, ODT, &PDF; або формату SVG. Зробити це можна з контекстного меню, яке можна викликати клацанням правою кнопкою миші на заголовку стовпчика, або за допомогою натискання піктограми параметрів на заголовку таблиці. В обох випадках слід вибрати пункт <guimenu
+>Експортувати</guimenu
+>.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="export_table_menu.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Експортувати можна будь-яку показану таблицю, отже ви можете експортувати довільні дані, зібрані у таблицю.</para>
+      </sect2>
+      
+      <sect2 id="export_graph">
+	<title
+>Експорт графіків</title>
+	<para
+>У &skrooge; перебачено можливість експорту <link linkend="reports"
+>графіків</link
+> у форматах &PDF;, SVG або інших форматах, що підтримуються &Qt;; (PNG, JPG, &GIF;, TIFF...). Для того, щоб експортувати дані, наведіть вказівник миші на графік, клацніть правою кнопкою миші і оберіть у контекстному меню пункт <guimenu
+>Експортувати</guimenu
+>.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="export_graph_menu.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	
+      </sect2>
+      
+    </sect1>
+  </chapter>
+  
+  <chapter id="using-skrooge-beginner">
+    <title
+>Користування &skrooge; (для початківців)</title>
+
+    <sect1 id="menu-main">
+      <title
+>Основне меню</title>
+      <para
+>У &skrooge; використовується стандартна схема меню &kde;. Отже, у програми є багато пунктів меню, які є спільними для усіх програм &kde;. Докладніші відомості щодо цих пунктів меню можна отримати з <ulink url="help:/fundamentals/menus.html"
+>цього розділу довідки</ulink
+>. </para>
+      <para
+>Нижче наведено опис усіх специфічних для &skrooge; пунктів меню. </para>
+      <sect2 id="menu-file">
+	<title
+>Меню «Файл»</title>
+      <para
+>У цьому меню зібрані усі команди, пов’язані із документом &skrooge;.</para>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="menu_file.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+      <itemizedlist>
+	<listitem
+><para
+><guimenuitem
+>Змінити пароль...</guimenuitem
+>: змінити пароль. Не заповнюйте поле пароля, щоб зняти парольний захист.</para
+></listitem>
+	<listitem
+><para
+><guimenuitem
+>Друкувати...</guimenuitem
+>: надрукувати відкриті сторінки.</para
+></listitem>
+	<listitem
+><para
+><guimenuitem
+>Перегляд друку</guimenuitem
+>: показ попереднього перегляду надрукованої сторінки.</para
+></listitem>
+	<listitem
+><para
+><guimenuitem
+>Імпортувати</guimenuitem
+>: імпортувати дані. <screenshot
+> <mediaobject
+> <imageobject
+><imagedata fileref="menu_import.png"/></imageobject>
+	  </mediaobject>
+	</screenshot
+>	    
+	<itemizedlist>
+	  <listitem
+><para
+><guimenuitem
+>Імпортувати стандартні закладки</guimenuitem
+>: імпортувати стандартні закладки. Такі закладки створюються під час створення документів.</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Імпортувати категорії</guimenuitem
+>: імпортувати набір попередньо визначених категорій. Перелік категорій залежить від вибраної вами мови інтерфейсу програми.</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Імпортувати</guimenuitem
+>: <link linkend="import"
+>імпортувати</link
+> записи операцій з файлів.</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Імпортувати за допомогою модуля</guimenuitem
+>: <link linkend="import"
+>імпортувати</link
+> записи операцій за допомогою усіх оголошених модулів обробки.</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Імпортувати суми у валюті...</guimenuitem
+>: імпортувати дані щодо сум у валюті з файлів. Звичайно ж, у файлі csv має бути три стовпчики даних (одиниця, дата і сума).</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Пошук...</guimenuitem
+>: відкрити сторінку <link linkend="search_and_process"
+>Знайти і обробити</link
+> з попередньо визначеним фільтром, що відповідає позначеним об’єктам. Звичайно ж, у файлі csv має бути два стовпчики (отримувач і категорія).</para
+></listitem
+>          
+	  </itemizedlist
+> </para
+></listitem>
+	<listitem
+><para
+><guimenuitem
+>Експортувати...</guimenuitem
+>: <link linkend="export_file"
+>експортувати</link
+> дані операцій до файла.</para
+></listitem>
+	</itemizedlist>
+      </sect2
+>   
+      
+      <sect2 id="menu-edit">
+	<title
+>Меню «Зміни»</title>
+      <para
+>У цьому меню зібрані усіх команди, пов’язані із внесенням змін у позначені об’єкти.</para>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="menu_edit.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+      <itemizedlist>
+	  <listitem
+><para
+><guimenuitem
+>Вернути</guimenuitem
+>: скасувати останні внесені зміни.</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Повторити</guimenuitem
+>: повторно виконати раніше скасовану дію.</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Повернутися до попередньої версії документа</guimenuitem
+>: скасувати внесені і незбережені зміни.</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Вилучити</guimenuitem
+>: вилучити позначені об’єкти (операції, рахунки, категорії тощо).</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Додати властивість</guimenuitem
+>: додати до позначених об’єктів запис властивості.</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Вибрати все</guimenuitem
+>: позначити усі рядки <link linkend="tables"
+>таблиці</link
+> на поточній сторінці.</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Швидке редагування</guimenuitem
+>: полегшує створення <link linkend="transactions"
+>записів операцій</link
+>, автоматично заповнюючи поля на основі попередньо створених записів операцій.</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Пошук...</guimenuitem
+>: відкрити сторінку <link linkend="search_and_process"
+>Знайти і обробити</link
+> з попередньо визначеним фільтром, що відповідає позначеним об’єктам.</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Перемкнути підсвічування</guimenuitem
+>: перемкнути стан підсвічування позначених об’єктів.</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Перемкнути закриття</guimenuitem
+>: перемкнути стан закриття об’єктів.</para
+></listitem
+>          
+	  <listitem
+><para
+><guimenuitem
+>Звірити...</guimenuitem
+>: відкрити сторінку <link linkend="transactions"
+>операцій</link
+> у режимі <link linkend="reconciliation"
+>узгодження</link
+>.</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Вказати</guimenuitem
+>: додати позначки до вибраних операцій.</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Групувати операції</guimenuitem
+>: згрупувати позначені операції. Групування призначено для створення зв'язків між операціями. Таке групування може бути корисним для переказів між рахунками або у випадку придбання чи продажу цінних паперів. Ви можете скористатися ним з будь-якою іншою метою. Зауважте, що у звітах і графіках ви можете вмикати і вимикати врахування групування операцій.</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Зняти групування операцій...</guimenuitem
+>: скасувати групування позначених операцій.</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Дублювати</guimenuitem
+>: дублювати позначений запис операції, тобто створити новий запис на основі попереднього.</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Створити шаблон</guimenuitem
+>: створити <link linkend="templates"
+>шаблон</link
+> на основі позначеного запису операції.</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Застосувати шаблон</guimenuitem
+>: застосувати <link linkend="templates"
+>шаблон</link
+> до позначених записів операцій.</para
+></listitem
+>          
+	  <listitem
+><para
+><guimenuitem
+>Об’єднати підоперації</guimenuitem
+>: об’єднати позначені записи операцій у один запис розділеної операції.</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Запланувати</guimenuitem
+>: запланувати позначену операцію.</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Увімкнути або вимкнути перевірку імпортованих операцій</guimenuitem
+>: перевірити усі позначені імпортовані записи операцій.</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Об’єднати імпортовані операції</guimenuitem
+>: об’єднати імпортований запис операції з іншим записом операції, введеним вручну. Якщо суми операцій будуть різними, програма попросить вас підтвердити правильність суми.</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Розділити акцію</guimenuitem
+>: розділити позначений запис <link linkend="units"
+>акції</link
+>.</para
+></listitem
+>	  
+      </itemizedlist>
+      </sect2
+>	
+      
+      <sect2 id="menu-view">
+	<title
+>Меню «Перегляд»</title>
+	<para
+>У цьому меню зібрано усіх команди, пов’язані зі <link linkend="multi-tabs"
+>сторінками</link
+>.</para
+>	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="menu_view.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+      <itemizedlist>
+	  <listitem
+><para
+><guimenuitem
+>Увімкнути редактор</guimenuitem
+>: задіяти редактор на поточній сторінці.</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Створити вкладку</guimenuitem
+>: відкрити нову вкладку.</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Повторення відкриття останньої закритої сторінки</guimenuitem
+>: відновити останню закриту сторінку.</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Закрити</guimenuitem
+>: закрити поточну сторінку.</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Закрити всі</guimenuitem
+>: закрити всі сторінки, окрім пришпилених.</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Закрити всі інші</guimenuitem
+>: закрити усі сторінки, окрім поточної і пришпилених.</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Фіксування цієї сторінки</guimenuitem
+>: зафіксувати (пришпилити) поточну сторінку. Фіксуванням можна уникнути заміни сторінки іншою або закриття сторінки.</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Відновлення стану сторінки</guimenuitem
+>: відновити початковий стан поточної сторінки.</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Збереження стану сторінки</guimenuitem
+>: зберегти стан поточної сторінки.</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Перезаписати стан закладки</guimenuitem
+>: зберегти стан поточної сторінки-закладки. До нової версії закладки буде записано дані щодо зміненого стану.</para
+></listitem
+>	  
+      </itemizedlist>
+      </sect2
+>	 
+      
+      <sect2 id="menu-do">
+	<title
+>Меню «Перехід»</title>
+	<para
+>У цьому меню зібрано усіх команди, пов’язані зі <link linkend="multi-tabs"
+>сторінками</link
+>.</para
+>	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="menu_go1.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+
+      <itemizedlist>
+	  <listitem
+><para
+><guimenuitem
+>Домівка</guimenuitem
+>: закрити усі сторінки і повторно відкрити усі закладки, які було автоматично завантажено під час відкриття документа.</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Назад</guimenuitem
+>: повернутися до попередньої сторінки, подібно до повернення до попередньої сторінки у програмі для перегляду інтернету.</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Далі</guimenuitem
+>: перейти до наступної сторінки, подібно до переходу до наступної сторінки у програмі для перегляду інтернету.</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Відкрити список підсвічувань…</guimenuitem
+>: відкрити список підсвічувань операцій.</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Відкрити останню змінену...</guimenuitem
+>: відкрити записи операцій, які було змінено у результаті виконання останньої дії у програмі.</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Відкрити потенційні дублікати...</guimenuitem
+>: відкрити сторінку записів операцій, для яких вказано однакові суми і однакові дати.</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Відкрити підоперації...</guimenuitem
+>: відкрити підоперації позначеного запису операції. Те саме, що і подвійне клацання на пункті операції.</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Відкрити звіт...</guimenuitem
+>: відкрити звіт на основі позначених пунктів. Такий звіт є дуже корисним. Приклад: якщо вами було позначено два рахунки і використано цей пункт меню, буде відкрито сторінку <link linkend="reports"
+>звіту</link
+>, але лише для операцій з цих двох рахунків.</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Відкрити імпортовані операції, які ще не перевірено...</guimenuitem
+>: відкрити сторінку зі списком усіх імпортованих операцій, які ще не було перевірено.</para
+></listitem
+>	    
+      </itemizedlist>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="menu_go2.png"/></imageobject>
+	  </mediaobject>
+	</screenshot
+>	
+      <itemizedlist>
+	  <listitem
+><para
+><guimenuitem
+>Відкрити операції, не пов’язані з категоріями…</guimenuitem
+>: відкрити записи операцій, які не пов’язано із жодною з категорій.</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Відкрити перекази, не пов’язані з категоріями…</guimenuitem
+>: відкрити перекази, які не пов’язано із жодною з категорій.</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Відкрити операції, не пов’язані з отримувачем…</guimenuitem
+>: відкрити записи операцій, які не пов’язано із жодним записом отримувача.</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Відкрити перекази, не пов’язані з отримувачами…</guimenuitem
+>: відкрити перекази, які не пов’язано із жодним з отримувачів.</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Відкрити операції без визначеного режиму…</guimenuitem
+>: відкрити записи операцій, для яких режим не було визначено.</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Відкрити записи операцій з невирівняними датами…</guimenuitem
+>: відкрити записи операцій, у яких дату не вирівняно з датою підоперації.</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Відкрити записи операцій з невирівняними коментарями…</guimenuitem
+>: відкрити записи операцій, у яких дату коментаря не вирівняно з датою підоперації.</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Відкрити записи операцій, які є єдиними записами у своїй групі…</guimenuitem
+>: відкрити усі записи операцій, які є єдиними у своїй групі.</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Відкрити записи дуже давніх операцій</guimenuitem
+>: відкрити записи операцій, дата здійснення яких є надто давньою.</para
+></listitem>
+      </itemizedlist>
+      </sect2
+>      
+      
+      <sect2 id="menu-tools">
+	<title
+>Меню «Інструменти»</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="menu_tools.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+      <itemizedlist>
+	  <listitem
+><para
+><guimenuitem
+>Знайти і згрупувати перекази</guimenuitem
+>: згрупувати потенційно схожі перекази.</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Очистити банківські імпорти</guimenuitem
+>: очистити операції після імпортування.</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Анонімізувати</guimenuitem
+>: анонімізувати документ, який згодом буде спрямовано розробникам &skrooge; для усування вад у програмі. </para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Вирівняти коментар записів підоперацій</guimenuitem
+>: виправити неузгоджені коментарі у записах операцій.</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Вирівняти дати записів підоперацій</guimenuitem
+>: виправити невирівняні дати у записах операцій.</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Вилучити групи, які містять лише один запис операції</guimenuitem
+>: усунути зайві записи груп.</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Вилучити невикористані записи отримувачів</guimenuitem
+>: вилучити невикористані записи отримувачів.</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Вилучити невикористані категорії</guimenuitem
+>: вилучити невикористані записи категорій.</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Вилучити невикористані одиниці</guimenuitem
+>: вилучити невикористані записи одиниць.</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Узгодити операції, які не потребують подальших дій</guimenuitem
+>: узгодити імпортовані записи операцій. </para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Обробити правила ведення бюджету</guimenuitem
+>: повторно обчислити усі параметри <link linkend="budgets"
+>бюджетів</link
+> на основі визначених правил.</para
+></listitem>
+      </itemizedlist>
+      </sect2
+>     
+      <sect2 id="menu-settings">
+	<title
+>Меню «Параметри»</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="menu_settings.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+      <itemizedlist>
+	  <listitem
+><para
+><guimenuitem
+>Показати смужку меню</guimenuitem
+>: для показу або приховування смужки меню</para
+></listitem>
+          <listitem
+><para
+><guimenuitem
+>Показані панелі</guimenuitem
+>: для показу або приховування панелей інструментів</para
+></listitem>
+          <listitem
+><para
+><guimenuitem
+>Показувати смужку стану</guimenuitem
+>: для показу або приховування смужки стану</para
+></listitem>
+          <listitem
+><para
+><guimenuitem
+>Налаштувати клавіатурні скорочення...</guimenuitem
+>: для зміни клавіатурних прив'язок усіх команд програми.</para
+></listitem>
+          <listitem
+><para
+><guimenuitem
+>Налаштувати пенали...</guimenuitem
+>: для внесення змін до компонування панелей інструментів</para
+></listitem>
+          <listitem
+><para
+><guimenuitem
+>Налаштувати сповіщення...</guimenuitem
+>: для внесення змін до системи сповіщень </para
+></listitem>
+          <listitem
+><para
+><guimenuitem
+>Налаштувати &skrooge;…</guimenuitem
+>: доступ до основних <link linkend="settings"
+>параметрів</link
+> роботи &skrooge;</para
+></listitem>
+      </itemizedlist>
+      </sect2
+>     
+    </sect1>
+    
+    <sect1 id="dashboard">
+      <title
+>Панель приладів</title>
+      <para
+>Панель приладів — це додаток &skrooge;, який показує загальну інформацію щодо вашого фінансового стану.</para>
+      
+      <screenshot>
+	<mediaobject>
+	  <imageobject
+><imagedata fileref="dashboard.png"/></imageobject>
+	</mediaobject>
+      </screenshot>
+      
+      <para
+>Додати нові графічні записи за допомогою у верхньому правому куті. Налаштувати кожен графічний запис можна клацанням піктограми на ньому. Упорядкувати графічні пункти на панелі приладів можна перетягуванням зі скиданням за допомогою вказівника миші.</para>
+      <tip
+><para
+>У поєднанні із <link linkend="bookmarks"
+>закладками</link
+> це чудовий спосіб швидкого огляду аспектів вашого поточного фінансового стану.</para
+></tip>
+      
+      <sect2 id="dashboard_advice">
+	<title
+>Поради</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_advice.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>За допомогою цього пункту можна переглянути список порад за пріоритетністю. Для кожного із пунктів списку ви зможете виконати такі дії: <itemizedlist>
+	  <listitem
+><para
+>Відкрити або очистити відповідні записи операцій.</para
+></listitem>
+	  <listitem
+><para
+>Відкинути пораду.</para
+></listitem>
+	  <listitem
+><para
+>Відкинути пораду для поточного місяця.</para
+></listitem>
+	  <listitem
+><para
+>Відкинути поради цього типу.</para
+></listitem>
+	  <listitem
+><para
+>Відкинути цей тип поради для поточного місяця.</para
+></listitem>
+      </itemizedlist
+>	  
+	</para>
+      </sect2
+>      
+      
+      <sect2 id="dashboard_tip">
+	<title
+>Порада дня</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_tip.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Показ поради дня. Ви можете клацнути на цій панелі, щоб переглянути наступну пораду.</para>
+      </sect2
+>          
+
+      <sect2 id="dashboard_accounts_light">
+	<title
+>Рахунки (простий)</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_accounts_light.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Показ балансу кожного з рахунків і типу рахунку. Ви можете налаштувати цю панель так, щоб бачити лише потрібні вам дані.</para>
+      </sect2
+>     
+      
+      <sect2 id="dashboard_accounts_full">
+	<title
+>Рахунки (повний)</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_accounts_full.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Показ балансу та типу кожного рахунків. Баланс можна порівняти з балансом попереднього місяця та року.</para>
+      </sect2
+>    
+      
+      <sect2 id="dashboard_banks_light">
+	<title
+>Банки (простий)</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_banks_light.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Показ балансу для кожного з банків. З цієї панелі можна безпосередньо відкрити відповідний звіт.</para>
+      </sect2
+>     
+      
+      <sect2 id="dashboard_banks_full">
+	<title
+>Банки (повний)</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_banks_full.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Показ балансу для кожного з банків. Баланс можна порівняти з балансом попереднього місяця або року.</para>
+      </sect2
+>        
+      
+      <sect2 id="dashboard_income">
+	<title
+>Вклади і зняття</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_income.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Показ вкладів, знять та заощаджень для двох різних періодів часу, наприклад поточного місяця, поточного року, попереднього місяця тощо. Звичайно ж, ви можете виконати такі дії: <itemizedlist>
+	    <listitem
+><para
+>Вибрати два потрібні вам періоди.</para
+></listitem>
+	    <listitem
+><para
+>Визначити, чи будуть братися до уваги <link linkend="transfer"
+>перекази</link
+>.</para
+></listitem>
+	    <listitem
+><para
+>Визначити, чи слід брати до уваги операції <link linkend="trackers"
+>зі стеженням</link
+>.</para
+></listitem>
+	    <listitem
+><para
+>Відкрити відповідний <link linkend="reports"
+>звіт</link
+>.</para
+></listitem>
+	</itemizedlist
+>		  
+	</para>
+      </sect2
+>       
+
+      <sect2 id="dashboard_highlighted">
+	<title
+>Підсвічені операції</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_highlighted.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Показ списку підсвічених операцій.</para>
+      </sect2
+>      
+      
+      <sect2 id="dashboard_scheduled">
+	<title
+>Заплановані операції</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_scheduled.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Показ списку <link linkend="scheduled"
+>запланованих</link
+> операцій.</para>
+      </sect2
+>         
+      
+      <sect2 id="dashboard_categories">
+	<title
+>5 основних категорій зняття з рахунку</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_categories.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Показ 5 основних категорій витрат для визначеного діапазону дат.</para>
+      </sect2
+>       
+      
+      <sect2 id="dashboard_variations">
+	<title
+>5 основних змін</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_variations.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Показ 5 основних змін прибутків і витрат для визначеного діапазону дат.</para>
+      </sect2
+>         
+      
+      <sect2 id="dashboard_budget">
+	<title
+>Бюджет</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_budget.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Показ бюджету для бажаного діапазону дат.</para>
+      </sect2
+>        
+      
+      <sect2 id="dashboard_alarms">
+	<title
+>Нагадування</title
+>	
+	<para
+>Показ нагадувань, визначених на сторінці <link linkend="search_and_process"
+>Знайти і обробити</link
+>.</para>
+      </sect2
+>    
+      
+      <sect2 id="dashboard_report">
+	<title
+>Звіт</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_report.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Показ потрібного вам <link linkend="reports"
+>звіту</link
+>.</para>
+      </sect2
+>         
+      
+      <sect2 id="dashboard_quotes">
+	<title
+>Курси</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_quotes.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Показати курс визначених <link linkend="units"
+>одиниць</link
+> та його змін. Ви можете вибрати типи одиниць для показу.</para>
+      </sect2
+>          
+      
+      <sect2 id="dashboard_portfolio">
+	<title
+>Портфоліо</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_portfolio.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Показати усі дані щодо акцій, які перебувають у вашій власності.</para>
+      </sect2
+>       
+      
+      <sect2 id="dashboard_interest">
+	<title
+>Обчислені відсотки</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_interest.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Показ оцінки прибутків для кожного з рахунків. Для визначення відсоткової ставки для кожного з рахунків скористайтеся сторінкою <link linkend="simulations"
+>імітації</link
+>.</para>
+      </sect2
+>    
+      
+      <sect2 id="dashboard_pfs">
+	<title
+>Особистий фінансовий рейтинг</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_pfs.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Показати ваш особистий фінансовий рейтинг.</para>
+      </sect2
+>        
+    </sect1>
+    
+    <sect1 id="accounts">
+      <title
+>Банк і рахунки</title>
+      <para
+>Цей додаток призначено для керування вашими рахунками.</para>
+      
+      <screenshot>
+	<mediaobject>
+	  <imageobject
+><imagedata fileref="bank_accounts.png" format="PNG"/></imageobject>
+	  <textobject
+><phrase
+>Перегляд «Банк і рахунки»</phrase
+></textobject>
+	</mediaobject>
+      </screenshot>
+      
+      
+      <sect2 id="account_properties"
+> 
+	<title
+>Властивості рахунку</title>
+	<para
+>Рахунок &skrooge; може мати такі властивості: <variablelist>
+	    <varlistentry>
+	      <term
+>Банк</term>
+	      <listitem
+><para
+>Ви можете обрати банк зі спадного списку (тут міститься список відомих банків вашої країни) або ввести назву, якщо банку у списку немає. Якщо список порожній, команда розробки &skrooge; ще не має потрібних відомостей. Ви можете зв’язатися з нами і допомогти!</para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Рахунок</term>
+	      <listitem
+><para
+>Назва, яку ви бажаєте використати для рахунку.</para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Тип</term>
+	      <listitem
+><para
+>Типом рахунку може бути <itemizedlist>
+		    <listitem
+><para
+>Поточний</para
+></listitem>
+		    <listitem
+><para
+>Кредитна картка: рахунки цього типу мають специфічний <link linkend="reconciliation"
+>режим узгодження</link
+>.</para
+></listitem>
+		    <listitem
+><para
+>Ощадний</para
+></listitem>
+		    <listitem
+><para
+>Інвестиція</para
+></listitem>
+		    <listitem
+><para
+>Активи</para
+></listitem>
+		    <listitem
+><para
+>Кредит: перекази на рахунок цього типу не беруться до уваги у звітах.</para
+></listitem>
+		    <listitem
+><para
+>Пенсія</para
+></listitem>
+		    <listitem
+><para
+>Гаманець: запис рахунку цього типу не містить назви банку.</para
+></listitem>
+		    <listitem
+><para
+>Інше</para
+></listitem>
+		  </itemizedlist>
+		  </para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Номер банку</term>
+	      <listitem
+><para
+>Ідентифікаційний номер банку</para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Номер агенції</term>
+	      <listitem
+><para
+>Ідентифікаційний номер агенції</para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Номер рахунку</term>
+	      <listitem
+><para
+>Ідентифікаційний номер рахунку. Це значення дуже важливим для встановлення відповідності рахунків під час імпортування даних.</para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Адреса</term>
+	      <listitem
+><para
+>Адреса агенції</para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Коментар</term>
+	      <listitem
+><para
+>Будь-що!</para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Початковий баланс</term>
+	      <listitem
+><para
+>Початкова сума рахунку. Для кредитних рахунків сума має бути від'ємно і рівною розміру кредиту.</para
+></listitem>
+	    </varlistentry
+>	  
+	    <varlistentry>
+	      <term
+>Обмеження на мінімум</term>
+	      <listitem
+><para
+>Мінімальне обмеження, за досягнення якого &skrooge; має вас попередити. </para
+></listitem>
+	    </varlistentry
+>	    
+	    <varlistentry>
+	      <term
+>Обмеження на максимум</term>
+	      <listitem
+><para
+>Максимальне обмеження, за досягнення якого &skrooge; має вас попередити. </para
+></listitem>
+	    </varlistentry
+>	    
+	  </variablelist>
+	</para>
+      </sect2>
+      
+      <sect2 id="accounts_list">
+	<title
+>Список рахунків</title>
+	<para
+>Список рахунків виглядає як таблиця, у якій кожному рахунку відведено один рядок. Окрім <link linkend="account_properties"
+>властивостей</link
+>, які ви визначили для рахунку, &skrooge; показує такі стовпчики даних:</para>
+	
+	<variablelist>
+	  <varlistentry>
+	    <term
+>Сума</term>
+	    <listitem
+><para
+>Сума, що зберігається на рахунку з врахуванням здійснення всіх операцій, було їх підтверджено чи ні.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Сплачено</term>
+	    <listitem
+><para
+>Сума всіх підтверджених операцій. Ця сума має дорівнювати сумі, записаній на вашій останній виписці з банку.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Планується</term>
+	    <listitem
+><para
+>Різниця між двома попередніми значеннями.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Кількість операцій</term>
+	    <listitem
+><para
+>Загальна кількість операцій, виконаних за допомогою цього рахунку.</para
+></listitem>
+	  </varlistentry>
+	</variablelist>
+	
+	<para
+>Як і у решті списків &skrooge;, ви можете повністю <link linkend="tables"
+>налаштувати показ стовпчиків, порядок, розмір</link
+>.</para>
+	
+      </sect2>
+      
+      <sect2 id="create_account">
+	<title
+>Створення рахунку</title>
+	<para
+>Створити рахунок можна за допомогою панелі редагування, яку розташовано під списком рахунків у режимі перегляду «Рахунки».</para>
+	
+	<para
+>Щоб створити рахунок, введіть його атрибути (обов’язкові поля позначено жирним) і натисніть кнопку <guibutton
+>Додати</guibutton
+>. У &skrooge; не потрібно вказувати початкову суму на рахунку. Для того, щоб встановити початкову суму, створіть операцію, що відповідає цій початковій сумі.</para>
+      </sect2>
+      
+      <sect2 id="modify_account">
+	<title
+>Зміна рахунку</title>
+	<para
+>Щоб змінити параметри рахунку, позначте його, змініть його атрибути і натисніть кнопку «Змінити».</para>
+      </sect2>
+      
+      <sect2 id="delete_account">
+	<title
+>Вилучення рахунків</title>
+	<para
+>Щоб вилучити рахунок, позначте його і натисніть клавішу <keycap
+>Delete</keycap
+>, скористайтесь відповідним пунктом контекстного меню або піктограмою панелі інструментів.</para>
+	<warning
+><para
+>Після вилучення рахунку, всі операції, що стосуються цього рахунку також буде вилучено. (Але ви завжди можете <link linkend="undo_redo"
+>скасувати</link
+> вилучення)</para
+></warning>
+      </sect2>
+      
+    </sect1>
+    
+    <sect1 id="transactions">
+      <title
+>Транзакції</title>
+      <para
+>Операції — це будь-які дії, які ви можете виконати з вашим рахунком: витрати, прибутки, перекази, продажі, купівлі тощо. Робота з операціями — це основна робота, яку можна виконувати за допомогою &skrooge;.</para>
+      
+      <para
+>Для того, щоб мати змогу вказувати операції, вам слід створити принаймні один <link linkend="accounts"
+>рахунок</link
+>.</para>
+      
+      <screenshot>
+	<mediaobject>
+	  <imageobject
+><imagedata fileref="transactions.png" format="PNG"/></imageobject>
+	  <textobject
+><phrase
+>Перегляд операцій</phrase
+></textobject>
+	</mediaobject>
+      </screenshot>
+      
+      <sect2 id="transaction_properties">
+	<title
+>Властивості операцій</title>
+	
+	<variablelist>
+	  <varlistentry>
+	    <term
+>Рахунок</term>
+	    <listitem
+><para
+>Рахунок, на якому буде здійснено операцію. Оберіть його зі списку існуючих рахунків.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Дата</term>
+	    <listitem
+><para
+>Дата, коли було здійснено операцію. Доступ до календаря можна отримати натисканням кнопки зі стрілочкою вниз, розташованої у правій частині поля.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term id="quantity_field"
+>Сума</term>
+	    <listitem>
+	      <para
+>Кількість — це кількість одиниць, які ви витратите або отримаєте внаслідок виконання цієї операції. У &skrooge; значення кількості слід вводити у два окремих поля: «Кількість» та «Одиниця».</para>
+	      <para
+>Кількість має від’ємне значення для витрат (-30, наприклад) і додатне значення для прибутків (+250 або просто 250). Це поле працює як калькулятор, тобто, якщо ви введете вираз на зразок 10 + 3,23*2, у полі буде показано результат обчислення: 16,46.</para>
+              <para
+>Якщо знак для кількості не вказано, &skrooge; використовуватиме категорію для визначення відповідного знаку.</para>
+	      <para
+>У &skrooge; потрібно вводити <link linkend="units"
+>одиниці</link
+>, оскільки операцію може бути здійснено не у основній валюті програми. Наприклад, якщо ви купуєте або продаєте акції, одиницею операції буде одиниця котирування акції.</para>
+	    </listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Отримувач</term>
+	    <listitem
+><para
+>Кому виконано сплату або хто отримає гроші.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Режим</term>
+	    <listitem>
+	      <para
+>Визначає режим сплати, використаний під час здійснення операції. Це може бути кредитна картка, чек, рахунок у банку... Вам просто треба вказати спосіб оплати.</para>
+	      <para
+>З режимом операції може бути пов’язано певний номер. Цим номером може бути номер чека або номер переказу.</para>
+	    </listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Категорія</term>
+	    <listitem>
+	      <para
+>Визначає <link linkend="categories"
+>Категорію</link
+>, до якої належить ця операція. Якщо ви бажаєте вплинути операцією на декілька категорій, скористайтеся режимом <link linkend="split_transaction"
+>дроблення</link
+>.</para>
+	      <para
+>Ви можете обрати або існуючу категорію, або ввести нову. У останньому випадку &skrooge; створить цю категорію разом з операцією.</para>
+	      <para
+>Роздільником між батьківською і дочірніми категоріями є символ &gt;. Якщо ви введете Одяг &gt; Взуття, &skrooge; створить категорію «Одяг», якщо такої категорії ще не існувало, і дочірню категорію «Взуття».</para>
+	      <para
+>Звичайно ж, ви можете створювати цілі дерева категорій, наприклад, «Транспорт &gt; Авто &gt; Пальне &gt; Неетильоване». &skrooge; створить всю потрібну ієрархічну структуру.</para>
+	    </listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Коментар</term>
+	    <listitem
+><para
+>Будь-який бажаний коментар.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Стеження</term>
+	    <listitem
+><para
+>Якщо ви бажаєте стежити за компенсацією цієї операції, введіть у відповідне поле назву <link linkend="trackers"
+>Стеження</link
+>. Якщо вам потрібно задіяти для операції декілька стежень, скористайтеся режимом <link linkend="split_transaction"
+>дроблення</link
+>.</para
+></listitem>
+	  </varlistentry>
+	</variablelist>
+	
+      </sect2>
+      
+      <sect2 id="transactions_list">
+	<title
+>Список операцій</title>
+	<para
+>Список операцій має форму таблиці, у якій показано усі операції, які відповідають поточному <link linkend="show"
+>фільтруванню таблиці</link
+> та критеріям пошуку. Кожному запису операції відповідає окремий рядок. Окрім стандартних <link linkend="transaction_properties"
+>властивостей операції</link
+> та будь-яких інших <link linkend="account_properties"
+>властивостей</link
+>, які визначено вами для цього рахунку, &skrooge; показує такі стовпчики даних:</para>
+	
+	<variablelist>
+	  <varlistentry>
+	    <term
+>Стан</term>
+	    <listitem
+><para
+>Заповнений квадратик означає, що дію було підтверджено під час <link linkend="reconciliation"
+>узгодження</link
+> рахунку. Напівзаповнений квадратик означає, що цю дію було <link linkend="terminology_marked_transaction"
+>вказано</link
+> і згодом буде <link linkend="reconciliation"
+>узгоджено</link
+>.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Закладка</term>
+	    <listitem
+><para
+>Додати закладку для операції значить додати її до списку основних операцій.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Заплановано</term>
+	    <listitem
+><para
+>Якщо операція належить до тих операцій, які виконуються за розкладом, у цьому стовпчику буде показано піктограму секундоміра.</para
+></listitem>
+	  </varlistentry>
+	</variablelist>
+	
+	<para
+>Ці стовпчики також мають певні особливості:</para>
+	
+	<variablelist>
+	  <varlistentry>
+	    <term
+>Режим</term>
+	    <listitem
+><para
+>Якщо операція є частиною <link linkend="transfer"
+>переказу</link
+>, перед назвою режиму буде показано піктограму з подвійною стрілочкою.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Категорія</term>
+	    <listitem
+><para
+>Якщо операція є <link linkend="split_transaction"
+>дробленою</link
+>, перед позначкою категорії буде показано піктограму з потрійною стрілочкою.</para
+></listitem>
+	  </varlistentry>
+	</variablelist>
+	
+	<para
+>Як і у решті списків &skrooge;, ви можете повністю <link linkend="tables"
+>налаштувати показ стовпчиків, порядок, розмір</link
+>.</para>
+	
+      </sect2>
+      
+      <sect2 id="standard_transaction">
+	<title
+>Створення операції</title>
+	<para
+>Щоб створити стандартну операцію, ви можете натиснути кнопку <guibutton
+>Спорожнити</guibutton
+>, щоб спорожнити всі поля і розпочати введення даних операції з нуля. Вкажіть параметри операції (вручну або за допомогою <link linkend="fast_editing"
+>швидкого редагування</link
+>) і натисніть кнопку <guibutton
+>Додати</guibutton
+>.</para>
+        <para
+>Якщо позначено відповідний пункт налаштувань, категорію буде встановлено автоматично при встановленні отримувача.</para>
+	<para
+>Крім того, ви можете позначити пункт подібної операції у списку операцій, змінити його відповідно до ваших потреб, а потім натиснути кнопку <guibutton
+>Додати</guibutton
+>.</para>
+      </sect2>
+      
+      
+      <sect2 id="split_transaction">
+	<title
+>Дроблена операція</title>
+	<para
+>Дроблена операція — це операція, яка має декілька дат, категорій, коментарів або стежень. Перемкнутися у режим редагування дробленої операції можна за допомогою натискання кнопки <guibutton
+>Розділена</guibutton
+>, розташованої у нижній частині панелі перегляду «Операції». Після перемикання у режим редагування дробленої операції поля «Категорія», «Коментар» і «Стеження» перетворяться на таблицю.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="split_transaction.png" format="PNG"/></imageobject>
+	    <textobject
+><phrase
+>Панель редагування розділеної операції.</phrase
+></textobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Щоб розпочати редагування комірки у цій таблиці, наведіть на неї вказівник миші і двічі клацніть лівою кнопкою миші.</para>
+	
+	<para
+>Ви можете додавати будь-яку кількість рядків до цієї таблиці. Якщо буде змінено значення кількості у рядку, &skrooge; обчислить різницю з загальною вартістю операції і покаже підсумкову вартість у останньому рядку таблиці. Якщо ви зміните вартість у останньому рядку, програма додасть ще один рядок для підсумкової вартості.</para>
+	
+	<para
+>Поля цього режиму подібні до полів стандартного режиму редагування:</para>
+	
+	<itemizedlist>
+	  <listitem
+><para
+>Поділ за датою корисний, наприклад, якщо ви одноразово сплатили за спортивні тренування протягом 3 місяців. У цьому випадку ви можете розділити сплату за цими трьома місяцями, що вплине на ваші звіти.</para
+></listitem>
+	  <listitem
+><para
+>«Категорія» — спадний список існуючих категорій. Ви можете додати нову категорію, &skrooge; створить її під час створення запису операції.</para
+></listitem>
+	  <listitem
+><para
+>«Сума» <link linkend="quantity_field"
+>працює як калькулятор</link
+>.</para
+></listitem>
+	  <listitem
+><para
+>«Стеження» — спадний список наявних стежень. Ви можете додати нове стеження, &skrooge; створить його під час створення запису операції.</para
+></listitem>
+	</itemizedlist>
+      </sect2>
+      
+      <sect2 id="transfer">
+	<title
+>Переказ</title>
+	<para
+>Загалом кажучи, операція-переказ є подвійною операцією: під час створення переказу, &skrooge; створить дві операції з сумами протилежних знаків (одну з додатною сумою і одну з від’ємною) на двох різних рахунках. Параметри, які слід вказати у цьому полі трохи відрізняються від параметрів стандартної операції:</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="transfer_transaction.png" format="PNG"/></imageobject>
+	    <textobject
+><phrase
+>Панель редагування операції переказу.</phrase
+></textobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Вам буде показано список «На рахунок», за допомогою якого ви зможете вказати рахунок, на який буде перераховано гроші.</para>
+	
+	<para
+>Оскільки переказ — це «Зняти гроші з рахунку A і покласти їх на рахунок B», якщо ви вкажете знак у полі кількості (+ або -), його буде проігноровано. Баланс операції завжди буде від’ємним для рахунку A і додатним для рахунку B.</para>
+      </sect2>
+      
+      <sect2 id="shares">
+	<title
+>Акції</title>
+	<para
+>Спершу вам слід створити одиниці з акціями, за якими ви хочете стежити. За допомогою <link linkend="settings"
+>параметрів</link
+> ви можете наказати програмі автоматично оновлювати дані, коли відкривається файл. Рекомендуємо вам створити окремий рахунок (наприклад «Торгівля акціями») для окремого стеження за інвестиціями і уможливлення перегляду їхніх даних на панелі даних. </para>
+<para
+>Тепер, можна додати ваші операції як «акції»: <screenshot
+> <mediaobject>
+	    <imageobject
+><imagedata fileref="shares.png" format="PNG"/></imageobject>
+	    <textobject
+><phrase
+>Панель редагування даних акцій.</phrase
+></textobject>
+	  </mediaobject>
+	</screenshot>
+	<itemizedlist>
+	  <listitem
+><para
+>Сума — кількість придбаних вами акцій (додатне значення) або проданих акцій (від’ємне значення).</para
+></listitem>
+	  <listitem
+><para
+>Символ — попередня створена вами одиниця.</para
+></listitem>
+	  <listitem
+><para
+>Вартість акції — загальна ціна, сплачена за акцію, або сума, яку ви можете отримати від продажу акції, за виключенням комісії та податків.</para
+></listitem>
+	  <listitem
+><para
+>Комісія — сума, яку ви сплачуєте банку за виконання певної операції.</para
+></listitem>
+	  <listitem
+><para
+>Податок — будь-яка сума, яку ви сплачуєте державі (зазвичай, якщо маєте певний дохід)</para
+></listitem
+> 
+	</itemizedlist
+>	  
+	 </para>
+      </sect2>
+      
+      <sect2 id="schedule_transaction">
+	<title
+>Заплановані операції</title>
+	
+	<para
+>Якщо відомо, що операція регулярно повторюється, вам, певне, захочеться, щоб &skrooge; автоматично додавала її до списку операцій. Зробити це можна за допомогою планування операції натисканням кнопки <guibutton
+>Запланувати<inlinemediaobject
+><imageobject
+><imagedata fileref="schedule_transaction.png"/></imageobject
+></inlinemediaobject
+></guibutton
+>.</para>
+	
+	<para
+>Типовими параметрами планування є:</para>
+	<itemizedlist>
+	  <listitem
+><para
+>Повторювати щомісяця</para
+></listitem>
+	  <listitem
+><para
+>Нагадувати мені за 5 днів до терміну</para
+></listitem>
+	  <listitem
+><para
+>Автоматично записувати у строк</para
+></listitem>
+	</itemizedlist>
+	
+	<para
+>Ви можете змінити ці типові значення параметрів у <link linkend="settings"
+>налаштуваннях &skrooge;</link
+>.</para>
+	<para
+>Крім того, ви можете змінити параметри всіх запланованих операцій за допомогою <link linkend="scheduled"
+>додатка планування</link
+>.</para>
+	<para
+>&skrooge; використовує значення, введені для попередньої запланованої операції, під час введення наступної. Якщо ви, наприклад, збільшите суму ваших щомісячних внесків на підтримку &kde; з 100$ до 200$, наступні операції, які буде автоматично створено &skrooge; міститимуть суму 200$.</para>
+	
+      </sect2>
+      
+      <sect2 id="fast_editing">
+	<title
+>Швидке редагування</title>
+	
+	<para
+>Який би режим редагування ви не обрали, існує цікава функціональна можливість, яка називається «Швидке редагування», за допомогою якої ви можете пришвидшити роботу зі створення нових операцій. Ця можливість надасть вам змогу заповнювати параметри операції на основі параметрів раніше введених операцій. Введіть значення у будь-яке з полів редактора і натисніть клавішу <keycap
+>F10</keycap
+> або піктограму <guibutton
+>Швидкого редагування<inlinemediaobject
+><imageobject
+><imagedata fileref="fast_editing.png" format="PNG"/></imageobject
+></inlinemediaobject
+></guibutton
+> (не полишаючи поточного поля).</para>
+	
+	<para
+>&skrooge; знайде першу ж (тобто найостаннішу) операцію, з тим самим значенням у відповідному полі і заповнить всі інші поля значеннями знайденої операції. Якщо повторно викликати швидке редагування, програма знайде наступну операцію тощо.</para>
+	
+	<warning>
+	  <para
+>Можливість «Швидке редагування» не змінюватиме дату, оскільки створення однакової операції, з тією самою датою, є малоймовірним...</para>
+	  <para
+>Якщо ви змінили значення поля до виклику швидкого редагування, програма не змінюватиме вміст цього поля автоматично. Подібне поле буде позначено іншим кольором тла, таке тло означає, що поле «заморожено».</para>
+	</warning>
+	
+	<para
+>Відмінності від подібних функціональних можливостей інших програм з керування особистими фінансами:</para>
+	<itemizedlist>
+	  <listitem
+><para
+>викликається за вимогою користувача</para
+></listitem>
+	  <listitem
+><para
+>циклічний повтор всіх попередніх операцій з тим самим значенням поля</para
+></listitem>
+	</itemizedlist>
+	
+	<para
+>Можлива робота з дробленими операціями!</para>
+      </sect2>
+      
+      <sect2 id="reconciliation">
+	<title
+>Узгодження</title>
+	<para
+>Узгодження — це процедура, за допомогою якої ви забезпечуєте відповідність усіх записів операцій у вашій обліковій книзі і в обліковій книзі банку. Для її виконання вам потрібні будете ви, виписка з вашого рахунку і ручка. Узгодження можна виконати лише станом на певну дату.</para>
+	<para
+>Спочатку введіть дані усіх операцій для рахунку до відповідного моменту часу. Якщо можете, отримайте записи операцій від банку і <link linkend="import"
+>імпортуйте</link
+> їх до &skrooge;, щоб мінімізувати введення даних вручну. Далі, на панелі «Операції» виберіть рахунок для узгодження зі спадного списку, або на панелі «Рахунки» двічі клацніть на пункті рахунку, або відкрийте контекстне меню і виберіть у ньому пункт contextual menu and choose <menuchoice
+><guimenu
+>Відкрити операції...</guimenu
+></menuchoice
+>. Перемкніть програму у режим узгодження за допомогою натискання кнопки <guibutton
+>Перемикнути відомості <inlinemediaobject
+><imageobject
+><imagedata fileref="switch_information.png" format="PNG"/></imageobject
+></inlinemediaobject
+></guibutton
+>, розташованої під таблицею операцій.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="reconciliation_information.png" format="PNG"/></imageobject>
+	    <textobject
+><phrase
+>Відомості щодо режиму узгодження.</phrase
+></textobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Введіть стан на вашому рахунку відповідно до відповідного поля банківської виписки. Після цього ви можете продовжити перевірку у &skrooge; всіх операцій, які було записано до банківської виписки: ви можете або клацнути на пункті у стовпчику стану або відкрити контекстне меню і вибрати у ньому пункт <guimenuitem
+>Позначити</guimenuitem
+>. Пункт відповідної операції буде показано сірим кольором, аж доки узгодження не буде повністю завершено.</para>
+	
+	<para
+>Після визначення операції вказаною &skrooge; покаже у зоні інформації:</para>
+	<itemizedlist>
+	  <listitem
+><para
+>Різницю: різницю між попередньою випискою з рахунку і сумою операцій за чеками.</para
+></listitem
+><!--TODO: explain 'previously entered'; what happens-->
+	  <listitem
+><para
+>Зняття з рахунку: загальна сума вказаних витрат</para
+></listitem>
+	  <listitem
+><para
+>Прибуток: загальна сума вказаних надходжень</para
+></listitem>
+	</itemizedlist>
+	
+	<para
+>За допомогою цих проміжних загальних сум ви зможете визначити операції, які ви, можливо, забули ввести до &skrooge;. У багатьох банківських виписках є подібні проміжні суми, зокрема «Зняття з рахунку» або «Депозити і кредити», хоча можуть бути і окремі суми для «Відсотків» та «Комісія». Якщо різниця дорівнює 0, ви, <emphasis
+>можливо</emphasis
+>, вказали усі операції відповідно до записів банку. Приклад: ви помилково вказали витрату у 8€ і надходження у 2€ і пропустили витрату 6€. Загальна сума є однаковою — мінус 6€. Якщо різниця дорівнюватиме 0, кнопку <guibutton
+>Підтвердити вказані операції <inlinemediaobject
+><imageobject
+><imagedata fileref="validate.png" format="PNG"/></imageobject
+></inlinemediaobject
+></guibutton
+> буде активовано. Натисніть цю кнопку, щоб завершити узгодження: всі позначені операції буде позначено.</para>
+	
+	<tip
+><para
+><inlinemediaobject
+><imageobject
+><imagedata fileref="fast_editing.png" format="PNG"/></imageobject
+></inlinemediaobject
+> може автоматично вказати усі імпортовані записи операцій.</para
+></tip>
+	
+	<para
+>Якщо для таблиці було позначено пункт <guibutton
+>Сховати сплачені операції</guibutton
+> у меню «Показ» (див. <link linkend="show"
+>Фільтрування таблиці</link
+>), всі пункти таких операцій буде приховано.</para>
+	
+	<para
+>Якщо узгодження з якоїсь причини є неможливим, ви можете створити запис фіктивної операції, яка у поєднанні із іншими вказаними вами операціями дасть нульове значення різниці, і, таким чином, надасть вам змогу завершити узгодження. Для цього натисніть кнопку «Додати» на панелі інструментів режиму узгодження. Ви можете вказати типові значення для цієї фіктивної операції у <link linkend="settings"
+>параметрах програми</link
+> (розділ <guilabel
+>Операції</guilabel
+>). Під час узгодження, якщо вами позначено відповідний пункт, &skrooge; автоматично вказуватиме усі створені записи операцій.</para>
+	
+      </sect2>
+      
+      <sect2 id="templates">
+	<title
+>Шаблони операцій</title>
+	<para
+>У &skrooge; передбачено можливість створення шаблонів операцій, тобто операцій, які за потреби можна буде використати повторно. Наприклад, припустімо, що ви взяли у прокат &DVD;, щоб подивитися його вдома. Така операція є досить типовою:</para>
+	
+	<itemizedlist>
+	  <listitem
+><para
+>Сума: -4,99</para
+></listitem>
+	  <listitem
+><para
+>Режим : Кредитна картка</para
+></listitem>
+	  <listitem
+><para
+>Отримувач: Acme Video</para
+></listitem>
+	  <listitem
+><para
+>Категорія: Розваги 
+> Відео</para
+></listitem>
+	  </itemizedlist>
+	  
+	  <para
+>Але ви не можете створити запис регулярної операції, оскільки ви берете &DVD;, коли вам хочеться, а не кожного тижня. Ідея шаблонів операцій полягає у тому, що ви створюєте основу запису, до якої можна швидко ввести ваш список операцій.</para>
+	  
+	  <para
+>Оскільки шаблони операцій це просто ще один різновид операцій, ви можете отримати доступ до них за допомогою вкладки операцій, де слід вибрати відповідний пункт у меню <guimenu
+>Показати</guimenu
+>:</para>
+	  
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject
+><imagedata fileref="template_button.png" format="PNG"/></imageobject>
+	      <textobject
+><phrase
+>Перемикання між шаблонами і операціями.</phrase
+></textobject>
+	    </mediaobject>
+	  </screenshot>
+	  
+	  <para
+>Створення шаблону абсолютно збігається зі створенням самої операції: достатньо вказати атрибути шаблону. Зауважте, що ви також можете створити шаблон на основі існуючого запису операції (скористайтеся контекстним меню запису операції). У такому разі шаблон матиме ті самі атрибути, що і операція.</para>
+	  
+	  <para
+>Щоб скористатися шаблоном і створити на його основі новий запис операції, наведіть на пункт шаблону вказівник миші і двічі клацніть лівою кнопкою миші. У відповідь програма створить новий запис операції з тим самими атрибутами, що і у шаблоні і поточною датою.</para>
+	  
+	  <para
+>Крім того, шаблони можна <link linkend="scheduled"
+>додавати до розкладу</link
+>.</para>
+  </sect2>
+  <sect2 id="viewing_modified_transactions">
+	<title
+>Перегляд змінених операцій</title>
+<para
+>Ви можете скористатися пунктом «Перехід 
+> Відкрити останні змінені...», щоб переглянути операції, які було змінено під час вашої останньої дії. Крім того, &skrooge; зберігає список усіх змін в операціях на <link linkend="undo_redo"
+>панелі журналу</link
+>. Щоб переглянути вміст цієї панелі скористайтеся пунктом меню <guimenuitem
+>Перегляд 
+> Панелі 
+> Журнал</guimenuitem
+>. Після цього ви можете клацнути правою кнопкою миші на будь-якому пункті у <link linkend="undo_redo"
+>списку журналу</link
+> і виберіть у контекстному меню пункт <guimenuitem
+>Відкрити операції, які змінено цією дією</guimenuitem
+>... </para>
+	</sect2>
+	
+      </sect1>
+      
+      <sect1 id="payees">
+	<title
+>Отримувачі</title>
+	<para
+>За допомогою панелі отримувачів ви можете переглядати ієрархічне дерево отримувачів платежів.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject>
+	      <imagedata fileref="payees.png" format="PNG"/>
+	    </imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Окрім назви отримувача у таблиці буде показано такі дані:</para>
+	
+	<variablelist>
+	  <varlistentry>
+	    <term
+>Адреса</term>
+	    <listitem
+><para
+>Адреса отримувача</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Категорія</term>
+	    <listitem
+><para
+>Типова категорія для цього отримувача. Цю категорію буде використано автоматично, якщо встановлено отримувача на сторінці <link linkend="transactions"
+>операцій</link
+>. Якщо категорію не буде вказано, типове значення визначатиметься на основі записів наявних операцій.</para
+></listitem>
+	  </varlistentry
+>          
+	  <varlistentry>
+	    <term
+>Сума</term>
+	    <listitem
+><para
+>Сума усіх операцій у для отримувача.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Кількість операцій</term>
+	    <listitem
+><para
+>Кількість операцій для отримувача.</para
+></listitem>
+	  </varlistentry>
+	</variablelist>
+	
+	<para
+>Наведення вказівника миші на рядок цієї таблиці з наступним подвійним клацанням лівою кнопкою миші відкриє список всіх операцій для отримувача у новій вкладці.</para>
+      </sect1>
+      
+      <sect1 id="categories">
+	<title
+>Категорії</title>
+	<para
+>За допомогою панелі категорій ви можете переглядати ієрархічне дерево категорій.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject>
+	      <imagedata fileref="categories.png" format="PNG"/>
+	    </imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Окрім назв категорій, у таблиці також буде показано: </para>
+	
+	<variablelist>
+	  <varlistentry>
+	    <term
+>Сума</term>
+	    <listitem
+><para
+>Суму всіх операцій у цій категорії.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Кількість операцій</term>
+	    <listitem
+><para
+>Кількість операцій у цій категорії.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Суму (накопичувальну)</term>
+	    <listitem
+><para
+>Суму всіх операцій у цій категорії та її підлеглих категоріях (аж до найнижчого рівня).</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Кількість операцій (накопичувальна)</term>
+	    <listitem
+><para
+>Кількість операцій у цій категорії та її підлеглих категоріях (аж до найнижчого рівня).</para
+></listitem>
+	  </varlistentry>
+	</variablelist>
+	
+	<para
+>Наведення вказівника миші на рядок цієї таблиці з наступним подвійним клацанням лівою кнопкою миші відкриє список всіх операцій у цій категорії у новій вкладці.</para>
+	<warning
+><para
+>Після вилучення категорії всі пов’язані з нею записи операцій позбудуться належності до категорій, отже потраплять до групи без категорії.</para
+></warning>
+      </sect1>
+      
+      <sect1 id="reports">
+	<title
+>Звіти</title>
+	<para
+>За допомогою &skrooge; ви можете створювати звіти, параметри яких буде визначено вами, для подальшого аналізу вашого фінансового стану.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject>
+	      <imagedata fileref="reports.png" format="PNG"/>
+	    </imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Звіт складається з таблиці (розташованої ліворуч), у якій містяться всі дані, використані для побудови графіку (розташованого праворуч). Дані таблиці можна фільтрувати за допомогою відповідного поля, розташованого вище. Після фільтрування графік буде накреслено відповідно до фільтрованих даних.</para>
+	
+	<para
+>Ви можете наказати програмі показувати лише таблицю, лише графік чи таблицю і графік одночасно.</para>
+	
+	<sect2 id="setup_report">
+	  <title
+>Налаштування звіту</title>
+	  
+	  <sect3 id="report_representation">
+	    <title
+>Представлення</title>
+	    <variablelist>
+	      <varlistentry>
+		<term
+>Таблиця</term>
+		<listitem
+><para
+>Показувати таблицю.</para
+></listitem>
+	      </varlistentry>
+	      <varlistentry>
+		<term
+>Графік</term>
+		<listitem
+><para
+>Показувати графік.</para
+></listitem>
+	      </varlistentry>
+	      <varlistentry>
+		<term
+>Текст</term>
+		<listitem
+><para
+>Показувати текстовий звіт, приховати таблицю і графік.</para
+></listitem>
+	      </varlistentry>
+	    </variablelist>
+	  </sect3>
+	  
+	  <sect3 id="report_data">
+	    <title
+>Дані</title>
+	    <para
+>Тут ви можете вказати, які дані слід використати для формування звіту. Виберіть вміст рядків та стовпчиків таблиці, а також режим обчислення. Передбачено два режими:</para>
+	    <variablelist>
+	      <varlistentry>
+		<term
+>Сума за операціями</term>
+		<listitem>
+		  <para
+>У цьому режимі програма обчислюватиме загальну суму операцій для кожного з місяців. Якщо ви вкажете «категорію» для рядка і «місяць» для стовпчика, програма обчислить загальні суми за операціями кожної категорії протягом кожного з місяців.</para>
+		</listitem>
+	      </varlistentry>
+	      <varlistentry>
+		<term
+>Загальна сума операцій</term>
+		<listitem>
+		  <para
+>Якщо знову скористатися нашим попереднім прикладом («категорія» для рядків, «місяць» для стовпчиків), ми отримаємо загальну суму, тобто для кожного місяця програма покаже загальну суму операцій, що стосуються певного місяця за кожною з категорій.</para>
+		  <para
+>У прикладі автор підручника використав цей режим для побудови діаграми зміни балансу на рахунках встановленням значення «Рахунки» для рядків і значення «Місяць» для стовпчиків.</para>
+		</listitem>
+	      </varlistentry>
+	      <varlistentry>
+		<term
+>Основа 100</term>
+		<listitem>
+		  <para
+>Подібне до «Суми операцій», але за основою 100.</para>
+		</listitem>
+	      </varlistentry>
+	      <varlistentry>
+		<term
+>Загальна сума за основою 100</term>
+		<listitem>
+		  <para
+>Подібне до «Загальної суми операцій», але за основою 100.</para>
+		</listitem>
+	      </varlistentry>
+	      <varlistentry>
+		<term
+>Значення у стовпчиках у відсотках</term>
+		<listitem>
+		  <para
+>Значення буде виражено у відсотках від найбільшого значення у стовпчику.</para>
+		</listitem>
+	      </varlistentry>
+	      <varlistentry>
+		<term
+>Абсолютне значення у стовпчиках у відсотках</term>
+		<listitem>
+		  <para
+>Значення буде виражено у відсотках від найбільшого значення у стовпчику у абсолютному вимірі.</para>
+		</listitem>
+	      </varlistentry>
+	      <varlistentry>
+		<term
+>Значення у рядках у відсотках</term>
+		<listitem>
+		  <para
+>Значення буде виражено у відсотках від найбільшого значення у рядку.</para>
+		</listitem>
+	      </varlistentry>
+	      <varlistentry>
+		<term
+>Абсолютне значення у рядках у відсотках</term>
+		<listitem>
+		  <para
+>Значення буде виражено у відсотках від найбільшого значення у рядку у абсолютному вимірі.</para>
+		</listitem>
+	      </varlistentry>
+	      <varlistentry>
+		<term
+>Кількість операцій</term>
+		<listitem>
+		  <para
+>.</para>
+		</listitem>
+	      </varlistentry
+>		      
+	    </variablelist>
+	    
+	    <para
+>Ви можете розгорнути рівень показу даних рядків та стовпчиків за допомогою натискання кнопки з зображенням <guibutton
+>плюса</guibutton
+> <inlinemediaobject
+><imageobject
+><imagedata fileref="plus.png"/></imageobject
+></inlinemediaobject
+>, розташованої праворуч від поля. Після натискання цієї кнопки програма покаже перелік підкатегорій звіту.</para>
+	  </sect3>
+	  
+	  <sect3 id="report_dates">
+	    <title
+>Дати</title>
+	    <para
+>За допомогою цього поля ви можете вказати діапазон даних звіту. Передбачено декілька способів визначення діапазону дат, отже ви зможете вказати майже будь-який потрібний вам діапазон дат.</para>
+	  </sect3>
+	  
+	  <sect3 id="report_transaction_types">
+	    <title
+>Типи операцій</title>
+	    <para
+>Тут ви можете вказати тип операцій, звіт за якими слід скласти. Наприклад, якщо ви бажаєте переглянути графік, на якому буде показано розподіл ваших витрат за категоріями, ймовірно, вам не знадобиться категорія «Прибутки».</para>
+	  </sect3>
+	  
+	  <sect3 id="report_other_filters">
+	    <title
+>Інші фільтри</title>
+	    <para
+>За допомогою цього розділу ви можете вибрати деякі інші фільтри, вибрані на інших сторінках. Якщо вам потрібні лише категорії «Їжа» та «Подарунки», вам слід відкрити сторінку <link linkend="categories"
+>категорій</link
+>, вибрати дві категорії і повернутися до звіту для активації відповідного фільтра.</para>
+	  </sect3
+>	  
+	  
+	</sect2>
+	
+	<sect2 id="graph_types">
+	  <title
+>Типи графіків</title>
+	  
+	  <para
+>Після налаштування звіту відповідно до ваших потреб, вам слід обрати вигляд графічної частини за допомогою спадного списку, розташованого під графіком. Щоб краще зрозуміти відмінності між кожним з типів, давайте побудуємо звіт, у якому буде показано витрати за категорією (рядки) і місяці (стовпчики):</para>
+	  
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject>
+		<imagedata fileref="report_table.png"/>
+	      </imageobject>
+	    </mediaobject>
+	  </screenshot>
+	  
+	  <sect3 id="stack">
+	    <title
+>Стовпчикова</title>
+	    <para
+>Один стовпчик на рядок, складання стовпчиків.</para>
+	    
+	    <screenshot>
+	      <mediaobject>
+		<imageobject>
+		  <imagedata fileref="stack.png"/>
+		</imageobject>
+	      </mediaobject>
+	    </screenshot>
+	    
+	    <para
+>За допомогою другого стовпчика (жовтавий) показано категорію «Ціні папери», зі стосуванням всіх даних місяців.</para>
+	    
+	  </sect3>
+	  
+	  <sect3 id="histogram">
+	    <title
+>Гістограма</title>
+	    <para
+>Для кожного стовпчика, кожен рядок матиме власний стовпчик.</para>
+	    
+	    <screenshot>
+	      <mediaobject>
+		<imageobject>
+		  <imagedata fileref="histogram.png"/>
+		</imageobject>
+	      </mediaobject>
+	    </screenshot>
+	    
+	  </sect3>
+	  
+	  
+	  <sect3 id="line">
+	    <title
+>Лінійна</title>
+	    <screenshot>
+	      <mediaobject>
+		<imageobject>
+		  <imagedata fileref="line_graph.png"/>
+		</imageobject>
+	      </mediaobject>
+	    </screenshot>
+	  </sect3>
+	  
+	  <sect3 id="point">
+	    <title
+>Позначка</title>
+	    <screenshot>
+	      <mediaobject>
+		<imageobject>
+		  <imagedata fileref="point_report.png"/>
+		</imageobject>
+	      </mediaobject>
+	    </screenshot>
+	  </sect3>
+	  
+	  
+	  <sect3 id="pie">
+	    <title
+>Кругова діаграма</title>
+	    <para
+>Класична кругова діаграма. Якщо обране значення для стовпчиків відмінне від «Нічого», буде показано по одній діаграмі на кожен стовпчик.</para>
+	    
+	    <screenshot>
+	      <mediaobject>
+		<imageobject>
+		  <imagedata fileref="pie.png"/>
+		</imageobject>
+	      </mediaobject>
+	    </screenshot>
+	    
+	    
+	  </sect3>
+	  
+	  <sect3 id="concentric_pie">
+	    <title
+>Концентрична діаграма</title>
+	    <para
+>Цей графік досить складний, можливо, розробники змінять його у майбутньому. До наміру творців входив показ одного кільця для кожного рівня даних.</para>
+	    
+	    <screenshot>
+	      <mediaobject>
+		<imageobject>
+		  <imagedata fileref="concentric_pie.png"/>
+		</imageobject>
+	      </mediaobject>
+	    </screenshot>
+	    
+	  </sect3>
+	  
+	</sect2>
+	
+	
+	<sect2 id="zoom_graph">
+	  <title
+>Збільшення графіка</title>
+	  <para
+>У &skrooge; передбачено можливість збільшення графіків для того, щоб можна було роздивитися найменші подробиці. Для збільшення скористайтеся панеллю керування збільшенням, розташованою над графіком:</para>
+	  
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject>
+		<imagedata fileref="zoom_graph.png"/>
+	      </imageobject>
+	    </mediaobject>
+	  </screenshot>
+	  
+	  
+	</sect2>
+	
+	<sect2 id="report_examples">
+	  <title
+>Приклади звітів</title>
+	  <para
+>Ось декілька знімків вікон, на яких продемонстровано класичні налаштування звітів. Ви можете скористатися ними, як зразками, для створення ваших власних звітів.</para>
+	  
+	  <sect3 id="income_expense">
+	    <title
+>Прибутки і витрати</title>
+	    <para
+>Для кожного місяця наведено порівняння загальної суми прибутків та загальної суми витрат. Прибутки позначено синім, витрати — жовтим кольором.</para>
+	    <screenshot>
+	      <mediaobject>
+		<imageobject>
+		  <imagedata fileref="incomes_expenses.png"/>
+		</imageobject>
+	      </mediaobject>
+	    </screenshot>
+	  </sect3>
+	  
+	  <sect3 id="balance_evolution">
+	    <title
+>Рух коштів на рахунку</title>
+	    <para
+>Показує рух коштів на рахунку за місяцями.</para>
+	    <screenshot>
+	      <mediaobject>
+		<imageobject>
+		  <imagedata fileref="balance_evolution.png"/>
+		</imageobject>
+	      </mediaobject>
+	    </screenshot>
+	  </sect3>
+	  
+	  <sect3 id="category_distribution">
+	    <title
+>Прибутки і витрати</title>
+	    <para
+>Показ розподілу витрат за категоріями протягом попереднього місяця.</para>
+	    <screenshot>
+	      <mediaobject>
+		<imageobject>
+		  <imagedata fileref="category_distribution.png"/>
+		</imageobject>
+	      </mediaobject>
+	    </screenshot>
+	  </sect3>
+	  
+	  
+	</sect2>
+	
+	<sect2 id="going_deeper">
+	  <title
+>Якщо розглянути все докладніше</title>
+	  <para
+>Подвійним клацанням на пункті графіка ви можете відкрити записи операцій, включені до цього пункту.</para>
+	  <para
+>Крім того, ви можете відкрити новий звіт на основі пункту на графіку.</para>
+	  <para
+>Отже, вам відомо, що ви можете виконати поглиблений аналіз ваших фінансових справ за допомогою звітів. Але наскільки глибоким буде цей аналіз? Гаразд, навіть глибшим, ніж вам здається... Якщо вам цікаво, прочитайте <link linkend="holidays_expenses_analysis"
+>розділ з прикладом</link
+>, у якому ми аналізуватимемо витрати автора підручника протягом відпустки. :)</para>
+	</sect2>
+	
+	
+      </sect1>
+      
+      <sect1 id="monthly_report">
+	<title
+>Місячний звіт</title>
+	
+	<para
+>За допомогою цього додатка можна переглянути ваш фінансовий стан для вибраного вами періоду.</para>
+	
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject>
+		<imagedata fileref="monthly.png"/>
+	      </imageobject>
+	    </mediaobject>
+	  </screenshot
+>	
+	  
+	  <para
+>Ви можете вибрати потрібний вам шаблон. Ви навіть можете самі створити шаблон, якщо введете його назву. Після цього буде запущено типовий текстовий редактор зі зразком для вашого шаблону. Вам слід лише скористатися для створення шаблона відповідними коментарями.</para>
+	  <para
+>Не вагайтеся, і поділіться вашими шаблонами у категорії <literal
+>&skrooge; report templates</literal
+> сховища шаблонів <ulink url="https://store.kde.org/browse/cat/338/"
+>store.kde.org</ulink
+>.</para>
+      </sect1>
+      
+      <sect1 id="units">
+	<title
+>Фінансові інструменти</title>
+	<para
+>Одиницею є будь-яка одиниця вартості, у якій ви можете виразити операцію. У більшості випадків такою одиницею буде грошова одиниця, але одиницею може бути акція або навіть автомобіль з будинком. Вартість одиниці змінюється з часом, її вартість також може бути виражено у інших одиницях. Приклад: акція ACME коштувала 31,2$ станом на січень 2009 року.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject>
+	      <imagedata fileref="units.png" format="PNG"/>
+	    </imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<sect2 id="edit_units">
+	  <title
+>Зміна одиниць</title>
+	  <para
+>Змінити одиниці можна у декілька способів:</para>
+	  <variablelist>
+	    <varlistentry>
+	      <term
+>Стандартний</term>
+	      <listitem
+><para
+>У цьому режимі роботи ви можете обрати одну з одиниць заздалегідь визначеного набору, яку ви бажаєте додати до поточного документа.</para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Вручну</term>
+	      <listitem
+><para
+>У цьому режимі ви зможете створити вашу власну одиницю. Серед потрібних програмі параметрів:</para>
+		<itemizedlist>
+		  <listitem
+><para
+>Назва: зрозуміла назва одиниці.</para
+></listitem>
+		  <listitem
+><para
+>Символ: символ одиниці, який буде показано у більшості таблиць і спадних списків.</para
+></listitem>
+		  <listitem
+><para
+>Тип: див. <link linkend="unit_types"
+>Типи одиниць</link
+>.</para
+></listitem>
+		  <listitem
+><para
+>Основна одиниця: інша одиниця, яку буде використано для обчислення вартості поточної одиниці. Наприклад, якщо ви є власником акцій EADS і бажаєте бачити їх вартість у євро, вам слід обрати основною одиницею € у одиницях EADS.</para
+></listitem>
+		  <listitem
+><para
+>Країна</para
+></listitem>
+                  <listitem
+><para
+>Джерело даних: джерело даних щодо курсів. Рекомендованим джерелом є «boursorama». Натискаючи стрілку, розташовану праворуч від поля «Отримати», ви можете безпосередньо отримати новий код зі <ulink url="https://store.kde.org/browse/cat/339/ord/latest/"
+>store.kde.org</ulink
+>.</para
+></listitem>
+		  <listitem
+><para
+>Код інтернету: код інтернету для цієї одиниці. Якщо буде вказано цей код, &skrooge; зможе отримати курс одиниці з вибраного джерела.</para
+></listitem>
+		</itemizedlist>
+	      </listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Вартість</term>
+	      <listitem
+><para
+>У цьому режимі редагування ви можете отримати дані про вартість одиниць з інтернету або вручну ввести вартість одиниці на вказану дату.</para
+></listitem>
+	    </varlistentry>
+	  </variablelist>
+	</sect2>
+	
+	<sect2 id="unit_types">
+	  <title
+>Типи одиниць</title>
+	  <para
+>Хоча &skrooge; може розглядати будь-яку цінність як одиницю, одиниці відрізняються за типом:</para>
+	  
+	  <variablelist>
+	    <varlistentry>
+	      <term
+>Основна валюта</term>
+	      <listitem
+><para
+>Це валюта, яку буде використано для показу дійсних сум операцій.</para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Другорядна валюта</term>
+	      <listitem
+><para
+>Якщо визначено, значення у другорядній одиниці буде показано на контекстній панелі після наведення вказівника миші на позначку суми операції.</para>
+		
+		<screenshot>
+		  <mediaobject>
+		    <imageobject>
+		      <imagedata fileref="secondary_unit_display.png"/>
+		    </imageobject>
+		  </mediaobject>
+		</screenshot>
+		
+	      </listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Валюта</term>
+	      <listitem
+><para
+>Будь-яка валюта, без особливої ролі під час показу.</para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Акція</term>
+	      <listitem
+><para
+>Цим типом одиниць можна скористатися для керування акціями.</para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Індекс</term>
+	      <listitem
+><para
+>Курсовий індекс, наприклад індекс Доу-Джонса, NASDAQ, CAC40, SBF120...</para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Інше</term>
+	      <listitem
+><para
+>Будь-яка одиниця, яка не належить до вже вказаних типів.</para
+></listitem>
+	    </varlistentry
+>    
+	  </variablelist
+>  
+	</sect2>
+      </sect1>
+    </chapter>
+    <chapter id="using-skrooge-advanced">
+      <title
+>Користування &skrooge; (для досвідчених)</title
+>     
+      
+      <sect1 id="scheduled">
+	<title
+>Заплановано</title>
+	<para
+>За допомогою цього додатка ви зможете переглянути список всіх запланованих операцій.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject>
+	      <imagedata fileref="scheduled.png" format="PNG"/>
+	    </imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Тут ви можете вказати для кожної з запланованих операцій власні параметри.</para>
+	
+	<variablelist>
+	  <varlistentry>
+	    <term
+>Наступне повторення</term>
+	    <listitem
+><para
+>Це поле призначено для інформування, але ви можете скористатися ним для введення дати наступного повторення вручну.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Один раз кожні</term>
+	    <listitem
+><para
+>Ви можете наказати програмі повторювати операцію регулярно, через вказану кількість днів, місяців та років.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Кількість повторень</term>
+	    <listitem
+><para
+>Якщо кількість повторень обмежено, ви можете позначити цей пункт і вказати кількість повторів або дату останнього повторення.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Нагадати мені</term>
+	    <listitem
+><para
+>Якщо ви бажаєте, щоб програма &skrooge; показувала сповіщення про наступну заплановану операцію, вам слід позначити цей пункт і вказати кількість перед тим, як програма вас попередить.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Автоматично записувати</term>
+	    <listitem
+><para
+>Якщо ви бажаєте, щоб програма &skrooge; автоматично записувала наступну заплановану операцію, ви можете позначити цей пункт і вказати випередження у днях для запису операції.</para
+></listitem>
+	  </varlistentry>
+          <varlistentry>
+            <term
+>Шаблон</term>
+            <listitem
+><para
+>Ви можете перетворити розклад на шаблон або перейти до безшаблонного режиму. У результаті буде створено або вилучено відповідний шаблон.</para
+></listitem>
+          </varlistentry>
+	</variablelist>
+	<para
+>Щоб внести зміни до запису операції (категорії, суми тощо), вам слід натиснути на пункті <guilabel
+>Перейти до операції</guilabel
+>.</para>
+	
+	
+	<para
+>Наведення вказівника на пункт запланованої операції з наступним подвійним клацанням лівою кнопкою миші призведе до показу списку вже зареєстрованих операцій запланованої операції у новій вкладці.</para>
+	
+	<sect2 id="scheduled_transactions">
+	  <title
+>Заплановані транзакції</title>
+	  
+	  <para
+>Якщо ви заплануєте операцію, параметри планування буде використано як еталон під час створення наступного запису операції. Розгляньмо приклад з цією операцією:</para>
+	  
+	  <table>
+	    <title
+>Заплановані операції (крок 1)</title>
+	    <tgroup cols="4">
+	      <thead>
+		<row>
+		  <entry
+>Дата</entry>
+		  <entry
+>Отримувач</entry>
+		  <entry
+>Категорія</entry>
+		  <entry
+>Сума</entry>
+		</row>
+	      </thead>
+	      <tbody>
+		<row>
+		  <entry
+>20.06.2009</entry>
+		  <entry
+>&kde;</entry>
+		  <entry
+>Пожертви &gt; ВПЗ</entry>
+		  <entry
+>20€</entry>
+		</row>
+	      </tbody>
+	    </tgroup>
+	  </table>
+	  
+	  <para
+>Тепер, якщо ви заплануєте цю операцію, її наступний запис буде створено таким саме чином:</para>
+	  
+	  <table>
+	    <title
+>Заплановані операції (крок 2)</title>
+	    <tgroup cols="4">
+	      <thead>
+		<row>
+		  <entry
+>Дата</entry>
+		  <entry
+>Отримувач</entry>
+		  <entry
+>Категорія</entry>
+		  <entry
+>Сума</entry>
+		</row>
+	      </thead>
+	      <tbody>
+		<row>
+		  <entry
+>20.06.2009</entry>
+		  <entry
+>&kde;</entry>
+		  <entry
+>Пожертви &gt; ВПЗ</entry>
+		  <entry
+>20€</entry>
+		</row>
+		<row>
+		  <entry
+>20.07.2009</entry>
+		  <entry
+>&kde;</entry>
+		  <entry
+>Пожертви &gt; ВПЗ</entry>
+		  <entry
+>20€</entry>
+		</row>
+	      </tbody>
+	    </tgroup>
+	  </table>
+	  
+	  <para
+>Якщо ви зміните якийсь з параметрів у останньому записі, він стане еталонним для наступного запису. Наприклад, якщо ви збільшите місячну пожертву на &kde; до 25€ у липні, у наступному записі теж фігуруватиме сума 25€:</para>
+	  
+	  <table>
+	    <title
+>Заплановані операції (крок 3)</title>
+	    <tgroup cols="4">
+	      <thead>
+		<row>
+		  <entry
+>Дата</entry>
+		  <entry
+>Отримувач</entry>
+		  <entry
+>Категорія</entry>
+		  <entry
+>Сума</entry>
+		</row>
+	      </thead>
+	      <tbody>
+		<row>
+		  <entry
+>20.06.2009</entry>
+		  <entry
+>&kde;</entry>
+		  <entry
+>Пожертви &gt; ВПЗ</entry>
+		  <entry
+>20€</entry>
+		</row>
+		<row>
+		  <entry
+>20.07.2009</entry>
+		  <entry
+>&kde;</entry>
+		  <entry
+>Пожертви &gt; ВПЗ</entry>
+		  <entry
+>25€</entry>
+		</row>
+		<row>
+		  <entry
+>20.08.2009</entry>
+		  <entry
+>&kde;</entry>
+		  <entry
+>Пожертви &gt; ВПЗ</entry>
+		  <entry
+>25€</entry>
+		</row>
+	      </tbody>
+	    </tgroup>
+	  </table>
+	  
+	  <para
+>Так чи інакше, запланована операція є динамічним об’єктом, де останній запис є еталоном. Але, можливо, ви бажаєте, щоб всі записи були статичними, тобто містили однакові суми і завжди додавалися через рівні проміжки часу? Створіть <link linkend="scheduled_templates"
+>запланований шаблон</link
+>./link
+>.</para>
+	  
+	</sect2>
+	
+	
+	<sect2 id="scheduled_templates">
+	  <title
+>Планування шаблонів</title>
+	  
+	  <para
+><link linkend="templates"
+>Шаблони</link
+> дещо схожі на еталонні операції. Якщо запланувати шаблон, кожен новий запис буде точно відповідати цьому шаблону. Знову скористаємося нашим прикладом з <link linkend="schedule_transaction"
+>попередньої глави</link
+>. Створимо шаблон:</para>
+	  
+	  <table>
+	    <title
+>Планування шаблонів (крок 1)</title>
+	    <tgroup cols="4">
+	      <thead>
+		<row>
+		  <entry
+>Дата</entry>
+		  <entry
+>Отримувач</entry>
+		  <entry
+>Категорія</entry>
+		  <entry
+>Сума</entry>
+		</row>
+	      </thead>
+	      <tbody>
+		<row>
+		  <entry
+>20.06.2009</entry>
+		  <entry
+>&kde;</entry>
+		  <entry
+>Пожертви &gt; ВПЗ</entry>
+		  <entry
+>20€</entry>
+		</row>
+	      </tbody>
+	    </tgroup>
+	  </table>
+	  
+	  <para
+>Наступним використанням буде:</para>
+	  
+	  
+	  <table>
+	    <title
+>Планування шаблонів (крок 2)</title>
+	    <tgroup cols="4">
+	      <thead>
+		<row>
+		  <entry
+>Дата</entry>
+		  <entry
+>Отримувач</entry>
+		  <entry
+>Категорія</entry>
+		  <entry
+>Сума</entry>
+		</row>
+	      </thead>
+	      <tbody>
+		<row>
+		  <entry
+>20.06.2009</entry>
+		  <entry
+>&kde;</entry>
+		  <entry
+>Пожертви &gt; ВПЗ</entry>
+		  <entry
+>20€</entry>
+		</row>
+		<row>
+		  <entry
+>20.07.2009</entry>
+		  <entry
+>&kde;</entry>
+		  <entry
+>Пожертви &gt; ВПЗ</entry>
+		  <entry
+>20€</entry>
+		</row>
+	      </tbody>
+	    </tgroup>
+	  </table>
+	  
+	  <para
+>Тепер змініть ваш липневий внесок у &kde; до 25€. Оскільки ви запланували шаблон з сумою 20€, у наступному записі також буде сума 20€:</para>
+	  
+	  <table>
+	    <title
+>Планування шаблонів (крок 3)</title>
+	    <tgroup cols="4">
+	      <thead>
+		<row>
+		  <entry
+>Дата</entry>
+		  <entry
+>Отримувач</entry>
+		  <entry
+>Категорія</entry>
+		  <entry
+>Сума</entry>
+		</row>
+	      </thead>
+	      <tbody>
+		<row>
+		  <entry
+>20.06.2009</entry>
+		  <entry
+>&kde;</entry>
+		  <entry
+>Пожертви &gt; ВПЗ</entry>
+		  <entry
+>20€</entry>
+		</row>
+		<row>
+		  <entry
+>20.07.2009</entry>
+		  <entry
+>&kde;</entry>
+		  <entry
+>Пожертви &gt; ВПЗ</entry>
+		  <entry
+>25€</entry>
+		</row>
+		<row>
+		  <entry
+>20.08.2009</entry>
+		  <entry
+>&kde;</entry>
+		  <entry
+>Пожертви &gt; ВПЗ</entry>
+		  <entry
+>20€</entry>
+		</row>
+	      </tbody>
+	    </tgroup>
+	  </table>
+	  
+	  <para
+>Якщо вам захочеться змінити місячну суму, просто змініть суму у шаблоні, і всі наступні записи міститимуть нову суму.</para>
+	</sect2>
+	
+	<sect2 id="schedule_assign">
+	  <title
+>Призначення розкладу</title>
+	  
+	  <para
+>Якщо вами заплановано операцію, яка регулярно повторюється, ви можете пов'язати якісь із попередніх операцій з цим розкладом за допомогою пункту контекстного меню «Призначити операцію» пункту операції. За допомогою цього пункту можна також скасувати прив'язку операції до розкладу або пов'язати її з іншим розкладом.</para>
+	  
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject>
+	        <imagedata fileref="assign_schedule.png" format="PNG"/>
+	      </imageobject>
+	    </mediaobject>
+	  </screenshot>
+	</sect2>
+      </sect1>
+      
+      <sect1 id="trackers">
+	<title
+>Стеження</title>
+	<para
+>За допомогою стежень ви можете зібрати певні операції у групу, щоб слідкувати за ними пильніше. Цією можливістю можна скористатися для стеження за витратами, які згодом слід буде компенсувати, або просто для визначення, скажімо, ваших витрат під час відпочинку на Багамах.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject>
+	      <imagedata fileref="trackers.png" format="PNG"/>
+	    </imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Наприклад, уявімо, що ваша компанія відрядила вас до Італії. Опинившись на місці ви сплатили за кімнату у готелі: у &skrooge; ви створюєте операцію у категорії «Бізнес &gt; Подорожі &gt; Готель» і призначаєте спостереження з назвою «Ділова подорож до Італії». Ви можете призначити це спостереження до всіх професійних витрат, які вам доведеться зробити під час подорожі. Після завершення відрядження, якщо все пройшло добре, ваша компанія поверне вам всі витрати, — ви зможете створити прибуткову операцію і також призначити її до спостереження «Ділова подорож до Італії».</para>
+	<para
+>Призначенням спостережень до операцій витрат, які згодом буде відшкодовано, ви зможете спостерігати за повнотою відшкодування.</para>
+	<para
+>Подібна стратегія, звичайно ж, працює і у зворотному напрямку: якщо хтось позичив вам гроші, вам цікаво буде спостерігати за поверненням боргу.</para>
+	<para
+>Наведення вказівника миші на пункт спостереження на панелі спостереження з наступним подвійним клацанням лівою кнопкою миші відкриє нову вкладку, на якій міститиметься список всіх операцій, пов’язаних з цим спостереженням.</para>
+	
+	<tip
+><para
+>Іноді виникає потреба у стеженні за відшкодуванням кредиту до того, як ви почнете користуватися &skrooge;. Як це зробити, якщо не можна встановити початкову суму для стеження?</para>
+
+	<para
+>Ви можете створити дроблену операцію з такими параметрами: <itemizedlist>
+	      <listitem
+><para
+>сума=0, щоб уникнути впливу операції на звіти.</para
+></listitem>
+	      <listitem
+><para
+>поділ з очікуваною сумою, пов’язаний зі стеженням.</para
+></listitem>
+	      <listitem
+><para
+>інший поділ із сумою протилежного знаку, не пов’язаний зі стеженням.</para
+></listitem>
+	    </itemizedlist
+>	  
+	</para
+></tip>
+	
+	<sect2 id="close_tracker">
+	  <title
+>Припинення стеження</title>
+	  
+	  <para
+>Коли у вас зникає потреба у стеженні, наприклад через те, що кредит було повністю сплачено, ви можете просто вилучити стеження. Але, якщо ви так зробите, всі введені, цікаві для подальшого вивчення, дані буде втрачено.</para>
+	  <para
+>Кращим вирішенням є закриття спостереження: закриттям спостереження його можна просто сховати з панелі спостереження позначенням відповідного пункту.</para>
+	</sect2>
+	
+      </sect1>
+      
+      <sect1 id="search_and_process">
+	<title
+>Пошук і обробка</title>
+	
+	<para
+>За допомогою цього додатка ви можете будувати складні запити щодо пошуку операцій, а також виконувати над записами операцій певні перетворення. Ось наш приклад:</para>
+	
+	<blockquote
+><para
+>Джон отримав певні дані з свого банку. Звичайно ж, отримані дані не розподілено за категоріями. Фактично, вся корисна інформація щодо категорії міститься у полі коментаря. Джонові потрібен якийсь автоматичний спосіб призначення відповідної категорії та інших атрибутів на основі коментаря.</para
+></blockquote>
+
+	<para
+>Як все це працює? По-перше, ви визначите критерії пошуку, за якими програма надасть вам список операцій. Після цього, до знайдених операцій буде застосовано вказані перетворення.</para>
+	
+	<note
+><para
+><link linkend="search_process_real_case"
+>Приклад застосування</link
+> можна знайти у додатку. Там же ви знайдете корисну вправу, пов’язану з наведеними прикладом.</para
+></note>
+	
+	<sect2 id="define_search_criteria">
+	  <title
+>Визначення критеріїв пошуку</title>
+	  
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject>
+		<imagedata fileref="define_search.png" format="PNG"/>
+	      </imageobject>
+	    </mediaobject>
+	  </screenshot>
+	  
+	  <para
+>Тут ви можете визначити запит щодо пошуку операцій за допомогою комбінації параметрів. На наведеному вище знімку показано таблицю з атрибутами заголовка операції. Якщо ви зміните вміст відповідного рядка, ви створите новий критерій запиту. Кожен зі стовпчиків запиту буде поєднано з іншими стовпчиками за допомогою логічної операції «І»:</para>
+	  <para
+>(стовпчик1 і стовпчик2)</para>
+	  <para
+>Якщо ви додасте новий рядок, ви створите новий критерій, який буде поєднано з першим рядком логічною операцією «АБО»:</para>
+	  <para
+>[рядок1] або [рядок2].</para>
+	  
+	  <para
+>Так чи інакше, комбінацію стовпчиків і рядків можна буде прочитати як:</para>
+	  <para
+>(стовпчик1 і стовпчик3) або (стовпчик2 і стовпчик3)</para>
+	  
+	  <para
+>Звичайно ж, у вашому запиті ви можете створювати довільну кількість рядків і стовпчиків.</para>
+	  
+	  <para
+>Після завершення визначення запиту ви можете додати його до списку критеріїв пошуку або змінити один з вже існуючих критеріїв пошуку.</para>
+	  
+	</sect2>
+	
+	
+	<sect2 id="view_search_result">
+	  <title
+>Перегляд результатів пошуку</title>
+	  
+	  <para
+>Після вибору запиту з пошуку у перегляді запитів під таблицею буде показано кількість знайдених записів операцій:</para>
+	  
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject>
+		<imagedata fileref="preview_search_result.png" format="PNG"/>
+	      </imageobject>
+	    </mediaobject>
+	  </screenshot>
+	  
+	  
+	  <para
+>Наведення вказівника миші на рядок запиту пошуку у перегляді запитів з наступним подвійним клацанням лівою кнопкою миші призведе до показу всіх знайдених операцій у новій вкладці:</para>
+	  
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject>
+		<imagedata fileref="search_result.png" format="PNG"/>
+	      </imageobject>
+	    </mediaobject>
+	  </screenshot>
+	  
+	</sect2>
+	
+	
+	<sect2 id="define_processing">
+	  <title
+>Визначення обробки</title>
+	  
+	  <para
+>Якщо ви бажаєте виконати якусь обробку знайдених запитів, позначте потрібний запит і перейдіть на панель визначення обробки:</para>
+	  
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject>
+		<imagedata fileref="define_processing.png" format="PNG"/>
+	      </imageobject>
+	    </mediaobject>
+	  </screenshot>
+	  
+	  <para
+>За допомогою цієї панелі ви можете визначити перетворення, які слід виконати над записами операцій. Зауважте, що автори програми навмисно заборонили зміну суми операції або дати за допомогою цієї панелі.</para>
+	  
+	</sect2>
+	
+	
+	<sect2 id="define_alarm">
+	  <title
+>Визначення нагадування</title>
+	  <para
+>Особливою можливістю додатка «Пошук з обробкою» є можливість визначення нагадувань. У разі визначення нагадування &skrooge; зможе звертати вашу увагу на певні події, наприклад досягнення місячного значення витрат за певною категорією.</para>
+	  
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject>
+		<imagedata fileref="alarm.png" format="PNG"/>
+	      </imageobject>
+	    </mediaobject>
+	  </screenshot>
+	  
+	  <para
+>Для визначення нагадування слід спочатку вказати критерії пошуку, за якими програма вибиратиме набір операцій, про які вам слід нагадати. Ви, наприклад, можете вказати, що ці операції має бути здійснено поточного місяця і що вони мають належати до категорії «Одяг». Потім вам слід вказати суму, за якої буде увімкнено процедуру нагадування», наприклад 1000€, і визначити повідомлення нагадування, яке буде надіслано вам &skrooge; у разі досягнення вказаної суми.</para>
+	    <tip
+><para
+>Повідомлення нагадування можуть містити параметри для загальної суми (%1), суми нагадування (%2) і різниці (%3).</para
+></tip>
+	  
+	</sect2>
+	
+      </sect1>
+      
+      <sect1 id="budgets">
+	<title
+>Бюджети</title>
+	<para
+>За допомогою цього додатка ви можете визначити бюджет та керувати ним.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject>
+	      <imagedata fileref="budgets.png" format="PNG"/>
+	    </imageobject>
+	  </mediaobject>
+	</screenshot>
+	<para
+>Подібно до інших програм для керування фінансами, у &skrooge; передбачено можливість визначення бюджетів. Зробити це можна вручну або у автоматичному режимі.</para>
+	<sect2 id="budget_definition">
+	  <title
+>Визначення бюджету</title
+>	
+	  <para
+>У режимі керування вручну ви можете: <itemizedlist>
+	      <listitem
+><para
+>Визначити бюджетну суму для категорії на рік.</para
+></listitem>
+	      <listitem
+><para
+>Визначити бюджетну суму для категорії на усі місяці року.</para
+></listitem>
+	      <listitem
+><para
+>Визначити бюджетну суму для категорії на певний місяць року.</para
+></listitem>
+	      <listitem
+><para
+>Визначити, чи слід брати до уваги прибутки і витрати за підкатегоріями під час визначення бюджету (приклад: якщо буде позначено відповідний пункт, до бюджету категорії «Автомобіль» буде зараховано категорію «Автомобіль 
+> Пальне»).</para
+></listitem>
+	    </itemizedlist>
+	    <tip
+><para
+>Ви можете наказати програмі зараховувати до бюджету усі прибутки і витрати, не визначені у іншому бюджеті, якщо залишите поле категорії порожнім. Такий варіант буде корисним, якщо вам потрібно забезпечити врахування усіх витрат.</para
+></tip>
+	    </para>
+	    
+	  <para
+>У автоматичному режимі ви можете: <itemizedlist>
+	      <listitem
+><para
+>Визначити бюджет на рік на основі операцій протягом попереднього року.</para
+></listitem>
+	      <listitem
+><para
+>Визначити пропущені записи бюджету для встановлення балансу на кожен місяць і/або на рік. Це можна зробити навіть для бюджетів, визначених вручну.</para
+></listitem>
+	    </itemizedlist>
+	    </para>
+	</sect2>
+	
+	<sect2 id="budget_rules">
+	  <title
+>Правила ведення бюджету</title>
+	  <para
+>Щоб обговорити додаткові питання бюджетування, давайте розглянемо такий приклад збалансованого бюджету: <itemizedlist>
+	      <listitem
+><para
+>-500 € на місяць на категорію «Їжа».</para
+></listitem>
+	      <listitem
+><para
+>+500 € на місяць для усіх інших категорій зняття та вкладень.</para
+></listitem>
+	    </itemizedlist>
+	    </para>
+	    
+	    <para
+>Тепер припустімо, що вами витрачено 600 € на категорію «Їжа» протягом попереднього місяця. &skrooge; проінформує вас, що ви вийшли за межі бюджету, але ви не можете припинити їсти. Отже, вам доведеться їх десь узяти. Що ж робити?</para>
+	    <para
+>Правила ведення бюджету надають вам змогу визначити спосіб поводження з різницею (додатною чи від’ємною). Наприклад, ви можете перевести різницю одного місяця на наступний місяць. У розглянутому випадку ваш новий бюджет для категорії «Їжа» на поточний місяць складатиме -400 € (-500+100). Отже вам слід подбати про відшукання додаткових коштів на покриття різниці.</para
+>	  
+	    <para
+>Правила ведення бюджету також допоможуть планувати ваші проєкти. Наприклад, ви можете визначити таке правило: усю додатну різницю (економію коштів) у категорії «Їжа» переводити до категорії «Відпочинок». Тоді ви зможете накопичити певну суму у категорії «Відпочинок» і вирушити відпочивати.</para
+>	    
+	</sect2>
+      </sect1>
+      
+      <sect1 id="simulations">
+	<title
+>Імітації</title>
+	<para
+>За допомогою цього додатка можна моделювати стан рахунку.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject>
+	      <imagedata fileref="simulations.png" format="PNG"/>
+	    </imageobject>
+	  </mediaobject>
+	</screenshot>
+	<para
+>Ви можете визначити ставки для кожного з рахунків і оцінити річні сплати. Ви також можете наказати програмі створити таблицю погашення.</para>
+      </sect1>
+      
+    </chapter>
+
+    <chapter id="settings">
+        <title
+>Параметри</title>
+        <para
+>Тут наведено опис усіх параметрів, які використовуються для роботи &skrooge;. Ці параметри є спільними для усіх документів.</para>
+        
+        <sect1 id="settings_general">
+        <title
+>Загальне</title>
+        
+        <screenshot>
+            <mediaobject>
+            <imageobject>
+                <imagedata fileref="settings_general.png" format="PNG"/>
+            </imageobject>
+            </mediaobject>
+        </screenshot>
+        <para
+>Тут ви можете визначити загальні параметри. Найважливішими з них є ті, які визначають, що має робити програма, якщо змінено сторінку або закладку.</para>
+        </sect1>
+        
+        <sect1 id="settings_file">
+        <title
+>Файл</title>
+        
+        <screenshot>
+            <mediaobject>
+            <imageobject>
+                <imagedata fileref="settings_file.png" format="PNG"/>
+            </imageobject>
+            </mediaobject>
+        </screenshot>
+        <para
+>Усі ці параметри стосуються зберігання даних. Ви можете визначити спосіб створення файлів резервних копій, те, чи хочете ви використовувати сховище паролів &kde; для зберігання паролів тощо.</para>
+        </sect1>
+
+        <sect1 id="settings_bookmarks">
+        <title
+>Закладки</title>
+        
+        <screenshot>
+            <mediaobject>
+            <imageobject>
+                <imagedata fileref="settings_bookmarks.png" format="PNG"/>
+            </imageobject>
+            </mediaobject>
+        </screenshot>
+        <para
+>На цій сторінці ви знайдете лише один параметр для вибору того, чи слід автоматично пришпилювати завантажені закладки.</para>
+        </sect1>
+
+        <sect1 id="settings_history">
+        <title
+>Журнал</title>
+        
+        <screenshot>
+            <mediaobject>
+            <imageobject>
+                <imagedata fileref="settings_history.png" format="PNG"/>
+            </imageobject>
+            </mediaobject>
+        </screenshot>
+        <para
+>За допомогою цих параметрів ви зможете налаштувати керування вашим журналом змін.</para>
+        </sect1>
+
+        <sect1 id="settings_transactions">
+        <title
+>Транзакції</title>
+        
+        <screenshot>
+            <mediaobject>
+            <imageobject>
+                <imagedata fileref="settings_transactions.png" format="PNG"/>
+            </imageobject>
+            </mediaobject>
+        </screenshot>
+        <para
+>Тут наведено параметри дій з редагування.</para>
+        <para
+>Будь ласка, зауважте, що можна поліпшити швидкодію програми, якщо ви не використовуєте стовпчик «Баланс». Просто вимкніть обчислення балансів, щоб не змушувати програму виконувати марні обчислення.</para>
+        <para
+>Визначитися з тим, що робити, якщо певна дія порушує узгоджений запис. Після кожного внесення змін програма виконує перевірку, щоб визначити, чи не порушує зміна попереднє узгодження з банківською установою. Ви можете визначити дію, яку буде виконано, якщо виявлено порушення.</para
+>     
+        <para
+>Визначитися з тим, що робити, якщо певна дія не узгоджується із імпортованим записом. Після кожного внесення змін програма виконує перевірку, щоб визначити, чи не порушує зміна узгодженість із раніше імпортованими даними. Ви можете визначити дію, яку буде виконано, якщо виявлено порушення.</para
+>          
+        </sect1>
+
+        <sect1 id="settings_scheduled">
+        <title
+>Заплановані операції</title>
+        
+        <screenshot>
+            <mediaobject>
+            <imageobject>
+                <imagedata fileref="settings_scheduled.png" format="PNG"/>
+            </imageobject>
+            </mediaobject>
+        </screenshot>
+        <para
+>Тут наведено параметри для редагування запланованих операцій.</para>
+        <para
+>Якщо ви позначите пункт створення шаблона, з'явиться додатковий пункт, за допомогою якого ви зможете виконати перетворення усіх наявних запланованих операцій.</para>
+        <screenshot>
+            <mediaobject>
+            <imageobject>
+                <imagedata fileref="settings_scheduled_convert.png" format="PNG"/>
+            </imageobject>
+            </mediaobject>
+        </screenshot>
+        </sect1>
+
+        <sect1 id="settings_search">
+        <title
+>Знайти і обробити</title>
+        
+        <screenshot>
+            <mediaobject>
+            <imageobject>
+                <imagedata fileref="settings_search.png" format="PNG"/>
+            </imageobject>
+            </mediaobject>
+        </screenshot>
+        <para
+>На цій сторінці можна визначити лише один параметр — частоту нагадувань.</para>
+        </sect1
+>     
+        
+        <sect1 id="settings_report">
+        <title
+>Звіт</title>
+        
+        <screenshot>
+            <mediaobject>
+            <imageobject>
+                <imagedata fileref="settings_report.png" format="PNG"/>
+            </imageobject>
+            </mediaobject>
+        </screenshot>
+        <para
+>Тут ви можете визначити деякі параметри показу звітів.</para>
+        </sect1
+>   
+        
+        <sect1 id="settings_units">
+        <title
+>Фінансові інструменти</title>
+        
+        <screenshot>
+            <mediaobject>
+            <imageobject>
+                <imagedata fileref="settings_units.png" format="PNG"/>
+            </imageobject>
+            </mediaobject>
+        </screenshot>
+        <para
+>Тут можна визначити деякі параметри, які пов'язано із отриманням даних щодо курсів.</para>
+        </sect1
+>   
+
+        <sect1 id="settings_import">
+        <title
+>Імпорт/Експорт</title>
+        
+        <screenshot>
+            <mediaobject>
+            <imageobject>
+                <imagedata fileref="settings_import_1.png" format="PNG"/>
+            </imageobject>
+            </mediaobject>
+        </screenshot>
+        <para
+>Загальні параметри імпортування даних.</para>
+        
+        <screenshot>
+            <mediaobject>
+            <imageobject>
+                <imagedata fileref="settings_import_2.png" format="PNG"/>
+            </imageobject>
+            </mediaobject>
+        </screenshot>
+        <para
+>Якщо ви користуєтеся імпортуванням даних у CSV, ви можете змінити ці параметри, щоб допомогти &skrooge; у визначенні стовпчиків даних.</para>
+        
+        <screenshot>
+            <mediaobject>
+            <imageobject>
+                <imagedata fileref="settings_import_3.png" format="PNG"/>
+            </imageobject>
+            </mediaobject>
+        </screenshot>
+        <para
+>У деяких випадках може виникнути потреба у примусовому визначені формату дат для файлів QIF. У більшості випадків &skrooge; може визначити цей формат автоматично.</para>
+        
+        <screenshot>
+            <mediaobject>
+            <imageobject>
+                <imagedata fileref="settings_import_4.png" format="PNG"/>
+            </imageobject>
+            </mediaobject>
+        </screenshot>
+        <para
+>Тут ви можете активувати модулі імпортування даних зі списку.</para
+>        
+        </sect1
+>                
+    </chapter
+>    
+    
+    <chapter id="howto">
+      <title
+>Рецепти</title>
+	<qandaset id="faqlist">
+	<qandaentry>
+	<question id="howto_language">
+	<para
+>Як змусити &skrooge; показувати інтерфейс рідною мовою?</para>
+	</question>
+	<answer>
+	<para
+>Спершу перевірте, чи перекладено <ulink url="http://l10n.kde.org/stats/gui/trunk-kf5/po/skrooge.po/"
+>перекладено &skrooge; вашою мовою</ulink
+> на достатньому рівні.</para>
+	</answer>
+	</qandaentry>
+
+	<qandaentry>
+	<question id="howto_currency">
+	<para
+>Як встановити типову валюту та формат запису дати?</para>
+	</question>
+	<answer>
+	<para
+>Дані щодо типової валюти та формату запису дати &skrooge; отримує із системних параметрів Плазми. У деяких дистрибутивах програму для керування цими параметрами не встановлюють разом із &skrooge;. Якщо ваш дистрибутив належить до цього типу, вам слід встановити програму за допомогою програми для керування пакунками вашого дистрибутива.</para>
+
+	<para
+>Запустити відповідну програму можна за допомогою такої команди, відданої з консолі: <userinput
+>systemsettings5</userinput
+></para>
+
+	<para
+>Параметри валюти та дати можна визначити за допомогою модуля <guilabel
+>Формат</guilabel
+>.</para>
+	</answer>
+	</qandaentry>
+
+	<qandaentry>
+	<question id="howto_size">
+	<para
+>Як зменшити розміри документа?</para>
+	</question>
+	<answer>
+	<para
+>Розмір документа іноді буває дуже важливим. Вилучення записів застарілих операцій може призвести лише до збільшення розмірів документа. Причина цього зрозуміла: &skrooge; зберігає журнал усіх дій для використання у механізмі скасування-повторення дій. Тому, якщо ви хочете зменшити розміри вашого документа, вам слід спорожнити журнал.</para>
+	</answer>
+	</qandaentry>
+
+	<qandaentry>
+	<question id="howto_extractor">
+	<para
+>Як визначити спосіб видобування даних з накладної?</para>
+	</question>
+	<answer>
+	<para
+>&skrooge; використовує pdftotext для видобування текстових даних з &PDF;. Далі, програма використовує текстовий файл із описом того, як знайти ключові значення. Якщо ви хочете визначити новий спосіб видобування даних з накладних, вам слід виконати такі дії:</para>
+	<itemizedlist>
+	<listitem
+><para
+>Запустити <command
+>pdftotext</command
+> для видобування даних із зразкового файла &PDF;.</para
+></listitem>
+	<listitem
+><para
+>Відкрити створений текстовий файл і відповідний файл &PDF;.</para
+></listitem>
+	<listitem
+><para
+>Створити текстовий файл із суфіксом назви <filename class="extension"
+>.extractor</filename
+>. Приклад: <filename
+>google.extractor</filename
+></para
+></listitem>
+	<listitem
+><para
+>Вміст файла має бути приблизно таким:</para>
+	<programlisting
+>payee=REGEXPCAP:^(Biofan) SPRL$
+date=REGEXPCAP:^Order Date: (.*)$
+dateformat=dd MMM yyyy
+number=REGEXPCAP:^N° de facture (.*)$
+mode=SET:Carte
+comment=REGEXPCAP:^N° de commande (.*)$|SET:Commande %1
+amount=REGEXP:^Montant global:$|LINEOFFSET:2
+        </programlisting>
+	<para
+>Для кожного з атрибутів (payee, date, number, mode, comment та amount) використовується однаковий синтаксис: КОМАНДА:значення|КОМАНДА:значення|…</para>
+	<para
+>Передбачено такі команди:</para>
+	<itemizedlist>
+	<listitem
+><para
+><command
+>REGEXPCAP</command
+>: формальний вираз для визначення розташування значення</para
+></listitem>
+	<listitem
+><para
+><command
+>REGEXP</command
+>: пошук у файлі рядка, який відповідає формальному виразу.</para
+></listitem>
+	<listitem
+><para
+><command
+>LINEOFFSET</command
+>: зміна позиції у рядку.</para
+></listitem>
+	<listitem
+><para
+><command
+>SET</command
+>: надання змінній значення. Можна використовувати як першу команду або команду після REGEXPCAP (див. приклад).</para
+></listitem>
+	</itemizedlist>
+	<para
+>dateformat — формат запису дати, яка видобувається.</para>
+	</listitem>
+	<listitem
+><para
+>Цей файл слід зберегти у тій самій теці, що і інші файли із суфіксами назв <filename class="extension"
+>.extractor</filename
+>.</para
+></listitem>
+	</itemizedlist>
+	</answer>
+	</qandaentry>
+	</qandaset>
+
+    </chapter
+>    
+    
+    <chapter id="credits">
+      <title
+>Подяки і ліцензія</title>
+      <para
+>&skrooge; </para>
+      <para
+>Авторські права на програму належать Stéphane Mankowski <email
+>stephane@mankowski.fr</email
+>, 2008–2020. </para>
+      <para
+>Авторські права на документацію до програми належать Guillaume DE BURE <email
+>gdebure@yahoo.com</email
+> 2008–2020 </para>
+      <para
+>Переклад українською: Юрій Чорноіван <email
+>yurchor@ukr.net</email
+></para
+> &underFDL; &underGPL; </chapter
+>    
+    
+    <appendix id="search_process_real_case">
+      <title
+>Приклад застосування пошуку з обробкою</title>
+      
+      <para
+>Гаразд, можна погодитися, що хоча додаток <link linkend="search_and_process"
+>Пошук і обробка</link
+> і досить потужний, працювати з ним не так вже і просто. Ось невеличка вправа, яка допоможе вам зрозуміти роботу додатка краще. Пам’ятаєте наш приклад щодо пошуку з обробкою?</para>
+      
+      <blockquote
+><para
+>Джон отримав певні дані з свого банку. Звичайно ж, отримані дані не розподілено за категоріями. Фактично, вся корисна інформація щодо категорії міститься у полі коментаря. Джонові потрібен якийсь автоматичний спосіб призначення відповідної категорії та інших атрибутів на основі коментаря.</para
+></blockquote>
+      
+      
+      <para
+>Нехай нашому уявному користувачеві, Джону, відомо, що назва отримувача міститься у полі коментаря. Він бажає, щоб всі внески у &kde; зберігалися у категорії «Пожертви &amp; ВПЗ». Отже слід знайти всі записи операцій, поле коментаря яких містить слово «&kde;»:</para>
+      
+      <table>
+	<title
+>Визначення пошуку</title>
+	<tgroup cols="1">
+	  <thead>
+	    <row>
+	      <entry
+>Коментар</entry>
+	    </row>
+	  </thead>
+	  <tbody>
+	    <row>
+	      <entry
+>містить «&kde;»</entry>
+	    </row>
+	  </tbody>
+	</tgroup>
+      </table>
+      
+      <para
+>Додайте це визначення пошуку до списку існуючих способів пошуку натисканням кнопки <guibutton
+>Додати</guibutton
+>.</para>
+      
+      <para
+>Далі, нам слід повідомити &skrooge;, що слід додати всі операції, знайдені за вказаним запитом, до категорії «Пожертви &gt; ВПЗ». Змінимо тип запиту на «Оновлення» за допомогою спадного списку і визначимо перетворення, які слід застосувати:</para>
+      
+      <table>
+	<title
+>Визначення оновлення</title>
+	<tgroup cols="2">
+	  <thead>
+	    <row>
+	      <entry
+>Коментар</entry>
+	      <entry
+>Категорія</entry>
+	    </row>
+	  </thead>
+	  <tbody>
+	    <row>
+	      <entry
+>=''</entry>
+	      <entry
+>='Пожертви &gt; ВПЗ'</entry>
+	    </row>
+	  </tbody>
+	</tgroup>
+      </table>
+      
+      <tip
+><para
+>Зауважте, що ми вилучили початковий коментар, надавши йому значення порожнього рядка. Причиною цього було бажання зробити записи зручнішими для читання, але ви можете зберегти коментар для подальшого перегляду.</para
+></tip>
+      
+      <para
+>Додайте створену обробку до попередньо визначеного пошуку за допомогою натискання кнопки <guibutton
+>Додати</guibutton
+>.</para>
+      
+      <para
+>Тепер застосуйте обробку до всіх імпортованих записів операцій, які ще не було звірено (натисніть кнопку <guibutton
+>Застосувати</guibutton
+>):</para>
+      
+      <screenshot>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="apply_process.png" format="PNG"/>
+	  </imageobject>
+	</mediaobject>
+      </screenshot>
+      
+      <para
+>Ну, ось і все! Якщо ви повернетеся до панелі перегляду операцій, ви зауважите, що всі потрібні вам записи було оновлено. Якщо сталася помилка, не забувайте, що ви можете скористатися можливістю <link linkend="undo_redo"
+>Вернути</link
+>! Навіть якщо під час обробки було змінено 2327 записів операцій, ви все одно можете скасувати всі зміни одною дією скасування.</para>
+      
+    </appendix>
+    
+    <appendix id="holidays_expenses_analysis">
+      <title
+>Вправа з поглибленого аналізу: витрати протягом відпустки</title>
+      <para
+>Щоб проілюструвати можливості з аналізу &skrooge;, ми розглянемо витрати автора підручника протягом відпустки :).</para>
+      
+      <sect1 id="analysis_context">
+	<title
+>Контекст аналізу</title>
+	<para
+>Щоб краще зрозуміти суть вправи, вам потрібно знати дещо про цю відпустку. Вона тривала протягом майже місяця влітку 2009 року. Автор знімав декілька помешкань у різних місцях Франції. Крім того, довелося витратити деяку суму ан пальне, оскільки місця, які було відвідано, розташовано у доволі віддалених місцевостях Франції.</para>
+      </sect1>
+      
+      <sect1 id="analysis_data_organisation">
+	<title
+>Впорядкування даних</title>
+	<para
+>Автором було ретельно введено записи операцій з розподілом на категорії та додаванням до <link linkend="trackers"
+>стеження</link
+> з назвою «Відпустка, літо 2009». Для категорій було передбачено підкатегорії, зокрема «Транспорт 
+> Автомобіль 
+> Пальне», щоб уможливити подальший докладний аналіз.</para>
+      <screenshot>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="analysis_transactions_view.png" format="PNG"/>
+	  </imageobject>
+	</mediaobject>
+      </screenshot>
+    </sect1>
+    
+    <sect1 id="analysis_total_cost">
+      <title
+>Обчислення загальних витрат протягом відпустки</title>
+      <para
+>Це так просто, що ви навіть не повірите: відкрийте панель «Стеження» і зазирніть до стовпчика «Сума»:</para>
+      <screenshot>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="analysis_trackers_view.png" format="PNG"/>
+	  </imageobject>
+	</mediaobject>
+      </screenshot>
+      <para
+>А тепер поглянемо на щось цікавіше...</para>
+    </sect1>
+    
+    <sect1 id="analysis_expenses_distribution">
+      <title
+>Розподіл витрат</title>
+      <para
+>Ну, добре, але на що ж пішли всі ці гроші? Щоб довідатися про це, слід побудувати за стеженням звіт. Наведіть вказівник миші на рядок звіту, клацніть правою кнопкою миші і оберіть у контекстному меню пункт <guimenuitem
+>Відкрити звіт...</guimenuitem
+>.</para>
+      <screenshot>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="analysis_build_report.png" format="PNG"/>
+	  </imageobject>
+	</mediaobject>
+      </screenshot>
+      
+      
+      <para
+>У відповідь програма відкриє звіт у новій вкладці, де буде показано лише операції, пов’язані з вказаним стеженням. Типовим параметром для діапазону дат буде «Поточний місяць», отже, звіт може виявитися порожнім, оскільки всі операції могло бути здійснено до початку поточного місяця. Потрібно змінити значення цього параметра на «Всі дати»:</para>
+      <screenshot>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="analysis_report_1.png" format="PNG"/>
+	  </imageobject>
+	</mediaobject>
+      </screenshot>
+      <para
+>Тепер ми зможемо бачити всі витрати за категоріями. Давайте побудуємо на основі даних кругову діаграму, щоб картина стала наочнішою.</para>
+      
+      <screenshot>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="analysis_report_2.png" format="PNG"/>
+	  </imageobject>
+	</mediaobject>
+      </screenshot>
+      
+      
+      <para
+>Тепер стає зрозумілим, що більшість витрат протягом відпустки припадає на транспорт та їжу. Чи можна отримати ще якісь відомості? Звичайно, давайте заглибимося на один рівень у ієрархію категорій натисканням кнопки з зображенням <guibutton
+>плюса</guibutton
+> <inlinemediaobject
+><imageobject
+><imagedata fileref="category_one_level_more.png"/></imageobject
+></inlinemediaobject
+>.</para>
+      <screenshot>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="analysis_report_3.png" format="PNG"/>
+	  </imageobject>
+	</mediaobject>
+      </screenshot>
+      
+      <para
+>Г-м-м, тут не так уже й багато даних, окрім категорії «Транспорт». Скористаємося підкатегорією «Автомобіль». Побудуємо графік для цієї підкатегорії (позначте пункт кругової діаграми, наведіть на нього вказівник миші, клацніть правою кнопкою і виберіть у контекстному меню пункт <guimenuitem
+>Відкрити звіт</guimenuitem
+>):</para>
+      <screenshot>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="analysis_build_transport_report.png" format="PNG"/>
+	  </imageobject>
+	</mediaobject>
+      </screenshot>
+      
+      <para
+>Програма відкриє ще одну вкладку зі звітом лише за категорією «Транспорт 
+> Автомобіль».</para>
+      <screenshot>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="analysis_report_4.png" format="PNG"/>
+	  </imageobject>
+	</mediaobject>
+      </screenshot>
+      <para
+>М-м-м… не дуже-то й цікаво. Але підкатегорій набагато більше. Давайте розгорнемо їх список знову:</para>
+      <screenshot>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="analysis_report_5.png" format="PNG"/>
+	  </imageobject>
+	</mediaobject>
+      </screenshot>
+      <para
+>Гаразд, тепер ми знаємо, що на пальне витрачено 362,27€, а на дорожній податок 131,90€ (у Франції проїзд певними шосе є платним). Добре, я так і знав ;-). Крім того, цікаво подивитися на графік використання цих категорій у часі:</para>
+      <screenshot>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="analysis_report_6.png" format="PNG"/>
+	  </imageobject>
+	</mediaobject>
+      </screenshot>
+      <para
+>Зауважте, що нами було змінено тип графіка на «Лінія», а стовпчики позначають тепер «Тиждень».</para>
+      
+    </sect1>
+    
+    <sect1 id="analysis_conclusion">
+      <title
+>Висновки</title>
+      <para
+>За допомогою цього простого прикладу ми познайомилися з додатковими можливостями зі створення звітів у &skrooge;. Ці можливості допомогли нам докладно проаналізувати витрати протягом відпустки, особливо за категорією «Транспорт». Звичайно ж, у цих можливостей є і безліч інших застосувань: ймовірно, програма &skrooge; здатна задовольнити будь-які ваші забаганки.</para>
+    </sect1>
+    
+  </appendix>
+  
+  &documentation.index;
+  
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->

@@ -1,0 +1,3248 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "customization/dtd/kdedbx45.dtd" [
+  <!ENTITY appname '<application
+>Skrooge</application
+>'>
+  <!ENTITY kappname "&appname;">
+  <!ENTITY tbw "TO BE WRITTEN">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Spanish "INCLUDE"
+><!-- change language only here -->
+
+  <!ENTITY homepage "http://extragear.kde.org/apps/skrooge/">
+
+]>
+
+
+<book id="skrooge" lang="&language;">
+<title
+>Manual de &appname;</title>
+
+
+<bookinfo>
+
+<authorgroup>
+
+<author
+><firstname
+>Stéphane</firstname
+> <surname
+>MANKOWSKI</surname
+> <affiliation
+> <address
+><email
+>stephane@mankowski.fr</email
+></address>
+</affiliation>
+</author>
+
+<othercredit role="developer"
+><firstname
+>Guillaume</firstname
+> <surname
+>DE BURE</surname
+> <affiliation
+> <address
+><email
+>guillaume.debure@gmail.com</email
+></address>
+</affiliation>
+<contrib
+>Desarrollador</contrib>
+</othercredit>
+<othercredit role="translator"
+><firstname
+>Cristina Yenyxe</firstname
+> <surname
+>González García</surname
+><affiliation
+> <address
+><email
+>the.blue.valkyrie@gmail.com</email
+></address
+></affiliation
+><contrib
+>Traductor</contrib
+></othercredit
+> <othercredit role="translator"
+><firstname
+>Kira</firstname
+><surname
+>J. Fernández</surname
+><affiliation
+><address
+><email
+>kirajfdez@gmail.com</email
+></address
+></affiliation
+><contrib
+>Traductora</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+<year
+>2007</year>
+<year
+>2008</year>
+<year
+>2009</year>
+<year
+>2010</year>
+<year
+>2011</year>
+<holder
+>Stéphane MANKOWSKI</holder>
+<holder
+>Guillaume DE BURE</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>30/01/2011</date>
+<releaseinfo
+>0.8.0</releaseinfo>
+
+
+<abstract>
+<para
+>Este documento es un manual de uso de &appname;, una aplicación de gestión de finanzas personal. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>extragear</keyword>
+<keyword
+>office</keyword>
+<keyword
+>skrooge</keyword>
+<keyword
+>finanzas personales</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Introducción</title>
+
+<sect1 id="skrooge-intro">
+<title
+>&appname;</title>
+
+<para
+>&appname; es una aplicación para gestionar sus finanzas personales. Puede llevar un registro de sus ingresos y gastos de varias cuentas, en varios tipos de divisas. Dispone de todas las características que espera de una herramienta de ese tipo, como categorías, operaciones programadas, informes gráficos, gestión de existencias... También tiene algunas funcionalidades menos comunes, como la edición rápida de operaciones, buscar mientras teclea, reintegro de rastreadores, atributos personalizables... </para>
+
+<screenshot>
+<screeninfo
+>&appname; mostrando gráficos circulares de gastos por categoría</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="reports.png" format="PNG"/>
+</imageobject>
+<textobject
+><phrase
+>&appname; mostrando gráficos circulares de gastos por categoría</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+
+<sect2 id="what-skrooge-is">
+<title
+>Qué es &appname;</title>
+
+<para
+>&appname; es un gestor de finanzas personales para &kde; 4. Está pensado para su uso por individuos que desean mantener un registro de sus ingresos, gastos e inversiones. </para>
+
+</sect2>
+
+<sect2 id="what-skrooge-is-not">
+<title
+>Qué no es &appname;</title>
+
+<para
+>&appname; no es una herramienta profesional. No tiene las funciones que se esperarían de un programa que se utiliza para llevar un pequeño negocio. No gestiona impuestos, no usa sistemas de doble entrada ni otras funciones financieras avanzadas. </para>
+<para
+>Si estuviera buscando una herramienta así, puede que desee mirar en su lugar KMyMoney o Kraft.</para>
+
+</sect2>
+</sect1>
+
+<sect1 id="terminology">
+<title
+>Terminología</title>
+
+<sect2 id="terminology-document">
+<title
+>Documento</title>
+<para
+>Un documento es un archivo de &appname; (de extensión .skg). Puede contener un número indefinido de <link linkend="terminology-account"
+>cuentas</link
+>. Puede usar un documento para gestionar todas sus cuentas a la vez. </para>
+</sect2>
+
+<sect2 id="terminology-account">
+<title
+>Cuenta</title>
+<para
+>Una cuenta de &appname; es parecida a su cuenta del banco. Por ejemplo, si tiene una cuenta para usted, otra para su cónyuge y otra común, puede crear las tres cuentas en &appname;. Cada vez que gaste o gane dinero, registrará una <link linkend="terminology-operation"
+>operación</link
+>, e indicará sobre qué cuenta se ha realizado esta operación. </para>
+</sect2>
+
+<sect2 id="terminology-operation">
+<title
+>Operación</title>
+<para
+>Una operación es un crédito o un débito sobre una de sus cuentas. Asignando una <link linkend="terminology-category"
+>categoría</link
+> a una operación, podrá analizar cómo gasta su dinero. </para>
+
+<sect3 id="terminology_standard_operation">
+<title
+>Operación estándar</title>
+<para
+>Una operación estándar es la operación básica en &appname;. Como «Hoy se ha gastado 20€ de la tarjeta de crédito en alimentación».</para>
+<para
+></para>
+</sect3>
+
+<sect3 id="terminology_split_operation">
+<title
+>Operación dividida</title>
+<para
+>Una operación dividida es una operación en la que la cantidad total se divide en varias <link linkend="terminology-category"
+>categorías</link
+> o <link linkend="trackers"
+>rastreadores</link
+>.</para>
+<para
+>Por ejemplo, «Ayer, usted gastó 100€ en el supermercado, de los cuales 60€ fueron en comida y 40€ en ropa».</para>
+</sect3>
+
+<sect3 id="terminology_transfer">
+<title
+>Transferencia</title>
+<para
+>Una transferencia en &appname; es equivalente a mover una cantidad de dinero de una de sus cuentas de &appname; a otra.</para>
+<para
+>Esto no se debe confundir con el medio de pago elegido: si ha hecho una transferencia, por ejemplo utilizando la página web de su banco, a la cuenta de alguien, esto no es una operación de transferencia, porque &appname; no sabe de la cuenta de esa otra persona. Es una <link linkend="terminology_standard_operation"
+>operación estándar</link
+> hecha con una transferencia como forma de pago.</para>
+<para
+>Lea el <link linkend="transfer"
+>capítulo dedicado</link
+> si las cosas todavía no están claras.</para>
+</sect3>
+
+<sect3 id="terminology_validated_operation">
+<title
+>Operación validada</title>
+<para
+>Cuando se <link linkend="import"
+>Importen</link
+> operaciones, no se considerarán válidas inmediatamente. Primero necesita validarlas manualmente. Una operación validada es, por tanto, una operación importada que ha sido validada.</para>
+<para
+>Tenga en cuenta que es posible validar automáticamente las operaciones al importarlas, activando la correspondiente opción en las preferencias.</para>
+</sect3>
+
+<sect3 id="terminology_pointed_operation">
+<title
+>Operación señalada</title>
+<para
+>Durante el <link linkend="reconciliation"
+>proceso de reconciliación</link
+>, usted señala en &appname; todas las operaciones que aparecen en la correspondiente posición de la cuenta. Una operación señalada es una de esas operaciones. No se <link linkend="terminology_checked_operation"
+>verifica</link
+> hasta que la reconciliación se ha completado.</para>
+</sect3>
+
+<sect3 id="terminology_checked_operation">
+<title
+>Operación verificada</title>
+<para
+>Cuando todas las operaciones en la posición de su cuenta se han señalado en &appname;, puede completar el proceso de reconciliación. Todas las operaciones <link linkend="terminology_pointed_operation"
+>señaladas</link
+> se convierten en Operaciones verificadas.</para>
+</sect3>
+
+
+</sect2>
+
+<sect2 id="terminology-category">
+<title
+>Categoría</title>
+<para
+>Una categoría es básicamente una clase de operaciones. Algunos ejemplos clásicos incluyen «Comida», «Impuestos», «Sueldo»... Una categoría puede contener otras categorías: es una estructura jerárquica. Por ejemplo, la categoría «Transporte» puede contener las categorías «Autobús», «Automóvil», «Avión»... &appname; maneja una infinita profundidad de categorías. </para>
+</sect2>
+
+<sect2 id="terminology-unit">
+<title
+>Unidad</title>
+<para
+>Una unidad en &appname; es cualquier cosa que pueda tener un valor. Por ejemplo: <itemizedlist>
+  <listitem
+><para
+>Divisa <itemizedlist>
+      <listitem
+><para
+>$ (dólar de EEUU)</para
+></listitem>
+      <listitem
+><para
+>€ (euro)</para
+></listitem>
+      <listitem
+><para
+>£ (libra esterlina)</para
+></listitem>
+    </itemizedlist>
+    </para>
+  </listitem>
+  <listitem
+><para
+>Acciones <itemizedlist
+> <listitem
+><para
+>GOOG (Google)</para
+></listitem>
+    </itemizedlist>
+    </para>
+  </listitem>
+  <listitem
+><para
+>Cualquiera de sus posesiones <itemizedlist>
+      <listitem
+><para
+>Su casa</para
+></listitem>
+      <listitem
+><para
+>Su coche</para
+></listitem>
+    </itemizedlist>
+    </para>
+  </listitem>
+</itemizedlist>
+
+</para>
+</sect2>
+
+</sect1>
+
+</chapter>
+
+
+
+<chapter id="using-skrooge">
+<title
+>Usando &appname;</title>
+
+<sect1 id="user_interface">
+<title
+>Interfaz de usuario</title>
+<para
+>La ventana de &appname; se compone de un área principal rodeada de puntos de anclaje y una barra de estado. Los puntos de anclaje se pueden cerrar y volverse a abrir, y situados a la izquierda o a la derecha del área principal. </para>
+
+<sect2 id="main_area">
+<title
+>El área principal</title>
+<para
+>Aquí es donde &appname; muestra la información que le interesa. Puede contener <link linkend="multi-tabs"
+>muchas pestañas</link
+>, cada una con la vista que le haya asignado. </para>
+</sect2>
+
+<sect2 id="docks">
+<title
+>Puntos de anclaje</title>
+<para
+>Los puntos de anclaje se pueden encontrar en muchas aplicaciones &kde;. Son una parte de la ventana de una aplicación, y pueden ser reubicados, apilados, cerrados o incluso separados de la ventana principal. </para>
+
+<para
+>Algunos ejemplos de la distribución de los puntos de anclaje: </para>
+
+<informaltable>
+  <tgroup cols="3">
+    <tbody>
+      <row>
+        <entry>
+        <inlinemediaobject>
+        <imageobject>
+          <imagedata fileref="docks_left_right.png"/>
+        </imageobject>
+        </inlinemediaobject>
+        </entry>
+        <entry>
+        <inlinemediaobject>
+        <imageobject>
+          <imagedata fileref="docks_detached.png"/>
+        </imageobject>
+        </inlinemediaobject>
+        </entry>
+        <entry>
+        <inlinemediaobject>
+        <imageobject>
+          <imagedata fileref="docks_stacked.png"/>
+        </imageobject>
+        </inlinemediaobject>
+        </entry>
+      </row>
+    </tbody>
+  </tgroup>
+</informaltable>
+
+<para
+>Los puntos de anclaje de &appname; son: <itemizedlist>
+<listitem
+><para
+><link linkend="context_chooser"
+>El selector de contexto</link
+></para
+></listitem>
+<listitem
+><para
+><link linkend="bookmarks"
+>La lista de marcadores</link
+></para
+></listitem>
+<listitem
+><para
+><link linkend="undo_redo"
+>El explorador de deshacer/rehacer</link
+></para
+></listitem>
+<listitem
+><para
+><link linkend="property_editor"
+>El editor de propiedades</link
+></para
+></listitem>
+</itemizedlist>
+</para>
+</sect2>
+
+<sect2 id="status_bar">
+<title
+>La barra de estado</title>
+<para
+>La barra de estado es una pequeña sección en la parte inferior de la ventana de &appname; que le muestra información según trabaja. Incluye una barra de progreso y un botón de cancelación por si quisiera interrumpir una tarea larga, como importar un archivo grande. <screenshot
+> <mediaobject>
+<imageobject
+><imagedata fileref="progress-bar.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>La barra de progreso de &appname;</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+</para>
+</sect2>
+
+<sect2 id="context_chooser">
+<title
+>Selector de página</title>
+<para
+>El selector de contexto es un punto de anclaje donde puede seleccionar la vista que se mostrará en la pestaña actual o en una nueva. Para abrir una pestaña nueva, mantenga pulsada la tecla &Ctrl; mientras hace click en la vista seleccionada.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="context_chooser.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>El selector de contexto</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Cada contexto será descrito en el capítulo correspondiente de este manual.</para>
+</sect2>
+
+<sect2 id="multi-tabs">
+<title
+>Múltiples pestañas</title>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="multi_tabs.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>&appname; mostrando varias pestañas</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>&appname; puede mostrar muchas pestañas. Puede añadir tantas como desee, cada una con la información que necesite. La captura superior muestra 4 pestañas (cuentas, operaciones, y dos gráficos).</para>
+
+</sect2>
+
+
+<sect2 id="edition_panels">
+<title
+>Paneles de edición</title>
+<para
+>En la mayoría de pestañas de &appname;, la manera de editar los objetos es usar el panel de edición, situado en la parte inferior de la página. Para preservar el máximo espacio para visualizar información, sobre todo en pantallas pequeñas, los paneles de edición se pueden ocultar o mostrar usando botones.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="edition_panel_buttons.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Botones para mostrar u ocultar los paneles de edición de Operaciones.</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Cuando está disponible más de un modo de edición, varios botones permitirán elegir entre ellos. En la captura de pantalla de arriba, hay cuatro botones que permiten elegir el modo de edición para las <link linkend="operations"
+>Operaciones</link
+>, «Estándar», «Divididas», «Transferencias» y «Participaciones».</para>
+
+</sect2>
+
+
+<sect2 id="tables">
+<title
+>Tablas</title>
+<para
+>En &appname; todas las tablas son personalizables. Traiga el menú contextual (usualmente haciendo click derecho) sobre la cabecera de columna, y verá aparecer un menú:</para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="table_menu.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Personalizar una tabla</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Columnas</guimenu
+></menuchoice
+></term>
+<listitem>
+<para
+>Personalizar la apariencia de las columnas.</para>
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Ver apariencia</guimenu
+></menuchoice
+></term>
+<listitem>
+<para
+>Use un juego de columnas predefinido. La columna «predeterminada» normalmente muestra todas las columnas. Para cada table, pueden existir otros conjuntos predefinidos.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Ajustar el tamaño al contenido</guimenu
+></menuchoice
+></term>
+<listitem
+><para
+>Redimensionar todas las columnas para ajustarse al contenido.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Ajustar tamaño automáticamente</guimenu
+></menuchoice
+></term>
+<listitem
+><para
+>Cuando lo active no podrá redimensionar las columnas a mano, &appname; lo hará automáticamente basándose en su contenido.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guimenu
+>Lista de columnas mostradas</guimenu
+></term>
+<listitem
+><para
+>Muestra la lista de todas las columnas que se pueden mostrar para esta tabla. Las que se están mostrando actualmente están marcadas. Desmarque para ocultar una columna, márquela para mostrarla.</para
+></listitem>
+</varlistentry>
+</variablelist>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Desplazamiento suave</guimenu
+></menuchoice
+></term>
+<listitem
+><para
+>Cuando está habilitado, le permite desplazarse por la tabla haciendo click con el botón izquierdo y moviendo el ratón. Mueva el ratón rápidamente en una dirección, como si fuera a «lanzarlo», y la tabla se desplazará más rápido con un efecto amortiguado. Muy útil en dispositivos táctiles.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Mostrar cuadrícula</guimenu
+></menuchoice
+></term>
+<listitem
+><para
+>Dibuja las líneas de cuadrícula en la tabla.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Alternar colores de fila</guimenu
+></menuchoice
+></term>
+<listitem
+><para
+>Alterna los colores usados en cada fila, basándose en el esquema de color seleccionado para &kde;.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Exportar</guimenu
+></menuchoice
+></term>
+<listitem
+><para
+><link linkend="export_table"
+>Exporta la tabla</link
+> en un archivo independiente. Los formatos aceptados son pdf, csv y txt.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>También puede hacer click sobre un encabezado para elegir la columna por la que se ordenará, o reordenar las columnas arrastrándolas a la izquierda o a la derecha.</para>
+
+</sect2>
+
+
+
+<sect2 id="save_customized_content">
+<title
+>Guardar contenido personalizado</title>
+
+<para
+>Como se ha explicado en el <link linkend="tables"
+>capítulo anterior</link
+>, las tablas pueden ser totalmente personalizadas según sus gustos. Pero probablemente no quiera perder todo el trabajo de personalización que ha hecho al cerrar una pestaña. Hay dos maneras de guardar este trabajo.</para>
+
+<sect3 id="save_default_context">
+<title
+>Guardar el estado de una página</title>
+<para
+>Esta opción le permite guardar el estado actual de la pestaña como el estado predeterminado que siempre aparecerá cuando abra este contexto. Por ejemplo, puede querer que su <link linkend="dashboard"
+>Tablero</link
+> contenga 4 widgets, organizados a su gusto. Lo que es aún más importante es que siempre querrá que el tablero tenga el mismo aspecto, no querrá repetir la personalización cada vez que lo abra.</para>
+<para
+>Para hacerlo, simplemente necesitará hacer el trabajo de personalización una vez, y entonces guardar el estado de la pestaña como el estado predeterminado para el contenido mostrado. El establecimiento del estado predeterminado se consigue haciendo un click derecho sobre la pestaña y seleccionando <guimenuitem
+>Guardar estado de la página</guimenuitem
+>.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="tab_state_management.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Menú contextual de las pestañas</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Una manera más rápida es hacer click en el icono del disco <inlinemediaobject
+><imageobject
+><imagedata fileref="document-save.png" format="PNG"/></imageobject
+></inlinemediaobject
+> que aparecerá a la izquierda del título de la pestaña cuando modifique el estado por defecto de una pestaña.</para>
+
+</sect3>
+
+
+<sect3 id="bookmarks">
+<title
+>Usar los marcadores</title>
+<para
+>Imagine que necesita personalizar la vista de operaciones según la cuenta: cada cuenta se mostraría en su propia pestaña, quizás con diferentes columnas en cada tabla. El método antedicho no funciona, ya que se aplica sobre todas las pestañas del mismo tipo. </para>
+<para
+>La solución es guardar cada pestaña individual como un marcador. De forma muy similar a un navegador, los marcadores se pueden organizar en una jerarquía de carpetas de marcadores, que puede visualizar en el explorador de marcadores:</para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="bookmarks_browser.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>El explorador de marcadores</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Para crear un marcador, seleccione un contexto del <link linkend="context_chooser"
+>selector de contexto</link
+> que desea añadir a los marcadores, y personalice su contenido a su gusto. Una vez haya terminado, en el <link linkend="docks"
+>anclaje</link
+> de marcadores, traiga el menú contextual y seleccione <menuchoice
+> <guimenu
+>Añadir la página actual a marcadores</guimenu
+> </menuchoice
+>.</para>
+
+<para
+>Cada marcador o carpeta de marcadores se pueden «autoiniciar», p.ej. se abrirán automáticamente cuando se inicie &appname;. De esta forma, puede personalizar completamente la distribución predeterminada de &appname;.</para>
+
+</sect3>
+
+</sect2>
+
+<sect2 id="undo_redo">
+<title
+>Deshacer / rehacer</title>
+<para
+>&appname; gestiona deshacer / rehacer de una manera bastante clásica, excepto en que usted puede deshacer o rehacer cualquier acción, incluso si fue hecha hace varios días. En cuanto a los ajustes por defecto, el historial no se limpia cuando se cierra &appname; (puede cambiar este comportamiento en las preferencias), lo que significa que puede deshacer cualquier cosa remontándose a la creación del documento. </para>
+<para
+>Para limitar el impacto sobre el tamaño del archivo, &appname; está configurado por defecto para mantener un historial de 50 entradas. Puede cambiar este valor en las preferencias. </para>
+<para
+>&appname; tiene un <link linkend="docks"
+>punto de anclaje</link
+> que lista todas las acciones que se pueden deshacer. </para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="history_browser.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>El explorador del historial</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>El explorador del historial muestra tres columnas: </para>
+
+<itemizedlist>
+
+<listitem>
+<para
+>un icono que muestra el estado de la acción. Una flecha amarilla en sentido antihorario <inlinemediaobject
+><imageobject
+> <imagedata fileref="edit-undo.png" format="PNG"/></imageobject
+> </inlinemediaobject
+> significa que la acción se puede deshacer. Una flecha verde en sentido horario <inlinemediaobject
+><imageobject
+> <imagedata fileref="edit-redo.png" format="PNG"/></imageobject
+> </inlinemediaobject
+> significa que la acción se puede rehacer. </para>
+</listitem>
+
+<listitem>
+<para
+>la descripción de la acción </para>
+</listitem>
+
+<listitem>
+<para
+>la fecha en que se realizó la acción </para>
+</listitem>
+
+<listitem>
+<para
+>un icono de disco <inlinemediaobject
+><imageobject
+><imagedata fileref="document-save.png" format="PNG"/></imageobject
+></inlinemediaobject
+> significa que esta acción corresponde a un estado guardado; es decir, el documento fue guardado justo después de esta acción. </para>
+</listitem>
+</itemizedlist>
+
+<para
+>Para deshacer o rehacer una operación, haga doble click en ella. </para>
+</sect2>
+
+
+<sect2 id="mass_update">
+<title
+>Actualización en masa</title>
+<para
+>En &appname; es posible actualizar en masa una selección de elementos. Aunque eso es principalmente útil para <link linkend="operations"
+>operaciones</link
+>, también se puede usar en <link linkend="accounts"
+>cuentas</link
+>, <link linkend="units"
+>unidades</link
+>, <link linkend="scheduled"
+>operaciones programadas</link
+>...</para>
+<para
+>La manera de hacer esto es bastante directa: seleccione los elementos que deben ser actualizados, establezca el valor o valores que deben aplicarse a los elementos, y haga click en <guibutton
+>Aplicar</guibutton
+>. Para todos los atributos donde no ha establecido un valor, se dejarán sin modificar.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="before_mass_update.png"/></imageobject>
+<caption
+><para
+>Establezca el modo como «Tarjeta de crédito» y el beneficiario como «ACME» en las operaciones seleccionadas.</para
+></caption>
+</mediaobject>
+</screenshot>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="after_mass_update.png"/></imageobject>
+<caption
+><para
+>Operaciones actualizadas.</para
+></caption>
+</mediaobject>
+</screenshot>
+
+<note
+><para
+>Es intencionadamente imposible establecer la fecha o cantidad en actualizaciones masivas</para
+></note>
+
+</sect2>
+
+
+<sect2 id="property_editor">
+<title
+>Editor de propiedades</title>
+<para
+>Una de las características poco comunes de &appname; es la habilidad de añadir propiedades personalizadas a cualquier objeto. Por ejemplo puede que quiera añadir el nombre y el teléfono de un empleado de banca a una cuenta, porque él o ella es su contacto. O puede querer adjuntar un archivo a una operación, como una imagen escaneada de una factura. </para>
+<para
+>Esto se puede conseguir usando el editor de propiedades, que es un <link linkend="docks"
+>punto de anclaje</link
+> por sí mismo. </para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="property_editor.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>El editor de propiedades, con un adjunto</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Cuando un punto de anclaje es visible, mostrará las propiedades personalizadas del objeto seleccionado, tanto si es una cuenta como si es una operación, una categoría, una unidad... </para>
+</sect2>
+
+<sect2 id="search">
+<title
+>Buscar según teclea</title>
+<para
+>En todas las vistas de &appname; encontrará un campo de «filtro» que le permitirá buscar mientras teclea en la vista: <itemizedlist>
+<listitem
+><para
+>En una vista de operación, filtrará las operaciones que contengan el texto introducido, sin importar la columna (fecha, beneficiario, categoría, comentario...)</para
+></listitem>
+<listitem
+><para
+>En una vista de cuentas, filtrará las cuentas que contengan el texto introducido, sin importar la columna (banco, nombre de la cuenta, número...)</para
+></listitem>
+<listitem
+><para
+>En una vista de informes, se redibujará el gráfico basándose en este filtro</para
+></listitem>
+<listitem
+><para
+>En una... bueno, ya se hace la idea, ¿verdad?</para
+></listitem>
+</itemizedlist>
+</para>
+</sect2>
+
+</sect1>
+
+<sect1 id="import">
+<title
+>Importar archivos</title>
+
+<para
+>&appname; puede importar archivos desde otras aplicaciones financieras o desde su banco. Así, si viene de usar otra aplicación, o simplemente no quiere pasar por la complicación de introducir manualmente todas sus operaciones, &appname; tiene una vía rápida para usted.</para>
+
+<sect2 id="supported_file_formats">
+<title
+>Formatos de archivo soportados</title>
+
+<para
+>Puede utilizar uno de los siguientes formatos:</para>
+
+<variablelist>
+<varlistentry>
+  <term
+>OFX</term>
+  <listitem
+><para
+>Open Financial eXchange es un formato bien definido y documentado que &appname; importa usando una librería de terceros (libofx). Este es el formato recomendado para las importaciones.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+  <term
+>QFX</term>
+  <listitem
+><para
+>QFX es una personalización de OFX del programa comercial <trademark
+>Quicken</trademark
+>.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+  <term
+>QIF</term>
+  <listitem
+><para
+>Archivo de importación de <trademark
+>Quicken</trademark
+>. Quizás el formato de archivo comercial más común. Sin embargo, tiene algunas limitaciones bastante molestas, como no dar la unidad para la operación, o un formato de fecha poco estricto.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+  <term
+>CSV</term>
+  <listitem
+><para
+>Valores Separados por Comas. Aunque no es un formato estrictamente financiero, está a menudo disponible como formato de exportación de bancos a otras aplicaciones, principalmente porque es fácil de usar en una hoja de cálculo.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</sect2>
+
+<sect2 id="csv_specificities">
+<title
+>Especificidades CSV</title>
+<para
+>Como CSV no tiene un formato estrictamente definido, no hay forma de que &appname; sepa dónde debe encontrar las fechas, las categorías, los valores... Para hacerlo, &appname; espera que su archivo CSV contenga algunos encabezados que indiquen para qué es cada columna. El archivo debe contener al menos columnas como «Fecha» o «Cantidad».</para>
+<para
+>Usted puede definir manualmente cómo está configurado el archivo (&ie;, ignorando las cabeceras del archivo) estableciéndolo en las preferencias de la aplicación (<menuchoice
+><guimenu
+>Preferencias</guimenu
+> <guimenuitem
+>Configurar &appname;</guimenuitem
+></menuchoice
+>), en la sección <guilabel
+>Importar / Exportar</guilabel
+>.</para>
+</sect2>
+
+<sect2 id="import_operations">
+<title
+>Importar operaciones</title>
+<para
+>Uno de los principios de &appname; es evitar que haya múltiples asistentes o cuadros de diálogo. Esto es especialmente cierto para las importaciones, donde otras aplicaciones requieren mucha información del usuario. &appname; no. Cuando seleccione <menuchoice
+><guimenu
+>Archivo</guimenu
+> <guimenuitem
+>Importar</guimenuitem
+></menuchoice
+>, se le pedirá seleccionar los archivos (sí, puede importar varios a la vez), y eso es todo. Entre bambalinas, &appname; encontrará el formato del archivo y aplicará el modo de importación apropiado.</para>
+
+<sect3 id="import_account">
+<title
+>Cuenta</title>
+<para
+>Una cosa que puede que le sorprenda es que no se le preguntará a qué cuenta se deben importar las operaciones. Esto es porque &appname; lee el número de cuenta en el archivo, y lo asocia con operaciones importadas a esa cuenta.</para>
+<para
+>Si no existe ninguna cuenta con ese número, o si el archivo no contiene esa información, &appname; usará el nombre del archivo como número de cuenta.</para>
+<para
+>Si todavía no hay ninguna cuenta con ese número, &appname; creará una nueva cuenta que tenga el nombre del archivo como número de cuenta, e importará todas las operaciones a esa cuenta. Entonces, usted tendrá libertad para renombrar la cuenta, realizar una <link linkend="mass_update"
+>actualización en masa</link
+>, o usar <link linkend="search_and_process"
+>Búsqueda y proceso</link
+> para asociar las operaciones importadas a las cuentas existentes.</para>
+</sect3>
+
+<sect3 id="import_unit">
+<title
+>Unidad</title>
+<para
+>Si no se especifica ninguna unidad en el archivo importado (que es el caso normal para QIF y CSV), &appname; supondrá que la unidad es su <link linkend="unit_types"
+>divisa primaria</link
+>. Si este no es el caso, use la función <link linkend="search_and_process"
+>Búsqueda y proceso</link
+> para corregirlo.</para>
+</sect3>
+
+<sect3 id="import_date">
+<title
+>Fecha</title>
+<para
+>A veces, los archivos de entrada no tienen las fechas en el formato habitual para su país (esto puede pasar en QIF o CSV; OFX tiene un formato de fecha impuesto). &appname; lo hará lo mejor que pueda para detectar el formato.</para>
+</sect3>
+
+<sect3 id="import_status">
+<title
+>Importar estado</title>
+<para
+>Las operaciones importadas tienen un estado específico. Justo después de la importación, se considerarán «importadas, pero no validadas». La idea es que usted puede querer comprobar si la importación ha ido tan bien como esperaba, así que necesitará identificar rápidamente esas operaciones. Con los ajustes predeterminados, esas operaciones aparecerán en azul.</para>
+<tip
+><para
+>Si no desea este comportamiento, puede establecer la opción <guilabel
+>Validar automáticamente tras importar</guilabel
+> en las preferencias de la aplicación.</para
+></tip>
+</sect3>
+
+
+</sect2>
+
+<sect2 id="merge_operations">
+<title
+>Fusionar operaciones tras la importación</title>
+<para
+>Hay algunos casos en los que ha introducido manualmente una operación, pero también la ha importado desde su banco. En esos casos, la operación aparecerá dos veces en la lista.</para>
+<para
+>Puede fusionar esas dos operaciones seleccionándolas, y luego seleccionando <guimenu
+>Fusionar operaciones</guimenu
+> en el menú contextual. Esto añadirá toda la información que ha introducido manualmente a la operación importada, y eliminará la operación introducida manualmente.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="merge_operations_menu.png"/></imageobject>
+</mediaobject>
+</screenshot>
+
+</sect2>
+
+</sect1>
+
+<sect1 id="export">
+<title
+>Exportar</title>
+<para
+>Hay diferentes formas de exportar datos con &appname; dependiendo de lo que pretenda hacer.</para>
+
+<sect2 id="export_file">
+<title
+>Exportar todos los datos en un archivo</title>
+<para
+>Usando el menú <menuchoice
+><guimenu
+>Archivo</guimenu
+> <guimenuitem
+>Exportar</guimenuitem
+></menuchoice
+>, se creará un archivo CSV o QIF, que contendrá todas las operaciones del documento actual. Esta es la opción que hay que elegir si se necesita exportar sus datos a otra aplicación.</para>
+</sect2>
+
+<sect2 id="export_table">
+<title
+>Exportar una tabla determinada</title>
+<para
+>Todas las <link linkend="tables"
+>tablas</link
+> de &appname; se pueden exportar, tanto en formato CSV como PDF o TXT. </para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="export_table_menu.png"/></imageobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Esto funciona siempre que se muestra una tabla, así que lo puede usar para exportar cualquier información tabular que necesite.</para>
+
+</sect2>
+
+<sect2 id="export_graph">
+<title
+>Exportar gráfica</title>
+<para
+>&appname; le permite exportar una <link linkend="reports"
+>gráfica</link
+>, tanto en PDF como en SVG o en cualquier formato de imagen admitido por &kde; (PNG, JPG, GIF, TIFF...). Puede hacer esto haciendo click derecho sobre el gráfico, y eligiendo la opción <guimenu
+>Exportar</guimenu
+>.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="export_graph_menu.png"/></imageobject>
+</mediaobject>
+</screenshot>
+
+
+</sect2>
+
+</sect1>
+
+<sect1 id="dashboard">
+<title
+>Tablero</title>
+<para
+>El Tablero es un complemento de &appname; que muestra información global sobre su situación financiera.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="dashboard.png"/></imageobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Puede configurarlo usando los iconos en la parte superior derecha, o haciendo click derecho y seleccionando o eliminando los bloques para mostrar. Algunos bloques pueden configurarse haciendo click derecho sobre su título.</para>
+
+</sect1>
+
+<sect1 id="accounts">
+<title
+>Bancos y cuentas</title>
+<para
+>Este es el complemento dedicado a gestionar sus diferentes cuentas.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="bank_accounts.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>La vista de bancos y cuentas</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+
+<sect2 id="account_properties"
+> 
+<title
+>Propiedades de cuenta</title>
+<para
+>Una cuenta de &appname; posee las propiedades siguientes: <variablelist>
+<varlistentry>
+<term
+>Banco</term>
+<listitem
+><para
+>Puede elegir un banco de la caja desplegable (que contiene la lista de bancos conocidos en su país), o teclear el nombre si su banco no está en la lista (si la lista está vacía, al equipo de &appname; todavía no se le ha proporcionado esta información. ¡Puede contactar con nosotros para ayudar!)</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Cuenta</term>
+<listitem
+><para
+>El nombre que desea usar para esta cuenta.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Tipo</term>
+<listitem
+><para
+>el tipo de cuenta puede ser <itemizedlist
+> <listitem
+><para
+>Corriente</para
+> </listitem
+> <listitem
+><para
+>Tarjeta de crédito</para
+></listitem
+> <listitem
+><para
+>Inversiones</para
+></listitem
+> <listitem
+> <para
+>Activos</para
+></listitem
+> <listitem
+><para
+>Otros</para
+> </listitem
+> </itemizedlist
+>. El tipo de cuenta no se usa para ningún tipo de proceso actualmente; está ahí solo como información. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Número de banco</term>
+<listitem
+><para
+>El número identificativo de su banco</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Número de sucursal</term>
+<listitem
+><para
+>El número identificativo de la sucursal</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Número de cuenta</term>
+<listitem
+><para
+>El número de identificación de la cuenta</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Dirección</term>
+<listitem
+><para
+>La dirección de la sucursal</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Comentario</term>
+<listitem
+><para
+>¡Lo que le apetezca!</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+<!--Shall we talk about the "RIB key" here ? Or maybe this is strictly french, and should be removed from skrooge ?-->
+
+</para>
+</sect2>
+
+<sect2 id="accounts_list">
+<title
+>Lista de cuentas</title>
+<para
+>La lista de cuentas toma la forma de una tabla con una fila por cuenta. Además de las <link linkend="account_properties"
+>propiedades</link
+> que ha definido para esta cuenta, &appname; muestra las siguientes columnas:</para>
+
+<variablelist>
+<varlistentry>
+<term
+>Cantidad</term>
+<listitem
+><para
+>La cantidad disponible en la cuenta, considerando todas las operaciones registradas, tanto si están validadas como si no.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Verificada</term>
+<listitem
+><para
+>La cantidad de operaciones validadas. Esta debería ser igual a la cantidad escrita en la última posición de la cuenta de su banco. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Previsto</term>
+<listitem
+><para
+>La diferencia entre las dos columnas anteriores</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Número de operaciones</term>
+<listitem
+><para
+>Número total de operaciones hechas en esta cuenta</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Como con todas las vistas de lista de &appname;, usted puede <link linkend="tables"
+>personalizar la apariencia de la tabla</link
+>.</para>
+
+</sect2>
+
+<sect2 id="create_account">
+<title
+>Crear una cuenta</title>
+<para
+>La creación de cuenta se ha realizado usando el panel de edición bajo la lista de cuentas.</para>
+
+<para
+>Para crear una cuenta, introduzca sus atributos (los obligatorios están en negrita) y haga click en <guibutton
+>Añadir</guibutton
+>. &appname; no necesita que usted proporcione la cantidad inicial en esta cuenta. Para establecer la cantidad inicial de la cuenta, cree una operación que se corresponda con la cantidad inicial.</para>
+</sect2>
+
+<sect2 id="modify_account">
+<title
+>Modificar una cuenta</title>
+<para
+>Para modificar una cuenta, selecciónela, edite sus atributos y haga clic en «Modificar»</para>
+</sect2>
+
+<sect2 id="delete_account">
+<title
+>Eliminar cuentas</title>
+<para
+>Para eliminar cuentas, selecciónelas y pulse la tecla <keycap
+>Suprimir</keycap
+>, la opción del menú contextual o el icono de la barra de herramientas.</para>
+<warning
+><para
+>Al eliminar una cuenta, todas las operaciones que pertenezcan a ella serán también eliminadas (pero siempre puede <link linkend="undo_redo"
+>deshacer</link
+> la eliminación).</para
+></warning>
+</sect2>
+
+</sect1>
+
+
+
+<sect1 id="operations">
+<title
+>Operaciones</title>
+<para
+>Las operaciones son cualquier operación que haga sobre una cuenta, sea un gasto, un ingreso, una transferencia, ventas, compras... En esto es en lo que probablemente pasará más tiempo cuando use &appname;.</para>
+
+<para
+>Para introducir operaciones, necesita tener creada al menos una <link linkend="accounts"
+>cuenta</link
+>.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="operations.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>La vista de operaciones</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<sect2 id="operation_properties">
+<title
+>Propiedades de operación</title>
+
+<variablelist>
+<varlistentry>
+<term
+>Cuenta</term>
+<listitem
+><para
+>La cuenta sobre la que se realiza la operación. Selecciónela de entre la lista de cuentas existentes.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Fecha</term>
+<listitem
+><para
+>La fecha en que realizó la operación. Puede utilizar un calendario mediante la fecha a la derecha del campo.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term id="quantity_field"
+>Cantidad</term>
+<listitem>
+<para
+>La cantidad es cuánto se ha gastado o ha ganado con la operación. &appname; requiere que introduzca esto en dos campos separados: Cantidad y Unidad.</para>
+<para
+>La cantidad es negativa para un gasto (-30, por ejemplo), y positiva para un ingreso (+250, o simplemente 250). Este campo actúa como una calculadora; p.ej., introducir una expresión como 10 + 3,23*2 dará como resultado que el campo contenga 16,46.</para>
+<para
+>&appname; requiere que usted introduzca la <link linkend="units"
+>unit</link
+>, porque una operación no necesariamente se hará en su divisa principal. Por ejemplo, cuando compra o vente participaciones, la unidad de la operación es la unidad de la participación.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Beneficiario</term>
+<listitem
+><para
+>A quién le ha pagado esto, o quién le dio el dinero.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Modo</term>
+<listitem>
+<para
+>Cuál fue el modo de pago usado para esta operación. Algo en la línea de Tarjeta de crédito, Cheque, Depósito... ¡De todo!</para>
+<para
+>Junto con el modo de operación hay un número opcional. Se usa principalmente para introducir el número de cheque, o el número de transferencia.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Categoría</term>
+<listitem>
+<para
+>A qué <link linkend="categories"
+>Categoría</link
+> pertenece esta operación. Si necesita asignar más de una categoría a una operación, utilice el modo <link linkend="split_operation"
+>dividido</link
+>.</para>
+<para
+>Puede elegir una categoría existente o teclear una nueva. En este caso, &appname; la creará por usted junto con la operación.</para>
+<para
+>El separador entre una categoría y sus hijos es el carácter &gt;. Si introduce Ropa &gt; Zapatos, &appname; creará la categoría Ropa si aún no existe, y su categoría hija Zapatos.</para>
+<para
+>Por supuesto, puede crear árboles de categorías como Transporte &gt; Coches &gt; Gasolinas &gt; Sin plomo, y &appname; creará toda la estructura jerárquica.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Comentario</term>
+<listitem
+><para
+>El comentario que desee.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Rastreador</term>
+<listitem
+><para
+>Si desea rastrear el reembolso para esta operación, introduzca el nombre del <link linkend="trackers"
+>Rastreador</link
+> aquí. Si necesita variar más de un rastreador para esta operación, use el modo <link linkend="split_operation"
+>dividido</link
+>.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</sect2>
+
+<sect2 id="operations_list">
+<title
+>Lista de operaciones</title>
+<para
+>La lista de cuentas toma la forma de una tabla con una fila por cuenta. Además de las <link linkend="account_properties"
+>propiedades</link
+> que ha definido para esta cuenta, &appname; muestra las siguientes columnas:</para>
+
+<variablelist>
+<varlistentry>
+<term
+>Estado</term>
+<listitem
+><para
+>Esta casilla indica si la operación ha sido confirmada durante la conciliación de cuentas. Si la casilla está en gris claro significa que la reconciliación está en curso.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Marcador</term>
+<listitem
+><para
+>Marcar esta operación como Añadida a marcadores, un sinónimo de Favorita.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Programada</term>
+<listitem
+><para
+>Cuando una operación esté programada, esta columna mostrará un icono de cronómetro.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Estas columnas también tienen algunas especificidades:</para>
+
+<variablelist>
+<varlistentry>
+<term
+>Modo</term>
+<listitem
+><para
+>Cuando la operación forma parte de una <link linkend="transfer"
+>transferencia</link
+>, un icono de doble flecha aparecerá antes del modo.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Categoría</term>
+<listitem
+><para
+>Cuando la operación está <link linkend="split_operation"
+>dividida</link
+>, la categoría irá precedida de un icono de triple flecha.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Como con todas las vistas de lista de &appname;, usted puede <link linkend="tables"
+>personalizar la apariencia de la tabla</link
+>.</para>
+
+</sect2>
+
+<sect2 id="standard_operation">
+<title
+>Crear una operación</title>
+<para
+>Para crear una operación estándar, puede usar el botón <guibutton
+>Limpiar botón</guibutton
+> para limpiar todos los campos e iniciar una nueva operación desde cero. Entonces podrá rellenar sus atributos (manualmente o usando la <link linkend="fast_edition"
+>edición rápida</link
+>), y hacer click en <guibutton
+>Añadir</guibutton
+>.</para>
+<para
+>También puede seleccionar una operación similar de las existentes, modificar lo que necesite cambiarse y entonces hacer click en <guibutton
+>Añadir</guibutton
+>.</para>
+</sect2>
+
+
+<sect2 id="split_operation">
+<title
+>Operación dividida</title>
+<para
+>Una operación dividida es una operación que tiene varias categorías, comentarios o rastreadores. Puede cambiar al modo de edición de operaciones divididas en la parte inferior de la ventana de &appname;. Cuando cambie al modo de edición de operaciones divididas, los campos Categoría, Comentario y Rastreador son reemplazados por una tabla.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="split_operation.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>El panel de edición de operaciones divididas</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Para editar una celda de esta tabla, haga doble click en ella.</para>
+
+<para
+>Puede añadir tantas filas en esta tabla como necesite. Cuando cambie la cantidad de una línea, &appname; calculará la diferencia con la operación de cantidad global, y mostrará la cantidad restante en la última fila de la tabla. Si ha cambiado la cantidad en la última fila, se añadirá una nueva con la cantidad restante.</para>
+
+<para
+>Los campos aquí tienen el mismo comportamiento que en modo estándar de edición de operaciones:</para>
+
+<itemizedlist>
+<listitem
+><para
+>La Categoría es una caja desplegable de las categorías existentes. Puede añadir una nueva estructura de categorías; &appname; la creará cuando cree la operación.</para
+></listitem>
+<listitem
+><para
+>La Cantidad <link linkend="quantity_field"
+>actúa como una calculadora</link
+>.</para
+></listitem>
+<listitem
+><para
+>El Rastreador es una caja desplegable de los rastreadores existentes. Puede añadir un nuevo rastreador; &appname; lo creará cuando cree la operación.</para
+></listitem>
+</itemizedlist>
+
+</sect2>
+
+
+<sect2 id="transfer">
+<title
+>Transferencia</title>
+<para
+>En la práctica, una transferencia es una operación doble: cuando se crea, &appname; en realidad crea dos cargos opuestos (uno positivo y otro negativo) en dos cuentas diferentes. Los atributos que se deben facilitar difieren ligeramente de los de una operación estándar:</para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="transfer_operation.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>El panel de edición de operaciones de transferencia.</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>En lugar de un campo de Beneficiario, encontrará una lista «A la cuenta» donde deberá seleccionar la cuenta que reciba el dinero.</para>
+
+<para
+>Como una transferencia significa «Saque dinero de la cuenta A y métalo en la cuenta B», si pone un signo en el campo de cantidad (+ o -), este será ignorado. La operación para la cuenta A siempre será negativa, y positiva para la cuenta B.</para>
+
+<para
+>En este momento, una vez se han creado las operaciones ya no tendrán ninguna relación la una con la otra: cualquier modificación en una de ellas no se reflejará en la otra.</para>
+
+</sect2>
+
+<sect2 id="shares">
+<title
+>Participaciones</title>
+<para
+>&tbw; (este autor no tiene absolutamente ni idea de los principios de las participaciones / activos... :-D ¡Usted puede ayudar!)</para>
+</sect2>
+
+<sect2 id="schedule_operation">
+<title
+>Operaciones programadas</title>
+
+<para
+>Si se sabe que una operación se repite de forma regular, puede querer que &appname; la introduzca automáticamente por usted usando la lista de operaciones. Esto se puede hacer programando una operación, usando el <guibutton
+>Botón de programación<inlinemediaobject
+> <imageobject
+><imagedata fileref="schedule_operation.png"/> </imageobject
+></inlinemediaobject
+></guibutton
+>.</para>
+
+<para
+>Los parámetros básicos de planificación son:</para>
+<itemizedlist>
+<listitem
+><para
+>Repetir todos los meses</para
+></listitem>
+<listitem
+><para
+>Recordármelo 5 días antes del plazo</para
+></listitem>
+<listitem
+><para
+>Escribir automáticamente al final del plazo</para
+></listitem>
+</itemizedlist>
+
+<para
+>Puede cambiar los parámetros por defecto en las preferencias de &appname;.</para>
+<para
+>Puede cambiar también los parámetros de cada operación programada en el <link linkend="scheduled"
+>Complemento de programación</link
+>.</para>
+<para
+>&appname; usa valores de la última entrada de operación planificada para escribir la siguiente. Si usted incrementa, por ejemplo, el valor de su contribución mensual a &kde; de 100$ a 200$, las siguientes operaciones escritas automáticamente por &appname; tendrán una cantidad de 200$.</para>
+
+</sect2>
+
+<sect2 id="fast_edition">
+<title
+>Edición rápida</title>
+
+<para
+>Cualquiera que sea el modo de edición elegido, hay una ingeniosa función llamada Edición rápida que puede acelerar el trabajo mientras crea nuevas operaciones. Rellenará los atributos de la operación basándose en operaciones introducidas previamente. Introduzca un valor en cualquier campo del editor y presione <keycap
+>F10</keycap
+>, o haga click en el <guibutton
+>Icono de edición rápida<inlinemediaobject
+> <imageobject
+><imagedata fileref="fast_edition.png" format="PNG"/> </imageobject
+></inlinemediaobject
+></guibutton
+> (sin abandonar el campo seleccionado).</para>
+
+<para
+>&appname; buscará la primera (esto es, la más reciente) operación que tenga el mismo valor en el mismo campo, y rellenará los otros campos con valores de esa operación. Active la Edición rápida de nuevo, y buscará la siguiente operación, y así sucesivamente.</para>
+
+<warning>
+<para
+>La edición rápida no tiene efecto sobre la fecha, ya que es bastante improbable que quiera crear exactamente la misma operación completa con la misma fecha...</para>
+<para
+>Si ha modificado el valor de un campo antes de activar la Edición rápida, su contenido no se verá afectado. Esto se materializa con un pequeño copo de nieve <inlinemediaobject
+><imageobject
+><imagedata fileref="frozen.png" format="PNG"/></imageobject
+></inlinemediaobject
+>que aparecerá en el campo, para que usted sepa que está «congelado».</para>
+</warning>
+
+<para
+>Lo que es diferente aquí de funciones similares en otros programas de finanzas personales:</para>
+<itemizedlist>
+<listitem
+><para
+>Se activa a petición del usuario</para
+></listitem>
+<listitem
+><para
+>Recorre cíclicamente todas las operaciones pasadas con el mismo valor del campo.</para
+></listitem>
+</itemizedlist>
+
+<para
+>¡Y hasta funciona con operaciones divididas!</para>
+</sect2>
+
+<sect2 id="reconciliation">
+<title
+>Conciliación</title>
+<para
+>La conciliación es el proceso por el que usted se asegura de que todas las operaciones están alineadas con la posición de su cuenta desde el punto de vista de su banco. Eso le implica a usted, a la posición de su cuenta y a un bolígrafo.La conciliación puede sucederle a una sola cuenta en un momento determinado.</para>
+<para
+>En la vista de operación, seleccione la cuenta que desee conciliar de la caja desplegable. Cambie al modo de reconciliación usando el botón<guibutton
+>Cambiar información <inlinemediaobject
+><imageobject
+> <imagedata fileref="switch_information.png" format="PNG"/></imageobject
+> </inlinemediaobject
+></guibutton
+> bajo la tabla de operaciones.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="reconciliation_information.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Información del modo de conciliación</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Introduzca la posición de su cuenta tal como se la ha dado su banco en el campo dedicado. Ahora, puede proceder a comprobar en &appname; cada operación que aparezca en los registros de la cuenta. Por el momento, la casilla de verificación aparecerá en gris hasta que valide la conciliación.</para>
+
+<para
+>Conforme verifique operaciones, verá que &appname; muestra en la zona de información:</para>
+<itemizedlist>
+<listitem
+><para
+>Delta: la diferencia entre la posición de cuenta introducida previamente y la suma de todas las operaciones verificadas.</para
+></listitem>
+<listitem
+><para
+>Gastos: la cantidad total de gastos</para
+></listitem>
+<listitem
+><para
+>Ingresos: la cantidad total de ingresos</para
+></listitem>
+</itemizedlist>
+
+<para
+>Esto puede ser útil cuando intenta localizar operaciones que puede haber olvidado introducir en &appname;. Cuando todas las operaciones pertinentes han sido verificadas, Delta es igual a 0, y el botón <guibutton
+>Validar operaciones verificadas<inlinemediaobject
+><imageobject
+> <imagedata fileref="validate.png" format="PNG"/></imageobject
+> </inlinemediaobject
+></guibutton
+> está activado. Haga click en este botón para validar la conciliación: ahora todas las operaciones verificadas estarán validadas.</para>
+
+<para
+>Si la opción <guibutton
+>Ocultar operaciones verificadas</guibutton
+> está seleccionada, todas estas operaciones estarán ahora ocultas.</para>
+
+</sect2>
+
+<sect2 id="templates">
+<title
+>Operaciones de plantilla</title>
+<para
+>&appname; le permite crear operaciones de plantilla; esto es, operaciones que se pueden reutilizar cuando lo necesite. Por ejemplo, imagine que tiene por costumbre alquilar un DVD para verlo en casa. Esta operación es siempre la misma:</para>
+
+<itemizedlist>
+<listitem
+><para
+>Cantidad: -4,99</para
+></listitem>
+<listitem
+><para
+>Modo: Tarjeta de crédito</para
+></listitem>
+<listitem
+><para
+>Beneficiario: Acme Video</para
+></listitem>
+<listitem
+><para
+>Categoría: Ocio 
+> Vídeo</para
+></listitem>
+</itemizedlist>
+
+<para
+>Sin embargo, no puede convertirla en una operación recurrente porque usted alquila un DVD cuando le apetece, no cada semana. La idea que hay tras estas operaciones de plantilla es que le dan un esquema básico que se puede insertar rápidamente en su lista de operaciones.</para>
+
+<para
+>Como las operaciones de plantilla son otro tipo más de operaciones, puede acceder a ellas a través de la pestaña de operaciones usando el botón encima del panel de edición:</para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="template_button.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Cambiar entre plantillas y operaciones</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Crear una plantilla es exactamente igual a crear una operación definiendo sus atributos. Tenga en cuenta que también puede crear una plantilla desde una operación existente (trayendo el menú contextual en una operación). En este caso, la plantilla tendrá los mismos atributos que la operación.</para>
+
+<para
+>Para usar una plantilla y crear una nueva operación a partir de ella, haga doble click sobre ella. Se creará una nueva operación con los mismos atributos de la plantilla, con la fecha actual. Entonces puede modificar sus atributos si es necesario.</para>
+
+<para
+>Las plantillas también se pueden <link linkend="scheduled"
+>programar</link
+>.</para>
+
+</sect2>
+
+</sect1>
+
+<sect1 id="scheduled">
+<title
+>Programadas</title>
+<para
+>Este complemento le muestra la lista de todas las operaciones programadas.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="scheduled.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Aquí es donde puede establecer que cada operación programada tenga sus propios parámetros.</para>
+
+<variablelist>
+<varlistentry>
+<term
+>Próxima ocurrencia</term>
+<listitem
+><para
+>Se muestra para informar, pero también se usa para forzar la fecha de la próxima aparición.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Una vez cada</term>
+<listitem
+><para
+>Puede establecer que una operación se repita un determinado número de días, meses o años.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Número de ocurrencias</term>
+<listitem
+><para
+>Si la operación tiene un número limitado de apariciones, puede marcar esta opción y definir tanto el número de apariciones restantes, o la fecha de la última.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Recuérdamelo </term>
+<listitem
+><para
+>Si desea que &appname; muestre una notificación para recordarle cuándo es la siguiente operación programada, puede marcar esta opción y establecer el número de días antes del final del plazo que deben quedar para que se muestre el aviso.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Escribir automáticamente</term>
+<listitem
+><para
+>Si desea que &appname; escriba automáticamente las próximas operaciones programadas, puede marcar esta opción y establecer el número de días antes del final del plazo que deben quedar para que se escriba la operación.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Hacer doble click en una operación programada mostrará la lista de operaciones ya registradas para esta operación programada en una nueva pestaña.</para>
+
+<sect2 id="scheduled_operations">
+<title
+>Operaciones programadas</title>
+
+<para
+>Si programa una operación, será utilizada como referencia cuando inserte la próxima aparición. Veamos un ejemplo con esta operación:</para>
+
+<table>
+<title
+></title>
+<tgroup cols="4">
+<thead>
+<row>
+<entry
+>Fecha</entry>
+<entry
+>Beneficiario</entry>
+<entry
+>Categoría</entry>
+<entry
+>Cantidad</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry
+>20/06/2009</entry>
+<entry
+>&kde;</entry>
+<entry
+>Donaciones &gt; Código abierto</entry>
+<entry
+>20€</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+
+<para
+>Ahora, si programa esta operación, será escrita exactamente así para la próxima aparición:</para>
+
+<table>
+<title
+></title>
+<tgroup cols="4">
+<thead>
+<row>
+<entry
+>Fecha</entry>
+<entry
+>Beneficiario</entry>
+<entry
+>Categoría</entry>
+<entry
+>Cantidad</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry
+>20/06/2009</entry>
+<entry
+>&kde;</entry>
+<entry
+>Donaciones &gt; Código abierto</entry>
+<entry
+>20€</entry>
+</row>
+<row>
+<entry
+>20/07/2009</entry>
+<entry
+>&kde;</entry>
+<entry
+>Donaciones &gt; Código abierto</entry>
+<entry
+>20€</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+
+<para
+>Si cambia algo en la última aparición, se convertirá en referente para la próxima. Por ejemplo, si aumenta su contribución mensual a &kde; a 25€ en julio, la próxima ocurrencia también será por una cantidad de 25€.</para>
+
+<table>
+<title
+></title>
+<tgroup cols="4">
+<thead>
+<row>
+<entry
+>Fecha</entry>
+<entry
+>Beneficiario</entry>
+<entry
+>Categoría</entry>
+<entry
+>Cantidad</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry
+>20/06/2009</entry>
+<entry
+>&kde;</entry>
+<entry
+>Donaciones &gt; Código abierto</entry>
+<entry
+>20€</entry>
+</row>
+<row>
+<entry
+>20/07/2009</entry>
+<entry
+>&kde;</entry>
+<entry
+>Donaciones &gt; Código abierto</entry>
+<entry
+>25€</entry>
+</row>
+<row>
+<entry
+>20/08/2009</entry>
+<entry
+>&kde;</entry>
+<entry
+>Donaciones &gt; Código abierto</entry>
+<entry
+>25€</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+
+<para
+>Después de todo, una operación programada es un objeto dinámico, donde la última aparición se toma como referente. Pero quizás prefiera que todas las apariciones sean estáticas; esto es, que se inserten siempre los mismos valores para cada nueva aparición. Presentamos las <link linkend="scheduled_templates"
+>Plantillas programadas</link
+>.</para>
+
+</sect2>
+
+
+<sect2 id="scheduled_templates">
+<title
+>Plantillas programadas</title>
+
+<para
+>Las <link linkend="templates"
+>Plantillas</link
+> son una clase de operaciones de referencia. Cuando se programa una plantilla, cada nueva aparición será exactamente igual a la plantilla. Vamos a reutilizar nuestro ejemplo del <link linkend="schedule_operation"
+>capítulo anterior</link
+> creando una plantilla como esta:</para>
+
+<table>
+<title
+></title>
+<tgroup cols="4">
+<thead>
+<row>
+<entry
+>Fecha</entry>
+<entry
+>Beneficiario</entry>
+<entry
+>Categoría</entry>
+<entry
+>Cantidad</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry
+>20/06/2009</entry>
+<entry
+>&kde;</entry>
+<entry
+>Donaciones &gt; Código abierto</entry>
+<entry
+>20€</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+
+<para
+>La próxima aparición será:</para>
+
+
+<table>
+<title
+></title>
+<tgroup cols="4">
+<thead>
+<row>
+<entry
+>Fecha</entry>
+<entry
+>Beneficiario</entry>
+<entry
+>Categoría</entry>
+<entry
+>Cantidad</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry
+>20/06/2009</entry>
+<entry
+>&kde;</entry>
+<entry
+>Donaciones &gt; Código abierto</entry>
+<entry
+>20€</entry>
+</row>
+<row>
+<entry
+>20/07/2009</entry>
+<entry
+>&kde;</entry>
+<entry
+>Donaciones &gt; Código abierto</entry>
+<entry
+>20€</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+
+<para
+>Ahora cambie su contribución de julio a &kde; a 25€. Como ha programado una plantilla con 20€ de cantidad, la próxima aparición también tendrá una cantidad de 20€.</para>
+
+<table>
+<title
+></title>
+<tgroup cols="4">
+<thead>
+<row>
+<entry
+>Fecha</entry>
+<entry
+>Beneficiario</entry>
+<entry
+>Categoría</entry>
+<entry
+>Cantidad</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry
+>20/06/2009</entry>
+<entry
+>&kde;</entry>
+<entry
+>Donaciones &gt; Código abierto</entry>
+<entry
+>20€</entry>
+</row>
+<row>
+<entry
+>20/07/2009</entry>
+<entry
+>&kde;</entry>
+<entry
+>Donaciones &gt; Código abierto</entry>
+<entry
+>25€</entry>
+</row>
+<row>
+<entry
+>20/08/2009</entry>
+<entry
+>&kde;</entry>
+<entry
+>Donaciones &gt; Código abierto</entry>
+<entry
+>20€</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+
+<para
+>Si necesita cambiar el valor mensual, simplemente edite la plantilla, y todas las futuras apariciones tendrán el nuevo valor.</para>
+</sect2>
+
+</sect1>
+
+
+<sect1 id="trackers">
+<title
+>Rastreadores</title>
+<para
+>Los rastreadores le permiten agregar algunas operaciones juntas en un grupo, de forma que las pueda seguir más de cerca. Esto puede ser útil para seguir gastos por los que espera un reembolso, o simplemente para saber cuánto se ha gastado en sus últimas vacaciones en las Bahamas.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="trackers.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Por ejemplo, imagine que su empresa le ha mandado a Italia. Una vez allí, usted paga por su habitación del hotel: en &appname; puede crear una operación en la categoría «Negocios &gt; Viajes &gt; Hotel», y asignar un rastreador llamado «Viaje de negocios a Italia». Puede asignar este rastreador a todos los gastos profesionales que haga allí. Entonces, si todo va bien, su empresa le devolverá todos los gastos, y podrá crear una operación de ingresos que también afectará al rastreador «Viaje de negocios a Italia».</para>
+<para
+>Asociando rastreadores a operaciones que serán reembolsadas, podrá seguir cómo se va completando el reembolso.</para>
+<para
+>Esto, por supuesto, también funciona a la inversa: si alguien le presta dinero, podrá vigilar cuánto le queda todavía por reembolsar.</para>
+<para
+>Hacer doble click sobre un rastreador en la vista de rastreadores abrirá una nueva pestaña que contendrá todas las operaciones asociadas a este rastreador.</para>
+
+<sect2 id="close_tracker">
+<title
+>Cerrar rastreador</title>
+
+<para
+>Cuando ya no necesite el rastreador, por ejemplo porque el dinero ya le ha sido totalmente reembolsado, puede simplemente borrarlo. Hacer esto, sin embargo, hará que se pierda toda la información que ha introducido, y esto podría ser de interés para referencias futuras.</para>
+<para
+>Una solución más limpia es cerrar el rastreador: cuando un rastreador se cierra, se puede ocultar fácilmente de la vista de rastreadores utilizando la opción a tal efecto.</para>
+</sect2>
+
+</sect1>
+
+
+<sect1 id="categories">
+<title
+>Categorías</title>
+<para
+>Las vista de categorías le permite explorar el árbol de categorías.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="categories.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Además del nombre de las categorías, la tabla también muestra: </para>
+
+<variablelist>
+<varlistentry>
+<term
+>Cantidad</term>
+<listitem
+><para
+>La suma de todas las operaciones de esa categoría.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Número de operaciones</term>
+<listitem
+><para
+>El número de operaciones en esa categoría.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Cantidad (acumulativa)</term>
+<listitem
+><para
+>La suma de todas las operaciones en esa categoría y sus categorías hijas (hasta el último nivel).</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Número de operaciones (acumulativo)</term>
+<listitem
+><para
+>El número de operaciones en esta categoría y sus categorías hijas (hasta el último nivel).</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Hacer doble click en una fila de esta tabla abrirá la lista de todas las operaciones de esta categoría en una nueva pestaña.</para>
+
+<warning
+><para
+>Cuando elimine una categoría, a todas las operaciones asociadas a ella se les borrará la categoría, de ahí que ya no tengan ninguna asociada.</para
+></warning>
+
+</sect1>
+
+
+<sect1 id="reports">
+<title
+>Informes</title>
+<para
+>&appname; le permite construir informes altamente personalizados para un análisis profundo de su estado financiero.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="reports.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Un informe se compone de una tabla (a la izquierda) que contiene todos los datos usados para dibujar la gráfica (a la derecha). La tabla se puede filtrar usando los campos dedicados de arriba, causando que la gráfica se redibuje con los datos filtrados.</para>
+
+<para
+>Puede elegir mostrar solo la tabla, solo la gráfica o ambas.</para>
+
+
+<sect2 id="setup_report">
+<title
+>Organizar informe</title>
+
+<sect3 id="report_representation">
+<title
+>Representación</title>
+<variablelist>
+<varlistentry>
+<term
+>Solo tabla</term>
+<listitem
+><para
+>Muestra solo la tabla y oculta la gráfica.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Solo gráfica</term>
+<listitem
+><para
+>Muestra solo la gráfica y oculta la tabla.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Ambas</term>
+<listitem
+><para
+>Muestra la tabla y la gráfica.</para
+></listitem>
+</varlistentry>
+</variablelist>
+</sect3>
+
+<sect3 id="report_data">
+<title
+>Datos</title>
+<para
+>Aquí es donde elige qué datos se presentarán en el informe. Seleccione lo que se mostrará en las filas y en las columnas, y el modo de cálculo. Hay dos valores distintos para este modo:</para>
+<variablelist>
+<varlistentry>
+<term
+>Suma</term>
+<listitem>
+<para
+>En este modo, se calculará la cantidad total de operaciones para cada mes. Si ha seleccionado la fila de «categoría» y la columna de «mes», esto calculará la cantidad total de operaciones para cada categoría cada mes.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Historial</term>
+<listitem>
+<para
+>Si reutilizamos nuestro ejemplo anterior («categoría» en la fila, «mes» en la columna), tendremos una suma acumulada; esto es, para cada mes, calcularemos la cantidad total de operaciones hasta este mes para cada categoría.</para>
+<para
+>Como ejemplo, el autor usa este modo para dibujar la evolución del saldo de sus cuentas estableciendo «Cuentas» en la fila y «Mes» en la columna.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Para filas y columnas, es posible expandir el nivel de datos presentados usando el icono <guibutton
+>más</guibutton
+> <inlinemediaobject
+> <imageobject
+><imagedata fileref="plus.png"/></imageobject
+> </inlinemediaobject
+> a la derecha del campo. Use esto para mostrar las subcategorías en el informe.</para>
+</sect3>
+
+<sect3 id="report_dates">
+<title
+>Fechas</title>
+<para
+>Use esto para especificar el intervalo de fechas para su informe. Puede usar varias formas de especificar el intervalo de fechas. Eso debería cubrir prácticamente cualquier intervalo de fechas que necesite.</para>
+</sect3>
+
+<sect3 id="report_operation_types">
+<title
+>Tipos de operaciones</title>
+<para
+>Seleccione el tipo de operaciones que quiere incluir en su informe. Por ejemplo, si desea dibujar una gráfica que muestre la distribución de sus gastos por categoría, probablemente no quiera incluir «Ingresos» en su informe.</para>
+</sect3>
+
+</sect2>
+
+<sect2 id="graph_types">
+<title
+>Tipos de gráficas</title>
+
+<para
+>Una vez esté todo de acuerdo a sus necesidades, debería seleccionar el aspecto de la gráfica seleccionando la caja desplegable de debajo del gráfico. Para comprender mejor las diferencias entre cada tipo, vamos a construir un informe que muestre los gastos por categoría (filas) y mes (columnas):</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="report_table.png"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+<sect3 id="stack">
+<title
+>Pila</title>
+<para
+>Una barra por fila, columnas apiladas.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="stack.png"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+<para
+>La segunda barra (amarillento) muestra la categoría «Seguridad», con todos los meses apilados hacia arriba.</para>
+
+</sect3>
+
+<sect3 id="histogram">
+<title
+>Histograma</title>
+<para
+>Para cada columna, cada fila tiene su propia barra.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="histogram.png"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+</sect3>
+
+
+<sect3 id="line">
+<title
+>Fila</title>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="line_graph.png"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</sect3>
+
+<sect3 id="point">
+<title
+>Punto</title>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="point_report.png"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</sect3>
+
+
+<sect3 id="pie">
+<title
+>Tarta</title>
+<para
+>El clásico gráfico de tarta. Si el valor seleccionado para la columna es diferente de «nada», se muestra un sector por columna.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="pie.png"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+
+</sect3>
+
+<sect3 id="concentric_pie">
+<title
+>Tarta concéntrica</title>
+<para
+>Esta es un poco peliaguda, y posiblemente necesita trabajo por su parte. la intención es mostrar un anillo por nivel de datos.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="concentric_pie.png"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+</sect3>
+
+</sect2>
+
+
+<sect2 id="zoom_graph">
+<title
+>Zoom sobre el gráfico</title>
+<para
+>&appname; hace posible acercar la gráfica para ver todos los pequeños detalles. Use el control del zoom sobre la gráfica:</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="zoom_graph.png"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+
+</sect2>
+
+<sect2 id="report_examples">
+<title
+>Ejemplos de informes</title>
+<para
+>Aquí hay algunas capturas de pantalla que muestran algunas configuraciones clásicas de informes. Puede usarlas como referencia para sus propios informes.</para>
+
+<sect3 id="income_expense">
+<title
+>Ingresos y gastos</title>
+<para
+>Para cada mes, compara la cantidad total de ingresos frente a la cantidad total de gastos. Los ingresos están en azul, los gastos en amarillo.</para>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="incomes_expenses.png"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</sect3>
+
+<sect3 id="balance_evolution">
+<title
+>Evolución del saldo</title>
+<para
+>Muestra la evolución del saldo final con frecuencia mensual.</para>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="balance_evolution.png"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</sect3>
+
+<sect3 id="category_distribution">
+<title
+>Ingresos y gastos</title>
+<para
+>Muestra la distribución de los gastos por categoría para el mes anterior.</para>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="category_distribution.png"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</sect3>
+
+
+</sect2>
+
+<sect2 id="going_deeper">
+<title
+>Yendo a más profundidad</title>
+<para
+>Usted ya sabe que puede hacer un análisis más profundo de sus finanzas gracias a los informes. ¿Pero cómo de profundo es «profundo»? Bueno, pues es más profundo de lo que imagina... Si tiene interés, lea el <link linkend="holidays_expenses_analysis"
+>ejercicio</link
+> que analiza los gastos del autor durante las vacaciones. :)</para>
+</sect2>
+
+
+</sect1>
+
+
+<sect1 id="monthly_report">
+<title
+>Informe mensual</title>
+
+<para
+>Este complemento muestra una vista superficial de su situación financiera para el mes elegido.</para>
+
+<!-- Sub par compared to the quality of other plugins and functionality partly covered by dashboard... Shall we deprecate it and extend dashboard instead ?-->
+
+</sect1>
+
+<sect1 id="units">
+<title
+>Unidades</title>
+<para
+>Una unidad es cualquier cosa en la que puede expresar una operación. En la mayoría de los casos es una divisa, pero también puede ser un activo, o incluso un coche o una casa. Una unidad tiene diferentes valores a lo largo del tiempo, expresados en otra unidad. Por ejemplo, una acción de ACME vale 31,2$ en enero de 2009.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="units.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+<sect2 id="edit_units">
+<title
+>Editar unidades</title>
+<para
+>Se pueden editar las unidades de diferentes formas:</para>
+<variablelist>
+<varlistentry>
+<term
+>Estándar</term>
+<listitem
+><para
+>Este modelo le permite elegir entre un conjunto de unidades predefinidas que usted puede querer añadir a su documento actual.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Manual</term>
+<listitem
+><para
+>Este modo le permite crear su propia unidad. Los parámetros que hay que proporcionar son:</para>
+  <itemizedlist>
+  <listitem
+><para
+>Nombre: el nombre de la unidad.</para
+></listitem>
+  <listitem
+><para
+>Símbolo: el símbolo de la unidad, mostrado en la mayoría de tablas y cajas desplegables.</para
+></listitem>
+  <listitem
+><para
+>Tipo: vea <link linkend="unit_types"
+>Tipos de unidades</link
+>.</para
+></listitem>
+  <listitem
+><para
+>Unidad de referencia: la (otra) unidad usada para calcular el valor de la unidad (actual). Por ejemplo, si tiene acciones de EADS y quiere ver su valor en euros, debería seleccionar € como unidad de referencia en la unidad EADS.</para
+></listitem>
+  <listitem
+><para
+>País</para
+></listitem>
+  <listitem
+><para
+>Código de internet: El código de internet de Yahoo! para esta unidad. Si se le da este código, &appname; puede descargar los valores de las unidades desde Yahoo!.</para
+></listitem>
+</itemizedlist>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Valores</term>
+<listitem
+><para
+>Este modo de edición le permite descargar valores de unidades desde internet,o introducir manualmente el valor de una unidad en una fecha determinada.</para
+></listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+
+<sect2 id="unit_types">
+<title
+>Tipos de unidades</title>
+<para
+>Incluso si &appname; considera casi cualquier cosa como una unidad, hace una distinción dependiendo del tipo:</para>
+
+<variablelist>
+<varlistentry>
+<term
+>Divisa principal</term>
+<listitem
+><para
+>Es la divisa que se utilizará para mostrar las cantidades de las operaciones reales.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Divisa secundaria</term>
+<listitem
+><para
+>Si se define, es el valor de la unidad secundaria que se mostrará cuando se pase el ratón sobre la cantidad de una operación.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="secondary_unit_display.png"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Divisa</term>
+<listitem
+><para
+>Cualquier divisa, sin ningún papel específico para mostrar.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Participación</term>
+<listitem
+><para
+>Este tipo de unidad se puede utilizar para manejar participaciones.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Índice</term>
+<listitem
+><para
+>Un índice bursátil, como el Dow Jones, Nasdaq, CAC40, SBF120...</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Otros</term>
+<listitem
+><para
+>Cualquier unidad que no encaja en los tipos anteriores.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+</sect1>
+
+
+<sect1 id="search_and_process">
+<title
+>Búsqueda y proceso</title>
+
+<para
+>Este complemento le permite elaborar consultas complejas para encontrar operaciones, y opcionalmente aplicarles algunas transformaciones. Aquí hay un caso:</para>
+
+<blockquote
+><para
+>John se descarga algunos datos de su banco. Los datos vienen, obviamente, sin indicación de la categoría. De hecho, todo está escrito en el campo de comentarios. A John le gustaría tener alguna manera automática de asignar la categoría y otros atributos, basándose en el contenido del comentario.</para
+></blockquote>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="search_and_process.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Entonces, ¿cómo funciona esto? Primero, debe definir un criterio de búsqueda, que le dará una lista de operaciones. Después, defina las transformaciones que se aplicarán a estas operaciones.</para>
+
+<note
+><para
+>Un <link linkend="search_process_real_case"
+>caso de estudio real</link
+> se puede encontrar en el apéndice, proporcionando un ejercicio práctico para el caso anterior.</para
+></note>
+
+<sect2 id="define_search_criteria">
+<title
+>Definir criterios de búsqueda</title>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="define_search.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Aquí puede definir la consulta para encontrar operaciones usando una combinación de parámetros. En la figura de arriba, puede encontrar una tabla con atributos de operación como encabezado. Editando una fila, creará una nueva cláusula en la consulta. Cada columna se combina con otras columnas usando una operación lógica «and».</para>
+<para
+>(columna1 y columna2)</para>
+<para
+>Si añade una nueva fila, creará otra cláusula combinada con la primera fila por un «or» lógico:</para>
+<para
+>[línea1] o [línea2].</para>
+
+<para
+>En general, la combinación de columnas y de filas se puede leer como:</para>
+<para
+>(columna1 y columna3) o (columna2 y columna3)</para>
+
+<para
+>Por supuesto, puede tener tantas filas y columnas como necesite en una consulta de búsqueda.</para>
+
+<para
+>Una vez satisfecho con la definición de la búsqueda, la puede añadir a la lista de criterios de búsqueda existentes, o modificar uno ya existente.</para>
+
+</sect2>
+
+
+<sect2 id="view_search_result">
+<title
+>Ver resultados de búsqueda</title>
+
+<para
+>Cuando seleccione una consulta de búsqueda en la vista de consultas, el número de operaciones encontradas se muestra bajo la tabla:</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="preview_search_result.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+
+<para
+>Cuando hace doble click en una consulta de búsqueda en la vista de consultas, todas las operaciones encontradas se muestran en una nueva pestaña:</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="search_result.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+</sect2>
+
+
+<sect2 id="define_processing">
+<title
+>Definir proceso</title>
+
+<para
+>Si necesita aplicar algún proceso a todas las operaciones encontradas, seleccione la consulta concerniente y active el panel de definición de procesos: </para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="define_processing.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+<para
+>En este panel, puede definir las transformaciones que realizar sobre las operaciones. Tenga en cuenta que es intencionadamente imposible establecer la cantidad o la fecha de una operación en este panel.</para>
+
+</sect2>
+
+
+<sect2 id="define_alarm">
+<title
+>Definir alerta</title>
+<para
+>Un tipo especial de uso del complemento de Búsqueda y proceso es la habilidad de definir alertas. Una alerta es básicamente una llamada de atención de &appname; sobre algún tipo de evento, como que se ha alcanzado el límite de su presupuesto mensual para una categoría.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="alarm.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Para definir una alerta, defina primero el criterio de búsqueda, dado el conjunto de operaciones sobre los cuáles necesita una alerta. Por ejemplo, todas las operaciones en el mes actual y en la categoría «Ropa». Después, defina la cantidad para la cual se activará la alerta; por ejemplo, 100€, y defina el mensaje de alerta que le mandará &appname; cuando se alcance esa cantidad.</para>
+
+</sect2>
+
+</sect1>
+
+
+</chapter>
+
+<chapter id="credits">
+<title
+>Créditos y licencia</title>
+<para
+>&appname; </para>
+<para
+>Derechos de autor del programa 2001-2009 Stéphane Mankowski <email
+>stephane@miraks.com</email
+> </para>
+<para
+>Derechos de autor de la documentación 2001-2009 Guillaume DE BURE <email
+>gdebure@yahoo.com</email
+> </para>
+<para
+>Traducido por Cristina Yenyxe González García <email
+>the.blue.valkyrie@gmail.com</email
+> y Kira J. Fernández <email
+>kirajfdez@gmail.com</email
+>.</para
+>  
+&underFDL; &underGPL; </chapter>
+
+<appendix id="installation">
+<title
+>Instalación</title>
+
+<sect1 id="getting-skrooge">
+<title
+>Cómo obtener &appname;</title>
+
+<para
+>La página principal de &appname; se puede encontrar en <ulink url="&homepage;"
+>&homepage;</ulink
+>. Aquí se pueden encontrar noticias y actualizaciones. </para>
+</sect1>
+
+<sect1 id="requirements">
+<title
+>Requisitos</title>
+
+<para
+>Para utilizar con éxito &appname;, necesitará &kde; 4, qt-sqlite3, libofx, y qca. </para>
+
+</sect1>
+
+<sect1 id="Installation">
+<title
+>Instalar &appname;</title>
+
+<para
+>Se recomienda que instale &appname; usando el sistema de gestión de paquetes de su distribución. Si, por cualquier razón, prefiere compilar e instalar &appname; usted mismo, este capítulo contiene todos los pasos necesarios. </para>
+
+<sect2 id="prerequisites">
+<title
+>Prerrequisitos</title>
+<para
+>&appname; usa varios componentes que necesitará instalar para compilarlo:</para>
+<itemizedlist>
+<listitem
+><para
+>sqlite3: una base de datos SQL ligera. Los archivos de &appname; son bases de datos sqlite.</para
+></listitem>
+<listitem
+><para
+>libofx: una librería para gestionar el formato de archivo OFX. OFX es un formato &XML; estándar para intercambios financieros.</para
+></listitem>
+<listitem
+><para
+>qca: Arquitectura criptográfica de &Qt;. Se usa para la protección de contraseñas.</para
+></listitem>
+</itemizedlist>
+</sect2>
+
+<sect2 id="compilation">
+<title
+>Compilación e instalación</title>
+
+<para
+>Para compilar e instalar &appname; en su sistema, teclee lo siguiente en la carpeta base del archivo, donde el tercer paso debe hacerse como usuario administrador si lo está instalando en una carpeta de sistema: <screen width="40"
+><prompt
+>$</prompt
+> <userinput
+>cmake . <option
+>-DCMAKE_INSTALL_PREFIX=`kde4-config --prefix`</option
+></userinput>
+<prompt
+>$</prompt
+> <userinput
+>make</userinput>
+<prompt
+>$</prompt
+> <userinput
+>make install</userinput
+>
+</screen>
+</para>
+<para
+>Como &appname; usa <command
+>cmake</command
+>, no debería tener problema compilándolo. Si se encuentra con algún problema, por favor informe a los autores.</para>
+</sect2>
+
+</sect1>
+
+</appendix>
+
+
+<appendix id="search_process_real_case">
+<title
+>Estudio de un caso real de búsqueda y proceso</title>
+
+<para
+>De acuerdo, tenemos que admitir que, si bien es bastante potente, el complemento de <link linkend="search_and_process"
+>Búsqueda  y proceso</link
+> puede ser un poco difícil de entender. Aquí tiene un pequeño ejercicio que le ayudará a hacerse con él. ¿Recuerda el caso de utilización de Búsqueda y proceso?</para>
+
+<blockquote
+><para
+>John se descarga algunos datos de su banco. Los datos vienen, obviamente, sin indicación de la categoría. De hecho, todo está escrito en el campo de comentarios. A John le gustaría tener alguna manera automática de asignar la categoría y otros atributos, basándose en el contenido del comentario.</para
+></blockquote>
+
+
+<para
+>John sabe que su banco puso el nombre del beneficiario en el campo de comentarios. Y quiere que todos sus pagos a &kde; estén en la categoría de Donaciones y Código Abierto. Buscaremos todas las operaciones cuyo campo de comentarios contenga &kde;.</para>
+
+<table>
+<title
+>Definición de búsqueda</title>
+<tgroup cols="1">
+<thead>
+<row>
+<entry
+>Comentario</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry
+>contiene «&kde;»</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+
+<para
+>Añada esta definición de búsqueda a la lista de búsquedas existentes usando el botón <guibutton
+>Añadir</guibutton
+>.</para>
+
+<para
+>Después, necesitamos decirle a &appname; que incluya todas las operaciones encontradas en esta consulta en la categoría Donaciones &gt; Código abierto. Cambie el tipo de búsqueda a Actualizar usando el recuadro desplegable de abajo, y defina las transformaciones que hay que aplicar:</para>
+
+<table>
+<title
+>Definición de actualización</title>
+<tgroup cols="2">
+<thead>
+<row>
+<entry
+>Comentario</entry>
+<entry
+>Categoría</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry
+>=''</entry>
+<entry
+>=«Donaciones &gt; Código abierto»</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+
+<tip
+><para
+>Tenga en cuenta que también hemos eliminado el comentario original asociándolo a una cadena vacía. Esto es por razones de legibilidad, pero puede desear mantenerlo por razones históricas.</para
+></tip>
+
+<para
+>Añada este proceso a la búsqueda definida previamente usando el botón <guibutton
+>Añadir</guibutton
+>.</para>
+
+<para
+>Hasta ahora, muy bien. Ahora, vamos a aplicar el proceso a todas las operaciones importadas no validadas todavía (haga click en el botón <guibutton
+>Aplicar</guibutton
+>):</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="apply_process.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+<para
+>¡Eso es! Si vuelve a la vista de operaciones, se dará cuenta de que todas las operaciones implicadas se han actualizado. En caso de que algo haya ido mal, ¡no olvide que <link linkend="undo_redo"
+>Deshacer</link
+> es su amigo! Incluso si el proceso ha modificado 2327 operaciones, todavía será una acción que &appname; podrá deshacer.</para>
+
+</appendix>
+
+<appendix id="holidays_expenses_analysis">
+<title
+>Ejercicio de análisis profundo: gastos de las vacaciones</title>
+<para
+>Para ilustrar las capacidades de análisis de &appname;, vamos a examinar los gastos del autor durante sus vacaciones. :)</para>
+
+<sect1 id="analysis_context">
+<title
+>Análisis del contexto</title>
+<para
+>Para comprender el ejercicio, necesitará saber unas pocas cosas sobre estas vacaciones. Abarcan casi un mes completo durante el verano de 2009, e incluyeron alquilar varias habitaciones en varias localidades de Francia. Hubo también una buena cantidad de combustible, ya que estas vacaciones también abarcaron una gran parte de Francia.</para>
+</sect1>
+
+<sect1 id="analysis_data_organisation">
+<title
+>Organización de los datos</title>
+<para
+>El autor introdujo cuidadosamente sus operaciones, asignándoles categorías, pero también añadiéndolas al <link linkend="trackers"
+>rastreador</link
+> «Vacaciones de verano, 2009». Las categorías a menudo tienen subcategorías, como «Transporte 
+> Coche 
+> Combustible», lo que permite este análisis detallado.</para>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="analysis_operations_view.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</sect1>
+
+<sect1 id="analysis_total_cost">
+<title
+>Averiguando el coste total de las vacaciones</title>
+<para
+>Esto es tan fácil que ni siquiera es divertido: abra la vista de Rastreadores y lea la columna de «Cantidad» para nuestro rastreador:</para>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="analysis_trackers_view.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+<para
+>Movámonos a cosas más interesantes...</para>
+</sect1>
+
+<sect1 id="analysis_expenses_distribution">
+<title
+>Distribución de los gastos</title>
+<para
+>Todo esto está muy bien, pero ¿a dónde ha ido todo el dinero? Para averiguar esto, vamos a construir un informe sobre el rastreador. haga click derecho en la fila del rastreador y elija <guimenuitem
+>Abrir rastreador...</guimenuitem
+>.</para>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="analysis_build_report.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+
+<para
+>Esto abrirá un informe en una nueva pestaña, solo para las operaciones asociadas con el rastreador. Los parámetros predeterminados para las fechas son «Mes actual», de forma que existe la posibilidad de que el informe esté vacío si todas las operaciones del rastreador se hicieron antes de esto. Vamos a cambiarlo a «Todas las fechas»:</para>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="analysis_report_1.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+<para
+>Esto le da una primera vista general de los gastos por categoría. Vamos a mostrarlos en una gráfica de tarta para una presentación más natural:</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="analysis_report_2.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+
+<para
+>Ahora está bastante claro que la mayoría de los gastos de las vacaciones fueron en transporte y comida. ¿Alguna indicación más? Claro, vamos a descender un nivel más en las categorías, utilizando el botón <guibutton
+>más</guibutton
+><inlinemediaobject
+><imageobject
+> <imagedata fileref="category_one_level_more.png"/></imageobject
+> </inlinemediaobject
+>.</para>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="analysis_report_3.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Mmm, no hay mucha más información aquí, salvo que en la categoría de «Transporte» solo está utilizada la subcategoría de «Coche». Vamos a construir una gráfica para esa subcategoría seleccionando el sector de la gráfica, haciendo click derecho en él y seleccionando <guimenuitem
+>Abrir informe</guimenuitem
+>:</para>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="analysis_build_transport_report.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Esto abrirá otra pestaña con un informe que solo contendrá la categoría de «Transporte» 
+> «Coche».</para>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="analysis_report_4.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+<para
+>Mmm, no es muy interesante... Pero hay más subcategorías. Vamos a expandirlas otra vez:</para>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="analysis_report_5.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+<para
+>Ah, ahora sabemos que nos gastamos 362,27€ en gasolina, y 131,90€ en impuestos de carreteras (en Francia tienes que pagar para conducir por algunas autopistas). De acuerdo, sé que esto era de esperar ;-). También estoy interesado en saber cómo se utilizaron estas dos categorías a lo largo del tiempo:</para>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="analysis_report_6.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+<para
+>Advierta que hemos cambiado el tipo de gráfica a «Línea» y las columnas a «Semana».</para>
+
+</sect1>
+
+<sect1 id="analysis_conclusion">
+<title
+>Conclusión</title>
+<para
+>Mediante este sencillo ejercicio, hemos podido usar las capacidades avanzadas de informes de &appname; para realizar un análisis de los gastos hechos durante las vacaciones, especialmente en la categoría de «Transportes». Por supuesto, pueden ocurrírsele otros casos: &appname; probablemente será capaz de tratar con ellos.</para>
+</sect1>
+
+</appendix>
+
+&documentation.index;
+
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->

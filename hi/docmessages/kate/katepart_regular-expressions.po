@@ -1,0 +1,1633 @@
+# Hindi translations for PACKAGE package.
+# Kali <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: katepart_regular-expressions\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 12:04+0000\n"
+"PO-Revision-Date: 2024-12-15 14:44+0530\n"
+"Last-Translator: Kali <EMAIL@ADDRESS>\n"
+"Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
+"Language: hi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#. Tag: author
+#: regular-expressions.docbook:4
+#, no-c-format
+msgid "&Anders.Lund; &Anders.Lund.mail;"
+msgstr "&Anders.Lund; &Anders.Lund.mail;"
+
+#. Tag: trans_comment
+#: regular-expressions.docbook:5
+#, no-c-format
+msgid "ROLES_OF_TRANSLATORS"
+msgstr "अनुवादकों की भूमिकाएँ"
+
+#. Tag: title
+#: regular-expressions.docbook:9
+#, no-c-format
+msgid "Regular Expressions"
+msgstr "नियमित अभिव्यक्तियाँ"
+
+#. Tag: synopsis
+#: regular-expressions.docbook:11
+#, no-c-format
+msgid ""
+"This Appendix contains a brief but hopefully sufficient and\n"
+"covering introduction to the world of <emphasis>regular\n"
+"expressions</emphasis>. It documents regular expressions in the form\n"
+"available within &kappname;, which is not compatible with the regular\n"
+"expressions of perl, nor with those of for example\n"
+"<command>grep</command>."
+msgstr ""
+"इस परिशिष्ट में <emphasis>रेगुलर एक्सप्रेशन</emphasis> की दुनिया का संक्षिप्त लेकिन उम्मीद "
+"है कि पर्याप्त और\n"
+"सम्पूर्ण परिचय है। यह &kappname; के भीतर उपलब्ध फॉर्म में रेगुलर एक्सप्रेशन का दस्तावेजीकरण "
+"करता है, जो कि perl के रेगुलर एक्सप्रेशन के साथ संगत नहीं है, न ही उदाहरण के लिए "
+"<command>grep</command> के साथ।"
+
+#. Tag: title
+#: regular-expressions.docbook:15
+#, no-c-format
+msgid "Introduction"
+msgstr "परिचय"
+
+#. Tag: para
+#: regular-expressions.docbook:17
+#, no-c-format
+msgid ""
+"<emphasis>Regular Expressions</emphasis> provides us with a way to describe "
+"some possible contents of a text string in a way understood by a small piece "
+"of software, so that it can investigate if a text matches, and also in the "
+"case of advanced applications with the means of saving pieces or the "
+"matching text."
+msgstr ""
+"<emphasis>रेगुलर एक्सप्रेशन</emphasis> हमें एक टेक्स्ट स्ट्रिंग की कुछ संभावित सामग्री का "
+"वर्णन करने का एक तरीका प्रदान करता है, जिसे सॉफ्टवेयर का एक छोटा सा हिस्सा समझ सके, "
+"ताकि यह जांच सके कि कोई टेक्स्ट मेल खाता है या नहीं, और उन्नत अनुप्रयोगों के मामले में टुकड़ों "
+"या मेल खाते टेक्स्ट को सहेजने के साधन भी प्रदान करता है।"
+
+#. Tag: para
+#: regular-expressions.docbook:23
+#, no-c-format
+msgid ""
+"An example: Say you want to search a text for paragraphs that starts with "
+"either of the names <quote>Henrik</quote> or <quote>Pernille</quote> "
+"followed by some form of the verb <quote>say</quote>."
+msgstr ""
+"एक उदाहरण: मान लीजिए कि आप ऐसे पैराग्राफ के लिए पाठ खोजना चाहते हैं जो "
+"<quote>Henrik</quote> या <quote>Pernille</quote> नामों में से किसी एक से शुरू होता "
+"है और उसके बाद <quote>say</quote> क्रिया का कोई रूप आता है।"
+
+#. Tag: para
+#: regular-expressions.docbook:28
+#, no-c-format
+msgid ""
+"With a normal search, you would start out searching for the first name, "
+"<quote>Henrik</quote> maybe followed by <quote>sa</quote> like this: "
+"<userinput>Henrik sa</userinput>, and while looking for matches, you would "
+"have to discard those not being the beginning of a paragraph, as well as "
+"those in which the word starting with the letters <quote>sa</quote> was not "
+"either <quote>says</quote>, <quote>said</quote> or so. And then of course "
+"repeat all of that with the next name..."
+msgstr ""
+"सामान्य खोज में, आप पहले नाम की खोज शुरू करेंगे, <quote>Henrik</quote> जिसके बाद "
+"<quote>sa</quote> हो सकता है, जैसे कि: <userinput>Henrik sa</userinput>, और "
+"मिलान की तलाश करते समय, आपको उन नामों को छोड़ना होगा जो पैराग्राफ़ की शुरुआत नहीं हैं, "
+"साथ ही उन नामों को भी छोड़ना होगा जिनमें <quote>sa</quote> अक्षरों से शुरू होने वाला "
+"शब्द <quote>says</quote>, <quote>said</quote> या ऐसा कुछ नहीं था। और फिर निश्चित "
+"रूप से अगले नाम के साथ यह सब दोहराएँ..."
+
+#. Tag: para
+#: regular-expressions.docbook:37
+#, no-c-format
+msgid ""
+"With Regular Expressions, that task could be accomplished with a single "
+"search, and with a larger degree of preciseness."
+msgstr ""
+"रेगुलर एक्सप्रेशन के साथ, यह कार्य एक ही खोज से, और अधिक सटीकता के साथ पूरा किया जा "
+"सकता है।"
+
+#. Tag: para
+#: regular-expressions.docbook:40
+#, no-c-format
+msgid ""
+"To achieve this, Regular Expressions defines rules for expressing in details "
+"a generalization of a string to match. Our example, which we might literally "
+"express like this: <quote>A line starting with either <quote>Henrik</quote> "
+"or <quote>Pernille</quote> (possibly following up to 4 blanks or tab "
+"characters) followed by a whitespace followed by <quote>sa</quote> and then "
+"either <quote>ys</quote> or <quote>id</quote></quote> could be expressed "
+"with the following regular expression:"
+msgstr ""
+"इसे प्राप्त करने के लिए, रेगुलर एक्सप्रेशन मिलान करने के लिए स्ट्रिंग के सामान्यीकरण को "
+"विस्तार से व्यक्त करने के लिए नियम परिभाषित करता है। हमारा उदाहरण, जिसे हम शाब्दिक रूप "
+"से इस तरह व्यक्त कर सकते हैं: <quote>हेनरिक</quote> या <quote>पेर्निले</quote> से शुरू "
+"होने वाली एक पंक्ति (संभवतः 4 रिक्त स्थान या टैब वर्णों के बाद) के बाद एक रिक्त स्थान और "
+"फिर <quote>sa</quote> और फिर या तो <quote>ys</quote> या <quote>id</quote></"
+"quote> को निम्नलिखित रेगुलर एक्सप्रेशन के साथ व्यक्त किया जा सकता है:"
+
+#. Tag: userinput
+#: regular-expressions.docbook:47
+#, no-c-format
+msgid "^[ \\t]{0,4}(Henrik|Pernille) sa(ys|id)"
+msgstr "^[ \\{0,4}(हेनरिक|पर्निल) sa(ys|id)"
+
+#. Tag: para
+#: regular-expressions.docbook:50
+#, no-c-format
+msgid ""
+"The above example demonstrates all four major concepts of modern Regular "
+"Expressions, namely:"
+msgstr ""
+"उपरोक्त उदाहरण आधुनिक रेगुलर एक्सप्रेशन की सभी चार प्रमुख अवधारणाओं को प्रदर्शित करता है, "
+"अर्थात्:"
+
+#. Tag: para
+#: regular-expressions.docbook:54
+#, no-c-format
+msgid "<para>Patterns</para>"
+msgstr "<पैरा>पैटर्न</पैरा>"
+
+#. Tag: para
+#: regular-expressions.docbook:55
+#, no-c-format
+msgid "<para>Assertions</para>"
+msgstr "<para>दावा</para>"
+
+#. Tag: para
+#: regular-expressions.docbook:56
+#, no-c-format
+msgid "<para>Quantifiers</para>"
+msgstr "<पैरा>क्वांटिफ़ायर</पैरा>"
+
+#. Tag: para
+#: regular-expressions.docbook:57
+#, no-c-format
+msgid "Back references"
+msgstr "पिछला संदर्भ"
+
+#. Tag: para
+#: regular-expressions.docbook:60
+#, no-c-format
+msgid ""
+"The caret (<literal>^</literal>) starting the expression is an assertion, "
+"being true only if the following matching string is at the start of a line."
+msgstr ""
+"अभिव्यक्ति को आरंभ करने वाला कैरेट (<literal>^</literal>) एक अभिकथन है, जो केवल तभी "
+"सत्य होता है जब निम्नलिखित मिलान स्ट्रिंग पंक्ति के आरंभ में हो।"
+
+#. Tag: para
+#: regular-expressions.docbook:64
+#, no-c-format
+msgid ""
+"The strings <literal>[ \\t]</literal> and <literal>(Henrik|Pernille) sa(ys|"
+"id)</literal> are patterns. The first one is a <emphasis>character class</"
+"emphasis> that matches either a blank or a (horizontal) tab character; the "
+"other pattern contains first a subpattern matching either <literal>Henrik</"
+"literal> <emphasis>or</emphasis> <literal>Pernille</literal>, then a piece "
+"matching the exact string <literal> sa</literal> and finally a subpattern "
+"matching either <literal>ys</literal> <emphasis>or</emphasis> <literal>id</"
+"literal>"
+msgstr ""
+"स्ट्रिंग्स <literal>[ \\t]</literal> और <literal>(Henrik|Pernille) sa(ys|id)</"
+"literal> पैटर्न हैं। पहला एक <emphasis>वर्ण वर्ग</emphasis> है जो या तो रिक्त या "
+"(क्षैतिज) टैब वर्ण से मेल खाता है; दूसरे पैटर्न में सबसे पहले एक उप-पैटर्न होता है जो या तो "
+"<literal>Henrik</literal> <emphasis>या</emphasis> <literal>Pernille</"
+"literal> से मेल खाता है, फिर एक टुकड़ा जो सटीक स्ट्रिंग <literal> sa</literal> से मेल "
+"खाता है और अंत में एक उप-पैटर्न जो या तो <literal>ys</literal> <emphasis>या</"
+"emphasis> <literal>id</literal> से मेल खाता है"
+
+#. Tag: para
+#: regular-expressions.docbook:74
+#, no-c-format
+msgid ""
+"The string <literal>{0,4}</literal> is a quantifier saying <quote>anywhere "
+"from 0 up to 4 of the previous</quote>."
+msgstr ""
+"स्ट्रिंग <literal>{0,4}</literal> एक परिमाणक है जो <quote>0 से लेकर पिछले वाले के 4 "
+"तक कहीं भी</quote> बताता है।"
+
+#. Tag: para
+#: regular-expressions.docbook:77
+#, no-c-format
+msgid ""
+"Because regular expression software supporting the concept of <emphasis>back "
+"references</emphasis> saves the entire matching part of the string as well "
+"as sub-patterns enclosed in parentheses, given some means of access to those "
+"references, we could get our hands on either the whole match (when searching "
+"a text document in an editor with a regular expression, that is often marked "
+"as selected) or either the name found, or the last part of the verb."
+msgstr ""
+"चूंकि <emphasis>बैक रेफरेंसेज</emphasis> की अवधारणा का समर्थन करने वाला नियमित "
+"अभिव्यक्ति सॉफ्टवेयर स्ट्रिंग के संपूर्ण मिलान वाले भाग के साथ-साथ कोष्ठकों में संलग्न उप-पैटर्न "
+"को भी सहेज लेता है, इसलिए उन संदर्भों तक पहुंच के कुछ साधन दिए जाने पर, हम या तो संपूर्ण "
+"मिलान (नियमित अभिव्यक्ति वाले संपादक में पाठ दस्तावेज़ खोजते समय, जिसे अक्सर चयनित के रूप "
+"में चिह्नित किया जाता है) या फिर पाया गया नाम, या क्रिया का अंतिम भाग प्राप्त कर सकते "
+"हैं।"
+
+#. Tag: para
+#: regular-expressions.docbook:85
+#, no-c-format
+msgid ""
+"All together, the expression will match where we wanted it to, and only "
+"there."
+msgstr "कुल मिलाकर, अभिव्यक्ति वहीं मेल खाएगी जहां हम चाहते थे, और केवल वहीं।"
+
+#. Tag: para
+#: regular-expressions.docbook:88
+#, no-c-format
+msgid ""
+"The following sections will describe in details how to construct and use "
+"patterns, character classes, assertions, quantifiers and back references, "
+"and the final section will give a few useful examples."
+msgstr ""
+"निम्नलिखित अनुभागों में विस्तार से बताया जाएगा कि पैटर्न, वर्ण वर्ग, अभिकथन, परिमाणक और "
+"पश्च संदर्भों का निर्माण और उपयोग कैसे किया जाए, तथा अंतिम अनुभाग में कुछ उपयोगी उदाहरण "
+"दिए जाएंगे।"
+
+#. Tag: title
+#: regular-expressions.docbook:97
+#, no-c-format
+msgid "<title>Patterns</title>"
+msgstr "<title>पैटर्न्स</title>"
+
+#. Tag: para
+#: regular-expressions.docbook:99
+#, no-c-format
+msgid ""
+"Patterns consists of literal strings and character classes. Patterns may "
+"contain sub-patterns, which are patterns enclosed in parentheses."
+msgstr ""
+"पैटर्न में शाब्दिक स्ट्रिंग और वर्ण वर्ग शामिल होते हैं। पैटर्न में उप-पैटर्न हो सकते हैं, जो "
+"कोष्ठक में संलग्न पैटर्न होते हैं।"
+
+#. Tag: title
+#: regular-expressions.docbook:104
+#, no-c-format
+msgid "Escaping characters"
+msgstr "बचकर भागते हुए पात्र"
+
+#. Tag: para
+#: regular-expressions.docbook:106
+#, no-c-format
+msgid ""
+"In patterns as well as in character classes, some characters have a special "
+"meaning. To literally match any of those characters, they must be marked or "
+"<emphasis>escaped</emphasis> to let the regular expression software know "
+"that it should interpret such characters in their literal meaning."
+msgstr ""
+"पैटर्न के साथ-साथ कैरेक्टर क्लास में भी कुछ कैरेक्टर का एक खास मतलब होता है। उनमें से किसी भी "
+"कैरेक्टर से शाब्दिक रूप से मेल खाने के लिए, उन्हें चिह्नित या <emphasis>एस्केप</emphasis> "
+"किया जाना चाहिए ताकि रेगुलर एक्सप्रेशन सॉफ़्टवेयर को पता चल सके कि उसे ऐसे कैरेक्टर को उनके "
+"शाब्दिक अर्थ में समझना चाहिए।"
+
+#. Tag: para
+#: regular-expressions.docbook:112
+#, no-c-format
+msgid ""
+"This is done by prepending the character with a backslash (<literal>\\</"
+"literal>)."
+msgstr "यह कार्य वर्ण के आगे बैकस्लैश (<literal>\\</literal>) लगाकर किया जाता है।"
+
+#. Tag: para
+#: regular-expressions.docbook:116
+#, no-c-format
+msgid ""
+"The regular expression software will silently ignore escaping a character "
+"that does not have any special meaning in the context, so escaping for "
+"example a <quote>j</quote> (<userinput>\\j</userinput>) is safe. If you are "
+"in doubt whether a character could have a special meaning, you can therefore "
+"escape it safely."
+msgstr ""
+"रेगुलर एक्सप्रेशन सॉफ़्टवेयर चुपचाप ऐसे कैरेक्टर को एस्केप करने से अनदेखा कर देगा जिसका संदर्भ में "
+"कोई विशेष अर्थ नहीं है, इसलिए उदाहरण के लिए <quote>j</quote> (<userinput>\\j</"
+"userinput>) को एस्केप करना सुरक्षित है। यदि आपको संदेह है कि क्या किसी कैरेक्टर का कोई "
+"विशेष अर्थ हो सकता है, तो आप उसे सुरक्षित रूप से एस्केप कर सकते हैं।"
+
+#. Tag: para
+#: regular-expressions.docbook:122
+#, no-c-format
+msgid ""
+"Escaping of course includes the backslash character itself, to literally "
+"match a such, you would write <userinput>\\\\</userinput>."
+msgstr ""
+"एस्केपिंग में बैकस्लैश वर्ण भी शामिल है, ऐसे वर्ण से अक्षरशः मिलान करने के लिए आप <userinput>"
+"\\\\</userinput> लिखेंगे।"
+
+#. Tag: title
+#: regular-expressions.docbook:129
+#, no-c-format
+msgid "Character Classes and abbreviations"
+msgstr "वर्ण वर्ग और संक्षिप्तीकरण"
+
+#. Tag: para
+#: regular-expressions.docbook:131
+#, no-c-format
+msgid ""
+"A <emphasis>character class</emphasis> is an expression that matches one of "
+"a defined set of characters. In Regular Expressions, character classes are "
+"defined by putting the legal characters for the class in square brackets, "
+"<literal>[]</literal>, or by using one of the abbreviated classes described "
+"below."
+msgstr ""
+"<emphasis>वर्ण वर्ग</emphasis> एक अभिव्यक्ति है जो वर्णों के एक निर्धारित समूह में से एक "
+"से मेल खाता है। रेगुलर एक्सप्रेशन में, वर्ण वर्गों को वर्ग कोष्ठक में वर्ग के लिए वैध वर्ण डालकर, "
+"<literal>[]</literal>, या नीचे वर्णित संक्षिप्त वर्गों में से किसी एक का उपयोग करके "
+"परिभाषित किया जाता है।"
+
+#. Tag: para
+#: regular-expressions.docbook:137
+#, no-c-format
+msgid ""
+"Simple character classes just contains one or more literal characters, for "
+"example <userinput>[abc]</userinput> (matching either of the letters "
+"<quote>a</quote>, <quote>b</quote> or <quote>c</quote>) or "
+"<userinput>[0123456789]</userinput> (matching any digit)."
+msgstr ""
+"सरल वर्ण वर्गों में केवल एक या अधिक शाब्दिक वर्ण होते हैं, उदाहरण के लिए "
+"<userinput>[abc]</userinput> (अक्षरों <quote>a</quote>, <quote>b</quote> या "
+"<quote>c</quote> में से किसी एक से मेल खाता है) या <userinput>[0123456789]</"
+"userinput> (किसी भी अंक से मेल खाता है)।"
+
+#. Tag: para
+#: regular-expressions.docbook:142
+#, no-c-format
+msgid ""
+"Because letters and digits have a logical order, you can abbreviate those by "
+"specifying ranges of them: <userinput>[a-c]</userinput> is equal to "
+"<userinput>[abc]</userinput> and <userinput>[0-9]</userinput> is equal to "
+"<userinput>[0123456789]</userinput>. Combining these constructs, for example "
+"<userinput>[a-fynot1-38]</userinput> is completely legal (the last one would "
+"match, of course, either of <quote>a</quote>,<quote>b</quote>,<quote>c</"
+"quote>,<quote>d</quote>, <quote>e</quote>,<quote>f</quote>,<quote>y</quote>,"
+"<quote>n</quote>,<quote>o</quote>,<quote>t</quote>, <quote>1</quote>,"
+"<quote>2</quote>,<quote>3</quote> or <quote>8</quote>)."
+msgstr ""
+"क्योंकि अक्षरों और अंकों का एक तार्किक क्रम होता है, आप उनकी सीमा निर्दिष्ट करके उन्हें "
+"संक्षिप्त कर सकते हैं: <userinput>[a-c]</userinput> बराबर है <userinput>[abc]</"
+"userinput> और <userinput>[0-9]</userinput> बराबर है <userinput>[0123456789]</"
+"userinput>. इन संरचनाओं को संयोजित करना, उदाहरण के लिए <userinput>[a-fynot1-38]</"
+"userinput> पूरी तरह से वैध है (अंतिम संरचना, निश्चित रूप से, <quote>a</quote>,"
+"<quote>b</quote>,<quote>c</quote>,<quote>d</quote>, <quote>e</quote>,"
+"<quote>f</quote>,<quote>y</quote>,<quote>n</quote>,<quote>o</quote>,"
+"<quote>t</quote>, <quote>1</quote>,<quote>2</quote>,<quote>3</quote> या "
+"<quote>8</quote> में से किसी से मेल खाएगी)।"
+
+#. Tag: para
+#: regular-expressions.docbook:154
+#, no-c-format
+msgid ""
+"As capital letters are different characters from their non-capital "
+"equivalents, to create a caseless character class matching <quote>a</quote> "
+"or <quote>b</quote>, in any case, you need to write it <userinput>[aAbB]</"
+"userinput>."
+msgstr ""
+"चूंकि बड़े अक्षर अपने गैर-बड़े समकक्षों से भिन्न वर्ण होते हैं, इसलिए <quote>a</quote> या "
+"<quote>b</quote> से मेल खाते केसलेस कैरेक्टर क्लास बनाने के लिए, किसी भी स्थिति में, आपको "
+"इसे <userinput>[aAbB]</userinput> लिखना होगा।"
+
+#. Tag: para
+#: regular-expressions.docbook:159
+#, no-c-format
+msgid ""
+"It is of course possible to create a <quote>negative</quote> class matching "
+"as <quote>anything but</quote> To do so put a caret (<literal>^</literal>) "
+"at the beginning of the class:"
+msgstr ""
+"यह निश्चित रूप से संभव है कि <quote>negative</quote> क्लास का निर्माण किया जाए जो "
+"<quote>anything but</quote> से मेल खाता हो। ऐसा करने के लिए क्लास के आरंभ में एक कैरेट "
+"(<literal>^</literal>) लगाएं:"
+
+#. Tag: para
+#: regular-expressions.docbook:163
+#, no-c-format
+msgid ""
+"<userinput>[^abc]</userinput> will match any character <emphasis>but</"
+"emphasis> <quote>a</quote>, <quote>b</quote> or <quote>c</quote>."
+msgstr ""
+"<userinput>[^abc]</userinput> किसी भी वर्ण से मेल खाएगा <emphasis>लेकिन</"
+"emphasis> <quote>a</quote>, <quote>b</quote> या <quote>c</quote> से।"
+
+#. Tag: para
+#: regular-expressions.docbook:167
+#, no-c-format
+msgid ""
+"In addition to literal characters, some abbreviations are defined, making "
+"life still a bit easier:"
+msgstr ""
+"शाब्दिक अक्षरों के अतिरिक्त, कुछ संक्षिप्त रूप भी परिभाषित किए गए हैं, जिससे जीवन थोड़ा "
+"आसान हो जाएगा:"
+
+#. Tag: userinput
+#: regular-expressions.docbook:173
+#, no-c-format
+msgid "<userinput>\\a</userinput>"
+msgstr "<userinput>\\a</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:174
+#, no-c-format
+msgid "This matches the &ASCII; bell character (BEL, 0x07)."
+msgstr "यह &ASCII; घंटी वर्ण (BEL, 0x07) से मेल खाता है।"
+
+#. Tag: userinput
+#: regular-expressions.docbook:178
+#, no-c-format
+msgid "<userinput>\\f</userinput>"
+msgstr "<userinput>\\f</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:179
+#, no-c-format
+msgid "This matches the &ASCII; form feed character (FF, 0x0C)."
+msgstr "यह &ASCII; फॉर्म फ़ीड वर्ण (FF, 0x0C) से मेल खाता है।"
+
+#. Tag: userinput
+#: regular-expressions.docbook:183
+#, no-c-format
+msgid "<userinput>\\n</userinput>"
+msgstr "<userinput>\\n</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:184
+#, no-c-format
+msgid "This matches the &ASCII; line feed character (LF, 0x0A, Unix newline)."
+msgstr "यह &ASCII; लाइन फीड वर्ण (LF, 0x0A, Unix न्यूलाइन) से मेल खाता है।"
+
+#. Tag: userinput
+#: regular-expressions.docbook:188
+#, no-c-format
+msgid "<userinput>\\r</userinput>"
+msgstr "<userinput>\\r</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:189
+#, no-c-format
+msgid "This matches the &ASCII; carriage return character (CR, 0x0D)."
+msgstr "यह &ASCII; कैरिज रिटर्न कैरेक्टर (CR, 0x0D) से मेल खाता है।"
+
+#. Tag: userinput
+#: regular-expressions.docbook:193
+#, no-c-format
+msgid "<userinput>\\t</userinput>"
+msgstr "<यूजरइनपुट>\\t</यूजरइनपुट>"
+
+#. Tag: para
+#: regular-expressions.docbook:194
+#, no-c-format
+msgid "This matches the &ASCII; horizontal tab character (HT, 0x09)."
+msgstr "यह &ASCII; क्षैतिज टैब वर्ण (HT, 0x09) से मेल खाता है।"
+
+#. Tag: userinput
+#: regular-expressions.docbook:198
+#, no-c-format
+msgid "<userinput>\\v</userinput>"
+msgstr "<यूजरइनपुट>\\v</यूजरइनपुट>"
+
+#. Tag: para
+#: regular-expressions.docbook:199
+#, no-c-format
+msgid "This matches the &ASCII; vertical tab character (VT, 0x0B)."
+msgstr "यह &ASCII; ऊर्ध्वाधर टैब वर्ण (VT, 0x0B) से मेल खाता है।"
+
+#. Tag: userinput
+#: regular-expressions.docbook:202
+#, no-c-format
+msgid "\\xhhhh"
+msgstr "\\xहह"
+
+#. Tag: para
+#: regular-expressions.docbook:204
+#, no-c-format
+msgid ""
+"This matches the Unicode character corresponding to the hexadecimal number "
+"hhhh (between 0x0000 and 0xFFFF). \\0ooo (&ie;, \\zero ooo) matches the "
+"&ASCII;/Latin-1 character corresponding to the octal number ooo (between 0 "
+"and 0377)."
+msgstr ""
+"यह हेक्साडेसिमल संख्या hhhh (0x0000 और 0xFFFF के बीच) के संगत यूनिकोड वर्ण से मेल खाता "
+"है। \\0ooo (&ie;, \\zero ooo) अष्टाधारी संख्या ooo (0 और 0377 के बीच) के संगत "
+"&ASCII;/Latin-1 वर्ण से मेल खाता है।"
+
+#. Tag: term
+#: regular-expressions.docbook:212
+#, no-c-format
+msgid "<userinput>.</userinput> (dot)"
+msgstr "<userinput>.</userinput> (डॉट)"
+
+#. Tag: para
+#: regular-expressions.docbook:213
+#, no-c-format
+msgid "This matches any character (including newline)."
+msgstr "यह किसी भी वर्ण (नई पंक्ति सहित) से मेल खाता है।"
+
+#. Tag: userinput
+#: regular-expressions.docbook:217
+#, no-c-format
+msgid "<userinput>\\d</userinput>"
+msgstr "<userinput>\\d</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:218
+#, no-c-format
+msgid "This matches a digit. Equal to <literal>[0-9]</literal>"
+msgstr "यह एक अंक से मेल खाता है। <literal>[0-9]</literal> के बराबर"
+
+#. Tag: userinput
+#: regular-expressions.docbook:222
+#, no-c-format
+msgid "<userinput>\\D</userinput>"
+msgstr "<userinput>\\D</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:223
+#, no-c-format
+msgid ""
+"This matches a non-digit. Equal to <literal>[^0-9]</literal> or <literal>[^"
+"\\d]</literal>"
+msgstr ""
+"यह एक गैर-अंक से मेल खाता है। <literal>[^0-9]</literal> या <literal>[^\\d]</"
+"literal> के बराबर"
+
+#. Tag: userinput
+#: regular-expressions.docbook:227
+#, no-c-format
+msgid "<userinput>\\s</userinput>"
+msgstr "<userinput>\\s</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:228
+#, no-c-format
+msgid ""
+"This matches a whitespace character. Practically equal to <literal>[ \\t\\n"
+"\\r]</literal>"
+msgstr ""
+"यह रिक्त स्थान वर्ण से मेल खाता है। व्यावहारिक रूप से <literal>[ \\t\\n\\r]</literal> "
+"के बराबर है"
+
+#. Tag: userinput
+#: regular-expressions.docbook:232
+#, no-c-format
+msgid "<userinput>\\S</userinput>"
+msgstr "<userinput>\\S</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:233
+#, no-c-format
+msgid ""
+"This matches a non-whitespace. Practically equal to <literal>[^ \\t\\r\\n]</"
+"literal>, and equal to <literal>[^\\s]</literal>"
+msgstr ""
+"यह एक गैर-रिक्त स्थान से मेल खाता है। व्यावहारिक रूप से <literal>[^ \\t\\r\\n]</"
+"literal> के बराबर है, और <literal>[^\\s]</literal> के बराबर है"
+
+#. Tag: userinput
+#: regular-expressions.docbook:237
+#, no-c-format
+msgid "<userinput>\\w</userinput>"
+msgstr "<userinput>\\w</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:238
+#, no-c-format
+msgid ""
+"Matches any <quote>word character</quote> - in this case any letter, digit "
+"or underscore. Equal to <literal>[a-zA-Z0-9_]</literal>"
+msgstr ""
+"किसी भी <quote>शब्द वर्ण</quote> से मेल खाता है - इस मामले में कोई भी अक्षर, अंक या "
+"अंडरस्कोर। <literal>[a-zA-Z0-9_]</literal> के बराबर"
+
+#. Tag: userinput
+#: regular-expressions.docbook:243
+#, no-c-format
+msgid "<userinput>\\W</userinput>"
+msgstr "<userinput>\\W</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:244
+#, no-c-format
+msgid ""
+"Matches any non-word character - anything but letters, numbers or "
+"underscore. Equal to <literal>[^a-zA-Z0-9_]</literal> or <literal>[^\\w]</"
+"literal>"
+msgstr ""
+"किसी भी गैर-शब्द वर्ण से मेल खाता है - अक्षरों, संख्याओं या अंडरस्कोर के अलावा कुछ भी। "
+"<literal>[^a-zA-Z0-9_]</literal> या <literal>[^\\w]</literal> के बराबर"
+
+#. Tag: para
+#: regular-expressions.docbook:253
+#, no-c-format
+msgid ""
+"The <emphasis>POSIX notation of classes</emphasis>, <userinput>[:&lt;class "
+"name&gt;:]</userinput> are also supported. For example, <userinput>[:"
+"digit:]</userinput> is equivalent to <userinput>\\d</userinput>, and "
+"<userinput>[:space:]</userinput> to <userinput>\\s</userinput>. See the full "
+"list of POSIX character classes <ulink url=\"https://www.regular-expressions."
+"info/posixbrackets.html\">here</ulink>."
+msgstr ""
+"<emphasis>क्लास का POSIX संकेतन</emphasis>, <userinput>[:&lt;class name&gt;:]</"
+"userinput> भी समर्थित हैं। उदाहरण के लिए, <userinput>[:digit:]</userinput> "
+"<userinput>\\d</userinput> के बराबर है, और <userinput>[:space:]</userinput> "
+"<userinput>\\s</userinput> के बराबर है। POSIX वर्ण वर्गों की पूरी सूची <ulink url="
+"\"https://www.regular-expressions.info/posixbrackets.html\">यहाँ</ulink> देखें।"
+
+#. Tag: para
+#: regular-expressions.docbook:260
+#, no-c-format
+msgid ""
+"The abbreviated classes can be put inside a custom class, for example to "
+"match a word character, a blank or a dot, you could write <userinput>[\\w "
+"\\.]</userinput>"
+msgstr ""
+"संक्षिप्त क्लास को कस्टम क्लास के अंदर रखा जा सकता है, उदाहरण के लिए किसी शब्द वर्ण, "
+"रिक्त स्थान या बिंदु से मिलान करने के लिए, आप <userinput>[\\w \\.]</userinput> लिख "
+"सकते हैं"
+
+#. Tag: title
+#: regular-expressions.docbook:265
+#, no-c-format
+msgid "Characters with special meanings inside character classes"
+msgstr "वर्ण वर्गों के अंदर विशेष अर्थ वाले वर्ण"
+
+#. Tag: para
+#: regular-expressions.docbook:267
+#, no-c-format
+msgid ""
+"The following characters has a special meaning inside the <quote>[]</quote> "
+"character class construct, and must be escaped to be literally included in a "
+"class:"
+msgstr ""
+"निम्नलिखित वर्णों का <quote>[]</quote> वर्ण वर्ग संरचना के अंदर एक विशेष अर्थ है, और "
+"उन्हें वर्ग में शाब्दिक रूप से शामिल करने के लिए एस्केप किया जाना चाहिए:"
+
+#. Tag: userinput
+#: regular-expressions.docbook:273
+#, no-c-format
+msgid "<userinput>]</userinput>"
+msgstr "<यूजरइनपुट>]</यूजरइनपुट>"
+
+#. Tag: para
+#: regular-expressions.docbook:274
+#, no-c-format
+msgid ""
+"Ends the character class. Must be escaped unless it is the very first "
+"character in the class (may follow an unescaped caret)."
+msgstr ""
+"वर्ण वर्ग को समाप्त करता है। इसे एस्केप किया जाना चाहिए, जब तक कि यह वर्ग का सबसे "
+"पहला वर्ण न हो (यह एस्केप न किए गए कैरेट के बाद हो सकता है)।"
+
+#. Tag: term
+#: regular-expressions.docbook:278 regular-expressions.docbook:415
+#, no-c-format
+msgid "<userinput>^</userinput> (caret)"
+msgstr "<userinput>^</userinput> (कैरेट)"
+
+#. Tag: para
+#: regular-expressions.docbook:279
+#, no-c-format
+msgid ""
+"Denotes a negative class, if it is the first character. Must be escaped to "
+"match literally if it is the first character in the class."
+msgstr ""
+"यदि यह पहला अक्षर है, तो यह एक नकारात्मक वर्ग को दर्शाता है। यदि यह वर्ग में पहला "
+"अक्षर है, तो शाब्दिक रूप से मिलान करने के लिए इसे एस्केप किया जाना चाहिए।"
+
+#. Tag: term
+#: regular-expressions.docbook:282
+#, no-c-format
+msgid "<userinput>-</userinput> (dash)"
+msgstr "<यूजरइनपुट>-</यूजरइनपुट> (डैश)"
+
+#. Tag: para
+#: regular-expressions.docbook:283
+#, no-c-format
+msgid ""
+"Denotes a logical range. Must always be escaped within a character class."
+msgstr "तार्किक सीमा को दर्शाता है। हमेशा एक वर्ण वर्ग के भीतर एस्केप किया जाना चाहिए।"
+
+#. Tag: term
+#: regular-expressions.docbook:286 regular-expressions.docbook:410
+#, no-c-format
+msgid "<userinput>\\</userinput> (backslash)"
+msgstr "<userinput>\\</userinput> (बैकस्लैश)"
+
+#. Tag: para
+#: regular-expressions.docbook:287
+#, no-c-format
+msgid "The escape character. Must always be escaped."
+msgstr "एस्केप कैरेक्टर। हमेशा एस्केप होना चाहिए।"
+
+#. Tag: title
+#: regular-expressions.docbook:298
+#, no-c-format
+msgid "Alternatives: matching <quote>one of</quote>"
+msgstr "विकल्प: <quote>इनमें से एक</quote> से मेल खाता हुआ"
+
+#. Tag: para
+#: regular-expressions.docbook:300
+#, no-c-format
+msgid ""
+"If you want to match one of a set of alternative patterns, you can separate "
+"those with <literal>|</literal> (vertical bar character)."
+msgstr ""
+"यदि आप वैकल्पिक पैटर्न के सेट में से किसी एक को मिलाना चाहते हैं, तो आप उन्हें <literal>|</"
+"literal> (वर्टिकल बार कैरेक्टर) से अलग कर सकते हैं।"
+
+#. Tag: para
+#: regular-expressions.docbook:303
+#, no-c-format
+msgid ""
+"For example to find either <quote>John</quote> or <quote>Harry</quote> you "
+"would use an expression <userinput>John|Harry</userinput>."
+msgstr ""
+"उदाहरण के लिए, <quote>John</quote> या <quote>Harry</quote> को खोजने के लिए आप "
+"<userinput>John|Harry</userinput> अभिव्यक्ति का उपयोग करेंगे।"
+
+#. Tag: title
+#: regular-expressions.docbook:309
+#, no-c-format
+msgid "Sub Patterns"
+msgstr "उप पैटर्न"
+
+#. Tag: para
+#: regular-expressions.docbook:311
+#, no-c-format
+msgid ""
+"<emphasis>Sub patterns</emphasis> are patterns enclosed in parentheses, and "
+"they have several uses in the world of regular expressions."
+msgstr ""
+"<emphasis>उप पैटर्न</emphasis> कोष्ठकों में बंद पैटर्न होते हैं, और नियमित अभिव्यक्तियों की "
+"दुनिया में उनके कई उपयोग हैं।"
+
+#. Tag: title
+#: regular-expressions.docbook:317
+#, no-c-format
+msgid "Specifying alternatives"
+msgstr "विकल्प निर्दिष्ट करना"
+
+#. Tag: para
+#: regular-expressions.docbook:319
+#, no-c-format
+msgid ""
+"You may use a sub pattern to group a set of alternatives within a larger "
+"pattern. The alternatives are separated by the character <quote>|</quote> "
+"(vertical bar)."
+msgstr ""
+"आप विकल्पों के एक समूह को एक बड़े पैटर्न के भीतर समूहीकृत करने के लिए उप पैटर्न का उपयोग कर "
+"सकते हैं। विकल्पों को वर्ण <quote>|</quote> (वर्टिकल बार) द्वारा अलग किया जाता है।"
+
+#. Tag: para
+#: regular-expressions.docbook:323
+#, no-c-format
+msgid ""
+"For example to match either of the words <quote>int</quote>, <quote>float</"
+"quote> or <quote>double</quote>, you could use the pattern <userinput>int|"
+"float|double</userinput>. If you only want to find one if it is followed by "
+"some whitespace and then some letters, put the alternatives inside a "
+"subpattern: <userinput>(int|float|double)\\s+\\w+</userinput>."
+msgstr ""
+"उदाहरण के लिए <quote>int</quote>, <quote>float</quote> या <quote>double</"
+"quote> में से किसी भी शब्द से मिलान करने के लिए, आप <userinput>int|float|double</"
+"userinput> पैटर्न का उपयोग कर सकते हैं। यदि आप केवल तभी एक को ढूँढना चाहते हैं जब उसके "
+"बाद कुछ रिक्त स्थान और फिर कुछ अक्षर हों, तो विकल्पों को एक उप-पैटर्न के अंदर रखें: "
+"<userinput>(int|float|double)\\s+\\w+</userinput>."
+
+#. Tag: title
+#: regular-expressions.docbook:334
+#, no-c-format
+msgid "Capturing matching text (back references)"
+msgstr "मेल खाते पाठ को कैप्चर करना (पिछला संदर्भ)"
+
+#. Tag: para
+#: regular-expressions.docbook:336
+#, no-c-format
+msgid ""
+"If you want to use a back reference, use a sub pattern <userinput>(PATTERN)</"
+"userinput> to have the desired part of the pattern remembered. To prevent "
+"the sub pattern from being remembered, use a non-capturing group "
+"<userinput>(?:PATTERN)</userinput>."
+msgstr ""
+"यदि आप बैक रेफरेंस का उपयोग करना चाहते हैं, तो पैटर्न के वांछित भाग को याद रखने के लिए सब "
+"पैटर्न <userinput>(PATTERN)</userinput> का उपयोग करें। सब पैटर्न को याद रखने से रोकने "
+"के लिए, नॉन-कैप्चरिंग ग्रुप <userinput>(?:PATTERN)</userinput> का उपयोग करें।"
+
+#. Tag: para
+#: regular-expressions.docbook:341
+#, no-c-format
+msgid ""
+"For example, if you want to find two occurrences of the same word separated "
+"by a comma and possibly some whitespace, you could write <userinput>(\\w+),"
+"\\s*\\1</userinput>. The sub pattern <literal>\\w+</literal> would find a "
+"chunk of word characters, and the entire expression would match if those "
+"were followed by a comma, 0 or more whitespace and then an equal chunk of "
+"word characters. (The string <literal>\\1</literal> references <emphasis>the "
+"first sub pattern enclosed in parentheses</emphasis>.)"
+msgstr ""
+"उदाहरण के लिए, यदि आप एक ही शब्द की दो घटनाओं को अल्पविराम और संभवतः कुछ रिक्त स्थान "
+"से अलग करके खोजना चाहते हैं, तो आप <userinput>(\\w+),\\s*\\1</userinput> लिख सकते "
+"हैं। उप पैटर्न <literal>\\w+</literal> शब्द वर्णों का एक हिस्सा खोजेगा, और संपूर्ण "
+"अभिव्यक्ति मेल खाएगी यदि उनके बाद अल्पविराम, 0 या अधिक रिक्त स्थान और फिर शब्द वर्णों "
+"का एक समान हिस्सा हो। (स्ट्रिंग <literal>\\1</literal> <emphasis>कोष्ठकों में संलग्न "
+"पहले उप पैटर्न</emphasis> को संदर्भित करता है।)"
+
+#. Tag: para
+#: regular-expressions.docbook:351
+#, no-c-format
+msgid ""
+"To avoid ambiguities with usage of <userinput>\\1</userinput> with some "
+"digits behind it (&eg; <userinput>\\12</userinput> can be 12th subpattern or "
+"just the first subpattern with <userinput>2</userinput>) we use <userinput>"
+"\\{12}</userinput> as syntax for multi-digit subpatterns."
+msgstr ""
+"<userinput>\\1</userinput> के पीछे कुछ अंकों के साथ उपयोग में अस्पष्टता से बचने के लिए "
+"(&eg; <userinput>\\12</userinput> 12वां उपपैटर्न हो सकता है या <userinput>2</"
+"userinput> के साथ केवल पहला उपपैटर्न हो सकता है) हम बहु-अंकीय उपपैटर्न के लिए सिंटैक्स के "
+"रूप में <userinput>\\{12}</userinput> का उपयोग करते हैं।"
+
+#. Tag: para
+#: regular-expressions.docbook:352
+#, no-c-format
+msgid "Examples:"
+msgstr "उदाहरण:"
+
+#. Tag: para
+#: regular-expressions.docbook:354
+#, no-c-format
+msgid "<userinput>\\{12}1</userinput> is <quote>use subpattern 12</quote>"
+msgstr "<userinput>\\{12}1</userinput> है <quote>उपपैटर्न 12 का उपयोग करें</quote>"
+
+#. Tag: para
+#: regular-expressions.docbook:355
+#, no-c-format
+msgid ""
+"<userinput>\\123</userinput> is <quote>use capture 1 then 23 as the normal "
+"text</quote>"
+msgstr ""
+"<userinput>\\123</userinput> <quote>कैप्चर 1 और फिर 23 को सामान्य टेक्स्ट के रूप में "
+"उपयोग करें</quote>"
+
+#. Tag: title
+#: regular-expressions.docbook:365
+#, no-c-format
+msgid "Lookahead Assertions"
+msgstr "अग्रिम दावे"
+
+#. Tag: para
+#: regular-expressions.docbook:367
+#, no-c-format
+msgid ""
+"A lookahead assertion is a sub pattern, starting with either <literal>?=</"
+"literal> or <literal>?!</literal>."
+msgstr ""
+"लुकअहेड अभिकथन एक उप पैटर्न है, जो <literal>?=</literal> या <literal>?!</literal> "
+"से शुरू होता है।"
+
+#. Tag: para
+#: regular-expressions.docbook:370
+#, no-c-format
+msgid ""
+"For example to match the literal string <quote>Bill</quote> but only if not "
+"followed by <quote> Gates</quote>, you could use this expression: "
+"<userinput>Bill(?! Gates)</userinput>. (This would find <quote>Bill Clinton</"
+"quote> as well as <quote>Billy the kid</quote>, but silently ignore the "
+"other matches.)"
+msgstr ""
+"उदाहरण के लिए शाब्दिक स्ट्रिंग <quote>Bill</quote> से मिलान करने के लिए, लेकिन केवल "
+"तभी जब उसके बाद <quote>Gates</quote> न हो, आप इस अभिव्यक्ति का उपयोग कर सकते हैं: "
+"<userinput>Bill(?! Gates)</userinput>. (यह <quote>Bill Clinton</quote> के साथ-"
+"साथ <quote>Billy the kid</quote> को भी खोज लेगा, लेकिन अन्य मिलानों को चुपचाप "
+"अनदेखा कर देगा.)"
+
+#. Tag: para
+#: regular-expressions.docbook:376 regular-expressions.docbook:393
+#, no-c-format
+msgid "Sub patterns used for assertions are not captured."
+msgstr "अभिकथन के लिए प्रयुक्त उप पैटर्न कैप्चर नहीं किए गए हैं।"
+
+#. Tag: para
+#: regular-expressions.docbook:378
+#, no-c-format
+msgid "See also <link linkend=\"assertions\">Assertions</link>."
+msgstr "यह भी देखें<link linkend=\"assertions\"> इस प्रकार के दावे</link> ."
+
+#. Tag: title
+#: regular-expressions.docbook:383
+#, no-c-format
+msgid "Lookbehind Assertions"
+msgstr "पीछे की ओर देखें दावे"
+
+#. Tag: para
+#: regular-expressions.docbook:385
+#, no-c-format
+msgid ""
+"A lookbehind assertion is a sub pattern, starting with either <literal>?&lt;"
+"=</literal> or <literal>?&lt;!</literal>."
+msgstr ""
+"लुकबिहाइंड एश्योरेंस एक उप पैटर्न है, जो <literal>?&lt;=</literal> या <literal>?&lt;!"
+"</literal> से शुरू होता है।"
+
+#. Tag: para
+#: regular-expressions.docbook:388
+#, no-c-format
+msgid ""
+"Lookbehind has the same effect as the lookahead, but works backwards. For "
+"example to match the literal string <quote>fruit</quote> but only if not "
+"preceded by <quote>grape</quote>, you could use this expression: "
+"<userinput>(?&lt;!grape)fruit</userinput>."
+msgstr ""
+"लुकबिहाइंड का प्रभाव लुकअहेड के समान ही होता है, लेकिन यह पीछे की ओर काम करता है। "
+"उदाहरण के लिए, शाब्दिक स्ट्रिंग <quote>fruit</quote> से मिलान करने के लिए, लेकिन केवल "
+"तभी जब उसके पहले <quote>grape</quote> न हो, आप इस अभिव्यक्ति का उपयोग कर सकते हैं: "
+"<userinput>(?&lt;!grape)fruit</userinput>."
+
+#. Tag: para
+#: regular-expressions.docbook:395
+#, no-c-format
+msgid "See also <link linkend=\"assertions\">Assertions</link>"
+msgstr "यह भी देखें<link linkend=\"assertions\"> इस प्रकार के दावे</link>"
+
+#. Tag: title
+#: regular-expressions.docbook:402
+#, no-c-format
+msgid "Characters with a special meaning inside patterns"
+msgstr "पैटर्न के अंदर विशेष अर्थ वाले अक्षर"
+
+#. Tag: para
+#: regular-expressions.docbook:404
+#, no-c-format
+msgid ""
+"The following characters have meaning inside a pattern, and must be escaped "
+"if you want to literally match them:"
+msgstr ""
+"निम्नलिखित वर्णों का एक पैटर्न के अंदर अर्थ होता है, और यदि आप उनका शाब्दिक मिलान करना "
+"चाहते हैं तो उन्हें एस्केप करना होगा:"
+
+#. Tag: para
+#: regular-expressions.docbook:411
+#, no-c-format
+msgid "The escape character."
+msgstr "भागने वाला पात्र."
+
+#. Tag: para
+#: regular-expressions.docbook:416
+#, no-c-format
+msgid "Asserts the beginning of the string."
+msgstr "स्ट्रिंग की शुरुआत का दावा करता है."
+
+#. Tag: userinput
+#: regular-expressions.docbook:420
+#, no-c-format
+msgid "<userinput>$</userinput>"
+msgstr "<userinput>$</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:421
+#, no-c-format
+msgid "Asserts the end of string."
+msgstr "स्ट्रिंग के अंत का दावा करता है."
+
+#. Tag: term
+#: regular-expressions.docbook:425
+#, no-c-format
+msgid "<userinput>()</userinput> (left and right parentheses)"
+msgstr "<userinput>()</userinput> (बाएं और दाएं कोष्ठक)"
+
+#. Tag: para
+#: regular-expressions.docbook:426
+#, no-c-format
+msgid "Denotes sub patterns."
+msgstr "उप पैटर्न को दर्शाता है."
+
+#. Tag: term
+#: regular-expressions.docbook:430
+#, no-c-format
+msgid "<userinput>{}</userinput> (left and right curly braces)"
+msgstr "<userinput>{}</userinput> (बाएं और दाएं घुंघराले ब्रेसेज़)"
+
+#. Tag: para
+#: regular-expressions.docbook:431
+#, no-c-format
+msgid "Denotes numeric quantifiers."
+msgstr "संख्यात्मक परिमाणकों को दर्शाता है."
+
+#. Tag: term
+#: regular-expressions.docbook:435
+#, no-c-format
+msgid "<userinput>[]</userinput> (left and right square brackets)"
+msgstr "<userinput>[]</userinput> (बाएं और दाएं वर्गाकार कोष्ठक)"
+
+#. Tag: para
+#: regular-expressions.docbook:436
+#, no-c-format
+msgid "Denotes character classes."
+msgstr "वर्ण वर्गों को दर्शाता है."
+
+#. Tag: term
+#: regular-expressions.docbook:440
+#, no-c-format
+msgid "<userinput>|</userinput> (vertical bar)"
+msgstr "<userinput>|</userinput> (ऊर्ध्वाधर पट्टी)"
+
+#. Tag: para
+#: regular-expressions.docbook:441
+#, no-c-format
+msgid "logical OR. Separates alternatives."
+msgstr "तार्किक OR. विकल्पों को अलग करता है."
+
+#. Tag: term
+#: regular-expressions.docbook:445 regular-expressions.docbook:522
+#, no-c-format
+msgid "<userinput>+</userinput> (plus sign)"
+msgstr "<userinput>+</userinput> (प्लस चिह्न)"
+
+#. Tag: para
+#: regular-expressions.docbook:446
+#, no-c-format
+msgid "Quantifier, 1 or more."
+msgstr "परिमाणक, 1 या अधिक।"
+
+#. Tag: term
+#: regular-expressions.docbook:450 regular-expressions.docbook:517
+#, no-c-format
+msgid "<userinput>*</userinput> (asterisk)"
+msgstr "<userinput>*</userinput> (तारांकन)"
+
+#. Tag: para
+#: regular-expressions.docbook:451
+#, no-c-format
+msgid "Quantifier, 0 or more."
+msgstr "परिमाणक, 0 या अधिक."
+
+#. Tag: term
+#: regular-expressions.docbook:455 regular-expressions.docbook:527
+#, no-c-format
+msgid "<userinput>?</userinput> (question mark)"
+msgstr "<userinput>?</userinput> (प्रश्न चिह्न)"
+
+#. Tag: para
+#: regular-expressions.docbook:456
+#, no-c-format
+msgid "An optional character. Can be interpreted as a quantifier, 0 or 1."
+msgstr "एक वैकल्पिक वर्ण। इसे परिमाणक, 0 या 1 के रूप में समझा जा सकता है।"
+
+#. Tag: title
+#: regular-expressions.docbook:468
+#, no-c-format
+msgid "<title>Quantifiers</title>"
+msgstr "<title>परिमाणकों</title>"
+
+#. Tag: para
+#: regular-expressions.docbook:470
+#, no-c-format
+msgid ""
+"<emphasis>Quantifiers</emphasis> allows a regular expression to match a "
+"specified number or range of numbers of either a character, character class "
+"or sub pattern."
+msgstr ""
+"<emphasis>परिमाणक</emphasis> एक नियमित अभिव्यक्ति को किसी वर्ण, वर्ण वर्ग या उप "
+"पैटर्न की निर्दिष्ट संख्या या संख्याओं की श्रेणी से मिलान करने की अनुमति देता है।"
+
+#. Tag: para
+#: regular-expressions.docbook:474
+#, no-c-format
+msgid ""
+"Quantifiers are enclosed in curly brackets (<literal>{</literal> and "
+"<literal>}</literal>) and have the general form <literal>{[minimum-"
+"occurrences][,[maximum-occurrences]]}</literal>"
+msgstr ""
+"परिमाणवाचक शब्दों को घुमावदार कोष्ठकों (<literal>{</literal> और <literal>}</"
+"literal>) में रखा जाता है और उनका सामान्य रूप <literal>{[न्यूनतम-घटनाएँ][,[अधिकतम-"
+"घटनाएँ]]}</literal> होता है"
+
+#. Tag: para
+#: regular-expressions.docbook:479
+#, no-c-format
+msgid "The usage is best explained by example:"
+msgstr "इसका उपयोग सबसे अच्छे तरीके से उदाहरण द्वारा समझाया जा सकता है:"
+
+#. Tag: userinput
+#: regular-expressions.docbook:484
+#, no-c-format
+msgid "<userinput>{1}</userinput>"
+msgstr "<यूजरइनपुट>{1}</यूजरइनपुट>"
+
+#. Tag: para
+#: regular-expressions.docbook:485
+#, no-c-format
+msgid "Exactly 1 occurrence"
+msgstr "ठीक 1 घटना"
+
+#. Tag: userinput
+#: regular-expressions.docbook:489
+#, no-c-format
+msgid "{0,1}"
+msgstr "{0,1}"
+
+#. Tag: para
+#: regular-expressions.docbook:490
+#, no-c-format
+msgid "Zero or 1 occurrences"
+msgstr "शून्य या 1 घटना"
+
+#. Tag: userinput
+#: regular-expressions.docbook:494
+#, no-c-format
+msgid "{,1}"
+msgstr "{,1}"
+
+#. Tag: para
+#: regular-expressions.docbook:495
+#, no-c-format
+msgid "The same, with less work;)"
+msgstr "वही, कम काम के साथ;)"
+
+#. Tag: userinput
+#: regular-expressions.docbook:499
+#, no-c-format
+msgid "{5,10}"
+msgstr "{5,10}"
+
+#. Tag: para
+#: regular-expressions.docbook:500
+#, no-c-format
+msgid "At least 5 but maximum 10 occurrences."
+msgstr "कम से कम 5 लेकिन अधिकतम 10 घटनाएं।"
+
+#. Tag: userinput
+#: regular-expressions.docbook:504
+#, no-c-format
+msgid "{5,}"
+msgstr "{5,}"
+
+#. Tag: para
+#: regular-expressions.docbook:505
+#, no-c-format
+msgid "At least 5 occurrences, no maximum."
+msgstr "कम से कम 5 बार, अधिकतम नहीं।"
+
+#. Tag: para
+#: regular-expressions.docbook:512
+#, no-c-format
+msgid "Additionally, there are some abbreviations:"
+msgstr "इसके अतिरिक्त, कुछ संक्षिप्तीकरण भी हैं:"
+
+#. Tag: para
+#: regular-expressions.docbook:518
+#, no-c-format
+msgid "similar to <literal>{0,}</literal>, find any number of occurrences."
+msgstr "<literal>{0,}</literal> के समान, किसी भी संख्या में घटनाएँ ज्ञात करें।"
+
+#. Tag: para
+#: regular-expressions.docbook:523
+#, no-c-format
+msgid "similar to <literal>{1,}</literal>, at least 1 occurrence."
+msgstr "<literal>{1,}</literal> के समान, कम से कम 1 बार घटित होना।"
+
+#. Tag: para
+#: regular-expressions.docbook:528
+#, no-c-format
+msgid "similar to <literal>{0,1}</literal>, zero or 1 occurrence."
+msgstr "<literal>{0,1}</literal> के समान, शून्य या 1 घटना।"
+
+#. Tag: title
+#: regular-expressions.docbook:537
+#, no-c-format
+msgid "Greed"
+msgstr "लालच"
+
+#. Tag: para
+#: regular-expressions.docbook:539
+#, no-c-format
+msgid ""
+"When using quantifiers with no maximum, regular expressions defaults to "
+"match as much of the searched string as possible, commonly known as "
+"<emphasis>greedy</emphasis> behavior."
+msgstr ""
+"जब बिना किसी अधिकतम के परिमाणकों का उपयोग किया जाता है, तो नियमित अभिव्यक्तियाँ "
+"खोजे गए स्ट्रिंग के यथासंभव अधिक से अधिक भाग से मिलान करने के लिए डिफ़ॉल्ट होती हैं, जिसे "
+"आमतौर पर <emphasis>लालची</emphasis> व्यवहार के रूप में जाना जाता है।"
+
+#. Tag: para
+#: regular-expressions.docbook:543
+#, no-c-format
+msgid ""
+"Modern regular expression software provides the means of <quote>turning off "
+"greediness</quote>, though in a graphical environment it is up to the "
+"interface to provide you with access to this feature. For example a search "
+"dialog providing a regular expression search could have a check box labeled "
+"<quote>Minimal matching</quote> as well as it ought to indicate if "
+"greediness is the default behavior."
+msgstr ""
+"आधुनिक नियमित अभिव्यक्ति सॉफ्टवेयर <quote>लालच को बंद करने</quote> का साधन प्रदान "
+"करता है, हालांकि एक ग्राफिकल वातावरण में यह इंटरफ़ेस पर निर्भर करता है कि आपको इस "
+"सुविधा तक पहुँच प्रदान की जाए। उदाहरण के लिए एक नियमित अभिव्यक्ति खोज प्रदान करने वाले "
+"खोज संवाद में <quote>न्यूनतम मिलान</quote> लेबल वाला एक चेक बॉक्स हो सकता है और साथ "
+"ही यह इंगित करना चाहिए कि क्या लालच डिफ़ॉल्ट व्यवहार है।"
+
+#. Tag: title
+#: regular-expressions.docbook:554
+#, no-c-format
+msgid "In context examples"
+msgstr "संदर्भ में उदाहरण"
+
+#. Tag: para
+#: regular-expressions.docbook:556
+#, no-c-format
+msgid "Here are a few examples of using quantifiers:"
+msgstr "परिमाणवाचक शब्दों के प्रयोग के कुछ उदाहरण यहां दिए गए हैं:"
+
+#. Tag: userinput
+#: regular-expressions.docbook:561
+#, no-c-format
+msgid "^\\d{4,5}\\s"
+msgstr "^\\d{4,5}\\s"
+
+#. Tag: para
+#: regular-expressions.docbook:562
+#, no-c-format
+msgid ""
+"Matches the digits in <quote>1234 go</quote> and <quote>12345 now</quote>, "
+"but neither in <quote>567 eleven</quote> nor in <quote>223459 somewhere</"
+"quote>."
+msgstr ""
+"<quote>1234 go</quote> और <quote>12345 now</quote> में अंकों से मेल खाता है, लेकिन न "
+"तो <quote>567 Eleven</quote> में और न ही <quote>223459 कहीं</quote> में।"
+
+#. Tag: userinput
+#: regular-expressions.docbook:567
+#, no-c-format
+msgid "<userinput>\\s+</userinput>"
+msgstr "<userinput>\\s+</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:568
+#, no-c-format
+msgid "Matches one or more whitespace characters."
+msgstr "एक या अधिक रिक्त स्थान वर्णों से मेल खाता है."
+
+#. Tag: userinput
+#: regular-expressions.docbook:572
+#, no-c-format
+msgid "(bla){1,}"
+msgstr "(नहीं){1,}"
+
+#. Tag: para
+#: regular-expressions.docbook:573
+#, no-c-format
+msgid ""
+"Matches all of <quote>blablabla</quote> and the <quote>bla</quote> in "
+"<quote>blackbird</quote> or <quote>tabla</quote>."
+msgstr ""
+"<quote>blablabla</quote> और <quote>blackbird</quote> या <quote>tabla</quote> "
+"में मौजूद <quote>bla</quote> से मेल खाता है।"
+
+#. Tag: userinput
+#: regular-expressions.docbook:577
+#, no-c-format
+msgid "/?&gt;"
+msgstr "/?&gt;"
+
+#. Tag: para
+#: regular-expressions.docbook:578
+#, no-c-format
+msgid ""
+"Matches <quote>/&gt;</quote> in <quote>&lt;closeditem/&gt;</quote> as well "
+"as <quote>&gt;</quote> in <quote>&lt;openitem&gt;</quote>."
+msgstr ""
+"<quote>&lt;closeditem/&gt;</quote> में <quote>/&gt;</quote> से मेल खाता है, साथ "
+"ही <quote>&lt;openitem&gt;</quote> में <quote>&gt;</quote> से भी मेल खाता है।"
+
+#. Tag: title
+#: regular-expressions.docbook:589
+#, no-c-format
+msgid "<title>Assertions</title>"
+msgstr "<title>इस प्रकार के दावे</title>"
+
+#. Tag: para
+#: regular-expressions.docbook:591
+#, no-c-format
+msgid ""
+"<emphasis>Assertions</emphasis> allows a regular expression to match only "
+"under certain controlled conditions."
+msgstr ""
+"<emphasis>अभिकथन</emphasis> एक नियमित अभिव्यक्ति को केवल कुछ नियंत्रित स्थितियों के "
+"तहत ही मेल खाने की अनुमति देता है।"
+
+#. Tag: para
+#: regular-expressions.docbook:594
+#, no-c-format
+msgid ""
+"An assertion does not need a character to match, it rather investigates the "
+"surroundings of a possible match before acknowledging it. For example the "
+"<emphasis>word boundary</emphasis> assertion does not try to find a non word "
+"character opposite a word one at its position, instead it makes sure that "
+"there is not a word character. This means that the assertion can match where "
+"there is no character, &ie; at the ends of a searched string."
+msgstr ""
+"किसी अभिकथन को मिलान के लिए किसी वर्ण की आवश्यकता नहीं होती, बल्कि यह संभावित "
+"मिलान को स्वीकार करने से पहले उसके आस-पास की जांच करता है। उदाहरण के लिए "
+"<emphasis>शब्द सीमा</emphasis> अभिकथन किसी शब्द के विपरीत उसके स्थान पर कोई गैर-"
+"शब्द वर्ण खोजने का प्रयास नहीं करता, बल्कि यह सुनिश्चित करता है कि कोई शब्द वर्ण न हो। "
+"इसका अर्थ यह है कि अभिकथन वहां मिलान कर सकता है जहां कोई वर्ण नहीं है, &ie; खोजी गई "
+"स्ट्रिंग के अंत में।"
+
+#. Tag: para
+#: regular-expressions.docbook:602
+#, no-c-format
+msgid ""
+"Some assertions actually do have a pattern to match, but the part of the "
+"string matching that will not be a part of the result of the match of the "
+"full expression."
+msgstr ""
+"कुछ अभिकथनों में वास्तव में मिलान करने के लिए एक पैटर्न होता है, लेकिन स्ट्रिंग मिलान का वह "
+"भाग पूर्ण अभिव्यक्ति के मिलान के परिणाम का हिस्सा नहीं होगा।"
+
+#. Tag: para
+#: regular-expressions.docbook:606
+#, no-c-format
+msgid ""
+"Regular Expressions as documented here supports the following assertions:"
+msgstr "यहां प्रलेखित नियमित अभिव्यक्तियाँ निम्नलिखित कथनों का समर्थन करती हैं:"
+
+#. Tag: term
+#: regular-expressions.docbook:612
+#, no-c-format
+msgid "<userinput>^</userinput> (caret: beginning of string)"
+msgstr "<userinput>^</userinput> (कैरेट: स्ट्रिंग की शुरुआत)"
+
+#. Tag: para
+#: regular-expressions.docbook:614
+#, no-c-format
+msgid "Matches the beginning of the searched string."
+msgstr "खोजे गए स्ट्रिंग के आरंभ से मेल खाता है."
+
+#. Tag: para
+#: regular-expressions.docbook:615
+#, no-c-format
+msgid ""
+"The expression <userinput>^Peter</userinput> will match at <quote>Peter</"
+"quote> in the string <quote>Peter, hey!</quote> but not in <quote>Hey, Peter!"
+"</quote>"
+msgstr ""
+"अभिव्यक्ति <userinput>^Peter</userinput> स्ट्रिंग <quote>Peter, hey!</quote> में "
+"<quote>Peter</quote> से मेल खाएगी, लेकिन <quote>Hey, Peter!</quote> में नहीं"
+
+#. Tag: term
+#: regular-expressions.docbook:621
+#, no-c-format
+msgid "<userinput>$</userinput> (end of string)"
+msgstr "<userinput>$</userinput> (स्ट्रिंग का अंत)"
+
+#. Tag: para
+#: regular-expressions.docbook:622
+#, no-c-format
+msgid "Matches the end of the searched string."
+msgstr "खोजे गए स्ट्रिंग के अंत से मेल खाता है."
+
+#. Tag: para
+#: regular-expressions.docbook:624
+#, no-c-format
+msgid ""
+"The expression <userinput>you\\?$</userinput> will match at the last you in "
+"the string <quote>You didn't do that, did you?</quote> but nowhere in "
+"<quote>You didn't do that, right?</quote>"
+msgstr ""
+"अभिव्यक्ति <userinput>you\\?$</userinput> स्ट्रिंग में अंतिम you से मेल खाएगी "
+"<quote>You did not do that, did you?</quote> लेकिन <quote>You did not do "
+"that, right?</quote> में कहीं भी नहीं।"
+
+#. Tag: term
+#: regular-expressions.docbook:632
+#, no-c-format
+msgid "<userinput>\\b</userinput> (word boundary)"
+msgstr "<userinput>\\b</userinput> (शब्द सीमा)"
+
+#. Tag: para
+#: regular-expressions.docbook:633
+#, no-c-format
+msgid ""
+"Matches if there is a word character at one side and not a word character at "
+"the other."
+msgstr "यदि एक ओर शब्द वर्ण है और दूसरी ओर शब्द वर्ण नहीं है तो मिलान होता है।"
+
+#. Tag: para
+#: regular-expressions.docbook:635
+#, no-c-format
+msgid ""
+"This is useful to find word ends, for example both ends to find a whole "
+"word. The expression <userinput>\\bin\\b</userinput> will match at the "
+"separate <quote>in</quote> in the string <quote>He came in through the "
+"window</quote>, but not at the <quote>in</quote> in <quote>window</quote>."
+msgstr ""
+"यह शब्द के अंत को खोजने के लिए उपयोगी है, उदाहरण के लिए एक पूरा शब्द खोजने के लिए दोनों "
+"छोर। अभिव्यक्ति <userinput>\\bin\\b</userinput> स्ट्रिंग <quote>He came in "
+"through the window</quote> में अलग <quote>in</quote> से मेल खाएगी, लेकिन "
+"<quote>window</quote> में <quote>in</quote> से नहीं।"
+
+#. Tag: term
+#: regular-expressions.docbook:644
+#, no-c-format
+msgid "<userinput>\\B</userinput> (non word boundary)"
+msgstr "<userinput>\\B</userinput> (गैर शब्द सीमा)"
+
+#. Tag: para
+#: regular-expressions.docbook:645
+#, no-c-format
+msgid "Matches wherever <quote>\\b</quote> does not."
+msgstr "जहाँ भी <quote>\\b</quote> मेल नहीं खाता, वहाँ मेल खाता है।"
+
+#. Tag: para
+#: regular-expressions.docbook:646
+#, no-c-format
+msgid ""
+"That means that it will match for example within words: The expression "
+"<userinput>\\Bin\\B</userinput> will match at in <quote>window</quote> but "
+"not in <quote>integer</quote> or <quote>I'm in love</quote>."
+msgstr ""
+"इसका अर्थ है कि यह उदाहरण के लिए शब्दों के भीतर मेल खाएगा: अभिव्यक्ति <userinput>\\Bin"
+"\\B</userinput> <quote>window</quote> में मेल खाएगी, लेकिन <quote>integer</"
+"quote> या <quote>I'm in love</quote> में नहीं।"
+
+#. Tag: term
+#: regular-expressions.docbook:652
+#, no-c-format
+msgid "<userinput>(?=PATTERN)</userinput> (Positive lookahead)"
+msgstr "<userinput>(?=PATTERN)</userinput> (सकारात्मक आगे की दृष्टि)"
+
+#. Tag: para
+#: regular-expressions.docbook:653
+#, no-c-format
+msgid ""
+"A lookahead assertion looks at the part of the string following a possible "
+"match. The positive lookahead will prevent the string from matching if the "
+"text following the possible match does not match the <emphasis>PATTERN</"
+"emphasis> of the assertion, but the text matched by that will not be "
+"included in the result."
+msgstr ""
+"लुकअहेड अभिकथन संभावित मिलान के बाद स्ट्रिंग के भाग को देखता है। यदि संभावित मिलान के "
+"बाद का पाठ अभिकथन के <emphasis>PATTERN</emphasis> से मेल नहीं खाता है, तो "
+"सकारात्मक लुकअहेड स्ट्रिंग को मिलान से रोक देगा, लेकिन उससे मेल खाने वाला पाठ परिणाम में "
+"शामिल नहीं किया जाएगा।"
+
+#. Tag: para
+#: regular-expressions.docbook:657
+#, no-c-format
+msgid ""
+"The expression <userinput>handy(?=\\w)</userinput> will match at "
+"<quote>handy</quote> in <quote>handyman</quote> but not in <quote>That came "
+"in handy!</quote>"
+msgstr ""
+"अभिव्यक्ति <userinput>handy(?=\\w)</userinput> <quote>handy</quote> में "
+"<quote>handyman</quote> से मेल खाएगी, लेकिन <quote>That came in handy!</quote> "
+"से नहीं"
+
+#. Tag: term
+#: regular-expressions.docbook:663
+#, no-c-format
+msgid "<userinput>(?!PATTERN)</userinput> (Negative lookahead)"
+msgstr "<userinput>(?!PATTERN)</userinput> (नकारात्मक लुकअहेड)"
+
+#. Tag: para
+#: regular-expressions.docbook:665
+#, no-c-format
+msgid ""
+"The negative lookahead prevents a possible match to be acknowledged if the "
+"following part of the searched string does match its <emphasis>PATTERN</"
+"emphasis>."
+msgstr ""
+"नकारात्मक लुकअहेड संभावित मिलान को स्वीकार करने से रोकता है यदि खोजे गए स्ट्रिंग का अगला "
+"भाग उसके <emphasis>PATTERN</emphasis> से मेल खाता है।"
+
+#. Tag: para
+#: regular-expressions.docbook:668
+#, no-c-format
+msgid ""
+"The expression <userinput>const \\w+\\b(?!\\s*&amp;)</userinput> will match "
+"at <quote>const char</quote> in the string <quote>const char* foo</quote> "
+"while it can not match <quote>const QString</quote> in <quote>const "
+"QString&amp; bar</quote> because the <quote>&amp;</quote> matches the "
+"negative lookahead assertion pattern."
+msgstr ""
+"अभिव्यक्ति <userinput>const \\w+\\b(?!\\s*&amp;)</userinput> स्ट्रिंग "
+"<quote>const char* foo</quote> में <quote>const char</quote> से मेल खाएगी, जबकि "
+"यह <quote>const QString&amp; bar</quote> में <quote>const QString</quote> से मेल "
+"नहीं खा सकती, क्योंकि <quote>&amp;</quote> नकारात्मक लुकअहेड अभिकथन पैटर्न से मेल खाती "
+"है।"
+
+#. Tag: term
+#: regular-expressions.docbook:678
+#, no-c-format
+msgid "<userinput>(?&lt;=PATTERN)</userinput> (Positive lookbehind)"
+msgstr "<userinput>(?&lt;=PATTERN)</userinput> (सकारात्मक लुकबैक)"
+
+#. Tag: para
+#: regular-expressions.docbook:679
+#, no-c-format
+msgid ""
+"Lookbehind has the same effect as the lookahead, but works backwards. A "
+"lookbehind looks at the part of the string previous a possible match. The "
+"positive lookbehind will match a string only if it is preceded by the "
+"<emphasis>PATTERN</emphasis> of the assertion, but the text matched by that "
+"will not be included in the result."
+msgstr ""
+"लुकबिहाइंड का प्रभाव लुकअहेड के समान ही होता है, लेकिन यह पीछे की ओर काम करता है। "
+"लुकबिहाइंड संभावित मिलान से पहले स्ट्रिंग के भाग को देखता है। सकारात्मक लुकबिहाइंड केवल तभी "
+"स्ट्रिंग से मिलान करेगा जब उसके पहले अभिकथन का <emphasis>PATTERN</emphasis> हो, "
+"लेकिन उससे मिलान किया गया पाठ परिणाम में शामिल नहीं किया जाएगा।"
+
+#. Tag: para
+#: regular-expressions.docbook:683
+#, no-c-format
+msgid ""
+"The expression <userinput>(?&lt;=cup)cake</userinput> will match at "
+"<quote>cake</quote> if it is succeeded by <quote>cup</quote> (in "
+"<quote>cupcake</quote> but not in <quote>cheesecake</quote> or in "
+"<quote>cake</quote> alone)."
+msgstr ""
+"अभिव्यक्ति <userinput>(?&lt;=cup)cake</userinput> <quote>cake</quote> पर मेल "
+"खाएगी यदि उसके बाद <quote>cup</quote> आता है (<quote>cupcake</quote> में, लेकिन "
+"<quote>cheesecake</quote> में या अकेले <quote>cake</quote> में नहीं)।"
+
+#. Tag: term
+#: regular-expressions.docbook:690
+#, no-c-format
+msgid "<userinput>(?&lt;!PATTERN)</userinput> (Negative lookbehind)"
+msgstr "<userinput>(?&lt;!PATTERN)</userinput> (नकारात्मक लुकबैक)"
+
+#. Tag: para
+#: regular-expressions.docbook:691
+#, no-c-format
+msgid ""
+"The negative lookbehind prevents a possible match to be acknowledged if the "
+"previous part of the searched string does match its <emphasis>PATTERN</"
+"emphasis>."
+msgstr ""
+"नकारात्मक लुकबिहाइंड, संभावित मिलान को स्वीकार होने से रोकता है, यदि खोजे गए स्ट्रिंग का "
+"पिछला भाग उसके <emphasis>पैटर्न</emphasis> से मेल खाता है।"
+
+#. Tag: para
+#: regular-expressions.docbook:693
+#, no-c-format
+msgid ""
+"The expression <userinput>(?&lt;![\\w\\.])[0-9]+</userinput> will match at "
+"<quote>123</quote> in the strings <quote>=123</quote> and <quote>-123</"
+"quote> while it can not match <quote>123</quote> in <quote>.123</quote> or "
+"<quote>word123</quote>."
+msgstr ""
+"अभिव्यक्ति <userinput>(?&lt;![\\w\\.])[0-9]+</userinput> स्ट्रिंग्स <quote>=123</"
+"quote> और <quote>-123</quote> में <quote>123</quote> पर मेल खाएगी, जबकि यह "
+"<quote>.123</quote> या <quote>word123</quote> में <quote>123</quote> से मेल नहीं "
+"खा सकती है।"
+
+#. Tag: term
+#: regular-expressions.docbook:700
+#, no-c-format
+msgid "<userinput>(PATTERN)</userinput> (Capturing group)"
+msgstr "<userinput>(पैटर्न)</userinput> (कैप्चरिंग समूह)"
+
+#. Tag: para
+#: regular-expressions.docbook:702
+#, no-c-format
+msgid ""
+"The sub pattern within the parentheses is captured and remembered, so that "
+"it can be used in back references. For example, the expression "
+"<userinput>(&amp;quot;+)[^&amp;quot;]*\\1</userinput> matches "
+"<userinput>&quot;&quot;&quot;&quot;text&quot;&quot;&quot;&quot;</userinput> "
+"and <userinput>&quot;text&quot;</userinput>."
+msgstr ""
+"कोष्ठकों के भीतर उप पैटर्न को कैप्चर और याद किया जाता है, ताकि इसे बैक रेफरेंस में इस्तेमाल "
+"किया जा सके। उदाहरण के लिए, अभिव्यक्ति <userinput>(&amp;quot;+)[^&amp;quot;]*"
+"\\1</userinput> <userinput>&quot;&quot;&quot;&quot;text&quot;&quot;&quot;</"
+"userinput> और <userinput>&quot;text&quot;</userinput> से मेल खाती है।"
+
+#. Tag: para
+#: regular-expressions.docbook:707
+#, no-c-format
+msgid ""
+"See the section <link linkend=\"regex-capturing\">Capturing matching text "
+"(back references)</link> for more information."
+msgstr ""
+"अनुभाग देखें<link linkend=\"regex-capturing\"> मेल खाते पाठ को कैप्चर करना (पिछला "
+"संदर्भ)</link> अधिक जानकारी के लिए."
+
+#. Tag: term
+#: regular-expressions.docbook:713
+#, no-c-format
+msgid "<userinput>(?:PATTERN)</userinput> (Non-capturing group)"
+msgstr "<userinput>(?:PATTERN)</userinput> (गैर-कैप्चरिंग समूह)"
+
+#. Tag: para
+#: regular-expressions.docbook:715
+#, no-c-format
+msgid ""
+"The sub pattern within the parentheses is not captured and is not "
+"remembered. It is preferable to always use non-capturing groups if the "
+"captures will not be used."
+msgstr ""
+"कोष्ठकों के भीतर उप पैटर्न कैप्चर नहीं किया जाता है और याद नहीं किया जाता है। यदि कैप्चर "
+"का उपयोग नहीं किया जाएगा तो हमेशा गैर-कैप्चरिंग समूहों का उपयोग करना बेहतर होता है।"

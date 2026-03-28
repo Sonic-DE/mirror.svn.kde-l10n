@@ -1,0 +1,224 @@
+#
+# Alexander Potashev <aspotashev@gmail.com>, 2019.
+# Olesya Gerasimenko <translation-team@basealt.ru>, 2023.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 12:04+0000\n"
+"PO-Revision-Date: 2023-01-24 15:46+0300\n"
+"Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
+"Language-Team: Basealt Translation Team\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 22.08.3\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+
+#. Tag: author
+#: man-fixincludes.1.docbook:8
+#, no-c-format
+msgid ""
+"<personname><firstname>Ben</firstname><surname>Burton</surname></personname> "
+"<email>bab@debian.org</email>"
+msgstr ""
+"<personname><firstname>Ben</firstname><surname>Burton</surname></personname> "
+"<email>bab@debian.org</email>"
+
+#. Tag: date
+#: man-fixincludes.1.docbook:10
+#, no-c-format
+msgid "2003-04-07"
+msgstr "7 апреля 2003 г."
+
+#. Tag: manvolnum
+#: man-fixincludes.1.docbook:15
+#, no-c-format
+msgid "<manvolnum>1</manvolnum>"
+msgstr "<manvolnum>1</manvolnum>"
+
+#. Tag: refpurpose
+#: man-fixincludes.1.docbook:20
+#, no-c-format
+msgid "Reduce the number of #includes in &kde; source files"
+msgstr "Уменьшить количество объявлений #include в файлах исходного кода &kde;"
+
+#. Tag: cmdsynopsis
+#: man-fixincludes.1.docbook:24
+#, no-c-format
+msgid ""
+"<command>fixincludes</command> <group><option>-v, --verbose</option></group> "
+"<group><option>-e, --experimental</option></group> <group><option>-m, --"
+"modify</option></group> <group><option><replaceable>file</replaceable></"
+"option></group> <group><option>--help</option></group>"
+msgstr ""
+"<command>fixincludes</command> <group><option>-v, --verbose</option></group> "
+"<group><option>-e, --experimental</option></group> <group><option>-m, --"
+"modify</option></group> <group><option><replaceable>файл</replaceable></"
+"option></group> <group><option>--help</option></group>"
+
+#. Tag: title
+#: man-fixincludes.1.docbook:35
+#, no-c-format
+msgid "Description"
+msgstr "Описание"
+
+#. Tag: para
+#: man-fixincludes.1.docbook:37
+#, no-c-format
+msgid ""
+"<command>fixincludes</command> tries to reduce the number of #includes in C+"
+"+ source files. Much of it's processing is specific to &kde; sources and so "
+"it might not work so well with sources for non-&kde; applications."
+msgstr ""
+"Команда <command>fixincludes</command> пытается уменьшить количество "
+"объявлений #include в файлах исходного кода на языке C++. Большинство "
+"функций этой команды предназначены для исходного кода &kde;; следовательно, "
+"она может не работать должным образом для программ, не относящихся к &kde;."
+
+#. Tag: para
+#: man-fixincludes.1.docbook:42
+#, no-c-format
+msgid ""
+"The following problems are identified by <command>fixincludes</command>:"
+msgstr ""
+"С помощью команды <command>fixincludes</command> можно выявить следующие "
+"проблемы:"
+
+#. Tag: para
+#: man-fixincludes.1.docbook:46
+#, no-c-format
+msgid ""
+"Including headers that are no longer supported but which exist for "
+"compatibility with older Qt/KDE versions;"
+msgstr ""
+"Включение файлов заголовков, которые больше не поддерживаются, но существуют "
+"для обеспечения совместимости с более старыми версиями Qt/KDE;"
+
+#. Tag: para
+#: man-fixincludes.1.docbook:49
+#, no-c-format
+msgid "Including the same file multiple times."
+msgstr "Неоднократное включение одного и того же файла."
+
+#. Tag: para
+#: man-fixincludes.1.docbook:53
+#, no-c-format
+msgid ""
+"There is also an experimental mode which tries removing each #include one at "
+"a time (with a few exceptions) to see whether the source still compiles. "
+"Note that this experimental mode will modify the original sources."
+msgstr ""
+"Также имеется экспериментальный режим: объявления #include удаляются по "
+"одному за раз (за некоторыми исключениями) для проверки того, продолжает ли "
+"компилироваться исходный код. Обратите внимание, что использование этого "
+"экспериментального режима приведёт к изменению первоначального исходного "
+"кода."
+
+#. Tag: para
+#: man-fixincludes.1.docbook:58
+#, no-c-format
+msgid ""
+"By default the sources will not be modified; the identified problems will "
+"simply be written to standard output."
+msgstr ""
+"По умолчанию исходный код не будет изменён; обнаруженные проблемы просто "
+"будут переданы на стандартный вывод."
+
+#. Tag: para
+#: man-fixincludes.1.docbook:61
+#, no-c-format
+msgid ""
+"The list of C++ sources to examine should be given on the command-line. If "
+"no files are given, all C++ sources in or beneath the current directory will "
+"be examined (with the exception of directories whose <filename>Makefile.am</"
+"filename> contains <option>-UQT_NO_COMPAT</option> or <option>-"
+"UKDE_NO_COMPAT</option>)"
+msgstr ""
+"В командной строке следует указать список файлов исходного кода на языке C+"
+"+, которые должны быть проверены. Если файлы не указаны, будут проверены все "
+"файлы исходного кода на языке C++, находящиеся в текущем каталоге или его "
+"подкаталогах (за исключением тех каталогов, где файл <filename>Makefile.am</"
+"filename> содержит опцию <option>-UQT_NO_COMPAT</option> или <option>-"
+"UKDE_NO_COMPAT</option>)"
+
+#. Tag: para
+#: man-fixincludes.1.docbook:68
+#, no-c-format
+msgid "This utility is part of the KDE Software Development Kit."
+msgstr "Эта утилита является частью пакета KDE Software Development Kit."
+
+#. Tag: title
+#: man-fixincludes.1.docbook:73
+#, no-c-format
+msgid "Options"
+msgstr "Опции"
+
+#. Tag: option
+#: man-fixincludes.1.docbook:77
+#, no-c-format
+msgid "-v, --verbose"
+msgstr "-v, --verbose"
+
+#. Tag: para
+#: man-fixincludes.1.docbook:78
+#, no-c-format
+msgid ""
+"Verbose mode. Additional debugging output is written to standard output."
+msgstr ""
+"Режим подробной информации. Дополнительный отладочный вывод передаётся на "
+"стандартный вывод."
+
+#. Tag: option
+#: man-fixincludes.1.docbook:81
+#, no-c-format
+msgid "-e, --experimental"
+msgstr "-e, --experimental"
+
+#. Tag: para
+#: man-fixincludes.1.docbook:82
+#, no-c-format
+msgid ""
+"Experimental mode, as described above in detail. Note that this option "
+"implies <option>--modify</option>."
+msgstr ""
+"Экспериментальный режим, описание которого приводилось выше. Обратите "
+"внимание, что при использовании этой опции будет автоматически добавлена "
+"опция <option>--modify</option>."
+
+#. Tag: option
+#: man-fixincludes.1.docbook:85
+#, no-c-format
+msgid "-m, --modify"
+msgstr "-m, --modify"
+
+#. Tag: para
+#: man-fixincludes.1.docbook:86
+#, no-c-format
+msgid ""
+"As well as writing messages to standard output, actually modify the original "
+"sources to fix any problems that were found."
+msgstr ""
+"Как передать сообщения на стандартный вывод, так и действительно изменить "
+"первоначальный исходный код для устранения обнаруженных проблем."
+
+#. Tag: title
+#: man-fixincludes.1.docbook:93
+#, no-c-format
+msgid "Authors"
+msgstr "Авторы"
+
+#. Tag: para
+#: man-fixincludes.1.docbook:94
+#, no-c-format
+msgid ""
+"<command>fixincludes</command> was written by Dirk Mueller "
+"<email>mueller@kde.org</email>."
+msgstr ""
+"Автор команды <command>fixincludes</command> — Dirk Mueller "
+"<email>mueller@kde.org</email>."
+
+#~ msgid "April 7, 2003"
+#~ msgstr "7 апреля 2003 г."

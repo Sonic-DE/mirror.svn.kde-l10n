@@ -1,0 +1,430 @@
+# Translation of kphotoalbum_workflows.po to Brazilian Portuguese
+# Copyright (C) 2012-2013 This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2012, 2020.
+# André Marcelo Alvarenga <alvarenga@kde.org>, 2012, 2013.
+# Marcus Gama <marcus.gama@gmail.com>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: kphotoalbum_workflows\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 12:03+0000\n"
+"PO-Revision-Date: 2020-03-10 12:02-0300\n"
+"Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
+"Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 19.12.2\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. Tag: title
+#: workflows.docbook:10
+#, no-c-format
+msgid "Workflows with &kphotoalbum;"
+msgstr "Fluxos de trabalho com o &kphotoalbum;"
+
+#. Tag: para
+#: workflows.docbook:11
+#, no-c-format
+msgid ""
+"Workflow is rather important aspect in digital imaging. In this chapter we "
+"describe different workflows that fit on different needs. There are many "
+"different factors that must be considered when developing a workflow. "
+"Hopefully these examples will provide you with sufficient ideas of how to "
+"tune-up your own method of working with digital imaging."
+msgstr ""
+"O fluxo de trabalho é um aspecto bastante importante nas imagens digitais. "
+"Neste capítulo iremos descrever cenários diferentes que se adequam a "
+"necessidades. Existem diversos fatores diferentes que devem ser considerados "
+"ao desenvolver um fluxo de trabalho. Acreditamos que estes exemplos forneçam-"
+"lhe ideias suficientes sobre como aperfeiçoar o seu próprio método de "
+"trabalho com imagens digitais."
+
+#. Tag: title
+#: workflows.docbook:19
+#, no-c-format
+msgid "RAW workflow using &kphotoalbum; and Bibble5/AfterShot Pro"
+msgstr "Fluxo de trabalho de RAW com o &kphotoalbum; e o Bibble5/AfterShot Pro"
+
+#. Tag: para
+#: workflows.docbook:20
+#, no-c-format
+msgid ""
+"When shooting RAW images the files from camera must be developed to commonly "
+"recognized format like JPEG or TIFF. There are a few options to choose from "
+"when working on Linux. For example RawTherapee and Ufraw are open-source "
+"alternatives when Bibble5/AfterShot Pro are commercial application for this "
+"purpose."
+msgstr ""
+"Ao fotografar imagens em RAW, os arquivos da câmera precisam ser convertidos "
+"para um formato conhecido, tal como o JPEG ou o TIFF. Existem algumas opções "
+"para escolher se estiver trabalhando no Linux. Por exemplo, o RawTherapee e "
+"o Ufraw são alternativas de código aberto, enquanto o Bibble5/AfterShot Pro "
+"são aplicativos comerciais para essa finalidade."
+
+#. Tag: para
+#: workflows.docbook:26
+#, no-c-format
+msgid ""
+"A few settings are recommended for a RAW workflow. First is to enable the "
+"using of the embedded thumbnail. This will give a tremendous speed boost "
+"over decoding each raw file each time they are viewed (check also the "
+"minimum dimension configuration to ensure decent quality). Second one is for "
+"the New Image Finder to automatically stack the developed versions over the "
+"RAW file (developed image must be on same directory as the original). This "
+"requires regular expressions as described in <xref linkend=\"opt-search-new"
+"\"/>. Two helper scripts are provided in &kphotoalbum; sources to help in "
+"RAW workflow. These are open-raw.desktop and open-raw.pl. The first one "
+"enables GUI applications to open the RAW files in the open-raw.pl script "
+"that tries to find the original RAW file and open that instead of the "
+"developed image."
+msgstr ""
+"Recomenda-se algumas configurações para o fluxo de trabalho de RAW. A "
+"primeira é a ativação do uso da miniatura incorporada. Isto lhe dará um "
+"enorme aumento de velocidade ao decodificar cada arquivo RAW na sua exibição "
+"(veja também a definição da dimensão mínima, para garantir uma qualidade "
+"aceitável). A segunda é a possibilidade da 'Pesquisa de novas imagens' "
+"empilhar automaticamente as versões convertidas a partir do arquivo RAW (a "
+"imagem convertida precisa estar na mesma pasta da original). Isto requer o "
+"uso de expressões regulares, como descritas em <xref linkend=\"opt-search-new"
+"\"/>. São fornecidos dois utilitários no código-fonte do &kphotoalbum; para "
+"ajudar no fluxo de trabalho de RAW. São eles: o open-raw.desktop e o open-"
+"raw.pl. O primeiro permite aos aplicativos gráficos abrirem arquivos RAW no "
+"script open-raw.pl, que tenta encontrar o arquivo RAW original e abri-lo, em "
+"vez da imagem convertida."
+
+#. Tag: title
+#: workflows.docbook:41
+#, no-c-format
+msgid "Sending Images to RAW Editor"
+msgstr "Enviando as imagens para o editor RAW"
+
+#. Tag: para
+#: workflows.docbook:49
+#, no-c-format
+msgid ""
+"First step in actual workflow is to copy the images from camera to the "
+"computer. A simple copy on a terminal window is all that is needed:"
+msgstr ""
+"O primeiro passo no fluxo de trabalho atual é copiar as imagens da câmera "
+"para o computador. Uma simples cópia em uma janela de terminal é tudo o que "
+"é necessário:"
+
+#. Tag: screen
+#: workflows.docbook:52
+#, no-c-format
+msgid ""
+"<userinput><command>cp</command> <option>-a</option> <filename>/"
+"media/.../101CANON/</filename> <filename>~/Pictures/2012/sample</filename>\n"
+"  </userinput>"
+msgstr ""
+"<userinput><command>cp</command> <option>-a</option> <filename>/"
+"media/.../101CANON/</filename> <filename>~/Imagens/2012/exemplo</filename>\n"
+"  </userinput>"
+
+#. Tag: para
+#: workflows.docbook:53
+#, no-c-format
+msgid ""
+"Then either start &kphotoalbum; or run <menuchoice><guimenu>Maintenance</"
+"guimenu><guimenuitem>Rescan for Images and Videos</guimenuitem></"
+"menuchoice>. New images should be found and now is time for initially "
+"tagging the images. As I usually photograph while traveling I first insert "
+"the place. Select <guilabel>Folder</guilabel> and browse to the new "
+"directory. Then go to the <guilabel>Show Thumbnails</guilabel>, select all "
+"and <guimenu>Annotate Multiple Items at a Time</guimenu> or <keycombo action="
+"\"simul\">&Ctrl;<keycap>2</keycap></keycombo>. Insert the proper place like "
+"Finland-Helsinki (see <xref linkend=\"sec-member-groups-in-property-editor\"/"
+">)."
+msgstr ""
+"Depois, tanto poderá iniciar o &kphotoalbum; ou executar a opção "
+"<menuchoice><guimenu>Manutenção</guimenu><guimenuitem>Pesquisar por imagens "
+"e vídeos</guimenuitem></menuchoice>. Novas imagens devem ser encontradas e "
+"você pode agora iniciar a colocação de etiquetas. No exemplo dado, o "
+"fotógrafo normalmente indica primeiro o local onde a foto foi tirada. "
+"(Selecionando a opção <guilabel>Pasta</guilabel> e indo para a nova pasta, "
+"você poderá ir a <guilabel>Mostrar miniaturas</guilabel>, selecionar todas e "
+"<guimenu>Anotar vários itens de uma vez</guimenu> ou <keycombo action=\"simul"
+"\">&Ctrl;<keycap>2</keycap></keycombo>. Indique o local correto, como por "
+"exemplo, Finlândia-Helsinki (veja <xref linkend=\"sec-member-groups-in-"
+"property-editor\"/>)."
+
+#. Tag: para
+#: workflows.docbook:67
+#, no-c-format
+msgid ""
+"Now that the new images are easy to find I do the initial ranking and "
+"deletion. For this I go to the thumbnail view and start the Viewer by "
+"hitting &Enter;. I use rating for good images, just press the appropriate "
+"number from <keycap>1</keycap> to <keycap>5</keycap>. I only give 3 to 5 "
+"ratings and hit <keycombo action=\"simul\">&Ctrl;<keycap>Del</keycap></"
+"keycombo> for the bad photos to delete them. At this point I might add also "
+"People names if there happens to be a diver in the photo. Once the first "
+"round is done I exit the Viewer by hitting &Esc; and select "
+"<guimenuitem>Delete file from disk</guimenuitem> to get rid off the bad "
+"images for good."
+msgstr ""
+"Agora que as novas imagens são fáceis de encontrar, é possível fazer a "
+"classificação e exclusão inicial. Para isto, você pode ir para a área de "
+"miniaturas e iniciar o visualizador, clicando &Enter;. Será usada a "
+"classificação das imagens boas, bastando pressionar no número apropriado de "
+"<keycap>1</keycap> a <keycap>5</keycap>. O autor só pretende atribuir "
+"classificações entre 3 e 5 estrelas e clica em <keycombo action=\"simul"
+"\">&Ctrl;<keycap>Del</keycap></keycombo> para excluir fotos ruins. Neste "
+"momento, também será possível adicionar os nomes das pessoas, caso exista "
+"alguém em destaque na foto. Assim que terminar a primeira rodada, pode-se "
+"sair do visualizador com a tecla &Esc; e selecionar a opção "
+"<guimenuitem>Excluir o arquivo do disco</guimenuitem> para descartar as "
+"imagens ruins."
+
+#. Tag: para
+#: workflows.docbook:81
+#, no-c-format
+msgid ""
+"Next I select only the images that have high enough rating using the search "
+"function. Naturally the Place has to be set if search is started with "
+"<keycombo action=\"simul\">&Ctrl;<keycap>F</keycap></keycombo>. However, if "
+"search is invoked from the Main Window the current selection is drilled down "
+"to the more precise match. Anyway, at this point I go through the better "
+"rated images again doing refining on the rating. E.g. if I have 5 similar "
+"photos of one Nudibranch species I generally decrease the rating of the "
+"poorer images and might increase the best one. Comparing images can be done "
+"by selecting the ones you want to compare and starting the Viewer. Removing "
+"images from the Viewer selection can be done with <keycap>Delete</keycap>. "
+"This only disables the viewing of the current image while within the Viewer, "
+"nothing is removed or deleted. This allows comparing 2 or 3 better images "
+"next to each other moving between them with <keycap>PgUp</keycap> and "
+"<keycap>PgDn</keycap>. I quite commonly use a <literal>tmp</literal> "
+"category to mark &eg; crabs and shrimps to be easily able to display only "
+"selected type of images during the later phases of selection and "
+"identification."
+msgstr ""
+"Depois, serão selecionadas apenas as imagens que tiverem classificação "
+"suficientemente alta, usando a função de pesquisa. Naturalmente, o Local "
+"deverá estar definido se a pesquisa for iniciada com o <keycombo action="
+"\"simul\">&Ctrl;<keycap>F</keycap></keycombo>. Contudo, se a pesquisa for "
+"invocada a partir da janela principal, a seleção atual será aprofundada até "
+"à correspondência mais exata. De qualquer, no ponto atual, é possível "
+"percorrer as imagens melhor classificadas novamente, se ainda refinar mais a "
+"classificação. Por exemplo., se tiver 5 fotografias semelhantes de uma "
+"espécie de Pardal, normalmente reduz-se a classificação das imagens mais "
+"fracas e aumenta-se a classificação da melhor ou melhores. Você poderá fazer "
+"a comparação das imagens se selecionar as que deseja comparar e iniciar o "
+"Visualizador. A remoção de imagens da seleção do Visualizador poderá ser "
+"feita com a tecla <keycap>Delete</keycap>. Esta apenas desativa a "
+"visualização da imagem atual, enquanto no Visualizador não se poderá remover "
+"ou apagar nada. Isto permite comparar as 2 ou 3 melhores imagens entre si, "
+"mudando entre elas com as teclas <keycap>PgUp</keycap> e <keycap>PgDn</"
+"keycap>. Normalmente, pode-se usar uma categoria <literal>tmp</literal> para "
+"marcar &eg; caranguejos e camarões, para que seja possível mostrar apenas o "
+"tipo de imagens selecionado durante as últimas fases de seleção e "
+"identificação."
+
+#. Tag: para
+#: workflows.docbook:101
+#, no-c-format
+msgid ""
+"After a reduced amount of images is left I start tagging them. I add the "
+"Latin Name of the species and Common Name. Whenever I have these two "
+"categories completed I consider the image Done and get rid of the Untagged "
+"marking. Note that if you still need to do tagging after developing the RAW "
+"image (and auto-stacking them) you need to select the top of collapsed stack "
+"(or all images on expanded stack) and select <emphasis>Annotate Multiple "
+"Items at a Time</emphasis> to get the whole stack annotated instead of only "
+"the topmost image."
+msgstr ""
+"Depois de ficar apenas com um número reduzido de imagens, será iniciada a "
+"sua marcação. Foi adicionado o nome em Latim para as espécies e o nome "
+"comum. Sempre que tiver estas duas categorias completas, considera-se a "
+"imagem como Pronta e será retirada da configuração Não Marcada. Observe que "
+"se você ainda precisar marcar após abrir a imagem RAW (e colocá-la na pilha "
+"automaticamente) você precisa selecionar a superior da pilha recolhida (ou "
+"todas as imagens na pilha desdobrada) e selecionar <emphasis>Anotar vários "
+"itens ao mesmo tempo</emphasis> para fazer com que toda a pilha seja anotada "
+"ao invés de somente a imagem superior."
+
+#. Tag: para
+#: workflows.docbook:111
+#, no-c-format
+msgid ""
+"The best images are sent to external application for developing. With wanted "
+"images selected, right click on selected thumbnail and select "
+"<menuchoice><guimenuitem>Invoke External Program</"
+"guimenuitem><guimenuitem>All Selected Images</guimenuitem><guimenuitem>Send "
+"Bibble5</guimenuitem></menuchoice>. The application selected is actually my "
+"script that detects if there is a RAW file for the possibly already "
+"developed images available and uses that if possible. Within the external "
+"application I do some tuning up and cropping if required and then output the "
+"developed JPEGs next to the original RAW file. File naming is rather simple, "
+"change the extension or add underscore and running number if needed."
+msgstr ""
+"As melhores imagens são enviadas para aplicações externas para serem "
+"reveladas. Com as imagens desejadas selecionadas, clique com o botão direito "
+"sobre a miniatura selecionada e escolha a opção "
+"<menuchoice><guimenuitem>Invocar um programa externo</"
+"guimenuitem><guimenuitem>Todas as imagens selecionadas</"
+"guimenuitem><guimenuitem>Enviar para o Bibble5</guimenuitem></menuchoice>. A "
+"aplicação selecionada é de fato um programa do autor que detecta se existe "
+"um arquivo RAW para as imagens já reveladas disponível e usa-o, se possível. "
+"Dentro da aplicação externa, é possível efetuar alguns ajustes e recortes, "
+"se necessário, colocando os JPEG's revelados ao lado do arquivo RAW "
+"original. A nomenclatura do arquivo é relativamente simples, mudando a "
+"extensão ou adicionando números e sublinhados, se necessário."
+
+#. Tag: para
+#: workflows.docbook:125
+#, no-c-format
+msgid ""
+"Now that there is plenty of new JPEGs in the image directories I let "
+"&kphotoalbum; search for new images and automatically stack the new ones on "
+"top of the original RAW (<xref linkend=\"fig-options-file-versions\"/>). "
+"Then a final round of selection with the developed images and adding some "
+"descriptions if needed."
+msgstr ""
+"Agora que existe uma grande quantidade de JPEG's novos nas pastas das "
+"imagens, iremos deixar que o &kphotoalbum; procure por imagens novas, "
+"empilhando as novas no topo do RAW original (<xref linkend=\"fig-options-"
+"file-versions\"/>). Depois, faça uma rodada final onde poderá selecionar as "
+"imagens reveladas e adicionar algumas descrições, se necessário."
+
+#. Tag: para
+#: workflows.docbook:131
+#, no-c-format
+msgid ""
+"Final step is to generate static &HTML; pages and upload to my web server "
+"for the enjoyment of friends and colleagues. This I do with the stacks "
+"collapsed to only get the developed images to the web page. &HTML; "
+"generation is described in <xref linkend=\"chp-generating-html\"/>."
+msgstr ""
+"O passo final é gerar páginas &HTML; estáticas e enviá-las para o servidor "
+"Web, para que os amigos e colegas desfrutem delas. Isto é feito com a pilha "
+"recolhida para somente enviar as imagens abertas para o site. A geração do "
+"&HTML; está descrita em <xref linkend=\"chp-generating-html\"/>."
+
+#. Tag: title
+#: workflows.docbook:139
+#, no-c-format
+msgid "Panorama workflow"
+msgstr "Fluxo de trabalho de panoramas"
+
+#. Tag: para
+#: workflows.docbook:140
+#, no-c-format
+msgid ""
+"Panoramas require a bit different workflow than normal photo editing. This "
+"is due to the requirement for multiple source files. The tool of choice for "
+"panoramas is Autopano Pro but latest version of &digikam; should do well and "
+"fits zero budget. Following list describes the steps required:"
+msgstr ""
+"Os panoramas precisam de um fluxo de trabalho ligeiramente diferente da "
+"edição normal de fotos. Isto deve-se ao fato de usarem vários arquivos de "
+"origem. A ferramenta de escolha de panoramas é o Autopano Pro, mas a última "
+"versão do &digikam; também deverá funcionar bem, com custo zero. A lista a "
+"seguir descreve os passos necessários:"
+
+#. Tag: para
+#: workflows.docbook:147
+#, no-c-format
+msgid ""
+"Tag the photos belonging to a panorama in &kphotoalbum; appropriately. This "
+"is done mainly to avoid discarding images by accident, when sorting out the "
+"garbage among the photos taken. You probably want also to stack the set of "
+"source images at this point."
+msgstr ""
+"Marque as fotos que pertencem a um panorama no &kphotoalbum; da forma "
+"apropriada. Isto é feito principalmente para evitar a eliminação acidental "
+"de imagens, ao escolher o lixo no meio das fotografias tiradas. Você também "
+"pode querer usar isto para empilhar o conjunto de imagens originais."
+
+#. Tag: para
+#: workflows.docbook:152
+#, no-c-format
+msgid "You have at least two simple options for next step:"
+msgstr "Você terá pelo menos duas opções simples para o passo seguinte:"
+
+#. Tag: para
+#: workflows.docbook:155
+#, no-c-format
+msgid ""
+"You can let Autopano Pro find the panoramas automatically from the photo "
+"directory."
+msgstr ""
+"Você pode deixar que o Autopano Pro encontre os panoramas automaticamente na "
+"pasta de fotos."
+
+#. Tag: para
+#: workflows.docbook:158
+#, no-c-format
+msgid ""
+"Or send the proper images to Autopano Pro on command line to speed things "
+"up. This is handy if the image directory contains a lot of images, "
+"especially RAW ones. This requires one to fix the script that starts "
+"Autopano Pro to accept input and to create a desktop file or invoking "
+"external program with own command line."
+msgstr ""
+"Ou enviar as imagens adequadas para o Autopano Pro na linha de comando para "
+"acelerar as coisas. Isto é útil se a pasta de imagens tiver diversas "
+"imagens, especialmente imagens RAW. Isto obriga a corrigir o script que "
+"inicia o Autopano Pro para aceitar dados de entrada e para criar um arquivo "
+"'desktop' ou ainda carregar programas externos com uma linha de comando "
+"própria."
+
+#. Tag: para
+#: workflows.docbook:165
+#, no-c-format
+msgid ""
+"If it happens that the resulting panorama is missing a small part, you can "
+"try to craft it e.g. with the Gimp. Gimp works usually quite well if there "
+"is enough \"structure\" to be cloned but there is absolutely no guarantee "
+"you will get usable results."
+msgstr ""
+"Se faltar um pequeno pedaço do panorama, você pode tentar ajustá-lo com o "
+"Gimp, por exemplo. O Gimp funciona normalmente bem se existir bastante "
+"\"estrutura\" para ser clonada, mas não existe qualquer garantia de que você "
+"obterá resultados úteis."
+
+#. Tag: para
+#: workflows.docbook:170
+#, no-c-format
+msgid ""
+"Save the new image somewhere under &kphotoalbum;'s image directory and run "
+"<menuchoice><guimenu>Maintenance</guimenu><guimenuitem>Rescan for Images and "
+"Videos</guimenuitem></menuchoice>. This should notice the new panorama and "
+"include it in the picture gallery."
+msgstr ""
+"Salve a imagem nova em qualquer local da pasta de imagens do &kphotoalbum; e "
+"execute a opção <menuchoice><guimenu>Manutenção</"
+"guimenu><guimenuitem>Procurar novamente por imagens e vídeos</guimenuitem></"
+"menuchoice>. Isto deverá detectar o novo panorama e incluí-lo na galeria de "
+"imagens."
+
+#. Tag: para
+#: workflows.docbook:176
+#, no-c-format
+msgid ""
+"If you have set the AutoStacking of new images properly and name of the new "
+"panorama matches the rules for this, the panorama should be on top of the "
+"stack. Otherwise sort the images by date, so the new panorama ends up at by "
+"the source images and stack them manually. (Autopano Pro seems to write the "
+"EXIF info of the first image into the panorama.)"
+msgstr ""
+"Se tiver ativado o Empilhamento Automático de imagens novas e se o nome do "
+"novo panorama corresponder às regras deste, o panorama deverá ficar na parte "
+"superior da pilha. Caso contrário, ordene as imagens por data, para que o "
+"novo panorama termine nas imagens de origem e as empilhe manualmente. (O "
+"Autopano Pro parece gravar as informações EXIF da primeira imagem do "
+"panorama.)"
+
+#. Tag: para
+#: workflows.docbook:182
+#, no-c-format
+msgid ""
+"You can still add tagging at this point to the panorama or you might include "
+"all the source images also with <keycombo>&Ctrl;<keycap>2</keycap></"
+"keycombo>."
+msgstr ""
+"Neste momento, você pode ainda adicionar marcações ao panorama ou incluir "
+"todas as imagens de origem com <keycombo>&Ctrl;<keycap>2</keycap></keycombo>."

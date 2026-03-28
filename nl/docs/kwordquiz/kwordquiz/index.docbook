@@ -1,0 +1,676 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+ "dtd/kdedbx45.dtd" [
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Dutch "INCLUDE"
+><!-- change language only here -->
+]>
+
+<book id="kwordquiz" lang="&language;">
+
+<bookinfo>
+<title
+>Het handboek van &kwordquiz;</title>
+
+<authorgroup>
+<author
+><firstname
+>Peter</firstname
+> <surname
+>Hedlund</surname
+> <affiliation
+> <address
+><email
+>peter.hedlund@kdemail.net</email
+></address>
+</affiliation>
+</author>
+&Marc.Heyvaert;&Tom.Albers; 
+</authorgroup>
+
+
+<copyright>
+  <year
+>2003</year>
+  <year
+>2004</year>
+  <year
+>2005</year>
+  <year
+>2008</year>
+  <holder
+>Peter B. Hedlund</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+
+<date
+>2023-07-04</date>
+<releaseinfo
+>Applications 23.08</releaseinfo>
+
+<abstract>
+<para
+>&kwordquiz; is een toepassing door &kde; die u kan helpen een vreemde woordenschat aan te leren. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>kdeedu</keyword>
+<keyword
+>KWordQuiz</keyword>
+<keyword
+>kaarten</keyword>
+<keyword
+>woordenschat</keyword>
+<keyword
+>taal</keyword>
+<keyword
+>onderwijs</keyword>
+<keyword
+>school</keyword>
+<keyword
+>middelbare school</keyword>
+<keyword
+>universiteit</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Inleiding</title>
+<para
+>&kwordquiz; is een toepassing die u kan helpen een nieuwe woordenschat onder de knie te krijgen. U kunt er woorden uit een vreemde taal mee aanleren of woorden van een gespecialiseerde terminologie. </para>
+<sect1 id="easy-to-use">
+<title
+>Gemakkelijk te gebruiken</title>
+
+<para
+>Met &kwordquiz; kunt u op een gemakkelijke en intuïtieve manier uw eigen woordenlijst opbouwen. Een woordenlijst heeft de vorm van een spreadsheet met twee kolommen. In de ene kolom komen de woorden zoals u ze kent, in de andere komen de vormen die u wilt aanleren. De titels van de kolommen kunt u veranderen zodat ze weergeven wat u aan het leren bent. </para>
+
+<sect2 id="quiz-types">
+<title
+>Soorten toetsen</title>
+
+<para
+>Wanneer u een woordenlijst hebt ingevoerd bent u klaar om een toets te starten. Tijdens een toets is de woordenlijst niet zichtbaar zodat u niet kunt spieken. Misschien wilt u beginnen met een kaarten-sessie, later is een meerkeuzevragen-sessie misschien aangewezen, of een krachtige "Vraag en antwoord"-sessie? U kunt onmiddellijk zien welke van uw antwoorden goed of fout zijn en u kunt het programma zo instellen dat woorden die u fout had opnieuw aan bod komen, zodat u efficiënter leert. Indien u wat extra hulp nodig hebt, kunt u een tip vragen. </para>
+</sect2>
+
+
+<sect2 id="practice-modes">
+<title
+>Wijze van oefenen</title>
+
+<para
+>U kunt kiezen op welke manier u wilt oefenen. Met &kwordquiz; hebt u de keuze uit drie verschillende modi om het leerproces efficiënt te laten verlopen. De verschillende modi maken het mogelijk om te beslissen welke kolom wordt gebruikt als een vraag, antwoord of beiden. Bovendien kunt u kiezen of een sequentiële of willekeurige volgorde gebruikt. </para>
+</sect2>
+
+<sect2 id="vocabulary-documents">
+<title
+>Woordenlijsten</title>
+<para
+>&kwordquiz; kan verschillende typen van woordenschatgegevens openen. Het standaard formaat is <filename class="extension"
+>.kvtml</filename
+> dat ook door andere &kde; programma's wordt gebruikt. &kwordquiz; zou ook het formaat <filename class="extension"
+>.wql</filename
+> van &kwordquiz; voor &Windows; aan moeten kunnen, <filename class="extension"
+>.cvs</filename
+> bestanden met komma-gescheiden tekst, <ulink url="http://www.vokabeln.de/v1/download.htm"
+><filename class="extension"
+>.voc</filename
+> bestanden</ulink
+> aangemaakt door de oude versie van Vokabeltrainer, <ulink url="https://sourceforge.net/projects/xdxf/files/dicts-XDXF/"
+><filename class="extension"
+>.xdxf</filename
+> bestanden</ulink
+> en het <filename class="extension"
+>.xml.gz</filename
+> formaat dat door oude versies van het programma <ulink url="http://pauker.sourceforge.net"
+>Pauker</ulink
+> wordt gebruikt. </para>
+<para
+>Met &kwordquiz; kunt u woordenlijsten in verschillende formaten opslaan. Standaard gebeurt dat in het formaat <filename class="extension"
+>.kvtml</filename
+> dat ook door andere &kde; programma's wordt gebruikt. Een andere mogelijkheid is komma-gescheiden tekst <filename class="extension"
+>.cvs</filename
+>. </para>
+<para
+>U kunt verschillende bestanden tegelijkertijd openen en gemakkelijk de inhoud van een bestand naar een ander bestand kopiëren of verplaatsen. </para>
+</sect2>
+</sect1>
+</chapter>
+
+<chapter id="commands">
+<title
+>Naslag menu's</title>
+<sect1 id="mode-menu">
+<title
+>Het menu Opties</title>
+<para
+>Dit menu biedt u drie verschillende manieren voor de toets die elkaar niet onderling uitsluiten.</para>
+
+  <note
+><para
+>De namen die u zelf aan de kolommen hebt gegeven worden in dit menu overgenomen. De gekozen modus telt voor elke soort toets : "Kaarten", "Meerkeuzevragen" of "Vraag en antwoord".</para>
+  </note>
+<variablelist>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Opties</guimenu
+><guimenuitem
+>Willekeurige volgorde</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>Tijdens de toets krijgt u de items in willekeurige volgorde, maar elk item komt maar één keer voor. </para>
+    </listitem>
+  </varlistentry>
+
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Opties</guimenu
+> <guimenuitem
+>Kolom 1 -&gt; Kolom 2</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>Tijdens de toets krijgt u de inhoud van Kolom 1 te zien en moet u de overeenkomstige inhoud van Kolom 2 invoeren. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Modus</guimenu
+> <guimenuitem
+>Kolom 2 -&gt; Kolom 1</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>Tijdens de toets krijgt u de inhoud van Kolom 2 te zien en moet u de overeenkomstige inhoud van Kolom 1 invoeren. </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+</sect1>
+</chapter>
+
+<chapter id="welcome-page">
+<title
+>De welkomstpagina</title>
+
+<para
+>Bij het openen van KWordQuiz krijgt u de welkomstpagina. Deze pagina biedt een lijst met alle eerder geopende kaartensets. Bovendien laat deze u een nieuwe kaartenset aanmaken, een kaartenset openen uit een bestand of een kaartenset downloaden uit het internet. Tenslotte kunt u ook kiezen welke hoofdmodus u wilt gebruiken. </para>
+
+<screenshot>
+  <screeninfo
+>De welkomstpagina</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-welcome.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>De welkomstpagina</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</chapter>
+
+<chapter id="editor">
+<title
+>De editor</title>
+
+<para
+>Het gebied met het woordenschatdocument ziet eruit als een spreadsheet: er is een rooster met twee kolommen en een aantal rijen zichtbaar. Elke kolom heeft een titel en de rijen zijn genummerd. Ze kunnen gezet worden door de eerste rij te bewerken. </para>
+
+<para
+>U kunt op een cel in het raster klikken om dat de actieve cel te maken. U kunt de pijl omhoog of omlaag gebruiken om omhoog of omlaag te gaan in de tabel en de tab-toets om naar het volgende element te gaan.</para>
+
+<screenshot>
+  <screeninfo
+>De editor</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-editor.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>De editor</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<para
+>U bouwt een woordenlijst op door in de kolommen, twee aan twee, woorden of termen in te voeren. Om in een actieve cel een woord in te voeren moet u alleen maar beginnen typen. De cel bevindt zich dan in bewerken-modus en u kunt nu de volledige tekst of een gedeelte van de tekst selecteren. U kunt een bestaande cel bewerken door in de cel te dubbelklikken of door op <keycap
+>F2</keycap
+> te drukken. De wijzigingen worden onmiddellijk in de cel zelf getoond.  </para>
+<para
+>Wanneer u een woord hebt ingevoerd en u naar de volgende cel wilt overgaan volstaat het op <keycap
+>Enter</keycap
+> te drukken. Het is dus gemakkelijk om snel verschillende items in te tikken. Er is werkelijk geen limiet aan het aantal rijen dat u in een document kunt hebben. </para>
+</chapter>
+
+<chapter id="flashcard">
+
+<title
+>De kaarten-sessie</title>
+
+<para
+>Selecteer Kaarten uit het navigatiepaneel om een kaarten-sessie op te starten met de actieve woordenlijst. Het programma gebruikt de modus die in het menu <guimenu
+>Opties</guimenu
+> werd gekozen. Wanneer u tijdens de sessie de opties verandert, wordt de sessie opnieuw gestart. </para>
+
+<para
+>De grootte van het venster kan worden aangepast zodat meer ruimte vrijkomt voor de vragen en de antwoorden. Dit kan nodig zijn bij lange opgaven. Ook de grootte van het gebruikte lettertype is bepalend voor de beschikbare ruimte. Het gebruikte lettertype kunt u aanpassen door in het menu <menuchoice
+><guimenu
+>Woordenschat</guimenu
+> <guimenuitem
+>Lettertype</guimenuitem
+></menuchoice
+> te selecteren. </para>
+
+<screenshot>
+  <screeninfo
+>De kaarten-sessie</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-flashcard.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>De kaarten-sessie</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Aanvankelijk is de voorzijde van de kaart te zien. Met <guibutton
+>Controleren</guibutton
+> draait u de kaart om. </para>
+<para
+>Om naar de volgende kaart over te gaan kiest u <guibutton
+>Gekend</guibutton
+> wanneer u de kaart als goed wil aanrekenen of <guibutton
+>Niet gekend</guibutton
+> wanneer u de kaart als fout wilt aanrekenen. </para>
+<para
+>Selecteer <guibutton
+>Herhaal fouten</guibutton
+> om de kaarten die u niet goed had opnieuw te krijgen. </para>
+<para
+>Selecteer <guibutton
+>Opnieuw proberen</guibutton
+> om de sessie opnieuw te beginnen. Als u een willekeurige modus gebruikt zullen de kaarten opnieuw geschut worden. </para>
+<para
+>Bovenaan het venster ziet u de scoregegevens: het totale aantal kaarten, de kaarten die u reeds hebt gezien, het aantal goede en het aantal foute antwoorden. </para>
+</chapter>
+
+<chapter id="multiple">
+
+<title
+>De meerkeuzevragen-sessie</title>
+
+<para
+>Selecteer Meerkeuzevragen in de welkomstpagina om een meerkeuzevragen-sessie op te starten met de actieve woordenlijst. Het programma gebruikt de modus die in het menu <guimenu
+>Opties</guimenu
+> werd gekozen. Wanneer u tijdens een sessie van modus verandert, wordt de sessie opnieuw gestart. </para>
+<para
+>De grootte van het venster kan worden aangepast zodat meer ruimte vrijkomt voor de vragen en de antwoorden. Dit kan nodig zijn bij lange opgaven. Ook de grootte van het gebruikte lettertype is bepalend voor de beschikbare ruimte. Het gebruikte lettertype kunt u aanpassen door in het menu <menuchoice
+><guimenu
+>Woordenschat</guimenu
+> <guimenuitem
+>Lettertype</guimenuitem
+></menuchoice
+> te selecteren. </para>
+<para
+>In het voorbeeld hieronder gaf de gebruiker een goed antwoord op de vorige vraag. Hij staat nu op het punt de volgende vraag te beantwoorden. </para>
+
+<screenshot>
+  <screeninfo
+>De meerkeuzevragen-sessie</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-multiple.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>De meerkeuzevragen-sessie</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>In het midden ziet u de mogelijke antwoorden. Kies het antwoord dat volgens u correct is. Gebruik <guibutton
+>Controleren</guibutton
+> om te zien of u het bij het rechte eind hebt. Indien u automatisch controleren in <menuchoice
+><guimenu
+>Instellingen</guimenu
+></menuchoice
+> hebt geactiveerd, dan wordt uw antwoord onmiddellijk gecontroleerd. </para>
+<para
+>Selecteer <guibutton
+>Herhaal fouten</guibutton
+> om de kaarten die u niet goed had opnieuw te krijgen. </para>
+<para
+>Selecteer <guibutton
+>Opnieuw proberen</guibutton
+> om de sessie opnieuw te beginnen. Als u een willekeurige modus gebruikt zullen de kaarten opnieuw geschut worden. </para>
+<para
+>Bovenaan het venster ziet u de scoregegevens: het totale aantal vragen, de vragen die u reeds hebt gekregen, het aantal goede en het aantal foute antwoorden. </para>
+</chapter>
+
+
+<chapter id="question-and-answer">
+
+<title
+>De "Vraag &amp; antwoord"-sessie</title>
+<para
+>Selecteer Vraag en antwoord om een "Vraag &amp; uit het navigatiepaneel om een vraag-en-antwoord-sessie op te starten met de actieve woordenlijst. Het programma gebruikt de modus die in het menu <guimenu
+>Modus</guimenu
+> werd gekozen. Wanneer u tijdens de sessie van modus verandert, wordt de sessie opnieuw gestart.  </para>
+<para
+>De grootte van het venster kan worden aangepast zodat meer ruimte vrijkomt voor de vragen en de antwoorden. Dit kan nodig zijn bij lange opgaven. Ook de grootte van het gebruikte lettertype is bepalend voor de beschikbare ruimte. Het gebruikte lettertype kunt u aanpassen door in het menu <menuchoice
+><guimenu
+>Woordenschat</guimenu
+> <guimenuitem
+>Lettertype</guimenuitem
+></menuchoice
+> te selecteren. </para>
+<para
+>In het voorbeeld hieronder gaf de gebruiker een goed antwoord op de vorige vraag. De gebruiker staat nu op het punt de volgende vraag te beantwoorden. </para>
+
+<screenshot>
+  <screeninfo
+>De "Vraag &amp; antwoord"-sessie</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-qanda.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>De "Vraag &amp; antwoord"-sessie</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>In het midden ziet u de vraag. Voer uw antwoord in. Typ uw antwoord in bewerkingsveld. Gebruik <guibutton
+>Controleren</guibutton
+> of druk op &Enter; om te zien of u het bij het rechte eind hebt.  </para>
+<para
+>Selecteer <guibutton
+>Tip</guibutton
+>om de volgende juiste letter van het antwoord te krijgen. In <menuchoice
+> <guimenu
+>Instellingen</guimenu
+></menuchoice
+> kunt u bepalen of het vragen van een tip als fout moet worden aangerekend. </para>
+<para
+>Selecteer <guibutton
+>Herhaal fouten</guibutton
+> om de kaarten die u niet goed had opnieuw te krijgen. </para>
+<para
+>Selecteer <guibutton
+>Opnieuw proberen</guibutton
+> om de sessie opnieuw te beginnen. Als u een willekeurige modus gebruikt zullen de kaarten opnieuw geschut worden. </para>
+<para
+>Bovenaan het venster ziet u de scoregegevens: het totale aantal vragen, de vragen die u reeds hebt gekregen, het aantal goede en het aantal foute antwoorden. </para>
+</chapter>
+
+<chapter id="fill-in-the-blank">
+<title
+>Leeg-gedeelte-invullen</title>
+
+<para
+>'Leeg-gedeelte-invullen' is een krachtige optie bij het gebruik van &kwordquiz;. Deze optie laat toe een "Vraag en antwoord"-sessie op een bijzondere manier te gebruiken en dit vraagt om een beetje uitleg. </para>
+
+<para
+>Het volgende voorbeeld zou een woordenlijst in &kwordquiz; kunnen zijn: </para>
+
+<informaltable
+><tgroup cols="3">
+<thead>
+<row>
+<entry
+></entry>
+<entry
+>Engels</entry>
+<entry
+>Duits</entry>
+</row>
+</thead>
+
+<tbody>
+<row>
+<entry
+>1</entry>
+<entry
+>Mijn kleermaker is rijk</entry>
+<entry
+>My tailor is rich</entry>
+</row>
+
+<row>
+<entry
+>2</entry>
+<entry
+>Mijn kleermaker is rijk</entry>
+<entry
+>My [tailor] is rich</entry>
+</row>
+
+<row>
+<entry
+>3</entry>
+<entry
+>Mijn kleermaker is rijk</entry>
+<entry
+>My tailor [is rich].</entry>
+</row>
+
+<row>
+<entry
+>4</entry>
+<entry
+>Mijn kleermaker is rijk</entry>
+<entry
+>My [tailor] is [rich].</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+
+<para
+>De vierkante haakjes zijn belangrijk. Zij bepalen hoe &kwordquiz; de vragen aanbiedt. </para>
+<para
+>Bij 1. komen er geen haakjes voor. Indien de opgave bestaat uit de zin in het Nederlands en bijgevolg de Engelse vertaling als antwoord verwacht wordt, dan moet de hele zin worden ingevoerd voor een goed antwoord. </para>
+<para
+>Opgave 2 is identiek, maar nu krijgen we niet alleen de zin in het Nederlands te zien, maar ook het grootste gedeelte van het antwoord : "My ......is rich. Om correct te antwoorden volstaat het "tailor" in te voeren. </para>
+<para
+>Uit opgave 3. blijkt dat een blanco kan overeenkomen met meer dan één woord. Het goede antwoord is "is rich". </para>
+<para
+>Bij opgave 4. krijgen we twee in te vullen blanco's. Het goede antwoord is hier "tailor; rich", dus de twee correcte antwoorden in de goede volgorde en gescheiden door een puntkomma. </para>
+<para
+>Gemarkeerde leegte heeft enkel zin in de antwoorden. Indien ze voorkomen in de vraag worden ze gewoon genegeerd. Deze haakjes spelen evenmin een rol bij meerkeuzevragen- en kaarten-sessies. Om het aanmaken van woordenlijsten met 'Leeg-gedeelte-invullen' eenvoudiger te maken zijn hiervoor in het menu en de hoofdwerkbalk commando's voorzien om leegte te markeren of de markering weg te halen. Maar het is uiteraard mogelijk de vierkante haakjes gewoon in te typen. &kwordquiz; controleert of alles klopt. Wanneer de tekst in het rood verschijnt dan klopt er iets niet met de haakjes en de toets kan niet worden gestart. </para>
+</chapter>
+
+<chapter id="printing">
+<title
+>Afdrukken</title>
+<para
+>Met &kwordquiz; kan een woordenlijst op verschillende manieren worden afgedrukt. De opties voor afdrukken zijn beschikbaar in de bewerker van &kwordquiz;. Bij selecteren van <guibutton
+>Afdrukken...</guibutton
+> krijgt u een menu waar u kunt kiezen het document als een woordenschatlijst af te drukken (&ie; zoals getoond in de bewerker), als toets of als kaarten. Nadat u de modus hebt geselecteerd krijgt de standaard dialoog voor afdrukken van &kde;. </para>
+<screenshot>
+  <screeninfo
+>Afdrukken Opties</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-type.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Afdrukken Opties</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<formalpara>
+<title
+>Woordenlijst</title>
+<para
+>De woordenlijst wordt afgedrukt zoals deze in de editor voorkomt, met dezelfde lettertypes en dezelfde rijhoogte en kolombreedte. U moet de kolommen zo instellen dat ze binnen de breedte van het blad vallen.</para>
+</formalpara>
+<screenshot>
+  <screeninfo
+>Woordenlijst afdrukken</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-list.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Woordenlijst afdrukken</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<formalpara>
+<title
+>Toets</title>
+<para
+>De woordenlijst wordt afgedrukt zoals hij in de editor wordt afgebeeld, maar de rechterkolom is leeg en er werd een derde kolom toegevoegd om de score in bij te houden. U moet de kolommen zo instellen dat ze binnen de breedte van het blad vallen.</para>
+</formalpara>
+<screenshot>
+  <screeninfo
+>Toets afdrukken</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-exam.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Toets afdrukken</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<formalpara>
+<title
+>Kaarten</title>
+<para
+>De kaarten worden per twee afgedrukt. De pagina wordt automatisch op landschap ingesteld.</para>
+</formalpara>
+<screenshot>
+  <screeninfo
+>Kaarten afdrukken</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-flashcard.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Kaarten afdrukken</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+</chapter>
+
+<chapter id="dialogs">
+<title
+>Dialoogvensters</title>
+
+<sect1 id="dlg-config-general">
+<title
+>Algemene instellingen</title>
+<screenshot>
+  <screeninfo
+>Algemene instellingen</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-config.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Algemene instellingen</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>U kunt selecteren wat met voor type sessie een nieuw geopende woordenlijst zou moeten starten. Direct naar een toets gaan voorkomt dat u van te voren items ziet. </para>
+<para
+>Voor alle sessie kunt u kiezen of de score als een percentage moet worden weergegeven. </para>
+<tip>
+<para
+>Merk op dat de instellingen automatisch worden toegepast. </para>
+</tip>
+</sect1>
+
+<sect1 id="dlg-languages">
+<title
+>Kolominstellingen</title>
+<para
+>U kunt deze dialoog openen vanuit de bewerker.</para>
+<screenshot>
+  <screeninfo
+>Kolominstellingen</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-languages.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Kolominstellingen</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Gebruik deze dialoog om de titels van de kolommen en de talen in te stellen. Klik op een taal om deze te selecteren of sluit de dialoog om elke wijziging te verwerpen. </para>
+</sect1>
+</chapter>
+
+<chapter id="credits">
+
+<title
+>Dankbetuigingen en licentie</title>
+
+<para
+>&kwordquiz; </para>
+<para
+>Programma copyright 2003-2008 Peter B. Hedlund <email
+>peter.hedlund@kdemail.net</email
+> 2023 Carl Schwan <email
+>carl@carlchwan.eu</email
+> </para>
+
+<para
+>Documentatie-copyright 2003-2008 Peter B. Hedlund <email
+>peter.hedlund@kdemail.net</email
+> </para>
+
+&meld.fouten;&vertaling.marc;&vertaling.tom;&vertaling.freek; &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->

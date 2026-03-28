@@ -1,0 +1,1343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter id="details.settings">
+<chapterinfo>
+  <authorgroup>
+    <author
+>&Roger.Lum; &Roger.Lum.mail; </author>
+    <author
+>&Michael.Carpino; &Michael.Carpino.mail;</author>
+    <author
+>&Jack.H.Ostroff; &Jack.H.Ostroff.mail; </author>
+  </authorgroup>
+  <date
+>01/12/2024</date>
+  <releaseinfo
+>5.2.0</releaseinfo>
+</chapterinfo>
+<title
+>Configurações do &kmymoney;</title>
+
+<para
+>As configurações descritas neste capítulo modificam o comportamento do &kmymoney;, permitindo que você o personalize para atender às necessidades específicas de suas finanças e modifique sua aparência para combinar com sua personalidade. Essas configurações podem ser alteradas através do item de menu <menuchoice
+> <guimenu
+>Configurações</guimenu
+> <guimenuitem
+>Configurar &kmymoney;...</guimenuitem
+> </menuchoice
+> ou usando o atalho de teclado <keycombo action="simul"
+>&Ctrl; &Shift;<keycap
+>,</keycap
+></keycombo
+>. Para que as alterações entrem em vigor, o botão<guibutton
+>Aplicar</guibutton
+> deve ser clicado. </para>
+
+<para
+>À esquerda da caixa de diálogo <guilabel
+>Configurar</guilabel
+> ou de configurações, há uma lista de ícones e rótulos, cada um representando uma área específica do programa. Ao clicar em um desses ícones, a parte direita da caixa de diálogo exibirá os controles para configurar essa área do programa, geralmente divididos em várias abas. </para>
+
+<sect1 id="details.settings.general"
+><title
+>Geral</title>
+
+<sect2 id="details.settings.general.global"
+><title
+>Aba Global</title>
+<screenshot>
+  <screeninfo
+>Configuração do KMyMoney, aba geral, global</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="config_general_global.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Configuração do KMyMoney, aba geral, global</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<!-- FIXME: I would prefer a more consistent hierarchy and use of levels here, such
+     as with using sectX and variablelist.  For now, I minimize layout changes. -->
+<variablelist>
+  <varlistentry>
+    <term
+><guilabel
+>Opções de salvamento automático</guilabel
+></term>
+    <listitem>
+      <para
+>Um arquivo de salvamento automático é simplesmente uma cópia do seu arquivo de dados. A principal vantagem deles é que são criados automaticamente, de acordo com as configurações, então você não precisa se lembrar de fazer nada. Qualquer arquivo de salvamento automático criado estará no mesmo diretório do arquivo de dados atualmente aberto. </para>
+
+      <para
+>Marcar a caixa <guilabel
+>Salvar automaticamente periodicamente</guilabel
+> instrui o &kmymoney; a salvar automaticamente seu arquivo no intervalo definido pelo campo <guilabel
+>minutos</guilabel
+>. O valor padrão é 10 minutos. Você pode alterar essa configuração de 0 (salvar automaticamente imediatamente após inserir uma transação) até 60 minutos. </para>
+
+      <para
+>Marcar a caixa <guilabel
+>Salvar automaticamente quando o arquivo for modificado ao fechar</guilabel
+> instrui o &kmymoney; a salvar automaticamente seu arquivo quando o programa for fechado, mas somente se alguma alteração tiver sido feita. Você também tem a opção de fazer backup do seu arquivo &kmymoney; ao fechar o programa. </para>
+
+      <para
+>O <guilabel
+>Número de backups a serem mantidos</guilabel
+> pode ser definido de 0 (Desativado) até 20. Os arquivos de salvamento automático serão armazenados na mesma pasta que o arquivo principal. Se o seu arquivo de dados for MinhasFinanças.kmy, então, quando um arquivo de salvamento automático for criado, ele será chamado de MinhasFinanças.kmy.1~. Quaisquer arquivos de salvamento automático existentes terão seu número incrementado em 1, até o número especificado. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><guilabel
+>Ano fiscal</guilabel
+></term>
+    <listitem>
+      <para
+>O &kmymoney; permite que você especifique um ano fiscal diferente do ano civil. Para isso, insira o dia e o mês em que seu ano fiscal começa. Esse valor é usado para orçamentos e alguns relatórios. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><guilabel
+>Programas externos</guilabel
+></term>
+    <listitem>
+      <para
+>Esta configuração não afeta diretamente o funcionamento do &kmymoney;, mas fornece uma maneira conveniente de executar qualquer utilitário externo, como uma calculadora avançada. O primeiro passo é inserir o caminho completo para o programa escolhido na caixa de texto <guilabel
+>Calculadora</guilabel
+>. </para>
+
+      <para
+>Atualmente, não existe um item de menu direto para iniciar a calculadora, ou qualquer outro programa externo que você tenha configurado. Existem, portanto, duas maneiras de iniciar o programa. </para>
+
+      <para
+>Primeiro, você pode usar o item de menu <guimenu
+>Configurações</guimenu
+> <guimenuitem
+>Configurar barras de ferramentas...</guimenuitem
+> para colocar o <guiicon
+> <inlinemediaobject
+> <imageobject
+> <imagedata fileref="icon-accessories-calculator.svg" format="SVG"/> </imageobject
+> </inlinemediaobject
+> </guiicon
+> ícone da calculadora na barra de ferramentas. Então, quando você clicar nesse ícone na barra de ferramentas, o &kmymoney; iniciará o aplicativo selecionado. </para>
+
+      <para
+>Em segundo lugar, você pode usar o item de menu <guimenu
+>Configurações</guimenu
+> <guimenuitem
+>Configurar atalhos...</guimenuitem
+> para definir um atalho de teclado personalizado. (A entrada está em &kmymoney;/Calculadora nessa lista.) Você pode então usar esse atalho para iniciar o aplicativo. </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+</sect2>
+
+<sect2 id="details.settings.general.views"
+><title
+>Aba Visões</title>
+<screenshot>
+  <screeninfo
+>Configuração do KMyMoney, geral, aba vistas</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="config_general_views.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Configuração do KMyMoney, geral, aba vistas</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<variablelist>
+  <varlistentry>
+    <term
+><guilabel
+>Opções da página inicial</guilabel
+></term>
+    <listitem>
+      <para
+>Ao iniciar o &kmymoney;, esta opção indica se deve iniciar com a vista inicial (<guilabel
+>Iniciar com a página inicial</guilabel
+>) ou com a visualização exibida quando o programa foi fechado pela última vez (<guilabel
+>Iniciar com a última vista selecionada</guilabel
+>). </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+  <term
+><guilabel
+>Tipo da vista do &kmymoney;</guilabel
+></term>
+    <listitem>
+      <para
+>Isso permite que você selecione um dos três layouts para o seletor de vistas, onde você escolhe a vista em <guilabel
+>Lista</guilabel
+> ou em <guilabel
+>Árvore</guilabel
+>. Os ícones e seus rótulos serão localizados no lado esquerdo da janela. A vista em Lista exibe ícones maiores acima do nome de cada vista, enquanto a vista em Árvore tem ícones menores à esquerda dos nomes. A vista <guilabel
+>Com abas</guilabel
+> localiza os ícones e rótulos em abas na parte superior da janela. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <guilabel
+>Sincronizar a seleção de contas das vistas de Livro de registro e de Investimentos </guilabel>
+    </term>
+    <listitem>
+      <para
+>Se esta opção for selecionada, as contas exibidas nas vistas de Livro de registro e de Investimentos serão sincronizadas. Isso significa que, se você alterar a conta exibida em uma das vistas e, em seguida, alternar para a outra, as informações da mesma conta serão exibidas. Isso aumenta a eficiência da navegação entre essas duas vistas. Se não for selecionada, selecionar qualquer uma dessas vistas exibirá a mesma conta previamente selecionada nessa vista, independentemente da conta selecionada na outra. </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+</sect2>
+
+<sect2 id="details.settings.general.filter"
+><title
+>Aba Filtro</title>
+<screenshot>
+  <screeninfo
+>Configuração do KMyMoney, geral, aba de filtro</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="config_general_filter.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Configuração do KMyMoney, geral, aba de filtro</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<variablelist>
+  <varlistentry>
+    <term
+>Contas / categorias</term>
+    <listitem>
+      <para
+>Selecionar a opção <guilabel
+>Não mostrar categorias não utilizadas</guilabel
+> oculta as categorias não utilizadas na vista de Categorias. Uma categoria oculta ainda estará disponível caso uma transação a exija. Ao digitar uma categoria oculta no livro de registro, ela ficará disponível para uso. </para>
+
+      <para
+>As contas de patrimônio líquido são usadas para acompanhar ações ou investimentos individuais mantidos em uma conta de Investimento. Elas não devem ser confundidas com o grupo de contas de nível superior, <emphasis
+>Patrimônio líquido</emphasis
+>, que inclui a(s) conta(s) que contêm os saldos iniciais de outras contas. Por padrão, as contas de patrimônio líquido ficam ocultas na vista de Contas. Marcar a caixa <guilabel
+>Mostrar contas de patrimônio líquido</guilabel
+> exibirá as contas de patrimônio líquido na vista de Contas. </para>
+
+      <para
+>Por padrão, as categorias ficam ocultas na vista de contas. Marcar a opção <guilabel
+>Mostrar categorias na lista de contas</guilabel
+> exibirá as categorias na vista de contas. </para>
+
+      <para
+>Selecionar <guilabel
+>Não mostrar patrimônio líquido com saldo zero</guilabel
+> irá remover quaisquer contas de patrimônio líquido com saldo zero da vista de contas. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry
+> 
+    <term
+>Agendamentos</term>
+    <listitem>
+      <para
+>Selecionar <guilabel
+>Não mostrar agendamentos concluídos</guilabel
+> oculta todos os agendamentos concluídos da vista de transações agendadas. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+>Transações</term>
+    <listitem>
+      <para
+>Transações anteriores à data no campo <guilabel
+>Não mostrar transações antes de</guilabel
+> não serão exibidas na vista do livro de registro. Isso pode ser útil se seus dados incluírem muitos anos de transações; definir isso para um ou dois anos atrás oculta as transações mais antigas. </para>
+      
+      <para
+>Definir esta opção para 1 de janeiro de 1900 (o valor padrão) é uma boa maneira de depurar problemas de importação de dados relacionados a datas, caso algumas datas estivessem erroneamente muito distantes no passado. </para>
+
+      <para
+>Selecionar <guilabel
+>Não mostrar transações reconciliadas</guilabel
+> filtrará as transações por estado de reconciliação. As transações que estiverem marcadas como <emphasis
+>Reconciliadas</emphasis
+> não serão exibidas na vista do livro de registro. </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+</sect2>
+
+<sect2 id="details.settings.general.support"
+><title
+>Aba Suporte</title>
+<screenshot>
+  <screeninfo
+>Configuração do KMyMoney, seção geral, aba de suporte</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="config_general_support.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Configuração do KMyMoney, seção geral, aba de suporte</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<variablelist>
+  <varlistentry>
+    <term
+>Registro</term>
+    <listitem>
+      <para
+>O &kmymoney; pode criar um arquivo de log ao importar dados. Isso pode ser útil para solucionar problemas, mas é importante ter cuidado, pois esses arquivos de log podem conter dados confidenciais, como nomes de usuário e senhas em texto simples, conforme observado na caixa de diálogo. </para>
+
+      <para
+>Para que qualquer registro seja feito, especifique o caminho para o diretório onde os registros serão criados no campo <guilabel
+>Caminho do registro</guilabel
+>. Você também pode clicar em <guibutton
+>...</guibutton
+> à direita do campo e usar a caixa de diálogo de seleção de arquivo para navegar até o diretório escolhido. </para>
+
+      <para
+>Se você marcar a caixa <guilabel
+>Registrar declarações importadas</guilabel
+>, sempre que o &kmymoney; importar dados, ele salvará um arquivo chamado <quote
+> <literal
+>kmm-declaração-</literal
+>aaaa-mm-dd<literal
+>T</literal
+>hh-mm-ss.sss<literal
+>.txt</literal
+> </quote
+> no diretório especificado. Este arquivo é um arquivo &XML; com todos os dados recém-importados. </para>
+
+      <para
+>Se você marcar a caixa <guilabel
+>Registrar transações OFX</guilabel
+>, sempre que o &kmymoney; usar a <link linkend="details.impexp.ofxdirectconnect"
+>conexão direta OFX</link
+> para recuperar dados de transação, ele registrará todas as interações que tiver com o servidor OFX remoto. Essas interações serão adicionadas a um arquivo chamado <literal
+>ofxlog.txt</literal
+> no diretório especificado. Como mencionado acima, é provável que esse arquivo contenha nomes de conta e de usuário, bem como senhas em texto simples. </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+</sect2>
+</sect1>
+
+<sect1 id="details.settings.home"
+><title
+>Pasta Pessoal</title>
+
+<sect2
+><title
+>Seções exibidas na página da Pasta Pessoal</title>
+<screenshot>
+  <screeninfo
+>Configuração do KMyMoney, vista da Pasta Pessoal</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="config_home.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Configuração do KMyMoney, vista da Pasta Pessoal</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<para
+>Essas opções permitem personalizar a aparência da <link linkend="firsttime.mainwindow"
+>Vista da Pasta Pessoal</link
+> (também chamada de Página Inicial ou Janela Principal) escolhendo quais informações exibir e a ordem em que elas aparecem. As seções selecionadas podem ser reordenadas clicando nos botões <guibutton
+>Para cima</guibutton
+> ou <guibutton
+>Para baixo</guibutton
+> correspondentes. Uma seção pode não aparecer, mesmo que a entrada apropriada esteja marcada, se estiver vazia. </para>
+
+<variablelist>
+  <varlistentry>
+    <term
+><guilabel
+>Ativos e passivos</guilabel
+></term>
+    <listitem>
+      <para
+>Isso exibirá uma lista de contas de ativos à esquerda e contas de passivos à direita. Essas e as outras listas de contas na Página Inicial estão classificadas em ordem alfabética, a menos que indicado de outra forma. Normalmente, somente as contas em aberto serão listadas, a menos que a opção <link linkend="reference.menus.view"
+>Mostrar todas as contas</link
+> tenha sido selecionada. </para>
+
+      <para
+>Para esta e as outras listas de contas na vista Inicial, a exibição incluirá o nome da conta, a data da última conciliação e o saldo atual. Além disso, outras colunas podem ser exibidas, conforme configurado na seção <guilabel
+>Exibição de informações da conta</guilabel
+> abaixo nesta janela. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><guilabel
+>Pagamentos agendados</guilabel
+></term>
+    <listitem>
+      <para
+>Esta seção exibirá as próximas ocorrências de <link linkend="details.schedules"
+>Transações agendadas</link
+>, distinguindo aquelas que estão vencidas, vencidas hoje ou vencidas no futuro. Ela mostra a data, o nome do agendamento, a conta e o valor do pagamento, além do saldo da conta após o pagamento. Por padrão, serão exibidas até seis transações. Se seis forem exibidas, há um link que você pode selecionar para exibir mais, com até 30 dias de antecedência. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><guilabel
+>Contas favoritas</guilabel
+></term>
+    <listitem>
+      <para
+>Isso exibirá as contas que estão identificadas como Contas Favoritas no diálogo de configuração <guimenu
+>Conta</guimenu
+> <guimenuitem
+>Editar conta...</guimenuitem
+>. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><guilabel
+>Contas de pagamento</guilabel
+></term>
+    <listitem>
+      <para
+>Isso exibirá todas as contas de pagamento; isso inclui qualquer conta na qual a renda pode ser depositada e/ou da qual as contas podem ser pagas. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><guilabel
+>Relatórios favoritos</guilabel
+></term>
+    <listitem>
+      <para
+>Isso exibirá uma lista de todos os relatórios que foram identificados como favoritos na <link linkend="details.reports.config"
+>caixa de diálogo de configuração</link
+> do relatório. A lista está em ordem cronológica, de acordo com a data em que cada relatório se tornou um favorito. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><guilabel
+>Previsão (agendada)</guilabel
+></term>
+    <listitem>
+      <para
+>Isso exibirá uma previsão para contas de ativos e passivos, semelhante à <link linkend="details.forecast.summary"
+>Aba Resumo</link
+> da vista de Previsão. Os detalhes da exibição podem ser controlados com a caixa de diálogo <link linkend="details.forecast.configure"
+>Configuração da Previsão</link
+>. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><guilabel
+>Previsão do patrimônio líquido</guilabel
+></term>
+    <listitem>
+      <para
+>Isso mostra um gráfico da sua previsão de valor líquido para os próximos 90 dias. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><guilabel
+>Orçamento</guilabel
+></term>
+    <listitem>
+      <para
+>Isso exibirá um resumo do mês atual e os estouros de orçamento para qualquer <link linkend="details.budgets"
+>orçamento definido</link
+>. Se nenhum orçamento for definido, ele exibirá a ausência de orçamento ou estouros, com os gastos reais do mês atual. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><guilabel
+>Fluxo de Caixa</guilabel
+></term>
+    <listitem>
+      <para
+>Isso exibirá uma análise resumida do fluxo de caixa para o mês atual.</para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+</sect2>
+
+<sect2
+><title
+>Escalonamento da Página Inicial/Resumo</title>
+<variablelist>
+  <varlistentry>
+    <term
+><guilabel
+>Fator de zoom:</guilabel
+></term>
+    <listitem>
+      <para
+>Esta opção permite selecionar o tamanho da fonte em porcentagem para ajustar à vista Inicial, de acordo com a preferência do usuário. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><guilabel
+>Lembrar do fator de zoom ao sair do programa, caso seja alterado manualmente com a roda do mouse</guilabel
+></term>
+    <listitem>
+      <para
+>Selecionar esta opção, irá salvar as suas preferências de tamanho do texto, caso a tenha alterado na página Inicial, usando a roda do mouse. </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+</sect2>
+
+<sect2 id="details.settings.home.acctinfo"
+><title
+>Exibição de informações da conta</title>
+<para
+>Essas opções permitem que você personalize quais informações são incluídas em qualquer lista de contas na vista Inicial. </para>
+
+<variablelist>
+  <varlistentry>
+    <term
+><guilabel
+>Mostrar informações sobre o limite da conta</guilabel
+></term>
+    <listitem>
+      <para
+>Exibe o limite da conta conforme definido na caixa de diálogo <link linkend="details.accounts.edit"
+>Editar conta</link
+>. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><guilabel
+>Mostrar o estado do saldo das contas online</guilabel
+></term>
+    <listitem>
+      <para
+>Mostra o saldo das contas mapeadas e das contas que tiveram transações importadas. O status é simbolizado por um ícone na coluna que precede o nome da conta. Observe que as cores descritas aqui podem ser diferentes das exibidas para você, dependendo do tema de exibição selecionado. Uma <guiicon
+> <inlinemediaobject
+> <imageobject
+> <imagedata fileref="icon-dialog-ok.svg" format="SVG"/> </imageobject
+> </inlinemediaobject
+> </guiicon
+> marca verde indica que o saldo online e o saldo local são iguais. Um <guiicon
+> <inlinemediaobject
+> <imageobject
+> <imagedata fileref="icon-dialog-cancel.svg" format="SVG"/> </imageobject
+> </inlinemediaobject
+> </guiicon
+> sinal de alerta vermelho indica uma incompatibilidade entre o arquivo local e o saldo online. Uma <guiicon
+> <inlinemediaobject
+> <imageobject
+> <imagedata fileref="icon-mail-receive.svg" format="SVG"/> </imageobject
+> </inlinemediaobject
+> </guiicon
+> caixa de correio com uma seta verde indica que o arquivo local contém transações mais recentes do que a atualização online mais recente. Isso alerta o usuário para realizar uma atualização online. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><guilabel
+>Mostrar número de transações não marcadas por conta [!M]</guilabel
+></term>
+    <listitem>
+      <para
+>Insere uma coluna após o nome da conta, mostrando o número de transações não marcadas na conta. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><guilabel
+>Mostrar número de transações compensadas por conta [C]</guilabel
+></term>
+    <listitem>
+      <para
+>Insere uma coluna que mostra o número de transações compensadas na conta. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><guilabel
+>Mostrar número de transações não reconciliadas (não marcada + compensada) por conta [!R]</guilabel
+></term>
+    <listitem>
+      <para
+>Insere uma coluna mostrando o número de transações não reconciliadas para a conta, &ie;, a soma de todas as transações não marcadas e compensadas. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><guilabel
+>Mostrar a data da última reconciliação</guilabel
+></term>
+    <listitem>
+      <para
+>Insere uma coluna adicional mostrando a última data de reconciliação da conta. </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+</sect2>
+</sect1>
+
+<sect1 id="details.settings.register"
+><title
+>Livro de registro</title>
+<para
+>As configurações e opções desta seção permitem a modificação do livro de transações exibido na vista do Livro de registro. </para>
+
+<sect2 id="details.settings.register.display"
+><title
+>Página de Apresentação</title>
+<variablelist>
+  <varlistentry>
+    <term
+><guilabel
+>Mostrar uma grade no livro de registro</guilabel
+></term>
+    <listitem>
+      <para
+>Selecionar esta opção exibe linhas de grade na vista do Livro de registro. Esta é uma opção de visualização adicional que pode facilitar a visualização de transações separadas e suas partes componentes. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+  <term
+><guilabel
+>Mostrar o formulário da transação</guilabel
+></term>
+    <listitem>
+      <para
+>Selecionar esta opção exibe o <link linkend="details.ledger.transactionform"
+>formulário de transação</link
+> na parte inferior do livro de registro, e é lá que você insere ou edita uma transação. Se o formulário de transação não for exibido, você edita uma transação diretamente no livro-razão. Com esta opção ativada, menos transações ficam visíveis no livro de registro, em comparação com quando ela está desativada. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><guilabel
+>Mostrar agendamentos atrasados com data planejada</guilabel
+></term>
+    <listitem>
+      <para
+>Transações agendadas com datas futuras são exibidas na vista do Livro de registro para a conta relevante. Quando a data passa e uma transação agendada fica vencida, ela não é mais exibida no razão, a menos que esta opção esteja selecionada. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><guilabel
+>Detalhes da entrada no livro de registro</guilabel
+></term>
+    <listitem>
+      <formalpara>
+        <title
+><guilabel
+>Mostrar todas as entradas do livro de registro com todos os detalhes</guilabel
+></title>
+        <para
+>Selecionar esta opção faz com que o livro de registro mostre todas as informações de todas as transações exibidas, com linhas separadas na coluna Detalhes para Categoria, Etiquetas e Memorando. Se não for selecionada, Categoria, Etiquetas e Memorando não serão exibidas. Isso tem o mesmo efeito que selecionar a opção de menu <link linkend="reference.menus.settings.transactiondetail"
+>Mostrar detalhes da transação</link
+>. </para>
+      </formalpara>
+
+      <formalpara id="details.settings.register.lens">
+        <title
+><guilabel
+>Usar a lupa do livro de registros</guilabel
+></title>
+        <para
+>Selecionar esta opção exibe todas as linhas de detalhes da transação selecionada, mesmo que <guilabel
+>Mostrar todos os lançamentos contábeis em detalhes</guilabel
+> não esteja selecionado. </para>
+      </formalpara>
+
+      <formalpara
+><title
+>Mostrar todos os detalhes da parcela no livro de registro</title>
+      <para
+>Selecionar esta opção mostra mais detalhes sobre as transações divididas. </para>
+      </formalpara>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><guilabel
+>Cabeçalhos de informações</guilabel
+></term>
+    <listitem>
+      <formalpara>
+        <title
+><guilabel
+>Mostrar cabeçalhos de grupo entre as transações</guilabel
+></title>
+        <para
+>Selecionar esta opção exibirá os cabeçalhos de grupo no livro de registro. Estes referem-se a períodos ou marcos como Mês passado, Semana passada, Este mês, Última reconciliação, Próxima semana e Próximo mês. </para>
+      </formalpara>
+
+      <formalpara>
+        <title>
+          <guilabel
+>Mostrar o cabeçalho para os anos fiscais anteriores e atual</guilabel>
+        </title>
+        <para
+>Selecionar esta opção exibirá os cabeçalhos de grupo no livro de registro para o ano fiscal atual e o anterior. </para>
+      </formalpara>
+
+      <formalpara>
+        <title
+><guilabel
+>Cabeçalhos de grupo para reconciliação</guilabel
+></title>
+        <para
+>Este menu suspenso controla a exibição dos cabeçalhos de grupo para reconciliações. Se <guilabel
+>Não mostrar lançamentos de reconciliação</guilabel
+> estiver selecionado, nenhum cabeçalho de grupo será exibido para reconciliações. Se <guilabel
+>Mostrar o último lançamento de reconciliação com data e saldo no livro registro</guilabel
+> estiver selecionado, apenas a reconciliação mais recente será indicada por um cabeçalho de grupo. Se <guilabel
+>Mostrar todos os lançamentos de reconciliação com data e saldo no livro registro</guilabel
+> estiver selecionado, um cabeçalho de grupo será exibido para todas as reconciliações anteriores. </para>
+      </formalpara>
+    </listitem>
+  </varlistentry>
+</variablelist>
+</sect2>
+
+<sect2 id="details.settings.register.sorting"
+><title
+>Página de Ordenação</title>
+<para
+>Estas três seções permitem definir a ordem de classificação padrão das transações na vista do Livro de registro. Em todos os casos, a lista à direita mostra os campos que foram selecionados como parte da ordem de classificação para essa visualização, e a lista à esquerda mostra todos os campos disponíveis para classificação que ainda não foram escolhidos. Para classificar um item, selecione-o (um clique do mouse) e clique na seta à direita entre as duas listas. Você pode ajustar a ordem relativa dos campos selecionando um e ajustando sua posição na lista usando as setas para cima e para baixo à direita da lista. Você pode alternar entre a classificação crescente e decrescente para qualquer item clicando duas vezes nele. </para>
+
+<para
+>Os campos disponíveis para classificação são os mesmos para todas as três seções: Valor, Categoria, Ordem de Entrada (a data em que a transação foi criada, não o ID interno da transação), Número, Beneficiário, Data de lançamento, Estado de reconciliação, Data de reconciliação, Segurança e Tipo. </para>
+
+<sect3 id="details.settings.register.sorting.normal"
+><title
+>Subaba da vista Normal</title>
+<para
+>Esta aba controla a ordem de classificação padrão da vista regular do Livro de registro. </para>
+</sect3>
+
+<sect3 id="details.settings.register.sorting.reconciliation"
+><title
+>Subaba da vista de Reconciliação</title>
+<para
+>Esta aba controla a ordem de classificação padrão do livro de registro enquanto estiver na vista de Reconciliação. Esta é a exibição das transações mostradas durante o processo de <link linkend="details.reconcile"
+>Reconciliação</link
+>. </para>
+</sect3>
+
+<sect3 id="details.settings.register.sorting.search"
+><title
+>Subaba da vista de Pesquisa</title>
+<para
+>Esta aba controla a ordem de classificação padrão do livro de registro enquanto estiver na <link linkend="details.search"
+>Vista de Pesquisa</link
+>. </para>
+</sect3>
+</sect2>
+
+<sect2 id="details.settings.register.dataentry"
+><title
+>Aba de Inserção de Dados</title>
+<para
+>Essas opções afetam o processo de criação de novas transações.</para>
+
+<variablelist>
+  <varlistentry>
+    <term
+><guilabel
+>Incrementar automaticamente o número do cheque</guilabel
+></term>
+    <listitem>
+      <para
+>Habilitar esta opção incrementará automaticamente o número do cheque sempre que uma nova transação de cheque for inserida. O efeito é o mesmo, independentemente de você usar a vista do Livro de registro ou o formulário de transação. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <guilabel
+>Manter as mudanças ao selecionar uma transação/parcela diferente</guilabel>
+    </term>
+    <listitem>
+      <para
+>Quando a opção estiver ativada, selecionar uma transação ou parcela diferente irá salvar qualquer edição feita na transação atual. Quando estiver desativada, ao selecionar outra parcela da transação será apresentada a pergunta se deseja salvar as alterações. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><guilabel
+>Usar a tecla Enter para mover-se entre os campos</guilabel
+></term>
+    <listitem>
+      <para
+>Quando ativado, pressionar &Enter; mudará o foco para o próximo campo da transação. Ao chegar ao último campo, a transação será salva. Quando desativado, a navegação entre os campos ocorrerá usando a tecla &Tab; ou o mouse. Pressionar a tecla &Enter; salvará a transação, independentemente do campo que estiver em foco no momento. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><guilabel
+>Corresponder nomes do início</guilabel
+></term>
+    <listitem>
+      <para
+>Esta opção controla a <link linkend="details.payees.details.matching"
+> correspondência de beneficiários</link
+>. Quando ativada, os nomes dos beneficiários serão sempre correspondidos desde o início. Quando desativada, qualquer substring será correspondida. Além disso, quando ativada, opções adicionais de correspondência podem ser definidas na aba "Correspondência" da vista de Beneficiários. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <!-- FIXME:   missing description of Automatic reconciliation -->
+    <term
+><guilabel
+>Reconciliação automática</guilabel
+></term>
+    <listitem>
+      <para
+>Essa opção precisa ser documentada. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><guilabel
+>Posição inicial do cursor dentro do campo de data</guilabel
+></term>
+    <listitem>
+      <para
+>Ao avançar para o campo de data de uma transação (seja criando ou editando uma transação, ou usando &Tab; ou &Enter;), este menu suspenso determina se o cursor começará na parte do dia, mês ou ano da data. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><guilabel
+>Estado padrão da reconciliação</guilabel
+></term>
+    <listitem>
+      <para
+>Este menu suspenso permite selecionar o estado de reconciliação padrão para novas transações: Não reconciliada, Compensada ou Reconciliada. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><guilabel
+>Preencher automaticamente</guilabel
+></term>
+    <listitem>
+      <para
+>Esta opção permite selecionar o comportamento desejado para o preenchimento automático. Isso controla quais transações anteriores, se houver, para o mesmo beneficiário são exibidas e quais dessas transações, se houver, são usadas para preencher automaticamente os detalhes da nova transação. </para>
+
+      <itemizedlist>
+        <listitem>
+          <para
+>Não preencher automaticamente</para>
+          <para
+>Isso desativará o preenchimento automático e você deverá inserir manualmente todos os detalhes para a nova transação. </para>
+        </listitem>
+        
+        <listitem>
+          <para
+>Mesma transação se a diferença do montante for menor que o porcentual abaixo</para>
+          <para
+>Com esta opção selecionada, ao inserir uma nova transação, o &kmymoney; exibirá uma lista de transações anteriores para o mesmo beneficiário e conta. Se o valor de uma transação anterior for suficientemente próximo do valor que você inseriu, será considerado uma correspondência e os detalhes dessa transação anterior serão usados ​​para preencher automaticamente os detalhes da nova transação. <quote
+>Suficientemente próximo</quote
+> significa dentro da porcentagem especificada na caixa ao lado de <guilabel
+>Mesma transação se o valor diferir menos de</guilabel
+> e pode variar de 0 a 100%. Se a porcentagem for 0, todas as transações anteriores para o beneficiário e a conta serão exibidas e você poderá selecionar uma dessas transações para usar no preenchimento automático clicando nela. </para>
+        </listitem>
+
+        <listitem>
+          <para
+>Com a transação anterior mais usada para o beneficiário</para>
+          <para
+>Com esta opção selecionada, ao inserir uma nova transação, o &kmymoney; irá preencher todos os detalhes da transação com base na transação mais utilizada anteriormente para o beneficiário selecionado. </para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><guilabel
+>Usar os memorandos da transação anterior</guilabel
+></term>
+    <listitem>
+      <para
+>Quando selecionada, o memorando da transação inserida anteriormente será automaticamente inserida como memorando da nova transação. </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+</sect2>
+
+<sect2 id="details.settings.register.import"
+><title
+>Aba Importar</title>
+<variablelist>
+  <varlistentry>
+    <term
+><guilabel
+>Corresponder à transação dentro do período em dias</guilabel
+></term>
+    <listitem>
+      <para
+>Procura por transações correspondentes dentro do período da transação importada +/- os dias indicados, cujo valor pode ser definido de 0 a 99. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><guilabel
+>Solicitar uma nova categoria padrão do beneficiário</guilabel
+></term>
+    <listitem>
+      <para
+>Se esta opção estiver selecionada, sempre que for detectado um novo beneficiário durante uma importação, será pedido ao usuário a categoria padrão do beneficiário. </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+</sect2>
+</sect1>
+
+<sect1 id="details.settings.schedules"
+><title
+>Transações agendadas</title>
+<para
+>Estas opções permitem-lhe modificar o comportamento das <link linkend="details.schedules"
+>Transações agendadas</link
+>. </para>
+
+<sect2
+><title
+>Opções de inicialização</title>
+<variablelist>
+  <varlistentry>
+    <term
+><guilabel
+>Verificar os eventos recorrentes ao iniciar</guilabel
+></term>
+    <listitem>
+      <para
+>Permite verificar o agendamento na inicialização do &kmymoney;. Se uma transação agendada corresponder aos critérios de agendamento definidos, o &kmymoney; gerará uma notificação exigindo o processamento da transação. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <guilabel
+>Inserir as transações com este número de dias de antecedência</guilabel>
+    </term>
+    <listitem>
+      <para
+>Indicar com quantos dias de avanço deverá ser inserida uma transação agendada. </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+</sect2>
+
+<sect2 id="details.settings.schedules.calendar"
+><title
+>Dias de processamento</title>
+<variablelist>
+  <varlistentry>
+    <term
+><guilabel
+>Usar o calendário de feriados da região</guilabel
+></term>
+    <listitem>
+      <para
+>Selecione a região do mundo que melhor atenda às suas necessidades.</para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+</sect2>
+
+<sect2
+><title
+>Item desagrupado</title>
+<!-- FIXME: This is a good example of problems with the current mix of sectX and variablelist.  Without a title, this
+     sect has inadequate spacing above.  so it looks part of the previous group, but the actual title doesn't match the
+     lack of title in the actual config dialog.  I'm open to suggestions on how to deal with this.  Not using sect2 for
+     boxes might help, but would be a lot of effort.  Perhaps just adding a box and title to the config dialog?-->
+<literallayout
+>
+</literallayout>
+<variablelist>
+  <varlistentry>
+    <term
+><guilabel
+>Dias de antecipação dos agendamentos no registro</guilabel
+></term>
+    <listitem>
+      <para
+>Especifique com quantos dias de antecedência as transações agendadas devem aparecer no livro de registro. Para transações agendadas futuras exibidas no livro de registro, você pode adicioná-las ou ignorá-las clicando com o botão direito do mouse. </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+</sect2>
+</sect1>
+
+<sect1 id="details.settings.onlinequote"
+><title
+>Cotações online</title>
+<para
+>Essas configurações determinam como as cotações de preços são obtidas de diferentes fontes online. Isso inclui preços de ações, títulos e outros ativos, bem como preços de metais preciosos e conversão de moedas. </para>
+
+<para
+>Esta seção permite-lhe alterar as fontes de cotações online a serem usadas no &kmymoney;. De modo geral, esta é uma opção avançada, devendo ser alterada apenas por usuários mais técnicos. </para>
+
+<para
+>Para mais detalhes, consulte a seção sobre as <link linkend="details.investments.onlinequotes"
+>Cotações de preços online</link
+>. </para>
+
+<note>
+  <para
+>A lista inicial e a configuração das fontes de cotação online são definidas quando o &kmymoney; cria seu arquivo de dados pela primeira vez. Se uma fonte online sofrer uma alteração que exija uma mudança nessas configurações para que o &kmymoney; continue a usá-la como uma fonte válida, o usuário deverá fazer as alterações necessárias usando esta caixa de diálogo, com base nas instruções publicadas em uma das <link linkend="firsttime.contact"
+>opções de suporte</link
+> sugeridas. Esperamos que, em um futuro próximo, a forma como a configuração da fonte online é gerenciada seja alterada para que o &kmymoney; possa buscar automaticamente quaisquer atualizações necessárias nessas configurações, sem exigir que o usuário faça edições manuais. </para>
+</note>
+</sect1>
+
+<sect1 id="details.settings.colors"
+><title
+>Cores</title>
+<para
+>Esta seção permite personalizar as cores usadas no &kmymoney;. Se <guilabel
+>Cores personalizadas</guilabel
+> não estiver selecionado, as cores padrão serão usadas. </para>
+
+<para
+>Para personalizar as cores, marque a caixa de seleção <guilabel
+>Cores personalizadas</guilabel
+>. Você pode modificar qualquer uma das cores clicando no botão de cor, que abrirá a paleta de seleção de cores. Isso fornecerá opções ilimitadas na seleção de cores. Você pode selecionar uma cor básica definida, escolher uma cor clicando em qualquer lugar na paleta de cores exibida, inserir uma cor definida em &HTML; ou especificar valores para Matiz, Saturação, Valor, Vermelho, Verde e Azul. </para>
+</sect1>
+
+<sect1 id="details.settings.fonts"
+><title
+>Fontes</title>
+<para
+>Esta seção permite modificar as fontes usadas nos campos de Célula ou Cabeçalho. </para>
+
+<variablelist>
+  <varlistentry>
+    <term
+><guilabel
+>Usar as fontes do sistema</guilabel
+></term>
+    <listitem>
+      <para
+>Selecione isto para usar as fontes do sistema. Desmarcar esta opção possibilita que você escolha as fontes. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><guilabel
+>Fonte das células</guilabel
+></term>
+    <listitem>
+      <para
+>Indique a fonte personalizada a usar em cada célula dos livros de registros.</para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+><guilabel
+>Fonte do cabeçalho</guilabel
+></term>
+    <listitem>
+      <para
+>Indique a fonte personalizada a usar nos cabeçalhos de cada área do livro de registros. </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+</sect1>
+
+<sect1 id="details.settings.icons"
+><title
+>Ícones</title>
+<para
+>Esta opção permite a seleção dos ícones que serão exibidos. </para>
+
+<variablelist>
+  <varlistentry>
+    <term
+><guilabel
+>Configurações individuais dos ícones</guilabel
+></term>
+    <listitem>
+      <para
+>A lista suspensa apresenta uma seleção de temas de ícones disponíveis para uso. Ícones adicionais podem estar disponíveis para download e uso, dependendo do sistema operacional ou da distribuição &Linux; instalada. </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+</sect1>
+
+<sect1 id="details.settings.plugins"
+><title
+>Plugins</title>
+<para
+>Esta seção fornece informações sobre os plugins disponíveis e permite que você modifique o comportamento de alguns deles. Observe que a lista de plugins exibida dependerá de quais plugins foram encontrados quando o &kmymoney; foi iniciado. Não importa se o plugin foi compilado como parte do aplicativo ou adicionado como um pacote separado. </para>
+  
+<screenshot>
+  <screeninfo
+>Configuração do KMyMoney, plugins</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="configure_plugins.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Configuração do KMyMoney, plugins</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<para
+>Cada plugin pode ser ativado ou desativado, de acordo com o estado da caixa de seleção à esquerda do nome e ícone do plugin. Além disso, à direita, há um botão de <guibutton
+>Informações</guibutton
+> &infoicon; para cada plugin, que exibirá a versão e o(s) autor(es). Para alguns plugins, informações adicionais sobre configuração e uso podem ser encontradas clicando em &configicon; <guibutton
+>Configurar</guibutton
+> à esquerda do botão de informações. </para>
+
+<para
+>Até recentemente, havia apenas um plugin que exigia configuração, o plugin de impressão de cheques. Agora, existem vários plugins que possuem páginas de configuração que são acessadas a partir desta página. Estes estão listados nas seções seguintes. Observe, no entanto, que muitos deles já foram descritos anteriormente neste documento. </para>
+
+<sect2 id="details.settings.plugins.printchecks"
+><title
+>Plugin de impressão de cheques</title>
+<para
+>Existe um plugin para impressão de cheques, incluído no código-fonte do &kmymoney;, e que deve estar sempre ativado. Ele permite a impressão de um cheque com base nos dados de uma transação selecionada, com o layout controlado por um modelo &HTML;. Você precisa usar um modelo que combine com seus cheques pré-impressos. Um modelo padrão integrado é fornecido. Você também pode escolher um modelo personalizado. Para isso, clique em &configicon; <guibutton
+>configurar</guibutton
+> para exibir a caixa de diálogo de configuração <guilabel
+>Impressão de cheques</guilabel
+>. Na parte superior, você pode marcar a caixa para usar um modelo personalizado. À direita, há um botão que abre um seletor de arquivos para escolher um arquivo de modelo alternativo. </para>
+
+<para
+>Um arquivo de modelo é um arquivo &HTML;, no qual strings específicas são usadas para referenciar campos da transação e da conta corrente e instituição para mostrar onde eles serão impressos no cheque. O &kmymoney; é fornecido com um modelo padrão integrado. Em <ulink url="https://invent.kde.org/office/kmymoney/-/blob/master/kmymoney/plugins/checkprinting/templates/"
+> este endereço</ulink
+>, você pode encontrar o arquivo fonte HTML do modelo padrão, bem como alguns modelos adicionais. Você poderá usar um deles ou modificar um para atender às suas necessidades. Observe que apenas um <emphasis
+>subconjunto</emphasis
+> do padrão HTML é suportado — a documentação detalhada sobre isso pode ser encontrada <ulink url="https://doc.qt.io/qt-5/richtext-html-subset.html"
+>aqui</ulink
+>. </para>
+
+<!-- FIXME: do we want to actually include these checkwriting variables here, and if
+           so, with how much detail? -->
+<!-- info from source code on substitution variables.  Future exercise to list/describe them here.
+    // data about the user
+    checkHTML.replace("$OWNER_NAME", file->user().name());
+    checkHTML.replace("$OWNER_ADDRESS", file->user().address());
+    checkHTML.replace("$OWNER_CITY", file->user().city());
+    checkHTML.replace("$OWNER_STATE", file->user().state());
+
+    // data about the account's institution
+    checkHTML.replace("$INSTITUTION_NAME", institution.name());
+    checkHTML.replace("$INSTITUTION_STREET", institution.street());
+    checkHTML.replace("$INSTITUTION_TELEPHONE", institution.telephone());
+    checkHTML.replace("$INSTITUTION_TOWN", institution.town());
+    checkHTML.replace("$INSTITUTION_CITY", institution.city());
+    checkHTML.replace("$INSTITUTION_POSTCODE", institution.postcode());
+    checkHTML.replace("$INSTITUTION_MANAGER", institution.manager());
+
+    // data about the transaction
+    checkHTML.replace("$DATE", KGlobal::locale()->formatDate(QDate::currentDate(), KLocale::LongDate));
+    checkHTML.replace("$CHECK_NUMBER", (*it).split().number());
+    checkHTML.replace("$PAYEE_NAME", file->payee((*it).split().payeeId()).name());
+    checkHTML.replace("$PAYEE_ADDRESS", file->payee((*it).split().payeeId()).address());
+    checkHTML.replace("$PAYEE_CITY", file->payee((*it).split().payeeId()).city());
+    checkHTML.replace("$PAYEE_POSTCODE", file->payee((*it).split().payeeId()).postcode());
+    checkHTML.replace("$PAYEE_STATE", file->payee((*it).split().payeeId()).state());
+    checkHTML.replace("$AMOUNT_STRING", converter.convert((*it).split().shares().abs()));
+    checkHTML.replace("$AMOUNT_DECIMAL", MyMoneyUtils::formatMoney((*it).split().shares().abs(), currency));
+    checkHTML.replace("$MEMO", (*it).split().memo());
+-->
+</sect2>
+
+<sect2 id="details.settings.plugins.csvimporter"
+><title
+>Importador CSV</title>
+<para
+>Alguns aspectos da configuração do plugin CSV Importer já foram discutidos <link linkend="details.settings.plugins.csvimporter"
+>aqui</link
+>. No entanto, também existe uma caixa de diálogo que pode ser invocada aqui. </para>
+
+<screenshot>
+  <screeninfo
+>configurar plugin do importador csv</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="config_plugins_csvimporter.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>configurar plugin do importador csv</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<sect3
+><title
+>Detectar automaticamente</title>
+<para
+>Geralmente, é melhor deixar o plugin detectar automaticamente o delimitador de campo, o símbolo decimal e o formato de data. No entanto, é possível desativar esse comportamento para cada um desses itens desmarcando a caixa correspondente. </para>
+
+<para
+>Em alguns casos, um arquivo CSV a ser importado contém o nome da conta em algum lugar nas primeiras linhas do arquivo. Você pode solicitar que o plugin procure isso automaticamente marcando a caixa apropriada, separadamente para importações bancárias e de investimentos. </para>
+</sect3>
+
+<sect3
+><title
+>Perfil de exportação do QIF</title>
+<para
+>Embora seja atualmente melhor usar o plugin de exportação QIF diretamente, ainda é possível fazer com que o Importador CSV exporte um arquivo QIF. Nesse caso, você pode usar este menu suspenso para selecionar o perfil de exportação QIF padrão. </para>
+</sect3>
+</sect2>
+
+<sect2 id="details.settings.plugins.forecast"
+><title
+>Vista de Previsão</title>
+<para
+>Isso é descrito na seção <link linkend="details.forecast.configure"
+>Configurando a Previsão</link
+> do <link linkend="details.forecast"
+>Capítulo de Previsão.</link
+> </para>
+</sect2>
+
+<sect2
+><title
+>iCalendar</title>
+<para
+>O &kmymoney; é capaz de exportar um arquivo no formato <quote
+>iCalendar</quote
+> para que você possa importar suas transações agendadas para o &korganizer; ou outro programa de calendário, para que você possa receber lembretes de transações agendadas. A exportação do arquivo é feita através do item de menu <menuchoice
+> <guimenu
+>Arquivo</guimenu
+> <guisubmenu
+>Exportar</guisubmenu
+> <guimenuitem
+>Agendamentos para iCalendar</guimenuitem
+> </menuchoice
+>. </para>
+
+<screenshot>
+  <screeninfo
+>configurar exportação para icalendar</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="config_plugins_ical.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>configurar exportação para icalendar</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<para
+>O arquivo exportado conterá um evento para cada transação agendada. Existem controles para configurar se o calendário deve exibir lembretes para os eventos, bem como quantos lembretes e com quanta antecedência os lembretes serão criados, embora atualmente pareça que esses controles não têm nenhum efeito no arquivo criado. </para>
+
+<para
+>O último campo da caixa de diálogo permite que você especifique o nome padrão e o caminho do arquivo exportado. Como de costume, você pode digitar o caminho completo ou clicar no ícone de seleção de arquivo à direita para abrir a caixa de diálogo de seleção de arquivo. Atualmente, a caixa de diálogo de salvar arquivo usa como padrão a pasta especificada aqui, mas você ainda precisa inserir o nome real do arquivo no momento da exportação. </para>
+</sect2>
+
+<!-- FIXME: There is some overlap between here and the Reference/Settings section.
+            There should be better coordination between the two areas.  -->
+<sect2 id="details.settings.plugins.kbanking"
+><title
+>KBanking</title>
+
+<para
+>Este plugin adiciona suporte para HBCI/FinTs, OFX e serviços bancários online do PayPal usando o <ulink url="https://www.aquamaniac.de/rdm/"
+>AqBanking</ulink
+>, que é um projeto de código aberto independente. A comunicação entre HBCI/FinTs e bancos é feita apenas na Alemanha. </para>
+
+<para
+>A configuração deste plugin não é feita através desta caixa de diálogo, mas sim através do item de menu <link linkend="reference.menus.settings.help"
+> <guimenu
+>Configurações</guimenu
+> <guisubmenu
+>Configurar Aqbanking...</guisubmenu
+> </link
+>, onde encontrará mais informações. </para>
+</sect2>
+
+<sect2
+><title
+>Exportador QIF, Importador QIF</title>
+<para
+>Esses recursos são descritos na seção <link linkend="details.impexp.qif.profile"
+>Perfis QIF</link
+>. Conforme apontado nessa seção, a Importação QIF e a Exportação QIF são implementadas como plugins separados, mas ambas utilizam o mesmo conjunto de perfis. </para>
+</sect2>
+
+<sect2 id="details.settings.plugins.reports"
+><title
+>Vista de Relatórios</title>
+<para
+>Isso fornece uma caixa de diálogo onde você pode configurar alguns valores padrão a serem usados ​​ao exibir <link linkend="details.reports"
+>Relatórios</link
+>. Os detalhes são descritos com as outras configurações de <link linkend="details.reports.config.plugin"
+>Configuração do Relatório</link
+>. </para>
+</sect2>
+
+<sect2
+><title
+>Armazenamento XML</title>
+<para
+>O armazenamento padrão dos seus dados é no formato &XML;, descrito no capítulo sobre <link linkend="details.formats"
+>Formatos de arquivo</link
+>. Como o código que lê e salva seus dados é implementado como um plugin, a caixa de diálogo de configuração que controla alguns aspectos desse armazenamento é acessada pela seção Plugin da configuração geral do KMyMoney, embora também seja descrita na seção mencionada acima. </para>
+</sect2>
+</sect1>
+</chapter>

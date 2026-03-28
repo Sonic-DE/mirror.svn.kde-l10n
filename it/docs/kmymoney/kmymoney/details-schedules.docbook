@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter id="details.schedules">
+<chapterinfo>
+  <authorgroup>
+    <author
+>&Roger.Lum; &Roger.Lum.mail; </author>
+    <author
+>&Michael.T.Edwardes; &Michael.T.Edwardes.mail; </author>
+    <author
+>&Michael.Carpino; &Michael.Carpino.mail;</author>
+    <author
+>&Jack.H.Ostroff; &Jack.H.Ostroff.mail; </author>
+  </authorgroup>
+  <date
+>1/12/2024</date>
+  <releaseinfo
+>5.2.0</releaseinfo>
+</chapterinfo>
+<title
+>Pianificazioni</title>
+
+<sect1 id="details.schedules.intro"
+><title
+>Introduzione</title>
+<para
+>Le pianificazioni mantengono informazioni sulle transazioni che avvengono una o più volte in un certo intervallo di tempo. </para>
+
+<para
+>A volte chiamata transazione pianificata o transazione ricorrente, una pianificazione consente di registrare informazioni su una transazione che avviene regolarmente. Puoi pianificare transazioni di deposito, trasferimento, prelievo e prestito. Le pianificazioni offrono molta flessibilità, comprese transazioni che si verificano una sola volta o con una cadenza di un certo numero di giorni, settimane, metà mese, mesi o anni. </para>
+
+<para
+>Poiché sai che queste transazioni avvengono regolarmente, siano esse pagamenti ricevuti o pagamenti effettuati verso qualcun altro, puoi creare una pianificazione per registrare le informazioni sui dettagli ricorrenti, semplificando e ricordando facilmente quando si verificherà il prossimo evento. </para>
+
+<para
+>Le pianificazioni possono essere create per identificare il denaro in entrata o in uscita dai proprio conti con regolarità. Spese comuni, come le bollette, le tasse, l'assicurazione, le carte di credito, le quote associative, gli interessi, i prestiti, le rate del mutuo e gli affitti. La pianificazione di un pagamento come quelli elencati fornisce un utile promemoria per gestire in modo opportuno gli impegni finanziari attesi. </para>
+
+<para
+>Una pianificazione consiste di due parti principali: i dati della transazione e i dati della pianificazione. I dati della pianificazione indicano le occorrenze della pianificazione, cioè quando e come deve essere inserita nel registro. I dati della transazione indicano i normali dettagli della transazione, incluse opzioni per metodo di pagamento, conto, pagamento a/da, categoria, etichette, promemoria, data di scadenza, importo e stato. Inoltre, è possibile selezionare opzioni aggiuntive in base a quando si desidera elaborare la transazione. </para>
+</sect1>
+
+<sect1 id="details.schedules.type"
+><title
+>Tipi di pianificazioni</title>
+<para
+>Ci sono quattro diversi tipi di pianificazioni in &kmymoney;: </para>
+
+<formalpara
+><title
+>Depositi</title>
+<para
+>Queste pianificazioni riguardano il denaro che entra nel tuo conto, come uno stipendio, un bonus o interessi. </para>
+</formalpara>
+
+<formalpara
+><title
+>Addebiti/Prelevamenti</title>
+<para
+>Si tratta di denaro in uscita dal tuo conto, ad esempio per un abbonamento, una bolletta, il pagamento delle tasse o la registrazione di un'auto. </para>
+</formalpara>
+
+<formalpara
+><title
+>Trasferimento</title>
+<para
+>Si tratta di denaro che esce da un conto e va a finire su un altro, ad esempio quando si effettua un pagamento con carta di credito dal proprio conto corrente. </para>
+</formalpara>
+
+<formalpara
+><title
+>Prestiti</title>
+<para
+>Si tratta di un tipo speciale di pianificazione, che viene creato quando si crea un <link linkend="details.loans"
+>conto di prestito</link
+>. </para>
+</formalpara>
+</sect1>
+
+<sect1 id="details.schedules.view"
+><title
+>La vista delle pianificazioni</title>
+<para
+>Aprire la vista delle pianificazioni facendo clic sull'icona <guiicon
+> <inlinemediaobject
+> <imageobject
+> <imagedata fileref="schedule_view.png" format="PNG"/></imageobject
+> </inlinemediaobject
+> </guiicon
+> delle transazioni pianificate nel selettore della vista. </para>
+
+<screenshot>
+  <screeninfo
+>vista delle pianificazioni</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="scheduleview.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>vista delle pianificazioni</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+	
+<para
+>La vista delle pianificazioni è composta da una singola area di visualizzazione con il pulsante <guibutton
+>Nuova pianificazione...</guibutton
+> e la casella di testo <guilabel
+>Filtro</guilabel
+> sopra di esso. </para>
+	
+<para
+>Per creare una nuova pianificazione, fare clic su <guibutton
+>Nuova pianificazione</guibutton
+>. &kmymoney; visualizzerà la finestra di creazione della nuova pianificazione, che può essere utilizzata per creare una pianificazione di deposito, trasferimento o fattura/prelievo. Le pianificazioni di prestito sono gestite in modo diverso, come descritto nella sezione <link linkend="details.loans"
+>Prestiti</link
+> di questo manuale. </para>
+</sect1>
+
+<sect1 id="details.schedules.new"
+><title
+>La finestra Nuova pianificazione</title>
+<screenshot>
+  <screeninfo
+>finestra Nuova pianificazione</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="newsched_numbered.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>finestra Nuova pianificazione</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+	
+<para
+>Viene visualizzata una finestra di dialogo Nuova pianificazione, che richiede l'inserimento dei dettagli relativi alla pianificazione e alla transazione. I dati richiesti includono ciò che segue: </para>
+
+<orderedlist numeration="upperalpha">
+  <listitem
+><para
+>Nome della pianificazione</para
+></listitem>
+  <listitem
+><para
+>Prossima data di scadenza</para
+></listitem>
+  <listitem
+><para
+>Frequenza</para
+></listitem>
+  <listitem
+><para
+>Metodo pagamento</para
+></listitem>
+  <listitem
+><para
+>Importo</para
+></listitem>
+  <listitem
+><para
+>Altri dettagli della transazione</para
+></listitem>
+  <listitem
+><para
+>Opzioni di pianificazione</para
+></listitem>
+</orderedlist>
+
+<sect2
+><title
+>Completare le informazioni relative al nome della pianificazione, frequenza e pagamento.</title>
+<para
+>Digitare il nome della pianificazione e la data della prossima occorrenza nei rispettivi campi. Il nome è il modo in cui la pianificazione sarà etichettata nella vista delle pianificazioni e in altre viste. Specificare quanto spesso si verificherà la pianificazione, utilizzando il campo Frequenza e l'elenco a tendina. Se il menu a tendina è impostato su <quote
+>Una volta</quote
+>, il campo Frequenza sarà disabilitato. Altrimenti, il menu a tendina indica un intervallo di tempo e la transazione avverrà ogni <emphasis
+>Frequenza</emphasis
+> occorrenze di quell'intervallo. Notare che alcuni intervalli possono essere indicati in più di un modo, come 6 x «settimanale» o 3 x «ogni due settimane» o 2 x «ogni tre settimane». Non è possibile indicare frazioni di un intervallo, come due volte al mese; è necessario utilizzare un intervallo più breve, come 1 x «ogni mezzo mese». </para>
+
+<para
+>Se l'importo varia da transazione a transazione, assicurati di marcare la casella di selezione <guilabel
+>L'importo è una stima perché varia per ogni pagamento</guilabel
+> nell'area <guilabel
+>Opzioni</guilabel
+> sottostante e ti sarà richiesto l'importo corretto quando viene inserito nel registro. L'importo viene inserito come numero positivo nel campo <guilabel
+>Pagamento</guilabel
+> o <guilabel
+>Deposito</guilabel
+>. Gli altri campi obbligatori in quest'area sono Conto e Categoria. Il menu a tendina <guilabel
+>Stato</guilabel
+> indica lo stato della transazione quando &kmymoney; la inserisce nel registro. I campi rimanenti in questa sezione sono facoltativi. </para>
+</sect2>
+
+<sect2
+><title
+>Modificare la sezione Opzioni di pianificazione</title>
+<para
+>Il menu a tendina <guilabel
+>Se questa pianificazione si verifica in una data di non elaborazione:</guilabel
+> consente di scegliere come gestire i giorni di non elaborazione. I giorni di non elaborazione includono i fine settimana e le festività note a &kmymoney; per la regione specificata nell'<link linkend="details.settings.schedules.calendar"
+>opzione di configurazione appropriata</link
+>. Se la pianificazione si verifica in un giorno di non elaborazione, è possibile scegliere se <guilabel
+>Non modificare la data</guilabel
+>, <guilabel
+>Modificare la data al giorno di elaborazione precedente</guilabel
+> o <guilabel
+>Modificare la data al giorno di elaborazione successivo</guilabel
+>. Questa opzione è disponibile per replicare parte dell'elaborazione operativa aziendale del mondo reale. </para>
+
+<para
+>La casella di selezione <guilabel
+>L'importo è una stima perché varia per ogni pagamento</guilabel
+> consente di selezionare se &kmymoney; inserisce automaticamente tale importo nel registro o se richiede l'importo effettivo alla scadenza del pagamento. </para>
+
+<para
+>La casella di selezione <guilabel
+>Non modificare l'importo della categoria, ma modifica il tasso di cambio della transazione</guilabel
+> può essere utilizzata quando la pianificazione riguarda un conto e una categoria con valute diverse. Se non è selezionata, l'importo specificato è utilizzato quando la transazione viene inserita nel registro. Selezionando la casella si comunica a &kmymoney; che l'importo è specificato nella valuta della categoria. Sarà comunque necessario confermare l'altro valore o il tasso di conversione quando la transazione viene inserita nel registro. </para>
+
+<para
+>La casella di selezione <guilabel
+>Elabora questa pianificazione sempre l'ultimo giorno del mese</guilabel
+> consente di pianificare l'elaborazione di date di fine mese irregolari. </para>
+
+<para
+>La casella di selezione <guilabel
+>Inserisci automaticamente questa pianificazione nel registro quando è dovuta</guilabel
+> indica a &kmymoney; di immettere la transazione nel registro alla data corretta senza intervento umano. Altrimenti, quando la transazione deve essere immessa, &kmymoney; aprirà una finestra che chiederà di confermare che si desidera che venga immessa. Questo comportamento è configurabile e maggiori informazioni sono disponibili nella sezione <link linkend="details.settings.schedules"
+>Impostazioni</link
+>. </para>
+
+<para
+>Se sai che la pianificazione non continuerà indefinitamente, seleziona <guilabel
+>Questa pianificazione terminerà a un certo punto</guilabel
+> e puoi inserire <guilabel
+>Numero di transazioni rimanenti:</guilabel
+> o <guilabel
+>Data della transazione finale</guilabel
+>. </para>
+
+<para
+>Quando hai inserito tutte le informazioni necessarie, fai clic su <guibutton
+>OK</guibutton
+> per continuare. </para>
+</sect2>
+</sect1>
+
+<sect1 id="details.schedules.edit"
+><title
+>Modifica delle pianificazioni</title>
+<para
+>Per modificare una pianificazione, selezionare la voce dall'elenco e fare clic con il tasto destro del mouse e selezionare <guimenuitem
+>Modifica transazione pianificata</guimenuitem
+> nel menu contestuale. Sarà aperta una finestra simile a <guilabel
+>Nuova transazione pianificata</guilabel
+>, che permette di aggiornare i dati necessari. </para>
+</sect1>
+
+<sect1 id="details.schedules.delete"
+><title
+>Eliminazione di pianificazioni</title>
+<para
+>Per eliminare una pianificazione, selezionare la voce dall'elenco e fare clic con il tasto destro del mouse e selezionare <guimenuitem
+>Elimina transazione pianificata</guimenuitem
+> nel menu contestuale. </para>
+<warning
+><para
+>Nota che mentre molte azioni in &kmymoney; possono essere annullate, questo non vale per l'eliminazione di una pianificazione. Se elimini una pianificazione e ti rendi conto che non volevi farlo, dovrai ricrearla completamente da zero. </para
+></warning>
+</sect1>
+
+<sect1 id="details.schedules.duplicate"
+><title
+>Duplicare le pianificazioni</title>
+<para
+>Per duplicare una pianificazione, selezionare la voce dall'elenco e fare clic con il tasto destro del mouse e selezionare <guimenuitem
+>Duplica transazione pianificata</guimenuitem
+> nel menu contestuale. </para>
+</sect1>
+
+<sect1 id="details.schedules.entering"
+><title
+>Inserimento di transazioni pianificate</title>
+<para
+>L'inserimento di una transazione pianificata consiste nella creazione della transazione nel registro appropriato, utilizzando i dettagli specificati nella pianificazione. Le transazioni pianificate possono essere inserite in uno di tre modi diversi: </para>
+
+<itemizedlist>
+  <listitem>
+    <para
+>Manualmente, facendo clic con il pulsante destro del mouse sulla voce nella vista delle pianificazioni e selezionando <guilabel
+>Inserisci transazione successiva</guilabel
+> nel menu contestuale. </para>
+  </listitem>
+
+  <listitem>
+    <para
+>&kmymoney; può inserire le transazioni pianificate all'avvio, con o senza la tua interazione. </para>
+  </listitem>
+  <listitem>
+    <para
+>&kmymoney; può inserirle, con la tua interazione, quando si usa l'online banking o si importa un estratto conto. </para>
+  </listitem>
+</itemizedlist>
+
+<sect2
+><title
+>Conferma della transazione da inserire</title>
+<para
+>Il primo e il terzo metodo visualizzeranno una finestra <guilabel
+>Inserisci transazione pianificata</guilabel
+> (probabilmente dopo aver visualizzato una finestra informativa sul processo). Questa finestra richiede di confermare o aggiornare le informazioni richieste immesse quando è stata creata la pianificazione. </para>
+
+<screenshot>
+  <screeninfo
+>inserire la transazione pianificata</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="enterschedule.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>inserire la transazione pianificata</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<para
+>Queste informazioni possono essere modificate, e i cambiamenti possono essere applicati solo a un'istanza della pianificazione o a tutte le transazioni successive. Dopo aver controllato che i dati siano corretti, un clic su <guibutton
+>OK</guibutton
+> aggiungerà la transazione al registro e aggiornerà la prossima data di scadenza della pianificazione alla prossima occorrenza. Se si sono modificati i dati della transazione viene visualizzata un'ulteriore conferma, in modo da poter scegliere di accettare o annullare le modifiche. </para>
+
+<screenshot>
+  <screeninfo
+>confermare le modifiche alle transazioni manuali</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="confirm_enter.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>confermare le modifiche alle transazioni manuali</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<para
+>Selezionare quello che si vuole fare con le informazioni visualizzate e premere <guibutton
+>OK</guibutton
+> o <guibutton
+>Annulla</guibutton
+>. </para>
+</sect2>
+
+<sect2
+><title
+>Lasciare che &kmymoney; inserisca le transazioni pianificate al proprio posto</title>
+<para
+>In alternativa, &kmymoney; può controllare le transazioni pianificate scadute all'avvio e inserirle automaticamente, se si seleziona l'opzione appropriata alla creazione della pianificazione. </para>
+
+<para
+>Se l'opzione non è stata selezionata, &kmymoney; aprirà la finestra menzionata sopra e potrai seguire i passi indicati. &kmymoney; aprirà la finestra anche se l'importo è una stima, in modo da poter inserire l'importo effettivo. </para>
+
+<para
+>È anche possibile impostare &kmymoney; in modo da non controllare le transazioni pianificate all'avvio, deselezionando l'opzione relativa nella finestra Impostazioni. Tutte le transazioni scadute saranno visualizzate nella vista Inizio, permettendone l'inserimento manuale. </para>
+</sect2>
+</sect1>
+</chapter>
+

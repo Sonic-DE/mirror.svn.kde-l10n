@@ -1,0 +1,1747 @@
+# Translation of katepart_regular-expressions.po to Ukrainian
+# Copyright (C) 2008-2020 This_file_is_part_of_KDE
+# This file is distributed under the license LGPL version 2.1 or
+# version 3 or later versions approved by the membership of KDE e.V.
+#
+# Yuri Chornoivan <yurchor@ukr.net>, 2008, 2009, 2010, 2011, 2013, 2016, 2019, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: katepart_regular-expressions\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 12:04+0000\n"
+"PO-Revision-Date: 2020-10-02 07:52+0300\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-KDE-DocBook-SVN-URL: trunk/KDE/kdesdk/doc/kate/regular-expressions."
+"docbook\n"
+"X-KDE-DocBook-SVN-Changed-Revision: 608839\n"
+"X-KDE-Associated-UI-Catalogs: \n"
+"X-Generator: Lokalize 20.11.70\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+
+#. Tag: author
+#: regular-expressions.docbook:4
+#, no-c-format
+msgid "&Anders.Lund; &Anders.Lund.mail;"
+msgstr "&Anders.Lund; &Anders.Lund.mail;"
+
+#. Tag: trans_comment
+#: regular-expressions.docbook:5
+#, no-c-format
+msgid "ROLES_OF_TRANSLATORS"
+msgstr ""
+"<othercredit role=\"translator\"><firstname>Юрій</"
+"firstname><surname>Чорноіван</"
+"surname><affiliation><address><email>yurchor@ukr.net</email></address></"
+"affiliation><contrib>Переклад українською</contrib></othercredit>"
+
+#. Tag: title
+#: regular-expressions.docbook:9
+#, no-c-format
+msgid "Regular Expressions"
+msgstr "Формальні вирази"
+
+#. Tag: synopsis
+#: regular-expressions.docbook:11
+#, no-c-format
+msgid ""
+"This Appendix contains a brief but hopefully sufficient and\n"
+"covering introduction to the world of <emphasis>regular\n"
+"expressions</emphasis>. It documents regular expressions in the form\n"
+"available within &kappname;, which is not compatible with the regular\n"
+"expressions of perl, nor with those of for example\n"
+"<command>grep</command>."
+msgstr ""
+"У цьому додатку наведено короткий, але, як сподіваються автори, достатній і "
+"інформативний вступ до світу <emphasis>формальних виразів</emphasis>. Тут "
+"наведено документацію щодо формальних виразів у тому вигляді, у якому вони "
+"використовуються у &kappname;, і який не є сумісним ні з формальними "
+"виразами у perl, ні з формальними виразами, наприклад, у <command>grep</"
+"command>."
+
+#. Tag: title
+#: regular-expressions.docbook:15
+#, no-c-format
+msgid "Introduction"
+msgstr "Вступ"
+
+#. Tag: para
+#: regular-expressions.docbook:17
+#, no-c-format
+msgid ""
+"<emphasis>Regular Expressions</emphasis> provides us with a way to describe "
+"some possible contents of a text string in a way understood by a small piece "
+"of software, so that it can investigate if a text matches, and also in the "
+"case of advanced applications with the means of saving pieces or the "
+"matching text."
+msgstr ""
+"За допомогою <emphasis>формальних виразів</emphasis> можна описати можливий "
+"вміст рядка тексту так, щоб ваш опис був зрозумілим програмі і вона змогла "
+"визначати відповідність тексту шуканому рядку, а також, у випадку програм з "
+"додатковими можливостями, зберігати знайдені фрагменти для наступного "
+"використання."
+
+#. Tag: para
+#: regular-expressions.docbook:23
+#, no-c-format
+msgid ""
+"An example: Say you want to search a text for paragraphs that starts with "
+"either of the names <quote>Henrik</quote> or <quote>Pernille</quote> "
+"followed by some form of the verb <quote>say</quote>."
+msgstr ""
+"Приклад: припустімо, вам потрібно знайти у тексті абзаци, які починаються зі "
+"слів <quote>Іван</quote> або <quote>Франко</quote>, за якими слідує одна з "
+"форм дієслова <quote>говорити</quote>."
+
+#. Tag: para
+#: regular-expressions.docbook:28
+#, no-c-format
+msgid ""
+"With a normal search, you would start out searching for the first name, "
+"<quote>Henrik</quote> maybe followed by <quote>sa</quote> like this: "
+"<userinput>Henrik sa</userinput>, and while looking for matches, you would "
+"have to discard those not being the beginning of a paragraph, as well as "
+"those in which the word starting with the letters <quote>sa</quote> was not "
+"either <quote>says</quote>, <quote>said</quote> or so. And then of course "
+"repeat all of that with the next name..."
+msgstr ""
+"Якщо б ви виконували пошук у звичайний спосіб, ви мали б почати з пошуку "
+"імені, <quote>Іван</quote>, можливо у супроводі <quote>говори</quote>, десь "
+"так: <userinput>Іван говори</userinput>, серед відповідників вам слід би "
+"було відкинути ті, які стоять не на початку абзацу, а також ті, у яких "
+"літери <quote>говори</quote> не є літерами слів <quote>говорить</quote>, "
+"<quote>говорив</quote> тощо. Потім, звичайно ж, вам слід було б повторити "
+"пошук для прізвища..."
+
+#. Tag: para
+#: regular-expressions.docbook:37
+#, no-c-format
+msgid ""
+"With Regular Expressions, that task could be accomplished with a single "
+"search, and with a larger degree of preciseness."
+msgstr ""
+"За допомогою формальних виразів завдання з пошуку виконується в одну дію і з "
+"вищим рівнем точності."
+
+#. Tag: para
+#: regular-expressions.docbook:40
+#, no-c-format
+msgid ""
+"To achieve this, Regular Expressions defines rules for expressing in details "
+"a generalization of a string to match. Our example, which we might literally "
+"express like this: <quote>A line starting with either <quote>Henrik</quote> "
+"or <quote>Pernille</quote> (possibly following up to 4 blanks or tab "
+"characters) followed by a whitespace followed by <quote>sa</quote> and then "
+"either <quote>ys</quote> or <quote>id</quote></quote> could be expressed "
+"with the following regular expression:"
+msgstr ""
+"Щоб досягти цього, за допомогою формальних виразів визначаються правила, за "
+"допомогою яких створюється узагальнена форма рядка пошуку. У нашому прикладі "
+"це правило можна висловити буквально так: <quote>Рядок, який починається з "
+"<quote>Іван</quote> або <quote>Франко</quote> (перед цим словом може бути до "
+"4 пробілів або символів табуляції), продовжується пробілом, за яким йде "
+"слово <quote>говори</quote>, яке закінчується на <quote>ть</quote> або "
+"<quote>в</quote></quote>. Все це визначає формальний вираз:"
+
+#. Tag: userinput
+#: regular-expressions.docbook:47
+#, no-c-format
+msgid "^[ \\t]{0,4}(Henrik|Pernille) sa(ys|id)"
+msgstr "^[ \\t]{0,4}(Іван|Франко) говори(ть|в)"
+
+#. Tag: para
+#: regular-expressions.docbook:50
+#, no-c-format
+msgid ""
+"The above example demonstrates all four major concepts of modern Regular "
+"Expressions, namely:"
+msgstr ""
+"У наведеному вище прикладі продемонстровано всі чотири компоненти сучасних "
+"формальних виразів, а саме:"
+
+#. Tag: para
+#: regular-expressions.docbook:54
+#, no-c-format
+msgid "<para>Patterns</para>"
+msgstr "<para>Шаблони</para>"
+
+#. Tag: para
+#: regular-expressions.docbook:55
+#, no-c-format
+msgid "<para>Assertions</para>"
+msgstr "<para>Умовні вирази</para>"
+
+#. Tag: para
+#: regular-expressions.docbook:56
+#, no-c-format
+msgid "<para>Quantifiers</para>"
+msgstr "<para>Лічильники</para>"
+
+#. Tag: para
+#: regular-expressions.docbook:57
+#, no-c-format
+msgid "Back references"
+msgstr "Зворотні посилання"
+
+#. Tag: para
+#: regular-expressions.docbook:60
+#, no-c-format
+msgid ""
+"The caret (<literal>^</literal>) starting the expression is an assertion, "
+"being true only if the following matching string is at the start of a line."
+msgstr ""
+"Символ каретки (<literal>^</literal>) на початку виразу є умовним виразом, "
+"який визначає, що наступний рядок має розпочинати рядок у тексті."
+
+#. Tag: para
+#: regular-expressions.docbook:64
+#, no-c-format
+msgid ""
+"The strings <literal>[ \\t]</literal> and <literal>(Henrik|Pernille) sa(ys|"
+"id)</literal> are patterns. The first one is a <emphasis>character class</"
+"emphasis> that matches either a blank or a (horizontal) tab character; the "
+"other pattern contains first a subpattern matching either <literal>Henrik</"
+"literal> <emphasis>or</emphasis> <literal>Pernille</literal>, then a piece "
+"matching the exact string <literal> sa</literal> and finally a subpattern "
+"matching either <literal>ys</literal> <emphasis>or</emphasis> <literal>id</"
+"literal>"
+msgstr ""
+"Рядки <literal>[ \\t]</literal> і <literal>(Іван|Франко) говори(ть|в)</"
+"literal> є шаблонами. Перший з них визначає <emphasis>клас символів</"
+"emphasis>, до якого належить пробіл або символ горизонтальної табуляції; у "
+"другому шаблоні міститься спочатку підшаблон, який визначає рядок "
+"<literal>Іван</literal> <emphasis>або</emphasis> <literal>Франко</literal>, "
+"потім рядка <literal> говори</literal> і нарешті підшаблону, що визначає "
+"закінчення: <literal>ть</literal> <emphasis>або</emphasis> <literal>ив</"
+"literal>"
+
+#. Tag: para
+#: regular-expressions.docbook:74
+#, no-c-format
+msgid ""
+"The string <literal>{0,4}</literal> is a quantifier saying <quote>anywhere "
+"from 0 up to 4 of the previous</quote>."
+msgstr ""
+"Рядок <literal>{0,4}</literal> є лічильником, який повідомляє інструментові "
+"пошуку, що рядок знаходиться <quote>будь-де, за від 0 до 4 рядками, "
+"вказаними раніше</quote>."
+
+#. Tag: para
+#: regular-expressions.docbook:77
+#, no-c-format
+msgid ""
+"Because regular expression software supporting the concept of <emphasis>back "
+"references</emphasis> saves the entire matching part of the string as well "
+"as sub-patterns enclosed in parentheses, given some means of access to those "
+"references, we could get our hands on either the whole match (when searching "
+"a text document in an editor with a regular expression, that is often marked "
+"as selected) or either the name found, or the last part of the verb."
+msgstr ""
+"Програмне забезпечення, яке працює з формальними виразами, підтримує "
+"концепцію <emphasis>зворотних посилань</emphasis>, використання цієї "
+"концепції надає змогу зберегти повністю знайдену частину рядка або підрядки, "
+"позначені круглими дужками, а потім у певний спосіб використати ці "
+"посилання. Отже, ми можемо повністю позбутися ручної роботи з пошуку рядка "
+"(під час пошуку за допомогою формального виразу у текстовому документі, "
+"відкритому у редакторі, цей рядок буде позначено як виділений), пошуку імені "
+"або навіть фраз з різними закінченнями у дієслів."
+
+#. Tag: para
+#: regular-expressions.docbook:85
+#, no-c-format
+msgid ""
+"All together, the expression will match where we wanted it to, and only "
+"there."
+msgstr ""
+"Разом, формальний вираз визначає саме той рядок, який ми бажали знайти, і "
+"лише у потрібному місці тексту."
+
+#. Tag: para
+#: regular-expressions.docbook:88
+#, no-c-format
+msgid ""
+"The following sections will describe in details how to construct and use "
+"patterns, character classes, assertions, quantifiers and back references, "
+"and the final section will give a few useful examples."
+msgstr ""
+"У наступних розділах буде докладно описано побудову і використання шаблонів, "
+"класів символів, умовних виразів, лічильників і зворотних посилань. Нарешті "
+"у останньому розділі ви знайдете декілька корисних прикладів."
+
+#. Tag: title
+#: regular-expressions.docbook:97
+#, no-c-format
+msgid "<title>Patterns</title>"
+msgstr "<title>Шаблони</title>"
+
+#. Tag: para
+#: regular-expressions.docbook:99
+#, no-c-format
+msgid ""
+"Patterns consists of literal strings and character classes. Patterns may "
+"contain sub-patterns, which are patterns enclosed in parentheses."
+msgstr ""
+"Шаблони складаються з рядків і класів символів. У шаблонах можуть міститися "
+"підшаблони, тобто шаблони, взяті у круглі дужки."
+
+#. Tag: title
+#: regular-expressions.docbook:104
+#, no-c-format
+msgid "Escaping characters"
+msgstr "Символи керування"
+
+#. Tag: para
+#: regular-expressions.docbook:106
+#, no-c-format
+msgid ""
+"In patterns as well as in character classes, some characters have a special "
+"meaning. To literally match any of those characters, they must be marked or "
+"<emphasis>escaped</emphasis> to let the regular expression software know "
+"that it should interpret such characters in their literal meaning."
+msgstr ""
+"У шаблонах, так само як і у класах символів, певні символи мають особливе "
+"призначення. Для пошуку цих символів не за значенням, а за візуальним "
+"представленням, ці символи слід позначити або <emphasis>екранувати</"
+"emphasis>, щоб повідомити рушієві пошуку за формальним виразом, що "
+"відповідні символи слід шукати за їх візуальним представленням."
+
+#. Tag: para
+#: regular-expressions.docbook:112
+#, no-c-format
+msgid ""
+"This is done by prepending the character with a backslash (<literal>\\</"
+"literal>)."
+msgstr ""
+"Це завдання можна виконати за допомогою додавання перед символом зворотної "
+"навскісної риски (<literal>\\</literal>)."
+
+#. Tag: para
+#: regular-expressions.docbook:116
+#, no-c-format
+msgid ""
+"The regular expression software will silently ignore escaping a character "
+"that does not have any special meaning in the context, so escaping for "
+"example a <quote>j</quote> (<userinput>\\j</userinput>) is safe. If you are "
+"in doubt whether a character could have a special meaning, you can therefore "
+"escape it safely."
+msgstr ""
+"Рушій пошуку за формальним виразом без додаткових повідомлень ігноруватиме "
+"екрановані символи, які не мають спеціального призначення, отже екранування, "
+"наприклад, символу <quote>j</quote> (<userinput>\\j</userinput>) є "
+"безпечним. Якщо ви не пам’ятаєте, чи може символ мати спеціальне "
+"призначення, ви можете про всяк випадок його заекранувати."
+
+#. Tag: para
+#: regular-expressions.docbook:122
+#, no-c-format
+msgid ""
+"Escaping of course includes the backslash character itself, to literally "
+"match a such, you would write <userinput>\\\\</userinput>."
+msgstr ""
+"Екранування, звичайно ж, можна застосовувати і до самого символу зворотної "
+"навскісної риски, щоб програма сприймала введену вами зворотну навскісну "
+"риску як зворотну навскісну риску, вам слід ввести <userinput>\\\\</"
+"userinput>."
+
+#. Tag: title
+#: regular-expressions.docbook:129
+#, no-c-format
+msgid "Character Classes and abbreviations"
+msgstr "Класи символів і абревіатури"
+
+#. Tag: para
+#: regular-expressions.docbook:131
+#, no-c-format
+msgid ""
+"A <emphasis>character class</emphasis> is an expression that matches one of "
+"a defined set of characters. In Regular Expressions, character classes are "
+"defined by putting the legal characters for the class in square brackets, "
+"<literal>[]</literal>, or by using one of the abbreviated classes described "
+"below."
+msgstr ""
+"<emphasis>Клас символів</emphasis> — це вираз, якому відповідає один символ "
+"з вказаного набору символів. У формальних виразах, класи символів "
+"визначаються зазначенням дозволених символів класу у квадратних дужках, "
+"<literal>[]</literal>, або за допомогою абревіатур класів, які описано нижче."
+
+#. Tag: para
+#: regular-expressions.docbook:137
+#, no-c-format
+msgid ""
+"Simple character classes just contains one or more literal characters, for "
+"example <userinput>[abc]</userinput> (matching either of the letters "
+"<quote>a</quote>, <quote>b</quote> or <quote>c</quote>) or "
+"<userinput>[0123456789]</userinput> (matching any digit)."
+msgstr ""
+"Прості класи символів містять один або декілька буквених символів, "
+"наприклад, <userinput>[abc]</userinput> (це означає одну з літер: <quote>a</"
+"quote>, <quote>b</quote> або <quote>c</quote>) або <userinput>[0123456789]</"
+"userinput> (цей клас визначає одну цифру)."
+
+#. Tag: para
+#: regular-expressions.docbook:142
+#, no-c-format
+msgid ""
+"Because letters and digits have a logical order, you can abbreviate those by "
+"specifying ranges of them: <userinput>[a-c]</userinput> is equal to "
+"<userinput>[abc]</userinput> and <userinput>[0-9]</userinput> is equal to "
+"<userinput>[0123456789]</userinput>. Combining these constructs, for example "
+"<userinput>[a-fynot1-38]</userinput> is completely legal (the last one would "
+"match, of course, either of <quote>a</quote>,<quote>b</quote>,<quote>c</"
+"quote>,<quote>d</quote>, <quote>e</quote>,<quote>f</quote>,<quote>y</quote>,"
+"<quote>n</quote>,<quote>o</quote>,<quote>t</quote>, <quote>1</quote>,"
+"<quote>2</quote>,<quote>3</quote> or <quote>8</quote>)."
+msgstr ""
+"Оскільки для літер і цифр характерний певний порядок (абетка або порядок "
+"цифр), ви можете скорочувати запис за допомогою діапазонів: <userinput>[a-"
+"c]</userinput> рівнозначний до <userinput>[abc]</userinput>, а "
+"<userinput>[0-9]</userinput> — до <userinput>[0123456789]</userinput>. Можна "
+"також використовувати комбінації таких конструкцій, наприклад, <userinput>[a-"
+"fynot1-38]</userinput> (звичайно ж, остання комбінація відповідає одному з "
+"символів <quote>a</quote>,<quote>b</quote>,<quote>c</quote>,<quote>d</"
+"quote>, <quote>e</quote>,<quote>f</quote>,<quote>y</quote>,<quote>n</quote>,"
+"<quote>o</quote>,<quote>t</quote>, <quote>1</quote>,<quote>2</quote>,"
+"<quote>3</quote> або <quote>8</quote>)."
+
+#. Tag: para
+#: regular-expressions.docbook:154
+#, no-c-format
+msgid ""
+"As capital letters are different characters from their non-capital "
+"equivalents, to create a caseless character class matching <quote>a</quote> "
+"or <quote>b</quote>, in any case, you need to write it <userinput>[aAbB]</"
+"userinput>."
+msgstr ""
+"Оскільки великі літери відрізняються від своїх малих еквівалентів, для "
+"створення класу символів, у якому б регістр не мав значення, з літер "
+"<quote>a</quote> і <quote>b</quote>, вам слід записати <userinput>[aAbB]</"
+"userinput>."
+
+#. Tag: para
+#: regular-expressions.docbook:159
+#, no-c-format
+msgid ""
+"It is of course possible to create a <quote>negative</quote> class matching "
+"as <quote>anything but</quote> To do so put a caret (<literal>^</literal>) "
+"at the beginning of the class:"
+msgstr ""
+"Звичайно ж можна створити і <quote>негативний клас</quote>, до якого б "
+"входили <quote>всі літери окрім вказаних</quote>. Для запису такого класу "
+"вам слід скористатися символом каретки (<literal>^</literal>) на початку "
+"запису класу:"
+
+#. Tag: para
+#: regular-expressions.docbook:163
+#, no-c-format
+msgid ""
+"<userinput>[^abc]</userinput> will match any character <emphasis>but</"
+"emphasis> <quote>a</quote>, <quote>b</quote> or <quote>c</quote>."
+msgstr ""
+"Набір <userinput>[^abc]</userinput> відповідає будь-якому символу, "
+"<emphasis>окрім</emphasis> <quote>a</quote>, <quote>b</quote> і <quote>c</"
+"quote>."
+
+#. Tag: para
+#: regular-expressions.docbook:167
+#, no-c-format
+msgid ""
+"In addition to literal characters, some abbreviations are defined, making "
+"life still a bit easier:"
+msgstr ""
+"Окрім звичайних символів, передбачено використання деяких скорочень, які "
+"спрощують запис формальних виразів:"
+
+#. Tag: userinput
+#: regular-expressions.docbook:173
+#, no-c-format
+msgid "<userinput>\\a</userinput>"
+msgstr "<userinput>\\a</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:174
+#, no-c-format
+msgid "This matches the &ASCII; bell character (BEL, 0x07)."
+msgstr ""
+"Цей рядок відповідає символу дзвінка у <acronym>ASCII</acronym> (BEL, 0x07)."
+
+#. Tag: userinput
+#: regular-expressions.docbook:178
+#, no-c-format
+msgid "<userinput>\\f</userinput>"
+msgstr "<userinput>\\f</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:179
+#, no-c-format
+msgid "This matches the &ASCII; form feed character (FF, 0x0C)."
+msgstr ""
+"Цей рядок відповідає символу зміни сторінки у <acronym>ASCII</acronym> (FF, "
+"0x0C)."
+
+#. Tag: userinput
+#: regular-expressions.docbook:183
+#, no-c-format
+msgid "<userinput>\\n</userinput>"
+msgstr "<userinput>\\n</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:184
+#, no-c-format
+msgid "This matches the &ASCII; line feed character (LF, 0x0A, Unix newline)."
+msgstr ""
+"Цей рядок відповідає символу зміни рядка у <acronym>ASCII</acronym> (LF, "
+"0x0A, символ нового рядка у Unix)."
+
+#. Tag: userinput
+#: regular-expressions.docbook:188
+#, no-c-format
+msgid "<userinput>\\r</userinput>"
+msgstr "<userinput>\\r</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:189
+#, no-c-format
+msgid "This matches the &ASCII; carriage return character (CR, 0x0D)."
+msgstr ""
+"Цей рядок відповідає символу повернення каретки у <acronym>ASCII</acronym> "
+"(CR, 0x0D)."
+
+#. Tag: userinput
+#: regular-expressions.docbook:193
+#, no-c-format
+msgid "<userinput>\\t</userinput>"
+msgstr "<userinput>\\t</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:194
+#, no-c-format
+msgid "This matches the &ASCII; horizontal tab character (HT, 0x09)."
+msgstr ""
+"Цей рядок відповідає символу горизонтальної табуляції у <acronym>ASCII</"
+"acronym> (HT, 0x09)."
+
+#. Tag: userinput
+#: regular-expressions.docbook:198
+#, no-c-format
+msgid "<userinput>\\v</userinput>"
+msgstr "<userinput>\\v</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:199
+#, no-c-format
+msgid "This matches the &ASCII; vertical tab character (VT, 0x0B)."
+msgstr ""
+"Цей рядок відповідає символу вертикальної табуляції у <acronym>ASCII</"
+"acronym> (VT, 0x0B)."
+
+#. Tag: userinput
+#: regular-expressions.docbook:202
+#, no-c-format
+msgid "\\xhhhh"
+msgstr "\\xhhhh"
+
+#. Tag: para
+#: regular-expressions.docbook:204
+#, no-c-format
+msgid ""
+"This matches the Unicode character corresponding to the hexadecimal number "
+"hhhh (between 0x0000 and 0xFFFF). \\0ooo (&ie;, \\zero ooo) matches the "
+"&ASCII;/Latin-1 character corresponding to the octal number ooo (between 0 "
+"and 0377)."
+msgstr ""
+"Такий рядок відповідає символу Unicode з шістнадцятковим номером hhhh (у "
+"межах від 0x0000 до 0xFFFF). \\0ooo (тобто \\нульo ooo) відповідає символу з "
+"<acronym>ASCII</acronym>/Latin-1 з вісімковим номером ooo (у межах від 0 до "
+"0377)."
+
+#. Tag: term
+#: regular-expressions.docbook:212
+#, no-c-format
+msgid "<userinput>.</userinput> (dot)"
+msgstr "<userinput>.</userinput> (крапка)"
+
+#. Tag: para
+#: regular-expressions.docbook:213
+#, no-c-format
+msgid "This matches any character (including newline)."
+msgstr ""
+"Цей рядок відповідає будь-якому символу (зокрема символу нового рядка)."
+
+#. Tag: userinput
+#: regular-expressions.docbook:217
+#, no-c-format
+msgid "<userinput>\\d</userinput>"
+msgstr "<userinput>\\d</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:218
+#, no-c-format
+msgid "This matches a digit. Equal to <literal>[0-9]</literal>"
+msgstr ""
+"Цей рядок відповідає будь-якій цифрі. Він рівнозначний до <literal>[0-9]</"
+"literal>"
+
+#. Tag: userinput
+#: regular-expressions.docbook:222
+#, no-c-format
+msgid "<userinput>\\D</userinput>"
+msgstr "<userinput>\\D</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:223
+#, no-c-format
+msgid ""
+"This matches a non-digit. Equal to <literal>[^0-9]</literal> or <literal>[^"
+"\\d]</literal>"
+msgstr ""
+"Цей рядок відповідає будь-якому символу, окрім цифри. Він рівнозначний до "
+"<literal>[^0-9]</literal> або <literal>[^\\d]</literal>"
+
+#. Tag: userinput
+#: regular-expressions.docbook:227
+#, no-c-format
+msgid "<userinput>\\s</userinput>"
+msgstr "<userinput>\\s</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:228
+#, no-c-format
+msgid ""
+"This matches a whitespace character. Practically equal to <literal>[ \\t\\n"
+"\\r]</literal>"
+msgstr ""
+"Цей рядок відповідає символу проміжку між символами. З практичної точки "
+"зору, він рівнозначний до <literal>[ \\t\\n\\r]</literal>"
+
+#. Tag: userinput
+#: regular-expressions.docbook:232
+#, no-c-format
+msgid "<userinput>\\S</userinput>"
+msgstr "<userinput>\\S</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:233
+#, no-c-format
+msgid ""
+"This matches a non-whitespace. Practically equal to <literal>[^ \\t\\r\\n]</"
+"literal>, and equal to <literal>[^\\s]</literal>"
+msgstr ""
+"Цей рядок відповідає символу, який не є пробілом. З практичної точки зору, "
+"цей рядок еквівалентний до <literal>[^ \\t\\r\\n]</literal> або <literal>[^"
+"\\s]</literal>"
+
+#. Tag: userinput
+#: regular-expressions.docbook:237
+#, no-c-format
+msgid "<userinput>\\w</userinput>"
+msgstr "<userinput>\\w</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:238
+#, no-c-format
+msgid ""
+"Matches any <quote>word character</quote> - in this case any letter, digit "
+"or underscore. Equal to <literal>[a-zA-Z0-9_]</literal>"
+msgstr ""
+"Цей рядок відповідає будь-якому <quote>символу слова</quote> — у нашому "
+"випадку, літері, цифрі або символу підкреслювання. Цей рядок еквівалентний "
+"до рядка <literal>[a-zA-Z0-9_]</literal>"
+
+#. Tag: userinput
+#: regular-expressions.docbook:243
+#, no-c-format
+msgid "<userinput>\\W</userinput>"
+msgstr "<userinput>\\W</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:244
+#, no-c-format
+msgid ""
+"Matches any non-word character - anything but letters, numbers or "
+"underscore. Equal to <literal>[^a-zA-Z0-9_]</literal> or <literal>[^\\w]</"
+"literal>"
+msgstr ""
+"Цей рядок відповідає будь-якому символу, який не є символом запису слів, "
+"тобто будь-якому символу, який не є літерою, цифрою або символом "
+"підкреслювання. Рядок еквівалентний до рядка <literal>[^a-zA-Z0-9_]</"
+"literal> або <literal>[^\\w]</literal>"
+
+#. Tag: para
+#: regular-expressions.docbook:253
+#, no-c-format
+msgid ""
+"The <emphasis>POSIX notation of classes</emphasis>, <userinput>[:&lt;class "
+"name&gt;:]</userinput> are also supported. For example, <userinput>[:"
+"digit:]</userinput> is equivalent to <userinput>\\d</userinput>, and "
+"<userinput>[:space:]</userinput> to <userinput>\\s</userinput>. See the full "
+"list of POSIX character classes <ulink url=\"https://www.regular-expressions."
+"info/posixbrackets.html\">here</ulink>."
+msgstr ""
+"Передбачено також підтримку <emphasis>позначення класів POSIX</emphasis> — "
+"<userinput>[:&lt;назва класу&gt;:]</userinput>. Наприклад, <userinput>[:"
+"digit:]</userinput> є тим самим, що і <userinput>\\d</userinput>, а "
+"<userinput>[:space:]</userinput> — тим самим, що і <userinput>\\s</"
+"userinput>. Із повним списком класів символів POSIX можна ознайомитися "
+"<ulink url=\"https://www.regular-expressions.info/posixbrackets.html\">тут</"
+"ulink>."
+
+#. Tag: para
+#: regular-expressions.docbook:260
+#, no-c-format
+msgid ""
+"The abbreviated classes can be put inside a custom class, for example to "
+"match a word character, a blank or a dot, you could write <userinput>[\\w "
+"\\.]</userinput>"
+msgstr ""
+"Класи-скорочення можна використовувати в межах загальних класів, наприклад, "
+"щоб знайти літеру слова, символ пробілу або крапку, ви можете скористатися "
+"записом <userinput>[\\w \\.]</userinput>"
+
+#. Tag: title
+#: regular-expressions.docbook:265
+#, no-c-format
+msgid "Characters with special meanings inside character classes"
+msgstr "Символи з особливим призначенням у класах символів"
+
+#. Tag: para
+#: regular-expressions.docbook:267
+#, no-c-format
+msgid ""
+"The following characters has a special meaning inside the <quote>[]</quote> "
+"character class construct, and must be escaped to be literally included in a "
+"class:"
+msgstr ""
+"Перелічені далі символи мають особливе призначення у конструкціях класів "
+"символів <quote>[]</quote>, отже для включення їх за візуальним значенням до "
+"класу ці символи слід екранувати:"
+
+#. Tag: userinput
+#: regular-expressions.docbook:273
+#, no-c-format
+msgid "<userinput>]</userinput>"
+msgstr "<userinput>]</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:274
+#, no-c-format
+msgid ""
+"Ends the character class. Must be escaped unless it is the very first "
+"character in the class (may follow an unescaped caret)."
+msgstr ""
+"Завершує визначення класу символів. Цей символ слід екранувати, якщо він не "
+"є найпершим символом у класі (можна використовувати одразу за неекранованим "
+"символом каретки)."
+
+#. Tag: term
+#: regular-expressions.docbook:278 regular-expressions.docbook:415
+#, no-c-format
+msgid "<userinput>^</userinput> (caret)"
+msgstr "<userinput>^</userinput> (знак вставки)"
+
+#. Tag: para
+#: regular-expressions.docbook:279
+#, no-c-format
+msgid ""
+"Denotes a negative class, if it is the first character. Must be escaped to "
+"match literally if it is the first character in the class."
+msgstr ""
+"Змінює значення вказаного класу на протилежне, якщо є першим символом класу. "
+"Цей символ слід екранувати, якщо він є першим символом класу."
+
+#. Tag: term
+#: regular-expressions.docbook:282
+#, no-c-format
+msgid "<userinput>-</userinput> (dash)"
+msgstr "<userinput>-</userinput> (дефіс)"
+
+#. Tag: para
+#: regular-expressions.docbook:283
+#, no-c-format
+msgid ""
+"Denotes a logical range. Must always be escaped within a character class."
+msgstr ""
+"Визначає діапазон. Цей символ завжди слід екранувати, якщо він визначає "
+"символ у класі символів."
+
+#. Tag: term
+#: regular-expressions.docbook:286 regular-expressions.docbook:410
+#, no-c-format
+msgid "<userinput>\\</userinput> (backslash)"
+msgstr "<userinput>\\</userinput> (зворотна навскісна риска)"
+
+#. Tag: para
+#: regular-expressions.docbook:287
+#, no-c-format
+msgid "The escape character. Must always be escaped."
+msgstr ""
+"Символ керівної послідовності. Цей символ завжди слід екранувати, якщо він "
+"потрібен вам як символ зворотної навскісної риски."
+
+#. Tag: title
+#: regular-expressions.docbook:298
+#, no-c-format
+msgid "Alternatives: matching <quote>one of</quote>"
+msgstr "Варіанти: пошук <quote>одного з</quote>"
+
+#. Tag: para
+#: regular-expressions.docbook:300
+#, no-c-format
+msgid ""
+"If you want to match one of a set of alternative patterns, you can separate "
+"those with <literal>|</literal> (vertical bar character)."
+msgstr ""
+"Якщо вам потрібно знайти один з декількох варіантів шаблонів, ви можете "
+"відокремити ці шаблони символом <literal>|</literal> (вертикальною рискою)."
+
+#. Tag: para
+#: regular-expressions.docbook:303
+#, no-c-format
+msgid ""
+"For example to find either <quote>John</quote> or <quote>Harry</quote> you "
+"would use an expression <userinput>John|Harry</userinput>."
+msgstr ""
+"Наприклад, щоб знайти один з рядків, <quote>Іван</quote> або <quote>Юрій</"
+"quote>, вам слід скористатися виразом <userinput>Іван|Юрій</userinput>."
+
+#. Tag: title
+#: regular-expressions.docbook:309
+#, no-c-format
+msgid "Sub Patterns"
+msgstr "Підшаблони"
+
+#. Tag: para
+#: regular-expressions.docbook:311
+#, no-c-format
+msgid ""
+"<emphasis>Sub patterns</emphasis> are patterns enclosed in parentheses, and "
+"they have several uses in the world of regular expressions."
+msgstr ""
+"<emphasis>Підшаблони</emphasis> — це шаблони взяті у круглі дужки, у світі "
+"формальних виразів існує декілька способів використання підшаблонів."
+
+#. Tag: title
+#: regular-expressions.docbook:317
+#, no-c-format
+msgid "Specifying alternatives"
+msgstr "Визначення варіантів"
+
+#. Tag: para
+#: regular-expressions.docbook:319
+#, no-c-format
+msgid ""
+"You may use a sub pattern to group a set of alternatives within a larger "
+"pattern. The alternatives are separated by the character <quote>|</quote> "
+"(vertical bar)."
+msgstr ""
+"Ви можете скористатися підшаблоном, щоб згрупувати набір варіантів у більший "
+"шаблон. Варіанти відокремлюються символом <quote>|</quote> (вертикальною "
+"рискою)."
+
+#. Tag: para
+#: regular-expressions.docbook:323
+#, no-c-format
+msgid ""
+"For example to match either of the words <quote>int</quote>, <quote>float</"
+"quote> or <quote>double</quote>, you could use the pattern <userinput>int|"
+"float|double</userinput>. If you only want to find one if it is followed by "
+"some whitespace and then some letters, put the alternatives inside a "
+"subpattern: <userinput>(int|float|double)\\s+\\w+</userinput>."
+msgstr ""
+"Наприклад, для того, щоб знайти одне зі слів <quote>int</quote>, "
+"<quote>float</quote> або <quote>double</quote>, ви можете скористатися "
+"шаблоном <userinput>int|float|double</userinput>. Якщо вам потрібно знайти "
+"одне з цих слів, і вам відомо, що за цим словом має йти пробіл, а потім "
+"якісь літери, згрупуйте варіанти у підшаблон: <userinput>(int|float|"
+"double)\\s+\\w+</userinput>."
+
+#. Tag: title
+#: regular-expressions.docbook:334
+#, no-c-format
+msgid "Capturing matching text (back references)"
+msgstr "Збереження знайденого тексту (зворотні посилання)"
+
+#. Tag: para
+#: regular-expressions.docbook:336
+#, no-c-format
+msgid ""
+"If you want to use a back reference, use a sub pattern <userinput>(PATTERN)</"
+"userinput> to have the desired part of the pattern remembered. To prevent "
+"the sub pattern from being remembered, use a non-capturing group "
+"<userinput>(?:PATTERN)</userinput>."
+msgstr ""
+"Якщо ви хочете скористатися зворотним посиланням, скористайтеся рядком "
+"<userinput>(ШАБЛОН)</userinput> для запам'ятовування бажаної частини рядка. "
+"Щоб запобігти запам'ятовуванню шаблона, скористайтеся групуванням без "
+"захоплення вмісту <userinput>(?:ШАБЛОН)</userinput>."
+
+#. Tag: para
+#: regular-expressions.docbook:341
+#, no-c-format
+msgid ""
+"For example, if you want to find two occurrences of the same word separated "
+"by a comma and possibly some whitespace, you could write <userinput>(\\w+),"
+"\\s*\\1</userinput>. The sub pattern <literal>\\w+</literal> would find a "
+"chunk of word characters, and the entire expression would match if those "
+"were followed by a comma, 0 or more whitespace and then an equal chunk of "
+"word characters. (The string <literal>\\1</literal> references <emphasis>the "
+"first sub pattern enclosed in parentheses</emphasis>.)"
+msgstr ""
+"Наприклад, якщо вам потрібно знайти два однакових слова, відокремлені комою "
+"і, можливо, пробільними символами, ви можете скористатися формальним виразом "
+"<userinput>(\\w+),\\s*\\1</userinput>. За допомогою підшаблону <literal>\\w"
+"+</literal> буде знайдено послідовність символів слів, збіг з формальним "
+"виразом буде зареєстровано, якщо за цією послідовністю буде кома, 0 або "
+"більше пробільних символів і така сама послідовність символів слів. (Рядок "
+"<literal>\\1</literal> відповідає <emphasis>першому підшаблону, взятому у "
+"круглі дужки</emphasis>)"
+
+#. Tag: para
+#: regular-expressions.docbook:351
+#, no-c-format
+msgid ""
+"To avoid ambiguities with usage of <userinput>\\1</userinput> with some "
+"digits behind it (&eg; <userinput>\\12</userinput> can be 12th subpattern or "
+"just the first subpattern with <userinput>2</userinput>) we use <userinput>"
+"\\{12}</userinput> as syntax for multi-digit subpatterns."
+msgstr ""
+"Щоб уникнути двозначностей, пов’язаних із використанням <userinput>\\1</"
+"userinput> з якимись цифрами за ним (наприклад <userinput>\\12</userinput> "
+"може означати 12 підшаблон або просто перший підшаблон із наступним "
+"<userinput>2</userinput>) ми використовуємо синтаксичну конструкцію "
+"<userinput>\\{12}</userinput> для багатоцифрових номерів підшаблонів."
+
+#. Tag: para
+#: regular-expressions.docbook:352
+#, no-c-format
+msgid "Examples:"
+msgstr "Приклади:"
+
+#. Tag: para
+#: regular-expressions.docbook:354
+#, no-c-format
+msgid "<userinput>\\{12}1</userinput> is <quote>use subpattern 12</quote>"
+msgstr ""
+"<userinput>\\{12}1</userinput> — це <quote>використати підшаблон 12</quote>"
+
+#. Tag: para
+#: regular-expressions.docbook:355
+#, no-c-format
+msgid ""
+"<userinput>\\123</userinput> is <quote>use capture 1 then 23 as the normal "
+"text</quote>"
+msgstr ""
+"<userinput>\\123</userinput> — це <quote>використати підшаблон 1, потім 23 "
+"як звичайний текст</quote>"
+
+#. Tag: title
+#: regular-expressions.docbook:365
+#, no-c-format
+msgid "Lookahead Assertions"
+msgstr "Умовні вирази з перевіркою"
+
+#. Tag: para
+#: regular-expressions.docbook:367
+#, no-c-format
+msgid ""
+"A lookahead assertion is a sub pattern, starting with either <literal>?=</"
+"literal> or <literal>?!</literal>."
+msgstr ""
+"Умовний вираз з перевіркою — це підшаблон, що починається з символів "
+"<literal>?=</literal> або <literal>?!</literal>."
+
+#. Tag: para
+#: regular-expressions.docbook:370
+#, no-c-format
+msgid ""
+"For example to match the literal string <quote>Bill</quote> but only if not "
+"followed by <quote> Gates</quote>, you could use this expression: "
+"<userinput>Bill(?! Gates)</userinput>. (This would find <quote>Bill Clinton</"
+"quote> as well as <quote>Billy the kid</quote>, but silently ignore the "
+"other matches.)"
+msgstr ""
+"Наприклад, для того, щоб знайти рядок <quote>Білл</quote>, за яким не буде "
+"рядка <quote> Гейтс</quote>, можна скористатися таким виразом: "
+"<userinput>Bill(?! Gates)</userinput>. (Таким чином буде знайдено "
+"послідовності <quote>Білл Клінтон</quote> і <quote>Біллі Кід</quote>, але "
+"проігноровано всі інші варіанти.)"
+
+#. Tag: para
+#: regular-expressions.docbook:376 regular-expressions.docbook:393
+#, no-c-format
+msgid "Sub patterns used for assertions are not captured."
+msgstr ""
+"Підшаблони, які було використано для перевірки умови, не будуть "
+"запам’ятовуватися рушієм пошуку."
+
+#. Tag: para
+#: regular-expressions.docbook:378
+#, no-c-format
+msgid "See also <link linkend=\"assertions\">Assertions</link>."
+msgstr "Див. також <link linkend=\"assertions\">Умовні вирази</link>."
+
+#. Tag: title
+#: regular-expressions.docbook:383
+#, no-c-format
+msgid "Lookbehind Assertions"
+msgstr "Умовні вирази з перевіркою і пошуком назад"
+
+#. Tag: para
+#: regular-expressions.docbook:385
+#, no-c-format
+msgid ""
+"A lookbehind assertion is a sub pattern, starting with either <literal>?&lt;"
+"=</literal> or <literal>?&lt;!</literal>."
+msgstr ""
+"Умовний вираз з перевіркою і пошуком назад — це підшаблон, що починається з "
+"символів <literal>?&lt;=</literal> або <literal>?&lt;!</literal>."
+
+#. Tag: para
+#: regular-expressions.docbook:388
+#, no-c-format
+msgid ""
+"Lookbehind has the same effect as the lookahead, but works backwards. For "
+"example to match the literal string <quote>fruit</quote> but only if not "
+"preceded by <quote>grape</quote>, you could use this expression: "
+"<userinput>(?&lt;!grape)fruit</userinput>."
+msgstr ""
+"Пошук назад працює так само, як і пошук вперед, але пошук виконується у "
+"протилежному напрямку. Наприклад, знайти рядок <quote>команда</quote>, але "
+"лише якщо перед ним немає рядка <quote>Зе</quote>, ви можете скористатися "
+"таким виразом: <userinput>(?&lt;!Зе)команда</userinput>."
+
+#. Tag: para
+#: regular-expressions.docbook:395
+#, no-c-format
+msgid "See also <link linkend=\"assertions\">Assertions</link>"
+msgstr "Див. також <link linkend=\"assertions\">Умовні вирази</link>"
+
+#. Tag: title
+#: regular-expressions.docbook:402
+#, no-c-format
+msgid "Characters with a special meaning inside patterns"
+msgstr "Символи зі спеціальним значення у шаблонах"
+
+#. Tag: para
+#: regular-expressions.docbook:404
+#, no-c-format
+msgid ""
+"The following characters have meaning inside a pattern, and must be escaped "
+"if you want to literally match them:"
+msgstr ""
+"Перелічені нижче символи мають особливе призначення в межах шаблону, отже, "
+"якщо вам потрібно буде знайти ці символи за візуальним представленням, вам "
+"слід буде екранувати їх:"
+
+#. Tag: para
+#: regular-expressions.docbook:411
+#, no-c-format
+msgid "The escape character."
+msgstr "Символ керівної послідовності."
+
+#. Tag: para
+#: regular-expressions.docbook:416
+#, no-c-format
+msgid "Asserts the beginning of the string."
+msgstr "Умовний початок рядка."
+
+#. Tag: userinput
+#: regular-expressions.docbook:420
+#, no-c-format
+msgid "<userinput>$</userinput>"
+msgstr "<userinput>$</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:421
+#, no-c-format
+msgid "Asserts the end of string."
+msgstr "Умовне завершення рядка."
+
+#. Tag: term
+#: regular-expressions.docbook:425
+#, no-c-format
+msgid "<userinput>()</userinput> (left and right parentheses)"
+msgstr "<userinput>()</userinput> (ліва і права круглі дужки)"
+
+#. Tag: para
+#: regular-expressions.docbook:426
+#, no-c-format
+msgid "Denotes sub patterns."
+msgstr "Визначення підшаблону."
+
+#. Tag: term
+#: regular-expressions.docbook:430
+#, no-c-format
+msgid "<userinput>{}</userinput> (left and right curly braces)"
+msgstr "<userinput>{}</userinput> (ліва і права фігурні дужки)"
+
+#. Tag: para
+#: regular-expressions.docbook:431
+#, no-c-format
+msgid "Denotes numeric quantifiers."
+msgstr "Визначення числових лічильників."
+
+#. Tag: term
+#: regular-expressions.docbook:435
+#, no-c-format
+msgid "<userinput>[]</userinput> (left and right square brackets)"
+msgstr "<userinput>[]</userinput> (ліва і права квадратні дужки)"
+
+#. Tag: para
+#: regular-expressions.docbook:436
+#, no-c-format
+msgid "Denotes character classes."
+msgstr "Визначення класів символів."
+
+#. Tag: term
+#: regular-expressions.docbook:440
+#, no-c-format
+msgid "<userinput>|</userinput> (vertical bar)"
+msgstr "<userinput>|</userinput> (вертикальна риска)"
+
+#. Tag: para
+#: regular-expressions.docbook:441
+#, no-c-format
+msgid "logical OR. Separates alternatives."
+msgstr "Логічне АБО. Відокремлює варіанти значення."
+
+#. Tag: term
+#: regular-expressions.docbook:445 regular-expressions.docbook:522
+#, no-c-format
+msgid "<userinput>+</userinput> (plus sign)"
+msgstr "<userinput>+</userinput> (знак «плюс»)"
+
+#. Tag: para
+#: regular-expressions.docbook:446
+#, no-c-format
+msgid "Quantifier, 1 or more."
+msgstr "Лічильник, 1 або більше."
+
+#. Tag: term
+#: regular-expressions.docbook:450 regular-expressions.docbook:517
+#, no-c-format
+msgid "<userinput>*</userinput> (asterisk)"
+msgstr "<userinput>*</userinput> (зірочка)"
+
+#. Tag: para
+#: regular-expressions.docbook:451
+#, no-c-format
+msgid "Quantifier, 0 or more."
+msgstr "Лічильник, 0 або більше."
+
+#. Tag: term
+#: regular-expressions.docbook:455 regular-expressions.docbook:527
+#, no-c-format
+msgid "<userinput>?</userinput> (question mark)"
+msgstr "<userinput>?</userinput> (знак питання)"
+
+#. Tag: para
+#: regular-expressions.docbook:456
+#, no-c-format
+msgid "An optional character. Can be interpreted as a quantifier, 0 or 1."
+msgstr ""
+"Необов’язковий символ. Може бути інтерпретовано яка лічильник, 0 або 1."
+
+#. Tag: title
+#: regular-expressions.docbook:468
+#, no-c-format
+msgid "<title>Quantifiers</title>"
+msgstr "<title>Лічильники</title>"
+
+#. Tag: para
+#: regular-expressions.docbook:470
+#, no-c-format
+msgid ""
+"<emphasis>Quantifiers</emphasis> allows a regular expression to match a "
+"specified number or range of numbers of either a character, character class "
+"or sub pattern."
+msgstr ""
+"За допомогою <emphasis>лічильників</emphasis> можна виконувати пошук "
+"вказаної кількості або певного діапазону кількостей відповідників символу, "
+"класу символів або підшаблону."
+
+#. Tag: para
+#: regular-expressions.docbook:474
+#, no-c-format
+msgid ""
+"Quantifiers are enclosed in curly brackets (<literal>{</literal> and "
+"<literal>}</literal>) and have the general form <literal>{[minimum-"
+"occurrences][,[maximum-occurrences]]}</literal>"
+msgstr ""
+"Лічильники слід вказувати між фігурними дужками (<literal>{</literal> і "
+"<literal>}</literal>). У загальному випадку вони виглядають так: "
+"<literal>{[мінімальна кількість][,[максимальна кількість]]}</literal>"
+
+#. Tag: para
+#: regular-expressions.docbook:479
+#, no-c-format
+msgid "The usage is best explained by example:"
+msgstr "Використання найкраще пояснюється прикладом:"
+
+#. Tag: userinput
+#: regular-expressions.docbook:484
+#, no-c-format
+msgid "<userinput>{1}</userinput>"
+msgstr "<userinput>{1}</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:485
+#, no-c-format
+msgid "Exactly 1 occurrence"
+msgstr "Точно один збіг."
+
+#. Tag: userinput
+#: regular-expressions.docbook:489
+#, no-c-format
+msgid "{0,1}"
+msgstr "{0,1}"
+
+#. Tag: para
+#: regular-expressions.docbook:490
+#, no-c-format
+msgid "Zero or 1 occurrences"
+msgstr "Жодного або 1 збіг."
+
+#. Tag: userinput
+#: regular-expressions.docbook:494
+#, no-c-format
+msgid "{,1}"
+msgstr "{,1}"
+
+#. Tag: para
+#: regular-expressions.docbook:495
+#, no-c-format
+msgid "The same, with less work;)"
+msgstr "Те саме, але меншими зусиллями ;)"
+
+#. Tag: userinput
+#: regular-expressions.docbook:499
+#, no-c-format
+msgid "{5,10}"
+msgstr "{5,10}"
+
+#. Tag: para
+#: regular-expressions.docbook:500
+#, no-c-format
+msgid "At least 5 but maximum 10 occurrences."
+msgstr "Не менше 5, але не більше 10 збігів."
+
+#. Tag: userinput
+#: regular-expressions.docbook:504
+#, no-c-format
+msgid "{5,}"
+msgstr "{5,}"
+
+#. Tag: para
+#: regular-expressions.docbook:505
+#, no-c-format
+msgid "At least 5 occurrences, no maximum."
+msgstr "Не менше 5 збігів, без обмежень згори."
+
+#. Tag: para
+#: regular-expressions.docbook:512
+#, no-c-format
+msgid "Additionally, there are some abbreviations:"
+msgstr "Крім того, існує декілька скорочень:"
+
+#. Tag: para
+#: regular-expressions.docbook:518
+#, no-c-format
+msgid "similar to <literal>{0,}</literal>, find any number of occurrences."
+msgstr ""
+"те саме, що і <literal>{0,}</literal>, шукати без обмеження на кількість "
+"відповідників."
+
+#. Tag: para
+#: regular-expressions.docbook:523
+#, no-c-format
+msgid "similar to <literal>{1,}</literal>, at least 1 occurrence."
+msgstr "те саме, що і <literal>{1,}</literal>, принаймні один відповідник."
+
+#. Tag: para
+#: regular-expressions.docbook:528
+#, no-c-format
+msgid "similar to <literal>{0,1}</literal>, zero or 1 occurrence."
+msgstr "те саме, що і <literal>{0,1}</literal>, жодного або один відповідник."
+
+#. Tag: title
+#: regular-expressions.docbook:537
+#, no-c-format
+msgid "Greed"
+msgstr "Жадібність"
+
+#. Tag: para
+#: regular-expressions.docbook:539
+#, no-c-format
+msgid ""
+"When using quantifiers with no maximum, regular expressions defaults to "
+"match as much of the searched string as possible, commonly known as "
+"<emphasis>greedy</emphasis> behavior."
+msgstr ""
+"За використання лічильників без зазначення максимальної кількості, типово, "
+"буде виконано пошук якомога більшої кількості відповідників формального "
+"виразу, така поведінка називається <emphasis>жадібною</emphasis>."
+
+#. Tag: para
+#: regular-expressions.docbook:543
+#, no-c-format
+msgid ""
+"Modern regular expression software provides the means of <quote>turning off "
+"greediness</quote>, though in a graphical environment it is up to the "
+"interface to provide you with access to this feature. For example a search "
+"dialog providing a regular expression search could have a check box labeled "
+"<quote>Minimal matching</quote> as well as it ought to indicate if "
+"greediness is the default behavior."
+msgstr ""
+"У сучасних рушіях пошуку за формальними виразами передбачено можливість "
+"<quote>вимикання жадібності</quote>, забезпечення доступу до цієї можливості "
+"є проблемою лише графічного інтерфейсу. Наприклад, у діалоговому вікні "
+"пошуку за формальним виразом може бути поле для позначки з міткою "
+"<quote>Мінімальна кількість збігів</quote>, а також певним чином позначено, "
+"що жадібність є типовою поведінкою."
+
+#. Tag: title
+#: regular-expressions.docbook:554
+#, no-c-format
+msgid "In context examples"
+msgstr "Приклади використання"
+
+#. Tag: para
+#: regular-expressions.docbook:556
+#, no-c-format
+msgid "Here are a few examples of using quantifiers:"
+msgstr "Ось декілька прикладів використання лічильників."
+
+#. Tag: userinput
+#: regular-expressions.docbook:561
+#, no-c-format
+msgid "^\\d{4,5}\\s"
+msgstr "^\\d{4,5}\\s"
+
+#. Tag: para
+#: regular-expressions.docbook:562
+#, no-c-format
+msgid ""
+"Matches the digits in <quote>1234 go</quote> and <quote>12345 now</quote>, "
+"but neither in <quote>567 eleven</quote> nor in <quote>223459 somewhere</"
+"quote>."
+msgstr ""
+"Буде знайдено цифри у <quote>1234 поїхали</quote> і <quote>12345 давай</"
+"quote>, але не у <quote>567 одинадцять</quote> і у <quote>223459 десь</"
+"quote>."
+
+#. Tag: userinput
+#: regular-expressions.docbook:567
+#, no-c-format
+msgid "<userinput>\\s+</userinput>"
+msgstr "<userinput>\\s+</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:568
+#, no-c-format
+msgid "Matches one or more whitespace characters."
+msgstr "Буде знайдено один або декілька пробільних символів."
+
+#. Tag: userinput
+#: regular-expressions.docbook:572
+#, no-c-format
+msgid "(bla){1,}"
+msgstr "(ля){1,}"
+
+#. Tag: para
+#: regular-expressions.docbook:573
+#, no-c-format
+msgid ""
+"Matches all of <quote>blablabla</quote> and the <quote>bla</quote> in "
+"<quote>blackbird</quote> or <quote>tabla</quote>."
+msgstr ""
+"Буде знайдено <quote>ляляля</quote>, а також <quote>ля</quote> у словах "
+"<quote>шабля</quote> або <quote>пляшка</quote>."
+
+#. Tag: userinput
+#: regular-expressions.docbook:577
+#, no-c-format
+msgid "/?&gt;"
+msgstr "/?&gt;"
+
+#. Tag: para
+#: regular-expressions.docbook:578
+#, no-c-format
+msgid ""
+"Matches <quote>/&gt;</quote> in <quote>&lt;closeditem/&gt;</quote> as well "
+"as <quote>&gt;</quote> in <quote>&lt;openitem&gt;</quote>."
+msgstr ""
+"Буде знайдено <quote>/&gt;</quote> у <quote>&lt;closeditem/&gt;</quote>, а "
+"також <quote>&gt;</quote> у <quote>&lt;openitem&gt;</quote>."
+
+#. Tag: title
+#: regular-expressions.docbook:589
+#, no-c-format
+msgid "<title>Assertions</title>"
+msgstr "<title>Умовні вирази</title>"
+
+#. Tag: para
+#: regular-expressions.docbook:591
+#, no-c-format
+msgid ""
+"<emphasis>Assertions</emphasis> allows a regular expression to match only "
+"under certain controlled conditions."
+msgstr ""
+"За допомогою <emphasis>умовних виразів</emphasis> відповідники формального "
+"виразу буде знайдено лише за виконання певних керованих умов."
+
+#. Tag: para
+#: regular-expressions.docbook:594
+#, no-c-format
+msgid ""
+"An assertion does not need a character to match, it rather investigates the "
+"surroundings of a possible match before acknowledging it. For example the "
+"<emphasis>word boundary</emphasis> assertion does not try to find a non word "
+"character opposite a word one at its position, instead it makes sure that "
+"there is not a word character. This means that the assertion can match where "
+"there is no character, &ie; at the ends of a searched string."
+msgstr ""
+"За використання умовного виразу не буде виконуватися пошук певного символу, "
+"рушій скоріше вивчатиме оточення можливого відповідника формального виразу і "
+"визначатиме, чи той це вираз, який вам потрібен. Наприклад, за використання "
+"умови <emphasis>межа слова</emphasis> рушій пошуку не намагатиметься знайти "
+"символ, який не є символом слова, поряд зі знайденим словом, — рушій просто "
+"переконається, що цей символ не є символом слова. Це означає, що за "
+"використання умовного виразу, рядок буде знайдено і там, де пробільного "
+"символу немає, наприклад, наприкінці рядка."
+
+#. Tag: para
+#: regular-expressions.docbook:602
+#, no-c-format
+msgid ""
+"Some assertions actually do have a pattern to match, but the part of the "
+"string matching that will not be a part of the result of the match of the "
+"full expression."
+msgstr ""
+"У деяких умовних виразах можуть міститися шаблони, але за їх використання "
+"виконуватиметься лише перевірка на збіг рядка з вказаним шаблоном, — "
+"результат перевірки не буде включено до результатів пошуку."
+
+#. Tag: para
+#: regular-expressions.docbook:606
+#, no-c-format
+msgid ""
+"Regular Expressions as documented here supports the following assertions:"
+msgstr ""
+"У формальних виразах, описаних у цій документації, підтримуються такі умовні "
+"вирази:"
+
+#. Tag: term
+#: regular-expressions.docbook:612
+#, no-c-format
+msgid "<userinput>^</userinput> (caret: beginning of string)"
+msgstr "<userinput>^</userinput> (каретка: початок рядка)"
+
+#. Tag: para
+#: regular-expressions.docbook:614
+#, no-c-format
+msgid "Matches the beginning of the searched string."
+msgstr "Пошук на початку рядка."
+
+#. Tag: para
+#: regular-expressions.docbook:615
+#, no-c-format
+msgid ""
+"The expression <userinput>^Peter</userinput> will match at <quote>Peter</"
+"quote> in the string <quote>Peter, hey!</quote> but not in <quote>Hey, Peter!"
+"</quote>"
+msgstr ""
+"За виразом <userinput>^Петре</userinput> буде знайдено рядок <quote>Петре</"
+"quote> у рядку <quote>Петре, агов!</quote>, але не у рядку <quote>Агов, "
+"Петре!</quote>"
+
+#. Tag: term
+#: regular-expressions.docbook:621
+#, no-c-format
+msgid "<userinput>$</userinput> (end of string)"
+msgstr "<userinput>$</userinput> (кінець рядка)"
+
+#. Tag: para
+#: regular-expressions.docbook:622
+#, no-c-format
+msgid "Matches the end of the searched string."
+msgstr "Пошук наприкінці рядка."
+
+#. Tag: para
+#: regular-expressions.docbook:624
+#, no-c-format
+msgid ""
+"The expression <userinput>you\\?$</userinput> will match at the last you in "
+"the string <quote>You didn't do that, did you?</quote> but nowhere in "
+"<quote>You didn't do that, right?</quote>"
+msgstr ""
+"За виразом <userinput>ти\\?$</userinput> буде знайдено останнє «ти» у рядку "
+"<quote>Це зробив не ти?</quote>, але нічого не буде знайдено у рядку "
+"<quote>Це ж не ти зробив?</quote>"
+
+#. Tag: term
+#: regular-expressions.docbook:632
+#, no-c-format
+msgid "<userinput>\\b</userinput> (word boundary)"
+msgstr "<userinput>\\b</userinput> (межа слова)"
+
+#. Tag: para
+#: regular-expressions.docbook:633
+#, no-c-format
+msgid ""
+"Matches if there is a word character at one side and not a word character at "
+"the other."
+msgstr ""
+"Пошук рядка, з одного боку якого стоїть символ запису слів, а з іншого — "
+"символ, який не використовується для запису слів."
+
+#. Tag: para
+#: regular-expressions.docbook:635
+#, no-c-format
+msgid ""
+"This is useful to find word ends, for example both ends to find a whole "
+"word. The expression <userinput>\\bin\\b</userinput> will match at the "
+"separate <quote>in</quote> in the string <quote>He came in through the "
+"window</quote>, but not at the <quote>in</quote> in <quote>window</quote>."
+msgstr ""
+"Цей вираз корисний для перевірки на те, чи завершується у певному місці "
+"слово, наприклад під час пошуку цілого слова. Вираз <userinput>\\bу\\b</"
+"userinput> буде знайдено як окреме слово <quote>у</quote> у рядку <quote>Він "
+"увійшов у вікно</quote>, але не як частину <quote>у</quote> слова "
+"<quote>увійшов</quote>."
+
+#. Tag: term
+#: regular-expressions.docbook:644
+#, no-c-format
+msgid "<userinput>\\B</userinput> (non word boundary)"
+msgstr "<userinput>\\B</userinput> (відсутність межі слова)"
+
+#. Tag: para
+#: regular-expressions.docbook:645
+#, no-c-format
+msgid "Matches wherever <quote>\\b</quote> does not."
+msgstr ""
+"Пошук всіх відповідників, які не буде пропущено за використання умовного "
+"виразу <quote>\\b</quote>."
+
+#. Tag: para
+#: regular-expressions.docbook:646
+#, no-c-format
+msgid ""
+"That means that it will match for example within words: The expression "
+"<userinput>\\Bin\\B</userinput> will match at in <quote>window</quote> but "
+"not in <quote>integer</quote> or <quote>I'm in love</quote>."
+msgstr ""
+"Такий вираз можна використовувати, наприклад, для пошуку внутрішніх частин "
+"слів: вираз <userinput>\\Bу\\B</userinput> буде знайдено у слові "
+"<quote>вухо</quote>, але не у слові <quote>увійшов</quote> або виразі "
+"<quote>Бачив у кіно</quote>."
+
+#. Tag: term
+#: regular-expressions.docbook:652
+#, no-c-format
+msgid "<userinput>(?=PATTERN)</userinput> (Positive lookahead)"
+msgstr "<userinput>(?=ШАБЛОН)</userinput> (перевірка на збіг)"
+
+#. Tag: para
+#: regular-expressions.docbook:653
+#, no-c-format
+msgid ""
+"A lookahead assertion looks at the part of the string following a possible "
+"match. The positive lookahead will prevent the string from matching if the "
+"text following the possible match does not match the <emphasis>PATTERN</"
+"emphasis> of the assertion, but the text matched by that will not be "
+"included in the result."
+msgstr ""
+"За допомогою умовного виразу перевірки на збіг можна перевірити на "
+"відповідність частину рядка, яку розташовано безпосередньо за можливим "
+"відповідником. За використання перевірки на збіг частина рядка вважатиметься "
+"невідповідною, якщо за нею не йде вказаний <emphasis>ШАБЛОН</emphasis> "
+"умовного виразу, але текст цього шаблону не буде додано до результату пошуку."
+
+#. Tag: para
+#: regular-expressions.docbook:657
+#, no-c-format
+msgid ""
+"The expression <userinput>handy(?=\\w)</userinput> will match at "
+"<quote>handy</quote> in <quote>handyman</quote> but not in <quote>That came "
+"in handy!</quote>"
+msgstr ""
+"За виразом <userinput>зручно(?=\\w)</userinput> буде знайдено рядок "
+"<quote>зручно</quote> у слові <quote>зручності</quote>, а у рядку <quote>Це "
+"дуже зручно!</quote> нічого не буде знайдено."
+
+#. Tag: term
+#: regular-expressions.docbook:663
+#, no-c-format
+msgid "<userinput>(?!PATTERN)</userinput> (Negative lookahead)"
+msgstr "<userinput>(?!ШАБЛОН)</userinput> (перевірка на відсутність збігу)"
+
+#. Tag: para
+#: regular-expressions.docbook:665
+#, no-c-format
+msgid ""
+"The negative lookahead prevents a possible match to be acknowledged if the "
+"following part of the searched string does match its <emphasis>PATTERN</"
+"emphasis>."
+msgstr ""
+"За перевірки на відсутність збігу знайдений рядок не буде вважатися "
+"потрібним, якщо за ним йде рядок вказаний як <emphasis>ШАБЛОН</emphasis>."
+
+#. Tag: para
+#: regular-expressions.docbook:668
+#, no-c-format
+msgid ""
+"The expression <userinput>const \\w+\\b(?!\\s*&amp;)</userinput> will match "
+"at <quote>const char</quote> in the string <quote>const char* foo</quote> "
+"while it can not match <quote>const QString</quote> in <quote>const "
+"QString&amp; bar</quote> because the <quote>&amp;</quote> matches the "
+"negative lookahead assertion pattern."
+msgstr ""
+"Вираз <userinput>const \\w+\\b(?!\\s*&amp;)</userinput> відповідатиме "
+"частині <quote>const char</quote> у рядку <quote>const char* foo</quote>, "
+"але не частині <quote>const QString</quote> у рядку <quote>const "
+"QString&amp; bar</quote>, оскільки символ <quote>&amp;</quote> збігається з "
+"шаблоном перевірки на відсутність збігу."
+
+#. Tag: term
+#: regular-expressions.docbook:678
+#, no-c-format
+msgid "<userinput>(?&lt;=PATTERN)</userinput> (Positive lookbehind)"
+msgstr ""
+"<userinput>(?&lt;=ШАБЛОН)</userinput> (перевірка на збіг із пошуком назад)"
+
+#. Tag: para
+#: regular-expressions.docbook:679
+#, no-c-format
+msgid ""
+"Lookbehind has the same effect as the lookahead, but works backwards. A "
+"lookbehind looks at the part of the string previous a possible match. The "
+"positive lookbehind will match a string only if it is preceded by the "
+"<emphasis>PATTERN</emphasis> of the assertion, but the text matched by that "
+"will not be included in the result."
+msgstr ""
+"Пошук назад працює так само, як і пошук вперед, але пошук виконується у "
+"протилежному напрямку. За допомогою умовного виразу перевірки на збіг із "
+"пошуком назад можна перевірити на відповідність частину рядка, яку "
+"розташовано безпосередньо перед можливим відповідником. Частина рядка "
+"вважатиметься відповідною, лише якщо перед нею не йде вказаний "
+"<emphasis>ШАБЛОН</emphasis> умовного виразу, але текст цього шаблону не буде "
+"додано до результату пошуку."
+
+#. Tag: para
+#: regular-expressions.docbook:683
+#, no-c-format
+msgid ""
+"The expression <userinput>(?&lt;=cup)cake</userinput> will match at "
+"<quote>cake</quote> if it is succeeded by <quote>cup</quote> (in "
+"<quote>cupcake</quote> but not in <quote>cheesecake</quote> or in "
+"<quote>cake</quote> alone)."
+msgstr ""
+"За виразом <userinput>(?&lt;=диво)сміх</userinput> буде знайдено "
+"<quote>сміх</quote>, якщо перед ним є рядок <quote>диво</quote> (тобто буде "
+"знайдено <quote>дивосміх</quote>, але не <quote>вогнесміх</quote> і не "
+"окреме слово <quote>сміх</quote>)."
+
+#. Tag: term
+#: regular-expressions.docbook:690
+#, no-c-format
+msgid "<userinput>(?&lt;!PATTERN)</userinput> (Negative lookbehind)"
+msgstr ""
+"<userinput>(?&lt;!ШАБЛОН)</userinput> (перевірка на відсутність збігу із "
+"пошуком назад)"
+
+#. Tag: para
+#: regular-expressions.docbook:691
+#, no-c-format
+msgid ""
+"The negative lookbehind prevents a possible match to be acknowledged if the "
+"previous part of the searched string does match its <emphasis>PATTERN</"
+"emphasis>."
+msgstr ""
+"За перевірки на відсутність збігу із пошуком назад знайдений рядок не буде "
+"вважатися потрібним, якщо перед ним йде рядок вказаний як <emphasis>ШАБЛОН</"
+"emphasis>."
+
+#. Tag: para
+#: regular-expressions.docbook:693
+#, no-c-format
+msgid ""
+"The expression <userinput>(?&lt;![\\w\\.])[0-9]+</userinput> will match at "
+"<quote>123</quote> in the strings <quote>=123</quote> and <quote>-123</"
+"quote> while it can not match <quote>123</quote> in <quote>.123</quote> or "
+"<quote>word123</quote>."
+msgstr ""
+"За виразом <userinput>(?&lt;![\\w\\.])[0-9]+</userinput> буде знайдено "
+"<quote>123</quote> у рядках <quote>=123</quote> і <quote>-123</quote>, але "
+"не буде знайдено <quote>123</quote> у <quote>.123</quote> і <quote>слово123</"
+"quote>."
+
+#. Tag: term
+#: regular-expressions.docbook:700
+#, no-c-format
+msgid "<userinput>(PATTERN)</userinput> (Capturing group)"
+msgstr "<userinput>(ШАБЛОН)</userinput> (Захоплення групи)"
+
+#. Tag: para
+#: regular-expressions.docbook:702
+#, no-c-format
+msgid ""
+"The sub pattern within the parentheses is captured and remembered, so that "
+"it can be used in back references. For example, the expression "
+"<userinput>(&amp;quot;+)[^&amp;quot;]*\\1</userinput> matches "
+"<userinput>&quot;&quot;&quot;&quot;text&quot;&quot;&quot;&quot;</userinput> "
+"and <userinput>&quot;text&quot;</userinput>."
+msgstr ""
+"Засіб обробки захопить і запам'ятає шаблон у дужках так, щоб ним можна було "
+"скористатися для зворотного посилання. Наприклад, вираз <userinput>(&amp;"
+"quot;+)[^&amp;quot;]*\\1</userinput> відповідає одразу рядку "
+"<userinput>&quot;&quot;&quot;&quot;текст&quot;&quot;&quot;&quot;</userinput> "
+"і рядку <userinput>&quot;текст&quot;</userinput>."
+
+#. Tag: para
+#: regular-expressions.docbook:707
+#, no-c-format
+msgid ""
+"See the section <link linkend=\"regex-capturing\">Capturing matching text "
+"(back references)</link> for more information."
+msgstr ""
+"Докладніший опис можна знайти у розділі <link linkend=\"regex-capturing"
+"\">Збереження знайденого тексту (зворотні посилання)</link>."
+
+#. Tag: term
+#: regular-expressions.docbook:713
+#, no-c-format
+msgid "<userinput>(?:PATTERN)</userinput> (Non-capturing group)"
+msgstr "<userinput>(?:ШАБЛОН)</userinput> (Групування без захоплення)"
+
+#. Tag: para
+#: regular-expressions.docbook:715
+#, no-c-format
+msgid ""
+"The sub pattern within the parentheses is not captured and is not "
+"remembered. It is preferable to always use non-capturing groups if the "
+"captures will not be used."
+msgstr ""
+"Засіб обробки не захоплюватиме і не запам'ятовуватиме шаблон у дужках. Якщо "
+"ви не маєте наміру використовувати запам'ятовування груп, варто завжди "
+"користуватися саме цим варіантом запису груп."
+
+#~ msgid ""
+#~ "The POSIX notation of classes, <userinput>[:&lt;class name&gt;:]</"
+#~ "userinput> is currently not supported."
+#~ msgstr ""
+#~ "Позначення POSIX для класів, <userinput>[:&lt;назва класу&gt;:]</"
+#~ "userinput>, у поточній версії не підтримується."
+
+#~ msgid ""
+#~ "If you want to use a back reference, use a sub pattern to have the "
+#~ "desired part of the pattern remembered."
+#~ msgstr ""
+#~ "Якщо вам потрібно скористатися зворотним посиланням, скористайтеся "
+#~ "групуванням у підшаблон для того, щоб рушій запам’ятав потрібну частину "
+#~ "шаблону."

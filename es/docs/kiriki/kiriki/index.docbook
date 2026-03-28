@@ -1,0 +1,815 @@
+<?xml version="1.0" ?>
+<!--IMPORTANT: please note that'do not change this!' notice does not apply to translators -->
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY % Spanish "INCLUDE"
+> <!-- change language only here -->
+  <!ENTITY % addindex "IGNORE"
+> <!-- do not change this! -->
+]>
+
+<book id="kiriki" lang="&language;"
+> <!-- do not change this! -->
+<bookinfo>
+	<title
+>Manual de &kiriki;</title>
+<authorgroup>
+			<author
+><firstname
+>Albert</firstname
+> <surname
+>Astals Cid</surname
+> </author>
+<author
+><firstname
+>Eugene</firstname
+><surname
+>Trounev</surname
+> <affiliation
+><address
+><email
+>eugene.trounev@gmail.com</email
+></address
+></affiliation>
+</author>
+			<othercredit role="translator"
+><firstname
+>Rocío</firstname
+><surname
+>Gallego</surname
+><affiliation
+><address
+><email
+>traducciones@rociogallego.com</email
+></address
+></affiliation
+><contrib
+>Traductora</contrib
+></othercredit
+><othercredit role="translator"
+><firstname
+>Santiago</firstname
+><surname
+>Fernández Sancho</surname
+><affiliation
+><address
+><email
+>santi@kde-es.org</email
+></address
+></affiliation
+><contrib
+>Traductor</contrib
+></othercredit
+> <othercredit role="translator"
+><firstname
+>Kira</firstname
+><surname
+>J. Fernández</surname
+><affiliation
+><address
+><email
+>kirajfdez@gmail.com</email
+></address
+></affiliation
+><contrib
+>Traductora</contrib
+></othercredit
+> <othercredit role="translator"
+><firstname
+>Eloy</firstname
+> <surname
+>Cuadra</surname
+> <affiliation
+><address
+><email
+>ecuadra@eloihr.net</email
+></address
+></affiliation
+> <contrib
+>Corrección de la traducción</contrib
+></othercredit
+> 
+		</authorgroup>
+
+		<copyright>
+			<year
+>2007</year>
+			<holder
+>&Albert.Astals.Cid;</holder>
+		</copyright>
+<legalnotice
+>&FDLNotice;</legalnotice>
+<date
+>2021-07-06</date>
+<releaseinfo
+>KDE Gear 21.04</releaseinfo>
+
+<!--Short description of this document. Do not change unless necessary!-->
+<abstract>
+	<para
+>Esta documentación describe el juego &kiriki; versión 21.04</para>
+</abstract>
+
+<!--List of relevan keywords-->
+<keywordset>
+	<keyword
+>KDE</keyword
+> <!-- do not change this! -->
+	<keyword
+>kdegames</keyword
+> <!-- do not change this! -->
+	<keyword
+>juego</keyword
+> <!-- do not change this! -->
+	<keyword
+>kiriki</keyword
+><!--Application name goes here-->
+<!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+	<keyword
+>dados</keyword>
+	<keyword
+>recreativo</keyword>
+	<keyword
+>juego de dados</keyword>
+	<keyword
+>jugar a los dados</keyword>
+<!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+	<keyword
+>seis jugadores</keyword>
+</keywordset>
+</bookinfo>
+<!--Content begins here: -->
+<chapter id="introduction"
+><title
+>Introducción</title
+> <!-- do not change this! -->
+	<note
+><title
+>Tipo de juego:</title
+><para
+>Dados, Recreativo</para
+></note
+><!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+	<note
+><title
+>Número de posibles jugadores:</title
+><para
+>Seis</para
+></note
+><!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="gameboard.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>El tablero de juego de &kiriki;</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>&kiriki; es un adictivo y divertido juego de dados creado por &kde; y diseñado para que puedan jugar un máximo de seis jugadores. Los jugadores deben sumar puntos tirando cinco dados en tres tiradas por turno. Cada tirada genera una combinación específica de números que el jugador es libre de aceptar o rechazar. Sin embargo, cada combinación específica de números solo puede aceptarse una vez. Tras trece turnos, el juego termina y se comparan las puntuaciones. El jugador con la puntuación más alta gana el juego. </para>
+</chapter>
+
+<chapter id="howto"
+><title
+>Cómo jugar</title
+> <!-- do not change this! -->
+<!--IMPORTANT: If the game has no defined objective, please remove the below line.-->
+	<note
+><title
+>Objetivo:</title
+><para
+>Conseguir más puntos que los demás oponentes.</para
+></note
+><!--Describe the objective of the game.-->
+<!--How to play description. Don't be to specific on rules as they have a separate section in this document-->
+	<para
+>Tras lanzar &kiriki;, se muestra la primera combinación para el primer jugador. Si eres el primer jugador, te toca; si no, tendrás que esperar hasta que los demás jugadores hagan sus movimientos.</para>
+	<note
+><title
+>Nota:</title
+><para
+>De forma predeterminada, a menos que hayas cambiado la configuración del juego, y en el modo de un solo jugador, el primer jugador lo controlará una persona (tú), mientras que los otros cinco estarán controlados por la Inteligencia Artificial.</para
+></note>
+	<para
+>Cuando te toque, lo primero que deberías hacer es examinar tu tirada. Cada uno de los cinco dados de la parte izquierda de la pantalla de juego tiene un valor específico. Comprueba la secuencia para ver si estos valores forman alguno de los patrones de puntuación.</para>
+	<note
+><title
+>Nota:</title
+><para
+>Puedes encontrar la descripción detallada de los valores de los patrones de puntuación en la sección<link linkend="rules_and_tips"
+>Reglas del juego, estrategias y consejos</link
+> de este manual.</para
+></note>
+	<para
+>Recuerda que la combinación puede coincidir con más de un patrón de puntuación. En este caso deberás determinar el patrón de puntuación que te dará más puntos.</para>
+	<para
+>En el caso de que la secuencia no coincida con ningún patrón de puntuación, o coincida con un patrón de puntuación que ya hayas usado, tendrás dos tiradas más para corregir la situación. Para usar tu segundo (o tercer) dado, selecciona el dado con el que no estés conforme haciendo clic sobre él con el ratón y pulsa el botón <guibutton
+>Tirar</guibutton
+> situado bajo el dado. Así podrás volver a tirar el dado, cambiando de esta forma su valor.</para>
+	<para
+>Después de tirar el tercer dado debes escoger el patrón de puntuación que más se ajuste a la secuencia. Si ninguno de los patrones de puntuación se ajusta a la secuencia, puedes <guilabel
+>Cambiar</guilabel
+> el patrón de puntuación o bien seleccionar cualquier patrón de puntuación en tu marcador de puntuación.</para>
+   <note
+><title
+>Nota:</title
+><para
+>Si seleccionas un patrón de puntuación que no coincide con la secuencia actual de los dados, el patrón de puntuación seleccionado estará vacío y tendrá valor cero.</para
+></note>
+	<para
+>En cuanto selecciones el patrón de puntuación, su valor se actualiza para reflejar la secuencia que tengas en ese momento.</para>
+	<note
+><title
+>Nota:</title
+><para
+>Puedes encontrar la descripción detallada de los valores de los patrones de puntuación en la sección<link linkend="rules_and_tips"
+>Reglas del juego, estrategias y consejos</link
+> de este manual.</para
+></note>
+	<para
+>Una vez hecho esto, finalizará tu turno y comenzará el turno del siguiente participante. Esta secuencia se repetirá hasta trece veces, momento en el que finalizará el juego, se calculará la puntuación y se adjudicarán las mejores puntuaciones.</para>
+</chapter>
+
+<chapter id="rules_and_tips"
+><title
+>Reglas del juego, estrategias y consejos</title
+> <!-- do not change this! -->
+	<!--This section has to do with game rules. Please give a detailed description of those using lists or paragraphs.-->
+	<sect1
+><title
+>Reglas del juego</title>
+		<para
+>El marcador de puntuaciones de &kiriki; se divide en catorce líneas diferentes. Cada línea tiene un único patrón de puntuación y la puntuación que los jugadores han obtenido cuando un dado coincide con el patrón. El patrón de puntuación de cada línea se calcula como sigue:</para>
+			<itemizedlist>
+				<listitem
+><para
+><guilabel
+>1</guilabel
+>: Suma de todos los dados con valor «1».<note
+><title
+>Ejemplo:</title
+><para
+>Dados de la pantalla: «14112». La suma es: «3»=«1»+«1»+«1». Dados de la pantalla: «51111». La suma es: «4»=«1»+«1»+«1»+«1».</para
+></note
+></para
+></listitem>
+				<listitem
+><para
+><guilabel
+>2</guilabel
+>: Suma de todos los dados con valor «2».<note
+><title
+>Ejemplo:</title
+><para
+>Dados de la pantalla: «22422». La suma es: «8»=«2»+«2»+«2»+«2». Dados de la pantalla: «42322». La suma es: «6»=«2»+«2»+«2».</para
+></note
+></para
+></listitem>
+				<listitem
+><para
+><guilabel
+>3</guilabel
+>: Suma de todos los dados con valor «3».<note
+><title
+>Ejemplo:</title
+><para
+>Dados de la pantalla: «34132». La suma es: «6»=«3»+«3». Dados de la pantalla: «33333». La suma es: «15»=«3»+«3»+«3»+«3»+«3».</para
+></note
+></para
+></listitem>
+				<listitem
+><para
+><guilabel
+>4</guilabel
+>: Suma de todos los dados con valor «4».<note
+><title
+>Ejemplo:</title
+><para
+>Dados de la pantalla: «14142». La suma es: «8»=«4»+«4». Dados de la pantalla: «41414». La suma es: «12»=«4»+«4»+«4»+«4».</para
+></note
+></para
+></listitem>
+				<listitem
+><para
+><guilabel
+>5</guilabel
+>: Suma de todos los dados con valor «5».<note
+><title
+>Ejemplo:</title
+><para
+>Dados de la pantalla: «15155». La suma es: «15»=«5»+«5»+«5». Dados de la pantalla: «51555». La suma es: «20»=«5»+«5»+«5»+«5».</para
+></note
+></para
+></listitem>
+				<listitem
+><para
+><guilabel
+>6</guilabel
+>: Suma de todos los dados con valor «6».<note
+><title
+>Ejemplo:</title
+><para
+>Dados de la pantalla: «66616». La suma es: «24»=«6»+«6»+«6»+«6». Dados de la pantalla: «61616». La suma es: «18»=«6»+«6»+«6».</para
+></note
+></para
+></listitem>
+				<listitem
+><para
+><guilabel
+>Bonificación si 
+> 62</guilabel
+>: el jugador gana 35 puntos más si el valor total de todos los campos anteriores es mayor de 62 puntos.</para
+></listitem>
+				<listitem
+><para
+><guilabel
+>Total superior</guilabel
+>: no es un campo modificable, sino la suma de todos los campos anteriores.</para
+></listitem>
+				<listitem
+><para
+><guilabel
+>3 iguales</guilabel
+>: suma de los valores de todos los dados cuando tres de los dados tienen el mismo valor.<note
+><title
+>Ejemplo:</title
+><para
+>Dados de la pantalla: «14121». La suma es: «9»=«1»+«1»+«1»+«4»+«2». Dados de la pantalla: «55151». La suma es: «17»=«5»+«5»+«5»+«1»+«1».</para
+></note
+></para
+></listitem>
+				<listitem
+><para
+><guilabel
+>4 iguales</guilabel
+>: suma de los valores de todos los dados cuando cuatro de los dados tienen el mismo valor.<note
+><title
+>Ejemplo:</title
+><para
+>Dados de la pantalla: «41444». La suma es: «17»=«4»+«4»+«4»+«4»+«1». Dados de la pantalla: «22522». La suma es: «13»=«2»+«2»+«2»+«2»+«5».</para
+></note
+></para
+></listitem>
+				<listitem
+><para
+><guilabel
+>Completo</guilabel
+>: el jugador gana 25 puntos al jugador si en la ronda obtiene 3 dados iguales y una pareja.<note
+><title
+>Ejemplo:</title
+><para
+>Dados de la pantalla: «11212». Dados de la pantalla: «53353»</para
+></note
+></para
+></listitem>
+				<listitem
+><para
+><guilabel
+>Escalera baja</guilabel
+>: el jugador gana 30 puntos si en la ronda obtiene cuatro dados con valores consecutivos.<note
+><title
+>Ejemplo:</title
+><para
+>Dados de la pantalla: «14312». La secuencia es: «1», «2», «3», «4». Dados de la pantalla: «51643». La secuencia es: «3», «4», «5», «6».</para
+></note
+></para
+></listitem>
+				<listitem
+><para
+><guilabel
+>Escalera alta</guilabel
+>: el jugador gana 40 puntos si en la ronda obtiene cinco dados con valores consecutivos.<note
+><title
+>Ejemplo:</title
+><para
+>Dados de la pantalla: «34152». La secuencia es: «1», «2», «3», «4», «5». Dados de la pantalla: «53264». La secuencia es: «2», «3», «4», «5», «6».</para
+></note
+></para
+></listitem>
+				<listitem
+><para
+><guilabel
+>&kiriki;</guilabel
+>: el jugador gana 50 puntos si en la ronda obtiene cinco dados con el mismo valor. Se puede puntuar por cada uno de los &kiriki; que obtenga. Por cada uno que obtenga después del primero, obtendrá un turno adicional al final del juego.<note
+><title
+>Ejemplo:</title
+><para
+>Dados de la pantalla: «11111». Dados de la pantalla: «33333»</para
+></note
+></para
+></listitem>
+				<listitem
+><para
+><guilabel
+>Azar</guilabel
+>: suma de los valores de todos los dados de la pantalla.<note
+><title
+>Ejemplo:</title
+><para
+>Dados de la pantalla: «51143». La suma es: «14»=«5»+«1»+«1»+«4»+«3». Dados de la pantalla: «21526». La suma es: «16»=«2»+«1»+«5»+«1»+«2»+«6».</para
+></note
+></para
+></listitem>
+				<listitem
+><para
+><guilabel
+>Total inferior</guilabel
+>: no es un campo modificable, sino la suma de todos los campos que empiecen por «3 iguales» e inferiores.</para
+></listitem>
+				<listitem
+><para
+><guilabel
+>Total final</guilabel
+>: no es un campo modificable, sino la suma de los campos «Total superior» y «Total inferior».</para
+></listitem>
+			</itemizedlist>
+			<para
+>Otras reglas y restricciones:</para>
+			<itemizedlist>
+				<listitem
+><para
+>El juego completo se divide en 13 turnos.</para
+></listitem>
+				<listitem
+><para
+>Cada jugador puede tirar tres dados por turno.</para
+></listitem>
+				<listitem
+><para
+>Después de tirar el primer dado, un jugador puede tirar los dados otras dos veces (tres tiradas en total por turno).</para
+></listitem>
+				<listitem
+><para
+>El jugador no está obligado a realizar tiradas adicionales si tras el primer lanzamiento considera el resultado satisfactorio.</para
+></listitem>
+				<listitem
+><para
+>Cada tirada adicional puede usar todos los dados o solo aquellos que seleccione.</para
+></listitem>
+				<listitem
+><para
+>Un jugador puede seleccionar los dados que desee volver a tirar pulsando en ellos con el ratón.</para
+></listitem>
+				<listitem
+><para
+>Una vez que haya vuelto a tirar, los dados perderán el valor anterior y solo será válido el nuevo valor.</para
+></listitem>
+				<listitem
+><para
+>El resultado de los dados se considerará satisfactorio si los valores de los dados de la pantalla coinciden con los patrones de puntuación expuestos anteriormente.</para
+></listitem>
+				<listitem
+><para
+>Cada patrón de valor individual solo se puede usar una vez por juego y por jugador. Por tanto, una vez que el patrón de puntuación se haya usado, no podrá volver a ser usado por el mismo jugador. Sin embargo, otro jugador sí podrá usar este mismo patrón.</para
+></listitem>
+			</itemizedlist>
+	</sect1>
+</chapter>
+
+<chapter id="interface"
+><title
+>Vista general de la interfaz</title
+> <!-- do not change this! -->
+<sect1 id="menu">
+<title
+>Opciones del menú</title>
+
+		<variablelist>
+			<varlistentry id="game-menu-new">
+				<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>N</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Juego</guimenu
+> <guimenuitem
+>Nuevo</guimenuitem
+> </menuchoice
+></term>
+				<listitem
+><para
+><action
+>Empieza una partida nueva.</action
+></para
+></listitem>
+			</varlistentry>
+			<varlistentry id="game-menu-highscores">
+				<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>H</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Juego</guimenu
+> <guimenuitem
+>Mostrar mejores puntuaciones…</guimenuitem
+> </menuchoice
+></term>
+				<listitem
+><para
+><action
+>Muestra una lista con las mejores puntuaciones.</action
+> Cuando tu puntuación del juego sobrepase una de las mejores diez puntuaciones listadas, se te pedirá el nombre para añadirlo. </para
+></listitem>
+			</varlistentry>
+			<varlistentry id="game-menu-print">
+				<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>P</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Juego</guimenu
+> <guimenuitem
+>Imprimir…</guimenuitem
+> </menuchoice
+></term>
+				<listitem
+><para
+><action
+>Imprime la tabla de puntuaciones actual.</action
+></para
+></listitem>
+			</varlistentry>
+			<varlistentry>
+				<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Juego</guimenu
+> <guimenuitem
+>Salir</guimenuitem
+> </menuchoice
+></term>
+				<listitem
+><para
+><action
+>Sale</action
+> de &kiriki;.</para
+></listitem>
+			</varlistentry>
+			<varlistentry>
+				<term
+><menuchoice
+><shortcut
+><keycap
+>H</keycap
+></shortcut
+> <guimenu
+>Mover</guimenu
+> <guimenuitem
+>Pista</guimenuitem
+> </menuchoice
+></term>
+				<listitem
+><para
+>Muestra una pista resaltando uno o más dados antes de tirarlos o una fila del cuadro de puntuaciones. El uso de esta función hará que la puntuación no se tenga en cuenta en la tabla de mejores puntuaciones.</para
+></listitem>
+			</varlistentry>
+			<varlistentry>
+				<term
+><menuchoice
+><shortcut
+><keycap
+>D</keycap
+></shortcut
+> <guimenu
+>Mover</guimenu
+> <guimenuitem
+>Demostración</guimenuitem
+> </menuchoice
+></term>
+				<listitem
+><para
+>Jugar en modo de demostración. Se puede detener la demostración empezando un nuevo juego.</para
+></listitem>
+			</varlistentry>
+
+		</variablelist>
+<para
+>De forma adicional, &kiriki; posee los elementos de los menús comunes de &kde; <guimenu
+>Preferencias</guimenu
+> y <guimenu
+>Ayuda</guimenu
+>. Para más información, consulta las secciones sobre el <ulink url="help:/fundamentals/menus.html#menus-settings"
+>menú Preferencias</ulink
+> y el <ulink url="help:/fundamentals/menus.html#menus-help"
+>menú Ayuda</ulink
+> en los principios fundamentales de &kde;. </para>
+
+</sect1>
+</chapter>
+
+<chapter id="faq"
+><title
+>Preguntas frecuentes</title
+> <!-- do not change this! -->
+<!--This chapter is for frequently asked questions. Please use <qandaset
+> <qandaentry
+> only!-->
+<qandaset>
+<!--Following is a standard list of FAQ questions.-->
+<qandaentry>
+ <question
+><para
+>Quiero cambiar el aspecto del juego. ¿Puedo? </para
+></question>
+ <answer
+><para
+>No. En la actualidad, &kiriki; no incluye temas.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>He cometido un error. ¿Puedo deshacerlo? </para
+></question>
+ <answer
+><para
+>No. &kiriki; no tiene la opción «deshacer».</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>¿Puedo usar el teclado para jugar?</para
+></question>
+ <answer
+><para
+>No. El juego de &kiriki; no se puede jugar usando el teclado.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>¡No sé qué puedo hacer! ¿Hay pistas? </para
+></question>
+ <answer
+><para
+>Para aprender las reglas y tácticas del juego, consulta la sección <link linkend="rules_and_tips"
+>Reglas de juego, estrategias y consejos</link
+> de este manual.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Debo salir del juego, pero todavía no he terminado la partida. ¿Puedo guardar el estado actual?</para
+></question>
+ <answer
+><para
+>No. En &kiriki; no existe la función de «Guardar».</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>La IA es demasiado rápida. ¡No veo lo que está haciendo!</para
+></question>
+ <answer
+><para
+>Para cambiar la velocidad de acción de la Inteligencia Artificial, usa el diálogo de configuración del juego del que se ha hablado en la sección <link linkend="configuration"
+>Configuración del juego</link
+> de este manual.</para
+></answer>
+</qandaentry>
+
+</qandaset>
+</chapter>
+
+<chapter id="configuration"
+><title
+>Configuración del juego</title
+> <!-- do not change this! -->
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="configuration.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Configuración del juego</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>El diálogo de configuración de &kiriki; permite configurar el número de participantes, administrar sus identidades y sus tiempos de respuesta.</para>
+<note
+><title
+>Nota:</title
+><para
+>Puedes cambiar los tiempos de respuesta solo para los jugadores dirigidos por la Inteligencia Artificial.</para
+></note>
+<para
+><guilabel
+>Número de jugadores:</guilabel
+> este campo define el número de jugadores para &kiriki;. Los valores permitidos están en el intervalo de dos a seis.</para>
+
+<para
+><guilabel
+>1.</guilabel
+>-<guilabel
+>6.</guilabel
+> Campos numerados con las identidades de los jugadores participantes. Puedes cambiar sus nombres e indicar si se controlarán por una persona o por la Inteligencia Artificial. Para definir quién controla el jugador, usa la casilla situada en la parte derecha, al lado del nombre del jugador.</para>
+<para
+>El primer jugador debe ser controlado siempre por una persona.</para>
+
+<para
+>Los cambios en el número de participantes y sus identidades se aplicarán en el próximo juego.</para>
+
+<para
+>El <guilabel
+>Retardo entre movimientos de la máquina (ms)</guilabel
+> permite indicar el retardo entre los turnos de la Inteligencia Artificial. El valor predeterminado de este campo es cero, lo que significa que la Inteligencia Artificial reacciona instantáneamente.</para>
+
+<note
+><title
+>Nota:</title
+><para
+>El valor máximo para este campo es de 999 milisegundos.</para
+></note>
+
+<para
+>Usa <guilabel
+>Tamaño del tipo de letra:</guilabel
+> y <guilabel
+>Altura de las filas:</guilabel
+> para ajustar el cuadro de puntuaciones según tus gustos.</para>
+<para
+>Si quieres jugar de forma inmediata tras lanzar &kiriki;, desactiva la opción predeterminada <guilabel
+>Mostrar un juego de demostración tras iniciar</guilabel
+>.</para>
+</chapter>
+
+<chapter id="credits"
+><title
+>Créditos y licencia</title
+> <!-- do not change this! -->
+<!--This chapter is for credits and licenses.-->
+
+<para
+>&kiriki;</para>
+
+<!--List all the copyright holders here-->
+<para
+>Copyright del programa 2005-2007 &Albert.Astals.Cid; &Albert.Astals.Cid.mail; </para>
+<para
+>Copyright de la documentación 2005 &Albert.Astals.Cid; &Albert.Astals.Cid.mail; </para>
+<para
+>Copyright de la documentación 2007 Eugene Trounev <email
+>eugene.trounev@gmail.com</email
+> </para>
+<para
+>Documentación traducida por Rocío Gallego <email
+>traducciones@rociogallego.com</email
+>, Santiago Fernández Sancho<email
+>santi@kde-es.org</email
+> y Kira J. Fernández <email
+>kirajfdez@gmail.com</email
+>.</para
+><para
+>Corregida por Eloy Cuadra <email
+>ecuadra@eloihr.net</email
+>.</para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-omittag:t
+sgml-shorttag:t
+sgml-namecase-general:t
+sgml-always-quote-attributes:t
+sgml-indent-step:0
+sgml-indent-data:nil
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->

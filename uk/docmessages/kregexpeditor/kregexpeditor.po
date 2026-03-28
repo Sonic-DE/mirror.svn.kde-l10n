@@ -1,0 +1,1235 @@
+# Translation of kregexpeditor.po to Ukrainian
+# Copyright (C) 2009-2013 This_file_is_part_of_KDE
+# This file is distributed under the license LGPL version 2.1 or
+# version 3 or later versions approved by the membership of KDE e.V.
+#
+# Yuri Chornoivan <yurchor@ukr.net>, 2009, 2010, 2011, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: kregexpeditor\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 12:04+0000\n"
+"PO-Revision-Date: 2013-01-27 09:43+0200\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-KDE-DocBook-SVN-URL: trunk/playground/utils/doc/KRegExpEditor/index."
+"docbook\n"
+"X-KDE-DocBook-SVN-Changed-Revision: 628042\n"
+"X-KDE-Associated-UI-Catalogs: \n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+
+#. Tag: title
+#: index.docbook:10
+#, no-c-format
+msgid "The Regular Expression Editor Manual"
+msgstr "Підручник з редактора формальних виразів"
+
+#. Tag: author
+#: index.docbook:13
+#, no-c-format
+msgid "<firstname>Jesper K.</firstname> <surname>Pedersen</surname>"
+msgstr "<firstname>Jesper K.</firstname> <surname>Pedersen</surname>"
+
+#. Tag: address
+#: index.docbook:16
+#, no-c-format
+msgid "&Jesper.Pedersen.mail;"
+msgstr "&Jesper.Pedersen.mail;"
+
+#. Tag: trans_comment
+#: index.docbook:18
+#, no-c-format
+msgid "ROLES_OF_TRANSLATORS"
+msgstr ""
+"<othercredit role=\"translator\"><firstname>Юрій</"
+"firstname><surname>Чорноіван</"
+"surname><affiliation><address><email>yurchor@ukr.net</email></address></"
+"affiliation><contrib>Переклад українською</contrib></othercredit>"
+
+#. Tag: date
+#: index.docbook:21
+#, no-c-format
+msgid "2001-07-03"
+msgstr "3 липня 2001 року"
+
+#. Tag: releaseinfo
+#: index.docbook:22
+#, no-c-format
+msgid "<releaseinfo>0.1</releaseinfo>"
+msgstr "<releaseinfo>0.1</releaseinfo>"
+
+#. Tag: holder
+#: index.docbook:28
+#, no-c-format
+msgid "Jesper K. Pedersen"
+msgstr "Jesper K. Pedersen"
+
+#. Tag: para
+#: index.docbook:32
+#, no-c-format
+msgid "This Handbook describes the Regular Expression Editor widget"
+msgstr "У цьому підручнику описано віджет редактора формальних виразів"
+
+#. Tag: keyword
+#: index.docbook:36
+#, no-c-format
+msgid "<keyword>KDE</keyword>"
+msgstr "<keyword>KDE</keyword>"
+
+#. Tag: keyword
+#: index.docbook:37
+#, no-c-format
+msgid "regular expression"
+msgstr "формальний вираз"
+
+#. Tag: title
+#: index.docbook:45
+#, no-c-format
+msgid "Introduction"
+msgstr "Вступ"
+
+#. Tag: para
+#: index.docbook:48
+#, no-c-format
+msgid ""
+"The regular expression editor is an editor for editing regular expression in "
+"a graphical style (in contrast to the <acronym>ASCII</acronym> syntax). "
+"Traditionally regular expressions have been typed in the <acronym>ASCII</"
+"acronym> syntax, which for example looks like <literal>^.*kde\\b</literal>. "
+"The major drawbacks of this style are:"
+msgstr ""
+"Редактор формальних виразів призначено для редагування формальних виразів у "
+"графічному режимі (на відміну від використання синтаксису <acronym>ASCII</"
+"acronym>). Традиційні формальні вирази вводяться у синтаксисі "
+"<acronym>ASCII</acronym>, який, наприклад, може виглядати так: <literal>^."
+"*kde\\b</literal>. Основними недоліками використання подібного синтаксису є:"
+
+#. Tag: para
+#: index.docbook:55
+#, no-c-format
+msgid "It is hard to understand for non-programmers."
+msgstr "Його важко зрозуміти, якщо ви не програміст."
+
+#. Tag: para
+#: index.docbook:58
+#, no-c-format
+msgid ""
+"It requires that you <emphasis>escape</emphasis> certain symbols (to match a "
+"star for example, you need to type <literal>\\*</literal>)."
+msgstr ""
+"За його використання вам доведеться <emphasis>екранувати</emphasis> деякі "
+"символи (для пошуку зірочки вам доведеться ввести <literal>\\*</literal>)."
+
+#. Tag: para
+#: index.docbook:62
+#, no-c-format
+msgid ""
+"It requires that you remember rules for <emphasis>precedence</emphasis> "
+"(What does <literal>x|y*</literal> match? a single <literal>x</literal> or a "
+"number of <literal>y</literal>, <emphasis>OR</emphasis> a number of "
+"<literal>x</literal> and <literal>y</literal>'s mixed?)"
+msgstr ""
+"Для його використання вам слід пам’ятати правила <emphasis>пріоритетності</"
+"emphasis> (Чому відповідає послідовність символів <literal>x|y*</literal>? "
+"Окремому <literal>x</literal> або довільній кількості <literal>y</literal> "
+"<emphasis>ЧИ</emphasis> довільній кількості <literal>x</literal> і "
+"<literal>y</literal>?)"
+
+#. Tag: para
+#: index.docbook:70
+#, no-c-format
+msgid ""
+"The regular expression editor, on the other hand, lets you <emphasis>draw</"
+"emphasis> your regular expression in an unambiguous way. The editor solves "
+"at least item two and three above. It might not make regular expressions "
+"available for the non-programmers, though only tests by users can tell that. "
+"So, if are you a non programmer, who has gained the power of regular "
+"expression from this editor, then please <ulink url=\"mailto:blackie@kde.org"
+"\">let me know</ulink>."
+msgstr ""
+"З іншого боку редактор формальних виразів надає вам змогу "
+"<emphasis>намалювати</emphasis> ваш формальний вираз у формі, яка не "
+"допускає двозначностей. Цей редактор розв’язує принаймні проблеми пунктів "
+"два і три, про які ми згадували вище. Можливо, він і не зробить формальні "
+"вирази доступними навіть для тих, хто не має нічого спільного з "
+"програмуванням, але перевірити це можна лише на власному досвіді. Отже, якщо "
+"ви не є програмістом і змогли скористатися всією потужністю формальних "
+"виразів за допомогою цього редактора, будь ласка,  <ulink url=\"mailto:"
+"blackie@kde.org\">повідомте про це авторові</ulink>."
+
+#. Tag: title
+#: index.docbook:86
+#, no-c-format
+msgid "What is a Regular Expression"
+msgstr "Що таке «формальний вираз»?"
+
+#. Tag: para
+#: index.docbook:88
+#, no-c-format
+msgid ""
+"A regular expression is a way to specify <emphasis>conditions</emphasis> to "
+"be fulfilled for a situation in mind. Normally when you search in a text "
+"editor you specify the text to search for <emphasis>literally</emphasis>, "
+"using a regular expression, on the other hand, you tell what a given match "
+"would look like. Examples of this include <emphasis>I'm searching for the "
+"word &kde;, but only at the beginning of the line</emphasis>, or "
+"<emphasis>I'm searching for the word <literal>the</literal>, but it must "
+"stand on its own</emphasis>, or <emphasis>I'm searching for files starting "
+"with the word <literal>test</literal>, followed by a number of digits, for "
+"example <literal>test12</literal>, <literal>test107</literal> and "
+"<literal>test007</literal></emphasis>"
+msgstr ""
+"Формальний вираз — це спосіб вказати <emphasis>умови</emphasis>, які має "
+"бути виконано у певній ситуації. Зазвичай, під час виконання пошуку у "
+"текстовому редакторів ви вказуєте текст, який має знайти програма "
+"<emphasis>буквально</emphasis>. За допомогою ж формального виразу ви можете "
+"вказати програмі певний клас відповідності знайденого. Прикладами таких "
+"класів є <emphasis>Я шукаю слово &kde;, але лише на початку рядка</"
+"emphasis>, або <emphasis>Я шукаю слово <literal>the</literal>, але це слово "
+"має стояти окремо</emphasis>, або <emphasis>Я шукаю файли, назви яких "
+"починаються зі слова <literal>test</literal>, за яким іде певне число, "
+"наприклад <literal>test12</literal>, <literal>test107</literal> або "
+"<literal>test007</literal></emphasis>"
+
+#. Tag: para
+#: index.docbook:102
+#, no-c-format
+msgid ""
+"You build regular expressions from smaller regular expressions, just like "
+"you build large Lego toys from smaller subparts. As in the Lego world, there "
+"are a number of basic building blocks. In the following I will describe each "
+"of these basic building blocks using a number of examples."
+msgstr ""
+"Великі формальні вирази складаються з менших формальних виразів, так само, "
+"які великі іграшки Лего складаються з маленьких частинок. Так само, які і у "
+"світі Лего, існує декілька основних будівельних блоків. Нижче ми "
+"познайомимося з кожним з цих будівельних блоків за допомогою декількох "
+"прикладів."
+
+#. Tag: title
+#: index.docbook:109
+#, no-c-format
+msgid "Searching for normal text."
+msgstr "Пошук звичайного тексту."
+
+#. Tag: para
+#: index.docbook:110
+#, no-c-format
+msgid ""
+"If you just want to search for a given text, then regular expression is "
+"definitely not a good choice. The reason for this is that regular "
+"expressions assign special meaning to some characters. This includes the "
+"following characters: <literal>.*|$</literal>. Thus if you want to search "
+"for the text <literal>kde.</literal> (i.e. the characters <literal>kde</"
+"literal> followed by a period), then you would need to specify this as "
+"<literal>kde\\.</literal><footnote><para>The regular expression editor "
+"solves this problem by taking care of escape rules for you.</para></"
+"footnote> Writing <literal>\\.</literal> rather than just <literal>.</"
+"literal> is called <emphasis>escaping</emphasis>."
+msgstr ""
+"Якщо вам просто треба знайти вказаний текст, формальні вирази вам точно не "
+"знадобляться. Причиною цього є те, що за використання формальних виразів "
+"деяким символам надається особливе значення. Серед цих символів: <literal>.*|"
+"$</literal>. Отже, якщо вам потрібно знайти послідовність символів "
+"<literal>kde.</literal> (тобто послідовність символів <literal>kde</"
+"literal>, за якою слідує крапка), вам доведеться визначати цю послідовність "
+"як формальний вираз <literal>kde\\.</literal><footnote><para>У редакторі "
+"формальних виразів цю проблему вже вирішень: програма саме потурбується про "
+"екранування символів.</para></footnote> Записи на зразок <literal>\\.</"
+"literal> замість простої <literal>.</literal> називаються "
+"<emphasis>екрануванням</emphasis>."
+
+#. Tag: title
+#: index.docbook:124
+#, no-c-format
+msgid "Matching &URL;s"
+msgstr "Пошук &URL;"
+
+#. Tag: para
+#: index.docbook:125
+#, no-c-format
+msgid ""
+"When you select something looking like a &URL; in &kde;, then the program "
+"<command>klipper</command> will offer to start <command>konqueror</command> "
+"with the selected &URL;."
+msgstr ""
+"Якщо ви виберете якийсь фрагмент тексту, який схожий на адресу &URL;, у "
+"&kde;, програма <command>klipper</command> запропонує вам запустити "
+"<command>konqueror</command> на сторінці з відповідною адресою &URL;."
+
+#. Tag: para
+#: index.docbook:129
+#, no-c-format
+msgid ""
+"<command>Klipper</command> does this by matching the selection against "
+"several different regular expressions, when one of the regular expressions "
+"matches, the accommodating command will be offered."
+msgstr ""
+"<command>Klipper</command> виконує це завдання за допомогою порівняння "
+"вибраного фрагмента з декількома різними формальними виразами, якщо буде "
+"виявлено збіг з одним з цих формальних виразів, програма запропонує "
+"відповідну команду."
+
+#. Tag: para
+#: index.docbook:133
+#, no-c-format
+msgid ""
+"The regular expression for &URL;s says (among other things), that the "
+"selection must start with the text <literal>http://</literal>. This is "
+"described using regular expressions by prefixing the text <literal>http://</"
+"literal> with a hat (the <literal>^</literal> character)."
+msgstr ""
+"Формальний вираз для &URL; повинен (окрім всього іншого) починатися з "
+"послідовності символів <literal>http://</literal>. У формальних виразах "
+"подібну умову можна вказати, якщо додати перед послідовністю символів "
+"<literal>http://</literal> символ «дашка» (символ <literal>^</literal>)."
+
+#. Tag: para
+#: index.docbook:139
+#, no-c-format
+msgid ""
+"The above is an example of matching positions using regular expressions. "
+"Similar, the position <emphasis>end-of-line</emphasis> can be matched using "
+"the character <literal>$</literal> (i.e. a dollar sign)."
+msgstr ""
+"Наведена вище умова є прикладом визначення у формальних виразах позиції "
+"послідовності символів у рядку. Подібним же чином, позицію "
+"<emphasis>наприкінці рядка</emphasis> можна вказати за допомогою символу "
+"<literal>$</literal> (тобто значка долара)."
+
+#. Tag: title
+#: index.docbook:146
+#, no-c-format
+msgid ""
+"Searching for the word <literal>the</literal>, but not <emphasis>the</"
+"emphasis><literal>re</literal>, <literal>brea</literal><emphasis>the</"
+"emphasis> or <literal>ano</literal><emphasis>the</emphasis><literal>r</"
+"literal>"
+msgstr ""
+"Пошук слова <literal>the</literal>, але не <emphasis>the</"
+"emphasis><literal>re</literal>, <literal>brea</literal><emphasis>the</"
+"emphasis> or <literal>ano</literal><emphasis>the</emphasis><literal>r</"
+"literal>"
+
+#. Tag: para
+#: index.docbook:150
+#, no-c-format
+msgid ""
+"Two extra position types can be matches in the above way, namely "
+"<emphasis>the position at a word boundary</emphasis>, and <emphasis>the "
+"position at a <emphasis>non</emphasis>-word boundary</emphasis>. The "
+"positions are specified using the text <literal>\\b</literal> (for word-"
+"boundary) and <literal>\\B</literal> (for non-word boundary)"
+msgstr ""
+"У описаний вище спосіб можна вказати ще два типи розташування послідовності "
+"символів, а саме <emphasis>розташування на межі слова</emphasis> і "
+"<emphasis>розташування <emphasis>не</emphasis> не на межі слова</emphasis>. "
+"Такі розташування можна задати за допомогою послідовностей символів <literal>"
+"\\b</literal> (на межі слова) і <literal>\\B</literal> (не на межі слова)"
+
+#. Tag: para
+#: index.docbook:157
+#, no-c-format
+msgid ""
+"Thus, searching for the word <literal>the</literal> can be done using the "
+"regular expression <literal>\\bthe\\b</literal>. This specifies that we are "
+"searching for <literal>the</literal> with no letters on each side of it (i."
+"e. with a word boundary on each side)"
+msgstr ""
+"Отже, пошук слова <literal>the</literal> можна виконати за допомогою "
+"формального виразу <literal>\\bthe\\b</literal>. Таким чином ми визначаємо, "
+"що шукати слід послідовність символів <literal>the</literal> по обидва боки "
+"від якої немає літер (тобто з обох боків цієї послідовності маємо межі "
+"слова)."
+
+#. Tag: para
+#: index.docbook:162
+#, no-c-format
+msgid ""
+"The four position matching regular expressions are inserted in the regular "
+"expression editor using <link linkend=\"positiontool\">four different "
+"positions tool</link>"
+msgstr ""
+"Формальні вирази з визначенням одного з чотирьох розташувань можна вставити "
+"у редакторі формальних виразів за допомогою <link linkend=\"positiontool"
+"\">інструменту визначення розташування</link>."
+
+#. Tag: title
+#: index.docbook:168
+#, no-c-format
+msgid "Searching for either <literal>this</literal> or <literal>that</literal>"
+msgstr "Пошук <literal>цього</literal> або <literal>того</literal>"
+
+#. Tag: para
+#: index.docbook:169
+#, no-c-format
+msgid ""
+"Imagine that you want to run through your document searching for either the "
+"word <literal>this</literal> or the word <literal>that</literal>. With a "
+"normal search method you could do this in two sweeps, the first time around, "
+"you would search for <literal>this</literal>, and the second time around you "
+"would search for <literal>that</literal>."
+msgstr ""
+"Припустімо, що вам потрібно знайти у всьому документі слова <literal>цього</"
+"literal> або слова <literal>того</literal>. За використання звичайних "
+"способів пошуку вам довелося б виконати два проходи: перший раз знайти всі "
+"<literal>цього</literal>, а другий раз — всі <literal>того</literal>."
+
+#. Tag: para
+#: index.docbook:176
+#, no-c-format
+msgid ""
+"Using regular expression searches you would search for both in the same "
+"sweep. You do this by searching for <literal>this|that</literal>, &ie; "
+"separating the two words with a vertical bar."
+msgstr ""
+"За допомогою формальних виразів ви зможете виконати пошук обох "
+"послідовностей символів за один прохід. Виконати подібний пошук можна за "
+"допомогою виразу <literal>цього|того</literal>, тобто відокремленням цих "
+"двох слів вертикальною рискою."
+
+#. Tag: para
+#: index.docbook:179
+#, no-c-format
+msgid ""
+"Note on each side of the vertical bar is a regular expression, so this "
+"feature is not only for searching for two different pieces of text, but for "
+"searching for two different regular expressions."
+msgstr ""
+"Зауважте, що по обидва боки від вертикальної риски можна вказувати формальні "
+"вирази, отже цією можливістю можна користуватися не лише для пошуку двох "
+"різних послідовностей символів, але і для пошуку двох різних формальних "
+"виразів."
+
+#. Tag: para
+#: index.docbook:184
+#, no-c-format
+msgid ""
+"In the regular expression editor you do not write the vertical bar yourself, "
+"but instead select the <link linkend=\"altntool\">alternative tool</link>, "
+"and insert the smaller regular expressions above each other."
+msgstr ""
+"У редакторі формальних виразів вам не потрібно буде зазначати вертикальну "
+"риску власноруч, замість цього можна буде скористатися <link linkend="
+"\"altntool\">інструментом варіантів</link>, а потім вказати менші формальні "
+"вирази один над одним."
+
+#. Tag: title
+#: index.docbook:190
+#, no-c-format
+msgid "Matching anything"
+msgstr "Пошук довільного виразу"
+
+#. Tag: para
+#: index.docbook:191
+#, no-c-format
+msgid ""
+"Regular expressions are often compared to wildcard matching in the shell - "
+"that is the capability to specify a number of files using the asterisk. You "
+"will most likely recognize wildcard matching from the following examples:"
+msgstr ""
+"Формальні вирази часто порівнюють з використанням шаблонів заміни у "
+"командній оболонці, тобто з можливістю вказувати декілька файлів одразу за "
+"допомогою використання зірочки. Приклади використання шаблонів заміни "
+"наведено нижче:"
+
+#. Tag: para
+#: index.docbook:196
+#, no-c-format
+msgid ""
+"<literal>ls *.txt</literal> - here <literal>*.txt</literal> is the shell "
+"wildcard matching every file ending with the <literal>.txt</literal> "
+"extension."
+msgstr ""
+"<literal>ls *.txt</literal> — тут <literal>*.txt</literal> — шаблон заміни, "
+"що відповідає всім назвам файлів, які завершуються суфіксом <literal>.txt</"
+"literal>."
+
+#. Tag: para
+#: index.docbook:199
+#, no-c-format
+msgid ""
+"<literal>cat test??.res</literal> - matching every file starting with "
+"<literal>test</literal> followed by two arbitrary characters, and finally "
+"followed by the test <literal>.res</literal>"
+msgstr ""
+"<literal>cat test??.res</literal> — покаже вміст всіх файлів, назви яких "
+"починаються на <literal>test</literal>, за яким йде два довільних символи, а "
+"завершуються суфіксом <literal>.res</literal>"
+
+#. Tag: para
+#: index.docbook:205
+#, no-c-format
+msgid ""
+"In the shell the asterisk matches any character any number of times. In "
+"other words, the asterisk matches <emphasis>anything</emphasis>. This is "
+"written like <literal>.*</literal> with regular expression syntax. The dot "
+"matches any single character, &ie; just <emphasis>one</emphasis> character, "
+"and the asterisk, says that the regular expression prior to it should be "
+"matched any number of times. Together this says any single character any "
+"number of times."
+msgstr ""
+"У командній оболонці зірочка відповідає довільному символу, вказаному "
+"довільну кількість разів. Іншими словами, зірочка відповідає <emphasis>будь-"
+"чому</emphasis>. Подібну властивість у синтаксисі формальних виразів має "
+"послідовність символів <literal>.*</literal>. Крапка відповідає окремому "
+"довільному символу, тобто лише <emphasis>одному</emphasis> символу, а "
+"зірочка позначає, що формальний вираз, який їй передує, може зустрічатися "
+"довільну кількість разів. Разом ці два символи означають: довільний символ "
+"довільну кількість разів."
+
+#. Tag: para
+#: index.docbook:214
+#, no-c-format
+msgid ""
+"This may seem overly complicated, but when you get the larger picture you "
+"will see the power. Let me show you another basic regular expression: "
+"<literal>a</literal>. The letter <literal>a</literal> on its own is a "
+"regular expression that matches a single letter, namely the letter "
+"<literal>a</literal>. If we combine this with the asterisk, &ie; "
+"<literal>a*</literal>, then we have a regular expression matching any number "
+"of a's."
+msgstr ""
+"Таке позначення може здатися занадто заплутаним, але якщо ви поглянете на "
+"все це ширше, ви побачите наскільки потужним є подібний синтаксис. "
+"Розглянемо ще один базовий формальний вираз: <literal>a</literal>. Саме "
+"літера <literal>a</literal> є формальним виразом, який відповідає одній "
+"літері, а саме літері <literal>a</literal>. Якщо сполучити цю літеру з "
+"зірочкою, тобто скористатися послідовністю <literal>a*</literal>, у нас "
+"вийде формальний вираз, який відповідає довільній кількості літер «a»."
+
+#. Tag: para
+#: index.docbook:222
+#, no-c-format
+msgid ""
+"We can combine several regular expression after each other, for example "
+"<literal>ba(na)*</literal>. <footnote><para><literal>(na)*</literal> just "
+"says that what is inside the parenthesis is repeated any number of times.</"
+"para></footnote> Imagine you had typed this regular expression into the "
+"search field in a text editor, then you would have found the following words "
+"(among others): <literal>ba</literal>, <literal>bana</literal>, "
+"<literal>banana</literal>, <literal>bananananananana</literal>"
+msgstr ""
+"Ми можемо сполучати декілька формальних виразів, один за іншим, наприклад "
+"<literal>кан(та)*</literal>. <footnote><para><literal>(та)*</literal> "
+"повідомляє інструменту пошуку, що вираз у круглих дужках має бути повторено "
+"довільну кількість разів.</para></footnote> Уявімо, що ви ввели цей "
+"формальний вираз у звичайне поле пошуку вашого текстового редактора, тоді за "
+"ним буде знайдено такі слова (серед інших): <literal>кан</literal>, "
+"<literal>канта</literal>, <literal>кантата</literal>, "
+"<literal>кантатататататататата</literal>"
+
+#. Tag: para
+#: index.docbook:232
+#, no-c-format
+msgid ""
+"Given the information above, it hopefully isn't hard for you to write the "
+"shell wildcard <literal>test??.res</literal> as a regular expression. "
+"Answer: <literal>test..\\.res</literal>. The dot on its own is any "
+"character. To match a single dot you must write <literal>\\.</"
+"literal><footnote><para>This is called escaping</para></footnote>. In other "
+"word, the regular expression <literal>\\.</literal> matches a dot, while a "
+"dot on its own matches any character."
+msgstr ""
+"На основі наведеної вище інформації вам, ймовірно, буде нескладно створити "
+"формальний вираз для шаблону командного рядка <literal>test??.res</literal>. "
+"Відповідь: <literal>test..\\.res</literal>. Крапка відповідає одному "
+"довільному символу. Щоб вказати саму крапку, вам слід написати <literal>\\.</"
+"literal><footnote><para>Подібні послідовності називаються екрануванням</"
+"para></footnote>. Іншими словами, формальному виразу <literal>\\.</literal> "
+"відповідає крапка, а сам символ крапки відповідає довільному символу."
+
+#. Tag: para
+#: index.docbook:240
+#, no-c-format
+msgid ""
+"In the regular expression editor, a repeated regular expression is created "
+"using the <link linkend=\"repeattool\">repeat tool</link>"
+msgstr ""
+"У редакторі формальних виразів формальний вираз з повторенням можна створити "
+"за допомогою <link linkend=\"repeattool\">інструменту повторення</link>"
+
+#. Tag: title
+#: index.docbook:245
+#, no-c-format
+msgid ""
+"Replacing <literal>&amp;</literal> with <literal>&amp;amp;</literal> in a "
+"&HTML; document"
+msgstr ""
+"Заміна <literal>&amp;</literal> на <literal>&amp;amp;</literal> у документі "
+"&HTML;"
+
+#. Tag: para
+#: index.docbook:246
+#, no-c-format
+msgid ""
+"In &HTML; the special character <literal>&amp;</literal> must be written as "
+"<literal>&amp;amp;</literal> - this is similar to escaping in regular "
+"expressions."
+msgstr ""
+"У форматі &HTML; спеціальний символ <literal>&amp;</literal> слід записувати "
+"так: <literal>&amp;amp;</literal>. Тут ми маємо справу з чимось подібним до "
+"екранування у формальних виразах."
+
+#. Tag: para
+#: index.docbook:251
+#, no-c-format
+msgid ""
+"Imagine that you have written an &HTML; document in a normal editor (e.g. "
+"&XEmacs; or &kate;), and you totally forgot about this rule. What you would "
+"do when realized your mistake was to replace every occurrences of "
+"<literal>&amp;</literal> with <literal>&amp;amp;</literal>."
+msgstr ""
+"Уявімо, що ви створюєте документ &HTML; у звичайному редакторі (наприклад "
+"&XEmacs; або &kate;) і чомусь зовсім забули про це правило. Що ж робити, "
+"коли ви виявите власну помилку? Доведеться замінити всі <literal>&amp;</"
+"literal> на <literal>&amp;amp;</literal>."
+
+#. Tag: para
+#: index.docbook:256
+#, no-c-format
+msgid ""
+"This can easily be done using normal search and replace, there is, however, "
+"one glitch. Imagine that you did remember this rule - <emphasis>just a bit</"
+"emphasis> - and did it right in some places. Replacing unconditionally would "
+"result in <literal>&amp;amp;</literal> being replaced with <literal>&amp;amp;"
+"amp;</literal>"
+msgstr ""
+"Це завдання можна виконати звичайною дією з пошуку і заміни, але тут може "
+"виникнути інша проблема. Уявімо, що ви <emphasis>іноді</emphasis> все ж "
+"користувалися цим правилом. Тоді звичайна заміна призведе до того, що "
+"замість <literal>&amp;amp;</literal> у тексті з’явиться <literal>&amp;amp;"
+"amp;</literal>"
+
+#. Tag: para
+#: index.docbook:263
+#, no-c-format
+msgid ""
+"What you really want to say is that <literal>&amp;</literal> should only be "
+"replaced if it is <emphasis>not</emphasis> followed by the letters "
+"<literal>amp;</literal>. You can do this using regular expressions using "
+"<emphasis>positive lookahead</emphasis>."
+msgstr ""
+"Насправді нам потрібно замінити символ <literal>&amp;</literal>, лише якщо "
+"після нього <emphasis>немає</emphasis> послідовності літер <literal>amp;</"
+"literal>. Зробити це можна за допомогою формального виразу з "
+"<emphasis>додатним випередженням</emphasis>."
+
+#. Tag: para
+#: index.docbook:268
+#, no-c-format
+msgid ""
+"The regular expression, which only matches an ampersand if it is not "
+"followed by the letters <literal>amp;</literal> looks as follows: "
+"<literal>&amp;(?!amp;)</literal>. This is, of course, easier to read using "
+"the regular expression editor, where you would use the <link linkend="
+"\"lookaheadtools\">lookahead tools</link>."
+msgstr ""
+"Формальний вираз, який відповідатиме лише амперсанду, за яким немає літер "
+"<literal>amp;</literal> виглядатиме так: <literal>&amp;(?!amp;)</literal>. "
+"Його, звичайно ж, простіше прочитати за допомогою редактора формальних "
+"виразів, у якому можна скористатися <link linkend=\"lookaheadtools"
+"\">інструментами випереджального пошуку</link>."
+
+#. Tag: title
+#: index.docbook:281
+#, no-c-format
+msgid "Using the Regular Expression Editor"
+msgstr "Користування редактором формальних виразів"
+
+#. Tag: para
+#: index.docbook:283
+#, no-c-format
+msgid ""
+"This chapter will tell you about how the regular expression editor works."
+msgstr ""
+"У цій главі ми поговоримо про те, як працює редактор формальних виразів."
+
+#. Tag: title
+#: index.docbook:291
+#, no-c-format
+msgid "The organization of the screen"
+msgstr "Компонування вікна"
+
+#. Tag: para
+#: index.docbook:297
+#, no-c-format
+msgid ""
+"The most important part of the editor is of course the editing area, this is "
+"the area where you draw your regular expression. This area is the larger "
+"gray one in the middle."
+msgstr ""
+"Найважливішою частиною редактора є, звичайно ж, область редагування: це "
+"область у якій ви створюватимете ваш формальний вираз. Це велика сіра "
+"область, розташована посередині вікна."
+
+#. Tag: para
+#: index.docbook:301
+#, no-c-format
+msgid ""
+"Above the editing area you have two Toolbars, the first one contains the "
+"<link linkend=\"editingtools\">editing actions</link> - much like drawing "
+"tools in a drawing program. The second Toolbar contains the <emphasis>What's "
+"This?</emphasis> button, and buttons for undo and redo."
+msgstr ""
+"Над областю редагування розташовано дві панелі інструментів. На першій з них "
+"містяться кнопки <link linkend=\"editingtools\">дій з редагування</link> — "
+"вони подібні до інструментів малювання у програмі, призначеній для "
+"малювання. На другій панелі інструментів міститься кнопка <emphasis>Що це?</"
+"emphasis> та кнопки дій «Вернути» і «Повторити»."
+
+#. Tag: para
+#: index.docbook:307
+#, no-c-format
+msgid ""
+"Below the editing area you find the regular expression currently build, in "
+"the so called ascii syntax. The ascii syntax is updated while you edit the "
+"regular expression in the graphical editor. If you rather want to update the "
+"ascii syntax then please do, the graphical editor is updated on the fly to "
+"reflect your changes."
+msgstr ""
+"Під областю редагування ви побачите формальний вираз, який ви створюєте, у "
+"так званому синтаксисі ASCII. Протягом редагування формального виразу за "
+"допомогою графічного редактора вираз ASCII змінюватиметься. Якщо ви надаєте "
+"перевагу зміні ASCII вигляду, ви можете перейти до відповідного поля, — поле "
+"графічного редактора оновлюватиметься відповідно до змін у тексті ASCII."
+
+#. Tag: para
+#: index.docbook:314
+#, no-c-format
+msgid ""
+"Finally to the left of the editor area you will find a number of pre-built "
+"regular expressions. They serve two purposes: (1) When you load the editor "
+"with a regular expression then this regular expression is made "
+"<emphasis>nicer</emphasis> or more comprehensive by replacing common regular "
+"expressions. In the screen dump above, you can see how the ascii syntax \".*"
+"\" have been replaced with a box saying \"anything\". (2) When you insert "
+"regular expression you may find building blocks for your own regular "
+"expression from the set of pre build regular expressions. See the section on "
+"<link linkend=\"userdefinedregexps\">user defined regular expressions</link> "
+"to learn how to save your own regular expressions."
+msgstr ""
+"Нарешті, ліворуч від області редагування ви побачите декілька попередньо "
+"створених формальних виразів. У цих виразів два призначення: 1) після "
+"завантаження до редактора формального виразу подібні формальні вирази "
+"виглядають <emphasis>приємніше</emphasis> або зрозуміліше за звичайні форми "
+"формальних виразів. На знімку вікна, наведеному нижче, ви можете бачити, як "
+"послідовність символів ASCII «.*» замінено на панель з написом «будь-що». "
+"(2) ви можете створити власні попередньо визначені формальні вирази, якими "
+"згодом буде зручно користуватися. Докладніше про створення ваших власних "
+"типових формальних виразів можна дізнатися з розділу, присвяченому <link "
+"linkend=\"userdefinedregexps\">визначеним користувачем формальним виразам</"
+"link>."
+
+#. Tag: title
+#: index.docbook:331
+#, no-c-format
+msgid "Editing Tools"
+msgstr "Інструменти редагування"
+
+#. Tag: para
+#: index.docbook:332
+#, no-c-format
+msgid ""
+"The text in this section expects that you have read the chapter on <link "
+"linkend=\"whatIsARegExp\">what a regular expression is</link>, or have "
+"previous knowledge on this subject."
+msgstr ""
+"У цьому розділі ми вважатимемо, що ви вже прочитали главу, присвячену <link "
+"linkend=\"whatIsARegExp\">опису формальних виразів</link> або вже знайомі з "
+"предметом з інших джерел."
+
+#. Tag: para
+#: index.docbook:336
+#, no-c-format
+msgid ""
+"All the editing tools are located in the toolbar above editing area. Each of "
+"them will be described in the following."
+msgstr ""
+"Всі інструменти редагування перебувають на панелі інструментів, розташованій "
+"над областю редагування. Про кожен з цих інструментів ми поговоримо трохи "
+"згодом."
+
+#. Tag: title
+#: index.docbook:342
+#, no-c-format
+msgid "Selection Tool"
+msgstr "Інструмент вибору"
+
+#. Tag: para
+#: index.docbook:346
+#, no-c-format
+msgid ""
+"The selection tool is used to mark elements for cut-and-paste and drag-and-"
+"drop. This is very similar to a selection tool in any drawing program."
+msgstr ""
+"Інструмент вибору призначено для позначення елементів для наступного "
+"виконання дії з вирізання з вставленням або перетягування зі скиданням. Дія "
+"цього інструменту подібна до дії інструменту вибору у будь-якій з програм "
+"для малювання."
+
+#. Tag: title
+#: index.docbook:353
+#, no-c-format
+msgid "Text Tool"
+msgstr "Текстовий інструмент"
+
+#. Tag: para
+#: index.docbook:363
+#, no-c-format
+msgid ""
+"Using this tool you will insert normal text to match. The text is matched "
+"literally, &ie; you do not have to worry about escaping of special "
+"characters. In the example above the following regular expression will be "
+"build: <literal>abc\\*\\\\\\)</literal>"
+msgstr ""
+"За допомогою цього інструменту ви можете ввести звичайний текст для пошуку. "
+"Текст сприйматиметься інструментом буквально, тобто вам не потрібно "
+"перейматися екрануванням спеціальних символів. У наведеному вище прикладі "
+"буде створено такий формальний вираз: <literal>abc\\*\\\\\\)</literal>"
+
+#. Tag: title
+#: index.docbook:371
+#, no-c-format
+msgid "Character Tool"
+msgstr "Інструмент символів"
+
+#. Tag: para
+#: index.docbook:379
+#, no-c-format
+msgid ""
+"Using this tool you insert character ranges. Examples includes what in ASCII "
+"text says <literal>[0-9]</literal>, <literal>[^a-zA-Z,_]</literal>. When "
+"inserting an item with this tool a dialog will appear, in which you specify "
+"the character ranges."
+msgstr ""
+"За допомогою цього інструменту можна додавати діапазони символів. Прикладами "
+"таких діапазонів у синтаксисі ASCII є <literal>[0-9]</literal>, <literal>[^a-"
+"zA-Z,_]</literal>. Під час додавання елемента за допомогою цього інструменту "
+"програма відкриває діалогове вікно, у якому ви можете вказати відповідний "
+"діапазон символів."
+
+#. Tag: para
+#: index.docbook:385
+#, no-c-format
+msgid ""
+"See description of <link linkend=\"repeatregexp\">repeated regular "
+"expressions</link>."
+msgstr ""
+"Див. опис <link linkend=\"repeatregexp\">формальних виразів з повторенням</"
+"link>."
+
+#. Tag: title
+#: index.docbook:391
+#, no-c-format
+msgid "Any Character Tool"
+msgstr "Інструмент будь-якого символу"
+
+#. Tag: para
+#: index.docbook:398
+#, no-c-format
+msgid ""
+"This is the regular expression \"dot\" (.). It matches any single character."
+msgstr ""
+"Це формальний вираз «крапка» (.). він відповідає одному довільному символу."
+
+#. Tag: title
+#: index.docbook:407
+#, no-c-format
+msgid "Repeat Tool"
+msgstr "Інструмент повторення"
+
+#. Tag: para
+#: index.docbook:415
+#, no-c-format
+msgid ""
+"This is the repeated elements. This includes what in ASCII syntax is "
+"represented using an asterix (*), a plus (+), a question mark (?), and "
+"ranges ({3,5}). When you insert an item using this tool, a dialog will "
+"appear asking for the number of times to repeat."
+msgstr ""
+"Цей інструмент призначено для визначення повторюваності елементів. Його "
+"відповідниками у синтаксисі ASCII є символи зірочки (*), плюса (+), знака "
+"питання (?) і діапазонів ({3,5}). Під час додавання відповідного елемента "
+"програма відкриватиме діалогове вікно, у якому ви зможете ввести кількість "
+"повторів."
+
+#. Tag: para
+#: index.docbook:422
+#, no-c-format
+msgid ""
+"You specify what to repeat by drawing the repeated content inside the box "
+"which this tool inserts."
+msgstr ""
+"Вказати елемент для повторення можна додаванням відповідних елементів чи "
+"символів до поля, яке додасть у вираз інструмент."
+
+#. Tag: para
+#: index.docbook:425
+#, no-c-format
+msgid ""
+"Repeated elements can both be built from the outside in and the inside out. "
+"That is you can first draw what to be repeated, select it and use the repeat "
+"tool to repeat it. Alternatively you can first insert the repeat element, "
+"and draw what is to be repeated inside it."
+msgstr ""
+"Елементи для повторення можна створити як поза блоком, так і всередині блоку "
+"повторення. Це означає, що ви, наприклад, можете створити спочатку "
+"формальний вираз для повторення, обрати його, а потім скористатися "
+"інструментом повторення. Ви також можете спочатку додати елемент повторення, "
+"а потім вказати у відповідному полі те, що, власне, слід повторювати."
+
+#. Tag: para
+#: index.docbook:432
+#, no-c-format
+msgid ""
+"See description on the <link linkend=\"repeatregexp\">repeated regular "
+"expressions</link>."
+msgstr ""
+"Див. опис <link linkend=\"repeatregexp\">формальних виразів з повторенням</"
+"link>."
+
+#. Tag: title
+#: index.docbook:439
+#, no-c-format
+msgid "Alternative Tool"
+msgstr "Інструмент варіантів"
+
+#. Tag: para
+#: index.docbook:446
+#, no-c-format
+msgid ""
+"This is the alternative regular expression (|). You specify the alternatives "
+"by drawing each alternative on top of each other inside the box that this "
+"tool inserts."
+msgstr ""
+"Цей інструмент додає формальний вираз з варіантами (|). Вказати варіанти "
+"можна додаванням їх у поля варіантів всередині блоку, який інструмент "
+"вставляє до формального виразу."
+
+#. Tag: para
+#: index.docbook:450
+#, no-c-format
+msgid ""
+"See description on <link linkend=\"altnregexp\">alternative regular "
+"expressions</link>"
+msgstr ""
+"Див. опис <link linkend=\"altnregexp\">формальних виразів з варіантами</"
+"link>."
+
+#. Tag: title
+#: index.docbook:457
+#, no-c-format
+msgid "Compound Tool"
+msgstr "Інструмент складання"
+
+#. Tag: para
+#: index.docbook:464
+#, no-c-format
+msgid ""
+"The compound tool does not represent any regular expressions. It is used to "
+"group other sub parts together in a box, which easily can be collapsed to "
+"only its title. This can be seen in the right part of the screen dump above."
+msgstr ""
+"Інструмент складання не відповідає жодному формальному виразу. Він "
+"використовується для групування частин формального виразу у єдиний блок, "
+"який потім можна згорнути до заголовка цього блоку. Приклад подібного "
+"згортання можна бачити у правій частині наведеного вище знімка екрана."
+
+#. Tag: title
+#: index.docbook:474
+#, no-c-format
+msgid "Line Start/End Tools"
+msgstr "Інструменти «Початок/Кінець рядка»"
+
+#. Tag: para
+#: index.docbook:484
+#, no-c-format
+msgid ""
+"The line start and line end tools matches the start of the line, and the end "
+"of the line respectively. The regular expression in the screen dump above "
+"thus matches lines only matches spaces."
+msgstr ""
+"Інструменти початку і завершення рядка призначено для додавання позначок "
+"початку і кінцю рядка, відповідно. Формальний вираз, наведений відповідає "
+"лише рядкам, які починаються з пробілів."
+
+#. Tag: para
+#: index.docbook:489
+#, no-c-format
+msgid ""
+"See description of <link linkend=\"positionregexp\">position regular "
+"expressions</link>."
+msgstr ""
+"Див. опис <link linkend=\"positionregexp\">формальних виразів розташування</"
+"link>."
+
+#. Tag: title
+#: index.docbook:497
+#, no-c-format
+msgid "Word (Non)Boundary Tools"
+msgstr "Інструменти межі (або її відсутності) слова"
+
+#. Tag: para
+#: index.docbook:506
+#, no-c-format
+msgid ""
+"The boundary tools matches a word boundary respectively a non-word boundary. "
+"The regular expression in the screen dump thus matches any words starting "
+"with <literal>the</literal>. The word <literal>the</literal> itself is, "
+"however, not matched."
+msgstr ""
+"За допомогою інструментів меж можна вказати інструменту, що слід шукати межу "
+"слова або відсутність такої межі. Таким чином, формальний вираз на знімку "
+"вікна відповідає будь-яким словам, що починаються з <literal>the</literal> "
+"але саме слово <literal>the</literal> йому не відповідає."
+
+#. Tag: para
+#: index.docbook:511
+#, no-c-format
+msgid ""
+"See description of <link linkend=\"boundaryregexp\">boundary regular "
+"expressions</link>."
+msgstr ""
+"Див. опис <link linkend=\"boundaryregexp\">формальних виразі межі</link>."
+
+#. Tag: title
+#: index.docbook:519
+#, no-c-format
+msgid "Positive/Negative Lookahead Tools"
+msgstr "Інструменти додатного або від’ємного випередження"
+
+#. Tag: para
+#: index.docbook:529
+#, no-c-format
+msgid ""
+"The look ahead tools either specify a positive or negative regular "
+"expression to match. The match is, however, not part of the total match."
+msgstr ""
+"За допомогою інструментів випереджального пошуку можна вказати формальний "
+"вираз послідовності символів перед або після формального виразу. Пошуку ж "
+"самих цих послідовностей інструментом не виконуватиметься."
+
+#. Tag: para
+#: index.docbook:533
+#, no-c-format
+msgid ""
+"Note: You are only allowed to place lookaheads at the end of the regular "
+"expressions. The Regular Expression Editor widget does not enforce this."
+msgstr ""
+"Зауваження: додавати випереджальні формальні вирази можна лише у кінець "
+"формального виразу. Віджет редактора формальних виразів не має подібних "
+"обмежень."
+
+#. Tag: para
+#: index.docbook:537
+#, no-c-format
+msgid ""
+"See description of <link linkend=\"lookaheadregexp\">look ahead regular "
+"expressions</link>."
+msgstr ""
+"Див. опис <link linkend=\"lookaheadregexp\">формальних виразів з "
+"випередженням</link>."
+
+#. Tag: title
+#: index.docbook:546
+#, no-c-format
+msgid "User Defined Regular Expressions"
+msgstr "Формальні вирази, визначені користувачем"
+
+#. Tag: para
+#: index.docbook:547
+#, no-c-format
+msgid ""
+"Located at the left of the editing area is a list box containing user "
+"defined regular expressions. Some regular expressions are pre-installed with "
+"your &kde; installation, while others you can save yourself."
+msgstr ""
+"У лівій частині області редагування міститься список визначених користувачем "
+"формальних виразів. Деякі з шаблонів формальних виразів встановлюються разом "
+"з &kde;, інші ж ви можете визначити власноруч."
+
+#. Tag: para
+#: index.docbook:552
+#, no-c-format
+msgid ""
+"These regular expression serves two purposes (<link linkend="
+"\"screenorganization\">see detailed description</link>), namely (1) to offer "
+"you a set of building block and (2) to make common regular expressions "
+"prettier."
+msgstr ""
+"У цих формальних виразів два призначення (<link linkend=\"screenorganization"
+"\">див. докладний опис</link>), а саме: 1) створити набір будівельних "
+"цеглинок для інших формальних виразів; 2) зробити вигляд поширених "
+"формальних виразів наочнішим."
+
+#. Tag: para
+#: index.docbook:557
+#, no-c-format
+msgid ""
+"You can save your own regular expressions by right clicking the mouse button "
+"in the editing area, and choosing <literal>Save Regular Expression</literal>."
+msgstr ""
+"Ви можете зберігати ваші власні формальні вирази: для цього достатньо "
+"навести вказівник миші на область редагування з таким формальним виразом, "
+"клацнути правою кнопкою миші і обрати у контекстному меню пункт "
+"<literal>Зберегти формальний вираз</literal>."
+
+#. Tag: para
+#: index.docbook:561
+#, no-c-format
+msgid ""
+"If the regular expression you save is within a <link linkend=\"compoundtool"
+"\">compound container</link> then the regular expression will take part in "
+"making subsequent regular expressions prettier."
+msgstr ""
+"Якщо формальний вираз, який ви маєте намір зберегти перебуває у <link "
+"linkend=\"compoundtool\">контейнері складання</link>, формальний вираз, "
+"використаний як будівельний блок у складніших виразах, виглядатиме "
+"акуратніше."
+
+#. Tag: para
+#: index.docbook:566
+#, no-c-format
+msgid ""
+"User defined regular expressions can be deleted or renamed by pressing the "
+"right mouse button on top of the regular expression in question in the list "
+"box."
+msgstr ""
+"Ви можете вилучити або перейменувати визначені вами формальні вирази: "
+"наведіть вказівник миші на відповідний пункт у списку і клацніть правою "
+"кнопкою миші, щоб відкрити контекстне меню з потрібними вам пунктами."
+
+#. Tag: title
+#: index.docbook:576
+#, no-c-format
+msgid "Reporting bugs and Suggesting Features"
+msgstr "Повідомлення про вади та запити на реалізацію можливостей"
+
+#. Tag: para
+#: index.docbook:577
+#, no-c-format
+msgid ""
+"Bug reports and feature requests should be submitted through the <ulink url="
+"\"http://bugs.kde.org/\">&kde; Bug Tracking System</ulink>. <emphasis role="
+"\"strong\">Before</emphasis> you report a bug or suggest a feature, please "
+"check that it hasn't already been <ulink url=\"http://bugs.kde.org/buglist."
+"cgi?quicksearch=kregexpeditor\">reported/suggested.</ulink>"
+msgstr ""
+"Для повідомлень про вади і запитів щодо реалізації можливостей слід "
+"використовувати <ulink url=\"http://bugs.kde.org/\">Систему стеження за "
+"вадами у &kde;</ulink>. <emphasis role=\"strong\">Перш ніж</emphasis> "
+"повідомити про ваду або запропонувати реалізацію можливості, будь ласка, "
+"перевірте, чи не було вже подібного <ulink url=\"http://bugs.kde.org/buglist."
+"cgi?quicksearch=kregexpeditor\">повідомлення/запиту</ulink>."
+
+#. Tag: title
+#: index.docbook:588
+#, no-c-format
+msgid "Frequently Asked Questions"
+msgstr "Часті запитання"
+
+#. Tag: title
+#: index.docbook:590
+#, no-c-format
+msgid "Does the regular expression editor support back references?"
+msgstr "Чи підтримує редактор формальних виразів зворотні посилання?"
+
+#. Tag: para
+#: index.docbook:591
+#, no-c-format
+msgid "No currently this is not supported. It is planned for the next version."
+msgstr ""
+"Ні, ще не підтримує. Реалізацію підтримки заплановано у наступних версіях."
+
+#. Tag: title
+#: index.docbook:596
+#, no-c-format
+msgid "Does the regular expression editor support showing matches?"
+msgstr "Чи може редактор формальних виразів показувати відповідники?"
+
+#. Tag: para
+#: index.docbook:597
+#, no-c-format
+msgid "No, hopefully this will be available in the next version."
+msgstr ""
+"Ні, сподіваємося цю можливість буде реалізовано у наступній версії програми."
+
+#. Tag: title
+#: index.docbook:601
+#, no-c-format
+msgid ""
+"I'm the author of a &kde; program, how can I use this widget in my "
+"application?"
+msgstr ""
+"Я є автором однієї з програм &kde;, як мені скористатися цим віджетом у моїй "
+"програмі?"
+
+#. Tag: para
+#: index.docbook:603
+#, no-c-format
+msgid ""
+"See <ulink url=\"http://developer.kde.org/documentation/library/cvs-api/"
+"classref/interfaces/KRegExpEditorInterface.html\">The documentation for the "
+"class KRegExpEditorInterface</ulink>."
+msgstr ""
+"Ознайомтеся з <ulink url=\"http://developer.kde.org/documentation/library/"
+"cvs-api/classref/interfaces/KRegExpEditorInterface.html\">документацією щодо "
+"класу KRegExpEditorInterface</ulink>."
+
+#. Tag: title
+#: index.docbook:608
+#, no-c-format
+msgid ""
+"I cannot find the <emphasis>Edit Regular expression</emphasis> button in for "
+"example konqueror on another KDE3 installation, why?"
+msgstr ""
+"Не можу знайти кнопку <emphasis>Редагувати формальний вираз</emphasis>, "
+"наприклад у konqueror іншого комплексу програм KDE3, чому?"
+
+#. Tag: para
+#: index.docbook:610
+#, no-c-format
+msgid ""
+"The regular expression widget is located in the package &kde;-utils. If you "
+"do not have this package installed, then the <emphasis>edit regular "
+"expressions</emphasis> buttons will not appear in the programs."
+msgstr ""
+"Віджет формальних виразів міститься у пакунку &kde;-utils. Якщо цей пакунок "
+"не буде встановлено, у програмах не буде показано кнопок "
+"<emphasis>редагувати формальний вираз</emphasis>."
+
+#. Tag: title
+#: index.docbook:621
+#, no-c-format
+msgid "Credits and License"
+msgstr "Подяки і ліцензування"
+
+#. Tag: para
+#: index.docbook:623
+#, no-c-format
+msgid ""
+"Documentation is copyright 2001, Jesper K. Pedersen &Jesper.Pedersen.mail;"
+msgstr ""
+"Авторські права на документацію належать Jesper K. Pedersen &Jesper.Pedersen."
+"mail;, ©2001"
+
+#. Tag: trans_comment
+#: index.docbook:628
+#, no-c-format
+msgid "CREDIT_FOR_TRANSLATORS"
+msgstr ""
+"<para>Переклад українською: Юрій Чорноіван <email>yurchor@ukr.net</email></"
+"para>"
+
+#. Tag: chapter
+#: index.docbook:628
+#, no-c-format
+msgid "&underFDL; &underGPL;"
+msgstr "&underFDL; &underGPL;"

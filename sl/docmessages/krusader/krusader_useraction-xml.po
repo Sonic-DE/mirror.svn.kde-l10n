@@ -1,0 +1,508 @@
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 12:03+0000\n"
+"PO-Revision-Date: 2023-09-29 23:33+0200\n"
+"Last-Translator: Jan <jan.napast153@gmail.com>\n"
+"Language-Team: Slovenian <kde-i18n-doc@kde.org>\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#. Tag: title
+#: useraction-xml.docbook:8
+#, no-c-format
+msgid "useractions.xml"
+msgstr "userakcije.xml"
+
+#. Tag: para
+#: useraction-xml.docbook:9
+#, no-c-format
+msgid ""
+"This appendix gives several examples of <filename>useractions.xml</filename> "
+"files. With this you can begin to discover the power of the <link linkend="
+"\"useractions\">UserActions</link> and start learning how to use them. Once "
+"you understand how to write UserActions you will find that &krusader; is an "
+"even more powerful, customizable tool."
+msgstr ""
+"V tem dodatku je več primerov datotek <filename>useractions.xml</filename>. "
+"S tem lahko začnete odkrivati moč <link linkend=\"useractions\">uporabniških "
+"dejanj</link> in se učiti, kako jih uporabljati. Ko boste razumeli, kako "
+"napisati UserActions, boste ugotovili, da &krusader; je še močnejše, "
+"prilagodljivo orodje."
+
+#. Tag: para
+#: useraction-xml.docbook:15
+#, no-c-format
+msgid ""
+"Please consider uploading your UserActions at <ulink url=\"https://store.kde."
+"org\">store.kde.org</ulink> as we are collecting them. If your UserAction is "
+"selected by us it will be shipped with &krusader; at the next release."
+msgstr ""
+"Prosimo, razmislite o nalaganju svojih uporabniških dejanj na <ulink url="
+"\"https://store.kde.org\">store.kde.org</ulink>, saj jih zbiramo. Če "
+"izberemo vaše UserAction, bo poslano z &krusader; ob naslednji izdaji."
+
+#. Tag: para
+#: useraction-xml.docbook:20
+#, no-c-format
+msgid "Runs <command>uptime</command>"
+msgstr "Zažene <command>uptime</command>"
+
+#. Tag: programlisting
+#: useraction-xml.docbook:21
+#, no-c-format
+msgid ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+" &lt;KrusaderUserActions>\n"
+"  &lt;action name=\"uptime\" >\n"
+"  &lt;title>Up-time&lt;/title>\n"
+"  &lt;tooltip>tells how long since the computer has been booted&lt;/"
+"tooltip>\n"
+"  &lt;icon>clock&lt;/icon>\n"
+"  &lt;category>information&lt;/category>\n"
+"  &lt;description same_as=\"tooltip\" />\n"
+"  &lt;command executionmode=\"collect_output\" >uptime&lt;/command>\n"
+"  &lt;defaultshortcut>Alt+Ctrl+U&lt;/defaultshortcut>\n"
+" &lt;/action>\n"
+"&lt;/KrusaderUserActions>"
+msgstr ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+"  &lt;KrusaderUserActions>\n"
+"   &lt;action name=\"uptime\" >\n"
+"   &lt;title>Up time&lt;/title>\n"
+"   &lt;tooltip>pove, koliko časa je minilo od zagona računalnika&lt;/"
+"tooltip>\n"
+"   &lt;icon>ura&lt;/icon>\n"
+"   &lt;category>informacije&lt;/category>\n"
+"   &lt;description same_as=\"tooltip\" />\n"
+"   &lt;command executionmode=\"collect_output\" >uptime&lt;/command>\n"
+"   &lt;defaultshortcut>Alt+Ctrl+U&lt;/defaultshortcut>\n"
+"  &lt;/dejanje>\n"
+"&lt;/KrusaderUserActions>"
+
+#. Tag: para
+#: useraction-xml.docbook:24
+#, no-c-format
+msgid "Runs <command>ls -l</command>"
+msgstr "Zažene <command>ls -l</command>"
+
+#. Tag: programlisting
+#: useraction-xml.docbook:25
+#, no-c-format
+msgid ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+" &lt;KrusaderUserActions>\n"
+"  &lt;action name=\"ls -l\" >\n"
+"  &lt;title>ls -l in current dir&lt;/title>\n"
+"  &lt;description same_as=\"tooltip\" />\n"
+"  &lt;command executionmode=\"collect_output\" >ls -l %aPath% %oPath%&lt;/"
+"command>\n"
+" &lt;/action>\n"
+"&lt;/KrusaderUserActions>"
+msgstr ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+"  &lt;KrusaderUserActions>\n"
+"   &lt;action name=\"ls -l\" >\n"
+"   &lt;title>ls -l v trenutnem imeniku&lt;/title>\n"
+"   &lt;description same_as=\"tooltip\" />\n"
+"   &lt;command executionmode=\"collect_output\" >ls -l %aPath% %oPath%&lt;/"
+"command>\n"
+"  &lt;/dejanje>\n"
+"&lt;/KrusaderUserActions>"
+
+#. Tag: para
+#: useraction-xml.docbook:28
+#, no-c-format
+msgid "Echo Placeholder"
+msgstr "Oznaka mesta Echo"
+
+#. Tag: programlisting
+#: useraction-xml.docbook:29
+#, no-c-format
+msgid ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+" &lt;KrusaderUserActions>\n"
+"  &lt;action name=\"test_placeholder\" >\n"
+"  &lt;title>Echo Placeholder&lt;/title>\n"
+"  &lt;tooltip>Echo's the placeholder values&lt;/tooltip>\n"
+"  &lt;category>Testing&lt;/category>\n"
+"  &lt;description same_as=\"tooltip\" />\n"
+"  &lt;command executionmode=\"collect_output\" onmultiplefiles=\"call_each\" "
+">echo -e &quot;aPath %aPath()%  \\naCurrent: %aCurrent()%&quot;&lt;/"
+"command>\n"
+" &lt;/action>\n"
+"&lt;/KrusaderUserActions>"
+msgstr ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+"  &lt;KrusaderUserActions>\n"
+"   &lt;action name=\"test_placeholder\" >\n"
+"   &lt;title>Ograja mesta Echo&lt;/title>\n"
+"   &lt;tooltip>Echo je nadomestne vrednosti&lt;/tooltip>\n"
+"   &lt;category>Testiranje&lt;/category>\n"
+"   &lt;description same_as=\"tooltip\" />\n"
+"   &lt;command executionmode=\"collect_output\" onmultiplefiles=\"call_each"
+"\" >echo -e &quot;aPath %aPath()% \\naCurrent: %aCurrent()%&quot;&lt;/"
+"command>\n"
+"  &lt;/dejanje>\n"
+"&lt;/KrusaderUserActions>"
+
+#. Tag: para
+#: useraction-xml.docbook:32
+#, no-c-format
+msgid "This useraction copies current path and filename to clipboard:"
+msgstr ""
+"To uporabniško dejanje kopira trenutno pot in ime datoteke v odložišče:"
+
+#. Tag: programlisting
+#: useraction-xml.docbook:33
+#, no-c-format
+msgid ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+"&lt;KrusaderUserActions>\n"
+" &lt;action name=\"clipboard current\" >\n"
+"  &lt;title>Copy to Clipboard&lt;/title>\n"
+"  &lt;tooltip>Copy to clipboard&lt;/tooltip>\n"
+"  &lt;icon>klipper&lt;/icon>\n"
+"  &lt;category>System&lt;/category>\n"
+"  &lt;description>Copy current path and filename to clipboard&lt;/"
+"description>\n"
+"  &lt;command>%_Clipboard(&quot;%aCurrent%&quot;)%&lt;/command>\n"
+"  &lt;defaultshortcut>Win+C&lt;/defaultshortcut>\n"
+" &lt;/action>\n"
+"&lt;/KrusaderUserActions>"
+msgstr ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+"&lt;KrusaderUserActions>\n"
+"  &lt;action name=\"clipboard current\" >\n"
+"   &lt;title>Kopiraj v odložišče&lt;/title>\n"
+"   &lt;tooltip>Kopiraj v odložišče&lt;/tooltip>\n"
+"   &lt;icon>klipper&lt;/icon>\n"
+"   &lt;category>Sistem&lt;/category>\n"
+"   &lt;description>Kopiraj trenutno pot in ime datoteke v odložišče&lt;/"
+"description>\n"
+"   &lt;command>%_Clipboard(&quot;%aCurrent%&quot;)%&lt;/command>\n"
+"   &lt;defaultshortcut>Win+C&lt;/defaultshortcut>\n"
+"  &lt;/dejanje>\n"
+"&lt;/KrusaderUserActions>"
+
+#. Tag: para
+#: useraction-xml.docbook:36
+#, no-c-format
+msgid ""
+"Selects <literal role=\"extension\">.diff</literal> and <literal role="
+"\"extension\">*.h</literal> in the active panel:"
+msgstr ""
+"Izbere <literal role=\"extension\">.diff</literal> in <literal role="
+"\"extension\">*.h</literal> v aktivni plošči:"
+
+#. Tag: programlisting
+#: useraction-xml.docbook:37
+#, no-c-format
+msgid ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+"&lt;KrusaderUserActions>\n"
+" &lt;action name=\"test_select\" >\n"
+"  &lt;title>Add selection *.diff and *.h&lt;/title>\n"
+"  &lt;category>Selection&lt;/category>\n"
+"  &lt;command>%aSelect(&quot;*.diff&quot;, &quot;add&quot;)% %aSelect(&quot;"
+"*.h&quot;, &quot;add&quot;)%&lt;/command>\n"
+" &lt;/action>\n"
+"&lt;/KrusaderUserActions>"
+msgstr ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+"&lt;KrusaderUserActions>\n"
+"  &lt;action name=\"test_select\" >\n"
+"   &lt;title>Dodaj izbor *.diff in *.h&lt;/title>\n"
+"   &lt;category>Izbor&lt;/category>\n"
+"   &lt;command>%aSelect(&quot;*.diff&quot;, &quot;add&quot;)% %aSelect(&quot;"
+"*.h&quot;, &quot;add&quot;)%&lt;/command>\n"
+"  &lt;/dejanje>\n"
+"&lt;/KrusaderUserActions>"
+
+#. Tag: para
+#: useraction-xml.docbook:40
+#, no-c-format
+msgid "Active panel changes to <filename>mnt/floppy</filename> (bookmark):"
+msgstr ""
+"Aktivna plošča se spremeni v <filename>mnt/floppy</filename> (zaznamek):"
+
+#. Tag: programlisting
+#: useraction-xml.docbook:41
+#, no-c-format
+msgid ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+"&lt;KrusaderUserActions>\n"
+"&lt;action name=\"mnt/floppy bookmark\" >\n"
+"  &lt;title>Jump to /mnt/floppy&lt;/title>\n"
+"  &lt;category>Bookmarks&lt;/category>\n"
+"  &lt;command>%aGoto(&quot;/mnt/floppy&quot;, &quot;yes&quot;)%&lt;/"
+"command>\n"
+" &lt;/action>\n"
+"&lt;/KrusaderUserActions>"
+msgstr ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+"&lt;KrusaderUserActions>\n"
+"&lt;action name=\"mnt/floppy bookmark\" >\n"
+"   &lt;title>Skoči na /mnt/floppy&lt;/title>\n"
+"   &lt;category>Zaznamki&lt;/category>\n"
+"   &lt;ukaz>%aPojdi(&quot;/mnt/floppy&quot;, &quot;da&quot;)%&lt;/ukaz>\n"
+"  &lt;/dejanje>\n"
+"&lt;/KrusaderUserActions>"
+
+#. Tag: para
+#: useraction-xml.docbook:44
+#, no-c-format
+msgid ""
+"Select in the non-active panel, all filenames that are highlighted in the "
+"active panel:"
+msgstr ""
+"Na neaktivni plošči izberite vsa imena datotek, ki so označena na aktivni "
+"plošči:"
+
+#. Tag: programlisting
+#: useraction-xml.docbook:45
+#, no-c-format
+msgid ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+"&lt;KrusaderUserActions>\n"
+" &lt;action name=\"asdfasdf\" >\n"
+"  &lt;title>Select in Other Panel&lt;/title>\n"
+"  &lt;category>Selection&lt;/category>\n"
+"  &lt;description>Select all filenames that are selected in the active "
+"panel, also in the non-active panel&lt;/description>\n"
+"  &lt;command>%oSelect(&quot;%aList(&quot;selected&quot;, &quot; &quot;, "
+"&quot;Yes&quot;)%&quot;)%&lt;/command>\n"
+" &lt;/action>\n"
+"&lt;/KrusaderUserActions>"
+msgstr ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+"&lt;KrusaderUserActions>\n"
+"  &lt;action name=\"asdfasdf\" >\n"
+"   &lt;title>Izberite v drugi plošči&lt;/title>\n"
+"   &lt;category>Izbor&lt;/category>\n"
+"   &lt;opis>Izberite vsa imena datotek, ki so izbrana v aktivni plošči, tudi "
+"v neaktivni plošči&lt;/description>\n"
+"   &lt;ukaz>%oIzberi(&quot;%aList(&quot;izbrano&quot;, &quot; &quot;, &quot;"
+"Da&quot;)%&quot;)%&lt;/ukaz>\n"
+"  &lt;/dejanje>\n"
+"&lt;/KrusaderUserActions>"
+
+#. Tag: para
+#: useraction-xml.docbook:48
+#, no-c-format
+msgid ""
+"Make a backup of the current file/folder to <filename>foo.bak</filename> "
+"into the current folder:"
+msgstr ""
+"Naredite varnostno kopijo trenutne datoteke/mape v <filename>foo.bak</"
+"filename> v trenutno mapo:"
+
+#. Tag: programlisting
+#: useraction-xml.docbook:49
+#, no-c-format
+msgid ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+"&lt;KrusaderUserActions>\n"
+" &lt;action name=\"backup current\" >\n"
+"  &lt;title>Backup in Current Directory&lt;/title>\n"
+"  &lt;tooltip>Backup in current folder&lt;/tooltip>\n"
+"  &lt;icon>document-save-as&lt;/icon>\n"
+"  &lt;category>System&lt;/category>\n"
+"  &lt;description same_as=\"tooltip\" />\n"
+"  &lt;command>%_Copy(&quot;%aCurrent%&quot;, &quot;%_Ask(&quot;new "
+"name&quot;, &quot;%aCurrent%.bak&quot;)%&quot;)%&lt;/command>\n"
+"  &lt;defaultshortcut>Shift+F5&lt;/defaultshortcut>\n"
+" &lt;/action>\n"
+"&lt;/KrusaderUserActions>"
+msgstr ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+"&lt;KrusaderUserActions>\n"
+"  &lt;action name=\"backup current\" >\n"
+"   &lt;title>Varnostna kopija v trenutnem imeniku&lt;/title>\n"
+"   &lt;tooltip>Varnostna kopija v trenutni mapi&lt;/tooltip>\n"
+"   &lt;icon>document-save-as&lt;/icon>\n"
+"   &lt;category>Sistem&lt;/category>\n"
+"   &lt;description same_as=\"tooltip\" />\n"
+"   &lt;ukaz>%_Copy(&quot;%aCurrent%&quot;, &quot;%_Ask(&quot;novo ime&quot;, "
+"&quot;%aCurrent%.bak&quot;)%&quot;)%&lt;/command>\n"
+"   &lt;defaultshortcut>Shift+F5&lt;/defaultshortcut>\n"
+"  &lt;/dejanje>\n"
+"&lt;/KrusaderUserActions>"
+
+#. Tag: para
+#: useraction-xml.docbook:52
+#, no-c-format
+msgid "Opens <link linkend=\"krusearcher\">KruSearcher</link>:"
+msgstr "Odpre <link linkend=\"krusearcher\">KruSearcher</link>:"
+
+#. Tag: programlisting
+#: useraction-xml.docbook:53
+#, no-c-format
+msgid ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+"&lt;KrusaderUserActions>\n"
+" &lt;action name=\"search\" >\n"
+"  &lt;title>Search Test&lt;/title>\n"
+"  &lt;command>%_NewSearch(&quot;Search 2&quot;)%&lt;/command>\n"
+" &lt;/action>\n"
+"&lt;/KrusaderUserActions>"
+msgstr ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+"&lt;KrusaderUserActions>\n"
+"  &lt;action name=\"iskanje\" >\n"
+"   &lt;title>Preizkus iskanja&lt;/title>\n"
+"   &lt;command>%_NewSearch(&quot;Iskanje 2&quot;)%&lt;/command>\n"
+"  &lt;/dejanje>\n"
+"&lt;/KrusaderUserActions>"
+
+#. Tag: para
+#: useraction-xml.docbook:56
+#, no-c-format
+msgid "Sets the selected picture as wallpaper:"
+msgstr "Nastavi izbrano sliko za ozadje:"
+
+#. Tag: programlisting
+#: useraction-xml.docbook:57
+#, no-c-format
+msgid ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+"&lt;KrusaderUserActions>\n"
+" &lt;action name=\"set wallpaper\" >\n"
+"  &lt;title>Set as Wallpaper&lt;/title>\n"
+"  &lt;tooltip>Set as wallpaper&lt;/tooltip>\n"
+"  &lt;icon>image&lt;/icon>\n"
+"  &lt;category>Service Menu&lt;/category>\n"
+"  &lt;description>Set as wallpaper (scaled)&lt;/description>\n"
+"  &lt;command>dcop kdesktop KBackgroundIface setWallpaper &quot;%aCurrent"
+"%&quot; 6&lt;/command>\n"
+"  &lt;defaultshortcut>Win+W&lt;/defaultshortcut>\n"
+" &lt;/action>\n"
+"&lt;/KrusaderUserActions>"
+msgstr ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+"&lt;KrusaderUserActions>\n"
+"  &lt;action name=\"nastavi ozadje\" >\n"
+"   &lt;title>Nastavi kot ozadje&lt;/title>\n"
+"   &lt;tooltip>Nastavi kot ozadje&lt;/tooltip>\n"
+"   &lt;icon>slika&lt;/icon>\n"
+"   &lt;category>Storitveni meni&lt;/category>\n"
+"   &lt;description>Nastavi kot ozadje (pomanjšano)&lt;/description>\n"
+"   &lt;command>dcop kdesktop KBackgroundIface setWallpaper &quot;%aCurrent"
+"%&quot; 6&lt;/ukaz>\n"
+"   &lt;defaultshortcut>Win+W&lt;/defaultshortcut>\n"
+"  &lt;/dejanje>\n"
+"&lt;/KrusaderUserActions>"
+
+#. Tag: para
+#: useraction-xml.docbook:60
+#, no-c-format
+msgid ""
+"This useraction edits a file with root permissions using <command>kdesu</"
+"command>:"
+msgstr ""
+"To uporabniško dejanje ureja datoteko s korenskimi dovoljenji z uporabo "
+"<command>kdesu</command>:"
+
+#. Tag: programlisting
+#: useraction-xml.docbook:61
+#, no-c-format
+msgid ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+"&lt;KrusaderUserActions>\n"
+" &lt;action name=\"edit as root\" >\n"
+"  &lt;title>Edit as Root&lt;/title>\n"
+"  &lt;tooltip>Edit as root&lt;/tooltip>\n"
+"  &lt;icon>kwrite&lt;/icon>\n"
+"  &lt;category>System&lt;/category>\n"
+"  &lt;description>Edit a file with root permissions using kdesu&lt;/"
+"description>\n"
+"  &lt;command>kdesu kwrite %aCurrent%&lt;/command>\n"
+"  &lt;defaultshortcut>Win+F4&lt;/defaultshortcut>\n"
+" &lt;/action>\n"
+"&lt;/KrusaderUserActions>"
+msgstr ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+"&lt;KrusaderUserActions>\n"
+"  &lt;action name=\"uredi kot root\" >\n"
+"   &lt;title>Uredi kot koren&lt;/title>\n"
+"   &lt;tooltip>Uredi kot root&lt;/tooltip>\n"
+"   &lt;icon>kwrite&lt;/icon>\n"
+"   &lt;category>Sistem&lt;/category>\n"
+"   &lt;description>Uredite datoteko s korenskimi dovoljenji z uporabo "
+"kdesu&lt;/description>\n"
+"   &lt;command>kdesu kwrite %aCurrent%&lt;/command>\n"
+"   &lt;defaultshortcut>Win+F4&lt;/defaultshortcut>\n"
+"  &lt;/dejanje>\n"
+"&lt;/KrusaderUserActions>"
+
+#. Tag: para
+#: useraction-xml.docbook:64
+#, no-c-format
+msgid "This useraction Add item(s) to Amarok playlist:"
+msgstr "To uporabniško dejanje Dodaj element(e) na seznam predvajanja Amarok:"
+
+#. Tag: programlisting
+#: useraction-xml.docbook:65
+#, no-c-format
+msgid ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+"&lt;KrusaderUserActions>\n"
+" &lt;action name=\"amarok enqueue\" >\n"
+"  &lt;title>Enqueue in Amarok&lt;/title>\n"
+"  &lt;tooltip>Append selected item(s) to Amarok playlist&lt;/tooltip>\n"
+"  &lt;icon>amarok&lt;/icon>\n"
+"  &lt;category>Multimedia&lt;/category>\n"
+"  &lt;description same_as=\"tooltip\" />\n"
+"  &lt;command>amarok --append %aList(&quot;Selected&quot;)%&lt;/command>\n"
+"  &lt;defaultshortcut>Win+A&lt;/defaultshortcut>\n"
+" &lt;/action>\n"
+"&lt;/KrusaderUserActions>"
+msgstr ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+"&lt;KrusaderUserActions>\n"
+"  &lt;action name=\"amarok enqueue\" >\n"
+"   &lt;title>Dodaj v čakalno vrsto v Amaroku&lt;/title>\n"
+"   &lt;tooltip>Dodaj izbrane elemente seznamu predvajanja Amarok&lt;/"
+"tooltip>\n"
+"   &lt;icon>amarok&lt;/icon>\n"
+"   &lt;category>Večpredstavnost&lt;/category>\n"
+"   &lt;description same_as=\"tooltip\" />\n"
+"   &lt;ukaz>amarok --dodaj %aList(&quot;Izbrano&quot;)%&lt;/ukaz>\n"
+"   &lt;defaultshortcut>Win+A&lt;/defaultshortcut>\n"
+"  &lt;/dejanje>\n"
+"&lt;/KrusaderUserActions>"
+
+#. Tag: para
+#: useraction-xml.docbook:68
+#, no-c-format
+msgid "Opens <link linkend=\"synchronizer\">Synchronizer</link>:"
+msgstr "Odpre <link linkend=\"synchronizer\">Synchronizer</link>:"
+
+#. Tag: programlisting
+#: useraction-xml.docbook:69
+#, no-c-format
+msgid ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+"&lt;KrusaderUserActions>\n"
+" &lt;action name=\"synchronizer\" >\n"
+"  &lt;title>Synchronizer&lt;/title>\n"
+"  &lt;command>%_Sync(&quot;Sync 2&quot;)%&lt;/command>\n"
+" &lt;/action>\n"
+"&lt;/KrusaderUserActions>"
+msgstr ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+"&lt;KrusaderUserActions>\n"
+"  &lt;action name=\"sinhronizator\" >\n"
+"   &lt;title>Sinhronizator&lt;/title>\n"
+"   &lt;command>%_Sync(&quot;Sync 2&quot;)%&lt;/command>\n"
+"  &lt;/dejanje>\n"
+"&lt;/KrusaderUserActions>"

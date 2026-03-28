@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter id="details.budgets">
+<chapterinfo>
+  <authorgroup>
+    <author
+>&Colin.Wright; &Colin.Wright.mail; </author>
+    <author
+>&Jack.H.Ostroff; &Jack.H.Ostroff.mail; </author>
+  </authorgroup>
+  <date
+>01/12/2024</date>
+  <releaseinfo
+>5.2.0</releaseinfo>
+</chapterinfo>
+
+<title
+>Orçamentos</title>
+
+<sect1 id="details.budgets.define"
+><title
+>O que é um orçamento?</title>
+<para
+>Orçamento é uma lista categorizada de receitas e despesas esperadas para um determinado período. </para>
+
+<para
+>A funcionalidade de Orçamento do &kmymoney; permite-lhe criar orçamentos anuais. Mais de um orçamento pode ser criado para qualquer ano. Você pode definir valores mensais do orçamento para quaisquer categorias de Receita ou Despesa que tenha criado. Os valores podem ser definidos de três formas, dependendo do período: </para>
+
+<variablelist>
+  <varlistentry>
+    <term
+>Mensal</term>
+    <listitem
+><para
+>(Padrão) especifica um único valor aplicado a todos os meses no Orçamento</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+>Anual</term>
+    <listitem
+><para
+>Especifica um único valor a dividir uniformemente por todos os meses no orçamento</para
+></listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+>Individual</term>
+    <listitem>
+      <para
+>Especifica valores separados para cada mês.</para>
+      <para
+>Isto é usado para as receitas e despesas dispostas irregularmente ao longo do ano.</para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+
+<para
+>O &kmymoney; oferece um conjunto de relatórios para comparar os orçamentos feitos com as receitas e despesas reais. Esses relatórios são descritos em detalhes em <link linkend="budget.details.reports"
+>outra seção</link
+>. </para>
+</sect1>
+
+<sect1 id="details.budgets.create"
+><title
+>Seus orçamentos</title>
+<para
+>Você pode acessar seus orçamentos na <guilabel
+>vista de Orçamentos</guilabel
+>, que você pode exibir clicando no ícone apropriado no seletor de visualização no lado esquerdo da sua janela do &kmymoney;. </para>
+
+<para
+>A vista de Orçamentos possui duas seções principais. À esquerda, há uma lista dos orçamentos que você criou. Acima dela, encontram-se botões para criar, renomear e excluir orçamentos. À direita, há três seções. Na parte superior, está a Lista de Categorias. Na parte inferior, é exibida a quantidade de valores atribuídos ao orçamento selecionado à esquerda para a categoria selecionada na Lista de Categorias acima. Entre essas duas áreas, encontram-se alguns controles adicionais para gerenciar o orçamento. </para>
+
+<sect2
+><title
+>Visualizar, criar, renomear e excluir orçamentos</title>
+<para
+>A seção esquerda da vista de Orçamentos mostra a lista de orçamentos existentes no arquivo atual do &kmymoney;. Se nenhum orçamento foi criado, a lista estará vazia. Essa lista possui duas colunas: </para>
+
+<variablelist>
+  <varlistentry>
+    <term
+>Nome</term>
+    <listitem>
+      <para
+>Nome do orçamento</para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+>Ano</term>
+    <listitem>
+      <para
+>Ano fiscal do orçamento. Repare que o mês e dia iniciais do ano fiscal poderão ser indicados na <link linkend="details.settings.general.global"
+>caixa de diálogo Configurar o &kmymoney;.</link
+> Para alterar o ano fiscal de um orçamento, clique duas vezes no ano. </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+
+<para
+>Os valores do orçamento selecionado são apresentados à direita. Para selecionar um orçamento diferente, você poderá clicar no nome do orçamento na lista à esquerda. Em alternativa, quando a lista estiver em primeiro plano, você poderá selecionar um orçamento diferente com as teclas &Up; e &Down;. Se tiver feito alterações em um orçamento e depois selecionar outro, o &kmymoney; perguntará se deseja salvar ou descartar as alterações. </para>
+
+<para
+>Há três botões acima da lista de orçamentos: </para>
+
+<variablelist>
+  <varlistentry>
+    <term
+>Novo</term>
+    <listitem>
+      <para
+>Cria um novo orçamento em branco. O nome padrão de um novo orçamento é "Orçamento &lt;ano&gt;", onde o &lt;ano&gt; será o ano corrente. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+>Renomear</term>
+    <listitem>
+      <para
+>Edite o nome do orçamento selecionado. Você também pode editar o nome de um orçamento com um clique duplo sobre o nome de um orçamento na lista. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+>Excluir</term>
+    <listitem>
+      <para
+>Exclui o orçamento selecionado.</para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+
+<para
+>Estão disponíveis opções adicionais no menu de contexto de <guilabel
+>Opções do orçamento</guilabel
+> que é acessado com o botão direito sobre um orçamento. </para>
+
+<variablelist>
+  <varlistentry>
+    <term
+>Novo orçamento</term>
+    <listitem>
+      <para
+>Cria um novo orçamento em branco.</para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+>Renomear orçamento</term>
+    <listitem>
+      <para
+>Renomeia o orçamento selecionado.</para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+>Excluir orçamento</term>
+    <listitem>
+      <para
+>Exclui o orçamento selecionado.</para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+>Copiar orçamento</term>
+    <listitem>
+      <para
+>Cria uma cópia do orçamento selecionado. O novo orçamento possui o nome "Cópia de &lt;orçamento&gt;", onde o &lt;orçamento&gt; é o nome do orçamento copiado. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+>Orçamento com base na previsão</term>
+    <listitem>
+      <para
+>Preenche os montantes do orçamento com base nos dados dos valores de Previsão do &kmymoney;. Veja a seção sobre as <link linkend="details.forecast.define"
+>Previsões</link
+> para obter mais informações. </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+</sect2>
+
+<sect2
+><title
+>Lista de categorias</title>
+<para
+>A lista de categorias mostra a lista de contas de Receitas e Despesas. (Lembre-se de que, no &kmymoney;, as categorias são tratadas como um tipo especial de conta.) Como nos outros locais do &kmymoney;, a lista está organizada como uma árvore. A lista poderá ser expandida ou recolhida para mostrar ou ocultar as subcategorias de uma categoria. A lista de categorias possui as colunas: </para>
+
+<para
+>Além da coluna Nome, todas as outras colunas podem ser exibidas ou ocultadas clicando com o botão direito do mouse em qualquer cabeçalho de coluna e marcando ou desmarcando a caixa de seleção ao lado do nome da coluna. Para obter mais detalhes sobre o significado de cada coluna, consulte a seção <link linkend="details.categories.view"
+>vista de Categorias</link
+>. Somente as colunas especificamente relevantes para Orçamentos estão listadas abaixo, mas todas as colunas de Categoria podem ser exibidas. </para>
+
+<variablelist>
+  <varlistentry>
+    <term
+>Nome</term>
+    <listitem>
+      <para
+>Nome da conta (Categoria)</para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+>Tipo</term>
+    <listitem>
+      <para
+>Tipo de categoria (Receita ou Despesa)</para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+>Saldo</term>
+    <listitem>
+      <para
+>O saldo atual da conta. Este valor estará em branco para as Categorias, a menos que a categoria esteja definida numa moeda estrangeira. Nesse caso, o saldo mostrará o valor para a categoria na sua moeda definida. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+>Valor total</term>
+    <listitem>
+      <para
+>O valor anual total no orçamento. Se uma categoria tiver subcategorias e se a lista das subcategorias estiver fechada, o valor apresentado é o somatório dos valores para a conta e todas as suas subcategorias. Se uma categoria estiver definida em moeda estrangeira, o Valor total irá mostrar o valor na moeda base. </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+
+<para
+>Abaixo da lista de categorias existem diversos controles. Os botões <guiicon
+> <inlinemediaobject
+> <imageobject
+> <imagedata fileref="icon-gtk-floppy.svg" format="SVG"/> </imageobject
+> </inlinemediaobject
+> </guiicon
+> <guibutton
+>Atl</guibutton
+> (Atualizar) e <guiicon
+> <inlinemediaobject
+> <imageobject
+> <imagedata fileref="icon-edit-undo.svg" format="SVG"/> </imageobject
+> </inlinemediaobject
+> </guiicon
+> <guibutton
+>Res</guibutton
+> (Redefinir) são descritos a seguir abaixo. Os botões para <guiicon
+> <inlinemediaobject
+> <imageobject
+> <imagedata fileref="icon-zoom-out.svg" format="SVG"/> </imageobject
+> </inlinemediaobject
+></guiicon
+> recolher e <guiicon
+> <inlinemediaobject
+> <imageobject
+> <imagedata fileref="icon-zoom-in.svg" format="SVG"/> </imageobject
+> </inlinemediaobject
+></guiicon
+> expandir recolhem ou expandem toda a lista de categorias. </para>
+
+<para
+>A lista de categorias poderá ser filtrada de duas formas. Se assinalar a opção <guilabel
+>Ocultar as categorias não-usadas</guilabel
+>, irá ocultar as categorias que não tenham valor atribuído à categoria ou a qualquer das suas subcategorias no orçamento selecionado. À direita desta, existe um campo de texto sem descrição. Somente as categorias que incluírem o que for escrito neste campo é que aparecem, além das suas categorias-pai. </para>
+
+<para
+>Lembre-se de que a mudança da opção <guilabel
+>Ocultar as categorias de orçamentos não-usadas</guilabel
+> ou o valor do filtro provavelmente irá alterar a visualização da lista de categorias. Pode ser necessário expandir a lista novamente para ver todas as categorias que deverão aparecer com a configuração atual. </para>
+</sect2>
+
+<sect2
+><title
+>Atribuições</title>
+<para
+>A área de Atribuições mostra os valores da categoria selecionada na lista de categorias. </para>
+
+<variablelist>
+  <varlistentry>
+    <term
+>Conta</term>
+    <listitem>
+      <para
+>O nome da categoria selecionada. Se a categoria for uma subcategoria, o nome completo da categoria selecionada aparece no formato Categoria:Subcategoria. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+>Total</term>
+    <listitem>
+      <para
+>O valor anual total atribuído à categoria.</para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+>Incluir as subcontas</term>
+    <listitem>
+      <para
+>Se esta opção estiver assinalada, os Relatórios mostram a receita ou despesa atual nas subcategorias pertencentes à categoria, face à categoria em vez da subcategoria. </para>
+
+      <para
+>Se uma subcategoria tiver um valor definido no orçamento, então a receita e a despesa são apresentadas face à subcategoria. </para>
+
+      <para
+>Se a categoria selecionada na lista de categorias tiver as suas subcategorias recolhidas, ainda que o Valor Total apresente a soma dos Valores Totais de todas as suas subcategorias, os montantes na área de atribuições ainda irá mostrar 0, a menos que esta opção tenha sido assinalada ou tenha atribuído explicitamente um montante à categoria. </para>
+
+      <para
+>De um modo geral, ou você irá assinalar esta opção e atribuir valores à categoria e não a nenhuma das suas subcategorias, ou então não irá assinalar a mesma, atribuindo então valores às subcategorias mas não à categoria em si. Se alguma subcategoria tiver valores atribuídos com esta opção assinalada, então esses valores serão agregados à categoria. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+>Limpar</term>
+    <listitem>
+      <para
+>Clicar neste botão redefine os valores do orçamento na categoria para zero. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+>Período</term>
+    <listitem>
+      <para
+>As opções exclusivas permitem-lhe selecionar o período onde se aplica o valor </para>
+
+      <variablelist>
+	<varlistentry>
+	  <term
+>Mensal</term>
+	  <listitem>
+	    <para
+>É inserido um único valor, definindo o montante por mês. Esta é a configuração padrão. </para>
+	  </listitem>
+	</varlistentry>
+
+	<varlistentry>
+	  <term
+>Anual</term>
+	  <listitem>
+	    <para
+>É inserido um valor, definindo o montante por ano.</para>
+	  </listitem>
+	</varlistentry>
+
+	<varlistentry>
+	  <term
+>Individual</term>
+	  <listitem>
+	    <para
+>Os valores são definidos para cada mês do calendário. Isto é usado onde a despesa ou a receita estão dispostas de forma irregular ao longo do ano. </para>
+	  </listitem>
+	</varlistentry>
+      </variablelist>
+
+      <para
+>Se um valor ou valores já estiverem definidos e o Período for alterado, o &kmymoney; irá perguntar se deseja usar o total anual atual, de modo a atribuir os valores novos. </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+</sect2>
+
+<sect2
+><title
+>Atualizar e Reverter</title>
+<para
+>Quando os valores de um orçamento são modificados pela primeira vez, os botões <guibutton
+>Atualizar</guibutton
+> e <guibutton
+>Reverter</guibutton
+> ficarão ativos. Você poderá fazer várias alterações no orçamento. Pressione <guibutton
+>Atualizar</guibutton
+> para armazenar as alterações e desativar estes botões. </para>
+
+<para
+>O botão <guibutton
+>Salvar</guibutton
+> do &kmymoney; só grava as alterações que foram armazenadas com o botão <guibutton
+>Atualizar</guibutton
+>. Desse modo, se tiver modificado um orçamento, mas ainda não tiver armazenado as alterações, o <guibutton
+>Salvar</guibutton
+> não irá afetar o orçamento modificado e os botões <guibutton
+>Atualizar</guibutton
+> e <guibutton
+>Reverter</guibutton
+> permanecerão ativos. </para>
+
+<para
+>O Reverter anula todas as alterações feitas em um orçamento, desde a última atualização, e desativa os botões <guibutton
+>Atualizar</guibutton
+> e <guibutton
+>Reverter</guibutton
+>. </para>
+</sect2>
+</sect1>
+
+<sect1 id="budget.details.reports"
+><title
+>Relatórios de Orçamentos</title>
+<para
+>O &kmymoney; oferece um conjunto de relatórios para comparar um orçamento com as receitas e despesas reais. Estes são apresentados nos Relatórios em "Orçamentos". Existem dois tipos de relatórios de orçamento: </para>
+
+<variablelist>
+  <varlistentry>
+    <term
+>Apenas orçamentos</term>
+    <listitem
+><para
+>Estes relatórios mostram alguns valores de um orçamento.</para>
+      <variablelist>
+        <varlistentry>
+          <term
+>Orçamento mensal</term
+> 
+          <listitem>
+            <para
+>Mostra os valores mensais de um orçamento.</para>
+          </listitem
+></varlistentry>
+        <varlistentry>
+          <term
+>Orçamento anual</term
+> 
+          <listitem>
+            <para
+>Mostra os valores mensais de um orçamento, com um total anual. </para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term
+>Orçamentado x Real</term>
+    <listitem>
+      <para
+>Estes relatórios comparam os valores de um orçamento com as receitas e despesas reais. Em cada relatório de orçamento, você poderá encontrar as colunas Orçamento, Valor Atual e Diferença. Cada relatório difere no período em que é apresentado. </para>
+      <variablelist>
+        <varlistentry>
+          <term
+>Orçamento x Real este ano</term
+> 
+          <listitem>
+            <para
+>Do início do ano até hoje</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term
+>Orçamento x Real este ano (YTM)</term
+> 
+          <listitem>
+            <para
+>Do início do ano até ao último dia do mês anterior </para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term
+>Orçamento mensal x Real</term
+> 
+          <listitem>
+            <para
+>Do início do ano até ao último dia do mês atual </para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term
+>Orçamento anual x Real</term
+> 
+          <listitem>
+            <para
+>De 1º de janeiro até 31 de dezembro</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term
+>Orçamentado x Real anual (Gráfico)</term
+> 
+          <listitem>
+            <para
+>Igual ao relatório anterior, mostrando o gráfico por padrão </para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+
+      <para
+>Estes relatórios oferecem uma base a partir da qual você poderá criar os relatórios personalizados, alterando o intervalo de datas e o orçamento, entre outras opções. </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+</sect1>
+</chapter>

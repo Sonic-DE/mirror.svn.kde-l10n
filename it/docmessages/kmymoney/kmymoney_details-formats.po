@@ -1,0 +1,768 @@
+#
+# SPDX-FileCopyrightText: 2014, 2018, 2020, 2024 Vincenzo Reale <smart2128vr@gmail.com>
+# Marco Poletti <poletti.marco@gmail.com>, 2009, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: kmymoney_details-formats\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 12:04+0000\n"
+"PO-Revision-Date: 2024-12-10 07:24+0100\n"
+"Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
+"Language-Team: Italian <kde-i18n-it@kde.org>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 24.08.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. Tag: author
+#: details-formats.docbook:5
+#, no-c-format
+msgid "&Thomas.Baumgart; &Thomas.Baumgart.mail;"
+msgstr "&Thomas.Baumgart; &Thomas.Baumgart.mail;"
+
+#. Tag: author
+#: details-formats.docbook:6
+#, no-c-format
+msgid "&Jack.H.Ostroff; &Jack.H.Ostroff.mail;"
+msgstr "&Jack.H.Ostroff; &Jack.H.Ostroff.mail;"
+
+#. Tag: date
+#: details-formats.docbook:8
+#, no-c-format
+msgid "2024-12-01"
+msgstr "1/12/2024"
+
+#. Tag: releaseinfo
+#: details-formats.docbook:9
+#, no-c-format
+msgid "5.2.0"
+msgstr "5.2.0"
+
+#. Tag: title
+#: details-formats.docbook:11
+#, no-c-format
+msgid "File Formats"
+msgstr "Formati dei file"
+
+#. Tag: para
+#: details-formats.docbook:13
+#, no-c-format
+msgid ""
+"Unless you choose to use a <link linkend=\"details.database\">relational "
+"database</link>, &kmymoney; will store all your financial information in a "
+"file. Most commonly, the file name will end in <filename class=\"extension"
+"\">.kmy</filename>. Also, when you launch &kmymoney;, unless you use a <link "
+"linkend=\"firsttime.launch\">command line option</link> that tells it not to "
+"do so, it will open the last file it had open. However, it is important to "
+"know that there is actually more than one type of file &kmymoney; can use to "
+"hold your financial data."
+msgstr ""
+"A meno che non si scelga una <link linkend=\"details.database\">base dati "
+"relazionale</link>, &kmymoney; salverà tutte le proprie informazioni "
+"finanziarie in un file. Più comunemente, il nome del file terminerà con "
+"<filename class=\"extension\">.kmy</filename>. Inoltre, quando si avvia "
+"&kmymoney;, a meno che si non utilizzi un'<link linkend=\"firsttime.launch"
+"\">\n"
+"opzione della riga di comando</link> che gli dica di non farlo, aprirà "
+"l'ultimo file che aveva aperto. Tuttavia, è importante sapere che in realtà "
+"c'è più di un tipo di file che &kmymoney; può usare per contenere i propri "
+"dati finanziari."
+
+#. Tag: para
+#: details-formats.docbook:24
+#, no-c-format
+msgid ""
+"This chapter describes the file formats in which &kmymoney; can store its "
+"data in permanent form. It also discusses backing up your data."
+msgstr ""
+"Questo capitolo descrive i formati di file in cui &kmymoney; può memorizzare "
+"i suoi dati in forma permanente. Discute anche del backup dei tuoi dati."
+
+#. Tag: title
+#: details-formats.docbook:29
+#, no-c-format
+msgid "Data File formats"
+msgstr "Formati dei file di dati"
+
+#. Tag: para
+#: details-formats.docbook:30
+#, no-c-format
+msgid ""
+"In general, &kmymoney; stores its information in form of an &XML; document. "
+"Depending on the actual format, which is set in &kmymoney;'s configuration, "
+"this &XML; document will be written: <itemizedlist> <listitem><para>as a "
+"plain text file, encoded in UTF-8,</para></listitem> <listitem><para>as a "
+"compressed file, using GZIP compression,</para></listitem> "
+"<listitem><para>as an encrypted file, using GPG encryption, or</para></"
+"listitem> <listitem> <para> as an anonymous plain text file, encoded in "
+"UTF-8 but with all your personal data scrambled. </para> </listitem> </"
+"itemizedlist> Each of these is described in more detail in the following "
+"sections."
+msgstr ""
+"In generale, &kmymoney; memorizza le sue informazioni sotto forma di "
+"documento &XML;. A seconda del formato effettivo, impostato nella "
+"configurazione di &kmymoney;, questo documento &XML; sarà scritto: "
+"<itemizedlist> <listitem><para>come file di testo normale, codificato in "
+"UTF-8,</para></listitem> <listitem><para>come file compresso, usando la "
+"compressione GZIP,</para></listitem> <listitem><para>come file cifrato, "
+"usando la crittografia GPG, oppure</para></listitem> <listitem> <para>come "
+"file di testo normale anonimo, codificato in UTF-8, ma con tutti i tuoi dati "
+"personali cifrati. </para> </listitem> </itemizedlist> Ognuno di questi è "
+"descritto più dettagliatamente nelle sezioni seguenti."
+
+#. Tag: title
+#: details-formats.docbook:52
+#, no-c-format
+msgid "Plain text file"
+msgstr "File di testo semplice"
+
+#. Tag: para
+#: details-formats.docbook:53
+#, no-c-format
+msgid ""
+"This is the most space consuming format supported, as no compression is "
+"performed. It is not intended for normal use, and is provided to support "
+"debugging purposes and the capability to modify the file manually. If you "
+"end a filename in <filename class=\"extension\">.xml</filename>, the file "
+"will be stored in this format."
+msgstr ""
+"Questo è il formato supportato che occupa più spazio su disco, perché non "
+"viene applicata alcuna compressione. Non è pensato per essere usato "
+"normalmente, ma per scopi di debug e per la possibilità di modificare "
+"manualmente il file. Se il nome del file ha estensione <filename class="
+"\"extension\">.xml</filename> sarà salvato in questo formato."
+
+#. Tag: para
+#: details-formats.docbook:61
+#, no-c-format
+msgid ""
+"Manual modification of the file is not recommended to the normal user, and "
+"should only be performed if the internal working of &kmymoney; is fully "
+"understood or if instructions from the developers tell you what to do. Don't "
+"blame the &kmymoney; developers if you damage or destroy your data: You have "
+"been warned!"
+msgstr ""
+"La modifica manuale del file non è consigliata all'utente normale e dovrebbe "
+"essere eseguita solo se il funzionamento interno di &kmymoney; è pienamente "
+"compreso o se le istruzioni degli sviluppatori ti dicono cosa fare. Non dare "
+"la colpa agli sviluppatori di &kmymoney; se danneggi o distruggi i tuoi "
+"dati: sei stato avvisato!"
+
+#. Tag: title
+#: details-formats.docbook:71
+#, no-c-format
+msgid "GZIP-compressed file"
+msgstr "File compresso con GZIP"
+
+#. Tag: para
+#: details-formats.docbook:72
+#, no-c-format
+msgid ""
+"This is the normal format used by &kmymoney; when you store a file with the "
+"extension <filename class=\"extension\">.kmy</filename>."
+msgstr ""
+"Questo è il formato usato solitamente da &kmymoney; quando si salva un file "
+"con l'estensione <filename class=\"extension\">.kmy</filename>."
+
+#. Tag: para
+#: details-formats.docbook:78
+#, no-c-format
+msgid ""
+"If <link linkend=\"details.formats.encrypted\">encryption</link> has been "
+"selected in the configuration, the file will be stored encrypted, as "
+"described in the next section."
+msgstr ""
+"Se è stata selezionata la <link linkend=\"details.formats.encrypted"
+"\">cifratura</link>nella configurazione, il file sarà archiviato con "
+"cifratura, come descritto nella sezione successiva."
+
+#. Tag: para
+#: details-formats.docbook:85
+#, no-c-format
+msgid ""
+"If you want to look at the contents of a GZIP compressed file, rename it to "
+"a filename ending in <filename class=\"extension\">.gz</filename> (&eg;, "
+"rename <filename>myfinances.kmy</filename> to <filename>myfinances.kmy.gz</"
+"filename>), then use <command>gunzip</command> to uncompress the file and "
+"look at it. You don't have to compress it before loading it into &kmymoney; "
+"the next time, because &kmymoney; can read the uncompressed data as well. "
+"Nevertheless, if you save it thereafter, it will be saved compressed again. "
+"Use the <link linkend=\"details.formats.plain\"><filename class=\"extension"
+"\">.xml</filename></link> extension to write it in uncompressed format."
+msgstr ""
+"Se si vuole vedere il contenuto di un file compresso con GZIP, rinominarlo "
+"con l'estensione <filename class=\"extension\">.gz</filename> (&eg;, da "
+"<filename>miefinanze.kmy</filename> a <filename>miefinanze.kmy.gz</"
+"filename>) e poi usare <command>gunzip</command> per scompattarlo e vedere "
+"il contenuto. Non è necessario comprimerlo per caricarlo in &kmymoney; la "
+"volta successiva, perché &kmymoney;è in grado di leggere anche i dati non "
+"compressi. Comunque, quando lo si salva tornerà ad essere memorizzato in "
+"modo compresso. Utilizzare l'estensione <link linkend=\"details.formats.plain"
+"\"><filename class=\"extension\">.xml</filename></link> per scriverlo in "
+"formato non compresso."
+
+#. Tag: title
+#: details-formats.docbook:98
+#, no-c-format
+msgid "GPG-encrypted file"
+msgstr "File cifrato con GPG"
+
+#. Tag: para
+#: details-formats.docbook:99
+#, no-c-format
+msgid ""
+"Using the GPG-encrypted file format is a very secure method of storing your "
+"personal finance data on your storage device. When &kmymoney; has been "
+"instructed through the settings dialog to store your data encrypted, it will "
+"cipher the data using GPG and the key you provided before actually storing "
+"it. When opening an encrypted file, you have to provide the passphrase "
+"necessary to open your keyring. The encrypted file itself will be stored in "
+"GPG's <emphasis>&ASCII; armored</emphasis> format."
+msgstr ""
+"L'uso del formato cifrato con GPG è un modo molto sicuro di archiviare i "
+"propri dati finanziari sui dispositivi di memorizzazione. Una volta "
+"impostato &kmymoney; per la memorizzazione cifrata dei dati nella finestra "
+"di configurazione, cifrerà i dati prima di memorizzarli, utilizzando GPG e "
+"la chiave fornita. Quando si apre un file cifrato, si deve inserire la "
+"password necessaria per aprire il portachiavi. Il file cifrato sarà "
+"memorizzato nel formato <emphasis>&ASCII; con cifratura corazzata</emphasis> "
+"di GPG."
+
+#. Tag: para
+#: details-formats.docbook:108
+#, no-c-format
+msgid ""
+"When using GPG encryption, GPG also compresses the file using gzip, so no "
+"extra compression is necessary."
+msgstr ""
+"Quando si utilizza la cifratura GPG, GPG comprime anche il file tramite "
+"gzip, quindi non è necessaria alcuna compressione aggiuntiva."
+
+#. Tag: title
+#: details-formats.docbook:115
+#, no-c-format
+msgid "GPG-Keys"
+msgstr "Chiavi GPG"
+
+#. Tag: para
+#: details-formats.docbook:116
+#, no-c-format
+msgid ""
+"If you have not done so already for mail encryption, you need to generate a "
+"key-pair in order to use the GPG encryption feature of &kmymoney;. Also, "
+"<application>GPG</application> must be installed on your system."
+msgstr ""
+"Se non l'hai già fatto per la cifratura dei messaggi email, devi generare "
+"una coppia di chiavi prima di usare la funzione di cifratura GPG presente in "
+"&kmymoney;. È necessario anche avere installato il programma "
+"<application>GPG</application>"
+
+#. Tag: para
+#: details-formats.docbook:122
+#, no-c-format
+msgid ""
+"The details about how to generate a key-pair and how to take care of it are "
+"beyond the scope of this document. A Mini Howto on this subject can be found "
+"at <ulink url=\"https://www.gnupg.org/documentation/howtos.en.html\">https://"
+"www.gnupg.org/documentation/howtos.en.html</ulink>. The web sites of most "
+"&Linux; distributions also contain instructions on using GPG in that "
+"distribution."
+msgstr ""
+"I dettagli su come generare una coppia di chiavi e come prendersene cura "
+"vanno oltre lo scopo di questo documento. Un Mini Howto su questo argomento "
+"può essere trovato su <ulink url=\"https://www.gnupg.org/documentation/"
+"howtos.en.html\">\n"
+"https://www.gnupg.org/documentation/howtos.en.html</ulink>. I siti web della "
+"maggior parte delle distribuzioni &Linux; contengono anche istruzioni "
+"sull'uso di GPG in quella distribuzione."
+
+#. Tag: title
+#: details-formats.docbook:131
+#, no-c-format
+msgid "Setting the keys in &kmymoney;"
+msgstr "Impostazione delle chiavi in &kmymoney;"
+
+#. Tag: para
+#: details-formats.docbook:132
+#, no-c-format
+msgid ""
+"On the encryption page of the settings dialog, there is a dropdown list "
+"where you can select the key that should be used for encryption and "
+"decryption. Additionally, there is a field where you can enter the key-id of "
+"a key not in the listbox. You can use either the key-id, the email address "
+"associated with this key, or any other valid GPG key identification as the "
+"value for this field. When you enter the key-id, &kmymoney; will check its "
+"validity and display a green LED icon in the dialog if a key is found."
+msgstr ""
+"Nella pagina Cifratura della finestra delle impostazioni, c'è un menu a "
+"tendina in cui si può selezionare la chiave da usare per la cifratura e la "
+"decifratura. Inoltre, c'è un campo in cui si può inserire l'id di una chiave "
+"non presente nel menu a tendina. È possibile utilizzare il campo l'id della "
+"chiave, l'indirizzo di posta associato alla chiave o qualsiasi altra "
+"identificazione valida di una chiave GPG. Quando si inserisce l'id, "
+"&kmymoney; controllerà la sua validità e visualizzerà un LED verde nella "
+"finestra se viene trovata una chiave."
+
+#. Tag: para
+#: details-formats.docbook:141
+#, no-c-format
+msgid ""
+"Make sure you have both the public and the private key for this id. If you "
+"do not own the private key for the id entered, you will not be able to open "
+"the file again."
+msgstr ""
+"Assicurarsi di avere sia la chiave pubblica sia quella privata per questo "
+"id. Se non si possiede la chiave privata, non si sarà più in grado di aprire "
+"il file, una volta salvato."
+
+#. Tag: title
+#: details-formats.docbook:150
+#, no-c-format
+msgid "The &kmymoney; recovery key"
+msgstr "La chiave di ripristino di &kmymoney;"
+
+#. Tag: para
+#: details-formats.docbook:151
+#, no-c-format
+msgid ""
+"Also on this page of the settings dialog you have the choice of selecting "
+"supplemental encryption with the &kmymoney; recovery key. This option is "
+"available to you if that key is stored in your <application>GPG</"
+"application> keyring. Selecting this option will allow you to recover your "
+"data even in the case you lose your own private key. This is possible "
+"because the data is not only encrypted for your own key, but also for the "
+"&kmymoney; recovery key. This key is only available to selected &kmymoney; "
+"developers (at the time of writing only to the author.) As of the May, 2024, "
+"the recovery key is set to expire on 7 January 2025."
+msgstr ""
+"In questa pagina di impostazioni è possibile anche selezionare una cifratura "
+"supplementare con la chiave di ripristino di &kmymoney;. Questa opzione è "
+"disponibile se la chiave è memorizzata nel portachiavi di <application>GPG</"
+"application>. Selezionando questa opzione, sarà possibile ripristinare i "
+"dati anche se si perde la chiave privata. Questo è possibile perché i dati "
+"non vengono cifrati solo con la propria chiave, ma anche con quella di "
+"ripristino di &kmymoney;. Questa chiave è disponibile solo ad alcuni "
+"sviluppatori di &kmymoney; (al momento della scrittura di questo manuale, "
+"solo l'autore). A partire da maggio 2024, la chiave di ripristino scadrà il "
+"7 gennaio 2025."
+
+#. Tag: para
+#: details-formats.docbook:162
+#, no-c-format
+msgid ""
+"Under normal circumstances, you will open/save/close your file as usual. In "
+"the abnormal case of loss of your key, you have the chance to contact one of "
+"the developers who has access to the &kmymoney; recover key and request help "
+"to recover your data. You may contact the developers via email to the "
+"&kmymoney; developer mailing list at &devlist;."
+msgstr ""
+"Nelle normali circostanze, si può aprire, salvare e chiudere il file come al "
+"solito. In caso di perdita della chiave, si può contattare uno degli "
+"sviluppatori che possiede la chiave di ripristino di &kmymoney; e chiedere "
+"aiuto per il ripristino dei dati. È possibile contattare gli sviluppatori "
+"tramite email scrivendo alla lista di distribuzione degli sviluppatori di "
+"&kmymoney;: &devlist;."
+
+#. Tag: para
+#: details-formats.docbook:170
+#, no-c-format
+msgid ""
+"To get the recovery key, go to <ulink url=\"https://kmymoney.org/recovery."
+"html\"> The KMyMoney recovery key</ulink> page of the &kmymoney; web site. "
+"Copy and save the <quote>PGP PUBLIC KEY BLOCK</quote> (including the "
+"<quote>BEGIN</quote> and <quote>END</quote> lines) to a text file and then "
+"import it with gpg."
+msgstr ""
+"Per ottenere la chiave di ripristino, andare alla pagina <ulink url="
+"\"https://kmymoney.org/recovery.html\"> La chiave di ripristino di KMyMoney</"
+"ulink> del sito web &kmymoney;. Copiare e salvare il <quote>PGP PUBLIC KEY "
+"BLOCK</quote> (incluse le righe <quote>BEGIN</quote> e <quote>END</quote>) "
+"in un file di testo e quindi importalo con gpg."
+
+#. Tag: para
+#: details-formats.docbook:177
+#, no-c-format
+msgid ""
+"Remember that the developer can only help recover your data file if you "
+"actually do encrypt it with the recovery key, in addition to your own key."
+msgstr ""
+"Ricorda che lo sviluppatore può aiutarti a recuperare il tuo file di dati "
+"solo se lo cifri effettivamente con la chiave di recupero, oltre alla tua "
+"chiave."
+
+#. Tag: title
+#: details-formats.docbook:184
+#, no-c-format
+msgid "Anonymous file"
+msgstr "File anonimo"
+
+#. Tag: para
+#: details-formats.docbook:185
+#, no-c-format
+msgid ""
+"This format is not intended to be used for normal data storage. It is "
+"supported so that in case of a problem, you can supply the &kmymoney; "
+"development team with your file without disclosing any of the confidential "
+"details in your financial data. For example, it changes institution, "
+"account, payee, and category names to strings such as \"I000001\" and "
+"\"A000001\"; it makes similar changes to all data such as account numbers, "
+"and it also randomly changes the amounts of transactions."
+msgstr ""
+"Questo formato non è pensato per la normale archiviazione dei dati. È "
+"supportato solo perché, in caso di problemi, puoi fornire alla squadra di "
+"sviluppo di &kmymoney; il tuo file, senza svelare i dettagli confidenziali "
+"presenti nei tuoi dati finanziari. Ad esempio, i nomi degli istituti, dei "
+"beneficiari, dei conti e delle categorie sono sostituiti da stringhe come "
+"«I000001» e «A000001». Vengono apportate modifiche simili a tutti i dati, "
+"come i numeri dei conti, e modificati in modo casuale gli importi delle "
+"transazioni."
+
+#. Tag: para
+#: details-formats.docbook:194
+#, no-c-format
+msgid ""
+"If instructed by the developers, use the <guimenuitem>Save as...</"
+"guimenuitem> menu item to store your data in anonymous format by selecting "
+"<literal role=\"filter\">Anonymous files</literal> as the filter. This also "
+"changes the file extension to <filename class=\"extension\">.anon.xml</"
+"filename>."
+msgstr ""
+"Se gli sviluppatori indicano di farlo, usare la voce di menu "
+"<guimenuitem>Salva come...</guimenuitem> per memorizzare i dati in formato "
+"anonimo, selezionando <literal role=\"filter\">File anonimi</literal> come "
+"filtro. Questo imposta anche l'estensione del file a <filename class="
+"\"extension\">.anon.xml</filename>."
+
+#. Tag: para
+#: details-formats.docbook:201
+#, no-c-format
+msgid ""
+"To verify that your problem still exists, reload this anonymized file and "
+"try to duplicate your problem. If the problem is still present, send the "
+"file to the developer mailing list at &devlist; for further investigation. "
+"If the problem does not show ... well, I don't want to think about this "
+"scenario right now."
+msgstr ""
+"Per verificare che il problema persiste, ricarica questo file reso anonimo e "
+"prova a replicare il problema. Se il problema rimane, invia il file alla "
+"mailing list degli sviluppatori: &devlist;, in modo che venga analizzato. Se "
+"il problema non si ripresenta... beh, adesso non ho voglia di pensare a "
+"questo caso ."
+
+#. Tag: title
+#: details-formats.docbook:209
+#, no-c-format
+msgid "Data file locations"
+msgstr "Posizioni dei file di dati"
+
+#. Tag: para
+#: details-formats.docbook:210
+#, no-c-format
+msgid ""
+"All of the above file types can be stored on a local hard drive, a removable "
+"device such as a usb thumb drive, or a network location. Depending on your "
+"Operating System, a remote location may need to be mapped or mounted prior "
+"to use."
+msgstr ""
+"Tutti i tipi di file sopra indicati possono essere archiviati su un disco "
+"rigido locale, un dispositivo rimovibile come una chiavetta USB o una "
+"posizione di rete. A seconda del sistema operativo, potrebbe essere "
+"necessario mappare o montare una posizione remota prima dell'uso."
+
+#. Tag: title
+#: details-formats.docbook:216
+#, no-c-format
+msgid "Limitation on Windows"
+msgstr "Limitazione su Windows"
+
+#. Tag: para
+#: details-formats.docbook:217
+#, no-c-format
+msgid ""
+"On &Windows;, in order to use a network or remote file location, that mapped "
+"location must be mapped to a drive letter."
+msgstr ""
+"In &Windows;, per utilizzare una posizione di rete o di file remoto, la "
+"posizione mappata deve essere associata a una lettera di unità."
+
+#. Tag: title
+#: details-formats.docbook:226
+#, no-c-format
+msgid "Backup"
+msgstr "Copia di sicurezza"
+
+#. Tag: para
+#: details-formats.docbook:227
+#, no-c-format
+msgid ""
+"We will not attempt here to convince you that making backup copies of your "
+"data is an extremely good idea; hopefully you are already convinced of that. "
+"This section describes three ways to do this, and you can use any one, two, "
+"or even all three of them. Note that this is about backing up a data file; "
+"if you use an SQL backend to store your data, see the documentation for that "
+"database system for instructions on making backups."
+msgstr ""
+"Non cercheremo qui di convincerti che fare copie di sicurezza dei tuoi dati "
+"sia un'idea estremamente buona; speriamo che tu ne sia già convinto. Questa "
+"sezione descrive tre modi per farlo, e puoi usarne uno qualsiasi, due o "
+"anche tutti e tre. Nota che questo riguarda il backup di un file di dati; se "
+"usi un motore SQL per archiviare i tuoi dati, consulta la documentazione di "
+"quel sistema di banca dati per istruzioni su come effettuare le copie di "
+"sicurezza."
+
+#. Tag: title
+#: details-formats.docbook:236
+#, no-c-format
+msgid "Backup file location"
+msgstr "Posizione della copia di sicurezza"
+
+#. Tag: para
+#: details-formats.docbook:237
+#, no-c-format
+msgid ""
+"If you need a backup copy of your data to confirm some aspect of your "
+"finances at a previous point in time, or to revert to an earlier state, such "
+"as to undo importing a lot of data to the wrong account, it doesn't matter "
+"whether the backup copy is local or stored elsewhere, such as on an attached "
+"network drive. However, if you need a backup to recover from loss of data if "
+"you disk drive failed, for example, it is essential that the backup is "
+"<emphasis>not</emphasis> on the same drive as your primary data file. In "
+"case of a larger disaster, such as a house fire, you would need a backup "
+"copy stored in a fireproof safe or at a physically different location. "
+"Please keep this in mind as you establish your backup strategy."
+msgstr ""
+"Se hai bisogno di una copia di sicurezza dei tuoi dati per confermare un "
+"aspetto delle tue finanze in un momento precedente, o per tornare a uno "
+"stato precedente, come ad esempio per annullare l'importazione di molti dati "
+"nel conto sbagliato, non importa se la copia di sicurezza è locale o "
+"archiviata altrove, ad esempio su un'unità di rete collegata. Tuttavia, se "
+"hai bisogno di un copia di sicurezza per recuperare dati persi in caso di "
+"guasto dell'unità disco, ad esempio, è essenziale che la copia di sicurezza "
+"<emphasis>non</emphasis> sia sulla stessa unità del tuo file di dati "
+"primario. In caso di un disastro più grande, come un incendio domestico, "
+"avresti bisogno di una copia di sicurezza archiviata in una cassaforte "
+"ignifuga o in una posizione fisica diversa. Tieni presente questo quando "
+"stabilisci la tua strategia di backup."
+
+#. Tag: title
+#: details-formats.docbook:250
+#, no-c-format
+msgid "Autosave"
+msgstr "Salvataggio automatico"
+
+#. Tag: para
+#: details-formats.docbook:251
+#, no-c-format
+msgid ""
+"&kmymoney; has the ability to automatically save a copy of your data file at "
+"regular intervals. It can also do so on closing the program, if the data has "
+"changed. This behavior can be configured on the &kmymoney; <link linkend="
+"\"details.settings.general.global\">configuration dialog, General section, "
+"Global tab</link>."
+msgstr ""
+"&kmymoney; ha la capacità di salvare automaticamente una copia del proprio "
+"file di dati a intervalli regolari. Può farlo anche quando si chiude il "
+"programma, se i dati sono cambiati. Questo comportamento può essere "
+"configurato nella finestra di configurazione di &kmymoney; <link linkend="
+"\"details.settings.general.global\">, sezione Generale, scheda Globale</"
+"link>."
+
+#. Tag: title
+#: details-formats.docbook:260
+#, no-c-format
+msgid "File copy"
+msgstr "Copia file"
+
+#. Tag: para
+#: details-formats.docbook:261
+#, no-c-format
+msgid ""
+"Unless you are using SQL storage, your data may be compressed, and it may be "
+"encrypted, but is kept in a regular file. Whenever you save your data with "
+"the <menuchoice><guimenu>File</guimenu><guimenuitem>Save</guimenuitem></"
+"menuchoice> menu item, it writes all your data to a file, replacing the "
+"previous version. The most straightforward way of backing up your data is by "
+"making a copy of that file. A single copy can even have the same file name "
+"if it is in a different folder than your original file, but if you are going "
+"to keep multiple copies, it makes sense to include some version of the "
+"current date and time in each file name. You can save these to a network "
+"drive, or to a USB storage device, or even to an optical device. The primary "
+"downside of this method is that you need to keep track of all the backups, "
+"but it does provide the most flexibility."
+msgstr ""
+"A meno che tu non stia utilizzando l'archiviazione SQL, i tuoi dati "
+"potrebbero essere compressi e cifrati, ma vengono conservati in un file "
+"normale. Ogni volta che salvi i tuoi dati con la voce di menu "
+"<menuchoice><guimenu>File</guimenu><guimenuitem>Salva</guimenuitem></"
+"menuchoice>, tutti i tuoi dati vengono scritti in un file, sostituendo la "
+"versione precedente. Il modo più semplice per eseguire la copia di sicurezza "
+"dei tuoi dati è creare una copia di quel file. Una singola copia può anche "
+"avere lo stesso nome file se si trova in una cartella diversa dal file "
+"originale, ma se hai intenzione di conservare più copie, ha senso includere "
+"una versione della data e dell'ora attuali in ogni nome file. Puoi salvarli "
+"su un'unità di rete, su un dispositivo di archiviazione USB o persino su un "
+"dispositivo ottico. Lo svantaggio principale di questo metodo è che devi "
+"tenere traccia di tutte le copie di sicurezza, ma fornisce la massima "
+"flessibilità."
+
+#. Tag: title
+#: details-formats.docbook:276
+#, no-c-format
+msgid "Backup command"
+msgstr "Comando di backup"
+
+#. Tag: para
+#: details-formats.docbook:277
+#, no-c-format
+msgid ""
+"To make things a bit easier, you can select the <menuchoice> <guimenu>File</"
+"guimenu> <guimenuitem>Backup</guimenuitem> </menuchoice> menu item."
+msgstr ""
+"Per semplificare un po' le cose, è possibile selezionare la voce di menu "
+"<menuchoice> <guimenu>File</guimenu> <guimenuitem>Backup</guimenuitem> </"
+"menuchoice>."
+
+#. Tag: screeninfo
+#: details-formats.docbook:283
+#, no-c-format
+msgid "<screeninfo>file backup</screeninfo>"
+msgstr "<screeninfo>file di backup</screeninfo>"
+
+#. Tag: phrase
+#: details-formats.docbook:289
+#, no-c-format
+msgid "<phrase>file backup</phrase>"
+msgstr "<phrase>File di backup</phrase>"
+
+#. Tag: para
+#: details-formats.docbook:294
+#, no-c-format
+msgid ""
+"When you click <guibutton>OK</guibutton> &kmymoney; will create a copy of "
+"your data file, with the date (formatted as YYYY-MM-DD) appended to the "
+"name. Note that this means only one backup per day can be created by this "
+"method. If you have already created a backup on the same day, &kmymoney; "
+"will ask if you want to replace the previous backup or cancel."
+msgstr ""
+"Quando si fa clic su <guibutton>OK</guibutton> &kmymoney; creerà una copia "
+"del proprio file di dati, con la data (formattata come AAAA-MM-GG) aggiunta "
+"al nome. Notare che questo significa che con questo metodo può essere creato "
+"solo un copia di sicurezza al giorno. Se è già stata creata una copia di "
+"sicurezza lo stesso giorno, &kmymoney; chiederà se si desidera sostituire la "
+"copia precedente o annullare."
+
+#. Tag: para
+#: details-formats.docbook:302
+#, no-c-format
+msgid ""
+"&kmymoney; will save this file to the directory specified in the "
+"<guilabel>Mount Point</guilabel> field. You can either manually type the "
+"full path to the directory or click <guibutton>Choose...</guibutton> and "
+"navigate to it using the file browser. The directory can be on a local "
+"storage device or it can be a network folder."
+msgstr ""
+"&kmymoney; salverà questo file nella cartella specificata nel campo "
+"<guilabel>Punto di montaggio</guilabel>. Puoi digitare manualmente il "
+"percorso completo della cartella o fare clic su <guibutton>Scegli...</"
+"guibutton> e accedervi tramite il browser dei file. La cartella può trovarsi "
+"su un dispositivo di archiviazione locale o su una cartella di rete."
+
+#. Tag: para
+#: details-formats.docbook:310
+#, no-c-format
+msgid ""
+"If the specified directory is actually a mount point for a storage device "
+"that is not always mounted, you can check the <guilabel>Mount this directory "
+"before backing up</guilabel> checkbox. Do not use this for a regular network "
+"file share which is always mounted."
+msgstr ""
+"Se la cartella specificata è in realtà un punto di montaggio per un "
+"dispositivo di archiviazione che non è sempre montato, puoi selezionare la "
+"casella <guilabel>Monta questa cartella prima di effettuare il backup</"
+"guilabel>. Non utilizzare questa opzione per una condivisione di rete "
+"regolare che è sempre montata."
+
+#~ msgid "2014-08-30"
+#~ msgstr "30/08/2014"
+
+#~ msgid "4.7.01"
+#~ msgstr "4.7.01"
+
+#~ msgid ""
+#~ "This chapter describes the formats in which &kmymoney; stores its data in "
+#~ "permanent form on the user's storage device. In general, &kmymoney; "
+#~ "stores its information in form of an &XML; document. Depending on the "
+#~ "actual format, this &XML; document will be written:"
+#~ msgstr ""
+#~ "Questo capitolo descrive i formati in cui &kmymoney; memorizza i dati in "
+#~ "modo permanente sul dispositivo di archiviazione dell'utente. In "
+#~ "generale, &kmymoney; salva le informazioni come documento &XML;. In base "
+#~ "al formato effettivo, questo documento &XML; può essere salvato come:"
+
+#~ msgid ""
+#~ "as a <link linkend=\"details.formats.plain\">plain text file</link> "
+#~ "encoded in UTF-8,"
+#~ msgstr ""
+#~ "<link linkend=\"details.formats.plain\">file di testo semplice</link>, "
+#~ "con codifica UTF-8, o"
+
+#~ msgid ""
+#~ "as a <link linkend=\"details.formats.compressed\">compressed file</link> "
+#~ "using GZIP compression,"
+#~ msgstr ""
+#~ "<link linkend=\"details.formats.compressed\">file compresso</link> con "
+#~ "GZIP, o"
+
+#~ msgid ""
+#~ "as an <link linkend=\"details.formats.encrypted\">encrypted file</link> "
+#~ "using GPG encryption, or"
+#~ msgstr ""
+#~ "<link linkend=\"details.formats.encrypted\">file cifrato</link> con la "
+#~ "cifratura GPG, o"
+
+#~ msgid ""
+#~ "as an <link linkend=\"details.formats.anonymous\">anonymous plain text "
+#~ "file</link> encoded in UTF-8 but with all your personal data scrambled."
+#~ msgstr ""
+#~ "<link linkend=\"details.formats.anonymous\">file di testo semplice "
+#~ "anonimo</link> codificato in UTF-8 senza dati personali."
+
+#~ msgid "2010-07-25"
+#~ msgstr "2010-07-25"
+
+#~ msgid "<releaseinfo>4.5</releaseinfo>"
+#~ msgstr "<releaseinfo>4.5</releaseinfo>"
+
+#~ msgid "<firstname>Thomas</firstname> <surname>Baumgart</surname>"
+#~ msgstr "<firstname>Thomas</firstname> <surname>Baumgart</surname>"
+
+#~ msgid "ipwizard@users.sourceforge.net"
+#~ msgstr "ipwizard@users.sourceforge.net"
+
+#~ msgid ""
+#~ "This format is not intended to be used for normal data storage. It is "
+#~ "supported in case of a problem as a method of supplying the &kappname; "
+#~ "development team with your file without disclosing any of your financial "
+#~ "data. If instructed by the developers, use the <guimenuitem>Save as...</"
+#~ "guimenuitem> menu item to store your data in anonymous format by "
+#~ "selecting <literal role=\"extension\">.anon.xml</literal> as the file "
+#~ "extension. To verify that your problem still exists, reload this "
+#~ "anonymized file and try to duplicate your problem. If the problem is "
+#~ "still present, send the file to the developer mailing list at &devlist; "
+#~ "for further investigation. If the problem does not show ... well, I don't "
+#~ "want to think about this scenario right now."
+#~ msgstr ""
+#~ "Questo formato non è stato pensato per l'uso normale. È supportato per "
+#~ "permettere, in caso di problemi, di fornire alla squadra di sviluppo di "
+#~ "&kappname; il file senza rivelare i dati finanziari che contiene. Se "
+#~ "viene richiesto dagli sviluppatori, usare la voce di menu "
+#~ "<guimenuitem>Salva come...</guimenuitem> e scegliere <literal role="
+#~ "\"extension\">.anon.xml</literal> come estensione del file per "
+#~ "memorizzare i dati nel formato anonimo. Per verificare che il problema si "
+#~ "manifesti anche con il file anonimo, aprirlo e provare a riprodurre il "
+#~ "problema. Se il problema si presenta ancora, inviare il file alla mailing-"
+#~ "list degli sviluppatori (&devlist;) in modo da permettere di studiare "
+#~ "meglio il problema. Se il problema non si presenta più... beh, non voglio "
+#~ "pensare a questo caso."

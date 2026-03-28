@@ -1,0 +1,1658 @@
+# SLOVENIAN TRANSLATION OF KDE DOCUMENTATION.
+# Copyright (C) 2001 Free Software Foundation, Inc.
+# $Id$
+# $Source$
+# Andrej Vernekar <andrej.vernekar@moj.net>, 2001.
+# Jan <jan.napast153@gmail.com>, 2023.
+# Matjaž Jeran <matjaz.jeran@amis.net>, 2023.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 12:04+0000\n"
+"PO-Revision-Date: 2024-09-23 15:03+0200\n"
+"Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
+"Language-Team: Slovenian <lugos-slo@lugos.si>\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
+"Translator: Jan <jan.napast153@gmail.com>\n"
+"X-Generator: Poedit 3.5\n"
+
+#. Tag: author
+#: regular-expressions.docbook:4
+#, no-c-format
+msgid "&Anders.Lund; &Anders.Lund.mail;"
+msgstr "&Anders.Lund; &Anders.Lund.mail;"
+
+#. Tag: trans_comment
+#: regular-expressions.docbook:5
+#, no-c-format
+msgid "ROLES_OF_TRANSLATORS"
+msgstr ""
+"<othercredit role=\"translator\"><firstname>Andrej</"
+"firstname><surname>Vernekar</surname><affiliation><address><email>andrej."
+"vernekar@moj.net</email></address></affiliation></othercredit>"
+
+#. Tag: title
+#: regular-expressions.docbook:9
+#, no-c-format
+msgid "Regular Expressions"
+msgstr "Regularni izrazi"
+
+#. Tag: synopsis
+#: regular-expressions.docbook:11
+#, no-c-format
+msgid ""
+"This Appendix contains a brief but hopefully sufficient and\n"
+"covering introduction to the world of <emphasis>regular\n"
+"expressions</emphasis>. It documents regular expressions in the form\n"
+"available within &kappname;, which is not compatible with the regular\n"
+"expressions of perl, nor with those of for example\n"
+"<command>grep</command>."
+msgstr ""
+"Ta dodatek vsebuje kratko, a upajmo, da zadostno in\n"
+"zajema uvod v svet <emphasis>običajnega\n"
+"izrazi</emphasis>. Dokumentira regularne izraze v obrazcu\n"
+"na voljo znotraj &kappname;, ki ni združljiv z običajnim\n"
+"izrazi perla, niti z izrazi naprimer\n"
+"<command>grep</command>."
+
+#. Tag: title
+#: regular-expressions.docbook:15
+#, no-c-format
+msgid "Introduction"
+msgstr "Uvod"
+
+#. Tag: para
+#: regular-expressions.docbook:17
+#, no-c-format
+msgid ""
+"<emphasis>Regular Expressions</emphasis> provides us with a way to describe "
+"some possible contents of a text string in a way understood by a small piece "
+"of software, so that it can investigate if a text matches, and also in the "
+"case of advanced applications with the means of saving pieces or the "
+"matching text."
+msgstr ""
+"<emphasis>Regularni izrazi</emphasis> nam omogočajo, da opišemo nekatere "
+"možne vsebine besedilnega niza na način, ki ga razume majhen kos programske "
+"opreme, tako da lahko razišče, ali se besedilo ujema, in tudi v primeru "
+"napredne aplikacije s sredstvi za shranjevanje kosov ali ujemajočega se "
+"besedila."
+
+#. Tag: para
+#: regular-expressions.docbook:23
+#, no-c-format
+msgid ""
+"An example: Say you want to search a text for paragraphs that starts with "
+"either of the names <quote>Henrik</quote> or <quote>Pernille</quote> "
+"followed by some form of the verb <quote>say</quote>."
+msgstr ""
+"Primer: Recimo, da želite v besedilu poiskati odstavke, ki se začnejo z "
+"imeni <quote>Henrik</quote> ali <quote>Pernille</quote>, ki mu sledi neka "
+"oblika glagola <quote>say</quote >."
+
+#. Tag: para
+#: regular-expressions.docbook:28
+#, no-c-format
+msgid ""
+"With a normal search, you would start out searching for the first name, "
+"<quote>Henrik</quote> maybe followed by <quote>sa</quote> like this: "
+"<userinput>Henrik sa</userinput>, and while looking for matches, you would "
+"have to discard those not being the beginning of a paragraph, as well as "
+"those in which the word starting with the letters <quote>sa</quote> was not "
+"either <quote>says</quote>, <quote>said</quote> or so. And then of course "
+"repeat all of that with the next name..."
+msgstr ""
+"Z običajnim iskanjem bi začeli iskati prvo ime, <quote>Henrik</quote>, ki bi "
+"mu morda sledilo <quote>sa</quote>, takole: <userinput>Henrik sa</"
+"userinput>, in med iskanjem za ujemanja bi morali zavreči tiste, ki niso "
+"začetek odstavka, pa tudi tiste, v katerih beseda, ki se začne s črkama "
+"<quote>sa</quote>, ni bila niti <quote>pravi</quote>, <quote>rekel</quote> "
+"ali tako. In potem seveda vse to ponovite z naslednjim imenom ..."
+
+#. Tag: para
+#: regular-expressions.docbook:37
+#, no-c-format
+msgid ""
+"With Regular Expressions, that task could be accomplished with a single "
+"search, and with a larger degree of preciseness."
+msgstr ""
+"Z regularnimi izrazi je to nalogo mogoče opraviti z enim samim iskanjem in z "
+"večjo stopnjo natančnosti."
+
+#. Tag: para
+#: regular-expressions.docbook:40
+#, no-c-format
+msgid ""
+"To achieve this, Regular Expressions defines rules for expressing in details "
+"a generalization of a string to match. Our example, which we might literally "
+"express like this: <quote>A line starting with either <quote>Henrik</quote> "
+"or <quote>Pernille</quote> (possibly following up to 4 blanks or tab "
+"characters) followed by a whitespace followed by <quote>sa</quote> and then "
+"either <quote>ys</quote> or <quote>id</quote></quote> could be expressed "
+"with the following regular expression:"
+msgstr ""
+"Da bi to dosegli, regularni izrazi določajo pravila za podrobno izražanje "
+"posplošitve niza za ujemanje. Naš primer, ki bi ga lahko dobesedno izrazili "
+"takole: <quote>Vrstica, ki se začne z <quote>Henrik</quote> ali "
+"<quote>Pernille</quote> (po možnosti sledijo do 4 presledki ali "
+"tabulatorji), ki ji sledi presledek, ki mu sledi <quote>sa</quote> in nato "
+"<quote>ys</quote> ali <quote>id</quote></quote>, se lahko izrazi z "
+"naslednjim regularnim izrazom:"
+
+#. Tag: userinput
+#: regular-expressions.docbook:47
+#, no-c-format
+msgid "^[ \\t]{0,4}(Henrik|Pernille) sa(ys|id)"
+msgstr "^[ \\t]{0,4}(Henrik|Pernille) sa(ys|id)"
+
+#. Tag: para
+#: regular-expressions.docbook:50
+#, no-c-format
+msgid ""
+"The above example demonstrates all four major concepts of modern Regular "
+"Expressions, namely:"
+msgstr ""
+"Zgornji primer prikazuje vse štiri glavne koncepte sodobnih regularnih "
+"izrazov, in sicer:"
+
+#. Tag: para
+#: regular-expressions.docbook:54
+#, no-c-format
+msgid "<para>Patterns</para>"
+msgstr "<para>Vzorci</para>"
+
+#. Tag: para
+#: regular-expressions.docbook:55
+#, no-c-format
+msgid "<para>Assertions</para>"
+msgstr "<para>Trditve</para>"
+
+#. Tag: para
+#: regular-expressions.docbook:56
+#, no-c-format
+msgid "<para>Quantifiers</para>"
+msgstr "<para>Kvantifikatorji</para>"
+
+#. Tag: para
+#: regular-expressions.docbook:57
+#, no-c-format
+msgid "Back references"
+msgstr "Reference za nazaj"
+
+#. Tag: para
+#: regular-expressions.docbook:60
+#, no-c-format
+msgid ""
+"The caret (<literal>^</literal>) starting the expression is an assertion, "
+"being true only if the following matching string is at the start of a line."
+msgstr ""
+"Karetica (<literal>^</literal>), ki začne izraz, je trditev, ki je resnična "
+"samo, če je naslednji ujemajoči se niz na začetku vrstice."
+
+#. Tag: para
+#: regular-expressions.docbook:64
+#, no-c-format
+msgid ""
+"The strings <literal>[ \\t]</literal> and <literal>(Henrik|Pernille) sa(ys|"
+"id)</literal> are patterns. The first one is a <emphasis>character class</"
+"emphasis> that matches either a blank or a (horizontal) tab character; the "
+"other pattern contains first a subpattern matching either <literal>Henrik</"
+"literal> <emphasis>or</emphasis> <literal>Pernille</literal>, then a piece "
+"matching the exact string <literal> sa</literal> and finally a subpattern "
+"matching either <literal>ys</literal> <emphasis>or</emphasis> <literal>id</"
+"literal>"
+msgstr ""
+"Niza <literal>[ \\t]</literal> in <literal>(Henrik|Pernille) sa(ys|id)</"
+"literal> sta vzorca. Prvi je <emphasis>razred znakov</emphasis>, ki se ujema "
+"s praznim ali (vodoravnim) tabulatorjem; drugi vzorec vsebuje najprej "
+"podvzorec, ki se ujema bodisi z <literal>Henrik</literal> <emphasis>ali</"
+"emphasis> <literal>Pernille</literal>, nato kos, ki se ujema z natančnim "
+"nizom <literal> sa</literal> in končno podvzorec, ki se ujema z <literal>ys</"
+"literal> <emphasis>ali</emphasis> <literal>id</literal>"
+
+#. Tag: para
+#: regular-expressions.docbook:74
+#, no-c-format
+msgid ""
+"The string <literal>{0,4}</literal> is a quantifier saying <quote>anywhere "
+"from 0 up to 4 of the previous</quote>."
+msgstr ""
+"Niz <literal>{0,4}</literal> je kvantifikator, ki pravi <quote>kjer koli od "
+"0 do 4 prejšnjega</quote>."
+
+#. Tag: para
+#: regular-expressions.docbook:77
+#, no-c-format
+msgid ""
+"Because regular expression software supporting the concept of <emphasis>back "
+"references</emphasis> saves the entire matching part of the string as well "
+"as sub-patterns enclosed in parentheses, given some means of access to those "
+"references, we could get our hands on either the whole match (when searching "
+"a text document in an editor with a regular expression, that is often marked "
+"as selected) or either the name found, or the last part of the verb."
+msgstr ""
+"Ker programska oprema za regularne izraze, ki podpira koncept "
+"<emphasis>povratnih sklicev</emphasis>, shrani celoten ujemajoči se del niza "
+"kot tudi podvzorce, obdane z oklepaji, bi lahko dobili nekaj načinov dostopa "
+"do teh sklicev bodisi celotno ujemanje (pri iskanju besedilnega dokumenta v "
+"urejevalniku z regularnim izrazom, ki je pogosto označen kot izbrano) bodisi "
+"najdeno ime ali zadnji del glagola."
+
+#. Tag: para
+#: regular-expressions.docbook:85
+#, no-c-format
+msgid ""
+"All together, the expression will match where we wanted it to, and only "
+"there."
+msgstr "Vse skupaj se bo izraz ujemal tam, kjer smo želeli, in samo tam."
+
+#. Tag: para
+#: regular-expressions.docbook:88
+#, no-c-format
+msgid ""
+"The following sections will describe in details how to construct and use "
+"patterns, character classes, assertions, quantifiers and back references, "
+"and the final section will give a few useful examples."
+msgstr ""
+"Naslednji razdelki bodo podrobno opisali, kako zgraditi in uporabiti vzorce, "
+"razrede znakov, trditve, kvantifikatorje in povratne reference, zadnji del "
+"pa bo dal nekaj uporabnih primerov."
+
+#. Tag: title
+#: regular-expressions.docbook:97
+#, no-c-format
+msgid "<title>Patterns</title>"
+msgstr "<title>Vzorci</title>"
+
+#. Tag: para
+#: regular-expressions.docbook:99
+#, no-c-format
+msgid ""
+"Patterns consists of literal strings and character classes. Patterns may "
+"contain sub-patterns, which are patterns enclosed in parentheses."
+msgstr ""
+"Vzorci so sestavljeni iz dobesednih nizov in znakovnih razredov. Vzorci "
+"lahko vsebujejo podvzorce, ki so vzorci v oklepajih."
+
+#. Tag: title
+#: regular-expressions.docbook:104
+#, no-c-format
+msgid "Escaping characters"
+msgstr "Ubežni znaki"
+
+#. Tag: para
+#: regular-expressions.docbook:106
+#, no-c-format
+msgid ""
+"In patterns as well as in character classes, some characters have a special "
+"meaning. To literally match any of those characters, they must be marked or "
+"<emphasis>escaped</emphasis> to let the regular expression software know "
+"that it should interpret such characters in their literal meaning."
+msgstr ""
+"Tako v vzorcih kot tudi v razredih znakov imajo nekateri znaki poseben "
+"pomen. Če se želite dobesedno ujemati s katerim koli od teh znakov, jih je "
+"treba označiti ali <emphasis>ubežati</emphasis>, da programska oprema za "
+"regularne izraze ve, da mora take znake interpretirati v njihovem dobesednem "
+"pomenu."
+
+#. Tag: para
+#: regular-expressions.docbook:112
+#, no-c-format
+msgid ""
+"This is done by prepending the character with a backslash (<literal>\\</"
+"literal>)."
+msgstr ""
+"To naredite tako, da pred znak dodate poševnico nazaj (<literal>\\</"
+"literal>)."
+
+#. Tag: para
+#: regular-expressions.docbook:116
+#, no-c-format
+msgid ""
+"The regular expression software will silently ignore escaping a character "
+"that does not have any special meaning in the context, so escaping for "
+"example a <quote>j</quote> (<userinput>\\j</userinput>) is safe. If you are "
+"in doubt whether a character could have a special meaning, you can therefore "
+"escape it safely."
+msgstr ""
+"Programska oprema za regularne izraze bo tiho prezrla ubežanje znaka, ki v "
+"kontekstu nima posebnega pomena, zato je ubežanje na primer <quote>j</quote> "
+"(<userinput>\\j</userinput>) varno. Če ste v dvomih, ali ima znak lahko "
+"poseben pomen, se mu torej lahko varno izognete."
+
+#. Tag: para
+#: regular-expressions.docbook:122
+#, no-c-format
+msgid ""
+"Escaping of course includes the backslash character itself, to literally "
+"match a such, you would write <userinput>\\\\</userinput>."
+msgstr ""
+"Ubežanje seveda vključuje sam znak nazaj poševnice, da bi se dobesedno "
+"ujemal s takim, bi napisali <userinput>\\\\</userinput>."
+
+#. Tag: title
+#: regular-expressions.docbook:129
+#, no-c-format
+msgid "Character Classes and abbreviations"
+msgstr "Razredi znakov in okrajšave"
+
+#. Tag: para
+#: regular-expressions.docbook:131
+#, no-c-format
+msgid ""
+"A <emphasis>character class</emphasis> is an expression that matches one of "
+"a defined set of characters. In Regular Expressions, character classes are "
+"defined by putting the legal characters for the class in square brackets, "
+"<literal>[]</literal>, or by using one of the abbreviated classes described "
+"below."
+msgstr ""
+"<emphasis>Razred znakov</emphasis> je izraz, ki se ujema z enim od "
+"definiranega niza znakov. V regularnih izrazih so razredi znakov definirani "
+"z dajanjem zakonitih znakov za razred v oglate oklepaje, <literal>[]</"
+"literal>, ali z uporabo enega od skrajšanih razredov, opisanih spodaj."
+
+#. Tag: para
+#: regular-expressions.docbook:137
+#, no-c-format
+msgid ""
+"Simple character classes just contains one or more literal characters, for "
+"example <userinput>[abc]</userinput> (matching either of the letters "
+"<quote>a</quote>, <quote>b</quote> or <quote>c</quote>) or "
+"<userinput>[0123456789]</userinput> (matching any digit)."
+msgstr ""
+"Preprosti razredi znakov vsebujejo samo enega ali več dobesednih znakov, na "
+"primer <userinput>[abc]</userinput> (ki se ujema s katero koli od črk "
+"<quote>a</quote>, <quote>b</quote> ali <quote> c</quote>) ali "
+"<userinput>[0123456789]</userinput> (ujema se s katero koli števko)."
+
+#. Tag: para
+#: regular-expressions.docbook:142
+#, no-c-format
+msgid ""
+"Because letters and digits have a logical order, you can abbreviate those by "
+"specifying ranges of them: <userinput>[a-c]</userinput> is equal to "
+"<userinput>[abc]</userinput> and <userinput>[0-9]</userinput> is equal to "
+"<userinput>[0123456789]</userinput>. Combining these constructs, for example "
+"<userinput>[a-fynot1-38]</userinput> is completely legal (the last one would "
+"match, of course, either of <quote>a</quote>,<quote>b</quote>,<quote>c</"
+"quote>,<quote>d</quote>, <quote>e</quote>,<quote>f</quote>,<quote>y</quote>,"
+"<quote>n</quote>,<quote>o</quote>,<quote>t</quote>, <quote>1</quote>,"
+"<quote>2</quote>,<quote>3</quote> or <quote>8</quote>)."
+msgstr ""
+"Ker imajo črke in števke logičen vrstni red, jih lahko skrajšate tako, da "
+"določite njihove obsege: <userinput>[a-c]</userinput> je enako "
+"<userinput>[abc]</userinput> in <userinput>[0-9 ]</userinput> je enako "
+"<userinput>[0123456789]</userinput>. Združevanje teh konstruktov, na primer "
+"<userinput>[a-fynot1-38]</userinput>, je popolnoma zakonito (zadnji bi se "
+"seveda ujemal s katerim koli od <quote>a</quote>,<quote>b</quote>,<quote>c</"
+"quote>,<quote>d</quote>, <quote>e</quote>,<quote>f</quote>,<quote>y</quote>,"
+"<quote> >n</quote>,<quote>o</quote>,<quote>t</quote>, <quote>1</quote>,"
+"<quote>2</quote>,<quote>3</quote> > ali <quote>8</quote>)."
+
+#. Tag: para
+#: regular-expressions.docbook:154
+#, no-c-format
+msgid ""
+"As capital letters are different characters from their non-capital "
+"equivalents, to create a caseless character class matching <quote>a</quote> "
+"or <quote>b</quote>, in any case, you need to write it <userinput>[aAbB]</"
+"userinput>."
+msgstr ""
+"Ker so velike črke različni znaki od njihovih nevelikih ustreznikov, morate "
+"za ustvarjanje razreda znakov brez velikih in velikih črk, ki se ujema z "
+"<quote>a</quote> ali <quote>b</quote>, v vsakem primeru napisati <userinput> "
+"[aAbB]</userinput>."
+
+#. Tag: para
+#: regular-expressions.docbook:159
+#, no-c-format
+msgid ""
+"It is of course possible to create a <quote>negative</quote> class matching "
+"as <quote>anything but</quote> To do so put a caret (<literal>^</literal>) "
+"at the beginning of the class:"
+msgstr ""
+"Seveda je mogoče ustvariti <quote>negativen</quote> razred, ki se ujema kot "
+"<quote>karkoli, vendar</quote> Če želite to narediti, postavite kazalko "
+"(<literal>^</literal>) na začetek razreda :"
+
+#. Tag: para
+#: regular-expressions.docbook:163
+#, no-c-format
+msgid ""
+"<userinput>[^abc]</userinput> will match any character <emphasis>but</"
+"emphasis> <quote>a</quote>, <quote>b</quote> or <quote>c</quote>."
+msgstr ""
+"<userinput>[^abc]</userinput> se bo ujemal s katerim koli znakom "
+"<emphasis>ampak</emphasis> <quote>a</quote>, <quote>b</quote> ali <quote>c</"
+"quote>."
+
+#. Tag: para
+#: regular-expressions.docbook:167
+#, no-c-format
+msgid ""
+"In addition to literal characters, some abbreviations are defined, making "
+"life still a bit easier:"
+msgstr ""
+"Poleg dobesednih znakov je definiranih nekaj okrajšav, ki olajšajo življenje:"
+
+#. Tag: userinput
+#: regular-expressions.docbook:173
+#, no-c-format
+msgid "<userinput>\\a</userinput>"
+msgstr "<userinput>\\a</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:174
+#, no-c-format
+msgid "This matches the &ASCII; bell character (BEL, 0x07)."
+msgstr "To se ujema z &ASCII; znak zvonca (BEL, 0x07)."
+
+#. Tag: userinput
+#: regular-expressions.docbook:178
+#, no-c-format
+msgid "<userinput>\\f</userinput>"
+msgstr "<userinput>\\f</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:179
+#, no-c-format
+msgid "This matches the &ASCII; form feed character (FF, 0x0C)."
+msgstr "To se ujema z &ASCII; znak podajanja obrazca (FF, 0x0C)."
+
+#. Tag: userinput
+#: regular-expressions.docbook:183
+#, no-c-format
+msgid "<userinput>\\n</userinput>"
+msgstr "<userinput>\\n</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:184
+#, no-c-format
+msgid "This matches the &ASCII; line feed character (LF, 0x0A, Unix newline)."
+msgstr ""
+"To se ujema z &ASCII; znak za začetek vrstice (LF, 0x0A, nova vrstica Unix)."
+
+#. Tag: userinput
+#: regular-expressions.docbook:188
+#, no-c-format
+msgid "<userinput>\\r</userinput>"
+msgstr "<userinput>\\r</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:189
+#, no-c-format
+msgid "This matches the &ASCII; carriage return character (CR, 0x0D)."
+msgstr "To se ujema z &ASCII; znak za vrnitev na začetek (CR, 0x0D)."
+
+#. Tag: userinput
+#: regular-expressions.docbook:193
+#, no-c-format
+msgid "<userinput>\\t</userinput>"
+msgstr "<userinput>\\t</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:194
+#, no-c-format
+msgid "This matches the &ASCII; horizontal tab character (HT, 0x09)."
+msgstr "To se ujema z &ASCII; horizontalni tabulator (HT, 0x09)."
+
+#. Tag: userinput
+#: regular-expressions.docbook:198
+#, no-c-format
+msgid "<userinput>\\v</userinput>"
+msgstr "<userinput>\\v</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:199
+#, no-c-format
+msgid "This matches the &ASCII; vertical tab character (VT, 0x0B)."
+msgstr "To se ujema z &ASCII; navpični tabulator (VT, 0x0B)."
+
+#. Tag: userinput
+#: regular-expressions.docbook:202
+#, no-c-format
+msgid "\\xhhhh"
+msgstr "\\xhhhh"
+
+#. Tag: para
+#: regular-expressions.docbook:204
+#, no-c-format
+msgid ""
+"This matches the Unicode character corresponding to the hexadecimal number "
+"hhhh (between 0x0000 and 0xFFFF). \\0ooo (&ie;, \\zero ooo) matches the "
+"&ASCII;/Latin-1 character corresponding to the octal number ooo (between 0 "
+"and 0377)."
+msgstr ""
+"To se ujema z znakom Unicode, ki ustreza šestnajstiškemu številu hhhh (med "
+"0x0000 in 0xFFFF). \\0ooo (&ie;, \\nič ooo) se ujema z znakom &ASCII;/"
+"Latin-1, ki ustreza osmiškemu številu ooo (med 0 in 0377)."
+
+#. Tag: term
+#: regular-expressions.docbook:212
+#, no-c-format
+msgid "<userinput>.</userinput> (dot)"
+msgstr "<userinput>.</userinput> (pika)"
+
+#. Tag: para
+#: regular-expressions.docbook:213
+#, no-c-format
+msgid "This matches any character (including newline)."
+msgstr "To se ujema s katerim koli znakom (vključno z novo vrstico)."
+
+#. Tag: userinput
+#: regular-expressions.docbook:217
+#, no-c-format
+msgid "<userinput>\\d</userinput>"
+msgstr "<userinput>\\d</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:218
+#, no-c-format
+msgid "This matches a digit. Equal to <literal>[0-9]</literal>"
+msgstr "To se ujema s števko. Enako <literal>[0-9]</literal>"
+
+#. Tag: userinput
+#: regular-expressions.docbook:222
+#, no-c-format
+msgid "<userinput>\\D</userinput>"
+msgstr "<userinput>\\D</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:223
+#, no-c-format
+msgid ""
+"This matches a non-digit. Equal to <literal>[^0-9]</literal> or <literal>[^"
+"\\d]</literal>"
+msgstr ""
+"To se ujema z neštevilko. Enako <literal>[^0-9]</literal> ali <literal>[^"
+"\\d]</literal>"
+
+#. Tag: userinput
+#: regular-expressions.docbook:227
+#, no-c-format
+msgid "<userinput>\\s</userinput>"
+msgstr "<userinput>\\s</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:228
+#, no-c-format
+msgid ""
+"This matches a whitespace character. Practically equal to <literal>[ \\t\\n"
+"\\r]</literal>"
+msgstr ""
+"To se ujema s presledkom. Praktično enako <literal>[ \\t\\n\\r]</literal>"
+
+#. Tag: userinput
+#: regular-expressions.docbook:232
+#, no-c-format
+msgid "<userinput>\\S</userinput>"
+msgstr "<userinput>\\S</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:233
+#, no-c-format
+msgid ""
+"This matches a non-whitespace. Practically equal to <literal>[^ \\t\\r\\n]</"
+"literal>, and equal to <literal>[^\\s]</literal>"
+msgstr ""
+"To se ujema s presledkom, ki ni prazen. Praktično enako <literal>[^ \\t\\r"
+"\\n]</literal> in enako <literal>[^\\s]</literal>"
+
+#. Tag: userinput
+#: regular-expressions.docbook:237
+#, no-c-format
+msgid "<userinput>\\w</userinput>"
+msgstr "<userinput>\\w</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:238
+#, no-c-format
+msgid ""
+"Matches any <quote>word character</quote> - in this case any letter, digit "
+"or underscore. Equal to <literal>[a-zA-Z0-9_]</literal>"
+msgstr ""
+"Ujema se s katerim koli <quote>besednim znakom</quote> - v tem primeru s "
+"katero koli črko, številko ali podčrtajem. Enako <literal>[a-zA-Z0-9_]</"
+"literal>"
+
+#. Tag: userinput
+#: regular-expressions.docbook:243
+#, no-c-format
+msgid "<userinput>\\W</userinput>"
+msgstr "<userinput>\\W</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:244
+#, no-c-format
+msgid ""
+"Matches any non-word character - anything but letters, numbers or "
+"underscore. Equal to <literal>[^a-zA-Z0-9_]</literal> or <literal>[^\\w]</"
+"literal>"
+msgstr ""
+"Ujema se s katerim koli nebesednim znakom - karkoli razen črk, številk ali "
+"podčrtaja. Enako <literal>[^a-zA-Z0-9_]</literal> ali <literal>[^\\w]</"
+"literal>"
+
+#. Tag: para
+#: regular-expressions.docbook:253
+#, no-c-format
+msgid ""
+"The <emphasis>POSIX notation of classes</emphasis>, <userinput>[:&lt;class "
+"name&gt;:]</userinput> are also supported. For example, <userinput>[:"
+"digit:]</userinput> is equivalent to <userinput>\\d</userinput>, and "
+"<userinput>[:space:]</userinput> to <userinput>\\s</userinput>. See the full "
+"list of POSIX character classes <ulink url=\"https://www.regular-expressions."
+"info/posixbrackets.html\">here</ulink>."
+msgstr ""
+"Podprt je tudi <emphasis>Zapis razredov POSIX</emphasis>, <userinput>[:&lt;"
+"ime razreda&gt;:]</userinput>. Na primer, <userinput>[:digit:]</userinput> "
+"je enakovreden <userinput>\\d</userinput> in <userinput>[:space:]</"
+"userinput> <userinput>\\s</userinput >. Oglejte si celoten seznam znakovnih "
+"razredov POSIX <ulink url=\"https://www.regular-expressions.info/"
+"posixbrackets.html\">tukaj</ulink>."
+
+#. Tag: para
+#: regular-expressions.docbook:260
+#, no-c-format
+msgid ""
+"The abbreviated classes can be put inside a custom class, for example to "
+"match a word character, a blank or a dot, you could write <userinput>[\\w "
+"\\.]</userinput>"
+msgstr ""
+"Skrajšane razrede lahko postavite v razred po meri, na primer, da se ujemajo "
+"z besednim znakom, presledkom ali piko, lahko napišete <userinput>[\\w \\.]</"
+"userinput>"
+
+#. Tag: title
+#: regular-expressions.docbook:265
+#, no-c-format
+msgid "Characters with special meanings inside character classes"
+msgstr "Znaki s posebnimi pomeni znotraj razredov znakov"
+
+#. Tag: para
+#: regular-expressions.docbook:267
+#, no-c-format
+msgid ""
+"The following characters has a special meaning inside the <quote>[]</quote> "
+"character class construct, and must be escaped to be literally included in a "
+"class:"
+msgstr ""
+"Naslednji znaki imajo poseben pomen znotraj konstrukcije razreda znakov "
+"<quote>[]</quote> in jih je treba ubežati, da so dobesedno vključeni v "
+"razred:"
+
+#. Tag: userinput
+#: regular-expressions.docbook:273
+#, no-c-format
+msgid "<userinput>]</userinput>"
+msgstr "<userinput>]</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:274
+#, no-c-format
+msgid ""
+"Ends the character class. Must be escaped unless it is the very first "
+"character in the class (may follow an unescaped caret)."
+msgstr ""
+"Konča razred znakov. Mora biti ubežno, razen če je prvi znak v razredu "
+"(lahko sledi neubežni kazalki)."
+
+#. Tag: term
+#: regular-expressions.docbook:278 regular-expressions.docbook:415
+#, no-c-format
+msgid "<userinput>^</userinput> (caret)"
+msgstr "<userinput>^</userinput> (kazalka)"
+
+#. Tag: para
+#: regular-expressions.docbook:279
+#, no-c-format
+msgid ""
+"Denotes a negative class, if it is the first character. Must be escaped to "
+"match literally if it is the first character in the class."
+msgstr ""
+"Označuje negativen razred, če je prvi znak. Če je prvi znak v razredu, ga je "
+"treba ubežati, da se dobesedno ujema."
+
+#. Tag: term
+#: regular-expressions.docbook:282
+#, no-c-format
+msgid "<userinput>-</userinput> (dash)"
+msgstr "<userinput>-</userinput> (pomišljaj)"
+
+#. Tag: para
+#: regular-expressions.docbook:283
+#, no-c-format
+msgid ""
+"Denotes a logical range. Must always be escaped within a character class."
+msgstr ""
+"Označuje logično območje. Vedno mora biti ubežen znotraj razreda znakov."
+
+#. Tag: term
+#: regular-expressions.docbook:286 regular-expressions.docbook:410
+#, no-c-format
+msgid "<userinput>\\</userinput> (backslash)"
+msgstr "<userinput>\\</userinput> (poševnica nazaj)"
+
+#. Tag: para
+#: regular-expressions.docbook:287
+#, no-c-format
+msgid "The escape character. Must always be escaped."
+msgstr "Pobegli znak. Vedno je treba pobegniti."
+
+#. Tag: title
+#: regular-expressions.docbook:298
+#, no-c-format
+msgid "Alternatives: matching <quote>one of</quote>"
+msgstr "Alternative: ujemanje z <quote>enim od</quote>"
+
+#. Tag: para
+#: regular-expressions.docbook:300
+#, no-c-format
+msgid ""
+"If you want to match one of a set of alternative patterns, you can separate "
+"those with <literal>|</literal> (vertical bar character)."
+msgstr ""
+"Če se želite ujemati z enim od nabora alternativnih vzorcev, jih lahko "
+"ločite z <literal>|</literal> (znak navpične črte)."
+
+#. Tag: para
+#: regular-expressions.docbook:303
+#, no-c-format
+msgid ""
+"For example to find either <quote>John</quote> or <quote>Harry</quote> you "
+"would use an expression <userinput>John|Harry</userinput>."
+msgstr ""
+"Na primer, da bi našli <quote>John</quote> ali <quote>Harry</quote>, bi "
+"uporabili izraz <userinput>John|Harry</userinput>."
+
+#. Tag: title
+#: regular-expressions.docbook:309
+#, no-c-format
+msgid "Sub Patterns"
+msgstr "Podvzorci"
+
+#. Tag: para
+#: regular-expressions.docbook:311
+#, no-c-format
+msgid ""
+"<emphasis>Sub patterns</emphasis> are patterns enclosed in parentheses, and "
+"they have several uses in the world of regular expressions."
+msgstr ""
+"<emphasis>Podvzorci</emphasis> so vzorci v oklepajih in imajo več uporab v "
+"svetu regularnih izrazov."
+
+#. Tag: title
+#: regular-expressions.docbook:317
+#, no-c-format
+msgid "Specifying alternatives"
+msgstr "Določanje alternativ"
+
+#. Tag: para
+#: regular-expressions.docbook:319
+#, no-c-format
+msgid ""
+"You may use a sub pattern to group a set of alternatives within a larger "
+"pattern. The alternatives are separated by the character <quote>|</quote> "
+"(vertical bar)."
+msgstr ""
+"Podvzorec lahko uporabite za združevanje nabora alternativ znotraj večjega "
+"vzorca. Alternative so ločene z znakom <quote>|</quote> (navpična črta)."
+
+#. Tag: para
+#: regular-expressions.docbook:323
+#, no-c-format
+msgid ""
+"For example to match either of the words <quote>int</quote>, <quote>float</"
+"quote> or <quote>double</quote>, you could use the pattern <userinput>int|"
+"float|double</userinput>. If you only want to find one if it is followed by "
+"some whitespace and then some letters, put the alternatives inside a "
+"subpattern: <userinput>(int|float|double)\\s+\\w+</userinput>."
+msgstr ""
+"Če želite na primer ujemati eno od besed <quote>int</quote>, <quote>float</"
+"quote> ali <quote>double</quote>, lahko uporabite vzorec <userinput>int|"
+"float|double</userinput>. Če želite enega najti le, če mu sledi nekaj "
+"presledkov in nato nekaj črk, postavite alternative znotraj podvzorca: "
+"<userinput>(int|float|double)\\s+\\w+</userinput>."
+
+#. Tag: title
+#: regular-expressions.docbook:334
+#, no-c-format
+msgid "Capturing matching text (back references)"
+msgstr "Zajem ujemajočega se besedila (povratne reference)"
+
+#. Tag: para
+#: regular-expressions.docbook:336
+#, no-c-format
+msgid ""
+"If you want to use a back reference, use a sub pattern <userinput>(PATTERN)</"
+"userinput> to have the desired part of the pattern remembered. To prevent "
+"the sub pattern from being remembered, use a non-capturing group "
+"<userinput>(?:PATTERN)</userinput>."
+msgstr ""
+"Če želite uporabiti povratni sklic, uporabite podvzorec "
+"<userinput>(PATTERN)</userinput>, da si zapomnite želeni del vzorca. Če "
+"želite preprečiti, da bi si podvzorec zapomnil, uporabite nezajemljivo "
+"skupino <userinput>(?:PATTERN)</userinput>."
+
+#. Tag: para
+#: regular-expressions.docbook:341
+#, no-c-format
+msgid ""
+"For example, if you want to find two occurrences of the same word separated "
+"by a comma and possibly some whitespace, you could write <userinput>(\\w+),"
+"\\s*\\1</userinput>. The sub pattern <literal>\\w+</literal> would find a "
+"chunk of word characters, and the entire expression would match if those "
+"were followed by a comma, 0 or more whitespace and then an equal chunk of "
+"word characters. (The string <literal>\\1</literal> references <emphasis>the "
+"first sub pattern enclosed in parentheses</emphasis>.)"
+msgstr ""
+"Na primer, če želite poiskati dve pojavitvi iste besede, ločeni z vejico in "
+"po možnosti s presledkom, lahko napišete <userinput>(\\w+),\\s*\\1</"
+"userinput>. Podvzorec <literal>\\w+</literal> bi našel kos besednih znakov "
+"in celoten izraz bi se ujemal, če bi jim sledila vejica, 0 ali več "
+"presledkov in nato enak kos besednih znakov. (Niz <literal>\\1</literal> se "
+"sklicuje na <emphasis>prvi podvzorec, obdan z oklepaji</emphasis>.)"
+
+#. Tag: para
+#: regular-expressions.docbook:351
+#, no-c-format
+msgid ""
+"To avoid ambiguities with usage of <userinput>\\1</userinput> with some "
+"digits behind it (&eg; <userinput>\\12</userinput> can be 12th subpattern or "
+"just the first subpattern with <userinput>2</userinput>) we use <userinput>"
+"\\{12}</userinput> as syntax for multi-digit subpatterns."
+msgstr ""
+"Da bi se izognili dvoumnostim z uporabo <userinput>\\1</userinput> z nekaj "
+"števkami za njim (&eg; <userinput>\\12</userinput> je lahko 12. podvzorec "
+"ali samo prvi podvzorec z <userinput>2</userinput> ) uporabljamo <userinput>"
+"\\{12}</userinput> kot sintakso za večmestne podvzorce."
+
+#. Tag: para
+#: regular-expressions.docbook:352
+#, no-c-format
+msgid "Examples:"
+msgstr "Primeri:"
+
+#. Tag: para
+#: regular-expressions.docbook:354
+#, no-c-format
+msgid "<userinput>\\{12}1</userinput> is <quote>use subpattern 12</quote>"
+msgstr "<userinput>\\{12}1</userinput> je <quote>uporabi podvzorec 12</quote>"
+
+#. Tag: para
+#: regular-expressions.docbook:355
+#, no-c-format
+msgid ""
+"<userinput>\\123</userinput> is <quote>use capture 1 then 23 as the normal "
+"text</quote>"
+msgstr ""
+"<userinput>\\123</userinput> je <quote>uporabi zajem 1 in nato 23 kot "
+"običajno besedilo</quote>"
+
+#. Tag: title
+#: regular-expressions.docbook:365
+#, no-c-format
+msgid "Lookahead Assertions"
+msgstr "Trditve za pogled naprej"
+
+#. Tag: para
+#: regular-expressions.docbook:367
+#, no-c-format
+msgid ""
+"A lookahead assertion is a sub pattern, starting with either <literal>?=</"
+"literal> or <literal>?!</literal>."
+msgstr ""
+"Trditev vnaprejšnjega pogleda je podvzorec, ki se začne z <literal>?=</"
+"literal> ali <literal>?!</literal>."
+
+#. Tag: para
+#: regular-expressions.docbook:370
+#, no-c-format
+msgid ""
+"For example to match the literal string <quote>Bill</quote> but only if not "
+"followed by <quote> Gates</quote>, you could use this expression: "
+"<userinput>Bill(?! Gates)</userinput>. (This would find <quote>Bill Clinton</"
+"quote> as well as <quote>Billy the kid</quote>, but silently ignore the "
+"other matches.)"
+msgstr ""
+"Na primer, če želite ujemati dobesedni niz <quote>Bill</quote>, vendar le, "
+"če mu ne sledi <quote> Gates</quote>, lahko uporabite ta izraz: "
+"<userinput>Bill(?! Gates)</userinput>. (S tem bi našli <quote>Billa "
+"Clintona</quote> kot tudi <quote>Billy the kid</quote>, vendar bi prezrli "
+"druga ujemanja.)"
+
+#. Tag: para
+#: regular-expressions.docbook:376 regular-expressions.docbook:393
+#, no-c-format
+msgid "Sub patterns used for assertions are not captured."
+msgstr "Podvzorci, uporabljeni za trditve, niso zajeti."
+
+#. Tag: para
+#: regular-expressions.docbook:378
+#, no-c-format
+msgid "See also <link linkend=\"assertions\">Assertions</link>."
+msgstr "Glejte tudi <link linkend=\"assertions\">Trditve</link>."
+
+#. Tag: title
+#: regular-expressions.docbook:383
+#, no-c-format
+msgid "Lookbehind Assertions"
+msgstr "Lookbehind trditve"
+
+#. Tag: para
+#: regular-expressions.docbook:385
+#, no-c-format
+msgid ""
+"A lookbehind assertion is a sub pattern, starting with either <literal>?&lt;"
+"=</literal> or <literal>?&lt;!</literal>."
+msgstr ""
+"Trditev za nazaj je podvzorec, ki se začne z <literal>?&lt;=</literal> ali "
+"<literal>?&lt;!</literal>."
+
+#. Tag: para
+#: regular-expressions.docbook:388
+#, no-c-format
+msgid ""
+"Lookbehind has the same effect as the lookahead, but works backwards. For "
+"example to match the literal string <quote>fruit</quote> but only if not "
+"preceded by <quote>grape</quote>, you could use this expression: "
+"<userinput>(?&lt;!grape)fruit</userinput>."
+msgstr ""
+"Lookbehind ima enak učinek kot lookahead, vendar deluje nazaj. Na primer, če "
+"želite ujemati dobesedni niz <quote>sadje</quote>, vendar le, če pred njim "
+"ni <quote>grozdje</quote>, lahko uporabite ta izraz: <userinput>(?&lt;!"
+"grozdje)sadje</userinput >."
+
+#. Tag: para
+#: regular-expressions.docbook:395
+#, no-c-format
+msgid "See also <link linkend=\"assertions\">Assertions</link>"
+msgstr "Glejte tudi <link linkend=\"assertions\">Trditve</link>"
+
+#. Tag: title
+#: regular-expressions.docbook:402
+#, no-c-format
+msgid "Characters with a special meaning inside patterns"
+msgstr "Znaki s posebnim pomenom znotraj vzorcev"
+
+#. Tag: para
+#: regular-expressions.docbook:404
+#, no-c-format
+msgid ""
+"The following characters have meaning inside a pattern, and must be escaped "
+"if you want to literally match them:"
+msgstr ""
+"Naslednji znaki imajo pomen znotraj vzorca in jih je treba ubežati, če jih "
+"želite dobesedno ujemati:"
+
+#. Tag: para
+#: regular-expressions.docbook:411
+#, no-c-format
+msgid "The escape character."
+msgstr "Pobegli zank."
+
+#. Tag: para
+#: regular-expressions.docbook:416
+#, no-c-format
+msgid "Asserts the beginning of the string."
+msgstr "Premakni kazalko na začetek vrstice."
+
+#. Tag: userinput
+#: regular-expressions.docbook:420
+#, no-c-format
+msgid "<userinput>$</userinput>"
+msgstr "<userinput>$</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:421
+#, no-c-format
+msgid "Asserts the end of string."
+msgstr "Uveljavi konec niza."
+
+#. Tag: term
+#: regular-expressions.docbook:425
+#, no-c-format
+msgid "<userinput>()</userinput> (left and right parentheses)"
+msgstr "<userinput>()</userinput> (levi in desni oklepaj)"
+
+#. Tag: para
+#: regular-expressions.docbook:426
+#, no-c-format
+msgid "Denotes sub patterns."
+msgstr "Označuje podvzorce."
+
+#. Tag: term
+#: regular-expressions.docbook:430
+#, no-c-format
+msgid "<userinput>{}</userinput> (left and right curly braces)"
+msgstr "<userinput>{}</userinput> (levi in desni zavit oklepaj)"
+
+#. Tag: para
+#: regular-expressions.docbook:431
+#, no-c-format
+msgid "Denotes numeric quantifiers."
+msgstr "Označuje numerične kvantifikatorje."
+
+#. Tag: term
+#: regular-expressions.docbook:435
+#, no-c-format
+msgid "<userinput>[]</userinput> (left and right square brackets)"
+msgstr "<userinput>[]</userinput> (levi in desni oglati oklepaj)"
+
+#. Tag: para
+#: regular-expressions.docbook:436
+#, no-c-format
+msgid "Denotes character classes."
+msgstr "Označuje razrede znakov."
+
+#. Tag: term
+#: regular-expressions.docbook:440
+#, no-c-format
+msgid "<userinput>|</userinput> (vertical bar)"
+msgstr "<userinput>|</userinput> (navpična vrstica)"
+
+#. Tag: para
+#: regular-expressions.docbook:441
+#, no-c-format
+msgid "logical OR. Separates alternatives."
+msgstr "logični ALI. Ločuje alternative."
+
+#. Tag: term
+#: regular-expressions.docbook:445 regular-expressions.docbook:522
+#, no-c-format
+msgid "<userinput>+</userinput> (plus sign)"
+msgstr "<userinput> </userinput> (znak plus)"
+
+#. Tag: para
+#: regular-expressions.docbook:446
+#, no-c-format
+msgid "Quantifier, 1 or more."
+msgstr "Kvantifikator, 1 ali več."
+
+#. Tag: term
+#: regular-expressions.docbook:450 regular-expressions.docbook:517
+#, no-c-format
+msgid "<userinput>*</userinput> (asterisk)"
+msgstr "<userinput>*</userinput> (zvezdica)"
+
+#. Tag: para
+#: regular-expressions.docbook:451
+#, no-c-format
+msgid "Quantifier, 0 or more."
+msgstr "Kvantifikator, 0 ali več."
+
+#. Tag: term
+#: regular-expressions.docbook:455 regular-expressions.docbook:527
+#, no-c-format
+msgid "<userinput>?</userinput> (question mark)"
+msgstr "<userinput>?</userinput> (vprašaj)"
+
+#. Tag: para
+#: regular-expressions.docbook:456
+#, no-c-format
+msgid "An optional character. Can be interpreted as a quantifier, 0 or 1."
+msgstr "Izbirni znak. Lahko se razlaga kot kvantifikator, 0 ali 1."
+
+#. Tag: title
+#: regular-expressions.docbook:468
+#, no-c-format
+msgid "<title>Quantifiers</title>"
+msgstr "<title>Kvantifikatorji</title>"
+
+#. Tag: para
+#: regular-expressions.docbook:470
+#, no-c-format
+msgid ""
+"<emphasis>Quantifiers</emphasis> allows a regular expression to match a "
+"specified number or range of numbers of either a character, character class "
+"or sub pattern."
+msgstr ""
+"<emphasis>Kvantifikatorji</emphasis> omogočajo, da se regularni izraz ujema "
+"z določenim številom ali obsegom števil znaka, razreda znakov ali podvzorca."
+
+#. Tag: para
+#: regular-expressions.docbook:474
+#, no-c-format
+msgid ""
+"Quantifiers are enclosed in curly brackets (<literal>{</literal> and "
+"<literal>}</literal>) and have the general form <literal>{[minimum-"
+"occurrences][,[maximum-occurrences]]}</literal>"
+msgstr ""
+"Kvantifikatorji so v zavitih oklepajih (<literal>{</literal> in <literal>}</"
+"literal>) in imajo splošno obliko <literal>{[minimum-occurrences][,[maximum-"
+"occurrences]]}</literal>"
+
+#. Tag: para
+#: regular-expressions.docbook:479
+#, no-c-format
+msgid "The usage is best explained by example:"
+msgstr "Uporabo je najbolje pojasniti s primerom:"
+
+#. Tag: userinput
+#: regular-expressions.docbook:484
+#, no-c-format
+msgid "<userinput>{1}</userinput>"
+msgstr "<userinput>{1}</userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:485
+#, no-c-format
+msgid "Exactly 1 occurrence"
+msgstr "Točno 1 pojavitev"
+
+#. Tag: userinput
+#: regular-expressions.docbook:489
+#, no-c-format
+msgid "{0,1}"
+msgstr "{0,1}"
+
+#. Tag: para
+#: regular-expressions.docbook:490
+#, no-c-format
+msgid "Zero or 1 occurrences"
+msgstr "Nič ali 1 pojavitev"
+
+#. Tag: userinput
+#: regular-expressions.docbook:494
+#, no-c-format
+msgid "{,1}"
+msgstr "{,1}"
+
+#. Tag: para
+#: regular-expressions.docbook:495
+#, no-c-format
+msgid "The same, with less work;)"
+msgstr "Enako, z manj dela;)"
+
+#. Tag: userinput
+#: regular-expressions.docbook:499
+#, no-c-format
+msgid "{5,10}"
+msgstr "{5,10}"
+
+#. Tag: para
+#: regular-expressions.docbook:500
+#, no-c-format
+msgid "At least 5 but maximum 10 occurrences."
+msgstr "Vsaj 5, vendar največ 10 pojavitev."
+
+#. Tag: userinput
+#: regular-expressions.docbook:504
+#, no-c-format
+msgid "{5,}"
+msgstr "{5,}"
+
+#. Tag: para
+#: regular-expressions.docbook:505
+#, no-c-format
+msgid "At least 5 occurrences, no maximum."
+msgstr "Vsaj 5 pojavitev, brez največje vrednosti."
+
+#. Tag: para
+#: regular-expressions.docbook:512
+#, no-c-format
+msgid "Additionally, there are some abbreviations:"
+msgstr "Poleg tega obstaja nekaj okrajšav:"
+
+#. Tag: para
+#: regular-expressions.docbook:518
+#, no-c-format
+msgid "similar to <literal>{0,}</literal>, find any number of occurrences."
+msgstr "podobno kot <literal>{0,}</literal>, najdi poljubno število pojavitev."
+
+#. Tag: para
+#: regular-expressions.docbook:523
+#, no-c-format
+msgid "similar to <literal>{1,}</literal>, at least 1 occurrence."
+msgstr "podobno kot <literal>{1,}</literal>, vsaj 1 pojavitev."
+
+#. Tag: para
+#: regular-expressions.docbook:528
+#, no-c-format
+msgid "similar to <literal>{0,1}</literal>, zero or 1 occurrence."
+msgstr "podobno kot <literal>{0,1}</literal>, nič ali 1 pojavitev."
+
+#. Tag: title
+#: regular-expressions.docbook:537
+#, no-c-format
+msgid "Greed"
+msgstr "Pohlep"
+
+#. Tag: para
+#: regular-expressions.docbook:539
+#, no-c-format
+msgid ""
+"When using quantifiers with no maximum, regular expressions defaults to "
+"match as much of the searched string as possible, commonly known as "
+"<emphasis>greedy</emphasis> behavior."
+msgstr ""
+"Pri uporabi kvantifikatorjev brez največje vrednosti se regularni izrazi "
+"privzeto ujemajo s čim večjim delom iskanega niza, splošno znano kot "
+"<emphasis>pohlepno</emphasis> vedenje."
+
+#. Tag: para
+#: regular-expressions.docbook:543
+#, no-c-format
+msgid ""
+"Modern regular expression software provides the means of <quote>turning off "
+"greediness</quote>, though in a graphical environment it is up to the "
+"interface to provide you with access to this feature. For example a search "
+"dialog providing a regular expression search could have a check box labeled "
+"<quote>Minimal matching</quote> as well as it ought to indicate if "
+"greediness is the default behavior."
+msgstr ""
+"Sodobna programska oprema za regularne izraze nudi sredstva za <quote>izklop "
+"požrešnosti</quote>, čeprav je v grafičnem okolju odvisno od vmesnika, ki "
+"vam omogoči dostop do te funkcije. Na primer, iskalno pogovorno okno, ki "
+"ponuja iskanje po regularnem izrazu, bi lahko imelo potrditveno polje z "
+"oznako <quote>Minimalno ujemanje</quote>, prav tako pa bi moralo označevati, "
+"ali je požrešnost privzeto vedenje."
+
+#. Tag: title
+#: regular-expressions.docbook:554
+#, no-c-format
+msgid "In context examples"
+msgstr "V primerih konteksta"
+
+#. Tag: para
+#: regular-expressions.docbook:556
+#, no-c-format
+msgid "Here are a few examples of using quantifiers:"
+msgstr "Tukaj je nekaj primerov uporabe kvantifikatorjev:"
+
+#. Tag: userinput
+#: regular-expressions.docbook:561
+#, no-c-format
+msgid "^\\d{4,5}\\s"
+msgstr "^\\d{4,5}\\s"
+
+#. Tag: para
+#: regular-expressions.docbook:562
+#, no-c-format
+msgid ""
+"Matches the digits in <quote>1234 go</quote> and <quote>12345 now</quote>, "
+"but neither in <quote>567 eleven</quote> nor in <quote>223459 somewhere</"
+"quote>."
+msgstr ""
+"Ujema se s številkami v <quote>1234 go</quote> in <quote>12345 zdaj</quote>, "
+"vendar ne v <quote>567 enajst</quote> niti v <quote>223459 nekje</quote>."
+
+#. Tag: userinput
+#: regular-expressions.docbook:567
+#, no-c-format
+msgid "<userinput>\\s+</userinput>"
+msgstr "<userinput>\\s </userinput>"
+
+#. Tag: para
+#: regular-expressions.docbook:568
+#, no-c-format
+msgid "Matches one or more whitespace characters."
+msgstr "Ujema se z enim ali več presledki."
+
+#. Tag: userinput
+#: regular-expressions.docbook:572
+#, no-c-format
+msgid "(bla){1,}"
+msgstr "(bla){1,}"
+
+#. Tag: para
+#: regular-expressions.docbook:573
+#, no-c-format
+msgid ""
+"Matches all of <quote>blablabla</quote> and the <quote>bla</quote> in "
+"<quote>blackbird</quote> or <quote>tabla</quote>."
+msgstr ""
+"Ujema se z vsemi <quote>blablabla</quote> in <quote>bla</quote> v "
+"<quote>blackbird</quote> ali <quote>tabla</quote>."
+
+#. Tag: userinput
+#: regular-expressions.docbook:577
+#, no-c-format
+msgid "/?&gt;"
+msgstr "/?&gt;"
+
+#. Tag: para
+#: regular-expressions.docbook:578
+#, no-c-format
+msgid ""
+"Matches <quote>/&gt;</quote> in <quote>&lt;closeditem/&gt;</quote> as well "
+"as <quote>&gt;</quote> in <quote>&lt;openitem&gt;</quote>."
+msgstr ""
+"Ujema se s <quote>/&gt;</quote> v <quote>&lt;closeditem/&gt;</quote> kot "
+"tudi <quote>&gt;</quote> v <quote>&lt;openitem&gt;</quote>."
+
+#. Tag: title
+#: regular-expressions.docbook:589
+#, no-c-format
+msgid "<title>Assertions</title>"
+msgstr "<title>Trditve</title>"
+
+#. Tag: para
+#: regular-expressions.docbook:591
+#, no-c-format
+msgid ""
+"<emphasis>Assertions</emphasis> allows a regular expression to match only "
+"under certain controlled conditions."
+msgstr ""
+"<emphasis>Trditve</emphasis> omogočajo ujemanje regularnega izraza samo pod "
+"določenimi nadzorovanimi pogoji."
+
+#. Tag: para
+#: regular-expressions.docbook:594
+#, no-c-format
+msgid ""
+"An assertion does not need a character to match, it rather investigates the "
+"surroundings of a possible match before acknowledging it. For example the "
+"<emphasis>word boundary</emphasis> assertion does not try to find a non word "
+"character opposite a word one at its position, instead it makes sure that "
+"there is not a word character. This means that the assertion can match where "
+"there is no character, &ie; at the ends of a searched string."
+msgstr ""
+"Trditev ne potrebuje znaka za ujemanje, temveč razišče okolico možnega "
+"ujemanja, preden ga potrdi. Na primer, trditev o <emphasis>besedni meji</"
+"emphasis> ne poskuša najti nebesednega znaka nasproti besednega znaka ena na "
+"njegovem mestu, temveč poskrbi, da ni besednega znaka. To pomeni, da se "
+"lahko trditev ujema tam, kjer ni znaka, &ie; na koncih iskanega niza."
+
+#. Tag: para
+#: regular-expressions.docbook:602
+#, no-c-format
+msgid ""
+"Some assertions actually do have a pattern to match, but the part of the "
+"string matching that will not be a part of the result of the match of the "
+"full expression."
+msgstr ""
+"Nekatere trditve dejansko imajo vzorec za ujemanje, vendar del ujemajočega "
+"se niza, ki ne bo del rezultata ujemanja polnega izraza."
+
+#. Tag: para
+#: regular-expressions.docbook:606
+#, no-c-format
+msgid ""
+"Regular Expressions as documented here supports the following assertions:"
+msgstr ""
+"Regularni izrazi, kot so dokumentirani tukaj, podpirajo naslednje trditve:"
+
+#. Tag: term
+#: regular-expressions.docbook:612
+#, no-c-format
+msgid "<userinput>^</userinput> (caret: beginning of string)"
+msgstr "<userinput>^</userinput> (karetica: začetek niza)"
+
+#. Tag: para
+#: regular-expressions.docbook:614
+#, no-c-format
+msgid "Matches the beginning of the searched string."
+msgstr "Premakni kazalko na začetek vrstice."
+
+#. Tag: para
+#: regular-expressions.docbook:615
+#, no-c-format
+msgid ""
+"The expression <userinput>^Peter</userinput> will match at <quote>Peter</"
+"quote> in the string <quote>Peter, hey!</quote> but not in <quote>Hey, Peter!"
+"</quote>"
+msgstr ""
+"Izraz <userinput>^Peter</userinput> se bo ujemal pri <quote>Peter</quote> v "
+"nizu <quote>Peter, hej!</quote>, vendar ne v <quote>Hej, Peter!</quote>"
+
+#. Tag: term
+#: regular-expressions.docbook:621
+#, no-c-format
+msgid "<userinput>$</userinput> (end of string)"
+msgstr "<userinput>$</userinput> (konec niza)"
+
+#. Tag: para
+#: regular-expressions.docbook:622
+#, no-c-format
+msgid "Matches the end of the searched string."
+msgstr "Ujema se s koncem iskanega niza."
+
+#. Tag: para
+#: regular-expressions.docbook:624
+#, no-c-format
+msgid ""
+"The expression <userinput>you\\?$</userinput> will match at the last you in "
+"the string <quote>You didn't do that, did you?</quote> but nowhere in "
+"<quote>You didn't do that, right?</quote>"
+msgstr ""
+"Izraz <userinput>you\\?$</userinput> se bo zadnjič ujemal z vami v nizu "
+"<quote>Tega niste storili, kajne?</quote> vendar nikjer v <quote>You didn't "
+"do to, kajne?</quote>"
+
+#. Tag: term
+#: regular-expressions.docbook:632
+#, no-c-format
+msgid "<userinput>\\b</userinput> (word boundary)"
+msgstr "<userinput>\\b</userinput> (besedna meja)"
+
+#. Tag: para
+#: regular-expressions.docbook:633
+#, no-c-format
+msgid ""
+"Matches if there is a word character at one side and not a word character at "
+"the other."
+msgstr "Ujema se, če je na eni strani besedni znak, na drugi pa ne."
+
+#. Tag: para
+#: regular-expressions.docbook:635
+#, no-c-format
+msgid ""
+"This is useful to find word ends, for example both ends to find a whole "
+"word. The expression <userinput>\\bin\\b</userinput> will match at the "
+"separate <quote>in</quote> in the string <quote>He came in through the "
+"window</quote>, but not at the <quote>in</quote> in <quote>window</quote>."
+msgstr ""
+"To je uporabno za iskanje koncev besed, na primer obeh koncev za iskanje "
+"cele besede. Izraz <userinput>\\bin\\b</userinput> se bo ujemal pri ločenem "
+"<quote>in</quote> v nizu <quote>On je prišel skozi okno</quote>, vendar ne "
+"pri <quote> v</quote> v <quote>oknu</quote>."
+
+#. Tag: term
+#: regular-expressions.docbook:644
+#, no-c-format
+msgid "<userinput>\\B</userinput> (non word boundary)"
+msgstr "<userinput>\\B</userinput> (brez besedne meje)"
+
+#. Tag: para
+#: regular-expressions.docbook:645
+#, no-c-format
+msgid "Matches wherever <quote>\\b</quote> does not."
+msgstr "Ujema se povsod, kjer se <quote>\\b</quote> ne ujema."
+
+#. Tag: para
+#: regular-expressions.docbook:646
+#, no-c-format
+msgid ""
+"That means that it will match for example within words: The expression "
+"<userinput>\\Bin\\B</userinput> will match at in <quote>window</quote> but "
+"not in <quote>integer</quote> or <quote>I'm in love</quote>."
+msgstr ""
+"To pomeni, da se bo ujemal na primer znotraj besed: Izraz <userinput>\\Bin"
+"\\B</userinput> se bo ujemal v <quote>oknu</quote>, ne pa v <quote>integer</"
+"quote> ali <quote >Zaljubljen sem</quote>."
+
+#. Tag: term
+#: regular-expressions.docbook:652
+#, no-c-format
+msgid "<userinput>(?=PATTERN)</userinput> (Positive lookahead)"
+msgstr "<userinput>(?=PATTERN)</userinput> (Pozitiven pogled naprej)"
+
+#. Tag: para
+#: regular-expressions.docbook:653
+#, no-c-format
+msgid ""
+"A lookahead assertion looks at the part of the string following a possible "
+"match. The positive lookahead will prevent the string from matching if the "
+"text following the possible match does not match the <emphasis>PATTERN</"
+"emphasis> of the assertion, but the text matched by that will not be "
+"included in the result."
+msgstr ""
+"Trditev vnaprejšnjega pogleda gleda na del niza, ki sledi možnemu ujemanju. "
+"Pozitiven pogled naprej bo preprečil ujemanje niza, če se besedilo, ki sledi "
+"možnemu ujemanju, ne ujema z <emphasis>VZORCE</emphasis> trditve, vendar "
+"besedilo, ki se ujema s tem, ne bo vključeno v rezultat."
+
+#. Tag: para
+#: regular-expressions.docbook:657
+#, no-c-format
+msgid ""
+"The expression <userinput>handy(?=\\w)</userinput> will match at "
+"<quote>handy</quote> in <quote>handyman</quote> but not in <quote>That came "
+"in handy!</quote>"
+msgstr ""
+"Izraz <userinput>handy(?=\\w)</userinput> se bo ujemal z <quote>handy</"
+"quote> v <quote>handyman</quote>, ne pa tudi z <quote>To je prišlo prav!</"
+"quote>"
+
+#. Tag: term
+#: regular-expressions.docbook:663
+#, no-c-format
+msgid "<userinput>(?!PATTERN)</userinput> (Negative lookahead)"
+msgstr "<userinput>(?!PATTERN)</userinput> (Negativni pogled naprej)"
+
+#. Tag: para
+#: regular-expressions.docbook:665
+#, no-c-format
+msgid ""
+"The negative lookahead prevents a possible match to be acknowledged if the "
+"following part of the searched string does match its <emphasis>PATTERN</"
+"emphasis>."
+msgstr ""
+"Negativni pogled naprej preprečuje morebitno ujemanje, če se naslednji del "
+"iskanega niza ujema z njegovim <emphasis>VZORCEM</emphasis>."
+
+#. Tag: para
+#: regular-expressions.docbook:668
+#, no-c-format
+msgid ""
+"The expression <userinput>const \\w+\\b(?!\\s*&amp;)</userinput> will match "
+"at <quote>const char</quote> in the string <quote>const char* foo</quote> "
+"while it can not match <quote>const QString</quote> in <quote>const "
+"QString&amp; bar</quote> because the <quote>&amp;</quote> matches the "
+"negative lookahead assertion pattern."
+msgstr ""
+"Izraz <userinput>const \\w+\\b(?!\\s*&amp;)</userinput> se bo ujemal pri "
+"<quote>const char</quote> v nizu <quote>const char* foo</quote>, medtem ko "
+"ne more se ujemati z <quote>const QString</quote> v <quote>const "
+"QString&amp; bar</quote>, ker se <quote>&amp;</quote> ujema z vzorcem "
+"trditve negativnega vnaprejšnjega pogleda."
+
+#. Tag: term
+#: regular-expressions.docbook:678
+#, no-c-format
+msgid "<userinput>(?&lt;=PATTERN)</userinput> (Positive lookbehind)"
+msgstr "<userinput>(?&lt;=PATTERN)</userinput> (Pozitiven pogled nazaj)"
+
+#. Tag: para
+#: regular-expressions.docbook:679
+#, no-c-format
+msgid ""
+"Lookbehind has the same effect as the lookahead, but works backwards. A "
+"lookbehind looks at the part of the string previous a possible match. The "
+"positive lookbehind will match a string only if it is preceded by the "
+"<emphasis>PATTERN</emphasis> of the assertion, but the text matched by that "
+"will not be included in the result."
+msgstr ""
+"Lookbehind ima enak učinek kot lookahead, vendar deluje nazaj. Pogled nazaj "
+"pogleda del niza pred možnim ujemanjem. Pozitivni pogled nazaj se bo ujemal "
+"z nizom samo, če je pred njim <emphasis>VZOREC</emphasis> trditve, vendar "
+"besedilo, ki se ujema s tem, ne bo vključeno v rezultat."
+
+#. Tag: para
+#: regular-expressions.docbook:683
+#, no-c-format
+msgid ""
+"The expression <userinput>(?&lt;=cup)cake</userinput> will match at "
+"<quote>cake</quote> if it is succeeded by <quote>cup</quote> (in "
+"<quote>cupcake</quote> but not in <quote>cheesecake</quote> or in "
+"<quote>cake</quote> alone)."
+msgstr ""
+"Izraz <userinput>(?&lt;=cup)cake</userinput> se bo ujemal pri <quote>cake</"
+"quote>, če ga nasledi <quote>cup</quote> (v <quote>cupcake</quote > vendar "
+"ne samo v <quote>cheesecake</quote> ali v <quote>cake</quote>)."
+
+#. Tag: term
+#: regular-expressions.docbook:690
+#, no-c-format
+msgid "<userinput>(?&lt;!PATTERN)</userinput> (Negative lookbehind)"
+msgstr "<userinput>(?&lt;!PATTERN)</userinput> (Negativni pogled zadaj)"
+
+#. Tag: para
+#: regular-expressions.docbook:691
+#, no-c-format
+msgid ""
+"The negative lookbehind prevents a possible match to be acknowledged if the "
+"previous part of the searched string does match its <emphasis>PATTERN</"
+"emphasis>."
+msgstr ""
+"Negativni pogled za nazaj preprečuje morebitno potrditev ujemanja, če se "
+"prejšnji del iskanega niza ujema z njegovim <emphasis>VZORCEM</emphasis>."
+
+#. Tag: para
+#: regular-expressions.docbook:693
+#, no-c-format
+msgid ""
+"The expression <userinput>(?&lt;![\\w\\.])[0-9]+</userinput> will match at "
+"<quote>123</quote> in the strings <quote>=123</quote> and <quote>-123</"
+"quote> while it can not match <quote>123</quote> in <quote>.123</quote> or "
+"<quote>word123</quote>."
+msgstr ""
+"Izraz <userinput>(?&lt;![\\w\\.])[0-9]+</userinput> se bo ujemal pri "
+"<quote>123</quote> v nizih <quote>=123</quote> in <quote>-123</quote>, "
+"medtem ko se ne more ujemati z <quote>123</quote> v <quote>.123</quote> ali "
+"<quote>word123</quote>."
+
+#. Tag: term
+#: regular-expressions.docbook:700
+#, no-c-format
+msgid "<userinput>(PATTERN)</userinput> (Capturing group)"
+msgstr "<userinput>(PATTERN)</userinput> (skupina za zajem)"
+
+#. Tag: para
+#: regular-expressions.docbook:702
+#, no-c-format
+msgid ""
+"The sub pattern within the parentheses is captured and remembered, so that "
+"it can be used in back references. For example, the expression "
+"<userinput>(&amp;quot;+)[^&amp;quot;]*\\1</userinput> matches "
+"<userinput>&quot;&quot;&quot;&quot;text&quot;&quot;&quot;&quot;</userinput> "
+"and <userinput>&quot;text&quot;</userinput>."
+msgstr ""
+"Podvzorec v oklepajih se zajame in zapomni, tako da ga je mogoče uporabiti v "
+"povratnih sklicih. Na primer, izraz <userinput>(&amp;quot;+)[^&amp;quot;]*"
+"\\1</userinput> se ujema z <userinput>&quot;&quot;&quot;&quot;besedilo&quot;"
+"&quot;&quot;&quot;</userinput> in <userinput>&quot;besedilo&quot;</"
+"userinput>."
+
+#. Tag: para
+#: regular-expressions.docbook:707
+#, no-c-format
+msgid ""
+"See the section <link linkend=\"regex-capturing\">Capturing matching text "
+"(back references)</link> for more information."
+msgstr ""
+"Za več informacij glejte razdelek <link linkend=\"regex-capturing\">Zajem "
+"ujemajočega se besedila (povratne reference)</link>."
+
+#. Tag: term
+#: regular-expressions.docbook:713
+#, no-c-format
+msgid "<userinput>(?:PATTERN)</userinput> (Non-capturing group)"
+msgstr "<userinput>(?:PATTERN)</userinput> (skupina brez zajemanja)"
+
+#. Tag: para
+#: regular-expressions.docbook:715
+#, no-c-format
+msgid ""
+"The sub pattern within the parentheses is not captured and is not "
+"remembered. It is preferable to always use non-capturing groups if the "
+"captures will not be used."
+msgstr ""
+"Podvzorec v oklepajih ni zajet in si ni zapomnil. Priporočljivo je, da vedno "
+"uporabite skupine brez zajetja, če zajetja ne boste uporabili."

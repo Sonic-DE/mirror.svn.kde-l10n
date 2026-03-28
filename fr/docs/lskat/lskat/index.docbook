@@ -1,0 +1,749 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY i18n-lskat "Lieutenant Skat">
+  <!ENTITY lskat "LSkat">
+
+  <!ENTITY % French "INCLUDE">
+  <!ENTITY % addindex "IGNORE">
+]>
+
+<book id="lskat" lang="&language;">
+<bookinfo>
+<title
+>Manuel utilisateur de &lskat; </title>
+<authorgroup>
+<author
+><firstname
+>Martin</firstname
+> <surname
+>Heni</surname
+> <affiliation
+><address
+><email
+>kde@heni-online.de</email
+></address
+></affiliation>
+</author>
+<author
+><firstname
+>Eugene</firstname
+><surname
+>Trounev</surname
+> <affiliation
+><address
+><email
+>eugene.trounev@gmail.com</email
+></address
+></affiliation>
+</author>
+<othercredit role="reviewer"
+><firstname
+>Mike</firstname
+><surname
+>McBride</surname
+> <contrib
+>Relecteur</contrib>
+<affiliation>
+<address
+>&Mike.McBride.mail;</address
+></affiliation>
+</othercredit>
+&traducteurStanislasZeller; &relecteurLudovicGrossard; 
+</authorgroup>
+
+<date
+>05-10-2021</date>
+<releaseinfo
+>1.50 (KDE Gear 21.08)</releaseinfo>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<abstract>
+<para
+>Cette documentation décrit le jeu &i18n-lskat; en version 1.50</para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>kdegames</keyword>
+<keyword
+>jeu</keyword>
+<keyword
+>cartes</keyword>
+<keyword
+>jeu de carte</keyword>
+<keyword
+>arcade</keyword>
+<keyword
+>carte</keyword>
+<keyword
+>Skat</keyword>
+<keyword
+>lieutenant</keyword>
+<keyword
+>LSkat</keyword>
+<keyword
+>deux joueurs</keyword>
+</keywordset>
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Introduction</title>
+<note
+><title
+>Type de jeu : </title
+><para
+>Carte, arcade</para
+></note
+><!-- Game genre. Use as many as necessary. Available game types are: Arcade, Board, Card, Dice, Toys, Logic, Strategy.-->
+<note
+><title
+>Nombre possible de joueurs : </title
+><para
+>Deux</para
+></note
+><!--Number of possible players. It can be: One, Two,..., Multiplayer-->
+<para
+><literal
+>Lieutenant Skat</literal
+> (De l'allemand <foreignphrase lang="de"
+>Offiziersskat</foreignphrase
+>) est un jeu de cartes, amusant et attrayant, pour deux joueurs, où le deuxième joueur est soit un humain, soit l'ordinateur. </para>
+<para
+>Le jeu se joue en utilisant un simple jeu de cartes. Les cartes sont battues et distribuées entre les joueurs de manière que huit d'entre elles soient visibles par tour. Dès que toutes les cartes sont jouées, la partie se termine et les points sont calculées et attribuées. </para>
+</chapter>
+
+<chapter id="howto">
+<title
+>Comment jouer</title>
+<note
+><title
+>Objectif : </title
+><para
+>Le score de plus de 60 points dans une partie simple.</para
+></note>
+
+<para
+>Une fois que la donne est terminée, chaque joueur commence avec 16 cartes chacun. Les cartes sont affichées sur deux lignes horizontales - quatre cartes par ligne. La moitié des cartes sont couverte et l'autre moitié découverte. Chaque joueur peut voir les cartes de son adversaire comme les vôtres. Vous pouvez alors effectuer un mouvement en cliquant sur n'importe quelle carte découverte. L'adversaire doit répondre en sélectionnant une carte de forme correspondante de sa propre pile.</para>
+
+<note
+><para
+>Si votre adversaire est une intelligence artificielle, ses cartes seront choisies automatiquement.</para
+></note>
+
+<para
+>Une fois l'échange terminé, les valeurs des cartes jouées sont évaluées et soit vous, soit votre adversaire allez recevoir des points. Le jeu est terminé en 16 tours (Lorsque toutes vos cartes et celles de votre adversaire ont été jouées). Après la fin de la partie, votre score est comparé à celui de votre adversaire et le joueur avec le score le plus élevé remporte le tour.</para>
+</chapter>
+
+<chapter id="rules_and_tips">
+<title
+>Règles de jeu, stratégies et astuces</title>
+
+<sect1 id="screen">
+<title
+>Écran de jeu</title>
+
+<screenshot>
+<screeninfo
+>Écran de jeu par défaut de &i18n-lskat;</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="lskat_screen_01.png" format="PNG"/>
+</imageobject>
+<textobject>
+<phrase
+>Écran de référence de jeu par défaut de &i18n-lskat;.</phrase>
+</textobject>
+</mediaobject>
+</screenshot>
+
+<segmentedlist>
+<segtitle
+>1</segtitle>
+<segtitle
+>2, 3</segtitle>
+<segtitle
+>4</segtitle>
+<segtitle
+>5</segtitle>
+<segtitle
+>6</segtitle>
+<segtitle
+>7</segtitle>
+<segtitle
+>8</segtitle>
+<seglistitem>
+<seg
+>Indicateur du joueur actif</seg>
+<seg
+>Piles de cartes pour le joueur un et le joueur deux</seg>
+<seg
+>Pile de cartes gagnées (si il y en a)</seg>
+<seg
+>Zone de jeu</seg>
+<seg
+>Tableau de score avec le nom du joueur, les points de la partie en cours, le score total du joueur, et le nombre de victoires par partie</seg>
+<seg
+>Contrôleur des joueurs (humain / ordinateur)</seg>
+<seg
+><quote
+>L'atout</quote
+>dans la partie actuelle</seg>
+</seglistitem>
+</segmentedlist>
+
+</sect1>
+
+<sect1 id="rules">
+<title
+>Règles</title>
+<itemizedlist>
+<listitem
+><para
+>Chaque joueur possède 16 cartes : huit d'entre elles sont couvertes, les huit autres étant découvertes.</para
+></listitem>
+<listitem
+><para
+>Une carte couverte ne peut être découverte qu'après qu'une carte découverte a été jouée.</para
+></listitem>
+<listitem
+><para
+>Chaque partie a des cartes <quote
+>d'atout</quote
+>choisit aléatoirement [8].</para
+></listitem>
+<listitem
+><para
+>Les quatre valets sont comptés comme des atouts et n'appartiennent pas à des couleurs.</para
+></listitem>
+<listitem
+><para
+>Si une couleur (Par exemple du cœur) est sélectionnée comme <quote
+>atout</quote
+>, les sept cœurs comme les quatre valets comptent comme des atouts, ce qui donne onze cartes d'atout.</para
+></listitem>
+<listitem
+><para
+>Les valets se battent chacun dans l'ordre suivant (Du plus fort au plus faible) : trèfle, pique, cœur, carreau.</para
+></listitem>
+<listitem
+><para
+>La séquence de cartes pour une couleur d'atout : valet de trèfle, valet de pique, valet de cœur, valet de carreau, as, 10, roi, reine, 9, 8, 7.</para
+></listitem>
+<listitem
+><para
+>La séquence de cartes pour une couleur qui n'est pas à l'atout : as, 10, roi, reine, 9, 8, 7.</para
+></listitem>
+<listitem id="card-values"
+><para
+>Les valeurs de cartes (de la plus forte à la plus faible) : </para
+></listitem>
+</itemizedlist>
+
+<informaltable>
+<tgroup cols="2">
+<tbody>
+<row
+><entry
+>Carte</entry
+><entry
+>Valeur</entry
+></row>
+<row
+><entry
+>As</entry
+><entry
+>11</entry
+></row>
+<row
+><entry
+>Dix</entry
+><entry
+>10</entry
+></row>
+<row
+><entry
+>Roi</entry
+><entry
+>4</entry
+></row>
+<row
+><entry
+>Reine</entry
+><entry
+>3</entry
+></row>
+<row
+><entry
+>Valet</entry
+><entry
+>2</entry
+></row>
+<row
+><entry
+>Neuf</entry
+><entry
+>0</entry
+></row>
+<row
+><entry
+>Huit</entry
+><entry
+>0</entry
+></row>
+<row
+><entry
+>Sept</entry
+><entry
+>0</entry
+></row>
+</tbody>
+</tgroup>
+</informaltable>
+
+<itemizedlist>
+<listitem
+><para
+>Une partie spéciale avec des cartes <quote
+>d'atouts</quote
+> existe et est appelé le « Grand ». Dans cette partie, aucune couleur n'est une carte d'atout, seuls les quatre valets comptent comme carte d'atout. Ce type de partie est indiqué par le symbole d'une tête de valet [8] sur le tableau de score [6].</para
+></listitem>
+<listitem
+><para
+>Si le joueur démarre la partie, il peut choisir les cartes à jouer, soit une carte de couleur ou soit d'une carte d'atout.</para
+></listitem>
+<listitem
+><para
+>Seules les cartes découvertes de la pile appartenant au joueur peuvent être utilisées pour jouer la partie.</para
+></listitem>
+<listitem
+><para
+>Le joueur qui gagne la partie commence la suivante.</para
+></listitem>
+<listitem
+><para
+>Le joueur qui gagne la partie ajoute les valeurs des cartes jouées dans cette partie à son score.</para
+></listitem>
+<listitem
+><para
+>Le joueur avec plus de 60 points gagne cette partie.</para
+></listitem>
+<listitem
+><para
+>Si les deux joueurs finissent avec 60 points chacun, la partie se termine par un nul.</para
+></listitem>
+<listitem
+><para
+>Pour chaque partie, une certaine quantité de points est attribuée et ajoutée au score général.</para
+></listitem>
+</itemizedlist>
+
+<informaltable>
+<tgroup cols="2">
+<tbody>
+<row
+><entry
+>Points</entry
+><entry
+>Score</entry
+></row>
+<row
+><entry
+>60</entry
+><entry
+>1</entry
+></row>
+<row
+><entry
+>61 à 90</entry
+><entry
+>2</entry
+></row>
+<row
+><entry
+>91 à 119</entry
+><entry
+>3</entry
+></row>
+<row
+><entry
+>120</entry
+><entry
+>4</entry
+></row>
+</tbody>
+</tgroup>
+</informaltable>
+
+</sect1>
+
+<sect1 id="strategies">
+<title
+>Stratégies et astuces</title>
+<para
+>Lorsque la partie démarre, le joueur de départ doit jouer n'importe quelle carte découverte de sa propre pile. Si le deuxième joueur a actuellement des cartes découvertes ayant la même couleur que les cartes jouées, ce dernier doit répondre avec une de ces cartes. Si, cependant, le deuxième joueur ne possède aucune carte de couleur identique, ce dernier peut jouer n'importe quelle autre carte, y compris une carte d'atout.</para>
+<para
+>S'il y a au moins une carte <quote
+>d'atout</quote
+>, la carte <quote
+>d'atout</quote
+> la plus forte gagne tous les cartes.</para>
+<para
+>S'il y a aucune carte <quote
+>d'atout</quote
+>, la carte la plus forte de la couleur jouée par le premier joueur gagne toutes les cartes.</para>
+<para
+>Si le joueur suivant ne possède aucune carte de la couleur demandée et aucune carte <quote
+>d'atout</quote
+>, il doit jouer n'importe quelle carte et le joueur ayant démarré remporte toutes les cartes.</para>
+
+<para
+>Le joueur qui gagne la partie commence la suivante.</para>
+</sect1>
+</chapter>
+
+<chapter id="faq">
+<title
+>Foire aux questions</title>
+
+<qandaset>
+<qandaentry>
+ <question
+><para
+>Puis-je jouer avec un jeu différent de cartes ?</para
+></question>
+ <answer
+><para
+>Oui. Consultez <link linkend="deck_change"
+>cette</link
+> section de la vue d'ensemble de l'interface pour plus de détails.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>J'ai commis une erreur. Puis-je l'annuler ? </para
+></question>
+ <answer
+><para
+>Non. Ce jeu n'implante pas cette fonctionnalité <quote
+>d'annulation</quote
+>.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Puis-je utiliser le clavier pour jouer à ce jeu ? </para
+></question>
+ <answer
+><para
+>Non. Ce jeu ne se joue pas en utilisant le clavier.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Je ne comprend pas quoi faire ! Y a t-il des conseils ? </para
+></question>
+ <answer
+><para
+>Non. Ce jeu n'implante pas de fonctionnalité de <quote
+>conseil</quote
+>.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Je veux quitter le jeu maintenant, mais ma partie n'est pas terminée. Puis je l'enregistrer ?</para
+></question>
+ <answer
+><para
+>Non. Ce jeu n'implante pas la fonctionnalité <quote
+>enregistrer l'état</quote
+>.</para
+></answer>
+</qandaentry>
+<qandaentry>
+ <question
+><para
+>Puis-je modifier les noms des joueurs ?</para
+></question>
+ <answer
+><para
+>Oui. Pour modifier les noms affichés sur le coté droit de l'écran du jeu, consultez <link linkend="name_change"
+>cette</link
+> section de la vue d'ensemble de l'interface pour plus de détails.</para
+></answer>
+</qandaentry>
+</qandaset>
+</chapter>
+
+<chapter id="interface">
+<title
+>Vue d'ensemble de l'interface</title>
+
+<sect1 id="file-menu">
+<title
+>Le menu du jeu</title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl;<keycap
+><anchor id="new_game"/>N</keycap
+></keycombo
+> </shortcut
+> <guimenu
+>Partie</guimenu
+> <guimenuitem
+>Nouveau</guimenuitem
+></menuchoice
+></term>
+<listitem>
+<para>
+<action
+>Démarre une nouvelle partie.</action>
+</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+> <keycombo action="simul"
+>&Ctrl; &End;</keycombo
+> </shortcut
+> <guimenu
+>Partie</guimenu
+> <guimenuitem
+>Terminer la partie</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para>
+<action
+>Termine une partie en cours.</action>
+</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Partie</guimenu
+> <guimenuitem
+>Effacer les statistiques</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Efface toute la mémoire des parties antérieures.</action
+> Ces statistiques sont enregistrées quand la partie se termine et affichent le score total et le nombre de parties jouées et gagnées par joueur. Celles-ci sont effacées avec cet élément de menu. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><shortcut
+><keycombo action="simul"
+>&Ctrl;<keycap
+>Q</keycap
+></keycombo
+></shortcut
+> <guimenu
+>Partie</guimenu
+> <guimenuitem
+>Quitter</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para
+><action
+>Ferme le programme.</action>
+</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</sect1>
+
+<sect1 id="settings-menu">
+<title
+>Le menu de configuration</title>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Configuration</guimenu
+> <guisubmenu
+>Premier joueur</guisubmenu
+></menuchoice
+></term>
+<listitem
+><para
+>Choisit si le joueur 1 (en haut) ou le joueur 2 (en bas) commence la partie suivante. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Configuration</guimenu
+> <guisubmenu
+>Joueur 1 joué par</guisubmenu
+> </menuchoice
+></term>
+<listitem>
+<para
+>Choisit qui devra jouer le joueur 1 (en haut). Le joueur peut être soit contrôlé par un joueur local avec la souris, soit par l'ordinateur. </para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Configuration</guimenu
+> <guisubmenu
+>Joueur 2 joué par</guisubmenu
+> </menuchoice
+></term>
+<listitem>
+<para
+>Choisit qui devra jouer le joueur 2 (en bas). Le joueur peut être soit contrôlé par un joueur local avec la souris, soit par l'ordinateur. </para
+></listitem>
+</varlistentry>
+
+<varlistentry id="theme_change">
+<term
+><menuchoice
+><guimenu
+>Configuration</guimenu
+> <guisubmenu
+>Thème</guisubmenu
+> </menuchoice
+></term>
+<listitem>
+<para
+>Sélectionne un thème visuel. Ceci modifie l'apparence du jeu mais pas celle des cartes. Les jeux de cartes sont sélectionnés avec leur propre menu d'options. </para
+></listitem>
+</varlistentry>
+
+<varlistentry id="deck_change">
+<term
+><menuchoice
+><guimenu
+>Configuration</guimenu
+> <guimenuitem
+>Sélectionner un jeu de cartes...</guimenuitem
+></menuchoice
+></term>
+<listitem
+><para
+><action
+>Sélectionner l'aspect et le dos des cartes utilisés pour le jeu.</action
+> Vous pouvez les sélectionner dans une boite de dialogue d'aperçu affichant tous les styles de jeux de cartes installés pour &kde;. </para>
+<note>
+<para
+>Certains jeux de cartes ou paquets de cartes sont affichés comme des images vectorielles (Format &SVG;) dans la boite de dialogue. Leur sélection fournira une meilleure qualité graphique lorsque le jeu est réduit ou élargi. Les graphiques de taille fixe perdront en qualité si elles sont redimensionnées en dehors de leur taille originale. </para>
+</note>
+</listitem>
+</varlistentry>
+
+<varlistentry id="name_change">
+<term
+><menuchoice
+><guimenu
+>Configuration</guimenu
+> <guimenuitem
+>Modifier les nom des joueurs...</guimenuitem
+> </menuchoice
+></term>
+<listitem
+><para>
+<action
+>Modifie le nom des joueurs.</action>
+</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+<para
+>De plus, &i18n-lskat; possède des éléments communs de menu de &kde; comme <guimenu
+>Configuration</guimenu
+> et <guimenu
+>Aide</guimenu
+>. Pour plus d'informations, veuillez consulter les sections <ulink url="help:/fundamentals/menus.html#menus-settings"
+>Menu « Configuration » </ulink
+> et <ulink url="help:/fundamentals/menus.html#menus-help"
+>Menu « Aide » </ulink
+> des fondamentaux de &kde;. </para>
+
+</sect1>
+
+</chapter>
+
+<chapter id="credits">
+<title
+>Remerciements et licence</title>
+
+<para
+>&lskat; </para>
+<para
+>Copyright du logiciel 2000-2007 par &Martin.Heni; <email
+>kde@heni-online.de</email
+> </para>
+<para
+>Copyright des graphismes 2007 par Eugene Trounev <email
+>eugene.trounev@gmail.com</email
+> </para>
+<para
+>Copyright de la documentation 2000,2001 par Martin Heni <email
+>martin@heni-online.de</email
+> </para>
+<para
+>Documentation convertie vers &kde; 2.0 par &Mike.McBride; &Mike.McBride.mail; </para>
+
+<para
+>Traduction française par &StanislasZeller;, relecture par &LudovicGrossard;</para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-omittag:t
+sgml-shorttag:t
+sgml-namecase-general:t
+sgml-always-quote-attributes:t
+sgml-indent-step:0
+sgml-indent-data:nil
+sgml-parent-document:nil
+sgml-exposed-tags:nil
+sgml-local-catalogs:nil
+sgml-local-ecat-files:nil
+End:
+-->
+
+
+

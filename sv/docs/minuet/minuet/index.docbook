@@ -1,0 +1,327 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Swedish "INCLUDE">
+]>
+<book id="minuet" lang="&language;">
+
+<bookinfo>
+<title
+>Handbok Minuet</title>
+
+<authorgroup>
+<author
+><personname
+> <firstname
+>Sandro</firstname
+> <othername
+>S.</othername
+> <surname
+>Andrade</surname
+> </personname
+> <email
+>&Sandro.Andrade.mail;</email
+> </author>
+<othercredit role="translator"
+> <firstname
+>Stefan</firstname
+> <surname
+>Asserhäll</surname
+> <affiliation
+><address
+><email
+>stefan.asserhall@gmail.com</email
+></address
+></affiliation
+> <contrib
+>Översättare</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+<year
+>2016</year>
+<holder
+>&Sandro.Andrade;</holder>
+</copyright>
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2021-10-19</date>
+
+<releaseinfo
+>0.4 (KDE Gear 21.08)</releaseinfo>
+
+<abstract>
+<para
+>Minuet är ett program för musikutbildning. Det innehåller ett antal gehörsövningar avseende intervall, ackord och skalor. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>kdeedu</keyword>
+<keyword
+>musik</keyword>
+<keyword
+>utbildning</keyword>
+<keyword
+>intervall</keyword>
+<keyword
+>ackord</keyword>
+<keyword
+>skalor</keyword>
+<keyword
+>Minuet</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Inledning</title>
+
+<para
+>Välkommen till Minuet, programvaran för musikutbildning. Minuet har som mål att hjälpa elever och lärare i många av musikutbildningens aspekter, såsom gehörsövning, första notläsning, solmisering, skalor, rytm, harmonilära och improvisation. Minuet använder &MIDI;-funktioner i stor utsträckning för att tillhandahålla en fullfjädrad uppsättning funktioner när det gäller volym, tempo och förändringar av tonhöjd, vilket gör Minuet ett värdefullt verktyg för både nybörjare och erfarna musiker. </para>
+<para
+>Minuet har en rik uppsättning gehörsövningar och nya kan <link linkend="creating-exercises"
+>kan smidigt läggas till</link
+> för att utöka funktionaliteten och anpassa den till olika musikutbildningssammanhang. </para>
+
+<screenshot>
+  <screeninfo
+>Huvudfönstret i &minuet;</screeninfo>
+  <mediaobject>
+    <imageobject
+><imagedata fileref="minuet-screenshot.png" format="PNG"/></imageobject>
+    <textobject
+><phrase
+>Gehörsövningar för ackord i Minuet</phrase
+></textobject>
+  </mediaobject>
+</screenshot>
+</chapter>
+
+<chapter id="using-minuet">
+<title
+>Använda Minuet</title>
+
+<para
+>I följande två avsnitt, <link linkend="starting-minuet"
+>Starta Minuet</link
+> och <link linkend="minuet-exercises"
+>Övningar i Minuet</link
+>, ger vi dig de nödvändiga stegen för att komma igång med Minuet. </para>
+
+<sect1 id="starting-minuet">
+<title
+>Starta Minuet</title>
+
+<para
+>&minuet; kan startas från Starta program. Öppna den globala menyn genom att klicka på ikonen för Starta program i verktygsraden längst ner till vänster på skärmen. Det visar en meny. Flytta pekaren upp i menyn till menyalternativet <menuchoice
+><guimenu
+>Program</guimenu
+> <guisubmenu
+>Utbildning</guisubmenu
+> <guisubmenu
+>Diverse</guisubmenu
+> <guimenuitem
+>&minuet; (Programvara för musikutbildning)</guimenuitem
+></menuchoice
+> i den globala menyn eller använd <keycombo action="simul"
+>&Alt;<keycap
+>F2</keycap
+></keycombo
+> och skriv in <command
+>minuet</command
+> i inmatningsfältet. </para>
+</sect1>
+
+<sect1 id="minuet-exercises">
+<title
+>Övningar och arbetsflöde i Minuet</title>
+
+<para
+>Användargränssnittet i Minuet består av tre huvuddelar: </para>
+
+<screenshot>
+  <screeninfo
+>Huvudfönstret i &minuet;</screeninfo>
+  <mediaobject>
+    <imageobject
+><imagedata fileref="minuet-ui-components.png" format="PNG"/></imageobject>
+    <textobject
+><phrase
+>Delar av användargränssnittet i Minuet</phrase
+></textobject>
+  </mediaobject>
+</screenshot>
+
+<variablelist>
+
+<varlistentry>
+<term
+><guilabel
+>Navigeringsmeny</guilabel
+></term>
+<listitem
+><para
+>Gör det möjligt att navigera bland övningskategorierna i Minuet och välja en viss övning. Navigeringsmenyn skapas dynamiskt baserat på övningsspecifikationsfiler som beskrivs i <link linkend="creating-exercises"
+>Skapa övningar</link
+>. Övningarna i Minuet är grupperade enligt klasser som intervall, skalor och ackord.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Klaviatur</guilabel
+></term>
+<listitem
+><para
+>Visar <parameter
+>note on</parameter
+> &MIDI;-händelser sekvenserade av en &MIDI;-fil eller vid ett övningsutförande.</para
+></listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>Övningsvy</guilabel
+></term>
+<listitem
+><para
+>Visar knappar för att kontrollera presentation av övningen och en uppsättning möjliga svar på övningen, för en given övning. En övning börjar genom att klicka på knappen <guibutton
+>Ny fråga</guibutton
+>. Ett slumpmässigt valt interval, ackord eller skala spelas upp av &minuet;, och därefter förväntas eleven välja ett svar bland de som visas i svarsfältet. &minuet; visar alltid den första tonen för det valda intervallet eller skalan, eller grundtonen för det valda ackordet, som en liten vit cirkel i svarsfältet. Genom att hålla muspekaren över ett möjligt svar, markerar &minuet; den motsvarande visuella representationen på klaviaturen. Återstående toner i svaret som hålls över visas som små cirklar vars färger är samma som knappen för svaret som hålls över. Eleven kan lyssna på övningen igen genom att klicka på knappen <parameter
+>Spela upp fråga</parameter
+>, klicka på den valda svarsknappen, eller få rätt svar genom att klicka på knappen <parameter
+>Ge upp</parameter
+>. Ett nytt försök med samma övning kan startas genom att klicka på knappen <parameter
+>Ny fråga</parameter
+> igen.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+</sect1>
+</chapter>
+
+<chapter id="creating-exercises">
+<title
+>Skapa nya övningar för Minuet</title>
+
+<para
+>Övningar i &minuet; är definierade i övningsspecifikationsfiler, skrivna med &JSON;-format: </para>
+<para>
+<programlisting
+>{
+  "exercises": [
+    {
+      "name": "Intervals",
+      "root": "21..104",
+      "playMode": "scale",
+      "children": [
+        {
+          "name": "Ascending Melodic Intervals",
+          "children": [
+            {
+              "name": "Seconds",
+              "options": [
+                {
+                  "name": "Minor Second",
+                  "sequenceFromRoot": "1"
+                },
+                {
+                  "name": "Major Second",
+                  "sequenceFromRoot": "2"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+</programlisting>
+</para>
+<para
+>Övningsspecifikationsfilerna i &minuet; innehåller ett &JSON;-objekt på toppnivån, som innehåller fältet <parameter
+>exercises</parameter
+>. Ett sådant fält definierar en hierarkisk struktur av övningar, grupperade enligt kategorier. Varje kategori och övning har ett namn. &JSON;-objekt för kategorier innehåller en egenskap benämnd <parameter
+>children</parameter
+>, som beskriver delkategorierna eller övningarna som är förenade med en sådan kategori. &JSON;-objekt för övningar innehåller en egenskap benämnd <parameter
+>options</parameter
+>, som definiera möjliga svar för en sådan övning. Vid varje övningstillfälle, väljer &minuet; slumpmässigt ett svar bland de möjliga, och eleven förväntas klicka på svarsknappen som motsvarar det valda svaret. </para>
+<para
+>Alla (del)kategorier kan definiera parametern <parameter
+>root</parameter
+> för att ange omfång som grundtonen i intervallet, ackordet eller skalan kommer att väljas slumpmässigt från för alla övningar i kategorin. Sådana omfång motsvarar vanliga tonnummer i &MIDI; och har formatet <parameter
+>&lt;minvärde&gt;..&lt;maxvärde&gt;</parameter
+>. Exemplet som visas ovan använder hela klaviaturens omfång som möjliga grundtoner (21..104). Parametern <parameter
+>playMode</parameter
+> anger hur möjliga svar ska spelas upp: som en skala, <parameter
+>scale</parameter
+> (en ton i taget), eller som ett ackord, <parameter
+>chord</parameter
+> (alla toner ljuder samtidigt). </para>
+<para
+>Alternativet för varje övning definierar ett namn och en tonföljd som ska spelas från grundtonen som väljes slumpmässigt vid varje övningstillfälle. En sådan tonföljd definieras som relativt avstånd från grundtonen, och beskriver intervallet som varje ton utgör i förhållande till grundtonen. Exempelvis för en durskala är tonföljden <quote
+>2 4 5 7 9 11 12</quote
+>, vilket anger durskalans struktur <quote
+>hel hel halv hel hel hel halv</quote
+>. Parametern <parameter
+>sequenceFromRoot</parameter
+> kan innehålla vilka toner som helst i längd. Dessutom försäkrar kärnan i &minuet; att bara svar vars toner befinner sig inom klaviaturens omfång väljes slumpmässigt. </para>
+<para
+>För att skapa en bättre infrastruktur för att organisera en stor mängd övningsspecifikationsfiler, stöder kärnan i &minuet; användning av flera specifikationsfiler, som automatiskt sammanfogas för att skapa den slutliga övningshierarkin som visas i Navigeringsmeny. Övningar sammanfogas på ett riktigt sätt, under förutsättning att olika specifikationsfiler använder samma (del)kategorinamn när övningar definieras. För närvarande erbjuder inte &minuet; något grafiskt gränssnitt för att skapa övningsspecifikationer, och sådana &JSON;-filer måste alltså skapas för hand. Övningsspecifikationsfiler i &minuet; kan installeras för hela systemet eller lokalt i katalogen <filename
+>minuet/exercises/</filename
+> placerad i <userinput
+><command
+>qtpaths</command
+> <option
+>--path GenericDataLocation</option
+></userinput
+>. </para>
+
+</chapter>
+
+<chapter id="credits">
+
+<title
+>Tack till och licens</title>
+
+<para
+>Minuet </para>
+<para
+>Program copyright 2016 &Sandro.Andrade; &Sandro.Andrade.mail; </para>
+
+<para
+>Dokumentation Copyright &copy; 2016 &Sandro.Andrade; &Sandro.Andrade.mail; </para>
+
+<para
+>Översättning Stefan Asserhäll <email
+>stefan.asserhall@gmail.com</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+
+<!--
+Local Variables:
+mode: xml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+vim:tabstop=2:shiftwidth=2:expandtab
+kate: space-indent on; indent-width 2; tab-width 2; indent-mode none;
+-->

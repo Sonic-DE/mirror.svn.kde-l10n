@@ -1,0 +1,4834 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+<!ENTITY skrooge '<application
+>Skrooge</application
+>'
+> <!--remove when skrooge requires kdoctools 5.13-->
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Portuguese "INCLUDE"
+><!-- change language only here -->
+<!ENTITY homepage "https://www.kde.org/applications/office/skrooge/">
+]>
+
+<book id="skrooge" lang="&language;">
+  <title
+>O Manual do &skrooge;</title>
+  
+  <bookinfo>
+    
+    <authorgroup>
+      
+      <author
+><firstname
+>Stéphane</firstname
+> <surname
+>MANKOWSKI</surname
+> <affiliation
+> <address
+><email
+>stephane@mankowski.fr</email
+></address>
+	</affiliation>
+      </author>
+      
+      <othercredit role="developer"
+><firstname
+>Guillaumme</firstname
+> <surname
+>DE BURE</surname
+> <affiliation
+> <address
+><email
+>guillaume.debure@gmail.com</email
+></address>
+	</affiliation>
+	<contrib
+>Desenvolvimento</contrib>
+      </othercredit>
+      <othercredit role="translator"
+><firstname
+>José</firstname
+><surname
+>Pires</surname
+><affiliation
+><address
+><email
+>zepires@gmail.com</email
+></address
+></affiliation
+><contrib
+>Tradução</contrib
+></othercredit
+> 
+    </authorgroup>
+    
+    <copyright>
+      <year
+>2007</year>
+      <year
+>2008</year>
+      <year
+>2009</year>
+      <year
+>2010</year>
+      <year
+>2011</year>
+      <year
+>2012</year>
+      <year
+>2013</year>
+      <year
+>2014</year>
+      <year
+>2015</year>
+      <year
+>2016</year
+>      
+      <year
+>2017</year
+>           
+      <holder
+>Stéphane MANKOWSKI</holder>
+      <holder
+>Guillaume DE BURE</holder>
+    </copyright>
+    
+    <legalnotice
+>&FDLNotice;</legalnotice>
+    
+    <date
+>2016-06-15</date>
+    <releaseinfo
+>Skrooge 2.5.0</releaseinfo>
+    
+    <abstract>
+      <para
+>Este documento é um manual para usar o &skrooge;, uma aplicação de gestão de finanças pessoais. </para>
+    </abstract>
+    
+    <keywordset>
+      <keyword
+>KDE</keyword>
+      <keyword
+>extragear</keyword>
+      <keyword
+>escritório</keyword>
+      <keyword
+>skrooge</keyword>
+      <keyword
+>finanças pessoais</keyword>
+    </keywordset>
+    
+  </bookinfo>
+  
+  <chapter id="introduction">
+    <title
+>Introdução</title>
+    
+    <sect1 id="skrooge-intro">
+      <title
+>&skrooge;</title>
+      
+      <para
+>O &skrooge; é uma aplicação para gerir as suas finanças pessoais. Poderá fazer o seguimento das suas receitas e despesas pelas várias contas, em várias moedas. Tem todas as funcionalidades que esperaria de uma ferramenta deste tipo, como as categorias, as operações agendadas, os relatórios gráficos, a gestão de 'stocks', ... Tem também algumas funcionalidades menos comuns, como a edição rápida de operações, a pesquisa incremental, os seguimentos de retornos, os atributos personalizados, etc... </para>
+      
+      <screenshot>
+	<screeninfo
+>O &skrooge; a mostrar gráficos das despesas por categoria</screeninfo>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="reports.png" format="PNG"/>
+	  </imageobject>
+	  <textobject
+><phrase
+>O &skrooge; a mostrar gráficos das despesas por categoria</phrase
+></textobject>
+	</mediaobject>
+      </screenshot>
+      
+      
+      <sect2 id="what-skrooge-is">
+	<title
+>O Que é o &skrooge;</title>
+	
+	<para
+>O &skrooge; é um gestor de finanças pessoais para a plataforma do &kde;. Pretende ser usado pelos indivíduos que desejem acompanhar as suas receitas, despesas e investimentos. </para>
+	
+      </sect2>
+      
+      <sect2 id="what-skrooge-is-not">
+	<title
+>O Que o &skrooge; Não É</title>
+	
+	<para
+>O &skrooge; não é uma ferramenta profissional. Não tem as funções esperadas de um 'software' que iria usar num pequeno negócio. Não faz a  gestão de taxas, não permite o sistema de introdução de dados em duplicado ou qualquer outra função financeira avançada. </para>
+	<para
+>Se estava à procura de uma ferramenta deste tipo, poderá querer ver o Kmymoney ou o Kraft em alternativa.</para>
+	
+      </sect2>
+    </sect1>
+    
+    <sect1 id="terminology">
+      <title
+>Terminologia</title>
+      
+      <sect2 id="terminology-document">
+	<title
+>Documento</title>
+	<para
+>Um documento é um ficheiro do &skrooge; (extensão .skg). Poderá conter um número indefinido de <link linkend="terminology-account"
+>contas</link
+>. Poderá usar um documento para gerir todas as suas contas de uma vez. </para>
+      </sect2>
+      
+      <sect2 id="terminology-account">
+	<title
+>Conta</title>
+	<para
+>Uma conta do &skrooge; é semelhante à sua conta bancária. Por exemplo, se possuir uma conta sua, uma para a sua mulher e outra em conjunto,  poderá criar estas três contas no &skrooge;. Sempre que gastar ganhar algum dinheiro, deverá registar uma <link linkend="terminology-operation"
+>operação</link
+> e indicar a conta em que foi feita esta operação. </para>
+      </sect2>
+      
+      <sect2 id="terminology-operation">
+	<title
+>Operação</title>
+	<para
+>Uma operação será um crédito ou um débito para uma das suas contas. Ao associar uma categoria a uma operação, poderá analisar como é que gastou o seu dinheiro. </para>
+	
+	<sect3 id="terminology_standard_operation">
+	  <title
+>Operação Normal</title>
+	  <para
+>Uma operação normal é a operação básica do &skrooge;. Do tipo "Hoje, gastei 20€ do cartão de crédito na mercearia".</para>
+	  <para
+></para>
+	</sect3>
+	
+	<sect3 id="terminology_split_operation">
+	  <title
+>Operação Dividida</title>
+	  <para
+>Uma operação dividida é uma operação para a qual o montante total está dividido em várias <link linkend="terminology-category"
+>categorias</link
+>, datas e/ou <link linkend="trackers"
+>seguimentos</link
+>.</para>
+	  <para
+>Por exemplo, "Ontem, gastei 100€ no supermercado, sendo 60€ para a comida e 40€ para roupas".</para>
+	</sect3>
+	
+	<sect3 id="terminology_transfer">
+	  <title
+>Transferência</title>
+	  <para
+>Uma transferência no &skrooge; é equivalente a mover uma quantidade de dinheiro de uma das suas contas do &skrooge; para outra das suas contas do &skrooge;.</para>
+	  <para
+>Isto não deverá ser confundido com o modo do pagamento escolhido: se fez uma transferência, por exemplo através da página Web do seu banco, esta não é uma operação de transferência, porque o &skrooge; não conhece a conta dessa outra pessoa. É uma <link linkend="terminology_standard_operation"
+>operação normal</link
+> feita com a transferência como modo de pagamento.</para>
+	  <para
+>Leia o <link linkend="transfer"
+>capítulo dedicado ao assunto</link
+>, se as coisas continuarem por esclarecer</para>
+	</sect3>
+	
+	<sect3 id="terminology_validated_operation">
+	  <title
+>Operação Validada</title>
+	  <para
+>Ao <link linkend="import"
+>Importar</link
+> as operações, as mesmas não são consideradas válidas desde já. Terá de as validar manualmente em primeiro lugar. Uma operação validada é isso mesmo, uma operação importada que foi validada.</para>
+	  <para
+>Lembre-se que é possível validar automaticamente as operações durante a importação, activando a opção correspondente na configuração.</para>
+	</sect3>
+	
+	<sect3 id="terminology_pointed_operation">
+	  <title
+>Operação Apontada</title>
+	  <para
+>Durante o <link linkend="reconciliation"
+>processo de reconciliação</link
+>, irá apontar no &skrooge; todas as operações que aparecem na posição correspondente na conta. Uma operação apontada é uma dessas operações. Não fica <link linkend="terminology_checked_operation"
+>Verificada</link
+> até que termine a reconciliação.</para>
+	</sect3>
+	
+	<sect3 id="terminology_checked_operation">
+	  <title
+>Operação Verificada</title>
+	  <para
+>Quando todas as operações na posição da sua conta tiverem sido apontadas no &skrooge;, poderá terminar o processo de reconciliação. Todas as operações <link linkend="terminology_pointed_operation"
+>apontadas</link
+> passarão então a ser Operações Verificadas.</para>
+	</sect3>
+	
+	
+      </sect2>
+      
+      <sect2 id="terminology-category">
+	<title
+>Categoria</title>
+	<para
+>Uma categoria é, basicamente, uma classe de operações. Alguns exemplos típicos incluem "Comida", "Impostos", "Salário"... Uma categoria poderá conter outras categorias: é uma estrutura hierárquica. Por exemplo, a categoria "transportes" poderá contar "Autocarro", "Automóvel", "Avião"... O &skrooge; lida com uma profundidade de categorias infinita. </para>
+      </sect2>
+      
+      <sect2 id="terminology-unit">
+	<title
+>Unidade</title>
+	<para
+>Uma unidade no &skrooge; poderá ser algo que tenha um valor. Exemplos: <itemizedlist>
+	    <listitem
+><para
+>Moeda <itemizedlist>
+		  <listitem
+><para
+>$ (Dólar dos EUA)</para
+></listitem>
+		  <listitem
+><para
+>€ (Euro)</para
+></listitem>
+		  <listitem
+><para
+>£ (Libra Esterlina)</para
+></listitem>
+		</itemizedlist>
+	      </para>
+	    </listitem>
+	    <listitem
+><para
+>Acção ou índice <itemizedlist>
+		  <listitem
+><para
+>GOOG (Google)</para
+></listitem>
+		  <listitem
+><para
+>NASDAQ</para
+></listitem>
+		</itemizedlist>
+	      </para>
+	    </listitem>
+	    <listitem
+><para
+>Qualquer coisa que possua <itemizedlist>
+		  <listitem
+><para
+>A sua casa</para
+></listitem>
+		  <listitem
+><para
+>O seu carro</para
+></listitem>
+		</itemizedlist>
+	      </para>
+	    </listitem>
+	  </itemizedlist>
+	  
+	</para>
+      </sect2>
+    </sect1>
+  </chapter>
+  
+  <chapter id="main-concepts">
+    <title
+>Conceitos principais</title>
+    
+    <sect1 id="user_interface">
+      <title
+>Interface do Utilizador</title>
+      <para
+>A janela do &skrooge; é composta por uma área principal, rodeada por acoplagens ou áreas acopláveis, e uma barra de estado. As áreas acopláveis poderão ser fechadas e reabertas, assim como poderão ser posicionadas à esquerda ou à direita da área principal. </para>
+      
+      <sect2 id="main_area">
+	<title
+>A área principal</title>
+	<para
+>Aqui é onde o &skrooge; irá mostrar a informação em que está interessado. Poderá conter <link linkend="multi-tabs"
+>várias páginas</link
+>, cada uma com a área que você lhe atribuiu. </para>
+      </sect2>
+      
+      <sect2 id="docks">
+	<title
+>Acoplagens</title>
+	<para
+>As acoplagens, ou áreas acopláveis, existem em várias aplicações do &kde;. Estas são uma sub-parte da janela de uma aplicação, e poderão ser posicionadas, fechadas ou mesmo destacadas da janela principal. </para>
+	
+	<para
+>Alguns exemplos de disposições das acoplagens: </para>
+	
+	<informaltable>
+	  <tgroup cols="3">
+	    <tbody>
+	      <row>
+		<entry>
+		  <inlinemediaobject>
+		    <imageobject>
+		      <imagedata fileref="docks_left_right.png"/>
+		    </imageobject>
+		  </inlinemediaobject>
+		</entry>
+		<entry>
+		  <inlinemediaobject>
+		    <imageobject>
+		      <imagedata fileref="docks_detached.png"/>
+		    </imageobject>
+		  </inlinemediaobject>
+		</entry>
+		<entry>
+		  <inlinemediaobject>
+		    <imageobject>
+		      <imagedata fileref="docks_stacked.png"/>
+		    </imageobject>
+		  </inlinemediaobject>
+		</entry>
+	      </row>
+	    </tbody>
+	  </tgroup>
+	</informaltable>
+	
+	<para
+>As áreas acopláveis do &skrooge; são: <itemizedlist>
+	    <listitem
+><para
+><link linkend="page_chooser"
+>O selector de páginas</link
+></para
+></listitem>
+	    <listitem
+><para
+><link linkend="bookmarks"
+>A lista de favoritos</link
+></para
+></listitem>
+	    <listitem
+><para
+><link linkend="undo_redo"
+>O navegador das acções a Desfazer/Refazer</link
+></para
+></listitem>
+	    <listitem
+><para
+><link linkend="property_editor"
+>O editor de propriedades</link
+></para
+></listitem>
+	    <listitem
+><para
+><link linkend="message_list"
+>A Lista de Mensagens</link
+></para
+></listitem>
+	  </itemizedlist>
+	</para>
+      </sect2>
+      
+      <sect2 id="page_chooser">
+	<title
+>Selector de Páginas</title>
+	<para
+>O selector de páginas é uma área onde poderá seleccionar a área a mostrar na página actual ou numa página nova. Para abrir numa página nova, mantenha a tecla &Ctrl; carregada enquanto carrega na área seleccionada.</para
+><tip
+><para
+>Poderá personalizar esta lista se usar o menu de contexto sobre a mesma.</para
+></tip>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="context_chooser.png" format="PNG"/></imageobject>
+	    <textobject
+><phrase
+>O selector de páginas</phrase
+></textobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Cada contexto será descrito num capítulo específico deste manual.</para>
+      </sect2>
+       	
+      <sect2 id="bookmarks">
+	  <title
+>Favoritos</title>
+	  <para
+>Imagine que precisa de personalizar a áreas de operações para cada conta: cada uma das contas seria apresentada na sua própria página, talvez usando colunas diferentes por cada tabela. O método acima indicado não funciona, dado que se aplica a todas as páginas do mesmo tipo. </para>
+	  <para
+>A solução aqui é gravar cada página individual como um Favorito. Do mesmo modo que acontece num navegador Web, os favoritos poderão ser organizados numa hierarquia de pastas de navegação, as quais poderá visualizar no Navegador de Favoritos:</para>
+	  
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject
+><imagedata fileref="bookmarks_browser.png" format="PNG"/></imageobject>
+	      <textobject
+><phrase
+>O navegador de favoritos</phrase
+></textobject>
+	    </mediaobject>
+	  </screenshot>
+	  
+	  <para
+>Para criar um favorito, seleccione um contexto no <link linkend="page_chooser"
+>selector de páginas</link
+> que deseja marcar como favorito, fazendo as modificações que desejar. Assim que terminar, na <link linkend="docks"
+>área acoplável</link
+> dos Favoritos, invoque o menu de contexto e seleccione a opção <menuchoice
+><guimenu
+>Adicionar a página actual aos favoritos</guimenu
+></menuchoice
+>.</para>
+	  
+	  <para
+>Cada favorito ou pasta de favoritos poderá ser "auto-iniciado", &ie; será aberto automaticamente ao iniciar o &skrooge;. Desta forma, poderá personalizar por completo a disposição por omissão do &skrooge;.</para>
+	  <para
+>Poderá seleccionar o texto e o ícone que deseja para cada favorito ou pasta de favoritos.</para
+>	  
+	</sect2>
+      
+      <sect2 id="undo_redo">
+	<title
+>Desfazer / Refazer</title>
+	<para
+>O &skrooge; faz a gestão das operações Desfazer/Refazer de forma relativamente clássica, excepto que poderá desfazer ou refazer qualquer acção, mesmo que tenha sido feita há vários dias. O histórico não é limpo ao fechar o &skrooge;, o que significa que poderá desfazer praticamente tudo, até chegar à criação do documento. </para>
+	<para
+>Para limitar o impacto no tamanho dos ficheiros, o &skrooge; está configurado por omissão para manter um histórico de 50 elementos. Se quiser alterar este valor, defina-o na configuração. </para>
+	<para
+>O &skrooge; tem uma <link linkend="docks"
+>área acoplável</link
+> que apresenta todas as acções anuláveis. </para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="history_browser.png" format="PNG"/></imageobject>
+	    <textobject
+><phrase
+>O navegador do histórico</phrase
+></textobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>O navegador do histórico mostra três colunas: </para>
+	
+	<itemizedlist
+>	  
+	  <listitem>
+	    <para
+>um ícone a mostrar o estado da acção. Uma seta amarela para a esquerda <inlinemediaobject
+><imageobject
+><imagedata fileref="edit-undo.png" format="PNG"/></imageobject
+></inlinemediaobject
+> diz que a acção pode ser desfeita (anulada). Uma seta verde para a direita <inlinemediaobject
+><imageobject
+><imagedata fileref="edit-redo.png" format="PNG"/></imageobject
+></inlinemediaobject
+> significa que a acção poderá ser refeita. </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para
+>a descrição da acção </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para
+>a data em que a acção foi feita </para>
+	  </listitem>
+	  
+	  <listitem>
+	    <para
+>um ícone de disco <inlinemediaobject
+><imageobject
+><imagedata fileref="document-save.png" format="PNG"/></imageobject
+></inlinemediaobject
+> significa que esta acção corresponde a um estado gravado, &ie; o documento foi gravado logo a seguir a esta acção. </para>
+	  </listitem>
+	</itemizedlist>
+	
+	<para
+>Para anular uma operação anulável, ou refazer uma operação que pode ser refeita, faça duplo-click sobre ela. </para>
+      </sect2>
+      
+      <sect2 id="property_editor">
+	<title
+>Editor de Propriedades</title>
+	<para
+>Uma das funcionalidades menos comuns do &skrooge; é a capacidade de adicionar propriedades personalizadas a qualquer objecto. Por exemplo, poderá querer adicionar  o nome e o número de telefone de um empregado do banco a uma conta, por ele/ela ser o seu gestor de conta. Também poderá querer adicionar um ficheiro a uma operação, como uma digitalização de uma factura. </para>
+	<para
+>Isto poderá ser feito com o editor de propriedades, que é uma <link linkend="docks"
+>área acoplável</link
+> por si só. </para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="property_editor.png" format="PNG"/></imageobject>
+	    <textobject
+><phrase
+>O editor de propriedades com um anexo</phrase
+></textobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Quando esta área estiver visível, irá mostrar as propriedades personalizadas do objecto seleccionado (Para: Selecção) ou de todos os objectos (Para: Tudo), quer seja uma conta, uma operação, uma categoria, uma unidade, etc... Esta área permite criar, actualizar ou apagar as propriedades. </para>
+	
+	<para
+>Uma propriedade pode ser: </para>
+	  <itemizedlist>
+	    
+	    <listitem>
+	      <para
+>Um texto simples </para>
+	    </listitem>
+	    
+	    <listitem>
+	      <para
+>Um ficheiro copiado, seja qual for o formato (ODT, PNG, PDF, ...). Significa que o ficheiro será copiado para dentro do documento do &skrooge;. Este ficheiro poderá ser aberto a partir do &skrooge; se carregar no botão apropriado. Tenha atenção: todas as modificações do ficheiro original não serão replicadas na versão gravada no documento do &skrooge;. </para>
+	    </listitem>
+	    
+	    <listitem>
+	      <para
+>Uma ligação para um ficheiro existente, seja qual for o formato (ODT, PNG, PDF, ...). Significa que o ficheiro não será copiado para dentro do documento do &skrooge;, mas apenas terá uma referência para o mesmo. Este ficheiro poderá ser aberto a partir do &skrooge; se carregar no botão apropriado. </para>
+	    </listitem>
+	    
+	    <listitem>
+	      <para
+>Um endereço de uma página Web. Exemplo: a página Web do seu banco. </para>
+	    </listitem>
+	  </itemizedlist>
+	<para
+>As propriedades adicionadas poderão ser apresentadas como uma coluna nas <link linkend="tables"
+>tabelas</link
+> </para
+>	
+      </sect2>
+
+      <sect2 id="message_list">
+	<title
+>Lista de mensagens</title>
+	<para
+>Esta área acoplável permite-lhe ver todas as mensagens apresentadas.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="messages.png" format="PNG"/></imageobject>
+	    <textobject
+><phrase
+>A lista de mensagens</phrase
+></textobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Cada contexto será descrito num capítulo específico deste manual.</para>
+      </sect2>
+      
+      <sect2 id="multi-tabs">
+	<title
+>Páginas Múltiplas</title>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="multi_tabs.png" format="PNG"/></imageobject>
+	    <textobject
+><phrase
+>O &skrooge; a mostrar diversas páginas</phrase
+></textobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>O &skrooge; pode apresentar várias páginas. Poderá adicionar tantas quanto desejar, contendo cada uma a informação que necessitar. A imagem acima mostra 4 páginas (contas, operações e dois gráficos).</para>
+      </sect2>
+      
+      <sect2 id="edition_panels">
+	<title
+>Painéis de Edição</title>
+	<para
+>Na maioria das páginas do  &skrooge;, a forma de editar os itens é usar o painel de edição, localizado no fundo da página. Para preservar o máximo de espaço para visualizar a informação, especialmente em ecrãs pequenos, os painéis de edição poderão ser escondidos ou visualizados através de botões próprios para o efeito.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="edition_panel_buttons.png" format="PNG"/></imageobject>
+	    <textobject
+><phrase
+>Botões para mostrar ou esconder os painéis de edição das Operações.</phrase
+></textobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Quando estiver disponível mais de um modo de edição, existem vários botões que permitem a sua selecção. Na imagem acima, existem quatro botões que permitem escolher o modo de edição das <link linkend="operations"
+>Operações</link
+>, "Normal", "Dividido", "Transferência" e "Acções".</para>
+	
+	<para
+>Todos os campos numéricos são interpretados. Isto significa que poderá introduzir expressões matemáticas como as seguintes: <itemizedlist>
+	    <listitem
+><para
+>5*3+10</para
+></listitem>
+	    <listitem
+><para
+>5*(3+10)</para
+></listitem>
+	    <listitem
+><para
+>Math.sin(10)</para
+></listitem>
+	  </itemizedlist
+>	  
+	</para
+>	
+      </sect2>
+      
+      <sect2 id="tables">
+	<title
+>Tabelas</title>
+	<para
+>No &skrooge;, todas as tabelas são personalizadas. Invoque o menu de contexto (normalmente com o botão direito) no cabeçalho da coluna, para que veja aparecer um menu:</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="table_menu.png" format="PNG"/></imageobject>
+	    <textobject
+><phrase
+>Personalizar uma tabela</phrase
+></textobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<variablelist>
+	  <varlistentry>
+	    <term
+><menuchoice
+><guimenu
+>Colunas</guimenu
+></menuchoice
+></term>
+	    <listitem>
+	      <para
+>Personaliza a aparência das colunas.</para>
+	      <variablelist>
+		<varlistentry>
+		  <term
+><menuchoice
+><guimenu
+>Aparência da Área</guimenu
+></menuchoice
+></term>
+		  <listitem>
+		    <para
+>Usa um conjunto predefinido de colunas. A coluna "por omissão" mostra normalmente todas as colunas. Os outros conjuntos predefinidos poderão existir por cada tabela.</para>
+		  </listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+><menuchoice
+><guimenu
+>Dimensionar ao Conteúdo</guimenu
+></menuchoice
+></term>
+		  <listitem
+><para
+>Dimensiona todas as colunas para se ajustar ao conteúdo.</para
+></listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+><menuchoice
+><guimenu
+>Auto-Dimensionar</guimenu
+></menuchoice
+></term>
+		  <listitem
+><para
+>Quando a opção estiver activada, não poderá dimensionar manualmente as colunas. O &skrooge; fá-lo-á automaticamente, com base no conteúdo das colunas.</para
+></listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+><guimenu
+>Lista das colunas apresentadas</guimenu
+></term>
+		  <listitem
+><para
+>Mostra a lista de todas as colunas que poderão ser apresentadas para esta tabela. As que estão visíveis de momento estão assinaladas. Desligue para esconder uma coluna e assinale para a mostrar. As <link linkend="property_editor"
+>propriedades</link
+> adicionadas podem ser seleccionadas para serem apresentadas como uma coluna.</para
+></listitem>
+		</varlistentry
+>	
+	      </variablelist>
+	    </listitem>
+	  </varlistentry>
+	  
+	  <varlistentry>
+	    <term
+><menuchoice
+><guimenu
+>Agrupar por</guimenu
+></menuchoice
+></term>
+	    <listitem>
+	      <para
+>Escolha como agrupar as linhas.</para>
+	      <variablelist>
+		<varlistentry>
+		  <term
+><menuchoice
+><guimenu
+>Nenhum</guimenu
+></menuchoice
+></term>
+		  <listitem>
+		    <para
+>Sem agrupamento.</para>
+		  </listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+><menuchoice
+><guimenu
+>Coluna de ordenação</guimenu
+></menuchoice
+></term>
+		  <listitem
+><para
+>As linhas serão agrupadas pela coluna pela qual será aplicada a ordenação.</para
+></listitem>
+		</varlistentry>
+		<varlistentry>
+		  <term
+><guimenu
+>Lista de colunas</guimenu
+></term>
+		  <listitem
+><para
+>Mostra a lista de todas as colunas que poderá usar nos agrupamentos.</para
+></listitem>
+		</varlistentry>
+	      </variablelist>
+	    </listitem>
+	  </varlistentry
+>	  
+	  
+	  <varlistentry>
+	    <term
+><menuchoice
+><guimenu
+>Cores das linhas alternadas</guimenu
+></menuchoice
+></term>
+	    <listitem
+><para
+>Alterna as cores usadas para cada linha. As cores usadas baseiam-se no esquema de cores do &kde; escolhido.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+><menuchoice
+><guimenu
+>Exportar</guimenu
+></menuchoice
+></term>
+	    <listitem
+><para
+><link linkend="export_table"
+>Exporta a tabela</link
+> como um ficheiro autónomo. Os formatos suportados são o PDF, o CSV, o HTML, o SVG, o ODT ou o TXT.</para
+></listitem>
+	  </varlistentry>
+	</variablelist>
+	
+	<para
+>Poderá também carregar num cabeçalho para escolher a coluna de ordenação ou para reordenar as colunas, arrastando-as para a esquerda ou para a direita.</para>
+	
+	<sect3 id="show">
+	  <title
+>Filtrar a tabela</title>
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject
+><imagedata fileref="show.png" format="PNG"/></imageobject>
+	      <textobject
+><phrase
+>Mostrar o menu da tabela</phrase
+></textobject>
+	    </mediaobject>
+	  </screenshot
+>	  
+	  <para
+>Em todas as áreas do &skrooge;, irá encontrar um campo "Mostra", o qual lhe permite filtrar a área. </para>
+	</sect3>
+	
+	<sect3 id="search">
+	  <title
+>Procurar à medida que escreve</title>
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject
+><imagedata fileref="search.png" format="PNG"/></imageobject>
+	      <textobject
+><phrase
+>Campo de pesquisa</phrase
+></textobject>
+	    </mediaobject>
+	  </screenshot
+>	  
+	  <para
+>Em todas as áreas do &skrooge;, irá encontrar um campo de "filtro", o qual lhe permite procurar à medida que escreve na área: <itemizedlist>
+	      <listitem
+><para
+>Numa área de operações, irá filtrar as operações que contenham o texto introduzido, seja qual for a coluna (data, beneficiário, categoria, comentário...)</para
+></listitem>
+	      <listitem
+><para
+>Numa área de contas, irá filtrar as contas que contêm o texto introduzido, seja qual for a coluna (banco, nome da conta, número...)</para
+></listitem>
+	      <listitem
+><para
+>Numa área de relatórios, irá actualizar o gráfico com base neste filtro</para
+></listitem>
+	      <listitem
+><para
+>Numa .... bem, acho que já percebeu, certo?</para
+></listitem>
+	    </itemizedlist>
+	  </para>
+	  <tip>
+	  <para
+>O texto de filtragem segue estas regras: </para>
+	    <itemizedlist>
+		<listitem
+><para
+>A pesquisa não faz distinção entre maiúsculas e minúsculas. Como tal, 'tabela', 'Tabela' e 'TABELA' são todos termos iguais.</para
+></listitem>
+		<listitem
+><para
+>Se quiser colocar uma palavra ou série de palavras no campo de pesquisa, a aplicação irá filtrar a tabela para manter todas as linhas que tiverem todas essas palavras (operador lógico E).</para
+></listitem>
+		<listitem
+><para
+>Se quiser adicionar algum termo (operador lógico OU), deverá anteceder a sua palavra com um "+".</para
+></listitem>
+		<listitem
+><para
+>Se quiser remover algum termo (operador lógico NÃO), deverá anteceder a sua palavra com um "-".</para
+></listitem>
+		<listitem
+><para
+>Se quiser pesquisar apenas numa coluna, deverá anteceder a sua pesquisa com o nome da coluna, do tipo "col1:palavra".</para
+></listitem>
+		<listitem
+><para
+>Se quiser usar o carácter ":" no valor, terá de indicar o nome da coluna, como na seguinte forma: col1:valor:resto.</para
+></listitem>
+		<listitem
+><para
+>Se quiser pesquisar por uma frase ou algo que tenha espaços, deverá rodear o texto com aspas, como por exemplo: "sim, isto é uma frase".</para
+></listitem>
+		<listitem
+><para
+>Pode também usar o operador "&lt;" e "&gt;".</para
+></listitem>
+	    </itemizedlist>
+	  <para
+>Alguns exemplos poderão explicar melhor isto: </para>
+	    <itemizedlist>
+	      <listitem
+><para
+>+val1 +val2 =&gt; Mantém as linhas que contêm 'val1' OU 'val2'</para
+></listitem>
+	      <listitem
+><para
+>+val1 -val2 =&gt; Mantém as linhas que contêm 'val1' mas NÃO 'val2'</para
+></listitem>
+	      <listitem
+><para
+>"abc def" =&gt; Mantém as linhas que contêm a frase "abc def"</para
+></listitem>
+	      <listitem
+><para
+>abc:def =&gt; Mantém as linhas que têm um nome de coluna que começa por 'abc' e que contêm 'def' nela</para
+></listitem>
+	      <listitem
+><para
+>abc:def =&gt; Mantém as linhas que têm um nome de coluna que começa por 'abc' e que contêm 'def' nela</para
+></listitem>
+	      <listitem
+><para
+>:abc:def =&gt; Mantém as linhas que contêm "abc:def"</para
+></listitem>
+	      <listitem
+><para
+>Data&gt;2015-03-01 =&gt; Mantém as linhas em que o atributo Data é maior que 2015-03-01</para
+></listitem>
+	      <listitem
+><para
+>Montante&lt;10 =&gt;Mantém as linhas em que o atributo Montante é menor que 10</para
+></listitem>
+	    </itemizedlist>
+	</tip>
+	</sect3>
+      </sect2>
+      
+      <sect2 id="save_customized_content">
+	<title
+>Gravar o Conteúdo Personalizado</title>
+	
+	<para
+>Como foi explicado no <link linkend="tables"
+>capítulo anterior</link
+>, as tabelas poderão ser personalizadas por completo, de acordo com a sua preferência. Contudo, provavelmente não irá querer perder todo o trabalho de configuração ao fechar uma página. Existem duas formas de guardar esse trabalho.</para>
+	
+	<sect3 id="save_default_context">
+	  <title
+>Gravar o estado da página</title>
+	  <para
+>Esta opção permite-lhe gravar o estado da página actual como sendo o estado predefinido que será sempre invocado ao abrir esta página. Por exemplo, poderá querer que o seu <link linkend="dashboard"
+>Painel</link
+> contenha 4 elementos, organizados a seu gosto. O que ainda é mais importante é que irá querer sempre que o Painel apareça igual, mas que não deseja repetir o trabalho de personalização sempre que o abrir.</para>
+	  <para
+>Para o fazer, basta fazer a personalização apenas uma vez e depois gravar o estado da página como o Estado Predefinido para o contexto actualmente em visualização. A atribuição do estado por omissão é feita com o botão direito do rato na página e seleccionando a opção <guimenuitem
+>Gravar o Estado da Página</guimenuitem
+>. Se quiser manter mais que um estado por página, então deverá usar os <link linkend="bookmarks"
+>favoritos</link
+>.</para>
+	  
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject
+><imagedata fileref="tab_state_management.png" format="PNG"/></imageobject>
+	      <textobject
+><phrase
+>Menu de contexto nas páginas</phrase
+></textobject>
+	    </mediaobject>
+	  </screenshot>
+	  
+	  <para
+>Uma forma mais rápida é carregar no ícone de disco <inlinemediaobject
+><imageobject
+><imagedata fileref="document-save.png" format="PNG"/></imageobject
+></inlinemediaobject
+> que aparece à esquerda do título da página sempre que tiver modificado o estado predefinido numa página.</para>
+	  
+	</sect3>
+	</sect2>
+ 
+      <sect2 id="mass_update">
+	<title
+>Actualização em Massa</title>
+	<para
+>No &skrooge;, é possível actualizar em massa uma selecção de itens. Ainda que seja mais útil para as <link linkend="operations"
+>operações</link
+>, poderá também ser usado nas <link linkend="accounts"
+>contas</link
+>, <link linkend="units"
+>unidades</link
+>, <link linkend="scheduled"
+>operações agendadas</link
+>...</para>
+	<para
+>A forma de o fazer é bastante intuitiva : seleccione os itens a actualizar, defina os valores dos atributos que deverão ser aplicados a todos os itens e carregue em <guibutton
+>Aplicar</guibutton
+>. Para todos os atributos em que não definiu qualquer valor, será deixado inalterado nos itens.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="before_mass_update.png"/></imageobject>
+	    <caption
+><para
+>Defina o modo como "Cartão de Crédito" e o beneficiário como "XPTO" nas operações seleccionadas.</para
+></caption>
+	  </mediaobject>
+	</screenshot>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="after_mass_update.png"/></imageobject>
+	    <caption
+><para
+>Operações actualizadas.</para
+></caption>
+	  </mediaobject>
+	</screenshot>
+	
+	<note
+><para
+>É impossível, de propósito, definir a data ou a quantidade numa actualização em massa</para
+></note>
+	
+      </sect2>
+      
+      <sect2 id="status_bar">
+	<title
+>Barra de Estado</title>
+	<para
+>A barra de estado é uma pequena secção no fundo da janela do &skrooge;, apresentando diversas informações à medida que vai trabalhando. Inclui uma barra de progresso e um botão de cancelamento, para o caso em que deseje interromper uma tarefa longa, como importar um ficheiro grande. <screenshot
+> <mediaobject>
+	      <imageobject
+><imagedata fileref="progress-bar.png" format="PNG"/></imageobject>
+	      <textobject
+><phrase
+>A barra de progresso do &skrooge;</phrase
+></textobject>
+	    </mediaobject>
+	  </screenshot>
+	</para>
+      </sect2
+>     
+
+      </sect1>
+    
+    <sect1 id="import">
+      <title
+>Importar Ficheiros</title>
+      
+      <para
+>O &skrooge; é capaz de importar os ficheiros de outras aplicações financeiras ou a partir do seu banco. Por isso, se vier de outra aplicação ou porque simplesmente não quer estar a introduzir manualmente as suas operações, o &skrooge; tem uma forma rápida para si.</para>
+      
+      <sect2 id="supported_file_formats">
+	<title
+>Formatos de Ficheiros Suportados</title>
+	
+	<para
+>Poderá usar um dos seguintes formatos:</para>
+	
+	<itemizedlist>
+	    <listitem
+><para
+>AFB120: uma norma francesa.</para
+></listitem
+>	  
+	    <listitem
+><para
+>CSV: Comma Separated Value (Valores Separados por Vírgulas). Ainda que não seja estritamente um formato financeiro, é usado frequentemente como formato de exportação a partir dos bancos ou das outras aplicações, principalmente por ser tão simples de usar numa folha de cálculo.</para
+></listitem>
+	    <listitem
+><para
+>GnuCash: O formato da aplicação GnuCash. Se quiser migrar a partir desta aplicação, será o formato recomendado a usar.</para
+></listitem>
+	    <listitem
+><para
+>Grisbi: O formato da aplicação Grisbi. Se quiser migrar a partir desta aplicação, será o formato recomendado a usar.</para
+></listitem>
+	    <listitem
+><para
+>Homebank: O formato da aplicação Homebank. Se quiser migrar a partir desta aplicação, será o formato recomendado a usar.</para
+></listitem>
+	    <listitem
+><para
+>KMyMoney: O formato da aplicação KMyMoney. Se quiser migrar a partir desta aplicação, será o formato recomendado a usar.</para
+></listitem>
+	    <listitem
+><para
+>MT940: Uma norma internacional definida pela SWIFT.</para
+></listitem>
+	    <listitem
+><para
+>&Microsoft; Money: O formato da aplicação &Microsoft; Money. Se quiser migrar a partir desta aplicação, será o formato recomendado a usar.</para
+></listitem>
+	    <listitem
+><para
+>Money Manager Ex: O formato da aplicação Money Manager Ex. Se quiser migrar a partir desta aplicação, será o formato recomendado a usar.</para
+></listitem>
+	    <listitem
+><para
+>OFX: Open Financial eXchange. É um formato bem definido &amp; documentado que o &skrooge; importa, usando uma biblioteca de terceiros (libofx). Este é o formato recomendado para as importações.</para
+></listitem>
+	    <listitem
+><para
+>QFX: O QFX é uma versão personalizada do OFX para a aplicação comercial <trademark
+>Quicken</trademark
+>.</para
+></listitem>
+	    <listitem
+><para
+>QIF: <trademark
+>Quicken</trademark
+> Import File (Ficheiro de Importação do Quicken). Talvez o formato de ficheiros para aplicações financeiras mais comum. Contudo, tem algumas restrições relativamente incómodas, como a não-atribuição da unidade para a operação ou a ausência de uma formatação restrita das datas.</para
+></listitem>
+	    <listitem
+><para
+>IIF: O formato <trademark
+>Intuit</trademark
+> Interchange Format é usado pelo <trademark
+>QuickBooks</trademark
+>.</para
+></listitem>
+	    <listitem
+><para
+>SKG: Isto será útil para reunir 2 documentos do &skrooge;</para
+></listitem>
+            <listitem
+><para
+>PDF: Isto permite criar a operação a partir de uma factura em PDF. A factura fica também associada à operação como uma propriedade. Leia o documento <link linkend="howto_extractor"
+>Como fazer</link
+> se quiser saber como extrair a informação de uma factura ainda não suportada.</para
+></listitem>
+	    <listitem
+><para
+>Infra-Estrutura: o &skrooge; também poderá importar as operações através de uma infra-estrutura. A única que é suportada por agora é a <ulink url="http:://weboob.org"
+>WEBOOB</ulink
+>. Ao usar esta infra-estrutura, poderá importar todas as operações de todos os seus bancos com apenas um 'click'. Para tal, terá apenas de instalar o <ulink url="http:://weboob.org"
+>WEBOOB</ulink
+> e activar a infra-estrutura correspondente a partir da configuração.</para>
+	    
+            <tip
+><para
+>Se não quiser guardar as senhas do seu banco no ficheiro de configuração do WEBOOB, poderá fazer isso: <itemizedlist>
+	       <listitem
+><para
+>Adicione as senhas para cada banco com o comando <quote
+>kwallet-query -f Weboob kdewallet -w m_nome_banco</quote
+></para
+></listitem>
+	       <listitem
+><para
+>Edite o ficheiro <quote
+>~/.config/weboob/backends</quote
+> no seu editor de texto favorito</para
+></listitem>
+	       <listitem
+><para
+>Substitua no ficheiro de configuração <quote
+>password = minha_senha</quote
+> por <quote
+>password = `kwallet-query -f Weboob kdewallet -r m_nome_banco`</quote
+></para
+></listitem>
+	    </itemizedlist
+>	    
+	    </para
+></tip>
+	      </listitem
+>	  
+	</itemizedlist>
+      </sect2>
+      
+      <sect2 id="csv_specificities">
+	<title
+>Especificidades do CSV</title>
+	<para
+>Dado que o CSV não tem um formato restrito definido, não existe forma de o &skrooge; saber onde é que é suposto encontrar as datas, categorias, valores... Para o fazer, o &skrooge; espera que o seu ficheiro CSV contenha alguns cabeçalhos que indiquem o que é a coluna. O ficheiro deverá conter pelo menos as colunas "Data" e "Montante".</para>
+	<para
+>Poderá definir manualmente como é que é configurado o ficheiro (&ie; ignorando os cabeçalhos no ficheiro), definindo-os na configuração da aplicação (<menuchoice
+><guimenu
+>Configuração</guimenu
+> <guimenuitem
+>Configurar o &skrooge;</guimenuitem
+></menuchoice
+>), na secção de <guilabel
+>Importação / Exportação</guilabel
+>.</para>
+      </sect2>
+      
+      <sect2 id="import_operations">
+	<title
+>Importar as Operações</title>
+	<para
+>Um dos princípios do &skrooge; é evitar vários assistentes ou janelas. Isto é especialmente verdadeiro para as importações, nas quais as outras aplicações necessitam de muita informação por parte do utilizador. Não é o caso do &skrooge;. Ao seleccionar a opção <menuchoice
+><guimenu
+>Ficheiro</guimenu
+><guimenuitem
+>Importar</guimenuitem
+></menuchoice
+>, ser-lhe-á pedido para seleccionar os ficheiros (sim, poderá importar vários de uma vez). Nos bastidores, o &skrooge; irá descobrir o formato do ficheiro e aplicar o modo de importação relevante.</para>
+	
+	<sect3 id="import_account">
+	  <title
+>Conta</title>
+	  <para
+>Uma coisa que o poderá surpreender é que não será questionado acerca da conta para onde importar as operações. Isto acontece porque o &skrooge; irá ler o número da conta a partir do ficheiro, associando as operações importadas a essa conta.</para>
+	  <para
+>Se não existir nenhuma conta com esse número, ou se o ficheiro não tiver essa informação, o &skrooge; irá usar o nome do ficheiro como número de conta.</para>
+	  <para
+>Se não existir ainda nenhuma conta com esse número, o &skrooge; irá criar uma conta nova que tem o nome do ficheiro como número de conta, importando todas as operações para essa conta. Estará então à vontade para mudar o nome da conta, fazer uma <link linkend="mass_update"
+>actualização massiva</link
+> ou usar a <link linkend="search_and_process"
+>Pesquisa &amp; Processamento</link
+> para associar as operações importadas a uma conta existente.</para>
+	</sect3>
+	
+	<sect3 id="import_unit">
+	  <title
+>Unidade</title>
+	  <para
+>Se não for definida nenhuma unidade no ficheiro importado (o que é frequente no caso do QIF &amp; CSV), o  &skrooge; irá assumir que a unidade é a sua <link linkend="unit_types"
+>moeda primária</link
+>. Se não foi esse o caso, use a função de <link linkend="search_and_process"
+>Pesquisa &amp; Processamento</link
+> para a corrigir.</para>
+	</sect3>
+	
+	<sect3 id="import_date">
+	  <title
+>Data</title>
+	  <para
+>Em alguns casos, os ficheiros de entrada não irão ter as datas formatadas de acordo com a sua região (poderá acontecer no QIF ou no CSV, sendo que o OFX tem um formato de datas imposto). O &skrooge; irá tentar o melhor possível detectar o formato. Se não funcionar como esperado, poderá forçar o formato das datas na configuração da aplicação.</para>
+	</sect3>
+	
+	<sect3 id="import_status">
+	  <title
+>Estado da Importação</title>
+	  <para
+>As operações importadas têm um estado específico. Logo após a importação, são consideradas "Importadas mas não validadas". A ideia por trás disto é que poderá querer verificar se a importação correu como desejou, para que possa identificar rapidamente estas operações. De acordo com a configuração predefinida, estas operações também irão aparecer a azul.</para>
+	  <tip
+><para
+>Se não quiser este comportamento, poderá definir a opção de <guilabel
+>Validação Automática Após a Importação</guilabel
+> na configuração da aplicação.</para
+></tip>
+	  <tip
+><para
+>A função para <link linkend="search_and_process"
+>Pesquisar &amp; Processar</link
+> pode ser lançada automaticamente após a importação para classificar as operações.</para
+></tip>
+	</sect3>
+      </sect2>
+      
+      <sect2 id="merge_operations">
+	<title
+>Reunir as operações após a importação</title>
+	<para
+>Existem alguns casos onde poderá ter introduzido manualmente uma operação, mas também a tenha importado a partir do seu banco. Nesses casos, a operação irá aparecer duas vezes na lista.</para>
+	<para
+>Poderá juntar estas duas operações; para tal, seleccione-as e escolha a opção <guimenuitem
+>Juntar as operações</guimenuitem
+> no menu de contexto. Isto irá adicionar toda a informação que tiver introduzido manualmente à operação importada, apagando a operação introduzida manualmente.</para>
+      </sect2>
+    </sect1>
+    
+    <sect1 id="export">
+      <title
+>Exportar</title>
+      <para
+>Existem diferentes formas de exportar os dados com o &skrooge;, dependendo do que pretende fazer.</para>
+      
+      <sect2 id="export_file">
+	<title
+>Exportar todos os seus dados para um ficheiro</title>
+	<para
+>Se usar o menu <menuchoice
+><guimenu
+>Ficheiro</guimenu
+><guimenuitem
+>Exportar</guimenuitem
+></menuchoice
+>, será criado um ficheiro CSV, QIF, JSON, KMyMoney, SQLite ou WML, contendo todas as operações no documento actual. Esta é a opção a escolher, caso necessite de exportar os seus dados para outra aplicação.</para>
+      </sect2>
+      
+      <sect2 id="export_table">
+	<title
+>Exportar uma tabela específica</title>
+	<para
+>Todas as <link linkend="tables"
+>tabelas</link
+> no  &skrooge; poderão ser exportadas, quer para o formato CSV, &HTML;, ODT, PDF, SVG ou TXT. </para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="export_table_menu.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Isto funciona sempre que for apresentada uma tabela, de modo que possa usá-la para exportar a informação das tabelas que necessitar.</para>
+      </sect2>
+      
+      <sect2 id="export_graph">
+	<title
+>Exportar o Grafo</title>
+	<para
+>O &skrooge; permite-lhe exportar um <link linkend="reports"
+>gráfico</link
+>, seja em PDF, SVG ou num formato qualquer de imagem suportado pelo Qt (PNG, JPG, &GIF;, TIFF...). Para o fazer, poderá carregar com o botão direito do rato no gráfico e escolher a opção <guimenu
+>Exportar</guimenu
+>.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="export_graph_menu.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	
+      </sect2>
+      
+    </sect1>
+  </chapter>
+  
+  <chapter id="using-skrooge-beginner">
+    <title
+>Usar o &skrooge; (principiante)</title>
+
+    <sect1 id="menu-main">
+      <title
+>A área principal</title>
+      <para
+>O &skrooge; segue o esquema de menus normal do &kde;. Como tal, tem muitas opções dos menus que são comuns a todas as aplicações do &kde;. Poderá encontrar mais informações sobre esses itens <ulink url="help:/fundamentals/menus.html"
+>nesta secção de ajuda</ulink
+>. </para>
+      <para
+>Em baixo poderá encontrar descrições para os itens de menu específicos do &skrooge;. </para>
+      <sect2 id="menu-file">
+	<title
+>O Menu Ficheiro</title>
+      <para
+>Poderá encontrar neste menu todas as funções relativas ao documento do &skrooge;</para>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="menu_file.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+      <itemizedlist>
+	<listitem
+><para
+><guimenuitem
+>Mudar a Senha...</guimenuitem
+>: Usado para alterar a senha. Deixe o campo em branco para a remover.</para
+></listitem>
+	<listitem
+><para
+><guimenuitem
+>Imprimir...</guimenuitem
+>: Imprime as páginas abertas</para
+></listitem>
+	<listitem
+><para
+><guimenuitem
+>Antevisão da Impressão</guimenuitem
+>: Mostra uma antevisão antes da impressão</para
+></listitem>
+	<listitem
+><para
+><guimenuitem
+>Import</guimenuitem
+>: Efectua uma importação de dados. <screenshot
+> <mediaobject
+> <imageobject
+><imagedata fileref="menu_import.png"/></imageobject>
+	  </mediaobject>
+	</screenshot
+>	    
+	<itemizedlist>
+	  <listitem
+><para
+><guimenuitem
+>Importar os favoritos-padrão</guimenuitem
+>: Importa os favoritos-padrão. Estes são criados na altura da criação de um novo documento</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Importar as categorias</guimenuitem
+>: Para importar um conjunto de categorias predefinidas. Esta opção depende do seu país</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Importar</guimenuitem
+>: Para <link linkend="import"
+>importar</link
+> operações a partir de ficheiros</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Importar com a infra-estrutura</guimenuitem
+>: Para <link linkend="import"
+>importar</link
+> operações com uma dada infra-estrutura de importação</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Importar os valores das moedas...</guimenuitem
+>: Para importar os valores de cotações das moedas a partir de ficheiros. Obviamente, o ficheiro CSV deverá ter as três colunas (unidade, data e montante).</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Importar as regras...</guimenuitem
+>: Abre a página das regras de <link linkend="search_and_process"
+>Pesquisa e processo</link
+> para associar uma categoria a um beneficiário. Obviamente, o ficheiro CSV deverá conter as duas colunas de beneficiário e categoria.</para
+></listitem
+>          
+	  </itemizedlist
+> </para
+></listitem>
+	<listitem
+><para
+><guimenuitem
+>Exportar...</guimenuitem
+>: Para <link linkend="export_file"
+>exportar</link
+> operações para um ficheiro</para
+></listitem>
+	</itemizedlist>
+      </sect2
+>   
+      
+      <sect2 id="menu-edit">
+	<title
+>O Menu Editar</title>
+      <para
+>Poderá encontrar neste menu todas as funções que poderão ser usadas para modificar os objectos seleccionados</para>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="menu_edit.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+      <itemizedlist>
+	  <listitem
+><para
+><guimenuitem
+>Desfazer</guimenuitem
+>: Cancela a última modificação efectuada</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Refazer</guimenuitem
+>: Volta a aplicar a última modificação cancelada</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Reverter o documento</guimenuitem
+>: Cancela as modificações anteriores feitas até à última gravação</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Apagar</guimenuitem
+>: Remove os objectos seleccionados (operações, contas, categorias, ...)</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Adicionar uma propriedade</guimenuitem
+>: Adiciona uma propriedade normalmente usada aos objectos seleccionados</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Seleccionar tudo</guimenuitem
+>: Selecciona todas as linhas da <link linkend="export_file"
+>tabela</link
+> para a página actual</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Edição rápida:</guimenuitem
+>: Facilita a criação de novas <link linkend="operations"
+>operações</link
+> com o preenchimento automático dos campos com base nas operações anteriores criadas</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Procurar...</guimenuitem
+>: Abre a página de <link linkend="search_and_process"
+>Pesquisa e processo</link
+> com um filtro predefinido que corresponde aos objectos seleccionados</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Mudar de realce</guimenuitem
+>: Muda o estado de realce dos objectos</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Mudar o fecho</guimenuitem
+>: Muda o estado de fecho dos objectos</para
+></listitem
+>          
+	  <listitem
+><para
+><guimenuitem
+>Reconciliar...</guimenuitem
+>: Abre a página de <link linkend="operations"
+>Operações</link
+>, no modo de <link linkend="reconciliation"
+>reconciliação</link
+></para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Apontar</guimenuitem
+>: Aponta as operações seleccionadas</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Agrupar as operações</guimenuitem
+>: Agrupa as operações seleccionadas</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Desagrupar as operações</guimenuitem
+>: Desagrupa os grupos de operações seleccionados</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Duplicar</guimenuitem
+>: Duplica a operação seleccionada para criar uma nova a partir de outra anterior</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Criar um modelo</guimenuitem
+>: Cria um <link linkend="templates"
+>modelo</link
+> a partir de uma operação seleccionada</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Aplicar um modelo</guimenuitem
+>: Aplica um <link linkend="templates"
+>modelo</link
+> sobre as operações seleccionadas</para
+></listitem
+>          
+	  <listitem
+><para
+><guimenuitem
+>Reunir as sub-operações</guimenuitem
+>: Reune as operações seleccionadas numa única operação com parcelas</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Agendar</guimenuitem
+>: Agenda a operação seleccionada</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Validar as operações importadas</guimenuitem
+>: Valida todas as operações importadas seleccionadas</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Reunir as operações importadas</guimenuitem
+>: Junta uma operação importada com outra introduzida manualmente. Se os montantes forem diferentes, então será pedida uma confirmação</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Dividir as acções</guimenuitem
+>: Divide as <link linkend="units"
+>acções</link
+> seleccionadas</para
+></listitem
+>	  
+      </itemizedlist>
+      </sect2
+>	
+      
+      <sect2 id="menu-view">
+	<title
+>O Menu Ver</title>
+	<para
+>Poderá encontrar neste menu todas as funções relativas às <link linkend="multi-tabs"
+>páginas</link
+></para
+>	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="menu_view.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+      <itemizedlist>
+	  <listitem
+><para
+><guimenuitem
+>Activar o editor</guimenuitem
+>: Activa o editor para a página actual</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Nova página</guimenuitem
+>: Abre uma nova página</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Reabrir a última página fechada</guimenuitem
+>: Recupera a última página fechada</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Fechar</guimenuitem
+>: Fecha a página actual</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Fechar Tudo</guimenuitem
+>: Fecha todas as páginas excepto as fixas</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Fechar Todas as Outras</guimenuitem
+>: Fecha todas as páginas, exceptuando a actual e as marcadas como fixas</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Fixar esta página</guimenuitem
+>: Marca a página actual como fixa. Isto irá evitar a sua substituição por outra ou o fecho</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Repor o estado da página</guimenuitem
+>: Repõe o estado da página actual</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Gravar o estado da página</guimenuitem
+>: Grava o estado da página actual</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Sobrepor o estado de favorito</guimenuitem
+>: Grava o estado da página actualmente marcada como favorita. O favorito é actualizado com o novo estado</para
+></listitem
+>	  
+      </itemizedlist>
+      </sect2
+>	 
+      
+      <sect2 id="menu-do">
+	<title
+>O Menu Ir</title>
+	<para
+>Poderá encontrar neste menu todas as funções relativas às <link linkend="multi-tabs"
+>páginas</link
+></para
+>	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="menu_go1.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+
+      <itemizedlist>
+	  <listitem
+><para
+><guimenuitem
+>Início</guimenuitem
+>: Fecha todas as páginas e reabre todos os favoritos, iniciados automaticamente como quando o documento foi aberto</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Anterior</guimenuitem
+>: Altera o conteúdo da página actual com o conteúdo da anterior, como acontece num navegador Web</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Seguinte</guimenuitem
+>: Altera o conteúdo da página actual com o conteúdo da seguinte, como acontece num navegador Web</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Abrir os realces...</guimenuitem
+>: Abre as operações realçadas</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Abrir as últimas modificadas...</guimenuitem
+>: Abre as operações modificadas pela última acção efectuada</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Abrir os potenciais duplicados...</guimenuitem
+>: Abre as operações que são potenciais duplicados</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Abrir as sub-operações...</guimenuitem
+>: Abre as sub-operações da operação seleccionada. É semelhante a um duplo-click</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Abrir um relatório...</guimenuitem
+>: Abre um relatório com base nos itens seleccionados. Isto é realmente útil. Por exemplo: se seleccionar 2 contas e lançar esta acção, então a página do <link linkend="reports"
+>relatório</link
+> será aberta, mas apenas para as operações destas contas</para
+></listitem
+>	  
+	  <listitem
+><para
+><guimenuitem
+>Abrir as operações importadas e ainda não validadas...</guimenuitem
+>: nada a adicionar</para
+></listitem
+>	    
+      </itemizedlist>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="menu_go2.png"/></imageobject>
+	  </mediaobject>
+	</screenshot
+>	
+      <itemizedlist>
+	  <listitem
+><para
+><guimenuitem
+>Abrir as operações sem categoria...</guimenuitem
+>: Abre todas as operações que não têm nenhuma categoria</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Abrir as transferências sem categoria...</guimenuitem
+>: Abre todas as transferências que não têm qualquer categoria</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Abrir as operações sem beneficiário...</guimenuitem
+>: Abre todas as operações que não tiverem um beneficiário</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Abrir as transferências sem beneficiário...</guimenuitem
+>: Abre todas as transferências que não têm beneficiários associados</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Abrir as operações sem modo...</guimenuitem
+>: Abre todas as operações que não têm nenhum modo</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Abrir as operações com datas não alinhadas...</guimenuitem
+>: Abre todas as operações individuais que não têm a data alinhada com a sua sub-operação</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Abrir as operações com comentários não alinhados...</guimenuitem
+>: Abre todas as operações individuais que não têm o comentário alinhado com a sua sub-operação</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Abrir as operações em grupos com apenas uma operação...</guimenuitem
+>: Abre todas as operações individuais sozinhas num grupo</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Abrir as operações muito antigas</guimenuitem
+>: nada a acrescentar</para
+></listitem>
+      </itemizedlist>
+      </sect2
+>      
+      
+      <sect2 id="menu-tools">
+	<title
+>O Menu Ferramentas</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="menu_tools.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+      <itemizedlist>
+	  <listitem
+><para
+><guimenuitem
+>Procurar e agrupar as transferências</guimenuitem
+>: Cria transferências potenciais</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Limpar a importação do banco</guimenuitem
+>: Limpa as operações após as importações</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Anónimo</guimenuitem
+>: Torna o seu documento anónimo para ajudar na depuração do &skrooge; </para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Alinhar o comentário das sub-operações</guimenuitem
+>: Corrige as operações individuais que têm os comentários não alinhados</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Alinhar a data das sub-operações</guimenuitem
+>: Corrige as operações individuais que têm as datas não alinhadas</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Remover os grupos com apenas uma operação</guimenuitem
+>: Corrige as operações sozinhas dentro de um grupo</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Apagar os beneficiários não usados</guimenuitem
+>: nada a acrescentar</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Apagar as categorias não usadas</guimenuitem
+>: nada a acrescentar</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Apagar as unidades não usadas</guimenuitem
+>: nada a acrescentar</para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Validar as operações que não necessitam de mais acções</guimenuitem
+>: Valida as operações importadas </para
+></listitem>
+	  <listitem
+><para
+><guimenuitem
+>Processar as regras de contabilidade</guimenuitem
+>: Volta a calcular os <link linkend="budgets"
+>orçamentos</link
+> com base nas regras definidas</para
+></listitem>
+      </itemizedlist>
+      </sect2
+>     
+      
+    </sect1>
+    
+    <sect1 id="dashboard">
+      <title
+>Painel</title>
+      <para
+>O Painel é um 'plugin' do  &skrooge; que mostra a informação global sobre a sua situação financeira.</para>
+      
+      <screenshot>
+	<mediaobject>
+	  <imageobject
+><imagedata fileref="dashboard.png"/></imageobject>
+	</mediaobject>
+      </screenshot>
+      
+      <para
+>Poderá adicionar novos itens gráficos com o botão no canto superior direito. Poderá configurar cada um dos itens gráficos se carregar no ícone respectivo. Poderá organizar os itens gráficos no quadro por arrastamento.</para>
+      <tip
+><para
+>Em conjunto com os <link linkend="bookmarks"
+>favoritos</link
+>, esta é uma boa forma de ter rapidamente diferentes vistas sobre o seu estado financeiro.</para
+></tip>
+      
+      <sect2 id="dashboard_advice">
+	<title
+>Aviso</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_advice.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Este item gráfico mostra alguns conselhos por ordem de prioridade. Para cada um deles, poderá: <itemizedlist>
+	  <listitem
+><para
+>Abrir ou fechar as operações respectivas</para
+></listitem>
+	  <listitem
+><para
+>Esquecer esse conselho</para
+></listitem>
+	  <listitem
+><para
+>Esquecer este conselho para o mês actual</para
+></listitem>
+	  <listitem
+><para
+>Esquecer este tipo de conselhos</para
+></listitem>
+	  <listitem
+><para
+>Esquecer este tipo de conselhos para o mês actual</para
+></listitem>
+      </itemizedlist
+>	  
+	</para>
+      </sect2
+>      
+      
+      <sect2 id="dashboard_tip">
+	<title
+>Dica do dia</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_tip.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Mostra uma sugestão do dia. Poderá carregar no item gráfico para ver a dica seguinte.</para>
+      </sect2
+>          
+
+      <sect2 id="dashboard_accounts_light">
+	<title
+>Contas (Leve)</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_accounts_light.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Mostra o saldo e o tipo de cada conta. Poderá configurar este item gráfico para seleccionar o que deseja ver.</para>
+      </sect2
+>     
+      
+      <sect2 id="dashboard_accounts_full">
+	<title
+>Contas (Completo)</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_accounts_full.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Mostra o saldo e o tipo de cada conta. O saldo poderá ser comparado com o do mês anterior e o do ano anterior.</para>
+      </sect2
+>    
+      
+      <sect2 id="dashboard_banks_light">
+	<title
+>Bancos (Leve)</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_banks_light.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Mostra o saldo em cada banco. O relatório correspondente poderá ser aberto directamente a partir do item gráfico.</para>
+      </sect2
+>     
+      
+      <sect2 id="dashboard_banks_full">
+	<title
+>Bancos (Completo)</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_banks_full.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Mostra o saldo de cada banco. O saldo pode ser comparado com o do mês anterior e o do ano anterior.</para>
+      </sect2
+>        
+      
+      <sect2 id="dashboard_income">
+	<title
+>Receitas &amp; Despesas</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_income.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Mostra as receitas, despesas e poupanças para dois períodos diferentes (exemplo, mês actua, ano actual, mês anterior, ...). Obviamente, poderá: <itemizedlist>
+	    <listitem
+><para
+>Seleccionar os dois períodos que deseja</para
+></listitem>
+	    <listitem
+><para
+>Escolha se as <link linkend="transfer"
+>transferências</link
+> são tidas em conta ou não</para
+></listitem>
+	    <listitem
+><para
+>Escolher se as operações <link linkend="trackers"
+>seguidas</link
+> são tidas em conta ou não</para
+></listitem>
+	    <listitem
+><para
+>Abrir o <link linkend="reports"
+>relatório</link
+> correspondente</para
+></listitem>
+	</itemizedlist
+>		  
+	</para>
+      </sect2
+>       
+
+      <sect2 id="dashboard_highlighted">
+	<title
+>Operações realçadas</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_highlighted.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Mostra-lhe a lista de todas as operações realçadas.</para>
+      </sect2
+>      
+      
+      <sect2 id="dashboard_scheduled">
+	<title
+>Operações agendadas</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_scheduled.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Mostra a lista de operações <link linkend="scheduled"
+>agendadas</link
+>.</para>
+      </sect2
+>         
+      
+      <sect2 id="dashboard_categories">
+	<title
+>5 categorias principais de despesa</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_categories.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Mostra as 5 categorias principais de despesas para o mês actual ou para o anterior.</para>
+      </sect2
+>       
+      
+      <sect2 id="dashboard_variations">
+	<title
+>5 variações principais</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_variations.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Mostra as 5 variações principais de receita e despesa para o mês actual ou para o anterior.</para>
+      </sect2
+>         
+      
+      <sect2 id="dashboard_budget">
+	<title
+>Orçamento</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_budget.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Mostra o orçamento para o mês actual ou para o anterior.</para>
+      </sect2
+>        
+      
+      <sect2 id="dashboard_alarms">
+	<title
+>Alarmes</title
+>	
+	<para
+>Mostra os alarmes definidos em <link linkend="search_and_process"
+>Pesquisar e Processar</link
+>.</para>
+      </sect2
+>    
+      
+      <sect2 id="dashboard_report">
+	<title
+>Relatório</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_report.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Mostra o <link linkend="reports"
+>relatório</link
+> que desejar.</para>
+      </sect2
+>         
+      
+      <sect2 id="dashboard_quotes">
+	<title
+>Cotações</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_quotes.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Mostra a cotação das <link linkend="units"
+>unidades</link
+> definidas e as suas variações. Poderá escolher os tipos de unidades a apresentar.</para>
+      </sect2
+>          
+      
+      <sect2 id="dashboard_portfolio">
+	<title
+>Portfólio</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_portfolio.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Mostra todas as informações relativas às acções que tem.</para>
+      </sect2
+>       
+      
+      <sect2 id="dashboard_interest">
+	<title
+>Juro estimado</title>
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="dashboard_interest.png"/></imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Mostra a estimativa do juro para cada conta. Tem de usar a página de <link linkend="simulations"
+>simulação</link
+> para definir a taxa de cada conta.</para>
+      </sect2
+>             
+    </sect1>
+    
+    <sect1 id="accounts">
+      <title
+>Banco &amp; Contas</title>
+      <para
+>Este é o 'plugin' dedicado à gestão das suas diferentes contas.</para>
+      
+      <screenshot>
+	<mediaobject>
+	  <imageobject
+><imagedata fileref="bank_accounts.png" format="PNG"/></imageobject>
+	  <textobject
+><phrase
+>A área do Banco &amp; Contas</phrase
+></textobject>
+	</mediaobject>
+      </screenshot>
+      
+      
+      <sect2 id="account_properties"
+> 
+	<title
+>Propriedades da conta</title>
+	<para
+>Uma conta no &skrooge; tem as seguintes propriedades: <variablelist>
+	    <varlistentry>
+	      <term
+>Banco</term>
+	      <listitem
+><para
+>Poderá escolher um banco na lista (que contém a lista de bancos conhecidos no seu país) ou escreva o nome se o seu banco não constar na lista (se esta estiver vazia, a equipa do &skrooge; ainda não recebeu essa informação. Poder-nos-á contactar para ajudar!).</para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Conta</term>
+	      <listitem
+><para
+>O nome que deseja usar para esta conta.</para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Tipo</term>
+	      <listitem
+><para
+>O tipo de conta poderá ser <itemizedlist>
+		    <listitem
+><para
+>Actual</para
+></listitem>
+		    <listitem
+><para
+>Cartão de Crédito: Este tipo de conta tem um modo de <link linkend="reconciliation"
+>consolidação</link
+> específico.</para
+></listitem>
+		    <listitem
+><para
+>Gravar</para
+></listitem>
+		    <listitem
+><para
+>Investimento</para
+></listitem>
+		    <listitem
+><para
+>Activos</para
+></listitem>
+		    <listitem
+><para
+>Empréstimo: As transferências para este tipo de conta não são tidas em conta nos relatórios.</para
+></listitem>
+		    <listitem
+><para
+>Pensão</para
+></listitem>
+		    <listitem
+><para
+>Carteira: Este tipo de conta não tem nenhum nome de banco.</para
+></listitem>
+		    <listitem
+><para
+>Outra</para
+></listitem>
+		  </itemizedlist>
+		  </para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Número do Banco</term>
+	      <listitem
+><para
+>O número de identificação do seu banco</para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Número da Agência</term>
+	      <listitem
+><para
+>O número de identificação da agência</para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Número de Conta</term>
+	      <listitem
+><para
+>O número de identificação da conta. Este valor é muito importante para corresponder à conta apropriada durante as importações</para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Endereço</term>
+	      <listitem
+><para
+>O endereço da agência</para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Comentário</term>
+	      <listitem
+><para
+>Tudo o que desejar !</para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Saldo inicial</term>
+	      <listitem
+><para
+>O montante inicial da conta</para
+></listitem>
+	    </varlistentry
+>	  
+	    <varlistentry>
+	      <term
+>Limite mínimo</term>
+	      <listitem
+><para
+>O limite mínimo em que o &skrooge; deverá emitir um alarme </para
+></listitem>
+	    </varlistentry
+>	    
+	    <varlistentry>
+	      <term
+>Limite máximo</term>
+	      <listitem
+><para
+>O limite máximo em que o &skrooge; deverá emitir um alarme </para
+></listitem>
+	    </varlistentry
+>	    
+	  </variablelist>
+	</para>
+      </sect2>
+      
+      <sect2 id="accounts_list">
+	<title
+>Lista de contas</title>
+	<para
+>A lista de contas tem o formato de uma tabela, com uma linha para cada conta. Para além das <link linkend="account_properties"
+>propriedades</link
+> que definiu para esta conta, o &skrooge; mostra as seguintes colunas:</para>
+	
+	<variablelist>
+	  <varlistentry>
+	    <term
+>Montante</term>
+	    <listitem
+><para
+>O montante disponível na conta, tendo em consideração todas as operações registadas, quer estejam validadas ou não.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Verificada</term>
+	    <listitem
+><para
+>O montante de todas as operações validadas. Deverá ser igual ao montante escrito no último extracto da sua conta bancária.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Prevista</term>
+	    <listitem
+><para
+>A diferença entre as duas colunas anteriores</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Número de operações</term>
+	    <listitem
+><para
+>O número total de operações feitas nesta conta</para
+></listitem>
+	  </varlistentry>
+	</variablelist>
+	
+	<para
+>Como em todas as listas do &skrooge;, poderá <link linkend="tables"
+>configurar por completo a aparência das tabelas</link
+>.</para>
+	
+      </sect2>
+      
+      <sect2 id="create_account">
+	<title
+>Criar uma Conta</title>
+	<para
+>A criação da conta é feita com o painel de edição, por baixo da lista de contas.</para>
+	
+	<para
+>Para criar uma conta, indique os seus atributos (os obrigatórios estão a negrito) e carregue em <guibutton
+>Adicionar</guibutton
+>. O &skrooge; não necessita que indique o montante inicial para esta conta. Para poder definir o montante inicial da conta, crie uma operação correspondente ao montante inicial.</para>
+      </sect2>
+      
+      <sect2 id="modify_account">
+	<title
+>Modificar uma Conta</title>
+	<para
+>Para modificar uma conta, seleccione-a, modifique os seus atributos e carregue em "Modificar"</para>
+      </sect2>
+      
+      <sect2 id="delete_account">
+	<title
+>Apagar as Contas</title>
+	<para
+>Para apagar as contas, seleccione-as e carregue na tecla <keycap
+>Delete</keycap
+>, use o menu de contexto ou o ícone na barra de ferramentas.</para>
+	<warning
+><para
+>Lembre-se que, ao apagar uma conta, todas as operações que pertençam a essa conta também serão apagadas ! (Contudo, poderá sempre <link linkend="undo_redo"
+>desfazer</link
+> a remoção)</para
+></warning>
+      </sect2>
+      
+    </sect1>
+    
+    <sect1 id="operations">
+      <title
+>Operações</title>
+      <para
+>As operações são, basicamente, qualquer operação que faça sobre uma conta, seja ela uma despesa, uma receita, uma transferência, uma compra... Aqui é onde provavelmente irá passar a maior parte do seu tempo ao usar o &skrooge;.</para>
+      
+      <para
+>Para poder introduzir as operações, deverá ter criada pelo menos uma <link linkend="accounts"
+>conta</link
+>.</para>
+      
+      <screenshot>
+	<mediaobject>
+	  <imageobject
+><imagedata fileref="operations.png" format="PNG"/></imageobject>
+	  <textobject
+><phrase
+>A área de operações</phrase
+></textobject>
+	</mediaobject>
+      </screenshot>
+      
+      <sect2 id="operation_properties">
+	<title
+>Propriedades da Operação</title>
+	
+	<variablelist>
+	  <varlistentry>
+	    <term
+>Conta</term>
+	    <listitem
+><para
+>A conta sobre a qual é feita a operação. Seleccione-a na lista de contas existentes.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Data</term>
+	    <listitem
+><para
+>A data em que foi feita a operação. Está disponível um calendário se usar a seta para baixo, ao lado do campo.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term id="quantity_field"
+>Montante</term>
+	    <listitem>
+	      <para
+>O montante é quanto gastou ou ganhou com esta operação. O &skrooge; necessita que o indique em dois campos separados: a Quantidade e a Unidade.</para>
+	      <para
+>A quantidade é negativa para uma despesa (-30, por exemplo), e positiva para uma receita (250). Este campo, actua como uma calculadora, &ie; se introduzir uma expressão do tipo 10 + 3,23*2 irá corresponder ao campo 16,46.</para>
+              <para
+>Se o sinal da quantidade não for indicado, então o &skrooge; irá usar a categoria para descobrir o mais apropriado.</para>
+	      <para
+>O &skrooge; precisa que você introduza a <link linkend="units"
+>unidade</link
+>, porque uma operação não é necessariamente feita na sua moeda principal. Por exemplo, quando compra ou vende acções, a unidade da operação é a unidade da acção.</para>
+	    </listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Beneficiário</term>
+	    <listitem
+><para
+>A quem é que pagou isto, ou quem lhe deu a si o dinheiro.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Modo</term>
+	    <listitem>
+	      <para
+>Qual foi o modo de pagamento usado para esta operação. Algo do tipo Cartão de Crédito, Cheque, Depósito... o que quiser !</para>
+	      <para
+>Associado ao modo de operação, existe um número opcional. É usado na grande maioria para indicar o número do cheque ou da transferência.</para>
+	    </listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Categoria</term>
+	    <listitem>
+	      <para
+>Qual é a <link linkend="categories"
+>Categoria</link
+> a que esta operação pertence. Se necessitar de afectar mais que uma categoria a uma dada operação, use o modo <link linkend="split_operation"
+>dividido</link
+>.</para>
+	      <para
+>Poderá então escolher uma categoria existente, ou então escrever uma nova. Nesse caso, o &skrooge; criá-la-á para si ao longo da operação.</para>
+	      <para
+>O separador entre uma categoria-mãe e as suas filhas é o carácter &gt;. Se escrever Roupas &gt; Sapatos, o &skrooge; irá criar a categoria Roupas, se não existir, seguida da categoria-filha Sapatos.</para>
+	      <para
+>Obviamente, poderá criar árvores de categorias inteiras, como a seguinte: Transportes &gt; Carro &gt; Combustível &gt; Sem Chumbo, pelo que o &skrooge; irá criar sem problemas toda a estrutura hierárquica.</para>
+	    </listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Comentário</term>
+	    <listitem
+><para
+>Qualquer comentário que desejar.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Localizador</term>
+	    <listitem
+><para
+>Se quiser seguir os retornos para esta operação, indique o nome do <link linkend="trackers"
+>Seguimento</link
+> aqui. Se necessitar de afectar mais que um seguimento a uma dada operação, use o modo <link linkend="split_operation"
+>dividido em parcelas</link
+>.</para
+></listitem>
+	  </varlistentry>
+	</variablelist>
+	
+      </sect2>
+      
+      <sect2 id="operations_list">
+	<title
+>Lista de operações</title>
+	<para
+>A lista de contas tem o formato de uma tabela, com uma linha para cada conta. Para além das <link linkend="account_properties"
+>propriedades</link
+> que definiu para esta conta, o &skrooge; mostra as seguintes colunas:</para>
+	
+	<variablelist>
+	  <varlistentry>
+	    <term
+>Estado</term>
+	    <listitem
+><para
+>Esta opção indica se esta operação foi confirmada durante a <link linkend="reconciliation"
+>reconciliação</link
+> da conta. Uma opção semi-acinzentada significa que a <link linkend="reconciliation"
+>reconciliação</link
+> está em curso.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Favorito</term>
+	    <listitem
+><para
+>Marcar esta operação como um Favorito.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Agendada</term>
+	    <listitem
+><para
+>Quando esta operação está agendada, esta coluna mostra um ícone de cronómetro.</para
+></listitem>
+	  </varlistentry>
+	</variablelist>
+	
+	<para
+>Estas colunas também têm algumas especificidades:</para>
+	
+	<variablelist>
+	  <varlistentry>
+	    <term
+>Modo</term>
+	    <listitem
+><para
+>Quando a operação faz parte de uma <link linkend="transfer"
+>transferência</link
+>, o modo é antecedido de um ícone com setas duplas.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Categoria</term>
+	    <listitem
+><para
+>Quando a operação está <link linkend="split_operation"
+>dividida em parcelas</link
+>, a categoria é antecedida de um ícone de setas triplas.</para
+></listitem>
+	  </varlistentry>
+	</variablelist>
+	
+	<para
+>Como em todas as listas do &skrooge;, poderá <link linkend="tables"
+>configurar por completo a aparência das tabelas</link
+>.</para>
+	
+      </sect2>
+      
+      <sect2 id="standard_operation">
+	<title
+>Criar uma operação</title>
+	<para
+>Para criar uma operação normal, poderá usar o botão <guibutton
+>Limpar</guibutton
+> para limpar todos os campos e iniciar uma operação nova do zero. Poderá então preencher os seus atributos (manualmente ou com a <link linkend="fast_edition"
+>edição rápida</link
+>), e carregue em <guibutton
+>Adicionar</guibutton
+>.</para>
+	<para
+>Poderá também seleccionar uma operação semelhante nas operações existentes, modificar o que tiver a alterar e depois carregar em <guibutton
+>Adicionar</guibutton
+>.</para>
+      </sect2>
+      
+      
+      <sect2 id="split_operation">
+	<title
+>Operação Dividida</title>
+	<para
+>Uma operação dividida é uma operação que tem diversas datas, categorias, comentários ou seguimentos. Irá mudar para o modo de edição de operações divididas com o <guibutton
+>Botão de Dividido</guibutton
+>, no fundo da janela do &skrooge;. Ao mudar para o modo de edição das operações divididas, os campos Categoria, Comentário e Seguimento são substituídos por uma tabela.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="split_operation.png" format="PNG"/></imageobject>
+	    <textobject
+><phrase
+>O painel de edição da operação dividida.</phrase
+></textobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Para editar uma célula nesta tabela, faça duplo-click sobre ela.</para>
+	
+	<para
+>Poderá adicionar tantas linhas nesta tabela quantas desejar. Ao modificar a quantidade numa linha, o &skrooge; irá calcular a diferença face à quantidade global, apresentando a quantidade restante na última linha da tabela. Se alterar a quantidade na última linha, será adicionada uma nova linha com a quantidade restante.</para>
+	
+	<para
+>Os campos aqui têm o mesmo comportamento que no modo de edição normal da operação:</para>
+	
+	<itemizedlist>
+	  <listitem
+><para
+>A divisão por Datas é útil, por exemplo, quando tiver pago o seu treino desportivo durante 3 meses. Nesse caso, poderá dividir o pagamento por 3 meses, dado que terá algum impacto nos relatórios.</para
+></listitem>
+	  <listitem
+><para
+>A Categoria é uma lista com as categorias existentes. Poderá adicionar uma nova estrutura de categorias, pelo que o &skrooge; criá-la-á quando criar a operação.</para
+></listitem>
+	  <listitem
+><para
+>A Quantidade <link linkend="quantity_field"
+>actua como uma calculadora</link
+>.</para
+></listitem>
+	  <listitem
+><para
+>O Seguimento é uma lista com os módulos de seguimento existentes. Poderá adicionar um novo módulo de seguimento, para que o &skrooge; o crie quando criar a operação.</para
+></listitem>
+	</itemizedlist>
+      </sect2>
+      
+      <sect2 id="transfer">
+	<title
+>Transferência</title>
+	<para
+>Uma operação de transferência é de facto uma operação dupla: ao criar uma transferência, o &skrooge; irá criar duas operações de quantias opostas (uma positiva e outra negativa) em duas contas diferentes. Os atributos a indicar aqui são ligeiramente diferentes de uma operação normal:</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="transfer_operation.png" format="PNG"/></imageobject>
+	    <textobject
+><phrase
+>O painel de edição da operação de transferência.</phrase
+></textobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Irá encontrar uma lista "Para a Conta", onde poderá seleccionar a conta que irá receber o dinheiro.</para>
+	
+	<para
+>Dado que uma transferência significa "Retirar algum dinheiro da conta A e pôr na conta B", se colocar um sinal no campo da quantia (+ ou -), este será ignorado. A operação na conta A será sempre negativa, enquanto na B será positiva.</para>
+      </sect2>
+      
+      <sect2 id="shares">
+	<title
+>Partilhas</title>
+	<para
+>Primeiro que tudo terá de criar algumas unidades com as acções que deseja seguir; a partir da configuração, poderá optar por actualizar os dados automaticamente quando abrir o ficheiro. Também se recomenda que crie uma conta diferente (&eg; "ETF") para manter os investimentos em separado e ser capaz de os ver a partir do quadro principal. </para>
+<para
+>Poderá agora adicionar as suas operações como "acções": <screenshot
+> <mediaobject>
+	    <imageobject
+><imagedata fileref="shares.png" format="PNG"/></imageobject>
+	    <textobject
+><phrase
+>O painel de edição de acções.</phrase
+></textobject>
+	  </mediaobject>
+	</screenshot>
+	<itemizedlist>
+	  <listitem
+><para
+>O montante é o número de acções que comprou (valor positivo) ou vendeu (valor negativo)</para
+></listitem>
+	  <listitem
+><para
+>O símbolo é a unidade anterior que criou</para
+></listitem>
+	  <listitem
+><para
+>A quantidade de acções é o preço total que pagou pelas acções / o montante que recebeu da venda, excluindo as comissões e taxas</para
+></listitem>
+	  <listitem
+><para
+>As comissões são o montante que pagou ao seu banco por essa transacção</para
+></listitem>
+	  <listitem
+><para
+>A taxa é qualquer montante que tenha pago (normalmente quando existem ganhos)</para
+></listitem
+> 
+	</itemizedlist
+>	  
+	 </para>
+      </sect2>
+      
+      <sect2 id="schedule_operation">
+	<title
+>Agendar as Operações</title>
+	
+	<para
+>Se se souber que uma operação é repetida a título regular, poderá fazer com que o &skrooge; a introduza automaticamente na lista de operações. Isto poderá ser feito ao agendar uma operação, usando o <guibutton
+>botão Agendar <inlinemediaobject
+><imageobject
+><imagedata fileref="schedule_operation.png"/></imageobject
+></inlinemediaobject
+></guibutton
+>.</para>
+	
+	<para
+>Os parâmetros de calendarização por omissão são:</para>
+	<itemizedlist>
+	  <listitem
+><para
+>Repetir todos os meses</para
+></listitem>
+	  <listitem
+><para
+>Lembrar-me 5 dias antes do fim</para
+></listitem>
+	  <listitem
+><para
+>Escrever automaticamente no fim</para
+></listitem>
+	</itemizedlist>
+	
+	<para
+>Poderá alterar os parâmetros por omissão na configuração do &skrooge;.</para>
+	<para
+>Poderá também mudar os parâmetros de cada operação agendada no <link linkend="scheduled"
+>'plugin' Agendada</link
+>.</para>
+	<para
+>O &skrooge; usa os valores do último item da operação agendada para escrever a seguinte. Se, por exemplo, aumentar a quantia da sua contribuição mensal para o esforço do &kde; de 100€ para 200€, as operações seguintes criadas pelo &skrooge; irão ter um montante de 200€.</para>
+	
+      </sect2>
+      
+      <sect2 id="fast_edition">
+	<title
+>Edição Rápida</title>
+	
+	<para
+>Seja qual for o modo de edição escolhido, existe uma função útil chamada Edição Rápida que poderá acelerar o trabalho de criar operações novas. Irá preencher os atributos da operação com base nas operações introduzidas anteriormente. Indique um valor em qualquer campo do editor e carregue em <keycap
+>F10</keycap
+> ou carregue no <guibutton
+>ícone de Edição Rápida <inlinemediaobject
+><imageobject
+><imagedata fileref="fast_edition.png" format="PNG"/></imageobject
+></inlinemediaobject
+></guibutton
+> (sem deixar o campo seleccionado).</para>
+	
+	<para
+>O &skrooge; irá procurar pela primeira (&ie;, a mais recente) operação que tiver o mesmo valor no mesmo campo, preenchendo todos os outros campos com os valores dessa operação. Invoque a Edição Rápida de novo, para procurar pela operação seguinte, e assim por diante.</para>
+	
+	<warning>
+	  <para
+>A Edição Rápida não fará efeito na data, dado que é pouco provável que vá criar a mesma operação exacta, incluindo com a mesma data...</para>
+	  <para
+>Se modificou um campo antes de invocar a Edição Rápida, o seu conteúdo não será afectado. Isso será materializado através de uma cor de fundo diferente no campo, para que saiba que está "congelado".</para>
+	</warning>
+	
+	<para
+>O que se passa de diferente das funções semelhantes das outras aplicações de finanças pessoais:</para>
+	<itemizedlist>
+	  <listitem
+><para
+>É chamada a pedido do utilizador</para
+></listitem>
+	  <listitem
+><para
+>Repete o ciclo de todas as operações passadas, com o mesmo valor do campo</para
+></listitem>
+	</itemizedlist>
+	
+	<para
+>E até funciona em operações divididas !</para>
+      </sect2>
+      
+      <sect2 id="reconciliation">
+	<title
+>Reconciliação</title>
+	<para
+>A reconciliação é o processo pelo qual irá garantir que todas as operações são alinhadas com a posição da sua conta, do ponto de vista do banco. Irá envolvê-lo, a posição da sua conta e uma caneta. A reconciliação ou consolidação só poderá ocorrer num dado ponto do tempo, para uma dada conta.</para>
+	<para
+>Na área de operações, seleccione a conta que deseja consolidar na lista. Mude para o modo de reconciliação, usando o <guibutton
+>botão para Mudar de Informação <inlinemediaobject
+><imageobject
+><imagedata fileref="switch_information.png" format="PNG"/></imageobject
+></inlinemediaobject
+></guibutton
+>, por baixo da tabela de operações.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject
+><imagedata fileref="reconciliation_information.png" format="PNG"/></imageobject>
+	    <textobject
+><phrase
+>A informação do modo de reconciliação.</phrase
+></textobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Indique a posição da sua conta, tal como está referenciada pelo seu banco no campo dedicado. Agora, poderá prosseguir com a verificação no &skrooge; de todas as operações que aparecem nos registos da conta. De momento, a opção de marcação desta operação irá aparecer acinzentada, até que realmente valide a reconciliação.</para>
+	
+	<para
+>À medida que vai verificando as operações, irá ver o &skrooge; a mostrar na área de informações:</para>
+	<itemizedlist>
+	  <listitem
+><para
+>Delta: a diferença entre a posição da conta introduzida anteriormente e a soma de todas as operações verificadas</para
+></listitem>
+	  <listitem
+><para
+>Despesa: o montante total das despesas</para
+></listitem>
+	  <listitem
+><para
+>Receita: o montante total de receitas</para
+></listitem>
+	</itemizedlist>
+	
+	<para
+>Isto poderá ser útil para localizar as operações que provavelmente se esqueceu de introduzir no &skrooge;. Quando todas as operações relevantes tiverem sido verificadas, o Delta será igual a 0, ficando o <guibutton
+>botão para Validar as operações verificadas <inlinemediaobject
+><imageobject
+><imagedata fileref="validate.png" format="PNG"/></imageobject
+></inlinemediaobject
+></guibutton
+> activo. Carregue neste botão para validar a reconciliação: todas as operações verificadas serão agora validadas.</para>
+	
+	<tip
+><para
+><inlinemediaobject
+><imageobject
+><imagedata fileref="fast_edition.png" format="PNG"/></imageobject
+></inlinemediaobject
+> poderá apontar automaticamente todas as operações importadas para si.</para
+></tip>
+	
+	<para
+>Se a opção <guibutton
+>Esconder as operações verificadas</guibutton
+> estiver seleccionada, todas estas operações ficarão escondidas.</para>
+	
+	<para
+>Se a reconciliação não for possível por uma dada razão, poderá ser criada uma falsa de forma automática para permitir a reconciliação. Os atributos predefinidos da operação falsa poderão ser definidos a partir da configuração. Durante a reconciliação, se a opção apropriada estiver activada, todas as operações criadas são automaticamente apontadas.</para>
+	
+      </sect2>
+      
+      <sect2 id="templates">
+	<title
+>Operações-Modelo</title>
+	<para
+>O &skrooge; permite-lhe criar operações-modelo, &ie; operações que poderão ser reutilizadas sempre que necessitar. Por exemplo, imagine que costuma alugar DVD's para ver em casa. A operação é sempre a mesma :</para>
+	
+	<itemizedlist>
+	  <listitem
+><para
+>Montante: -4,99</para
+></listitem>
+	  <listitem
+><para
+>Modo: Cartão de Crédito</para
+></listitem>
+	  <listitem
+><para
+>Beneficiário: Clube de Vídeo XPTO</para
+></listitem>
+	  <listitem
+><para
+>Categoria: Entretenimento 
+> Vídeo</para
+></listitem>
+	  </itemizedlist>
+	  
+	  <para
+>Contudo, não a poderá tornar uma operação recorrente, porque o aluguer é algo que ocorre quando lhe apetece e não num período regular. A ideia por trás das operações-modelo é que lhe fornece um esqueleto básico que poderá ser rapidamente introduzido na sua lista de operações.</para>
+	  
+	  <para
+>Dado que as operações-modelo são apenas outro tipo de operações, poderá aceder a elas através da página de Operações, usando a opção dedicada no menu <guimenu
+>Mostrar</guimenu
+>:</para>
+	  
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject
+><imagedata fileref="template_button.png" format="PNG"/></imageobject>
+	      <textobject
+><phrase
+>Mudar entre modelos e operações.</phrase
+></textobject>
+	    </mediaobject>
+	  </screenshot>
+	  
+	  <para
+>A criação de um modelo é rigorosamente igual à criação de uma operação, através da definição dos seus atributos. Lembre-se que também poderá criar um modelo a partir de uma operação existente (invocando o menu de contexto sobre uma operação). Nesse caso, o modelo irá ter os mesmos atributos que a operação.</para>
+	  
+	  <para
+>Para usar um modelo e criar uma operação nova a partir dele, faça duplo-click sobre o mesmo. Será criada uma nova operação com os mesmos atributos que o modelo, para a data actual. Poderá então modificar os seus atributos, em caso de necessidade.</para>
+	  
+	  <para
+>Os modelos também poderão ser <link linkend="scheduled"
+>agendados.</link
+></para>
+	  
+	</sect2>
+	
+      </sect1>
+      
+      <sect1 id="payees">
+	<title
+>Beneficiários</title>
+	<para
+>A área de Beneficiários permite-lhe navegar pela lista de beneficiários.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject>
+	      <imagedata fileref="payees.png" format="PNG"/>
+	    </imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Para além do nome dos beneficiários, a tabela também mostra: </para>
+	
+	<variablelist>
+	  <varlistentry>
+	    <term
+>Endereço</term>
+	    <listitem
+><para
+>O endereço deste beneficiário.</para
+></listitem>
+	  </varlistentry
+>	  
+	  <varlistentry>
+	    <term
+>Montante</term>
+	    <listitem
+><para
+>A soma de todas as operações nesse beneficiário.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Número de Operações</term>
+	    <listitem
+><para
+>O número de operações neste beneficiário.</para
+></listitem>
+	  </varlistentry>
+	</variablelist>
+	
+	<para
+>Se fizer duplo-click numa linha desta tabela, irá abrir uma lista com todas as operações neste beneficiário, numa página nova.</para>
+      </sect1>
+      
+      <sect1 id="categories">
+	<title
+>Categorias</title>
+	<para
+>A área de Categorias permite-lhe navegar pela árvore de categorias.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject>
+	      <imagedata fileref="categories.png" format="PNG"/>
+	    </imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Para além do nome das categorias, a tabela também mostra: </para>
+	
+	<variablelist>
+	  <varlistentry>
+	    <term
+>Montante</term>
+	    <listitem
+><para
+>A soma de todas as operações nessa categoria.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Número de Operações</term>
+	    <listitem
+><para
+>O número de operações nesta categoria.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Quantia (Acumulada)</term>
+	    <listitem
+><para
+>A soma de todas as operações nesta categoria e nas filhas (até ao último nível).</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Número de Operações (Acumulado)</term>
+	    <listitem
+><para
+>O número de operações nesta categoria e nas filhas (até ao último nível).</para
+></listitem>
+	  </varlistentry>
+	</variablelist>
+	
+	<para
+>Se fizer duplo-click numa linha desta tabela, irá abrir uma lista com todas as operações nesta categoria, numa página nova.</para>
+	<warning
+><para
+>Ao apagar uma categoria, todas as operações associadas a ela terão a sua categoria apagada, pelo que não irá ter nenhuma categoria afectada</para
+></warning>
+      </sect1>
+      
+      <sect1 id="reports">
+	<title
+>Relatórios</title>
+	<para
+>O &skrooge; permite-lhe criar relatórios altamente personalizados, para uma análise profunda do seu estado financeiro.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject>
+	      <imagedata fileref="reports.png" format="PNG"/>
+	    </imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Um relatório é composto por uma tabela (à esquerda) que contém todos os dados usados para desenhar o gráfico (à direita). A tabela poderá ser filtrada com campo dedicado acima, fazendo com que o gráfico seja actualizado com os dados filtrados.</para>
+	
+	<para
+>Poderá optar por mostrar apenas a tabela, o gráfico ou ambos.</para>
+	
+	<sect2 id="setup_report">
+	  <title
+>Configurar o relatório</title>
+	  
+	  <sect3 id="report_representation">
+	    <title
+>Representação</title>
+	    <variablelist>
+	      <varlistentry>
+		<term
+>Tabela</term>
+		<listitem
+><para
+>Mostra a tabela.</para
+></listitem>
+	      </varlistentry>
+	      <varlistentry>
+		<term
+>Gráfico</term>
+		<listitem
+><para
+>Mostra o gráfico.</para
+></listitem>
+	      </varlistentry>
+	      <varlistentry>
+		<term
+>Texto</term>
+		<listitem
+><para
+>Mostra o relatório de texto, escondendo a tabela e o gráfico.</para
+></listitem>
+	      </varlistentry>
+	    </variablelist>
+	  </sect3>
+	  
+	  <sect3 id="report_data">
+	    <title
+>Dados</title>
+	    <para
+>Aqui onde poderá escolher os dados a apresentar no relatório. Seleccione o que será apresentado nas linhas e nas colunas, assim como o modo de cálculo. Existem dois valores distintos para o modo:</para>
+	    <variablelist>
+	      <varlistentry>
+		<term
+>Soma das operações</term>
+		<listitem>
+		  <para
+>Neste modo, será calculado o montante total das operações de cada mês. Se tiver seleccionado a "categoria" nas linhas e o "mês" nas colunas, isto irá calcular o montante total das operações para cada categoria e para cada mês.</para>
+		</listitem>
+	      </varlistentry>
+	      <varlistentry>
+		<term
+>Soma acumulada de operações</term>
+		<listitem>
+		  <para
+>Se reutilizarmos o nosso exemplo anterior ("categoria" nas linhas, "mês" nas colunas), iremos ter aqui uma soma acumulada, &ie; para cada mês, iremos calcular o montante total de operações até este mês, para cada uma das categorias.</para>
+		  <para
+>Como exemplo útil, este autor usa este modo para desenhar a evolução do saldo das suas contas, definindo as "Contas" para as linhas e o "Mês" para as colunas.</para>
+		</listitem>
+	      </varlistentry>
+	      <varlistentry>
+		<term
+>Base 100</term>
+		<listitem>
+		  <para
+>Como a "Soma das operações" mas na base 100.</para>
+		</listitem>
+	      </varlistentry>
+	      <varlistentry>
+		<term
+>Soma acumulada na base 100</term>
+		<listitem>
+		  <para
+>Como a "Soma acumulada das operações" mas na base 100.</para>
+		</listitem>
+	      </varlistentry>
+	      <varlistentry>
+		<term
+>Percentagem das colunas</term>
+		<listitem>
+		  <para
+>Os valores são expressos como uma percentagem do valor da coluna alta.</para>
+		</listitem>
+	      </varlistentry>
+	      <varlistentry>
+		<term
+>Percentagem absoluta das colunas</term>
+		<listitem>
+		  <para
+>Os valores são expressos como uma percentagem do valor absoluto da coluna alta.</para>
+		</listitem>
+	      </varlistentry>
+	      <varlistentry>
+		<term
+>Percentagem das linhas</term>
+		<listitem>
+		  <para
+>Os valores são expressos como uma percentagem do valor da linha alta.</para>
+		</listitem>
+	      </varlistentry>
+	      <varlistentry>
+		<term
+>Percentagem absoluta das linhas</term>
+		<listitem>
+		  <para
+>Os valores são expressos como uma percentagem do valor absoluto da linha alta.</para>
+		</listitem>
+	      </varlistentry>
+	      <varlistentry>
+		<term
+>Número de operações</term>
+		<listitem>
+		  <para
+>.</para>
+		</listitem>
+	      </varlistentry
+>		      
+	    </variablelist>
+	    
+	    <para
+>Para as linhas e colunas, é possível expandir o nível de dados apresentados com o ícone <guibutton
+>mais</guibutton
+> <inlinemediaobject
+><imageobject
+><imagedata fileref="plus.png"/></imageobject
+></inlinemediaobject
+>, à direita do campo. Use isto para mostrar as sub-categorias no relatório.</para>
+	  </sect3>
+	  
+	  <sect3 id="report_dates">
+	    <title
+>Datas</title>
+	    <para
+>Use isto para indicar o intervalo de datas para o seu relatório. Poderá usar várias formas de indicar o intervalo de datas, o que deverá cobrir o máximo de dados possíveis que necessitar.</para>
+	  </sect3>
+	  
+	  <sect3 id="report_operation_types">
+	    <title
+>Tipos de Operações</title>
+	    <para
+>Seleccione o tipo de operações que deseja incluir no seu relatório. Por exemplo, se quiser desenhar um gráfico que mostra a distribuição das suas despesas por categoria, provavelmente não irá querer incluir as "Receitas" no seu relatório.</para>
+	  </sect3>
+	  
+	  <sect3 id="report_other_filters">
+	    <title
+>Outros filtros</title>
+	    <para
+>Nesta secção, poderá seleccionar outros filtros definidos pela selecção feita noutras páginas. Se quiser um relatório apenas para as categorias "Alimentação" e "Prendas", terá de abrir apenas a página das <link linkend="categories"
+>categorias</link
+>, seleccione as 2 categorias e voltar para o relatório e para activar o filtro correspondente.</para>
+	  </sect3
+>	  
+	  
+	</sect2>
+	
+	<sect2 id="graph_types">
+	  <title
+>Tipos de Gráficos</title>
+	  
+	  <para
+>Assim que tudo estiver configurado de acordo com as suas necessidades, deverá seleccionar a aparência do gráfico com a lista por baixo do gráfico. Para melhor compreender as diferenças entre cada tipo, criemos um relatório que mostra as despesas por categorias (linhas) e por meses (colunas):</para>
+	  
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject>
+		<imagedata fileref="report_table.png"/>
+	      </imageobject>
+	    </mediaobject>
+	  </screenshot>
+	  
+	  <sect3 id="stack">
+	    <title
+>Pilha</title>
+	    <para
+>Uma barra por linha, colunas empilhadas.</para>
+	    
+	    <screenshot>
+	      <mediaobject>
+		<imageobject>
+		  <imagedata fileref="stack.png"/>
+		</imageobject>
+	      </mediaobject>
+	    </screenshot>
+	    
+	    <para
+>A segunda barra (a amarelo) mostra a categoria "Segurança", com todos os meses empilhados.</para>
+	    
+	  </sect3>
+	  
+	  <sect3 id="histogram">
+	    <title
+>Histograma</title>
+	    <para
+>Para todas as colunas, cada linha tem a sua própria barra.</para>
+	    
+	    <screenshot>
+	      <mediaobject>
+		<imageobject>
+		  <imagedata fileref="histogram.png"/>
+		</imageobject>
+	      </mediaobject>
+	    </screenshot>
+	    
+	  </sect3>
+	  
+	  
+	  <sect3 id="line">
+	    <title
+>Linha</title>
+	    <screenshot>
+	      <mediaobject>
+		<imageobject>
+		  <imagedata fileref="line_graph.png"/>
+		</imageobject>
+	      </mediaobject>
+	    </screenshot>
+	  </sect3>
+	  
+	  <sect3 id="point">
+	    <title
+>Ponto</title>
+	    <screenshot>
+	      <mediaobject>
+		<imageobject>
+		  <imagedata fileref="point_report.png"/>
+		</imageobject>
+	      </mediaobject>
+	    </screenshot>
+	  </sect3>
+	  
+	  
+	  <sect3 id="pie">
+	    <title
+>Circular</title>
+	    <para
+>O gráfico circular clássico. Se o valor seleccionado da coluna for diferente de "nada", mostra um gráfico circular por coluna.</para>
+	    
+	    <screenshot>
+	      <mediaobject>
+		<imageobject>
+		  <imagedata fileref="pie.png"/>
+		</imageobject>
+	      </mediaobject>
+	    </screenshot>
+	    
+	    
+	  </sect3>
+	  
+	  <sect3 id="concentric_pie">
+	    <title
+>Circular Concêntrico</title>
+	    <para
+>Este é um pouco mais esquisito, e provavelmente necessita de algum trabalho do nosso lado. A intenção é mostrar um anel por cada nível de dados.</para>
+	    
+	    <screenshot>
+	      <mediaobject>
+		<imageobject>
+		  <imagedata fileref="concentric_pie.png"/>
+		</imageobject>
+	      </mediaobject>
+	    </screenshot>
+	    
+	  </sect3>
+	  
+	</sect2>
+	
+	
+	<sect2 id="zoom_graph">
+	  <title
+>Ampliar no gráfico</title>
+	  <para
+>O &skrooge; torna possível ampliar um gráfico para obter todos os pequenos detalhes. Use a zona de controlo da ampliação por cima do gráfico:</para>
+	  
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject>
+		<imagedata fileref="zoom_graph.png"/>
+	      </imageobject>
+	    </mediaobject>
+	  </screenshot>
+	  
+	  
+	</sect2>
+	
+	<sect2 id="report_examples">
+	  <title
+>Relatórios de Exemplo</title>
+	  <para
+>Aqui estão algumas imagens que mostram algumas configurações clássicas de relatórios. Podê-las-á usar como referência para os seus próprios relatórios.</para>
+	  
+	  <sect3 id="income_expense">
+	    <title
+>Receitas e Despesas</title>
+	    <para
+>Para cada mês, compara o montante total das receitas face ao montante total das despesas. As receitas aparecem a azul, enquanto as despesas aparecem a amarelo.</para>
+	    <screenshot>
+	      <mediaobject>
+		<imageobject>
+		  <imagedata fileref="incomes_expenses.png"/>
+		</imageobject>
+	      </mediaobject>
+	    </screenshot>
+	  </sect3>
+	  
+	  <sect3 id="balance_evolution">
+	    <title
+>Evolução do Saldo</title>
+	    <para
+>Mostrar a evolução do saldo final, a um ritmo mensal.</para>
+	    <screenshot>
+	      <mediaobject>
+		<imageobject>
+		  <imagedata fileref="balance_evolution.png"/>
+		</imageobject>
+	      </mediaobject>
+	    </screenshot>
+	  </sect3>
+	  
+	  <sect3 id="category_distribution">
+	    <title
+>Receitas e Despesas</title>
+	    <para
+>Mostra a distribuição das despesas por categoria, para o mês anterior.</para>
+	    <screenshot>
+	      <mediaobject>
+		<imageobject>
+		  <imagedata fileref="category_distribution.png"/>
+		</imageobject>
+	      </mediaobject>
+	    </screenshot>
+	  </sect3>
+	  
+	  
+	</sect2>
+	
+	<sect2 id="going_deeper">
+	  <title
+>Aprofundar Mais</title>
+	  <para
+>Se fizer duplo-click num de um gráfico, irá abrir uma lista com todas as operações incluídas neste item.</para>
+	  <para
+>Também poderá abrir um novo relatório com base num item de um gráfico.</para>
+	  <para
+>Com que então, deseja fazer uma análise profunda das suas finanças, graças aos relatórios. Mas qual a profundidade real que pretende ? Bem, ainda será mais profundo do que imaginava... Vejamos com um <link linkend="holidays_expenses_analysis"
+>exemplo prático</link
+>, analisando as despesas deste autor durante as suas férias :)</para>
+	</sect2>
+	
+	
+      </sect1>
+      
+      <sect1 id="monthly_report">
+	<title
+>Relatório Mensal</title>
+	
+	<para
+>Este 'plugin' mostra uma visão geral da sua situação financeira para um dado período.</para>
+	
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject>
+		<imagedata fileref="monthly.png"/>
+	      </imageobject>
+	    </mediaobject>
+	  </screenshot
+>	
+	  
+	  <para
+>Poderá escolher o modelo que deseja. Poderá até criar o seu próprio modelo, introduzindo o nome do modelo que deseja criar. O seu editor de texto por omissão será invocado com uma amostra para o seu modelo. Apenas terá de seguir os comentários deste exemplo.</para>
+	  <para
+>Não hesite em distribuir os seus modelos na categoria <literal
+>Modelos de relatórios do Skrooge</literal
+> no <ulink url="https://store.kde.org/browse/cat/338"
+>store.kde.org</ulink
+>.</para>
+      </sect1>
+      
+      <sect1 id="units">
+	<title
+>Unidades</title>
+	<para
+>Uma unidade é tudo o que conseguir exprimir numa dada operação. Na maior parte dos casos, esta é uma moeda, mas também poderá ser uma acção, um carro ou uma casa. Uma unidade tem diferentes valores ao longo do tempo, sendo o seu valor expresso em função de outra unidade. Exemplo: a acção ACME valia 31,2 dólares em Janeiro 2009.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject>
+	      <imagedata fileref="units.png" format="PNG"/>
+	    </imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<sect2 id="edit_units">
+	  <title
+>Editar as Unidades</title>
+	  <para
+>A edição das unidades poderá ser feita de diferentes formas:</para>
+	  <variablelist>
+	    <varlistentry>
+	      <term
+>Normal</term>
+	      <listitem
+><para
+>Este modo permite-lhe escolher, entre um conjunto de unidades predefinidas, a que deseja adicionar ao documento actual.</para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Manual</term>
+	      <listitem
+><para
+>Este modo permite-lhe criar a sua própria unidade. Os parâmetros a fornecer são:</para>
+		<itemizedlist>
+		  <listitem
+><para
+>Nome: o nome extenso da unidade.</para
+></listitem>
+		  <listitem
+><para
+>Símbolo: o símbolo da unidade, apresentado na maioria das tabelas e listas.</para
+></listitem>
+		  <listitem
+><para
+>Tipo: veja os <link linkend="unit_types"
+>Tipos de Unidades</link
+>.</para
+></listitem>
+		  <listitem
+><para
+>Unidade de Referência: a (outra) unidade que é usada para calcular o valor da unidade (actual). Por exemplo, se tiver acções da EADS, e quiser ver o seu valor em euros, deverá seleccionar o euro (€) como unidade de referência da unidade EADS.</para
+></listitem>
+		  <listitem
+><para
+>País</para
+></listitem>
+		  <listitem
+><para
+>Fonte da transferência: A fonte de onde transferir as cotações. A recomendada é o "Yahoo".</para
+></listitem>
+		  <listitem
+><para
+>Código da Internet: O código de Internet para esta unidade. Se indicar este código, o &skrooge; poderá transferir os valores da unidade a partir da fonte seleccionada.</para
+></listitem>
+		</itemizedlist>
+	      </listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Valores</term>
+	      <listitem
+><para
+>Este modo de edição permite transferir os valores das unidades a partir da Internet, ou então introduzir manualmente um valor da unidade numa dada data.</para
+></listitem>
+	    </varlistentry>
+	  </variablelist>
+	</sect2>
+	
+	<sect2 id="unit_types">
+	  <title
+>Tipos de Unidades</title>
+	  <para
+>Mesmo que o &skrooge; considere tudo como sendo uma unidade, o mesmo faz uma distinção dependendo do seu tipo:</para>
+	  
+	  <variablelist>
+	    <varlistentry>
+	      <term
+>Moeda Primária</term>
+	      <listitem
+><para
+>Esta é a moeda que será usada para mostrar o montante das operações reais.</para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Moeda Secundária</term>
+	      <listitem
+><para
+>Se estiver definido, o valor na moeda secundária será apresentado ao passar o rato sobre o montante de uma operação.</para>
+		
+		<screenshot>
+		  <mediaobject>
+		    <imageobject>
+		      <imagedata fileref="secondary_unit_display.png"/>
+		    </imageobject>
+		  </mediaobject>
+		</screenshot>
+		
+	      </listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Moeda</term>
+	      <listitem
+><para
+>Qualquer moeda, sem nenhum papel específico na visualização.</para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Partilha</term>
+	      <listitem
+><para
+>Este tipo de unidade poderá ser usado para gerir as acções.</para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Índice</term>
+	      <listitem
+><para
+>Um indicador de câmbio de acções, como o Dow Jones, Nasdaq, CAC40, SBF120, ...</para
+></listitem>
+	    </varlistentry>
+	    <varlistentry>
+	      <term
+>Outro</term>
+	      <listitem
+><para
+>Qualquer unidade que não corresponda aos tipos acima.</para
+></listitem>
+	    </varlistentry
+>    
+	  </variablelist
+>  
+	</sect2>
+	
+      </sect1>
+    </chapter>
+    
+    <chapter id="using-skrooge-advanced">
+      <title
+>Usar o &skrooge; (avançado)</title
+>     
+      
+      <sect1 id="scheduled">
+	<title
+>Agendada</title>
+	<para
+>Este 'plugin' mostra-lhe a lista de todas as operações agendadas.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject>
+	      <imagedata fileref="scheduled.png" format="PNG"/>
+	    </imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Aqui é onde poderá configurar cada uma das operações agendadas, de modo a ter os seus próprios parâmetros.</para>
+	
+	<variablelist>
+	  <varlistentry>
+	    <term
+>Ocorrência Seguinte</term>
+	    <listitem
+><para
+>Mostrado a título de informação, mas também poderá ser usado para forçar a data da próxima ocorrência.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Uma vez a cada</term>
+	    <listitem
+><para
+>Poderá indicar a uma operação para se repetir com um dado período em dias, meses ou anos.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Número de Ocorrências</term>
+	    <listitem
+><para
+>Se a ocorrência acontecer em número limitado, poderá assinalar esta opção e definir o número de ocorrências restantes ou a data da última ocorrência.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Recordar-me</term>
+	    <listitem
+><para
+>Se quiser que o &skrooge; mostre uma notificação para o recordar da próxima operação agendada, poderá assinalar esta opção e definir o número de dias antes do prazo em que deverá ocorrer o aviso.</para
+></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term
+>Escrever Automaticamente</term>
+	    <listitem
+><para
+>Se quiser que o &skrooge; escreva automaticamente a próxima operação agendada, poderá assinalar esta opção e definir o número de dias antes do prazo em que a mesma será registada.</para
+></listitem>
+	  </varlistentry>
+	</variablelist>
+	<para
+>Para modificar a operação (categoria, montante, ...), terá de carregar em <guilabel
+>Saltar para a operação</guilabel
+>.</para>
+	
+	
+	<para
+>Se fizer duplo-click sobre uma operação agendada, irá mostrar a lista de operações já registadas para esta operação agendada numa página nova.</para>
+	
+	<sect2 id="scheduled_operations">
+	  <title
+>Operações Agendadas</title>
+	  
+	  <para
+>Se agendar uma operação, será usada como referẽncia ao inserir a ocorrência seguinte. Vejamos um exemplo com a seguinte operação:</para>
+	  
+	  <table>
+	    <title
+>Operações Agendadas (passo 1)</title>
+	    <tgroup cols="4">
+	      <thead>
+		<row>
+		  <entry
+>Data</entry>
+		  <entry
+>Beneficiário</entry>
+		  <entry
+>Categoria</entry>
+		  <entry
+>Conta</entry>
+		</row>
+	      </thead>
+	      <tbody>
+		<row>
+		  <entry
+>20/06/2009</entry>
+		  <entry
+>&kde;</entry>
+		  <entry
+>Doações &gt; Open Source</entry>
+		  <entry
+>20€</entry>
+		</row>
+	      </tbody>
+	    </tgroup>
+	  </table>
+	  
+	  <para
+>Agora, se agendar esta operação, será gerada exactamente como está na ocorrência seguinte:</para>
+	  
+	  <table>
+	    <title
+>Operações Agendadas (passo 2)</title>
+	    <tgroup cols="4">
+	      <thead>
+		<row>
+		  <entry
+>Data</entry>
+		  <entry
+>Beneficiário</entry>
+		  <entry
+>Categoria</entry>
+		  <entry
+>Conta</entry>
+		</row>
+	      </thead>
+	      <tbody>
+		<row>
+		  <entry
+>20/06/2009</entry>
+		  <entry
+>&kde;</entry>
+		  <entry
+>Doações &gt; Open Source</entry>
+		  <entry
+>20€</entry>
+		</row>
+		<row>
+		  <entry
+>20/07/2009</entry>
+		  <entry
+>&kde;</entry>
+		  <entry
+>Doações &gt; Open Source</entry>
+		  <entry
+>20€</entry>
+		</row>
+	      </tbody>
+	    </tgroup>
+	  </table>
+	  
+	  <para
+>Se mudar algo na última ocorrência, tornar-se-á a referência nova para a ocorrência seguinte. Por exemplo, se aumentar a sua contribuição mensal para o &kde; como 25€ em Julho, a próxima ocorrência será também com um montante de 25€:</para>
+	  
+	  <table>
+	    <title
+>Operações Agendadas (passo 3)</title>
+	    <tgroup cols="4">
+	      <thead>
+		<row>
+		  <entry
+>Data</entry>
+		  <entry
+>Beneficiário</entry>
+		  <entry
+>Categoria</entry>
+		  <entry
+>Conta</entry>
+		</row>
+	      </thead>
+	      <tbody>
+		<row>
+		  <entry
+>20/06/2009</entry>
+		  <entry
+>&kde;</entry>
+		  <entry
+>Doações &gt; Open Source</entry>
+		  <entry
+>20€</entry>
+		</row>
+		<row>
+		  <entry
+>20/07/2009</entry>
+		  <entry
+>&kde;</entry>
+		  <entry
+>Doações &gt; Open Source</entry>
+		  <entry
+>25€</entry>
+		</row>
+		<row>
+		  <entry
+>20/08/2009</entry>
+		  <entry
+>&kde;</entry>
+		  <entry
+>Doações &gt; Open Source</entry>
+		  <entry
+>25€</entry>
+		</row>
+	      </tbody>
+	    </tgroup>
+	  </table>
+	  
+	  <para
+>Em resumo, uma operação agendada é um objecto dinâmico, onde a última ocorrência é a referência. Contudo, poderá querer que todas as ocorrências sejam estáticas, &ie; serão os mesmos valores sempre inseridos para cada ocorrência nova ? Entre nos <link linkend="scheduled_templates"
+>Modelos Agendados</link
+>.</para>
+	  
+	</sect2>
+	
+	
+	<sect2 id="scheduled_templates">
+	  <title
+>Modelos Agendados</title>
+	  
+	  <para
+>Os <link linkend="templates"
+>modelos</link
+> são uma espécie de operações de referência. Ao agendar um modelo, todas as ocorrências novas serão exactamente iguais ao modelo. Será utilizado o exemplo do <link linkend="schedule_operation"
+>capítulo anterior</link
+>, criando um modelo como o seguinte:</para>
+	  
+	  <table>
+	    <title
+>Modelos Agendados (passo 1)</title>
+	    <tgroup cols="4">
+	      <thead>
+		<row>
+		  <entry
+>Data</entry>
+		  <entry
+>Beneficiário</entry>
+		  <entry
+>Categoria</entry>
+		  <entry
+>Conta</entry>
+		</row>
+	      </thead>
+	      <tbody>
+		<row>
+		  <entry
+>20/06/2009</entry>
+		  <entry
+>&kde;</entry>
+		  <entry
+>Doações &gt; Open Source</entry>
+		  <entry
+>20€</entry>
+		</row>
+	      </tbody>
+	    </tgroup>
+	  </table>
+	  
+	  <para
+>A ocorrência seguinte será:</para>
+	  
+	  
+	  <table>
+	    <title
+>Modelos Agendados (passo 2)</title>
+	    <tgroup cols="4">
+	      <thead>
+		<row>
+		  <entry
+>Data</entry>
+		  <entry
+>Beneficiário</entry>
+		  <entry
+>Categoria</entry>
+		  <entry
+>Conta</entry>
+		</row>
+	      </thead>
+	      <tbody>
+		<row>
+		  <entry
+>20/06/2009</entry>
+		  <entry
+>&kde;</entry>
+		  <entry
+>Doações &gt; Open Source</entry>
+		  <entry
+>20€</entry>
+		</row>
+		<row>
+		  <entry
+>20/07/2009</entry>
+		  <entry
+>&kde;</entry>
+		  <entry
+>Doações &gt; Open Source</entry>
+		  <entry
+>20€</entry>
+		</row>
+	      </tbody>
+	    </tgroup>
+	  </table>
+	  
+	  <para
+>Agora altere a sua contribuição de Julho do &kde; para 25€. Dado que agendou um modelo com uma quantia de 20€, a ocorrência seguinte terá também um montante igual a 20€:</para>
+	  
+	  <table>
+	    <title
+>Modelos Agendados (passo 3)</title>
+	    <tgroup cols="4">
+	      <thead>
+		<row>
+		  <entry
+>Data</entry>
+		  <entry
+>Beneficiário</entry>
+		  <entry
+>Categoria</entry>
+		  <entry
+>Conta</entry>
+		</row>
+	      </thead>
+	      <tbody>
+		<row>
+		  <entry
+>20/06/2009</entry>
+		  <entry
+>&kde;</entry>
+		  <entry
+>Doações &gt; Open Source</entry>
+		  <entry
+>20€</entry>
+		</row>
+		<row>
+		  <entry
+>20/07/2009</entry>
+		  <entry
+>&kde;</entry>
+		  <entry
+>Doações &gt; Open Source</entry>
+		  <entry
+>25€</entry>
+		</row>
+		<row>
+		  <entry
+>20/08/2009</entry>
+		  <entry
+>&kde;</entry>
+		  <entry
+>Doações &gt; Open Source</entry>
+		  <entry
+>20€</entry>
+		</row>
+	      </tbody>
+	    </tgroup>
+	  </table>
+	  
+	  <para
+>Se precisar de alterar o valor mensal, basta editar o modelo, para que todas as ocorrências futuras tenham o valor novo.</para>
+	</sect2>
+	
+      </sect1>
+      
+      <sect1 id="trackers">
+	<title
+>Localizadores</title>
+	<para
+>Os seguimentos permitem-lhe agregar algumas operações em conjunto num grupo, de modo que as possa encontrar mais de perto. Isto poderá ser útil para seguir as despesas nas quais espera um retorno, ou simplesmente saber quanto é que gastou nas suas férias das Bahamas.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject>
+	      <imagedata fileref="trackers.png" format="PNG"/>
+	    </imageobject>
+	  </mediaobject>
+	</screenshot>
+	
+	<para
+>Por exemplo, imagine que foi enviado para Itália pela sua empresa. Uma vez lá, você pagou o seu quarto de hotel: no &skrooge;, poderá criar uma operação na categoria "Negócios &gt; Viagens &gt; Hotel" e atribuir um seguimento chamado "Viagem de Negócios em Itália". Poderá atribuir este seguimento a todas as despesas profissionais que fizer lá. Aí, se tudo correr bem, a sua companhia pagar-lhe-á de volta por todos estes itens, podendo criar uma operação de receita e afectando-a também ao seguimento "Viagem de Negócios em Itália".</para>
+	<para
+>Ao afectar os seguimentos às operações que deverão ser reembolsados, você poderá seguir a finalização do reembolso.</para>
+	<para
+>Isto, obviamente, também funciona no outro sentido: se alguém lhe emprestar algum dinheiro, poderá monitorizar quanto ainda terá de reembolsar.</para>
+	<para
+>Se fizer duplo-click num seguimento, na área respectiva, irá abrir uma página nova com todas as operações associadas a este seguimento.</para>
+	
+	<tip
+><para
+>Em alguns casos, gostaria de seguir o reembolso de um pagamento feito, antes de começar a usar o &skrooge;. Como fazê-lo, dado que não é possível definir um montante inicial num seguimento?</para>
+
+	<para
+>Poderá criar uma operação dividida com: <itemizedlist>
+	      <listitem
+><para
+>montante=0 para evitar algum impacto nos relatórios.</para
+></listitem>
+	      <listitem
+><para
+>uma parcela com o montante esperado associada ao seguimento.</para
+></listitem>
+	      <listitem
+><para
+>a outra parcela com o montante oposto, não associada a nenhum seguimento.</para
+></listitem>
+	    </itemizedlist
+>	  
+	</para
+></tip>
+	
+	<sect2 id="close_tracker">
+	  <title
+>Fechar o Seguimento</title>
+	  
+	  <para
+>Quando não necessitar mais do seguimento - por exemplo, porque já foi reembolsado por completo -, podê-lo-á apagar simplesmente. Se o fizer, contudo, irá perder toda a informação introduzida por si, o que poderá ser interessante para referência futura.</para>
+	  <para
+>Uma solução mais limpa é fechar o seguimento: quando este é fechado, poderá ser facilmente escondido na área de seguimentos, usando a opção dedicada.</para>
+	</sect2>
+	
+      </sect1>
+      
+      <sect1 id="search_and_process">
+	<title
+>Pesquisa &amp; Processamento</title>
+	
+	<para
+>Este 'plugin' permite-lhe criar consultas complexas para descobrir as operações, aplicando a nível opcional algumas transformações. Aqui está um caso de uso:</para>
+	
+	<blockquote
+><para
+>O João obtém alguns dados do seu banco. Esses dados vêm, obviamente, sem qualquer indicação da categoria. De facto, tudo é escrito no campo do comentário. O João gostaria de algum método automático para definir correctamente a categoria e outros atributos, baseando-se para tal no conteúdo do comentário.</para
+></blockquote>
+
+	<para
+>Sendo assim, como é que isto funciona? Primeiro, tem de definir um critério de pesquisa, o qual lhe dará uma lista de operações. Depois, defina as transformações a aplicar a essas operações.</para>
+	
+	<note
+><para
+>Poderá encontrar um <link linkend="search_process_real_case"
+>caso de estudo real</link
+> no apêndice, dando algumas dicas de exercício sobre o caso de uso descrito acima.</para
+></note>
+	
+	<sect2 id="define_search_criteria">
+	  <title
+>Definir os critérios de pesquisa</title>
+	  
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject>
+		<imagedata fileref="define_search.png" format="PNG"/>
+	      </imageobject>
+	    </mediaobject>
+	  </screenshot>
+	  
+	  <para
+>Aqui poderá definir a consulta para procurar as operações, usando uma combinação de parâmetros. Na imagem acima, poderá encontrar uma tabela com os atributos da operação para o cabeçalho. Ao editar uma linha, poderá criar mais um critério para a pesquisa. Cada coluna é combinada com as outras colunas, usando um "e" lógico :</para>
+	  <para
+>(coluna1 e coluna2)</para>
+	  <para
+>Se adicionar ma linha nova, irá criar outro critério, combinado com o primeiro, através de um "ou" lógico:</para>
+	  <para
+>[linha1] ou [linha2].</para>
+	  
+	  <para
+>Em resumo, a combinação das colunas e linhas poderá ser lida como:</para>
+	  <para
+>(coluna1 e coluna3) ou (coluna2 e coluna3)</para>
+	  
+	  <para
+>Obviamente, poderá ter tantas linhas e colunas quantas necessitar numa consulta de pesquisa.</para>
+	  
+	  <para
+>Assim que estiver satisfeito com a definição de uma pesquisa, podê-la-á adicionar à lista de critérios de pesquisa existentes ou modificar uma existente.</para>
+	  
+	</sect2>
+	
+	
+	<sect2 id="view_search_result">
+	  <title
+>Ver os resultados da pesquisa</title>
+	  
+	  <para
+>Ao seleccionar uma consulta de pesquisa na área de consultas, é apresentado o número de operações encontradas por baixo da tabela:</para>
+	  
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject>
+		<imagedata fileref="preview_search_result.png" format="PNG"/>
+	      </imageobject>
+	    </mediaobject>
+	  </screenshot>
+	  
+	  
+	  <para
+>Se fizer duplo-click numa linha desta tabela, irá abrir uma lista com todas as operações nesta categoria, numa página nova:</para>
+	  
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject>
+		<imagedata fileref="search_result.png" format="PNG"/>
+	      </imageobject>
+	    </mediaobject>
+	  </screenshot>
+	  
+	</sect2>
+	
+	
+	<sect2 id="define_processing">
+	  <title
+>Definir o Processamento</title>
+	  
+	  <para
+>Se necessitar de aplicar algum processamento sobre todas as operações encontradas, seleccione a consulta em questão e active o painel de definição do processamento:</para>
+	  
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject>
+		<imagedata fileref="define_processing.png" format="PNG"/>
+	      </imageobject>
+	    </mediaobject>
+	  </screenshot>
+	  
+	  <para
+>Neste painel, poderá definir as transformações a efectuar sobre as operações. Lembre-se que é impossível, a título intencional, definir o montante ou a data de uma operação neste painel.</para>
+	  
+	</sect2>
+	
+	
+	<sect2 id="define_alarm">
+	  <title
+>Definir o Alarme</title>
+	  <para
+>Um tipo de utilização especial do 'plugin' de Pesquisa &amp; Processamento é a capacidade de definir alarmes. Um alarme é basicamente o &skrooge; a chamar-lhe a atenção para algum tipo de evento, como o atingir do limite do seu orçamento mensal para uma dada categoria.</para>
+	  
+	  <screenshot>
+	    <mediaobject>
+	      <imageobject>
+		<imagedata fileref="alarm.png" format="PNG"/>
+	      </imageobject>
+	    </mediaobject>
+	  </screenshot>
+	  
+	  <para
+>Para definir um alarme, indique primeiro o critério de pesquisa, usando como base o conjunto de operações para as quais necessita de algum alerta. Por exemplo, todas as operações no mês actual e na categoria "Roupas". Depois, defina o montante para o qual o alerta deverá ser despoletado, por como exemplo 100€, e defina a mensagem de alarme que o &skrooge; irá enviar para si, ao atingir esse montante.</para>
+	    <tip
+><para
+>As mensagens de alarme poderão ter parâmetros para o montante total (%1), o montante do alarme (%2) e a diferença (%3).</para
+></tip>
+	  
+	</sect2>
+	
+      </sect1>
+      
+      <sect1 id="budgets">
+	<title
+>Orçamentos</title>
+	<para
+>Este 'plugin' permite-lhe definir e gerir o seu orçamento.</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject>
+	      <imagedata fileref="budgets.png" format="PNG"/>
+	    </imageobject>
+	  </mediaobject>
+	</screenshot>
+	<para
+>Como em todas as aplicações financeiras, o &skrooge; permite-lhe definir um orçamento. Podê-lo-á fazer de forma manual ou automática.</para>
+	<sect2 id="budget_definition">
+	  <title
+>Definição do orçamento</title
+>	
+	  <para
+>No modo manual, poderá: <itemizedlist>
+	      <listitem
+><para
+>Definir um montante orçamentado para uma categoria durante um ano.</para
+></listitem>
+	      <listitem
+><para
+>Definir um montante orçamentado para uma categoria durante todos os meses de um ano.</para
+></listitem>
+	      <listitem
+><para
+>Definir um montante orçamentado para uma categoria durante um mês específico de um ano.</para
+></listitem>
+	      <listitem
+><para
+>Definir se a receita ou despesa das sub-categorias deverá ser tida em conta para o orçamento definido (exemplo: se a opção estiver seleccionada, então um orçamento para a categoria "Carro" irá ter em conta a categoria "Carro 
+> Combustível").</para
+></listitem>
+	    </itemizedlist>
+	    <tip
+><para
+>Poderá definir um orçamento que captura todas as receitas ou despesas que não estão definidas noutro orçamento, deixando a categoria em branco. Isto é realmente útil para garantir que não perde nenhuma despesa.</para
+></tip>
+	    </para>
+	    
+	  <para
+>No modo automático, poderá: <itemizedlist>
+	      <listitem
+><para
+>Definir um orçamento para um ano, com base nas operações do ano anterior.</para
+></listitem>
+	      <listitem
+><para
+>Definir os itens de orçamento em falta para balancear em cada mês e/ou ano - mesmo nos orçamentos definidos manualmente.</para
+></listitem>
+	    </itemizedlist>
+	    </para>
+	</sect2>
+	
+	<sect2 id="budget_rules">
+	  <title
+>Regras de orçamento</title>
+	  <para
+>Para ir mais além nos orçamentos, iremos ter como exemplo o seguinte orçamento consolidado: <itemizedlist>
+	      <listitem
+><para
+>-500 € / mês para "Alimentação".</para
+></listitem>
+	      <listitem
+><para
+>+500 € / mês para todas as outras categorias de despesas e receitas.</para
+></listitem>
+	    </itemizedlist>
+	    </para>
+	    
+	    <para
+>Imagine agora que gastou 600 € em "Alimentação" no mês anterior! O &skrooge; informou-o que está acima do orçamento definido, mas você não pode deixar de comer. Como tal, gastou mais que o esperado! O que fazer com isso?</para>
+	    <para
+>As regras do orçamento permitir-lhe-ão definir o que deseja fazer com o delta (positivo ou negativo). Por exemplo, poderá optar por transferir a diferença de um mês para o seguinte. Neste caso, o seu novo orçamento para "Alimentação" do mês actual é -400 € (-500+100). Assim, terá de ter cuidado em recuperar a situação.</para
+>	  
+	    <para
+>As regras de orçamento também o poderão ajudar no seu projecto. Por exemplo: poderá definir uma regra como a seguinte: Todos os diferenciais positivos (poupanças) em "Alimentação" são transferidos para as "Férias". Assim, quando tiver o montante esperado no orçamento de "Férias", já saberá que poderá ir.</para
+>	    
+	</sect2>
+      </sect1>
+      
+      <sect1 id="simulations">
+	<title
+>Simulações</title>
+	<para
+>Este 'plugin' permite-lhe efectuar simulações</para>
+	
+	<screenshot>
+	  <mediaobject>
+	    <imageobject>
+	      <imagedata fileref="simulations.png" format="PNG"/>
+	    </imageobject>
+	  </mediaobject>
+	</screenshot>
+	<para
+>Poderá definir, para cada conta, as taxas e estimar o juro anual. Também poderá gerar uma tabela de amortizações.</para>
+      </sect1>
+      
+    </chapter>
+    
+    <chapter id="howto">
+      <title
+>Como...</title>
+	<qandaset id="faqlist">
+	<qandaentry>
+	<question id="howto_language">
+	<para
+>Como obter o &skrooge; na minha língua?</para>
+	</question>
+	<answer>
+	<para
+>Primeiro, verifique se o &skrooge; está devidamente <ulink url="http://l10n.kde.org/stats/gui/trunk-kf5/po/skrooge.po/"
+>traduzido para a sua língua</ulink
+>.</para>
+	</answer>
+	</qandaentry>
+
+	<qandaentry>
+	<question id="howto_currency">
+	<para
+>Como definir o formato monetário e de datas por omissão?</para>
+	</question>
+	<answer>
+	<para
+>Os formatos monetários e de datas por omissão são obtidos a partir do &systemsettings; do &plasma;. Algumas distribuições não as trazem com os pacotes de base do &kde;, dado que isso deveria ser instalado com o &skrooge;. Nesse caso, terá de os instalar com o gestor de pacotes da sua distribuição.</para>
+
+	<para
+>Podê-lo-á então iniciar numa consola: <userinput
+>systemsettings5</userinput
+></para>
+
+	<para
+>E seleccionar a sua definição preferida, na secção <guilabel
+>Formato</guilabel
+>.</para>
+	</answer>
+	</qandaentry>
+
+	<qandaentry>
+	<question id="howto_size">
+	<para
+>Como reduzir o tamanho do meu documento?</para>
+	</question>
+	<answer>
+	<para
+>O tamanho do seu documento pode ser bastante importante. Se apagar algumas transacções antigas, o tamanho irá aumentar. Isto acontece normalmente porque o &skrooge; mantém o histórico de todas as modificações para o mecanismo desfazer/refazer. Por isso, se quiser reduzir o tamanho do seu documento, apenas terá de limpar o histórico.</para>
+	</answer>
+	</qandaentry>
+
+	<qandaentry>
+	<question id="howto_extractor">
+	<para
+>Como definir um novo extractor de facturas?</para>
+	</question>
+	<answer>
+	<para
+>O &skrooge; usa o 'pdftotext' para extrair todos os textos de um PDF. Depois disso, usa um ficheiro de texto que descreve como encontrar os valores-chave. Se quiser definir um novo extractor de facturas, terá de fazer o seguinte:</para>
+	<itemizedlist>
+	<listitem
+><para
+>Invoque o <command
+>pdftotext</command
+> sobre o seu ficheiro PDF</para
+></listitem>
+	<listitem
+><para
+>Abra o ficheiro de texto gerado e o ficheiro PDF correspondente</para
+></listitem>
+	<listitem
+><para
+>Crie um novo texto com uma extensão <filename class="extension"
+>.extractor</filename
+>. Por exemplo: <filename
+>google.extractor</filename
+></para
+></listitem>
+	<listitem
+><para
+>O seu ficheiro deverá ficar parecido com o seguinte:</para>
+	<programlisting
+>payee=REGEXPCAP:^(Biofan) SPRL$
+        date=REGEXPCAP:^Order Date: (.*)$
+        dateformat=dd MMM yyyy
+        number=REGEXPCAP:^N° de facture (.*)$
+        mode=SET:Carte
+        comment=REGEXPCAP:^N° de commande (.*)$|SET:Commande %1
+        amount=REGEXP:^Montant global:$|LINEOFFSET:2
+        </programlisting>
+	<para
+>Cada atributo ('payee', 'date', 'number', 'mode', 'comment' e 'amount') usam a mesma sintaxe: COMANDO:valor|COMANDO:valor|...</para>
+	<para
+>O comando poderá ser:</para>
+	<itemizedlist>
+	<listitem
+><para
+><command
+>REGEXPCAP</command
+>: Esta é uma expressão regular que captura um valor</para
+></listitem>
+	<listitem
+><para
+><command
+>REGEXP</command
+>: Obter a linha no ficheiro que corresponde a uma dada expressão regular</para
+></listitem>
+	<listitem
+><para
+><command
+>LINEOFFSET</command
+>: Mudar o índice da linha.</para
+></listitem>
+	<listitem
+><para
+><command
+>SET</command
+>: Forçar o valor. Pode ser usado como primeiro comando ou a seguir ao REGEXPCAP (ver exemplo).</para
+></listitem>
+	</itemizedlist>
+	<para
+>O 'dateformat' é o formato da data extraída.</para>
+	</listitem>
+	<listitem
+><para
+>Coloque este ficheiro na mesma pasta onde estão todos os outros ficheiros <filename class="extension"
+>.extractor</filename
+></para
+></listitem>
+	</itemizedlist>
+	</answer>
+	</qandaentry>
+	</qandaset>
+
+    </chapter
+>    
+    
+    <chapter id="credits">
+      <title
+>Créditos e Licença</title>
+      <para
+>&skrooge; </para>
+      <para
+>Programa com 'copyright' 2001-2014 de Stéphane Mankowski <email
+>stephane@mankowski.fr</email
+> </para>
+      <para
+>Documentação com 'copyright' 2001-2014 de Guillaume DE BURE <email
+>gdebure@yahoo.com</email
+> </para>
+      <para
+>Tradução de José Nuno Pires <email
+>zepires@gmail.com</email
+></para
+> 
+&underFDL; &underGPL; </chapter
+>    
+    
+    <appendix id="search_process_real_case">
+      <title
+>Caso de estudo real da Pesquisa &amp; Processamento</title>
+      
+      <para
+>OK, temos de admitir que, apesar de ser bastante poderoso, o 'plugin' de <link linkend="search_and_process"
+>Pesquisa &amp; Processamento</link
+> talvez seja um pouco difícil de compreender. Aqui está um pequeno exercício que lhe dará uma ideia sobre ele. Lembra-se do caso de uso na introdução ?</para>
+      
+      <blockquote
+><para
+>O João obtém alguns dados do seu banco. Esses dados vêm, obviamente, sem qualquer indicação da categoria. De facto, tudo é escrito no campo do comentário. O João gostaria de algum método automático para definir correctamente a categoria e outros atributos, baseando-se para tal no conteúdo do comentário.</para
+></blockquote>
+      
+      
+      <para
+>Agora, o João sabe que o seu banco colocou o nome do beneficiário no campo do comentário. A partir daí, ele deseja que todos os seus pagamentos para o &kde; estejam na categoria Doações &amp; Open Source. Irá então procurar todas as operações importadas com o campo de comentário a conter &kde;:</para>
+      
+      <table>
+	<title
+>Definição da Pesquisa</title>
+	<tgroup cols="1">
+	  <thead>
+	    <row>
+	      <entry
+>Comentário</entry>
+	    </row>
+	  </thead>
+	  <tbody>
+	    <row>
+	      <entry
+>contém '&kde;'</entry>
+	    </row>
+	  </tbody>
+	</tgroup>
+      </table>
+      
+      <para
+>Adicione esta definição de pesquisa à lista de pesquisas existente, usando o botão <guibutton
+>Adicionar</guibutton
+>.</para>
+      
+      <para
+>Depois, é necessário dizer ao &skrooge; para configurar todas as operações devolvidas por esta pesquisa na categoria Doações &gt; Open Source. Mude o tipo de pesquisa para Actualização na lista e defina as transformações a aplicar:</para>
+      
+      <table>
+	<title
+>Actualizar a Definição</title>
+	<tgroup cols="2">
+	  <thead>
+	    <row>
+	      <entry
+>Comentário</entry>
+	      <entry
+>Categoria</entry>
+	    </row>
+	  </thead>
+	  <tbody>
+	    <row>
+	      <entry
+>=''</entry>
+	      <entry
+>='Doações &gt; Open Source'</entry>
+	    </row>
+	  </tbody>
+	</tgroup>
+      </table>
+      
+      <tip
+><para
+>Repare que também foi removido o comentário original, definindo-o como um texto vazio. Isto serve para fins de legibilidade, mas podê-lo-á querer manter por razões históricas.</para
+></tip>
+      
+      <para
+>Adicione este processamento à pesquisa definida anteriormente, usando o botão <guibutton
+>Adicionar</guibutton
+>.</para>
+      
+      <para
+>Até agora, tudo bem. Agora, iremos aplicar o processamento em todas as operações importadas que ainda não tiverem sido validadas (carregue no botão <guibutton
+>Aplicar</guibutton
+>):</para>
+      
+      <screenshot>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="apply_process.png" format="PNG"/>
+	  </imageobject>
+	</mediaobject>
+      </screenshot>
+      
+      <para
+>É tudo ! Se voltar à área de operações, irá reparar que todas as operações relacionadas foram actualizadas. No caso de alguma coisa ter corrido mal, não se esqueça que a opção <link linkend="undo_redo"
+>Desfazer</link
+> é sua amiga ! Mesmo que o processamento tenha alterado 2327 operações, é à mesma apenas uma única acção a anular no &skrooge;.</para>
+      
+    </appendix>
+    
+    <appendix id="holidays_expenses_analysis">
+      <title
+>Exercício de análise aprofundada: Despesas das férias</title>
+      <para
+>Para ilustrar as capacidades de análise do &skrooge;, iremos examinar as despesas deste autor durante as suas férias :).</para>
+      
+      <sect1 id="analysis_context">
+	<title
+>Contexto de Análise</title>
+	<para
+>Para compreender o exercício, é necessário saber algumas coisas sobre estas férias. Elas duram praticamente um mês inteiro do Verão de 2009 e envolveram o aluguer de vários quartos, em diferentes locais na França. Existe também algum gasto razoável em combustível, dado que essas férias envolveram uma parte relativamente grande da França.</para>
+      </sect1>
+      
+      <sect1 id="analysis_data_organisation">
+	<title
+>Organização dos Dados</title>
+	<para
+>O autor introduziu cuidadosamente as suas operações, associando-lhes as categorias desejadas, mas adicionando-as também ao <link linkend="trackers"
+>módulo de seguimento</link
+> "Férias, verão de 2009". As categorias normalmente têm sub-categorias, como o "Transporte 
+> Carro 
+> Combustível", permitindo este tipo detalhado de análise.</para>
+      <screenshot>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="analysis_operations_view.png" format="PNG"/>
+	  </imageobject>
+	</mediaobject>
+      </screenshot>
+    </sect1>
+    
+    <sect1 id="analysis_total_cost">
+      <title
+>Descobrir o custo total das férias</title>
+      <para
+>É tão fácil, que não tem piada sequer: abrir a área de Seguimentos, ler a coluna "Montante" para o nosso módulo de seguimento:</para>
+      <screenshot>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="analysis_trackers_view.png" format="PNG"/>
+	  </imageobject>
+	</mediaobject>
+      </screenshot>
+      <para
+>Vejamos as coisas mais interessantes...</para>
+    </sect1>
+    
+    <sect1 id="analysis_expenses_distribution">
+      <title
+>Distribuição das Despesas</title>
+      <para
+>Isto está tudo muito bem, mas para onde foi todo esse dinheiro ? Para descobrir onde, iremos construir um relatório sobre o seguimento. Carregue com o botão direito na linha do nosso módulo de seguimento e escolher <guimenuitem
+>Abrir o relatório...</guimenuitem
+>.</para>
+      <screenshot>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="analysis_build_report.png" format="PNG"/>
+	  </imageobject>
+	</mediaobject>
+      </screenshot>
+      
+      
+      <para
+>Isto irá abrir um relatório numa nova página, somente com as operações associadas a esse seguimento. Os parâmetros por omissão das datas são o "Mês Actual", pelo que existe a possibilidade que o relatório esteja vazio, caso todas as operações tenham sido feitas antes deste período. Iremos mudar agora para "Todas as Datas":</para>
+      <screenshot>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="analysis_report_1.png" format="PNG"/>
+	  </imageobject>
+	</mediaobject>
+      </screenshot>
+      <para
+>Isto dá uma boa ideia geral das despesas por categoria. Iremos então apresentá-las num gráfico circular, para ter uma apresentação mais natural:</para>
+      
+      <screenshot>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="analysis_report_2.png" format="PNG"/>
+	  </imageobject>
+	</mediaobject>
+      </screenshot>
+      
+      
+      <para
+>Agora ficou bastante claro que a maioria das despesas das férias foram para os transportes e alimentação. Mais alguma indicação ? Claro, vamos navegar um nível abaixo nas categorias, usando o ícone <guibutton
+>mais</guibutton
+> <inlinemediaobject
+><imageobject
+><imagedata fileref="category_one_level_more.png"/></imageobject
+></inlinemediaobject
+>.</para>
+      <screenshot>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="analysis_report_3.png" format="PNG"/>
+	  </imageobject>
+	</mediaobject>
+      </screenshot>
+      
+      <para
+>Hmm, não existe muito mais informação a retirar aqui, excepto que, na categoria "Transporte", a sub-categoria "Carro" é a única que é usada. Iremos criar então um gráfico sobre essa sub-categoria, seleccionando a fatia do gráfico, carregando nela com o botão direito do rato e seleccionando <guimenuitem
+>Abrir o relatório</guimenuitem
+>:</para>
+      <screenshot>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="analysis_build_transport_report.png" format="PNG"/>
+	  </imageobject>
+	</mediaobject>
+      </screenshot>
+      
+      <para
+>Isto irá abrir outra página com um relatório apenas na categoria "Transporte 
+> Carro".</para>
+      <screenshot>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="analysis_report_4.png" format="PNG"/>
+	  </imageobject>
+	</mediaobject>
+      </screenshot>
+      <para
+>Hmm, não é muito interessante... Mas existem ainda mais sub-categorias. Vamos expandi-las de novo:</para>
+      <screenshot>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="analysis_report_5.png" format="PNG"/>
+	  </imageobject>
+	</mediaobject>
+      </screenshot>
+      <para
+>Ah, agora sabemos que foram gastos 362,27€ em combustíveis e 131,90€ em portagens (na França, tem de pagar para andar em algumas auto-estradas). Ok, seria de esperar ;-). Também estou interessado em saber como essas duas categorias foram usadas ao longo do tempo:</para>
+      <screenshot>
+	<mediaobject>
+	  <imageobject>
+	    <imagedata fileref="analysis_report_6.png" format="PNG"/>
+	  </imageobject>
+	</mediaobject>
+      </screenshot>
+      <para
+>Repare que foi alterado o tipo do gráfico para "Linhas" e as colunas para "Semana".</para>
+      
+    </sect1>
+    
+    <sect1 id="analysis_conclusion">
+      <title
+>Conclusão</title>
+      <para
+>Através deste simples exercício, aprendemos a usar as capacidades avançadas de relatórios do &skrooge;, de modo a efectuar uma análise fina das despesas feitas durante as férias, especialmente na categoria de "Transportes". Obviamente, poderá pensar noutros casos de uso: o &skrooge; será provavelmente capaz de lidar com eles.</para>
+    </sect1>
+    
+  </appendix>
+  
+  &documentation.index;
+  
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->

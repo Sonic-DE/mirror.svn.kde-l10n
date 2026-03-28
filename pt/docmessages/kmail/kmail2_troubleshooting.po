@@ -1,0 +1,1274 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kmail_troubleshooting\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 12:04+0000\n"
+"PO-Revision-Date: 2021-08-27 12:15+0100\n"
+"Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
+"Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-POFile-SpellExtra: and akonadi false Spam Online akonadiconsole mysql\n"
+"X-POFile-SpellExtra: Tips Status ps Maildir spam Spambayes start\n"
+"X-POFile-SpellExtra: akonadictl var KMail Hints unsure maildir spool true\n"
+"X-POFile-SpellExtra: grep ux Classification SPAM MBox Agent SC mbox\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-POFile-SpellExtra: akonadimaildirresourceXXX ENTITYDISPLAY\n"
+"X-POFile-SpellExtra: DefaultResourceId outbox SpecialCollections\n"
+"X-POFile-SpellExtra: akonadimaildirresource specialmailcollectionsrc\n"
+"X-POFile-SpellExtra: SpecialCollectionAttribute HOME folder restart\n"
+"X-POFile-SpellExtra: kquitapp binlogformat kmail reinícios row wiki mysqld\n"
+"X-POFile-SpellExtra: Akonadictl status instances vacuum fsck Found\n"
+"X-POFile-SpellExtra: external parts unreferenced be moved database\n"
+"X-POFile-SpellExtra: collections without RID items dirty RemoteId Unable\n"
+"X-POFile-SpellExtra: Fetch Akonadiconsole guilabel Mails dbus from Backend\n"
+"X-POFile-SpellExtra: LRCONFLICT fetch backend possíel david Sl usr sbin\n"
+"X-POFile-SpellExtra: run user pid pts colour Welcome the MariaDB Commands\n"
+"X-POFile-SpellExtra: end with or Your connection id Server version Source\n"
+"X-POFile-SpellExtra: distribution Oracle Corporation Ab others Type help\n"
+"X-POFile-SpellExtra: clear current statement none Reading table\n"
+"X-POFile-SpellExtra: information completion of column names You can turn\n"
+"X-POFile-SpellExtra: off this feature get quicker startup Database changed\n"
+"X-POFile-SpellExtra: delete pimitemtable where remoteid NULL Query rows\n"
+"X-POFile-SpellExtra: affected sec Bye cd share ls error dbdata filedbdata\n"
+"X-POFile-SpellExtra: conf localhost default dbmisc filelost found searchdb\n"
+"X-POFile-SpellExtra: find type xargs rm\n"
+
+#. Tag: firstname
+#: troubleshooting.docbook:7
+#, no-c-format
+msgid ""
+"Portions of this chapter were converted from the KDE UserBase <ulink url="
+"\"https://userbase.kde.org/Special:MyLanguage/KMail/FAQs_Hints_and_Tips"
+"\">KMail/FAQs Hints and Tips</ulink> page in 2012."
+msgstr ""
+"Partes deste capítulo foram convertido a partir da página da Base de "
+"Utilizadores do KDE <ulink url=\"https://userbase.kde.org/Special:MyLanguage/"
+"KMail/FAQs_Hints_and_Tips\">KMail/FAQs Hints and Tips</ulink> em 2012."
+
+#. Tag: author
+#: troubleshooting.docbook:11
+#, no-c-format
+msgid "&David.Bryant; &David.Bryant.mail;"
+msgstr "&David.Bryant; &David.Bryant.mail;"
+
+#. Tag: trans_comment
+#: troubleshooting.docbook:15
+#, no-c-format
+msgid "ROLES_OF_TRANSLATORS"
+msgstr ""
+"<othercredit role=\"translator\"><firstname>José</firstname><surname>Pires</"
+"surname><affiliation><address><email>zepires@gmail.com</email></address></"
+"affiliation><contrib>Tradução</contrib></othercredit>"
+
+#. Tag: date
+#: troubleshooting.docbook:17
+#, no-c-format
+msgid "2021-08-08"
+msgstr "2021-08-08"
+
+#. Tag: releaseinfo
+#: troubleshooting.docbook:18
+#, no-c-format
+msgid "5.14.2 (Applications 20.04.2)"
+msgstr "5.14.2 (Aplicações 20.04.2)"
+
+#. Tag: title
+#: troubleshooting.docbook:21
+#, no-c-format
+msgid "&kmail; Troubleshooting"
+msgstr "Resolução de Problemas do &kmail;"
+
+#. Tag: title
+#: troubleshooting.docbook:24
+#, no-c-format
+msgid "Introduction to &akonadi;"
+msgstr "Introdução ao &akonadi;"
+
+#. Tag: para
+#: troubleshooting.docbook:26
+#, no-c-format
+msgid ""
+"&kmail; has been under active development since 1997. A lot of bugs have "
+"cropped up over the years. Many of these have been resolved. If you are "
+"curious about any of those old bugs, please see the <ulink url=\"https://"
+"userbase.kde.org/Special:MyLanguage/KMail/FAQs_Hints_and_Tips\">KMail/FAQs "
+"Hints and Tips</ulink> in the &kde; UserBase Wiki. Or visit <ulink url="
+"\"https://bugs.kde.org\">&kde;'s main bug tracking page</ulink> to learn "
+"about bugs of a more recent vintage."
+msgstr ""
+"O &kmail; tem estado em desenvolvimento activo desde 1997. Foram "
+"rectificados vários erros ao longo do anos, muitos dos quais ficaram "
+"definitivamente resolvidos. Se tem curiosidade sobre alguns desses erros "
+"antigos, veja por favor a página de <ulink url=\"https://userbase.kde.org/"
+"Special:MyLanguage/KMail/FAQs_Hints_and_Tips\">KMail/Dicas e Truques das "
+"FAQ's</ulink> na wiki da Base de Utilizadores do &kde;, ou então visite a "
+"<ulink url=\"https://bugs.kde.org\">página do sistema principal de gestão de "
+"erros do &kde;</ulink> para aprender mais sobre os erros mais recentes."
+
+#. Tag: para
+#: troubleshooting.docbook:32
+#, fuzzy, no-c-format
+#| msgid ""
+#| "At the present time (2021), many of the problems people are experiencing "
+#| "with &kmail; involve the &akonadi; server. &akonadi; is an auxiliary "
+#| "program that functions as an intermediary between &kmail; (plus all the "
+#| "other &PIM; applications) and a general purpose database daemon (most "
+#| "commonly \"mysqld\"). It also facilitates inter-process communications "
+#| "among the various pieces of the &PIM; applications. Depending on the way "
+#| "your system is configured, &akonadi; may be started during the bootup / "
+#| "login process. Or it may not start until you invoke a &PIM; application "
+#| "program (like &kmail;, or &kaddressbook;, or &kontact;)."
+msgid ""
+"At the present time (2021), many of the problems people are experiencing "
+"with &kmail; involve the &akonadi; server. &akonadi; is an auxiliary program "
+"that functions as an intermediary between &kmail; (plus all the other &PIM; "
+"applications) and a general purpose database daemon (most commonly \"mysqld"
+"\"). It also facilitates inter-process communications among the various "
+"pieces of the &PIM; applications. Depending on the way your system is "
+"configured, &akonadi; may be started during the boot-up / login process. Or "
+"it may not start until you invoke a &PIM; application program (like &kmail;, "
+"or &kaddressbook;, or &kontact;)."
+msgstr ""
+"Neste preciso momento (2021), muitos dos problemas com que as pessoas se "
+"deparam no &kmail; envolvem o servidor &akonadi;. O &akonadi; é um programa "
+"auxiliar que funciona como um intermediário entre o &kmail; (e as outras "
+"aplicações de &PIM;) e um servidor de bases de dados de uso geral (sendo "
+"mais normalmente o \"mysqld\"). Também facilita as comunicações entre "
+"processos por parte das várias componentes das aplicações &PIM;. Dependendo "
+"da forma como está configurado o seu sistema, o &akonadi; pode arrancar no "
+"início do sistema ou da sessão. Ou poderá não ser iniciado de todo até que "
+"invoque um programa ou aplicação de &PIM; (como o &kmail;, o &kaddressbook; "
+"ou o &kontact;)."
+
+#. Tag: para
+#: troubleshooting.docbook:39
+#, no-c-format
+msgid ""
+"There are two application programs that permit one to interact with the "
+"&akonadi; server directly: <code>akonadictl</code> (a terminal-oriented "
+"control program), and <code>akonadiconsole</code> (a GUI application). Here "
+"is a little information about those two programs."
+msgstr ""
+"Existem duas aplicações que permitem a uma pessoa interagir directamente com "
+"o servidor do &akonadi;: o <code>akonadictl</code> (um programa de controlo "
+"baseado em terminal) e o <code>akonadiconsole</code> (uma aplicação "
+"gráfica). Aqui está alguma informação acerca destes dois programas."
+
+#. Tag: para
+#: troubleshooting.docbook:42 troubleshooting.docbook:60
+#: troubleshooting.docbook:86 troubleshooting.docbook:105
+#: troubleshooting.docbook:404 troubleshooting.docbook:409
+#, no-c-format
+msgid "&nbsp;"
+msgstr "&nbsp;"
+
+#. Tag: title
+#: troubleshooting.docbook:45
+#, no-c-format
+msgid "The Akonadictl Control Program"
+msgstr "O Programa de Controlo Akonadictl"
+
+#. Tag: screeninfo
+#: troubleshooting.docbook:47
+#, no-c-format
+msgid "<screeninfo>&akonadi; status report</screeninfo>"
+msgstr "<screeninfo>Relatório de estado do &akonadi;</screeninfo>"
+
+#. Tag: phrase
+#: troubleshooting.docbook:53
+#, no-c-format
+msgid "<phrase>&akonadi; status report</phrase>"
+msgstr "<phrase>Relatório de estado do &akonadi;</phrase>"
+
+#. Tag: para
+#: troubleshooting.docbook:56
+#, no-c-format
+msgid "Akonadictl Status Report, 32 Agents Running"
+msgstr "Relatório de Estado do Akonadictl, com 32 Agentes em Execução"
+
+#. Tag: para
+#: troubleshooting.docbook:62
+#, no-c-format
+msgid ""
+"The preceding screenshot illustrates one of the commands one may use with "
+"the <code>akonadictl</code> program. Here are all the commands "
+"<code>akonadictl</code> recognizes."
+msgstr ""
+"A imagem anterior ilustra um dos comandos que poderão ser usados com o "
+"programa <code>akonadictl</code>. Aqui estão todos os comandos que o "
+"<code>akonadictl</code> reconhece."
+
+#. Tag: screen
+#: troubleshooting.docbook:65
+#, no-c-format
+msgid "~$ akonadictl start"
+msgstr "~$ akonadictl start"
+
+#. Tag: para
+#: troubleshooting.docbook:65
+#, no-c-format
+msgid "Starts the &akonadi; server."
+msgstr "Inicia o servidor do &akonadi;."
+
+#. Tag: screen
+#: troubleshooting.docbook:66
+#, no-c-format
+msgid "~$ akonadictl stop"
+msgstr "~$ akonadictl stop"
+
+#. Tag: para
+#: troubleshooting.docbook:66
+#, no-c-format
+msgid "Stops the &akonadi; server."
+msgstr "Pára o servidor do &akonadi;."
+
+#. Tag: screen
+#: troubleshooting.docbook:67
+#, no-c-format
+msgid "~$ akonadictl restart"
+msgstr "~$ akonadictl restart"
+
+#. Tag: para
+#: troubleshooting.docbook:67
+#, no-c-format
+msgid "Stops the &akonadi; server, then launches it anew."
+msgstr "Pára o servidor do &akonadi;, lançando-o depois de novo."
+
+#. Tag: screen
+#: troubleshooting.docbook:68
+#, no-c-format
+msgid "~$ akonadictl status"
+msgstr "~$ akonadictl status"
+
+#. Tag: para
+#: troubleshooting.docbook:68
+#, no-c-format
+msgid "Produces the status report illustrated in the preceding screenshot."
+msgstr "Produz o relatório de estado ilustrado na imagem anterior."
+
+#. Tag: screen
+#: troubleshooting.docbook:69
+#, no-c-format
+msgid "~$ akonadictl instances"
+msgstr "~$ akonadictl instances"
+
+#. Tag: para
+#: troubleshooting.docbook:69
+#, no-c-format
+msgid ""
+"Lists the &akonadi; server instances (more than one can be running at the "
+"same time)."
+msgstr ""
+"Apresenta as instâncias do servidor de &akonadi; (poderá estar mais que uma "
+"em execução ao mesmo tempo)."
+
+#. Tag: screen
+#: troubleshooting.docbook:71
+#, no-c-format
+msgid "~$ akonadictl vacuum"
+msgstr "~$ akonadictl vacuum"
+
+#. Tag: para
+#: troubleshooting.docbook:71
+#, no-c-format
+msgid "Cleans up &akonadi;'s storage, or at least tries to do that."
+msgstr "Limpa o armazenamento do &akonadi;, ou pelo menos tenta fazê-lo."
+
+#. Tag: screen
+#: troubleshooting.docbook:72
+#, no-c-format
+msgid "~$ akonadictl fsck"
+msgstr "~$ akonadictl fsck"
+
+#. Tag: para
+#: troubleshooting.docbook:72
+#, no-c-format
+msgid ""
+"Performs a file consistency check. The output from this command can be quite "
+"voluminous, especially if you have added your own folders to &kmail;. Use "
+"this version of the command (piping the output through grep) to verify that "
+"your &akonadi; database is healthy, without producing a lot of extraneous "
+"output."
+msgstr ""
+"Efectua uma verificação de consistência dos ficheiros. O resultado deste "
+"comando poderá ser bastante volumoso especialmente se tiver adicionado as "
+"suas próprias pastas ao &kmail;. Use esta versão do comando (encaminhando o "
+"resultado através do 'grep') para verificar se a sua base de dados do "
+"&akonadi; está em condições, sem produzir um conjunto de resultados "
+"estranhos."
+
+#. Tag: screen
+#: troubleshooting.docbook:78
+#, no-c-format
+msgid ""
+"~ $ akonadictl fsck 2>&amp;1 | grep ^Found\n"
+"Found 0 external files.\n"
+"Found 0 external parts.\n"
+"Found no unreferenced external files.\n"
+"Found 0 parts to be moved to external files\n"
+"Found 0 parts to be moved to database\n"
+"Found 6 collections without RID.\n"
+"Found 0 items without RID.\n"
+"Found 0 dirty items."
+msgstr ""
+"~ $ akonadictl fsck 2>&amp;1 | grep ^Found\n"
+"Found 0 external files.\n"
+"Found 0 external parts.\n"
+"Found no unreferenced external files.\n"
+"Found 0 parts to be moved to external files\n"
+"Found 0 parts to be moved to database\n"
+"Found 6 collections without RID.\n"
+"Found 0 items without RID.\n"
+"Found 0 dirty items."
+
+#. Tag: para
+#: troubleshooting.docbook:78
+#, no-c-format
+msgid ""
+"RID stands for RemoteId, a named field in the mysql database tables. If "
+"there are more than 0 items without RID, you have a minor problem that "
+"should be corrected. If there are more than 0 dirty items you may have a "
+"major problem that <emphasis>must</emphasis> be corrected. See <link linkend="
+"\"resource-conflict-error\">\"Unable to Fetch Item ...\"</link> and also "
+"<link linkend=\"dealing-with-dirt\">Correcting &kmail;'s \"Dirty\" Items</"
+"link>, below."
+msgstr ""
+"RID significa RemoteId, um campo com nome nas tabelas da base de dados "
+"MySQL. Se existirem mais de 0 itens sem RID, é porque tem algum pequeno "
+"problema que deverá ser corrigido. Se existirem mais de 0 itens modificados, "
+"então tem um problema grave que <emphasis>deve</emphasis> ser corrigido. "
+"Veja as secções <link linkend=\"resource-conflict-error\">\"Unable to Fetch "
+"Item ...\"</link> e <link linkend=\"dealing-with-dirt\">Corrigir os Itens "
+"\"Modificados\" do &kmail;</link> em baixo."
+
+#. Tag: title
+#: troubleshooting.docbook:90
+#, no-c-format
+msgid "The Akonadiconsole Program"
+msgstr "O programa Akonadiconsole"
+
+#. Tag: screeninfo
+#: troubleshooting.docbook:92
+#, no-c-format
+msgid "<screeninfo>What akonadiconsole looks like</screeninfo>"
+msgstr "<screeninfo>Com que se parece o 'akonadiconsole'</screeninfo>"
+
+#. Tag: phrase
+#: troubleshooting.docbook:98
+#, no-c-format
+msgid "<phrase>What akonadiconsole looks like</phrase>"
+msgstr "<phrase>Com que se parece o 'akonadiconsole'</phrase>"
+
+#. Tag: para
+#: troubleshooting.docbook:101
+#, no-c-format
+msgid "Akonadiconsole in action"
+msgstr "O Akonadiconsole em acção"
+
+#. Tag: para
+#: troubleshooting.docbook:107
+#, no-c-format
+msgid ""
+"The <code>akonadiconsole</code> program provides twelve different \"windows"
+"\" into the inner workings of the &PIM; applications. Here is a brief "
+"summary of the available views."
+msgstr ""
+"O programa <code>akonadiconsole</code> oferece doze \"janelas\" diferentes "
+"para os funcionamentos internos das aplicações de &PIM;. Aqui está um breve "
+"resumo das áreas disponíveis."
+
+#. Tag: term
+#: troubleshooting.docbook:112
+#, no-c-format
+msgid "<guilabel>Agents</guilabel> tab."
+msgstr "Página de <guilabel>Agentes</guilabel>."
+
+#. Tag: para
+#: troubleshooting.docbook:113
+#, no-c-format
+msgid "Here you can see a list of the user agents (processors)."
+msgstr "Aqui poderá ver uma lista dos agentes do utilizador (processadores)."
+
+#. Tag: term
+#: troubleshooting.docbook:117
+#, no-c-format
+msgid "<guilabel>Browse</guilabel> tab."
+msgstr "Página de <guilabel>Navegação</guilabel>."
+
+#. Tag: para
+#: troubleshooting.docbook:118
+#, no-c-format
+msgid ""
+"This tab provides an overview of the various collections of data &akonadi; "
+"is maintaining, organized as a hierarchical tree that shows how many items "
+"reside in each collection."
+msgstr ""
+"Esta página dá uma visão geral das várias colecções de dados que o &akonadi; "
+"guarda, organizadas como uma árvore hierárquica que mostra quantos itens "
+"existem em cada colecção."
+
+#. Tag: term
+#: troubleshooting.docbook:124
+#, no-c-format
+msgid "<guilabel>Debugger</guilabel> tab."
+msgstr "Página do <guilabel>Depurador</guilabel>."
+
+#. Tag: para
+#: troubleshooting.docbook:125
+#, no-c-format
+msgid "Here you can turn debugging on and off, and view the debug message log."
+msgstr ""
+"Aqui poderá activar ou desactivar a depuração, assim como ver o registo de "
+"mensagens de depuração."
+
+#. Tag: term
+#: troubleshooting.docbook:129
+#, no-c-format
+msgid "<guilabel>Logging</guilabel> tab."
+msgstr "Página de <guilabel>Registo</guilabel>."
+
+#. Tag: para
+#: troubleshooting.docbook:130
+#, no-c-format
+msgid ""
+"This tab lets you view messages emitted by various &akonadi; components."
+msgstr ""
+"Esta página permite-lhe ver as mensagens emitidas pelos vários componentes "
+"do &akonadi;."
+
+#. Tag: term
+#: troubleshooting.docbook:134
+#, no-c-format
+msgid "<guilabel>DB Browser</guilabel> tab."
+msgstr "Página do <guilabel>Navegador da BD</guilabel>."
+
+#. Tag: para
+#: troubleshooting.docbook:135
+#, no-c-format
+msgid ""
+"Use this tab to peek inside the mysql database. There are many different "
+"tables."
+msgstr ""
+"Use esta página para consultar o interior da base de dados MySQL. Existem "
+"diversas tabelas diferentes."
+
+#. Tag: term
+#: troubleshooting.docbook:139
+#, no-c-format
+msgid "<guilabel>DB Console</guilabel> tab."
+msgstr "Página da <guilabel>Consola da BD</guilabel>."
+
+#. Tag: para
+#: troubleshooting.docbook:140
+#, no-c-format
+msgid "Here you can query the mysql database."
+msgstr "Aqui poderá consultar a base de dados do MySQL."
+
+#. Tag: term
+#: troubleshooting.docbook:144
+#, no-c-format
+msgid "<guilabel>Query Debugger</guilabel> tab."
+msgstr "Página do <guilabel>Depurador de Pesquisas</guilabel>."
+
+#. Tag: para
+#: troubleshooting.docbook:145
+#, no-c-format
+msgid ""
+"Use this tab to turn database query debugging on and off. &kmail; queries "
+"the mysql database many times in just a few seconds; output can be "
+"voluminous."
+msgstr ""
+"Use esta página para activar ou desactivar a depuração das pesquisas na base "
+"de dados. O &kmail; consulta a base de dados MySQL várias vezes em apenas "
+"alguns segundos; o resultado poderá ser bastante volumoso."
+
+#. Tag: term
+#: troubleshooting.docbook:150
+#, no-c-format
+msgid "<guilabel>Job Tracker</guilabel> tab."
+msgstr "Página do <guilabel>Seguimento de Tarefas</guilabel>."
+
+#. Tag: para
+#: troubleshooting.docbook:151
+#, no-c-format
+msgid ""
+"The &PIM; applications perform various functions by initiating \"jobs\". Use "
+"this tab to toggle job tracking on and off."
+msgstr ""
+"As aplicações de &PIM; efectuam várias operações através do arranque de "
+"\"tarefas\". Use esta página para activar ou desactivar o seguimento das "
+"tarefas."
+
+#. Tag: term
+#: troubleshooting.docbook:156
+#, no-c-format
+msgid "<guilabel>Resources Schedulers</guilabel> tab."
+msgstr "Página de <guilabel>Escalonamentos dos Recursos/guilabel>."
+
+#. Tag: para
+#: troubleshooting.docbook:157
+#, no-c-format
+msgid ""
+"Here you can see which resources are needed when a particular &PIM; function "
+"is invoked. You can see a list of all the &akonadi; resources in your system "
+"in the <filename>~/.config/akonadi/</filename> directory."
+msgstr ""
+"Aqui poderá ver quais os recursos que são necessários quando é invocada uma "
+"dada função de &PIM; em particular. Poderá ver uma lista de todos os "
+"recursos do &akonadi; no seu sistema na pasta <filename>~/.config/akonadi/</"
+"filename>."
+
+#. Tag: term
+#: troubleshooting.docbook:163
+#, no-c-format
+msgid "<guilabel>Notification Monitor</guilabel> tab."
+msgstr "Página do <guilabel>Monitor de Notificações</guilabel>."
+
+#. Tag: para
+#: troubleshooting.docbook:164
+#, no-c-format
+msgid ""
+"Use this tab to monitor notifications sent by various &akonadi; resources."
+msgstr ""
+"Use esta página para monitoriza as notificações enviadas pelos vários "
+"recursos do &akonadi;."
+
+#. Tag: term
+#: troubleshooting.docbook:168
+#, no-c-format
+msgid "<guilabel>Item Search</guilabel> tab."
+msgstr "Página de <guilabel>Pesquisa dos Itens</guilabel>."
+
+#. Tag: para
+#: troubleshooting.docbook:169
+#, no-c-format
+msgid ""
+"This tab provides a generic search function. Searches can be restricted to "
+"Calendar, Contact, Email, or Note."
+msgstr ""
+"Esta página oferece uma função de pesquisa genérica. As pesquisas poderão "
+"estar restritas aos Calendários, Contactos, E-Mails ou Notas."
+
+#. Tag: term
+#: troubleshooting.docbook:174
+#, no-c-format
+msgid "<guilabel>Monitors</guilabel> tab."
+msgstr "Página de <guilabel>Monitores</guilabel>."
+
+#. Tag: para
+#: troubleshooting.docbook:175
+#, no-c-format
+msgid ""
+"Here you can see a list of all the monitors running under &akonadi;, and "
+"also view their properties. Agents, resources, and even some application "
+"programs are monitored."
+msgstr ""
+"Aqui poderá ver um lista de todos os monitores em execução no &akonadi;, "
+"assim como ver as suas propriedades. Os agentes, recursos e mesmo alguns "
+"programas de aplicações são monitorizados."
+
+#. Tag: title
+#: troubleshooting.docbook:324
+#, no-c-format
+msgid "\"Unable to Fetch Item from Backend\" When Entering &IMAP; Folder"
+msgstr ""
+"\"Incapaz de obter o item da infra-estrutura\" ao Entrar na Pasta de &IMAP;"
+
+#. Tag: para
+#: troubleshooting.docbook:326
+#, no-c-format
+msgid ""
+"There are at least two possible reasons for this. Here are some workarounds."
+msgstr ""
+"Existem pelo menos duas razões possíveis para tal. Existem alguns truques "
+"possíveis."
+
+#. Tag: term
+#: troubleshooting.docbook:330
+#, no-c-format
+msgid "Workaround 1"
+msgstr "Alternativa 1"
+
+#. Tag: para
+#: troubleshooting.docbook:333
+#, no-c-format
+msgid "edit <filename>~/.local/share/akonadi/mysql.conf</filename>"
+msgstr ""
+"edite o ficheiro <filename>~/.local/share/akonadi/mysql.conf</filename>"
+
+#. Tag: para
+#: troubleshooting.docbook:334
+#, no-c-format
+msgid ""
+"Under the <guilabel>[mysql]</guilabel> section, add: "
+"<userinput>binlog_format=row</userinput>"
+msgstr ""
+"Na secção <guilabel>[mysql]</guilabel>, adicione: "
+"<userinput>binlog_format=row</userinput>"
+
+#. Tag: para
+#: troubleshooting.docbook:336
+#, no-c-format
+msgid "If this does not work, try workaround 2 (below)."
+msgstr "Se isto não funcionar, tente a solução 2 (em baixo)."
+
+#. Tag: term
+#: troubleshooting.docbook:341
+#, no-c-format
+msgid "Workaround 2"
+msgstr "Alternativa 2"
+
+#. Tag: para
+#: troubleshooting.docbook:343
+#, no-c-format
+msgid ""
+"This one is a matter of restarting so &kmail; can fetch those pesky items. "
+"Some possible steps include:"
+msgstr ""
+"Esta é mais uma questão de reiniciar, para que o &kmail; possa obter estes "
+"itens específicos. Alguns passos possíveis:"
+
+#. Tag: para
+#: troubleshooting.docbook:344
+#, no-c-format
+msgid ""
+"Use <keycombo>&Alt;<keycap>F2</keycap></keycombo> (&krunner;) or &konsole; "
+"to type <userinput><command>kquitapp kmail</command></userinput> , then wait "
+"a minute, then <userinput><command>akonadictl stop</command></userinput> . "
+"Wait a minute, type <userinput><command>akonadictl start</command></"
+"userinput> , wait a minute, then type <userinput> <command>kmail</command></"
+"userinput> . This stops &kmail; (closing <emphasis>all</emphasis> windows), "
+"stops the &kmail; backend, restarts the &kmail; backend, and restarts "
+"&kmail;. Having a working internet connection increases the chances of "
+"success. Sometimes, you can also just do <userinput><command>kquitapp kmail</"
+"command></userinput> , wait a minute, and then start &kmail; again. Often, a "
+"few restarts seem to be needed. It is unclear what causes this error, but on "
+"bad network connections it is more likely to happen."
+msgstr ""
+"Use o <keycombo>&Alt;<keycap>F2</keycap></keycombo> (o &krunner;) ou o "
+"&konsole; para escrever: <userinput><command>kquitapp kmail</command></"
+"userinput>, depois espere um minuto, depois o <userinput><command>akonadictl "
+"stop</command></userinput>, espere mais um minuto, escreva "
+"<userinput><command>akonadictl start</command></userinput>, espere mais "
+"outro minuto ainda e escreva <userinput><command>kmail</command></"
+"userinput>. Isto interrompe o &kmail; (fechando <emphasis>todas</emphasis> "
+"as janelas), interrompe a infra-estrutura do &kmail;, inicia a mesma infra-"
+"estrutura do &kmail;, inicia o &kmail; em si. Se tiver uma ligação à "
+"Internet funcional, irá aumentar as hipóteses de sucesso. Algumas das vezes, "
+"bastará apenas fazer <userinput><command>kquitapp kmail</command></"
+"userinput>, esperar um minuto e iniciar o &kmail; de novo. Geralmente, "
+"parecem ser necessários alguns reinícios sucessivos. Não é clara a razão "
+"para este facto, mas em ligações à rede problemáticas, é mais provável que "
+"isto aconteça."
+
+#. Tag: para
+#: troubleshooting.docbook:356
+#, no-c-format
+msgid ""
+"See also <link linkend=\"your-mails-are-not-being-sent\">the next topic</"
+"link> to learn how <application>akonadiconsole</application> can be helpful."
+msgstr ""
+"Veja também o <link linkend=\"your-mails-are-not-being-sent\">item abaixo</"
+"link> sobre a utilidade do <application>akonadiconsole</application>."
+
+#. Tag: title
+#: troubleshooting.docbook:361
+#, no-c-format
+msgid "Your Emails Are Not Being Sent, Without Error Messages"
+msgstr "As Suas Mensagens não Estão a ser Enviadas, mas Sem Mensagens de Erro"
+
+#. Tag: para
+#: troubleshooting.docbook:363
+#, no-c-format
+msgid ""
+"If &kmail; does not send mail without saying anything, the <quote>agent</"
+"quote> responsible for dispatching messages may be stuck. Of course, you "
+"should first verify you have proper network connectivity so mail can be sent!"
+msgstr ""
+"Se o &kmail; não enviar nada mas também não indicar nenhum erro, o "
+"<quote>agente</quote> responsável por despachar as mensagens poderá estar "
+"bloqueado. Obviamente, terá de garantir que tem uma ligação adequada à rede "
+"para enviar o correio!"
+
+#. Tag: para
+#: troubleshooting.docbook:366
+#, no-c-format
+msgid ""
+"To remedy this, it might help to abort the current action and restart it. "
+"First, quit &kmail; by using &krunner; (<keycombo>&Alt;<keycap>F2</keycap></"
+"keycombo>) or &konsole; and typing: <userinput><command>kquitapp kmail</"
+"command></userinput> . Note that a normal <keycombo>&Alt;<keycap>F4</"
+"keycap></keycombo> or <menuchoice><guimenu>File</guimenu><guimenuitem>Quit</"
+"guimenuitem> </menuchoice> does <emphasis>not</emphasis> do the trick! Wait "
+"a minute, then start &kmail; again. Now start <application>akonadiconsole</"
+"application> using &krunner; (<keycombo>&Alt;<keycap>F2</keycap></keycombo>) "
+"or &konsole;. Go to the <guilabel>Mail Dispatcher Agent</guilabel> (under "
+"the <guilabel>Agents</guilabel> tab), do a right-click, and abort the "
+"current action. You will most likely get some error messages popping up. Now "
+"go back to &kmail; and choose <menuchoice><guimenu>File</guimenu> "
+"<guimenuitem>Send Queued Messages</guimenuitem></menuchoice>. Now it might "
+"work. If not, instead of aborting the current action, try toggling the "
+"offline/online status of the <guilabel>Mail Dispatcher Agent</guilabel> "
+"(same context menu) or restarting things as mentioned in workaround 2 of "
+"<link linkend=\"unable-to-fetch-item-from-backend\"> the previous topic</"
+"link>."
+msgstr ""
+"Para resolver isto, poderá ajudar se interromper a acção actual e reiniciá-"
+"la. Primeiro, saia do &kmail; com o &krunner; (<keycombo>&Alt;<keycap>F2</"
+"keycap></keycombo>) ou o &konsole; e se escrever: "
+"<userinput><command>kquitapp kmail</command></userinput>. Lembre-se que um "
+"<keycombo>&Alt;<keycap>F4</keycap></keycombo> normal ou a opção "
+"<menuchoice><guimenu>Ficheiro</guimenu><guimenuitem>Sair</guimenuitem></"
+"menuchoice> <emphasis>não</emphasis> aplica o truque! Espere um minuto e "
+"inicie depois o &kmail; de novo. Agora, arranque o "
+"<application>akonadiconsole</application> com o &krunner; (<keycombo>&Alt;"
+"<keycap>F2</keycap></keycombo>) ou o &konsole;. Vá ao <guilabel>Agente de "
+"Tratamento de Correio</guilabel>, carregue com o botão direito do rato e "
+"interrompa a acção actual. Poderá obter algumas mensagens de erro que "
+"aparecem. Volte ao &kmail; e escolha a opção <menuchoice><guimenu>Ficheiro</"
+"guimenu><guimenuitem>Enviar as Mensagens em Espera</guimenuitem></"
+"menuchoice>. Agora já poderá funcionar. Caso contrário, em vez de "
+"interromper a acção actual, tente comutar o estado ligado/desligado do "
+"<guilabel>Agente de Tratamento de Correio</guilabel> ou reiniciar as coisas, "
+"como mencionado no passo 2 do problema acima."
+
+#. Tag: para
+#: troubleshooting.docbook:377
+#, no-c-format
+msgid ""
+"akonadiconsole can be quite helpful for a number of situations because it "
+"shows all the <quote>agents</quote>, the separate components of the &kmail; "
+"backend. You can stop and start them, put them in offline mode, abort "
+"ongoing actions &etc;. It can be very helpful when &kmail; is acting cranky."
+msgstr ""
+"O 'akonadiconsole' pode ser bastante útil para um conjunto de situações, "
+"dado que mostra todos os <quote>agentes</quote>, os componentes separados da "
+"infra-estrutura do &kmail;. Podê-los-á iniciar e parar, colocá-los no modo "
+"desligado, interromper as acções em curso, &etc;. Poderá ser bastante útil "
+"quando as coisas ficarem presas."
+
+#. Tag: para
+#: troubleshooting.docbook:381
+#, no-c-format
+msgid ""
+"Sometimes the <guilabel>Mail Dispatcher Agent</guilabel> fails to function "
+"because the dbus daemon (a system-level facility for inter-process "
+"communications) is not functioning correctly. Your best bet in this "
+"circumstance is simply to reboot the system. The dbus daemon is one of the "
+"first processes started when you log in to the &kde; desktop, so it cannot "
+"be easily stopped and restarted. The whole &plasma; environment depends on "
+"it."
+msgstr ""
+"Algumas vezes o <guilabel>Agente de Despacho do Correio</guilabel> não "
+"funciona porque o servidor 'dbus' (um funcionalidade do sistema para a "
+"comunicação entre processos) não está a funcionar correctamente. A sua "
+"melhor hipótese nesta circunstância é simplesmente reiniciar o sistema. O "
+"servidor 'dbus' é um dos primeiros processos iniciados quando se autentica "
+"no ambiente de trabalho &kde;, pelo que não poderá ser parado e reiniciado "
+"facilmente. Todo o ambiente do &plasma; depende dele, de facto."
+
+#. Tag: title
+#: troubleshooting.docbook:389
+#, no-c-format
+msgid "\"Unable to Fetch Item from Backend ... [LRCONFLICT]\""
+msgstr "\"Unable to Fetch Item from Backend ... [LRCONFLICT]\""
+
+#. Tag: para
+#: troubleshooting.docbook:391
+#, no-c-format
+msgid ""
+"This problem is directly related to <ulink url=\"https://bugs.kde.org/"
+"show_bug.cgi?id=283682\">&akonadi; bug #283682</ulink>, which has been a "
+"thorn in the side of &kmail; since October, 2011. There is a timing / co-"
+"ordination problem with asynchronous processing of message filters. Once in "
+"a while, a filter rule that moves messages to a different folder \"hiccups"
+"\", and produces more than one database entry for a message that has been "
+"moved. When you try to open the second copy of such a message, the error "
+"message \"Unable to fetch item from backend ...[LRCONFLICT]\" appears. Such "
+"phantom messages cannot be deleted or moved to trash using &kmail;'s built-"
+"in functions. But you <emphasis>can</emphasis> get rid of them. Here's how "
+"you do it."
+msgstr ""
+"Este problema está relacionado directamente com o <ulink url=\"https://bugs."
+"kde.org/show_bug.cgi?id=283682\">erro #283682 do &akonadi;</ulink>, que tem "
+"sido um espinho do lado do &kmail; desde Outubro de 2011. Existe um problema "
+"de temporização / coordenação com o processamento assíncrono dos filtros das "
+"mensagens. De vez em quando, uma regra de filtragem que move as mensagens "
+"para uma pasta diferente \"soluça\" e produz mais que um item na base de "
+"dados para uma mensagem que foi movida. Quanto tentar abrir a segunda cópia "
+"de uma dessas mensagens, irá aparecer a mensagem \"Unable to fetch item from "
+"backend ...[LRCONFLICT]\" (Não foi possíel obter o item da infra-"
+"estrutura ... [CONFLITO]). Essas mensagens-fantasma não podem ser apagadas "
+"ou enviadas para o lixo com as funções incorporadas no &kmail;. Contudo, o "
+"utilizador <emphasis>poderá</emphasis> ver-se livre delas, da seguinte forma."
+
+#. Tag: para
+#: troubleshooting.docbook:399
+#, no-c-format
+msgid ""
+"First, exit the &kmail; program. This may not be necessary, but better safe "
+"than sorry."
+msgstr ""
+"Em primeiro lugar, saia do programa &kmail;. Isto poderá não ser necessário, "
+"mas mais vale prevenir que remediar."
+
+#. Tag: para
+#: troubleshooting.docbook:401
+#, no-c-format
+msgid ""
+"You can learn how many corrupted messages are present by using "
+"<code>akonadictl</code>. <screen>~ $ akonadictl fsck 2>&amp;1 | grep ^Found\n"
+"Found 6 external files.\n"
+"Found 6 external parts.\n"
+"Found no unreferenced external files.\n"
+"Found 0 parts to be moved to external files\n"
+"Found 0 parts to be moved to database\n"
+"Found 6 collections without RID.\n"
+"Found 9 items without RID.\n"
+"Found 0 dirty items.</screen> In this instance, there are nine duplicated "
+"messages (without RID)."
+msgstr ""
+"Poderá aprender como são apresentadas as mensagens corrompidas se usar o "
+"<code>akonadictl</code>. <screen>~ $ akonadictl fsck 2>&amp;1 | grep ^Found\n"
+"Found 6 external files.\n"
+"Found 6 external parts.\n"
+"Found no unreferenced external files.\n"
+"Found 0 parts to be moved to external files\n"
+"Found 0 parts to be moved to database\n"
+"Found 6 collections without RID.\n"
+"Found 9 items without RID.\n"
+"Found 0 dirty items.</screen> Nesta instância, existem nove mensagens "
+"duplicadas (sem RID)."
+
+#. Tag: para
+#: troubleshooting.docbook:406
+#, no-c-format
+msgid ""
+"You need to know how to connect directly to the mysql server. Use the "
+"<code>ps</code> and <code>grep</code> commands to do this."
+msgstr ""
+"Tem de saber como se ligar directamente ao servidor de MySQL. Use os "
+"comandos <code>ps</code> e <code>grep</code> para o fazer."
+
+#. Tag: screen
+#: troubleshooting.docbook:408
+#, fuzzy, no-c-format
+#| msgid ""
+#| "~ $ ps ux | grep mysql\n"
+#| "david     8788  0.2  0.9 3736292 153936 ?      Sl   06:45   0:16 /usr/"
+#| "sbin/mysqld \n"
+#| "--defaults-file=/home/david/.local/share/akonadi/mysql.conf\n"
+#| "--datadir=/home/david/.local/share/akonadi/db_data/ \n"
+#| "--socket=/run/user/1000/akonadi/mysql.socket \n"
+#| "--pid-file=/run/user/1000/akonadi/mysql.pid\n"
+#| "david    24275  0.0  0.0   8056  2144 pts/1    S+   08:24   0:00 grep --"
+#| "colour=auto mysql"
+msgid ""
+"~ $ ps ux | grep mysql\n"
+"david     8788  0.2  0.9 3736292 153936 ?      Sl   06:45   0:16 /usr/sbin/"
+"mysqld\n"
+"--defaults-file=/home/david/.local/share/akonadi/mysql.conf\n"
+"--datadir=/home/david/.local/share/akonadi/db_data/\n"
+"--socket=/run/user/1000/akonadi/mysql.socket\n"
+"--pid-file=/run/user/1000/akonadi/mysql.pid\n"
+"david    24275  0.0  0.0   8056  2144 pts/1    S+   08:24   0:00 grep --"
+"colour=auto mysql"
+msgstr ""
+"~ $ ps ux | grep mysql\n"
+"david     8788  0.2  0.9 3736292 153936 ?      Sl   06:45   0:16 /usr/sbin/"
+"mysqld \n"
+"--defaults-file=/home/david/.local/share/akonadi/mysql.conf\n"
+"--datadir=/home/david/.local/share/akonadi/db_data/ \n"
+"--socket=/run/user/1000/akonadi/mysql.socket \n"
+"--pid-file=/run/user/1000/akonadi/mysql.pid\n"
+"david    24275  0.0  0.0   8056  2144 pts/1    S+   08:24   0:00 grep --"
+"colour=auto mysql"
+
+#. Tag: para
+#: troubleshooting.docbook:411
+#, no-c-format
+msgid ""
+"Invoke the mysql server program using the socket information from step 3 and "
+"issue three mysql commands, as illustrated below. <screen>~ $ mysql --"
+"socket=/run/user/1000/akonadi/mysql.socket                 &lt;==\n"
+"Welcome to the MariaDB monitor.  Commands end with ; or \\g.\n"
+"Your MariaDB connection id is 114\n"
+"Server version: 10.5.10-MariaDB Source distribution\n"
+"\n"
+"Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.\n"
+"\n"
+"Type 'help;' or '\\h' for help. Type '\\c' to clear the current input "
+"statement.\n"
+"\n"
+"MariaDB [(none)]> use akonadi;                                         &lt;"
+"==\n"
+"Reading table information for completion of table and column names\n"
+"You can turn off this feature to get a quicker startup with -A\n"
+"\n"
+"Database changed\n"
+"MariaDB [akonadi]> delete from pimitemtable where remoteid is NULL;    &lt;"
+"==\n"
+"Query OK, 9 rows affected (0.003 sec)\n"
+"\n"
+"MariaDB [akonadi]> \\q                                                  &lt;"
+"==\n"
+"Bye</screen> The three mysql commands are \"use akonadi;\", \"delete from "
+"pimitemtable where remoteid is NULL;\", and \"\\q\". After you say \"mysql --"
+"socket= ...\" you will be in a dialog with the mysql server (aka \"MariaDB"
+"\"), which provides a &gt; prompt. The entire dialog is presented here, for "
+"clarity. User input lines are marked with &lt;== in the preceding "
+"illustration."
+msgstr ""
+"Invoque o programa do servidor 'mysql' usando a informação do 'socket' do "
+"passo 3 e invoque três comandos do 'mysql', como demonstrado abaixo. "
+"<screen>~ $ mysql --socket=/run/user/1000/akonadi/mysql."
+"socket                 &lt;==\n"
+"Welcome to the MariaDB monitor.  Commands end with ; or \\g.\n"
+"Your MariaDB connection id is 114\n"
+"Server version: 10.5.10-MariaDB Source distribution\n"
+"Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.\n"
+"Type 'help;' or '\\h' for help. Type '\\c' to clear the current input "
+"statement.\n"
+"MariaDB [(none)]> use akonadi;                                         &lt;"
+"==\n"
+"Reading table information for completion of table and column names\n"
+"You can turn off this feature to get a quicker startup with -A\n"
+"Database changed\n"
+"MariaDB [akonadi]> delete from pimitemtable where remoteid is NULL;    &lt;"
+"==\n"
+"Query OK, 9 rows affected (0.003 sec)\n"
+"MariaDB [akonadi]> \\q                                                  &lt;"
+"==\n"
+"Bye</screen> Os três comandos do 'mysql' são \"use akonadi;\", \"delete from "
+"pimitemtable where remoteid is NULL;\" e \"\\q\". Depois de indicar \"mysql "
+"--socket= ...\" irá entrar em contacto com o servidor de MySQL (ou \"MariaDB"
+"\"), que lhe fornece uma linha de comandos &gt;. A janela inteira aparece "
+"aqui, para fins de clareza. As linhas introduzidas pelo utilizador estão "
+"marcadas com &lt;== na ilustração anterior."
+
+#. Tag: para
+#: troubleshooting.docbook:421
+#, no-c-format
+msgid ""
+"When you restart &kmail;, those pesky duplicate messages will be gone. They "
+"were merely phantoms caused by the NULL pointers in the mysql database "
+"tables."
+msgstr ""
+"Quando reiniciar o &kmail;, estas mensagens duplicadas incómodas foram-se "
+"embora. Provavelmente eram fantasmas criados pelos ponteiros nulos nas "
+"tabelas da base de dados MySQL."
+
+#. Tag: title
+#: troubleshooting.docbook:427
+#, no-c-format
+msgid "Keeping &kmail;'s Auxiliary Storage Areas Clean"
+msgstr "Manter as Áreas de Armazenamento Auxiliar do &kmail; Limpas"
+
+#. Tag: para
+#: troubleshooting.docbook:429
+#, no-c-format
+msgid ""
+"&kmail; stores data in several different places on your machine. Most of "
+"these places are inside the <filename>~/.local/share/</filename> directory "
+"somewhere. For instance, on most Linux distros, your <guilabel>Local "
+"Folders</guilabel> are in <filename>~/.local/share/local-mail/</filename> . "
+"&akonadi; stores most of its data in <filename>~/.local/share/akonadi/</"
+"filename> ."
+msgstr ""
+"O &kmail; guarda os dados em vários locais diferentes na sua máquina. A "
+"maioria desses locais são algures dentro da pasta <filename>~/.local/share/</"
+"filename>. Por exemplo, na maioria das distribuições de Linux, as suas "
+"<guilabel>Pastas Locais</guilabel> encontram-se em <filename>~/.local/share/"
+"local-mail/</filename> . O &akonadi; guarda a maioria dos seus dados em "
+"<filename>~/.local/share/akonadi/</filename> ."
+
+#. Tag: screen
+#: troubleshooting.docbook:433
+#, no-c-format
+msgid ""
+"~ $ cd .local/share/akonadi\n"
+"~/.local/share/akonadi $ ls\n"
+"Akonadi.error      db_data  file_db_data     mysql.conf  socket-localhost-"
+"default\n"
+"Akonadi.error.old  db_misc  file_lost+found  search_db"
+msgstr ""
+"~ $ cd .local/share/akonadi\n"
+"~/.local/share/akonadi $ ls\n"
+"Akonadi.error      db_data  file_db_data     mysql.conf  socket-localhost-"
+"default\n"
+"Akonadi.error.old  db_misc  file_lost+found  search_db"
+
+#. Tag: para
+#: troubleshooting.docbook:435
+#, no-c-format
+msgid ""
+"<filename>Akonadi.error</filename> and <filename>Akonadi.error.old</"
+"filename> are log files that are created whenever &akonadi; stops and "
+"restarts. Text file <filename>mysql.conf</filename> is a configuration file "
+"for the mysqld daemon that serves as &akonadi;'s backend. The two "
+"directories <filename>db_data</filename> and <filename>search_db</filename> "
+"contain the actual mysql database tables. There are also a couple of mysql "
+"log files in <filename>db_data</filename> that might be helpful if and when "
+"&akonadi; acts up."
+msgstr ""
+"O <filename>Akonadi.error</filename> e o <filename>Akonadi.error.old</"
+"filename> são ficheiros de registos que são criados sempre que o &akonadi; "
+"pára e reinicia. O ficheiro de texto <filename>mysql.conf</filename> é um "
+"ficheiro de configuração para o servidor 'mysqld daemon' que funciona como "
+"infra-estrutura do &akonadi;. As duas pastas <filename>db_data</filename> e "
+"<filename>search_db</filename> contêm as tabelas reais da base de dados "
+"MySQL. Também existem alguns ficheiros de registo do MySQL no "
+"<filename>db_data</filename> que poderão ser úteis para perceber se e quando "
+"o &akonadi; funciona."
+
+#. Tag: para
+#: troubleshooting.docbook:441
+#, no-c-format
+msgid ""
+"The two directories <filename>file_db_data</filename> and <filename>file_lost"
+"+found</filename> contain auxiliary data associated with asynchronous "
+"processing. &akonadi; does not automatically clean out the "
+"<filename>file_lost+found</filename> directory, so you may wish to clean "
+"those files up manually from time to time (&eg;, with &dolphin;). &akonadi; "
+"does try to clean the <filename>file_db_data</filename> directory out after "
+"it has merged everything into the main database files, but sometimes junk "
+"piles up in there. Use this command <screen>find .local/share/akonadi/"
+"file_db_data/ -type f | xargs rm</screen> to fix this when it happens. (If "
+"the directory <filename>file_db_data</filename> is already clean, the \"find"
+"\" command shown above will return an error.)"
+msgstr ""
+"As duas pastas <filename>file_db_data</filename> e <filename>file_lost"
+"+found</filename> contêm dados auxiliares associados com o processamento "
+"assíncrono. O &akonadi; não limpa automaticamente a pasta <filename>file_lost"
+"+found</filename>, pelo que poderá desejar limpar estes ficheiros "
+"manualmente de tempos a tempos (&eg;, com o &dolphin;). O &akonadi; tenta de "
+"facto limpar a pasta <filename>file_db_data</filename> depois de ter passado "
+"tudo para os ficheiros principais da base de dados, mas às vezes junta-se lá "
+"algum lixo. Use este comando <screen>find .local/share/akonadi/file_db_data/ "
+"-type f | xargs rm</screen> para corrigir isto quando isso acontecer. (Se a "
+"pasta <filename>file_db_data</filename> já estiver limpa, o comando \"find\" "
+"apresentado acima irá devolver um erro.)"
+
+#. Tag: title
+#: troubleshooting.docbook:452
+#, no-c-format
+msgid "Correcting &kmail;'s \"Dirty\" Items"
+msgstr "Correcção dos Itens \"Modificados\" do &kmail;"
+
+#. Tag: para
+#: troubleshooting.docbook:454
+#, no-c-format
+msgid ""
+"This problem is directly related to <ulink url=\"https://bugs.kde.org/"
+"show_bug.cgi?id=436550\">&akonadi; bug #436550</ulink>, which was reported "
+"in April, 2021. It results from the \"dirty\" items occasionally found by "
+"<code>akonadictl fsck</code>."
+msgstr ""
+"Este programa está relacionado directamente com o <ulink url=\"https://bugs."
+"kde.org/show_bug.cgi?id=436550\">erro #436550 do &akonadi;</ulink>, que foi "
+"comunicado em Abril de 2021. Resulta dos itens \"modificados\" encontrados "
+"ocasionalmente pelo <code>akonadictl fsck</code>."
+
+#. Tag: screen
+#: troubleshooting.docbook:456
+#, no-c-format
+msgid ""
+"~ $ akonadictl fsck 2>&amp;1 | grep ^Found\n"
+"Found 5 external files.\n"
+"Found 5 external parts.\n"
+"Found no unreferenced external files.\n"
+"Found 0 parts to be moved to external files\n"
+"Found 0 parts to be moved to database\n"
+"Found 6 collections without RID.\n"
+"Found 0 items without RID.\n"
+"Found 750 dirty items."
+msgstr ""
+"~ $ akonadictl fsck 2>&amp;1 | grep ^Found\n"
+"Found 5 external files.\n"
+"Found 5 external parts.\n"
+"Found no unreferenced external files.\n"
+"Found 0 parts to be moved to external files\n"
+"Found 0 parts to be moved to database\n"
+"Found 6 collections without RID.\n"
+"Found 0 items without RID.\n"
+"Found 750 dirty items."
+
+#. Tag: para
+#: troubleshooting.docbook:459
+#, no-c-format
+msgid ""
+"The \"dirty\" flag on an item in pimitemtable (one of the tables in the "
+"&akonadi; database) is used to control certain aspects of asynchronous "
+"processing. It is set true when there are operations pending for a "
+"particular email message. Most of the time, the \"dirty\" flag is cleared "
+"one or two seconds later, when the once pending operation finishes up."
+msgstr ""
+"A opção \"dirty\" (modificado) de um item na 'pimitemtable' (uma das tabelas "
+"da base de dados do &akonadi;) é usada para controlar certos aspectos do "
+"processamento assíncrono. Está como 'verdadeira' quando existirem operações "
+"pendentes para uma dada mensagem de e-mail. Na maior parte das vezes, a "
+"opção \"dirty\" é limpa ao fim de um ou dois segundos, quando a operação "
+"pendente tiver terminado."
+
+#. Tag: para
+#: troubleshooting.docbook:463
+#, no-c-format
+msgid ""
+"Occasionally, for reasons that are not entirely clear, the \"dirty\" flag "
+"can get set on dozens or even hundreds of messages all at once, as "
+"illustrated above. When this happens, the automatic clearing mechanism gets "
+"stuck, and is unable to repair itself automatically. The primary reason for "
+"a \"dirty\" item in this circumstance is that the field \"remoteid\" is not "
+"set correctly, making retrieval of a \"dirty\" message impossible in "
+"&kmail;. The message still exists on the disk. But &kmail; can't find it."
+msgstr ""
+"Ocasionalmente, por razões que não são totalmente claras, a opção \"dirty\" "
+"poderá ficar assinalada em dezenas ou mesmo centenas de mensagens de uma "
+"vez, como demonstrado acima. Quando isso acontece,, o mecanismo de limpeza "
+"automática fica bloqueado e não se consegue reparar a si próprio de forma "
+"automática. A razão principal para um item \"dirty\" nessas circunstâncias é "
+"que o campo \"remoteid\" não está definido correctamente, tornando a "
+"recepção de uma mensagem \"dirty\" impossível no &kmail;. A mensagem ainda "
+"existe no disco, mas o &kmail; não consegue encontrá-la."
+
+#. Tag: para
+#: troubleshooting.docbook:469
+#, no-c-format
+msgid ""
+"There ought to be a better way to correct this problem. If you think of a "
+"better way, please let the authors know about it, so this documentation can "
+"be improved. The following procedure will at least correct the database "
+"errors. But it does entail a lot of work."
+msgstr ""
+"Deveria existir uma melhor forma de corrigir este problema. Se descobrir uma "
+"forma mais correcta, por favor comunique-a aos autores, para que esta "
+"documentação possa ser melhorada. O seguinte procedimento irá pelo menos "
+"corrigir os erros na base de dados. Contudo, implica bastante trabalho."
+
+#. Tag: para
+#: troubleshooting.docbook:474
+#, no-c-format
+msgid ""
+"Exit &kmail; and stop the &akonadi; server with a terminal command: "
+"<code>akonadictl stop</code> ."
+msgstr ""
+"Saia do &kmail; e pare o servidor do &akonadi; com um comando de terminal: "
+"<code>akonadictl stop</code> ."
+
+#. Tag: para
+#: troubleshooting.docbook:476
+#, no-c-format
+msgid ""
+"Make a backup copy of all your email messages. You may be able to use <ulink "
+"url=\"help:/pimdataexporter\">PIM Data Exporter</ulink> for this purpose. Or "
+"you may use &ark; to make an archive, or &dolphin; to make a second copy of "
+"<filename>~/.local/share/local-mail/</filename> somewhere else on your hard "
+"disk. If you're adventurous, you might just rename your local folders "
+"directory to something like <filename>local-mail-save</filename> . But it's "
+"safer to be sure you have a backup copy of your messages before you proceed."
+msgstr ""
+"Faça uma cópia de segurança de todas as suas mensagens de e-mail. Poderá "
+"então usar o <ulink url=\"help:/pimdataexporter\">Exportador de Dados PIM</"
+"ulink> para este fim. Ou então, poderá usar o &ark; para criar um pacote ou "
+"o &dolphin; para criar uma segunda cópia do <filename>~/.local/share/local-"
+"mail/</filename> noutro local do seu disco rígido. Se se sentir aventureiro, "
+"poderá apenas mudar o nomes das suas pastas locais para algo do tipo "
+"<filename>local-mail-cópia</filename> . Contudo, é mais seguro saber que tem "
+"uma cópia de segurança das suas mensagens antes de prosseguir."
+
+#. Tag: para
+#: troubleshooting.docbook:482
+#, no-c-format
+msgid ""
+"You should also make a backup copy of any filters you have created, and make "
+"sure you know how to restore any custom <guilabel>Sent mail folder</"
+"guilabel>, <guilabel>Drafts folder</guilabel>, or <guilabel>Templates "
+"folder</guilabel> entries associated with your &kmail; identities. The next "
+"step will remove all your personally customized mail folders, and you will "
+"need to patch some stuff up after &akonadi; rebuilds its database tables."
+msgstr ""
+"Também deverá criar uma cópia de segurança dos filtros que tiver criado, e "
+"certificar-se de que sabe como repor os itens das pastas <guilabel>Enviado</"
+"guilabel>, <guilabel>Rascunhos</guilabel> ou <guilabel>Modelos</guilabel> "
+"nas suas identidades do &kmail;. O próximo passo irá remover todas as suas "
+"pastas personalizadas, pelo que terá de corrigir algumas coisas depois de o "
+"&akonadi; reconstruir as tabelas da sua base de dados."
+
+#. Tag: para
+#: troubleshooting.docbook:487
+#, no-c-format
+msgid ""
+"Now delete all the folders inside of the directory <filename>local-mail</"
+"filename>, or rename that directory to something like <filename>local-mail-"
+"save</filename> . Then start the &kmail; program. This will force &akonadi; "
+"to erase all the database table entries associated with email messages. You "
+"will see your old folder names, briefly, but these will disappear when "
+"&akonadi; finishes deleting all the \"dirty\" items (and all the clean ones, "
+"too)."
+msgstr ""
+"Agora apague todas as pastas dentro da pasta <filename>local-mail</filename> "
+"ou mude o nome dessa pasta para algo do tipo <filename>local-mail-cópia</"
+"filename> . Depois inicie o programa &kmail;. Isto irá obrigar o &akonadi; a "
+"apagar todos os itens das tabelas da base de dados associados às mensagens "
+"de e-mail. Irá ver por momentos os nomes antigos das suas pastas, mas os "
+"mesmos irão desaparecer quando o &akonadi; acabar de apagar todos os itens "
+"\"dirty\" ou modificados (e também os já limpos)."
+
+#. Tag: para
+#: troubleshooting.docbook:492
+#, no-c-format
+msgid ""
+"Exit &kmail; and stop the &akonadi; server as explained in step 1, then "
+"restore the backup copy of your messages (created in step 2) to the "
+"<filename>~/.local/share/local-mail/</filename> directory."
+msgstr ""
+"Saia do &kmail; e pare o servidor do &akonadi; como explicado no passo 1; "
+"depois reponha a cópia de segurança das suas mensagens (criada no passo 2) "
+"para a pasta <filename>~/.local/share/local-mail/</filename>."
+
+#. Tag: para
+#: troubleshooting.docbook:495
+#, no-c-format
+msgid ""
+"Start &kmail; up again, and force &akonadi; to re-sync the database. The "
+"easiest way to do this is to <menuchoice> <shortcut><keycombo action=\"simul"
+"\">&Ctrl;<keycap>L</keycap></keycombo></shortcut><guimenu>File</"
+"guimenu><guimenuitem>Check Mail</guimenuitem></menuchoice>; &akonadi; "
+"automatically re-syncs all the folders when it fetches mail. This will take "
+"several minutes to complete, depending on how many messages you have saved "
+"in your &kmail; folders. But when the process is complete all the \"dirty\" "
+"items will be gone."
+msgstr ""
+"Inicie o &kmail; de novo e force o &akonadi; a sincronizar de novo a base de "
+"dados. A forma mais simples de o fazer é a opção <menuchoice> "
+"<shortcut><keycombo action=\"simul\">&Ctrl;<keycap>L</keycap></keycombo></"
+"shortcut><guimenu>Ficheiro</guimenu><guimenuitem>Verificar o Correio</"
+"guimenuitem></menuchoice>; o &akonadi; irá sincronizar de novo "
+"automaticamente todas as pastas quando receber o e-mail. Isto irá demorar "
+"vários minutos para terminar, dependendo de quantas mensagens tem gravadas "
+"nas suas pastas do &kmail;. Porém, quando o processo terminar, todos os "
+"itens \"dirty\" terão desaparecido."
+
+#. Tag: para
+#: troubleshooting.docbook:501
+#, no-c-format
+msgid ""
+"Finally, you will want to restore your mail filter rules backed up in step "
+"3, and check that all the custom folder items (<guilabel>Sent mail folder</"
+"guilabel>, &etc;) for your identities are set the way you want them. You "
+"will also need to reset any custom folder properties you had set up, and you "
+"will probably have a bunch of spurious \"Unread Message\" notifications to "
+"deal with. But your &akonadi; database tables will be all clean and shiny "
+"once again!"
+msgstr ""
+"Finalmente, irá querer repor as suas regras de filtragem de e-mail "
+"salvaguardadas no passo 3, e certificar que todos os itens de pastas "
+"personalizados (<guilabel>Pasta do correio enviado</guilabel>, &etc;) das "
+"suas identidades estão configurados da forma que deseja. Provavelmente irá "
+"também querer repor todas as propriedades personalizadas das pastas que "
+"configurou anteriormente, assim como poderá ter algumas notificações de "
+"\"Mensagem Não-Lida\" com que lidar. Mas ao menos as suas tabelas da base de "
+"dados do &akonadi; já estarão limpas e consistentes de novo!"

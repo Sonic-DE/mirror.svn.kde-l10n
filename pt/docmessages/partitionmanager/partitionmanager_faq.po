@@ -1,0 +1,431 @@
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: partitionmanager_faq\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 12:04+0000\n"
+"PO-Revision-Date: 2010-10-16 19:00+0000\n"
+"Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
+"Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: application/x-xml2pot; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-KDE-DocBook-SVN-URL: trunk/playground/sysadmin/doc/partitionmanager/faq."
+"docbook\n"
+"X-KDE-DocBook-SVN-Changed-Revision: 867075\n"
+"X-KDE-Associated-UI-Catalogs: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-POFile-SpellExtra: on linuxswap space MiB ext device Live JFS home XFS\n"
+"X-POFile-SpellExtra: resize left BIOS LibParted MS\n"
+
+#. Tag: title
+#: faq.docbook:2
+#, no-c-format
+msgid "Questions and Answers"
+msgstr "Perguntas e Respostas"
+
+#. Tag: para
+#: faq.docbook:7
+#, no-c-format
+msgid "How dangerous is &partman; for my data?"
+msgstr "Quão perigoso é o &partman; para os meus dados?"
+
+#. Tag: para
+#: faq.docbook:10
+#, no-c-format
+msgid ""
+"First of all, you should never perform any destructive operations (delete, "
+"move, resize) without first making a complete backup of everything affected."
+msgstr ""
+"Primeiro que tudo, nunca deverá efectuar quaisquer operações destrutivas "
+"(apagar, mover ou dimensionar) sem ter feito primeiro uma cópia de segurança "
+"completa de tudo o que for afectado."
+
+#. Tag: para
+#: faq.docbook:13
+#, no-c-format
+msgid ""
+"Having said that, &partman; is safe to use. It performs extensive checks "
+"before and after every operation. It calls external tools written and "
+"supported by the file system authors. And it has been tested extensively."
+msgstr ""
+"Posto isto, o &partman; é seguro de utilizar. Ele efectua verificações "
+"pormenorizadas antes e depois de cada operação. Ele invoca as ferramentas "
+"externas que foram criadas e são suportadas pelos autores dos sistemas de "
+"ficheiros. Tudo isto em conjunto foi testado de forma alargada."
+
+#. Tag: para
+#: faq.docbook:16
+#, no-c-format
+msgid ""
+"There is always the risk of data loss due to an unknown bug. &partman;'s "
+"authors try to minimize this risk, but there are of course no guarantees."
+msgstr ""
+"Existe sempre o risco de perda de dados derivado de um erro desconhecido. Os "
+"autores do &partman; tentam minimizar este risco, mas obviamente não existem "
+"garantias."
+
+#. Tag: para
+#: faq.docbook:23
+#, no-c-format
+msgid ""
+"I have installed all recommended external file system support packages and "
+"still do not get support for all operations on all file systems."
+msgstr ""
+"Instalei todos os pacotes externos de suporte ao sistema de ficheiros e "
+"mesmo assim não tenho suporte para todas as operações em todos os sistemas "
+"de ficheiros."
+
+#. Tag: para
+#: faq.docbook:26
+#, no-c-format
+msgid ""
+"Not everything &partman; can do in principle can be done with all file "
+"systems."
+msgstr ""
+"Nem tudo o que o &partman; pode fazer, em princípio, se aplica a todos os "
+"sistemas de ficheiros."
+
+#. Tag: para
+#: faq.docbook:29
+#, no-c-format
+msgid ""
+"One example is performing a file system check on linuxswap: It is just not "
+"possible. There are other limitations like that inherent in some file "
+"systems. You cannot shrink JFS or XFS file systems because neither of the "
+"two supports shrinking at all, with or without &partman;."
+msgstr ""
+"Um exemplo é a verificação do sistema de ficheiros de uma partição de "
+"memória virtual ('linuxswap'). Isto simplesmente não é possível. Existem "
+"outras limitações inerentes a alguns sistemas de ficheiros. Não pode "
+"encolher sistemas de ficheiros JFS ou XFS, dado que nenhum dos dois suportam "
+"o dimensionamento dos mesmos, com ou sem o &partman;."
+
+#. Tag: para
+#: faq.docbook:36
+#, no-c-format
+msgid ""
+"Why can't I see any meaningful progress information when resizing a "
+"partition?"
+msgstr ""
+"Porque é que não vejo nenhuma informação de progresso significativa quando "
+"estou a dimensionar uma partição?"
+
+#. Tag: para
+#: faq.docbook:39
+#, no-c-format
+msgid ""
+"&partman; can only show progress information when it knows how long the jobs "
+"in an operation will take. Unfortunately this is usually not the case when "
+"resizing partitions because the by far longest job when doing so is resizing "
+"the file system on the partition. Resizing file systems is in most cases "
+"something an external tool will do on behalf of &partman; and these external "
+"tools do not provide useful progress information to &partman;, so there's "
+"nothing to report while they are running."
+msgstr ""
+"O &partman; só pode mostrar a informação de progresso quando sabe o tempo "
+"que as tarefas de uma operação irão levar. Infelizmente, nem sempre é o caso "
+"no dimensionamento das partições porque, de longe, a tarefa mais longa é a "
+"mudança do tamanho do sistema de ficheiros na partição. O dimensionamento "
+"dos sistemas de ficheiros é, na maioria dos casos, feito por uma ferramenta "
+"externa que actua por parte do &partman;, mas que pode não fornecer "
+"informações úteis de progresso ao &partman;, pelo que não há nada a relatar "
+"enquanto estas estão em curso."
+
+#. Tag: para
+#: faq.docbook:46
+#, no-c-format
+msgid ""
+"Why can't I resize the root partition? How can I resize the partition /home "
+"is on?"
+msgstr ""
+"Porque é que não posso dimensionar a partição de raiz? Como é que posso "
+"dimensionar a partição onde se encontra a pasta '/home'?"
+
+#. Tag: para
+#: faq.docbook:49
+#, no-c-format
+msgid ""
+"To modify a partition it must not be mounted. You can however not unmount "
+"the root partition. Neither will you be able to unmount the home partition "
+"if the home directory of the currently logged in user is on it."
+msgstr ""
+"Para modificar uma partição, esta não poderá estar montada. Isso não pode "
+"acontecer com a partição de raiz em caso algum. Pelo mesmo facto, se a pasta "
+"pessoal do utilizador actual estiver em uso, também não poderá desmontar a "
+"partição respectiva."
+
+#. Tag: para
+#: faq.docbook:52
+#, no-c-format
+msgid ""
+"The solution for this problem is to boot from a Linux Live CD that comes "
+"with &partman; and modify these partitions from there."
+msgstr ""
+"A solução para este problema é arrancar a partir de um Live CD de Linux que "
+"venha com o &partman; e modificar essas partições a partir daí."
+
+#. Tag: para
+#: faq.docbook:59
+#, no-c-format
+msgid ""
+"I'm getting a warning message in the log output about something that a "
+"partition cannot be created with the size I requested and that it will "
+"instead be smaller. What happened?"
+msgstr ""
+"Estou a receber um aviso no resultado do registo sobre o facto de não poder "
+"criar uma partição com o tamanho que pediu, sendo criada com um tamanho mais "
+"pequeno. O que é que se passa?"
+
+#. Tag: para
+#: faq.docbook:62
+#, no-c-format
+msgid ""
+"On MS-DOS partition tables, partitions have to begin and end on cylinder "
+"boundaries. This is mainly for historical reasons. &partman; will deal with "
+"this internally and try not to bother the user with that limitation."
+msgstr ""
+"Nas tabelas de partições do MS-DOS, as partições têm de começar e terminar "
+"nos limites entre cilindros. Isto acontece por razões históricas. O "
+"&partman; irá lidar com isto internamente, não tentando incomodar o "
+"utilizador com essa limitação."
+
+#. Tag: para
+#: faq.docbook:65
+#, no-c-format
+msgid ""
+"Under rare circumstances, &partman; will however not be able to set up an "
+"operation in the way the user requested it due to this limitation. For "
+"example, if one cylinder on a device is 8 MiB large and you try to resize a "
+"partition by 6 MiB, this will not work."
+msgstr ""
+"Em algumas circunstâncias raras, o &partman; não poderá não ser contudo "
+"capaz de configurar uma operação da forma que o utilizador pedir, devido a "
+"esta limitação. Por exemplo, se um cilindro de um dispositivo tiver 8 MiB de "
+"tamanho e quiser variar o tamanho de uma partição em 6 MiB, isso não irá "
+"resultar."
+
+#. Tag: para
+#: faq.docbook:68
+#, no-c-format
+msgid ""
+"You might also encounter this message if you have a device and partition "
+"table where the partitions are, for whatever reason, not correctly snapped "
+"to cylinder boundaries and you try to move or copy these partitions for the "
+"first time."
+msgstr ""
+"Poderá também obter esta mensagem se tiver um dispositivo e uma tabela de "
+"partições onde as partições não estão, seja por que razão for, ajustadas "
+"correctamente aos limites dos cilindros e tente mover ou copiar estas "
+"partições pela primeira vez."
+
+#. Tag: para
+#: faq.docbook:71
+#, no-c-format
+msgid ""
+"The message itself is harmless and only exists to inform the user that "
+"something can not be done quite exactly the way the user expects. Your "
+"partitions and data will not be negatively affected in any way if you see "
+"this message."
+msgstr ""
+"A mensagem em si é inofensiva e só existe apenas para informar o utilizador "
+"que algo não poderá ser feito exactamente da forma que o utilizador está à "
+"espera. As suas partições e dados não serão afectados de forma negativa "
+"sempre que observar esta mensagem."
+
+#. Tag: para
+#: faq.docbook:78
+#, no-c-format
+msgid "How many operations can I add to the list of pending operations?"
+msgstr "Quantas operações posso adicionar à lista de operações pendentes?"
+
+#. Tag: para
+#: faq.docbook:81
+#, no-c-format
+msgid "There is no limit."
+msgstr "Não existe qualquer limite."
+
+#. Tag: para
+#: faq.docbook:84
+#, no-c-format
+msgid ""
+"It is however not recommended to add too many operations to the list. There "
+"is always a small chance an operation might fail with an error, in which "
+"case &partman; will stop executing operations. In that case it is a lot "
+"easier to find out what happened (and to re-add all the operations that "
+"could not be executed) if the list of pending operations was not exceedingly "
+"long."
+msgstr ""
+"Contudo, não é recomendado adicionar demasiadas operações à lista. Existirá "
+"sempre uma pequena hipótese que uma operação possa falhar com algum erro; "
+"nesse caso, o &partman; irá parar a execução das operações. Neste caso, é "
+"muito mais fácil descobrir o que se passou (e adicionar de novo todas as "
+"operações que não puderam ser executadas) se a lista de operações pendentes "
+"não for demasiado grande."
+
+#. Tag: para
+#: faq.docbook:91
+#, no-c-format
+msgid ""
+"Resizing an ext2 or ext3 file system failed with something in the report "
+"about <quote>no space left on device</quote>. What happened? Is my data "
+"corrupted now?"
+msgstr ""
+"O dimensionamento de um sistema de ficheiros 'ext2' ou 'ext3' falhou com "
+"algo do género <quote>no space left on device</quote> (acabou-se o espaço "
+"livre no dispositivo). O que se passou? Será que os meus dados estão "
+"corrompidos agora?"
+
+#. Tag: para
+#: faq.docbook:94
+#, fuzzy, no-c-format
+#| msgid ""
+#| "This is a problem of the <command>e2resize</command> command and the "
+#| "underlying ext2/3/4 file system. If a file system is nearly full, "
+#| "<command>e2resize</command> cannot make it any smaller even though that "
+#| "should be possible from the number of free sectors left. &partman; can "
+#| "unfortunately not know beforehand if <command>e2resize</command> will "
+#| "abort with this error for a given file system or not. If it happens "
+#| "nothing will be done at all and your data will not be negatively affected."
+msgid ""
+"This is a problem of the <command>e2resize</command> command and the "
+"underlying ext2/3/4 file system. If a file system is nearly full, "
+"<command>e2resize</command> cannot make it any smaller even though that "
+"should be possible from the number of free sectors left. &partman; can "
+"unfortunately not know beforehand if <command>e2resize</command> will abort "
+"with this error for a given file system or not. If it happens, nothing will "
+"be done at all and your data will not be negatively affected."
+msgstr ""
+"Este é um problema do comando <command>e2resize</command> e do sistema de "
+"ficheiros 'ext2'/'ext3'/'ext4' subjacente. Se um sistema de ficheiros "
+"estiver quase cheio, o  <command>e2resize</command> não consegue torná-lo "
+"mais pequeno, mesmo que tal fosse possível com base no número de sectores "
+"livres que sobram. Infelizmente, o &partman; não consegue saber de antemão "
+"se o <command>e2resize</command> irá ser interrompido ou não com este erro "
+"para um determinado sistema de ficheiros. Se acontecer, nada será feito e os "
+"seus dados não serão afectados de forma alguma."
+
+#. Tag: para
+#: faq.docbook:97
+#, no-c-format
+msgid "There is no real workaround for this problem right now."
+msgstr "Não existe nenhuma solução alternativa para o problema neste momento."
+
+#. Tag: para
+#: faq.docbook:104
+#, no-c-format
+msgid ""
+"Why can't I format my floppy disk with &partman;? Why is there no support "
+"for CD writing or DVD burning?"
+msgstr ""
+"Porque é que não posso formatar a minha disquete com o &partman;? Porque é "
+"que não há suporte para a gravação de CD's ou DVD's?"
+
+#. Tag: para
+#: faq.docbook:107
+#, no-c-format
+msgid ""
+"None of this is what &partman; has been designed to do: It is an application "
+"that deals with partitions and the file systems on these partitions. Floppy "
+"disks, CDs or DVDs do not need or use partitions."
+msgstr ""
+"Nada isto foi tido em conta ao desenhar o &partman;: É uma aplicação que "
+"lida com as partições e os sistemas de ficheiros destas. As disquetes, CD's "
+"ou DVD's não necessitam nem usam as partições."
+
+#. Tag: para
+#: faq.docbook:114
+#, no-c-format
+msgid ""
+"Why can't I modify partitions on a device with an amiga or bsd partition "
+"table?"
+msgstr ""
+"Porque é que não posso modificar as partições de um dispositivo com uma "
+"tabela de partições do Amiga ou do BSD?"
+
+#. Tag: para
+#: faq.docbook:117
+#, no-c-format
+msgid ""
+"&partman; currently only allows read-only access to any other partition "
+"table type than MS-DOS. This is for safety reasons: Support in &partman; for "
+"this partition table types is not really there and what is there (or just "
+"incidentally works) has not been tested enough to use it with confidence."
+msgstr ""
+"O &partman; só permite de momento o acesso apenas para leitura para qualquer "
+"outro tipo de tabelas de partições que não sejam as para MS-DOS. Isto "
+"acontece apenas por razões de segurança: O suporte do &partman; para este "
+"tipo de tabelas de partições não existe lá de facto e o que existir (ou que "
+"funciona apenas por incidente) não foi testado o suficiente para poder ser "
+"usado com confiança."
+
+#. Tag: para
+#: faq.docbook:120
+#, no-c-format
+msgid ""
+"Of course you can still create a new MS-DOS partition table on the device in "
+"question, but that is probably not what you want."
+msgstr ""
+"Obviamente, poderá criar à mesma uma nova tabela de partições para MS-DOS no "
+"dispositivo em questão, mas isto provavelmente não é o que deseja."
+
+#. Tag: para
+#: faq.docbook:127
+#, no-c-format
+msgid ""
+"On startup, &partman; hangs for a couple of minutes while it apparently "
+"tries to scan the floppy drive on my computer."
+msgstr ""
+"No início, o &partman; bloqueia durante alguns minutos, enquanto tenta "
+"aceder à unidade de disquetes do meu computador."
+
+#. Tag: para
+#: faq.docbook:130
+#, no-c-format
+msgid ""
+"This happens if you have a floppy drive configured in your computer's BIOS "
+"settings but have not actually connected one. If you do not have a floppy "
+"drive check your BIOS settings and disable any floppy drives configured "
+"there to see if this makes the problem go away."
+msgstr ""
+"Isso parece acontecer se tiver uma unidade de disquetes configurada na BIOS "
+"do seu computador, mas não tiver ligada nenhuma, de facto. Verifique por "
+"favor a sua configuração da BIOS e desactive as unidades de disquetes "
+"configuradas, de modo a ver se este problema fica resolvido."
+
+#. Tag: para
+#: faq.docbook:137
+#, no-c-format
+msgid ""
+"During startup, &partman; prints some message about probing devices and that "
+"it might even crash or at least take a long time."
+msgstr ""
+"Durante o arranque, o &partman; imprime algumas mensagens sobre a detecção "
+"dos dispositivos, o que poderá estoirar ou levar algum tempo, pelo menos."
+
+#. Tag: para
+#: faq.docbook:140
+#, no-c-format
+msgid ""
+"LibParted, a backend library &partman; uses, has problems with systems where "
+"the Linux Device Mapper is used in a way it doesn't understand. "
+"Unfortunately it reacts to some of these situations with segmentation "
+"faults, i.e. crashes. &partman; therefore tries to avoid these situations by "
+"using an alternative way to scan your computer for disks. If it cannot do "
+"that, however, and therefore has to rely on LibParted, it will print a "
+"message like the one mentioned. If the scanning for disks works, you can "
+"safely disregard the message."
+msgstr ""
+"A LibParted, uma biblioteca de infra-estrutura que o &partman; usa, tem "
+"problemas nos sistemas em que o Mapeador de Dispositivos do Linux é usado de "
+"forma incompreensível. Infelizmente, reage algumas dessas situações com "
+"estoiros. O &partman; tenta deste modo evitar essas situações, usando infra-"
+"estruturas alternativas. Se não o conseguir fazer, e tiver de se basear na "
+"LibParted, irá imprimir uma mensagem como a mencionada. Se a análise dos "
+"discos funcionar, poderá ignorar esta mensagem em segurança."
+
+#~ msgid "&reporting.bugs; &updating.documentation;"
+#~ msgstr "&reporting.bugs; &updating.documentation;"

@@ -1,0 +1,235 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ktechlab_flowcode\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 12:04+0000\n"
+"PO-Revision-Date: 2017-01-03 10:00+0000\n"
+"Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
+"Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-POFile-SpellExtra: gpasm Assembly PIC microbe PORT TRIS gputils\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#. Tag: title
+#: flowcode.docbook:3
+#, no-c-format
+msgid "&flowcode;"
+msgstr "&flowcode;"
+
+#. Tag: title
+#: flowcode.docbook:6
+#, no-c-format
+msgid "Introduction"
+msgstr "Introdução"
+
+#. Tag: para
+#: flowcode.docbook:8
+#, no-c-format
+msgid ""
+"&flowcode; allows for very quick and easy construction of a PIC program. "
+"After the user has constructed a flowchart from the program parts available, "
+"&ktechlab; can then convert the flowchart into a number of formats. To "
+"output hex, for example, the following chain of conversions takes place:"
+msgstr ""
+"O &flowcode; permite uma construção muito rápida e simples de um programa "
+"para um PIC. Depois de o utilizador ter construído um fluxograma a partir "
+"dos componentes de programação disponíveis, o &ktechlab; poderá então "
+"converter o fluxograma num variado conjunto de formatos. Para gerar código "
+"hexadecimal, por exemplo, toma lugar a seguinte sequência de conversões:"
+
+#. Tag: para
+#: flowcode.docbook:11
+#, no-c-format
+msgid ""
+"The &flowcode; is converted to &microbe;; a high-level language whose "
+"compiler is distributed with &ktechlab;."
+msgstr ""
+"O &flowcode; é convertido para &microbe;; uma linguagem de alto-nível cujo "
+"compilador é distribuído com o &ktechlab;."
+
+#. Tag: para
+#: flowcode.docbook:12
+#, no-c-format
+msgid ""
+"The <command>microbe</command> executable then compiles the &microbe; file "
+"to PIC assembly."
+msgstr ""
+"O executável <command>microbe</command> então compila o ficheiro &microbe; "
+"para Assembly do PIC."
+
+#. Tag: para
+#: flowcode.docbook:13
+#, no-c-format
+msgid ""
+"Finally, <command>gpasm</command> takes the PIC assembly file, and outputs "
+"the hex for the program."
+msgstr ""
+"Finalmente, o <command>gpasm</command> pega no ficheiro Assembly do PIC e "
+"gera o código hexadecimal do programa."
+
+#. Tag: para
+#: flowcode.docbook:16
+#, no-c-format
+msgid ""
+"Of course, if you don't have gputils installed - with which <command>gpasm</"
+"command> is distributed - then the last step can't be performed."
+msgstr ""
+"Obviamente, se não tiver o 'gputils' instalado - com o qual é distribuído o "
+"<command>gpasm</command> - então o último passo não pode ser executado."
+
+#. Tag: title
+#: flowcode.docbook:21
+#, no-c-format
+msgid "Creating a Program"
+msgstr "Criar um Programa"
+
+#. Tag: para
+#: flowcode.docbook:23
+#, no-c-format
+msgid ""
+"Every &flowcode; program needs a unique starting point - this is the place "
+"where your program will be run from on PIC startup. To define this point, "
+"open up the FlowParts sidebar on the left, and drag across the "
+"<guilabel>Start</guilabel> part. &ktechlab; will only allow you to use one "
+"of these."
+msgstr ""
+"Cada programa em &flowcode; precisa de um ponto de partida único - este é o "
+"local onde o seu programa será executado aquando do arranque do PIC. Para "
+"definir este ponto, abra a barra de Fluxos à esquerda e arraste a componente "
+"<guilabel>Início</guilabel>. O &ktechlab; só lhe permitirá usar uma "
+"instância deste."
+
+#. Tag: para
+#: flowcode.docbook:25
+#, no-c-format
+msgid ""
+"You can then construct your program by using the predefined parts on the "
+"left - or insert code of your own (in assembly or &microbe; format) via the "
+"<guilabel>Embed</guilabel> part. The flow of the program is controlled via "
+"the connections between the FlowParts - <xref linkend=\"connecting_components"
+"\"/> offers more detail on creating connections."
+msgstr ""
+"Poderá então construir o seu programa se usar os componentes predefinidos à "
+"esquerda - ou inserindo código seu (no formato Assembly ou &microbe;) com o "
+"componente <guilabel>Incorporação</guilabel>. O fluxo do programa é "
+"controlado pelas ligações entre componentes de fluxo - a secção <xref "
+"linkend=\"connecting_components\"/> oferece mais detalhe na criação de "
+"ligações."
+
+#. Tag: para
+#: flowcode.docbook:27
+#, no-c-format
+msgid ""
+"&flowcode; imposes limitations in addition to those of circuits on what can "
+"be connected. For example, each FlowPart can only have one output "
+"connection. Additional limitations are described in <xref linkend="
+"\"nestling_flowcode\"/>."
+msgstr ""
+"O &flowcode; impõe limitações, para além das dos circuitos, sobre o que pode "
+"ser ligado. Por exemplo, cada componente de fluxo só poderá ter uma ligação "
+"de saída. As limitações adicionais estão descritas em <xref linkend="
+"\"nestling_flowcode\"/>."
+
+#. Tag: title
+#: flowcode.docbook:31
+#, no-c-format
+msgid "PIC Settings"
+msgstr "Configuração do PIC"
+
+#. Tag: para
+#: flowcode.docbook:33
+#, no-c-format
+msgid ""
+"When you create a new &flowcode; document, you'll notice a picture of the "
+"PIC you're using in the top-left corner of the work area. This represents "
+"the initial settings of the PIC."
+msgstr ""
+"Quando criar um novo documento &flowcode;, irá reparar numa imagem do PIC "
+"que está a usar no canto superior esquerdo da área de trabalho. Isto "
+"representa a configuração inicial do PIC."
+
+#. Tag: para
+#: flowcode.docbook:35
+#, no-c-format
+msgid ""
+"Each pin shown on the picture of the PIC shows the initial type of pin "
+"(input or output), and its initial state (high or low). You can change these "
+"by dragging the pin to set the type, and clicking on it to toggle its state."
+msgstr ""
+"Cada pino apresentado na imagem do PIC mostra o tipo inicial do pino "
+"(entrada ou saída) e o seu estado inicial (alto ou baixo). Poderá alterar "
+"estes valores se arrastar o pino, para definir o tipo, e carregando nele "
+"para comutar o seu estado."
+
+#. Tag: para
+#: flowcode.docbook:37
+#, no-c-format
+msgid ""
+"The <guilabel>Settings</guilabel> dialog, invoked by clicking on the "
+"<guibutton>Settings</guibutton> button, also allows you to edit the initial "
+"pin types and states - in this case, by editing the binary values written to "
+"the PORT and TRIS registers. As well as pin settings though, the dialog "
+"allows editing of the initial values of variables in the PIC program."
+msgstr ""
+"A janela de <guilabel>Configuração</guilabel>, invocada ao carregar no botão "
+"de <guilabel>Configuração</guilabel>, também lhe permite editar os tipos e "
+"estados iniciais dos pinos - neste caso, ao editar os valores binários dos "
+"registos PORT e TRIS. Assim como na configuração dos pinos, a janela permite "
+"a edição dos valores iniciais das variáveis no programa do PIC."
+
+#. Tag: para
+#: flowcode.docbook:39
+#, no-c-format
+msgid ""
+"At the bottom, there is a list of currently defined pin maps, as well as "
+"buttons to manipulate them. Pin maps are used to specify how a seven segment "
+"or a keypad is connected to a PIC. To use the <guilabel>Seven Segment</"
+"guilabel> or the <guilabel>Keypad</guilabel> &flowcode; parts, you will need "
+"to define a pin map here first."
+msgstr ""
+"No fundo, existe uma lista com os mapas de pinos actuais, assim como botões "
+"para os manipular. Os mapas de pinos são usados como é que um sete-segmentos "
+"ou um teclado é ligado a um PIC. Para usar os componentes &flowcode; de "
+"<guilabel>Sete Segmentos</guilabel> ou o <guilabel>Teclado</guilabel>, terá "
+"de definir primeiro um mapa de pinos aqui."
+
+#. Tag: title
+#: flowcode.docbook:44
+#, no-c-format
+msgid "Nestling &flowcode;"
+msgstr "Encadear o &flowcode;"
+
+#. Tag: para
+#: flowcode.docbook:46
+#, no-c-format
+msgid ""
+"Many FlowParts, such as subroutines and loops, can contain code of their "
+"own. After creating such a container, FlowParts can be added by either "
+"dragging or dropping them into the container. The container will be "
+"highlighted to indicate that it will become the new parent of the FlowPart."
+msgstr ""
+"Muitos dos componentes de fluxo, como as sub-rotinas e os ciclos, podem "
+"conter código próprio. Depois de criar um desses contentores, poderá "
+"adicionar componentes de fluxo se os arrastar para dentro do contentor. O "
+"contentor ficará realçado para indicar que ficará como novo \"pai\" desse "
+"componente."
+
+#. Tag: para
+#: flowcode.docbook:48
+#, no-c-format
+msgid ""
+"The container takes responsibility for FlowParts nestled inside. If the "
+"expand button is unclicked, all contained FlowParts will be hidden - and "
+"likewise, the contents will be shown when the expand button is clicked "
+"again. Connections cannot be made between FlowParts in different containers, "
+"and the contents of a container will be moved about along with the container."
+msgstr ""
+"O contentor toma a responsabilidade pelos componentes nele incorporados. Se "
+"o botão de expansão não estiver carregado, todas as componentes nele "
+"contidas estarão escondidas - da mesma forma, o conteúdo será apresentado "
+"quando o botão de expansão for carregado de novo. Não é possível fazer "
+"ligações entre componentes de fluxo em diferentes contentores, assim como o "
+"conteúdo de um contentor será movido em conjunto com o mesmo."

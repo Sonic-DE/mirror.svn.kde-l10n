@@ -1,0 +1,243 @@
+# Translation of ktechlab_flowcode.po to Ukrainian
+# Copyright (C) 2016-2017 This_file_is_part_of_KDE
+# This file is distributed under the license LGPL version 2.1 or
+# version 3 or later versions approved by the membership of KDE e.V.
+#
+# Yuri Chornoivan <yurchor@ukr.net>, 2016, 2017.
+msgid ""
+msgstr ""
+"Project-Id-Version: ktechlab_flowcode\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 12:04+0000\n"
+"PO-Revision-Date: 2017-01-03 21:24+0200\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+
+#. Tag: title
+#: flowcode.docbook:3
+#, no-c-format
+msgid "&flowcode;"
+msgstr "&flowcode;"
+
+#. Tag: title
+#: flowcode.docbook:6
+#, no-c-format
+msgid "Introduction"
+msgstr "Вступ"
+
+#. Tag: para
+#: flowcode.docbook:8
+#, no-c-format
+msgid ""
+"&flowcode; allows for very quick and easy construction of a PIC program. "
+"After the user has constructed a flowchart from the program parts available, "
+"&ktechlab; can then convert the flowchart into a number of formats. To "
+"output hex, for example, the following chain of conversions takes place:"
+msgstr ""
+"За допомогою &flowcode; можна дуже швидко і просто побудувати програму PIC. "
+"Після створення користувачем блок-схеми на основі доступних програмних "
+"частин &ktechlab; може перетворити цю блок-схему на код у одному з декількох "
+"форматів. Для виведення результатів у форматі шістнадцяткового коду, "
+"наприклад, буде виконано такий ланцюжок перетворень:"
+
+#. Tag: para
+#: flowcode.docbook:11
+#, no-c-format
+msgid ""
+"The &flowcode; is converted to &microbe;; a high-level language whose "
+"compiler is distributed with &ktechlab;."
+msgstr ""
+"&flowcode; буде перетворено на &microbe;, код високорівневої мови "
+"програмування, компілятор якої є частиною пакунка &ktechlab;."
+
+#. Tag: para
+#: flowcode.docbook:12
+#, no-c-format
+msgid ""
+"The <command>microbe</command> executable then compiles the &microbe; file "
+"to PIC assembly."
+msgstr ""
+"Після цього програма <command>microbe</command> створить на основі файла "
+"&microbe; код асемблера PIC."
+
+#. Tag: para
+#: flowcode.docbook:13
+#, no-c-format
+msgid ""
+"Finally, <command>gpasm</command> takes the PIC assembly file, and outputs "
+"the hex for the program."
+msgstr ""
+"Нарешті, програма <command>gpasm</command> на основі коду асемблера PIC "
+"створить набір шістнадцяткових кодів програми PIC."
+
+#. Tag: para
+#: flowcode.docbook:16
+#, no-c-format
+msgid ""
+"Of course, if you don't have gputils installed - with which <command>gpasm</"
+"command> is distributed - then the last step can't be performed."
+msgstr ""
+"Звичайно ж, якщо у вашій системі не встановлено пакунок gputils, частиною "
+"якого є <command>gpasm</command>, останній крок виконати не вдасться."
+
+#. Tag: title
+#: flowcode.docbook:21
+#, no-c-format
+msgid "Creating a Program"
+msgstr "Створення програми"
+
+#. Tag: para
+#: flowcode.docbook:23
+#, no-c-format
+msgid ""
+"Every &flowcode; program needs a unique starting point - this is the place "
+"where your program will be run from on PIC startup. To define this point, "
+"open up the FlowParts sidebar on the left, and drag across the "
+"<guilabel>Start</guilabel> part. &ktechlab; will only allow you to use one "
+"of these."
+msgstr ""
+"У кожної програми &flowcode; має бути одна точка входу — місце, з якщо "
+"програма запускатиметься після вмикання живлення PIC. Щоб визначити цю "
+"точку, відкрийте бічну панель частин діаграми, розташовану ліворуч, і "
+"перетягніть на полотно частину <guilabel>Початок</guilabel>. &ktechlab; "
+"дозволить вам створити лише одну частину такого типу."
+
+#. Tag: para
+#: flowcode.docbook:25
+#, no-c-format
+msgid ""
+"You can then construct your program by using the predefined parts on the "
+"left - or insert code of your own (in assembly or &microbe; format) via the "
+"<guilabel>Embed</guilabel> part. The flow of the program is controlled via "
+"the connections between the FlowParts - <xref linkend=\"connecting_components"
+"\"/> offers more detail on creating connections."
+msgstr ""
+"Після цього ви зможете побудувати вашу програму, використовуючи типові "
+"частини з лівої бічної панелі або вводячи власний код (у форматі коду "
+"асемблера або &microbe;) за допомогою частини <guilabel>Вставка</guilabel>. "
+"Порядок виконання програми керується з’єднаннями між частинами діаграми. "
+"Докладний опис створення з’єднань можна знайти у розділі <xref linkend="
+"\"connecting_components\"/>."
+
+#. Tag: para
+#: flowcode.docbook:27
+#, no-c-format
+msgid ""
+"&flowcode; imposes limitations in addition to those of circuits on what can "
+"be connected. For example, each FlowPart can only have one output "
+"connection. Additional limitations are described in <xref linkend="
+"\"nestling_flowcode\"/>."
+msgstr ""
+"&flowcode; накладає додаткові обмеження, окрім визначених схемою, на "
+"з’єднувані частини. Наприклад, будь-яка частина діаграми може мати лише одне "
+"вихідне з’єднання. Додаткові обмеження описано у розділі <xref linkend="
+"\"nestling_flowcode\"/>."
+
+#. Tag: title
+#: flowcode.docbook:31
+#, no-c-format
+msgid "PIC Settings"
+msgstr "Параметри PIC"
+
+#. Tag: para
+#: flowcode.docbook:33
+#, no-c-format
+msgid ""
+"When you create a new &flowcode; document, you'll notice a picture of the "
+"PIC you're using in the top-left corner of the work area. This represents "
+"the initial settings of the PIC."
+msgstr ""
+"Після створення документа &flowcode; у верхньому лівому куті робочої області "
+"буде показано зображення PIC, яким ви користуєтеся. Це зображення відповідає "
+"початковим параметрам PIC."
+
+#. Tag: para
+#: flowcode.docbook:35
+#, no-c-format
+msgid ""
+"Each pin shown on the picture of the PIC shows the initial type of pin "
+"(input or output), and its initial state (high or low). You can change these "
+"by dragging the pin to set the type, and clicking on it to toggle its state."
+msgstr ""
+"Кожен контакт на зображенні PIC відповідає початковому типу контакту (вхід "
+"або вихід) та початковому стану (відкрито чи закрито). Ви можете змінити тип "
+"контакту перетягуванням, а його стан — клацанням лівою кнопкою миші."
+
+#. Tag: para
+#: flowcode.docbook:37
+#, no-c-format
+msgid ""
+"The <guilabel>Settings</guilabel> dialog, invoked by clicking on the "
+"<guibutton>Settings</guibutton> button, also allows you to edit the initial "
+"pin types and states - in this case, by editing the binary values written to "
+"the PORT and TRIS registers. As well as pin settings though, the dialog "
+"allows editing of the initial values of variables in the PIC program."
+msgstr ""
+"За допомогою діалогового вікна <guilabel>Параметри</guilabel>, відкрити яке "
+"можна натисканням кнопки <guibutton>Параметри</guibutton>, ви можете "
+"редагувати початкові типи і стани контактів, у цьому випадку, редагуючи "
+"двійкові значення, записані до регістрів PORT і TRIS. Втім, як і визначення "
+"параметрів окремих контактів, це діалогове вікно надає змогу змінити лише "
+"початкові значення змінних у програмі PIC."
+
+#. Tag: para
+#: flowcode.docbook:39
+#, no-c-format
+msgid ""
+"At the bottom, there is a list of currently defined pin maps, as well as "
+"buttons to manipulate them. Pin maps are used to specify how a seven segment "
+"or a keypad is connected to a PIC. To use the <guilabel>Seven Segment</"
+"guilabel> or the <guilabel>Keypad</guilabel> &flowcode; parts, you will need "
+"to define a pin map here first."
+msgstr ""
+"У нижній частині вікна буде показано список поточних визначених карт "
+"контактів, а також кнопки для керування цими картами. Карти контактів "
+"використовуються для визначення способу, у який сегментний індикатор або "
+"клавіатуру з’єднано з PIC. Щоб скористатися частинами &flowcode; "
+"<guilabel>Сегментний індикатор</guilabel> або <guilabel>Клавіатура</"
+"guilabel>, вам слід спочатку визначити тут карту контактів."
+
+#. Tag: title
+#: flowcode.docbook:44
+#, no-c-format
+msgid "Nestling &flowcode;"
+msgstr "Вкладення &flowcode;"
+
+#. Tag: para
+#: flowcode.docbook:46
+#, no-c-format
+msgid ""
+"Many FlowParts, such as subroutines and loops, can contain code of their "
+"own. After creating such a container, FlowParts can be added by either "
+"dragging or dropping them into the container. The container will be "
+"highlighted to indicate that it will become the new parent of the FlowPart."
+msgstr ""
+"Багато частин діаграми, зокрема підпрограми і цикли, можуть містити "
+"програмний код. Після створення таких контейнерів ви зможете додати до них "
+"частини діаграми простим перетягуванням зі скиданням частин до контейнера. "
+"При цьому програма підсвічуватиме контейнер, щоб позначити, що він стане "
+"батьківським елементом для нової частини діаграми."
+
+#. Tag: para
+#: flowcode.docbook:48
+#, no-c-format
+msgid ""
+"The container takes responsibility for FlowParts nestled inside. If the "
+"expand button is unclicked, all contained FlowParts will be hidden - and "
+"likewise, the contents will be shown when the expand button is clicked "
+"again. Connections cannot be made between FlowParts in different containers, "
+"and the contents of a container will be moved about along with the container."
+msgstr ""
+"Контейнер є відповідальним за усі вкладені до нього частини діаграми. Якщо "
+"натиснути кнопку згортання контейнера, усі частини діаграми, що містяться у "
+"ньому, буде приховано. І навпаки, якщо знову натиснути кнопку згортання, усі "
+"ці частини знову буде показано. Ви не зможете створювати з’єднання між "
+"окремими частинами у різних контейнерах, а вміст контейнера пересуватиметься "
+"лише разом із самим контейнером."

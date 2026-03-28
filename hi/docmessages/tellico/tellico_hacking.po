@@ -1,0 +1,1135 @@
+# Hindi translations for PACKAGE package.
+# Kali <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: tellico_hacking\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2026-01-02 00:56+0000\n"
+"PO-Revision-Date: 2024-12-15 14:44+0530\n"
+"Last-Translator: Kali <EMAIL@ADDRESS>\n"
+"Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
+"Language: hi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#. Tag: title
+#: hacking.docbook:2
+#, no-c-format
+msgid "Hacking &appname;"
+msgstr "हैकिंग &appname;"
+
+#. Tag: para
+#: hacking.docbook:4
+#, no-c-format
+msgid ""
+"In the spirit of Free Software, you are welcome to hack on &appname; as much "
+"as you like. You should be able to write scripts to import, export, or "
+"modify data very easily. This chapter gives you more information about doing "
+"that."
+msgstr ""
+"फ्री सॉफ्टवेयर की भावना में, आप &appname; को जितना चाहें उतना हैक कर सकते हैं। आपको डेटा "
+"को आयात, निर्यात या संशोधित करने के लिए स्क्रिप्ट लिखने में बहुत आसानी होनी चाहिए। यह "
+"अध्याय आपको ऐसा करने के बारे में अधिक जानकारी देता है।"
+
+#. Tag: title
+#: hacking.docbook:9
+#, no-c-format
+msgid "File Format"
+msgstr "फ़ाइल फ़ारमैट"
+
+#. Tag: para
+#: hacking.docbook:11
+#, no-c-format
+msgid ""
+"The default &appname; data file is a zip archive, normally with a <literal "
+"role=\"extension\">.tc</literal> file extension. Inside the archive is a top-"
+"level <filename>tellico.xml</filename> file. Images may be included inside "
+"the <filename>images/</filename> folder in the archive, or they may be "
+"included in the &XML; data directly in a base64 encoding. Images may also be "
+"saved inside the application data folder, in which case, they are not in the "
+"data file at all. &appname; can also load the &XML; file, by itself, "
+"uncompressed."
+msgstr ""
+"डिफ़ॉल्ट &appname; डेटा फ़ाइल एक ज़िप संग्रह है, जो आम तौर पर <literal role="
+"\"extension\">.tc</literal> फ़ाइल एक्सटेंशन के साथ होती है। संग्रह के अंदर एक शीर्ष-"
+"स्तरीय <filename>tellico.xml</filename> फ़ाइल होती है। छवियों को संग्रह में "
+"<filename>images/</filename> फ़ोल्डर के अंदर शामिल किया जा सकता है, या उन्हें सीधे "
+"बेस64 एन्कोडिंग में &XML; डेटा में शामिल किया जा सकता है। छवियों को एप्लिकेशन डेटा फ़ोल्डर "
+"के अंदर भी सहेजा जा सकता है, जिस स्थिति में, वे डेटा फ़ाइल में बिल्कुल भी नहीं होती हैं। "
+"&appname; &XML; फ़ाइल को, अपने आप, बिना संपीड़ित किए भी लोड कर सकता है।"
+
+#. Tag: title
+#: hacking.docbook:16
+#, no-c-format
+msgid "&XML; Data"
+msgstr "&XML; डेटा"
+
+#. Tag: title
+#: hacking.docbook:22
+#, no-c-format
+msgid "Collection"
+msgstr "संग्रह"
+
+#. Tag: programlisting
+#: hacking.docbook:23
+#, no-c-format
+msgid ""
+"<![CDATA[\n"
+"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
+"<!DOCTYPE tellico PUBLIC \"-//Robby Stephenson/DTD Tellico V11.0//EN\" "
+"\"http://periapsis.org/tellico/dtd/v11/tellico.dtd\">\n"
+"<tellico xmlns=\"http://periapsis.org/tellico/\" syntaxVersion=\"11\">\n"
+" <collection title=\"My Books\" type=\"2\">\n"
+" </collection>\n"
+"</tellico>\n"
+"]]>"
+msgstr ""
+"<![CDATA[\n"
+"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
+"<!DOCTYPE tellico PUBLIC \"-//Robby Stephenson/DTD Tellico V11.0//EN\" "
+"\"http://periapsis.org/tellico/dtd/v11/tellico.dtd\">\n"
+"<tellico xmlns=\"http://periapsis.org/tellico/\" syntaxVersion=\"11\">\n"
+"<collection title=\"मेरी पुस्तकें\" type=\"2\">\n"
+"</collection>\n"
+"</tellico>\n"
+"]]>"
+
+#. Tag: para
+#: hacking.docbook:25
+#, no-c-format
+msgid ""
+"The file begins with the required &XML; declaration and encoding, followed "
+"by the doctype. When a new field type is added or additional properties are "
+"set on the default fields, the doctype DTD version is incremented. &appname; "
+"is always able to open and read any previous DTD version, but will save "
+"files in the current version. The DTD location does point to an actual DTD "
+"file."
+msgstr ""
+"फ़ाइल की शुरुआत आवश्यक &XML; घोषणा और एन्कोडिंग से होती है, उसके बाद doctype होता है। "
+"जब कोई नया फ़ील्ड प्रकार जोड़ा जाता है या डिफ़ॉल्ट फ़ील्ड पर अतिरिक्त गुण सेट किए जाते हैं, "
+"तो doctype DTD संस्करण बढ़ जाता है। &appname; हमेशा किसी भी पिछले DTD संस्करण को "
+"खोलने और पढ़ने में सक्षम होता है, लेकिन फ़ाइलों को वर्तमान संस्करण में सहेजता है। DTD स्थान एक "
+"वास्तविक DTD फ़ाइल की ओर इशारा करता है।"
+
+#. Tag: para
+#: hacking.docbook:29
+#, no-c-format
+msgid ""
+"The top-level element is a <markup>&lt;tellico&gt;</markup> element, "
+"containing the default namespace declaration and the syntax version of the "
+"file, which should always match the DTD."
+msgstr ""
+"शीर्ष-स्तरीय तत्व एक <markup>&lt;tellico&gt;</markup> तत्व है, जिसमें डिफ़ॉल्ट "
+"नामस्थान घोषणा और फ़ाइल का सिंटैक्स संस्करण शामिल है, जो हमेशा DTD से मेल खाना चाहिए।"
+
+#. Tag: para
+#: hacking.docbook:33
+#, no-c-format
+msgid ""
+"The <markup>&lt;tellico&gt;</markup> element contains one <markup>&lt;"
+"collection&gt;</markup> element. Multiple collections are ignored, for now. "
+"The <markup>title</markup> attribute contains the collection title, while "
+"the <markup>type</markup> specifies what kinds of entries are contained in "
+"the collection. The allowable types are in <link linkend=\"collection-type-"
+"values\">listed in a later section</link>. An optional <markup>entryTitle</"
+"markup> attribute may be used to specify the title of the entries for a "
+"custom collection, and should be plural."
+msgstr ""
+"<markup>&lt;टेलिको&gt;</markup> तत्व में एक शामिल है<markup> &lt;संग्रह&gt;</"
+"markup> तत्व। अभी के लिए, कई संग्रहों को अनदेखा किया जाता है।<markup> शीर्षक</"
+"markup> विशेषता में संग्रह का शीर्षक होता है, जबकि<markup> प्रकार</markup> निर्दिष्ट "
+"करता है कि संग्रह में किस प्रकार की प्रविष्टियाँ शामिल हैं। स्वीकार्य प्रकार निम्न हैं<link "
+"linkend=\"collection-type-values\"> बाद के अनुभाग में सूचीबद्ध</link> . एक "
+"वैकल्पिक<markup> प्रविष्टिशीर्षक</markup> विशेषता का उपयोग कस्टम संग्रह के लिए "
+"प्रविष्टियों का शीर्षक निर्दिष्ट करने के लिए किया जा सकता है, और यह बहुवचन होना चाहिए।"
+
+#. Tag: title
+#: hacking.docbook:39
+#, no-c-format
+msgid "Fields"
+msgstr "फ़ील्ड"
+
+#. Tag: programlisting
+#: hacking.docbook:41
+#, no-c-format
+msgid ""
+"<![CDATA[\n"
+"  <fields>\n"
+"   <field flags=\"8\" title=\"Title\" category=\"General\" format=\"1\" type="
+"\"1\" name=\"title\" />\n"
+"   <field flags=\"7\" title=\"Author\" category=\"General\" format=\"2\" "
+"type=\"1\" name=\"author\" />\n"
+"   <field flags=\"2\" title=\"Binding\" category=\"General\" allowed="
+"\"Hardback;Paperback;Trade Paperback;E-Book;Magazine;Journal\" format=\"4\" "
+"type=\"3\" name=\"binding\" >\n"
+"    <prop name=\"default\">Paperback</prop>\n"
+"   </field>\n"
+"   <field flags=\"6\" title=\"Publisher\" category=\"Publishing\" format="
+"\"0\" type=\"1\" name=\"publisher\" />\n"
+"   <field flags=\"4\" title=\"Edition\" category=\"Publishing\" format=\"0\" "
+"type=\"1\" name=\"edition\" />\n"
+"   <field flags=\"3\" title=\"Copyright Year\" category=\"Publishing\" "
+"format=\"4\" type=\"6\" name=\"cr_year\" />\n"
+"   <field flags=\"2\" title=\"Publication Year\" category=\"Publishing\" "
+"format=\"4\" type=\"6\" name=\"pub_year\" />\n"
+"   <field flags=\"0\" title=\"ISBN#\" category=\"Publishing\" format=\"4\" "
+"type=\"1\" name=\"isbn\" description=\"International Standard Book Number\" /"
+">\n"
+"   <field flags=\"7\" title=\"Genre\" category=\"Classification\" format="
+"\"0\" type=\"1\" name=\"genre\" />\n"
+"   <field flags=\"7\" title=\"Keywords\" category=\"Classification\" format="
+"\"0\" type=\"1\" name=\"keyword\" />\n"
+"   <field flags=\"0\" title=\"Front Cover\" category=\"Front Cover\" format="
+"\"4\" type=\"10\" name=\"cover\" />\n"
+"   <field flags=\"0\" title=\"Comments\" category=\"Personal\" format=\"4\" "
+"type=\"1\" name=\"comments\" />\n"
+"   <field title=\"Rating\" flags=\"2\" category=\"Personal\" format=\"4\" "
+"type=\"14\" name=\"rating\">\n"
+"    <prop name=\"maximum\">5</prop>\n"
+"    <prop name=\"minimum\">1</prop>\n"
+"   </field>\n"
+"   <field title=\"ID\" flags=\"32\" category=\"Personal\" format=\"4\" type="
+"\"6\" name=\"id\">\n"
+"    <prop name=\"template\">%{@id}</prop>\n"
+"   </field>\n"
+"\n"
+"  </fields>\n"
+"]]>"
+msgstr ""
+"<![CDATA[\n"
+"<fields>\n"
+"<field flags=\"8\" title=\"शीर्षक\" श्रेणी=\"सामान्य\" प्रारूप=\"1\" प्रकार=\"1\" "
+"नाम=\"शीर्षक\" />\n"
+"<field flags=\"7\" title=\"लेखक\" श्रेणी=\"सामान्य\" प्रारूप=\"2\" प्रकार=\"1\" नाम="
+"\"लेखक\" />\n"
+"<field flags=\"2\" title=\"बाइंडिंग\" श्रेणी=\"सामान्य\" अनुमत=\"हार्डबैक;पेपरबैक;ट्रेड "
+"पेपरबैक;ई-बुक;पत्रिका;जर्नल\" प्रारूप=\"4\" प्रकार=\"3\" नाम=\"बाइंडिंग\" >\n"
+"<prop name=\"default\">पेपरबैक</prop>\n"
+"</field>\n"
+"<field flags=\"6\" title=\"प्रकाशक\" श्रेणी=\"प्रकाशन\" प्रारूप=\"0\" प्रकार=\"1\" "
+"नाम=\"प्रकाशक\" />\n"
+"<field flags=\"4\" title=\"संस्करण\" श्रेणी=\"प्रकाशन\" प्रारूप=\"0\" प्रकार=\"1\" "
+"नाम=\"संस्करण\" />\n"
+"<field flags=\"3\" title=\"कॉपीराइट वर्ष\" श्रेणी=\"प्रकाशन\" प्रारूप=\"4\" type="
+"\"6\" name=\"cr_year\" />\n"
+"<field flags=\"2\" title=\"प्रकाशन वर्ष\" श्रेणी=\"प्रकाशन\" प्रारूप=\"4\" type="
+"\"6\" name=\"pub_year\" />\n"
+"<field flags=\"0\" title=\"ISBN#\" श्रेणी=\"प्रकाशन\" प्रारूप=\"4\" type=\"1\" "
+"name=\"isbn\" विवरण=\"अंतर्राष्ट्रीय मानक पुस्तक संख्या\" />\n"
+"<field flags=\"7\" title=\"शैली\" श्रेणी=\"वर्गीकरण\" प्रारूप=\"0\" type=\"1\" "
+"name=\"शैली\" />\n"
+"<field flags=\"7\" title=\"कीवर्ड\" श्रेणी=\"वर्गीकरण\" प्रारूप=\"0\" type=\"1\" "
+"name=\"कीवर्ड\" />\n"
+"<field flags=\"0\" title=\"फ्रंट कवर\" श्रेणी=\"फ्रंट कवर\" प्रारूप=\"4\" type="
+"\"10\" name=\"कवर\" />\n"
+"<field flags=\"0\" title=\"टिप्पणियाँ\" श्रेणी=\"व्यक्तिगत\" प्रारूप=\"4\" प्रकार="
+"\"1\" नाम=\"टिप्पणियाँ\" />\n"
+"<फ़ील्ड शीर्षक=\"रेटिंग\" झंडे=\"2\" श्रेणी=\"व्यक्तिगत\" प्रारूप=\"4\" प्रकार=\"14\" नाम="
+"\"रेटिंग\">\n"
+"<प्रॉप नाम=\"अधिकतम\">5</प्रॉप>\n"
+"<प्रॉप नाम=\"न्यूनतम\">1</प्रॉप>\n"
+"</फ़ील्ड>\n"
+"<फ़ील्ड शीर्षक=\"आईडी\" झंडे=\"32\" श्रेणी=\"व्यक्तिगत\" प्रारूप=\"4\" प्रकार=\"6\" नाम="
+"\"आईडी\">\n"
+"<प्रॉप नाम=\"टेम्पलेट\">%{@id}</प्रॉप>\n"
+"</फ़ील्ड>\n"
+"\n"
+"</फ़ील्ड>\n"
+"]]>"
+
+#. Tag: para
+#: hacking.docbook:43
+#, no-c-format
+msgid ""
+"All of the fields are defined inside a <markup>&lt;fields&gt;</markup> "
+"element, of which there can be only one. All of the information for a field, "
+"except for any properties, are included as attributes of the <markup>&lt;"
+"field&gt;</markup> element. The allowable values for the <markup>flags</"
+"markup>, <markup>format</markup>, and <markup>type</markup> attributes are "
+"given in a <link linkend=\"field-type-values\">following section</link>."
+msgstr ""
+"सभी फ़ील्ड एक के अंदर परिभाषित हैं<markup> &lt;फ़ील्ड&gt;</markup> तत्व, जिसमें से केवल "
+"एक ही हो सकता है। किसी भी गुण को छोड़कर, किसी फ़ील्ड के लिए सभी जानकारी विशेषताओं के "
+"रूप में शामिल की जाती है<markup> &lt;फ़ील्ड&gt;</markup> तत्व के लिए स्वीकार्य "
+"मान<markup> झंडे</markup> ,<markup> प्रारूप</markup> , और<markup> प्रकार</markup> "
+"विशेषताएँ एक में दी गई हैं<link linkend=\"field-type-values\"> निम्नलिखित अनुभाग</"
+"link> ."
+
+#. Tag: para
+#: hacking.docbook:47
+#, no-c-format
+msgid ""
+"Field properties are used for setting default field values, rating value "
+"ranges, derived value templates, etc. The examples above include a default "
+"value, a maximum rating value, and a template for a derived ID field."
+msgstr ""
+"फ़ील्ड गुणों का उपयोग डिफ़ॉल्ट फ़ील्ड मान, रेटिंग मान श्रेणियाँ, व्युत्पन्न मान टेम्प्लेट आदि सेट "
+"करने के लिए किया जाता है। ऊपर दिए गए उदाहरणों में डिफ़ॉल्ट मान, अधिकतम रेटिंग मान और "
+"व्युत्पन्न ID फ़ील्ड के लिए टेम्प्लेट शामिल हैं।"
+
+#. Tag: title
+#: hacking.docbook:58
+#, no-c-format
+msgid "Entries"
+msgstr "प्रविष्टियां"
+
+#. Tag: programlisting
+#: hacking.docbook:60
+#, no-c-format
+msgid ""
+"<![CDATA[\n"
+"  <entry>\n"
+"   <title>C++ Programming Language, The</title>\n"
+"   <authors>\n"
+"    <author>Stroustrup, Bjarne</author>\n"
+"   </authors>\n"
+"   <publisher>Addison-Wesley Pub Co</publisher>\n"
+"   <edition>3rd</edition>\n"
+"   <pub_year>1997</pub_year>\n"
+"   <isbn>0-201-88954-4</isbn>\n"
+"   <genres>\n"
+"    <genre>Non-Fiction</genre>\n"
+"   </genres>\n"
+"   <keywords>\n"
+"    <keyword>Programming</keyword>\n"
+"    <keyword>Computers</keyword>\n"
+"   </keywords>\n"
+"   <cover>cf65a2f023b6cb9e9233323dca10ac7c.jpeg</cover>\n"
+"  </entry>\n"
+"]]>"
+msgstr ""
+"<![CDATA[\n"
+"  <entry><title>सी++ प्रोग्रामिंग भाषा,</title><authors><author> स्ट्रॉस्ट्रुप, "
+"बजेर्न</author></authors><publisher> एडिसन-वेस्ले पब कंपनी</publisher><edition> 3</"
+"edition><pub_year> 1997</pub_year><isbn> 0-201-88954-4</isbn><genres><genre> "
+"गैर-फिक्शन</genre></genres><keywords><keyword> प्रोग्रामिंग</keyword><keyword> "
+"कंप्यूटर</keyword></keywords><cover> cf65a2f023b6cb9e9233323dca10ac7c.jpeg</"
+"cover></entry> ]]&gt;"
+
+#. Tag: para
+#: hacking.docbook:62
+#, no-c-format
+msgid ""
+"For every field in the collection, an <markup>&lt;entry&gt;</markup> may "
+"contain an element whose name is identical to the field name. If multiple "
+"values are allowed for the field, then the letter <emphasis>s</emphasis> is "
+"added to the field name to create an element, and each value is added as a "
+"child of the element, as in the case of the author, genre, and keyword "
+"fields above."
+msgstr ""
+"संग्रह में प्रत्येक फ़ील्ड के लिए, <markup>&lt;entry&gt;</markup> में एक तत्व हो सकता है "
+"जिसका नाम फ़ील्ड नाम के समान हो। यदि फ़ील्ड के लिए एकाधिक मानों की अनुमति है, तो तत्व "
+"बनाने के लिए फ़ील्ड नाम में अक्षर <emphasis>s</emphasis> जोड़ा जाता है, और प्रत्येक मान "
+"तत्व के चाइल्ड के रूप में जोड़ा जाता है, जैसा कि ऊपर दिए गए लेखक, शैली और कीवर्ड फ़ील्ड के "
+"मामले में है।"
+
+#. Tag: para
+#: hacking.docbook:66
+#, no-c-format
+msgid ""
+"As a result, if additional fields are added to the collection, the data file "
+"will no longer conform to the DTD. However, &appname; uses a non-validating "
+"&XML; parser, so additional fields do not cause problems."
+msgstr ""
+"परिणामस्वरूप, यदि संग्रह में अतिरिक्त फ़ील्ड जोड़े जाते हैं, तो डेटा फ़ाइल अब DTD के अनुरूप नहीं "
+"होगी। हालाँकि, &appname; एक गैर-मान्य &XML; पार्सर का उपयोग करता है, इसलिए "
+"अतिरिक्त फ़ील्ड समस्याएँ पैदा नहीं करते हैं।"
+
+#. Tag: title
+#: hacking.docbook:72
+#, no-c-format
+msgid "Images"
+msgstr "इमेजिस"
+
+#. Tag: programlisting
+#: hacking.docbook:73
+#, no-c-format
+msgid ""
+"<![CDATA[\n"
+"  <images>\n"
+"   <image width=\"111\" format=\"JPEG\" height=\"140\" id="
+"\"cf65a2f023b6cb9e9233323dca10ac7c.jpeg\" />\n"
+"  </images>\n"
+"]]>"
+msgstr ""
+"<![CDATA[\n"
+"<images>\n"
+"<image width=\"111\" format=\"JPEG\" height=\"140\" id="
+"\"cf65a2f023b6cb9e9233323dca10ac7c.jpeg\" />\n"
+"</images>\n"
+"]]>"
+
+#. Tag: para
+#: hacking.docbook:75
+#, no-c-format
+msgid ""
+"Inside the <markup>&lt;images&gt;</markup> element, each image referenced by "
+"an entry is listed, along with attributes describing the image's size, "
+"format, and id. If the image is contained inside the Zip file, the element "
+"is empty. Otherwise, the image data may be contained in the &XML; stream as "
+"base64-encoded text."
+msgstr ""
+"<markup>&lt;images&gt;</markup> तत्व के अंदर, एक प्रविष्टि द्वारा संदर्भित प्रत्येक छवि "
+"सूचीबद्ध है, साथ ही छवि के आकार, प्रारूप और आईडी का वर्णन करने वाली विशेषताएँ भी हैं। "
+"यदि छवि ज़िप फ़ाइल के अंदर समाहित है, तो तत्व खाली है। अन्यथा, छवि डेटा &XML; स्ट्रीम में "
+"बेस64-एन्कोडेड टेक्स्ट के रूप में समाहित हो सकता है।"
+
+#. Tag: title
+#: hacking.docbook:85 hacking.docbook:92
+#, no-c-format
+msgid "Collection Type Values"
+msgstr "संग्रह प्रकार मान"
+
+#. Tag: para
+#: hacking.docbook:87
+#, no-c-format
+msgid ""
+"The type of collection is given in the type attribute of the collection "
+"element. The value is equal to the <type>Type</type> enum value in "
+"<filename>src/collection.h</filename>."
+msgstr ""
+"संग्रह का प्रकार संग्रह तत्व की प्रकार विशेषता में दिया गया है। मान <filename>src/"
+"collection.h</filename> में <type>Type</type> enum मान के बराबर है।"
+
+#. Tag: entry
+#: hacking.docbook:96
+#, no-c-format
+msgid "Collection Type"
+msgstr "संग्रह प्रकार"
+
+#. Tag: entry
+#: hacking.docbook:97 hacking.docbook:137 hacking.docbook:165
+#: hacking.docbook:189
+#, no-c-format
+msgid "Value"
+msgstr "कीमत"
+
+#. Tag: entry
+#: hacking.docbook:101
+#, no-c-format
+msgid "Custom Collection"
+msgstr "कस्टम संग्रह"
+
+#. Tag: entry
+#: hacking.docbook:101 hacking.docbook:141 hacking.docbook:194
+#, no-c-format
+msgid "<entry>1</entry>"
+msgstr "<प्रविष्टि>1</प्रविष्टि>"
+
+#. Tag: entry
+#: hacking.docbook:102
+#, no-c-format
+msgid "Book Collection"
+msgstr "पुस्तक संग्रह"
+
+#. Tag: entry
+#: hacking.docbook:102 hacking.docbook:142 hacking.docbook:195
+#, no-c-format
+msgid "<entry>2</entry>"
+msgstr "<प्रविष्टि>2</प्रविष्टि>"
+
+#. Tag: entry
+#: hacking.docbook:103
+#, no-c-format
+msgid "Video Collection"
+msgstr "वीडियो संग्रह"
+
+#. Tag: entry
+#: hacking.docbook:103 hacking.docbook:143 hacking.docbook:196
+#, no-c-format
+msgid "<entry>3</entry>"
+msgstr "<प्रविष्टि>3</प्रविष्टि>"
+
+#. Tag: entry
+#: hacking.docbook:104
+#, no-c-format
+msgid "Music Collection"
+msgstr "संगीत संग्रह"
+
+#. Tag: entry
+#: hacking.docbook:104 hacking.docbook:144 hacking.docbook:197
+#, no-c-format
+msgid "<entry>4</entry>"
+msgstr "<प्रविष्टि>4</प्रविष्टि>"
+
+#. Tag: entry
+#: hacking.docbook:105
+#, no-c-format
+msgid "Bibliography"
+msgstr "ग्रन्थसूची"
+
+#. Tag: entry
+#: hacking.docbook:105
+#, no-c-format
+msgid "<entry>5</entry>"
+msgstr "<प्रविष्टि>5</प्रविष्टि>"
+
+#. Tag: entry
+#: hacking.docbook:106
+#, no-c-format
+msgid "Comic Book Collection"
+msgstr "कॉमिक बुक संग्रह"
+
+#. Tag: entry
+#: hacking.docbook:106 hacking.docbook:145
+#, no-c-format
+msgid "<entry>6</entry>"
+msgstr "<प्रविष्टि>6</प्रविष्टि>"
+
+#. Tag: entry
+#: hacking.docbook:107
+#, no-c-format
+msgid "Wine Collection"
+msgstr "शराब संग्रह"
+
+#. Tag: entry
+#: hacking.docbook:107 hacking.docbook:146
+#, no-c-format
+msgid "<entry>7</entry>"
+msgstr "<प्रविष्टि>7</प्रविष्टि>"
+
+#. Tag: entry
+#: hacking.docbook:108
+#, no-c-format
+msgid "Coin Collection"
+msgstr "सिक्का संग्रह"
+
+#. Tag: entry
+#: hacking.docbook:108 hacking.docbook:147
+#, no-c-format
+msgid "<entry>8</entry>"
+msgstr "<प्रविष्टि>8</प्रविष्टि>"
+
+#. Tag: entry
+#: hacking.docbook:109
+#, no-c-format
+msgid "Stamp Collection"
+msgstr "डाक टिकट संग्रह"
+
+#. Tag: entry
+#: hacking.docbook:109
+#, no-c-format
+msgid "<entry>9</entry>"
+msgstr "<प्रविष्टि>9</प्रविष्टि>"
+
+#. Tag: entry
+#: hacking.docbook:110
+#, no-c-format
+msgid "Trading Card Collection"
+msgstr "ट्रेडिंग कार्ड संग्रह"
+
+#. Tag: entry
+#: hacking.docbook:110 hacking.docbook:148
+#, no-c-format
+msgid "<entry>10</entry>"
+msgstr "<प्रविष्टि>10</प्रविष्टि>"
+
+#. Tag: entry
+#: hacking.docbook:111
+#, no-c-format
+msgid "Video Game Collection"
+msgstr "वीडियो गेम संग्रह"
+
+#. Tag: entry
+#: hacking.docbook:111
+#, no-c-format
+msgid "<entry>11</entry>"
+msgstr "<प्रविष्टि>11</प्रविष्टि>"
+
+#. Tag: entry
+#: hacking.docbook:112
+#, no-c-format
+msgid "File Catalog"
+msgstr "फ़ाइल कैटलॉग"
+
+#. Tag: entry
+#: hacking.docbook:112 hacking.docbook:149
+#, no-c-format
+msgid "<entry>12</entry>"
+msgstr "<प्रविष्टि>12</प्रविष्टि>"
+
+#. Tag: entry
+#: hacking.docbook:113
+#, no-c-format
+msgid "Board Game Collection"
+msgstr "बोर्ड गेम संग्रह"
+
+#. Tag: entry
+#: hacking.docbook:113
+#, no-c-format
+msgid "<entry>13</entry>"
+msgstr "<प्रविष्टि>13</प्रविष्टि>"
+
+#. Tag: title
+#: hacking.docbook:121 hacking.docbook:132
+#, no-c-format
+msgid "Field Type Values"
+msgstr "फ़ील्ड प्रकार मान"
+
+#. Tag: para
+#: hacking.docbook:123
+#, no-c-format
+msgid ""
+"&appname; will include all the default fields for a collection if the first "
+"field element has the name <emphasis>_default</emphasis>. For "
+"<emphasis>Paragraph</emphasis>, <emphasis>Table</emphasis>, or "
+"<emphasis>Image</emphasis> fields, the field category should be identical to "
+"the field title."
+msgstr ""
+"&appname; में संग्रह के लिए सभी डिफ़ॉल्ट फ़ील्ड शामिल होंगे यदि पहले फ़ील्ड तत्व का नाम "
+"<emphasis>_default</emphasis> है। <emphasis>पैराग्राफ</emphasis>, "
+"<emphasis>टेबल</emphasis>, या <emphasis>इमेज</emphasis> फ़ील्ड के लिए, फ़ील्ड श्रेणी "
+"फ़ील्ड शीर्षक के समान होनी चाहिए।"
+
+#. Tag: para
+#: hacking.docbook:127
+#, no-c-format
+msgid ""
+"The type of field is given in the type attribute of the field element. The "
+"value is equal to the <type>FieldType</type> enum value in <filename>src/"
+"field.h</filename>."
+msgstr ""
+"फ़ील्ड का प्रकार फ़ील्ड तत्व के प्रकार विशेषता में दिया गया है। मान <filename>src/field."
+"h</filename> में <type>FieldType</type> enum मान के बराबर है।"
+
+#. Tag: entry
+#: hacking.docbook:136
+#, no-c-format
+msgid "Field Type"
+msgstr "क्षेत्र प्रकार"
+
+#. Tag: entry
+#: hacking.docbook:141
+#, no-c-format
+msgid "Simple Text"
+msgstr "सरल पाठ"
+
+#. Tag: entry
+#: hacking.docbook:142
+#, no-c-format
+msgid "Paragraph"
+msgstr "अनुच्छेद"
+
+#. Tag: entry
+#: hacking.docbook:143
+#, no-c-format
+msgid "Choice"
+msgstr "पसंद"
+
+#. Tag: entry
+#: hacking.docbook:144
+#, no-c-format
+msgid "Checkbox"
+msgstr "चेक बॉक्स"
+
+#. Tag: entry
+#: hacking.docbook:145
+#, no-c-format
+msgid "Number"
+msgstr "संख्या"
+
+#. Tag: entry
+#: hacking.docbook:146
+#, no-c-format
+msgid "&URL;"
+msgstr "&यूआरएल;"
+
+#. Tag: entry
+#: hacking.docbook:147
+#, no-c-format
+msgid "Table"
+msgstr "मेज़"
+
+#. Tag: entry
+#: hacking.docbook:148
+#, no-c-format
+msgid "Image"
+msgstr "छवि"
+
+#. Tag: entry
+#: hacking.docbook:149
+#, no-c-format
+msgid "Date"
+msgstr "तारीख"
+
+#. Tag: entry
+#: hacking.docbook:150
+#, no-c-format
+msgid "Rating"
+msgstr "रेटिंग"
+
+#. Tag: entry
+#: hacking.docbook:150
+#, no-c-format
+msgid "<entry>14</entry>"
+msgstr "<प्रविष्टि>14</प्रविष्टि>"
+
+#. Tag: para
+#: hacking.docbook:155
+#, no-c-format
+msgid ""
+"The field may have different flags set, given as a bitwise OR'd value in the "
+"flags attribute on the field element. The flag for preventing the user from "
+"deleting a field is intended for such things as the citation key for "
+"bibliographic entries."
+msgstr ""
+"फ़ील्ड में अलग-अलग फ़्लैग सेट हो सकते हैं, जो फ़ील्ड एलिमेंट पर फ़्लैग विशेषता में बिटवाइज़ OR'd "
+"मान के रूप में दिए गए हैं। उपयोगकर्ता को फ़ील्ड हटाने से रोकने के लिए फ़्लैग का उद्देश्य ग्रंथसूची "
+"प्रविष्टियों के लिए उद्धरण कुंजी जैसी चीज़ों के लिए है।"
+
+#. Tag: title
+#: hacking.docbook:160
+#, no-c-format
+msgid "Field Flag Values"
+msgstr "फ़ील्ड फ़्लैग मान"
+
+#. Tag: entry
+#: hacking.docbook:164
+#, no-c-format
+msgid "Field Flags"
+msgstr "मैदानी झंडे"
+
+#. Tag: entry
+#: hacking.docbook:169
+#, no-c-format
+msgid "Allow Multiple Values"
+msgstr "एकाधिक मानों की अनुमति दें"
+
+#. Tag: constant
+#: hacking.docbook:169
+#, no-c-format
+msgid "0x01"
+msgstr "0x01"
+
+#. Tag: entry
+#: hacking.docbook:170
+#, no-c-format
+msgid "Allow Grouping"
+msgstr "समूहीकरण की अनुमति दें"
+
+#. Tag: constant
+#: hacking.docbook:170
+#, no-c-format
+msgid "0x02"
+msgstr "0x02"
+
+#. Tag: entry
+#: hacking.docbook:171
+#, no-c-format
+msgid "Allow Completion"
+msgstr "पूर्णता की अनुमति दें"
+
+#. Tag: constant
+#: hacking.docbook:171
+#, no-c-format
+msgid "0x04"
+msgstr "0x04"
+
+#. Tag: emphasis
+#: hacking.docbook:172
+#, no-c-format
+msgid "Disallow Deleting"
+msgstr "हटाना अस्वीकार करें"
+
+#. Tag: constant
+#: hacking.docbook:172
+#, no-c-format
+msgid "0x08"
+msgstr "0x08"
+
+#. Tag: emphasis
+#: hacking.docbook:173
+#, no-c-format
+msgid "Disallow Editing"
+msgstr "संपादन की अनुमति न दें"
+
+#. Tag: constant
+#: hacking.docbook:173
+#, no-c-format
+msgid "0x10"
+msgstr "0x10"
+
+#. Tag: entry
+#: hacking.docbook:174
+#, no-c-format
+msgid "Derived Value"
+msgstr "व्युत्पन्न मूल्य"
+
+#. Tag: constant
+#: hacking.docbook:174
+#, no-c-format
+msgid "0x20"
+msgstr "0x20"
+
+#. Tag: para
+#: hacking.docbook:179
+#, no-c-format
+msgid ""
+"The format of the field is given in the format attribute on the field "
+"element. <emphasis>Date Formatting</emphasis> is not currently used. "
+"Grouping by <emphasis>People</emphasis> uses all the fields which use "
+"<emphasis>Name Formatting</emphasis>. Setting the <emphasis>Derived Value</"
+"emphasis> flag implies the value for the field is generated from the "
+"template property from other field values."
+msgstr ""
+"फ़ील्ड का प्रारूप फ़ील्ड तत्व पर प्रारूप विशेषता में दिया गया है। <emphasis>दिनांक स्वरूपण</"
+"emphasis> का वर्तमान में उपयोग नहीं किया जाता है। <emphasis>लोग</emphasis> द्वारा "
+"समूहीकरण उन सभी फ़ील्ड का उपयोग करता है जो <emphasis>नाम स्वरूपण</emphasis> का "
+"उपयोग करते हैं। <emphasis>व्युत्पन्न मान</emphasis> ध्वज सेट करने का अर्थ है कि फ़ील्ड के "
+"लिए मान अन्य फ़ील्ड मानों से टेम्पलेट गुण से उत्पन्न होता है।"
+
+#. Tag: title
+#: hacking.docbook:184
+#, no-c-format
+msgid "Field Format Values"
+msgstr "फ़ील्ड प्रारूप मान"
+
+#. Tag: entry
+#: hacking.docbook:188
+#, no-c-format
+msgid "Field Format"
+msgstr "फ़ील्ड प्रारूप"
+
+#. Tag: entry
+#: hacking.docbook:193
+#, no-c-format
+msgid "Capitalization Only"
+msgstr "केवल कैपिटलाइज़ेशन"
+
+#. Tag: entry
+#: hacking.docbook:193
+#, no-c-format
+msgid "<entry>0</entry>"
+msgstr "<प्रविष्टि>0</प्रविष्टि>"
+
+#. Tag: entry
+#: hacking.docbook:194
+#, no-c-format
+msgid "Title Formatting"
+msgstr "शीर्षक स्वरूपण"
+
+#. Tag: entry
+#: hacking.docbook:195
+#, no-c-format
+msgid "Name Formatting"
+msgstr "नाम स्वरूपण"
+
+#. Tag: emphasis
+#: hacking.docbook:196
+#, no-c-format
+msgid "Date Formatting"
+msgstr "दिनांक स्वरूपण"
+
+#. Tag: entry
+#: hacking.docbook:197
+#, no-c-format
+msgid "No Formatting"
+msgstr "कोई फ़ॉर्मेटिंग नहीं"
+
+#. Tag: title
+#: hacking.docbook:205
+#, no-c-format
+msgid "Hidden Configuration Options"
+msgstr "छिपे हुए कॉन्फ़िगरेशन विकल्प"
+
+#. Tag: para
+#: hacking.docbook:207
+#, no-c-format
+msgid ""
+"&appname; has some additional configuration options that are not visible in "
+"the <interface>Configuration Dialog</interface>. They are not important "
+"enough to warrant cluttering the dialog with more settings, but as they "
+"represent options which may appeal to various users, the application does "
+"read them from the configuration file."
+msgstr ""
+"&appname; में कुछ अतिरिक्त कॉन्फ़िगरेशन विकल्प हैं जो <interface>कॉन्फ़िगरेशन डायलॉग</"
+"interface> में दिखाई नहीं देते हैं। वे इतने महत्वपूर्ण नहीं हैं कि डायलॉग को और अधिक सेटिंग्स "
+"से भर दिया जाए, लेकिन चूंकि वे ऐसे विकल्प दर्शाते हैं जो विभिन्न उपयोगकर्ताओं को आकर्षित कर "
+"सकते हैं, इसलिए एप्लिकेशन उन्हें कॉन्फ़िगरेशन फ़ाइल से पढ़ता है।"
+
+#. Tag: para
+#: hacking.docbook:211
+#, fuzzy, no-c-format
+#| msgid ""
+#| "The settings for &appname; are saved in a file in the user's home folder, "
+#| "namely <filename>$<envar>KDEHOME</envar>/share/config/tellicorc</"
+#| "filename>. Within that file, settings are put in groups, which appear "
+#| "with bracketed names, such as [General Options]. To add a setting to the "
+#| "<emphasis>General Options</emphasis> group, find the line in the settings "
+#| "file with that group name. If it does not appear, then create it yourself "
+#| "by adding a line saying [General Options]. Then, the setting can be added "
+#| "underneath the group name."
+msgid ""
+"The settings for &appname; are saved in a file in the user's home folder, "
+"typically <filename>~/.config/tellicorc</filename>. Within that file, "
+"settings are put in groups, which appear with bracketed names, such as "
+"[General Options]. To add a setting to the <emphasis>General Options</"
+"emphasis> group, find the line in the settings file with that group name. If "
+"it does not appear, then create it yourself by adding a line saying [General "
+"Options]. Then, the setting can be added underneath the group name."
+msgstr ""
+"&appname; के लिए सेटिंग्स उपयोगकर्ता के होम फ़ोल्डर में एक फ़ाइल में सहेजी जाती हैं, जिसका "
+"नाम <filename>$<envar>KDEHOME</envar>/share/config/tellicorc</filename> है। "
+"उस फ़ाइल के भीतर, सेटिंग्स को समूहों में रखा जाता है, जो ब्रैकेटेड नामों के साथ दिखाई देते हैं, "
+"जैसे कि [सामान्य विकल्प]। <emphasis>सामान्य विकल्प</emphasis> समूह में सेटिंग जोड़ने के "
+"लिए, उस समूह नाम वाली सेटिंग फ़ाइल में लाइन ढूँढें। यदि यह दिखाई नहीं देता है, तो [सामान्य "
+"विकल्प] वाली लाइन जोड़कर इसे स्वयं बनाएँ। फिर, सेटिंग को समूह नाम के नीचे जोड़ा जा सकता "
+"है।"
+
+#. Tag: title
+#: hacking.docbook:216
+#, no-c-format
+msgid "[General Options]"
+msgstr "[आम विकल्प]"
+
+#. Tag: para
+#: hacking.docbook:218
+#, no-c-format
+msgid ""
+"These settings should be placed in the <emphasis>General Options</emphasis> "
+"group."
+msgstr "इन सेटिंग्स को <emphasis>सामान्य विकल्प</emphasis> समूह में रखा जाना चाहिए।"
+
+#. Tag: title
+#: hacking.docbook:223
+#, no-c-format
+msgid "Max Icon Size"
+msgstr "अधिकतम आइकन आकार"
+
+#. Tag: para
+#: hacking.docbook:225
+#, no-c-format
+msgid ""
+"The maximum size of the icons in the <interface>Icon View</interface> may be "
+"changed with this setting. The default value is 96. The size must be in the "
+"range of 32 to 512."
+msgstr ""
+"<इंटरफ़ेस>आइकन दृश्य</इंटरफ़ेस> में आइकन का अधिकतम आकार इस सेटिंग के साथ बदला जा सकता है। "
+"डिफ़ॉल्ट मान 96 है। आकार 32 से 512 की सीमा में होना चाहिए।"
+
+#. Tag: title
+#: hacking.docbook:231 hacking.docbook:246 hacking.docbook:261
+#: hacking.docbook:285 hacking.docbook:304 hacking.docbook:328
+#, no-c-format
+msgid "Example"
+msgstr "उदाहरण"
+
+#. Tag: userinput
+#: hacking.docbook:233
+#, no-c-format
+msgid "Max Icon Size=128"
+msgstr "अधिकतम आइकन आकार=128"
+
+#. Tag: title
+#: hacking.docbook:238
+#, no-c-format
+msgid "Icon Cache Size"
+msgstr "आइकन कैश आकार"
+
+#. Tag: para
+#: hacking.docbook:240
+#, no-c-format
+msgid ""
+"The maximum numbers of icons cached in memory may be changed with this "
+"setting. The default value is 1000."
+msgstr ""
+"इस सेटिंग से मेमोरी में कैश किए गए आइकन की अधिकतम संख्या बदली जा सकती है। डिफ़ॉल्ट मान "
+"1000 है।"
+
+#. Tag: userinput
+#: hacking.docbook:248
+#, no-c-format
+msgid "Icon Cache Size=100"
+msgstr "आइकन कैश आकार=100"
+
+#. Tag: title
+#: hacking.docbook:253
+#, no-c-format
+msgid "Image Cache Size"
+msgstr "छवि कैश आकार"
+
+#. Tag: para
+#: hacking.docbook:255
+#, fuzzy, no-c-format
+#| msgid ""
+#| "The maximum amount of memory in bytes used for caching all the images may "
+#| "be changed with this setting. The default value is 67108864."
+msgid ""
+"The maximum amount of memory in bytes used for caching all the images may be "
+"changed with this setting. The default value is 512 MiB."
+msgstr ""
+"सभी छवियों को कैश करने के लिए उपयोग की जाने वाली बाइट्स में मेमोरी की अधिकतम मात्रा को "
+"इस सेटिंग के साथ बदला जा सकता है। डिफ़ॉल्ट मान 67108864 है।"
+
+#. Tag: userinput
+#: hacking.docbook:263
+#, no-c-format
+msgid "Image Cache Size=256000000"
+msgstr "छवि कैश आकार=256000000"
+
+#. Tag: title
+#: hacking.docbook:270
+#, no-c-format
+msgid "[Options - bibtex]"
+msgstr "[विकल्प - bibtex]"
+
+#. Tag: para
+#: hacking.docbook:272
+#, no-c-format
+msgid ""
+"These settings should be placed in the <emphasis>Options - bibtex</emphasis> "
+"group."
+msgstr "इन सेटिंग्स को <emphasis>विकल्प - bibtex</emphasis> समूह में रखा जाना चाहिए।"
+
+#. Tag: title
+#: hacking.docbook:277
+#, no-c-format
+msgid "lyxpipe"
+msgstr "लिक्सपाइप"
+
+#. Tag: para
+#: hacking.docbook:279
+#, no-c-format
+msgid ""
+"This setting is for the location of the lyxpipe for sending bibliographic "
+"citations. It should not include the <literal role=\"extension\">.in</"
+"literal> suffix."
+msgstr ""
+"यह सेटिंग ग्रंथसूची उद्धरण भेजने के लिए lyxpipe के स्थान के लिए है। इसमें <literal role="
+"\"extension\">.in</literal> प्रत्यय शामिल नहीं होना चाहिए।"
+
+#. Tag: userinput
+#: hacking.docbook:287
+#, no-c-format
+msgid "lyxpipe=$HOME/.lyx/lyxpipe"
+msgstr "lyxpipe=$HOME/.lyx/lyxpipe"
+
+#. Tag: title
+#: hacking.docbook:293
+#, fuzzy, no-c-format
+#| msgid "[General Options]"
+msgid "[File Reader Options]"
+msgstr "[आम विकल्प]"
+
+#. Tag: para
+#: hacking.docbook:295
+#, fuzzy, no-c-format
+#| msgid ""
+#| "These settings should be placed in the <emphasis>General Options</"
+#| "emphasis> group."
+msgid ""
+"These settings should be placed in the <emphasis>File Reader Options</"
+"emphasis> group."
+msgstr "इन सेटिंग्स को <emphasis>सामान्य विकल्प</emphasis> समूह में रखा जाना चाहिए।"
+
+#. Tag: title
+#: hacking.docbook:298
+#, no-c-format
+msgid "Preview Size"
+msgstr ""
+
+#. Tag: para
+#: hacking.docbook:300
+#, no-c-format
+msgid "This setting is for the maximum size of the generated file preview."
+msgstr ""
+
+#. Tag: userinput
+#: hacking.docbook:306
+#, no-c-format
+msgid "Preview Size=523"
+msgstr ""
+
+#. Tag: title
+#: hacking.docbook:312
+#, no-c-format
+msgid "Multi-Disc Options"
+msgstr ""
+
+#. Tag: para
+#: hacking.docbook:314
+#, no-c-format
+msgid ""
+"The <link linkend=\"musicbrainz\">MusicBrainz</link>, <link linkend=\"discogs"
+"\">Discogs</link>, and <link linkend=\"itunes\">iTunes</link> data sources "
+"can fetch multi-disc album information, specifying which tracks each disc "
+"contains. By default, the track lists are inserted into separate field, one "
+"for each disc. Prior to version 4.0, the track lists were combined. This "
+"option provides the pre-4.0 behavior on an individual data source level. Add "
+"it to each <emphasis>Data Source</emphasis> section where it is desired."
+msgstr ""
+
+#. Tag: title
+#: hacking.docbook:322
+#, no-c-format
+msgid "Split Tracks By Disc"
+msgstr ""
+
+#. Tag: para
+#: hacking.docbook:324
+#, no-c-format
+msgid ""
+"Setting this to <emphasis>false</emphasis> reverts to pre-4.0 behavior where "
+"the tracks are collapsed into a single track list."
+msgstr ""
+
+#. Tag: userinput
+#: hacking.docbook:330
+#, no-c-format
+msgid "Split Tracks By Disc=false"
+msgstr ""
+
+#. Tag: title
+#: hacking.docbook:338
+#, no-c-format
+msgid "Bibtex Character Translation"
+msgstr "बिबटेक्स वर्ण अनुवाद"
+
+#. Tag: para
+#: hacking.docbook:340
+#, no-c-format
+msgid ""
+"When bibtex files are imported or exported, certain characters are "
+"translated between their TeX equivalents and the Unicode characters. Those "
+"character mappings are contained in the <filename>bibtex-translation.xml</"
+"filename> file, located in the installation data directory. The mappings can "
+"be modified, as desired. The key element contains the Unicode character, and "
+"the string elements within contain the TeX equivalents, which may be a one-"
+"to-many mapping. The first one is the one used when exporting to bibtex."
+msgstr ""
+"जब bibtex फ़ाइलें आयात या निर्यात की जाती हैं, तो कुछ वर्णों को उनके TeX समकक्षों और "
+"यूनिकोड वर्णों के बीच अनुवादित किया जाता है। वे वर्ण मैपिंग <filename>bibtex-"
+"translation.xml</filename> फ़ाइल में समाहित हैं, जो इंस्टॉलेशन डेटा निर्देशिका में स्थित "
+"है। मैपिंग को इच्छानुसार संशोधित किया जा सकता है। कुंजी तत्व में यूनिकोड वर्ण होता है, और "
+"स्ट्रिंग तत्वों में TeX समकक्ष होते हैं, जो एक-से-कई मैपिंग हो सकते हैं। पहला वह है जिसका "
+"उपयोग bibtex में निर्यात करते समय किया जाता है।"
+
+#. Tag: programlisting
+#: hacking.docbook:344
+#, no-c-format
+msgid ""
+"<![CDATA[\n"
+"  <key char=\"À\">\n"
+"    <string>{\\`A}</string>\n"
+"    <string>\\`{A}</string>\n"
+"  </key>\n"
+"]]>"
+msgstr ""
+"<![CDATA[\n"
+"<key char=\"À\">\n"
+"<string>{\\`A}</string>\n"
+"<string>\\`{A}</string>\n"
+"</key>\n"
+"]]>"
+
+#~ msgid "XSLT Tricks"
+#~ msgstr "XSLT ट्रिक्स"
+
+#~ msgid ""
+#~ "Here are some tips for writing XSLT to parse &appname; &XML; data: (TBD)."
+#~ msgstr ""
+#~ "&appname; &XML; डेटा को पार्स करने के लिए XSLT लिखने हेतु यहां कुछ सुझाव दिए गए हैं: "
+#~ "(TBD)."

@@ -1,0 +1,694 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+ "dtd/kdedbx45.dtd" [
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Italian "INCLUDE"
+><!-- change language only here -->
+]>
+
+<book id="kwordquiz" lang="&language;">
+
+<bookinfo>
+<title
+>Manuale di &kwordquiz;</title>
+
+<authorgroup>
+<author
+><firstname
+>Peter</firstname
+> <surname
+>Hedlund</surname
+> <affiliation
+> <address
+><email
+>peter.hedlund@kdemail.net</email
+></address>
+</affiliation>
+</author>
+<othercredit role="translator"
+><firstname
+>Pino</firstname
+><surname
+>Toscano</surname
+><affiliation
+><address
+><email
+>toscano.pino@tiscali.it</email
+></address
+></affiliation
+><contrib
+>Traduzione italiana</contrib
+></othercredit
+><othercredit role="translator"
+><firstname
+>Paolo</firstname
+><surname
+>Zamponi</surname
+><affiliation
+><address
+><email
+>zapaolo@email.it</email
+></address
+></affiliation
+><contrib
+>Aggiornamento della traduzione italiana</contrib
+></othercredit
+> 
+</authorgroup>
+
+
+<copyright>
+  <year
+>2003</year>
+  <year
+>2004</year>
+  <year
+>2005</year>
+  <year
+>2008</year>
+  <holder
+>Peter B. Hedlund</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+
+<date
+>04/07/2023</date>
+<releaseinfo
+>Applications 23.08</releaseinfo>
+
+<abstract>
+<para
+>&kwordquiz; è un programma di &kde; per l'apprendimento di carte mnemoniche e di vocabolari. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>kdeedu</keyword>
+<keyword
+>KWordQuiz</keyword>
+<keyword
+>carta mnemonica</keyword>
+<keyword
+>vocabolario</keyword>
+<keyword
+>lingua</keyword>
+<keyword
+>educazione</keyword>
+<keyword
+>scuola</keyword>
+<keyword
+>college</keyword>
+<keyword
+>università</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Introduzione</title>
+<para
+>&kwordquiz; è uno strumento che ti dà un modo potente per apprendere dei nuovi vocabolari. Può essere una lingua o un altro tipo di terminologia. </para>
+<sect1 id="easy-to-use">
+<title
+>Facile da usare</title>
+
+<para
+>Con &kwordquiz; crei i tuoi documenti di vocabolario in modo semplice e intuitivo. L'aspetto base è quello di un foglio di calcolo a due colonne: in una inserisci le voci di vocabolario nella forma che conosci, e nell'altra in quella che vuoi imparare. Puoi cambiare i titoli delle colonne affinché possano indicare ciò su cui ti stai esercitando. </para>
+
+<sect2 id="quiz-types">
+<title
+>Tipi di quiz</title>
+
+<para
+>Una volta che hai inserito il vocabolario sei pronto per avviare un quiz. Magari vuoi iniziare con una sessione con le carte mnemoniche, ma in seguito puoi passare ad un quiz a scelta multipla, oppure a domande più potenti e rispondere a quiz. Sai subito a quali domande hai risposto bene e a quali no, inoltre puoi ripetere ogni errore per migliorare ulteriormente l'efficienza dell'apprendimento. Se hai bisogno di un piccolo aiuto aggiuntivo puoi usare la funzione di suggerimento. </para>
+</sect2>
+
+
+<sect2 id="practice-modes">
+<title
+>Modalità di esercizio</title>
+
+<para
+>Puoi selezionare come vuoi esercitarti. &kwordquiz; offre tre modalità diverse, in modo da rendere l'esercitazione più efficiente. È possibile decidere quale colonna venga usata come domanda, come riposta oppure entrambe. Inoltre puoi scegliere se utilizzare un ordine sequenziale oppure uno casuale. </para>
+</sect2>
+
+<sect2 id="vocabulary-documents">
+<title
+>Documenti di vocabolario</title>
+<para
+>&kwordquiz; può aprire diversi tipi di vocabolario. Il formato predefinito è <filename class="extension"
+>.kvtml</filename
+>,un formato condiviso con molti altri programmi &kde;. &kwordquiz; può aprire anche i file <filename class="extension"
+>.wql</filename
+> creati da &kwordquiz; per &Windows;, i <filename class="extension"
+>.csv</filename
+> aventi testo con campi separati da virgole, i <ulink url="http://www.vokabeln.de/v1/download.htm"
+><filename class="extension"
+>file .voc</filename
+></ulink
+> creati dalla vecchia versione di Vokabeltrainer, i <ulink url="https://sourceforge.net/projects/xdxf/files/dicts-XDXF/"
+><filename class="extension"
+>file .xdxf</filename
+></ulink
+> e infine i <filename class="extension"
+>.xml.gz</filename
+> creati dalle vecchie versioni di <ulink url="http://pauker.sourceforge.net"
+>Pauker</ulink
+>. </para>
+<para
+>&kwordquiz; può salvare i documenti di vocabolario in diversi formati. Quello predefinito è <filename class="extension"
+>.kvtml</filename
+>, che viene usato da altri programmi &kde;. Un'altra opzione disponibile è il formato <filename class="extension"
+>.csv</filename
+>, cioè testo con campi separati da virgole. </para>
+<para
+>Puoi avere diversi file aperti allo stesso tempo, per poter copiare o spostare facilmente le voci tra di essi. </para>
+</sect2>
+</sect1>
+</chapter>
+
+<chapter id="commands">
+<title
+>Guida ai comandi</title>
+<sect1 id="mode-menu">
+<title
+>Il menu Opzioni</title>
+<para
+>Il menu fornisce tre opzioni diverse per il quiz, che non sono mutualmente esclusive.</para>
+
+  <note
+><para
+>I nomi dei menu cambieranno a seconda dei titoli delle colonne del documento di vocabolario attualmente attivo. La modalità verrà applicata alle carte mnemoniche, alla scelta multipla e alla modalità a domanda &amp; risposta.</para>
+  </note>
+<variablelist>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Opzioni</guimenu
+> <guimenuitem
+>Mescola</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>Durante il quiz ti verranno date le voci in un ordine casuale, ma ciascuna voce verrà elaborata una volta una sola. </para>
+    </listitem>
+  </varlistentry>
+
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Opzioni</guimenu
+> <guimenuitem
+>Colonna 1 -&gt; Colonna 2</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>Durante il quiz ti verranno date le voci della Colonna 1, e ti verrà chiesto di fornire le corrispondenti voci della Colonna 2. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Modalità</guimenu
+> <guimenuitem
+>Colonna 2 -&gt; Colonna 1</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>Durante il quiz ti verranno date le voci della Colonna 1, e ti verrà chiesto di fornire le corrispondenti voci della Colonna 2. </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+</sect1>
+</chapter>
+
+<chapter id="welcome-page">
+<title
+>La pagina di benvenuto</title>
+
+<para
+>All'apertura di KWordQuiz si aprirà la pagina di benvenuto. Questa elenca tutti i mazzi aperti in precedenza, inoltre ti permette di crearne uno nuovo, di aprirne uno da un file, oppure di scaricarne uno da internet. Puoi infine scegliere quale modalità principale vuoi usare. </para>
+
+<screenshot>
+  <screeninfo
+>La pagina di benvenuto</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-welcome.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>La pagina di benvenuto</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</chapter>
+
+<chapter id="editor">
+<title
+>L'editor del vocabolario</title>
+
+<para
+>L'area del documento di vocabolario ha l'aspetto di una griglia in stile foglio elettronico. Questa è composta da celle ordinate in due colonne e da varie righe. Ogni colonna e ogni riga ha un'intestazione, che viene usata per specificare i titoli del documento di vocabolario. Questi possono essere impostati modificando la prima riga. </para>
+
+<para
+>Puoi fare clic su una cella della griglia per farla diventare attiva. Puoi usare le frecce su e giù per spostarti in su e in giù nella tabella, e tab per spostarti all'elemento successivo.</para>
+
+<screenshot>
+  <screeninfo
+>L'editor del vocabolario</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-editor.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>L'editor del vocabolario</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<para
+>Crea un vocabolario di voci in coppia nelle due colonne del documento. Puoi inserire del testo nella cella attiva semplicemente iniziando a scrivere: la cella sarà quindi in modalità di modifica, e potrai selezionare tutto il testo o solo una parte. Puoi anche modificare una cella facendoci doppio clic sopra, oppure premendo <keycap
+>F2</keycap
+> e facendo le modifiche direttamente nella cella. </para>
+<para
+>Quando hai finito di inserire una voce, premi il tasto «Invio» e la cella successiva diventerà attiva. Quindi, è semplice inserire rapidamente più voci. Non c'è davvero limite al numero di righe che puoi avere in un documento. </para>
+</chapter>
+
+<chapter id="flashcard">
+
+<title
+>Sessione con le carte mnemoniche</title>
+
+<para
+>Seleziona «Carta mnemonica» dal pannello di navigazione per avviarne una con le carte mnemoniche sulle voci del documento di vocabolario attivo. Sarà usata la modalità selezionata nel menu <guimenu
+>Opzioni</guimenu
+>. Se cambi le opzioni durante una sessione, questa verrà riavviata. </para>
+
+<para
+>Se stai lavorando con delle espressioni lunghe puoi ridimensionare la finestra, in modo che ci sia più spazio disponibile. Anche la dimensione del carattere influenzerà lo spazio richiesto dalle varie parti della finestra. </para>
+
+<screenshot>
+  <screeninfo
+>Sessione con le carte mnemoniche</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-flashcard.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Sessione con le carte mnemoniche</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Inizialmente è visualizzata la parte frontale della carta. Usa <guibutton
+>Controlla</guibutton
+> per vedere il retro. </para>
+<para
+>Per passare alla carta successiva premi <guibutton
+>Lo so</guibutton
+> per contare la carta come corretta, oppure <guibutton
+>Non lo so</guibutton
+> per contarla come non corretta. </para>
+<para
+>Seleziona <guibutton
+>Ripeti errori</guibutton
+> per ripetere le carte che hai contato come non corrette. </para>
+<para
+>Seleziona <guibutton
+>Riprova</guibutton
+> per ricominciare la sessione dall'inizio. Se stai utilizzando una modalità casuale, le carte verranno rimescolate. </para>
+<para
+>La sezione del punteggio nella parte alta dello schermo mostra il numero delle carte, il numero di quelle viste, il numero delle carte contate come corrette e di quelle errate. </para>
+</chapter>
+
+<chapter id="multiple">
+
+<title
+>Sessione a scelta multipla</title>
+
+<para
+>Seleziona «Scelta multipla» nella pagina di benvenuto per avviare una sessione a scelta multipla sulle voci del documento di vocabolario attivo. Verrà usata la modalità selezionata nel menu <guimenu
+>Opzioni</guimenu
+>. Se cambi le opzioni durante una sessione, questa verrà riavviata. </para>
+<para
+>Se stai lavorando con delle espressioni lunghe puoi ridimensionare la finestra, in modo che ci sia più spazio. La dimensione del carattere selezionata per l'editor influenzerà anche lo spazio richiesto dalle varie parti della finestra. </para>
+<para
+>Nell'esempio sotto, l'utente ha dato una risposta non corretta alla domanda precedente. Adesso sta per rispondere alla domanda successiva. </para>
+
+<screenshot>
+  <screeninfo
+>Sessione a scelta multipla</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-multiple.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Sessione a scelta multipla</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Le tue scelte vengono mostrate nel mezzo dello schermo. Seleziona quella che pensi che sia corretta. Usa <guibutton
+>Controlla</guibutton
+> per vedere se la risposta è corretta. Se hai attivato la modalità automatica da <menuchoice
+><guimenu
+>Impostazioni</guimenu
+></menuchoice
+>, la tua selezione verrà controllata immediatamente. </para>
+<para
+>Seleziona <guibutton
+>Ripeti errori</guibutton
+> per ripetere le carte che hai contato come non corrette. </para>
+<para
+>Seleziona <guibutton
+>Riprova</guibutton
+> per ricominciare la sessione dall'inizio. Se stai utilizzando una modalità casuale, le carte verranno rimescolate. </para>
+<para
+>La sezione del punteggio nella parte alta dello schermo mostra il numero di risposte, il numero di quelle a cui hai risposto, il numero di quelle contate come corrette e di quelle errate. </para>
+</chapter>
+
+
+<chapter id="question-and-answer">
+
+<title
+>Sessione a domanda &amp; risposta</title>
+<para
+>Seleziona «Domanda &amp; risposta» dal pannello di navigazione per avviare una sessione a domanda e risposta sulle voci del documento di vocabolario attivo. Sarà usata la modalità selezionata nel menu <guimenu
+>Modalità</guimenu
+>. Se cambi modalità durante una sessione, la sessione sarà riavviata. </para>
+<para
+>Se stai lavorando con delle espressioni lunghe puoi ridimensionare la finestra, in modo che ci sia più spazio. La dimensione del carattere selezionata per l'editor influenzerà anche lo spazio richiesto dalle varie parti della finestra. </para>
+<para
+>Nell'esempio sotto, l'utente ha dato una risposta corretta alla domanda precedente (se vuoi vedere come sono gestite le risposte errate, leggi il capitolo sulla <link linkend="multiple"
+>Scelta multipla</link
+>). Adesso sta per rispondere alla successiva. </para>
+
+<screenshot>
+  <screeninfo
+>Sessione a domanda &amp; risposta</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-qanda.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Sessione a domanda &amp; risposta</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>La domanda è mostrata in centro. Digita la risposta nel campo di inserimento. Usa <guibutton
+>Controlla</guibutton
+> oppure &Enter; per vedere se è corretta. </para>
+<para
+>Seleziona <guibutton
+>Suggerimento</guibutton
+> per ottenere la lettera successiva della risposta. In <menuchoice
+><guimenu
+>Impostazioni</guimenu
+></menuchoice
+> puoi scegliere di contare come non corrette tutte le domande per le quali hai usato la funzione suggerimento. </para>
+<para
+>Seleziona <guibutton
+>Ripeti errori</guibutton
+> per ripetere le carte che hai contato come non corrette. </para>
+<para
+>Seleziona <guibutton
+>Riprova</guibutton
+> per ricominciare la sessione dall'inizio. Se stai utilizzando una modalità casuale, le carte verranno rimescolate. </para>
+<para
+>La sezione del punteggio nella parte alta dello schermo mostra il numero di risposte, il numero di quelle a cui hai risposto, il numero di quelle contate come corrette e di quelle errate. </para>
+</chapter>
+
+<chapter id="fill-in-the-blank">
+<title
+>Riempi-gli-spazi</title>
+
+<para
+>«Riempi-gli-spazi» è una modalità potente per esercitarti in &kwordquiz;. È un tipo speciale di quiz a domanda e risposta, che richiede una descrizione più dettagliata. </para>
+
+<para
+>Considera la seguente tabella. Potrebbe essere un vocabolario di &kwordquiz;: </para>
+
+<informaltable
+><tgroup cols="3">
+<thead>
+<row>
+<entry
+></entry>
+<entry
+>Inglese</entry>
+<entry
+>Italiano</entry>
+</row>
+</thead>
+
+<tbody>
+<row>
+<entry
+>1</entry>
+<entry
+>We own a computer</entry>
+<entry
+>Noi abbiamo un computer</entry>
+</row>
+
+<row>
+<entry
+>2</entry>
+<entry
+>We own a computer</entry>
+<entry
+>Noi [abbiamo] un computer</entry>
+</row>
+
+<row>
+<entry
+>3</entry>
+<entry
+>We own a computer</entry>
+<entry
+>Noi [abbiamo un] computer</entry>
+</row>
+
+<row>
+<entry
+>4</entry>
+<entry
+>We own a computer</entry>
+<entry
+>Noi [abbiamo] un [computer]</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+
+<para
+>La cosa importante da notare è la posizione delle parentesi quadre: indicano a &kwordquiz; come eseguire il quiz. </para>
+<para
+>In 1. non ci sono le parentesi quadre. Assumendo che Inglese sia la domanda e Italiano la risposta, devi inserire l'intera espressione "Noi abbiamo un computer" per fare bene. </para>
+<para
+>In 2. &kwordquiz; mostrerà la domanda, ma anche "Noi ....... un computer". Come risposta corretta è sufficiente scrivere "abbiamo". </para>
+<para
+>3. mostra che uno "spazio" può essere rappresentato da una o più parole. La risposta corretta è "abbiamo un". </para>
+<para
+>In 4. ci sono due "spazi" separati. Per specificare che nella risposta devi scrivere "abbiamo; computer", &ie; separa gli "spazi" con un punto e virgola per fornire la risposta corretta. </para>
+<para
+>Gli "spazi" segnati hanno importanza solo se appaiono nella risposta. Altrimenti le parentesi quadre saranno ignorate. Inoltre, esse non hanno effetto nei quiz a scelta multipla. Per semplificare la creazione di vocabolari "riempi-gli-spazi" ci sono comandi di menu per segnare e per rimuovere i segni di "spazio". Ovviamente puoi inserire le parentesi quadre a mano. &kwordquiz; controlla la sintassi: se il testo appare in rosso c'è un errore con le parentesi, un quiz e non può essere avviato. </para>
+</chapter>
+
+<chapter id="printing">
+<title
+>Stampa</title>
+<para
+>&kwordquiz; può stampare i documenti di vocabolario in diversi vari modi. Le opzioni di stampa sono disponibili nell'editor di &kwordquiz;. Quando selezioni <guibutton
+>Stampa...</guibutton
+> ti si presenta un menu dal quale è possibile selezionare se stampare il documento come una lista di vocaboli (&ie; com'è visualizzato nell'editor), come un esame del vocabolario, oppure come delle carte mnemoniche. Una volta che la modalità è stata scelta, apparirà la finestra di stampa standard di &kde;. </para>
+<screenshot>
+  <screeninfo
+>Opzioni di stampa del vocabolario</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-type.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Opzioni di stampa del vocabolario</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<formalpara>
+<title
+>Lista del vocabolario</title>
+<para
+>Il vocabolario verrà stampato come se fosse visualizzato nell'editor. Ciò include il carattere, l'altezza delle righe, e la larghezza delle colonne. Assicurati che le colonne siano abbastanza strette da entrare nella pagina.</para>
+</formalpara>
+<screenshot>
+  <screeninfo
+>Stampa una lista di vocaboli</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-list.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Stampa una lista di vocaboli</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<formalpara>
+<title
+>Esame sul vocabolario</title>
+<para
+>Il vocabolario sarà stampato come se fosse visualizzato nell'editor tranne la seconda colonna, che sarà lasciata vuota, inoltre verrà aggiunta una terza colonna per il punteggio. Le impostazioni includono il carattere, l'altezza delle righe e la larghezza delle colonne. Assicurati che le colonne siano abbastanza strette da entrare nella pagina.</para>
+</formalpara>
+<screenshot>
+  <screeninfo
+>Stampa come esame sul vocabolario</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-exam.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Stampa come esame sul vocabolario</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<formalpara>
+<title
+>Carte mnemoniche</title>
+<para
+>Due carte 3" x 5" per pagina. Le carte saranno sempre stampate in orizzontale.</para>
+</formalpara>
+<screenshot>
+  <screeninfo
+>Stampa le carte mnemoniche</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-flashcard.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Stampa le carte mnemoniche</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+</chapter>
+
+<chapter id="dialogs">
+<title
+>Finestre</title>
+
+<sect1 id="dlg-config-general">
+<title
+>Impostazioni generali</title>
+<screenshot>
+  <screeninfo
+>Impostazioni generali</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-config.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Impostazioni generali</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Puoi scegliere che tipo di sessione avviare all'apertura di un documento. Passare direttamente ad un quiz può evitare di vedere le voci prima che il test inizi. </para>
+<para
+>Per tutte le sessioni puoi scegliere se i punteggi devono essere visualizzati come percentuale invece che come numeri assoluti. </para>
+<tip>
+<para
+>Nota che le impostazioni vengono applicate automaticamente. </para>
+</tip>
+</sect1>
+
+<sect1 id="dlg-languages">
+<title
+>Impostazioni delle colonne</title>
+<para
+>Puoi aprire questa finestra dall'editor.</para>
+<screenshot>
+  <screeninfo
+>Impostazioni delle colonne</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-languages.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Impostazioni delle colonne</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Usa questa finestra per definire i titoli delle colonne e le colonne delle lingue. Premi su una lingua per selezionarla oppure per chiudere la finestra, scartando così tutte le modifiche. </para>
+</sect1>
+</chapter>
+
+<chapter id="credits">
+
+<title
+>Riconoscimenti e licenza</title>
+
+<para
+>&kwordquiz; </para>
+<para
+>Copyright del programma 2003-2008 Peter B. Hedlund <email
+>peter.hedlund@kdemail.net</email
+> 2023 Carl Schwan <email
+>carl@carlchwan.eu</email
+> </para>
+
+<para
+>Copyright della documentazione 2003-2008 Peter B. Hedlund <email
+>peter.hedlund@kdemail.net</email
+> </para>
+
+<para
+>Traduzione italiana di Pino Toscano <email
+>toscano.pino@tiscali.it</email
+></para
+><para
+>Aggiornamento della traduzione italiana di Paolo Zamponi <email
+>zapaolo@email.it</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->

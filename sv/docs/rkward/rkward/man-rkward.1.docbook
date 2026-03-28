@@ -1,0 +1,326 @@
+<?xml version="1.0" ?>
+<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+<!ENTITY % Swedish "INCLUDE">
+<!ENTITY rkward '<application
+>RKWard</application
+>'>
+<!ENTITY R '<application
+>R</application
+>'>
+]>
+<!--- This file is part of the RKWard project (https://rkward.kde.org).
+SPDX-FileCopyrightText: by Thomas Friedrichsmeier <thomas.friedrichsmeier@kdemail.net>
+SPDX-FileContributor: The RKWard Team <rkward-devel@kde.org>
+SPDX-License-Identifier: GFDL-1.2-no-invariants-or-later OR GPL-2.0-or-later
+-->
+
+<refentry lang="&language;">
+<refentryinfo>
+<title
+>RKWard användarhandbok</title>
+<author
+><firstname
+>Thomas</firstname
+> <surname
+>Friedrichsmeier</surname
+> <contrib
+>RKWard manualsida.</contrib>
+<affiliation>
+<address
+><email
+>rkward-devel@kde.org</email
+></address>
+</affiliation>
+</author>
+<date
+>2023-11-30</date>
+<releaseinfo
+>RKWard 0.7.5</releaseinfo>
+<productname
+>KDE-program</productname>
+</refentryinfo>
+
+<refmeta>
+<refentrytitle
+><command
+>rkward</command
+></refentrytitle>
+<manvolnum
+>1</manvolnum>
+</refmeta>
+
+<refnamediv>
+<refname
+><command
+>rkward</command
+></refname>
+<refpurpose
+>Ett &kde;-gränssnitt för R</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+<cmdsynopsis
+><command
+>rkward</command
+> <group choice="opt"
+><option
+>--evaluate</option
+> <replaceable
+> R-kod</replaceable
+></group
+> <group choice="opt"
+><option
+>--debug-level</option
+> <replaceable
+> nivå</replaceable
+></group
+> <group choice="opt"
+><option
+>--debug-flags</option
+> <replaceable
+> flaggor</replaceable
+></group
+> <group choice="opt"
+><option
+>--debug-output</option
+> <replaceable
+> vart</replaceable
+></group
+> <group choice="opt"
+><option
+>--backend-debugger</option
+> <replaceable
+> avlusningskommando</replaceable
+></group
+> <group choice="opt"
+><option
+>--r-executable</option
+> <replaceable
+> sökväg_till_körbart_program</replaceable
+></group
+> <group choice="opt"
+><option
+>--reuse</option
+></group
+> <group choice="opt"
+><option
+>--autoreuse</option
+></group
+> <group choice="opt"
+><option
+>--nowarn-external</option
+></group
+> <arg choice="opt"
+>Generella KDE-väljare</arg
+> <arg choice="opt"
+>Generella Qt-väljare</arg
+> <arg choice="opt"
+><replaceable
+>filer_att_öppna</replaceable
+></arg
+> </cmdsynopsis>
+</refsynopsisdiv>
+
+<refsect1>
+<title
+>Beskrivning</title>
+<para
+>&rkward; är ett &kde;-baserad grafisk användargränssnitt och integrerad utvecklingsmiljö för skriptspråket &R; för statistisk databehandling.</para>
+<para
+>För mer information, se <ulink url="https://rkward.kde.org/"
+>&rkward;s webbsida</ulink
+>, och dokumentationen som tillhandahålls inne i &rkward;.</para>
+</refsect1>
+
+<refsect1>
+<title
+>Väljare</title>
+
+<variablelist>
+<varlistentry>
+<term
+><option
+>--evaluate</option
+> <replaceable
+>R-kod</replaceable
+></term>
+<listitem
+><para
+>Den givna &R;-koden utvärderas efter att &rkward; har startat, och efter eventuellt angiven arbetsyta har lästs in. I huvudsak användbar för automatiserad utprovning.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>--debug-level</option
+> <replaceable
+>nivå</replaceable
+></term>
+<listitem
+><para
+>Detaljnivå för avlusningsutmatning. 0-5, där 0 är ingen utmatning, 5 är all utmatning inklusive funktionsspårningsinformation. Standardvärdet är 2.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>--debug-output</option
+> <replaceable
+>var</replaceable
+></term>
+<listitem
+><para
+>Vart avlusningsutmatning skickas. Det normala är att lagra den i en fil i den tillfälliga katalogen. Att ange "terminal" skriver istället ut avlusningsutmatning på standardfelutmatningen (användbart för att avlusa startproblem). Observera att avlusningsutmatning från bakgrundsprocessen alltid lagras i en fil.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>--debug-flags</option
+> <replaceable
+>flaggor</replaceable
+></term>
+<listitem
+><para
+>Anpassa vilka sektioner av koden som ska avlusas. Flaggor anges som ett binärt tal. Se källkodsfilerna för dokumentation, eftersom det här egentligen är en intern väljare.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>--backend-debugger</option
+> <replaceable
+>kommando</replaceable
+></term>
+<listitem
+><para
+>Kör &rkward; bakgrundsprogram via det angivna avlusningskommandot. För att lägga till väljare i avlusningskommandot, omge dem med enkla citationstecken (') tillsammans med kommandot. <emphasis
+>Observera:</emphasis
+> Avlusningsargument avdelas med mellanslag. Om det inte är lämpligt, måste ett eget omgivande skript skrivas för att starta avlusaren. Försäkra också att avlusarens all utmatning och/eller inmatning dirigeras om på lämpligt sätt. Se exemplen.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>--r-executable</option
+> <replaceable
+>kommando</replaceable
+></term>
+<listitem
+><para
+>I fallet med flera R-installationer, ange installationen som ska användas, t.ex. <filename
+>/usr/bin/R</filename
+>.Du kan också använda strängen <replaceable
+>"auto"</replaceable
+>, vilket gör att RKWard försöker hitta R med en av de kända installationssökvägarna. <emphasis
+>Observera</emphasis
+> att medan RKWard <emphasis
+>ofta</emphasis
+> fungerar med nyare versioner av R, behöver det <emphasis
+>ibland</emphasis
+> kompileras om för den versionen, eller är kanske helt inkompatibelt.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>--reuse</option
+></term>
+<listitem
+><para
+>Om en instans av &rkward; redan kör, lägg den överst och öppna <replaceable
+>filer-att-öppna</replaceable
+>. Observera att andra kommandoradsväljare ignoreras i fallet då en instans återanvänds.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>--autoreuse</option
+></term>
+<listitem
+><para
+>Beter sig som <option
+>--reuse</option
+>, om några filväljare också anges startas en ny instans, annars. Avsedd för användning i .desktop-fil.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>--nowarn-external</option
+></term>
+<listitem
+><para
+>När &rkward;-insticksprogram startas från kommandoraden (dvs. när <replaceable
+>filer-att-öppna</replaceable
+> innehåller webbadresser på formen <replaceable
+>rkward://runplugin/...</replaceable
+>), visar &rkward; oftast en varning att sådana webbadresser skulle <emphasis
+>kunna</emphasis
+> användas för att utföra skadliga åtgärder på systemet. Varningen gäller särskilt länkar som hittas på opålitliga webbplatser, eller andra opålitliga externa källor. Om du vill skapa lokala skript för &rkward;, kan varningen undvikas genom att lägga till --nowarn-external på kommandoraden.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>--quirkmode</option
+></term>
+<listitem
+><para
+>Inaktivera viss kod för startvalidering. Experimentellt alternativ, inte avsett för regelbunden användning.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><replaceable
+>filer-att-öppna</replaceable
+></term>
+<listitem
+><para
+>Du kan ange hur många filnamn eller webbadresser som helt att öppna i &rkward;. Oftast är det antingen arbetsytefiler, R-skriptfiler eller rkward:// webbadresser (t.ex. för att starta med en dialogruta i ett insticksprogram). Att ange mer än en arbetsytefil gör att arbetsytorna sammanfogas, och rekommenderas inte.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</refsect1>
+
+<refsect1>
+<title
+>Se också</title>
+<para
+><citerefentry
+><refentrytitle
+>R</refentrytitle>
+<manvolnum
+>1</manvolnum
+></citerefentry
+></para>
+</refsect1>
+
+<refsect1>
+<title
+>Exempel</title>
+<para
+><programlisting
+># Starta med dialogrutan t-test
+rkward --nowarn-external rkward://runplugin/rkward::t_test/
+# Öppna två skriptfiler i en instans av RKWard som kör (eller i en ny instans om RKWard inte kör)
+rkward --reuse file_a.R file_b.R
+
+# Kör bakgrundsprogrammet rkward via valgrind
+rkward --backend-debugger 'valgrind --log-file=valgrind.log'.
+</programlisting
+></para>
+</refsect1>
+
+<refsect1>
+<title
+>Upphovsmän</title>
+<para
+>&rkward; är skrivet av Thomas Friedrichsmeier och &rkward;-gruppen. Se <ulink url="https://rkward.kde.org/"
+>&rkward;s webbsida</ulink
+>.</para>
+</refsect1>
+
+</refentry>

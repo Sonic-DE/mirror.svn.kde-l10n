@@ -1,0 +1,1134 @@
+#
+# SPDX-FileCopyrightText: 2013, 2018, 2020, 2024, 2025 Vincenzo Reale <smart2128vr@gmail.com>
+# Marco Poletti <poletti.marco@gmail.com>, 2009, 2010.
+# Daniele Micci <daniele.micci@tiscali.it>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: kmymoney_details-database\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 12:04+0000\n"
+"PO-Revision-Date: 2025-01-24 10:59+0100\n"
+"Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
+"Language-Team: Italian <kde-i18n-it@kde.org>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 24.12.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. Tag: author
+#: details-database.docbook:5
+#, no-c-format
+msgid "&Tony.Bloomfield; &Tony.Bloomfield.mail;"
+msgstr "&Tony.Bloomfield; &Tony.Bloomfield.mail;"
+
+#. Tag: author
+#: details-database.docbook:6
+#, no-c-format
+msgid "&Jack.H.Ostroff; &Jack.H.Ostroff.mail;"
+msgstr "&Jack.H.Ostroff; &Jack.H.Ostroff.mail;"
+
+#. Tag: date
+#: details-database.docbook:8
+#, no-c-format
+msgid "2024-12-01"
+msgstr "1/12/2024"
+
+#. Tag: releaseinfo
+#: details-database.docbook:9
+#, no-c-format
+msgid "5.2.0"
+msgstr "5.2.0"
+
+#. Tag: title
+#: details-database.docbook:11
+#, no-c-format
+msgid "Database"
+msgstr "Database"
+
+#. Tag: title
+#: details-database.docbook:13
+#, no-c-format
+msgid "Using relational databases"
+msgstr "Uso di database relazionali"
+
+#. Tag: title
+#: details-database.docbook:15
+#, no-c-format
+msgid "Introduction"
+msgstr "Introduzione"
+
+#. Tag: para
+#: details-database.docbook:16
+#, no-c-format
+msgid ""
+"Since release 1.0, &kmymoney; allows you to hold your data in a relational "
+"database. One of the advantages of using this industry-standard format is "
+"that it may allow you to view your data using one of the graphic front ends "
+"such as <trademark>OpenOffice.org</trademark> or <trademark>LibreOffice</"
+"trademark>, or perhaps in some format that &kmymoney; currently doesn't "
+"provide. Also, a little knowledge of <acronym><ulink url=\"https://en."
+"wikipedia.org/wiki/SQL\">SQL</ulink> </acronym> (<quote>Structured Query "
+"Language</quote>, the language used world-wide to access relational "
+"databases) should enable you more easily to export data to an external "
+"program, for example, a budgeting application."
+msgstr ""
+"Fin dalla versione 1.0, &kmymoney; permette di conservare i propri dati in "
+"un database relazionale. Uno dei vantaggi dell'uso di questo formato comune "
+"è che ti consente di visualizzare i dati usando l'interfaccia grafica di "
+"programmi come <trademark>OpenOffice.org</trademark> o "
+"<trademark>LibreOffice</trademark>, magari in formati che &kmymoney; ancora "
+"non fornisce. Inoltre, una conoscenza di base di <acronym><ulink url="
+"\"https://en.wikipedia.org/wiki/SQL\">SQL</ulink> </acronym> "
+"(<quote>Structured Query Language</quote>, il linguaggio usato comunemente "
+"per accedere ai database relazionali) dovrebbe consentirti di esportare più "
+"facilmente i dati verso programmi esterni come, ad esempio, applicazioni per "
+"la redazione di budget."
+
+#. Tag: para
+#: details-database.docbook:29
+#, no-c-format
+msgid ""
+"Although most relational database systems allow concurrent access to a "
+"database by more than one user, this is not possible with &kmymoney;. Even "
+"though &kmymoney; can store its data in a relational database, it actually "
+"uses the database as just a different type of file storage. When you open "
+"your file, the program reads all of the data from the database. As you work "
+"with your data, the changes are made only to the internal storage; they are "
+"not immediately written back to the database. Only when you save your data "
+"does &kmymoney; write the entire file back to the database."
+msgstr ""
+"Sebbene la maggior parte dei sistemi di database relazionali consenta "
+"l'accesso simultaneo a un database da parte di più di un utente, questo non "
+"è possibile con &kmymoney;. Anche se &kmymoney; può memorizzare i suoi dati "
+"in un database relazionale, in realtà usa il database semplicemente come un "
+"diverso tipo di archiviazione di file. Quando apri il tuo file, il programma "
+"legge tutti i dati dal database. Mentre lavori con i tuoi dati, le modifiche "
+"vengono apportate solo all'archiviazione interna; non vengono immediatamente "
+"riscritte nel database. Solo quando salvi i tuoi dati &kmymoney; riscrive "
+"l'intero file nel database."
+
+#. Tag: para
+#: details-database.docbook:40
+#, no-c-format
+msgid ""
+"There have been requests for &kmymoney; to update the database for each data "
+"change, but this would require a significant change to the entire way the "
+"program manages its internal data structures, so this is extremely unlikely "
+"to happen in the foreseeable future."
+msgstr ""
+"Abbiamo ricevuto richieste affinché &kmymoney; aggiorni la banca dati per "
+"ogni modifica dei dati, ma ciò richiederebbe una modifica significativa "
+"all'intero modo in cui il programma gestisce le sue strutture dati interne, "
+"quindi è estremamente improbabile che ciò accada nel prossimo futuro."
+
+#. Tag: title
+#: details-database.docbook:49
+#, no-c-format
+msgid "Preparation"
+msgstr "Preparazione"
+
+#. Tag: para
+#: details-database.docbook:50
+#, no-c-format
+msgid ""
+"To access the database, &kmymoney; uses the SQL module supplied by &Qt; "
+"Software as part of their &Qt; programming system. This module supports many "
+"database systems through a collection of drivers. &Qt; has drivers for a "
+"large number of open source and proprietary relational database systems, "
+"including <trademark>MySQL</trademark>, PostgreSQL, and SQLCipher. The "
+"module also supports some 'heavier', more industrial, systems such as "
+"<trademark class=\"registered\">Oracle</trademark> and IBM <trademark class="
+"\"registered\">DB2</trademark>."
+msgstr ""
+"Per accedere al database, &kmymoney; usa il modulo SQL fornito da &Qt; "
+"Software come parte del loro sistema di programmazione &Qt;. Questo modulo "
+"supporta diversi sistemi di database, attraverso una serie di driver. &Qt; "
+"ha driver per un gran numero di sistemi di database relazionali open source "
+"e proprietari, tra cui <trademark>MySQL</trademark>, PostgreSQL e SQLCipher. "
+"Il modulo supporta anche alcuni sistemi 'più pesanti' e industriali, come "
+"<trademark class=\"registered\">Oracle</trademark> e IBM <trademark class="
+"\"registered\">DB2</trademark>."
+
+#. Tag: para
+#: details-database.docbook:61
+#, no-c-format
+msgid ""
+"Previous versions of &kmymoney; supported <ulink url=\"https://www.sqlite.org"
+"\">SQLite</ulink>. This has been replaced with support for <ulink url="
+"\"https://www.zetetic.net/sqlcipher\">SQLCipher</ulink>, which is a "
+"standalone fork of the SQLite database library that adds 256 bit AES "
+"encryption and other security features. The SQLCipher driver will read "
+"existing SQLite files. See the section below on <link linkend=\"details."
+"database.sqlcipher\">SQLCipher</link> for more details."
+msgstr ""
+"Le versioni precedenti di &kmymoney; supportavano <ulink url=\"https://www."
+"sqlite.org\">SQLite</ulink>. Questo è stato sostituito con il supporto per "
+"<ulink url=\"https://www.zetetic.net/sqlcipher\">SQLCipher</ulink>, che è un "
+"fork autonomo della libreria di database SQLite che aggiunge la cifratura "
+"AES a 256 bit e altre funzionalità di sicurezza. Il driver SQLCipher leggerà "
+"i file SQLite esistenti. Consulta la sezione sottostante su <link linkend="
+"\"details.database.sqlcipher\">SQLCipher</link> per maggiori dettagli."
+
+#. Tag: para
+#: details-database.docbook:71
+#, no-c-format
+msgid ""
+"With the exception of SQLCipher, these systems use a client/server model, "
+"where the 'client' software sits on 'your' machine, while the server lives "
+"on the same machine as the database itself, which may be elsewhere on a "
+"network. Of course, in the normal scenario for a personal finance "
+"application such as &kmymoney;, 'your' machine can act as both client and "
+"server. Your first task therefore, having decided which database system you "
+"wish to use, is to install the client, and most probably server, software."
+msgstr ""
+"Ad eccezione di SQLCipher, questi sistemi utilizzano un modello client/"
+"server, in cui il software «client» risiede sulla «tua» macchina, mentre il "
+"server risiede sulla stessa macchina del database stesso, che potrebbe "
+"trovarsi altrove in una rete. Naturalmente, nello scenario normale per "
+"un'applicazione di finanza personale come &kmymoney;, la «tua» macchina può "
+"fungere sia da client che da server. Il tuo primo compito, quindi, una volta "
+"deciso quale sistema di database desideri utilizzare, è installare il "
+"software client e, molto probabilmente, server."
+
+#. Tag: para
+#: details-database.docbook:81
+#, no-c-format
+msgid ""
+"In addition to the database software itself, you must also install the "
+"corresponding &Qt; driver module. Most &Linux; distributions will include "
+"driver modules for the more popular databases. Otherwise, check with the "
+"<ulink url=\"https://www.qt.io/\">&Qt; software web site</ulink> and search "
+"for <quote>SQL drivers</quote>."
+msgstr ""
+"Oltre al programma stesso di gestione del database, è necessario installare "
+"anche il modulo di &Qt; con il driver corrispondente. La maggior parte delle "
+"distribuzioni &Linux; include i moduli dei driver per i database più "
+"conosciuti. Altrimenti, cercare <quote>SQL drivers</quote>. nel <ulink url="
+"\"https://www.qt.io/\">sito web di &Qt;</ulink>."
+
+#. Tag: para
+#: details-database.docbook:90
+#, no-c-format
+msgid ""
+"SQLCipher and SQLite do not operate on a client/server model; each database "
+"is held in a regular file, local or remote, accessed using the normal "
+"methods supplied by the underlying operating system. In this case, "
+"therefore, there is only one software package and the driver to install. "
+"Also, some of the following information, particularly that related to "
+"administration, may not apply."
+msgstr ""
+"SQLCipher e SQLite non usano un modello client/server; ogni database è "
+"memorizzato in un file, locale o remoto, a cui accedono attraverso i metodi "
+"comuni forniti dal sistema operativo. In questo caso, quindi, c'è da "
+"installare un solo pacchetto e il driver. Alcune delle informazioni "
+"seguenti, in particolare quelle relative all'amministrazione, potrebbero non "
+"essere applicabili."
+
+#. Tag: title
+#: details-database.docbook:100
+#, no-c-format
+msgid "Administration"
+msgstr "Amministrazione"
+
+#. Tag: para
+#: details-database.docbook:101
+#, no-c-format
+msgid ""
+"Looking after databases is a little more complex than dealing with regular "
+"files. Each system has different methods for performing those necessary "
+"administrative tasks such as creating databases, assigning permissions to "
+"various users, or producing backups. Describing these tasks is outside the "
+"scope of this manual, but all of the supported products provide "
+"comprehensive reference documentation, and a quick search of the web will "
+"point you at many tutorials on the subject."
+msgstr ""
+"Gestire i database è più complesso che gestire file normali. Ogni sistema ha "
+"un modo diverso di eseguire le operazioni di amministrazione, come la "
+"creazione di database, l'assegnazione di permessi agli utenti, la creazione "
+"di copie di sicurezza, &etc;. Questo documento non ha come obiettivo la "
+"descrizione di queste operazioni, ma ognuno dei sistemi supportati fornisce "
+"una documentazione completa, e basterà una breve ricerca su Internet per "
+"trovare queste informazioni."
+
+#. Tag: title
+#: details-database.docbook:110
+#, no-c-format
+msgid "Creating the database"
+msgstr "Creazione del database"
+
+#. Tag: para
+#: details-database.docbook:111
+#, no-c-format
+msgid ""
+"&kmymoney; includes SQL code to create an initial database to hold your data "
+"if one doesn't exist. However, it is strongly recommended that you pre-"
+"create a database, because most of the products provide a number of options "
+"which may be relevant. One that may be of particular importance to some "
+"would be the designation of the character set (&eg;, UTF-8) to be used for "
+"text fields."
+msgstr ""
+"&kmymoney; include codice SQL per creare un database iniziale per contenere "
+"i tuoi dati se non ne esiste uno. Tuttavia, è fortemente consigliato di pre-"
+"creare un database, perché la maggior parte dei prodotti fornisce una serie "
+"di opzioni che potrebbero essere rilevanti. Una che potrebbe essere di "
+"particolare importanza per alcuni sarebbe la designazione del set di "
+"caratteri (&eg;, UTF-8) da utilizzare per i campi di testo."
+
+#. Tag: para
+#: details-database.docbook:119
+#, no-c-format
+msgid ""
+"At this time, you will also need to specify permissions for various users to "
+"perform different operations on the database. In most systems, the user who "
+"creates the database will be automatically assigned all permissions, but "
+"this is an area in which the documentation should be consulted."
+msgstr ""
+"Attualmente, è anche necessario specificare i permessi per i vari utenti "
+"relativi alle operazioni consentite sul database. Nella maggior parte dei "
+"sistemi vengono assegnati tutti i privilegi all'utente che crea il database, "
+"ma è meglio controllare nella documentazione."
+
+#. Tag: para
+#: details-database.docbook:126
+#, no-c-format
+msgid ""
+"For your first use of the database, and occasionally at other times when the "
+"database layout changes, you will need permission (also called privileges) "
+"to create and alter tables and views (see next paragraph.) There may be "
+"different names for the permission/privilege in different systems, but "
+"something like <literal>CREATE</literal> and <literal>ALTER</literal> should "
+"be commonplace. For normal running, you will need to be able to read and "
+"write records; these are normally defined in SQL as <literal>SELECT</"
+"literal>, <literal>INSERT</literal>, <literal>UPDATE</literal>, and "
+"<literal>DELETE</literal> permissions."
+msgstr ""
+"Per il primo utilizzo del database e occasionalmente in altri momenti in cui "
+"cambia la struttura del database, avrai bisogno dei permessi (chiamati anche "
+"privilegi) per creare e modificare tabelle e viste (vedi paragrafo "
+"successivo). Potrebbero esserci nomi diversi per il permesso/privilegio in "
+"sistemi diversi, ma qualcosa come <literal>CREATE</literal> e "
+"<literal>ALTER</literal> dovrebbe essere comuni. Per l'esecuzione normale, "
+"dovrai essere in grado di leggere e scrivere record; questi sono normalmente "
+"definiti in SQL come permessi <literal>SELECT</literal>, <literal>INSERT</"
+"literal>, <literal>UPDATE</literal> e <literal>DELETE</literal>."
+
+#. Tag: title
+#: details-database.docbook:138
+#, no-c-format
+msgid "Creating Tables"
+msgstr "Creazione di tabelle"
+
+#. Tag: para
+#: details-database.docbook:139
+#, no-c-format
+msgid ""
+"On your first use, &kmymoney; will attempt to create the necessary table "
+"structures. In order to achieve the maximum compatibility between various "
+"database types, only a subset of common data types are used. There may "
+"nevertheless be situations where a particular type is not supported, and in "
+"this case, provision has been made to generate the SQL code necessary to "
+"create the tables. This code can then be modified as required and used to "
+"create the tables outside of &kmymoney;. Should you find yourself in this "
+"situation, help can usually be obtained from one of the channels listed in "
+"the section on <link linkend=\"firsttime.contact\">Getting Help</link>. See "
+"<link linkend=\"details.database.generatesql\">Manual Database Creation</"
+"link> for more information."
+msgstr ""
+"Al primo utilizzo, &kmymoney; proverà a creare le strutture delle tabelle "
+"necessarie. Per ottenere la massima compatibilità tra vari tipi di database, "
+"viene utilizzato solo un sottoinsieme di tipi di dati comuni. Tuttavia, "
+"potrebbero esserci situazioni in cui un tipo particolare non è supportato e, "
+"in questo caso, è stato previsto di generare il codice SQL necessario per "
+"creare le tabelle. Questo codice può quindi essere modificato come richiesto "
+"e utilizzato per creare le tabelle al di fuori di &kmymoney;. Se ti trovi in ​​"
+"questa situazione, di solito puoi ottenere assistenza da uno dei canali "
+"elencati nella sezione su <link linkend=\"firsttime.contact\">Come ottenere "
+"aiuto</link>. Consulta <link linkend=\"details.database.generatesql"
+"\">Creazione manuale di database</link> per maggiori informazioni."
+
+#. Tag: title
+#: details-database.docbook:155
+#, no-c-format
+msgid "Creating a Database"
+msgstr "Creazione di un database"
+
+#. Tag: para
+#: details-database.docbook:156
+#, no-c-format
+msgid ""
+"Using &kmymoney;, open or import an existing data file, or create a new one. "
+"Then select <menuchoice><guimenu>File</guimenu><guimenuitem>Save as "
+"Database</guimenuitem></menuchoice> menu item. Select <guilabel>SQL</"
+"guilabel> from the <guilabel>Storage type to use for your data</guilabel> "
+"dropdown, and click <guibutton>OK</guibutton>. You will then see the "
+"following dialog:"
+msgstr ""
+"Usando &kmymoney;, aprire o importare un file di dati esistente, o crearne "
+"uno nuovo. Selezionare poi la voce di menu <menuchoice><guimenu>File</"
+"guimenu><guimenuitem>Salva come database</guimenuitem></menuchoice>. "
+"Selezionare <guilabel>SQL</guilabel> dal menu a tendina <guilabel>Tipo di "
+"archiviazione da utilizzare per i tuoi dati</guilabel> e fare clic su "
+"<guibutton>OK</guibutton>. Sarà visualizzerai quindi la seguente finestra:"
+
+#. Tag: screeninfo
+#: details-database.docbook:166
+#, no-c-format
+msgid "<screeninfo>creating a database</screeninfo>"
+msgstr "<screeninfo>creare un database</screeninfo>"
+
+#. Tag: phrase
+#: details-database.docbook:172
+#, no-c-format
+msgid "<phrase>creating a database</phrase>"
+msgstr "<phrase>creare un database</phrase>"
+
+#. Tag: para
+#: details-database.docbook:177
+#, no-c-format
+msgid ""
+"Complete the fields appropriate to the database type you have selected (as "
+"usual, mandatory fields will be highlighted) and click <guibutton>OK</"
+"guibutton> to create the database."
+msgstr ""
+"Completa i campi appropriati per il tipo di database selezionato (come al "
+"solito, i campi obbligatori saranno evidenziati) e fai clic su "
+"<guibutton>OK</guibutton> per creare il database."
+
+#. Tag: title
+#: details-database.docbook:183
+#, no-c-format
+msgid "Database Type"
+msgstr "Tipo di database"
+
+#. Tag: para
+#: details-database.docbook:184
+#, no-c-format
+msgid ""
+"This dropdown lists all the &Qt; SQL drivers installed on your system. "
+"Select the driver for your database type. If the one you want is not in the "
+"list, you need to install the appropriate driver. See your distribution "
+"documentation, or visit the <ulink url=\"https://www.qt.io/\">&Qt; software "
+"web site</ulink> and search for 'SQL drivers'."
+msgstr ""
+"Questa casella elenca tutti i driver SQL di &Qt; installati sul proprio "
+"sistema. Selezionare il driver relativo al tipo di database utilizzato. Se "
+"non viene elencato il driver desiderato, è necessario installarlo. Vedere la "
+"documentazione della propria distribuzione, o cercare «SQL drivers» nel "
+"<ulink url=\"https://www.qt.io/\">sito web di &Qt;</ulink>."
+
+#. Tag: title
+#: details-database.docbook:193
+#, no-c-format
+msgid "File (SQLite/SQLCipher only)"
+msgstr "File (solo per SQLite/SQLCipher)"
+
+#. Tag: para
+#: details-database.docbook:194
+#, no-c-format
+msgid ""
+"SQLCipher has one database per file so enter the filename in which you wish "
+"to create the database. To browse the file system, click the icon to the "
+"right of the filename. For SQLCipher databases, the <guilabel>Database Name</"
+"guilabel>, <guilabel>Host name</guilabel>, <guilabel>Username</guilabel> "
+"fields are not relevant. The SQLCipher file must have the appropriate read/"
+"write permissions set by the underlying file system to enable the "
+"appropriate access for the currently logged-in user."
+msgstr ""
+"SQLCipher ha un database per file, quindi inserire il nome file in cui si "
+"desidera creare il database. Per esplorare il file system, fare clic "
+"sull'icona a destra del nome del file. Per i database SQLCipher, i campi "
+"<guilabel>Nome database</guilabel>, <guilabel>Nome host</guilabel>, "
+"<guilabel>Nome utente</guilabel> non sono rilevanti. Il file SQLCipher deve "
+"avere i permessi di lettura/scrittura appropriate impostate dal file system "
+"sottostante per abilitare l'accesso appropriato per l'utente attualmente "
+"connesso."
+
+#. Tag: para
+#: details-database.docbook:204
+#, no-c-format
+msgid ""
+"The creators of <ulink url=\"https://www.zetetic.net/sqlcipher\">SQLCipher</"
+"ulink> released version 4.0 in November, 2018. However, many &kmymoney; "
+"users, especially those who do not upgrade very often, or who use LTS (Long "
+"Term Support) &Linux; distributions, may still be using a database created "
+"with version 3 of SQLCipher. At some point, usually after upgrading "
+"&kmymoney; or their distribution, they find they are unable to open their "
+"database, with an error that is not particularly informative or useful. What "
+"is required in this case is to upgrade the database itself from version 3 to "
+"version 4. Instructions for this can be found on the <ulink url=\"https://"
+"discuss.zetetic.net/t/upgrading-to-sqlcipher-4/3283\">SQLCipher website</"
+"ulink>."
+msgstr ""
+"Gli autori di <ulink url=\"https://www zetetic.net/sqlcipher\">SQLCipher</"
+"ulink> hanno rilasciato la versione 4.0 a novembre 2018. Tuttavia, molti "
+"utenti di &kmymoney;, in particolare quelli che non effettuano aggiornamenti "
+"molto spesso o che utilizzano distribuzioni LTS (Long Term Support) &Linux;, "
+"potrebbero ancora utilizzare un database creato con la versione 3 di "
+"SQLCipher. A un certo punto, di solito dopo aver aggiornato &kmymoney; o la "
+"loro distribuzione, scoprono di non essere in grado di aprire il loro "
+"database, con un errore che non è particolarmente informativo o utile. Ciò "
+"che è richiesto in questo caso è aggiornare il database stesso dalla "
+"versione 3 alla versione 4. Le istruzioni per questo sono disponibili sul "
+"<ulink url=\"https://www.zetetic.net/sqlcipher\">sito web di SQLCipher</"
+"ulink>."
+
+#. Tag: title
+#: details-database.docbook:219
+#, no-c-format
+msgid "Database name (others)"
+msgstr "Nome del database (altri)"
+
+#. Tag: para
+#: details-database.docbook:220
+#, no-c-format
+msgid ""
+"The default database name is <literal>KMyMoney</literal>, but you may choose "
+"some other name if you like. For some database types, &kmymoney; may not be "
+"able to create the database, so it must be pre-created using the appropriate "
+"administrative procedure. However, &kmymoney; will usually be able to create "
+"all table structures where necessary. If not, you can create them yourself. "
+"See <link linkend=\"details.database.generatesql\">Manual Database Creation</"
+"link> for more information."
+msgstr ""
+"Il nome predefinito del database è <literal>KMyMoney</literal>, ma è "
+"possibile sceglierne un altro se si desidera. Per alcuni tipi di database, "
+"&kmymoney; non è in grado di creare il database, quindi è necessario crearlo "
+"in precedenza con la relativa procedura di amministrazione. Comunque, "
+"&kmymoney; creerà le strutture delle tabelle, se necessario. È possibile "
+"anche crearle manualmente, vedere <link linkend=\"details.database."
+"generatesql\">Creazione manuale del database</link> per maggiori "
+"informazioni."
+
+#. Tag: title
+#: details-database.docbook:231
+#, no-c-format
+msgid "Host name"
+msgstr "Nome host"
+
+#. Tag: para
+#: details-database.docbook:232
+#, no-c-format
+msgid ""
+"For the average user, the default name of <quote>localhost</quote>, being "
+"the machine you are currently using, is correct. For networked databases, "
+"enter the connected host name of the database server."
+msgstr ""
+"Per l'utente medio, il nome predefinito di <quote>localhost</quote>, ovvero "
+"la macchina che stai attualmente utilizzando, è corretto. Per i database in "
+"rete, inserisci il nome host connesso del server del database."
+
+#. Tag: title
+#: details-database.docbook:239
+#, no-c-format
+msgid "User name and password"
+msgstr "Nome utente e password"
+
+#. Tag: para
+#: details-database.docbook:240
+#, no-c-format
+msgid ""
+"Check the permissions set up on your database, or contact the database "
+"administrator, for the correct values to use here. The user name must be "
+"capable of selecting, inserting, updating, and deleting records. If the user "
+"name is the same as your login name, a password is not normally required."
+msgstr ""
+"Per sapere i valori da utilizzare controllare i permessi impostati nel "
+"database, o contattare l'amministratore del database. Il nome utente "
+"inserito deve avere i permessi di selezione, di inserimento, di modifica e "
+"di cancellazione sui record. Se il nome utente è quello in uso nel computer, "
+"spesso la password non è richiesta."
+
+#. Tag: title
+#: details-database.docbook:249
+#, no-c-format
+msgid "Accessing your data"
+msgstr "Accedere ai dati"
+
+#. Tag: title
+#: details-database.docbook:251
+#, no-c-format
+msgid "Table design"
+msgstr "Organizzazione delle tabelle"
+
+#. Tag: para
+#: details-database.docbook:252
+#, no-c-format
+msgid ""
+"To access your data in &kmymoney;, use the <menuchoice> <guimenu>File</"
+"guimenu> <guimenuitem>Open Database</guimenuitem> </menuchoice> menu item. "
+"This will open a dialog similar to the above."
+msgstr ""
+"Per accedere ai dati in &kmymoney;, utilizzare la voce di menu "
+"<menuchoice><guimenu>File</guimenu><guimenuitem>Apri database</guimenuitem></"
+"menuchoice>. Si aprirà una finestra simile alla precedente."
+
+#. Tag: para
+#: details-database.docbook:259
+#, no-c-format
+msgid ""
+"If you created your database by first opening a file, and then doing "
+"<guimenu>File</guimenu> <guimenuitem>Save</guimenuitem> and choosing "
+"<guilabel>SQL</guilabel> as described above, then any subsequent changes to "
+"your data are saved only in the database, not in the file. This means that "
+"you can use the file as a backup or snapshot of your data at a particular "
+"time. To make a new backup like this, open your database, choose the "
+"<menuchoice> <guimenu>File</guimenu> <guimenuitem>Save As...</guimenuitem></"
+"menuchoice> menu item, choose <guilabel>XML</guilabel> as the storage type, "
+"and giving an appropriate file name. Remember to re-open your database, so "
+"&kmymoney; does not continue to use the file."
+msgstr ""
+"Se è stato creato il proprio database aprendo prima un file, e poi "
+"<guimenu>File</guimenu> <guimenuitem>Salva</guimenuitem> e scegliendo "
+"<guilabel>SQL</guilabel> come descritto sopra, allora tutte le modifiche "
+"successive ai propri dati saranno salvate solo nel database, non nel file. "
+"Ciò significa che è possibile usare il file come copia di sicurezza o "
+"istantanea dei propri dati in un momento particolare. Per creare una nuova "
+"copia di sicurezza in questo modo, aprire il proprio database, scegliere la "
+"voce di menu <menuchoice> <guimenu>File</guimenu> <guimenuitem>Salva con "
+"nome...</guimenuitem></menuchoice>, scegliere <guilabel>XML</guilabel> come "
+"tipo di archiviazione e assegnare un nome file appropriato. Ricordarsi di "
+"riaprire il proprio database, così &kmymoney; non continuerà a utilizzare il "
+"file."
+
+#. Tag: para
+#: details-database.docbook:273
+#, no-c-format
+msgid ""
+"To access your data in other formats, you will need to know a little about "
+"how it is held in relational databases. By far the easiest way to get a feel "
+"for this is to open the database in a front-end such as "
+"<trademark>OpenOffice.org</trademark>. This provides a list of the various "
+"tables which make up the database, and enables you to see the layout of each "
+"of them."
+msgstr ""
+"Per accedere ai dati in altri formati, è necessario conoscere i dettagli con "
+"cui vengono memorizzati nei database relazionali. Il modo migliore di "
+"capirlo è aprire il database in un programma come <trademark>OpenOffice.org</"
+"trademark>. Sarà visualizzata un elenco delle tabelle che compongono il "
+"database, e si potrà vedere la loro struttura."
+
+#. Tag: para
+#: details-database.docbook:281
+#, no-c-format
+msgid ""
+"To extract data, &eg;, into a spreadsheet or external file, it is almost "
+"invariably necessary to select linked data from more than one table. This is "
+"done by <quote>joining</quote> the tables, using a field which is common to "
+"them. You can find a lot more information about how this is done from the "
+"online database tutorials mentioned above. The following table lists the "
+"fields used to define these inter-table relationships."
+msgstr ""
+"Per estrarre dati, ad esempio in un foglio di calcolo o in un file esterno, "
+"è quasi sempre necessario selezionare dati collegati da più di una tabella. "
+"Questo viene fatto tramite l'operazione di <quote>join</quote> delle "
+"tabelle, usando un campo comune. È possibile trovare molte più informazioni "
+"su come farlo nelle guide in linea sui database menzionati sopra. La "
+"seguente tabella elenca i campi utilizzati per definire queste relazioni tra "
+"tabelle."
+
+#. Tag: para
+#: details-database.docbook:295
+#, no-c-format
+msgid "Relationship"
+msgstr "Relazione"
+
+#. Tag: para
+#: details-database.docbook:298
+#, no-c-format
+msgid "Match"
+msgstr "Campo"
+
+#. Tag: para
+#: details-database.docbook:301
+#, no-c-format
+msgid "With"
+msgstr "Campo corrispondente"
+
+#. Tag: para
+#: details-database.docbook:308
+#, no-c-format
+msgid "Institutions and Accounts"
+msgstr "Istituti e conti"
+
+#. Tag: literal
+#: details-database.docbook:311
+#, no-c-format
+msgid "kmmInstitutions.id"
+msgstr "kmmInstitutions.id"
+
+#. Tag: literal
+#: details-database.docbook:314
+#, no-c-format
+msgid "kmmAccounts.institutionId"
+msgstr "kmmAccounts.institutionId"
+
+#. Tag: para
+#: details-database.docbook:319
+#, no-c-format
+msgid "Accounts Parent/Child"
+msgstr "Contenimento tra conti"
+
+#. Tag: literal
+#: details-database.docbook:322 details-database.docbook:344
+#, no-c-format
+msgid "kmmAccounts.id"
+msgstr "kmmAccounts.id"
+
+#. Tag: literal
+#: details-database.docbook:325
+#, no-c-format
+msgid "kmmAccounts.parentId"
+msgstr "kmmAccounts.parentId"
+
+#. Tag: para
+#: details-database.docbook:330
+#, no-c-format
+msgid "Transactions and Splits (see Note 1)"
+msgstr "Transazioni e suddivisioni (vedere la nota 1)"
+
+#. Tag: literal
+#: details-database.docbook:333 details-database.docbook:369
+#, no-c-format
+msgid "kmmTransactions.id"
+msgstr "kmmTransactions.id"
+
+#. Tag: literal
+#: details-database.docbook:336
+#, no-c-format
+msgid "kmmSplits.transactionId"
+msgstr "kmmSplits.transactionId"
+
+#. Tag: para
+#: details-database.docbook:341
+#, no-c-format
+msgid "Accounts and Splits"
+msgstr "Conti e suddivisioni"
+
+#. Tag: literal
+#: details-database.docbook:347
+#, no-c-format
+msgid "kmmSplits.accountId"
+msgstr "kmmSplits.accountId"
+
+#. Tag: para
+#: details-database.docbook:352
+#, no-c-format
+msgid "Payees and Splits"
+msgstr "Beneficiari e suddivisioni"
+
+#. Tag: literal
+#: details-database.docbook:355
+#, no-c-format
+msgid "kmmPayees.id"
+msgstr "kmmPayees.id"
+
+#. Tag: literal
+#: details-database.docbook:358
+#, no-c-format
+msgid "kmmSplits.payeeId"
+msgstr "kmmSplits.payeeId"
+
+#. Tag: para
+#: details-database.docbook:363
+#, no-c-format
+msgid "Schedules and Transactions"
+msgstr "Pianificazioni e transazioni"
+
+#. Tag: literal
+#: details-database.docbook:366
+#, no-c-format
+msgid "kmmSchedules.id"
+msgstr "kmmSchedules.id"
+
+#. Tag: para
+#: details-database.docbook:374
+#, no-c-format
+msgid "Transactions and Currencies"
+msgstr "Transazioni e valute"
+
+#. Tag: literal
+#: details-database.docbook:377
+#, no-c-format
+msgid "kmmTransactions.currencyId"
+msgstr "kmmTransactions.currencyId"
+
+#. Tag: literal
+#: details-database.docbook:380 details-database.docbook:410
+#, no-c-format
+msgid "kmmCurrencies.ISOCode"
+msgstr "kmmCurrencies.ISOCode"
+
+#. Tag: literal
+#: details-database.docbook:385
+#, no-c-format
+msgid "Accounts and Securities (see Note 2)"
+msgstr "Conti e titoli (vedere la nota 2)"
+
+#. Tag: literal
+#: details-database.docbook:388
+#, no-c-format
+msgid "kmmAccounts.currencyId"
+msgstr "kmmAccounts.currencyId"
+
+#. Tag: literal
+#: details-database.docbook:391 details-database.docbook:399
+#, no-c-format
+msgid "kmmSecurities.id"
+msgstr "kmmSecurities.id"
+
+#. Tag: para
+#: details-database.docbook:396
+#, no-c-format
+msgid "Securities and Prices"
+msgstr "Titoli e prezzi"
+
+#. Tag: para
+#: details-database.docbook:402 details-database.docbook:413
+#, no-c-format
+msgid ""
+"<literal>kmmPrices.fromId</literal> or <literal>kmmPrices.toId</literal>"
+msgstr ""
+"<literal>kmmPrices.fromId</literal> o <literal>kmmPrices.toId</literal>"
+
+#. Tag: para
+#: details-database.docbook:407
+#, no-c-format
+msgid "Currency Rates"
+msgstr "Tassi di cambio"
+
+#. Tag: para
+#: details-database.docbook:420
+#, no-c-format
+msgid "Notes:"
+msgstr "Note:"
+
+#. Tag: para
+#: details-database.docbook:427
+#, no-c-format
+msgid ""
+"1 &ndash; txType = \"N&rdquor; for normal transactions, \"S&rdquor; for "
+"scheduled transactions"
+msgstr ""
+"1 &ndash; txType = \"N&rdquor; per le transazioni normali, \"S&rdquor; per "
+"le transazioni pianificate"
+
+#. Tag: para
+#: details-database.docbook:432
+#, no-c-format
+msgid "2 &ndash; if kmmAccounts.isStockAccount = \"Y&rdquor;"
+msgstr "2 &ndash; if kmmAccounts.isStockAccount = \"Y&rdquor;"
+
+#. Tag: title
+#: details-database.docbook:437
+#, no-c-format
+msgid "Field formats"
+msgstr "Formato dei campi"
+
+#. Tag: para
+#: details-database.docbook:438
+#, no-c-format
+msgid ""
+"Several of the data fields are held in an internal format which may not be "
+"immediately useful to external programs. In these cases, the information has "
+"been duplicated in both internal and external formats."
+msgstr ""
+"Diversi campi dati sono memorizzati in un formato interno che potrebbe non "
+"essere immediatamente utilizzabile da altri programmi. In questi casi, le "
+"informazioni sono duplicate in formati interni ed esterni."
+
+#. Tag: para
+#: details-database.docbook:444
+#, no-c-format
+msgid ""
+"Monetary amounts and share values are shown both in numerator/denominator "
+"format, and, with a field name suffixed with <quote> <literal>Formatted</"
+"literal> </quote>, in the form as typically displayed."
+msgstr ""
+"Gli importi monetari e i valori delle azioni vengono visualizzati sia nel "
+"formato numeratore/denominatore, sia con un nome di campo con suffisso "
+"<quote> <literal>Formattato</literal> </quote>, nel formato normalmente "
+"visualizzato."
+
+#. Tag: para
+#: details-database.docbook:450
+#, no-c-format
+msgid ""
+"Similarly, some fields, such as account type appear both as a numeric code, "
+"and in a field suffixed '<literal>String</literal>' in the form and language "
+"of the application."
+msgstr ""
+"In modo simile, alcuni campi, come il tipo di conto, sono memorizzati sia "
+"come codice numerico sia in un campo il cui nome termina con "
+"<literal>String</literal> usando il formato e la lingua del programma."
+
+#. Tag: title
+#: details-database.docbook:457
+#, no-c-format
+msgid "Updating your data"
+msgstr "Aggiornamento dei dati"
+
+#. Tag: para
+#: details-database.docbook:458
+#, no-c-format
+msgid ""
+"Having data in an industry standard format does give you the ability to "
+"modify it outside the &kmymoney; application. DO NOT DO IT unless you really "
+"know what you are doing, and always be certain to make a backup copy of your "
+"data first. If you get it wrong, &kmymoney; may not be able to access your "
+"data, and you could even end up losing it altogether. You have been warned!"
+msgstr ""
+"Avere i dati in un formato standard dà la possibilità di modificarli con un "
+"programma esterno. NON FARLO a meno che non si sappia veramente quello che "
+"si sta facendo, e fare sempre una copia di sicurezza dei dati prima della "
+"modifica. Se si sbaglia, &kmymoney; potrebbe non essere più in grado di "
+"accedere ai dati, e si potrebbe persino perderli tutti. Sei stato avvisato!"
+
+#. Tag: title
+#: details-database.docbook:467
+#, no-c-format
+msgid "Stored queries"
+msgstr "Query memorizzate"
+
+#. Tag: para
+#: details-database.docbook:468
+#, no-c-format
+msgid ""
+"Most database systems allow you to store commonly used queries and "
+"procedures, and in some cases, these may be held as tables or other objects "
+"within your database itself. As you will have guessed from the above, all "
+"the tables used by &kmymoney; begin with the lowercase letters "
+"'<literal>kmm</literal>'. This standard will be maintained, and only tables "
+"beginning with these letters will be updated. Thus, provided you avoid these "
+"in the naming of your queries &etc;, you should not experience any problems."
+msgstr ""
+"La maggior parte dei sistemi di database permette di memorizzare le query e "
+"le procedure utilizzate più spesso; in alcuni casi, potrebbero essere "
+"memorizzate come tabelle o altri oggetti nel database stesso. Come si può "
+"intuire dalla tabella sopra, tutte le tabelle usate da &kmymoney; iniziano "
+"con le lettere minuscole <literal>kmm</literal>. Questo standard sarà "
+"mantenuto, e verranno aggiornate solo le tabelle che iniziano con queste "
+"lettere. Quindi, se si evitano queste lettere nei nomi delle query, &etc;, "
+"non si dovrebbero avere problemi."
+
+#. Tag: title
+#: details-database.docbook:480
+#, no-c-format
+msgid "Manual database creation"
+msgstr "Creazione manuale del database"
+
+#. Tag: para
+#: details-database.docbook:482
+#, no-c-format
+msgid ""
+"This section covers more advanced database usage and may be skipped by the "
+"general user."
+msgstr ""
+"Questa sezione tratta l'utilizzo avanzato del database; la maggior parte "
+"degli utenti può evitare di leggerla."
+
+#. Tag: title
+#: details-database.docbook:487
+#, no-c-format
+msgid "When to use"
+msgstr "Quando usarla"
+
+#. Tag: para
+#: details-database.docbook:488
+#, no-c-format
+msgid ""
+"There may be occasions when &kmymoney; is unable to create the database "
+"automatically, or creates it without some options required by the user. For "
+"example, the database system used may not completely conform to standard SQL "
+"usage, or support may be introduced for new systems which have not been "
+"fully tested in &kmymoney;."
+msgstr ""
+"Ci sono casi in cui &kmymoney; non riesce a creare automaticamente un "
+"database, o lo crea senza utilizzare delle opzioni richieste dall'utente. Ad "
+"esempio, il sistema di database in uso potrebbe non rispettare completamente "
+"lo standard SQL, o non essere stato testato completamente con &kmymoney;."
+
+#. Tag: para
+#: details-database.docbook:496
+#, no-c-format
+msgid ""
+"Prior to using this facility, you should try just creating the database "
+"entry itself (&ie; with the <literal>CREATE DATABASE</literal> statement). "
+"Provided the database exists, &kmymoney; may well be able to create the "
+"tables, &etc; in the normal database save procedure described above."
+msgstr ""
+"Prima di usare questa funzione, si dovrebbe provare a creare la banca dati "
+"stessa (&ie; con l'istruzione <literal>CREATE DATABASE</literal>). Una volta "
+"creata la banca dati, &kmymoney; dovrebbe essere in grado di creare le "
+"tabelle, &etc; nella procedura normale di salvataggio come base di dati, "
+"descritta sopra."
+
+#. Tag: title
+#: details-database.docbook:504
+#, no-c-format
+msgid "Generating the SQL"
+msgstr "Generazione dei comandi SQL"
+
+#. Tag: para
+#: details-database.docbook:505
+#, no-c-format
+msgid ""
+"If this fails, it is possible to generate the basic SQL commands needed to "
+"create the various tables, views, and indexes required by the application. "
+"Select the <menuchoice> <guimenu>Tools</guimenu> <guimenuitem>Generate "
+"Database SQL</guimenuitem> </menuchoice> menu item. This will present the "
+"following dialog:"
+msgstr ""
+"Se questo non funziona, è possibile generare i comandi SQL di base necessari "
+"per creare le varie tabelle, viste e indici richiesti dall'applicazione. "
+"Selezionare la voce di menu <menuchoice> <guimenu>Strumenti</guimenu> "
+"<guimenuitem>Genera SQL database</guimenuitem> </menuchoice>. Sarà "
+"visualizzata la seguente finestra:"
+
+#. Tag: screeninfo
+#: details-database.docbook:513
+#, no-c-format
+msgid "<screeninfo>generate sql to create a database</screeninfo>"
+msgstr "<screeninfo>generare sql per creare un database</screeninfo>"
+
+#. Tag: phrase
+#: details-database.docbook:519
+#, no-c-format
+msgid "<phrase>generate sql to create a database</phrase>"
+msgstr "<phrase>generare sql per creare un database</phrase>"
+
+#. Tag: para
+#: details-database.docbook:524
+#, no-c-format
+msgid ""
+"On selecting the database type, the appropriate SQL will appear in the "
+"<guilabel>SQL for creation</guilabel> text box; this can be edited by the "
+"user, or saved to a text file by clicking <guibutton>Save SQL</guibutton>. "
+"In the latter case, the database must be created using the administrative "
+"functions provided by the database system."
+msgstr ""
+"Selezionando il tipo di database, apparirà il codice SQL corrispondente "
+"nella casella di testo <guilabel>SQL per la creazione</guilabel>; può essere "
+"modificato dall'utente o salvato in un file di testo facendo clic sul "
+"pulsante <guibutton>Salva SQL</guibutton>. In quest'ultimo caso, si deve "
+"creare database usando le funzioni di amministrazione fornite dal sistema di "
+"database."
+
+#. Tag: para
+#: details-database.docbook:532
+#, no-c-format
+msgid ""
+"If after editing the text in the dialog, you want &kmymoney; to create the "
+"database, you will need to complete the other fields in the dialog, as "
+"detailed in <link linkend=\"details.database.selectdatabase\">Creating a "
+"Database</link> above, and click <guibutton>Create Tables</guibutton>. Note "
+"that, except in the case of SQLite, you will need either to include a "
+"suitable <literal>CREATE DATABASE</literal> statement as the first command, "
+"or have previously issued such a command externally to &kmymoney;."
+msgstr ""
+"Se, dopo aver modificato il testo nella finestra, si vuole che &kmymoney; "
+"crei il database, è necessario completare gli altri campi della finestra, "
+"come descritto sopra nel capitolo <link linkend=\"details.database."
+"selectdatabase\">Creazione di un database</link>, e fare clic su "
+"<guibutton>Crea tabelle</guibutton>. È bene notare che, a parte nel caso di "
+"SQLite, bisogna aggiungere un'istruzione <literal>CREATE DATABASE</literal> "
+"come primo comando, se non si è già eseguito questo comando all'esterno di "
+"&kmymoney;."
+
+#. Tag: title
+#: details-database.docbook:543
+#, no-c-format
+msgid "Warning"
+msgstr "Attenzione"
+
+#. Tag: para
+#: details-database.docbook:544
+#, no-c-format
+msgid ""
+"You should be very careful editing the definitions of any of the basic "
+"tables or views (those with names beginning with '<literal>kmm</literal>'.) "
+"Some changes, such as increasing the length of an integer field, may have "
+"little impact, but you should not remove or change the sequence of any "
+"fields, or &kmymoney; may refuse to function, or may corrupt your data."
+msgstr ""
+"Bisogna stare molto attenti nella modifica delle definizioni delle tabelle e "
+"delle viste di base (quelle i cui nomi iniziano con <literal>kmm</literal>). "
+"Alcune modifiche, come l'aumento della lunghezza di un campo intero,  "
+"potrebbe avere un impatto trascurabile, ma non si dovrebbe rimuovere o "
+"modificare l'ordine dei campi, altrimenti &kmymoney; potrebbe non funzionare "
+"più o danneggiare i dati."
+
+#. Tag: para
+#: details-database.docbook:552
+#, no-c-format
+msgid ""
+"While adding or removing indexes may improve performance, you should also be "
+"aware that the opposite may happen. Some knowledge of the internal operation "
+"of &kmymoney; may help to get the best performance in these circumstances."
+msgstr ""
+"Mentre aggiungere o rimuovere indici può migliorare le prestazioni, dovresti "
+"anche essere consapevole che potrebbe accadere il contrario. Una certa "
+"conoscenza del funzionamento interno di &kmymoney; potrebbe aiutare a "
+"ottenere le migliori prestazioni in queste circostanze."
+
+#. Tag: title
+#: details-database.docbook:560
+#, no-c-format
+msgid "Encryption"
+msgstr "Cifratura"
+
+#. Tag: para
+#: details-database.docbook:561
+#, no-c-format
+msgid "Encryption of data in your database is not currently supported."
+msgstr "La cifratura dei dati nel database non è attualmente supportata."
+
+#~ msgid "2011-07-21"
+#~ msgstr "21/07/2011"
+
+#~ msgid "<releaseinfo>4.6</releaseinfo>"
+#~ msgstr "<releaseinfo>4.6</releaseinfo>"
+
+#~ msgid "<firstname>Tony</firstname> <surname>Bloomfield</surname>"
+#~ msgstr "<firstname>Tony</firstname> <surname>Bloomfield</surname>"
+
+#~ msgid "Caution when using the database"
+#~ msgstr "Fare attenzione nell'uso dei database."
+
+#~ msgid ""
+#~ "At the time of writing, the software described in this chapter is still "
+#~ "in an experimental stage, and loss of data is possible. Please ensure "
+#~ "that you have an alternative backup copy of your data before committing "
+#~ "to database usage."
+#~ msgstr ""
+#~ "Al momento della scrittura di questo manuale, le funzionalità descritte "
+#~ "in questo capitolo sono ancora in fase sperimentale, ed è possibile "
+#~ "perdere dati. Assicurarsi di avere una copia di sicurezza dei dati prima "
+#~ "di iniziare ad usare il database."
+
+#~ msgid ""
+#~ "Due to limitations in prior releases, only version 3 of SQLite is "
+#~ "supported. Unfortunately, the release of the &Qt; toolkit used by "
+#~ "&kappname; does not provide a driver for this version. However, an "
+#~ "unofficial, extensively tested, driver is available; if you wish to use "
+#~ "SQLite, ask on &devlist; for further information."
+#~ msgstr ""
+#~ "A causa delle limitazioni nelle versioni precedenti, è supportata solo la "
+#~ "versione 3 di SQLite. Sfortunatamente, la versione di &Qt; utilizzata da "
+#~ "&kappname; non fornisce un driver per questa versione. Comunque è "
+#~ "presente un driver non ufficiale, ma comunque testato a fondo; se si "
+#~ "vuole usare SQLite, chiedere maggiori informazioni nella mailing-list "
+#~ "&devlist;."
+
+#~ msgid "Initialisation"
+#~ msgstr "Inizializzazione"
+
+#~ msgid ""
+#~ "This button will generate the CREATE TABLE commands and save them to a "
+#~ "text file, which may be edited if the in-built commands do not work for "
+#~ "your database system (see previous paragraph)."
+#~ msgstr ""
+#~ "Questo pulsante genera i comandi CREATE TABLE e li salva in un file di "
+#~ "testo, che può essere modificato se i comandi predefiniti non funzionano "
+#~ "con il sistema di database in uso (vedere il paragrafo precedente)."

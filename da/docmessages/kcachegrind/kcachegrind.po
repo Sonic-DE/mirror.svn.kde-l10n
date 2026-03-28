@@ -1,0 +1,2668 @@
+# Danish translation of kcachegrind
+# Copyright (C)
+#
+# Erik Kjær Pedersen <erik@binghamton.edu>, 2003, 2004, 2006.
+# Rune Rønde Laursen <runerl@skjoldhoej.dk>, 2004.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcachegrind\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 12:04+0000\n"
+"PO-Revision-Date: 2006-04-19 20:28-0400\n"
+"Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
+"Language-Team: Danish <dansk@klid.dk>\n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#. Tag: title
+#: index.docbook:18
+#, no-c-format
+msgid "The &kcachegrind; Handbook"
+msgstr "&kcachegrind;-håndbogen"
+
+#. Tag: author
+#: index.docbook:21
+#, no-c-format
+msgid "<firstname>Josef</firstname> <surname>Weidendorfer</surname>"
+msgstr "<firstname>Josef</firstname> <surname>Weidendorfer</surname>"
+
+#. Tag: email
+#: index.docbook:25
+#, no-c-format
+msgid "Josef.Weidendorfer@gmx.de"
+msgstr "Josef.Weidendorfer@gmx.de"
+
+#. Tag: contrib
+#: index.docbook:27
+#, no-c-format
+msgid "Original author of the documentation"
+msgstr ""
+
+#. Tag: author
+#: index.docbook:30
+#, fuzzy, no-c-format
+#| msgid "<firstname>Josef</firstname> <surname>Weidendorfer</surname>"
+msgid "<firstname>Federico</firstname> <surname>Zenith</surname>"
+msgstr "<firstname>Josef</firstname> <surname>Weidendorfer</surname>"
+
+#. Tag: email
+#: index.docbook:34
+#, no-c-format
+msgid "federico.zenith@member.fsf.org"
+msgstr ""
+
+#. Tag: contrib
+#: index.docbook:36
+#, no-c-format
+msgid "Updates and corrections"
+msgstr ""
+
+#. Tag: trans_comment
+#: index.docbook:39
+#, no-c-format
+msgid "ROLES_OF_TRANSLATORS"
+msgstr "&rune.laursen.role;"
+
+#. Tag: holder
+#: index.docbook:45
+#, no-c-format
+msgid "&Josef.Weidendorfer;"
+msgstr "&Josef.Weidendorfer;"
+
+#. Tag: holder
+#: index.docbook:49
+#, no-c-format
+msgid "Federico Zenith"
+msgstr ""
+
+#. Tag: date
+#: index.docbook:53
+#, no-c-format
+msgid "2016-11-18"
+msgstr ""
+
+#. Tag: releaseinfo
+#: index.docbook:54
+#, no-c-format
+msgid "0.8.0 (Applications 17.04)"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:57
+#, fuzzy, no-c-format
+#| msgid ""
+#| "&kcachegrind; is a profile data visualization tool, written using the "
+#| "&kde; environment."
+msgid ""
+"&kcachegrind; is a profile data visualization tool, written using &kde-"
+"frameworks;."
+msgstr ""
+"&kcachegrind; er et værtøj til visualisering af profileringsdata, skrevet "
+"til &kde;-miljøet."
+
+#. Tag: keyword
+#: index.docbook:63
+#, no-c-format
+msgid "<keyword>KDE</keyword>"
+msgstr "<keyword>KDE</keyword>"
+
+#. Tag: keyword
+#: index.docbook:64
+#, no-c-format
+msgid "kdesdk"
+msgstr "kdesdk"
+
+#. Tag: keyword
+#: index.docbook:65
+#, no-c-format
+msgid "Cachegrind"
+msgstr "Cachegrind"
+
+#. Tag: keyword
+#: index.docbook:66
+#, no-c-format
+msgid "Callgrind"
+msgstr "Callgrind"
+
+#. Tag: keyword
+#: index.docbook:67
+#, no-c-format
+msgid "Valgrind"
+msgstr "Valgrind"
+
+#. Tag: keyword
+#: index.docbook:68
+#, no-c-format
+msgid "<keyword>Profiling</keyword>"
+msgstr "<keyword>Profilering</keyword>"
+
+#. Tag: title
+#: index.docbook:75
+#, no-c-format
+msgid "Introduction"
+msgstr "Indledning"
+
+#. Tag: para
+#: index.docbook:77
+#, fuzzy, no-c-format
+#| msgid ""
+#| "&kappname; is a browser for data produced by profiling tools. This "
+#| "chapter explains what profiling is for, how it is done, and gives some "
+#| "examples of profiling tools available."
+msgid ""
+"&kcachegrind; is a browser for data produced by profiling tools. This "
+"chapter explains what profiling is for, how it is done, and gives some "
+"examples of profiling tools available."
+msgstr ""
+"&kappname; er en browser til data produceret af profileringsværktøjer. Dette "
+"kapitel forklarer hvad profilering er til for, hvordan det gøres og giver "
+"nogle eksempler på nogle profileringsværktøjer der er til rådighed."
+
+#. Tag: title
+#: index.docbook:84
+#, no-c-format
+msgid "<title>Profiling</title>"
+msgstr "<title>Profilering</title>"
+
+#. Tag: para
+#: index.docbook:86
+#, no-c-format
+msgid ""
+"When developing a program, one of the last steps often involves performance "
+"optimizations. As it makes no sense to optimize functions rarely used, "
+"because that would be a waste of time, one needs to know in which part of a "
+"program most of the time is spent."
+msgstr ""
+"Når du udvikler et program, er et af de sidste skridt, at gøre det så "
+"hurtigt som muligt (men stadigvæk rigtigt). Du vil ikke sløse tiden væk på "
+"at optimere funktioner som sjældent bruges. Derfor skal du vide i hvilke "
+"dele af programmet den største del af tiden bruges."
+
+#. Tag: para
+#: index.docbook:93
+#, no-c-format
+msgid ""
+"For sequential code, collecting statistical data of the programs runtime "
+"characteristic like time numbers spent in functions and code lines usually "
+"is enough. This is called Profiling. The program is run under control of a "
+"profiling tool, which gives the summary of an execution run at the end. In "
+"contrast, for parallel code, performance problems typically are caused when "
+"one processor is waiting for data from another. As this waiting time usually "
+"cannot easily attributed, here it is better to generate timestamped event "
+"traces. &kcachegrind; cannot visualize this kind of data."
+msgstr ""
+"For sekventiel kode er det ofte tilstrækkeligt at samle statistiske data om "
+"programmets karakteristika ved kørselstidspunktet, som f.eks. tiden der "
+"forbruges i funktioner og kodelinjer. Dette kaldes profilering. Programmet "
+"køres under kontrol af et profileringsværktøj, som giver en opsummering i "
+"slutningen af programkørslen. I modsætning til dette skyldes "
+"ydelsesproblemer i parallel kode, ofte at en processor venter på data fra en "
+"anden. Da denne ventetid er svær at henføre til programkode, er det bedre at "
+"generere tidsstemplede begivenhedsspor. &kcachegrind; kan ikke visualisere "
+"denne type af data."
+
+#. Tag: para
+#: index.docbook:105
+#, no-c-format
+msgid ""
+"After analyzing the produced profile data, it should be easy to see the hot "
+"spots and bottlenecks of the code: for example, assumptions about call "
+"counts can be checked, and identified code regions can be optimized. "
+"Afterwards, the success of the optimization should be verified with another "
+"profile run."
+msgstr ""
+"Efter en analyse af de producerede profileringsdata, er det nemt at finde "
+"problemfyldte områder og flaskehalse i koden. F.eks kan antagelser om "
+"antallet af kald kontrolleres og de identificerede kodeområder kan "
+"optimeres. Efter ændringen bør optimeringens effekt verificeres på ny, med "
+"endnu en profileringskørsel."
+
+#. Tag: title
+#: index.docbook:115
+#, no-c-format
+msgid "Profiling Methods"
+msgstr "Profileringsmetoder"
+
+#. Tag: para
+#: index.docbook:117
+#, no-c-format
+msgid ""
+"To exactly measure the time passed or record the events happening during the "
+"execution of a code region (&eg; a function), additional measurement code "
+"needs to be inserted before and after the given region. This code reads the "
+"time, or a global event count, and calculates differences. Thus, the "
+"original code has to be changed before execution. This is called "
+"instrumentation. Instrumentation can be done by the programmer itself, the "
+"compiler, or by the runtime system. As interesting regions usually are "
+"nested, the overhead of measurement always influences the measurement "
+"itself. Thus, instrumentation should be done selectively and results have to "
+"be interpreted with care. Of course, this makes performance analysis by "
+"exact measurement a very complex process."
+msgstr ""
+"For præcist at kunne måle den forbrugte tid eller begivenheder der sker i et "
+"kodeområde, f.eks. en funktion, er det nødvendigt at indsætte yderligere "
+"målekode før og efter det givne område. Denne kode læser tiden eller en "
+"global begivenhedstæller og beregner forskelle. Derfor skal den oprindelige "
+"kode ændres før kørslen. Dette kaldes instrumentering. Instrumentering kan "
+"udføres af programmøren selv, oversætteren eller af kørselssystemet. "
+"Eftersom interessante kodeområder normalt er indlejrede påvirker selve "
+"målingen altid måleresultaterne i sig selv. Derfor skal instrumentering "
+"altid udføres selektivt og resultaterne skal fortolkes med forsigtighed. "
+"Dette gør naturligvis ydelsesanalyse vha. eksakt måling, til en meget "
+"vanskelig proces."
+
+#. Tag: para
+#: index.docbook:129
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Exact measurement is possible because of hardware counters (including "
+#| "counters incrementing on a time tick) provided in modern processors, "
+#| "which are incremented whenever an event is happening. As we want to "
+#| "attribute events to code regions, without the counters, we would have to "
+#| "handle every event by incrementing a counter for the current code region "
+#| "ourself. Doing this in software is, of course, not possible; but, on the "
+#| "assumption that the event distribution over source code is similar when "
+#| "looking only at every n-th event instead of every event, a measurement "
+#| "method whose overhead is tunable has been developed: it is called "
+#| "Sampling. Time Based Sampling (TBS) uses a timer to regularly look at the "
+#| "program counter to create a histogram over the program code. Event Based "
+#| "Sampling (EBS) exploits the hardware counters of modern processors, and "
+#| "uses a mode where an interrupt handler is called on counter underflow to "
+#| "generate a histogram of the corresponding event distribution: in the "
+#| "handler, the event counter is always reinitialized to the 'n' of the "
+#| "sampling method. The advantage of sampling is that the code does not have "
+#| "to be changed, but it is still a compromise: the above assumption will be "
+#| "more correct if n is small, but the smaller the n, the higher the "
+#| "overhead of the interrupt handler."
+msgid ""
+"Exact measurement is possible because of hardware counters (including "
+"counters incrementing on a time tick) provided in modern processors, which "
+"are incremented whenever an event is happening. As we want to attribute "
+"events to code regions, without the counters, we would have to handle every "
+"event by incrementing a counter for the current code region ourself. Doing "
+"this in software is, of course, not possible; but, on the assumption that "
+"the event distribution over source code is similar when looking only at "
+"every n-th event instead of every event, a measurement method whose overhead "
+"is tunable has been developed: it is called Sampling. Time Based Sampling "
+"(&TBS;) uses a timer to regularly look at the program counter to create a "
+"histogram over the program code. Event Based Sampling (&EBS;) exploits the "
+"hardware counters of modern processors, and uses a mode where an interrupt "
+"handler is called on counter underflow to generate a histogram of the "
+"corresponding event distribution: in the handler, the event counter is "
+"always reinitialized to the <symbol>n</symbol> of the sampling method. The "
+"advantage of sampling is that the code does not have to be changed, but it "
+"is still a compromise: the above assumption will be more correct if "
+"<symbol>n</symbol> is small, but the smaller the <symbol>n</symbol>, the "
+"higher the overhead of the interrupt handler."
+msgstr ""
+"Præcis måling er mulig fordi hardwaretællere (inklusive tællere der optælles "
+"én gang pr. klokpuls), som er til rådighed i moderne processorer, optælles "
+"hver gang der sker en begivenhed. Da vi gerne vil henføre begivenheder til "
+"kodeområder, ville vi uden tællerne, være nødt til at håndtere hver eneste "
+"begivenhed, ved selv at skulle optælle en tæller for kodeområdet. At gøre "
+"dette i software er naturligvis ikke muligt. Under antagelsen af at der er "
+"en ens fordeling af begivenheder i kildekoden, når man kun ser på hver n'te "
+"begivenhed i stedet for hver eneste, har vi konstrueret en målemetode som er "
+"mulig at finindstille mht. omkostninger. Dette kaldes at sample. Tidsbaseret "
+"sampling benytter en tæller til jævnligt at se på programtælleren til at "
+"lave et histogram af programkoden. Begivenhedsbaseret sampling udnytter "
+"hardwaretællere i moderne processorer og bruger en tilstand hvor en "
+"interrupt håndtering kaldes ved tællerunderløb, hvorved der genereres et "
+"histogram af den tilsvarende fordeling f begivenheder. I håndteringen gen-"
+"initialiseres begivenhedstælleren altid til samplingmetodens n. Fordelen ved "
+"sampling er at koden ikke skal ændres. Det er dog stadig et kompromis. Den "
+"ovenstående antagelse bliver mere korrekt når n er et lille tal, men jo "
+"mindre værdi af n, jo højere er omkostningerne til interrupthåndteringen."
+
+#. Tag: para
+#: index.docbook:148
+#, no-c-format
+msgid ""
+"Another measurement method is to simulate things happening in the computer "
+"system when executing a given code, &ie; execution driven simulation. The "
+"simulation is always derived from a more or less accurate machine model; "
+"however, with very detailed machine models, giving very close approximations "
+"to reality, the simulation time can be unacceptably high in practice. The "
+"advantage of simulation is that arbitrarily complex measurement/simulation "
+"code can be inserted in a given code without perturbing results. Doing this "
+"directly before execution (called runtime instrumentation), using the "
+"original binary, is very comfortable for the user: no re-compilation is "
+"necessary. Simulation becomes usable when simulating only parts of a machine "
+"with a simple model; another advantage is that the results produced by "
+"simple models are often easier to understand: often, the problem with real "
+"hardware is that results include overlapping effects from different parts of "
+"the machine."
+msgstr ""
+"Endnu en målemetode er at simulere det der sker i computersystemet når noget "
+"given kildekode eksekveres, dvs. kørselsdrevet simulering. Denne simulering "
+"er naturligvis altid afledt af en mere eller mindre præcis model af "
+"maskinen. Til meget detaljerede modeller, der kommer meget tæt på "
+"virkeligheden, kan simuleringstiden i praksis være uacceptabelt stor. "
+"Fordelen er at vilkårligt kompleks målings- og simuleringskildekode kan "
+"indsættes i noget given kildekode uden at påvirke resultaterne. At gøre "
+"dette lige før kørslen (kaldes, kørselstidsinstrumentering), ved at bruge "
+"den oprindelige kørbare, er meget komfortabelt for brugeren. Metoden er "
+"brugbar når man kun simulerer dele af en maskine og med en simpel model. "
+"Desuden er resultater produceret af en simpel model meget lettere at tolke. "
+"Problemet med rigtig hardware, er at resultaterne ofte viser overlappende "
+"effekter fra forskellige dele af maskinen."
+
+#. Tag: title
+#: index.docbook:164
+#, no-c-format
+msgid "Profiling Tools"
+msgstr "Profileringsværktøjer"
+
+#. Tag: para
+#: index.docbook:166
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Most known is the GCC profiling tool <application>gprof</application>: "
+#| "One needs to compile the program with option <option>-pg</option>; "
+#| "running the program generates a file <filename>gmon.out</filename>, which "
+#| "can be transformed into human-readable form with <command>gprof</"
+#| "command>. One disadvantage is the needed re-compilation step to prepare "
+#| "the executable, which has to be statically linked. The method used here "
+#| "is compiler-generated instrumention - which measures call arcs happening "
+#| "among functions and corresponding call counts - in conjunction with TBS - "
+#| "which gives a histogram of time distribution over the code. Using both "
+#| "pieces of information, it is possible to heuristically calculate "
+#| "inclusive time of functions, &ie; time spent in a function together with "
+#| "all functions called from it."
+msgid ""
+"Most known is the GCC profiling tool <application>gprof</application>: one "
+"needs to compile the program with option <option>-pg</option>; running the "
+"program generates a file <filename>gmon.out</filename>, which can be "
+"transformed into human-readable form with <command>gprof</command>. One "
+"disadvantage is the required re-compilation step to prepare the executable, "
+"which has to be statically linked. The method used here is compiler-"
+"generated instrumentation, which measures call arcs happening among "
+"functions and corresponding call counts, in conjunction with &TBS;, which "
+"gives a histogram of time distribution over the code. Using both pieces of "
+"information, it is possible to heuristically calculate inclusive time of "
+"functions, &ie; time spent in a function together with all functions called "
+"from it."
+msgstr ""
+"Mest kendt er GCC's profileringsværktøj <application>gprof</application>.Du "
+"skal kompilere programmet med flaget <option>-pg</option>, køre programmet "
+"for at oprette filen <filename>gmon.out</filename>, som kan oversættes til "
+"læsbar form med <command>gprof</command>. En ulempe er kompileringsskridtet "
+"for at forberede det kørbare program, som også skal linkes statisk. Denne "
+"metode kaldes oversættergenereret instrumentering. Den måler kaldbuer der "
+"sker blandt funktioner og i henhold til kaldtællinger i forbindelse med "
+"tidsbaseret sampling, der giver et histogram over tidsfordelingen i koden. "
+"Ved at udnytte begge typer oplysninger, er det muligt, heuristisk at beregne "
+"iberegnet tid i funktioner, dvs. tiden forbrugt i en funktion inklusive alle "
+"funktioner der kaldes fra denne funktion"
+
+#. Tag: para
+#: index.docbook:181
+#, no-c-format
+msgid ""
+"For exact measurement of events happening, libraries exist with functions "
+"able to read out hardware performance counters. Most known here is the "
+"PerfCtr patch for &Linux;, and the architecture independent libraries PAPI "
+"and PCL. Still, exact measurement needs instrumentation of code, as stated "
+"above. Either one uses the libraries itself or uses automatic "
+"instrumentation systems like ADAPTOR (for FORTRAN source instrumentation) or "
+"DynaProf (code injection via DynInst)."
+msgstr ""
+"For præcis måling af begivenheder, eksisterer der biblioteker med "
+"funktioner, der er i stand til at udlæse hardwareydelsestællere. De mest "
+"kendte her er PerfCtr patchen til &Linux; og de arkitekturuafhængige "
+"biblioteker PAPI og PCL. Der er dog stadig behov for præcise målinger som "
+"forklaret i det ovenstående. Enten benytter man bibliotekerne for sig selv "
+"eller også benytter man automatiserede instrumenteringssystemer som ADAPTOR "
+"(til FORTRAN kildekodedokumentation) eller DynaProf (kodeindsættelse via. "
+"DynInst)."
+
+#. Tag: para
+#: index.docbook:189
+#, no-c-format
+msgid "&oprofile; is a system-wide profiling tool for &Linux; using Sampling."
+msgstr ""
+"&oprofile; er et profileringsværktøj til &Linux;. Det benytter sampling."
+
+#. Tag: para
+#: index.docbook:193
+#, no-c-format
+msgid ""
+"In many aspects, a comfortable way of Profiling is using &cachegrind; or "
+"&callgrind;, which are simulators using the runtime instrumentation "
+"framework &valgrind;. Because there is no need to access hardware counters "
+"(often difficult with today's &Linux; installations), and binaries to be "
+"profiled can be left unmodified, it is a good alternative to other profiling "
+"tools. The disadvantage of simulation - slowdown - can be reduced by doing "
+"the simulation on only the interesting program parts, and perhaps only on a "
+"few iterations of a loop. Without measurement/simulation instrumentation, "
+"&valgrind;'s usage only has a slowdown factor in the range of 3 to 5. Also, "
+"when only the call graph and call counts are of interest, the cache "
+"simulator can be switched off."
+msgstr ""
+"På mange måder er brug af &cachegrind; eller &callgrind;, en behagelig måde "
+"at udføre profilering på. De er begge simulatorer der benytter "
+"kørselstidsinstrumenteringsskelettet &valgrind;. Fordi der ikke er noget "
+"behov for at tilgå hardwaretællere (ofte vanskeligt med dagens &Linux;-"
+"distributioner) og fordi de binære filer der skal profileres ikke behøver "
+"ændringer, er det et godt alternativ til andre profileringsværktøjer.Ulempen "
+"ved hastighedstab ved simulering, kan reduceres ved at udføre simuleringen, "
+"kun på de interessante steder i programmet og måske kun i et par iterationer "
+"af en løkke. Uden målings- eller simuleringsinstrumentering, ses der ved "
+"brug af &valgrind; kun et hastighedstab i størrelsesordenen 3-5. Når der kun "
+"benyttes kaldgrafen og kaldtælling kan cachesimulatoren slås helt fra."
+
+#. Tag: para
+#: index.docbook:207
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Cache simulation is the first step in approximating real times; as ,on "
+#| "modern systems, runtime is very sensitive to the exploitation of so "
+#| "called caches (small and fast buffers which accelerate repeated accesses "
+#| "to the same main memory cells.) &cachegrind; does cache simulation by "
+#| "catching memory accesses. The data produced includes the number of "
+#| "instruction/data memory accesses and 1st/2nd level cache misses, and "
+#| "relates it to source lines and functions of the run program. By combining "
+#| "these miss counts, using miss latencies from typical processors, an "
+#| "estimation of spent time can be given."
+msgid ""
+"Cache simulation is the first step in approximating real times, since "
+"runtime is very sensitive to the exploitation of so-called <emphasis>caches</"
+"emphasis>, small and fast buffers which accelerate repeated accesses to the "
+"same main memory cells, on modern systems. &cachegrind; does cache "
+"simulation by catching memory accesses. The data produced includes the "
+"number of instruction/data memory accesses and first- and second-level cache "
+"misses, and relates it to source lines and functions of the run program. By "
+"combining these miss counts, using miss latencies from typical processors, "
+"an estimation of spent time can be given."
+msgstr ""
+"Cachesimulering er det første skridt på vejen til ca. realtider, eftersom "
+"kørselstiden på moderne systemer, er meget følsom overfor udnyttelsen af "
+"cache, små hurtige buffere, som accelererer gentagen tilgang til samme "
+"hukommelsesceller. &cachegrind; udfører cachesimulering ved at opfange "
+"hukommelsestilgang. De data der produceres, omfatter antallet af "
+"instruktioner, adgange til instruktion/datahukommelse og ikke ramt cache i "
+"første og andetniveaus cacher og relaterer det til kildekodelinjer og "
+"funktioner i programmet som kører. Ved at kombinere disse ikke ramt-"
+"tællinger ved brug af typisk ikke ramt-latens, kan den forbrugte tid "
+"estimeres."
+
+#. Tag: para
+#: index.docbook:220
+#, no-c-format
+msgid ""
+"&callgrind; is an extension of &cachegrind; that builds up the call graph of "
+"a program on-the-fly, &ie; how the functions call each other and how many "
+"events happen while running a function. Also, the profile data to be "
+"collected can separated by threads and call chain contexts. It can provide "
+"profiling data on an instruction level to allow for annotation of "
+"disassembled code."
+msgstr ""
+"&callgrind; er en udvidelse af &cachegrind; der opbygger kaldgrafen for et "
+"program uden videre &ie; hvordan funktionerne kalder hinanden og hvor mange "
+"begivenheder der sker mens en funktion køres. Desuden kan de profildata der "
+"skal indsamles, blive adskilt af tråde og kaldkæde-sammenhænge. Den kan "
+"sørge for profilering af data på instruktionsniveau for at tillade "
+"annotering af disassembled kode."
+
+#. Tag: title
+#: index.docbook:230
+#, no-c-format
+msgid "Visualization"
+msgstr "Visualisering"
+
+#. Tag: para
+#: index.docbook:232
+#, no-c-format
+msgid ""
+"Profiling tools typically produce a large amount of data. The wish to easily "
+"browse down and up the call graph, together with fast switching of the "
+"sorting mode of functions and display of different event types, motivates a "
+"&GUI; application to accomplish this task."
+msgstr ""
+"Profileringsværktøjer producerer typisk store mængder af data. Ønsket om "
+"nemt at kunne browse op og ned i kaldgrafen, sammen med hurtig skift i "
+"sorteringen af funktioner og visning af forskellige begivenhedstyper, "
+"tilskynder til et program med en grafisk brugerflade."
+
+#. Tag: para
+#: index.docbook:239
+#, fuzzy, no-c-format
+#| msgid ""
+#| "&kappname; is an visualization for profile data fulfilling these wishes. "
+#| "Despite being programmed first with browsing the data from &cachegrind; "
+#| "and &calltree; in mind, there are converters available to be able to "
+#| "display profile data produced by other tools. In the appendix, a "
+#| "description of the &cachegrind;/&callgrind; file format is given."
+msgid ""
+"&kcachegrind; is a visualization tool for profile data fulfilling these "
+"wishes. Despite being programmed first with browsing the data from "
+"&cachegrind; and &calltree; in mind, there are converters available to be "
+"able to display profile data produced by other tools. In the appendix, a "
+"description of the &cachegrind;/&callgrind; file format is given."
+msgstr ""
+"&kappname; er visualisering af profildata og opfylder dermed disse ønsker. "
+"Selvom det er oprindelig er programmeret med browsing af data fra "
+"&cachegrind; og &calltree; in mente, er der konvertere til rådighed der kan "
+"vise profildata fra andre værktøjer. I appendikset gives der en beskrivelse "
+"af &cachegrind;/&callgrind; filformatet."
+
+#. Tag: para
+#: index.docbook:247
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Besides a list of functions sorted according exclusive or inclusive cost "
+#| "metrics, and optionally grouped by source file, shared library or C++ "
+#| "class, &kappname; features various visualization views for a selected "
+#| "function, namely"
+msgid ""
+"Besides a list of functions sorted according exclusive or inclusive cost "
+"metrics, and optionally grouped by source file, shared library or C++ class, "
+"&kcachegrind; features various views for a selected function, namely:"
+msgstr ""
+"Udover en liste af funktioner sorteret i henhold til eksklusiv- eller "
+"inklusivomkostningsmetrik og efter valg, grupperet efter kildefil, delt "
+"bibliotek eller C++-klasser, &kappname; er der også mulighed for forskellige "
+"grafvisninger for en valgt funktion."
+
+#. Tag: para
+#: index.docbook:252
+#, no-c-format
+msgid ""
+"a call-graph view, which shows a section of the call graph around the "
+"selected function,"
+msgstr ""
+"en kaldgrafvisning, som viser en sektion af kaldgrafen omkring den markerede "
+"funktion"
+
+#. Tag: para
+#: index.docbook:255
+#, no-c-format
+msgid ""
+"a tree-map view, which allows nested-call relations to be visualized, "
+"together with inclusive cost metric for fast visual detection of problematic "
+"functions,"
+msgstr ""
+"en træ-kort-visning som tillader en at visualisere indlejrede kaldrelationer "
+"til hinanden, med inklusivomkostningsmetrik til hurtig visuel detektion af "
+"problemfyldte funktioner,"
+
+#. Tag: para
+#: index.docbook:259
+#, no-c-format
+msgid ""
+"source code and disassembler annotation views, allowing to see details of "
+"cost related to source lines and assembler instructions."
+msgstr ""
+"kildekode og disassemblerannotationsvisninger, der giver mulighed for at se "
+"detaljer af omkostninger relativt til kildekodelinjer og "
+"assemblerinstruktioner."
+
+#. Tag: title
+#: index.docbook:269
+#, no-c-format
+msgid "Using &kcachegrind;"
+msgstr "Brug af &kcachegrind;"
+
+#. Tag: title
+#: index.docbook:272
+#, no-c-format
+msgid "Generate Data to Visualize"
+msgstr "Opret data til visning"
+
+#. Tag: para
+#: index.docbook:274
+#, no-c-format
+msgid ""
+"First, one wants to generate performance data by measuring aspects of the "
+"runtime characteristics of an application, using a profiling tool. "
+"&kcachegrind; itself does not include any profiling tool, but is good in "
+"being used together with &callgrind;, and by using a converter, also can be "
+"used to visualize data produced with &oprofile;. Although the scope of this "
+"manual is not to document profiling with these tools, the next section "
+"provides short quickstart tutorials to get you started."
+msgstr ""
+"Først vil man generere ydelsesdata, ved at måle aspekter af et programs "
+"karakteristik ved kørsel, ved at bruge et profileringsværktøj. &kcachegrind; "
+"indeholder ikke noget profileringsværktøj, men udmærker sig når det bruges i "
+"kombination med &callgrind;. Det kan også, ved at anvende en konverter, "
+"bruges til at visualisere data produceret af &oprofile;. Selvom dette ikke "
+"er denne manuals opgave at dokumentere profilering med disse værktøjer, får "
+"næste sektion dig hurtigt i gang med en kort guide."
+
+#. Tag: title
+#: index.docbook:284
+#, no-c-format
+msgid "&callgrind;"
+msgstr "&callgrind;"
+
+#. Tag: para
+#: index.docbook:286
+#, fuzzy, no-c-format
+#| msgid ""
+#| "&callgrind; is available from <ulink url=\"http://kcachegrind.sf.net\"> "
+#| "http://kcachegrind.sf.net</ulink>. Note that it previously was called "
+#| "&calltree;, but that name was misleading."
+msgid ""
+"&callgrind; is a part of <ulink url=\"http://valgrind.org\">&valgrind;</"
+"ulink>. Note that it previously was called &calltree;, but that name was "
+"misleading."
+msgstr ""
+"&callgrind; er til rådighed fra<ulink url=\"http://kcachegrind.sf.net\"> "
+"http://kcachegrind.sf.net</ulink> Læg mærke til at det tidligere hed "
+"&calltree; ,men dette navn var misvisende."
+
+#. Tag: para
+#: index.docbook:291
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Most common use is to prefix the command line to start your application "
+#| "with <application>callgrind</application>, like in "
+#| "<blockquote><para><command>callgrind myprogram myargs</command></para></"
+#| "blockquote> At program termination, a file <filename>callgrind.out.pid</"
+#| "filename> will be generated which can be loaded into &kcachegrind;."
+msgid ""
+"The most common use is to prefix the command line to start your application "
+"with <userinput><command>valgrind</command> <option>--tool=callgrind</"
+"option> </userinput>, as in: <blockquote><para><userinput> "
+"<command>valgrind</command> <option>--tool=callgrind</option> "
+"<replaceable>myprogram</replaceable> <replaceable>myargs</replaceable> </"
+"userinput></para></blockquote> At program termination, a file "
+"<filename>callgrind.out.<replaceable>pid</replaceable></filename> will be "
+"generated, which can be loaded into &kcachegrind;."
+msgstr ""
+"Normalt bruges <application>callgrind</application> som præfiks på "
+"kommandolinjen når du starter dit program, således:til præfiks kommando "
+"linje til start program<application></application> "
+"tommer<blockquote><para><command></command></para></blockquote> program a "
+"fil<filename></filename> Indlæst&kcachegrind;."
+
+#. Tag: para
+#: index.docbook:306
+#, fuzzy, no-c-format
+#| msgid ""
+#| "More advanced use is to dump out profile data whenever a given function "
+#| "of your application is called. E.g. for <command>konqueror</command>, to "
+#| "see profile data only for rendering a web page, you could decide to dump "
+#| "the data whenever you select the menu item View/Reload. This corresponds "
+#| "to a call to <symbol>KonqMainWindow::slotReload</symbol>. Use "
+#| "<blockquote><para><command> callgrind --dump-before=KonqMainWindow::"
+#| "slotReload konqueror </command></para></blockquote> This will produce "
+#| "multiple profile data files with an additional sequential number at the "
+#| "end of the filename. A file without such an number at the end (only "
+#| "ending in the process PID) will also be produced; by loading this file "
+#| "into &kcachegrind;, all others are loaded too, and can be seen in the "
+#| "Parts Overview and Parts list."
+msgid ""
+"More advanced use is to dump out profile data whenever a given function of "
+"your application is called. E.g. for &konqueror;, to see profile data only "
+"for the rendering of a Web page, you could decide to dump the data whenever "
+"you select the menu item <menuchoice><guimenu>View</"
+"guimenu><guimenuitem>Reload </guimenuitem></menuchoice>. This corresponds to "
+"a call to <methodname>KonqMainWindow::slotReload</methodname>. Use: "
+"<blockquote><para><userinput> <command>valgrind</command> <option>--"
+"tool=callgrind</option> <option>--dump-before=KonqMainWindow::slotReload</"
+"option> <replaceable>konqueror</replaceable> </userinput></para></"
+"blockquote> This will produce multiple profile data files with an additional "
+"sequential number at the end of the filename. A file without such an number "
+"at the end (only ending in the process PID) will also be produced; by "
+"loading this file into &kcachegrind;, all others are loaded too, and can be "
+"seen in the <guilabel>Parts Overview</guilabel> and <guilabel>Parts</"
+"guilabel> list."
+msgstr ""
+"Mere avanceret brug ville være at dumpe profildata hver gang en given "
+"funktion i din applikation bliver kaldt. F.eks. for <command> konqueror</"
+"command> for at se profildata kun for optegning af en netside, kunne man "
+"vælge at dumpe data hver gang man vælger vis/genopfrisk. Dette svarer til at "
+"kalde <symbol>KonqMainWindow::slotReload</symbol>. "
+"Brug<blockquote><para><command> callgrind --dump-before=KonqMainWindow::"
+"slotReload konqueror</command></para></blockquote>. Dette producerer flere "
+"profildatafiler med et ekstra sekventielt nummer i slutningen af filnavnet. "
+"En fil uden et sådant nummer (som kun ender på proces-PID) produceres også. "
+"Ved at indlæse filen i &kcachegrind;, indlæses alle de andre også og kan ses "
+"i partoversigten og partlisten."
+
+#. Tag: title
+#: index.docbook:330
+#, no-c-format
+msgid "&oprofile;"
+msgstr "&oprofile;"
+
+#. Tag: para
+#: index.docbook:332
+#, fuzzy, no-c-format
+#| msgid ""
+#| "&oprofile; is available from <ulink url=\"http://oprofile.sf.net\"> "
+#| "http://oprofile.sf.net</ulink>. Follow the installation instructions on "
+#| "the web site; but, before you do, check if your distribution does not "
+#| "already provide it as package (like &SuSE;)."
+msgid ""
+"&oprofile; is available from <ulink url=\"http://oprofile.sf.net\">its home "
+"page</ulink>. Follow the installation instructions on the Web site, but, "
+"before you do, check whether your distribution does not already provide it "
+"as package (like &SuSE;)."
+msgstr ""
+"&oprofile; er tilgængelig fra <ulink url=\"http://oprofile.sf.net\"> http://"
+"oprofile.sf.net</ulink>. Følg installationsinstruktionerne på siden. "
+"Kontrollér dog først om ikke din distribution allerede har en pakke til "
+"rådighed (som &SuSE;)."
+
+#. Tag: para
+#: index.docbook:339
+#, fuzzy, no-c-format
+#| msgid ""
+#| "System-wide profiling is only permitted to the root user, as all actions "
+#| "on the system can be observed; therefore, the following has to be done as "
+#| "root. First, configure the profiling process, using the &GUI; "
+#| "<command>oprof_start</command> or the command-line tool opcontrol. "
+#| "Standard configuration should be timer mode (TBS, see introduction). To "
+#| "start the measurement, run <command>opcontrol -s</command>. Then run the "
+#| "application you are interested in and, afterwards, do a "
+#| "<command>opcontrol -d</command>. This will write out the measurement "
+#| "results into files under directory <filename>/var/lib/oprofile/samples/</"
+#| "filename>. To be able to visualize the data in &kcachegrind;, do in an "
+#| "empty directory: <blockquote><para><command> opreport -gdf | op2callgrind "
+#| "</command></para></blockquote> This will produce a lot of files, one for "
+#| "every program which was running on the system. Each one can be loaded "
+#| "into &kcachegrind; on its own."
+msgid ""
+"System-wide profiling is only permitted to the root user, as all actions on "
+"the system can be observed; therefore, the following has to be done as root. "
+"First, configure the profiling process, using the &GUI; "
+"<command>oprof_start</command> or the command-line tool <command>opcontrol</"
+"command>. Standard configuration should be timer mode (&TBS;, see "
+"introduction). To start the measurement, run <userinput><command>opcontrol</"
+"command> <option>-s</option></userinput>. Then run the application you are "
+"interested in and, afterwards, do a <userinput><command>opcontrol</command> "
+"<option>-d</option></userinput>. This will write out the measurement results "
+"into files under folder <filename class=\"directory\">/var/lib/oprofile/"
+"samples/</filename>. To be able to visualize the data in &kcachegrind;, do "
+"in an empty directory: <blockquote><para><userinput> <command>opreport</"
+"command> <option>-gdf</option> | <command>op2callgrind</command> </"
+"userinput></para></blockquote> This will produce a lot of files, one for "
+"every program which was running on the system. Each one can be loaded into "
+"&kcachegrind; on its own."
+msgstr ""
+"Profilering af hele systemet er kun tilladt for root, fordi alle handlinger "
+"på systemet kan observeres. Derfor skal man gøre det følgende som root. "
+"Først konfigureres profileringsprocessen, vha. &GUI; <command>oprof_start</"
+"command> eller med kommandolinjeværktøjet  opcontrol. "
+"Standardkonfigurationen bør være timertilstand (se introduktionen). For at "
+"begynde målingen køres <command>opcontrol -s</command>. Dernæst køres "
+"applikationen du er interesseret i og bagefter udføres <command>opcontrol -"
+"d</command>. Dette udskriver måleresultaterne til filer under kataloget "
+"<filename>/var/lib/oprofile/samples</filename>. For at kunne visualisere "
+"dataene i &kcachegrind; udføres dette i et tomt katalog: "
+"<blockquote><para><command> opreport -gdf | op2callgrind </command></para></"
+"blockquote>. Dette producerer en masse filer, en for hvert program der kørte "
+"på systemet. Filerne kan indlæses i &kcachegrind; hver for sig."
+
+#. Tag: title
+#: index.docbook:367
+#, no-c-format
+msgid "User Interface Basics"
+msgstr "Grundlæggende om brugergrænseflade"
+
+#. Tag: para
+#: index.docbook:369
+#, fuzzy, no-c-format
+#| msgid ""
+#| "When starting &kcachegrind; with a profile data file as argument, or "
+#| "after loading one with File/Open, you will see a sidebar containing the "
+#| "function list at the left; and, on the right the main part, an area with "
+#| "visualizations for a selected function. This visualization area can be "
+#| "arbitrarily configured to show multiple visualizations at once."
+msgid ""
+"When starting &kcachegrind; with a profile data file as argument, or after "
+"loading one with <menuchoice><guimenu>File</guimenu> <guimenuitem>Open</"
+"guimenuitem></menuchoice>, you will see a navigation panel containing the "
+"function list at the left; and, on the right the main part, an area with "
+"views for a selected function. This view area can be arbitrarily configured "
+"to show multiple views at once."
+msgstr ""
+"Når &kcachegrind; starter med en profildatafil som argument eller efter at "
+"have indlæst en med Fil/Åbn, vil du se en sidebar med funktionslisten til "
+"venstre og hovedparten, et område med grafer, til højre. Grafområdet kan "
+"indstilles arbitrært, så det kan vise flere grafer på én gang."
+
+#. Tag: para
+#: index.docbook:378
+#, no-c-format
+msgid ""
+"At first start, this area will be divided into a top and a bottom part, each "
+"with different tab-selectable views. To move views, use the tabs' context "
+"menu, and adjust the splitters between views. To switch quickly between "
+"different viewing layouts, use <menuchoice><shortcut><keycombo action=\"simul"
+"\">&Ctrl;<keycap>→</keycap> </keycombo></shortcut> <guimenu>View</"
+"guimenu><guisubmenu>Layout</guisubmenu> <guimenuitem>Go to Next</"
+"guimenuitem></menuchoice> and <menuchoice><shortcut><keycombo action=\"simul"
+"\">&Ctrl;<keycap>←</keycap> </keycombo></shortcut> <guimenu>View</"
+"guimenu><guisubmenu>Layout</guisubmenu> <guimenuitem>Go to Previous</"
+"guimenuitem></menuchoice>."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:391
+#, fuzzy, no-c-format
+#| msgid ""
+#| "The active event type is important for visualization: for &callgrind;, "
+#| "this is, for example, Cache Misses or Cycle Estimation; for &oprofile;, "
+#| "this is \"Timer\" in the simplest case. You can change the event type via "
+#| "a combobox in the toolbar or in the Event Type view. A first overview of "
+#| "the runtime characteristics should be given when you select function "
+#| "<symbol>main</symbol> in the left list, and look at the call graph "
+#| "visualization; there, you see calls happening in your program. Note that "
+#| "the call graph view only shows functions with high event count. By double-"
+#| "clicking a function in the graph, it will change to show the called "
+#| "functions around the selected one."
+msgid ""
+"The active event type is important for visualization: for &callgrind;, this "
+"is, for example, cache misses or cycle estimation; for &oprofile;, this is "
+"<quote>Timer</quote> in the simplest case. You can change the event type via "
+"a combobox in the toolbar or in the <guilabel>Event Type</guilabel> view. A "
+"first overview of the runtime characteristics should be given when you "
+"select function <function>main</function> in the left list; look then at the "
+"call graph view. There, you see the calls occurring in your program. Note "
+"that the call graph view only shows functions with high event count. By "
+"double-clicking a function in the graph, it will change to show the called "
+"functions around the selected one."
+msgstr ""
+"Vigtigt for visualiseringen er den aktive begivenhedstype. For &callgrind; "
+"er den f.eks. ikke-ramt cache eller cyklusestimering. For &oprofile; er den "
+"\"Timer\" i den simpleste form. Du kan ændre begivenhedstypen via en "
+"kombinationsboks i værktøjslinjen eller i begivenhedstypevisningen. Når du "
+"vælger funktionen <symbol>main</symbol> og ser på kaldgrafen, vises der et "
+"overblik over kørselstidskarakteristikken. Der kan du se kald der sker i dit "
+"program. Læg mærke til at kaldgrafen kun viser funktioner med et højt antal "
+"begivenheder. Ved at dobbeltklikke på funktionen i grafen, ændres den så der "
+"vises kaldte funktioner omkring den markerede."
+
+#. Tag: para
+#: index.docbook:404
+#, fuzzy, no-c-format
+#| msgid ""
+#| "To explore the &GUI; further, in addition to this manual, also have a "
+#| "look at the documentation section on the web site <ulink url=\"http://"
+#| "kcachegrind.sf.net\"> http://kcachegrind.sf.net</ulink>. Also, every "
+#| "widget in &kcachegrind; has <quote>What's this</quote> help."
+msgid ""
+"To explore the &GUI; further, in addition to this manual, also have a look "
+"at the documentation section <ulink url=\"https://kcachegrind.github.io\">on "
+"the Web site</ulink>. Also, every widget in &kcachegrind; has <quote>What's "
+"this</quote> help."
+msgstr ""
+"For at udforske grænsefladen yderligere, bør du, udover at se i denne "
+"håndbog, også se nærmere på dokumentationen på hjemmesiden <ulink url="
+"\"http://kcachegrind.sf.net\"> http://kcachegrind.sf.net</ulink>. Derudover "
+"har hver kontrol i &kcachegrind; <quote>Hvad er dette</quote> hjælp."
+
+#. Tag: title
+#: index.docbook:416
+#, no-c-format
+msgid "Basic Concepts"
+msgstr "Grundlæggende begreber"
+
+#. Tag: para
+#: index.docbook:418
+#, no-c-format
+msgid ""
+"This chapter explains some concepts of the &kcachegrind;, and introduces "
+"terms used in the interface."
+msgstr ""
+"Dette kapitel forklarer nogle koncepter i &kcachegrind; og introducerer "
+"udtryk brugt i grænsefladen."
+
+#. Tag: title
+#: index.docbook:423
+#, no-c-format
+msgid "The Data Model for Profile Data"
+msgstr "Datamodel til profildata"
+
+#. Tag: title
+#: index.docbook:426
+#, no-c-format
+msgid "Cost Entities"
+msgstr "Omkostningentiteter"
+
+#. Tag: para
+#: index.docbook:428
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Cost counts of event types (like L2 Misses) are attributed to cost "
+#| "entities, which are items with relationship to source code or data "
+#| "structures of a given program. Cost entities not only can be simple code "
+#| "or data positions, but also position tuples. For example, a call has a "
+#| "source and a target, or a data address can have a data type and an code "
+#| "position where its allocation happened."
+msgid ""
+"Cost counts of event types (like L2 Misses) are attributed to cost entities, "
+"which are items with relationship to source code or data structures of a "
+"given program. Cost entities not only can be simple code or data positions, "
+"but also position tuples. For example, a call has a source and a target, or "
+"a data address can have a data type and a code position where its allocation "
+"happened."
+msgstr ""
+"Omkostningsoptælling af begivenhedstyper (som ikke-ramt L2) skyldes "
+"omkostningsentiteter i forbindelse med kildekode eller datastrukturer i et "
+"givet program. Omkostningsentiteter kan være ikke blot simpel kode eller "
+"datapositioner, men også positionstupler. F.eks. et kald har en kilde og et "
+"mål eller en dataadresse kan have en datatype og en kodeposition hvor "
+"allokeringen er foregået."
+
+#. Tag: para
+#: index.docbook:436
+#, fuzzy, no-c-format
+#| msgid ""
+#| "The cost entities known to &kcachegrind; are given in the following. "
+#| "Simple Positions: <itemizedlist> <listitem><para> Instruction. An "
+#| "assembler instruction at a specified address. </para></listitem> "
+#| "<listitem><para> Source Line of a Function. All instructions that the "
+#| "compiler (via debug information) maps to a given source line specified by "
+#| "source file name and line number, and which are executed in the context "
+#| "of some function. The latter is needed because a source line inside of an "
+#| "inlined function can appear in the context of multiple functions. "
+#| "Instructions without any mapping to an actual source line are mapped to "
+#| "line number 0 in file \"???\". </para></listitem> <listitem><para> "
+#| "Function. All source lines of a given function make up the function "
+#| "itself. A function is specified by its name and its location in some "
+#| "binary object if available. The latter is needed because binary objects "
+#| "of a single program each can hold functions with the same name (these can "
+#| "be accessed &eg; with dlopen/dlsym; the runtime linker resolves functions "
+#| "in a given search order of binary objects used). If a profiling tool "
+#| "cannot detect the symbol name of a function, &eg; because debug "
+#| "information is not available, either the address of the first executed "
+#| "instruction typically is used, or \"???\". </para></listitem> "
+#| "<listitem><para> Binary Object. All functions whose code is inside the "
+#| "range of a given binary object, either the main executable or a shared "
+#| "library. </para></listitem> <listitem><para> Source File. All functions "
+#| "whose first instruction is mapped to a line of the given source file. </"
+#| "para></listitem> <listitem><para> Class. Symbol names of functions "
+#| "typically are hierarchically ordered in name spaces, &eg; C++ namespaces, "
+#| "or classes of object oriented languages; thus, a class can hold functions "
+#| "of the class or embedded classes itself. </para></listitem> "
+#| "<listitem><para> Profile Part. Some time section of a profile run, with a "
+#| "given thread ID, process ID, and command line executed. </para></"
+#| "listitem> </itemizedlist> As can be seen from the list, a set of cost "
+#| "entities often defines another cost entity; thus, there is a inclusion "
+#| "hierarchy of cost entities which should be obvious from the description "
+#| "above."
+msgid ""
+"The cost entities known to &kcachegrind; are given in the following. Simple "
+"Positions: <variablelist> <varlistentry> <term>Instruction</term> "
+"<listitem><para> An assembler instruction at a specified address. </para></"
+"listitem> </varlistentry> <varlistentry> <term>Source Line of a Function</"
+"term> <listitem><para> All instructions that the compiler (via debug "
+"information) maps to a given source line specified by source file name and "
+"line number, and which are executed in the context of some function. The "
+"latter is needed because a source line inside of an inlined function can "
+"appear in the context of multiple functions. Instructions without any "
+"mapping to an actual source line are mapped to line number 0 in file "
+"<filename>???</filename>. </para></listitem> </varlistentry> <varlistentry> "
+"<term>Function</term> <listitem><para> All source lines of a given function "
+"make up the function itself. A function is specified by its name and its "
+"location in some binary object if available. The latter is needed because "
+"binary objects of a single program each can hold functions with the same "
+"name (these can be accessed &eg; with <function>dlopen</function> or "
+"<function>dlsym</function>; the runtime linker resolves functions in a given "
+"search order of binary objects used). If a profiling tool cannot detect the "
+"symbol name of a function, &eg; because debug information is not available, "
+"either the address of the first executed instruction typically is used, or "
+"<function>???</function>. </para></listitem> </varlistentry> <varlistentry> "
+"<term>Binary Object</term> <listitem><para> All functions whose code is "
+"inside the range of a given binary object, either the main executable or a "
+"shared library. </para></listitem> </varlistentry> <varlistentry> "
+"<term>Source File</term> <listitem><para> All functions whose first "
+"instruction is mapped to a line of the given source file. </para></listitem> "
+"</varlistentry> <varlistentry> <term>Class</term> <listitem><para> Symbol "
+"names of functions typically are hierarchically ordered in name spaces, &eg; "
+"C++ namespaces, or classes of object-oriented languages; thus, a class can "
+"hold functions of the class or embedded classes itself. </para></listitem> </"
+"varlistentry> <varlistentry> <term>Profile Part</term> <listitem><para> Some "
+"time section of a profile run, with a given thread ID, process ID, and "
+"command line executed. </para></listitem> </varlistentry> </variablelist> As "
+"can be seen from the list, a set of cost entities often defines another cost "
+"entity; thus, there is a inclusion hierarchy of cost entities."
+msgstr ""
+"Omkostningsentiteterne &kcachegrind; kender til er givet i det følgende. "
+"Simple positioner:<itemizedlist> <listitem><para> Instruktion. En "
+"assemblerinstruktion ved en specificeret adresse. </para></listitem> "
+"<listitem><para> Kildelinje i en funktioner. Alle instruktioner som "
+"oversætteren (via fejlsøgningsinformation) kortlægger til en given linje i "
+"kildekoden angivet ved kildefilnavn og linjenummer og som eksekveres i "
+"sammenhæng med en eller anden funktion. Sidstnævnte er nødvendig fordi en "
+"linje i en inlined funktion kan optræde i forbindelse med flere funktioner. "
+"Instruktioner uden kortlægning til en egentlig kildelinje, kortlægges til "
+"linje nummer 0 en en fil \"???\". </para></listitem> <listitem><para> "
+"Funktion. Alle kildelinjer i en given funktion udgør funktionen selv. En "
+"funktion er angivet ved sit navn og placering i et binært objekt, hvis et "
+"sådant er til rådighed. Sidstnævnte behøves fordi binære objekter i et "
+"enkelt program, kan indeholde funktioner med det samme navn (disse kan "
+"tilgås f.eks. med dlopen/dlsym, kørselstidslinkeren bestemmer funktioner i "
+"en given søgerækkefølge i de benyttede binære objekter). Hvis et "
+"profileringsværktøj ikke kan detektere en funktions symbolnavn, f.eks. pga. "
+"manglende fejlsøgningsinformation, bruges typisk enten adressen af den "
+"første udførte instruktion eller \"???\". </para></listitem> "
+"<listitem><para> Binært objekt. Alle funktioner hvis kode er indenfor et "
+"binært objekts rækkevidde. Enten den primære eksekverbare eller et delt "
+"bibliotek. </para></listitem> <listitem><para> Kildefil. Alle funktioner "
+"hvis første instruktioner kan kortlægges til en linje i den givne kildefil. "
+"</para></listitem> <listitem><para> Klasse. Funktioners symbolnavne er "
+"typisk ordnet hierakisk i navnerum. F.eks. C++ navnerum eller klasser i "
+"objektorienterede sprog. En klasse kan således indholde funktioner fra "
+"klassen eller indlejrede klasser. </para></listitem> <listitem><para> "
+"Profilpart. I en vis tidssektion af en profilering, med en given tråd-ID, "
+"proces-ID og kommandoeksekveret. </para></listitem></itemizedlist> Som det "
+"ses på listen, definerer én omkostningsentitet ofte en anden. Derfor er der "
+"et medregningshieraki af omkostningsentiteter, som burde være indlysende ud "
+"fra beskrivelsen herover."
+
+#. Tag: para
+#: index.docbook:505
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Positions tuples: <itemizedlist> <listitem><para> Call from instruction "
+#| "address to target function. </para></listitem> <listitem><para> Call from "
+#| "source line to target function. </para></listitem> <listitem><para> Call "
+#| "from source function to target function. </para></listitem> "
+#| "<listitem><para> (Un)conditional Jump from source to target instruction. "
+#| "</para></listitem> <listitem><para> (Un)conditional Jump from source to "
+#| "target line. </para></listitem> </itemizedlist> Jumps between functions "
+#| "are not allowed, as this makes no sense in a call graph; thus, constructs "
+#| "like exception handling and long jumps in C have to be translated to "
+#| "popping the call stack as needed."
+msgid ""
+"Positions tuples: <itemizedlist> <listitem><para> Call from instruction "
+"address to target function. </para></listitem> <listitem><para> Call from "
+"source line to target function. </para></listitem> <listitem><para> Call "
+"from source function to target function. </para></listitem> <listitem><para> "
+"(Un)conditional jump from source to target instruction. </para></listitem> "
+"<listitem><para> (Un)conditional jump from source to target line. </para></"
+"listitem> </itemizedlist> Jumps between functions are not allowed, as this "
+"makes no sense in a call graph; thus, constructs like exception handling and "
+"long jumps in C have to be translated to popping the call stack as needed."
+msgstr ""
+"Positionstupler: <itemizedlist> <listitem><para> Kald fra "
+"instruktionsadresse til målfunktion. </para></listitem> <listitem><para> "
+"Kald fra kildelinje til målfunktion. </para></listitem> <listitem><para> "
+"Kald fra kildefunktion til målfunktion. </para></listitem> <listitem><para> "
+"(U)betinget spring fra kilde til målinstruktion. </para></listitem> "
+"<listitem><para> (U)betingent spring fra kilde til mållinje. </para></"
+"listitem> </itemizedlist> Spring mellem funktioner er ikke tilladte eftersom "
+"det ikke giver nogen mening i en kaldgraf. Derfor skal kontruktioner som "
+"undtagelseshåndtering og lange hop, oversættes til at poppe på kaldstakken "
+"når behovet opstår."
+
+#. Tag: title
+#: index.docbook:533
+#, no-c-format
+msgid "Event Types"
+msgstr "Begivenhedstyper"
+
+#. Tag: para
+#: index.docbook:535
+#, no-c-format
+msgid ""
+"Arbitrary event types can be specified in the profile data by giving them a "
+"name. Their cost related to a cost entity is a 64-bit integer."
+msgstr ""
+"Tilfældige begivenhedstyper kan angives i profildataen, ved at navngive dem. "
+"Deres omkostning relateret til omkostningsentitet er et 64 bit heltal."
+
+#. Tag: para
+#: index.docbook:539
+#, no-c-format
+msgid ""
+"Event types whose costs are specified in a profile data file are called real "
+"events. Additionally, one can specify formulas for event types calculated "
+"from real events, which are called inherited events."
+msgstr ""
+"Begivenhedstyper hvis omkostninger er angivet i profildatafilen, kaldes ægte "
+"begivenheder. Yderligere kan man angive formler for begivenhedstyper "
+"beregnet ud fra reelle begivenheder. De kaldes arvede begivenheder."
+
+#. Tag: title
+#: index.docbook:549
+#, no-c-format
+msgid "Visualization State"
+msgstr "Graftilstand"
+
+#. Tag: para
+#: index.docbook:551
+#, fuzzy, no-c-format
+#| msgid ""
+#| "The Visualization state of a &kcachegrind; window includes: "
+#| "<itemizedlist> <listitem><para> the primary and secondary event type "
+#| "chosen for display, </para></listitem> <listitem><para> the function "
+#| "grouping (used in the Function Profile list and entity coloring), </"
+#| "para></listitem> <listitem><para> the profile parts whose costs are to be "
+#| "included in visualization, </para></listitem> <listitem><para> an active "
+#| "cost entity (&eg; a function selected from the function profile "
+#| "dockable), </para></listitem> <listitem><para> a selected cost entity. </"
+#| "para></listitem> </itemizedlist> This state influences visualizations."
+msgid ""
+"The visualization state of a &kcachegrind; window includes: <itemizedlist> "
+"<listitem><para> the primary and secondary event type chosen for display, </"
+"para></listitem> <listitem><para> the function grouping (used in the "
+"<guilabel>Function Profile</guilabel> list and entity coloring), </para></"
+"listitem> <listitem><para> the profile parts whose costs are to be included "
+"in visualization, </para></listitem> <listitem><para> an active cost entity "
+"(&eg; a function selected from the function profile sidedock), </para></"
+"listitem> <listitem><para> a selected cost entity. </para></listitem> </"
+"itemizedlist> This state influences the views."
+msgstr ""
+"Visualiseringtilstande i &kcachegrind; inkluderer: <itemizedlist> "
+"<listitem><para> primær og sekundær begivenhedstype valgt til visning,  </"
+"para></listitem> <listitem><para> funktionsgrupperingen (brugt i "
+"funktionsprofillisten og entitetsfarvelægningen), </para></listitem> "
+"<listitem><para> profilpartene hvis omkostninger skal inkluderes i "
+"visningen, </para></listitem> <listitem><para> en aktiv omkostningsentitet "
+"(f.eks. en funktion markeret i den dokbare funktionsprofil), </para></"
+"listitem> <listitem><para> en markeret omkostningsentitet. </para></"
+"listitem></itemizedlist> Denne tilstand påvirker visningerne."
+
+#. Tag: para
+#: index.docbook:575
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Visualizations always are shown for one, the active, cost entity. When a "
+#| "given visualization is not appropriate for a cost entity, it is disabled "
+#| "(&eg; when selecting an &ELF; object in the group list by double-"
+#| "clicking, source annotation for an &ELF; object make no sense)."
+msgid ""
+"Views are always shown for one cost entity, the active one. When a given "
+"view is inappropriate for a cost entity, it is disabled: when selecting &eg; "
+"an &ELF; object in the group list, source annotation makes no sense."
+msgstr ""
+"Visualiseringer vises altid for en, den aktive, omkostningsentitet. Når en "
+"given visualisering ikke er giver mening for en omkostningsentitet, "
+"deaktiveres den. F.eks. når man vælger et &ELF;-objekt i gruppelisten ved at "
+"dobbeltklikke, giver kildekommentar til et &ELF;-objekt ingen mening."
+
+#. Tag: para
+#: index.docbook:581
+#, fuzzy, no-c-format
+#| msgid ""
+#| "For example, for an active function, the callee list shows all the "
+#| "functions called from the active one: one can select one of these "
+#| "functions without making it active; also, if the call-graph is shown "
+#| "nearside, it will automatically select the same function."
+msgid ""
+"For example, for an active function, the callee list shows all the functions "
+"called from the active one: one can select one of these functions without "
+"making it active. Also, if the call graph is shown beside, it will "
+"automatically select the same function."
+msgstr ""
+"F.eks. for en aktiv funktion, viser kalderlisten alle funktionerne der "
+"kaldes fra den aktive. Man kan vælge en af disse funktioner uden at gøre den "
+"aktiv. Vises kaldgrafen ved siden af, vælges den samme funktion automatisk."
+
+#. Tag: title
+#: index.docbook:591
+#, no-c-format
+msgid "Parts of the &GUI;"
+msgstr "Elementer i brugerfladen"
+
+#. Tag: title
+#: index.docbook:594 index.docbook:678
+#, no-c-format
+msgid "Sidedocks"
+msgstr "Sidedokker"
+
+#. Tag: para
+#: index.docbook:595
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Sidedocks (Dockables) are side windows which can be placed at any border "
+#| "of an &kcachegrind; window. They always contain a list of cost entities "
+#| "sorted in some manner."
+msgid ""
+"Sidedocks are side windows which can be placed at any border of a "
+"&kcachegrind; window. They always contain a list of cost entities sorted in "
+"some way."
+msgstr ""
+"Sidedokker (dokbare) er sidevinduer som kan placeres på en hvilken som helst "
+"kant i et &kcachegrind;-vindue. De indeholder altid en liste af "
+"omkostningsentiteter, sorteret på en eller anden måde."
+
+#. Tag: para
+#: index.docbook:599
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Function Profile. The Function Profile is a list of functions showing "
+#| "inclusive and exclusive cost, call count, name and position of functions."
+msgid ""
+"The <guilabel>Function Profile</guilabel> is a list of functions showing "
+"inclusive and exclusive cost, call count, name and position of functions."
+msgstr ""
+"Funktionsprofil. Funktionsprofilen er en liste af funktioner der viser "
+"inklusiv- og eksklusivomkostning, kaldtælling, navn og placering af "
+"funktioner."
+
+#. Tag: guilabel
+#: index.docbook:604
+#, fuzzy, no-c-format
+#| msgid "<title>Parts Overview</title>"
+msgid "<guilabel>Parts Overview</guilabel>"
+msgstr "<title>Partoverblik</title>"
+
+#. Tag: guilabel
+#: index.docbook:607
+#, fuzzy, no-c-format
+#| msgid "<title>Call Stack</title>"
+msgid "<guilabel>Call Stack</guilabel>"
+msgstr "<title>Kaldstak</title>"
+
+#. Tag: title
+#: index.docbook:614
+#, no-c-format
+msgid "View Area"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:615
+#, fuzzy, no-c-format
+#| msgid ""
+#| "The visualization area, typically the right part of a &kcachegrind; main "
+#| "window, is made up of one (default) or more Tab Views, either lined up "
+#| "horizontally or vertically. Each tab view holds different visualization "
+#| "views of only one cost entity at a time. The name of this entity is given "
+#| "at the top of the tab view. If there are multiple tab views, only one is "
+#| "active. The entity name in the active tab view is shown in bold and "
+#| "determines the active cost entity of the &kcachegrind; window."
+msgid ""
+"The view area, typically the right part of a &kcachegrind; main window, is "
+"made up of one (default) or more tabs, lined up either horizontally or "
+"vertically. Each tab holds different views of only one cost entity at a "
+"time. The name of this entity is given at the top of the tab. If there are "
+"multiple tabs, only one is active. The entity name in the active tab is "
+"shown in bold, and determines the active cost entity of the &kcachegrind; "
+"window."
+msgstr ""
+"Visualiseringsområdet, normalt højre side i &kcachegrind;s hovedvindue, "
+"udgøres af en (standard) eller flere fanebladsvisninger, placeret enten "
+"horisontalt eller vertikalt. Hver fanebladsvisning har forskellige "
+"visualiseringsvisninger af kun en omkostningsentitet ad gangen. Navnet på "
+"denne entitet vises øverst i fanebladsvisningen. Er der flere "
+"fanebladsvisninger, er det kun den ene som er aktiv. Entitetsnavnet i den "
+"aktive fanebladsvisning, vises med fed skrift og afgør den aktive "
+"omkostningsentitet i &kcachegrind;-vinduet."
+
+#. Tag: title
+#: index.docbook:626
+#, fuzzy, no-c-format
+#| msgid "Areas of a Tab View"
+msgid "Areas of a Tab"
+msgstr "Områder i en fanebladsvisning"
+
+#. Tag: para
+#: index.docbook:627
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Each tab view can hold up to four view areas, namely Top, Right, Left, "
+#| "and Bottom. Each area can hold multiple stacked visualization views. The "
+#| "visible view of an area is selected by a tab bar. The tab bars of the top "
+#| "and right area are at the top; the tab bars of the left and bottom area "
+#| "are at the bottom. You can specify which kind of visualization should go "
+#| "into which area by using the context menus of the tabs."
+msgid ""
+"Each tab can hold up to four view areas, namely Top, Right, Left, and "
+"Bottom. Each area can hold multiple stacked views. The visible part of an "
+"area is selected by a tab bar. The tab bars of the top and right area are at "
+"the top; the tab bars of the left and bottom area are at the bottom. You can "
+"specify which kind of view should go into which area by using the tabs' "
+"context menus."
+msgstr ""
+"Hver fanebladsvisning kan indeholde op til fire visningsområder, top, højre, "
+"venstre og bund. Hvert område kan indeholde flere stakkede "
+"visualiseringsvisninger. Den synlige del af området vælges vha. en "
+"fanebladsbjælke. Fanebladsbjælker i toppen og i det højre område er øverst "
+"og fanebladsbjælker til venstre og i bunden er nederst. Du kan angive "
+"hvilken slags visualisering der skal være i hvilket område, ved at bruge "
+"fanebladendes kontekstmenuer."
+
+#. Tag: title
+#: index.docbook:637
+#, fuzzy, no-c-format
+#| msgid "Synchronized Visualization via Selected Entity in a Tab View"
+msgid "Synchronized View with Selected Entity in a Tab"
+msgstr "Synkroniseret graf via markeret entitet i en fanebladsvisning"
+
+#. Tag: para
+#: index.docbook:638
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Besides an active entity, each tab view has an selected entity. As most "
+#| "visualization types show multiple entities with the active one somehow "
+#| "centered, you can change the selected item by navigating inside a "
+#| "visualization (by clicking with the mouse or using the keyboard). "
+#| "Typically, selected items are shown in an highlighted state. By changing "
+#| "the selected entity in one of the visualizations of a tab view, all other "
+#| "visualizations in the tab view accordingly highlight the new selected "
+#| "entity."
+msgid ""
+"Besides an active entity, each tab has a selected entity. As most view types "
+"show multiple entities with the active one somehow centered, you can change "
+"the selected item by navigating inside a view (by clicking with the mouse or "
+"using the keyboard). Typically, selected items are shown in a highlighted "
+"state. By changing the selected entity in one of the views of a tab, all "
+"other views highlight the new selected entity accordingly."
+msgstr ""
+"Udover en aktiv entitet, har hvert faneblad en markeret entitet. Da de "
+"fleste visualiseringstyper viser flere entiteter med den aktive centreret, "
+"kan du ændre den markerede ved at navigere inde i en visualisering (ved at "
+"klikke med musen eller ved at bruge tastaturet). Typisk vises markerede "
+"entiteter i en fremhævet tilstand. Ved at ændre den markerede entitet i en "
+"af visualiseringerne i en fanebladsvisning, fremhæver alle andre "
+"visualiseringer i fanebladsvisningen den nye markerede entitet."
+
+#. Tag: title
+#: index.docbook:649
+#, fuzzy, no-c-format
+#| msgid "Synchronization between Tab Views"
+msgid "Synchronization between Tabs"
+msgstr "Synkronisering mellem fanebladsvisninger"
+
+#. Tag: para
+#: index.docbook:650
+#, fuzzy, no-c-format
+#| msgid ""
+#| "If there are multiple tab views, a selection change in one tab view leads "
+#| "to an activation change in the next (to right/to bottom) tab view. This "
+#| "kind of linkage should, for example, allow for fast browsing in call "
+#| "graphs."
+msgid ""
+"If there are multiple tabs, a selection change in one tab leads to an "
+"activation change in the next tab, be it right of the former or under it. "
+"This kind of linkage should, for example, allow for fast browsing in call "
+"graphs."
+msgstr ""
+"Hvis der er flere fanebladsvisninger, fører en ændring i markeringen i en "
+"fanebladsvisning til en aktiveringsændring i den næste (til højre/til bund) "
+"fanebladsvisning. Denne type sammenkædning giver mulighed for hurtig søgning "
+"i kaldgrafer."
+
+#. Tag: title
+#: index.docbook:658
+#, no-c-format
+msgid "Layouts"
+msgstr "Udseende"
+
+#. Tag: para
+#: index.docbook:659
+#, fuzzy, no-c-format
+#| msgid ""
+#| "The layout of all the tab views of a window can be saved (see menu item "
+#| "View/Layout). After duplicating the current layout (Ctrl+Plus or menu) "
+#| "and changing some sizes or moving a visualization view to another area of "
+#| "an tab view, you can quickly switch between the old and the new layout "
+#| "via Ctrl+Left/Right. The set of layouts will be stored between "
+#| "&kcachegrind; sessions of the same profiled command. You can make the "
+#| "current set of layouts as the default one for new &kcachegrind; sessions, "
+#| "or restore to the default layout set."
+msgid ""
+"The layout of all the tabs of a window can be saved "
+"(<menuchoice><guimenu>View </guimenu><guisubmenu>Layout</guisubmenu></"
+"menuchoice>). After duplicating the current layout "
+"(<menuchoice><shortcut><keycombo action=\"simul\">&Ctrl; <keycap>+</keycap></"
+"keycombo></shortcut> <guimenu>View</guimenu> <guisubmenu>Layout</"
+"guisubmenu><guimenuitem>Duplicate</guimenuitem> </menuchoice>) and changing "
+"some sizes or moving a view to another area of a tab, you can quickly switch "
+"between the old and the new layout via <keycombo action=\"simul\"> &Ctrl;"
+"<keycap>←</keycap></keycombo> and <keycombo action=\"simul\">&Ctrl; "
+"<keycap>→</keycap></keycombo>. The set of layouts will be stored between "
+"&kcachegrind; sessions of the same profiled command. You can make the "
+"current set of layouts the default one for new &kcachegrind; sessions, or "
+"restore the default layout set."
+msgstr ""
+"Layoutet i alle fanebladsvisninger i et vindue, kan gemmes (se menuindgangen "
+"Vis/Layout), Efter at have duplikeret det aktuelle layout (Ctrl+Plus eller "
+"menu) og ændret størrelser eller flyttet en visualiseringsvisning til et "
+"andet område af en fanebladsvisning, kan du hurtigt skifte mellem det gamle "
+"og det nye layout via Ctrl+Venstre/Højre. Layoutet gemmes mellem "
+"&kcachegrind;-sessioner med den samme profileringskommando. Du kan gøre det "
+"aktuelle layout til standarden for nye sessioner i &kcachegrind;, eller "
+"vende tilbage til standardopsætningen."
+
+#. Tag: title
+#: index.docbook:681
+#, no-c-format
+msgid "Flat Profile"
+msgstr "Flad profil"
+
+#. Tag: para
+#: index.docbook:682
+#, fuzzy, no-c-format
+#| msgid ""
+#| "The flat profile contains a group list and a function list. The group "
+#| "list contains all groups where cost is spent in, depending on the chosen "
+#| "group type. The group list is hidden when grouping is switched off."
+msgid ""
+"The <guilabel>Flat Profile</guilabel> contains a group list and a function "
+"list. The group list contains all groups where cost is spent in, depending "
+"on the chosen group type. The group list is hidden when grouping is switched "
+"off."
+msgstr ""
+"Den flade profil indeholder en gruppeliste og en funktionsliste. "
+"Gruppelisten indeholder alle grupper hvori der er omkostninger, afhængigt af "
+"den valgte gruppetype. Gruppelisten er skjult når gruppering er deaktiveret."
+
+#. Tag: para
+#: index.docbook:687
+#, fuzzy, no-c-format
+#| msgid ""
+#| "The function list contains the functions of the selected group (or all "
+#| "functions if grouping is switched off), ordered by some column, &eg; "
+#| "inclusive or self costs spent therein. There is a maximal number of "
+#| "functions shown in the list, which is configurable in Settings/Configure "
+#| "&kcachegrind;."
+msgid ""
+"The function list contains the functions of the selected group (or all "
+"functions if grouping is switched off), ordered by some column, &eg; "
+"inclusive or self costs spent therein. There is a maximum number of "
+"functions shown in the list, configurable in <menuchoice><guimenu>Settings</"
+"guimenu><guimenuitem>Configure KCachegrind</guimenuitem></menuchoice>."
+msgstr ""
+"Funktionslisten indeholder den valgte gruppes funktioner (eller alle "
+"funktioner, hvis gruppering er deaktiveret), ordnet efter en søjle, f.eks. "
+"inklusiv- eller egenomkostninger forbrugt deri. Der er et maksimalt antal "
+"funktioner der vises i liste, som kan indstilles i Opsætning/Indstil "
+"&kcachegrind;."
+
+#. Tag: title
+#: index.docbook:697
+#, no-c-format
+msgid "<title>Parts Overview</title>"
+msgstr "<title>Partoverblik</title>"
+
+#. Tag: para
+#: index.docbook:698
+#, fuzzy, no-c-format
+#| msgid ""
+#| "In a profile run, multiple profile data files can be produced, which can "
+#| "be loaded together into &kcachegrind;. The Parts Overview dockable shows "
+#| "these, horizontally ordered according creation time; the rectangle sizes "
+#| "are proportional to the cost spent in the parts. You can select one or "
+#| "several parts to constrain the costs shown in the other &kcachegrind; "
+#| "views to these parts only."
+msgid ""
+"In a profile run, multiple profile data files can be produced, which can be "
+"loaded together into &kcachegrind;. The <guilabel>Parts Overview</guilabel> "
+"sidedock shows these, ordered horizontally according to creation time; the "
+"rectangle sizes are proportional to the cost spent each part. You can select "
+"one or several parts to constrain the costs shown in the other &kcachegrind; "
+"views to these parts only."
+msgstr ""
+"I en profileringskørsel kan der produceres flere profildatafiler, der kan "
+"indlæses sammen i &kcachegrind;. Den dokbare partoversigt viser disse, "
+"horisontalt ordnet i henhold til oprettelsestidspunktet. Rektanglernes "
+"størrelser er proportionale med omkostningerne der forbruges deri. Du kan "
+"vælge en part eller flere for at indskrænke omkostningerne vist i andre "
+"&kcachegrind;-visninger til kun disse part."
+
+#. Tag: para
+#: index.docbook:706
+#, fuzzy, no-c-format
+#| msgid ""
+#| "The parts are further subdivided: there is a partitioning and an "
+#| "inclusive cost split mode:"
+msgid ""
+"The parts are further subdivided between a partitioning and an inclusive "
+"cost split mode:"
+msgstr ""
+"Part er yderligere underinddelt. Der er partitionering og en "
+"inklusivomkostninger i opdelt tilstand:"
+
+#. Tag: guilabel
+#: index.docbook:711
+#, no-c-format
+msgid "Partitioning Mode"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:712
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Partitioning: You see the partitioning into groups for a profile data "
+#| "part, according to the group type selected. For example, if &ELF; object "
+#| "groups are selected, you see colored rectangles for each used &ELF; "
+#| "object (shared library or executable), sized according to the cost spent "
+#| "therein."
+msgid ""
+"The partitioning is shown in groups for a profile data part, according to "
+"the group type selected. For example, if &ELF; object groups are selected, "
+"you see colored rectangles for each used &ELF; object (shared library or "
+"executable), sized according to the cost spent therein."
+msgstr ""
+"Partitionering: Du ser partitioneringen i grupper for en profildatapart, i "
+"henhold til den valgte gruppe. F.eks. hvis der vælges &ELF;-objektgrupper, "
+"ser du farvede rektangler for hvert brugt &ELF;-objekt (delt bibliotek eller "
+"eksekverbar) med en størrelse proportional med omkostningerne forbrugt deri."
+
+#. Tag: guilabel
+#: index.docbook:720
+#, no-c-format
+msgid "Diagram Mode"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:721
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Inclusive Cost Split: A rectangle showing the inclusive cost of the "
+#| "current active function in the part is shown. This, again, is split up to "
+#| "show inclusive costs of its callees."
+msgid ""
+"A rectangle showing the inclusive cost of the current active function in the "
+"part is shown. This, again, is split up to show the inclusive costs of its "
+"callees."
+msgstr ""
+"Opdelt inklusivomkostning: Der vises et rektangel der afspejler "
+"inklusivomkostningen i den aktive funktion i en part. Dette er igen opdelt "
+"for at vise inklusivomkostninger for kalderen."
+
+#. Tag: title
+#: index.docbook:732
+#, no-c-format
+msgid "<title>Call Stack</title>"
+msgstr "<title>Kaldstak</title>"
+
+#. Tag: para
+#: index.docbook:733
+#, fuzzy, no-c-format
+#| msgid ""
+#| "This is a purely fictional 'most probable' call stack. It is built up by "
+#| "starting with the current active function and adds the callers/callees "
+#| "with highest cost at the top and to bottom."
+msgid ""
+"This is a purely fictional <quote>most probable</quote> call stack. It is "
+"built up by starting with the current active function, and adds the callers "
+"and callees with highest cost at the top and to bottom."
+msgstr ""
+"Dette er en fuldstændig fiktiv 'mest sandsynlig' kaldstak. Den er opbygget "
+"således at der startes ved den aktive funktion og kaldere og kaldere/kaldte "
+"med størst omkostning fra toppen og til bunden."
+
+#. Tag: para
+#: index.docbook:738
+#, fuzzy, no-c-format
+#| msgid ""
+#| "The 'Cost' and 'Calls' columns show the cost used for all calls from the "
+#| "function in the line above."
+msgid ""
+"The <guilabel>Cost</guilabel> and <guilabel>Calls</guilabel> columns show "
+"the cost used for all calls from the function in the line above."
+msgstr ""
+"'Omkostning'- og 'kald'-søjlerne viser omkostningerne forbrugt i alle kald "
+"fra funktionen i linjen ovenover."
+
+#. Tag: title
+#: index.docbook:746
+#, no-c-format
+msgid "Views"
+msgstr ""
+
+#. Tag: title
+#: index.docbook:749
+#, fuzzy, no-c-format
+#| msgid "<title>Parts Overview</title>"
+msgid "<title>Event Type</title>"
+msgstr "<title>Partoverblik</title>"
+
+#. Tag: para
+#: index.docbook:750
+#, fuzzy, no-c-format
+#| msgid ""
+#| "This list shows all cost types available and the corresponding self and "
+#| "inclusive cost of the current active function for that event type."
+msgid ""
+"The <guilabel>Event Type</guilabel> list shows all cost types available and "
+"the corresponding self and inclusive cost of the current active function for "
+"that event type."
+msgstr ""
+"Denne liste viser alle omkostningstyper der er til rådighed og den "
+"tilsvarende egen- og inklusivomkostning af den aktive funktion for netop "
+"denne begivenhedstype."
+
+#. Tag: para
+#: index.docbook:755
+#, fuzzy, no-c-format
+#| msgid ""
+#| "By choosing an event type from the list, you change the type of costs "
+#| "shown all over &kcachegrind; to be the selected one."
+msgid ""
+"By choosing an event type from the list, you change the type of costs shown "
+"all over &kcachegrind; to the selected one."
+msgstr ""
+"Ved at vælge en begivenhedstype i listen, kan du ændre omkostningstypen der "
+"vises generelt i &kcachegrind;, til at være den valgte."
+
+#. Tag: title
+#: index.docbook:762
+#, no-c-format
+msgid "Call Lists"
+msgstr "Kaldlister"
+
+#. Tag: para
+#: index.docbook:763
+#, fuzzy, no-c-format
+#| msgid ""
+#| "These lists show calls to/from the current active function. With ''all' "
+#| "callers/callees functions are meant which can be reached in caller/callee "
+#| "direction, even when other functions are in between."
+msgid ""
+"These lists show calls to and from the current active function. With "
+"<guilabel>All Callers</guilabel> and <guilabel>All Callees</guilabel> are "
+"meant those functions reachable in the caller and callee direction, even "
+"when other functions are in between."
+msgstr ""
+"Disse lister viser kald til/fra den aktive funktion. Med 'alle' kaldere/"
+"kaldte funktioner, menes hvilke der kan nås i kalder/kaldt-retningen, selv "
+"når der er andre funktioner imellem."
+
+#. Tag: para
+#: index.docbook:770
+#, no-c-format
+msgid "Call list views include:"
+msgstr "Kaldlistevisning inkluderer:"
+
+#. Tag: para
+#: index.docbook:773
+#, no-c-format
+msgid "Direct <guilabel>Callers</guilabel>"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:774
+#, no-c-format
+msgid "Direct <guilabel>Callees</guilabel>"
+msgstr ""
+
+#. Tag: guilabel
+#: index.docbook:775
+#, no-c-format
+msgid "All Callers"
+msgstr "Alle kaldere"
+
+#. Tag: guilabel
+#: index.docbook:776
+#, no-c-format
+msgid "All Callees"
+msgstr "Alle kaldede"
+
+#. Tag: title
+#: index.docbook:782
+#, no-c-format
+msgid "Maps"
+msgstr "Kort"
+
+#. Tag: para
+#: index.docbook:783
+#, fuzzy, no-c-format
+#| msgid ""
+#| "A treemap visualization of the primary event type, up or down the call "
+#| "hierarchy. Each colored rectangle represents a function; its size tries "
+#| "to be proportional to the cost spent therein while the active function is "
+#| "running (however, there are drawing constrains)."
+msgid ""
+"A treemap view of the primary event type, up or down the call hierarchy. "
+"Each colored rectangle represents a function; its size is approximately "
+"proportional to the cost spent therein while the active function is running "
+"(however, there are drawing constrains)."
+msgstr ""
+"En trævisning af den primære begivenhedstype, op eller ned i kaldhierakiet. "
+"Hvert farvet rektangel repræsenterer en funktion. Dets størrelse forsøger at "
+"være proportionelt med omkostningerne forbrugt deri , mens den aktive "
+"funktion kører (der er dog begrænsninger ved optegningen)."
+
+#. Tag: para
+#: index.docbook:789
+#, fuzzy, no-c-format
+#| msgid ""
+#| "For the Caller Map, the graph shows the nested hierarchy of all callers "
+#| "of the current activated function; for the Callee Map, it shows the "
+#| "nested hierarchy of all callees of the current activated function."
+msgid ""
+"For the <guilabel>Caller Map</guilabel>, the graph shows the nested "
+"hierarchy of all callers of the currently activated function; for the "
+"<guilabel>Callee Map</guilabel>, it shows that of all callees."
+msgstr ""
+"For kaldervisningen, viser grafen hierakiet af alle kaldere af den aktuelle "
+"aktiverede funktion. For for kaldtvisningen vises hierakiet af alle kaldte "
+"fra den aktuelle aktiverede funktion."
+
+#. Tag: para
+#: index.docbook:794
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Appearance options can be found in the in the context menu. To get exact "
+#| "size proportions, choose 'Hide incorrect borders'. As this mode can be "
+#| "very time consuming, you may want to limit the maximum drawn nesting "
+#| "level before. 'Best' determinates the split direction for children from "
+#| "the aspect ratio of the parent. 'Always Best' decides on remaining space "
+#| "for each sibling. 'Ignore Proportions' takes space for function name "
+#| "drawing before drawing children. Note that size proportions can get "
+#| "heavily wrong."
+msgid ""
+"Appearance options can be found in the context menu. To get exact size "
+"proportions, choose <guimenuitem>Skip Incorrect Borders</guimenuitem>. As "
+"this mode can be very time-consuming, you may want to limit the maximum "
+"drawn nesting level before. <guilabel>Best</guilabel> determinates the split "
+"direction for children from the aspect ratio of the parent. <guilabel>Always "
+"Best</guilabel> decides on remaining space for each sibling. "
+"<guilabel>Ignore Proportions</guilabel> takes space for function name "
+"drawing before drawing children. Note that size proportions can get heavily "
+"wrong."
+msgstr ""
+"Indstillinger for udseende findes i kontekstmenuen. For eksakte "
+"størrelsesproportioner vælges 'Skjul ukorrekte kanter'. Da denne tilstand "
+"kan være meget ressourcekrævende, vil du sikkert begrænse det maksimale "
+"antal optegnede niveauer først. 'Bedst' fastsætter opdelingsretningen for "
+"indre funktioner ud fra de ydres synsvinkel. 'Altid bedst' beslutter sig "
+"udfra tilbageværende plads til hver funktion på samme niveau. 'Ignorér "
+"proportioner' bruger plads til at optegne funktionsnavnet før indre "
+"funktioner optegnes. Bid mærke i at størrelsesforholdene kan være særdeles "
+"fejlagtige."
+
+#. Tag: para
+#: index.docbook:804
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Keyboard navigation is available with the left/right arrow keys for "
+#| "traversing siblings, and up/down arrow keys to go a nesting level up/"
+#| "down. 'Return' activates the current item."
+msgid ""
+"Keyboard navigation is available with the left and right arrow keys for "
+"traversing siblings, and up and down arrow keys to go a nesting level up and "
+"down. &Enter; activates the current item."
+msgstr ""
+"Tastaturnvigering er mulig med venstre/højre piletaster, til at vandre "
+"gennem objekter på samme niveau og op/ned piletasterne for at vandre op og "
+"ned i niveau. 'Retur' aktiverer det aktuelle objekt."
+
+#. Tag: title
+#: index.docbook:812
+#, no-c-format
+msgid "Call Graph"
+msgstr "Kaldgraf"
+
+#. Tag: para
+#: index.docbook:813
+#, fuzzy, no-c-format
+#| msgid ""
+#| "This view shows the call graph around the active function. The shown cost "
+#| "is only the cost which is spent while the active function was actually "
+#| "running; &ie; the cost shown for main() - if it's visible - should be the "
+#| "same as the cost of the active function, as that is the part of inclusive "
+#| "cost of main() spent while the active function was running."
+msgid ""
+"This view shows the call graph around the active function. The cost shown is "
+"only the cost spent while the active function was actually running, &ie; the "
+"cost shown for <function>main()</function> (if it's visible) should be the "
+"same as the cost of the active function, as that is the part of inclusive "
+"cost of <function>main()</function> spent while the active function was "
+"running."
+msgstr ""
+"Denne visning viser kldgrafen omkring den aktive funktion. De viste "
+"omkostninger er omkostninger kun der forbruges mens den aktive funktion "
+"stadig kører. Dvs. omkostningerne der vises for main(), hvis den kan vises, "
+"skulle være det samme som omkostningerne for den aktive funktion, eftersom "
+"den er en del af inklusivomkostning forbrugt af main(), mens den aktive "
+"funktion kørte."
+
+#. Tag: para
+#: index.docbook:820
+#, fuzzy, no-c-format
+#| msgid ""
+#| "For cycles, blue call arrows indicate that this is an artificial call "
+#| "added for correct drawing which actually never happened."
+msgid ""
+"For cycles, blue call arrows indicate that this is an artificial call, which "
+"never actually happened, added for correct drawing."
+msgstr ""
+"For cykler, indikerer blå pile at dette er et kunstigt kald, tilføjet for at "
+"kunne optegne korrekt, som aldrig har foregået."
+
+#. Tag: para
+#: index.docbook:824
+#, fuzzy, no-c-format
+#| msgid ""
+#| "If the graph is larger than the widget area, a bird's eye view is shown "
+#| "in one edge. There are similar visualization options as for the Call "
+#| "Treemap; the selected function is highlighted."
+msgid ""
+"If the graph is larger than the drawing area, a bird's eye view is shown on "
+"a side. There are view options similar to those of the call maps; the "
+"selected function is highlighted."
+msgstr ""
+"Er grafen større en kontrolarealet, vises en oversigtsrude i fugleperspektiv "
+"i den ene kant. Der er lignende visualiseringsindstillinger til som for "
+"kaldtrævisningen. Den valgte funktion fremhæves."
+
+#. Tag: title
+#: index.docbook:832
+#, no-c-format
+msgid "Annotations"
+msgstr "Kommentarer"
+
+#. Tag: para
+#: index.docbook:833
+#, fuzzy, no-c-format
+#| msgid ""
+#| "The annotated source/assembler lists show the source lines/disassembled "
+#| "instructions of the current active function together with (self) cost "
+#| "spent while executing the code of a source line/instruction. If there was "
+#| "a call, lines with details on the call are inserted into the source: the "
+#| "(inclusive) cost spent inside of the call, the number of calls happening, "
+#| "and the call destination."
+msgid ""
+"The annotated source or assembler lists show the source lines or "
+"disassembled instructions of the current active function together with the "
+"(self) cost spent executing the code of a source line or instruction. If "
+"there was a call, lines with details on the call are inserted into the "
+"source: the (inclusive) cost spent inside of the call, the number of calls "
+"happening, and the call destination."
+msgstr ""
+"Listen over assemblykode med kommentarer, viser maskinkodeinstruktionerne "
+"for den aktive funktion, sammen med egenomkostninger forbrugt når en "
+"kodeinstruktion udføres. Hvis der skete et kald, indsættes linjer med "
+"detaljer om kaldet i kildekoden: inklusivomkostning forbrugt i kaldet, "
+"antallet af kald og kaldmålet."
+
+#. Tag: para
+#: index.docbook:841
+#, no-c-format
+msgid "Select such a call information line to activate the call destination."
+msgstr "Vælg sådan en kaldinformationslinje for at aktivere kalddestinationen."
+
+#. Tag: title
+#: index.docbook:851
+#, no-c-format
+msgid "Command Reference"
+msgstr "Kommandoreference"
+
+#. Tag: title
+#: index.docbook:854
+#, no-c-format
+msgid "The main &kcachegrind; window"
+msgstr "&kcachegrind;s hovedvindue"
+
+#. Tag: title
+#: index.docbook:857
+#, no-c-format
+msgid "The File Menu"
+msgstr ""
+
+#. Tag: menuchoice
+#: index.docbook:862
+#, fuzzy, no-c-format
+#| msgid ""
+#| "<shortcut> <keycombo>&Ctrl;<keycap>N</keycap></keycombo> </shortcut> "
+#| "<guimenu>File</guimenu> <guimenuitem>New</guimenuitem>"
+msgid ""
+"<shortcut> <keycombo>&Ctrl;<keycap>N</keycap></keycombo> </shortcut> "
+"<guimenu>File</guimenu><guimenuitem>New</guimenuitem>"
+msgstr ""
+"<shortcut> <keycombo>&Ctrl;<keycap>N</keycap></keycombo> </shortcut> "
+"<guimenu>Fil</guimenu> <guimenuitem>Ny</guimenuitem>"
+
+#. Tag: para
+#: index.docbook:868
+#, fuzzy, no-c-format
+#| msgid ""
+#| "<action> Opens an empty toplevel window into which you can load profile "
+#| "data. </action> This action is not really needed, as File/Open will give "
+#| "you a new toplevel window when the current one shows already some data."
+msgid ""
+"<action>Opens an empty top-level window</action> in which you can load "
+"profile data. This action is not really necessary, as <menuchoice> "
+"<guimenu>File</guimenu><guimenuitem>Open</guimenuitem></menuchoice> gives "
+"you a new top-level window if the current one already shows some data."
+msgstr ""
+"<action>Åbner et tomt vindue i topniveau, hvori du kan indlæse profildata</"
+"action>  Dette er ikke rigtig nødvendigt eftersom Fil/Åbn giver dig et nyt "
+"vindue i topniveau, når det aktuelle allerede viser nogle data."
+
+#. Tag: menuchoice
+#: index.docbook:877
+#, fuzzy, no-c-format
+#| msgid ""
+#| "<shortcut> <keycombo>&Ctrl;<keycap>O</keycap></keycombo> </shortcut> "
+#| "<guimenu>File</guimenu> <guimenuitem>Open</guimenuitem>"
+msgid ""
+"<shortcut> <keycombo>&Ctrl;<keycap>O</keycap></keycombo> </shortcut> "
+"<guimenu>File</guimenu><guimenuitem>Open</guimenuitem>"
+msgstr ""
+"<shortcut> <keycombo>&Ctrl;<keycap>B</keycap></keycombo> </shortcut> "
+"<guimenu>Fil</guimenu> <guimenuitem>Åbn</guimenuitem>"
+
+#. Tag: para
+#: index.docbook:884
+#, fuzzy, no-c-format
+#| msgid ""
+#| "<action> Pops up the File Open Dialog to choose a profile data file to be "
+#| "loaded. </action> If there is some data already shown in the current "
+#| "toplevel window, this will open a new window; if you want to open "
+#| "additional profile data in the current window, use File/Add."
+msgid ""
+"<action>Pops up the &kde; file selector</action> to choose a profile data "
+"file to be loaded. If there is some data already shown in the current top-"
+"level window, this will open a new window; if you want to open additional "
+"profile data in the current window, use <menuchoice> <guimenu>File</"
+"guimenu><guimenuitem>Add</guimenuitem></menuchoice>."
+msgstr ""
+"<action> Åbner Fil/Åbn-dialogen så der kan vælges data der skal indlæses.</"
+"action> Vises der allerede data i det aktuelle topniveauvindue, åbnes der et "
+"nyt vinduen. Hvis du vil åbne yderligere profildata i det aktuelle vindue "
+"skal du vælge Fil/Tilføj."
+
+#. Tag: para
+#: index.docbook:891
+#, fuzzy, no-c-format
+#| msgid ""
+#| "The name of profile data files usually ends in ..-, where and are "
+#| "optional and are used for multiple profile data files belonging to one "
+#| "application run. By loading a file ending only in ., eventually existing "
+#| "data files for this run, but with additional endings, are loaded too."
+msgid ""
+"The name of profile data files usually ends in <literal role=\"extension\">."
+"<replaceable>pid</replaceable>.<replaceable>part</replaceable>-"
+"<replaceable>threadID</replaceable></literal>, where <replaceable>part</"
+"replaceable> and <replaceable>threadID</replaceable> are optional. "
+"<replaceable>pid</replaceable> and <replaceable>part</replaceable> are used "
+"for multiple profile data files belonging to one application run. By loading "
+"a file ending only in <literal role=\"extension\"><replaceable>pid</"
+"replaceable></literal>, any existing data files for this run with additional "
+"endings are loaded as well."
+msgstr ""
+"Navnet på profildatafilen ender normalt på ..-, hvor og er valgfri og bruges "
+"til flere profildatafiler der hører til samme programkørsel. Ved at indlæse "
+"en fil der ender på ., indlæses også eksisterende datafiler, med andre "
+"filnavne, der hører til denne kørsel. "
+
+#. Tag: para
+#: index.docbook:899
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Example: If there exist profile data files cachegrind.out.123 and "
+#| "cachegrind.out.123.1, by loading the first, the second will be "
+#| "automatically loaded too."
+msgid ""
+"If there exist profile data files <filename>cachegrind.out.123</filename> "
+"and <filename>cachegrind.out.123.1</filename>, by loading the first, the "
+"second will be automatically loaded too."
+msgstr ""
+"Eksempel: Hvis profildatafilerne cachegrind.out.123 og cachegrind.out.123.1 "
+"eksisterer, bliver den anden indlæst automatisk når man indlæser den første."
+
+#. Tag: menuchoice
+#: index.docbook:907
+#, fuzzy, no-c-format
+#| msgid "<guimenu>File</guimenu> <guimenuitem>Add</guimenuitem>"
+msgid "<guimenu>File</guimenu><guimenuitem>Add</guimenuitem>"
+msgstr "<guimenu>Fil</guimenu> <guimenuitem>Tilføj</guimenuitem>"
+
+#. Tag: para
+#: index.docbook:910
+#, fuzzy, no-c-format
+#| msgid ""
+#| "<action> Adds a profile data file to the current window. </action> Using "
+#| "this, you can force multiple data files to be loaded into the same "
+#| "toplevel window even if they are not from the same run as given by the "
+#| "profile data file naming convention. This can, for example, be used for "
+#| "nearside comparison."
+msgid ""
+"<action>Adds a profile data file</action> to the current window. Using this, "
+"you can force multiple data files to be loaded into the same top-level "
+"window even if they are not from the same run, as given by the profile data "
+"file naming convention. For example, this can be used for side-by-side "
+"comparison."
+msgstr ""
+"<action> Tilføjer profildatafiler til det aktuelle vindue. </action> På "
+"denne måde kan du tvinge flere datafiler til at indlæses i samme "
+"topniveauvindue, selvom de ikke er fra samme kørsel, som ellers angivet af "
+"profildatafilernes navngivningskonvention. Brug det f.eks. til side om side-"
+"sammenligning."
+
+#. Tag: menuchoice
+#: index.docbook:920
+#, fuzzy, no-c-format
+#| msgid ""
+#| "<shortcut> <keycombo>&Ctrl;<keycap>N</keycap></keycombo> </shortcut> "
+#| "<guimenu>File</guimenu> <guimenuitem>New</guimenuitem>"
+msgid ""
+"<shortcut> <keycombo><keycap>F5</keycap></keycombo> </shortcut> "
+"<guimenu>File</guimenu><guimenuitem>Reload</guimenuitem>"
+msgstr ""
+"<shortcut> <keycombo>&Ctrl;<keycap>N</keycap></keycombo> </shortcut> "
+"<guimenu>Fil</guimenu> <guimenuitem>Ny</guimenuitem>"
+
+#. Tag: para
+#: index.docbook:926
+#, fuzzy, no-c-format
+#| msgid ""
+#| "<action> Reload the profile data. </action> This is most interesting "
+#| "after another profile data file was generated for an already loaded "
+#| "application run."
+msgid ""
+"<action>Reload the profile data</action>. This is useful when another "
+"profile data file was generated for an already loaded application run."
+msgstr ""
+"<action> Genindlæs profildata. </action> Dette er mest interessant efter "
+"endnu en profildatafil blev genereret for en i forvejen indlæst "
+"programkørsel."
+
+#. Tag: menuchoice
+#: index.docbook:933
+#, fuzzy, no-c-format
+#| msgid ""
+#| "<shortcut> <keycombo>&Ctrl;<keycap>Q</keycap></keycombo> </shortcut> "
+#| "<guimenu>File</guimenu> <guimenuitem>Quit</guimenuitem>"
+msgid ""
+"<shortcut> <keycombo>&Ctrl;<keycap>Q</keycap></keycombo> </shortcut> "
+"<guimenu>File</guimenu><guimenuitem>Quit</guimenuitem>"
+msgstr ""
+"<shortcut> <keycombo>&Ctrl;<keycap>Q</keycap></keycombo> </shortcut> "
+"<guimenu>Fil</guimenu> <guimenuitem>Afslut</guimenuitem>"
+
+#. Tag: para
+#: index.docbook:939
+#, fuzzy, no-c-format
+#| msgid "<action>Quits</action> &kappname;"
+msgid "<action>Quits</action> &kcachegrind;"
+msgstr "<action>Afslutter</action> &kappname;"
+
+#. Tag: title
+#: index.docbook:950
+#, no-c-format
+msgid "Questions and Answers"
+msgstr "Spørgsmål og svar"
+
+#. Tag: para
+#: index.docbook:957
+#, no-c-format
+msgid "What is &kcachegrind; for? I have no idea."
+msgstr "Hvad kan &kcachegrind; bruges til? Det aner jeg nemlig ikke."
+
+#. Tag: para
+#: index.docbook:962
+#, fuzzy, no-c-format
+#| msgid ""
+#| "&kcachegrind; is a helpful at a later stage in software development, "
+#| "called Profiling. If you don't develop applications, you don't need "
+#| "&kcachegrind;."
+msgid ""
+"&kcachegrind; is a helpful at a late stage in software development, called "
+"profiling. If you don't develop applications, you don't need &kcachegrind;."
+msgstr ""
+"&kcachegrind; er til hjælp på et sent skridt i programudvikling som kaldes "
+"profilering. Hvis du ikke udvikler programmer, har du ikke noget at bruge "
+"&kcachegrind; til."
+
+#. Tag: para
+#: index.docbook:971
+#, fuzzy, no-c-format
+#| msgid "What is the difference between 'Incl.' and 'Self' ?"
+msgid ""
+"What is the difference between <guilabel>Incl.</guilabel> and "
+"<guilabel>Self</guilabel>?"
+msgstr "Hvad er forskellen på 'inklusiv' og 'egen' ?"
+
+#. Tag: para
+#: index.docbook:977
+#, fuzzy, no-c-format
+#| msgid ""
+#| "These are cost attributes for functions regarding some event type. As "
+#| "functions can call each other, it makes sense to distinguish the cost of "
+#| "the function itself ('Self Cost') and the cost including all called "
+#| "functions ('Inclusive Cost'). 'Self' is sometimes also referred to as "
+#| "'Exclusive' costs."
+msgid ""
+"These are cost attributes for functions regarding some event type. As "
+"functions can call each other, it makes sense to distinguish the cost of the "
+"function itself (<quote>Self Cost</quote>) and the cost including all called "
+"functions (<quote>Inclusive Cost</quote>). <quote>Self</quote> is sometimes "
+"also referred to as <quote>Exclusive</quote> costs."
+msgstr ""
+"Disse er omkostningsegenskaber for funktioner angående en eller anden "
+"begivenhedstype.Da funktioner kan kalde hinanden, giver det ingen mening at "
+"skelne mellem omkostningerne for funktionen selv ('egenomkostningen') og "
+"omkostninger der inkluderer alle kaldte funktioner ('inklusivomkostning'). "
+"'Egen' refereres somme tider som 'eksklusivomkostning'."
+
+#. Tag: para
+#: index.docbook:983
+#, fuzzy, no-c-format
+#| msgid ""
+#| "So, for example, for main(), you will always have a inclusive cost of "
+#| "almost 100%, whereas the self cost is negligible when the real work is "
+#| "done in another function."
+msgid ""
+"So, for example, for <function>main()</function>, you will always have an "
+"inclusive cost of almost 100%, whereas the self cost is negligible when the "
+"real work is done in another function."
+msgstr ""
+"Så f.eks. for main(), vil du altid have en inklusivomkostning på næsten "
+"100%, hvorimod egenomkostningen er ubetydelig lille når arbejdet udføres i "
+"en anden funktion."
+
+#. Tag: para
+#: index.docbook:993
+#, fuzzy, no-c-format
+#| msgid ""
+#| "If I double-click on a function down in the Call Graph View, it shows for "
+#| "the function main the same cost as the selected function. Isn't this "
+#| "supposed to be constant 100% ?"
+msgid ""
+"If I double-click on a function down in the <guilabel>Call Graph</guilabel> "
+"view, it shows for function <function>main()</function> the same cost as the "
+"selected function. Isn't this supposed to be constant at 100%?"
+msgstr ""
+"Når jeg dobbeltklikker på en funktion et stykke nede i visningen af "
+"kaldgrafen, viser det for funktionen main(), den samme omkostning som den "
+"valgte funktion. Skal den ikke konstant være 100%?"
+
+#. Tag: para
+#: index.docbook:1000
+#, fuzzy, no-c-format
+#| msgid ""
+#| "You have activated a function below main() with cost less than main(). "
+#| "For any function, only that part of the full cost of the function is "
+#| "shown, that is spent while the activated function is running; that is, "
+#| "the cost shown for any function can never be higher than the cost of the "
+#| "activated function."
+msgid ""
+"You have activated a function below <function>main()</function>, which "
+"obviously costs less than <function>main()</function> itself. For every "
+"function, it is shown only the part of the cost spent while the "
+"<emphasis>activated</emphasis> function is running; that is, the cost shown "
+"for any function can never be higher than the cost of the activated function."
+msgstr ""
+"Du har aktiveret en funktioner under main() med en omkostning mindre end "
+"main(). For enhver funktion, vises kun en del af den totalt omkostning for "
+"funktionen, nemlig den forbruges når den aktive funktion køres. Dvs. "
+"omkostningerne der vises for enhver funktion kan aldrig være højere end "
+"omkostningen af den aktive funktion."
+
+#. Tag: glossterm
+#: index.docbook:1018
+#, fuzzy, no-c-format
+#| msgid "Cost Entities"
+msgid "Cost Entity"
+msgstr "Omkostningentiteter"
+
+#. Tag: para
+#: index.docbook:1019
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Cost Entity: An abstract item related to source code to which event "
+#| "counts can be attributed. Dimensions for cost entities are code location "
+#| "(&eg; source line, function), data location (&eg; accessed data type, "
+#| "data object), execution location (&eg; thread, process), and tuples or "
+#| "triples of the aforementioned positions (&eg; calls, object access from "
+#| "statement, evicted data from cache)."
+msgid ""
+"An abstract item related to source code to which event counts can be "
+"attributed. Dimensions for cost entities are code location (&eg; source "
+"line, function), data location (&eg; accessed data type, data object), "
+"execution location (&eg; thread, process), and tuples or triples of the "
+"aforementioned positions (&eg; calls, object access from statement, evicted "
+"data from cache)."
+msgstr ""
+"Omkostningsentitet: Et abstrakt begreb der relaterer til kildekode til "
+"hvilken begivenhedstælling kan henføres. Dimensioner for "
+"omkostningsentiteter er kodeplacering (f.eks. kildelinje eller funktion), "
+"dataplacering (f.eks. tilgået datatype, dataobjekt), placering af den "
+"eksekverbare (f.eks. tråde, processer) og tupler eller tripler af de "
+"førnævnte placeringer (f.eks. kald, objekttilgangen fra udtryk, data fjernet "
+"fra cache)."
+
+#. Tag: glossterm
+#: index.docbook:1028
+#, fuzzy, no-c-format
+#| msgid "Event Types"
+msgid "Event Costs"
+msgstr "Begivenhedstyper"
+
+#. Tag: para
+#: index.docbook:1029
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Event Costs: Sum of events of some event type occurring while the "
+#| "execution is related to some cost entity. The cost is attributed to the "
+#| "entity."
+msgid ""
+"Sum of events of some event type occurring while the execution is related to "
+"some cost entity. The cost is attributed to the entity."
+msgstr ""
+"Begivenhedsomkostninger: Summen af begivenheder af en eller anden "
+"begivenhedstype der sker, mens eksekveringen relateres til en "
+"omkostningsentitet. Omkostningen tillægges entiteten"
+
+#. Tag: glossterm
+#: index.docbook:1035
+#, no-c-format
+msgid "<glossterm>Event Type</glossterm>"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:1036
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Event Type: The kind of event of which costs can be attributed to a cost "
+#| "entity. There exist real event types and inherited event types."
+msgid ""
+"The kind of event of which costs can be attributed to a cost entity. There "
+"are real event types and inherited event types."
+msgstr ""
+"Begivenhedstype: En begivenhed til hvilken en omkostning kan tilskrives en "
+"omkostningsentitet. Der findes flere reelle begivenhedstyper og arvede "
+"begivenhedstyper."
+
+#. Tag: glossterm
+#: index.docbook:1041
+#, fuzzy, no-c-format
+#| msgid "Event Types"
+msgid "Inherited Event Type"
+msgstr "Begivenhedstyper"
+
+#. Tag: para
+#: index.docbook:1042
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Inherited Event Type: A virtual event type only visible in the "
+#| "visualization which is defined by a formula to be calculated from real "
+#| "event types."
+msgid ""
+"A virtual event type only visible in the view, defined by a formula to be "
+"calculated from real event types."
+msgstr ""
+"Arvet begivenhedstype: En virtuel begivenhedstype der kun er synlig i "
+"visualiseringen som er defineret ved en formel der beregnes ud fra reelle "
+"begivenhedstyper."
+
+#. Tag: glossterm
+#: index.docbook:1047
+#, no-c-format
+msgid "Profile Data File"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:1048
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Profile Data File: A file containing data measured in a profile "
+#| "experiment (or part of) or produced by postprocessing a trace. Its size "
+#| "is typically linear to the code size of the program."
+msgid ""
+"A file containing data measured in a profile experiment, or part of one, or "
+"produced by post-processing a trace. Its size is typically linear with the "
+"code size of the program."
+msgstr ""
+"Profildatafil: En fil der indeholder data målt i et profileringseksperiment "
+"(eller en del af dette) eller produceret af efterbehandling af et spor. "
+"Størrelsen er typisk lineær i fht. programmets kodestørrelse."
+
+#. Tag: glossterm
+#: index.docbook:1054
+#, no-c-format
+msgid "Profile Data Part"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:1055
+#, no-c-format
+msgid "Data from a profile data file."
+msgstr ""
+
+#. Tag: glossterm
+#: index.docbook:1059
+#, no-c-format
+msgid "Profile Experiment"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:1060
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Profile Experiment: A program run supervised by a profiling tool, "
+#| "producing possibly multiple profile data files from parts and/or threads "
+#| "of the run."
+msgid ""
+"A program run supervised by a profiling tool, producing possibly multiple "
+"profile data files from parts or threads of the run."
+msgstr ""
+"Profileringseksperiment: En programkørsel overvåget af et "
+"profileringsværktøj, der laver muligvis flere profildatafiler fra part og/"
+"eller tråde i kørslen."
+
+#. Tag: glossterm
+#: index.docbook:1065
+#, no-c-format
+msgid "Profile Project"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:1066
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Profile Project: A configuration for profile experiments used for one "
+#| "program which has to be profiled, perhaps in multiple versions. "
+#| "Comparisons of profile data typically only makes sense between profile "
+#| "data produced in experiments of one profile project."
+msgid ""
+"A configuration for profile experiments used for one program to profile, "
+"perhaps in multiple versions. Comparisons of profile data typically only "
+"makes sense between profile data produced in experiments of one profile "
+"project."
+msgstr ""
+"Profilprojekt: En indstilling til profileringseksperimenter benyttet til ét "
+"program der skal profileres, måske i flere versioner. Sammenligninger af "
+"profildata giver typisk kun mening mellem profildata produceret i "
+"eksperimenter af et profilprojekt."
+
+#. Tag: glossterm
+#: index.docbook:1073
+#, fuzzy, no-c-format
+#| msgid "<title>Profiling</title>"
+msgid "<glossterm>Profiling</glossterm>"
+msgstr "<title>Profilering</title>"
+
+#. Tag: para
+#: index.docbook:1074
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Profiling: The process of collecting statistical information about "
+#| "runtime characteristics of program runs."
+msgid ""
+"The process of collecting statistical information about runtime "
+"characteristics of program runs."
+msgstr ""
+"Profilering: Den proces hvormed der indsamles statistisk information om et "
+"programs karakteristik ved kørselstid."
+
+#. Tag: glossterm
+#: index.docbook:1079
+#, fuzzy, no-c-format
+#| msgid "Event Types"
+msgid "Real Event Type"
+msgstr "Begivenhedstyper"
+
+#. Tag: para
+#: index.docbook:1080
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Real Event Type: A event type that can be measured by a tool. This needs "
+#| "the existence of a sensor for the given event type."
+msgid ""
+"An event type that can be measured by a tool. This requires the existence of "
+"a sensor for the given event type."
+msgstr ""
+"Reel begivenhedstype: En begivenhedstype der kan måles med et værktøj. Det "
+"forudsætter eksistensen af en sensor til den givne begivenhedstype."
+
+#. Tag: glossterm
+#: index.docbook:1085
+#, no-c-format
+msgid "Trace"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:1086
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Trace: A sequence of timestamped events that occurred while tracing a "
+#| "program run. Its size is typically linear to the execution time of the "
+#| "program run."
+msgid ""
+"A sequence of timestamped events that occurred while tracing a program run. "
+"Its size is typically linear with the execution time of the program run."
+msgstr ""
+"Spor: En sekvens af tidsstemplede begivenheder der sker under sporingen af "
+"en programkørsel. Dens størrelse er normalt lineær i forhold "
+"tilprogramkørslens udførselstid."
+
+#. Tag: glossterm
+#: index.docbook:1092
+#, no-c-format
+msgid "Trace Part"
+msgstr ""
+
+#. Tag: glossterm
+#: index.docbook:1097
+#, no-c-format
+msgid "Tracing"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:1098
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Tracing: The process of supervising a program run and storing events "
+#| "happening sorted by a timestap in a output file, the Trace."
+msgid ""
+"The process of supervising a program run and storing its events, sorted by a "
+"timestamp, in an output file, the trace."
+msgstr ""
+"Spor: Processen i hvilken man overvåger en programkørsel og gemmer de "
+"begivenheder der sker, sorteret ud fra et tidsstempel i en uddatafil, sporet."
+
+#. Tag: title
+#: index.docbook:1106
+#, no-c-format
+msgid "Credits and License"
+msgstr "Medvirkende og licens"
+
+#. Tag: para
+#: index.docbook:1108
+#, no-c-format
+msgid ""
+"Thanks to Julian Seward for his excellent &valgrind;, and Nicholas "
+"Nethercote for the &cachegrind; addition. Without these programs, "
+"&kcachegrind; would not exist. Some ideas for this &GUI; were from them, too."
+msgstr ""
+"Tak til Julian Seward for hans udmærkede værktøj &valgrind;, og Nicholas "
+"Nethercote for tilføjelsen &cachegrind;. Uden disse programmer, ville "
+"&kcachegrind; ikke eksistere. Mange af ideerne til denne &GUI; kommer også "
+"fra dem."
+
+#. Tag: para
+#: index.docbook:1113
+#, fuzzy, no-c-format
+#| msgid "And thanks for all the bug reports/suggestions from different users."
+msgid "Thanks for all the bug reports and suggestions from different users."
+msgstr "Og tak for alle fejlrapporter og forslag fra forskellige brugere."
+
+#. Tag: trans_comment
+#: index.docbook:1117
+#, no-c-format
+msgid "CREDIT_FOR_TRANSLATORS"
+msgstr "&rune.laursen.credit;"
+
+#. Tag: chapter
+#: index.docbook:1117
+#, no-c-format
+msgid "&underFDL;"
+msgstr "&underFDL;"
+
+#~ msgid "The <guimenu>File</guimenu> Menu"
+#~ msgstr "<guimenu>Fil</guimenu>-menuen"
+
+#~ msgid "&reporting.bugs; &updating.documentation;"
+#~ msgstr "&reporting.bugs; &updating.documentation;"
+
+#, fuzzy
+#~| msgid ""
+#~| "The toolbar/menubar of my &kcachegrind; looks so spartanic. Is this "
+#~| "normal?"
+#~ msgid ""
+#~ "The toolbar and menubar of my &kcachegrind; look spartan. Is this normal?"
+#~ msgstr ""
+#~ "Min værktøjs-og menulinje i &kcachegrind; ser så spartansk ud. Er det "
+#~ "normalt?"
+
+#, fuzzy
+#~ msgid ""
+#~ "&kcachegrind; has probably been installed incorrectly on your system. It "
+#~ "is recommended to compile it with the installation prefix set to your "
+#~ "system-wide &kde; base folder, like <userinput><command>configure "
+#~ "<option>--prefix=<replaceable>/opt/kde4</replaceable></option></command>; "
+#~ "<command>make install</command></userinput>. If you choose another "
+#~ "folder, like <filename class=\"directory\">$<envar>HOME</envar>/kde</"
+#~ "filename>, you should set the environment variable <envar>KDEDIR</envar> "
+#~ "to this folder before running &kcachegrind;."
+#~ msgstr ""
+#~ "&kcachegrind; er tilsyneladende ikke korrekt installeret på dit system. "
+#~ "Det anbefales at kompilere det med installationspræfikset sat til dit KDE-"
+#~ "basiskatalog: <command>configure --prefix=/opt/kde3; make install</"
+#~ "command> Hvis du vælger et andet katalog som $HOME/kde, skal du indstille "
+#~ "miljøvariablen KDEDIR til dette katalog før du kører &kcachegrind;."
+
+#~ msgid "Installation"
+#~ msgstr "Installation"
+
+#~ msgid "How to obtain &kcachegrind;"
+#~ msgstr "Hvordan får jeg fat i &kcachegrind;"
+
+#, fuzzy
+#~| msgid ""
+#~| "&kcachegrind; is part of the &package; package of &kde;. For less "
+#~| "supported interim releases, &callgrind; and further documentation, see "
+#~| "the homepage at <ulink url=\"http://kcachegrind.sf.net\"> http://"
+#~| "kcachegrind.sf.net</ulink>. Look there for further installation and "
+#~| "compile instructions."
+#~ msgid ""
+#~ "&kcachegrind; is part of the &package; package of &kde;. For less "
+#~ "supported interim releases, &callgrind; and further documentation, see "
+#~ "<ulink url=\"https://kcachegrind.github.io\">the Web page</ulink>. Look "
+#~ "there for further installation and compile instructions."
+#~ msgstr ""
+#~ "&kcachegrind; er en del af KDE's kdesdk-pakke. For ikke-supporterede "
+#~ "deludgivelser, &callgrind; og yderligere dokumentation, se hjemmesiden på "
+#~ "<ulink url=\"http://kcachegrind.sf.net\"> http://kcachegrind.sf.net</"
+#~ "ulink>. Kig der for at finde yderligere installations- og "
+#~ "kompileringsinstruktioner."
+
+#~ msgid "Requirements"
+#~ msgstr "Krav"
+
+#, fuzzy
+#~| msgid ""
+#~| "In order to successfully use &kcachegrind;, you need &kde; 3.x. For "
+#~| "generating profile data, &cachegrind; or &calltree;/&callgrind; is "
+#~| "recommend."
+#~ msgid ""
+#~ "In order to use &kcachegrind;, you need &kde; 4.x. To generate profile "
+#~ "data, &cachegrind; or &calltree;/&callgrind; is recommended."
+#~ msgstr ""
+#~ "For at bruge &kcachegrind; med succes, har du brug for &kde; 3.x. For at "
+#~ "oprette profildata, anbefales &cachegrind; eller ;&callgrind;."
+
+#~ msgid "Compilation and Installation"
+#~ msgstr "Kompilering og installation"
+
+#~ msgid "&install.compile.documentation;"
+#~ msgstr "&install.compile.documentation;"
+
+#~ msgid "Configuration"
+#~ msgstr "Indstilling"
+
+#, fuzzy
+#~| msgid ""
+#~| "All configuration options are either in the configuration dialog or in "
+#~| "the context popup menus of the visualizations."
+#~ msgid ""
+#~ "All configuration options are either in the configuration dialog or in "
+#~ "the context menus of the views."
+#~ msgstr ""
+#~ "Alle indstillingsmuligheder findes enten i indstillingsdialogen eller i "
+#~ "de sammenhængsafhængige popopmenuer i graferne."
+
+#, fuzzy
+#~| msgid ""
+#~| "At first start, this area will be divided into a top and a bottom part, "
+#~| "each with different visualizations selectable by tabs. To move "
+#~| "visualization views, use the context menu of the tabs, and adjust the "
+#~| "splitters between visualizations. To quickly switch between different "
+#~| "visualization layouts, use View/Layouts/Duplicate, change the layout and "
+#~| "switch between layouts with View/Layout/Next (or, even better, use the "
+#~| "corresponding keyboard shortcuts)."
+#~ msgid ""
+#~ "At first start, this area will be divided into a top and a bottom part, "
+#~ "each with different visualizations selectable by tabs. To move "
+#~ "visualization views, use the context menu of the tabs, and adjust the "
+#~ "splitters between visualizations. To quickly switch between different "
+#~ "visualization layouts, use View/Layout/Duplicate, change the layout and "
+#~ "switch between layouts with View/Layout/Next (or, even better, use the "
+#~ "corresponding keyboard shortcuts)."
+#~ msgstr ""
+#~ "Ved første opstart er dette område opdelt i en top- og en bunddel, hver "
+#~ "med forskellige grafer der kan vælges med faneblade. Brug kontekstmenuen "
+#~ "i fanebladene for at flytte grafvisninger og justér opdelerne mellem "
+#~ "graferne. For hurtigskift mellem de forskellige graflayouter, bruger du "
+#~ "Vis/Layout/Duplikér, ændr layout og skift mellem layouter med Vis/Layout/"
+#~ "Næste (eller endnu bedre, de respektive tastaturgenveje.)"
+
+#~ msgid "<para>Parts Overview</para>"
+#~ msgstr "<para>Partoverblik</para>"
+
+#~ msgid "<para>Call Stack</para>"
+#~ msgstr "<para>Kaldstak</para>"
+
+#~ msgid "Visualization Area"
+#~ msgstr "Grafområde"
+
+#~ msgid "Visualizations"
+#~ msgstr "Grafer"
+
+#~ msgid "Direct Callers"
+#~ msgstr "Direkte kaldere"
+
+#~ msgid "Direct Callees"
+#~ msgstr "Direkte kaldede"
+
+#~ msgid "<guimenu>File</guimenu> <guimenuitem>Reload</guimenuitem>"
+#~ msgstr "<guimenu>Fil</guimenu> <guimenuitem>Genopfrisk</guimenuitem>"
+
+#~ msgid "The <guimenu>View</guimenu> Menu"
+#~ msgstr "<guimenu>Vis</guimenu>-menuen"
+
+#~ msgid ""
+#~ "<guimenu>View</guimenu> <guimenuitem>Primary Event Type</guimenuitem>"
+#~ msgstr ""
+#~ "<guimenu> Vis</guimenu> <guimenuitem>Primær begivenhedstype</guimenuitem>"
+
+#~ msgid "(To-do)"
+#~ msgstr "(Gøremål)"
+
+#~ msgid ""
+#~ "<guimenu>View</guimenu> <guimenuitem>Secondary Event Type</guimenuitem>"
+#~ msgstr ""
+#~ "<guimenu>Vis</guimenu> <guimenuitem>Sekundær begivenhedstype</guimenuitem>"
+
+#~ msgid "<guimenu>View</guimenu> <guimenuitem>Grouping</guimenuitem>"
+#~ msgstr "<guimenu>Vis</guimenu> <guimenuitem>Gruppering</guimenuitem>"
+
+#~ msgid "<guimenu>View</guimenu> <guimenuitem>Layout</guimenuitem>"
+#~ msgstr "<guimenu>Vis</guimenu> <guimenuitem>Udseende</guimenuitem>"
+
+#~ msgid "<guimenu>View</guimenu> <guimenuitem>Split</guimenuitem>"
+#~ msgstr "<guimenu>Vis</guimenu> <guimenuitem>Opdelt</guimenuitem>"
+
+#~ msgid "Glossary"
+#~ msgstr "Ordliste"
+
+#~ msgid "The following is a mixed list of terms."
+#~ msgstr "Det følgende er en blandet liste af udtryk."
+
+#~ msgid ""
+#~ "Profile Data Part (incorrectly used also: Trace Part): Data from a "
+#~ "profile data file."
+#~ msgstr ""
+#~ "Profileringsdata-part (forkert anvendt, også: Sporpart): Data fra en "
+#~ "profildatafil"
+
+#~ msgid "&kappname;"
+#~ msgstr "&kappname;"

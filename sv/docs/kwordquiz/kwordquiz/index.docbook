@@ -1,0 +1,676 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+ "dtd/kdedbx45.dtd" [
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Swedish "INCLUDE"
+><!-- change language only here -->
+]>
+
+<book id="kwordquiz" lang="&language;">
+
+<bookinfo>
+<title
+>Handbok &kwordquiz;</title>
+
+<authorgroup>
+<author
+><firstname
+>Peter</firstname
+> <surname
+>Hedlund</surname
+> <affiliation
+> <address
+><email
+>peter.hedlund@kdemail.net</email
+></address>
+</affiliation>
+</author>
+<othercredit role="translator"
+> <firstname
+>Stefan</firstname
+> <surname
+>Asserhäll</surname
+> <affiliation
+><address
+><email
+>stefan.asserhall@bredband.net</email
+></address
+></affiliation
+> <contrib
+>Översättare</contrib
+></othercredit
+> 
+</authorgroup>
+
+
+<copyright>
+  <year
+>2003</year>
+  <year
+>2004</year>
+  <year
+>2005</year>
+  <year
+>2008</year>
+  <holder
+>Peter B. Hedlund</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+
+<date
+>2023-07-04</date>
+<releaseinfo
+>Program 23.08</releaseinfo>
+
+<abstract>
+<para
+>&kwordquiz; är ett program för snabbkort och ordförrådsinlärning av &kde;. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>kdeedu</keyword>
+<keyword
+>Kwordquiz</keyword>
+<keyword
+>snabbkort</keyword>
+<keyword
+>ordförråd</keyword>
+<keyword
+>språk</keyword>
+<keyword
+>utbildning</keyword>
+<keyword
+>skola</keyword>
+<keyword
+>högskola</keyword>
+<keyword
+>universitet</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Inledning</title>
+<para
+>&kwordquiz; är ett verktyg som ger dig ett kraftfullt sätt att bemästra nya ordförråd. Det kan vara ett språk eller vilken annan sorts terminologi som helst. </para>
+<sect1 id="easy-to-use">
+<title
+>Enkelt att använda</title>
+
+<para
+>Du bygger upp dina egna ordförrådsdokument på ett enkelt och intuitivt sätt med &kwordquiz;. Den grundläggande layouten är ett kalkylblad med två kolumner, där du skriver in ordförrådsposter som du kan i ett formulär, och de som du vill lära dig i ett annat. Du ändrar kolumnernas rubriker för att motsvara det du övar på. </para>
+
+<sect2 id="quiz-types">
+<title
+>Provlägen</title>
+
+<para
+>När du har skrivit in ditt ordförråd, är du klar att börja ett prov. Kanske vill du börja med en snabbkortsession. Senare kan du gå vidare med ett flervalsprov eller utföra det kraftfulla provet med frågor och svar. Du får omedelbar återmatning om riktiga eller felaktiga svar och du har möjlighet att upprepa eventuella fel, vilket ytterligare förbättrar effektiviteten hos inlärningen. Om du behöver lite extra hjälp kan du använda tipsfunktionen. </para>
+</sect2>
+
+
+<sect2 id="practice-modes">
+<title
+>Övningslägen</title>
+
+<para
+>Du kan välja hur du vill öva. &kwordquiz; erbjuder tre olika lägen för att göra övningarna effektivare. De olika lägena gör det möjligt att låta provet gå igenom ordförrådet i sekvens eller i slumpmässig ordning i den ena eller båda riktningar. </para>
+</sect2>
+
+<sect2 id="vocabulary-documents">
+<title
+>Ordförrådsdokument</title>
+<para
+>&kwordquiz; kan öppna flera typer av ordförrådsdata. Standardformatet är <filename class="extension"
+>.kvtml</filename
+>, ett format som används av flera &kde;-program. &kwordquiz; kan också öppna <filename class="extension"
+>.wql</filename
+>-filer skapade av &kwordquiz; för &Windows;, <filename class="extension"
+>.csv</filename
+>-filer med text åtskild av kommatecken, <ulink url="http://www.vokabeln.de/v1/download.htm"
+><filename class="extension"
+>.voc</filename
+>-filer</ulink
+> skapade av den gamla versionen av Vokabeltrainer, <ulink url="https://sourceforge.net/projects/xdxf/files/dicts-XDXF/"
+><filename class="extension"
+>.xdxf</filename
+>-filer</ulink
+> och <filename class="extension"
+>.xml.gz</filename
+>-filer som skapats av de gamla versionerna av <ulink url="http://pauker.sourceforge.net"
+>Pauker</ulink
+>. </para>
+<para
+>&kwordquiz; kan spara ordförrådsdokument med flera olika format. Standardformatet är <filename class="extension"
+>.kvtml</filename
+>-formatet som används av andra &kde;-program. Ett annat tillgängligt alternativ är text åtskild av kommatecken, <filename class="extension"
+>.csv</filename
+>. </para>
+<para
+>Du kan ha flera filer öppna samtidigt, och enkelt kopiera eller flytta poster mellan filer. </para>
+</sect2>
+</sect1>
+</chapter>
+
+<chapter id="commands">
+<title
+>Kommandoreferens</title>
+<sect1 id="mode-menu">
+<title
+>Menyn Alternativ</title>
+<para
+>Menyn tillhandahåller tre olika lägen för provet, som inte är ömsesidigt uteslutande.</para>
+
+  <note
+><para
+>Menynamnen ändras för att motsvara kolumnrubrikerna för nuvarande aktiva ordförrådsdokument. Det valda läget gäller snabbkort, flervalsfrågor samt frågor och svar.</para>
+  </note>
+<variablelist>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Alternativ</guimenu
+> <guimenuitem
+> Blanda</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>Under provet anges värden i slumpmässig ordning, men varje värde behandlas bara en gång. </para>
+    </listitem>
+  </varlistentry>
+
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Alternativ</guimenu
+> <guimenuitem
+>Kolumn 1 -&gt; Kolumn 2</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>Under provet anges värden från kolumn 1 och du blir tillfrågad om motsvarande värden från kolumn 2. </para>
+    </listitem>
+  </varlistentry>
+
+  <varlistentry>
+    <term>
+      <menuchoice
+><guimenu
+>Alternativ</guimenu
+> <guimenuitem
+>Kolumn 2 -&gt; Kolumn</guimenuitem
+> </menuchoice>
+    </term>
+    <listitem>
+      <para
+>Under provet anges värden från kolumn 2 och du blir tillfrågad om motsvarande värden från kolumn 1. </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+</sect1>
+</chapter>
+
+<chapter id="welcome-page">
+<title
+>Välkomstsidan</title>
+
+<para
+>När du öppnar Kwordquiz hamnar du på välkomstsidan. Sidan listar alla tidigare öppnade kortlekar. Dessutom låter den dig skapa en ny kortlek, öppna en kortlek från en fil eller ladda ner en kortlek från Internet. Slutligen kan du också välja vilket huvudläge du vill använda. </para>
+
+<screenshot>
+  <screeninfo
+>Välkomstsidan</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-welcome.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Välkomstsidan</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</chapter>
+
+<chapter id="editor">
+<title
+>Ordförrådseditorn</title>
+
+<para
+>Ordförrådsdokumentets område ser ut som ett rutnät som liknar ett kalkylark. Rutnätet består av celler organiserade i två kolumner och ett antal rader. Varje kolumn och rad har en rubrik. Kolumnrubrikerna används för att ange rubriker i ordförrådsdokumentet. De kan anges genom att redigera den första raden. </para>
+
+<para
+>Du kan klicka i en av rutnätets celler för att göra den till den aktiva cellen. Du kan använda uppåt- och neråtpilarna för att flytta uppåt och neråt i tabellen och fliken för att gå till nästa element.</para>
+
+<screenshot>
+  <screeninfo
+>Ordförrådseditorn</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-editor.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Ordförrådseditorn</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<para
+>Du bygger ett ordförråd av parvisa poster i de två kolumnerna i dokumentet. Du kan skriva in text i den aktiva cellen genom att helt enkelt börja skriva. Cellen är då i redigeringsläge och du kan markera hela eller delar av texten. Du kan också redigera en cell genom att dubbelklicka på den eller genom att trycka på <keycap
+>F2</keycap
+> och göra ändringarna direkt i cellen. </para>
+<para
+>När du är klar med att skriva in en post, tryck på returtangenten så blir nästa cell automatiskt aktiv. På så sätt är det enkelt att skriva in flera poster. Det finns egentligen inte någon begränsning för hur många rader du kan ha i ett dokument. </para>
+</chapter>
+
+<chapter id="flashcard">
+
+<title
+>Snabbkortsession</title>
+
+<para
+>Välj Snabbkort i navigationspanelen för att starta en session med snabbkort för posterna i det aktiva ordförrådsdokumentet. Läget som valts i menyn <guimenu
+>Alternativ</guimenu
+> används. Om du byter alternativ under en session, startas sessionen om. </para>
+
+<para
+>Om du arbetar med långa uttryck, kan fönstrets storlek ändras för att göra mer utrymme tillgängligt. Teckenstorleken påverkar också hur mycket som får plats i olika delar av fönstret. </para>
+
+<screenshot>
+  <screeninfo
+>Snabbkortsession</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-flashcard.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Snabbkortsession</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Från början visas kortets framsida. Använd <guibutton
+>Kontrollera</guibutton
+> för att se andra sidan. </para>
+<para
+>För att gå till nästa kort, kan du antingen välja <guibutton
+>Jag vet</guibutton
+> för att räkna kortet som riktigt, eller <guibutton
+>Jag vet inte</guibutton
+> för att räkna kortet som felaktigt. </para>
+<para
+>Välj <guibutton
+>Upprepa felaktiga</guibutton
+> för att repetera korten som du har räknat som felaktiga. </para>
+<para
+>Välj <guibutton
+>Försök igen</guibutton
+> för att starta sessionen från början igen. Om du använder slumpmässigt läge blandas korten igen. </para>
+<para
+>Poängavdelningen längst upp på skärmen visar antal kort, antal kort du har sett, antal kort som räknas som riktiga och antal kort som räknas som felaktiga. </para>
+</chapter>
+
+<chapter id="multiple">
+
+<title
+>Flervalssession</title>
+
+<para
+>Välj Flerval på välkomstsidan för att starta ett flervalsprov med posterna i det aktiva ordförrådsdokumentet. Alternativet som valts i menyn <guimenu
+>Alternativ</guimenu
+> används. Om du byter alternativ under en session, startas sessionen om. </para>
+<para
+>Om du arbetar med långa uttryck, kan fönstrets storlek ändras för att göra mer utrymme tillgängligt. Teckenstorleken (som valts för editorn) påverkar också hur mycket som får plats i olika delar av fönstret. </para>
+<para
+>I exemplet nedan svarade användaren fel på föregående fråga. Han eller hon ska nu just svara på nästa fråga. </para>
+
+<screenshot>
+  <screeninfo
+>Flervalssession</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-multiple.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Flervalssession</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Alternativen visas längst upp till vänster. Välj det som du tror är rätt. Använd <guibutton
+>Kontrollera</guibutton
+> för att se om svaret är riktigt. Om du har aktiverat automatiskt läge med <menuchoice
+><guimenu
+>Inställningar</guimenu
+></menuchoice
+> kontrolleras ditt val omedelbart. </para>
+<para
+>Välj <guibutton
+>Upprepa felaktiga</guibutton
+> för att repetera korten som du har räknat som felaktiga. </para>
+<para
+>Välj <guibutton
+>Försök igen</guibutton
+> för att starta sessionen från början igen. Om du använder slumpmässigt läge blandas korten igen. </para>
+<para
+>Poängavdelningen längst upp på skärmen visar antal frågor, antal frågor du har besvarat, antal rätta svar och antal felaktiga svar. </para>
+</chapter>
+
+
+<chapter id="question-and-answer">
+
+<title
+>Session med frågor och svar</title>
+<para
+>Välj Frågor och svar i navigationspanelen för att starta en session med frågor och svar för posterna i det aktiva ordförrådet. Läget som valts i menyn <guimenu
+>Läge</guimenu
+> används. Om du byter läge under en session, startas sessionen om. </para>
+<para
+>Om du arbetar med långa uttryck, kan fönstrets storlek ändras för att göra mer utrymme tillgängligt. Teckenstorleken (som valts för editorn) påverkar också hur mycket som får plats i olika delar av fönstret. </para>
+<para
+>I exemplet nedan gav användaren ett riktigt svar på föregående fråga (för att se hur felaktiga svar hanteras, se kapitlet <link linkend="multiple"
+>Flerval</link
+>). Han eller hon ska nu just svara på nästa fråga. </para>
+
+<screenshot>
+  <screeninfo
+>Session med frågor och svar</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-qanda.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Session med frågor och svar</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Frågan visas i mitten. Skriv in svaret i redigeringsfältet. Använd <guibutton
+>Kontrollera</guibutton
+> eller returtangenten för att se om svaret är riktigt. </para>
+<para
+>Välj <guibutton
+>Tips</guibutton
+> för att se nästa riktiga bokstav i svaret. Under <menuchoice
+><guimenu
+>Inställningar</guimenu
+></menuchoice
+> kan du välja att räkna alla frågor där du använder tipsfunktionen som felaktiga. </para>
+<para
+>Välj <guibutton
+>Upprepa felaktiga</guibutton
+> för att repetera korten som du har räknat som felaktiga. </para>
+<para
+>Välj <guibutton
+>Försök igen</guibutton
+> för att starta sessionen från början igen. Om du använder slumpmässigt läge blandas korten igen. </para>
+<para
+>Poängavdelningen längst upp på skärmen visar antal frågor, antal frågor du har besvarat, antal rätta svar och antal felaktiga svar. </para>
+</chapter>
+
+<chapter id="fill-in-the-blank">
+<title
+>Fyll i luckan</title>
+
+<para
+>'Fyll i luckan' är ett kraftfullt sätt att öva med &kwordquiz;. Det är ett särskilt sorts prov med frågor och svar, som behöver beskrivas mer detaljerat. </para>
+
+<para
+>Betrakta följande tabell. Den skulle kunna vara ett ordförråd i &kwordquiz;: </para>
+
+<informaltable
+><tgroup cols="3">
+<thead>
+<row>
+<entry
+></entry>
+<entry
+>Engelska</entry>
+<entry
+>Tyska</entry>
+</row>
+</thead>
+
+<tbody>
+<row>
+<entry
+>1</entry>
+<entry
+>We own a computer</entry>
+<entry
+>Wir besitzen einen Computer</entry>
+</row>
+
+<row>
+<entry
+>2</entry>
+<entry
+>We own a computer</entry>
+<entry
+>Wir [besitzen] einen Computer</entry>
+</row>
+
+<row>
+<entry
+>3</entry>
+<entry
+>We own a computer</entry>
+<entry
+>Wir [besitzen einen] Computer</entry>
+</row>
+
+<row>
+<entry
+>4</entry>
+<entry
+>We own a computer</entry>
+<entry
+>Wir [besitzen] einen [Computer]</entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+
+<para
+>Det viktiga att observera är placeringen av hakparenteserna. De talar om för &kwordquiz; hur provet ska utföras. </para>
+<para
+>För 1 finns inga hakparenteser. Med antagandet att frågan är på engelska och svaret på tyska, måste du skriva in hela uttrycket 'Wir besitzen einen Computer' för ett riktigt svar. </para>
+<para
+>För 2 skulle &kwordquiz; visa frågan, men också 'Wir ........ einen Computer'. Det är nog att skriva 'besitzen' för ett riktigt svar. </para>
+<para
+>Rad 3 visar att en lucka kan bestå av mer än ett ord. Det riktiga svaret är 'besitzen einen'. </para>
+<para
+>För 4 finns två åtskilda luckor. För att ange det i svaret måste du skriva 'besitzen; Computer', dvs. skilja luckorna med ett semikolon för att få rätt svar. </para>
+<para
+>Markerade luckor är bara relevanta om de finns i svaret. Annars ignoreras hakparenteserna. Dessutom har hakparenteser ingen effekt i flervalsprov. För att förenkla att skapa ordförråd med 'Fyll i luckan' finns det verktygsrads- och menykommandon för att markera och avmarkera luckor. Du kan naturligtvis också bara skriva in hakparenteserna. &kwordquiz; kontrollerar syntaxen. Om texten visas med rött är det något fel på hakparenteserna och ett prov kan inte startas. </para>
+</chapter>
+
+<chapter id="printing">
+<title
+>Utskrift</title>
+<para
+>&kwordquiz; tillhandahåller möjlighet att skriva ut ordförrådsdokument på flera olika sätt. Utskriftsalternativen är tillgängliga i &kwordquiz; editor. När du väljer <guibutton
+>Skriv ut...</guibutton
+> visas en meny där du kan välja att skriva ut dokumentet som en ordförrådslista (dvs. som det visas i editorn), ett ordförrådsprov eller som snabbkort. När det väl är valt, visas &kde;:s vanliga utskriftdialogruta. </para>
+<screenshot>
+  <screeninfo
+>Alternativ för utskrift av ordförråd</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-type.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Alternativ för utskrift av ordförråd</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<formalpara>
+<title
+>Ordförrådslista</title>
+<para
+>Ordförrådet skrivs ut som det visas i editorn. Det omfattar teckensnitt, radhöjder och kolumnbredder. Försäkra dig om att kolumnerna är smala nog att få plats på sidan.</para>
+</formalpara>
+<screenshot>
+  <screeninfo
+>Skriv ut ordförrådslista</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-list.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Skriv ut ordförrådslista</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<formalpara>
+<title
+>Ordförrådsprov</title>
+<para
+>Ordförrådet skrivs ut som det visas i editorn, utom att högra kolumnen lämnas tom och en tredje kolumn för poängsättning läggs till. Inställningar som används omfattar teckensnitt, radhöjder och kolumnbredder. Försäkra dig om att kolumnerna är smala nog att få plats på sidan.</para>
+</formalpara>
+<screenshot>
+  <screeninfo
+>Skriv ut ordförrådsprov</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-exam.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Skriv ut ordförrådsprov</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<formalpara>
+<title
+>Snabbkort</title>
+<para
+>Två 3 x 5 tum kort per sida. Korten skrivs alltid ut med liggande format.</para>
+</formalpara>
+<screenshot>
+  <screeninfo
+>Skriv ut snabbkort</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-print-flashcard.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Skriv ut snabbkort</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+</chapter>
+
+<chapter id="dialogs">
+<title
+>Dialogrutor</title>
+
+<sect1 id="dlg-config-general">
+<title
+>Allmänna inställningar</title>
+<screenshot>
+  <screeninfo
+>Allmänna inställningar</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-config.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Allmänna inställningar</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Du kan välja vilken typ av session som ett nyöppnat ordförråd ska börja med. Att gå direkt till ett prov kan förhindra att du ser några poster i förväg. </para>
+<para
+>Du kan välja om poängen ska visas som procentvärden istället för absoluta tal för alla sessioner. </para>
+<tip>
+<para
+>Observera att inställningarna verkställs automatiskt. </para>
+</tip>
+</sect1>
+
+<sect1 id="dlg-languages">
+<title
+>Kolumninställningar</title>
+<para
+>Du kan öppna dialogrutan från editorn.</para>
+<screenshot>
+  <screeninfo
+>Kolumninställningar</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="kwq-dlg-languages.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>Kolumninställningar</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+<para
+>Använd dialogrutan för att definiera kolumntitlarna och kolumnspråken. Klicka på ett språk för att välja det eller stäng dialogrutan för att ignorera eventuella ändringar. </para>
+</sect1>
+</chapter>
+
+<chapter id="credits">
+
+<title
+>Tack till och licens</title>
+
+<para
+>&kwordquiz; </para>
+<para
+>Program copyright 2003-2008 Peter B. Hedlund <email
+>peter.hedlund@kdemail.net</email
+> 2023 Carl Schwan <email
+>carl@carlchwan.eu</email
+> </para>
+
+<para
+>Dokumentation copyright 2003-2008 Peter B. Hedlund <email
+>peter.hedlund@kdemail.net</email
+> </para>
+
+<para
+>Översättning Stefan Asserhäll <email
+>stefan.asserhall@bredband.net</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes: nil
+sgml-general-insert-case: lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->

@@ -1,0 +1,1735 @@
+# Translation of kmymoney_details-impexp-csv.po to Catalan
+# Copyright (C) 2020-2025 This_file_is_part_of_KDE
+# This file is distributed under the license LGPL version 2.1 or
+# version 3 or later versions approved by the membership of KDE e.V.
+#
+# SPDX-FileCopyrightText: 2020 Antoni Bella Pérez <antonibella5@yahoo.com>
+# SPDX-FileCopyrightText: 2020, 2021, 2023, 2024, 2025 Josep M. Ferrer <txemaq@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: kmymoney\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 12:04+0000\n"
+"PO-Revision-Date: 2025-01-29 14:04+0100\n"
+"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
+"Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 22.12.3\n"
+
+#. Tag: author
+#: details-impexp-csv.docbook:3
+#, no-c-format
+msgid "&Allan.Anderson;"
+msgstr "&Allan.Anderson;"
+
+#. Tag: author
+#: details-impexp-csv.docbook:4 details-impexp-csv.docbook:818
+#, no-c-format
+msgid "&Jack.H.Ostroff; &Jack.H.Ostroff.mail;"
+msgstr "&Jack.H.Ostroff; &Jack.H.Ostroff.mail;"
+
+#. Tag: title
+#: details-impexp-csv.docbook:6
+#, no-c-format
+msgid "CSV Importer Plugin"
+msgstr "Connector Importador de CSV"
+
+#. Tag: title
+#: details-impexp-csv.docbook:8
+#, no-c-format
+msgid "Reasons for importing CSV Files"
+msgstr "Raons per a importar fitxers CSV"
+
+#. Tag: para
+#: details-impexp-csv.docbook:9
+#, no-c-format
+msgid ""
+"In general, it is preferable to import OFX. However, not all institutions "
+"provide data in that format. CSV (comma separated value) files are almost "
+"always available, sometimes described as Excel or spreadsheet files. Also, "
+"they can often be created fairly easily by capturing the data you want to "
+"import, such as in a text file, and manually editing it."
+msgstr ""
+"En general, és preferible importar OFX. No obstant això, no totes les "
+"institucions proporcionen dades en aquest format. Gairebé sempre estaran "
+"disponibles els fitxers CSV (valors separats per comes), de vegades es "
+"descriuen com a fitxers Excel o de full de càlcul. A més, sovint es poden "
+"crear amb força facilitat capturant les dades que voleu importar, com en un "
+"fitxer de text, i editant-lo manualment."
+
+#. Tag: para
+#: details-impexp-csv.docbook:17
+#, no-c-format
+msgid ""
+"The initial focus of the CSV Importer was on handling data from bank "
+"statements, but the ability to also import some investment statements was "
+"added. In addition, it has been further enhanced to import both currency and "
+"stock prices. The original code for this was initially created, before "
+"becoming a CSV importer, to produce QIF files from CSV files, which could "
+"then be imported. This ability is still present, but is likely to be "
+"removed, as focus is now on directly importing CSV files. Also, &kmymoney; "
+"has the native ability to <link linkend=\"details.impexp.qifexp\">export QIF "
+"files</link>, so there is no longer a real reason to produce a QIF file from "
+"a CSV file."
+msgstr ""
+"L'enfocament inicial de l'Importador de CSV era gestionar les dades dels "
+"extractes bancaris, però també es va afegir la capacitat d'importar alguns "
+"extractes d'inversió. A més, després es va millorar per a importar "
+"cotitzacions de divises i valors. El codi original es va crear inicialment, "
+"abans de convertir-se en un importador de CSV, per a produir fitxers QIF a "
+"partir de fitxers CSV, que després es podrien importar. Aquesta capacitat "
+"encara està present, però és probable que s'elimini, ja que ara s'enfoca a "
+"importar directament fitxers CSV. A més, el &kmymoney; té la capacitat "
+"nativa d'<link linkend=\"details.impexp.qifexp\">exportar fitxers QIF</"
+"link>, de manera que ja no hi ha cap motiu concret per a produir un fitxer "
+"QIF a partir d'un fitxer CSV."
+
+#. Tag: title
+#: details-impexp-csv.docbook:30
+#, no-c-format
+msgid "Getting the plugin"
+msgstr "Obtenir el connector"
+
+#. Tag: para
+#: details-impexp-csv.docbook:31
+#, no-c-format
+msgid ""
+"The CSV importer is one of the newer features to have been added to "
+"&kmymoney; in the form of a plugin. However, as with other plugins, the CSV "
+"Importer is included with the core &kmymoney; source code, so it should be "
+"available in all &Linux; distribution versions, as well as the versions for "
+"other platforms made available through the &kmymoney; web site. The menu "
+"choice to import CSV files should automatically show up under the "
+"<menuchoice> <guimenu>File</guimenu> <guisubmenu>Import</guisubmenu> </"
+"menuchoice> submenu."
+msgstr ""
+"L'importador de CSV és una de les funcionalitats més noves que s'han afegit "
+"al &kmymoney; en forma de connector. No obstant això, igual que amb altres "
+"connectors, l'importador de CSV s'inclou amb el codi font del nucli del "
+"&kmymoney;, de manera que hauria d'estar disponible en totes les versions de "
+"les distribucions &Linux;, així com les versions per a altres plataformes "
+"disponibles a través del lloc web del &kmymoney;. L'opció de menú per a "
+"importar fitxers CSV hauria de mostrar-se automàticament en el submenú "
+"<menuchoice> <guimenu>Fitxer</guimenu> <guisubmenu>Importa</guisubmenu> </"
+"menuchoice>."
+
+#. Tag: para
+#: details-impexp-csv.docbook:41
+#, no-c-format
+msgid ""
+"To ensure that it is enabled within &kmymoney;, check the <menuchoice> "
+"<guimenu>Settings</guimenu> <guimenuitem>Configure &kmymoney;...</"
+"guimenuitem> </menuchoice> menu item, select <guilabel>Plugins</guilabel> on "
+"the left pane, and look for the <guilabel>CSV Importer</guilabel> in the "
+"displayed list of plugins. If the CSV importer does not seem to be installed "
+"in your version, the first place to check is in the same place you got your "
+"base &kmymoney; package. See if a later version is available, or if the "
+"importer is available as a separate package."
+msgstr ""
+"Per a assegurar-vos que està habilitat dins del &kmymoney;, comproveu "
+"l'element de menú <menuchoice> <guimenu>Arranjament</guimenu> "
+"<guimenuitem>Configura el &kmymoney;...</guimenuitem> </menuchoice>, "
+"seleccioneu <guilabel>Connectors</guilabel> a la subfinestra esquerra i "
+"cerqueu l'importador de CSV <guilabel></guilabel> a la llista de connectors "
+"visualitzada. Si l'importador de CSV no sembla que estigui instal·lat a la "
+"versió, el primer lloc per a comprovar-ho serà al mateix lloc on vàreu "
+"obtenir el paquet base del &kmymoney;. Vegeu si hi ha disponible una versió "
+"posterior o si l'importador està disponible com a un paquet separat."
+
+#. Tag: para
+#: details-impexp-csv.docbook:51
+#, no-c-format
+msgid ""
+"If you have built from source, there should be no additional requirements. "
+"The &kmymoney; build process should detect the plugin source and compile the "
+"plugin. There are configuration settings which can be used to exclude this "
+"or other plugins from being built, but these should rarely be needed."
+msgstr ""
+"Si l'heu construït a partir del codi font, no hi hauria d'haver requisits "
+"addicionals. El procés de construcció del &kmymoney; hauria de detectar el "
+"codi font del connector i compilar el connector. Hi ha paràmetres de "
+"configuració que es poden utilitzar per a excloure aquest o altres "
+"connectors de ser construïts, però aquests rarament haurien de ser "
+"necessaris."
+
+#. Tag: title
+#: details-impexp-csv.docbook:59
+#, no-c-format
+msgid "Importing a CSV file"
+msgstr "Importar un fitxer CSV"
+
+#. Tag: para
+#: details-impexp-csv.docbook:60
+#, no-c-format
+msgid ""
+"To import a CSV file, choose the importer from the main menu: <menuchoice> "
+"<guimenu>File</guimenu> <guisubmenu>Import</guisubmenu> <guimenuitem>CSV...</"
+"guimenuitem> </menuchoice>. If CSV does not show up under Import, the CSV "
+"Importer Plugin is not installed correctly or is not enabled. Please see the "
+"previous section."
+msgstr ""
+"Per a importar un fitxer CSV, trieu l'importador des del menú principal: "
+"<menuchoice><guimenu>Fitxer</guimenu><guisubmenu>Importa</guisubmenu> "
+"<guimenuitem>CSV...</guimenuitem></menuchoice>. Si no es mostra CSV sota "
+"Importa, el connector Importador de CSV no està instal·lat correctament o no "
+"està activat. Consulteu la secció anterior."
+
+#. Tag: para
+#: details-impexp-csv.docbook:68
+#, no-c-format
+msgid ""
+"The CSV Importer is presented in the form of a wizard, with a separate page "
+"for each individual step of the process."
+msgstr ""
+"L'importador de CSV es presenta en forma d'assistent, amb una pàgina "
+"separada per a cada pas individual del procés."
+
+#. Tag: title
+#: details-impexp-csv.docbook:73
+#, no-c-format
+msgid "CSV Import Wizard: Start"
+msgstr "Assistent de la importació de CSV: Inici"
+
+#. Tag: para
+#: details-impexp-csv.docbook:74
+#, no-c-format
+msgid ""
+"When launched, the CSV Importer displays the <guilabel>Start</guilabel> or "
+"<guilabel>File</guilabel> page. On the left is a list of the steps of the "
+"import process, with the current one highlighted. The upper right area is "
+"where data to be imported will be displayed; before that it shows some brief "
+"instructions relevant to the current stage of the wizard. Below that is a "
+"set of radiobuttons for selection of the type of data to be imported. That "
+"list currently includes <guilabel>Banking</guilabel>, <guilabel>Investment</"
+"guilabel>, <guilabel>Currency prices</guilabel>, and <guilabel>Stock prices</"
+"guilabel>. Next, there is a profile selector dropdown, which is enabled if "
+"once the radio button has been selected for one of the import file types."
+msgstr ""
+"Quan es llança, l'importador de CSV mostra la pàgina <guilabel>Inici</"
+"guilabel> o <guilabel>Fitxer</guilabel>. A l'esquerra hi ha una llista dels "
+"passos del procés d'importació, amb l'actual ressaltat. L'àrea superior "
+"dreta és on es mostraran les dades a importar; abans d'això, mostra algunes "
+"instruccions breus rellevants per a la fase actual de l'assistent. A "
+"continuació es mostra un conjunt de botons de ràdio per a la selecció del "
+"tipus de dades a importar. Aquesta llista actualment inclou <guilabel>Bancs</"
+"guilabel>, <guilabel>Inversió</guilabel>, <guilabel>Cotitzacions de divises</"
+"guilabel> i <guilabel>Cotitzacions de valors</guilabel>. A continuació, hi "
+"ha un selector desplegable de perfils, que està habilitat una vegada "
+"seleccionat el botó d'opció per a un dels tipus de fitxer d'importació."
+
+#. Tag: screeninfo
+#: details-impexp-csv.docbook:88
+#, no-c-format
+msgid "<screeninfo>csv import wizard: start</screeninfo>"
+msgstr "<screeninfo>Assistent de la importació de CSV: Inici</screeninfo>"
+
+#. Tag: phrase
+#: details-impexp-csv.docbook:94
+#, no-c-format
+msgid "<phrase>csv import wizard: start</phrase>"
+msgstr "<phrase>Assistent de la importació de CSV: Inici</phrase>"
+
+#. Tag: title
+#: details-impexp-csv.docbook:100
+#, no-c-format
+msgid "CSV Import Profiles"
+msgstr "Perfils d'importació de CSV"
+
+#. Tag: para
+#: details-impexp-csv.docbook:101
+#, no-c-format
+msgid ""
+"Each type of CSV file to be imported requires specification of several "
+"details regarding the expected formatting of the data, as described in the "
+"following sections. Not only do the details differ for the different types "
+"of data files imported, it is possible to need different configurations for "
+"the same type of data from different sources. So you do not need to enter "
+"all those details each time you import a file, the CSV Importer allows you "
+"to specify the details once, and save them in a named profile."
+msgstr ""
+"Cada tipus de fitxer CSV a importar requereix l'especificació de diversos "
+"detalls sobre la formatació esperada de les dades, tal com es descriu a les "
+"seccions següents. No només els detalls difereixen per als diferents tipus "
+"de fitxers de dades importats, és possible que es necessitin configuracions "
+"diferents per al mateix tipus de dades de fonts diferents. Per tant, no cal "
+"que introduïu tots aquests detalls cada vegada que importeu un fitxer, "
+"l'importador de CSV us permet especificar els detalls una vegada, i desar-"
+"los en un perfil amb nom."
+
+#. Tag: para
+#: details-impexp-csv.docbook:111
+#, no-c-format
+msgid ""
+"The name of a CSV import profile is completely arbitrary, but will be easier "
+"to remember if it reflects both the type of data being imported (bank, "
+"credit card, investment, ...) and the source of the data. There is no need "
+"to reference the account into which the data is imported, and it is possible "
+"to use the same profile for importing into more than one account, such as "
+"two checking accounts at the same bank."
+msgstr ""
+"El nom d'un perfil d'importació de CSV és completament arbitrari, però serà "
+"més fàcil de recordar si reflecteix tant el tipus de dades que s'importen "
+"(banc, targeta de crèdit, inversió...) i la font de les dades. No hi ha "
+"necessitat de fer referència al compte en el qual s'importen les dades, i és "
+"possible utilitzar el mateix perfil per a importar en més d'un compte, com "
+"dos comptes corrents en el mateix banc."
+
+#. Tag: para
+#: details-impexp-csv.docbook:120
+#, no-c-format
+msgid ""
+"The profile selector dropdown includes the names of all CSV Importer "
+"profiles you have previously created, and it also lets you type the name of "
+"a new profile. Below the profile selector dropdown, there are three buttons. "
+"When you click <guilabel>Add</guilabel>, which is always enabled, a new "
+"profile will be created with the name entered in the dropdown. Nothing will "
+"happen if that field is empty or if it displays the name of an existing "
+"profile. As you proceed through the rest of the CSV import wizard, the "
+"various configuration settings you enter or modify will be saved in the "
+"selected profile."
+msgstr ""
+"El desplegable del selector de perfils inclou els noms de tots els perfils "
+"de l'importador de CSV que heu creat prèviament, i també us permet escriure "
+"el nom d'un perfil nou. A sota de la llista desplegable del selector de "
+"perfils, hi ha tres botons. Quan feu clic a <guilabel>Afegeix</guilabel>, "
+"que sempre està activat, es crearà un perfil nou amb el nom introduït al "
+"desplegable. No passarà res si aquest camp està buit o si mostra el nom d'un "
+"perfil existent. A mesura que procediu a través de la resta de l'assistent "
+"de l'importador de CSV, les diverses opcions de configuració que introduïu o "
+"modifiqueu es desaran en el perfil seleccionat."
+
+#. Tag: para
+#: details-impexp-csv.docbook:131
+#, no-c-format
+msgid ""
+"If you have previously created one or more profiles, the other two buttons "
+"will be enabled. If you click <guilabel>Remove</guilabel>, the profile named "
+"in the dropdown will be deleted. If you click <guilabel>Rename</guilabel>, "
+"then alter the name displayed in the dropdown, and click <guilabel>Rename</"
+"guilabel> again, the profile will be renamed accordingly."
+msgstr ""
+"Si prèviament havíeu creat un o més perfils, s'habilitaran els altres dos "
+"botons. Si feu clic a <guilabel>Elimina</guilabel>, el perfil anomenat al "
+"desplegable s'eliminarà. Si feu clic a <guilabel>Canvia el nom</guilabel>, "
+"llavors modificareu el nom que es mostra al desplegable, i feu clic a "
+"<guilabel>Canvia el nom</guilabel> de nou, el perfil es canviarà en "
+"conseqüència."
+
+#. Tag: para
+#: details-impexp-csv.docbook:139
+#, no-c-format
+msgid ""
+"Next to the profile selector, there is a <guilabel>Skip setup</guilabel> "
+"checkbox. Initially, you should not select this checkbox. Once you have set "
+"up a profile and finished the wizard, all the configuration parameters you "
+"entered are saved in the resource file under the profile name. The next time "
+"you use that same profile, the parameters will be loaded into the UI (User "
+"Interface). The wizard would then plod through the following pages of "
+"parameters that you won't need to change. So, once you are happy with a "
+"profile, it may be helpful to check this box. The wizard will then move "
+"directly to the final page, and, assuming no problems are found, you just "
+"have to click <guilabel>Import</guilabel>."
+msgstr ""
+"Al costat del selector de perfils hi ha una casella de selecció "
+"<guilabel>Omet la configuració</guilabel>. Inicialment, no hauríeu de "
+"seleccionar aquesta casella de selecció. Una vegada hàgiu configurat un "
+"perfil i hàgiu finalitzat l'assistent, tots els paràmetres de configuració "
+"es desaran al fitxer de recursos amb el nom del perfil. La vegada següent "
+"que utilitzeu aquest mateix perfil, els paràmetres es carregaran a la "
+"interfície d'usuari. L'assistent anirà a través de les pàgines següents de "
+"paràmetres que no necessitareu canviar. Per tant, una vegada esteu satisfet "
+"amb un perfil, podria ser útil marcar aquest quadre. L'assistent es mourà "
+"directament a la pàgina final i, suposant que no es trobin problemes, només "
+"haureu de fer clic a <guilabel>Importa</guilabel>."
+
+#. Tag: para
+#: details-impexp-csv.docbook:151
+#, no-c-format
+msgid ""
+"At the bottom there is a <guilabel>Select File</guilabel> button. Clicking "
+"this will bring up a file selector dialog to let you choose the file to "
+"import. At the bottom of the remaining pages of the wizard are buttons to go "
+"<guibutton>&lt; Back</guibutton> to the previous step of the wizard, move on "
+"to the <guilabel>Next &gt;</guilabel> step, or <guibutton>Cancel</guibutton> "
+"the import."
+msgstr ""
+"A la part inferior hi ha un botó <guilabel>Tria el fitxer</guilabel>. En fer-"
+"hi clic s'obrirà un diàleg de selecció de fitxers que permet triar el fitxer "
+"a importar. A la part inferior de les pàgines restants de l'assistent hi ha "
+"botons per a anar <guibutton>&lt; Enrere</guibutton> al pas anterior de "
+"l'assistent, passar al pas <guilabel>Següent &gt;</guilabel>, o "
+"<guibutton>Cancel·la</guibutton> la importació."
+
+#. Tag: para
+#: details-impexp-csv.docbook:159
+#, no-c-format
+msgid ""
+"To review, on the Start page of the wizard, first select the checkbox for "
+"the type of data you are importing. In the profile selector dropdown, you "
+"can select the name of a previously created CSV Importer profile, or enter a "
+"new name, possibly the name of the account into which you wish to import, "
+"and click <guilabel>Add</guilabel>. Finally, click <guilabel>Select File</"
+"guilabel>, and a file selector dialog will open, where you select the CSV "
+"file you wish to import."
+msgstr ""
+"Per a revisar, a la pàgina d'inici de l'assistent, seleccioneu primer la "
+"casella de selecció per al tipus de dades que esteu important. Al "
+"desplegable del selector de perfils, podeu seleccionar el nom d'un perfil "
+"d'importació CSV creat prèviament, o introduir un nom nou, possiblement el "
+"nom del compte al qual voleu importar, i feu clic a <guilabel>Afegeix</"
+"guilabel>. Finalment, feu clic a <guilabel>Tria el fitxer</guilabel>, i "
+"s'obrirà un diàleg de selecció de fitxers, on seleccionareu el fitxer CSV "
+"que voleu importar."
+
+#. Tag: title
+#: details-impexp-csv.docbook:169
+#, no-c-format
+msgid "CSV Import Wizard: Separators"
+msgstr "Assistent de la importació de CSV: Separadors"
+
+#. Tag: para
+#: details-impexp-csv.docbook:170
+#, no-c-format
+msgid ""
+"After opening your selected data file, the wizard will advance to the "
+"<guilabel>Separators</guilabel> page, and you should now see your data."
+msgstr ""
+"Després d'obrir el fitxer de dades seleccionat, l'assistent avançarà fins a "
+"la pàgina <guilabel>Separadors</guilabel>, i hauríeu de veure les dades."
+
+#. Tag: screeninfo
+#: details-impexp-csv.docbook:176
+#, no-c-format
+msgid "<screeninfo>csv import wizard: separators</screeninfo>"
+msgstr "<screeninfo>Assistent de la importació de CSV: Separadors</screeninfo>"
+
+#. Tag: phrase
+#: details-impexp-csv.docbook:182
+#, no-c-format
+msgid "<phrase>csv import wizard: separators</phrase>"
+msgstr "<phrase>Assistent de la importació de CSV: Separadors</phrase>"
+
+#. Tag: para
+#: details-impexp-csv.docbook:188
+#, no-c-format
+msgid ""
+"It may appear that the data displayed in the upper section of the plugin "
+"window may be edited, and in fact they may, but any edits are not kept. The "
+"table is purely for display, not for editing. The input file is never "
+"altered by the CSV Importer, and the data actually imported comes from the "
+"input file, not from the display. The one exception to this is covered in "
+"<link linkend=\"details.impexp.csv.secsym\">Securities and Symbols</link> "
+"below."
+msgstr ""
+"Podria semblar que les dades que es mostren a la secció superior de la "
+"finestra del connector poden editar-se, i de fet es pot, però no es "
+"conservarà l'edició. La taula només és per a mostrar, no per a editar. "
+"L'importador de CSV no alterarà mai el fitxer d'entrada, i les dades "
+"realment importades provenen del fitxer d'entrada, no de la pantalla. "
+"L'única excepció a això està coberta en <link linkend=\"details.impexp.csv."
+"secsym\">Títols i símbols</link> a continuació."
+
+#. Tag: para
+#: details-impexp-csv.docbook:198
+#, no-c-format
+msgid ""
+"The CSV Importer should have detected the appropriate <guilabel>Encoding</"
+"guilabel>, <guilabel>Field Delimiter</guilabel>, and <guilabel>Text "
+"Delimiter</guilabel>. You can change the encoding if the program did not "
+"choose correctly. If you need to change the Field Delimiter, such as if your "
+"data is actually tab delimited, and not a comma delimited, be aware that "
+"doing so will reset any field choices you may already have made. Generally "
+"the quote (&quot;) is the correct text delimiter, but you may change it as "
+"necessary. Click <guibutton>Next</guibutton> to proceed."
+msgstr ""
+"L'importador de CSV hauria d'haver detectat la <guilabel>Codificació</"
+"guilabel> apropiada, el <guilabel>Delimitador de camp</guilabel> i el "
+"<guilabel>Delimitador de text</guilabel>. Podeu canviar la codificació si el "
+"programa no l'ha triat correctament. Si necessiteu canviar el delimitador de "
+"camp, com ara si les dades estan delimitades per tabulacions, i no amb el "
+"delimitador de coma, tingueu en compte que si ho feu, es restabliran les "
+"opcions de camp que ja hàgiu fet. En general, la cometa (&quot;) és el "
+"delimitador de text correcte, però podeu canviar-ho segons sigui necessari. "
+"Feu clic a <guibutton>Següent</guibutton> per a continuar."
+
+#. Tag: title
+#: details-impexp-csv.docbook:210
+#, no-c-format
+msgid "CSV Import Wizard: Rows"
+msgstr "Assistent de la importació de CSV: Files"
+
+#. Tag: para
+#: details-impexp-csv.docbook:211
+#, no-c-format
+msgid ""
+"You will now be on the <guilabel>Rows</guilabel> or <guilabel>Lines</"
+"guilabel> page. Here, you indicate if any lines should be ignored at the "
+"beginning or end of the file."
+msgstr ""
+"Ara estareu a la pàgina <guilabel>Files</guilabel> o <guilabel>Línies</"
+"guilabel>. Aquí, indiqueu si s'ha d'ignorar qualsevol línia al començament o "
+"al final del fitxer."
+
+#. Tag: screeninfo
+#: details-impexp-csv.docbook:218
+#, no-c-format
+msgid "<screeninfo>csv import wizard: rows</screeninfo>"
+msgstr "<screeninfo>Assistent de la importació de CSV: Files</screeninfo>"
+
+#. Tag: phrase
+#: details-impexp-csv.docbook:224
+#, no-c-format
+msgid "<phrase>csv import wizard: rows</phrase>"
+msgstr "<phrase>Assistent de la importació de CSV: Files</phrase>"
+
+#. Tag: para
+#: details-impexp-csv.docbook:229
+#, no-c-format
+msgid ""
+"This page allows you to adjust the import to ignore header and footer rows "
+"at the beginning or end of the file, which do not actually contain data to "
+"be imported."
+msgstr ""
+"Aquesta pàgina permet ajustar la importació per a ignorar les files de "
+"capçalera i peu de pàgina al començament o al final del fitxer, que en "
+"realitat no contenen dades a importar."
+
+#. Tag: title
+#: details-impexp-csv.docbook:234
+#, no-c-format
+msgid "Start line"
+msgstr "Línia inicial"
+
+#. Tag: para
+#: details-impexp-csv.docbook:235
+#, no-c-format
+msgid ""
+"Set this so the importer skips any header lines in the file. Your choice "
+"will be saved in this profile for future use. The start and end lines "
+"interact, and the start line may not be higher than the end line, nor may it "
+"be higher then the actual number of lines in the file. If the "
+"<guilabel>Start line</guilabel> selector does not respond, check the end "
+"line setting."
+msgstr ""
+"Establiu això perquè l'importador ometi qualsevol línia de capçalera al "
+"fitxer. L'elecció es desarà en aquest perfil per a ús futur. Les línies "
+"inicial i final interactuen, i la línia inicial no podrà ser més gran que la "
+"línia final, ni tampoc pot ser més gran al nombre real de línies al fitxer. "
+"Si el selector de la <guilabel>Línia inicial</guilabel> no respon, marqueu "
+"l'opció de la línia final."
+
+#. Tag: title
+#: details-impexp-csv.docbook:244
+#, no-c-format
+msgid "End line"
+msgstr "Línia final"
+
+#. Tag: para
+#: details-impexp-csv.docbook:245
+#, no-c-format
+msgid ""
+"The importer will automatically set this to the last line in the file, or to "
+"the setting last saved. You will only need to adjust it if there are footer "
+"lines in the file the importer should ignore. Otherwise, you are likely to "
+"get a data error warning when the plugin attempts to parse incorrect data. "
+"Again, if the <guilabel>End line</guilabel> selector does not respond, check "
+"the <guilabel>Start line</guilabel> setting."
+msgstr ""
+"L'importador configurarà això automàticament a l'última línia del fitxer o a "
+"l'última configuració desada. Només haureu d'ajustar-ho si hi ha línies de "
+"peu de pàgina al fitxer que l'importador hagi d'ignorar. Altrament, és "
+"probable que rebeu un avís d'error en les dades quan el connector intenti "
+"analitzar les dades incorrectes. De nou, si no respon el selector de "
+"<guilabel>Línia final</guilabel>, marqueu l'opció de la <guilabel>Línia "
+"inicial</guilabel>."
+
+#. Tag: para
+#: details-impexp-csv.docbook:255
+#, no-c-format
+msgid ""
+"Above these two fields is a <guilabel>Header contains account name or "
+"number</guilabel> checkbox. If checked, the importer will look in the lines "
+"above the start line for the name of number of the account to use for the "
+"import. If not, you will be prompted for that information."
+msgstr ""
+"Per sobre d'aquests dos camps hi ha una casella de selecció "
+"<guilabel>Capçalera que conté el nom del compte o el número</guilabel>. Si "
+"està marcada, l'importador cercarà en les línies de dalt de la línia d'inici "
+"el nom del número del compte que s'utilitzarà per a la importació. Si no, se "
+"us demanarà aquesta informació."
+
+#. Tag: para
+#: details-impexp-csv.docbook:262
+#, no-c-format
+msgid ""
+"When you are ready, click <guilabel>Next</guilabel> to proceed to the next "
+"step."
+msgstr ""
+"Quan estigueu preparat, feu clic a <guilabel>Següent</guilabel> per a "
+"continuar al pas següent."
+
+#. Tag: title
+#: details-impexp-csv.docbook:267
+#, no-c-format
+msgid "CSV Import Wizard: Columns"
+msgstr "Assistent de la importació de CSV: Columnes"
+
+#. Tag: para
+#: details-impexp-csv.docbook:268
+#, no-c-format
+msgid ""
+"You should now be on the <guilabel>Columns</guilabel> page. This is where "
+"you tell the importer which columns in the file contain the data which maps "
+"to the specific fields needed to create a meaningful record or transaction, "
+"depending on the type of data being imported. There is a different version "
+"of this page for each type of data, as each requires a different combination "
+"of items."
+msgstr ""
+"Ara hauríeu d'estar a la pàgina <guilabel>Columnes</guilabel>. Aquí és on "
+"s'indica a l'importador quines columnes del fitxer contenen les dades que "
+"s'assignen als camps específics necessaris per a crear un registre "
+"significatiu o una operació, depenent del tipus de dades que s'importa. Hi "
+"ha una versió diferent d'aquesta pàgina per a cada tipus de dades, ja que "
+"cada un requereix una combinació diferent d'elements."
+
+#. Tag: title
+#: details-impexp-csv.docbook:276
+#, no-c-format
+msgid "CSV Import Wizard: Banking"
+msgstr "Assistent de la importació de CSV: Bancs"
+
+#. Tag: screeninfo
+#: details-impexp-csv.docbook:278
+#, no-c-format
+msgid "<screeninfo>csv import wizard: banking</screeninfo>"
+msgstr "<screeninfo>Assistent de la importació de CSV: Bancs</screeninfo>"
+
+#. Tag: phrase
+#: details-impexp-csv.docbook:284
+#, no-c-format
+msgid "<phrase>csv import wizard: banking</phrase>"
+msgstr "<phrase>Assistent de la importació de CSV: Bancs</phrase>"
+
+#. Tag: para
+#: details-impexp-csv.docbook:289
+#, no-c-format
+msgid ""
+"For most fields, you just need to use the dropdown to select the appropriate "
+"column. Note that many fields have an <quote>x</quote> button to the right. "
+"Clicking it will clear whatever value has been entered or selected in the "
+"field to the left. In addition, there are some special considerations."
+msgstr ""
+"Per a la majoria de camps, només heu d'utilitzar el desplegable per a "
+"seleccionar la columna adequada. Tingueu en compte que molts camps tenen un "
+"botó «x» a la dreta. En fer-hi clic s'esborrarà el valor que s'hagi "
+"introduït o seleccionat al camp de l'esquerra. A més, hi ha algunes "
+"consideracions especials."
+
+#. Tag: para
+#: details-impexp-csv.docbook:298
+#, no-c-format
+msgid ""
+"To the right is an area with two tabs. If your file has a single column for "
+"all values, select the <guilabel>Amount</guilabel> tab. However, if there "
+"are separate columns for debits and credits, select the <guilabel>Debit/"
+"credit</guilabel> tab."
+msgstr ""
+"A la dreta hi ha una àrea amb dues pestanyes. Si el fitxer té una columna "
+"única per a tots els valors, seleccioneu la pestanya <guilabel>Quantitat</"
+"guilabel>. No obstant això, si hi ha columnes separades per a dèbits i "
+"crèdits, seleccioneu la pestanya <guilabel>Dèbit/crèdit</guilabel>."
+
+#. Tag: para
+#: details-impexp-csv.docbook:305
+#, no-c-format
+msgid ""
+"On the Amount tab, start by selecting the column which contains the amount "
+"of the transaction. If there is a column which contains <quote>Credit</"
+"quote> or <quote>Debit</quote> to indicate which the amount is, select that "
+"column as the <guilabel>Debit/Credit Indicator</guilabel>. Separately, if "
+"there is a string included in the amount field which indicates the amount is "
+"either a credit or a debit, enter that string in the appropriate "
+"<guilabel>Indicator</guilabel> field. Finally, if despite setting all the "
+"above values correctly, the amount imported is reversed from what it should "
+"be, check the <guilabel>Opposite signs</guilabel> checkbox."
+msgstr ""
+"A la pestanya Quantitat, comenceu seleccionant la columna que conté la "
+"quantitat de l'operació. Si hi ha una columna que conté «Crèdit» o «Dèbit» "
+"per a indicar quin és l'import, seleccioneu aquesta columna com "
+"l'<guilabel>Indicador dèbit/credit</guilabel>. Per separat, si hi ha una "
+"cadena inclosa en el camp import que indica que la quantitat és un crèdit o "
+"un dèbit, introduïu aquesta cadena en el camp apropiat <guilabel>Indicador</"
+"guilabel>. Finalment, si tot i establir correctament tots els valors "
+"anteriors, la quantitat importada s'inverteix del que hauria de ser, marqueu "
+"la casella de selecció <guilabel>Signes contraris</guilabel>."
+
+#. Tag: para
+#: details-impexp-csv.docbook:317
+#, no-c-format
+msgid ""
+"On the Debit/credit tab, simply enter the numbers of the columns with those "
+"values in the appropriate fields."
+msgstr ""
+"A la pestanya Dèbit/crèdit, simplement introduïu els números de les columnes "
+"amb aquests valors en els camps apropiats."
+
+#. Tag: para
+#: details-impexp-csv.docbook:324
+#, no-c-format
+msgid ""
+"It is possible to select more than one column for the Memo field, by making "
+"consecutive selections. Memo columns already selected are indicated in the "
+"<guilabel>Memo columns:</guilabel> field. If you select multiple columns in "
+"this way, their contents will be concatenated in the Memo field."
+msgstr ""
+"És possible seleccionar més d'una columna per al camp Recordatori, fent "
+"seleccions consecutives. Les columnes Recordatori ja seleccionades estaran "
+"indicades al camp <guilabel>Columnes de recordatori:</guilabel>. Si "
+"seleccioneu múltiples columnes d'aquesta manera, el seu contingut es "
+"concatenarà al camp Recordatori."
+
+#. Tag: para
+#: details-impexp-csv.docbook:333
+#, no-c-format
+msgid ""
+"If you attempt to choose the same column number for two fields, the importer "
+"will alert you and clear both selections. However, it is possible, if "
+"desired, to use the same column in both the <guilabel>Payee/Description</"
+"guilabel> and <guilabel>Memo</guilabel> fields. If you select a column for "
+"the <guilabel>Payee/Description</guilabel> field, and then select the same "
+"column for the <guilabel>Memo</guilabel> field, you will receive a warning "
+"that duplicate columns have been selected, but asking if you wish to "
+"proceed. If you do, click <guibutton>Yes</guibutton>, and the column will be "
+"used for both fields."
+msgstr ""
+"Si voleu triar el mateix número de columna per a dos camps, l'importador us "
+"alertarà i esborrarà ambdues seleccions. No obstant això, és possible, si ho "
+"voleu, fer servir la mateixa columna als camps <guilabel>Beneficiari/"
+"Descripció</guilabel> i <guilabel>Recordatori</guilabel>. Si seleccioneu una "
+"columna per al camp <guilabel>Beneficiari/Descripció</guilabel> i després "
+"seleccioneu la mateixa columns per al camp <guilabel>Recordatori</guilabel>, "
+"rebreu un avís que s'han seleccionat columnes duplicades, però us demanarà "
+"si voleu continuar. Si ho feu, feu clic a <guibutton>Sí</guibutton> i la "
+"columna s'utilitzarà per als dos camps."
+
+#. Tag: para
+#: details-impexp-csv.docbook:346
+#, no-c-format
+msgid ""
+"One particular reason to also capture the Payee/Descriptor field in the Memo "
+"field is that the incoming Payee/Description field might get completely "
+"changed on import when &kmymoney; does transaction matching. Selecting that "
+"field also as Memo will preserve that data, which would otherwise get lost."
+msgstr ""
+"Una raó particular per a capturar també el camp Beneficiari/Descripció al "
+"camp Recordatori és que el camp Beneficiari/Descripció podria canviar "
+"completament a la importació quan el &kmymoney; realitzi la coincidència de "
+"les operacions. En seleccionar aquest camp també com Recordatori, es "
+"conservaran aquestes dades, d'altra manera es perdrien."
+
+#. Tag: para
+#: details-impexp-csv.docbook:355
+#, no-c-format
+msgid ""
+"If you notice you have made an incorrect choice, just change that selection. "
+"If several changes need to be made, you can click <guilabel>Clear all</"
+"guilabel> and start over."
+msgstr ""
+"Si noteu que heu realitzat una elecció incorrecta, simplement canvieu "
+"aquesta selecció. Si cal fer diversos canvis, feu clic al botó "
+"<guibutton>Neteja-ho tot</guibutton> i torneu a començar."
+
+#. Tag: para
+#: details-impexp-csv.docbook:361
+#, no-c-format
+msgid ""
+"Once columns have been chosen for all the necessary fields, the "
+"<guilabel>Next</guilabel> button will be enabled, and clicking it will "
+"advance the wizard."
+msgstr ""
+"Un cop s'hagin triat les columnes per a tots els camps necessaris, "
+"s'habilitarà el botó <guibutton>Següent</guibutton>, i en fer-hi clic "
+"s'avançarà en l'assistent."
+
+#. Tag: title
+#: details-impexp-csv.docbook:368
+#, no-c-format
+msgid "CSV Import Wizard: Format"
+msgstr "Assistent de la importació de CSV: Format"
+
+#. Tag: para
+#: details-impexp-csv.docbook:369
+#, no-c-format
+msgid ""
+"The next page of the wizard still shows the data to be imported on the top, "
+"but the lower section provides three dropdowns. The initial values are set "
+"by &kmymoney; based on examining the actual data."
+msgstr ""
+"La pàgina següent de l'assistent encara mostra les dades que s'importaran a "
+"la part superior, però la secció inferior proporciona tres desplegables. Els "
+"valors inicials els estableix el &kmymoney; basant-se en examinar les dades "
+"reals."
+
+#. Tag: screeninfo
+#: details-impexp-csv.docbook:376 details-impexp-csv.docbook:425
+#, no-c-format
+msgid "<screeninfo>csv import wizard: investment</screeninfo>"
+msgstr "<screeninfo>Assistent de la importació de CSV: Inversió</screeninfo>"
+
+#. Tag: phrase
+#: details-impexp-csv.docbook:382 details-impexp-csv.docbook:431
+#, no-c-format
+msgid "<phrase>csv import wizard: investment</phrase>"
+msgstr "<phrase>Assistent de la importació de CSV: Inversió</phrase>"
+
+# skip-rule: punctuation-period-no
+#. Tag: para
+#: details-impexp-csv.docbook:387
+#, no-c-format
+msgid ""
+"The <guilabel>Decimal Symbol</guilabel> defaults to <quote>auto,</quote> "
+"which usually produces the correct results. If not, you can explicitly "
+"specify the <quote>dot</quote> or <quote>comma.</quote>"
+msgstr ""
+"El <guilabel>Símbol decimal</guilabel> és «auto,» de manera predeterminada "
+"que normalment produeix els resultats correctes. Si no, podeu especificar "
+"explícitament el «punt» o «coma»."
+
+#. Tag: para
+#: details-impexp-csv.docbook:393
+#, no-c-format
+msgid ""
+"The <guilabel>Thousands Symbol</guilabel> is set automatically, and the "
+"field may be disabled if it will not affect the results."
+msgstr ""
+"El <guilabel>Símbol de milers</guilabel> s'estableix automàticament, i el "
+"camp es pot desactivar si no afectarà els resultats."
+
+#. Tag: para
+#: details-impexp-csv.docbook:398
+#, no-c-format
+msgid ""
+"This needs to be set according to the order of year, month, and day in the "
+"dates in the file. If the plugin finds data incompatible with this setting, "
+"it will complain when you try to import. However, if the setting is wrong, "
+"but it produce invalid results not detected (such as data with no days "
+"higher than 12, so month and day could be switched) you will simply get "
+"incorrect data, because the plugin cannot know you made a mistake. In this "
+"case, the error will be obvious in the ledger after import."
+msgstr ""
+"Això s'haurà d'establir segons l'ordre de l'any, mes i dia en les dates del "
+"fitxer. Si el connector troba dades incompatibles amb aquesta opció, es "
+"queixarà quan intenti importar. No obstant això, si l'opció és incorrecta, "
+"però produeix resultats no vàlids sense detectar (com dades sense dies "
+"superiors a 12, de manera que es podrien haver alternat el mes i el dia), "
+"simplement obteniu dades incorrectes, això es deu al fet que el connector no "
+"podrà saber que ha comès un error. En aquest cas, l'error serà obvi al "
+"llibre major després de la importació."
+
+#. Tag: para
+#: details-impexp-csv.docbook:408
+#, no-c-format
+msgid ""
+"The <guilabel>Date format</guilabel> specifies the order of day, month, and "
+"year, and is also set automatically. However, in some cases, such as data "
+"with no day higher than 12, you will notice the problem after the import. In "
+"such cases, you will need to repeat the import, and choose the actual order "
+"of the date components."
+msgstr ""
+"El <guilabel>Format de data</guilabel> especifica l'ordre del dia, mes i any "
+"i també s'estableix automàticament. No obstant això, en alguns casos, com "
+"les dades sense un dia superior a 12, notareu el problema després de la "
+"importació. En aquests casos, haureu de repetir la importació i triar "
+"l'ordre real dels components de la data."
+
+#. Tag: title
+#: details-impexp-csv.docbook:416
+#, no-c-format
+msgid "CSV Import Wizard: Investment"
+msgstr "Assistent de la importació de CSV: Inversió"
+
+#. Tag: para
+#: details-impexp-csv.docbook:417
+#, no-c-format
+msgid ""
+"This page is similar to the <guilabel>Banking</guilabel> page, although it "
+"is somewhat more complex. Most selections are fairly obvious, but there are "
+"some items which can seem confusing until you have completed the process "
+"once or twice."
+msgstr ""
+"Aquesta pàgina és similar a la pàgina <guilabel>Bancs</guilabel>, encara que "
+"és una mica més complexa. La majoria de les seleccions són força òbvies, "
+"però hi ha alguns elements que poden semblar confusos fins que hàgiu "
+"completat el procés una o dues vegades."
+
+# skip-rule: punctuation-period-no
+#. Tag: para
+#: details-impexp-csv.docbook:439
+#, no-c-format
+msgid ""
+"As on the <guilabel>Banking</guilabel> page, you may select more than one "
+"column for the Memo field"
+msgstr ""
+"Com a la pàgina <guilabel>Bancs</guilabel>, podreu seleccionar més d'una "
+"columna per al camp Recordatori."
+
+#. Tag: para
+#: details-impexp-csv.docbook:446
+#, no-c-format
+msgid ""
+"The <guilabel>Type/Action</guilabel> selector is to identify the column "
+"which contains the action type, such as Buy, Sell, Dividend, &etc;"
+msgstr ""
+"El selector <guilabel>Tipus/Acció</guilabel> és per a identificar la columna "
+"que conté el tipus d'acció, com Comprar, Vendre, Dividend, &etc;"
+
+#. Tag: para
+#: details-impexp-csv.docbook:453
+#, no-c-format
+msgid ""
+"The <guilabel>Price Fraction</guilabel> selector is to indicate the fraction/"
+"multiplier for compatibility between imported and stored prices. For "
+"instance, if the import file price is in cents, but your &kmymoney; account "
+"is priced in dollars, select 0.01. Or, if your &kmymoney; data file pricing "
+"is in dollars, and so is the CSV file being imported, then set "
+"<guilabel>Price Fraction</guilabel> to 1.0."
+msgstr ""
+"El selector <guilabel>Fracció del preu</guilabel> és per a indicar la "
+"fracció/multiplicador per a la compatibilitat entre els preus importats i "
+"emmagatzemats. Per exemple, si el preu del fitxer d'importació està en "
+"centaus, però el compte del &kmymoney; té un preu en dòlars, seleccioneu "
+"0,01. O, si el preu del fitxer de dades del &kmymoney; està en dòlars, i "
+"també esteu important el fitxer CSV, seleccioneu 1,0."
+
+#. Tag: para
+#: details-impexp-csv.docbook:464
+#, no-c-format
+msgid ""
+"There are two ways to specify fees for transactions. If your file has a "
+"distinct column for fees, use the <guilabel>Fee Column</guilabel> selector. "
+"Note that on this page, this is the only field to explicitly include \"column"
+"\" in the label, to emphasize that it is for the fee column, not for any "
+"actual fee. Beware, though, that the fee might have been taken into account "
+"in the price."
+msgstr ""
+"Hi ha dues maneres d'especificar les comissions de les operacions. Si el "
+"fitxer té una columna diferent per a les comissions, utilitzeu el selector "
+"<guilabel>Columna de comissió</guilabel>. Tingueu en compte que en aquesta "
+"pàgina, aquest és l'únic camp que inclou explícitament «columna» a "
+"l'etiqueta, per a emfatitzar que és per la columna de comissions, no per a "
+"cap despesa real. No obstant això, tingueu en compte que la comissió podria "
+"haver estat tinguda en compte en el preu."
+
+#. Tag: para
+#: details-impexp-csv.docbook:472
+#, no-c-format
+msgid ""
+"If there is a fee, but it is a percentage figure, rather than a specified "
+"value, click the <guilabel>Fee is percentage</guilabel> check box, and enter "
+"the percentage rate into the <guilabel>Fee rate</guilabel> field. In "
+"addition, if there is a minimum fee, specify it in the <guilabel>Minimal "
+"Fee</guilabel> field, which becomes enabled when you enter the Fee rate "
+"(with a decimal point.) At this point, clicking <guibutton>Calculate Fees</"
+"guibutton> will add a column at the right of the table above, and will "
+"indicate the calculated fee for each transaction."
+msgstr ""
+"Si hi ha una comissió, però és una xifra percentual, en lloc d'un valor "
+"especificat, feu clic a la casella de selecció <guilabel>La comissió és en "
+"percentatge</guilabel>, i introduïu la taxa en tant per cent al camp "
+"<guilabel>Tipus de comissió</guilabel>. A més, si hi ha una comissió mínima, "
+"especifiqueu-la en el camp <guilabel>Comissió mínima</guilabel>, que "
+"s'activa quan introduïu la taxa de comissió (amb una coma decimal). En "
+"aquest punt, fent clic a <guibutton>Calcula la comissió</guibutton> "
+"s'afegirà una columna a la dreta de la taula anterior, i s'indicarà la "
+"comissió calculada per a cada operació."
+
+#. Tag: para
+#: details-impexp-csv.docbook:483
+#, no-c-format
+msgid ""
+"If you made a mistake in entering the fee information, clicking "
+"<guibutton>Clear Fee</guibutton> will reset all the fee related fields to "
+"their initial values."
+msgstr ""
+"Si heu comès un error en introduir la informació de la comissió, fent clic a "
+"<guibutton>Neteja la comissió</guibutton> es restabliran tots els camps "
+"relacionats amb la comissió als seus valors inicials."
+
+#. Tag: para
+#: details-impexp-csv.docbook:490
+#, no-c-format
+msgid ""
+"Below the column selectors are two areas for the security identity. "
+"Depending upon your broker or financial institution, your file may contain "
+"entries for only one or for several securities."
+msgstr ""
+"A sota dels selectors de columna hi ha dues àrees per a la identitat del "
+"títol. Depenent del corredor o institució financera, el fitxer podria "
+"contenir entrades per a només un o per a diversos títols."
+
+#. Tag: para
+#: details-impexp-csv.docbook:497
+#, no-c-format
+msgid ""
+"If the file contains transactions for just a single security, with the name "
+"possibly in a header row, the name should be entered into the "
+"<guilabel>Security Name</guilabel> box. The name you enter will be added to "
+"the dropdown list for future use. You may subsequently wish to remove that "
+"name from the list. If so, select it, then click <guilabel>Hide security</"
+"guilabel>. This removes it only from this list, and has no effect on your "
+"main &kmymoney; file."
+msgstr ""
+"Si el fitxer conté les operacions per a un títol individual, amb el nom "
+"possiblement en una fila de capçalera, el nom s'haurà d'introduir al quadre "
+"<guilabel>Nom del títol</guilabel>. El nom que introduïu s'afegirà a la "
+"llista desplegable per a ús futur. És possible que posteriorment vulgueu "
+"eliminar aquest nom de la llista. Si és així, seleccioneu-lo i després feu "
+"clic al botó <guilabel>Oculta el títol</guilabel>. Això només l'eliminarà "
+"d'aquesta llista i no tindrà cap efecte al fitxer principal del &kmymoney;."
+
+#. Tag: para
+#: details-impexp-csv.docbook:509
+#, no-c-format
+msgid ""
+"If the file includes transactions for several securities, each will be "
+"identified by its ticker symbol in a column with further detail in another "
+"column. Select those columns in the <guilabel>Symbol</guilabel> and "
+"<guilabel>Detail</guilabel> selectors. It may be that a security has no "
+"official symbol, and in this case a pseudo-symbol may be invented; this is "
+"not a problem, as long as it uniquely identifies that security in the import "
+"file. Sometimes the actual activity type is embedded in the detail column, "
+"possibly prefixed by a standard text. For instance, if the field contains "
+"<quote>type: dividend</quote>, go to <guilabel>Filter</guilabel> text box "
+"and enter <quote>type: </quote> including the trailing space."
+msgstr ""
+"Si el fitxer inclou les operacions per a diversos títols, cadascun "
+"s'identificarà pel seu símbol borsari en una columna amb més detalls en una "
+"altra columna. Seleccioneu aquestes columnes als selectors <guilabel>Símbol</"
+"guilabel> i <guilabel>Detall</guilabel>. Podria ser que un títol no tingui "
+"un símbol oficial, i en aquest cas es podrà inventar un pseudosímbol. Això "
+"no és un problema, sempre que identifiqui de forma exclusiva aquest títol al "
+"fitxer d'importació. De vegades, el tipus d'activitat real estarà incrustat "
+"a la columna de detalls, possiblement precedit per un text estàndard. Per "
+"exemple, si el camp conté «tipus: dividend», aneu al quadre de text "
+"<guilabel>Filtre</guilabel> i introduïu-hi «tipus: » incloent l'espai final."
+
+#. Tag: para
+#: details-impexp-csv.docbook:528
+#, no-c-format
+msgid ""
+"When all required fields are selected, the <guilabel>Next</guilabel> button "
+"will be enabled, and clicking it will advance the wizard."
+msgstr ""
+"Quan se seleccionin tots els camps obligatoris, s'habilitarà el botó "
+"<guibutton>Següent</guibutton>, i en fer-hi clic s'avançarà en l'assistent."
+
+#. Tag: title
+#: details-impexp-csv.docbook:534
+#, no-c-format
+msgid "CSV Import Wizard: Securities and Symbols"
+msgstr "Assistent de la importació de CSV: Títols i símbols"
+
+#. Tag: para
+#: details-impexp-csv.docbook:535
+#, no-c-format
+msgid ""
+"For an Investment file, after the <guilabel>Columns</guilabel> page has been "
+"accepted, you need to assure that each security in the file is matched to "
+"the correct security in your &kmymoney; file, before import can proceed. At "
+"this point, another window will open, showing the securities and symbols "
+"contained in the import file. Note that unlike the data display in the main "
+"wizard windows, the changes you make on this page <emphasis>are</emphasis> "
+"imported."
+msgstr ""
+"Per a un fitxer d'Inversió, una vegada s'hagi acceptat la pàgina "
+"<guilabel>Columnes</guilabel>, abans que pugueu continuar amb la importació, "
+"assegureu-vos que cada títol al fitxer coincideixi amb el títol correcte al "
+"fitxer del &kmymoney;. En aquest punt, s'obrirà una altra finestra mostrant "
+"els títols i símbols continguts al fitxer d'importació. Recordeu que, a "
+"diferència de la visualització de les dades en les finestres principals de "
+"l'assistent, els canvis que realitzeu en aquesta pàgina <emphasis>seran</"
+"emphasis> importants."
+
+#. Tag: para
+#: details-impexp-csv.docbook:544
+#, no-c-format
+msgid "Completing this page is straightforward, if you consider these items:"
+msgstr ""
+"Completar aquesta pàgina és senzill, si teniu en consideració aquests "
+"elements:"
+
+#. Tag: para
+#: details-impexp-csv.docbook:548
+#, no-c-format
+msgid ""
+"Each row represents one transaction, and so it may appear there are "
+"duplicate rows. This is OK."
+msgstr ""
+"Cada fila representa una operació, de manera que podria semblar que hi ha "
+"files duplicades. Això està bé."
+
+#. Tag: para
+#: details-impexp-csv.docbook:555
+#, no-c-format
+msgid ""
+"Each security name must match exactly the existing security as specified in "
+"&kmymoney;. If it does not match, it will be created as a new security, "
+"which you probably do not want, unless it represents the purchase of a new "
+"security."
+msgstr ""
+"Cada nom de títol haurà de coincidir exactament amb el títol existent com "
+"s'especifica al &kmymoney;. Si no coincideix, es crearà com a un títol nou, "
+"el qual probablement no voldreu, llevat que representi la compra d'un títol "
+"nou."
+
+#. Tag: para
+#: details-impexp-csv.docbook:564
+#, no-c-format
+msgid "A symbol must be shown for each security."
+msgstr "S'haurà de mostrar un símbol per a cada títol."
+
+#. Tag: para
+#: details-impexp-csv.docbook:570
+#, no-c-format
+msgid ""
+"The <emphasis>only</emphasis> information on this page should be the "
+"security symbol and name. Any other information initially shown (such as "
+"date or activity type) is still in the actual import file, but should not be "
+"shown here."
+msgstr ""
+"L'<emphasis>única</emphasis> informació en aquesta pàgina haurà de ser el "
+"símbol i el nom del títol. Qualsevol altra informació mostrada inicialment "
+"(com la data o el tipus d'activitat) encara es trobarà al fitxer real "
+"d'importació, però no s'haurà de mostrar aquí."
+
+#. Tag: para
+#: details-impexp-csv.docbook:580
+#, no-c-format
+msgid ""
+"You can edit a symbol or security name by double-clicking the cell. For each "
+"security, if necessary, edit the name in one of its rows, If the correct "
+"security name appears in the imported file, double-click it to select it, "
+"then copy and paste/edit, taking care if you have used a variation or "
+"abbreviation within &kmymoney;. If you edit a security name, that edit will "
+"be applied to all rows with the same symbol."
+msgstr ""
+"Podreu editar un símbol o nom del títol fent doble clic a la cel·la. Per a "
+"cada títol, si cal, editeu el nom en una de les seves files. Si apareix el "
+"nom correcte del títol al fitxer importat, feu doble clic per a seleccionar-"
+"lo, després copieu i enganxeu/editeu, tenint en compte si heu utilitzat una "
+"variació o abreujament dins del &kmymoney;. Si editeu un nom de títol, "
+"aquesta edició s'aplicarà a totes les files amb el mateix símbol."
+
+#. Tag: para
+#: details-impexp-csv.docbook:589
+#, no-c-format
+msgid ""
+"Any line without a symbol will be treated as a brokerage-type checking item. "
+"If any transaction involves another account, &eg;, a checking or brokerage "
+"account for a received dividend or for making a payment, a message box will "
+"pop up for the account name to be entered for the transfer. This will "
+"generally be the Brokerage account you chose or created when you created the "
+"Investment account. Similarly enter the column number containing the payee, "
+"if requested. If a mistake is made when entering the account name, the "
+"import will go ahead, but &kmymoney; will not recognize it, and will flag "
+"those transactions as missing a category assignment. If the required account "
+"name is rather long, just enter a few characters. The import will proceed "
+"but the transactions will be flagged by &kmymoney; as missing a category "
+"assignment, and you will need to select the correct transfer account after "
+"the import. Click <guibutton>OK</guibutton> when done. The import process "
+"then gets handed over to &kmymoney;."
+msgstr ""
+"Qualsevol línia sense símbol es tractarà com un element de selecció del "
+"tipus de valor. Si alguna operació involucra un altre compte, &pex;, un "
+"compte corrent o de valors per a un dividend rebut o per a realitzar un "
+"pagament, apareixerà un quadre de missatge perquè introduïu el nom del "
+"compte per a la transferència. En general, aquest serà el compte de valors "
+"que vàreu triar o crear quan es va crear el compte d'inversió. De la mateixa "
+"manera, si se us demana, introduïu el número de columna que conté el "
+"beneficiari. Si cometeu un error en introduir el nom del compte, la "
+"importació continuarà, però el &kmymoney; no ho reconeixerà i marcarà "
+"aquestes operacions com que els hi manca l'assignació de la categoria. Si el "
+"nom del compte requerit és massa llarg, introduïu només alguns caràcters. La "
+"importació continuarà, però el &kmymoney; marcarà les operacions com que els "
+"hi manca l'assignació de la categoria, i haureu de seleccionar el compte "
+"correcte per a la transferència després de la importació. Feu clic a "
+"<guibutton>D'acord</guibutton> quan hàgiu finalitzat. Després s'entregarà el "
+"procés d'importació al &kmymoney;."
+
+#. Tag: para
+#: details-impexp-csv.docbook:606
+#, no-c-format
+msgid ""
+"If you have more that one transaction referring to the same security, you "
+"can edit all of them at once, using multi-select. For instance, to add a "
+"symbol for several lines, press and hold the &Ctrl; key, and in the symbol "
+"column, select each transaction. While still holding the &Ctrl; key, all "
+"those symbol cells should still be selected, so click one and enter the "
+"symbol. Click inside the window but outside that column, or hit &Enter; (not "
+"<guibutton>OK</guibutton>). Now that those transactions all have the same "
+"symbol, double-click one detail entry and edit the security name as you "
+"wish. Click elsewhere on the window (or &Enter;) to accept the edit, which "
+"will then change all those entries. The remaining entries will show the "
+"symbols picked up from the transactions in the import file."
+msgstr ""
+"Si teniu més d'una operació que es refereix al mateix títol, podreu editar-"
+"les totes alhora, utilitzant la selecció múltiple. Per exemple, per a afegir "
+"un símbol per a diverses línies, manteniu premuda la tecla &Ctrl; i, a la "
+"columna de símbols, seleccioneu cada operació. Mentre la manteniu premuda, "
+"totes aquestes cel·les de símbols encara s'hauran de seleccionar, de manera "
+"que feu clic sobre una i introduïu el símbol. Feu clic dins de la finestra "
+"però fora d'aquesta columna, o premeu &Intro; (no a <guibutton>D'acord</"
+"guibutton>). Ara que totes aquestes operacions tenen el mateix símbol, feu "
+"doble clic en una entrada de detalls i editeu el nom del títol que vulgueu. "
+"Feu clic en una altra part de la finestra (o premeu &Intro;) per a acceptar "
+"l'edició, el qual canviarà totes aquestes entrades. Les entrades restants "
+"mostraran els símbols recollits des de les operacions al fitxer d'importació."
+
+#. Tag: para
+#: details-impexp-csv.docbook:619
+#, no-c-format
+msgid ""
+"Now click <guibutton>OK</guibutton>, then <guibutton>Import</guibutton>. In "
+"the <guilabel>Enter Account</guilabel> box, enter the name of a Brokerage/"
+"checking account for funds. If you enter a valid name that account will be "
+"used. If you can't be bothered entering a correct but long name, enter a few "
+"characters. The import will accept that but the transactions in the ledger "
+"after import will need a proper account to be selected. For the "
+"<guilabel>Brokerage</guilabel> box, enter the number of the column "
+"containing that detail. Now, on the <guilabel>Invalid transaction</guilabel> "
+"box you may get a few entries because the activity type does not match the "
+"qty/price/amount combination. On each message, click <guilabel>Select "
+"Transaction Type</guilabel>, and a dropdown will appear indicating valid "
+"activity types for that combination of values."
+msgstr ""
+"Ara feu clic a <guibutton>D'acord</guibutton>, després a <guibutton>Importa</"
+"guibutton>. Al quadre <guilabel>Introduïu un compte</guilabel>, introduïu el "
+"nom d'un compte de valors/compte corrent per a fons. Si introduïu un nom "
+"vàlid, s'utilitzarà aquest compte. Si no podeu molestar-vos a introduir un "
+"nom correcte però llarg, introduïu alguns caràcters. La importació ho "
+"acceptarà, però les operacions del llibre major després de la importació "
+"necessitaran un compte adequat per a ser seleccionades. Per al quadre "
+"<guilabel>Valors</guilabel>, introduïu el número de la columna que conté "
+"aquest detall. Ara, al quadre <guilabel>Operació no vàlida</guilabel>, "
+"podria obtenir algunes entrades perquè el tipus d'activitat no coincideix "
+"amb la combinació de quantitat/preu/import. A cada missatge, feu clic a "
+"<guilabel>Selecciona el tipus d'operació</guilabel>, i apareixerà una llista "
+"desplegable indicant els tipus d'activitat vàlids per a aquesta combinació "
+"de valors."
+
+#. Tag: para
+#: details-impexp-csv.docbook:634
+#, no-c-format
+msgid ""
+"Now the import has occurred and you're into &kmymoney; to select the "
+"investment account to use. Then the checking account, if there were any "
+"brokerage type transactions."
+msgstr ""
+"Ara s'ha produït la importació i esteu al &kmymoney; per a seleccionar el "
+"compte d'inversió que voleu utilitzar. Després el compte corrent, si hi "
+"havia cap operació de valors."
+
+#. Tag: title
+#: details-impexp-csv.docbook:641
+#, no-c-format
+msgid "CSV Import Wizard: Currency Prices"
+msgstr "Assistent de la importació de CSV: Cotitzacions de divises"
+
+#. Tag: para
+#: details-impexp-csv.docbook:642
+#, no-c-format
+msgid "something about importing currency prices"
+msgstr "alguna cosa sobre la importació de cotitzacions de divises"
+
+#. Tag: title
+#: details-impexp-csv.docbook:647
+#, no-c-format
+msgid "CSV Import Wizard: Stock prices"
+msgstr "Assistent de la importació de CSV: Cotitzacions de valors"
+
+#. Tag: para
+#: details-impexp-csv.docbook:648
+#, no-c-format
+msgid "Something about importing stock prices"
+msgstr "Alguna cosa sobre importació de cotitzacions de valors"
+
+#. Tag: title
+#: details-impexp-csv.docbook:654
+#, no-c-format
+msgid "CSV Import Wizard: Finish"
+msgstr "Assistent de la importació de CSV: Final"
+
+#. Tag: para
+#: details-impexp-csv.docbook:655
+#, no-c-format
+msgid ""
+"On reaching the Final page, the plugin automatically validates the values. "
+"If the numeric value column/s is/are highlighted in green, then the "
+"validation was successful and all that is necessary is to click "
+"<guibutton>Import CSV</guibutton> and control then passes to the main "
+"&kmymoney; program. However, if the start and/or end lines are incorrectly "
+"set, or if the wrong columns were selected, the highlighting will be in red, "
+"and an error message will appear indicating where the error lies. The user "
+"will then need to click <guibutton>Back</guibutton> to get to the relevant "
+"page to correct the error."
+msgstr ""
+"En arribar a la pàgina Final, el connector validarà automàticament els "
+"valors. Si la/es columna/es de valor numèric està/an ressaltada/es en verd, "
+"llavors la validació serà amb èxit i tot el que caldrà és fer clic a "
+"<guibutton>Importa CSV</guibutton> i el control després passarà al programa "
+"principal del &kmymoney;. No obstant això, si les línies inicial i/o final "
+"estan configurades incorrectament, o si es varen seleccionar les columnes "
+"incorrectes, el ressaltat estarà en vermell i apareixerà un missatge d'error "
+"indicant a on es troba l'error. L'usuari haurà de fer clic a "
+"<guibutton>Enrere</guibutton> per a accedir a la pàgina corresponent per a "
+"corregir l'error."
+
+# skip-rule: punctuation-period-no
+#. Tag: para
+#: details-impexp-csv.docbook:666
+#, no-c-format
+msgid ""
+"It might also be that if debit and credit columns are in use, one of those "
+"columns may legitimately contain no entries. This would mean that that "
+"column has no decimal symbol present, and this would result in a warning. If "
+"you see that this is the case, you may click either of the buttons to accept "
+"(<guibutton>Accept this</guibutton> or <guibutton>Accept all</guibutton>.)"
+msgstr ""
+"També podria ser que si les columnes de dèbit i crèdit estan en ús, una "
+"d'aquestes columnes legítimament podria no contenir entrades. Això voldrà "
+"dir que aquesta columna no té cap símbol decimal present, i això generarà un "
+"avís. Si veieu que aquest és el cas, podreu fer clic a qualsevol dels botons "
+"per a acceptar (<guibutton>Accepta això</guibutton> o <guibutton>Accepta-ho "
+"tot</guibutton>)."
+
+#. Tag: title
+#: details-impexp-csv.docbook:674
+#, no-c-format
+msgid "Decimal Symbol"
+msgstr "Símbol decimal"
+
+#. Tag: para
+#: details-impexp-csv.docbook:675
+#, no-c-format
+msgid ""
+"Another possible problem might be that the selected decimal symbol is "
+"incorrect. Selecting the symbol to match the data should clear that error. "
+"Normally, you should not need to change this selection. Note that the "
+"<guilabel>Decimal Symbol</guilabel> must be set to match your file, not your "
+"locale. If your locale setting has a different value, conversion will be "
+"seen to take place. The display of the file in the upper part of the window "
+"will show numeric fields highlighted in green if the current setting "
+"produces valid results, otherwise in red. The highlighting also reflects the "
+"<guilabel>Start line</guilabel> and <guilabel>End line</guilabel> settings. "
+"There could be warnings if any of the selected cells appear not to contain "
+"the selected symbol."
+msgstr ""
+"Un altre possible problema podria ser que el símbol decimal seleccionat "
+"sigui incorrecte. Per a esborrar aquest error cal seleccionar el símbol "
+"perquè coincideixi amb les dades. Normalment, no hauríeu de necessitar "
+"canviar aquesta selecció. Recordeu que el símbol decimal s'ha d'establir "
+"perquè coincideixi amb el fitxer, no amb la vostra configuració regional. Si "
+"la configuració regional té un valor diferent, tindrà lloc la conversió. La "
+"visualització del fitxer a la part superior de la finestra mostrarà camps "
+"numèrics ressaltats en verd si la configuració actual produeix resultats "
+"vàlids, en cas contrari en vermell. El ressaltat també reflectirà les "
+"opcions de la <guilabel>Línia inicial</guilabel> i la <guilabel>Línia final</"
+"guilabel>. Hi podrien haver avisos si alguna de les cel·les seleccionades "
+"sembla no contenir el símbol seleccionat."
+
+#. Tag: title
+#: details-impexp-csv.docbook:690
+#, no-c-format
+msgid "Thousands Symbol"
+msgstr "Separador de milers"
+
+#. Tag: para
+#: details-impexp-csv.docbook:691
+#, no-c-format
+msgid ""
+"This does not need to be selected, as it is set automatically based on the "
+"<guilabel>Decimal Symbol</guilabel>. It is provided purely as a guide. In "
+"addition, the selector will be inactive if none of the values to be imported "
+"is greater or equal to 1000."
+msgstr ""
+"No cal seleccionar-lo, ja que es configura automàticament en funció del "
+"<guilabel>Símbol decimal</guilabel>. Es proporciona únicament com una guia. "
+"A més, el selector estarà inactiu si cap dels valors a importar és major o "
+"igual que 1.000."
+
+#. Tag: title
+#: details-impexp-csv.docbook:699
+#, no-c-format
+msgid "Import CSV"
+msgstr "Importar CSV"
+
+#. Tag: para
+#: details-impexp-csv.docbook:700
+#, no-c-format
+msgid ""
+"Clicking this button tells the plugin to actually import the data from the "
+"file, based on the choices you have made above. &kmymoney; will prompt you "
+"for the correct account into which to import the data."
+msgstr ""
+"En fer clic en aquest botó, se li indicarà al connector que importi realment "
+"les dades des del fitxer, en funció de les seleccions que hàgiu fet "
+"anteriorment. El &kmymoney; us demanarà el compte correcte al qual importar "
+"les dades."
+
+#. Tag: title
+#: details-impexp-csv.docbook:708
+#, no-c-format
+msgid "Make QIF File"
+msgstr "Crear un fitxer QIF"
+
+#. Tag: para
+#: details-impexp-csv.docbook:709
+#, no-c-format
+msgid ""
+"This button gives you the ability, after the import has been completed, to "
+"save the data from the CSV file as a QIF file, should you require one for "
+"any reason. This was actually the original functionality that drove the "
+"creation of this plugin. However, as &kmymoney; itself is now able to export "
+"a qif file, the capability is now probably of little use and is likely to be "
+"removed eventually."
+msgstr ""
+"Aquest botó ofereix la possibilitat, una vegada hàgiu completat la "
+"importació, de desar les dades del fitxer CSV com un fitxer QIF, en cas que "
+"en necessiteu un per qualsevol motiu. Aquesta va ser en realitat la "
+"funcionalitat original que va impulsar la creació d'aquest connector. No "
+"obstant això, com que el &kmymoney; pot exportar un fitxer QIF, la capacitat "
+"ara és de poca utilitat i és probable que amb el temps sigui eliminada."
+
+#. Tag: title
+#: details-impexp-csv.docbook:719
+#, no-c-format
+msgid "Finishing up"
+msgstr "Finalitzant"
+
+#. Tag: para
+#: details-impexp-csv.docbook:720
+#, no-c-format
+msgid ""
+"For a <guilabel>Banking</guilabel> import, the plugin has finished, and "
+"&kmymoney; will prompt you, as stated above, for the correct account into "
+"which to import the data. For an <guilabel>Investment</guilabel> import, "
+"however, a little more may be required. If, during import of a transaction, "
+"the plugin finds no valid transaction type, it will display the offending "
+"transaction, and the user may select a valid type to substitute, depending "
+"on the combination of quantity, price, and amount values. For every "
+"transaction, the plugin will validate the column contents to ensure they "
+"match the action type. For instance, if a quantity appears but no price or "
+"amount, it is assumed that the transaction can be only an Add or Remove "
+"Shares. Or, if there is an amount but no quantity or price, then a Dividend "
+"is assumed, &etc;"
+msgstr ""
+"Per a una importació de <guilabel>Bancs</guilabel>, el connector haurà "
+"finalitzat i el &kmymoney; us demanarà, com s'ha indicat anteriorment, el "
+"compte correcte al qual importar les dades. No obstant això, per a una "
+"importació d'<guilabel>Inversió</guilabel>, es podria requerir una mica més. "
+"Si, durant la importació d'una operació, el connector no troba un tipus "
+"vàlid d'operació, mostrarà l'operació infractora i l'usuari podrà "
+"seleccionar un tipus vàlid per a substituir, segons la combinació dels "
+"valors per a quantitat, preu i import. Per a cada operació, el connector "
+"validarà el contingut de la columna per a garantir que coincideixi amb el "
+"tipus d'acció. Per exemple, si apareix una quantitat però no hi ha preu o "
+"import, se suposa que l'operació només podrà ser afegir accions o eliminar "
+"les accions. O, si hi ha un import però no hi ha cap quantitat o preu, "
+"llavors s'assumirà un Dividend, &etc;"
+
+#. Tag: para
+#: details-impexp-csv.docbook:734
+#, no-c-format
+msgid ""
+"If you wish to save your settings, remember to click <guibutton>Finish</"
+"guibutton>, and the plugin will then close."
+msgstr ""
+"Si voleu desar les opcions, recordeu fer clic a <guibutton>Finalitza</"
+"guibutton>, i es tancarà el connector."
+
+#. Tag: title
+#: details-impexp-csv.docbook:740
+#, no-c-format
+msgid "Adding Investment Activity Types"
+msgstr "Afegir els tipus d'activitat de les inversions"
+
+#. Tag: para
+#: details-impexp-csv.docbook:741
+#, no-c-format
+msgid ""
+"If you find that your investment statements keep including activity types "
+"that are not recognized, just add them to the section in the resource file. "
+"(See <link linkend=\"details.impexp.csv.config\">below</link> for more "
+"details on this file.) For instance, in the <literal>[InvestmentSettings]</"
+"literal> section of the file, the <literal>BuyParam</literal> field includes "
+"entries for <literal>Purchase</literal>, <literal>Buy</literal>, "
+"<literal>New Inv</literal>, and <literal>Switch In</literal>. If you find a "
+"different one, add it to the correct list and restart the plugin. You may "
+"notice that there are similarities in the entries in different fields, and "
+"you may find that the wrong activity type is being selected. The plugin "
+"checks these lists in the following order: <literal>Shrsin</literal>, "
+"<literal>DivX</literal>, <literal>Reinvdiv</literal>, <literal>Brokerage</"
+"literal>, <literal>Buy</literal>, <literal>Sell</literal>, and "
+"<literal>Remove</literal>. Re-ordering the lists to suit this does not work "
+"as might be expected, since the entries in the resource file get sorted into "
+"alphabetical order. If the offending parameter is one you don't need, just "
+"delete it from the file. If that is not possible, you may need to edit your "
+"file before input."
+msgstr ""
+"Si trobeu que els extractes d'inversió segueixen incloent els tipus "
+"d'activitat que no s'han reconegut, simplement afegiu-los a la secció al "
+"fitxer de recursos. (Vegeu <link linkend=\"details.impexp.csv.config\">a "
+"continuació</link> per a obtenir més detalls sobre aquest fitxer). Per "
+"exemple, a la secció <literal>[InvestmentSettings]</literal> del fitxer, el "
+"camp <literal>BuyParam</literal> inclourà entrades per a <literal>Purchase</"
+"literal>, <literal>Buy</literal>, <literal>New Inv</literal> i "
+"<literal>Switch In</literal>. Si en trobeu un de diferent, afegiu-lo a la "
+"llista correcta i torneu a iniciar el connector. Podríeu notar que hi ha "
+"similituds en les entrades en diferents camps, i podríeu trobar que s'està "
+"seleccionant el tipus d'activitat incorrecte. El connector comprovarà "
+"aquestes llistes en l'ordre següent: <literal>Shrsin</literal>, "
+"<literal>DivX</literal>, <literal>Reinvdiv</literal>, <literal>Brokerage</"
+"literal>, <literal>Buy</literal>, <literal>Sell</literal> i <literal>Remove</"
+"literal>. Tornar a ordenar les llistes per a adaptar-les no funciona com "
+"podria esperar-se, ja que les entrades al fitxer de recursos s'ordenaran "
+"alfabèticament. Si el paràmetre infractor és un que no necessiteu, "
+"simplement suprimiu-lo del fitxer. Si això no és possible, possiblement "
+"haureu d'editar el fitxer abans d'introduir-lo."
+
+#. Tag: title
+#: details-impexp-csv.docbook:761
+#, no-c-format
+msgid "Configuration of CSV importer plugin"
+msgstr "Configuració del connector de l'importador de CSV"
+
+#. Tag: para
+#: details-impexp-csv.docbook:762
+#, no-c-format
+msgid ""
+"A well-known drawback of QIF format is that it is a fairly loose format. "
+"With CSV files, there is this same problem, only more so, in that there is "
+"no agreed standard at all. With investment files, in particular, there is "
+"much more scope for variation in specifying the different types of "
+"activities represented in the data. The plugin handles this by listing these "
+"activity types in a resource file, called <filename>csvimporterrc</"
+"filename>. The location of this file depends on your operating system or "
+"distribution. On a &Linux; system, this will be <filename class=\"directory"
+"\">$KDEHOME/share/config</filename> where <envar>$KDEHOME</envar> is usually "
+"<filename class=\"directory\">.config</filename> within your home folder. If "
+"you are migrating from a version of &kmymoney; prior to 5.0, the old "
+"location of <envar>$KDEHOME</envar> was <filename class=\"directory\">.kde4</"
+"filename>, also within your home folder. Using this resource file allows the "
+"user to add an activity type that the developer had not encountered. If the "
+"file does not exist when the importer first runs, it will create a default "
+"version, containing a few of the more obvious descriptions."
+msgstr ""
+"Un inconvenient ben conegut del format QIF és que es tracta un format força "
+"fluix. Amb els fitxers CSV, hi ha el mateix problema, només que encara més, "
+"ja que no existeix un estàndard acordat. Amb els fitxers d'inversió, en "
+"particular, hi ha moltes més possibilitats de variació en especificar els "
+"diferents tipus d'activitat representats en les dades. El connector ho "
+"maneja llistant aquests tipus d'activitat en un fitxer de recursos, anomenat "
+"<filename>csvimporterrc</filename>. La ubicació d'aquest fitxer dependrà del "
+"sistema operatiu o de la distribució. En un sistema &Linux;, aquest estarà a "
+"<filename class=\"directory\">$KDEHOME/share/config</filename> on <envar>"
+"$KDEHOME</envar> generalment és «.config» dins de la carpeta d'inici. Si "
+"esteu migrant des d'una versió anterior del &kmymoney; 5.0, la ubicació "
+"anterior de <envar>$KDEHOME</envar> era <filename class=\"directory\">.kde4</"
+"filename>, també dins de la vostra carpeta d'inici. L'ús d'aquest fitxer de "
+"recursos permetrà a l'usuari afegir un tipus d'activitat que el "
+"desenvolupador no havia trobat. Si el fitxer no existeix quan s'executa "
+"l'importador per primera vegada, crearà una versió predeterminada, la qual "
+"contindrà algunes de les descripcions més òbvies."
+
+#. Tag: para
+#: details-impexp-csv.docbook:780
+#, no-c-format
+msgid ""
+"A number of sample CSV files are provided (in the <filename class=\"directory"
+"\"> kmymoney/contrib/csvimporter/</filename> folder in the source tree) in "
+"the hope that they may help. For example, in the investment sample, an "
+"activity type is \"<literal>ReInvestorContract Buy : ReInvested Units</"
+"literal>\". In the validation process, the first successful match is on the "
+"<literal>ReInv</literal> in <literal>ReInvestorContract Buy</literal>, so "
+"the transaction therefore gets classed as <literal>Reinvdiv</literal>, even "
+"though <literal>Buy</literal> also is mentioned. Another example which has "
+"been observed is an activity type of <literal>Reinvest</literal> even though "
+"the transaction included neither price nor amount, but only a quantity, so "
+"that needed to be treated as <literal>Add Shares</literal>, or "
+"<literal>Shrsin</literal>."
+msgstr ""
+"Es proporcionen diversos fitxers CSV de mostra (a la carpeta <filename class="
+"\"directory\">kmymoney/contrib/csvimporter/</filename> a l'arbre del codi "
+"font) amb l'esperança que puguin ajudar. Per exemple, en la mostra "
+"d'inversió, un tipus d'activitat és «<literal>ReInvestorContract Buy : "
+"ReInvested Units</literal>». En el procés de validació, la primera "
+"coincidència amb èxit sobre la <literal>ReInv</literal> a "
+"<literal>ReInvestorContract Buy</literal>, de manera que l'operació es "
+"classificarà com a <literal>Reinvdiv</literal>, tot i que també s'esmenta "
+"<literal>Buy</literal>. Un altre exemple que s'ha observat és un tipus "
+"d'activitat <literal>Reinvest</literal> tot i que l'operació no incloïa ni "
+"el preu ni l'import, sinó només una quantitat, així que s'haurà de tractar "
+"com <literal>Add Shares</literal> o <literal>Shrsin</literal>."
+
+#. Tag: para
+#: details-impexp-csv.docbook:794
+#, no-c-format
+msgid ""
+"When this plugin was created, only a few investment formats had been seen as "
+"examples, and it may well be that you will encounter one which cannot be "
+"handled correctly. If you find such a file, please send a suitable example "
+"(edited to remove or replace personal information) to the &kmymoney; user "
+"list &userlist; or developer list &devlist;, the developer will do his best "
+"to modify the plugin to handle it."
+msgstr ""
+"Quan es va crear aquest connector, només s'havien vist com a exemples alguns "
+"formats d'inversió, i és molt possible que en trobeu algun que no es pugui "
+"gestionar correctament. Si el trobeu, envieu-ne un exemple adequat (editant-"
+"lo per a eliminar o substituir la informació personal) a la llista d'usuaris "
+"&userlist; o a la llista de desenvolupadors &devlist; del &kmymoney;, el "
+"desenvolupador farà tot el que pugui per a modificar el connector perquè el "
+"gestioni."
+
+#. Tag: title
+#: details-impexp-csv.docbook:803
+#, no-c-format
+msgid "CSV Importer configuration dialog"
+msgstr "Diàleg de configuració de l'importador de CSV"
+
+#. Tag: para
+#: details-impexp-csv.docbook:804
+#, no-c-format
+msgid ""
+"Finally, there are a few other items which may be configured in a dialog "
+"invoked through the <link linkend=\"details.settings.plugins.csvimporter"
+"\">CSV Importer configuration dialog</link>, which can be invoked from the "
+"Plugins page of the main KMyMoney configuration dialog. This includes which "
+"items will be autodetected by the importer and which profile will be used if "
+"you do have the importer export a QIF file, as mentioned above."
+msgstr ""
+"Finalment, hi ha alguns altres elements que es poden configurar en un diàleg "
+"invocat a través del <link linkend=\"details.settings.plugins.csvimporter"
+"\">Diàleg de configuració de l'importador de CSV</link>, que es pot invocar "
+"des de la pàgina Connectors del diàleg principal de configuració del "
+"KMyMoney. Això inclou quins elements es detectaran automàticament per part "
+"de l'importador i quin perfil s'utilitzarà si feu que l'importador exporti "
+"un fitxer QIF, com s'ha esmentat anteriorment."
+
+#. Tag: title
+#: details-impexp-csv.docbook:820
+#, no-c-format
+msgid "CSV Exporter"
+msgstr "Exportador a CSV"
+
+#. Tag: para
+#: details-impexp-csv.docbook:822
+#, no-c-format
+msgid ""
+"To export data to a CSV file, choose the <menuchoice><guimenu>File</guimenu> "
+"<guisubmenu>Export</guisubmenu> <guimenuitem>CSV...</guimenuitem> </"
+"menuchoice> menu item. The dialog which appears gives you a number of "
+"choices which control the data to be exported."
+msgstr ""
+"Per a exportar a un fitxer CSV, trieu l'element de menú <menuchoice> "
+"<guimenu>Fitxer</guimenu><guisubmenu>Exporta</guisubmenu> <guimenuitem>CSV..."
+"</guimenuitem></menuchoice>. El diàleg que apareix us dona diverses opcions "
+"que controlen les dades que s'exportaran."
+
+#. Tag: screeninfo
+#: details-impexp-csv.docbook:830
+#, no-c-format
+msgid "<screeninfo>csv exporter</screeninfo>"
+msgstr "<screeninfo>Exportador a CSV</screeninfo>"
+
+#. Tag: phrase
+#: details-impexp-csv.docbook:836
+#, no-c-format
+msgid "<phrase>csv exporter</phrase>"
+msgstr "<phrase>Exportador a CSV</phrase>"
+
+#. Tag: para
+#: details-impexp-csv.docbook:841
+#, no-c-format
+msgid ""
+"Please note that an exported CSV file can include data from only one account."
+msgstr ""
+"Tingueu en compte que un fitxer CSV exportat pot incloure dades d'un sol "
+"compte."
+
+#. Tag: para
+#: details-impexp-csv.docbook:845
+#, no-c-format
+msgid ""
+"Specify the name of the exported CSV file either by entering the complete "
+"path in the <guilabel>File to export to</guilabel> field, or by clicking "
+"<guilabel>Browse</guilabel> and navigating to it in the Save File dialog. "
+"Choose which account to export with the <guilabel>Account to export</"
+"guilabel> dropdown."
+msgstr ""
+"Especifiqueu el nom del fitxer CSV exportat ja sigui introduint el camí "
+"complet al camp <guilabel>Fitxer on s'exportarà</guilabel>, o fent clic a "
+"<guilabel>Explora</guilabel> i navegant-hi al diàleg de desament de fitxer. "
+"Trieu quin compte voleu exportar amb el desplegable <guilabel>Compte a "
+"exportar</guilabel>."
+
+#. Tag: para
+#: details-impexp-csv.docbook:852
+#, no-c-format
+msgid ""
+"The time period of data exported is controlled by the <guilabel>Date Range</"
+"guilabel> <guilabel>Start on</guilabel> and <guilabel>End on</guilabel> date "
+"fields. The default values represent the complete date range of your entire "
+"data file, and they are adjusted when you select an account to export."
+msgstr ""
+"El període de temps de les dades exportades està controlat pels camps de "
+"dates <guilabel>Comença el</guilabel> i <guilabel>Acaba el</guilabel> de "
+"l'<guilabel>Interval de dates</guilabel>. Els valors predeterminats "
+"representen l'interval de dates complet de tot el fitxer de dades, i "
+"s'ajusten quan seleccioneu un compte a exportar."
+
+#. Tag: para
+#: details-impexp-csv.docbook:859
+#, no-c-format
+msgid ""
+"By default, the <guilabel>Field Separator</guilabel> is a comma, but you can "
+"also choose to use a tab or semicolon."
+msgstr ""
+"De manera predeterminada, el <guilabel>Separador de camps</guilabel> és una "
+"coma, però també podeu triar utilitzar un tabulador o un punt i coma."
+
+#. Tag: para
+#: details-impexp-csv.docbook:864
+#, no-c-format
+msgid ""
+"If you check the <guilabel>Contents to Export</guilabel> <guilabel>Account</"
+"guilabel> radio button, then the data exported will be the transactions from "
+"the specified account and date range. However, if you select the "
+"<guilabel>Categories</guilabel> radio button, then the exported file will "
+"contain one row for each category which has been defined. For top level "
+"categories, the category name is shown, and an <quote>I</quote> or <quote>E</"
+"quote> is shown to indicate whether the Category is Income or Expense. For "
+"non top-level categories, the parent category is also shown."
+msgstr ""
+"Si marqueu el botó d'opció <guilabel>Contingut a exportar</guilabel> "
+"<guilabel>Compte</guilabel>, llavors les dades exportades seran les "
+"operacions del compte especificat i l'interval de dates. No obstant això, si "
+"seleccioneu el botó d'opció <guilabel>Categories</guilabel>, llavors el "
+"fitxer exportat contindrà una fila per a cada categoria que s'ha definit. "
+"Per a les categories de nivell superior, es mostra el nom de la categoria, i "
+"es mostra una «I» o una «E» per a indicar si la categoria és d'Ingressos o "
+"Despeses. Per a categories no de nivell superior, també es mostra la "
+"categoria pare."
+
+#. Tag: para
+#: details-impexp-csv.docbook:875
+#, no-c-format
+msgid ""
+"The exporter will output a set of columns appropriate for the type of "
+"account being exported."
+msgstr ""
+"L'exportador generarà un conjunt de columnes adequades al tipus de compte "
+"que s'exporta."

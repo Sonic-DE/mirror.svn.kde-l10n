@@ -1,0 +1,743 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!-- Define an entity for your application if it is not part of KDE
+       Git -->
+  <!ENTITY gcompris "<application
+>GCompris Teachers</application
+>">
+  <!ENTITY kappname "&gcompris-teachers;"
+><!-- replace kmyapplication here
+                                              do *not* replace kappname-->
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % English "INCLUDE"
+> <!-- ONLY If you are writing non-English
+                                     original documentation, change
+                                     the language here -->
+
+  <!-- Do not define any other entities; instead, use the entities
+       from entities/general.entities and en/user.entities. -->
+]>
+<book id="gcompris_teachers_doc" lang="&language;">
+
+<bookinfo>
+<title
+>Dornlev GCompris evit ar gelennerien</title>
+
+<authorgroup>
+<author>
+<personname
+><firstname
+>Johnny</firstname
+> <surname
+>Jazeix</surname
+> </personname>
+</author>
+<author>
+<personname
+><firstname
+>Timothée</firstname
+> <surname
+>Giet</surname
+> </personname>
+</author>
+
+<othercredit role="developer">
+<othername
+>Skipailh &gcompris; </othername>
+<contrib
+>Diorroerien</contrib>
+</othercredit
+> 
+
+<othercredit role="translator"
+><surname
+>Skipailh troerien &gcompris; evit ar brezhoneg </surname
+><affiliation
+><address
+><email
+>envelkervoas@free.fr</email
+></address
+></affiliation
+><contrib
+>Envel Kervoas</contrib
+></othercredit
+> 
+</authorgroup>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<!-- Date of the documentation
+Don't forget to include this last date.
+Please respect the format of the date (YYYY-MM-DD),it is used by scripts.
+-->
+<date
+>2026-01-31</date>
+
+<!--version information of the application and kde this documentation is valid for.
+for example 'xx.yy.zz'
+-->
+<releaseinfo
+>26.0</releaseinfo>
+
+<!-- Abstract about this handbook -->
+
+<abstract>
+<para
+>Ur meziant kelennadurel gant meur a obererezhioù eo GCompris. An titouroù-mañ a vez kinniget d'ar gelennerien evit implijout  benveg-merañ GCompris (gcompris_teachers) </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>deskadurezh </keyword>
+<keyword
+>bugale</keyword>
+<keyword
+>c'hoarioù</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="overview">
+  <title
+>Gwel hollek</title>
+  <para
+>Gcompris_teachers a zo e bal reiñ d'ar gelennerien kement-mañ : </para>
+  <itemizedlist>
+    <listitem
+><para
+>krouiñ ha merañ strolladoù skolidi.</para
+></listitem>
+    <listitem
+><para
+>krouiñ rolloù-labour spis</para
+></listitem>
+    <listitem
+><para
+>kevreañ ha kas ur roll-labour d'ar skolidi.</para
+></listitem>
+    <listitem
+><para
+>gwelout disoc'hoù-labour pep strollad ha pep skoliad.</para
+></listitem>
+    <listitem
+><para
+>dielfennañ respontoù ar skolidi</para
+></listitem>
+  </itemizedlist>
+</chapter>
+<chapter id="specifications">
+  <title
+>Spisverkoù</title>
+  <para
+>Deskrivañ a ra ar rann da heul skrammoù liesseurt ar meziant. </para>
+  <sect1 id="main-screen-overview">
+    <title
+>Gwel hollek ar skramm pennañ</title>
+    <para
+>Gant ar skramm pennañ e c'heller mont betek : </para>
+    <itemizedlist>
+      <listitem
+><para
+>Pajenn an daolenn-stur.</para
+></listitem>
+      <listitem
+><para
+>Pajenn-verañ ar skolidi.</para
+></listitem>
+      <listitem
+><para
+>Pajenn-gevreañ an ardivinkoù.</para
+></listitem>
+      <listitem
+><para
+>Pajenn disoc'hoù an obererezhioù.</para
+></listitem>
+      <listitem
+><para
+>Pajenn-verañ teskadoù an data.</para
+></listitem>
+      <listitem
+><para
+>Pajenn embann an disoc'hoù gant grafoù</para
+></listitem>
+      <listitem
+><para
+>Pajenn an dibarzhioù</para
+></listitem>
+    </itemizedlist>
+    <para
+>Dre ziouer e vez diskouezet pajenn an daolenn-stur, enni prenestr al login, ha barrenn ar roll war-gostez evit tizhout ar pajennoù all zo kuzhet keit ha ma chomo kont ur c'helenner kevreet. <mediaobject>
+        <imageobject>
+          <imagedata fileref="main_screen.png"/>
+        </imageobject>
+        <textobject>
+          <phrase
+>skramm pennañ</phrase>
+        </textobject>
+      </mediaobject>
+    </para>
+    <para
+>Ar bouton a servij da ziskouez/ da guzhat  titl ar boutonoù e barrenn ar roll war-gostez (skeudennig an hamburger) a ro tu da c'hounit un tamm plas ur wech anavezet ster pep skeudennig gant an implijer.<mediaobject>
+        <imageobject>
+          <imagedata fileref="main_screen_hamburger.png"/>
+        </imageobject>
+        <textobject>
+          <phrase
+>skeudenn hambuger ar skramm pennañ</phrase>
+        </textobject>
+      </mediaobject>
+    </para>
+  </sect1>
+  <sect1 id="dashboard---login-dialog">
+    <title
+>Taolenn-stur - Prenestr ar c'hevreañ</title>
+    <para
+>A-benn krouiñ login nevez ur c'helenner hag un teskad data eo dav leuniañ an anv hag ar ger-tremen. Bez e c'heller goude dibab ma ranker kriptañ an teskad data (evit mirout a c'hallfe nep a gar lenn anezhañ hep kaout ar ger-tremen).  <mediaobject>
+        <imageobject>
+          <imagedata fileref="main_screen_create_db.png"/>
+        </imageobject>
+        <textobject>
+          <phrase
+>skramm pennañ evit krouiñ teskadoù data</phrase>
+        </textobject>
+      </mediaobject>
+    </para>
+  </sect1>
+  <sect1 id="manage-groups-and-pupils">
+    <title
+>Merañ strolladoù ha skolidi</title>
+    <para
+>Gant ar bajenn-mañ e c'haller krouiñ rolloù ar strolladoù hag ar skolidi evit ar c'hlas. <mediaobject>
+        <imageobject>
+          <imagedata fileref="pupils_groups.png"/>
+        </imageobject>
+        <textobject>
+          <phrase
+>strolladoù/skolidi</phrase>
+        </textobject>
+      </mediaobject>
+    </para>
+    <sect2 id="create-a-group">
+      <title
+>Krouiñ ur strollad</title>
+      <para
+>Click on the <quote
+>Add a group</quote
+> button on the bottom left and in the dialog fill the <quote
+>Name</quote
+> and optionally the <quote
+>Description</quote
+>. <mediaobject>
+          <imageobject>
+            <imagedata fileref="group_add.png"/>
+          </imageobject>
+          <textobject>
+            <phrase
+>ouzhpennañ ur strollad </phrase>
+          </textobject>
+        </mediaobject>
+      </para>
+    </sect2>
+    <sect2 id="modify-a-group-name-or-delete-it">
+      <title
+>Kemm anv ur strollad pe dizober anezhañ</title>
+      <para
+>Evit krouiñ pe lemel ur strollad, dav tremen a-us da roll ar strolladoù hag ar boutonoù <quote
+>Kemm</quote
+> ha <quote
+>Lemel</quote
+> a zeuio war-wel. <mediaobject>
+          <imageobject>
+            <imagedata fileref="group_delete_button.png"/>
+          </imageobject>
+          <textobject>
+            <phrase
+>bouton evit lemel ur strollad</phrase>
+          </textobject>
+        </mediaobject>
+      </para>
+      <para
+>Pa glker war ar bouton <quote
+>Lemel</quote
+> e c'haller lemel ar strollad. Evezh : lamet e vez ar skolidi eus ar strolladoù, met chom a reont e-barzh an teskad data. Evit lemel ar skolidi, dav ober evel er rann da heul. <mediaobject>
+          <imageobject>
+            <imagedata fileref="group_delete_confirmation.png"/>
+          </imageobject>
+          <textobject>
+            <phrase
+>kadarnaat lemel ur strollad </phrase>
+          </textobject>
+        </mediaobject>
+      </para>
+    </sect2>
+    <sect2 id="create-a-single-pupil">
+      <title
+>Krouiñ ur skoliad e-unan</title>
+      <para
+>Evit krouiñ ur skoliad nevez en teskad data e ranker klikañ war <quote
+>Ouzhpennañ ur skoliad</quote
+>. Aze e c'haller lakaat anv ar skoliad hag ar ger-tremen evit kevreañ anezhañ gant ar pratikoù. Posupl eo ivez ouzhpennañ skolidi end-eeun e strolladoù krouet a-raok. <mediaobject>
+          <imageobject>
+            <imagedata fileref="pupil_create.png"/>
+          </imageobject>
+          <textobject>
+            <phrase
+>krouiñ ur skoliad</phrase>
+          </textobject>
+        </mediaobject>
+      </para>
+    </sect2>
+    <sect2 id="create-several-pupils-using-csv-strings-export-pupils-in-a-file">
+      <title
+>Krouiñ meur a skoliad en ur implijout restroù csv  / treuzkas skolidi d'ur restr</title>
+      <para
+>Bez' e c'haller treuzkas ur roll skolidi end-eeun en ur ober gant ur restr csv.  <mediaobject>
+          <imageobject>
+            <imagedata fileref="pupil_import.png"/>
+          </imageobject>
+          <textobject>
+            <phrase
+>treuzkas skolidi</phrase>
+          </textobject>
+        </mediaobject>
+      </para>
+      <para
+>Posupl eo ivez treuzkas ur roll skolidi : <mediaobject>
+          <imageobject>
+            <imagedata fileref="pupil_export_csv.png"/>
+          </imageobject>
+          <textobject>
+            <phrase
+>csv treuzkas skolidi</phrase>
+          </textobject>
+        </mediaobject>
+      </para>
+    </sect2>
+    <sect2 id="managing-pupils">
+      <title
+>Merañ skolidi</title>
+      <para
+>Kinnig a ra ivez an etrefas boutonoù evit krouiñ skolidi, ouzhpennañ pe lemel anezhe diiouzh strolladoù. <mediaobject>
+          <imageobject>
+            <imagedata fileref="pupil_add_to_group.png"/>
+          </imageobject>
+          <textobject>
+            <phrase
+>ouzhpennet ur skoliad d'ur strollad</phrase>
+          </textobject>
+        </mediaobject
+> <mediaobject>
+          <imageobject>
+            <imagedata fileref="pupil_remove_from_group.png"/>
+          </imageobject>
+          <textobject>
+            <phrase
+>lemel ur skoliad diouzh ur strollad</phrase>
+          </textobject>
+        </mediaobject>
+      </para>
+      <para
+>Bez' e c'heller ivez lemel skolidi. Lemel ur skoliad ne lam ket e strollad. <mediaobject>
+          <imageobject>
+            <imagedata fileref="pupil_delete.png"/>
+          </imageobject>
+          <textobject>
+            <phrase
+>lemel ur skoliad</phrase>
+          </textobject>
+        </mediaobject>
+      </para>
+    </sect2>
+  </sect1>
+  <sect1 id="connect-devices">
+    <title
+>Kevreañ ardivinkoù</title>
+    <para
+>Ur wech savet an teskad data eo poent mont e darempred gant ar pratikoù. Diskouez a ra ar bajenn <quote
+>Kevreañ ardivinkoù</quote
+> ar strolladoù hag ar skolidi. Dre ziouer n'eus strollad ebet dibabet, evel-se e weler roll an holl skolidi. En ur zibab ur strollad e vo silet ar skolidi war-wel gouest da labourat er strollad-mañ hepken.  <mediaobject>
+        <imageobject>
+          <imagedata fileref="connect_devices.png"/>
+        </imageobject>
+        <textobject>
+          <phrase
+>kevreañ ardivinkoù</phrase>
+        </textobject>
+      </mediaobject>
+    </para>
+    <sect2 id="configuration-of-the-server-and-devices">
+      <title
+>Kefluniadur ar servijour hag an ardivinkoù</title>
+      <para
+>Rankout a ra ar c'helenner kefluniañ ar servijour hag ardivinkoù ar pratikoù a fell dezhañ kevreañ a-raok dezhe bezañ gouest da gevreañ. Ret eo d'an holl ardivinkoù bezañ kevreet gant ar memes kenrouedad lec'hel. War ar servijour eo dav mont war ar bajenn <quote
+>Dibarzhioù</quote
+> ha dibab un <quote
+>Identelezh ar servijour ID</quote
+> hepken (evit ar c'henrouedad lec'hel da nebeutañ) hag ur <quote
+>Porzh</quote
+> (ma n'eo ket sklaer pehini dibab, kenkoulz eo mirout an hini dre ziouer); <mediaobject>
+          <imageobject>
+            <imagedata fileref="settings.png"/>
+          </imageobject>
+          <textobject>
+            <phrase
+>dibarzhioù</phrase>
+          </textobject>
+        </mediaobject>
+      </para>
+      <para
+>War zu ardivinkoù GCompris e ranker mont d'ar bajenn <quote
+>Kefluniañ</quote
+> war ar skramm pennañ ha diskenn ar roll evit kavout bouton  <quote
+>Keflunier servijour ar c'helenner</quote
+>. <mediaobject>
+          <imageobject>
+            <imagedata fileref="gcompris_teacher_config_button.png"/>
+          </imageobject>
+          <textobject>
+            <phrase
+>bouton kefluniañ gcompris_teachers</phrase>
+          </textobject>
+        </mediaobject>
+      </para>
+      <para
+>Ur wech bezañ kliket, ret eo bezañ sur da gaout memes dibarzhioù eget ar servijour : <mediaobject>
+          <imageobject>
+            <imagedata fileref="gcompris_teacher_settings.png"/>
+          </imageobject>
+          <textobject>
+            <phrase
+>dibarzhioù gcompris_teachers</phrase>
+          </textobject>
+        </mediaobject>
+      </para>
+      <para
+>Ouzhpenn da se, ma 'z eus un arc'hwel maltouter gant ar servijour pe ar pratik, ret eo digeriñ ar porzh dereat e-barzh dibarzhioù an arc'hwel maltouter a-benn lakaat an ardivinkoù da gehentiñ kenetreze. </para>
+    </sect2>
+    <sect2 id="daily-connection-workflow">
+      <title
+>Roudenn bemdeziek ar c'hevreañ</title>
+      <para
+>Setu roudenn ar c'hevreañ : <emphasis
+>Goulenn a ra ar c'helenner digant ar skolidi lakaat o ardivinkoù war elum ha loc'hañ GCompris, ha diwar ar bajenn <quote
+>Kevreañ ardivinkoù</quote
+> pouezhañ war ar bouton <quote
+>Kevreañ ardivinkoù</quote
+> .</emphasis
+>  <mediaobject>
+          <imageobject>
+            <imagedata fileref="gcompris_connect.png"/>
+          </imageobject>
+          <textobject>
+            <phrase
+>kevreañ da GCompris</phrase>
+          </textobject>
+        </mediaobject>
+        <itemizedlist>
+          <listitem
+><para
+>Ur wech resevet kadarnaat ar skolidi e tibab ar c'helenner peseurt loginoù e c'hoanta kas diwar roll ar <quote
+>Skolidi</quote
+> ha pouezhañ goude war s <quote
+>Kas roll al loginoù </quote
+></para
+></listitem>
+          <listitem
+><para
+>Ardivinkoù ar pratikoù a ziskouez ur prenestr nevez evit dibab al login a blij dezhe. <mediaobject>
+                <imageobject>
+                  <imagedata fileref="gcompris_select_login.png"/>
+                </imageobject>
+                <textobject>
+                  <phrase
+>dibab ar c'hont GCompris</phrase>
+                </textobject>
+              </mediaobject>
+          </para
+></listitem>
+          <listitem
+><para
+>Ur wech kadarnaet e teuio un eil prenestr war-wel evit bizskrivañ ar ger-tremen. <mediaobject>
+                <imageobject>
+                  <imagedata fileref="gcompris_password.png"/>
+                </imageobject>
+                <textobject>
+                  <phrase
+>ger-tremen e-barzh GCompris</phrase>
+                </textobject>
+              </mediaobject>
+          </para
+></listitem>
+          <listitem
+><para
+>Ma 'z eo reizh ar ger-tremen e welo ar pratik ur bouton glas-gwer war ar varrenn o tiskouez pennvad ar c'hevreañ.  <mediaobject>
+                <imageobject>
+                  <imagedata fileref="gcompris_connect_ok.png"/>
+                </imageobject>
+                <textobject>
+                  <phrase
+>Kevreañ gant ar servijour OK</phrase>
+                </textobject>
+              </mediaobject>
+          </para
+></listitem>
+          <listitem
+><para
+>Hag ar servijour a resevo ur c'hemenn : <mediaobject>
+                <imageobject>
+                  <imagedata fileref="connect_devices_password_correct_incorrect.png"/>
+                </imageobject>
+                <textobject>
+                  <phrase
+>kevreañ c'hwitet abalamour d'ur ger-tremen fall</phrase>
+                </textobject>
+              </mediaobject>
+          </para
+></listitem>
+        </itemizedlist>
+      </para>
+      <para
+>Setu al livioù liesseurt : <itemizedlist>
+          <listitem
+><para
+>Gwer : kevreet</para
+></listitem>
+          <listitem
+><para
+>Ruz : ger-tremen fall</para
+></listitem>
+          <listitem
+><para
+>Gris : digevreet (digevreet goude bezañ bet kevreet d'ur poent zo)</para
+></listitem>
+          <listitem
+><para
+>Treuswelus : den ebet bet o klask en em gevreañ gant al login.</para
+></listitem>
+        </itemizedlist>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="connect_devices_password_disconnected_not_connected.png"/>
+          </imageobject>
+          <textobject>
+            <phrase
+>kevreañ gant ar servjour c'hwitet abalamour d'un digrevrañ pe kevre ebet</phrase>
+          </textobject>
+        </mediaobject>
+      </para>
+    </sect2>
+  </sect1>
+  <sect1 id="activities-view">
+    <title
+>Obererezhioù</title>
+    <para
+>Gant ar bajenn-mañ e c'haller diskouez an disoc'hoù bet silet hervez an deiziad, ar strolladoù, ar skolidi hag an obererezhioù. <mediaobject>
+        <imageobject>
+          <imagedata fileref="activities.png"/>
+        </imageobject>
+        <textobject>
+          <phrase
+>obererezhioù</phrase>
+        </textobject>
+      </mediaobject>
+    </para>
+    <para
+>Diskouez a ra ar skeudenn da heul an disoc'hoù evit an obererezh <quote
+>lamadenn a-serzh</quote
+> (pep obererezh gouest da gas roadennoù d'ar servijour a ginnig un diskouez dezhañ e-unan). <mediaobject>
+        <imageobject>
+          <imagedata fileref="activities_results.png"/>
+        </imageobject>
+        <textobject>
+          <phrase
+>disoc'hoù an obererezhioù</phrase>
+        </textobject>
+      </mediaobject>
+    </para>
+    <para
+>Gwelout a reer en deus bizskrivet ar skoliad ur respont fall ar wech kentañ hag ur respont mat en eil tro, hag ar respontoù a zispleg pelec'h emañ ar fazioù. </para>
+  </sect1>
+  <sect1 id="dataset-handling">
+    <title
+>Teskadoù data</title>
+    <para
+>Gant pajenn an teskadoù data e c'hell ar gelennerien krouiñ/adnevesaat/lemel teskadoù data resis evit an obererezhioù gant ezhommoù resis da dizhout, ha kas/lemel anezhe d'ar/diwar ar pratikoù. <mediaobject>
+        <imageobject>
+          <imagedata fileref="datasets.png"/>
+        </imageobject>
+        <textobject>
+          <phrase
+>Teskadoù an data</phrase>
+        </textobject>
+      </mediaobject>
+    </para>
+    <para
+>Harzet eo evit poent an obererezhioù rak ne c'heller embann nemet ar re stummet gant un teskad data (da skouer n'ez eus na <quote
+>Rummadoù yezhadurel</quote
+> pe <quote
+>Ar gerioù o kouezhañ</quote
+>. Roll an obererezhioù reizh (a c'hall kas data pe c'hoazh kaout un embanner teskadoù data) a vez kavet war ar bajenn-mañ eus hon diorren wiki:  <ulink url="https://invent.kde.org/education/gcompris/-/wikis/Teacher-administration-tool#supported-activities"
+></ulink
+> </para>
+    <para
+>Setu ur skouer evit an obererezh <quote
+>Klogorennoù-tredan daouredel</quote
+>. Pep embanner obererezhioù a zo ennañ tachennoù evit reiñ anv  an teskad data, ar pal hag an diaester. Pep obererezh he deus hec'h embanner dezhi. <mediaobject>
+        <imageobject>
+          <imagedata fileref="dataset_create_update.png"/>
+        </imageobject>
+        <textobject>
+          <phrase
+>adnevesaat an teskadoù data</phrase>
+        </textobject>
+      </mediaobject>
+    </para>
+    <para
+>Bouton an <quote
+>Titouriñ</quote
+> en traoñ a-gleiz a vez kinniget evit reiñ titouroù resis diwar-benn an doare da leuniañ an teskad data ma vez ezhomm. <mediaobject>
+        <imageobject>
+          <imagedata fileref="dataset_instructions.png"/>
+        </imageobject>
+        <textobject>
+          <phrase
+>titouroù an teskadoù data</phrase>
+        </textobject>
+      </mediaobject>
+    </para>
+    <para
+>Evit lemel un teskad data : diuz anezhañ, pouezañ war ar bouton <quote
+>Lemel teskad data</quote
+> ha gwiriañ er prenestr da heul : <mediaobject>
+        <imageobject>
+          <imagedata fileref="dataset_delete.png"/>
+        </imageobject>
+        <textobject>
+          <phrase
+>dilemel teskad an data</phrase>
+        </textobject>
+      </mediaobject>
+    </para>
+    <para
+>Ma 'z eus pratikoù kevreet e c'hell ar c'helenner kas dezhe un teskad data resis da vezañ implijet gante. Dav eo diuzañ an teskad data ha pouezañ war ar bouton  <quote
+>Kas d'ar pratikoù</quote
+>. Diskouezet e vo roll an holl bratikoù gevreet ha dibab pere a resevo an teskad data. <mediaobject>
+        <imageobject>
+          <imagedata fileref="dataset_send_client.png"/>
+        </imageobject>
+        <textobject>
+          <phrase
+>kas teskadoù data</phrase>
+        </textobject>
+      </mediaobject>
+    </para>
+    <sect2 id="specific-activities">
+      <title
+>Obererezhioù spis evit ar servijour</title>
+      <para
+>Krouet hon eus an obererezh We have created the <quote
+>Goulennaoueg liesdibab</quote
+> na weler nemet ma 'z eus teskadoù data en ardivink. Gant an obererezh-mañ e c'hell ar gelennerien krouiñ goulennaouegoù liesdibab a bep seurt.  <mediaobject>
+        <imageobject>
+          <imagedata fileref="gcompris_multiple-choice_questions.png"/>
+        </imageobject>
+        <textobject>
+          <phrase
+>obererezh goulennaoueg  liesdibab</phrase>
+        </textobject>
+      </mediaobject>
+      </para>
+    </sect2>
+  </sect1>
+  <sect1 id="charts-view">
+    <title
+>Grafoù</title>
+    <para
+>Heñvel ouzh pajenn an obererezhioù eo evit ar poent pajenn ar grafoù, ganti e c'heller diskouez an disoc'hoù en ur silañ an deiziad, ar strolladoù, ar skolidi hag an obererezhioù e stumm grafoù. <mediaobject>
+        <imageobject>
+          <imagedata fileref="charts.png"/>
+        </imageobject>
+        <textobject>
+          <phrase
+>grafoù</phrase>
+        </textobject>
+      </mediaobject>
+    </para>
+    <para
+>Evit poent, treut a-walc'h eo an diskouez, met gwellaet e vo diwar evezhiadennoù ar gelennerien. Ur wech kliket war un obererezh er graf e vez diskouezet ur gwel heñvel hini pajenn an obererezhioù. Pa vez diuzet an taolennata  <quote
+>skolidi</quote
+> e c'heller gwelout all disoc'hoù ur skoliad resis : <mediaobject>
+        <imageobject>
+          <imagedata fileref="charts_view_results_pupil.png"/>
+        </imageobject>
+        <textobject>
+          <phrase
+>gwel grafoù disoc'hoù ur skoliad</phrase>
+        </textobject>
+      </mediaobject>
+    </para>
+    <para
+>Pa vez diuzet an taolennata <quote
+>Obererezhioù</quote
+> e c'heller gwelout holl disoc'hoù evit un obererezh resis : <mediaobject>
+        <imageobject>
+          <imagedata fileref="charts_view_results_activity.png"/>
+        </imageobject>
+        <textobject>
+          <phrase
+>gwel grafoù disoc'h un obererezh</phrase>
+        </textobject>
+      </mediaobject>
+    </para>
+  </sect1>
+  <sect1 id="settings">
+    <title
+>Dibarzhioù</title>
+    <para
+>Gant pajenn an dibarzhioù e c'heller kemm an etrefas diouzh ar c'hoant ha kaout titouroù diwar-benn an teskad data implijet hag an abadenn. <mediaobject>
+        <imageobject>
+          <imagedata fileref="settings.png"/>
+        </imageobject>
+        <textobject>
+          <phrase
+>dibarzhioù</phrase>
+        </textobject>
+      </mediaobject>
+    </para>
+  </sect1>
+</chapter>
+
+<chapter id="credits">
+
+<title
+>Lañvaz ha trugarekaat</title>
+
+<para
+>&gcompris; </para>
+<para
+>Copyright ar meziant © 2000–2025 Timothée Giet hag all </para>
+
+<para
+>Troidigezh vrezhoneg : Skipailh treiñ GCompris evit ar brezhoneg <email
+>envelkervoas@free.fr</email
+></para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+
+<!--
+Local Variables:
+mode: xml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+
+vim:tabstop=2:shiftwidth=2:expandtab
+kate: space-indent on; indent-width 2; tab-width 2; indent-mode none;
+-->

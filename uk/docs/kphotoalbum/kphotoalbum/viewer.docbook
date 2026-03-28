@@ -1,0 +1,649 @@
+<!--
+SPDX-FileCopyrightText: 2003-2006 Jesper K. Pedersen <jesper.pedersen@kdab.com>
+SPDX-FileCopyrightText: 2012 Miika Turkia <miika.turkia@gmail.com>
+SPDX-FileCopyrightText: 2012 Yuri Chornoivan <yurchor@ukr.net>
+SPDX-FileCopyrightText: 2026 Randall Rude <rsquared42@proton.me>
+
+SPDX-License-Identifier: GFDL-1.2-only
+-->
+
+<chapter id="chp-viewer">
+  <title
+>Переглядач</title>
+  <para
+>Причиною завантаження ваших зображень до &kphotoalbum; і витрати годин часу на їх опис є, звичайно ж, те, що колись ви захочете їх переглянути. Для перегляду у &kphotoalbum; передбачено відповідний інструмент, здатний показувати ваші зображення і відео. Відкрити переглядач можна з перегляду мініатюр у спосіб, описаний у розділі <xref linkend="chp-thumbnail-view"/>. </para>
+
+<sect1 id="sect-viewer-common-commands">
+<title
+>Загальні команди у засобі перегляду</title>
+<para
+>У засобі перегляду передбачено підтримку як зображень, так і відео. Підтримку вказаних нижче команд передбачено як для зображень, так і для відео: </para>
+
+<itemizedlist>
+<listitem>
+<para
+>Натисніть <keycap
+>Esc</keycap
+>, що закрити вікно засобу для перегляду. </para>
+</listitem>
+
+<listitem>
+<para
+>Натисніть <keycap
+>Page Down</keycap
+> або <keycap
+>Пробіл</keycap
+>, щоб перейти до наступного зображення або відео, і натисніть <keycap
+>Page Up</keycap
+>, щоб перейти до попереднього зображення або відео. </para>
+</listitem>
+
+<listitem>
+<para
+>Натисніть <keycombo
+>&Ctrl;<keycap
+>1</keycap
+></keycombo
+>, щоб відкрити <link linkend="chp-typingIn"
+>діалогове вікно анотування</link
+> для поточного зображення або відео. </para>
+</listitem>
+
+<listitem>
+<para
+>Натисніть <keycombo
+>&Ctrl;<keycap
+>4</keycap
+></keycombo
+>, щоб зробити зображення або відео першим у стосі (якщо воно вже є частиною стосу). </para>
+</listitem>
+
+<listitem>
+<para
+>Натисніть <keycombo
+>&Ctrl;<keycap
+>D</keycap
+></keycombo
+>, щоб редагувати опис зображення. </para>
+</listitem>
+
+<listitem>
+<para
+>Натисніть <keycap
+>&Enter;</keycap
+> або <keycap
+>F11</keycap
+>, щоб перемкнути програму у повноекранний режим під час перегляду зображення або відео.</para>
+</listitem>
+
+<listitem>
+<para
+>Натисніть <keycap
+>Delete</keycap
+>, щоб вилучити поточне зображення або відео зі списку перегляду (ніби ви не вибирали його для перегляду) та перейти до наступного запису у списку перегляду. Якщо буде вилучено останнє зображення або відео зі списку перегляду, вікно переглядача буде закрито.</para>
+</listitem>
+
+<listitem>
+<para
+>Натисніть <keycombo
+>&Ctrl;<keycap
+>Delete</keycap
+></keycombo
+>, щоб додати поточне зображення або відео до списку вилучення засобу перегляду. Коли вікно перегляду буде закрито, &kphotoalbum; відкриє діалогове вікно <emphasis
+>Вилучення записів</emphasis
+>, якщо список вилучення не є порожнім. </para>
+</listitem>
+</itemizedlist>
+</sect1>
+
+<sect1 id="sect-viewer-images">
+<title
+>Перегляд зображень</title>
+<para
+>Ознайомтеся із розділом <xref linkend="sect-viewer-common-commands"/>, щоб дізнатися більше про підтримку команд, призначених для роботи і з зображеннями, і з відео. </para>
+
+<para
+>Знімок вікна переглядача можна побачити на зображенні <xref linkend="fig-viewer"/>. Переглядач, звичайно ж, покаже ваше зображення, але, крім того, цей інструмент покаже вам інформацію, яку було вами вказано щодо кожного з зображень, зокрема, про те, кого зображено на знімку, коли було зроблено знімок тощо. </para>
+
+  <figure id="fig-viewer">
+    <title
+>Переглядач</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="viewer.png" format="PNG"/>
+      </imageobject>
+    </mediaobject>
+  </figure>
+
+<sect2 id="viewer-infobox">
+<title
+>Інформаційна панель</title>
+
+<para
+>У засобі перегляду передбачено інформаційну панель, яку можна накласти поверх зображення. Інформаційну панель буде розташовано внизу по центру в <xref linkend="fig-viewer"/>. </para>
+
+<para
+>Якщо інформаційну панель розташовано поверх тієї частини зображення, яку ви дуже хочете побачити, ви можете клацнути лівою кнопкою миші на інформаційній панелі і перетягнути її в інше місце на зображенні. Натисніть <keycombo
+>&Ctrl;<keycap
+>I</keycap
+></keycombo
+>, щоб увімкнути або вимкнути інформаційне поле. </para>
+
+<para
+>Ви можете налаштувати перелік даних, які буде показано на інформаційній панелі, а також, звичайно, вказати, чи буде її взагалі показано. Доступ до всіх цих параметрів можна отримати наведенням вказівника миші на поле перегляду з наступним клацанням правою кнопкою миші. Нижче наведено знімок контекстного меню: <xref linkend="fig-viewer-contextmenu"/>.</para>
+
+  <figure id="fig-viewer-contextmenu">
+    <title
+>Контекстне меню переглядача</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="viewer-contextmenu.png" format="PNG"/>
+      </imageobject>
+    </mediaobject>
+  </figure>
+
+  <para
+>Деякі зі слів на інформаційній панелі підкреслено. Якщо ви натиснете вказівником миші таке слово, перегляд (див. <xref linkend="chp-browsing"/>) буде переведено у область видимості відповідного елемента. Наприклад, у демонстрації, якщо ви натиснете пункт <literal
+>Anne Helene</literal
+>, на панелі відомостей області перегляду буде показано знімки з Anne Helene. Тобто програма виконає тут саму дію, що і у разі вибору кореневої групи <literal
+>Люди</literal
+> з наступним вибором пункту <literal
+>Anne Helene</literal
+>.</para>
+
+<para
+>У верхньому правому куті інформаційної панелі ви побачите невеличку кнопку <emphasis
+>Перейти до контексту</emphasis
+> з логотипом &kphotoalbum;. Натискання цієї кнопки призведе до відкриття панелі <xref linkend="chp-thumbnail-view"/>. У перегляді мініатюр буде показано всі зображення, зображення, яке відкрито у переглядачі, буде позначено. Ідея така: ви переглядаєте знімок певної особи і бажаєте побачити всі знімки з цією особою. Один зі знімків може бути, скажімо, з ваших шкільних часів, і ви забажаєте побачити інші зображення цього періоду життя. За допомогою натискання кнопки <guilabel
+>Перейти до контексту</guilabel
+> ви зможете відкрити перегляд мініатюр з усіма зображенням, де буде сфокусовано поточне зображення і показано зображення зі шкільних часів.</para>
+
+<para
+>Якщо поточне зображення містить координати геопозиціювання, ви побачите кнопку карти під кнопкою <guilabel
+>Перейти до контексту</guilabel
+> на інформаційній панелі. Клацання лівою кнопкою миші на цій кнопці відкриє нове вікно з картою, на якій показано місце зйомки фотографії. </para>
+
+<note>
+<para
+>Кнопку карти буде показано, лише якщо &kphotoalbum; було зібрано з підтримкою &marble;. </para>
+</note>
+</sect2>
+
+<sect2 id="viewer-navigation">
+<title
+>Перегляд більшої кількості зображень</title>
+  <para
+>Якщо ви завантажили у переглядач декілька зображень, ви зможете здійснювати перехід між цими зображеннями за допомогою натискання клавіш <keycap
+>Page Up</keycap
+> і <keycap
+>Page Down</keycap
+>. Перейти до першого або останнього зображення списку можна за допомогою натискання клавіш <keycap
+>Home</keycap
+> і <keycap
+>End</keycap
+>. Доступ до цих функціональних можливостей можна, звичайно ж, отримати і за допомогою контекстного меню.</para>
+
+<para
+>Крім того, ви можете наказати програмі показати декілька зображень у форматі показу слайдів. У режимі показу слайдів &kphotoalbum; завантажує нове зображення до засобу перегляду кожні декілька секунд. Натисніть <keycombo
+>&Ctrl;<keycap
+>R</keycap
+></keycombo
+>, щоб увімкнути або вимкнути режим показу слайдів. Натисніть <keycombo
+>&Ctrl;<keycap
+>+</keycap
+></keycombo
+>, щоб прискорити показ слайдів, або <keycombo
+>&Ctrl;<keycap
+>-</keycap
+></keycombo
+>, щоб уповільнити його. </para>
+</sect2>
+
+<sect2 id="viewer-zooming">
+<title
+>Збільшення та зменшення</title>
+<para
+>Під час перегляду ви можете збільшити або зменшити ваше зображення перетягуванням прямокутника вказівником миші. Натискання клавіші <keycap
+>–</keycap
+> знову зменшить зображення. Натискання клавіші <keycap
+>+</keycap
+> збільшить зображення навколо його центра. На наведеному нижче знімку <xref linkend="fig-marking-zoom-rectangle"/> показано позначення прямокутника збільшення, а на знімку <xref linkend="fig-zoomed-view"/> — результат збільшення.</para>
+
+<para
+>За допомогою натискання клавіші <keycap
+>.</keycap
+> ви зможете скинути результати зміни масштабу, тобто відновити показ зображення у початковому масштабі. Натискання клавіші <keycap
+>=</keycap
+> встановить масштаб, за якого кожен піксель на екрані відповідатиме пікселю на зображенні.</para>
+
+  <figure id="fig-marking-zoom-rectangle">
+    <title
+>Збільшення у переглядачі</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="marking-zoom-rectangle.png"
+          format="PNG"/>
+      </imageobject>
+    </mediaobject>
+  </figure>
+
+  <figure id="fig-zoomed-view">
+    <title
+>Збільшення у переглядачі</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="zoomed-view.png"
+          format="PNG"/>
+      </imageobject>
+    </mediaobject>
+  </figure>
+</sect2>
+
+<sect2 id="viewer-rotating">
+<title
+>Обертання зображень</title>
+  <para
+>Натисніть клавішу <keycap
+>7</keycap
+>, щоб обернути зображення на 90 градусів проти годинникової стрілки. Натисканням клавіші <keycap
+>9</keycap
+> можна обернути зображення на 90 градусів за годинниковою стрілкою. Натисканням клавіші <keycap
+>8</keycap
+> можна повернути зображення на 180 градусів (тобто перевернути його). </para>
+<important>
+<para
+>Будь-які зміни в обертанні зображення у засобі перегляду буде записано до зображення.</para>
+</important>
+</sect2>
+</sect1>
+
+<sect1 id="sect-viewer-videos">
+<title
+>Перегляд відео</title>
+<para
+>Ознайомтеся із розділом <xref linkend="sect-viewer-common-commands"/>, щоб дізнатися більше про підтримку команд, призначених для роботи і з зображеннями, і з відео. </para>
+
+<para
+>Якщо до засобу перегляду буде завантажено відео, його відтворення почнеться автоматично. Натисніть клавішу <keycap
+>P</keycap
+>, щоб призупинити відтворення відео, і натисніть її ще раз, щоб відновити відтворення. </para>
+
+<para
+>Натисніть <keycap
+>Home</keycap
+>, щоб перезапустити поточне відео з початку, а <keycap
+>End</keycap
+> зупиняє поточне відео та перемотує його на початок. </para>
+
+<important>
+<para
+>Деякими можливостями засобу перегляду не можна скористатися, якщо ви переглядаєте відео:</para>
+<itemizedlist>
+<listitem>
+<para
+>На відео не може бути показано інформаційну панель.</para>
+</listitem>
+<listitem>
+<para
+>Для відео не передбачено підтримки масштабування, окрім вмикання або вимикання повноекранного режиму.</para>
+</listitem>
+<listitem>
+<para
+>Для відео не передбачено підтримки дій з обертання.</para>
+</listitem>
+<listitem>
+<para
+>Для відео не передбачено підтримки режиму показу слайдів.</para>
+</listitem>
+</itemizedlist>
+</important>
+
+<warning>
+<para
+>Як жетони (див. <xref linkend="assigning-tokens-from-the-viewer"/>), так і мітки (див. <xref linkend="annotating-from-the-viewer"/>) можна перемикати, коли відео показано у переглядачі, але користувач не отримує негайного відгуку щодо того, що щось змінилося. Ви можете встановити режим анотацій переглядача у значення <emphasis
+>Заблоковано</emphasis
+>, щоб уникнути випадкового перемикання жетона або мітки. </para>
+
+<para
+>Як зазначалося вище, клавіша <keycap
+>P</keycap
+> використовується для перемикання між режимами призупинення, тому цю клавішу не можна використовувати для перемикання між жетонами чи мітками під час перегляду відео. </para>
+</warning>
+
+<sect2 id="viewer-seeking">
+<title
+>Позиціювання у відео</title>
+<para
+>У засобі перегляду передбачено підтримку позиціювання у відео. Зі списком клавіатурних комбінацій для керування ним можна ознайомитися у розділі <xref linkend="table-video-seek-controls"/>. </para>
+
+<table id="table-video-seek-controls">
+<title
+>Засоби позиціювання у відео</title>
+<tgroup cols="3">
+<thead>
+<row>
+<entry
+>Тривалість позиціювання</entry>
+<entry
+>Перемотати назад</entry>
+<entry
+>Перемотати вперед</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry
+>100 мс</entry>
+<entry
+><keycombo
+>&Shift;<keycap
+>&Up;</keycap
+></keycombo
+></entry>
+<entry
+><keycombo
+>&Shift;<keycap
+>&Down;</keycap
+></keycombo
+></entry>
+</row>
+<row>
+<entry
+>1 сек.</entry>
+<entry
+><keycap
+>&Up;</keycap
+></entry>
+<entry
+><keycap
+>&Down;</keycap
+></entry>
+</row>
+<row>
+<entry
+>10 сек.</entry>
+<entry
+><keycap
+>&Left;</keycap
+></entry>
+<entry
+><keycap
+>&Right;</keycap
+></entry>
+</row>
+<row>
+<entry
+>1 хвилина</entry>
+<entry
+><keycombo
+>&Shift;<keycap
+>&Left;</keycap
+></keycombo
+></entry>
+<entry
+><keycombo
+>&Shift;<keycap
+>&Right;</keycap
+></keycombo
+></entry>
+</row>
+<row>
+<entry
+>10 хвилин</entry>
+<entry
+><keycombo
+>&Ctrl;<keycap
+>&Left;</keycap
+></keycombo
+></entry>
+<entry
+><keycombo
+>&Ctrl;<keycap
+>&Right;</keycap
+></keycombo
+></entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+</sect2>
+</sect1>
+
+<sect1 id="annotating-from-the-viewer">
+<title
+>Анотування зображень у режимі перегляду</title>
+<para
+>Передбачено три режими для анотування зображень у режимі перегляду:</para>
+<itemizedlist>
+    <listitem
+><para
+><emphasis
+>Заблоковано</emphasis
+> — це типовий режим після запуску переглядача. У ньому не відбуватиметься анотування або встановлення ключів. Так зроблено для того, щоб під час перегляду ви не виконали випадкове анотування зображень.</para
+></listitem>
+    <listitem
+><para
+><emphasis
+>Призначити ключі</emphasis
+> — уможливлює призначення ключів до зображень простим натисканням клавіші з діапазону A-Z на клавіатурі.</para
+></listitem>
+    <listitem
+><para
+><emphasis
+>Призначити мітки</emphasis
+> — уможливлює прив'язування макроса із клавішею на клавіатурі. Наприклад, <emphasis
+>L</emphasis
+> може встановлювати запис <emphasis
+>Лас-Вегас</emphasis
+> у категорії <emphasis
+>Місце</emphasis
+>. Крім того, також можна встановлювати будь-яку мітку для зображення.</para
+></listitem>
+</itemizedlist>
+<para
+>Режими вибирають із контекстного меню, як це можна бачити на знімку <xref linkend="fig-ctxmenu-for-mode-selection"/>. </para>
+<para
+>Ці два режими докладно описано нижче. </para>
+
+  <figure id="fig-ctxmenu-for-mode-selection">
+    <title
+>Вибір режиму анотування у режимі перегляду</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="annotation-mode.png"
+          format="PNG"/>
+      </imageobject>
+    </mediaobject>
+  </figure>
+
+</sect1>
+
+
+
+
+<sect1 id="assigning-tokens-from-the-viewer">
+<title
+>Встановлення ключів для переглядача</title>
+<para
+>Уявімо собі, що ви забажаєте надіслати декілька зображень на друк, щоб мати паперові відбитки. Щоб визначити потрібні зображення, ви можете відкрити переглядач зображень і позначите їх як <emphasis
+>придатні</emphasis
+>, <emphasis
+>непридатні</emphasis
+> або <emphasis
+>непевні</emphasis
+> під час перегляду кожного з них.</para>
+
+<para
+>Звичайно, можна створити декілька нових записів (скажімо, <emphasis
+>Придатні</emphasis
+>, <emphasis
+>Непридатні</emphasis
+> та <emphasis
+>Непевні</emphasis
+>) для наявної категорії, скажімо, категорії <emphasis
+>Альбом</emphasis
+>. Втім, враховуючи, що потреба у цих мітках може зникнути, щойно ви надішлете зображення на друк, є простіший спосіб, а саме, просто встановлення ключів для зображень. Ключі мають назви від «A» до «Z». Встановити ключ можна натисканням клавіші з відповідною літерою. На знімку у <xref linkend="fig-images-with-tokens"/> можна бачити зображення зі встановленими ключами A, B і C.</para>
+
+  <figure id="fig-images-with-tokens">
+    <title
+>Зображення з ключами</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="images-with-tokens.png"
+          format="PNG"/>
+      </imageobject>
+    </mediaobject>
+  </figure>
+
+  <para
+>Щоб це спрацювало, вам слід перевести програму у режим <emphasis
+>Призначення ключів</emphasis
+>. Див. <xref linkend="fig-ctxmenu-for-mode-selection"/></para>
+
+<para
+>Після встановлення ключів для ваших зображень ключі можна буде використовувати для звичайного перегляду у переглядачі, як це показано на знімку <xref linkend="fig-tokens-in-browser"/>. Отже, якщо ви бажаєте позначити зображення, які слід змінити, надрукувати або виконати інші дії, просто відкрийте панель навігації зображеннями і обробіть їх звідти, наприклад, скориставшись пунктом <emphasis
+>копіювати зображення до…</emphasis
+> з контекстного меню.</para>
+
+  <figure id="fig-tokens-in-browser">
+    <title
+>Ключі, показані у переглядачі</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="tokens-in-browser.png"
+          format="PNG"/>
+      </imageobject>
+    </mediaobject>
+  </figure>
+
+<para
+>Категорії (а особливо ключі) може бути показано у перегляді мініатюр. У режимі показу категорій переглядача мініатюр ви також можете додавати ключі до зображень простим натисканням літери ключа, коли вибрано пункт зображення. Це можна бачити на знімку <xref linkend="fig-tokens-in-thumbnail-viewer"/>.</para>
+
+  <figure id="fig-tokens-in-thumbnail-viewer">
+    <title
+>Ключі у переглядачі мініатюр</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="tokens-in-thumbnail-viewer.png"
+          format="PNG"/>
+      </imageobject>
+    </mediaobject>
+  </figure>
+
+
+
+</sect1>
+
+<sect1>
+    <title
+>Встановлення міток зображень у режимі перегляду</title>
+<para
+>Встановлення міток для зображень може бути марудною справою, навіть у &kphotoalbum;, принаймні, якщо каталог запущено, і у вас тисячі чи десятки тисяч зображень, які потребують встановлення належних міток. На щастя, у новій версії програм можна додавати мітки натисканням лише однієї клавіші при перегляді зображень. Прикладом такого способу обробки зображень є випадок, коли більшість зображень є знімками тих сами декількох людей у тих самих декількох місцях плюс  декілька «сторонніх» тем — скажімо, місця вашого відпочинку або знімки декількох друзів, які відвідували вас протягом тижня.</para>
+
+<para
+>Щоб позначити ваші зображення під час перегляду, вам слід перейти до <emphasis
+>режиму призначення міток</emphasis
+> — див. <xref linkend="fig-ctxmenu-for-mode-selection"/>. У цьому режимі просто натисніть клавішу літери на клавіатурі, щоб призначити або використати призначену мітку.</para>
+
+<para
+>На знімку <xref linkend="fig-assign-macro-step1"/> було натиснуто клавішу <keycap
+>s</keycap
+> під час перегляду зображень у <emphasis
+>режимі призначення міток</emphasis
+>. У відповідь було відкрито вікно, де можна вказати мітку, яку буде пов'язано із цією клавішею.</para>
+
+<figure id="fig-assign-macro-step1">
+  <title
+>Крок 1 — пов'язування макроса із клавішею <emphasis
+>s</emphasis
+></title>
+  <mediaobject>
+    <imageobject
+><imagedata fileref="assign-macro-step1.png" format="PNG"/></imageobject>
+   </mediaobject>
+</figure>
+
+<para
+>Далі, у полі для введення було введено <emphasis
+>sp</emphasis
+>, у відповідь на що програма запропонувала «Люди / Je<emphasis
+>sp</emphasis
+>er» і «Люди / <emphasis
+>Sp</emphasis
+>iff». Обидва записи відповідають введеним літерам. Натискання клавіші зі стрілкою вниз призведе до вибору запису <emphasis
+>Spiff</emphasis
+>. Натискання клавіші &Enter; призначить літеру <emphasis
+>S</emphasis
+> для додавання мітки <emphasis
+>Люди / Spiff</emphasis
+> до зображення, яке ви переглядаєте. Це призначення буде збережено для наступних сеансів. Щоб пов'язати <keycap
+>S</keycap
+> із іншою міткою, просто натисніть <keycombo action="simul"
+>&Shift;<keycap
+>s</keycap
+></keycombo
+>.</para>
+
+<figure id="fig-assign-macro-step2">
+  <title
+>Крок 2 — призначення макроса, введення <emphasis
+>sp</emphasis
+></title>
+  <mediaobject>
+    <imageobject
+><imagedata fileref="assign-macro-step2.png" format="PNG"/></imageobject>
+   </mediaobject>
+</figure>
+
+<para
+>На знімку <xref linkend="fig-assign-macro-overview"/> нижче наявні клавіатурні прив'язки показано у правій частині вікна.</para>
+<figure id="fig-assign-macro-overview">
+  <title
+>Огляд пов'язаних клавіатурних скорочень</title>
+  <mediaobject>
+    <imageobject
+><imagedata fileref="assign-macro-overview.png" format="PNG"/></imageobject>
+   </mediaobject>
+</figure>
+
+<para
+>Якщо мітки, яку ви хочете призначити, ще немає у вашій базі даних, просто натисніть кнопку <emphasis
+>Додати нову</emphasis
+>, щоб створити мітку. Відповідне вікно наведено на знімку <xref linkend="fig-assign-macro-add-new-value.png"/> нижче</para>
+
+<figure id="fig-assign-macro-add-new-value.png">
+  <title
+>Додавання нової мітки</title>
+  <mediaobject>
+    <imageobject
+><imagedata fileref="assign-macro-add-new-value.png" format="PNG"/></imageobject>
+   </mediaobject>
+</figure>
+
+<para
+>Під час встановлення міток для зображень на панелі перегляду може виникнути потреба у додаванні мітки без прив'язки її до клавіші. Для цього просто натисніть комбінацію клавіш <keycombo
+>&Ctrl;<keycap
+>A</keycap
+></keycombo
+>. Також цією комбінацією можна відкрити вікно для перегляду загальних прив'язок клавіш. </para>
+
+<para
+>Натисніть <keycombo
+>&Ctrl;<keycap
+>C</keycap
+></keycombo
+>, щоб скопіювати анотації з попереднього зображення у списку переглядача. </para>
+
+</sect1>
+</chapter>
+
+<!-- Keep this comment at the end of the file
+Local variables:
+mode: xml
+sgml-namecase-general:t
+sgml-general-insert-case:lower
+sgml-always-quote-attributes:t
+sgml-indent-step:2
+sgml-parent-document: "index.docbook"
+End:
+-->

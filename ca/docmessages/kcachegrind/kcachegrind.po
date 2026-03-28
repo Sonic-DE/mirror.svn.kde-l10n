@@ -1,0 +1,2127 @@
+# Translation of kcachegrind.po to Catalan
+# Copyright (C) 2022-2024 This_file_is_part_of_KDE
+# This file is distributed under the license LGPL version 2.1 or
+# version 3 or later versions approved by the membership of KDE e.V.
+#
+# SPDX-FileCopyrightText: 2022, 2023, 2024 Josep M. Ferrer <txemaq@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: kcachegrind\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 12:04+0000\n"
+"PO-Revision-Date: 2024-11-17 21:03+0100\n"
+"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
+"Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 22.12.3\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#. Tag: title
+#: index.docbook:18
+#, no-c-format
+msgid "The &kcachegrind; Handbook"
+msgstr "El manual del &kcachegrind;"
+
+#. Tag: author
+#: index.docbook:21
+#, no-c-format
+msgid "<firstname>Josef</firstname> <surname>Weidendorfer</surname>"
+msgstr "<firstname>Josef</firstname> <surname>Weidendorfer</surname>"
+
+#. Tag: email
+#: index.docbook:25
+#, no-c-format
+msgid "Josef.Weidendorfer@gmx.de"
+msgstr "Josef.Weidendorfer@gmx.de"
+
+#. Tag: contrib
+#: index.docbook:27
+#, no-c-format
+msgid "Original author of the documentation"
+msgstr "Autor original de la documentació"
+
+#. Tag: author
+#: index.docbook:30
+#, no-c-format
+msgid "<firstname>Federico</firstname> <surname>Zenith</surname>"
+msgstr "<firstname>Federico</firstname> <surname>Zenith</surname>"
+
+#. Tag: email
+#: index.docbook:34
+#, no-c-format
+msgid "federico.zenith@member.fsf.org"
+msgstr "federico.zenith@member.fsf.org"
+
+#. Tag: contrib
+#: index.docbook:36
+#, no-c-format
+msgid "Updates and corrections"
+msgstr "Actualitzacions i correccions"
+
+#. Tag: trans_comment
+#: index.docbook:39
+#, no-c-format
+msgid "ROLES_OF_TRANSLATORS"
+msgstr "&traductor.JosepMa.Ferrer;"
+
+#. Tag: holder
+#: index.docbook:45
+#, no-c-format
+msgid "&Josef.Weidendorfer;"
+msgstr "&Josef.Weidendorfer;"
+
+#. Tag: holder
+#: index.docbook:49
+#, no-c-format
+msgid "Federico Zenith"
+msgstr "Federico Zenith"
+
+#. Tag: date
+#: index.docbook:53
+#, no-c-format
+msgid "2016-11-18"
+msgstr "18 de novembre de 2016"
+
+#. Tag: releaseinfo
+#: index.docbook:54
+#, no-c-format
+msgid "0.8.0 (Applications 17.04)"
+msgstr "0.8.0 (Aplicacions 17.04)"
+
+#. Tag: para
+#: index.docbook:57
+#, no-c-format
+msgid ""
+"&kcachegrind; is a profile data visualization tool, written using &kde-"
+"frameworks;."
+msgstr ""
+"El &kcachegrind; és una eina de visualització de dades d'anàlisi del "
+"rendiment, escrita usant els &kde-frameworks;."
+
+#. Tag: keyword
+#: index.docbook:63
+#, no-c-format
+msgid "<keyword>KDE</keyword>"
+msgstr "<keyword>KDE</keyword>"
+
+#. Tag: keyword
+#: index.docbook:64
+#, no-c-format
+msgid "kdesdk"
+msgstr "kdesdk"
+
+#. Tag: keyword
+#: index.docbook:65
+#, no-c-format
+msgid "Cachegrind"
+msgstr "Cachegrind"
+
+#. Tag: keyword
+#: index.docbook:66
+#, no-c-format
+msgid "Callgrind"
+msgstr "Callgrind"
+
+#. Tag: keyword
+#: index.docbook:67
+#, no-c-format
+msgid "Valgrind"
+msgstr "Valgrind"
+
+#. Tag: keyword
+#: index.docbook:68
+#, no-c-format
+msgid "<keyword>Profiling</keyword>"
+msgstr "<keyword>Anàlisi del rendiment</keyword>"
+
+#. Tag: title
+#: index.docbook:75
+#, no-c-format
+msgid "Introduction"
+msgstr "Introducció"
+
+#. Tag: para
+#: index.docbook:77
+#, no-c-format
+msgid ""
+"&kcachegrind; is a browser for data produced by profiling tools. This "
+"chapter explains what profiling is for, how it is done, and gives some "
+"examples of profiling tools available."
+msgstr ""
+"El &kcachegrind; és un navegador per a les dades produïdes per les eines "
+"d'anàlisi del rendiment. Aquest capítol explica per a què serveix "
+"l'elaboració d'anàlisis de rendiment, com es fan, i dona alguns exemples "
+"d'eines disponibles d'anàlisi del rendiment."
+
+#. Tag: title
+#: index.docbook:84
+#, no-c-format
+msgid "<title>Profiling</title>"
+msgstr "<title>Anàlisi del rendiment</title>"
+
+#. Tag: para
+#: index.docbook:86
+#, no-c-format
+msgid ""
+"When developing a program, one of the last steps often involves performance "
+"optimizations. As it makes no sense to optimize functions rarely used, "
+"because that would be a waste of time, one needs to know in which part of a "
+"program most of the time is spent."
+msgstr ""
+"En desenvolupar un programa, un dels últims passos sovint implica "
+"optimitzacions de rendiment. Com que no té sentit optimitzar funcions "
+"rarament utilitzades, perquè això seria una pèrdua de temps, cal saber en "
+"quina part d'un programa es gasta la major part del temps."
+
+#. Tag: para
+#: index.docbook:93
+#, no-c-format
+msgid ""
+"For sequential code, collecting statistical data of the programs runtime "
+"characteristic like time numbers spent in functions and code lines usually "
+"is enough. This is called Profiling. The program is run under control of a "
+"profiling tool, which gives the summary of an execution run at the end. In "
+"contrast, for parallel code, performance problems typically are caused when "
+"one processor is waiting for data from another. As this waiting time usually "
+"cannot easily attributed, here it is better to generate timestamped event "
+"traces. &kcachegrind; cannot visualize this kind of data."
+msgstr ""
+"Per al codi seqüencial, recopilar dades estadístiques de les "
+"característiques de l'entorn d'execució dels programes com els números de "
+"temps emprats en funcions i línies de codi en general és suficient. Això "
+"s'anomena anàlisi de rendiment («Profiling» en anglès). El programa "
+"s'executa sota el control d'una eina d'anàlisi de rendiment, que al final "
+"dona el resum d'una execució. En canvi, per al codi paral·lel, els problemes "
+"de rendiment solen ser causats quan un processador espera dades d'un altre. "
+"Com que aquest temps d'espera normalment no es pot atribuir fàcilment, aquí "
+"és millor generar traces d'esdeveniments de marca horària. El &kcachegrind; "
+"no pot visualitzar aquest tipus de dades."
+
+#. Tag: para
+#: index.docbook:105
+#, no-c-format
+msgid ""
+"After analyzing the produced profile data, it should be easy to see the hot "
+"spots and bottlenecks of the code: for example, assumptions about call "
+"counts can be checked, and identified code regions can be optimized. "
+"Afterwards, the success of the optimization should be verified with another "
+"profile run."
+msgstr ""
+"Després d'analitzar les dades produïdes d'anàlisi del rendiment, hauria de "
+"ser fàcil veure els punts calents i els colls d'ampolla del codi: per "
+"exemple, es poden comprovar els supòsits sobre els comptadors de crides, i "
+"identificar les regions de codi que es poden optimitzar. Després, l'èxit de "
+"l'optimització s'ha de verificar amb una altra execució d'anàlisi del "
+"rendiment."
+
+#. Tag: title
+#: index.docbook:115
+#, no-c-format
+msgid "Profiling Methods"
+msgstr "Mètodes d'anàlisi del rendiment"
+
+#. Tag: para
+#: index.docbook:117
+#, no-c-format
+msgid ""
+"To exactly measure the time passed or record the events happening during the "
+"execution of a code region (&eg; a function), additional measurement code "
+"needs to be inserted before and after the given region. This code reads the "
+"time, or a global event count, and calculates differences. Thus, the "
+"original code has to be changed before execution. This is called "
+"instrumentation. Instrumentation can be done by the programmer itself, the "
+"compiler, or by the runtime system. As interesting regions usually are "
+"nested, the overhead of measurement always influences the measurement "
+"itself. Thus, instrumentation should be done selectively and results have to "
+"be interpreted with care. Of course, this makes performance analysis by "
+"exact measurement a very complex process."
+msgstr ""
+"Per a mesurar exactament el temps passat o registrar els esdeveniments que "
+"ocorren durant l'execució d'una regió de codi (&pex;, una funció), cal "
+"inserir codi de mesura addicional abans i després de la regió indicada. "
+"Aquest codi llegeix el temps, o un comptador global d'esdeveniments, i "
+"calcula les diferències. Per tant, el codi original s'ha de canviar abans de "
+"l'execució. Això s'anomena instrumentació. La instrumentació la pot fer el "
+"programador mateix, el compilador, o el sistema d'execució. Com que les "
+"regions interessants solen estar imbricades, la sobrecàrrega de la mesura "
+"sempre influeix en la mateixa mesura. Per tant, la instrumentació ha de fer-"
+"se de manera selectiva i els resultats han d'interpretar-se amb cura. Per "
+"descomptat, això fa que l'anàlisi de rendiment per a un mesurament exacte "
+"sigui un procés molt complex."
+
+#. Tag: para
+#: index.docbook:129
+#, no-c-format
+msgid ""
+"Exact measurement is possible because of hardware counters (including "
+"counters incrementing on a time tick) provided in modern processors, which "
+"are incremented whenever an event is happening. As we want to attribute "
+"events to code regions, without the counters, we would have to handle every "
+"event by incrementing a counter for the current code region ourself. Doing "
+"this in software is, of course, not possible; but, on the assumption that "
+"the event distribution over source code is similar when looking only at "
+"every n-th event instead of every event, a measurement method whose overhead "
+"is tunable has been developed: it is called Sampling. Time Based Sampling "
+"(&TBS;) uses a timer to regularly look at the program counter to create a "
+"histogram over the program code. Event Based Sampling (&EBS;) exploits the "
+"hardware counters of modern processors, and uses a mode where an interrupt "
+"handler is called on counter underflow to generate a histogram of the "
+"corresponding event distribution: in the handler, the event counter is "
+"always reinitialized to the <symbol>n</symbol> of the sampling method. The "
+"advantage of sampling is that the code does not have to be changed, but it "
+"is still a compromise: the above assumption will be more correct if "
+"<symbol>n</symbol> is small, but the smaller the <symbol>n</symbol>, the "
+"higher the overhead of the interrupt handler."
+msgstr ""
+"La mesura exacta és possible gràcies als comptadors de maquinari (incloent-"
+"hi els comptadors que s'incrementen en una marca de temps) proporcionats en "
+"els processadors moderns, que s'incrementen sempre que ocorre un "
+"esdeveniment. Com que volem atribuir els esdeveniments a les regions de "
+"codi, sense els comptadors, hauríem de gestionar cada esdeveniment "
+"incrementant un comptador per a la regió actual del codi. Per descomptat, no "
+"és possible fer-ho en el programari, però, suposant que la distribució de "
+"l'esdeveniment sobre el codi font és similar quan s'observa només cada "
+"esdeveniment n-èsim en lloc de cada esdeveniment, s'ha desenvolupat un "
+"mètode de mesura la sobrecàrrega del qual és ajustable: s'anomena mostreig. "
+"El mostreig basat en el temps (&TBS;) utilitza un temporitzador per a "
+"observar regularment el comptador del programa per a crear un histograma "
+"sobre el codi del programa. El mostreig basat en els esdeveniments (&EBS;) "
+"explota els comptadors de maquinari dels processadors moderns, i utilitza un "
+"mode on es crida un controlador d'interrupció per a generar un histograma de "
+"la distribució d'esdeveniments corresponent: en el gestor, el comptador "
+"d'esdeveniments sempre es reinicialitza amb la <symbol>n</symbol> del mètode "
+"de mostreig. L'avantatge del mostreig és que el codi no s'ha de canviar, "
+"però encara és un compromís: la suposició anterior serà més correcta si la "
+"<symbol>n</symbol> és petita, però com més petita sigui la <symbol>n</"
+"symbol>, més alt serà la sobrecàrrega del controlador d'interrupció."
+
+#. Tag: para
+#: index.docbook:148
+#, no-c-format
+msgid ""
+"Another measurement method is to simulate things happening in the computer "
+"system when executing a given code, &ie; execution driven simulation. The "
+"simulation is always derived from a more or less accurate machine model; "
+"however, with very detailed machine models, giving very close approximations "
+"to reality, the simulation time can be unacceptably high in practice. The "
+"advantage of simulation is that arbitrarily complex measurement/simulation "
+"code can be inserted in a given code without perturbing results. Doing this "
+"directly before execution (called runtime instrumentation), using the "
+"original binary, is very comfortable for the user: no re-compilation is "
+"necessary. Simulation becomes usable when simulating only parts of a machine "
+"with a simple model; another advantage is that the results produced by "
+"simple models are often easier to understand: often, the problem with real "
+"hardware is that results include overlapping effects from different parts of "
+"the machine."
+msgstr ""
+"Un altre mètode de mesura és simular coses que passen en el sistema "
+"informàtic quan s'executa un codi determinat, és a dir, simulació dirigida a "
+"l'execució. La simulació sempre es deriva d'un model de màquina més o menys "
+"precís; tanmateix, amb models de màquina molt detallats, donant "
+"aproximacions molt properes a la realitat, el temps de simulació pot ser "
+"inacceptablement alt en la pràctica. L'avantatge de la simulació és que el "
+"codi de mesura/simulació arbitràriament complex es pot inserir en un codi "
+"donat sense resultats que pertorbin. Fer-ho directament abans de l'execució "
+"(anomenada instrumentació en temps d'execució), utilitzant el binari "
+"original, és molt còmode per a l'usuari: no cal recompilar. La simulació es "
+"fa utilitzable en simular només parts d'una màquina amb un model simple; un "
+"altre avantatge és que els resultats produïts per models simples són sovint "
+"més fàcils d'entendre: sovint, el problema amb el maquinari real és que els "
+"resultats inclouen efectes superposats de diferents parts de la màquina."
+
+#. Tag: title
+#: index.docbook:164
+#, no-c-format
+msgid "Profiling Tools"
+msgstr "Eines d'anàlisi del rendiment"
+
+#. Tag: para
+#: index.docbook:166
+#, no-c-format
+msgid ""
+"Most known is the GCC profiling tool <application>gprof</application>: one "
+"needs to compile the program with option <option>-pg</option>; running the "
+"program generates a file <filename>gmon.out</filename>, which can be "
+"transformed into human-readable form with <command>gprof</command>. One "
+"disadvantage is the required re-compilation step to prepare the executable, "
+"which has to be statically linked. The method used here is compiler-"
+"generated instrumentation, which measures call arcs happening among "
+"functions and corresponding call counts, in conjunction with &TBS;, which "
+"gives a histogram of time distribution over the code. Using both pieces of "
+"information, it is possible to heuristically calculate inclusive time of "
+"functions, &ie; time spent in a function together with all functions called "
+"from it."
+msgstr ""
+"La més coneguda és l'eina d'anàlisi de rendiment del GCC <application>gprof</"
+"application>: cal compilar el programa amb l'opció <option>-pg</option>; "
+"l'execució del programa genera un fitxer <filename>gmon.out</filename>, que "
+"es pot transformar en forma llegible amb <command>gprof</command>. Un "
+"desavantatge és el pas necessari de recompilació per a preparar "
+"l'executable, que s'ha d'enllaçar estàticament. El mètode utilitzat aquí és "
+"la instrumentació generada pel compilador, que mesura els arcs de crida que "
+"passen entre funcions i els corresponents comptadors de crides, conjuntament "
+"amb &TBS; que dona un histograma de distribució de temps sobre el codi. "
+"Utilitzant ambdues peces d'informació, és possible calcular heurísticament "
+"el temps inclusiu de les funcions, &ead;, el temps dedicat a una funció "
+"juntament amb totes les funcions invocades des d'ella."
+
+#. Tag: para
+#: index.docbook:181
+#, no-c-format
+msgid ""
+"For exact measurement of events happening, libraries exist with functions "
+"able to read out hardware performance counters. Most known here is the "
+"PerfCtr patch for &Linux;, and the architecture independent libraries PAPI "
+"and PCL. Still, exact measurement needs instrumentation of code, as stated "
+"above. Either one uses the libraries itself or uses automatic "
+"instrumentation systems like ADAPTOR (for FORTRAN source instrumentation) or "
+"DynaProf (code injection via DynInst)."
+msgstr ""
+"Per a la mesura exacta dels esdeveniments, existeixen biblioteques amb "
+"funcions capaces de llegir els comptadors de rendiment del maquinari. La més "
+"coneguda aquí és el pedaç PerfCtr per al &Linux;, i les biblioteques PAPI i "
+"PCL independents de l'arquitectura. Tot i això, una mesura exacta necessita "
+"la instrumentació del codi, com s'ha dit anteriorment. O bé s'utilitzen les "
+"biblioteques en si o bé s'utilitzen sistemes d'instrumentació automàtics com "
+"ADAPTOR (per a la instrumentació del codi font FORTRAN) o DynaProf (injecció "
+"de codi via DynInst)."
+
+#. Tag: para
+#: index.docbook:189
+#, no-c-format
+msgid "&oprofile; is a system-wide profiling tool for &Linux; using Sampling."
+msgstr ""
+"L'&oprofile; és una eina d'anàlisi del rendiment per al &Linux; utilitzant "
+"el mostreig."
+
+#. Tag: para
+#: index.docbook:193
+#, no-c-format
+msgid ""
+"In many aspects, a comfortable way of Profiling is using &cachegrind; or "
+"&callgrind;, which are simulators using the runtime instrumentation "
+"framework &valgrind;. Because there is no need to access hardware counters "
+"(often difficult with today's &Linux; installations), and binaries to be "
+"profiled can be left unmodified, it is a good alternative to other profiling "
+"tools. The disadvantage of simulation - slowdown - can be reduced by doing "
+"the simulation on only the interesting program parts, and perhaps only on a "
+"few iterations of a loop. Without measurement/simulation instrumentation, "
+"&valgrind;'s usage only has a slowdown factor in the range of 3 to 5. Also, "
+"when only the call graph and call counts are of interest, the cache "
+"simulator can be switched off."
+msgstr ""
+"En molts aspectes, una manera còmoda d'analitzar el rendiment és utilitzant "
+"el &cachegrind; o el &callgrind;, que són simuladors que utilitzen el marc "
+"d'instrumentació d'execució &valgrind;. Com que no hi ha necessitat "
+"d'accedir als comptadors de maquinari (sovint difícil amb les instal·lacions "
+"actuals del &Linux;), i els binaris a analitzar el rendiment es poden deixar "
+"sense modificar, és una bona alternativa a altres eines d'anàlisi de "
+"rendiment. El desavantatge de la simulació, l'alentiment, es pot reduir fent "
+"la simulació només en les parts interessants del programa, i potser només en "
+"algunes iteracions d'un bucle. Sense instrumentació de mesura/simulació, "
+"l'ús de &valgrind; només té un factor de desacceleració en l'interval entre "
+"3 a 5. A més, quan només són d'interès la gràfica de crides i els comptadors "
+"de crides, el simulador de memòria cau es pot desactivar."
+
+#. Tag: para
+#: index.docbook:207
+#, no-c-format
+msgid ""
+"Cache simulation is the first step in approximating real times, since "
+"runtime is very sensitive to the exploitation of so-called <emphasis>caches</"
+"emphasis>, small and fast buffers which accelerate repeated accesses to the "
+"same main memory cells, on modern systems. &cachegrind; does cache "
+"simulation by catching memory accesses. The data produced includes the "
+"number of instruction/data memory accesses and first- and second-level cache "
+"misses, and relates it to source lines and functions of the run program. By "
+"combining these miss counts, using miss latencies from typical processors, "
+"an estimation of spent time can be given."
+msgstr ""
+"La simulació de memòria cau és el primer pas en l'aproximació dels temps "
+"reals, ja que el temps d'execució depèn molt de l'explotació de les "
+"anomenades <emphasis>memòries cau</emphasis>, memòries intermèdies petites i "
+"ràpides que acceleren els accessos repetits a les mateixes cel·les de la "
+"memòria principal, en els sistemes moderns. El &cachegrind; fa la simulació "
+"de la memòria cau capturant els accessos a la memòria. Les dades produïdes "
+"inclouen el nombre d'accessos a la memòria d'instruccions i dades i errors "
+"de memòria cau de primer i segon nivell, i el relaciona amb les línies i "
+"funcions del codi font del programa en execució. Combinant aquests "
+"comptadors de falles, i utilitzant retards de falles dels processadors "
+"habituals, es pot donar una estimació del temps gastat."
+
+#. Tag: para
+#: index.docbook:220
+#, no-c-format
+msgid ""
+"&callgrind; is an extension of &cachegrind; that builds up the call graph of "
+"a program on-the-fly, &ie; how the functions call each other and how many "
+"events happen while running a function. Also, the profile data to be "
+"collected can separated by threads and call chain contexts. It can provide "
+"profiling data on an instruction level to allow for annotation of "
+"disassembled code."
+msgstr ""
+"El &callgrind; és una extensió del &cachegrind; que construeix la gràfica de "
+"crides d'un programa al vol, és a dir, com les funcions es criden l'una a "
+"l'altra i quants esdeveniments succeeixen mentre s'executa una funció. A "
+"més, les dades de l'anàlisi del rendiment que es recopilen es poden separar "
+"per fils i contextos de cadenes de crides. Pot proporcionar dades d'anàlisi "
+"de rendiment a escala d'instrucció per a permetre l'anotació de codi "
+"desassemblat."
+
+#. Tag: title
+#: index.docbook:230
+#, no-c-format
+msgid "Visualization"
+msgstr "Visualització"
+
+#. Tag: para
+#: index.docbook:232
+#, no-c-format
+msgid ""
+"Profiling tools typically produce a large amount of data. The wish to easily "
+"browse down and up the call graph, together with fast switching of the "
+"sorting mode of functions and display of different event types, motivates a "
+"&GUI; application to accomplish this task."
+msgstr ""
+"Les eines d'anàlisi del rendiment normalment produeixen una gran quantitat "
+"de dades. El desig de navegar fàcilment cap avall i cap amunt per la gràfica "
+"de crides, juntament amb un canvi ràpid del mode de classificació de "
+"funcions i visualització de diferents tipus d'esdeveniments, motiva una "
+"aplicació de la &IGU; per a dur a terme aquesta tasca."
+
+#. Tag: para
+#: index.docbook:239
+#, no-c-format
+msgid ""
+"&kcachegrind; is a visualization tool for profile data fulfilling these "
+"wishes. Despite being programmed first with browsing the data from "
+"&cachegrind; and &calltree; in mind, there are converters available to be "
+"able to display profile data produced by other tools. In the appendix, a "
+"description of the &cachegrind;/&callgrind; file format is given."
+msgstr ""
+"El &kcachegrind; és una eina de visualització per a les dades d'anàlisi de "
+"rendiment que compleixen aquests desitjos. Tot i ser programat primer "
+"pensant en la navegació de les dades del &cachegrind; i el &calltree;, hi ha "
+"convertidors disponibles per a poder mostrar les dades d'anàlisi de "
+"rendiment produïdes per altres eines. A l'apèndix es dona una descripció del "
+"format de fitxer del &cachegrind;/&callgrind;."
+
+#. Tag: para
+#: index.docbook:247
+#, no-c-format
+msgid ""
+"Besides a list of functions sorted according exclusive or inclusive cost "
+"metrics, and optionally grouped by source file, shared library or C++ class, "
+"&kcachegrind; features various views for a selected function, namely:"
+msgstr ""
+"A més d'una llista de funcions ordenades segons les mètriques de cost "
+"exclusiu o inclusiu, i opcionalment agrupades pel fitxer de codi font, la "
+"biblioteca compartida o la classe C++, el &kcachegrind; té diverses vistes "
+"per a una funció seleccionada, a saber:"
+
+#. Tag: para
+#: index.docbook:252
+#, no-c-format
+msgid ""
+"a call-graph view, which shows a section of the call graph around the "
+"selected function,"
+msgstr ""
+"una vista de la gràfica de crides, que mostra una secció de la gràfica de "
+"crides al voltant de la funció seleccionada,"
+
+#. Tag: para
+#: index.docbook:255
+#, no-c-format
+msgid ""
+"a tree-map view, which allows nested-call relations to be visualized, "
+"together with inclusive cost metric for fast visual detection of problematic "
+"functions,"
+msgstr ""
+"una vista de mapa d'arbre, que permet visualitzar les relacions de crida "
+"imbricada, juntament amb la mètrica de cost inclusiu per a la detecció "
+"visual ràpida de les funcions problemàtiques,"
+
+#. Tag: para
+#: index.docbook:259
+#, no-c-format
+msgid ""
+"source code and disassembler annotation views, allowing to see details of "
+"cost related to source lines and assembler instructions."
+msgstr ""
+"vistes de codi font i d'anotacions del desassemblador, que permeten veure "
+"detalls del cost relacionat amb les línies del codi font i les instruccions "
+"de l'assemblador."
+
+#. Tag: title
+#: index.docbook:269
+#, no-c-format
+msgid "Using &kcachegrind;"
+msgstr "Ús del &kcachegrind;"
+
+#. Tag: title
+#: index.docbook:272
+#, no-c-format
+msgid "Generate Data to Visualize"
+msgstr "Generar les dades a visualitzar"
+
+#. Tag: para
+#: index.docbook:274
+#, no-c-format
+msgid ""
+"First, one wants to generate performance data by measuring aspects of the "
+"runtime characteristics of an application, using a profiling tool. "
+"&kcachegrind; itself does not include any profiling tool, but is good in "
+"being used together with &callgrind;, and by using a converter, also can be "
+"used to visualize data produced with &oprofile;. Although the scope of this "
+"manual is not to document profiling with these tools, the next section "
+"provides short quickstart tutorials to get you started."
+msgstr ""
+"En primer lloc, es vol generar dades de rendiment mesurant aspectes de les "
+"característiques en temps d'execució d'una aplicació, utilitzant una eina "
+"d'anàlisi de rendiment. El mateix &kcachegrind; no inclou cap eina d'anàlisi "
+"de rendiment, però és bo en ser utilitzat juntament amb el &callgrind;, i "
+"utilitzant un convertidor, també es pot utilitzar per a visualitzar les "
+"dades produïdes amb l'&oprofile;. Encara que l'abast d'aquest manual no és "
+"documentar l'elaboració d'anàlisis de rendiment amb aquestes eines, la "
+"següent secció proporciona guies d'aprenentatge curtes d'inici ràpid per a "
+"començar."
+
+#. Tag: title
+#: index.docbook:284
+#, no-c-format
+msgid "&callgrind;"
+msgstr "&callgrind;"
+
+#. Tag: para
+#: index.docbook:286
+#, no-c-format
+msgid ""
+"&callgrind; is a part of <ulink url=\"http://valgrind.org\">&valgrind;</"
+"ulink>. Note that it previously was called &calltree;, but that name was "
+"misleading."
+msgstr ""
+"El &callgrind; forma part del <ulink url=\"http://valgrind.org\">&valgrind;</"
+"ulink>. Tingueu en compte que abans s'anomenava &calltree; però aquest nom "
+"era enganyós."
+
+#. Tag: para
+#: index.docbook:291
+#, no-c-format
+msgid ""
+"The most common use is to prefix the command line to start your application "
+"with <userinput><command>valgrind</command> <option>--tool=callgrind</"
+"option> </userinput>, as in: <blockquote><para><userinput> "
+"<command>valgrind</command> <option>--tool=callgrind</option> "
+"<replaceable>myprogram</replaceable> <replaceable>myargs</replaceable> </"
+"userinput></para></blockquote> At program termination, a file "
+"<filename>callgrind.out.<replaceable>pid</replaceable></filename> will be "
+"generated, which can be loaded into &kcachegrind;."
+msgstr ""
+"L'ús més habitual és al prefix de la línia d'ordres per a començar la vostra "
+"aplicació amb <userinput><command>valgrind</command> <option>--"
+"tool=callgrind</option> </userinput>, com a: "
+"<blockquote><para><userinput><command>valgrind</command> <option>--"
+"tool=callgrind</option> <replaceable>elmeuprograma</replaceable> "
+"<replaceable>elsmeusarguments</replaceable> </userinput></para></"
+"blockquote>A la terminació del programa, es generarà un fitxer "
+"<filename>callgrind.out.<replaceable>pid</replaceable></filename>, que es "
+"pot carregar al &kcachegrind;."
+
+#. Tag: para
+#: index.docbook:306
+#, no-c-format
+msgid ""
+"More advanced use is to dump out profile data whenever a given function of "
+"your application is called. E.g. for &konqueror;, to see profile data only "
+"for the rendering of a Web page, you could decide to dump the data whenever "
+"you select the menu item <menuchoice><guimenu>View</"
+"guimenu><guimenuitem>Reload </guimenuitem></menuchoice>. This corresponds to "
+"a call to <methodname>KonqMainWindow::slotReload</methodname>. Use: "
+"<blockquote><para><userinput> <command>valgrind</command> <option>--"
+"tool=callgrind</option> <option>--dump-before=KonqMainWindow::slotReload</"
+"option> <replaceable>konqueror</replaceable> </userinput></para></"
+"blockquote> This will produce multiple profile data files with an additional "
+"sequential number at the end of the filename. A file without such an number "
+"at the end (only ending in the process PID) will also be produced; by "
+"loading this file into &kcachegrind;, all others are loaded too, and can be "
+"seen in the <guilabel>Parts Overview</guilabel> and <guilabel>Parts</"
+"guilabel> list."
+msgstr ""
+"Un ús més avançat és buidar les dades d'anàlisi del rendiment quan es crida "
+"una funció donada de l'aplicació. Per exemple, al &konqueror;, per a veure "
+"les dades de l'anàlisi del rendiment només a la representació d'una pàgina "
+"web, es podria decidir buidar les dades sempre que seleccioneu l'element de "
+"menú <menuchoice><guimenu>Visualitza</guimenu><guimenuitem>Recarrega</"
+"guimenuitem></menuchoice>. Això correspon a una crida al "
+"<methodname>KonqMainWindow::slotReload</methodname>. Useu: "
+"<blockquote><para><userinput> <command>valgrind</command> <option>--"
+"tool=callgrind</option> <option>--dump-before=KonqMainWindow::slotReload</"
+"option> <replaceable>konqueror</replaceable> </userinput></para></"
+"blockquote> Això produirà múltiples fitxers de dades d'anàlisi del rendiment "
+"amb un nombre seqüencial addicional al final del nom de fitxer. També es "
+"produirà un fitxer sense aquest número al final (només en acabar el PID del "
+"procés); carregant aquest fitxer al &kcachegrind; tots els altres també es "
+"carregaran, i es pot veure a la llista <guilabel>Vista general de les parts "
+"de traça</guilabel> i <guilabel>Parts</guilabel>."
+
+#. Tag: title
+#: index.docbook:330
+#, no-c-format
+msgid "&oprofile;"
+msgstr "&oprofile;"
+
+#. Tag: para
+#: index.docbook:332
+#, no-c-format
+msgid ""
+"&oprofile; is available from <ulink url=\"http://oprofile.sf.net\">its home "
+"page</ulink>. Follow the installation instructions on the Web site, but, "
+"before you do, check whether your distribution does not already provide it "
+"as package (like &SuSE;)."
+msgstr ""
+"L'&oprofile; està disponible des de la <ulink url=\"http://oprofile.sf.net"
+"\">seva pàgina web</ulink>. Seguiu les instruccions d'instal·lació en el "
+"lloc web, però, abans de fer-ho, comproveu si la vostra distribució no el "
+"proporciona ja com a paquet (com &SuSE;)."
+
+#. Tag: para
+#: index.docbook:339
+#, no-c-format
+msgid ""
+"System-wide profiling is only permitted to the root user, as all actions on "
+"the system can be observed; therefore, the following has to be done as root. "
+"First, configure the profiling process, using the &GUI; "
+"<command>oprof_start</command> or the command-line tool <command>opcontrol</"
+"command>. Standard configuration should be timer mode (&TBS;, see "
+"introduction). To start the measurement, run <userinput><command>opcontrol</"
+"command> <option>-s</option></userinput>. Then run the application you are "
+"interested in and, afterwards, do a <userinput><command>opcontrol</command> "
+"<option>-d</option></userinput>. This will write out the measurement results "
+"into files under folder <filename class=\"directory\">/var/lib/oprofile/"
+"samples/</filename>. To be able to visualize the data in &kcachegrind;, do "
+"in an empty directory: <blockquote><para><userinput> <command>opreport</"
+"command> <option>-gdf</option> | <command>op2callgrind</command> </"
+"userinput></para></blockquote> This will produce a lot of files, one for "
+"every program which was running on the system. Each one can be loaded into "
+"&kcachegrind; on its own."
+msgstr ""
+"L'elaboració d'anàlisis de rendiment a tot el sistema només es permet a "
+"l'usuari administrador, ja que es poden observar totes les accions del "
+"sistema; per tant, s'ha de fer el següent com a administrador. En primer "
+"lloc, configurar el procés d'elaboració de l'anàlisi del rendiment, "
+"utilitzant la &IGU; <command>oprof_start</command> o l'eina de línia "
+"d'ordres <command>opcontrol</command>. La configuració estàndard hauria de "
+"ser el mode temporitzador (&TBS;, vegeu la introducció). Per a començar la "
+"mesura, executeu <userinput><command>opcontrol</command> <option>-s</"
+"option></userinput>. Després executeu l'aplicació que us interessa i, "
+"després, feu un <userinput><command>opcontrol</command> <option>-d</option></"
+"userinput>. Això escriurà els resultats de la mesura en fitxers a la carpeta "
+"<filename class=\"directory\">/var/lib/oprofile/samples/</filename>. Per a "
+"poder visualitzar les dades en el &kcachegrind;, feu-ho en un directori "
+"buit: <blockquote><para><userinput> <command>opreport</command> <option>-"
+"gdf</option> | <command>op2callgrind</command> </userinput></para></"
+"blockquote> Això produirà molts fitxers, un per a cada programa que s'estava "
+"executant en el sistema. Cadascun es pot carregar al &kcachegrind; pel seu "
+"compte."
+
+#. Tag: title
+#: index.docbook:367
+#, no-c-format
+msgid "User Interface Basics"
+msgstr "Conceptes bàsics de la interfície d'usuari"
+
+#. Tag: para
+#: index.docbook:369
+#, no-c-format
+msgid ""
+"When starting &kcachegrind; with a profile data file as argument, or after "
+"loading one with <menuchoice><guimenu>File</guimenu> <guimenuitem>Open</"
+"guimenuitem></menuchoice>, you will see a navigation panel containing the "
+"function list at the left; and, on the right the main part, an area with "
+"views for a selected function. This view area can be arbitrarily configured "
+"to show multiple views at once."
+msgstr ""
+"Quan s'inicia el &kcachegrind; amb un fitxer de dades d'anàlisi del "
+"rendiment com a argument, o després de carregar-ne un amb "
+"<menuchoice><guimenu>Fitxer</guimenu> <guimenuitem>Obre</guimenuitem></"
+"menuchoice>, veureu un panell de navegació que conté la llista de funcions a "
+"l'esquerra; i la part principal a la dreta, una àrea amb vistes per a una "
+"funció seleccionada. Aquesta àrea de visualització es pot configurar "
+"arbitràriament per a mostrar múltiples vistes alhora."
+
+#. Tag: para
+#: index.docbook:378
+#, no-c-format
+msgid ""
+"At first start, this area will be divided into a top and a bottom part, each "
+"with different tab-selectable views. To move views, use the tabs' context "
+"menu, and adjust the splitters between views. To switch quickly between "
+"different viewing layouts, use <menuchoice><shortcut><keycombo action=\"simul"
+"\">&Ctrl;<keycap>→</keycap> </keycombo></shortcut> <guimenu>View</"
+"guimenu><guisubmenu>Layout</guisubmenu> <guimenuitem>Go to Next</"
+"guimenuitem></menuchoice> and <menuchoice><shortcut><keycombo action=\"simul"
+"\">&Ctrl;<keycap>←</keycap> </keycombo></shortcut> <guimenu>View</"
+"guimenu><guisubmenu>Layout</guisubmenu> <guimenuitem>Go to Previous</"
+"guimenuitem></menuchoice>."
+msgstr ""
+"Al principi, aquesta àrea es dividirà en una part superior i una part "
+"inferior, cadascuna amb vistes diferents seleccionables amb pestanyes. Per a "
+"moure les vistes, utilitzeu el menú contextual de les pestanyes i ajusteu "
+"els separadors entre les vistes. Per a canviar ràpidament entre diferents "
+"disposicions de visualització, utilitzeu <menuchoice><shortcut><keycombo "
+"action=\"simul\">&Ctrl;<keycap>→</keycap> </keycombo></shortcut> "
+"<guimenu>Visualitza</guimenu><guisubmenu>Disposició</guisubmenu> "
+"<guimenuitem>Ves a la següent</guimenuitem></menuchoice> i "
+"<menuchoice><shortcut><keycombo action=\"simul\">&Ctrl;<keycap>←</keycap> </"
+"keycombo></shortcut> <guimenu>Visualitza</guimenu><guisubmenu>Disposició</"
+"guisubmenu> <guimenuitem>Ves a l'anterior</guimenuitem></menuchoice>."
+
+#. Tag: para
+#: index.docbook:391
+#, no-c-format
+msgid ""
+"The active event type is important for visualization: for &callgrind;, this "
+"is, for example, cache misses or cycle estimation; for &oprofile;, this is "
+"<quote>Timer</quote> in the simplest case. You can change the event type via "
+"a combobox in the toolbar or in the <guilabel>Event Type</guilabel> view. A "
+"first overview of the runtime characteristics should be given when you "
+"select function <function>main</function> in the left list; look then at the "
+"call graph view. There, you see the calls occurring in your program. Note "
+"that the call graph view only shows functions with high event count. By "
+"double-clicking a function in the graph, it will change to show the called "
+"functions around the selected one."
+msgstr ""
+"El tipus d'esdeveniment actiu és important per a la visualització: per al "
+"&callgrind; això és, per exemple, errors de memòria cau o estimació de "
+"cicles; per a l'&oprofile; això és «Temporitzador» en el cas més simple. "
+"Podeu canviar el tipus d'esdeveniment a través d'un quadre combinat a la "
+"barra d'eines o a la vista <guilabel>Tipus d'esdeveniment</guilabel>. S'ha "
+"de donar una primera visió general de les característiques en temps "
+"d'execució quan seleccioneu la funció <function>principal</function> a la "
+"llista esquerra; després consulteu la vista gràfica de les crides. Allà, "
+"veureu les crides que es fan en el programa. Tingueu en compte que la vista "
+"gràfica de les crides només mostra funcions amb un alt nombre "
+"d'esdeveniments. En fer doble clic a una funció de la gràfica, canviarà per "
+"a mostrar les funcions cridades al voltant de la seleccionada."
+
+#. Tag: para
+#: index.docbook:404
+#, no-c-format
+msgid ""
+"To explore the &GUI; further, in addition to this manual, also have a look "
+"at the documentation section <ulink url=\"https://kcachegrind.github.io\">on "
+"the Web site</ulink>. Also, every widget in &kcachegrind; has <quote>What's "
+"this</quote> help."
+msgstr ""
+"Per a explorar més la &IGU;, a més d'aquest manual, també cal veure la "
+"secció de documentació <ulink url=\"https://kcachegrind.github.io\">al lloc "
+"web</ulink>. A més, cada giny en el &kcachegrind; té l'ajuda «Què és això»."
+
+#. Tag: title
+#: index.docbook:416
+#, no-c-format
+msgid "Basic Concepts"
+msgstr "Conceptes bàsics"
+
+#. Tag: para
+#: index.docbook:418
+#, no-c-format
+msgid ""
+"This chapter explains some concepts of the &kcachegrind;, and introduces "
+"terms used in the interface."
+msgstr ""
+"Aquest capítol explica diversos conceptes del &kcachegrind;, i introdueix "
+"termes utilitzats en la interfície."
+
+#. Tag: title
+#: index.docbook:423
+#, no-c-format
+msgid "The Data Model for Profile Data"
+msgstr "El model de dades de l'anàlisi de rendiment"
+
+#. Tag: title
+#: index.docbook:426
+#, no-c-format
+msgid "Cost Entities"
+msgstr "Entitats de cost"
+
+#. Tag: para
+#: index.docbook:428
+#, no-c-format
+msgid ""
+"Cost counts of event types (like L2 Misses) are attributed to cost entities, "
+"which are items with relationship to source code or data structures of a "
+"given program. Cost entities not only can be simple code or data positions, "
+"but also position tuples. For example, a call has a source and a target, or "
+"a data address can have a data type and a code position where its allocation "
+"happened."
+msgstr ""
+"Els comptadors de costos de tipus d'esdeveniment (com ara manques de L2 "
+"«Misses L2») s'atribueixen a entitats de cost, que són elements amb relació "
+"amb el codi font o a les estructures de dades d'un programa donat. Les "
+"entitats de cost no només poden ser posicions simples de codi o dades, sinó "
+"també tuples de posicions. Per exemple, una crida té un codi font i un "
+"destí, o una adreça de dades pot tenir un tipus de dades i una posició del "
+"codi on s'ha produït la seva assignació."
+
+#. Tag: para
+#: index.docbook:436
+#, no-c-format
+msgid ""
+"The cost entities known to &kcachegrind; are given in the following. Simple "
+"Positions: <variablelist> <varlistentry> <term>Instruction</term> "
+"<listitem><para> An assembler instruction at a specified address. </para></"
+"listitem> </varlistentry> <varlistentry> <term>Source Line of a Function</"
+"term> <listitem><para> All instructions that the compiler (via debug "
+"information) maps to a given source line specified by source file name and "
+"line number, and which are executed in the context of some function. The "
+"latter is needed because a source line inside of an inlined function can "
+"appear in the context of multiple functions. Instructions without any "
+"mapping to an actual source line are mapped to line number 0 in file "
+"<filename>???</filename>. </para></listitem> </varlistentry> <varlistentry> "
+"<term>Function</term> <listitem><para> All source lines of a given function "
+"make up the function itself. A function is specified by its name and its "
+"location in some binary object if available. The latter is needed because "
+"binary objects of a single program each can hold functions with the same "
+"name (these can be accessed &eg; with <function>dlopen</function> or "
+"<function>dlsym</function>; the runtime linker resolves functions in a given "
+"search order of binary objects used). If a profiling tool cannot detect the "
+"symbol name of a function, &eg; because debug information is not available, "
+"either the address of the first executed instruction typically is used, or "
+"<function>???</function>. </para></listitem> </varlistentry> <varlistentry> "
+"<term>Binary Object</term> <listitem><para> All functions whose code is "
+"inside the range of a given binary object, either the main executable or a "
+"shared library. </para></listitem> </varlistentry> <varlistentry> "
+"<term>Source File</term> <listitem><para> All functions whose first "
+"instruction is mapped to a line of the given source file. </para></listitem> "
+"</varlistentry> <varlistentry> <term>Class</term> <listitem><para> Symbol "
+"names of functions typically are hierarchically ordered in name spaces, &eg; "
+"C++ namespaces, or classes of object-oriented languages; thus, a class can "
+"hold functions of the class or embedded classes itself. </para></listitem> </"
+"varlistentry> <varlistentry> <term>Profile Part</term> <listitem><para> Some "
+"time section of a profile run, with a given thread ID, process ID, and "
+"command line executed. </para></listitem> </varlistentry> </variablelist> As "
+"can be seen from the list, a set of cost entities often defines another cost "
+"entity; thus, there is a inclusion hierarchy of cost entities."
+msgstr ""
+"Les entitats de cost conegudes pel &kcachegrind; s'indiquen seguidament. "
+"Posicions simples: <variablelist> <varlistentry> <term>Instrucció</term> "
+"<listitem><para> Una instrucció d'assemblador en una adreça especificada. </"
+"para></listitem> </varlistentry> <varlistentry> <term>Línia del codi d'una "
+"funció</term> <listitem><para> Totes les instruccions que el compilador (via "
+"informació de depuració) assigna a una línia del codi font especificada pel "
+"nom de fitxer del codi i el número de línia, i que s'executen en el context "
+"d'alguna funció. Això últim és necessari perquè una línia del codi font dins "
+"d'una funció inscrita pot aparèixer en el context de diverses funcions. Les "
+"instruccions sense cap assignació a una línia de codi font real s'assignen "
+"al número de línia 0 en el fitxer <filename>???</filename>. </para></"
+"listitem> </varlistentry> <varlistentry> <term>Funció</term> "
+"<listitem><para> Totes les línies del codi d'una funció donada formen la "
+"funció en si. Una funció s'especifica pel seu nom i la seva ubicació en "
+"algun objecte binari si està disponible. Aquest últim és necessari perquè "
+"els objectes binaris d'un únic programa poden tenir funcions amb el mateix "
+"nom (&pex;, es pot accedir amb <function>dlopen</function> o "
+"<function>dlsym</function>; l'enllaçador en temps d'execució resol funcions "
+"en un ordre de cerca donat dels objectes binaris utilitzats). Si una eina "
+"d'elaboració d'anàlisi de rendiment no pot detectar el nom del símbol d'una "
+"funció, &pex;, perquè la informació de depuració no està disponible, "
+"s'utilitza l'adreça de la primera instrucció executada, o <function>???</"
+"function>. </para></listitem> </varlistentry> <varlistentry> <term>Objecte "
+"binari </term> <listitem><para> Totes les funcions el codi de les quals està "
+"dins de l'interval d'un objecte binari donat, sigui l'executable principal o "
+"sigui una biblioteca compartida. </para></listitem> </varlistentry> "
+"<varlistentry> <term>Fitxer de codi font</term> <listitem><para> Totes les "
+"funcions la primera instrucció de les quals s'assigna a una línia del fitxer "
+"de codi font donat. </para></listitem> </varlistentry> <varlistentry> "
+"<term>Classe</term><listitem><para> Els noms dels símbols de les funcions "
+"normalment s'ordenen jeràrquicament en espais de noms, &pex;, espais de noms "
+"del C++, o classes de llenguatges orientats a objectes; per tant, una classe "
+"pot tenir funcions de la classe o classes incrustades en si mateixa. </"
+"para></listitem> </varlistentry> <varlistentry> <term>Part d'anàlisi del "
+"rendiment</term> <listitem><para> Secció de temps d'una execució d'anàlisi "
+"del rendiment, amb un identificador de fil, un identificador de procés, i la "
+"línia d'ordres executada. </para></listitem> </varlistentry> </variablelist> "
+"Com es pot veure a la llista, un conjunt d'entitats de cost sovint defineix "
+"una altra entitat de cost; per tant, hi ha una jerarquia d'inclusió "
+"d'entitats de cost."
+
+#. Tag: para
+#: index.docbook:505
+#, no-c-format
+msgid ""
+"Positions tuples: <itemizedlist> <listitem><para> Call from instruction "
+"address to target function. </para></listitem> <listitem><para> Call from "
+"source line to target function. </para></listitem> <listitem><para> Call "
+"from source function to target function. </para></listitem> <listitem><para> "
+"(Un)conditional jump from source to target instruction. </para></listitem> "
+"<listitem><para> (Un)conditional jump from source to target line. </para></"
+"listitem> </itemizedlist> Jumps between functions are not allowed, as this "
+"makes no sense in a call graph; thus, constructs like exception handling and "
+"long jumps in C have to be translated to popping the call stack as needed."
+msgstr ""
+"Tuples de posicions: <itemizedlist> <listitem><para> Crida des de l'adreça "
+"d'instrucció a la funció de destinació. </para></listitem> <listitem><para> "
+"Crida des de la línia del codi font a la funció de destinació. </para></"
+"listitem> <listitem><para> Crida des de la funció del codi a la funció de "
+"destinació. </para></listitem> <listitem><para> Salt (in)condicional des de "
+"la font a la instrucció de destinació. </para></listitem> <listitem><para> "
+"Salt (in)condicional des del codi font a la línia de destinació. </para></"
+"listitem> </itemizedlist> No estan permesos els salts entre funcions, ja que "
+"això no té sentit en una gràfica de crides; per tant, les construccions com "
+"la gestió d'excepcions i salts llargs en C s'han de traduir per a omplir la "
+"pila de crides segons sigui necessari."
+
+#. Tag: title
+#: index.docbook:533
+#, no-c-format
+msgid "Event Types"
+msgstr "Tipus d'esdeveniments"
+
+#. Tag: para
+#: index.docbook:535
+#, no-c-format
+msgid ""
+"Arbitrary event types can be specified in the profile data by giving them a "
+"name. Their cost related to a cost entity is a 64-bit integer."
+msgstr ""
+"Els tipus d'esdeveniments arbitraris es poden especificar a les dades "
+"d'anàlisi del rendiment donant-los un nom. El seu cost relacionat amb una "
+"entitat de cost és un enter de 64 bits."
+
+#. Tag: para
+#: index.docbook:539
+#, no-c-format
+msgid ""
+"Event types whose costs are specified in a profile data file are called real "
+"events. Additionally, one can specify formulas for event types calculated "
+"from real events, which are called inherited events."
+msgstr ""
+"Els tipus d'esdeveniment els costos dels quals s'especifiquen en un fitxer "
+"de dades d'anàlisi del rendiment s'anomenen esdeveniments reals. A més, es "
+"poden especificar fórmules per als tipus d'esdeveniments calculats a partir "
+"d'esdeveniments reals, que s'anomenen esdeveniments heretats."
+
+#. Tag: title
+#: index.docbook:549
+#, no-c-format
+msgid "Visualization State"
+msgstr "Estat de visualització"
+
+#. Tag: para
+#: index.docbook:551
+#, no-c-format
+msgid ""
+"The visualization state of a &kcachegrind; window includes: <itemizedlist> "
+"<listitem><para> the primary and secondary event type chosen for display, </"
+"para></listitem> <listitem><para> the function grouping (used in the "
+"<guilabel>Function Profile</guilabel> list and entity coloring), </para></"
+"listitem> <listitem><para> the profile parts whose costs are to be included "
+"in visualization, </para></listitem> <listitem><para> an active cost entity "
+"(&eg; a function selected from the function profile sidedock), </para></"
+"listitem> <listitem><para> a selected cost entity. </para></listitem> </"
+"itemizedlist> This state influences the views."
+msgstr ""
+"L'estat de visualització d'una finestra del &kcachegrind; inclou: "
+"<itemizedlist> <listitem><para> el tipus d'esdeveniment primari i secundari "
+"escollit per a la visualització, </para></listitem><listitem><para> "
+"l'agrupació de funcions (utilitzat en la llista de l'<guilabel>Anàlisi del "
+"rendiment de funció</guilabel> i la coloració d'entitats), </para></"
+"listitem> <listitem><para> les parts de l'anàlisi de rendiment els costos "
+"del qual s'han d'incloure en la visualització, </para></listitem> "
+"<listitem><para> una entitat de cost activa (&pex;, una funció seleccionada "
+"de la barra lateral de l'anàlisi de rendiment de la funció), </para></"
+"listitem> <listitem><para> una entitat de cost seleccionada. </para></"
+"listitem> </itemizedlist> Aquest estat influeix en les vistes."
+
+#. Tag: para
+#: index.docbook:575
+#, no-c-format
+msgid ""
+"Views are always shown for one cost entity, the active one. When a given "
+"view is inappropriate for a cost entity, it is disabled: when selecting &eg; "
+"an &ELF; object in the group list, source annotation makes no sense."
+msgstr ""
+"Les vistes sempre es mostren per a una entitat de cost, l'activa. Quan una "
+"vista donada és inadequada per a una entitat de cost, es desactiva: &pex;, "
+"quan se selecciona un objecte &ELF; a la llista de grups, l'anotació del "
+"codi font no té sentit."
+
+#. Tag: para
+#: index.docbook:581
+#, no-c-format
+msgid ""
+"For example, for an active function, the callee list shows all the functions "
+"called from the active one: one can select one of these functions without "
+"making it active. Also, if the call graph is shown beside, it will "
+"automatically select the same function."
+msgstr ""
+"Per exemple, per a una funció activa, la llista de cridats mostra totes les "
+"funcions cridades des de l'activa: es pot seleccionar una d'aquestes "
+"funcions sense fer-la activa. A més, si es mostra la gràfica de crides al "
+"costat, se seleccionarà automàticament la mateixa funció."
+
+#. Tag: title
+#: index.docbook:591
+#, no-c-format
+msgid "Parts of the &GUI;"
+msgstr "Parts de la &IGU;"
+
+#. Tag: title
+#: index.docbook:594 index.docbook:678
+#, no-c-format
+msgid "Sidedocks"
+msgstr "Barres laterals"
+
+#. Tag: para
+#: index.docbook:595
+#, no-c-format
+msgid ""
+"Sidedocks are side windows which can be placed at any border of a "
+"&kcachegrind; window. They always contain a list of cost entities sorted in "
+"some way."
+msgstr ""
+"Les barres laterals són les finestres laterals que es poden col·locar a "
+"qualsevol vora d'una finestra del &kcachegrind;. Sempre contenen una llista "
+"d'entitats de costos ordenades d'alguna manera."
+
+#. Tag: para
+#: index.docbook:599
+#, no-c-format
+msgid ""
+"The <guilabel>Function Profile</guilabel> is a list of functions showing "
+"inclusive and exclusive cost, call count, name and position of functions."
+msgstr ""
+"L'<guilabel>Anàlisi del rendiment de funció</guilabel> és una llista de "
+"funcions que mostren el cost inclusiu i exclusiu, comptador de crides, nom i "
+"posició de les funcions."
+
+#. Tag: guilabel
+#: index.docbook:604
+#, no-c-format
+msgid "<guilabel>Parts Overview</guilabel>"
+msgstr "<guilabel>Vista general de les parts de traça</guilabel>"
+
+#. Tag: guilabel
+#: index.docbook:607
+#, no-c-format
+msgid "<guilabel>Call Stack</guilabel>"
+msgstr "<guilabel>Pila de crides</guilabel>"
+
+#. Tag: title
+#: index.docbook:614
+#, no-c-format
+msgid "View Area"
+msgstr "Àrea de visualització"
+
+#. Tag: para
+#: index.docbook:615
+#, no-c-format
+msgid ""
+"The view area, typically the right part of a &kcachegrind; main window, is "
+"made up of one (default) or more tabs, lined up either horizontally or "
+"vertically. Each tab holds different views of only one cost entity at a "
+"time. The name of this entity is given at the top of the tab. If there are "
+"multiple tabs, only one is active. The entity name in the active tab is "
+"shown in bold, and determines the active cost entity of the &kcachegrind; "
+"window."
+msgstr ""
+"L'àrea de visualització, normalment la part dreta d'una finestra principal "
+"del &kcachegrind;, està formada per una (predeterminat) o més pestanyes, "
+"alineades horitzontalment o verticalment. Cada pestanya té vistes diferents "
+"de només una entitat de cost a la vegada. El nom d'aquesta entitat es dona a "
+"la part superior de la pestanya. Si hi ha múltiples pestanyes, només n'hi ha "
+"una activa. El nom de l'entitat a la pestanya activa es mostra en negreta, i "
+"determina l'entitat de cost activa de la finestra del &kcachegrind;."
+
+#. Tag: title
+#: index.docbook:626
+#, no-c-format
+msgid "Areas of a Tab"
+msgstr "Àrees d'una pestanya"
+
+#. Tag: para
+#: index.docbook:627
+#, no-c-format
+msgid ""
+"Each tab can hold up to four view areas, namely Top, Right, Left, and "
+"Bottom. Each area can hold multiple stacked views. The visible part of an "
+"area is selected by a tab bar. The tab bars of the top and right area are at "
+"the top; the tab bars of the left and bottom area are at the bottom. You can "
+"specify which kind of view should go into which area by using the tabs' "
+"context menus."
+msgstr ""
+"Cada pestanya pot tenir fins a quatre àrees de visualització, és a dir, "
+"superior, dreta, esquerra i inferior. Cada àrea pot contenir múltiples "
+"vistes apilades. La part visible d'una àrea se selecciona amb una barra de "
+"pestanyes. Les barres de pestanyes de l'àrea superior i la dreta es troben a "
+"la part superior; les barres de pestanyes de l'àrea esquerra i inferior es "
+"troben a la part inferior. Podeu especificar quin tipus de vista ha d'anar a "
+"l'àrea utilitzant els menús contextuals de les pestanyes."
+
+#. Tag: title
+#: index.docbook:637
+#, no-c-format
+msgid "Synchronized View with Selected Entity in a Tab"
+msgstr "Vista sincronitzada amb l'entitat seleccionada en una pestanya"
+
+#. Tag: para
+#: index.docbook:638
+#, no-c-format
+msgid ""
+"Besides an active entity, each tab has a selected entity. As most view types "
+"show multiple entities with the active one somehow centered, you can change "
+"the selected item by navigating inside a view (by clicking with the mouse or "
+"using the keyboard). Typically, selected items are shown in a highlighted "
+"state. By changing the selected entity in one of the views of a tab, all "
+"other views highlight the new selected entity accordingly."
+msgstr ""
+"A més d'una entitat activa, cada pestanya té una entitat seleccionada. Com "
+"que la majoria dels tipus de visualització mostren múltiples entitats amb "
+"l'activa centrada d'alguna manera, es pot canviar l'element seleccionat "
+"navegant dins d'una vista (fent clic amb el ratolí o utilitzant el teclat). "
+"Normalment, els elements seleccionats es mostren en un estat ressaltat. En "
+"canviar l'entitat seleccionada en una de les vistes d'una pestanya, totes "
+"les altres vistes destaquen la nova entitat seleccionada en conseqüència."
+
+#. Tag: title
+#: index.docbook:649
+#, no-c-format
+msgid "Synchronization between Tabs"
+msgstr "Sincronització entre pestanyes"
+
+#. Tag: para
+#: index.docbook:650
+#, no-c-format
+msgid ""
+"If there are multiple tabs, a selection change in one tab leads to an "
+"activation change in the next tab, be it right of the former or under it. "
+"This kind of linkage should, for example, allow for fast browsing in call "
+"graphs."
+msgstr ""
+"Si hi ha múltiples pestanyes, un canvi de selecció en una pestanya condueix "
+"a un canvi d'activació en la pestanya següent, ja sigui a la dreta de "
+"l'anterior o a sota. Aquest tipus d'enllaç hauria de permetre la navegació "
+"ràpida en els gràfics de crida, per exemple."
+
+#. Tag: title
+#: index.docbook:658
+#, no-c-format
+msgid "Layouts"
+msgstr "Disposicions"
+
+#. Tag: para
+#: index.docbook:659
+#, no-c-format
+msgid ""
+"The layout of all the tabs of a window can be saved "
+"(<menuchoice><guimenu>View </guimenu><guisubmenu>Layout</guisubmenu></"
+"menuchoice>). After duplicating the current layout "
+"(<menuchoice><shortcut><keycombo action=\"simul\">&Ctrl; <keycap>+</keycap></"
+"keycombo></shortcut> <guimenu>View</guimenu> <guisubmenu>Layout</"
+"guisubmenu><guimenuitem>Duplicate</guimenuitem> </menuchoice>) and changing "
+"some sizes or moving a view to another area of a tab, you can quickly switch "
+"between the old and the new layout via <keycombo action=\"simul\"> &Ctrl;"
+"<keycap>←</keycap></keycombo> and <keycombo action=\"simul\">&Ctrl; "
+"<keycap>→</keycap></keycombo>. The set of layouts will be stored between "
+"&kcachegrind; sessions of the same profiled command. You can make the "
+"current set of layouts the default one for new &kcachegrind; sessions, or "
+"restore the default layout set."
+msgstr ""
+"La disposició de totes les pestanyes d'una finestra es pot desar "
+"(<menuchoice><guimenu>Visualitza</guimenu><guisubmenu>Disposició</"
+"guisubmenu></menuchoice>). Després de duplicar la disposició actual "
+"(<menuchoice><shortcut><keycombo action=\"simul\">&Ctrl; <keycap>+</keycap></"
+"keycombo></shortcut> <guimenu>Visualitza</guimenu> <guisubmenu>Disposició</"
+"guisubmenu><guimenuitem>Duplica</guimenuitem> </menuchoice>) i canviar la "
+"mida o moure una vista a una altra àrea d'una pestanya, podeu canviar "
+"ràpidament entre la disposició antiga i la nova via <keycombo action=\"simul"
+"\"> &Ctrl;<keycap>←</keycap></keycombo> i <keycombo action=\"simul\">&Ctrl; "
+"<keycap>→</keycap></keycombo>. El conjunt de disposicions s'emmagatzemarà "
+"entre les sessions del &kcachegrind; de la mateixa ordre d'anàlisi del "
+"rendiment. Podeu fer que el conjunt actual de disposicions sigui el "
+"predeterminat per a les sessions noves del &kcachegrind; o restaurar el "
+"conjunt de disposicions predeterminades."
+
+#. Tag: title
+#: index.docbook:681
+#, no-c-format
+msgid "Flat Profile"
+msgstr "Anàlisi de rendiment plana"
+
+#. Tag: para
+#: index.docbook:682
+#, no-c-format
+msgid ""
+"The <guilabel>Flat Profile</guilabel> contains a group list and a function "
+"list. The group list contains all groups where cost is spent in, depending "
+"on the chosen group type. The group list is hidden when grouping is switched "
+"off."
+msgstr ""
+"L'<guilabel>anàlisi de rendiment plana</guilabel> conté una llista de grups "
+"i una llista de funcions. La llista de grups conté tots els grups on es "
+"gasta el cost, depenent del tipus de grup escollit. La llista de grups està "
+"amagada quan s'ha desactivat l'agrupació."
+
+#. Tag: para
+#: index.docbook:687
+#, no-c-format
+msgid ""
+"The function list contains the functions of the selected group (or all "
+"functions if grouping is switched off), ordered by some column, &eg; "
+"inclusive or self costs spent therein. There is a maximum number of "
+"functions shown in the list, configurable in <menuchoice><guimenu>Settings</"
+"guimenu><guimenuitem>Configure KCachegrind</guimenuitem></menuchoice>."
+msgstr ""
+"La llista de funcions conté les funcions del grup seleccionat (o totes les "
+"funcions si l'agrupació està desactivada), ordenades per alguna columna, "
+"&pex;, els costos inclusius o els costos propis que s'hi gasten. Hi ha un "
+"nombre màxim de funcions que es mostren a la llista, configurable a "
+"<menuchoice><guimenu>Arranjament</guimenu><guimenuitem>Configura el "
+"KCachegrind</guimenuitem></menuchoice>."
+
+#. Tag: title
+#: index.docbook:697
+#, no-c-format
+msgid "<title>Parts Overview</title>"
+msgstr "<title>Vista general de les parts de traça</title>"
+
+#. Tag: para
+#: index.docbook:698
+#, no-c-format
+msgid ""
+"In a profile run, multiple profile data files can be produced, which can be "
+"loaded together into &kcachegrind;. The <guilabel>Parts Overview</guilabel> "
+"sidedock shows these, ordered horizontally according to creation time; the "
+"rectangle sizes are proportional to the cost spent each part. You can select "
+"one or several parts to constrain the costs shown in the other &kcachegrind; "
+"views to these parts only."
+msgstr ""
+"En una execució d'anàlisi del rendiment es poden produir múltiples fitxers "
+"de dades d'anàlisi del rendiment, que es poden carregar junts al "
+"&kcachegrind;. La barra lateral <guilabel>Vista general de les parts de "
+"traça</guilabel> les mostra, ordenades horitzontalment segons el temps de "
+"creació; les mides del rectangle són proporcionals al cost que es gasta en "
+"cada part. Podeu seleccionar una o diverses parts per a restringir els "
+"costos mostrats en les altres vistes del &kcachegrind; només a aquestes "
+"parts."
+
+#. Tag: para
+#: index.docbook:706
+#, no-c-format
+msgid ""
+"The parts are further subdivided between a partitioning and an inclusive "
+"cost split mode:"
+msgstr ""
+"Les parts estan subdividides entre un mode de partició i un mode de divisió "
+"de cost inclusiu:"
+
+#. Tag: guilabel
+#: index.docbook:711
+#, no-c-format
+msgid "Partitioning Mode"
+msgstr "Mode de partició"
+
+#. Tag: para
+#: index.docbook:712
+#, no-c-format
+msgid ""
+"The partitioning is shown in groups for a profile data part, according to "
+"the group type selected. For example, if &ELF; object groups are selected, "
+"you see colored rectangles for each used &ELF; object (shared library or "
+"executable), sized according to the cost spent therein."
+msgstr ""
+"La partició es mostra en grups per a una part de les dades de l'anàlisi del "
+"rendiment, d'acord amb el tipus de grup seleccionat. Per exemple, si se "
+"seleccionen grups d'objectes &ELF;, es veuen rectangles de colors per a cada "
+"objecte &ELF; utilitzat (biblioteca compartida o executable), que es mesura "
+"segons el cost que s'hi gasta."
+
+#. Tag: guilabel
+#: index.docbook:720
+#, no-c-format
+msgid "Diagram Mode"
+msgstr "Mode de diagrama"
+
+#. Tag: para
+#: index.docbook:721
+#, no-c-format
+msgid ""
+"A rectangle showing the inclusive cost of the current active function in the "
+"part is shown. This, again, is split up to show the inclusive costs of its "
+"callees."
+msgstr ""
+"Es mostra un rectangle que mostra el cost inclusiu de la funció activa "
+"actual a la part. Això, una vegada més, es divideix per a mostrar els costos "
+"inclusius dels seus cridats."
+
+#. Tag: title
+#: index.docbook:732
+#, no-c-format
+msgid "<title>Call Stack</title>"
+msgstr "<title>Pila de crides</title>"
+
+#. Tag: para
+#: index.docbook:733
+#, no-c-format
+msgid ""
+"This is a purely fictional <quote>most probable</quote> call stack. It is "
+"built up by starting with the current active function, and adds the callers "
+"and callees with highest cost at the top and to bottom."
+msgstr ""
+"Es tracta d'una pila de crides «més probables» purament fictícia. Es "
+"construeix començant per la funció activa actual, i afegeix els cridadors i "
+"cridats amb el cost més alt a la part superior i a la part inferior."
+
+#. Tag: para
+#: index.docbook:738
+#, no-c-format
+msgid ""
+"The <guilabel>Cost</guilabel> and <guilabel>Calls</guilabel> columns show "
+"the cost used for all calls from the function in the line above."
+msgstr ""
+"Les columnes <guilabel>Cost</guilabel> i <guilabel>Crides</guilabel> mostren "
+"el cost utilitzat per a totes les crides de la funció de la línia anterior."
+
+#. Tag: title
+#: index.docbook:746
+#, no-c-format
+msgid "Views"
+msgstr "Vistes"
+
+#. Tag: title
+#: index.docbook:749
+#, no-c-format
+msgid "<title>Event Type</title>"
+msgstr "<title>Tipus d'esdeveniment</title>"
+
+#. Tag: para
+#: index.docbook:750
+#, no-c-format
+msgid ""
+"The <guilabel>Event Type</guilabel> list shows all cost types available and "
+"the corresponding self and inclusive cost of the current active function for "
+"that event type."
+msgstr ""
+"La llista <guilabel>Tipus d'esdeveniment</guilabel> mostra tots els tipus de "
+"cost disponibles i el cost propi i inclusiu corresponent de la funció activa "
+"actual per a aquest tipus d'esdeveniment."
+
+#. Tag: para
+#: index.docbook:755
+#, no-c-format
+msgid ""
+"By choosing an event type from the list, you change the type of costs shown "
+"all over &kcachegrind; to the selected one."
+msgstr ""
+"Escollint un tipus d'esdeveniment de la llista, canviareu el tipus de costos "
+"mostrats a tot el &kcachegrind; a l'escollit."
+
+#. Tag: title
+#: index.docbook:762
+#, no-c-format
+msgid "Call Lists"
+msgstr "Llistes de crides"
+
+#. Tag: para
+#: index.docbook:763
+#, no-c-format
+msgid ""
+"These lists show calls to and from the current active function. With "
+"<guilabel>All Callers</guilabel> and <guilabel>All Callees</guilabel> are "
+"meant those functions reachable in the caller and callee direction, even "
+"when other functions are in between."
+msgstr ""
+"Aquestes llistes mostren les crides a i des de la funció activa actual. Amb "
+"<guilabel>Tots els cridadors</guilabel> i <guilabel>Tots els cridats</"
+"guilabel> es vol dir que són les funcions accessibles en la direcció del "
+"cridador i del cridat, fins i tot quan altres funcions estan entremig."
+
+#. Tag: para
+#: index.docbook:770
+#, no-c-format
+msgid "Call list views include:"
+msgstr "Les vistes de llista de crides inclouen:"
+
+#. Tag: para
+#: index.docbook:773
+#, no-c-format
+msgid "Direct <guilabel>Callers</guilabel>"
+msgstr "<guilabel>Cridadors</guilabel> directes"
+
+#. Tag: para
+#: index.docbook:774
+#, no-c-format
+msgid "Direct <guilabel>Callees</guilabel>"
+msgstr "<guilabel>Cridats</guilabel> directes"
+
+#. Tag: guilabel
+#: index.docbook:775
+#, no-c-format
+msgid "All Callers"
+msgstr "Tots els cridadors"
+
+#. Tag: guilabel
+#: index.docbook:776
+#, no-c-format
+msgid "All Callees"
+msgstr "Tots els cridats"
+
+#. Tag: title
+#: index.docbook:782
+#, no-c-format
+msgid "Maps"
+msgstr "Mapes"
+
+#. Tag: para
+#: index.docbook:783
+#, no-c-format
+msgid ""
+"A treemap view of the primary event type, up or down the call hierarchy. "
+"Each colored rectangle represents a function; its size is approximately "
+"proportional to the cost spent therein while the active function is running "
+"(however, there are drawing constrains)."
+msgstr ""
+"Una vista de mapa d'arbre del tipus d'esdeveniment primari, amunt o avall de "
+"la jerarquia de crides. Cada rectangle acolorit representa una funció; la "
+"seva mida és aproximadament proporcional al cost que s'hi gasta mentre que "
+"la funció activa s'està executant (tot i que hi ha restriccions de dibuix)."
+
+#. Tag: para
+#: index.docbook:789
+#, no-c-format
+msgid ""
+"For the <guilabel>Caller Map</guilabel>, the graph shows the nested "
+"hierarchy of all callers of the currently activated function; for the "
+"<guilabel>Callee Map</guilabel>, it shows that of all callees."
+msgstr ""
+"Per al <guilabel>Mapa de cridadors</guilabel>, la gràfica mostra la "
+"jerarquia imbricada de tots els cridadors de la funció actualment activada; "
+"per al <guilabel>Mapa de cridats</guilabel>, mostra la de tots els cridats."
+
+#. Tag: para
+#: index.docbook:794
+#, no-c-format
+msgid ""
+"Appearance options can be found in the context menu. To get exact size "
+"proportions, choose <guimenuitem>Skip Incorrect Borders</guimenuitem>. As "
+"this mode can be very time-consuming, you may want to limit the maximum "
+"drawn nesting level before. <guilabel>Best</guilabel> determinates the split "
+"direction for children from the aspect ratio of the parent. <guilabel>Always "
+"Best</guilabel> decides on remaining space for each sibling. "
+"<guilabel>Ignore Proportions</guilabel> takes space for function name "
+"drawing before drawing children. Note that size proportions can get heavily "
+"wrong."
+msgstr ""
+"Les opcions d'aparença es poden trobar al menú contextual. Per a obtenir les "
+"proporcions exactes de les mides, trieu <guimenuitem>Ignora les vores "
+"incorrectes</guimenuitem>. Com que aquest mode pot trigar molt, és possible "
+"que vulgueu limitar el nivell màxim d'imbricació dibuixat abans. "
+"<guilabel>Millor</guilabel> determina la direcció de divisió dels fills amb "
+"relació a la proporció dels pares. <guilabel>Sempre el millor</guilabel> "
+"decideix sobre la resta d'espai per a cada germà. <guilabel>Ignora les "
+"proporcions</guilabel> pren espai per a dibuixar el nom de la funció abans "
+"de dibuixar els fills. Tingueu en compte que les proporcions de les mides "
+"poden ser molt incorrectes."
+
+#. Tag: para
+#: index.docbook:804
+#, no-c-format
+msgid ""
+"Keyboard navigation is available with the left and right arrow keys for "
+"traversing siblings, and up and down arrow keys to go a nesting level up and "
+"down. &Enter; activates the current item."
+msgstr ""
+"La navegació per teclat està disponible amb les tecles de fletxa esquerra i "
+"dreta per a travessar germans, i les tecles de fletxa amunt i avall per a "
+"anar un nivell d'imbricació amunt i avall. &Intro; activa l'element actual."
+
+#. Tag: title
+#: index.docbook:812
+#, no-c-format
+msgid "Call Graph"
+msgstr "Gràfica de crides"
+
+#. Tag: para
+#: index.docbook:813
+#, no-c-format
+msgid ""
+"This view shows the call graph around the active function. The cost shown is "
+"only the cost spent while the active function was actually running, &ie; the "
+"cost shown for <function>main()</function> (if it's visible) should be the "
+"same as the cost of the active function, as that is the part of inclusive "
+"cost of <function>main()</function> spent while the active function was "
+"running."
+msgstr ""
+"Aquesta vista mostra la gràfica de crides al voltant de la funció activa. El "
+"cost mostrat és només el cost gastat mentre la funció activa s'estava "
+"executant, és a dir, el cost mostrat per <function>main()</function> (si és "
+"visible) hauria de ser el mateix que el cost de la funció activa, ja que és "
+"la part del cost inclusiu de <function>main()</function> gastat mentre la "
+"funció activa s'estava executant."
+
+#. Tag: para
+#: index.docbook:820
+#, no-c-format
+msgid ""
+"For cycles, blue call arrows indicate that this is an artificial call, which "
+"never actually happened, added for correct drawing."
+msgstr ""
+"Per als cicles, les fletxes de crida blaves indiquen que es tracta d'una "
+"crida artificial, que realment mai ha ocorregut, afegida perquè es mostri un "
+"dibuix correcte."
+
+#. Tag: para
+#: index.docbook:824
+#, no-c-format
+msgid ""
+"If the graph is larger than the drawing area, a bird's eye view is shown on "
+"a side. There are view options similar to those of the call maps; the "
+"selected function is highlighted."
+msgstr ""
+"Si la gràfica és més gran que l'àrea de dibuix, es mostra una vista d'ocell "
+"en un costat. Hi ha opcions de visualització similars a les dels mapes de "
+"crides; es ressalta la funció seleccionada."
+
+#. Tag: title
+#: index.docbook:832
+#, no-c-format
+msgid "Annotations"
+msgstr "Anotacions"
+
+#. Tag: para
+#: index.docbook:833
+#, no-c-format
+msgid ""
+"The annotated source or assembler lists show the source lines or "
+"disassembled instructions of the current active function together with the "
+"(self) cost spent executing the code of a source line or instruction. If "
+"there was a call, lines with details on the call are inserted into the "
+"source: the (inclusive) cost spent inside of the call, the number of calls "
+"happening, and the call destination."
+msgstr ""
+"Les llistes de codi font o d'assemblador anotades mostren les línies del "
+"codi font o les instruccions desassemblades de la funció activa actual "
+"juntament amb el cost (per si mateix) gastat executant el codi d'una línia "
+"del codi font o una instrucció. Si hi havia una crida, les línies amb "
+"detalls de la crida s'insereixen en el codi font: el cost (inclusiu) que es "
+"gasta dins de la crida, el nombre de crides que ocorren i la destinació de "
+"la crida."
+
+#. Tag: para
+#: index.docbook:841
+#, no-c-format
+msgid "Select such a call information line to activate the call destination."
+msgstr ""
+"Seleccioneu aquesta línia d'informació de crida per a activar la destinació "
+"de la crida."
+
+#. Tag: title
+#: index.docbook:851
+#, no-c-format
+msgid "Command Reference"
+msgstr "Referència d'ordres"
+
+#. Tag: title
+#: index.docbook:854
+#, no-c-format
+msgid "The main &kcachegrind; window"
+msgstr "La finestra principal del &kcachegrind;"
+
+#. Tag: title
+#: index.docbook:857
+#, no-c-format
+msgid "The File Menu"
+msgstr "El menú Fitxer"
+
+#. Tag: menuchoice
+#: index.docbook:862
+#, no-c-format
+msgid ""
+"<shortcut> <keycombo>&Ctrl;<keycap>N</keycap></keycombo> </shortcut> "
+"<guimenu>File</guimenu><guimenuitem>New</guimenuitem>"
+msgstr ""
+"<shortcut> <keycombo>&Ctrl;<keycap>N</keycap></keycombo> </shortcut> "
+"<guimenu>Fitxer</guimenu> <guimenuitem>Nou</guimenuitem>"
+
+#. Tag: para
+#: index.docbook:868
+#, no-c-format
+msgid ""
+"<action>Opens an empty top-level window</action> in which you can load "
+"profile data. This action is not really necessary, as <menuchoice> "
+"<guimenu>File</guimenu><guimenuitem>Open</guimenuitem></menuchoice> gives "
+"you a new top-level window if the current one already shows some data."
+msgstr ""
+"<action>Obre una finestra de nivell superior buida</action> en la qual podeu "
+"carregar les dades d'anàlisi del rendiment. Aquesta acció no és realment "
+"necessària, ja que <menuchoice> <guimenu>Fitxer</guimenu><guimenuitem>Obre</"
+"guimenuitem></menuchoice> dona una nova finestra de nivell superior si "
+"l'actual ja mostra dades."
+
+#. Tag: menuchoice
+#: index.docbook:877
+#, no-c-format
+msgid ""
+"<shortcut> <keycombo>&Ctrl;<keycap>O</keycap></keycombo> </shortcut> "
+"<guimenu>File</guimenu><guimenuitem>Open</guimenuitem>"
+msgstr ""
+"<shortcut> <keycombo>&Ctrl;<keycap>O</keycap></keycombo> </shortcut> "
+"<guimenu>Fitxer</guimenu> <guimenuitem>Obre</guimenuitem>"
+
+#. Tag: para
+#: index.docbook:884
+#, no-c-format
+msgid ""
+"<action>Pops up the &kde; file selector</action> to choose a profile data "
+"file to be loaded. If there is some data already shown in the current top-"
+"level window, this will open a new window; if you want to open additional "
+"profile data in the current window, use <menuchoice> <guimenu>File</"
+"guimenu><guimenuitem>Add</guimenuitem></menuchoice>."
+msgstr ""
+"<action>Obre el selector de fitxers del &kde;</action> per a triar un fitxer "
+"de dades d'anàlisi de rendiment que s'ha de carregar. Si ja hi ha dades "
+"mostrades a la finestra actual de nivell superior, això obrirà una nova "
+"finestra; si voleu obrir dades d'anàlisi de rendiment addicionals a la "
+"finestra actual, utilitzeu <menuchoice> <guimenu>Fitxer</"
+"guimenu><guimenuitem>Afegeix</guimenuitem></menuchoice>."
+
+#. Tag: para
+#: index.docbook:891
+#, no-c-format
+msgid ""
+"The name of profile data files usually ends in <literal role=\"extension\">."
+"<replaceable>pid</replaceable>.<replaceable>part</replaceable>-"
+"<replaceable>threadID</replaceable></literal>, where <replaceable>part</"
+"replaceable> and <replaceable>threadID</replaceable> are optional. "
+"<replaceable>pid</replaceable> and <replaceable>part</replaceable> are used "
+"for multiple profile data files belonging to one application run. By loading "
+"a file ending only in <literal role=\"extension\"><replaceable>pid</"
+"replaceable></literal>, any existing data files for this run with additional "
+"endings are loaded as well."
+msgstr ""
+"El nom dels fitxers de dades d'anàlisi del rendiment normalment acaba en "
+"<literal role=\"extension\">.<replaceable>pid</replaceable>."
+"<replaceable>part</replaceable>-<replaceable>filID</replaceable></literal>, "
+"on <replaceable>part</replaceable> i <replaceable>filID</replaceable> són "
+"opcionals. <replaceable>pid</replaceable> i <replaceable>part</replaceable> "
+"s'utilitzen per a múltiples fitxers de dades d'anàlisi del rendiment que "
+"pertanyen a una aplicació executada. En carregar un fitxer que acabi només "
+"en <literal role=\"extension\"><replaceable>pid</replaceable></literal>, els "
+"fitxers de dades existents per a aquesta execució amb finals addicionals "
+"també es carreguen."
+
+#. Tag: para
+#: index.docbook:899
+#, no-c-format
+msgid ""
+"If there exist profile data files <filename>cachegrind.out.123</filename> "
+"and <filename>cachegrind.out.123.1</filename>, by loading the first, the "
+"second will be automatically loaded too."
+msgstr ""
+"Si hi ha fitxers de dades d'anàlisi de rendiment <filename>cachegrind."
+"out.123</filename> i <filename>cachegrind.out.123.1</filename>, carregant el "
+"primer, el segon també es carregarà automàticament."
+
+#. Tag: menuchoice
+#: index.docbook:907
+#, no-c-format
+msgid "<guimenu>File</guimenu><guimenuitem>Add</guimenuitem>"
+msgstr "<guimenu>Fitxer</guimenu><guimenuitem>Afegeix</guimenuitem>"
+
+#. Tag: para
+#: index.docbook:910
+#, no-c-format
+msgid ""
+"<action>Adds a profile data file</action> to the current window. Using this, "
+"you can force multiple data files to be loaded into the same top-level "
+"window even if they are not from the same run, as given by the profile data "
+"file naming convention. For example, this can be used for side-by-side "
+"comparison."
+msgstr ""
+"<action>Afegeix un fitxer de dades d'anàlisi de rendiment</action> a la "
+"finestra actual. Usant això, es poden forçar que múltiples fitxers de dades "
+"es carreguin a la mateixa finestra de nivell superior fins i tot si no són "
+"de la mateixa execució, com ho indica la convenció de noms de fitxers de "
+"dades d'anàlisi de rendiment. Per exemple, això es pot utilitzar per a la "
+"comparació en paral·lel."
+
+#. Tag: menuchoice
+#: index.docbook:920
+#, no-c-format
+msgid ""
+"<shortcut> <keycombo><keycap>F5</keycap></keycombo> </shortcut> "
+"<guimenu>File</guimenu><guimenuitem>Reload</guimenuitem>"
+msgstr ""
+"<shortcut> <keycombo><keycap>F5</keycap></keycombo> </shortcut> "
+"<guimenu>Fitxer</guimenu> <guimenuitem>Recarrega</guimenuitem>"
+
+#. Tag: para
+#: index.docbook:926
+#, no-c-format
+msgid ""
+"<action>Reload the profile data</action>. This is useful when another "
+"profile data file was generated for an already loaded application run."
+msgstr ""
+"<action>Torna a carregar les dades d'anàlisi de rendiment</action>. Això és "
+"útil quan es va generar un altre fitxer de dades d'anàlisi del rendiment per "
+"a una aplicació ja carregada."
+
+#. Tag: menuchoice
+#: index.docbook:933
+#, no-c-format
+msgid ""
+"<shortcut> <keycombo>&Ctrl;<keycap>Q</keycap></keycombo> </shortcut> "
+"<guimenu>File</guimenu><guimenuitem>Quit</guimenuitem>"
+msgstr ""
+"<shortcut> <keycombo>&Ctrl;<keycap>Q</keycap></keycombo> </shortcut> "
+"<guimenu>Fitxer</guimenu> <guimenuitem>Surt</guimenuitem>"
+
+#. Tag: para
+#: index.docbook:939
+#, no-c-format
+msgid "<action>Quits</action> &kcachegrind;"
+msgstr "<action>Surt</action> del &kcachegrind;"
+
+#. Tag: title
+#: index.docbook:950
+#, no-c-format
+msgid "Questions and Answers"
+msgstr "Preguntes i respostes"
+
+#. Tag: para
+#: index.docbook:957
+#, no-c-format
+msgid "What is &kcachegrind; for? I have no idea."
+msgstr "Per a què és el &kcachegrind;? No en tinc ni idea."
+
+#. Tag: para
+#: index.docbook:962
+#, no-c-format
+msgid ""
+"&kcachegrind; is a helpful at a late stage in software development, called "
+"profiling. If you don't develop applications, you don't need &kcachegrind;."
+msgstr ""
+"El &kcachegrind; és una ajuda en una fase tardana del desenvolupament de "
+"programari, anomenada anàlisi de rendiment. Si no desenvolupeu aplicacions, "
+"no necessiteu el &kcachegrind;."
+
+#. Tag: para
+#: index.docbook:971
+#, no-c-format
+msgid ""
+"What is the difference between <guilabel>Incl.</guilabel> and "
+"<guilabel>Self</guilabel>?"
+msgstr ""
+"Quina és la diferència entre <guilabel>Incl.</guilabel> i <guilabel>Propi</"
+"guilabel>?"
+
+#. Tag: para
+#: index.docbook:977
+#, no-c-format
+msgid ""
+"These are cost attributes for functions regarding some event type. As "
+"functions can call each other, it makes sense to distinguish the cost of the "
+"function itself (<quote>Self Cost</quote>) and the cost including all called "
+"functions (<quote>Inclusive Cost</quote>). <quote>Self</quote> is sometimes "
+"also referred to as <quote>Exclusive</quote> costs."
+msgstr ""
+"Aquests són atributs de cost per a funcions relatives a algun tipus "
+"d'esdeveniment. Com que les funcions es poden cridar entre si, té sentit "
+"distingir el cost de la funció en si mateix («Cost propi») i el cost que "
+"inclou totes les funcions cridades («Cost inclusiu»). «Propi» a vegades "
+"també es coneix com a costos «exclusius»."
+
+#. Tag: para
+#: index.docbook:983
+#, no-c-format
+msgid ""
+"So, for example, for <function>main()</function>, you will always have an "
+"inclusive cost of almost 100%, whereas the self cost is negligible when the "
+"real work is done in another function."
+msgstr ""
+"Així, per exemple, per a <function>main()</function>, sempre tindrem un cost "
+"inclusiu de gairebé el 100%, mentre que el cost propi és insignificant quan "
+"es fa el treball real en una altra funció."
+
+#. Tag: para
+#: index.docbook:993
+#, no-c-format
+msgid ""
+"If I double-click on a function down in the <guilabel>Call Graph</guilabel> "
+"view, it shows for function <function>main()</function> the same cost as the "
+"selected function. Isn't this supposed to be constant at 100%?"
+msgstr ""
+"Si faig doble clic en una funció a la vista <guilabel>Gràfica de crides</"
+"guilabel>, es mostra per a la funció <function>main()</function> el mateix "
+"cost que la funció seleccionada. Se suposa que això no és constant al 100%?"
+
+#. Tag: para
+#: index.docbook:1000
+#, no-c-format
+msgid ""
+"You have activated a function below <function>main()</function>, which "
+"obviously costs less than <function>main()</function> itself. For every "
+"function, it is shown only the part of the cost spent while the "
+"<emphasis>activated</emphasis> function is running; that is, the cost shown "
+"for any function can never be higher than the cost of the activated function."
+msgstr ""
+"Heu activat una funció per sota de <function>main()</function>, que "
+"òbviament costa menys que la mateixa <function>main()</function>. Per a cada "
+"funció, només es mostra la part del cost gastat mentre que la funció "
+"<emphasis>activada</emphasis> s'està executant; és a dir, el cost mostrat "
+"per a qualsevol funció mai pot ser més alt que el cost de la funció activada."
+
+#. Tag: glossterm
+#: index.docbook:1018
+#, no-c-format
+msgid "Cost Entity"
+msgstr "Entitat de cost"
+
+#. Tag: para
+#: index.docbook:1019
+#, no-c-format
+msgid ""
+"An abstract item related to source code to which event counts can be "
+"attributed. Dimensions for cost entities are code location (&eg; source "
+"line, function), data location (&eg; accessed data type, data object), "
+"execution location (&eg; thread, process), and tuples or triples of the "
+"aforementioned positions (&eg; calls, object access from statement, evicted "
+"data from cache)."
+msgstr ""
+"Un element abstracte relacionat amb el codi font al qual es poden atribuir "
+"els comptadors d'esdeveniments. Les dimensions per a les entitats de cost "
+"són la ubicació de codi (&pex;, línia de codi font, funció), la ubicació de "
+"dades (&pex;, tipus de dades accedides, objecte de dades), la ubicació "
+"d'execució (&pex;, fil, procés), i tuples o triples de les posicions abans "
+"esmentades (&pex;, crides, accés d'objectes des de la declaració, dades "
+"desnonades de la memòria cau)."
+
+#. Tag: glossterm
+#: index.docbook:1028
+#, no-c-format
+msgid "Event Costs"
+msgstr "Costos d'esdeveniment"
+
+#. Tag: para
+#: index.docbook:1029
+#, no-c-format
+msgid ""
+"Sum of events of some event type occurring while the execution is related to "
+"some cost entity. The cost is attributed to the entity."
+msgstr ""
+"La suma d'esdeveniments d'algun tipus d'esdeveniment que es produeixen "
+"mentre que l'execució està relacionada amb alguna entitat de cost. El cost "
+"s'atribueix a l'entitat."
+
+#. Tag: glossterm
+#: index.docbook:1035
+#, no-c-format
+msgid "<glossterm>Event Type</glossterm>"
+msgstr "<glossterm>Tipus d'esdeveniment</glossterm>"
+
+#. Tag: para
+#: index.docbook:1036
+#, no-c-format
+msgid ""
+"The kind of event of which costs can be attributed to a cost entity. There "
+"are real event types and inherited event types."
+msgstr ""
+"El tipus d'esdeveniment del qual els costos es poden atribuir a una entitat "
+"de cost. Hi ha tipus d'esdeveniment reals i tipus d'esdeveniment heretats."
+
+#. Tag: glossterm
+#: index.docbook:1041
+#, no-c-format
+msgid "Inherited Event Type"
+msgstr "Tipus d'esdeveniment heretat"
+
+#. Tag: para
+#: index.docbook:1042
+#, no-c-format
+msgid ""
+"A virtual event type only visible in the view, defined by a formula to be "
+"calculated from real event types."
+msgstr ""
+"Un tipus d'esdeveniment virtual només visible en la vista, definit per una "
+"fórmula que es calcula a partir dels tipus d'esdeveniments reals."
+
+#. Tag: glossterm
+#: index.docbook:1047
+#, no-c-format
+msgid "Profile Data File"
+msgstr "Fitxer de dades d'anàlisi de rendiment"
+
+#. Tag: para
+#: index.docbook:1048
+#, no-c-format
+msgid ""
+"A file containing data measured in a profile experiment, or part of one, or "
+"produced by post-processing a trace. Its size is typically linear with the "
+"code size of the program."
+msgstr ""
+"Un fitxer que conté dades mesurades en un experiment d'anàlisi del "
+"rendiment, o part d'un, o produït pel postprocessament d'una traça. La seva "
+"mida és típicament lineal amb la mida del codi del programa."
+
+#. Tag: glossterm
+#: index.docbook:1054
+#, no-c-format
+msgid "Profile Data Part"
+msgstr "Part de les dades d'anàlisi del rendiment"
+
+#. Tag: para
+#: index.docbook:1055
+#, no-c-format
+msgid "Data from a profile data file."
+msgstr "Dades d'un fitxer de dades d'anàlisi del rendiment."
+
+#. Tag: glossterm
+#: index.docbook:1059
+#, no-c-format
+msgid "Profile Experiment"
+msgstr "Experiment d'anàlisi del rendiment"
+
+#. Tag: para
+#: index.docbook:1060
+#, no-c-format
+msgid ""
+"A program run supervised by a profiling tool, producing possibly multiple "
+"profile data files from parts or threads of the run."
+msgstr ""
+"Un programa s'executa supervisat per una eina d'elaboració d'anàlisi de "
+"rendiment, produint possiblement múltiples fitxers de dades d'anàlisi del "
+"rendiment de parts o fils de l'execució."
+
+#. Tag: glossterm
+#: index.docbook:1065
+#, no-c-format
+msgid "Profile Project"
+msgstr "Projecte d'anàlisi de rendiment"
+
+#. Tag: para
+#: index.docbook:1066
+#, no-c-format
+msgid ""
+"A configuration for profile experiments used for one program to profile, "
+"perhaps in multiple versions. Comparisons of profile data typically only "
+"makes sense between profile data produced in experiments of one profile "
+"project."
+msgstr ""
+"Una configuració per a experiments d'anàlisi de rendiment utilitzats per un "
+"programa per a analitzar el rendiment, potser en diverses versions. Les "
+"comparacions de les dades d'anàlisi de rendiment normalment només tenen "
+"sentit entre les dades d'anàlisi de rendiment produïdes en experiments d'un "
+"projecte d'anàlisi de rendiment."
+
+#. Tag: glossterm
+#: index.docbook:1073
+#, no-c-format
+msgid "<glossterm>Profiling</glossterm>"
+msgstr "<glossterm>Anàlisi del rendiment</glossterm>"
+
+#. Tag: para
+#: index.docbook:1074
+#, no-c-format
+msgid ""
+"The process of collecting statistical information about runtime "
+"characteristics of program runs."
+msgstr ""
+"El procés de recopilació d'informació estadística sobre les característiques "
+"en temps d'execució de les execucions del programa."
+
+#. Tag: glossterm
+#: index.docbook:1079
+#, no-c-format
+msgid "Real Event Type"
+msgstr "Tipus d'esdeveniment real"
+
+#. Tag: para
+#: index.docbook:1080
+#, no-c-format
+msgid ""
+"An event type that can be measured by a tool. This requires the existence of "
+"a sensor for the given event type."
+msgstr ""
+"Un tipus d'esdeveniment que pot ser mesurat per una eina. Això requereix "
+"l'existència d'un sensor per al tipus d'esdeveniment donat."
+
+#. Tag: glossterm
+#: index.docbook:1085
+#, no-c-format
+msgid "Trace"
+msgstr "Traça"
+
+#. Tag: para
+#: index.docbook:1086
+#, no-c-format
+msgid ""
+"A sequence of timestamped events that occurred while tracing a program run. "
+"Its size is typically linear with the execution time of the program run."
+msgstr ""
+"Una seqüència d'esdeveniments amb marca horària que van ocórrer mentre es "
+"traçava una execució del programa. La seva mida és típicament lineal amb el "
+"temps d'execució de l'execució del programa."
+
+#. Tag: glossterm
+#: index.docbook:1092
+#, no-c-format
+msgid "Trace Part"
+msgstr "Part de traçat"
+
+#. Tag: glossterm
+#: index.docbook:1097
+#, no-c-format
+msgid "Tracing"
+msgstr "Traçat"
+
+#. Tag: para
+#: index.docbook:1098
+#, no-c-format
+msgid ""
+"The process of supervising a program run and storing its events, sorted by a "
+"timestamp, in an output file, the trace."
+msgstr ""
+"El procés de supervisió de l'execució d'un programa i l'emmagatzematge dels "
+"seus esdeveniments, ordenats per una marca de temps, en un fitxer de "
+"sortida, la traça."
+
+#. Tag: title
+#: index.docbook:1106
+#, no-c-format
+msgid "Credits and License"
+msgstr "Crèdits i llicència"
+
+#. Tag: para
+#: index.docbook:1108
+#, no-c-format
+msgid ""
+"Thanks to Julian Seward for his excellent &valgrind;, and Nicholas "
+"Nethercote for the &cachegrind; addition. Without these programs, "
+"&kcachegrind; would not exist. Some ideas for this &GUI; were from them, too."
+msgstr ""
+"Gràcies a Julian Seward pel seu excel·lent &valgrind; i a Nicholas "
+"Nethercote per afegir el &cachegrind;. Sense aquests programes, el "
+"&kcachegrind; no existiria. Algunes idees per a aquesta &IGU; també eren "
+"d'ells."
+
+#. Tag: para
+#: index.docbook:1113
+#, no-c-format
+msgid "Thanks for all the bug reports and suggestions from different users."
+msgstr ""
+"Gràcies per tots els informes d'errors i suggeriments d'usuaris diferents."
+
+#. Tag: trans_comment
+#: index.docbook:1117
+#, no-c-format
+msgid "CREDIT_FOR_TRANSLATORS"
+msgstr "<para>Traductor de la documentació: &credits.JosepMa.Ferrer;</para>"
+
+#. Tag: chapter
+#: index.docbook:1117
+#, no-c-format
+msgid "&underFDL;"
+msgstr "&underFDL;"

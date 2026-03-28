@@ -1,0 +1,1077 @@
+#
+# Stefan Asserhäll <stefan.asserhall@gmail.com>, 2016, 2017.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 12:04+0000\n"
+"PO-Revision-Date: 2017-01-03 18:06+0100\n"
+"Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
+"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 2.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#. Tag: title
+#: microbe.docbook:3
+#, no-c-format
+msgid "&microbe;"
+msgstr "&microbe;"
+
+#. Tag: title
+#: microbe.docbook:5
+#, no-c-format
+msgid "Introduction and General Syntax"
+msgstr "Inledning och generell syntax"
+
+#. Tag: para
+#: microbe.docbook:6
+#, no-c-format
+msgid ""
+"<application>Microbe</application> compiles programs written in the custom "
+"language for PICs, as a companion program to &ktechlab;. The syntax has been "
+"designed to suit a &flowcode; program. The syntax for running "
+"<command>microbe</command> from the command line is: <programlisting>microbe "
+"[options] [input.microbe] [output.asm]</programlisting> where options are:"
+msgstr ""
+"<application>Microbe</application> kompilerar program skrivna i språket "
+"anpassat för PIC:er, som ett medföljande program till &ktechlab;. Syntaxen "
+"har skapats för att passa ett &flowcode;-program. Syntaxen för att köra "
+"<command>microbe</command> på kommandoraden är: <programlisting>microbe "
+"[väljare] [indata.microbe] [utdata.asm]</programlisting> där väljare är:"
+
+#. Tag: para
+#: microbe.docbook:16
+#, no-c-format
+msgid ""
+"<function>--show-source</function> - Puts each line of &microbe; source code "
+"as a comment in the assembly output before the assembly instructions "
+"themselves for that line."
+msgstr ""
+"<function>--show-source</function>: Lägger till varje &microbe;-källkodsrad  "
+"som en kommentar i assemblerutmatningen innan själva "
+"assemblerinstruktionerna för den raden."
+
+#. Tag: para
+#: microbe.docbook:17
+#, no-c-format
+msgid ""
+"<function>--no-optimize</function> - Prevent optimization of the "
+"instructions generated from the source. Optimization is usually safe, and so "
+"this option is mainly used for debugging."
+msgstr ""
+"<function>--no-optimize</function>: Förhindra optimering av instruktionerna "
+"skapade från källkoden. Optimering är oftast säker, alltså är väljaren i "
+"huvudsak avsedd för avlusning."
+
+#. Tag: para
+#: microbe.docbook:20
+#, no-c-format
+msgid ""
+"The .microbe input file must identify the target PIC by inserting the PIC "
+"name at the top of the .microbe file; &eg; the name of a PIC16F84 is "
+"\"P16F84\"."
+msgstr ""
+"Filen indata.microbe måste identifiera PIC:n som är målet genom att infoga "
+"namnet på PIC:n längst upp i filen, t.ex. är namnet på PIC16F84 \"P16F84\"."
+
+#. Tag: title
+#: microbe.docbook:23
+#, no-c-format
+msgid "Simple complete &microbe; program"
+msgstr "Enkelt fullständig &microbe;-program"
+
+#. Tag: programlisting
+#: microbe.docbook:24
+#, no-c-format
+msgid ""
+"P16F84\n"
+"\n"
+"a = 0\n"
+"repeat\n"
+"{\n"
+"        PORTA = a\n"
+"        a = a + 1\n"
+"}\n"
+"until a == 5\n"
+"\n"
+"end"
+msgstr ""
+"P16F84\n"
+"\n"
+"a = 0\n"
+"repeat\n"
+"{\n"
+"        PORTA = a\n"
+"        a = a + 1\n"
+"}\n"
+"until a == 5\n"
+"\n"
+"end"
+
+#. Tag: title
+#: microbe.docbook:29
+#, no-c-format
+msgid "Naming conventions"
+msgstr "Namngivningskonventioner"
+
+#. Tag: para
+#: microbe.docbook:30
+#, no-c-format
+msgid "The following rules apply to variable names and labels:"
+msgstr "Följande regler gäller för variabelnamn och etiketter:"
+
+#. Tag: para
+#: microbe.docbook:33
+#, no-c-format
+msgid ""
+"They can only contain alphanumerical characters [a..z][A..Z][0..9] and the "
+"underscore \"_\"."
+msgstr ""
+"De kan bara innehålla alfanumeriska tecken [a..z][A..Z][0..9] och "
+"understrecket \"_\"."
+
+#. Tag: para
+#: microbe.docbook:34
+#, no-c-format
+msgid "They are case-sensitive."
+msgstr "De är skiftlägeskänsliga."
+
+#. Tag: para
+#: microbe.docbook:35
+#, no-c-format
+msgid "They cannot start with a number."
+msgstr "De kan inte börja med en siffra."
+
+#. Tag: para
+#: microbe.docbook:36
+#, no-c-format
+msgid ""
+"They should not start with <quote>__</quote> (double underscore), as this is "
+"reserved for use by the compiler."
+msgstr ""
+"De får inte börja med <quote>__</quote> (dubbla understreck) eftersom det är "
+"reserverat för användning av kompilatorn."
+
+#. Tag: title
+#: microbe.docbook:42
+#, no-c-format
+msgid "Bracing conventions"
+msgstr "Parenteskonventioner"
+
+#. Tag: para
+#: microbe.docbook:43
+#, no-c-format
+msgid ""
+"Curly braces, {}, indicate the start and end of a code block. They can "
+"appear anywhere before the start and after the end of the code block. "
+"Examples of acceptable code blocks:"
+msgstr ""
+"Klammerparenteser, {}, anger början och slutet på ett kodblock. De kan "
+"finnas var som helst före början och efter slutet på kodblocket. Exempel på "
+"korrekta kodblock:"
+
+#. Tag: programlisting
+#: microbe.docbook:49
+#, no-c-format
+msgid ""
+"statement1 {\n"
+"        some code\n"
+"}"
+msgstr ""
+"sats1 {\n"
+"        någon kod\n"
+"}"
+
+#. Tag: programlisting
+#: microbe.docbook:50
+#, no-c-format
+msgid ""
+"statement2 {\n"
+"        other code }"
+msgstr ""
+"sats2 {\n"
+"        annan kod }"
+
+#. Tag: programlisting
+#: microbe.docbook:52
+#, no-c-format
+msgid ""
+"statement3\n"
+"{\n"
+"        other code\n"
+"}"
+msgstr ""
+"sats3\n"
+"{\n"
+"        annan kod\n"
+"}"
+
+#. Tag: programlisting
+#: microbe.docbook:54
+#, no-c-format
+msgid ""
+"statement5 {\n"
+"        code block\n"
+"} statement6"
+msgstr ""
+"sats5 {\n"
+"        kodblock\n"
+"} sats6"
+
+#. Tag: title
+#: microbe.docbook:58
+#, no-c-format
+msgid "Commenting"
+msgstr "Kommentarer"
+
+#. Tag: para
+#: microbe.docbook:59
+#, no-c-format
+msgid ""
+"Commenting is similar to C. // comments out the rest of the line. /* and */ "
+"denote a multiline comment."
+msgstr ""
+"Kommentarer liknar C. // kommenterar bort resten av raden. /* och */ anger "
+"en flerraders kommentar."
+
+#. Tag: programlisting
+#: microbe.docbook:61
+#, no-c-format
+msgid ""
+"// This is a comment\n"
+"x = 2 \n"
+"/* As is this\n"
+"multiline comment */"
+msgstr ""
+"// Det här är en kommentar\n"
+"x = 2 \n"
+"/* Liksom denna\n"
+"flerraders kommentar */"
+
+#. Tag: title
+#: microbe.docbook:66
+#, no-c-format
+msgid "Program Structure"
+msgstr "Programstruktur"
+
+#. Tag: para
+#: microbe.docbook:67
+#, no-c-format
+msgid ""
+"The PIC id must be inserted at the top of the program. The end of the main "
+"program is denoted with <quote>end</quote>. Subroutines must placed after "
+"<quote>end</quote>."
+msgstr ""
+"PIC-id måste infogas överst i programmet. Slutet på huvudprogrammet anges "
+"med <quote>end</quote>. Subrutiner måste placeras efter <quote>end</quote>."
+
+#. Tag: title
+#: microbe.docbook:73
+#, no-c-format
+msgid "Subroutines"
+msgstr "Subrutiner"
+
+#. Tag: para
+#: microbe.docbook:74
+#, no-c-format
+msgid "A subroutine can be called from anywhere in the code. Syntax:"
+msgstr "En subrutin kan anropas var som helst i koden. Syntax:"
+
+#. Tag: programlisting
+#: microbe.docbook:77
+#, no-c-format
+msgid ""
+"sub SubName\n"
+"{\n"
+"        // Code...\n"
+"}"
+msgstr ""
+"sub SubrutinNamn\n"
+"{\n"
+"        // Kod...\n"
+"}"
+
+#. Tag: para
+#: microbe.docbook:78
+#, no-c-format
+msgid ""
+"The subroutine is called with <quote>call <replaceable>SubName</"
+"replaceable></quote>."
+msgstr ""
+"Subrutinen anropas med <quote>call <replaceable>SubrutinNamn</replaceable></"
+"quote>."
+
+#. Tag: title
+#: microbe.docbook:83
+#, no-c-format
+msgid "&microbe; language reference"
+msgstr "&microbe; språkreferens"
+
+#. Tag: title
+#: microbe.docbook:85 microbe.docbook:99
+#, no-c-format
+msgid "<title>if</title>"
+msgstr "<title>if</title>"
+
+#. Tag: para
+#: microbe.docbook:86
+#, no-c-format
+msgid ""
+"Conditional branching. Syntax: <programlisting role=\"correct\">if "
+"[expression] then [statement]</programlisting> or <programlisting role="
+"\"correct\">\n"
+"if [expression] then\n"
+"{\n"
+"        [statement block]\n"
+"}</programlisting> Similarly for else: <programlisting role=\"correct\">else "
+"[statement]</programlisting> or"
+msgstr ""
+"Villkorliga hopp. Syntax: <programlisting role=\"correct\">if [uttryck] then "
+"[sats]</programlisting> eller <programlisting role=\"correct\">\n"
+"if [uttryck] then\n"
+"{\n"
+"        [satsblock]\n"
+"}</programlisting> På liknande sätt för else: <programlisting role=\"correct"
+"\">else [sats]</programlisting> eller"
+
+#. Tag: programlisting
+#: microbe.docbook:96
+#, no-c-format
+msgid ""
+"else\n"
+"{\n"
+"        [statement block]\n"
+"}"
+msgstr ""
+"else\n"
+"{\n"
+"        [satsblock]\n"
+"}"
+
+#. Tag: programlisting
+#: microbe.docbook:100
+#, no-c-format
+msgid ""
+"if porta.0 is high then\n"
+"{\n"
+"        delay 200\n"
+"}\n"
+"else\n"
+"{\n"
+"        delay 300\n"
+"}"
+msgstr ""
+"if porta.0 is high then\n"
+"{\n"
+"        delay 200\n"
+"}\n"
+"else\n"
+"{\n"
+"        delay 300\n"
+"}"
+
+#. Tag: title
+#: microbe.docbook:105
+#, no-c-format
+msgid "alias"
+msgstr "alias"
+
+#. Tag: para
+#: microbe.docbook:106
+#, no-c-format
+msgid "Aliases one string to another. Syntax:"
+msgstr "Skapar ett alias från en sträng till en annan. Syntax:"
+
+#. Tag: programlisting
+#: microbe.docbook:107
+#, no-c-format
+msgid "alias [from] [to]"
+msgstr "alias [från] [till]"
+
+#. Tag: title
+#: microbe.docbook:112
+#, no-c-format
+msgid "repeat"
+msgstr "repeat"
+
+#. Tag: para
+#: microbe.docbook:113
+#, no-c-format
+msgid ""
+"Executes the statement block repeatedly until expression evaluates to true. "
+"The evaluation of the expression is performed after the statement block, so "
+"the statement block will always be executed at least once. Syntax:"
+msgstr ""
+"Kör satsblocket upprepade gånger tills uttrycket utvärderas till true. "
+"Utvärderingen av uttrycket utförs efter satsblocket, så att satsblocket "
+"alltid körs minst en gång. Syntax:"
+
+#. Tag: programlisting
+#: microbe.docbook:116
+#, no-c-format
+msgid ""
+"repeat\n"
+"{\n"
+"        [statement block]\n"
+"}\n"
+"until [expression]"
+msgstr ""
+"repeat\n"
+"{\n"
+"        [satsblock]\n"
+"}\n"
+"until [uttryck]"
+
+#. Tag: title
+#: microbe.docbook:121
+#, no-c-format
+msgid "while"
+msgstr "while"
+
+#. Tag: para
+#: microbe.docbook:122
+#, no-c-format
+msgid ""
+"Similar to repeat, this repeatedly executes the statement block. However, "
+"the expression is evaluated before execution, not after. So if the "
+"expression evaluates to false on the first pass, then the statement block "
+"will not get executed. Syntax:"
+msgstr ""
+"Liksom repeat, kör det satsblocket upprepade gånger. Dock utvärderas "
+"uttrycket innan körning, inte efter. Om uttrycket alltså utvärderas till "
+"false den första gången, körs inte satsblocket. Syntax:"
+
+#. Tag: programlisting
+#: microbe.docbook:126
+#, no-c-format
+msgid ""
+"while [expression]\n"
+"{\n"
+"        [statement block]\n"
+"}"
+msgstr ""
+"while [uttryck]\n"
+"{\n"
+"        [satsblock]\n"
+"}"
+
+#. Tag: title
+#: microbe.docbook:132 microbe.docbook:145
+#, no-c-format
+msgid "goto"
+msgstr "goto"
+
+#. Tag: para
+#: microbe.docbook:133
+#, no-c-format
+msgid ""
+"This causes execution of the code to continue at the next statement after "
+"the label specified. Goto syntax: <programlisting role=\"correct"
+"\"><function>goto</function> [labelname]</programlisting> Label syntax: "
+"<programlisting role=\"correct\"><function>labelname:</function></"
+"programlisting> It is often considered good programming practice to avoid "
+"the use of goto. Use of control statements and subroutines will result in a "
+"much more readable program."
+msgstr ""
+"Gör att körning av koden fortsätter med nästa sats efter den angivna "
+"etiketten. Syntax för goto: <programlisting role=\"correct\"><function>goto</"
+"function> [etikettnamn]</programlisting> Etikettsyntax: <programlisting role="
+"\"correct\"><function>etikettnamn:</function></programlisting> Det är ofta "
+"god programmeringsvana att undvika användning av goto. Användning av "
+"kontrollsatser och subrutiner leder till ett mycket mer läsbart program."
+
+#. Tag: programlisting
+#: microbe.docbook:146
+#, no-c-format
+msgid ""
+"goto MyLabel\n"
+"\n"
+"...\n"
+"\n"
+"[MyLabel]:\n"
+"// Code will continue at this point"
+msgstr ""
+"goto MinEtikett\n"
+"\n"
+"...\n"
+"\n"
+"[MinEtikett]:\n"
+"// Koden fortsätter på det här stället"
+
+#. Tag: title
+#: microbe.docbook:151
+#, no-c-format
+msgid "call"
+msgstr "call"
+
+#. Tag: para
+#: microbe.docbook:152
+#, no-c-format
+msgid ""
+"Calls a subroutine. Syntax: <programlisting role=\"correct\"><function>call</"
+"function> [SubName]</programlisting> where <replaceable>SubName</"
+"replaceable> is the name of the subroutine to be called."
+msgstr ""
+"Anropar en subrutin. Syntax: <programlisting role=\"correct"
+"\"><function>call</function> [SubrutinNamn]</programlisting> där "
+"<replaceable>SubrutinNamn</replaceable> är namnet på subrutinen som ska "
+"anropas."
+
+#. Tag: title
+#: microbe.docbook:162
+#, no-c-format
+msgid "delay"
+msgstr "delay"
+
+#. Tag: para
+#: microbe.docbook:163
+#, no-c-format
+msgid ""
+"This causes the code execution to stop for the given period of time. The "
+"interval is in milliseconds. Syntax:"
+msgstr ""
+"Gör att körning av koden stoppas under angiven tidsperiod. Intervallet anges "
+"i millisekunder. Syntax:"
+
+#. Tag: programlisting
+#: microbe.docbook:167
+#, no-c-format
+msgid "<function>delay</function> [interval]"
+msgstr "<function>delay</function> [intervall]"
+
+#. Tag: para
+#: microbe.docbook:169
+#, no-c-format
+msgid ""
+"At present, &microbe; assumes that the PIC is operating at a frequency of "
+"4MHz - &ie; each instruction takes 1 microsecond to execute. If this is not "
+"the case, the interval must be adjusted proportionately."
+msgstr ""
+"För närvarande antar &microbe; att PIC:n använder frekvensen 4 MHz, dvs. "
+"varje instruktion tar 1 mikrosekund att köra. Om det inte är fallet, måste "
+"intervallet justeras proportionellt."
+
+#. Tag: title
+#: microbe.docbook:174
+#, no-c-format
+msgid "sevenseg"
+msgstr "sevenseg"
+
+#. Tag: para
+#: microbe.docbook:175
+#, no-c-format
+msgid ""
+"This is used to define the pin mapping for a (common cathode) seven segment "
+"display connected to the PIC. Syntax: <programlisting role=\"correct"
+"\"><function>sevenseg</function> [name] [a] [b] [c] [d] [e] [f] [g]</"
+"programlisting> where [a]...[g] are the PIC pins to which the respective "
+"segments of the seven segment display are attached. The pins can be written "
+"either as PORTX.N or RXN."
+msgstr ""
+"Används för att definiera anslutningsavbildningen för en 7-segmentsdisplay "
+"(med gemensam katod) ansluten till PIC:n. Syntax <programlisting role="
+"\"correct\"><function>sevenseg</function> [namn] [a] [b] [c] [d] [e] [f] "
+"[g]</programlisting> där [a] ... [g] är PIC:ns anslutningar dit respektive "
+"segment i 7-segmentsdisplayen är kopplade. Anslutningarna kan antingen "
+"skrivas som PORTX.N eller RXN."
+
+#. Tag: para
+#: microbe.docbook:181
+#, no-c-format
+msgid ""
+"To display a number on the seven segment, the pin mapping is treated as a "
+"write only variable."
+msgstr ""
+"För att visa ett tal på 7-segmentdisplayen, behandlas "
+"anslutningsavbildningen som en enbart skrivbar variabel."
+
+#. Tag: title
+#: microbe.docbook:183
+#, no-c-format
+msgid "Defining and outputting to a seven segment"
+msgstr "Definiera och skriva ut på en 7-segmentsdisplay"
+
+#. Tag: programlisting
+#: microbe.docbook:184
+#, no-c-format
+msgid ""
+"sevenseg seg1 RB0 RB1 RB2 RB3 RB4 RB5 RB6\n"
+"seg1 = x + 2"
+msgstr ""
+"sevenseg seg1 RB0 RB1 RB2 RB3 RB4 RB5 RB6\n"
+"seg1 = x + 2"
+
+#. Tag: title
+#: microbe.docbook:190
+#, no-c-format
+msgid "keypad"
+msgstr "keypad"
+
+#. Tag: para
+#: microbe.docbook:191
+#, no-c-format
+msgid ""
+"This is used to define the pin mapping for a keypad connected to the PIC. "
+"Syntax: <programlisting role=\"correct\"><function>keypad</function> [name] "
+"[row 1] ... [row 4] [column 1] ... [column n]</programlisting> where [row "
+"1] ... [row 4] and [column 1] ... [column n] are the PIC pins to which the "
+"respective rows and columns of the keypad are attached (at the moment, the "
+"number of rows is not changeable). See <xref linkend=\"sevenseg\"/> (above) "
+"for more information on pin mappings."
+msgstr ""
+"Används för att definiera anslutningsavbildningen för en knappsats ansluten "
+"till PIC:n. Syntax: <programlisting role=\"correct\"><function>keypad</"
+"function> [namn] [rad 1] ... [rad 4] [kolumn 1] ... [kolumn n]</"
+"programlisting> där [rad 1] ... [rad 4] och [kolumn 1] ... [kolumn n] är PIC:"
+"ns anslutningar dit respektive rad och kolumn på knappsatsen är kopplade "
+"(för närvarande kan inte antal rader ändras). Se <xref linkend=\"sevenseg\"/"
+"> (ovan) för mer information om anslutningsavbildningar."
+
+#. Tag: para
+#: microbe.docbook:197
+#, no-c-format
+msgid ""
+"The columns of the keypad should be pulled down via 100k resistors to "
+"ground. The row pins must be configured as outputs and the column pins as "
+"inputs. Once the keypad has been defined, it is treated as a read only "
+"variable."
+msgstr ""
+"Knappsatsens kolumner ska använda ett 100k pull-down motstånd till jord. "
+"Radanslutningarna måste vara konfigurerade som utgångar och "
+"kolumnanslutningarna som ingångar. När knappsatsen väl har definierats, "
+"behandlas den som en enbart läsbar variabel."
+
+#. Tag: title
+#: microbe.docbook:199
+#, no-c-format
+msgid "Defining and reading from a keypad"
+msgstr "Definiera och läsa från en knappsats"
+
+#. Tag: programlisting
+#: microbe.docbook:200
+#, no-c-format
+msgid ""
+"keypad keypad1 RB0 RB1 RB2 RB3 RB4 RB5 RB6\n"
+"x = keypad1"
+msgstr ""
+"keypad keypad1 RB0 RB1 RB2 RB3 RB4 RB5 RB6\n"
+"x = keypad1"
+
+#. Tag: para
+#: microbe.docbook:204
+#, no-c-format
+msgid ""
+"By default, the values returned for a keypad are: <itemizedlist> "
+"<listitem><para>The value of the number if it is a numeric key (1 to 3 along "
+"top row; hexadecimal A to D down the fourth column and continuing for each "
+"extra column).</para></listitem> <listitem><para>253 for the key in row 4, "
+"column 1.</para></listitem> <listitem><para>254 for the key in row 4, column "
+"3.</para></listitem> </itemizedlist> These values can be redefined by using "
+"the alias command, where the name of the key in row x, column y (rows and "
+"columns starting at 1), is Keypad_x_y. For example, to give the star key on "
+"a 4x3 keypad the value zero, the following alias would be used:"
+msgstr ""
+"Normalt är värdena som returneras för en knappsats: <itemizedlist> "
+"<listitem><para>Värdet på siffran om det är en sifferknapp (1 till 3 längs "
+"övre raden, hexadecimalt A till D längs den fjärde kolumnen med fortsättning "
+"för varje extra kolumn).</para></listitem> <listitem><para>253 för knappen i "
+"rad 4, kolumn 1.</para></listitem> <listitem><para>254 för knappen i rad 4, "
+"kolumn 3.</para></listitem> </itemizedlist> Värdena kan definieras om genom "
+"att använda kommandot alias, där namnet på knappen i rad x, kolumn y (rader "
+"och kolumner börjar på 1), är Keypad_x_y. För att exempelvis ge asterisken "
+"på en 4x3 knappsats värdet noll, skulle följande alias användas:"
+
+#. Tag: title
+#: microbe.docbook:213
+#, no-c-format
+msgid "Aliasing a keypad key to a value"
+msgstr "Skapa ett alias för en knapp på en knappsats till ett värde"
+
+#. Tag: programlisting
+#: microbe.docbook:214
+#, no-c-format
+msgid "alias Keypad_4_1 0"
+msgstr "alias Keypad_4_1 0"
+
+#. Tag: title
+#: microbe.docbook:221
+#, no-c-format
+msgid "PIC I/O"
+msgstr "PIC in- och utmatning"
+
+#. Tag: title
+#: microbe.docbook:224
+#, no-c-format
+msgid "Port Direction"
+msgstr "Portriktning"
+
+#. Tag: para
+#: microbe.docbook:225
+#, no-c-format
+msgid ""
+"The port direction is set by assigning a value to TRIS*, where * is the port "
+"letter. For example:"
+msgstr ""
+"Portriktningen anges genom att tilldela ett värde till TRIS*, där * är "
+"portbokstaven. Exempelvis:"
+
+#. Tag: title
+#: microbe.docbook:228
+#, no-c-format
+msgid "Setting port directions"
+msgstr "Ställa in portriktningar"
+
+#. Tag: programlisting
+#: microbe.docbook:229
+#, no-c-format
+msgid "TRISB = b'01111001'"
+msgstr "TRISB = b'01111001'"
+
+#. Tag: para
+#: microbe.docbook:231
+#, no-c-format
+msgid ""
+"The above sets pins RB1, RB2 and RB7 on PORTB as outputs, and the other pins "
+"on PORTB as inputs. In this example, b'01111001' is a binary representation "
+"of the output type. The 1 on the right represents an output on RB0, and the "
+"0 on the left represents an input on RB7."
+msgstr ""
+"Ovanstående ställer in anslutningarna RB1, RB2 och RB7 på PORTB som "
+"utgångar, och övriga anslutningar på PORTB som ingångar. I exemplet är "
+"b'01111001' den binära representationen av utgångstypen. Värdet 1 till höger "
+"representerar en utgång på RB0, och värdet 0 till vänster representerar en "
+"ingång på RB7."
+
+#. Tag: title
+#: microbe.docbook:237
+#, no-c-format
+msgid "Port I/O"
+msgstr "Port in- och utmatning"
+
+#. Tag: para
+#: microbe.docbook:238
+#, no-c-format
+msgid "The port can be treated as a variable. For example:"
+msgstr "Porten kan behandlas som en variabel, exempelvis:"
+
+#. Tag: title
+#: microbe.docbook:242
+#, no-c-format
+msgid "Writing to a port"
+msgstr "Skriva till en port"
+
+#. Tag: programlisting
+#: microbe.docbook:243
+#, no-c-format
+msgid "x = PORTA"
+msgstr "x = PORTA"
+
+#. Tag: para
+#: microbe.docbook:246
+#, no-c-format
+msgid "The above assigns the value of PORTA to the variable x."
+msgstr "Det ovanstående tilldelar värdet av PORTA till variabeln x."
+
+#. Tag: title
+#: microbe.docbook:252
+#, no-c-format
+msgid "Pin I/O"
+msgstr "In- och utmatning för anslutningar"
+
+#. Tag: para
+#: microbe.docbook:253
+#, no-c-format
+msgid ""
+"Each pin on a port is obtained by prefixing the pin number by the port name; "
+"&eg; Pin 2 (starting from Pin 0) on PORTA is known as <emphasis>PORTA.0</"
+"emphasis>. The syntax to set a pin state is: <programlisting role=\"correct"
+"\">PORTX.N = <emphasis>STATE</emphasis></programlisting> where "
+"<emphasis>STATE</emphasis> can be <emphasis>high</emphasis> or "
+"<emphasis>low</emphasis>. The syntax to test a pin state is: <programlisting "
+"role=\"correct\"><function>if</function> PORTX.N is <emphasis>STATE</"
+"emphasis> <function>then</function></programlisting> Combining these "
+"examples, we have:"
+msgstr ""
+"Varje anslutning i en port erhålls genom att inleda anslutningsnumret med "
+"portnamnet: t.ex. anslutning 2 (med början på anslutning 0) på PORTA  kallas "
+"<emphasis>PORTA.0</emphasis>. Syntaxen för att ställa in ett tillstånd på en "
+"anslutning är: <programlisting role=\"correct\">PORTX.N = <emphasis>STATE</"
+"emphasis></programlisting> där <emphasis>STATE</emphasis> kan vara "
+"<emphasis>high</emphasis> (hög) eller <emphasis>low</emphasis> (låg). "
+"Syntaxen för att testa en anslutnings tillstånd är: <programlisting role="
+"\"correct\"><function>if</function> PORTX.N is <emphasis>STATE</"
+"emphasis><function>then</function></programlisting> Kombineras exemplen, får "
+"vi:"
+
+#. Tag: title
+#: microbe.docbook:266
+#, no-c-format
+msgid "Setting and testing pin state"
+msgstr "Ställa in och prova anslutningens tillstånd"
+
+#. Tag: programlisting
+#: microbe.docbook:267
+#, no-c-format
+msgid ""
+"TRISA = 0\n"
+"TRISB = 255\n"
+"<function>if</function> PORTA.3 is <function>high</function> <function>then</"
+"function>\n"
+"{\n"
+"        PORTB.5 = <function>low</function>\n"
+"}\n"
+"<function>else</function>\n"
+"{\n"
+"        PORTB = PORTA + 15\n"
+"}"
+msgstr ""
+"TRISA = 0\n"
+"TRISB = 255\n"
+"<function>if</function> PORTA.3 is <function>high</function> <function>then</"
+"function>\n"
+"{\n"
+"        PORTB.5 = <function>low</function>\n"
+"}\n"
+"<function>else</function>\n"
+"{\n"
+"        PORTB = PORTA + 15\n"
+"}"
+
+#. Tag: title
+#: microbe.docbook:273
+#, no-c-format
+msgid "Variables"
+msgstr "Variabler"
+
+#. Tag: para
+#: microbe.docbook:274
+#, no-c-format
+msgid ""
+"All variables are 8-bit unsigned integers, giving a range from 0 to 255. "
+"<application>&microbe;</application> supports the typical unary operations "
+"(acting on one variable) and binary operations (acting on two variables) "
+"that are supported by the PIC. In addition, &microbe; also supports division "
+"and multiplication."
+msgstr ""
+"Alla variabler är 8-bitars heltal utan tecken, vilket ger intervallet 0 till "
+"255. <application>&microbe;</application> stöder de typiska unära (som "
+"arbetar med en variabel) och binära (som arbetar med två variabler) "
+"operatorerna som stöds av PIC:n. Dessutom stöder &microbe; också division "
+"och multiplikation."
+
+#. Tag: title
+#: microbe.docbook:280
+#, no-c-format
+msgid "Unary Operations"
+msgstr "Unära operationer"
+
+#. Tag: para
+#: microbe.docbook:283
+#, no-c-format
+msgid ""
+"<emphasis>rotateleft x</emphasis> - Rotates the variable x left through "
+"carry."
+msgstr ""
+"<emphasis>rotateleft x</emphasis> - Roterar variabeln x åt vänster via carry."
+
+#. Tag: para
+#: microbe.docbook:284
+#, no-c-format
+msgid ""
+"<emphasis>rotateright x</emphasis> - Rotates the variable x right through "
+"carry."
+msgstr ""
+"<emphasis>rotateright x</emphasis> - Roterar variabeln x åt höger via carry."
+
+#. Tag: para
+#: microbe.docbook:285
+#, no-c-format
+msgid ""
+"<emphasis>increment x</emphasis> - Increments the variable x. If x has a "
+"value of 255, then x wraps round to 0."
+msgstr ""
+"<emphasis>increment x</emphasis> - Ökar variabeln x med ett. Om x har värdet "
+"255, slår den runt till 0."
+
+#. Tag: para
+#: microbe.docbook:286
+#, no-c-format
+msgid ""
+"<emphasis>decrement x</emphasis> - Decrements the variable x. If x has a "
+"value of 0, then x wraps round to 255."
+msgstr ""
+"<emphasis>decrement x</emphasis> - Minskar variabeln x med ett. Om x har "
+"värdet 0, slår den runt till 255."
+
+#. Tag: title
+#: microbe.docbook:292
+#, no-c-format
+msgid "Arithmetic"
+msgstr "Aritmetik"
+
+#. Tag: para
+#: microbe.docbook:293 microbe.docbook:309
+#, no-c-format
+msgid "Supported operations:"
+msgstr "Operationer som stöds:"
+
+#. Tag: para
+#: microbe.docbook:296
+#, no-c-format
+msgid "<emphasis>Addition:</emphasis> x + y"
+msgstr "<emphasis>Addition:</emphasis> x + y"
+
+#. Tag: para
+#: microbe.docbook:297
+#, no-c-format
+msgid "<emphasis>Subtraction:</emphasis> x - y"
+msgstr "<emphasis>Subtraktion:</emphasis> x - y"
+
+#. Tag: para
+#: microbe.docbook:298
+#, no-c-format
+msgid "<emphasis>Multiplication:</emphasis> x * y"
+msgstr "<emphasis>Multiplikation:</emphasis> x * y"
+
+#. Tag: para
+#: microbe.docbook:299
+#, no-c-format
+msgid "<emphasis>Division:</emphasis> x / y"
+msgstr "<emphasis>Division:</emphasis> x / y"
+
+#. Tag: para
+#: microbe.docbook:300
+#, no-c-format
+msgid "<emphasis>Binary XOR:</emphasis> x XOR y"
+msgstr "<emphasis>Binär exklusiv ELLER:</emphasis> x XOR y"
+
+#. Tag: para
+#: microbe.docbook:301
+#, no-c-format
+msgid "<emphasis>Binary AND:</emphasis> x AND y"
+msgstr "<emphasis>Binär OCH:</emphasis> x AND y"
+
+#. Tag: para
+#: microbe.docbook:302
+#, no-c-format
+msgid "<emphasis>Binary OR:</emphasis> x OR y"
+msgstr "<emphasis>Binär ELLER:</emphasis> x OR y"
+
+#. Tag: title
+#: microbe.docbook:308 microbe.docbook:324
+#, no-c-format
+msgid "Comparison"
+msgstr "Jämförelse"
+
+#. Tag: para
+#: microbe.docbook:313
+#, no-c-format
+msgid "<emphasis>Equals:</emphasis> x == y"
+msgstr "<emphasis>Lika med:</emphasis> x == y"
+
+#. Tag: para
+#: microbe.docbook:314
+#, no-c-format
+msgid "<emphasis>Does not equal:</emphasis> x != y"
+msgstr "<emphasis>Skilt från:</emphasis> x != y"
+
+#. Tag: para
+#: microbe.docbook:315
+#, no-c-format
+msgid "<emphasis>Is greater than:</emphasis> x > y"
+msgstr "<emphasis>Större än:</emphasis> x > y"
+
+#. Tag: para
+#: microbe.docbook:316
+#, no-c-format
+msgid "<emphasis>Is less than:</emphasis> x &lt; y"
+msgstr "<emphasis>Mindre än:</emphasis> x &lt; y"
+
+#. Tag: para
+#: microbe.docbook:317
+#, no-c-format
+msgid "<emphasis>Is greater than or equal to:</emphasis> x &gt;= y"
+msgstr "<emphasis>Större än eller lika med:</emphasis> x &gt;= y"
+
+#. Tag: para
+#: microbe.docbook:318
+#, no-c-format
+msgid "<emphasis>Is less than or equal to:</emphasis> x &lt;= y"
+msgstr "<emphasis>Mindre än eller lika med:</emphasis> x &lt;= y"
+
+#. Tag: para
+#: microbe.docbook:321
+#, no-c-format
+msgid "For example:"
+msgstr "Till exempel:"
+
+#. Tag: programlisting
+#: microbe.docbook:325
+#, no-c-format
+msgid ""
+"<function>if</function> PORTA >= 5 <function>then</function>\n"
+"{\n"
+"        ...\n"
+"}"
+msgstr ""
+"<function>if</function> PORTA >= 5 <function>then</function>\n"
+"{\n"
+"        ...\n"
+"}"
+
+#~ msgid ""
+#~ "<application>Microbe</application> compiles programs written in the "
+#~ "custom language for PICs, as a companion program to "
+#~ "<application>&kappname;</application>. The syntax has been designed to "
+#~ "suit a &flowcode; program. The syntax for running <command>microbe</"
+#~ "command> from the commandline is: <programlisting>microbe [options] "
+#~ "[input.microbe] [output.asm]</programlisting> where options are: "
+#~ "<itemizedlist> <listitem><para><function>--show-source</function> - Puts "
+#~ "each line of &microbe; source code as a comment in the assembly output "
+#~ "before the assembly instructions themselves for that line.</para></"
+#~ "listitem> <listitem><para><function>--no-optimize</function> - Prevent "
+#~ "optimization of the instructions generated from the source. Optimization "
+#~ "is usually safe, and so this option is mainly used for debugging.</para></"
+#~ "listitem> </itemizedlist> The .microbe input file must identify the "
+#~ "target PIC by inserting the PIC name at the top of the .microbe file; e."
+#~ "g. the name of a PIC16F84 is \"P16F84\"."
+#~ msgstr ""
+#~ "<application>Microbe</application> kompilerar program skrivna i språket "
+#~ "anpassat för PIC:er, som ett medföljande program till "
+#~ "<application>&kappname;</application>. Syntaxen har skapats för att passa "
+#~ "ett &flowcode;-program. Syntaxen för att köra <command>microbe</command> "
+#~ "på kommandoraden är: <programlisting>microbe [väljare] [indata.microbe] "
+#~ "[utdata.asm]</programlisting> där väljare är: <itemizedlist> "
+#~ "<listitem><para><function>--show-source</function>: Lägger till varje "
+#~ "&microbe;-källkodsrad  som en kommentar i assemblerutmatningen innan "
+#~ "själva assemblerinstruktionerna för den raden.</para></listitem> "
+#~ "<listitem><para><function>--no-optimize</function>: Förhindra optimering "
+#~ "av instruktionerna skapade från källkoden. Optimering är oftast säker, "
+#~ "alltså är väljaren i huvudsak avsedd för avlusning.</para></listitem> </"
+#~ "itemizedlist> Filen indata.microbe måste identifiera PIC:n som är målet "
+#~ "genom att infoga namnet på PIC:n längst upp i filen, t.ex. namnet på "
+#~ "PIC16F84 är \"P16F84\"."
+
+#~ msgid ""
+#~ "Supported operations: <itemizedlist> <listitem><para><emphasis>Equals:</"
+#~ "emphasis> x == y</para></listitem> <listitem><para><emphasis>Does not "
+#~ "equal:</emphasis> x != y</para></listitem> <listitem><para><emphasis>Is "
+#~ "greater than:</emphasis> x > y</para></listitem> "
+#~ "<listitem><para><emphasis>Is less than:</emphasis> x &lt; y</para></"
+#~ "listitem> <listitem><para><emphasis>Is greater than or equal to:</"
+#~ "emphasis> x &gt;= y</para></listitem> <listitem><para><emphasis>Is less "
+#~ "than or equal to:</emphasis> x &lt;= y</para></listitem> </itemizedlist> "
+#~ "For example:"
+#~ msgstr ""
+#~ "Operationer som stöds: <itemizedlist> <listitem><para><emphasis>Lika med:"
+#~ "</emphasis> x == y</para></listitem> <listitem><para><emphasis>Skilt från:"
+#~ "</emphasis> x != y</para></listitem> <listitem><para><emphasis>Större än:"
+#~ "</emphasis> x > y</para></listitem> <listitem><para><emphasis>Mindre än:</"
+#~ "emphasis> x &lt; y</para></listitem> <listitem><para><emphasis>Större än "
+#~ "eller lika med:</emphasis> x &gt;= y</para></listitem> "
+#~ "<listitem><para><emphasis>Mindre än eller lika med:</emphasis> x &lt;= y</"
+#~ "para></listitem> </itemizedlist> Exempelvis:"

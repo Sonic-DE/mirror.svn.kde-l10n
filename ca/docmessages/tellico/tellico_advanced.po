@@ -1,0 +1,456 @@
+# Translation of tellico_advanced.po to Catalan
+# Copyright (C) 2012-2024 This_file_is_part_of_KDE
+# This file is distributed under the license LGPL version 2.1 or
+# version 3 or later versions approved by the membership of KDE e.V.
+#
+# SPDX-FileCopyrightText: 2012, 2013, 2015, 2017, 2019, 2020, 2021 Antoni Bella Pérez <antonibella5@yahoo.com>
+# SPDX-FileCopyrightText: 2015, 2018, 2020, 2021, 2024 Josep M. Ferrer <txemaq@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: tellico\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 12:04+0000\n"
+"PO-Revision-Date: 2024-03-15 10:26+0100\n"
+"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
+"Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 22.12.3\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#. Tag: title
+#: advanced.docbook:2
+#, no-c-format
+msgid "Advanced Usage"
+msgstr "Ús avançat"
+
+#. Tag: title
+#: advanced.docbook:5
+#, no-c-format
+msgid "Command Line Options"
+msgstr "Opcions de la línia d'ordres"
+
+#. Tag: para
+#: advanced.docbook:7
+#, no-c-format
+msgid ""
+"When running &appname; from the command line, there are several options for "
+"opening data files. They may be seen by running <userinput>tellico --help</"
+"userinput>. Diagnostic logging can also be enabled, which will make a <link "
+"linkend=\"settings-help-menu\">menu item</link> to show the diagnostic log. "
+"The <userinput>--logfile</userinput> option redirects the log to a file."
+msgstr ""
+"Quan s'executa el &appname; des de la línia d'ordres, hi ha diverses opcions "
+"per a obrir els fitxers de dades. Es poden veure executant "
+"<userinput>tellico --help</userinput>. També es pot habilitar el registre de "
+"diagnòstic, el qual crearà un <link linkend=\"settings-help-menu\">element "
+"de menú</link> per a mostrar el registre de diagnòstic. L'opció <userinput>--"
+"logfile</userinput> redirigeix el registre a un fitxer."
+
+#. Tag: programlisting
+#: advanced.docbook:11
+#, no-c-format
+msgid ""
+"Usage: tellico [options] [filename]\n"
+"\n"
+"Tellico - collection management software, free and simple\n"
+"\n"
+"Options:\n"
+"  --nofile                  Do not reopen the last open file\n"
+"  --bibtex                  Import &lt;filename&gt; as a bibtex file\n"
+"  --mods                    Import &lt;filename&gt; as a MODS file\n"
+"  --ris                     Import &lt;filename&gt; as a RIS file\n"
+"  --pdf                     Import &lt;filename&gt; as a PDF file\n"
+"  --log                     Log diagnostic output\n"
+"  --logfile &lt;logfile&gt;       Write log output to &lt;filename&gt;\n"
+"\n"
+"Arguments:\n"
+"  [filename]                File to open"
+msgstr ""
+"Ús: tellico [opcions] [nom_fitxer]\n"
+"\n"
+"Tellico - un programari per a la gestió de col·leccions, lliure i senzill\n"
+"\n"
+"Opcions:\n"
+"  --nofile         No obris l'últim fitxer obert\n"
+"  --bibtex         Importa &lt;nom_fitxer&gt; com un fitxer bibtex\n"
+"  --mods           Importa &lt;nom_fitxer&gt; com un fitxer MODS\n"
+"  --ris            Importa &lt;nom_fitxer&gt; com un fitxer RIS\n"
+"  --pdf            Importa &lt;nom_fitxer&gt; com un fitxer PDF\n"
+"  --log                     Enregistra la sortida de diagnòstic\n"
+"  --logfile &lt;logfile&gt;       Escriu la sortida del registre a &lt;"
+"nomfitxer&gt;\n"
+"\n"
+"Arguments:\n"
+"  [nom_fitxer]         Fitxer a obrir"
+
+#. Tag: title
+#: advanced.docbook:16
+#, no-c-format
+msgid "&DBus; Interface"
+msgstr "Interfície de &DBus;"
+
+#. Tag: para
+#: advanced.docbook:18
+#, no-c-format
+msgid ""
+"&appname; has a minimal &DBus; interface, which can be useful for scripting "
+"or interacting with a running application from the command-line. As with all "
+"&DBus; calls, you need to specify the service you want to interface with, "
+"and the particular interface. The name of the &DBus; service is "
+"<constant>org.kde.tellico</constant>."
+msgstr ""
+"El &appname; té una interfície de &DBus; mínima, la qual pot ser útil per a "
+"crear scripts o interactuar amb una aplicació en execució des de la línia "
+"d'ordres. Igual que amb totes les crides de &DBus;, cal que especifiqueu el "
+"servei amb el qual voleu interactuar, i la interfície en particular. El nom "
+"del servei de &DBus; és <constant>org.kde.tellico</constant>."
+
+#. Tag: title
+#: advanced.docbook:23
+#, no-c-format
+msgid "&DBus; Commands"
+msgstr "Ordres de &DBus;"
+
+#. Tag: para
+#: advanced.docbook:25
+#, no-c-format
+msgid ""
+"Two &DBus; primary objects are available in the tellico interface: "
+"<constant>Tellico</constant> and <constant>Collections</constant>."
+msgstr ""
+"Els dos objectes primaris de &DBus; estan disponibles a la interfície "
+"tellico: <constant>Tellico</constant> i <constant>Collections</constant>."
+
+#. Tag: title
+#: advanced.docbook:28
+#, no-c-format
+msgid "The <constant>Tellico</constant> Object"
+msgstr "L'objecte <constant>Tellico</constant>"
+
+#. Tag: para
+#: advanced.docbook:30
+#, no-c-format
+msgid ""
+"The full list of &DBus; commands in the <constant>tellico</constant> object "
+"is shown below:"
+msgstr ""
+"A continuació es mostra la llista completa d'ordres de &DBus; a l'objecte "
+"<constant>tellico</constant>:"
+
+#. Tag: programlisting
+#: advanced.docbook:32
+#, no-c-format
+msgid ""
+"bool importTellico(QString file, QString action)\n"
+"bool importBibtex(QString file, QString action)\n"
+"bool importMODS(QString file, QString action)\n"
+"bool importPDF(QString file, QString action)\n"
+"bool importRIS(QString file, QString action)\n"
+"bool exportXML(QString file, bool filtered)\n"
+"bool exportZip(QString file, bool filtered)\n"
+"bool exportBibtex(QString file, bool filtered)\n"
+"bool exportHTML(QString file, bool filtered)\n"
+"bool exportCSV(QString file, bool filtered)\n"
+"QList&lt;int&gt; selectedEntries()\n"
+"QList&lt;int&gt; filteredEntries()\n"
+"void openFile(QString file)\n"
+"void setFilter(QString text)\n"
+"bool showEntry(int id)"
+msgstr ""
+"bool importTellico(QString fitxer, QString acció)\n"
+"bool importBibtex(QString fitxer, QString acció)\n"
+"bool importMODS(QString fitxer, QString acció)\n"
+"bool importPDF(QString fitxer, QString acció)\n"
+"bool importRIS(QString fitxer, QString acció)\n"
+"bool exportXML(QString fitxer, booleà filtrat)\n"
+"bool exportZip(QString fitxer, booleà filtrat)\n"
+"bool exportBibtex(QString fitxer, booleà filtrat)\n"
+"bool exportHTML(QString fitxer, booleà filtrat)\n"
+"bool exportCSV(QString fitxer, booleà filtrat)\n"
+"QList&lt;int&gt; selectedEntries()\n"
+"QList&lt;int&gt; filteredEntries()\n"
+"void openFile(QString fitxer)\n"
+"void setFilter(QString text)\n"
+"bool showEntry(int id)"
+
+#. Tag: para
+#: advanced.docbook:34
+#, no-c-format
+msgid ""
+"For the four import commands, the first argument is the file to import, and "
+"the second is the import action. Three actions are available: "
+"<emphasis>replace</emphasis>, <emphasis>append</emphasis>, and "
+"<emphasis>merge</emphasis>. Four file formats are supported for importing: "
+"Tellico &XML; files, Bibtex files, MODS files, and RIS files. Metadata from "
+"<link linkend=\"importing-pdf\">&PDF;</link> files can also be imported."
+msgstr ""
+"Per a les quatre ordres d'importació, el primer argument és el fitxer a "
+"importar, i el segon és l'acció d'importació. Disposeu de tres accions: "
+"<emphasis>replace</emphasis>, <emphasis>append</emphasis> i <emphasis>merge</"
+"emphasis>. Hi ha implementats quatre formats de fitxer per a importar: "
+"fitxers &XML; del Tellico, fitxers del Bibtex, fitxers del MODS i fitxers "
+"del RIS. També es poden importar les metadades de fitxers <link linkend="
+"\"importing-pdf\">&PDF;</link>."
+
+#. Tag: para
+#: advanced.docbook:38
+#, no-c-format
+msgid ""
+"For any of the commands to export text, a file name of <filename>--</"
+"filename> will pipe to the standard output."
+msgstr ""
+"Per a qualsevol de les ordres d'exportació de text, un nom de fitxer de "
+"<filename>--</filename> el canalitzarà a la sortida estàndard."
+
+#. Tag: para
+#: advanced.docbook:42
+#, no-c-format
+msgid ""
+"The current open collection in &appname; may be exported to a file, in "
+"either Tellico &XML; format, Tellico ZIP format, Bibtex, &HTML;, or comma-"
+"separated values (CSV). The export commands take an optional argument to "
+"specify whether the collection should be limited to the current filter or "
+"not."
+msgstr ""
+"La col·lecció oberta al &appname; es pot exportar a un fitxer, ja sigui en "
+"el format &XML; del Tellico, format ZIP del Tellico, Bibtex, &HTML;, o a "
+"valors separats per comes (CSV). Les ordres d'exportació prenen un argument "
+"opcional per a especificar si la col·lecció s'ha de limitar o no al filtre "
+"actual."
+
+#. Tag: para
+#: advanced.docbook:46
+#, no-c-format
+msgid ""
+"A list of the entry IDs currently selected or being filtered is able to "
+"facilitate showing or updating entries in the view."
+msgstr ""
+"Una llista dels identificadors d'entrada seleccionats o filtrada poden "
+"mostrar o actualitzar les entrades a la vista."
+
+#. Tag: para
+#: advanced.docbook:48
+#, no-c-format
+msgid ""
+"A new data file may be opened by using the <command>openFile()</command> "
+"command. The full path must be specified."
+msgstr ""
+"Podeu obrir un nou fitxer de dades amb l'ordre <command>openFile()</"
+"command>. Heu d'especificar el camí complet."
+
+#. Tag: para
+#: advanced.docbook:50
+#, no-c-format
+msgid ""
+"A new filter may be set using the <command>setFilter()</command> command, "
+"which is the equivalent of typing in the filter box in the main window."
+msgstr ""
+"Es pot ajustar un nou filtre utilitzant l'ordre <command>setFilter()</"
+"command>, el qual és l'equivalent a escriure al quadre de filtre a la "
+"finestra principal."
+
+#. Tag: para
+#: advanced.docbook:52
+#, no-c-format
+msgid ""
+"Given an entry ID, <command>showEntry()</command> will select that entry and "
+"show the entry details in the main window."
+msgstr ""
+"Donant un identificador d'entrada, <command>showEntry()</command> "
+"seleccionarà aquesta entrada i mostrarà els detalls de l'entrada a la "
+"finestra principal."
+
+#. Tag: title
+#: advanced.docbook:56
+#, no-c-format
+msgid "The <constant>Collections</constant> Object"
+msgstr "L'objecte <constant>Collections</constant>"
+
+#. Tag: para
+#: advanced.docbook:58
+#, no-c-format
+msgid ""
+"The full list of &DBus; commands in the <constant>Collections</constant> "
+"object is shown below:"
+msgstr ""
+"A continuació es mostra la llista completa d'ordres de &DBus; a l'objecte "
+"<constant>Collections</constant>:"
+
+#. Tag: programlisting
+#: advanced.docbook:60
+#, no-c-format
+msgid ""
+"int addEntry()\n"
+"bool removeEntry(int entryID)\n"
+"QStringList allValues(QString fieldName)\n"
+"QStringList entryValues(int entryID, QString fieldName)\n"
+"QStringList selectedBibtexKeys()\n"
+"QString entryBibtexKey(int entryID)\n"
+"bool setEntryValue(int entryID, QString fieldName, QString value)\n"
+"bool addEntryValue(int entryID, QString fieldName, QString value)"
+msgstr ""
+"int addEntry()\n"
+"bool removeEntry(int entryID)\n"
+"QStringList allValues(QString fieldName)\n"
+"QStringList entryValues(int entryID, QString fieldName)\n"
+"QStringList selectedBibtexKeys()\n"
+"QString entryBibtexKey(int entryID)\n"
+"bool setEntryValue(int entryID, QString fieldName, QString valor)\n"
+"bool addEntryValue(int entryID, QString fieldName, QString valor)"
+
+#. Tag: para
+#: advanced.docbook:62
+#, no-c-format
+msgid ""
+"A new empty entry may be created in the current collection using the "
+"<command>addEntry()</command> command. The return value is the entry ID, "
+"which can then be used to set the field values in the entry. An entry can be "
+"deleted from the collection by calling <command>removeEntry()</command>."
+msgstr ""
+"Es pot crear una entrada buida nova a la col·lecció actual utilitzant "
+"l'ordre <command>addEntry()</command>. El valor retornat és l'identificador "
+"de l'entrada, el qual després es pot utilitzar per a ajustar els valors de "
+"camp a l'entrada. Una entrada es pot suprimir de la col·lecció cridant "
+"<command>removeEntry()</command>."
+
+#. Tag: para
+#: advanced.docbook:66
+#, no-c-format
+msgid ""
+"Calling <command>allValues()</command> using just a field name will return "
+"all the values for that field for the currently selected entries. If no "
+"entries are selected, the return list is empty. If an entry ID is included "
+"in the command, the field values for that specific entry are returned."
+msgstr ""
+"Cridant <command>allValues()</command> utilitzant un nom de camp retornarà "
+"tots els valors per a aquest camp per a les entrades seleccionades. Si no hi "
+"ha entrades seleccionades, la llista retornada estarà buida. Si s'inclou un "
+"identificador d'entrada a l'ordre, es retornaran els valors de camp per a "
+"aquesta entrada específica."
+
+#. Tag: para
+#: advanced.docbook:70
+#, no-c-format
+msgid ""
+"If the current collection is a bibliography, calling "
+"<command>selectedBibtexKeys()</command> will return the Bibtex citation key "
+"for all selected entries. The bibtexKey for a specific entry may be found by "
+"using the <command>entryBibtexKey()</command> command."
+msgstr ""
+"Si la col·lecció actual és una bibliografia, cridar "
+"<command>selectedBibtexKeys()</command> retornarà la clau de cita de "
+"«Bibtex» per a totes les entrades seleccionades. La bibtexKey per a una "
+"entrada específica es pot trobar utilitzant l'ordre "
+"<command>entryBibtexKey()</command>."
+
+#. Tag: para
+#: advanced.docbook:74
+#, no-c-format
+msgid ""
+"Entries can be edited directly with the &DBus; interface. Given an entry ID, "
+"<command>setEntryValue()</command> will set the field value directly. To add "
+"a value, without affecting the existing values, use "
+"<command>addEntryValue()</command>. The new value gets appended to the end "
+"of the existing list."
+msgstr ""
+"Les entrades es poden editar directament amb la interfície de &DBus;. Donant "
+"un identificador d'entrada, <command>setEntryValue()</command> establirà el "
+"valor del camp directament. Per a afegir un valor sense afectar els ja "
+"existents, utilitzeu <command>addEntryValue()</command>. El nou valor "
+"apareixerà afegit al final de la llista existent."
+
+#. Tag: title
+#: advanced.docbook:82
+#, no-c-format
+msgid "&DBus; Examples"
+msgstr "Exemples de &DBus;"
+
+#. Tag: para
+#: advanced.docbook:84
+#, no-c-format
+msgid ""
+"Here are some examples for scripting &appname; using the &DBus; interface. "
+"Note that the <command>qdbus</command> command may exist as <command>qdbus-"
+"qt5</command> or something similar on your system."
+msgstr ""
+"Aquests són alguns exemples de scripts creats per al &appname; utilitzant la "
+"interfície de &DBus;. Tingueu en compte que l'ordre <command>qdbus</command> "
+"pot existir com <command>qdbus-qt5</command> o alguna cosa semblant en el "
+"vostre sistema."
+
+#. Tag: screen
+#: advanced.docbook:88
+#, no-c-format
+msgid ""
+"<emphasis>Open a Bibtex file</emphasis>\n"
+"<prompt>%</prompt> <userinput>qdbus org.kde.tellico /Tellico org.kde.tellico."
+"importBibtex \"/home/robby/reference.bib\" \"replace\"</userinput>\n"
+"<computeroutput>true</computeroutput>"
+msgstr ""
+"<emphasis>Obre un fitxer de Bibtex</emphasis>\n"
+"<prompt>%</prompt> <userinput>qdbus org.kde.tellico /Tellico org.kde.tellico."
+"importBibtex \"/home/usuari/referència.bib\" \"replace\"</userinput>\n"
+"<computeroutput>true</computeroutput>"
+
+#. Tag: screen
+#: advanced.docbook:90
+#, no-c-format
+msgid ""
+"<emphasis>Export a Bibtex file</emphasis>\n"
+"<prompt>%</prompt> <userinput>qdbus org.kde.tellico /Tellico org.kde.tellico."
+"exportBibtex ~/documents/reference.bib</userinput>\n"
+"<computeroutput>true</computeroutput>"
+msgstr ""
+"<emphasis>Exporta un fitxer de Bibtex</emphasis>\n"
+"<prompt>%</prompt> <userinput>qdbus org.kde.tellico /Tellico org.kde.tellico."
+"exportBibtex ~/documents/referència.bib</userinput>\n"
+"<computeroutput>true</computeroutput>"
+
+#. Tag: screen
+#: advanced.docbook:92
+#, no-c-format
+msgid ""
+"<emphasis>Export a Bibtex file using the current filter</emphasis>\n"
+"<prompt>%</prompt> <userinput>qdbus org.kde.tellico /Tellico org.kde.tellico."
+"exportBibtex ~/documents/reference.bib true</userinput>\n"
+"<computeroutput>true</computeroutput>"
+msgstr ""
+"<emphasis>Exporta un fitxer de Bibtex emprant el filtre actual</emphasis>\n"
+"<prompt>%</prompt> <userinput>qdbus org.kde.tellico /Tellico org.kde.tellico."
+"exportBibtex ~/documents/referència.bib true</userinput>\n"
+"<computeroutput>true</computeroutput>"
+
+#. Tag: screen
+#: advanced.docbook:94
+#, no-c-format
+msgid ""
+"<emphasis>Echo the citation key of the current selection</emphasis>\n"
+"<prompt>%</prompt> <userinput>qdbus org.kde.tellico /Collections org.kde."
+"tellico.selectedBibtexKeys</userinput>\n"
+"<computeroutput>stephenson2004</computeroutput>"
+msgstr ""
+"<emphasis>Mostra la clau de cita de la selecció actual</emphasis>\n"
+"<prompt>%</prompt> <userinput>qdbus org.kde.tellico /Collections org.kde."
+"tellico.selectedBibtexKeys</userinput>\n"
+"<computeroutput>stephenson2004</computeroutput>"
+
+#. Tag: screen
+#: advanced.docbook:96
+#, no-c-format
+msgid ""
+"<emphasis>Add a new entry and set the title</emphasis>\n"
+"<prompt>%</prompt> <userinput>myid=`qdbus org.kde.tellico /Collections org."
+"kde.tellico.addEntry`</userinput>\n"
+"<prompt>%</prompt> <userinput>qdbus org.kde.tellico /Collections org.kde."
+"tellico.setEntryValue $myid title \"My New Book\"</userinput>\n"
+"<computeroutput>true</computeroutput>"
+msgstr ""
+"<emphasis>Afegeix una nova entrada i estableix el títol</emphasis>\n"
+"<prompt>%</prompt> <userinput>myid=`qdbus org.kde.tellico /Collections org."
+"kde.tellico.addEntry`</userinput>\n"
+"<prompt>%</prompt> <userinput>qdbus org.kde.tellico /Collections org.kde."
+"tellico.setEntryValue $myid title \"El meu nou llibre\"</userinput>\n"
+"<computeroutput>true</computeroutput>"

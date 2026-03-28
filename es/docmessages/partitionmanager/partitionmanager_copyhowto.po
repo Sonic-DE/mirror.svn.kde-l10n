@@ -1,0 +1,140 @@
+# Spanish translations for partitionmanager_copyhowto.po package.
+# Copyright (C) 2009-2025 This file is copyright:
+# This file is distributed under the same license as the partitionmanager package.
+#
+# SPDX-FileCopyrightText: 2009, 2025 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2009 Cristina Yenyxe Gonzalez Garcia <the.blue.valkyrie@gmail.com>
+# SPDX-FileCopyrightText: 2014 Rocio Gallego <traducciones@rociogallego.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: partitionmanager manual\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 12:04+0000\n"
+"PO-Revision-Date: 2025-06-11 01:37+0100\n"
+"Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
+"Language-Team: Spanish <kde-l10n-es@kde.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-KDE-DocBook-SVN-URL: trunk/extragear/sysadmin/doc/partitionmanager/"
+"copyhowto.docbook\n"
+"X-KDE-DocBook-SVN-Changed-Revision: 867075\n"
+"X-KDE-Associated-UI-Catalogs: \n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#. Tag: title
+#: copyhowto.docbook:2
+#, no-c-format
+msgid "How-To: Copying a Partition"
+msgstr "Cómo copiar una partición"
+
+#. Tag: para
+#: copyhowto.docbook:4
+#, no-c-format
+msgid ""
+"This how-to describes copying a partition. We will assume the intention is "
+"to copy a partition from one device to another and overwriting an existing "
+"target partition, but the general procedure would not be much different when "
+"copying to the same device or to some unallocated area."
+msgstr ""
+"Este tutorial explica cómo copiar una partición, asumiendo que su intención "
+"es copiar una partición de un dispositivo a otro y sobreescribir una "
+"partición de destino ya existente, pero el procedimiento general no debería "
+"ser muy diferente al copiarla al mismo dispositivo o a un área sin reservar."
+
+#. Tag: para
+#: copyhowto.docbook:8
+#, no-c-format
+msgid "The following screenshot shows how the source device looks like:"
+msgstr ""
+"La siguiente captura le muestra cómo debería verse el dispositivo de origen:"
+
+#. Tag: phrase
+#: copyhowto.docbook:16
+#, no-c-format
+msgid "Main window with source device"
+msgstr "Ventana principal con el dispositivo de origen"
+
+#. Tag: para
+#: copyhowto.docbook:21
+#, no-c-format
+msgid ""
+"The source partition in our example will be <quote>sdb1</quote> which is "
+"currently mounted, indicated by the lock-icon next to the mount point name "
+"in the screen shot. A mounted partition can not be copied, thus you first "
+"need to unmount it: Click on it then select <xref linkend=\"menu-partition-"
+"mount\"/>."
+msgstr ""
+"La partición de origen de nuestro ejemplo será <quote>sdb1</quote>, que en "
+"este momento está montada, como indica el icono junto al nombre del punto de "
+"montaje en la captura de pantalla. Una partición montada no se puede copiar, "
+"así que el primer paso es desmontarla: haga clic en ella y seleccione <xref "
+"linkend=\"menu-partition-mount\"/>."
+
+#. Tag: para
+#: copyhowto.docbook:25
+#, no-c-format
+msgid ""
+"After unmounting the partition the lock icon has gone and it is now possible "
+"to select <xref linkend=\"menu-partition-copy\"/>. This puts <quote>sdb1</"
+"quote> in &partman;'s clipboard; in other words: <quote>sdb1</quote> is now "
+"the partition that will be inserted when you select <xref linkend=\"menu-"
+"partition-paste\"/>."
+msgstr ""
+"Tras desmontar la partición el icono habrá desaparecido y será posible "
+"seleccionar <xref linkend=\"menu-partition-copy\"/>. Esto pondrá a "
+"<quote>sdb1</quote> en el portapapeles de &partman;, en otras palabras, "
+"<quote>sdb1</quote> es la partición que se insertará cuando seleccione <xref "
+"linkend=\"menu-partition-paste\"/>."
+
+#. Tag: para
+#: copyhowto.docbook:29
+#, no-c-format
+msgid ""
+"The destination device for copying in this how-to is <quote>/dev/sdc</"
+"quote>. Click on it in the Devices panel. This is how the device looks like "
+"before copying:"
+msgstr ""
+"El dispositivo de destino en este tutorial es <quote>/dev/sdc</quote>. Haga "
+"clic en el panel Dispositivos. Así es cómo debería verse el dispositivo "
+"antes de la copia:"
+
+#. Tag: phrase
+#: copyhowto.docbook:37
+#, no-c-format
+msgid "Main window with destination device before copying"
+msgstr "Ventana principal con el dispositivo de destino antes de la copia"
+
+#. Tag: para
+#: copyhowto.docbook:42
+#, no-c-format
+msgid ""
+"The partition to overwrite is <quote>sdc5</quote>. To paste the copied "
+"partition into it, click on it and select <xref linkend=\"menu-partition-"
+"paste\"/>. You will see the operation to copy the partition has been added "
+"to the list of pending operations. Note that there is no dialog box required "
+"to insert the partition as would be the case if you pasted into an "
+"unallocated area: Beginning and end of the pasted partition are determined "
+"by the overwritten partition."
+msgstr ""
+"La partición a sobreescribir es <quote>sdc5</quote>. Para pegar la partición "
+"ya copiada sobre la antigua, haga clic en esta última y seleccione <xref "
+"linkend=\"menu-partition-paste\"/>. Verá que la operación de copiado se "
+"añade a la lista de pendientes. Fíjese en que no hay ninguna caja de diálogo "
+"para insertar la partición, al contrario que cuando la pega en un área sin "
+"reservar: el principio y final de la partición pegada se calcula sobre la "
+"partición sobreescrita."
+
+#. Tag: para
+#: copyhowto.docbook:46
+#, no-c-format
+msgid ""
+"Now select <xref linkend=\"menu-edit-apply\"/> and the partition will be "
+"copied. See the <link linkend=\"howto-resizepartition\">how-to on resizing "
+"partitions</link> for details about applying operations."
+msgstr ""
+"Ahora, seleccione <xref linkend=\"menu-edit-apply\"/> y la partición será "
+"copiada. Para más detalles sobre cómo aplicar operaciones, consulte <link "
+"linkend=\"howto-resizepartition\">cómo rendimensionar particiones</link>."

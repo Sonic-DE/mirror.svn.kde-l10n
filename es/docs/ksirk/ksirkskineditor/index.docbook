@@ -1,0 +1,1344 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+  <!ENTITY ksirkskineditor '<application
+>KsirK Skin Editor</application
+>'>
+  <!ENTITY i18n-ksirkskineditor '<application
+>Editor de temas de KsirK</application
+>'>
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Spanish "INCLUDE">
+]>
+
+<book id="ksirkskineditor" lang="&language;">
+
+<bookinfo>
+<title
+>Manual de &i18n-ksirkskineditor;</title>
+
+<authorgroup>
+  <author
+><firstname
+>Ga&euml;l</firstname
+> <othername
+>Kleag</othername
+> <surname
+>de Chalendar</surname
+> <affiliation
+><address
+><email
+>Kleag@free.fr</email
+></address
+></affiliation>
+  </author>
+  <!-- Translators: put here the copyright notice of the translation -->
+  <othercredit role="translator"
+> <firstname
+>Rocío</firstname
+><surname
+>Gallego</surname
+> <affiliation
+><address
+><email
+>traducciones@rociogallego.com</email
+></address
+></affiliation
+> <contrib
+>Traducción</contrib
+> </othercredit
+><othercredit role="translator"
+><firstname
+>Kira</firstname
+><surname
+>J. Fernández</surname
+><affiliation
+><address
+><email
+>kirajfdez@gmail.com</email
+></address
+></affiliation
+><contrib
+>Traductora</contrib
+></othercredit
+> <othercredit role="translator"
+><firstname
+>Eloy</firstname
+> <surname
+>Cuadra</surname
+> <affiliation
+><address
+><email
+>ecuadra@eloihr.net</email
+></address
+></affiliation
+> <contrib
+>Corrección de la traducción</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+  <year
+>2009</year>
+  <holder
+>Ga&euml;l de Chalendar</holder>
+</copyright>
+<!-- Put here the FDL notice.  Read the explanation in fdl-notice.docbook
+     and in the FDL itself on how to use it. -->
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<!-- Date of the documentation
+Change date/releaseinfo only if
+   docbook is updated and verified to be valid for the current app version
+   or
+   docbook is proofread and verified to be valid for the current app version
+Don't forget to include this last date.
+Please respect the format of the date (YYYY-MM-DD),it is used by scripts.
+-->
+<date
+>2021-10-14</date>
+
+<!--version information of Frameworks/Plasma/Applications this documentation is valid for.
+Example:
+Frameworks xx.yy for docbooks in frameworks
+Plasma xx.yy for docbooks in plasma workspace
+Applications xx.yy for docbooks released as Applications
+xx.yy (Applications xx.yy) for docbooks with own version released as Applications
+$applicationname xx.yy for applications with independent release schedule (extragear/playground)
+-->
+<releaseinfo
+>KDE Gear 21.08</releaseinfo>
+
+<!-- Abstract about this handbook -->
+
+<abstract>
+  <para
+>&ksirk; es una versión digital de un conocido juego de estrategia. Es completamente personalizable. Este manual explica cómo crear nuevos temas desde el principio usando un navegador de archivos, un editor de imágenes &SVG; y &i18n-ksirkskineditor;.</para>
+</abstract>
+
+<!-- This is a set of Keywords for indexing by search engines.
+Please at least include KDE, the KDE package it is in, the name
+ of your application, and a few relevant keywords. -->
+
+<keywordset>
+  <keyword
+>KDE</keyword>
+  <keyword
+>editor</keyword>
+  <keyword
+>libre</keyword>
+  <keyword
+>juego</keyword>
+  <keyword
+>GPL</keyword>
+  <keyword
+>risk</keyword>
+  <keyword
+>tema</keyword>
+  <keyword
+>estrategia</keyword>
+</keywordset>
+
+</bookinfo>
+
+<!-- The contents of the documentation begin here.  Label
+each chapter so with the id attribute. This is necessary for two reasons: it
+allows you to easily reference the chapter from other chapters of your
+document, and if there is no ID, the name of the generated HTML files will vary
+from time to time making it hard to manage for maintainers and for the CVS
+system. Any chapter labeled (OPTIONAL) may be left out at the author's
+discretion. Other chapters should not be left out in order to maintain a
+consistent documentation style across all KDE apps. -->
+
+<chapter id="introduction">
+<title
+>Introducción</title>
+
+<!-- The introduction chapter contains a brief introduction for the
+application that explains what it does and where to report
+problems. Basically a long version of the abstract.  Don't include a
+revision history. (see installation appendix comment) -->
+<para
+>&ksirk; es una versión digital de un conocido juego de estrategia. Es completamente personalizable. Este manual explica cómo crear nuevos temas desde el principio usando un navegador de archivos, un editor de imágenes &SVG; y &i18n-ksirkskineditor;.</para>
+
+<screenshot>
+  <screeninfo
+>Captura de pantalla de &i18n-ksirkskineditor;</screeninfo>
+  <mediaobject>
+    <imageobject
+><imagedata fileref="main-snapshot.png" format="PNG"/></imageobject>
+    <textobject
+><phrase
+>Captura de pantalla</phrase
+></textobject>
+  </mediaobject>
+</screenshot>
+
+<para
+>Hay tres pasos principales para crear un tema nuevo: crear la jerarquía de directorios, crear los gráficos, todos almacenados en un archivo &SVG;, y colocar las imágenes y dar nombre a las cosas usando &i18n-ksirkskineditor;.</para>
+</chapter>
+
+<chapter id="using-kapp">
+<title
+>Creación de un tema para &ksirk;</title>
+
+<para
+>&ksirk; es totalmente personalizable. Para los que tengan habilidad con los gráficos, crear un nuevo tema es tan fácil como copiar uno ya existente, editar o cambiar los gráficos y actualizar los datos en un archivo de configuración <literal role="extension"
+>.desktop</literal
+>, lo que se hace usando &i18n-ksirkskineditor;. El último paso es editar el archivo que describe lo que se debe instalar.</para>
+
+<para
+>Todos los ejemplos (texto e imágenes) están tomados del tema predeterminado de &ksirk;.</para>
+
+<sect1 id="sdf">
+<title
+>Estructura de directorios y archivos</title>
+
+<itemizedlist>
+  <listitem
+><para
+><filename class="directory"
+>Data/</filename
+>: Datos usados por el programa para manejar las imágenes del tema.</para>
+    <itemizedlist>
+      <listitem
+><para
+><filename
+>CMakeLists.txt/</filename
+>: Describe lo que se debe instalar.</para
+></listitem>
+      <listitem
+><para
+><filename
+>onu.desktop</filename
+>: Archivo principal para la descripción del tema. Consulta su descripción más adelante.</para
+></listitem>
+    </itemizedlist>
+  </listitem>
+
+  <listitem
+><para
+><filename class="directory"
+>Images/</filename
+>: Imágenes del tema (mapas, iconos, etc.).</para>
+    <itemizedlist>
+      <listitem
+><para
+><filename
+>CMakeLists.txt/</filename
+>: Describe lo que se debe instalar.</para
+></listitem>
+      <listitem
+><para
+><filename
+>pool.svg</filename
+>: El mapa y todas las imágenes que usa el tema.</para
+></listitem>
+      <listitem
+><para
+><filename
+>map-mask.png</filename
+>: La imagen que permite al programa encontrar sobre qué país está el ratón durante el juego (consulta más abajo).</para
+></listitem>
+      <listitem
+><para
+><literal role="extension"
+>*.png</literal
+>: Las demás imágenes de aquí son de botones.</para
+></listitem>
+    </itemizedlist>
+  </listitem>
+
+  <listitem
+><para
+><filename
+>CMakeLists.txt/</filename
+>: Describe lo que se debe instalar.</para
+></listitem>
+  <listitem
+><para
+><filename class="directory"
+>Sounds/</filename
+>: Archivos de sonido para el tema.</para
+></listitem>
+</itemizedlist>
+
+  <sect2 id="tdd">
+  <title
+>La carpeta «Data»</title>
+
+  <para
+>Esta carpeta contiene solo un archivo, <filename
+>world.desktop</filename
+>. Este archivo es una descripción del contenido del tema. Se usa para describir la organización del mundo y cómo representarla. No tienes que rellenarlo manualmente, ya que de eso se encarga &i18n-ksirkskineditor;. Pero, por dar una información completa, describiremos su estructura.</para>
+
+  <para
+>Un grupo <literal
+>onu</literal
+> contiene un número de entradas de países, un número de entradas de nacionalidades y un número de entradas de continentes. Entonces varios grupos contienen la descripción de las diferentes imágenes, la descripción de los diferentes países, continentes, nacionalidades y objetivos.</para>
+
+  <para
+>Las siguientes secciones describen el contenido de cada grupo.</para>
+
+    <sect3>
+    <title
+>El grupo <literal
+>onu</literal
+></title>
+
+    <table>
+      <title
+>Las entradas del grupo <literal
+>onu</literal
+></title>
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry
+>Nombre de la entrada</entry>
+            <entry
+>Significado</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>width</literal
+></entry>
+            <entry
+>Anchura del mapa del tema.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>height</literal
+></entry>
+            <entry
+>Altura del mapa del tema.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>skinpath</literal
+></entry>
+            <entry
+>Ruta del tema relativa a la ruta de los datos de la aplicación (por ejemplo, <filename
+>skins/default</filename
+>).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>nb-countries</literal
+></entry>
+            <entry
+>Número de países (42 en el tema predeterminado). Debería haber el mismo número de grupos de países abajo.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>nb-nationalities</literal
+></entry>
+            <entry
+>Número de nacionalidades (6 en el tema predeterminado). Debería ser el mismo número de grupos de nacionalidad de abajo.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>nb-continents</literal
+></entry>
+            <entry
+>Número de continentes (6 en el tema predeterminado). Debería haber el mismo número de grupos de continentes abajo.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>pool</literal
+></entry>
+            <entry
+>Ruta y nombre del archivo de almacén relativa a la ruta del tema (por ejemplo, <filename
+>Images/pool.svg</filename
+>).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>map-mask</literal
+></entry>
+            <entry
+>Ruta y nombre del archivo de máscara del tema relativo a la ruta del tema (por ejemplo, <filename
+>Images/map-mask.png</filename
+>).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>format-version</literal
+></entry>
+            <entry
+>Versión del archivo de formato del tema (2.0).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>name</literal
+></entry>
+            <entry
+>Nombre con el que se muestra el tema.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>desc</literal
+></entry>
+            <entry
+>Descripción detallada del tema.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>fighters-flag-y-diff</literal
+></entry>
+            <entry
+>Diferencia de altura entre las imágenes de las banderas y los cañones.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>width-between-flag-and-fighter</literal
+></entry>
+            <entry
+>Número de píxeles entre el píxel de más a la izquierda de la bandera y el píxel más a la izquierda del cañón (cuando no está disparando ni explotando).</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+
+    <sect3>
+    <title
+>Grupos de descripción de imágenes</title>
+
+    <para
+>Cada tipo de imagen (bandera, infantería, caballería, cañón, cañón disparando y cañón explotando) se define mediante un grupo. Solo algunas imágenes tienen entrada de anchura. Esta entrada se usa para establecer posiciones relativas durante las animaciones; los cañones, disparando o explotando, no deberían «moverse» alrededor de la bandera del país durante la batalla.</para>
+
+    <table>
+      <title
+>Entradas del grupo de descripción de imágenes</title>
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry
+>Nombre de la entrada</entry>
+            <entry
+>Significado</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>width</literal
+></entry>
+            <entry
+>Anchura de referencia de los marcos de la imagen de la bandera.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>height</literal
+></entry>
+            <entry
+>Altura de referencia de los marcos de la imagen de la bandera.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>frames</literal
+></entry>
+            <entry
+>Número de fotogramas de la imagen.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>versions</literal
+></entry>
+            <entry
+>Número de versiones de las imágenes de la bandera.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+
+    <sect3>
+    <title
+>Grupos de descripción de países</title>
+
+    <para
+>Para cada país listado en el grupo <literal
+>onu</literal
+>, la entrada de países tiene su propio grupo cuya etiqueta es el nombre del país. La tabla de abajo lista las entradas de estos grupos.</para>
+
+    <table>
+      <title
+>Entradas de países</title>
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry
+>Nombre de la entrada</entry>
+            <entry
+>Significado</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>id</literal
+></entry>
+            <entry
+>El entero que sirve como identificación única del país. Debe empezar en cero (0).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>name</literal
+></entry>
+            <entry
+>Nombre visible del país.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>&lt;sprite&gt;-point</literal
+></entry>
+            <entry
+>Cada tipo de imagen (bandera, infantería, etc.) del país se muestra en una determinada posición definida por esta entrada, consistente en dos enteros separados por una coma.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>neighbours</literal
+></entry>
+            <entry
+>Lista de las id de los vecinos del país actual.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+
+    <sect3>
+    <title
+>Grupos de descripción de nacionalidades</title>
+
+    <para
+>Para cada nacionalidad listada en el grupo <literal
+>onu</literal
+>, la entrada de nacionalidades tiene su propio grupo, cuya etiqueta es el nombre de la nacionalidad. La tabla de abajo lista las entradas de estos grupos.</para>
+
+    <table>
+      <title
+>Entradas de nacionalidades</title>
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry
+>Nombre de la entrada</entry>
+            <entry
+>Significado</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>name</literal
+></entry>
+            <entry
+>Nombre de la nacionalidad (por ejemplo, <literal
+>Japón</literal
+>).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>leader</literal
+></entry>
+            <entry
+>Nombre que se le propondrá al jugador que elija su nacionalidad.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>flag</literal
+></entry>
+            <entry
+>Nombre de la imagen de la bandera del país en el archivo &SVG; de <literal
+>onu</literal
+>.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+
+    <sect3>
+    <title
+>Grupos de descripción de los continentes</title>
+
+    <para
+>Para cada continente listado en el grupo <literal
+>onu</literal
+>, la entrada de continentes tiene su propio grupo, cuyo nombre es el nombre del continente. La tabla de abajo lista las entradas de estos grupos.</para>
+
+    <table>
+      <title
+>Entradas de continentes</title>
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry
+>Nombre de la entrada</entry>
+            <entry
+>Significado</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>name</literal
+></entry>
+            <entry
+>Nombre del continente (por ejemplo, <literal
+>África</literal
+>).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>id</literal
+></entry>
+            <entry
+>El entero que sirve de identificación única para el continente.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>bonus</literal
+></entry>
+            <entry
+>Número de ejércitos obtenidos al final de un turno para el jugador que posea todos los países del continente.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>continent-countries</literal
+></entry>
+            <entry
+>Lista de las id de los países dentro del continente actual.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+
+    <sect3>
+    <title
+>Grupos de descripción de objetivos</title>
+
+    <para
+>Para cada objetivo listado en el grupo <literal
+>onu</literal
+>, la entrada de objetivos tiene su propio grupo, cuya etiqueta es el nombre del objetivo. La tabla de abajo lista las entradas de estos grupos.</para>
+
+    <table>
+      <title
+>Entradas de objetivos</title>
+      <tgroup cols="2">
+        <thead>
+          <row>
+            <entry
+>Nombre de la entrada</entry>
+            <entry
+>Significado</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>type</literal
+></entry>
+            <entry
+>Tipo de objetivo. Puede ser continentes, países o un jugador.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>nbArmiesByCountry</literal
+></entry>
+            <entry
+>Establece el número mínimo de ejércitos que el jugador tendrá que poner en cada país.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>nbCountries</literal
+></entry>
+            <entry
+>Establece el número de países que debe poseer el jugador.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>nbCountriesFallback</literal
+></entry>
+            <entry
+>Para un tipo de juego de objetivos por jugador, si un jugador mata a otro, aquel establece el número de países que el jugador tendrá que conquistar.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>desc</literal
+></entry>
+            <entry
+>Una descripción completa del objetivo con marcadores de posición apropiados (falta más documentación aquí).</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>continents</literal
+></entry>
+            <entry
+>Lista de ids de continentes que el jugador tendrá que conquistar.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+  </sect2>
+
+  <sect2 id="tid">
+  <title
+>La carpeta de imágenes</title>
+
+  <para
+>Esta carpeta contiene los botones específicos de &ksirk; y el archivo de almacén &SVG; que contiene el mapa y todas las imágenes.</para>
+
+    <sect3>
+    <title
+>El archivo <filename
+>pool.svg</filename
+></title>
+
+    <para
+>Este archivo &SVG; contiene el mapa y todas las imágenes del juego. Cada elemento se nombra de tal forma que el juego puede seleccionar y renderizar cada uno por separado.</para>
+
+    <para
+>En el tema predeterminado, las imágenes son banderas, infantería, caballería y cañones. La infantería representa un ejército, cinco para la caballería y diez para los cañones. Los cañones también se utilizan para representar a ejércitos en lucha. Por eso es por lo que hay tres clases de imágenes para los cañones: normal estático o moviéndose, disparando y explotando.</para>
+
+    <para
+>Cada imagen es la concatenación de varias vistas del objeto y, para cada vista, sus marcos. Las vistas se organizan verticalmente y los marcos horizontalmente. Dónde cortar la imagen en marcos individuales se obtiene dividiendo la altura de la imagen por el número de vistas y la anchura por el número de marcos. Estos datos se encuentran en el archivo <filename
+>onu.desktop</filename
+>.</para>
+
+    <mediaobject>
+      <imageobject
+><imagedata fileref="cannon.png" format="PNG"/></imageobject>
+      <caption
+><para
+>Ejemplo de una imagen: <filename
+>cannon.png</filename
+></para
+></caption>
+    </mediaobject>
+
+    <para
+>Para imágenes de ejércitos, hay tres vistas diferentes, de arriba abajo:</para>
+
+    <itemizedlist>
+      <listitem
+><para
+>mirando a la derecha</para
+></listitem>
+      <listitem
+><para
+>mirando a la izquierda y</para
+></listitem>
+      <listitem
+><para
+>de frente</para
+></listitem>
+    </itemizedlist>
+
+    <para
+>Para las banderas solo hay una vista. Todos los fondos de imagen deberían hacerse transparentes.</para>
+
+    <mediaobject>
+      <imageobject
+><imagedata fileref="italy.png" format="PNG"/></imageobject>
+      <caption
+><para
+>Ejemplo de imagen de una bandera: <filename
+>italy.png</filename
+></para
+></caption>
+    </mediaobject>
+
+    <table>
+      <title
+>Elementos del almacén</title>
+      <tgroup cols="3">
+        <thead>
+          <row>
+            <entry
+>Nombre del elemento</entry>
+            <entry
+>Imagen de muestra</entry>
+            <entry
+>Significado</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><literal
+>map</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="map.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Mapa del mundo del tema. Los países pueden tener formas arbitrarias, pero deberían agruparse en continentes reconocibles a simple vista, por la localización o por el color.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>italy</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="italy.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Bandera de la nación italiana. Hay una entrada así para cada nación.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>infantry</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="infantry.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Icono que representa un ejército.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>cavalry</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="cavalry.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Icono que representa cinco ejércitos.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>cannon</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="cannon.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Icono que representa diez ejércitos.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>firing</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="firing.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Icono que representa ejércitos durante un combate.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>exploding</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="exploding.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Icono que representa ejércitos perdiendo un combate.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>alaska</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="alaska.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Forma del país de Alaska. Esto se utiliza para resaltar el país. Hay una forma así para cada país. El color no se usa. Por lo tanto, el color es libre.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>reddices</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="reddices.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Dados rojos que se usan para mostrar el resultado de las batallas.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>bluedices</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="bluedices.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Dados azules que se usan para mostrar el resultado de las batallas.</entry>
+          </row>
+          <row>
+            <entry
+><literal
+>mark1</literal
+></entry>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="mark1.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+>Esta marca se añade a imágenes de lucha para mostrar el número de ejércitos que representan, aquí 1. También hay unos elementos de <literal
+>mark2</literal
+> y <literal
+>mark3</literal
+>.</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+
+    <sect3>
+    <title
+>El archivo <filename
+>map-mask.png</filename
+></title>
+
+    <para
+>Este es un archivo png que también representa el mapa del mundo del tema, pero con un código de colores que permite identificar de manera única a cada país. Los países deben tener al menos las mismas formas que los correspondientes países sobre el archivo <filename
+>map.png</filename
+>, de forma que los usuarios puedan hacer clic en cualquier parte de un país visible y seleccionen el bueno. Los países que son islas pequeñas, como Indonesia en el mapa predeterminado, pueden ser más grandes que el equivalente en el archivo <filename
+>map.png</filename
+> para facilitar la selección del país.</para>
+
+    <mediaobject>
+      <imageobject
+><imagedata fileref="map-mask.png" format="PNG"/></imageobject>
+      <textobject
+><phrase
+>Ejemplo de máscara de mapa</phrase
+></textobject>
+    </mediaobject>
+
+    <para
+>El componente azul (en el modelo RGB) del color de un país identifica al país: el índice 0 es el país 0 en el archivo <filename
+>onu.xml</filename
+>, el índice 1 es el país 1, etc. El blanco (0xFFFFFF en RGB) identifica la ausencia del país (tierra de nadie).</para>
+    </sect3>
+
+    <sect3>
+    <title
+>Las imágenes de los botones</title>
+
+    <para
+>Los nombres de archivo están incluidos en el código, por lo que no deberían modificarse. La tabla inferior muestra todos los botones que deben incluirse.</para>
+
+    <table>
+      <title
+>Botones de la interfaz gráfica</title>
+      <tgroup cols="3">
+        <thead>
+          <row>
+            <entry
+>Imagen</entry>
+            <entry
+>Nombre de archivo</entry>
+            <entry
+>Significado</entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="newNetGame.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>newNetGame.png</filename
+></entry>
+            <entry
+>Intenta unirse a un juego de red.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="recycling.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>recycling.png</filename
+></entry>
+            <entry
+>Después de que todos los jugadores hayan situado sus ejércitos, es posible modificar la distribución (lo que se llama «reciclaje»). Este botón solicita hacer esa redistribución.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="recyclingFinished.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>recyclingFinished.png</filename
+></entry>
+            <entry
+>Elige no redistribuir. Las ventanas de todos los clientes deben tener este botón pulsado para terminar la distribución.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="nextPlayer.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>nextPlayer.png</filename
+></entry>
+            <entry
+>Termina el turno del jugador actual y cambia al siguiente, o pasa al siguiente turno si el jugador actual era el último.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="attackOne.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>attackOne.png</filename
+></entry>
+            <entry
+>Elige empezar un ataque con un ejército.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="attackTwo.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>attackTwo.png</filename
+></entry>
+            <entry
+>Elige empezar un ataque con dos ejércitos.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="attackThree.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>attackThree.png</filename
+></entry>
+            <entry
+>Elige empezar un ataque con tres ejércitos.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="defendOne.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>defendOne.png</filename
+></entry>
+            <entry
+>Elige defender un país atacado con un ejército.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="defendTwo.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>defendTwo.png</filename
+></entry>
+            <entry
+>Elige defender un país atacado con dos ejércitos.</entry>
+          </row>
+          <row>
+            <entry
+><mediaobject
+><imageobject
+><imagedata fileref="moveArmies.png" format="PNG"/></imageobject
+></mediaobject
+></entry>
+            <entry
+><filename
+>moveArmies.png</filename
+></entry>
+            <entry
+>Elige empezar el movimiento de tropas entre dos países (última acción del turno).</entry>
+          </row>
+        </tbody>
+      </tgroup>
+    </table>
+    </sect3>
+  </sect2>
+
+  <sect2 id="tsd">
+  <title
+>Carpeta de sonidos</title>
+
+  <para
+>Esta carpeta contiene tres archivos de sonido:</para>
+
+  <itemizedlist>
+    <listitem
+><para
+><filename
+>roll.wav</filename
+>, que suena cuando las tropas se mueven </para
+></listitem>
+    <listitem
+><para
+><filename
+>cannon.wav</filename
+>, que suena cuando se dispara, y </para
+></listitem>
+    <listitem
+><para
+><filename
+>crash.wav</filename
+>, que suena cuando un cañón explota</para
+></listitem>
+  </itemizedlist>
+  </sect2>
+</sect1>
+
+<sect1 id="using-kse">
+<title
+>Uso de &i18n-ksirkskineditor;</title>
+
+<para
+>Después de crear los gráficos en la carpeta apropiada y el archivo &SVG;, debes crear países, jugadores, etc., y asociarlos con el elemento &SVG; correcto del almacén. Esto se puede hacer con &i18n-ksirkskineditor;. Ten en cuenta que cada parte de esta aplicación se describe automáticamente mediante ayudas emergentes y de contexto a las que puedes acceder de la forma habitual mediante el atajo de teclado <keycombo action="simul"
+>&Ctrl;<keycap
+>F1</keycap
+></keycombo
+>.</para>
+
+<screenshot>
+  <screeninfo
+>Captura de pantalla de &i18n-ksirkskineditor;</screeninfo>
+  <mediaobject>
+    <imageobject
+><imagedata fileref="main-snapshot.png" format="PNG"/></imageobject>
+    <textobject
+><phrase
+>Captura de pantalla</phrase
+></textobject>
+  </mediaobject>
+</screenshot>
+</sect1>
+</chapter>
+
+<chapter id="commands">
+<title
+>Referencia de órdenes</title>
+
+<sect1 id="kapp-mainwindow">
+<title
+>La ventana principal de &i18n-ksirkskineditor;</title>
+
+  <sect2>
+  <title
+>Los botones</title>
+
+  <variablelist>
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="document-open.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>Cargar</phrase
+></textobject>
+        </inlinemediaobject>
+        <guibutton
+>Cargar…</guibutton>
+      </term>
+      <listitem
+><para
+><action
+>Hace que el programa cargue un tema existente.</action
+></para
+></listitem>
+    </varlistentry>
+
+    <varlistentry>
+      <term>
+        <inlinemediaobject>
+          <imageobject
+><imagedata fileref="document-save.png" format="PNG"/></imageobject>
+          <textobject
+><phrase
+>Guardar</phrase
+></textobject>
+        </inlinemediaobject>
+        <guibutton
+>Guardar</guibutton>
+      </term>
+      <listitem
+><para
+><action
+>Guarda el tema editado actualmente.</action
+></para
+></listitem>
+    </varlistentry>
+  </variablelist>
+  </sect2>
+</sect1>
+</chapter>
+
+<chapter id="developers">
+<title
+>Guía del desarrollador para &i18n-ksirkskineditor;</title>
+
+<para
+>Consulta <ulink url="https://api.kde.org/"
+>https://api.kde.org/</ulink
+> para la documentación de la API.</para>
+</chapter>
+
+<chapter id="faq">
+<title
+>Preguntas y respuestas</title
+>&updating.documentation; </chapter>
+
+<chapter id="credits">
+
+<!-- Include credits for the programmers, documentation writers, and
+contributors here. The license for your software should then be included below
+the credits with a reference to the appropriate license file included in the KDE
+distribution. -->
+
+<title
+>Créditos y licencia</title>
+
+<para
+>&ksirkskineditor;</para>
+
+<para
+>Copyright del programa 2009 Ga&euml;l de Chalendar <email
+>kleag@free.fr</email
+></para>
+
+<para
+>Copyright de la documentación 2009 Ga&euml;l de Chalendar <email
+>kleag@free.fr</email
+></para>
+
+<para
+>Documentación traducida por Rocío Gallego <email
+>traducciones@rociogallego.com</email
+> y Kira J. Fernández <email
+>kirajfdez@gmail.com</email
+>.</para
+><para
+>Corregida por Eloy Cuadra <email
+>ecuadra@eloihr.net</email
+>.</para
+> &underFDL; &underGPL; </chapter>
+
+&documentation.index;
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->

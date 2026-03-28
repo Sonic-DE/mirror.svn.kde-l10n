@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter id="details.categories">
+<chapterinfo>
+  <authorgroup>
+    <author
+>&Roger.Lum; &Roger.Lum.mail;</author>
+    <author
+>&Michael.Carpino; &Michael.Carpino.mail;</author>
+    <author
+>&Jack.H.Ostroff; &Jack.H.Ostroff.mail; </author>
+  </authorgroup>
+  <date
+>1/12/2024</date>
+  <releaseinfo
+>5.2.0</releaseinfo>
+</chapterinfo>
+
+<title
+>Categorie</title>
+
+<para
+>Internamente, le categorie sono trattate da &kmymoney; come un tipo speciale di conto, quindi molte delle funzionalità delle categorie sono molto simili a quelle di altri conti. </para>
+
+<sect1 id="details.categories.view"
+><title
+>Vista delle categorie</title>
+<screenshot>
+  <screeninfo
+>vista delle categorie</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="categories.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>vista delle categorie</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+
+<para
+>La vista delle categorie fornisce un riepilogo di tutte le categorie esistenti nel proprio file di dati attuale. In modo simile alla vista dei conti, le categorie sono raggruppate in entrate e spese. Come con la vista degli istituti e la vista dei conti, l'elenco delle categorie può essere espanso o compresso facendo clic sulla freccia a sinistra del tipo o del nome. Come con i conti Attività e Passività, le categorie possono essere considerate sottocategorie, con un genitore di un'altra categoria al posto delle entrate o delle spese di livello superiore. </para>
+
+<para
+>In modo simile alla vista dei conti, la vista delle categorie mostra diverse colonne con informazioni descrittive e riassuntive su ogni categoria. Come con la vista dei conti, è possibile selezionare quali colonne mostrare facendo clic con il tasto destro del mouse su qualsiasi intestazione di colonna e selezionando o deselezionando la casella accanto al nome della colonna. </para>
+
+<para
+>Le colonne disponibili per Categorie sono identiche a quelle per Conti per Nome, Tipo, Imposta, IVA, Saldo e Valore totale. In linea, Numero di conto e IBAN non sono applicabili a Categorie. È disponibile un'ulteriore colonna. </para>
+
+<variablelist>
+  <varlistentry>
+    <term
+>CC</term>
+    <listitem>
+      <para
+>Un'indicazione che un'assegnazione di centro di costo è necessaria in determinate condizioni quando si immette una transazione per questa categoria. Questa è una funzionalità aggiunta di recente, che non è ancora implementata, quindi questa colonna non è attualmente utilizzata. Inoltre, potrebbe non essere visualizzata affatto, a seconda del valore di un'impostazione di configurazione del tempo di compilazione. </para>
+    </listitem>
+  </varlistentry>
+</variablelist>
+</sect1>
+
+<sect1 id="details.categories.create"
+><title
+>Creare una categoria</title>
+<para
+>Esistono tre modi per creare una nuova categoria: selezionare la voce di menu <menuchoice
+><guimenu
+>Categoria</guimenu
+><guimenuitem
+>Nuova categoria</guimenuitem
+></menuchoice
+>; fare clic con il pulsante destro del mouse su un genitore nell'albero della vista delle categorie e selezionare l'opzione <guimenuitem
+>Nuova categoria</guimenuitem
+> o digitare direttamente il nome di una nuova categoria quando si aggiunge o modifica una transazione nel registro. Tutti questi passaggi condurranno alla finestra <guilabel
+>Crea una nuova categoria</guilabel
+>. La finestra contiene tre schede: <guilabel
+>Generale</guilabel
+>, <guilabel
+>Gerarchia</guilabel
+> e <guilabel
+>Imposte</guilabel
+>. La scheda Generale include campi modificabili per il nome, il tipo e la valuta della nuova categoria (con la valuta predefinita impostata in precedenza), così come opzioni per l'ultimo numero di assegno, note e caselle di selezione per l'assegnazione al centro di costo richiesto. Nella scheda Gerarchia, si potrà selezionare il conto genitore appropriato per la categoria. Infine, nella scheda Imposte. ci sono campi per abilitare e configurare il supporto dell'IVA e una casella di selezione per includere questa categoria nei report relativi alle imposte. </para>
+
+<screenshot>
+  <screeninfo
+>creare una nuova categoria</screeninfo>
+  <mediaobject>
+    <imageobject>
+      <imagedata fileref="categoryedit.png" format="PNG"/>
+    </imageobject>
+    <textobject>
+      <phrase
+>creare una nuova categoria</phrase>
+    </textobject>
+  </mediaobject>
+</screenshot>
+</sect1>
+
+<sect1 id="details.categories.edit"
+><title
+>Modifica di una categoria</title>
+<para
+>Per modificare una categoria, fare clic con il pulsante destro del mouse nella vista delle categorie, e selezionare <guimenuitem
+>Modifica categoria...</guimenuitem
+>. Si aprirà una finestra con le stesse tre schede della finestra <guilabel
+>Crea una nuova categoria</guilabel
+>: Generale, Gerarchia e Imposte. Ogni scheda consente di modificare determinati dettagli della categoria. </para>
+
+<para
+>La scheda Generale consente di modificare il nome della categoria, eventuali note immesse al momento della creazione della categoria, il numero dell'ultimo assegno. Il tipo e la valuta non possono essere modificati dai loro valori iniziali. </para>
+
+<para
+>La scheda Gerarchia consente di cambiare il genitore della categoria selezionata facendo clic su un'altra categoria che diventa il genitore. Inoltre, è possibile trascinare una categoria e rilasciarla sotto il suo nuovo genitore. </para>
+
+<para
+>La scheda Imposte consente di assegnare o modificare i dettagli IVA, o di modificare l'assegnazione automatica dell'IVA. Consente inoltre di scegliere se la categoria è inclusa o meno nei report relativi alle imposte. </para>
+</sect1>
+
+<sect1 id="details.categories.vat">
+<sect1info>
+  <author
+>&Thomas.Baumgart; &Thomas.Baumgart.mail;</author>
+</sect1info>
+<title
+>Supporto per l'IVA</title>
+	
+<para
+>Si può trasformare una categoria di entrate/uscite in una categoria IVA, in modo da assegnare ad essa le percentuali che compongono il pagamento dell'IVA allo Stato. Si può inserire anche il tasso percentuale. </para>
+ 
+<para
+>Alle categorie si può assegnare una categoria IVA, che consente a &kmymoney; di dividere una transazione per una categoria in due parti, una per la categoria stessa e una per l'IVA. Il valore inserito sarà considerato netto o lordo in base all'opzione relativa. </para>
+ 
+<para
+>Esempio: in Germania, ci sono tre tassi IVA (0%, 7% e 19%). Quindi si può creare una categoria «IVA pagata» e tre sotto-categorie, una per ogni tasso. Le si creano sia come entrate sia come uscite, quindi in totale ci sono sei categorie. Per i beni comprati, si seleziona una di queste categorie come «categoria IVA assegnata». </para>
+ 
+<para
+>Quando si comprano beni, li si inserisce in una transazione. Se, ad esempio, si seleziona l'inserimento del valore lordo, una volta inserita la categoria e il valore, &kmymoney; riconoscerà che c'è un'assegnazione IVA e calcola la parte relativa all'IVA, crea una seconda suddivisione con il conto IVA e l'importo dell'IVA e riduce l'importo della categoria. </para>
+ 
+<para
+>Lo stesso si applica alle categorie di entrata, ma al contrario. Speriamo che questo funzionamento abbia senso. </para>
+
+</sect1>
+
+<sect1 id="details.categories.delete"
+><title
+>Eliminare una categoria</title>
+<para
+>L'eliminazione di una categoria è simile all'eliminazione di un conto. Per eliminare una categoria, fare clic con il pulsante destro del mouse sul suo nome nella vista delle categorie e selezionare <guimenuitem
+>Elimina categoria...</guimenuitem
+>. Se la categoria non ha transazioni, pianificazioni o budget associati e non è impostata come categoria predefinita per le nuove transazioni con alcun beneficiario, sarà eliminata. </para>
+
+<para
+>Se la categoria contiene uno di questi elementi, sarà visualizzato una finestra a comparsa che consente di scegliere un'altra categoria alla quale tutti quegli elementi possono essere riassegnati prima che la categoria venga eliminata. </para>
+
+<para
+>Se si elimina una categoria che contiene qualsiasi altra categoria, sarà visualizzata una finestra per scegliere se eliminare quella categoria e tutte le sue sottocategorie o solo la categoria principale. Se si sceglie di eliminare solo la categoria superiore, tutte le sue sottocategorie saranno spostate nella sua categoria superiore. </para>
+
+<para
+>Notare che l'eliminazione di alcune categorie può richiedere sia dove riassegnare i suoi dati sia anche se eliminare o meno eventuali sottocategorie. </para>
+</sect1>
+
+<sect1 id="details.categories.open_ledger"
+><title
+>Aprire un registro per una categoria</title>
+<para
+>Le opzioni di menu per le categorie includono la possibilità di aprire un registro per quella categoria. Quando questa opzione è selezionata, &kmymoney; visualizzerà quella categoria in una scheda nella vista dei registri, mostrando tutte le transazioni per la categoria selezionata. Ciò consente di esaminare rapidamente tutte le transazioni in dettaglio per la categoria selezionata. È quindi possibile fare clic con il pulsante destro del mouse su qualsiasi transazione per ottenere ulteriori dettagli sulla transazione specifica e persino modificare la transazione. </para>
+</sect1>
+</chapter>
+

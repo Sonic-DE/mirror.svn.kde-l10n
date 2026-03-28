@@ -1,0 +1,3215 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "customization/dtd/kdedbx45.dtd" [
+  <!ENTITY appname '<application
+>Skrooge</application
+>'>
+  <!ENTITY kappname "&appname;">
+  <!ENTITY tbw "TO BE WRITTEN">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Lithuanian "INCLUDE"
+><!-- change language only here -->
+
+  <!ENTITY homepage "http://extragear.kde.org/apps/skrooge/">
+
+]>
+
+
+<book lang="&language;">
+<title
+>&appname; vadovas</title>
+
+
+<bookinfo>
+
+<authorgroup>
+
+<author
+><firstname
+>Stéphane</firstname
+> <surname
+>MANKOWSKI</surname
+> <affiliation
+> <address
+><email
+>stephane@mankowski.fr</email
+></address>
+</affiliation>
+</author>
+
+<othercredit role="developer"
+><firstname
+>Guillaumme</firstname
+> <surname
+>DE BURE</surname
+> <affiliation
+> <address
+><email
+>guillaume.debure@gmail.com</email
+></address>
+</affiliation>
+<contrib
+>Programuotojas</contrib>
+</othercredit>
+<othercredit role="translator"
+><firstname
+>Tomas</firstname
+><surname
+>Straupis</surname
+><affiliation
+><address
+><email
+>tomasstraupis@gmail.com</email
+></address
+></affiliation
+><contrib
+>Vertė</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+<year
+>2007</year>
+<year
+>2008</year>
+<year
+>2009</year>
+<year
+>2010</year>
+<year
+>2011</year>
+<holder
+>Stéphane MANKOWSKI</holder>
+<holder
+>Guillaume DE BURE</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2011-01-30</date>
+<releaseinfo
+>0.8.0</releaseinfo>
+
+
+<abstract>
+<para
+>Šis dokumentas – &appname; – asmeninių finansų apskaitos programos vadovas. </para>
+</abstract>
+
+<keywordset>
+<keyword
+>KDE</keyword>
+<keyword
+>papildomi</keyword>
+<keyword
+>biuras</keyword>
+<keyword
+>skrooge</keyword>
+<keyword
+>asmeniniai finansai</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>Įvadas</title>
+
+<sect1 id="skrooge-intro">
+<title
+>&appname;</title>
+
+<para
+>&appname; – jūsų asmeninių finansų valdymo programa. Ji gali sekti jūsų pajamas ir išlaidas keliose sąskaitose, keliomis valiutomis. Ji turi visas funkcijas, kokių tik galima tikėtis iš panašių programų: kategorijos, planuotos operacijos, grafikai, akcijų valdymas... Ji taipogi turi ir kai kurias rečiau sutinkamas funkcijas, tokias kaip greitas operacijų koregavimas, paieška rašant, grąžinimo sekimą ir keičiamą atributų sąrašą... </para>
+
+<screenshot>
+<screeninfo
+>&appname; rodo išlaidų kategorijose grafiką</screeninfo>
+<mediaobject>
+<imageobject>
+<imagedata fileref="reports.png" format="PNG"/>
+</imageobject>
+<textobject
+><phrase
+>&appname; rodo išlaidų kategorijose grafiką</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+
+<sect2 id="what-skrooge-is">
+<title
+>Kas yra &appname;</title>
+
+<para
+>&appname; yra asmeninių finansų valdymo įrankis skirtas &kde; 4. Jis skirtas žmonėms, kurie nori sekti savo pajamas, išlaidas ir investicijas. </para>
+
+</sect2>
+
+<sect2 id="what-skrooge-is-not">
+<title
+>Kas nėra &appname;</title>
+
+<para
+>&appname; nėra profesionalus įrankis. Jis neturi funkcijų, kurių reikia norint valdyti nedidelį verslą. Ji negali valdyti mokesčių, nenaudoja dvejybinės apskaitos bei kitų sudėtingų finansinių funkcijų. </para>
+<para
+>Jei ieškote būtent tokio įrankio – pasidomėkite Kmymoney ar Kraft programomis.</para>
+
+</sect2>
+</sect1>
+
+<sect1 id="terminology">
+<title
+>Terminologija</title>
+
+<sect2 id="terminology-document">
+<title
+>Dokumentas</title>
+<para
+>Dokumentas – tai &appname; failas (su praplėtimu .skg). Jame gali būti saugomas neribotas skaičius <link linkend="terminology-account"
+>sąskaitų</link
+>. Jūs galite naudoti vieną dokumentą, kuriame tvarkytumėte visas savo sąskaitas. </para>
+</sect2>
+
+<sect2 id="terminology-account">
+<title
+>Sąskaita</title>
+<para
+>&appname; sąskaita yra panaši į jūsų banko sąskaitą. Pavyzdžiui jei turite vieną savo sąskaitą, vieną žmonos sąskaitą ir vieną bendrą sąskaitą, galite sukurti šias tris sąskaitas. Kiekvieną kartą, kai uždirbate ar išleidžiate pinigus, jūs registruojate <link linkend="terminology-operation"
+>operaciją</link
+> ir nurodote, kuriai sąskaitai ji priklauso. </para>
+</sect2>
+
+<sect2 id="terminology-operation">
+<title
+>Operacija</title>
+<para
+>Operacija – tai vienos iš jūsų sąskaitų kreditas arba debitas. Nurodydami operacijos <link linkend="terminology-category"
+>kategoriją</link
+>, jūs galite analizuoti, kur išleidžiate pinigus. </para>
+
+<sect3 id="terminology_standard_operation">
+<title
+>Standartinė operacija</title>
+<para
+>Standartinė operacija – tai paprasta &appname; operacija. Pavyzdžiui „šiandien išleidau 20Lt maistui iš debetinės kortelės“.</para>
+<para
+></para>
+</sect3>
+
+<sect3 id="terminology_split_operation">
+<title
+>Suskaldyta operacija</title>
+<para
+>Suskaldyta operacija – tai operacija, kai bendra suma yra padalinta kelioms <link linkend="terminology-category"
+>kategorijoms</link
+> ar <link linkend="trackers"
+>sekikliams</link
+>.</para>
+<para
+>Pavyzdžiui „vakar išleidau 100Lt parduotuvėje, iš jų 60Lt maistui ir 40Lt drabužiams“.</para>
+</sect3>
+
+<sect3 id="terminology_transfer">
+<title
+>Perkėlimas</title>
+<para
+>Perkėlimas – tai pinigų kiekio pernešimas iš vienos &appname; sąskaitos į kitą.</para>
+<para
+>Pervedimo nereikėtų painioti su pasirinktu mokėjimo būdu: jei jūs pervedėte pinigus internetinės bankininkystės pagalba į kieno nors kito sąskaitą, tai nėra perkėlimo operacija, nes &appname; nieko nežino apie kito žmogaus sąskaitas. Tai <link linkend="terminology_standard_operation"
+>standartinė operacija</link
+>, atlikta pinigų pervedimo būdu.</para>
+<para
+>Jei vis dar lieka neaiškumų, skaitykite <link linkend="transfer"
+>pervedimams skirtą skyrių</link
+>.</para>
+</sect3>
+
+<sect3 id="terminology_validated_operation">
+<title
+>Patikrinta operacija</title>
+<para
+><link linkend="import"
+>Importuojant</link
+> operacijas, iš karto jos nelaikomos patikrintomis. Jūs turite rankiniu būdu patikrinti. Patikrinta operacija – tai importuota operacija kuri buvo patikrinta.</para>
+<para
+>Pastebėtina, kad importuotas operacijas galima automatiškai pažymėti kaip patvirtintas, įjungus atitinkamą nustatymų parinktį.</para>
+</sect3>
+
+<sect3 id="terminology_pointed_operation">
+<title
+>Nurodyta operacija</title>
+<para
+><link linkend="reconciliation"
+>Sutaikymo proceso</link
+> metu jūs nurodote &appname; visas operacijas, priklausančias atitinkamai sąskaitai. Nurodyta operacija, tai viena iš tokių operacijų. Ji nebus <link linkend="terminology_checked_operation"
+>Patvirtinta</link
+>, kol nebus baigtas sutaikymo procesas.</para>
+</sect3>
+
+<sect3 id="terminology_checked_operation">
+<title
+>Patvirtinta operacija</title>
+<para
+>Kai sąskaitos operacijos yra nurodomos, jūs galite užbaigti sutaikymo procesą. Visos <link linkend="terminology_pointed_operation"
+>nurodytosios</link
+> operacijos bus pakeistos į patvirtintąsias operacijas.</para>
+</sect3>
+
+
+</sect2>
+
+<sect2 id="terminology-category">
+<title
+>Kategorija</title>
+<para
+>Kategorija – tai operacijų klasifikacija. Įprasti kategorijų pavyzdžiai būtų: „Maistas“, „Mokesčiai“, „Atlyginimas“... Kategorija gali turėti savo vidines kategorijas hierarchiškoje struktūroje. Pavyzdžiui „transporto“ kategorija gali turėti subkategorijas „autobusas“, „automobilis“, „lėktuvas“... &appname; gali dirbti su begalinio gylio kategorijomis. </para>
+</sect2>
+
+<sect2 id="terminology-unit">
+<title
+>Vienetas</title>
+<para
+>&appname; vienetas gali reikšti bet ką, kas turi vertę. Pavyzdžiai: <itemizedlist>
+  <listitem
+><para
+>Valiuta <itemizedlist>
+      <listitem
+><para
+>$ (JAV doleris)</para
+></listitem>
+      <listitem
+><para
+>€ (Euras)</para
+></listitem>
+      <listitem
+><para
+>£ (Svaras)</para
+></listitem>
+    </itemizedlist>
+    </para>
+  </listitem>
+  <listitem
+><para
+>Akcijos <itemizedlist
+> <listitem
+><para
+>GOOG (Google)</para
+></listitem>
+    </itemizedlist>
+    </para>
+  </listitem>
+  <listitem
+><para
+>Bet kas, ką jūs turite <itemizedlist>
+      <listitem
+><para
+>Jūsų namas</para
+></listitem>
+      <listitem
+><para
+>Jūsų automobilis</para
+></listitem>
+    </itemizedlist>
+    </para>
+  </listitem>
+</itemizedlist>
+
+</para>
+</sect2>
+
+</sect1>
+
+</chapter>
+
+
+
+<chapter id="using-skrooge">
+<title
+>&appname; naudojimas</title>
+
+<sect1 id="user_interface">
+<title
+>Naudotojo sąsaja</title>
+<para
+>&appname; langą sudaro pagrindinė sritis ir aplink ją esančios prišlietos sritys bei būsenos juosta. Prišlietos sritys gali būti uždaromos ir atidaromos, perkeliamos į kairę ar dešinę pagrindinės srities pusę. </para>
+
+<sect2 id="main_area">
+<title
+>Pagrindinė sritis</title>
+<para
+>Čia &appname; rodys jus dominančią informaciją. Joje gali būti <link linkend="multi-tabs"
+>daug kortelių</link
+>, kiekvienoje iš jų bus jūsų priskirtas rodinys. </para>
+</sect2>
+
+<sect2 id="docks">
+<title
+>Prišlietos sritys</title>
+<para
+>Daugelyje &kde; programų galite rasti prišlietas sritis. Jos yra programos lango dalys ir gali būti perkeltos, sudėliotos, uždarytos ir netgi atjungtos nuo pagrindinio lango. </para>
+
+<para
+>Keli prišlietų sričių išdėstymo variantai: </para>
+
+<para>
+<inlinemediaobject>
+<imageobject>
+<imagedata fileref="docks_left_right.png"/>
+</imageobject>
+</inlinemediaobject>
+<inlinemediaobject>
+<imageobject>
+<imagedata fileref="docks_detached.png"/>
+</imageobject>
+</inlinemediaobject>
+<inlinemediaobject>
+<imageobject>
+<imagedata fileref="docks_stacked.png"/>
+</imageobject>
+</inlinemediaobject>
+</para>
+
+<para
+>&appname; prišlietos sritys: <itemizedlist>
+<listitem
+><para
+><link linkend="context_chooser"
+>Konteksto pasirinkimas</link
+></para
+></listitem>
+<listitem
+><para
+><link linkend="bookmarks"
+>Žymelių sąrašas</link
+></para
+></listitem>
+<listitem
+><para
+><link linkend="undo_redo"
+>Atstatymo ir pakartojimo naršymas</link
+></para
+></listitem>
+<listitem
+><para
+><link linkend="property_editor"
+>Savybių redaktorius</link
+></para
+></listitem>
+</itemizedlist>
+</para>
+</sect2>
+
+<sect2 id="status_bar">
+<title
+>Būsenos juosta</title>
+<para
+>Būsenos juosta – nedidelė juostelė &appname; lango apačioje, kurioje jūsų darbo metu rodoma įvairi informacija. Joje rasite progreso juostą ir nutraukimo mygtuką, kurio pagalba galite nutraukti ilgai vykstančią užduotį, tokią kaip didelio failo importą. <screenshot
+> <mediaobject>
+<imageobject
+><imagedata fileref="progress-bar.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>&appname; progreso juosta</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+</para>
+</sect2>
+
+<sect2 id="context_chooser">
+<title
+>Konteksto parinkėjas</title>
+<para
+>Konteksto parinkėjo pagalba galite parinkti, kurį rodinį norite matyti pagrindinėje arba naujoje kortelėje. Norėdami atverti naujoje kortelėje, spausdami ant norimo rodinio laikykite paspaudą klavišą &Ctrl;.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="context_chooser.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Konteksto parinkėjas</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Kiekvienas kontekstas bus aprašytas atskirame šio vadovo skyriuje.</para>
+</sect2>
+
+<sect2 id="multi-tabs">
+<title
+>Kelios kortelės</title>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="multi_tabs.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>&appname; rodo kelias korteles</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>&appname; gali rodyti daugiau nei vieną kortelę. Galite pridėti kiek tik norite kortelių, kiekvieną iš jų rodys jums reikiamą informaciją. Aukščiau pateiktoje nuotraukoje matomos 4 kortelės (sąskaitos, operacijos ir dvi diagramos).</para>
+
+</sect2>
+
+
+<sect2 id="edition_panels">
+<title
+>Redagavimo pultas</title>
+<para
+>Daugumoje &appname; skydelių elementų redagavimas atliekamas naudojant redagavimo pultą, esantį puslapio apačioje. Kad būtų išsaugota daugiau vietos informacijos vaizdavimui, ypač mažuose ekranuose, redagavimo skydeliai gali būti įjungiami ir slepiami mygtukų pagalbą.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="edition_panel_buttons.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Operacijų keitimo pultų rodymo ir slėpimo mygtukai.</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Kai yra daugiau nei vienas redagavimo režimas, keli pateikiami mygtukai leis pasirinkti reikiamą režimą. Aukščiau pateiktoje nuotraukoje matome keturis mygtukus, leidžiančius pasirinkti tarp <link linkend="operations"
+>operacijų</link
+> redagavimo režimų: „Standartinio“, „Padalinto“, „Perkėlimo“ ir „Akcijų“.</para>
+
+</sect2>
+
+
+<sect2 id="tables">
+<title
+>Lentelės</title>
+<para
+>Visas &appname; lenteles galima keisti. Iškvieskite kontekstinį meniu (paprastai spaudžiant dešinį pelės mygtuką stulpelio antraštėje) ir pamatysite tokį meniu:</para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="table_menu.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Lentelės keitimas</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Stulpeliai</guimenu
+></menuchoice
+></term>
+<listitem>
+<para
+>Keisti stulpelių išvaizdą.</para>
+<variablelist>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Rodinio išvaizda</guimenu
+></menuchoice
+></term>
+<listitem>
+<para
+>Naudoti iš anksto paruoštą stulpelių rinkinį. „Numatytasis“ stulpelis paprastai rodo visus stulpelius. Priklausomai nuo lentelės gali būti daugiau paruoštų stulpelių rinkinių.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Keisti dydį pagal turinį</guimenu
+></menuchoice
+></term>
+<listitem
+><para
+>Keisti visų stulpelių plotį taip, kad tilptų turinys.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Automatiškai keisti dydį</guimenu
+></menuchoice
+></term>
+<listitem
+><para
+>Įjungus šią parinktį, nebegalėsite rankiniu būdu keisti stulpelių plotį. &appname; tai darys automatiškai priklausomai nuo stulpelių turinio.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><guimenu
+>Rodomų stulpelių sąrašas</guimenu
+></term>
+<listitem
+><para
+>rodo sąrašą stulpelių, kurie gali būti rodomi šioje lentelėje. Šiuo metu rodomi stulpeliai pažymėti varnele. Nuimkite varnelę, jei norite paslėpti stulpelį, uždėkite varnelę, jei norite rodyti stulpelį.</para
+></listitem>
+</varlistentry>
+</variablelist>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Tolygus slinkimas</guimenu
+></menuchoice
+></term>
+<listitem
+><para
+>Įjungus šią parinktį, galėsite slinkti lentelę paspaudę kairįjį mygtuką ir judindami pelę. Greitai perkelkite pelę į vieną pusę, tarsi ją „mesdami“, ir lentelė bus praslenkama greičiau. Dažniausiai tai naudinga prisilietimus naudojančiuose įrenginiuose.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Rodyti tinklelį</guimenu
+></menuchoice
+></term>
+<listitem
+><para
+>Lentelėje paišyti tinklelį.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Kintančios eilučių spalvos</guimenu
+></menuchoice
+></term>
+<listitem
+><para
+>Kiekvienai eilutei naudoja kitokia spalva. Naudojamos spalvos priklauso nuo &kde; parinktos spalvų schemos.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><menuchoice
+><guimenu
+>Eksportuoti</guimenu
+></menuchoice
+></term>
+<listitem
+><para
+><link linkend="export_table"
+>Eksportuoti lentelę</link
+> į atskirą failą. Palaikomi formatai yra: pdf, csv arba txt.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Spausdami ant antraštės galite parinkti rikiavimo stulpelį arba pakeisti stulpelių tvarką tempdami juos kairėn ar dešinėn.</para>
+
+</sect2>
+
+
+
+<sect2 id="save_customized_content">
+<title
+>Įrašyti pakeistą turinį</title>
+
+<para
+>Kaip aiškinta <link linkend="tables"
+>ankstesniame skyriuje</link
+>, lenteles galima tvarkyti taip, kaip jums patinka. Bet tikriausiai nenorite prarasti visų pakeitimų, kai uždarote kortelę. Pakeitimus galite išsaugoti vienu iš dviejų būdų.</para>
+
+<sect3 id="save_default_context">
+<title
+>Įrašyti numatytąjį kontekstą</title>
+<para
+>Ši parinktis leidžia įrašyti dabartinę kortelės būseną kaip numatytąją, kuri bus naudojama ateityje atvėrus šį kontekstą. Pavyzdžiui jūs galite norėti, kad <link linkend="dashboard"
+>skydelyje</link
+> būtų 4 valdikliai, išdėlioti pagal jūsų skonį. Taipogi svarbu, kad jūs norite, jog skydelis visada atrodytų taip pat. Nenorite kiekvieną kartą atvėrę skydelį iš naujo jo konfigūruoti.</para>
+<para
+>Kad tą padarytumėte, jums reikia vieną kartą atlikti konfigūravimo darbus, tada įrašyti kortelės būseną kaip numatytąją rodomam kontekstui. Numatytąją būseną galima nurodyti arba paspaudus ant kortelės dešinį pelės klavišą ir parinkus <guimenuitem
+>Įrašyti konteksto būseną</guimenuitem
+>.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="tab_state_management.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Kortelės kontekstinis meniu</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Greitesnis būdas yra paspausti ant diskelio ženkliuko <inlinemediaobject
+><imageobject
+><imagedata fileref="document-save.png" format="PNG"/></imageobject
+></inlinemediaobject
+>, pasirodančio kortelės kairėje pusėje, kai tik pakeičiate numatytąją kortelės būseną.</para>
+
+</sect3>
+
+
+<sect3 id="bookmarks">
+<title
+>Žymelių naudojimas</title>
+<para
+>Įsivaizduokite, kad turite pakeisti operacijų rodinio išvaizdą priklausomai nuo sąskaitos: kiekviena sąskaita bus rodoma savoje kortelėje, galbūt rodant skirtingus stulpelius. Aukščiau aprašytas metodas neveiks, nes jis taikomas visoms tos pačios rūšies kortelėms. </para>
+<para
+>Sprendimas būtų įrašyti kiekvieną konkrečią kortelę kaip žymelę. Kaip ir žiniatinklio naršyklėje, žymelės gali būti dėliojamos į žymelių aplankų hierarchiją, kurie vizualiai matomi žymelių naršyklėje:</para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="bookmarks_browser.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Žymelių naršyklė</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Norėdami sukurti žymelę, <link linkend="context_chooser"
+>parinkite kontekstą</link
+>, kurį norite pažymėti ir pakeiskite jo išvaizdą pagal savo norus. Tai padarę, žymelių <link linkend="docks"
+>prišliejamame skydelyje</link
+> atverkite kontekstinį meniu ir ten parinkite <menuchoice
+><guimenu
+>Įtraukti puslapį į žymeles</guimenu
+></menuchoice
+>.</para>
+
+<para
+>Kiekviena žymelė ar žymelių aplankas gali būti „automatiškai paleistas“. T.y. jis bus automatiškai atvertas paleidžiant &appname;. Tokiu būdu galite visiškai pakeisti numatytąjį &appname; išdėstymą.</para>
+
+</sect3>
+
+</sect2>
+
+<sect2 id="undo_redo">
+<title
+>Atstatymas ir pakartojimas</title>
+<para
+>&appname; valdo atstatymą ir pakartojimą klasikiniu būdu išskyrus tai, kad jūs galite atstatyti arba pakartoti bet kokį veiksmą, net jei jis buvo padarytas prieš kelias dienas. Naudojant pradinius nustatymus, istorija nėra išvaloma uždarant &appname; (galite pakeisti tokią veikseną nustatymuose), o tai reiškia, kad galite atstatyti viską iki pat dokumento sukūrimo. </para>
+<para
+>Kad būtų galima valdyti failo dydį, standartiniai &appname; nustatymai riboja istorijos dydį 50 įrašų. Nustatymuose galite pakeisti šią reikšmę. </para>
+<para
+>&appname; turi <link linkend="docks"
+>prišliejamą panelę</link
+>, kurioje galite matyti visus atstatymus veiksmus. </para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="history_browser.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Istorijos naršyklė</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Istorijos naršyklė rodo tris stulpelius: </para>
+
+<itemizedlist>
+
+<listitem>
+<para
+>ženkliukas, rodantis veiksmo būseną. Geltona rodyklė su priešinga laikrodžio kryptimi <inlinemediaobject
+><imageobject
+><imagedata fileref="edit-undo.png" format="PNG"/></imageobject
+></inlinemediaobject
+> reiškia, kad veiksmą galima atstatyti. Žalia rodyklė pagal laikrodžio kryptį <inlinemediaobject
+><imageobject
+><imagedata fileref="edit-redo.png" format="PNG"/></imageobject
+></inlinemediaobject
+> reiškia, kad veiksmą galima pakartoti. </para>
+</listitem>
+
+<listitem>
+<para
+>veiksmo aprašymas </para>
+</listitem>
+
+<listitem>
+<para
+>data, kai buvo atliktas veiksmas </para>
+</listitem>
+
+<listitem>
+<para
+>diskelio ženkliukas <inlinemediaobject
+><imageobject
+><imagedata fileref="document-save.png" format="PNG"/></imageobject
+></inlinemediaobject
+> nurodo, kad veiksmas atitinka įrašytą būseną, t.y. dokumentas buvo įrašytas iš karto po šio veiksmo. </para>
+</listitem>
+</itemizedlist>
+
+<para
+>Kad atstatytumėte atstatomą veiksmą arba pakartotumėte pakartojamą – spauskite ant jo. </para>
+</sect2>
+
+
+<sect2 id="mass_update">
+<title
+>Masinis keitimas</title>
+<para
+>&appname; leidžia vykdyti masinius parinktų elementų pakeitimus. Tai labiausia tinka <link linkend="operations"
+>operacijoms</link
+>, bet gali būti taikoma ir <link linkend="accounts"
+>sąskaitoms</link
+>, <link linkend="units"
+>vienetams</link
+>, <link linkend="scheduled"
+>planuotoms operacijoms</link
+>...</para>
+<para
+>Tai padaryti yra gan paprasta: pažymėkite elementus, kuriuos norite keisti, nurodykite reikšmes atributų, kurie turi būti pakeisti visuose elementuose ir spauskite <guibutton
+>Pritaikyti</guibutton
+>. Reikšmės atributų, kurių jūs nelietėte, nebus keičiamos pažymėtuose elementuose.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="before_mass_update.png"/></imageobject>
+<caption
+><para
+>Įjunkite režimą „Kreditinė kortelė“ ir gavėją „ACME“ parinktoms operacijoms.</para
+></caption>
+</mediaobject>
+</screenshot>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="after_mass_update.png"/></imageobject>
+<caption
+><para
+>Pakeistos operacijos.</para
+></caption>
+</mediaobject>
+</screenshot>
+
+<note
+><para
+>Specialiai yra padaryta taip, kad vykdant masinius pakeitimus negalima keisti datos arba kiekio</para
+></note>
+
+</sect2>
+
+
+<sect2 id="property_editor">
+<title
+>Savybių redaktorius</title>
+<para
+>Viena iš neįprastų &appname; savybių yra galimybė pridėti prie bet kurio objekto savo atributus. Pavyzdžiui jums gali reikėti prie banko sąskaitos įrašyti ir banko darbuotojo vardą bei telefono numerį, nes jūs su juo/ja bendraujate. Arba gal norite prie operacijos prisegti failą, tokį kaip nuskenuotą sąskaitą. </para>
+<para
+>Tą galite padaryti naudodami savybių redaktorių, kuris yra atskiras <link linkend="docks"
+>prišliejamas pultas</link
+>. </para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="property_editor.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Savybių redaktorius su prisegtu failu</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Kai matomas šis prišliejamas pultas, jis rodys visas papildomas pažymėto objekto savybes nepriklausomai nuo to, tai sąskaita, operacija, kategorija ar vienetas. </para>
+</sect2>
+
+<sect2 id="search">
+<title
+>Ieškoti rašant</title>
+<para
+>Visuose &appname; rodiniuose rasite „filtro“ lauką, kuris leidžia ieškoti rodinyje rašant: <itemizedlist>
+<listitem
+><para
+>Operacijų sąraše jis filtruos operacijas, kuriose yra įvedamas tekstas, nesvarbu kuriame stulpelyje (datos, gavėjo, kategorijos, komentaro ar pan.).</para
+></listitem>
+<listitem
+><para
+>Sąskaitų rodinyje jis filtruos sąskaitas, kurios turi įvestą tekstą bet kuriame stulpelyje (banko, sąskaitos pavadinimo, numerio ar pan.)</para
+></listitem>
+<listitem
+><para
+>Ataskaitų rodinyje diagrama bus perpaišyta naudojant šį filtrą</para
+></listitem>
+<listitem
+><para
+>O kituose rodiniuose... na... jūs gi supratote, teisingai?</para
+></listitem>
+</itemizedlist>
+</para>
+</sect2>
+
+</sect1>
+
+<sect1 id="import">
+<title
+>Failų importavimas</title>
+
+<para
+>&appname; gali importuoti kitų finansinių programų ar bankų failus. Taigi jei anksčiau naudojote kitą finansinę programą arba tiesiog nenorite vargti ir rankiniu būdu suvedinėti jūsų operacijas – &appname; jums padės.</para>
+
+<sect2 id="supported_file_formats">
+<title
+>Palaikomi failų formatai</title>
+
+<para
+>Gali būti naudojamas vienas iš šių formatų:</para>
+
+<variablelist>
+<varlistentry>
+  <term
+>OFX</term>
+  <listitem
+><para
+>Open Financial eXchange (atviras finansinis apsikeitimas). Gerai apibrėžtas ir dokumentuotas formatas, kurį &appname; importuoja naudojant trečiųjų šalių biblioteką (libofx). Šis formatas rekomenduojamas importui.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+  <term
+>QFX</term>
+  <listitem
+><para
+>QFX yra komercinės programinės įrangos <trademark
+>Quicken</trademark
+> gamintojų adaptuota OFX versija.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+  <term
+>QIF</term>
+  <listitem
+><para
+><trademark
+>Quicken</trademark
+> importo failas. Tikriausiai populiariausias finansinės informacijos failo formatas. Deja jis turi gana nuviliančių trūkumų, pavyzdžiui nenurodoma operacijų valiuta arba nėra griežto datų formato.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+  <term
+>CSV</term>
+  <listitem
+><para
+>Kableliais atskirtos reikšmės. Nors tai ir nėra grynai finansinis formatas, jis dažnai naudojamas eksportuojant informaciją iš blankų ir kitų programų, dažniausiai dėl to, kad jį lengva naudoti skaičiuoklėse.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</sect2>
+
+<sect2 id="csv_specificities">
+<title
+>CSV specifika</title>
+<para
+>Kadangi nėra griežtai numatyto CSV formato, &appname; negali tiksliai žinoti, kur turėtų būti datos, kategorijos ir reikšmės... Kad būtų galima tai padaryti, &appname; tikisi, kad CSV faile bus antraštė, nurodanti kas įrašyta į konkretų stulpelį. Faile turi būti bent jau stulpeliai „Data“ ir „Suma“.</para>
+<para
+>Failo sandarą galite nurodyti rankiniu būdu (t.y. ignoruoti antraštes, randamas faile) stulpelius surašydami programos nustatymuose (<guimenu
+>Nustatymai</guimenu
+> <guimenuitem
+>Konfigūruoti &appname;</guimenuitem
+>), <guilabel
+>Importo / Eksporto</guilabel
+> skiltyje.</para>
+</sect2>
+
+<sect2 id="import_operations">
+<title
+>Operacijų importas</title>
+<para
+>Viena iš &appname; taisyklių yra vengti daugelio vedlių ar dialogų. Tai ypatingai tinka importams, kur kitos programos prašo naudotojo įvesti daug informacijos. Tik ne &appname;. Parinkus meniu punktą <guimenu
+>Failas</guimenu
+><guimenuitem
+>Importuoti</guimenuitem
+>, jums reikės nurodyti failus (taip, galite importuoti daugiau nei vieną failą vienu metu) ir viskas. &appname; išsiaiškins failo formatą ir parinks atitinkamą importavimo režimą.</para>
+
+<sect3 id="import_account">
+<title
+>Sąskaita</title>
+<para
+>Jus gali nustebinti tai, kad nereikės nurodyti, kuriai sąskaitai priskirti importuojamas operacijas. Taip yra todėl, kad &appname; perskaitys sąskaitos numerį faile ir susies importuojamas operacijas su atitinkama sąskaita.</para>
+<para
+>Jei tokios sąskaitos nėra, arba faile nėra tokios informacijos, &appname; panaudos failo pavadinimą, kaip sąskaitos numerį.</para>
+<para
+>Jei sąskaitos su tokiu numeriu nėra, &appname; sukurs naują sąskaitą su numeriu, tokiu kaip failo pavadinimas, ir į ją importuos visas operacijas. Tada galėsite arba pervadinti sąskaitą, arba vykdyti <link linkend="mass_update"
+>masinį pakeitimą</link
+>, arba naudoti <link linkend="search_and_process"
+>Paiešką ir apdorojimą</link
+>, kad susietumėte importuotas operacijas su egzistuojančia sąskaita.</para>
+</sect3>
+
+<sect3 id="import_unit">
+<title
+>Vienetas</title>
+<para
+>Jei importuojamame faile nenurodyti vienetai (taip dažnai būna QIF ir CSV failuose), &appname; galvos, kad naudojate <link linkend="unit_types"
+>pirminę valiutą</link
+>. Jei tai nėra teisinga, naudokite <link linkend="search_and_process"
+>Paieškos ir apdorojimo</link
+> funkciją, kad nurodytumėte teisingą vientetą (pvz. valiutą).</para>
+</sect3>
+
+<sect3 id="import_date">
+<title
+>Data</title>
+<para
+>Kartais failuose data bus įrašyta naudojant formatą, neatitinkantį įprasto jūsų šalyje (taip gali nutikti su QIF arba CSV formatais, OFX turi griežtai nurodytą datos formatą). &appname; darys viską, kad teisingai atpažintų formatą.</para>
+</sect3>
+
+<sect3 id="import_status">
+<title
+>Importo būsena</title>
+<para
+>Importuotos operacijos turi ypatingą būseną. Iš karto po importo jos laikomos „importuotomis, bet nepatikrintomis“. Manoma, kad po importo jūs norėsite patikrinti, ar informacija importuota taip, kaip jūs tikėjotės, taigi jums reikia atskirti importuotas operacijas. Naudojant pradinius nustatymus tokios operacijos bus žymimos mėlyna spalva.</para>
+<tip
+><para
+>Jei jums toks funkcionalumas nereikalingas, programos nustatymuose galite įjungti parinktį <guilabel
+>Automatinis patikrinimas po importo</guilabel
+>.</para
+></tip>
+</sect3>
+
+
+</sect2>
+
+<sect2 id="merge_operations">
+<title
+>Sulieti operacijas po importo</title>
+<para
+>Gali būti situacijų, kai jūs rankomis suvedėte operaciją, o vėliau ją importavote naudodami iš banko gautą failą. Tokiu atveju operacija sąraše kartosis du kartus.</para>
+<para
+>Jūs galite sulieti tokias operacijas abi jas pažymėję ir kontekstiniame meniu parinkę <guimenuitem
+>Sulieti operacijas</guimenuitem
+>. Tokiu atveju visa jūsų rankomis įvesta informacija bus įkelta į importuotą operaciją, o rankomis suvesta operacijos versija bus pašalinta.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="merge_operations_menu.png"/></imageobject>
+</mediaobject>
+</screenshot>
+
+</sect2>
+
+</sect1>
+
+<sect1 id="export">
+<title
+>Eksportas</title>
+<para
+>Naudodami &appname; duomenis galite eksportuoti keliais būdais, priklausomai nuo to, ką norite padaryti.</para>
+
+<sect2 id="export_file">
+<title
+>Eksportuoti visus duomenis į vieną failą</title>
+<para
+>Pasinaudoję meniu punktu <guimenu
+>Failas</guimenu
+> <guimenuitem
+>Eksportuoti</guimenuitem
+>, sukursite CSV arba QIF failą, kuriame bus visos dabartinio dokumento operacijos. Naudokite šį punktą, jei norite perkelti duomenis į kitą programą.</para>
+</sect2>
+
+<sect2 id="export_table">
+<title
+>Eksportuoti konkrečią lentelę</title>
+<para
+>Visos &appname; <link linkend="tables"
+>lentelės</link
+> gali būti eksportuotos CSV, PDF arba TXT formatu. </para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="export_table_menu.png"/></imageobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Tai veikia bet kada, kai rodoma lentelė, taigi šią funkciją naudoti bet kada, kai norite įrašyti stulpelių informaciją.</para>
+
+</sect2>
+
+<sect2 id="export_graph">
+<title
+>Eksportuoti diagramą</title>
+<para
+>&appname; leidžia eksportuoti <link linkend="reports"
+>diagramą</link
+> PDF, SVG arba bet kokio piešinio formatu, kurį palaiko &kde; (PNG, JPG, GIF, TIFF...). Tai galite padaryti paspaudę dešinį mygtuką ant diagramos ir parinkę punktą <guimenu
+>Eksportuoti</guimenu
+>.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="export_graph_menu.png"/></imageobject>
+</mediaobject>
+</screenshot>
+
+
+</sect2>
+
+</sect1>
+
+<sect1 id="dashboard">
+<title
+>Skydelis</title>
+<para
+>Skydelis – tai &appname; priedas, rodantis bendrą informaciją apie jūsų finansinę situaciją.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="dashboard.png"/></imageobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Konfigūruoti skydelį galite naudodami viršutinėje dešinėje dalyje esančius ženkliukus. Galite pridėti ir pašalinti rodomus blokus. Kai kuriuos blokus galima konfigūruoti paspaudus dešinį pelės mygtuką.</para>
+
+</sect1>
+
+<sect1 id="accounts">
+<title
+>Bankai ir sąskaitos</title>
+<para
+>Tai priedas, skirtas jūsų sąskaitų valdymui.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="bank_accounts.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Bankų ir sąskaitų rodinys</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+
+<sect2 id="account_properties"
+> 
+<title
+>Sąskaitos savybės</title>
+<para
+>&appname; sąskaita turi žemiau išvardintas savybes: <variablelist>
+<varlistentry>
+<term
+>Bankas</term>
+<listitem
+><para
+>Banką galite pasirinkti iškrentančiame sąraše (kuriame yra jūsų šalie bankai) arba įrašyti pavadinimą, jei banko nėra sąraše (jei sąrašas tuščias, ši informacija nebuvo pateikta &appname; komandai. Jūs galite su mumis susisiekti ir padėti!).</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Sąskaita</term>
+<listitem
+><para
+>Jums tinkamas sąskaitos pavadinimas.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Tipas</term>
+<listitem
+><para
+>Sąskaita gali būti <itemizedlist
+> <listitem
+><para
+>Einamoji</para
+></listitem
+> <listitem
+><para
+>Kreditinės ortelės</para
+></listitem
+> <listitem
+><para
+>Investicijos</para
+></listitem
+> <listitem
+><para
+>Turto</para
+></listitem
+> <listitem
+><para
+>Kita</para
+></listitem
+> </itemizedlist
+> Šiuo metu sąskaitos tipas nenaudojamas jokiems skaičiavimams, t.y. jis naudojamas tik informacijai. </para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Banko numeris</term>
+<listitem
+><para
+>Jūsų banko identifikacinis numeris</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Agentūros numeris</term>
+<listitem
+><para
+>Agentūros identifikacinis numeris</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Sąskaitos numeris</term>
+<listitem
+><para
+>Sąskaitos identifikacinis numeris</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Adresas</term>
+<listitem
+><para
+>Agentūros adresas</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Komentaras</term>
+<listitem
+><para
+>Bet kas!</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+<!--Shall we talk about the "RIB key" here ? Or maybe this is strictly french, and should be removed from skrooge ?-->
+
+</para>
+</sect2>
+
+<sect2 id="accounts_list">
+<title
+>Sąskaitų sąrašas</title>
+<para
+>Sąskaitų sąrašas – lentelė, kurioje vienai sąskaitai skiriama viena eilutė. Kiekvienai sąskaitai &appname; gali rodyti aukščiau nurodytas <link linkend="account_properties"
+>savybes</link
+> ir šiuos laukus:</para>
+
+<variablelist>
+<varlistentry>
+<term
+>Suma</term>
+<listitem
+><para
+>Sąskaitoje turimų pinigų kiekis, kai suvestos visos operacijos, nesvarbu patikrintos ar ne.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Patvirtinta</term>
+<listitem
+><para
+>Patikrintų operacijų suma. Šis skaičius turėtų būti lygus sąskaitos likučiui, nurodytam paskutinėje iš banko gautoje išklotinėje.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Numatytas</term>
+<listitem
+><para
+>Skirtumas tarp dviejų ankstesnių stulpelių</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Operacijų skaičius</term>
+<listitem
+><para
+>Operacijų šioje sąskaitoje skaičius</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Kaip ir kiekvieną kitą &appname; rodinį, jūs galite pilnai <link linkend="tables"
+>adaptuoti lentelės išvaizdą</link
+>.</para>
+
+</sect2>
+
+<sect2 id="create_account">
+<title
+>Sukurti sąskaitą</title>
+<para
+>Sąskaita kuriama naudojant kūrimo skydelį, esantį po sąskaitų sąrašu.</para>
+
+<para
+>Kad sukurtumėte sąskaitą, įveskite jos atributus (privalomi atributai paryškinti riebiu šriftu) ir spauskite <guibutton
+>Pridėti</guibutton
+>. &appname; nereikalauja, kad įvestumėte pradinį sąskaitos balansą. Norėdami jį nurodyti, galite tiesiog įvesti atitinkamą pradinę operaciją.</para>
+</sect2>
+
+<sect2 id="modify_account">
+<title
+>Keisti sąskaitą</title>
+<para
+>Norėdami keisti sąskaitą, pažymėkite ją, pakeiskite reikiamus atributus ir spauskite „Keisti“</para>
+</sect2>
+
+<sect2 id="delete_account">
+<title
+>Pašalinti paskyras</title>
+<para
+>Norėdami pašalinti sąskaitas, pažymėkite jas ir arba spauskite mygtuką <keycap
+>Delete</keycap
+>, arba naudokite kontekstinį meniu, arba ženkliuką įrankinėje.</para>
+<warning
+><para
+>Pašalinus sąskaitą bus pašalintos ir visos šiai sąskaitai priklausančios operacijos! (Jūs visada galite <link linkend="undo_redo"
+>atšaukti</link
+> pašalinimą)</para
+></warning>
+</sect2>
+
+</sect1>
+
+
+
+<sect1 id="operations">
+<title
+>Operacijos</title>
+<para
+>Operacija – tai bet koks veiksmas, atliekamas su sąskaita: išlaidos, pajamos, perkėlimas, pardavimas, pirkimas... Tikėtina, kad būtent čia praleisite daugiausia laiko naudodami &appname;</para>
+
+<para
+>Kad galėtumėte kurti operacijas, turite turėti bent vieną <link linkend="accounts"
+>sąskaitą</link
+>.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="operations.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Operacijų rodinys</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<sect2 id="operation_properties">
+<title
+>Operacijų savybės</title>
+
+<variablelist>
+<varlistentry>
+<term
+>Sąskaita</term>
+<listitem
+><para
+>Sąskaita, kurioje atliekama operacija. Parinkite ją iš esamų sąskaitų sąrašo.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Data</term>
+<listitem
+><para
+>Operacijos atlikimo data. Paspaudus dešinėje lauko esančią rodyklę žemyn bus parodytas kalendoriukas.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term id="quantity_field"
+>Suma</term>
+<listitem>
+<para
+>Operacijos metu išleistų arba uždirbtų pinigų suma. &appname; reikalauja, kad įvestumėte sumą dviejuose laukuose: kiekis ir vienetas.</para>
+<para
+>Kiekis bus neigiamas išlaidoms (pavyzdžiui -30) ir teigiamas pajamoms (+250 arba tiesiog 250). Šis laukas veikia kaip skaičiuotuvas, t.y. įvedus išraišką 10 + 3.23 * 2 lauko reikšmė pasikeis į rezultatą – 16.46.</para>
+<para
+>&appname; reikalauja, kad įvestumėte <link linkend="units"
+>vienetą</link
+>, nes operaciją nebūtinai atliekama pagrindine jūsų šalies valiuta. Pavyzdžiui perkant ar parduodant akcijas, operacijos vienetas bus akcijų valiuta.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Gavėjas</term>
+<listitem
+><para
+>Kam sumokėjote nurodytą sumą, arba kas jums davė šią sumą.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Režimas</term>
+<listitem>
+<para
+>Koks buvo šio mokėjimo režimas. Pavyzdžiui kreditinė kortelė, čekis, depozitas... Pasirinkite patys!</para>
+<para
+>Greta režimo lauko rasite ir neprivalomą numerio lauką. Jis dažniausiai naudojamas čekio arba pervedimo numerio įvedimui.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Kategorija</term>
+<listitem>
+<para
+>Kuriai <link linkend="categories"
+>kategorijai</link
+> priklauso ši operacija. Jei operaciją norite priskirti daugiau nei vienai kategorijai, naudokite <link linkend="split_operation"
+>suskaldymo</link
+> režimą.</para>
+<para
+>Galite parinkti jau esamą kategoriją arba įrašyti naują. Šiuo atveju &appname; kartu su operacija sukurs ir naują kategoriją.</para>
+<para
+>Skirtukas tarp tėvinės ir vaikinės kategorijos yra simbolis „&gt;“. Jei parašysite „Drabužiai &gt; Batai“, &appname; sukurs kategoriją „Drabužiai“ (jei jos dar nėra) ir vaikinę kategoriją „Batai“.</para>
+<para
+>Žinoma galite kurti kur kas sudėtingesnes kategorijų medžių versijas. Pavyzdžiui „Transportas &gt; Mašina &gt; Kuras &gt; Be švino“. &appname; sukurs visą reikiamą hierarchinę struktūrą.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Komentaras</term>
+<listitem
+><para
+>Bet koks komentaras.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Sekiklis</term>
+<listitem
+><para
+>Jei norite sekti operacijos išlaidų grąžinimą, čia įveskite <link linkend="trackers"
+>sekiklio</link
+> pavadinimą. Jei prie operacijos norite prijungti daugiau nei vieną sekiklį – naudokite <link linkend="split_operation"
+>suskaldymo</link
+> režimą.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+</sect2>
+
+<sect2 id="operations_list">
+<title
+>Operacijų sąrašas</title>
+<para
+>Sąskaitų sąrašas – lentelė, kurioje vienai sąskaitai skiriama viena eilutė. Kiekvienai sąskaitai &appname; gali rodyti aukščiau nurodytas <link linkend="account_properties"
+>savybes</link
+> ir šiuos laukus:</para>
+
+<variablelist>
+<varlistentry>
+<term
+>Būsena</term>
+<listitem
+><para
+>Ši varnelė nurodo, ar operacija buvo patvirtinta sąskaitos sutaikymo metu. Pilka varnelės būsena nurodo, kad sutaikymas vis dar vyksta.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Žymelė</term>
+<listitem
+><para
+>Šios operacijos įtraukimas į žymeles.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Suplanuota</term>
+<listitem
+><para
+>Jei operacija yra suplanuota, šiame stulpelyje rodomas chronometro ženkliukas.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Šie stulpeliai turi savo specifiką:</para>
+
+<variablelist>
+<varlistentry>
+<term
+>Režimas</term>
+<listitem
+><para
+>Kai operacija yra <link linkend="transfer"
+>perkėlimo</link
+>, režimo priekyje rodomas dvigubas rodyklės ženkliukas.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Kategorija</term>
+<listitem
+><para
+>Kai operacija <link linkend="split_operation"
+>suskaidyta</link
+>, kategorijos priekyje rodomas trigubos rodyklės ženkliukas.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Kaip ir kiekvieną kitą &appname; rodinį, jūs galite pilnai <link linkend="tables"
+>adaptuoti lentelės išvaizdą</link
+>.</para>
+
+</sect2>
+
+<sect2 id="standard_operation">
+<title
+>Sukurti operaciją</title>
+<para
+>Kad sukurtumėte standartinę operaciją, spauskite mygtuką <guibutton
+>Valyti</guibutton
+> to clear all fields and start a new operation from scratch. You can then fill its attributes (manually or using <link linkend="fast_edition"
+>fast edition</link
+>), and click on <guibutton
+>Add</guibutton
+>.</para>
+<para
+>Taipogi galite iš esamų operacijų pasirinkti panašią, pakeisti reikiamas detales ir spausti <guibutton
+>Pridėti</guibutton
+>.</para>
+</sect2>
+
+
+<sect2 id="split_operation">
+<title
+>Suskaldyta operacija</title>
+<para
+>Suskaldyta operacija turi daugiau nei vieną kategoriją, komentarą ar sekiklį. Jūs galite persijungti į suskaldytos operacijos įvedimo režimą paspaudę mygtuką <guibutton
+>Suskaldyta</guibutton
+>, esantį &appname; lango apačioje. Persijungus į suskaldytą režimą, kategorijos, komentaro ir sekiklio laukai pakeičiami lentele.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="split_operation.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Suskaldytos operacijos įvedimo skydas.</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Norėdami keisti šios lentelės lauką, du kartus spauskite ant jo pele.</para>
+
+<para
+>Šioje lentelėje galite pridėti kiek norite naujų eilučių. Pakeitus sumą eilutėje, &appname; paskaičiuos operacijos likutį ir jį parodys paskutinėje eilutėje. Jei pakeitėte paskutinės eilutės sumą, bus pridėta nauja paskutinė eilutė su paskaičiuotu likučiu.</para>
+
+<para
+>Čia esantys laukai turi tokias pačias reikšmes, kaip ir standartiniame režime:</para>
+
+<itemizedlist>
+<listitem
+><para
+>Kategorija – tai esamų kategorijų pasirinkimo sąrašas. Galite pridėti naują kategorijų struktūrą, &appname; automatiškai ją sukurs kuriant operaciją.</para
+></listitem>
+<listitem
+><para
+>Sumos laukas <link linkend="quantity_field"
+>veikia kaip skaičiuotuvas</link
+>.</para
+></listitem>
+<listitem
+><para
+>Sekiklis – tai esamų sekiklių pasirinkimo sąrašas. Galite pridėti naują sekiklį, &appname; automatiškai jį sukurs kuriant operaciją.</para
+></listitem>
+</itemizedlist>
+
+</sect2>
+
+
+<sect2 id="transfer">
+<title
+>Perkėlimas</title>
+<para
+>Perkėlimo operacija yra dviguba operacija: vykdant perkėlimą, &appname; sukurs dvi operacijas priešingose sąskaitose (vieną teigiamą, kitą – neigiamą). Čia nurodomi parametrai šiek tiek skiriasi nuo standartinių operacijų.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="transfer_operation.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Perkėlimo operacijos įvedimo skydas.</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Vietoje gavėjo lauko rasite sąrašą „Į sąskaitą“, kuriame nurodysite, į kurią sąskaitą pervedami pinigai.</para>
+
+<para
+>Kadangi perkėlimas reiškia „paimti pinigus iš sąskaitos A ir padėti juos į sąskaitą B“, bet koks nurodytas operacijos sumos ženklas (+ ar -) bus ignoruojamas. Sąskaitos A operacija visada bus neigiama, o sąskaitos B – teigiama.</para>
+
+<para
+>Šiuo metu po operacijų sukūrimo jų niekas nesieja: bet koks vienos iš operacijų pakeitimas visiškai neįtakos kitos operacijos.</para>
+
+</sect2>
+
+<sect2 id="shares">
+<title
+>Akcijos</title>
+<para
+>&tbw; (šis skyrius dar nesukurtas, jei suprantate akcijų veikimo principus – galite padėti!)</para>
+</sect2>
+
+<sect2 id="schedule_operation">
+<title
+>Planuoti operacijas</title>
+
+<para
+>Jei žinote, kad kažkokia operacija kartojama periodiškai, galite nurodyti &appname; kad ji būtų automatiškai įrašoma į operacijų sąrašą. Tai daroma planuojant operaciją mygtuko <guibutton
+>Planuoti<inlinemediaobject
+><imageobject
+><imagedata fileref="schedule_operation.png"/></imageobject
+></inlinemediaobject
+></guibutton
+> pagalba.</para>
+
+<para
+>Numatytieji planavimo parametrai yra:</para>
+<itemizedlist>
+<listitem
+><para
+>Kartoti kiekvieną mėnesį</para
+></listitem>
+<listitem
+><para
+>Priminti man 5 dienas iki termino</para
+></listitem>
+<listitem
+><para
+>Automatiškai įrašyti atėjus laikui</para
+></listitem>
+</itemizedlist>
+
+<para
+>Numatytuosius parametrus galite keisti &appname; nustatymuose.</para>
+<para
+>Kiekvienos suplanuotos operacijos parametrus taipogi galite keisti <link linkend="scheduled"
+>Planavimo priede</link
+>.</para>
+<para
+>&appname; naudoja paskutinės planuotos operacijos nustatymus kuriant naują planuotą operaciją. Pavyzdžiui jei padidinote savo mėnesinį įnašą į &kde; projektą nuo 100Lt iki 200Lt, kita automatiškai sukurta &appname; operacija turės sumą 200Lt.</para>
+
+</sect2>
+
+<sect2 id="fast_edition">
+<title
+>Greitas keitimas</title>
+
+<para
+>Nepriklausomai nuo parinkto keitimo režimo, galite naudoti patogią funkciją, vadinamą greitu keitimu, kuri gali pagreitinti darbą kuriant naujas operacijas. Ji užpildys operacijos atributus pagal anksčiau įvestas operacijas. Įveskite reikšmę bet kuriame redaktoriaus lauke ir spauskite <keycap
+>F10</keycap
+> arba <guibutton
+>Greito redagavimo ženkliuką<inlinemediaobject
+><imageobject
+><imagedata fileref="fast_edition.png" format="PNG"/></imageobject
+></inlinemediaobject
+></guibutton
+> (neišeinant iš pažymėto lauko).</para>
+
+<para
+>&appname; suras pirmą (t.y. pačią paskutinę) operaciją, kuri turi tokią pačią reikšmę tame pačiame lauke ir užpildys visus kitus laukus iš tos rastos operacijos. Vėl iškvieskite greitą redagavimą ir ji ras kitą operaciją ir t.t.</para>
+
+<warning>
+<para
+>Greitas redagavimas neįtakoja datos, nes labai maža tikimybė, kad norite sukurti visiškai tokią pačią operaciją, įskaitant ir datą...</para>
+<para
+>Jei pakeitėte lauko reikšmę prieš kviesdami greitą redagavimą, jo reikšmė nebus pakeista. Tai rodoma maža snaige<inlinemediaobject
+><imageobject
+><imagedata fileref="frozen.png" format="PNG"/></imageobject
+></inlinemediaobject
+> rodoma lauke, taigi jūs žinote, kad laukas „užšaldytas“.</para>
+</warning>
+
+<para
+>Kuo tai skiriasi nuo kitose finansinėse programose esamo panašaus funkcionalumo:</para>
+<itemizedlist>
+<listitem
+><para
+>Iškviečiama naudotojui nurodžius</para
+></listitem>
+<listitem
+><para
+>Tikrinamos visos ankstesnės operacijos, turinčios tokią pačią reikšmę</para
+></listitem>
+</itemizedlist>
+
+<para
+>Veika net suskaidytose operacijose!</para>
+</sect2>
+
+<sect2 id="reconciliation">
+<title
+>Sutaikymas</title>
+<para
+>Sutaikymas tai procesas, kurio metu jūs užtikrinate, kad visos operacijos atitinka jūsų banko informaciją. Tam reikės jūsų, jūsų sąskaitos duomenų ir rašiklio. Sutaikyti galima tik vieną sąskaitą vienu metu.</para>
+<para
+>Operacijų rodinyje iškrentančiame sąraše parinkite sąskaitą, kurią norite sutaikyti. Persijunkite į sutaikymo režimą naudodami mygtuką <guibutton
+>Perjungti informaciją <inlinemediaobject
+><imageobject
+><imagedata fileref="switch_information.png" format="PNG"/></imageobject
+></inlinemediaobject
+></guibutton
+>, kurį rasite po operacijų lentele.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="reconciliation_information.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Sutaikymo režimo informacija.</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Įveskite savo sąskaitos būseną, tokią, kokia nurodyta atitinkamame jūsų banko pateiktos informacijos lauke. Dabar galite tęsti žymėti kiekvieną operaciją, kuri pateikta sąskaitos žiniaraštyje. Patvirtinimo varnelė trumpam taps pilka, kol jūs pilnai patvirtinsite sutaikymą.</para>
+
+<para
+>Tikrinant operacijas matysite, kad &appname; informacijos zonoje rodo:</para>
+<itemizedlist>
+<listitem
+><para
+>Delta: skirtumas tarp anksčiau įvesto sąskaitos likučio ir patvirtintų operacijų sumos.</para
+></listitem>
+<listitem
+><para
+>Išlaidos: galutinė išlaidų suma</para
+></listitem>
+<listitem
+><para
+>Pajamos: galutinė pajamų suma</para
+></listitem>
+</itemizedlist>
+
+<para
+>Tai gali būti naudinga bandant rasti operacijas, kurias jūs pamiršote įvesti į &appname;. Patvirtinus visas susijusias operacijas, Delta bus lygi 0, o mygtukas <guibutton
+>Patvirtinti pažymėtas operacijas<inlinemediaobject
+><imageobject
+><imagedata fileref="validate.png" format="PNG"/></imageobject
+></inlinemediaobject
+></guibutton
+> bus aktyvuotas. Spauskite šį mygtuką, kad patvirtintumėte sutaikymą: visos operacijos dabar patikrintos.</para>
+
+<para
+>Jei parinktis <guibutton
+>Slėpti patvirtintas operacijas</guibutton
+> įjungta, visos šios operacijos nuo šiol bus paslėptos.</para>
+
+</sect2>
+
+<sect2 id="templates">
+<title
+>Šabloninės operacijos</title>
+<para
+>&appname; leidžia kurti šablonines operacijas, pavyzdžiui operacijas, kurias galima prireikus panaudoti iš naujo. Pavyzdžiui pagalvokite apie DVD nuomą. Operacija visada tokia pati:</para>
+
+<itemizedlist>
+<listitem
+><para
+>Suma: -20</para
+></listitem>
+<listitem
+><para
+>Režimas: Kreditinė kortelė</para
+></listitem>
+<listitem
+><para
+>Gavėjas: Acme Video</para
+></listitem>
+<listitem
+><para
+>Kategorija: Laisvalaikis 
+> Video</para
+></listitem>
+</itemizedlist>
+
+<para
+>Bet jūs negalite sukurti tokios pasikartojančios operacijos, kadangi DVD nuomojate tada, kai norite, o ne pavyzdžiui kiekvieną savaitę. Šablonų mintis yra leisti jums sukurti operacijų skeletą, kurį galėtumėte greiti įtraukti į operacijų sąrašą.</para>
+
+<para
+>Kadangi operacijų šablonai yra tos pačios operacijos, juos rasti galite operacijų kortelėje, naudodami mygtuką, esantį virš redagavimo skydelio:</para>
+
+<screenshot>
+<mediaobject>
+<imageobject
+><imagedata fileref="template_button.png" format="PNG"/></imageobject>
+<textobject
+><phrase
+>Persijungimas tarp šablonų ir operacijų.</phrase
+></textobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Šablono kūrimas yra lygiai toks pat, kaip ir operacijos kūrimas – atributų nurodymas. Pastebėtina, kad šabloną galite sukurti ir iš esamos operacijos (peržiūrėkite operacijų kontekstinį meniu). Tokiu atveju šablonas turės tokius pačius atributus, kaip ir operacija.</para>
+
+<para
+>Norėdami panaudoti šabloną – sukurti iš jo operaciją – spustelėkite du kartus pele. Bus sukurta nauja operacija, turinti tokius pačius atributus kaip ir šablonas bei šiandienos data. Tada galite pakeisti atributų reikšmes.</para>
+
+<para
+>Šablonus taipogi galima <link linkend="scheduled"
+>planuoti.</link
+></para>
+
+</sect2>
+
+</sect1>
+
+<sect1 id="scheduled">
+<title
+>Suplanuota</title>
+<para
+>Šis priedas rodo jums visas suplanuotas operacijas.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="scheduled.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Čia galite kurti suplanuotas operacijas ir nustatyti jų parametrus.</para>
+
+<variablelist>
+<varlistentry>
+<term
+>Kitas pasikartojimas</term>
+<listitem
+><para
+>Skirta tik rodymui, bet galima panaudoti ir kito pasikartojimo datos rankiniam nustatymui.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Vieną kartą kas</term>
+<listitem
+><para
+>Galite nurodyti, kad operaciją reikia kartoti kas nurodytą skaičių dienų, mėnesių ar metų.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Pasikartojimų skaičius</term>
+<listitem
+><para
+>Jei operaciją reikia kartoti ribotą kartų skaičių, galite įjungti šią parinktį ir arba nurodyti likusių kartojimų skaičių, arba paskutinio pakartojimo datą.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Priminti man</term>
+<listitem
+><para
+>Jei norite, kad &appname; parodytų priminimą apie artėjančią suplanuotą operaciją, įjunkite šią parinktį ir nurodykite, prieš kiek dienų reikia rodyti įspėjimą.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Automatiškai rašyti</term>
+<listitem
+><para
+>Jei norite, kad &appname; automatiškai įrašytų suplanuotą artėjančią operaciją, įjunkite šią parinktį ir nurodykite, kiek dienų prieš operacijos datą ji turi būti įrašyta.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Du kartus paspaudus ant suplanuotos operacijos, naujoje kortelėje bus rodomas jau užregistruotų šios suplanuotos operacijos įrašų sąrašas.</para>
+
+<sect2 id="scheduled_operations">
+<title
+>Suplanuotos operacijos</title>
+
+<para
+>Jei suplanuojate operaciją, ji bus naudojama kaip etalonas, įterpiant kitą pasikartojimą. Pažiūrėkime, kaip tai veikia, pasinaudoję šios operacijos pavyzdžiu:</para>
+
+<table>
+<title
+></title>
+<tgroup cols="4">
+<thead>
+<row>
+<entry
+>Data</entry>
+<entry
+>Gavėjas</entry>
+<entry
+>Kategorija</entry>
+<entry
+>Suma</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry
+>2009-06-20</entry>
+<entry
+>&kde;</entry>
+<entry
+>Parama &gt; Atviras kodas</entry>
+<entry
+>20Lt</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+
+<para
+>Jei suplanuosite šią operaciją, sekantis įrašytas jos pasikartojimas bus lygiai toks pat:</para>
+
+<table>
+<title
+></title>
+<tgroup cols="4">
+<thead>
+<row>
+<entry
+>Data</entry>
+<entry
+>Gavėjas</entry>
+<entry
+>Kategorija</entry>
+<entry
+>Suma</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry
+>2009-06-20</entry>
+<entry
+>&kde;</entry>
+<entry
+>Parama &gt; Atviras kodas</entry>
+<entry
+>20Lt</entry>
+</row>
+<row>
+<entry
+>2009-07-20</entry>
+<entry
+>&kde;</entry>
+<entry
+>Parama &gt; Atviras kodas</entry>
+<entry
+>20Lt</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+
+<para
+>Jei paskutiniame pasikartojime ką nors pakeitėte, tai bus naujas etalonas kuriant kitą pakartojimą. Pavyzdžiui, jei padidinote mėnesinę paramą &kde; iki 25Lt liepą, tai kito pasikartojimo suma irgi bus 25Lt:</para>
+
+<table>
+<title
+></title>
+<tgroup cols="4">
+<thead>
+<row>
+<entry
+>Data</entry>
+<entry
+>Gavėjas</entry>
+<entry
+>Kategorija</entry>
+<entry
+>Suma</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry
+>2009-06-20</entry>
+<entry
+>&kde;</entry>
+<entry
+>Parama &gt; Atviras kodas</entry>
+<entry
+>20Lt</entry>
+</row>
+<row>
+<entry
+>2009-07-20</entry>
+<entry
+>&kde;</entry>
+<entry
+>Parama &gt; Atviras kodas</entry>
+<entry
+>25Lt</entry>
+</row>
+<row>
+<entry
+>2009-08-20</entry>
+<entry
+>&kde;</entry>
+<entry
+>Parama &gt; Atviras kodas</entry>
+<entry
+>25Lt</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+
+<para
+>Taigi suplanuota operacija yra dinaminis objektas, kurio paskutinis pasikartojimas yra etalonas. Bet gal jūs norite, kad visi pasikartojimai būtų nekintantys? Pavyzdžiui kad kiekviename pasikartojime būtų įvesta ta pati suma? Įveskite <link linkend="scheduled_templates"
+>suplanuotus šablonus</link
+>.</para>
+
+</sect2>
+
+
+<sect2 id="scheduled_templates">
+<title
+>Suplanuoti šablonai</title>
+
+<para
+><link linkend="templates"
+>Šablonai</link
+> – tai kažkas panašaus į etalonines operacijas. Suplanuojant šabloną, kiekvienas pasikartojimas bus lygiai toks pat, kaip ir šablonas. Dar kartą panaudokime mūsų <link linkend="schedule_operation"
+>ankstesnio skyriaus</link
+> pavyzdį, sukurdami tokį šabloną:</para>
+
+<table>
+<title
+></title>
+<tgroup cols="4">
+<thead>
+<row>
+<entry
+>Data</entry>
+<entry
+>Gavėjas</entry>
+<entry
+>Kategorija</entry>
+<entry
+>Suma</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry
+>2009-06-20</entry>
+<entry
+>&kde;</entry>
+<entry
+>Parama &gt; Atviras kodas</entry>
+<entry
+>20Lt</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+
+<para
+>Kitas pakartojimas bus toks:</para>
+
+
+<table>
+<title
+></title>
+<tgroup cols="4">
+<thead>
+<row>
+<entry
+>Data</entry>
+<entry
+>Gavėjas</entry>
+<entry
+>Kategorija</entry>
+<entry
+>Suma</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry
+>2009-06-20</entry>
+<entry
+>&kde;</entry>
+<entry
+>Parama &gt; Atviras kodas</entry>
+<entry
+>20Lt</entry>
+</row>
+<row>
+<entry
+>2009-07-20</entry>
+<entry
+>&kde;</entry>
+<entry
+>Parama &gt; Atviras kodas</entry>
+<entry
+>20Lt</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+
+<para
+>Dabar pakeiskite jūsų Liepos &kde; paramą į 25Lt. Kadangi suplanavote šabloną su 20Lt, tai kito pasikartojimo suma bus 20Lt:</para>
+
+<table>
+<title
+></title>
+<tgroup cols="4">
+<thead>
+<row>
+<entry
+>Data</entry>
+<entry
+>Gavėjas</entry>
+<entry
+>Kategorija</entry>
+<entry
+>Suma</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry
+>2009-06-20</entry>
+<entry
+>&kde;</entry>
+<entry
+>Parama &gt; Atviras kodas</entry>
+<entry
+>20Lt</entry>
+</row>
+<row>
+<entry
+>2009-07-20</entry>
+<entry
+>&kde;</entry>
+<entry
+>Parama &gt; Atviras kodas</entry>
+<entry
+>25Lt</entry>
+</row>
+<row>
+<entry
+>2009-08-20</entry>
+<entry
+>&kde;</entry>
+<entry
+>Parama &gt; Atviras kodas</entry>
+<entry
+>20Lt</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+
+<para
+>Jei norite pakeisti mėnesinę reikšmę, tiesiog pakeiskite šabloną ir tada visi ateities pasikartojimai bus kuriami su nauja reikšme.</para>
+</sect2>
+
+</sect1>
+
+
+<sect1 id="trackers">
+<title
+>Sekikliai</title>
+<para
+>Sekikliai leidžia kaupti kelių operacijų rezultatus vienoje grupėje, kad galėtumėte juos akyliau stebėti. Tai ypač patogu stebint išlaidas, už kurias tikitės kompensacijos arba jei tiesiog norite stebėti, kiek išleidote paskutinių atostogų Pietų Afrikoje metu.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="trackers.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Pavyzdžiui įsivaizduokite, kad jūsų įmonė išsiuntė jus į Italiją. Nuvykę jūs sumokėjote už viešbučio kambarį: naudodami &appname; jūs galite sukurti operaciją kategorijoje „Verslas &gt; Kelionės &gt; Viešbutis“ ir priskirti jai sekiklį „Verslo kelionė Italijoje“. Šį sekiklį galite priskirti visoms su verslu susijusioms išlaidoms tos kelionės metu. Tada, jei viskas vyksta tvarkingai, jūsų įmonė padengs visas jūsų išlaidas. Taigi jūs sukursite pajamų operaciją, kurią irgi priskirsite sekikliui „Verslo kelionė Italijoje“.</para>
+<para
+>Priskirdami sekiklį operacijoms, kurios turėtų būti padengiamos, galite sekti padengimo užbaigimą.</para>
+<para
+>Tai taipogi veikia ir į kitą pusę: jei kažkas jums paskolino pinigų, jūs galite sekti, kiek jų dar turite grąžinti.</para>
+<para
+>Du kartus paspaudę ant sekiklio sekiklių rodinyje atversite naują kortelę su visomis operacijomis, priklausančiomis tam sekikliui.</para>
+
+<sect2 id="close_tracker">
+<title
+>Uždaryti sekiklį</title>
+
+<para
+>Kai sekiklis daugiau nebereikalingas, pavyzdžiui pilnai padengus išlaidas, galite tiesiog jį ištrinti. Bet, taip padarius, jūs prarasite visą įvestą informaciją, kurios gali prisireikti ateityje.</para>
+<para
+>Švaresnis sprendimas būtų uždaryti sekiklį: uždarius sekiklį, jį paprasta paslėpti sekiklių rodinyje, panaudojus atitinkamą parinktį.</para>
+</sect2>
+
+</sect1>
+
+
+<sect1 id="categories">
+<title
+>Kategorijos</title>
+<para
+>Kategorijų rodinyje galite naršyti po kategorijų medį.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="categories.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Greta kategorijų pavadinimų ši lentelė rodo: </para>
+
+<variablelist>
+<varlistentry>
+<term
+>Suma</term>
+<listitem
+><para
+>Visų kategorijos operacijų sumą:</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Operacijų skaičius</term>
+<listitem
+><para
+>Kategorijos operacijų skaičius.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Suma (bendra)</term>
+<listitem
+><para
+>Visų operacijų kategorijoje suma, įskaitant ir vaikines kategorijas (iki pat žemiausio lygmens).</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Operacijų skaičius (suminis)</term>
+<listitem
+><para
+>Kategorijos ir jos vaikinių kategorijų (iki pat pirmo lygmens) suminis operacijų skaičius.</para
+></listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Du kartus paspaudus ant eilutės šioje lentelėje, bus atverta nauja kortelė su visomis tos kategorijos operacijomis.</para>
+
+<warning
+><para
+>Ištrynus kategoriją, visose jos operacijose bus panaikinta kategorijos lauko reikšmė, t.y. visos tokios operacijos bus be kategorijos.</para
+></warning>
+
+</sect1>
+
+
+<sect1 id="reports">
+<title
+>Ataskaitos</title>
+<para
+>&appname; leidžia kurti adaptuotas ataskaitas, kurių pagalba galite analizuoti savo finansinę būseną.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="reports.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Ataskaita sudaryta iš lentelės (matoma kairėje pusėje), kurioje yra visi duomenys, naudojami diagramos paišymui (dešinėje). Duomenis lentelėje galima filtruoti, naudojant aukščiau esantį, lauką. Pasikeitus duomenims lentelėje diagrama bus perpaišoma.</para>
+
+<para
+>Galite pasirinkti, ar rodyti tik lentelę, tik diagramą ar abi.</para>
+
+
+<sect2 id="setup_report">
+<title
+>Ataskaitos nustatymai</title>
+
+<sect3 id="report_representation">
+<title
+>Vaizdavimas</title>
+<variablelist>
+<varlistentry>
+<term
+>Tik lentelė</term>
+<listitem
+><para
+>Rodyti tik lentelę paslepiant diagramą.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Tik diagrama</term>
+<listitem
+><para
+>Rodyti tik diagramą, o lentelę paslėpti.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Abi</term>
+<listitem
+><para
+>Rodyti ir lentelę ir diagramą.</para
+></listitem>
+</varlistentry>
+</variablelist>
+</sect3>
+
+<sect3 id="report_data">
+<title
+>Duomenys</title>
+<para
+>Čia pasirenkate duomenis, kuriuos norite pateikti ataskaitoje. Pasirinkite, kas bus rodoma eilutėse, stulpeliuose ir skaičiavimo režimą. Režimas gali būti vienas iš dviejų:</para>
+<variablelist>
+<varlistentry>
+<term
+>Suma</term>
+<listitem>
+<para
+>Šiame režime bus rodoma kiekvieno mėnesio operacijų suma. Jei eilutėje pasirinkote „kategorija“, o stulpelyje „mėnuo“, tai bus skaičiuojama operacijų suma kiekvienoje kategorijoje kiekvieną mėnesį.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Istorija</term>
+<listitem>
+<para
+>Jei panaudosime ankstesnį pavyzdį („kategorija“ eilutėje ir „mėnuo“ stulpelyje), turėsime kumuliatyvią sumą kiekvienam mėnesiui, suskaičiuosime galutinę operacijų sumą šiam mėnesiui kiekvienoje kategorijoje.</para>
+<para
+>Pavyzdžiui autorius naudoja šį režima savo sąskaitų balanso stebėjimui nustačius linijoms „sąskaitas“, o stulpeliams „mėnesį“.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+<para
+>Eilutėms ir stulpeliams galima naudoti vaizduojamų duomenų gilesnius lygius, naudojant  <guibutton
+>pliuso</guibutton
+> ženkliuką <inlinemediaobject
+><imageobject
+><imagedata fileref="plus.png"/></imageobject
+></inlinemediaobject
+>, esantį lauko dešinėje. Galite tai naudoti, jei norite ataskaitoje vaizduoti subkategorijas.</para>
+</sect3>
+
+<sect3 id="report_dates">
+<title
+>Datos</title>
+<para
+>Tai naudojama ataskaitos datų periodo nurodymui. Laiko periodą galite nurodyti keliais būdais, kurie turėtų užtikrinti beveik bet kokio periodo pasirinkimą.</para>
+</sect3>
+
+<sect3 id="report_operation_types">
+<title
+>Operacijų tipai</title>
+<para
+>Parinkite, kurių tipų operacijas norite įtraukti į ataskaitą. Pavyzdžiui jei norite nupaišyti diagramą, rodančią jūsų išlaidų pasiskirstymą per kategorijas, jūs tikriausiai nenorite į ataskaitą įtraukti „išlaidų“.</para>
+</sect3>
+
+</sect2>
+
+<sect2 id="graph_types">
+<title
+>Diagramų tipai</title>
+
+<para
+>Nurodžius jums reikiamus nustatymus belieka tik pasirinkti diagramos išvaizdą, naudojant iškrentantį sąrašą po diagrama. Kad geriau suprastumėte skirtingų tipų skirtumus, sukurkime ataskaitą, rodančią išlaidas kategorijose (eilutėse) ir mėnesiuose (stulpeliuose):</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="report_table.png"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+<sect3 id="stack">
+<title
+>Krūva</title>
+<para
+>Viena juostelė per eilutę, stulpeliai sukrauti vienas ant kito.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="stack.png"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Antra juostelė (gelsva) rodo kategoriją „Saugumas“, visi mėnesiai sukrauti vienas ant kito.</para>
+
+</sect3>
+
+<sect3 id="histogram">
+<title
+>Histograma</title>
+<para
+>Kiekvienam stulpeliui eilutė turi savo juostelę.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="histogram.png"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+</sect3>
+
+
+<sect3 id="line">
+<title
+>Linija</title>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="line_graph.png"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</sect3>
+
+<sect3 id="point">
+<title
+>Taškas</title>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="point_report.png"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</sect3>
+
+
+<sect3 id="pie">
+<title
+>Pyragas</title>
+<para
+>Klasikinė pyrago diagrama. Jei stulpeliui parinkta reikšmė nėra „niekas“, rodoma po pyragą kiekvienąm stulpeliui.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="pie.png"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+
+</sect3>
+
+<sect3 id="concentric_pie">
+<title
+>Koncentrinis pyragas</title>
+<para
+>Šis yra gan painus ir tikriausiai mums jį reikėtų kiek perdaryti. Tikslas yra rodyti kiekvienam duomenų lygiui po vieną pyrago žiedą.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="concentric_pie.png"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+</sect3>
+
+</sect2>
+
+
+<sect2 id="zoom_graph">
+<title
+>Diagramos mastelis</title>
+<para
+>&appname; leidžia keisti diagramos mastelį, kad būtų galima peržiūrėti visas smulkias detales. Naudokite mastelio valdymo zoną virš diagramos:</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="zoom_graph.png"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+
+</sect2>
+
+<sect2 id="report_examples">
+<title
+>Ataskaitų pavyzdžiai</title>
+<para
+>Žemiau pateikiami kai kurių klasikinių ataskaitų nustatymų pavyzdžiai. Galite juos panaudoti kurdami savo ataskaitas.</para>
+
+<sect3 id="income_expense">
+<title
+>Pajamos ir išlaidos</title>
+<para
+>Palyginkite kiekvieno mėnesio pajamas ir išlaidas. Pajamos – mėlynos, išlaidos – geltonos.</para>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="incomes_expenses.png"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</sect3>
+
+<sect3 id="balance_evolution">
+<title
+>Balanso vystymasis</title>
+<para
+>Rodyti galutinio balanso vystymąsi kas mėnesį.</para>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="balance_evolution.png"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</sect3>
+
+<sect3 id="category_distribution">
+<title
+>Pajamos ir išlaidos</title>
+<para
+>Rodyti paskutinio mėnesio išlaidų pasidalinimą kategorijose.</para>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="category_distribution.png"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</sect3>
+
+
+</sect2>
+
+<sect2 id="going_deeper">
+<title
+>Žvilgsnis giliau</title>
+<para
+>Taigi jūs žinote, kad galite smulkiai nagrinėti savo finansus naudodami ataskaitas. Bet kiek smulkiai? Na, netgi smulkiau nei jūs įsivaizdavote... Jei jums įdomu, paskaitykite <link linkend="holidays_expenses_analysis"
+>praktinį pavyzdį</link
+>, kuriame analizuojamos vieno iš programų autoriaus išlaidos atostogų metu :)</para>
+</sect2>
+
+
+</sect1>
+
+
+<sect1 id="monthly_report">
+<title
+>Mėnesinė ataskaita</title>
+
+<para
+>Šis priedas rodo pasirinkto mėnesio jūsų finansinės padėties apžvalgą.</para>
+
+<!-- Sub par compared to the quality of other plugins and functionality partly covered by dashboard... Shall we deprecate it and extend dashboard instead ?-->
+
+</sect1>
+
+<sect1 id="units">
+<title
+>Vienetai</title>
+<para
+>Vienetas – bet kas, kuo galite išreikšti operaciją. Dažniausiai tai valiuta, bet tai taipogi gali būti akcijos ar net mašina ar namas. Vienetas turi per laiką kintančias reikšmes, reikšmes lyginant su kitu vienetu. Pavyzdžiui: ACME akcijos 2009 sausį yra vertos 31.2$.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="units.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+<sect2 id="edit_units">
+<title
+>Vienetų keitimas</title>
+<para
+>Vienetus keisti galima keliais skirtingais būdais:</para>
+<variablelist>
+<varlistentry>
+<term
+>Standartinis</term>
+<listitem
+><para
+>Šis režimas leidžia rinktis iš kelių iš anksto numatytų vienetų ir juos pridėti į dabartinį dokumentą.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Rankinis</term>
+<listitem
+><para
+>Šis režimas leidžia susikurti savo vienetą. Pateikiami parametrai:</para>
+  <itemizedlist>
+  <listitem
+><para
+>Pavadinimas: suprantamas vieneto pavadinimas.</para
+></listitem>
+  <listitem
+><para
+>Simbolis: vieneto simbolis, rodomas daugumoje lentelių ir iškrentančių sąrašų.</para
+></listitem>
+  <listitem
+><para
+>Tipas: daugiau informacijos skyriuje <link linkend="unit_types"
+>vienetų tipai</link
+>.</para
+></listitem>
+  <listitem
+><para
+>Etaloninis vienetas: (kitas) vienetas, kurio pagalba skaičiuojama (dabartinio) vieneto vertė. Pavyzdžiui jei turite EADS akcijų ir norite matyti jų vertę eurais, turėtumėte pasirinkti € kaip etaloninį EADS vienetą.</para
+></listitem>
+  <listitem
+><para
+>Šalis</para
+></listitem>
+  <listitem
+><para
+>Interneto kodas: šio vieneto yahoo interneto kodas. Jei nurodomas šis kodas, &appname; gali automatiškai atsiųsti iš yahoo šio vieneto reikšmes.</para
+></listitem>
+</itemizedlist>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Reikšmės</term>
+<listitem
+><para
+>Šis keitimo režimas leidžia atsisiųsti vieneto vertes iš interneto arba įvesti jas rankiniu būdu nurodytai datai.</para
+></listitem>
+</varlistentry>
+</variablelist>
+</sect2>
+
+<sect2 id="unit_types">
+<title
+>Vienetų tipai</title>
+<para
+>Net jei &appname; viską supranta kaip vienetus, visgi ji skiria jų tipus:</para>
+
+<variablelist>
+<varlistentry>
+<term
+>Pirminė valiuta</term>
+<listitem
+><para
+>Tai valiuta, kuri bus naudojama rodant realias operacijų sumas.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Antrinė valiuta</term>
+<listitem
+><para
+>Jei nurodyta, suma įvertinta antrine valiuta bus rodoma užvedus pelės žymeklį virš sumos.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="secondary_unit_display.png"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Valiuta</term>
+<listitem
+><para
+>Bet kokia valiuta, be jokios specifinės rodymo paskirties.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Akcija</term>
+<listitem
+><para
+>Šio tipo vienetai gali būti naudojami tvarkant akcijas.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Indeksas</term>
+<listitem
+><para
+>Akcijų biržos indeksas, toks kaip OMX Baltic Benchmark, Dow Jones, Nasdaq, CAC40, SBF120...</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+>Kita</term>
+<listitem
+><para
+>Bet koks vienetas, kuris neatitinka nei vieno aukščiau pateikto aprašymo.</para
+></listitem>
+</varlistentry>
+
+</variablelist>
+
+</sect2>
+
+</sect1>
+
+
+<sect1 id="search_and_process">
+<title
+>Ieškoti ir apdoroti</title>
+
+<para
+>Šio priedo pagalba galite kurti sudėtingas operacijų paieškos užklausas ir, jei norite, keisti rastų operacijų duomenis. Štai pavyzdys:</para>
+
+<blockquote
+><para
+>Kęstutis atsisiunčia duomenis iš savo banko. Visi duomenys, žinoma, gaunami be kategorijų. Beje viskas įrašyta komentarų lauke. Kęstutis norėtų kaip nors automatiškai nurodyti kategoriją ir kitus atributus, priklausomai nuo komentaro turinio.</para
+></blockquote>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="search_and_process.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Tai kaip tai veikia? Visų pirma nurodysite paieškos kriterijus, kurie atrinks reikiamas operacijas. Tada nurodykite pakeitimus, kuriuose reikia atlikti su operacijomis.</para>
+
+<note
+><para
+>Priede galima rasti <link linkend="search_process_real_case"
+>praktinį pavyzdį</link
+>, kuriame pateikiamas aukščiau pateikto pavyzdžio įgyvendinimo pratimas.</para
+></note>
+
+<sect2 id="define_search_criteria">
+<title
+>Nurodykite paieškos kriterijus</title>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="define_search.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Čia, naudodami parametrų kombinaciją, galite nurodyti operacijų paieškos užklausą. Aukščiau pateiktame piešinyje rasite lentelę su operacijų atributais. Keisdami eilutę jūs sukuriate naują užklausos kriterijų. Kiekvienas stulpelis jungiamas su kitais naudojant loginį „ir“:</para>
+<para
+>(stulpelis1 ir stulpelis2)</para>
+<para
+>Jei pridedate naują eilutę, jūs sukuriate kitą sąlygą, kuri jungiama su pirma eilute naudojant loginį „arba“:</para>
+<para
+>[eilutė1] arba [eilutė2]</para>
+
+<para
+>Galų gale stulpelių ir eilučių kombinaciją galima skaityti taip:</para>
+<para
+>(stulpelis1 ir stulpelis3) arba (stulpelis2 ir stulpelis3)</para>
+
+<para
+>Žinoma į užklausą galite įrašyti tiek eilučių ir stulpelių, kiek tik jums reikia.</para>
+
+<para
+>Kai būsite patenkinti užklausa, galite pridėti ją į esamų paieškos kriterijų sąrašą. Taipogi galite pakeisti sąraše jau esantį kriterijų.</para>
+
+</sect2>
+
+
+<sect2 id="view_search_result">
+<title
+>Peržiūrėti paieškos rezultatus</title>
+
+<para
+>Užklausų rodinyje pasirenkant paieškos užklausą, po lentele bus rodomas rastų operacijų skaičius:</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="preview_search_result.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+
+<para
+>Du kartus paspaudus ant paieškos užklausos, naujoje kortelėje bus rodomos visos rastos operacijos:</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="search_result.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+</sect2>
+
+
+<sect2 id="define_processing">
+<title
+>Apibrėžti keitimą</title>
+
+<para
+>Jei norite kaip nors keisti rastas operacijas, pažymėkite reikiamą užklausą ir aktyvuokite pakeitimo nurodymo skydelį:</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="define_processing.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Šiame skydelyje galite nurodyti operacijų keitimus. Pastebėtina, kad specialiai padaryta taip, kad šio skydelio pagalba negalima būtų keisti operacijos sumos ar datos.</para>
+
+</sect2>
+
+
+<sect2 id="define_alarm">
+<title
+>Apibrėžti įspėjimą</title>
+<para
+>Ypatinga paieškos ir keitimo priedo savybė yra galimybė kurti įspėjimus. Įspėjimas – tai jūsų dėmesio atkreipimas į kokį nors įvykį, tokį kaip jūsų mėnesinio biudžeto konkrečiai kategorijai išnaudojimas.</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="alarm.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Norėdami sukurti įspėjimą, sukurkite paieškos kriterijų, taip apibrėždami aibę operacijų, apie kurias norėtumėte įspėti. Pavyzdžiui visos šio mėnesio operacijos kategorijoje „drabužiai“. Tada nurodykite sumą, kuriai turi būti kuriamas įspėjimas, pavyzdžiui 100Lt ir nurodykite įspėjimo pranešimą, kurį &appname; jums parodys pasiekus nurodytą sumą.</para>
+
+</sect2>
+
+</sect1>
+
+
+</chapter>
+
+<chapter id="credits">
+<title
+>Padėkos ir licencija</title>
+<para
+>&appname; </para>
+<para
+>Programos autorinės teisės 2001-2009 Stéphane Mankowski <email
+>stephane@miraks.com</email
+> </para>
+<para
+>Dokumentacijos autorinės teisės 2001-2009 Guillaume DE BURE <email
+>gdebure@yahoo.com</email
+> </para>
+<para
+>Tomas Straupis<email
+>tomasstraupis@gmail.com</email
+></para
+> 
+&underFDL; &underGPL; </chapter>
+
+<appendix id="installation">
+<title
+>Diegimas</title>
+
+<sect1 id="getting-skrooge">
+<title
+>Iš kur gauti &appname;</title>
+
+<para
+>&appname; svetainę rasite adresu <ulink url="&homepage;"
+>&homepage;</ulink
+>. Ten rasite atnaujinimus ir naujienas. </para>
+</sect1>
+
+<sect1 id="requirements">
+<title
+>Reikalavimai</title>
+
+<para
+>Norint sėkmingai naudoti &appname;, turite turėti &kde; 4, qt-sqlite3, libofx ir qca. </para>
+
+</sect1>
+
+<sect1 id="Installation">
+<title
+>&appname; diegimas</title>
+
+<para
+>Rekomenduojama diegti &appname; naudojant jūsų distribucijos paketų sistemą. Jei dėl koki nors priežasčių norite patys kompiliuotis &appname;, šiame skyriuje rasite visų reikiamų žingsnių aprašymą. </para>
+
+<sect2 id="prerequisites">
+<title
+>Reikalavimai</title>
+<para
+>&appname; naudoja keletą komponentų, kuriuos turite įdiegti prieš bandydami kompiliuoti.</para>
+<itemizedlist>
+<listitem
+><para
+>sqlite3: nedidelė SQL duomenų bazė. &appname; failai yra sqlite duomenų bazės.</para
+></listitem>
+<listitem
+><para
+>libofx: OFX failų formato tvarkymo biblioteka. OFX yra standartinis finansinės informacijos apsikeitimo &XML; formatas.</para
+></listitem>
+<listitem
+><para
+>qca: &Qt; Cryptographic Architecture. Naudojama slaptažodžių apsaugai.</para
+></listitem>
+</itemizedlist>
+</sect2>
+
+<sect2 id="compilation">
+<title
+>Kompiliavimas ir diegimas</title>
+
+<para
+>Norėdami sukompiliuoti &appname; ir įdiegti savo sistemoje, parašykite šią komandą pagrindiniame archyvo aplanke, kur trečias žingsnis turės bus padarytas root naudotojo teisėmis, jei diegsite į sisteminį aplanką: <screen width="40"
+><prompt
+>$</prompt
+> <userinput
+>cmake . <option
+>-DCMAKE_INSTALL_PREFIX=`kde4-config --prefix`</option
+></userinput>
+<prompt
+>$</prompt
+> <userinput
+>make</userinput>
+<prompt
+>$</prompt
+> <userinput
+>make install</userinput
+>
+</screen>
+</para>
+<para
+>Kadangi &appname; naudoja <command
+>cmake</command
+>, jums neturėtų kilti problemų kompiliuojant. Jei visgi kils problemų – praneškite apie jas autoriams.</para>
+</sect2>
+
+</sect1>
+
+</appendix>
+
+
+<appendix id="search_process_real_case">
+<title
+>Paieškos ir pakeitimo praktinis uždavinys</title>
+
+<para
+>Gerai, mes turime pripažinti, kad <link linkend="search_and_process"
+>paieškos ir pakeitimų</link
+> priedas yra galingas, bet jį gan sunku suprasti. Todėl čia pateikiamas nedidelis pratimas, kuris padės jums jį suprasti. Prisimenate praktinę paieškos ir pakeitimo užduotį?</para>
+
+<blockquote
+><para
+>Kęstutis atsisiunčia duomenis iš savo banko. Visi duomenys, žinoma, gaunami be kategorijų. Beje viskas įrašyta komentarų lauke. Kęstutis norėtų kaip nors automatiškai nurodyti kategoriją ir kitus atributus, priklausomai nuo komentaro turinio.</para
+></blockquote>
+
+
+<para
+>Kęstutis žino, kad jo bankas gavėją įrašo į komentaro lauką. Jis nori, kad mokėjimai skirti &kde; būtų priskirti kategorijai „Parama ir atviras kodas“. Mes ieškosime visų operacijų, kurių komentare yra &kde;:</para>
+
+<table>
+<title
+>Paieškos apibrėžimas</title>
+<tgroup cols="1">
+<thead>
+<row>
+<entry
+>Komentaras</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry
+>turi „&kde;“</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+
+<para
+>Pridėkite šį paieškos apibrėžimą į turimų paieškų sąrašą spausdami mygtuką <guibutton
+>Pridėti</guibutton
+>.</para>
+
+<para
+>Tada turime nurodyti &appname;, kad visoms šia užklausa rastoms operacijoms reikia priskirti kategoriją „parama &gt; atviras kodas“. Pakeiskite užklausos tipą į pakeitimą, naudodami iškrentantį sąrašą. Tada nurodykite pritaikytinus pakeitimus:</para>
+
+<table>
+<title
+>Keitimo apibrėžimas</title>
+<tgroup cols="2">
+<thead>
+<row>
+<entry
+>Komentaras</entry>
+<entry
+>Kategorija</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry
+>=''</entry>
+<entry
+>='Parama &gt; Atviras kodas'</entry>
+</row>
+</tbody>
+</tgroup>
+</table>
+
+<tip
+><para
+>Atkreipkite dėmesį, kad mes taipogi išvalėme komentarą priskirdami jam tuščią reikšmę. Taip buvo padaryta skaitomumui, bet, jei norite, galite palikti šią reikšmę istoriniais sumetimais.</para
+></tip>
+
+<para
+>Pridėkite šį procesą prie anksčiau apibrėžtos paieškos mygtuko <guibutton
+>Pridėti</guibutton
+> pagalba.</para>
+
+<para
+>Kol kas viskas sklandu. Dabar pritaikykime apdorojimą visoms importuotoms operacijoms, kurios dar nebuvo patikrintos (spauskite mygtuką <guibutton
+>Pritaikyti</guibutton
+>):</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="apply_process.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Viskas! Jei grįšite į operacijų rodinį, pastebėsite, kad visos susijusios operacijos buvo pakeistos. Jei kažkas suveikė ne taip, kaip norėjote, nepamirškite, kad turite draugą <link linkend="undo_redo"
+>atstatymą</link
+>! Net jei buvo pakeistos 2327 operacijos, viską galima atstatyti su &appname;.</para>
+
+</appendix>
+
+<appendix id="holidays_expenses_analysis">
+<title
+>Detalios analizės pratimas: atostogų išlaidos</title>
+<para
+>Kad pademonstruotume &appname; analizės galimybes, patyrinėsime autoriaus atostogų išlaidas :).</para>
+
+<sect1 id="analysis_context">
+<title
+>Analizės kontekstas</title>
+<para
+>Kad suprastumėte pratimą, turite šį tą žinoti apie atostogas. Jų trukmė buvo beveik mėnuo, 2009 metų vasarą. Atostogų metu buvo nuomoti keli kambariai keliose vietose Žemaitijoje. Taipogi buvo išeikvotas nemažas kiekis kuro, kadangi buvo apkeliauta nemaža Žemaitijos dalis.</para>
+</sect1>
+
+<sect1 id="analysis_data_organisation">
+<title
+>Duomenų organizavimas</title>
+<para
+>Autorius kruopščiai suvedė savo operacijas, priskyrė reikiamas kategorijas bei <link linkend="trackers"
+>sekiklį</link
+> „Atostogos, 2009 vasara“. Kategorijose dažnai yra subkategorijos, tokios kaip „Transportas 
+> Mašina 
+> Kuras“, kurios leidžia vykdyti detalesnę analizę.</para>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="analysis_operations_view.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+</sect1>
+
+<sect1 id="analysis_total_cost">
+<title
+>Bendros atostogų kainos skaičiavimas</title>
+<para
+>Tai taip paprasta, kad net nejuokinga: atverkite sekiklių rodinį ir žiūrėkite į sekiklio stulpelį „Suma“:</para>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="analysis_trackers_view.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+<para
+>Pereikime prie įdomesnių dalykų...</para>
+</sect1>
+
+<sect1 id="analysis_expenses_distribution">
+<title
+>Išlaidų pasiskirstymas</title>
+<para
+>Visa tai yra puiku, bet kurgi dingo visi pinigai? Kad tai sužinotumėme, sukurkime ataskaitą apie sekiklį. Spauskite dešinį pelės mygtuką ant sekiklio eilutės ir parinkite <guimenuitem
+>Atverti ataskaitą...</guimenuitem
+>.</para>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="analysis_build_report.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+
+<para
+>Naujoje kortelėje bus atverta ataskaita apie operacijas, priklausančias parinktam sekikliui. Numatytasis datų parametras yra „Šis mėnuo“, taigi yra tikimybė, kad ataskaita bus tuščia, jei visos su sekikliu susietos operacijos buvo atliktos anksčiau. Pakeiskime šį parametrą į „Visos datos“:</para>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="analysis_report_1.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+<para
+>Tokiu būdu gauname pirmą gražią išlaidų per kategoriją apžvalgą. Pavaizduokime tai pyrago tipo diagramoje, kad vaizdavimas būtų natūralesnis:</para>
+
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="analysis_report_2.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+
+<para
+>Dabar aišku, kad didžioji atostogų išlaidų dalis teko transportui ir maistui. Ar galima gauti daugiau informacijos? Žinoma, panagrinėkime kategorijas vienu lygiu žemiau pasinaudoję <guibutton
+>pliuso</guibutton
+> ženkliuku <inlinemediaobject
+><imageobject
+><imagedata fileref="category_one_level_more.png"/></imageobject
+></inlinemediaobject
+>.</para>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="analysis_report_3.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Hmm, ne ką daugiau informacijos... „Transporto“ kategorijoje naudojama tik viena subkategorija – „Mašina“. Sukurkime diagramą šiai subkategorijai, pažymėkite jos pyrago dalį dešiniu pelės mygtuku ir parinkę <guimenuitem
+>atverti ataskaitą</guimenuitem
+>:</para>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="analysis_build_transport_report.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+
+<para
+>Bus atverta kita ataskaita, kurioje vaizduojama tik „Transportas -> Mašina“ kategorija.</para>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="analysis_report_4.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+<para
+>Hmm, nelabai įdomu... Bet yra daugiau subkategorijų. Dar padidinkime gylį:</para>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="analysis_report_5.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+<para
+>Aha, dabar mes žinome, kad 362,27Lt sumokėjome už kurą, o 131,90Lt kelio mokesčiams (už kai kuriuos kelius reikia mokėti). Gerai, aš žinojau, kad to galima buvo laukti ;-) Aš dar norėčiau sužinoti, kaip šios dvi kategorijos buvo naudojamos bėgant laikui:</para>
+<screenshot>
+<mediaobject>
+<imageobject>
+<imagedata fileref="analysis_report_6.png" format="PNG"/>
+</imageobject>
+</mediaobject>
+</screenshot>
+<para
+>Pastebėkite, kad mes pakeitėme diagramos tipą į „Linija“ ir stulpelius į „Savaites“.</para>
+
+</sect1>
+
+<sect1 id="analysis_conclusion">
+<title
+>Išvada</title>
+<para
+>Šio paprasto pratimo pagalba mes sugebėjome panaudoti &appname; ataskaitų kūrimo galimybes, kad atliktumėte atostogų išlaidų analizę, „Transporto“ išlaidų kategorija buvo dar detaliau panagrinėta. Suprantama, kad jūs galite sugalvoti ir kitokių panaudojimo variantų: &appname; tikriausiai sugebės patenkinti jūsų norus.</para>
+</sect1>
+
+</appendix>
+
+&documentation.index;
+
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-minimize-attributes:nil
+sgml-general-insert-case:lower
+sgml-indent-step:0
+sgml-indent-data:nil
+End:
+-->

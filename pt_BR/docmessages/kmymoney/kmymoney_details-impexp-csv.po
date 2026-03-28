@@ -1,0 +1,1847 @@
+# Translation of kmymoney_details-impexp-csv.po to Brazilian Portuguese
+# Copyright (C) 2014-2019 This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# André Marcelo Alvarenga <alvarenga@kde.org>, 2014, 2019.
+# Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2019, 2020.
+# SPDX-FileCopyrightText: 2025 Marcus Gama <marcus.gama@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: kmymoney_details-impexp-csv.po\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 12:04+0000\n"
+"PO-Revision-Date: 2025-12-26 13:47-0300\n"
+"Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
+"Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 25.12.0\n"
+
+#. Tag: author
+#: details-impexp-csv.docbook:3
+#, no-c-format
+msgid "&Allan.Anderson;"
+msgstr "&Allan.Anderson;"
+
+#. Tag: author
+#: details-impexp-csv.docbook:4 details-impexp-csv.docbook:818
+#, no-c-format
+msgid "&Jack.H.Ostroff; &Jack.H.Ostroff.mail;"
+msgstr "&Jack.H.Ostroff; &Jack.H.Ostroff.mail;"
+
+#. Tag: title
+#: details-impexp-csv.docbook:6
+#, no-c-format
+msgid "CSV Importer Plugin"
+msgstr "Plugin de Importação de CSV"
+
+#. Tag: title
+#: details-impexp-csv.docbook:8
+#, no-c-format
+msgid "Reasons for importing CSV Files"
+msgstr "Motivos para importar arquivos CSV"
+
+#. Tag: para
+#: details-impexp-csv.docbook:9
+#, no-c-format
+msgid ""
+"In general, it is preferable to import OFX. However, not all institutions "
+"provide data in that format. CSV (comma separated value) files are almost "
+"always available, sometimes described as Excel or spreadsheet files. Also, "
+"they can often be created fairly easily by capturing the data you want to "
+"import, such as in a text file, and manually editing it."
+msgstr ""
+"Em geral, é preferível importar de OFX. No entanto, nem todas as "
+"instituições fornecem dados nesse formato. Os arquivos CSV (do inglês, comma "
+"separated value, ou valores separados por vírgulas), às vezes também "
+"chamados de arquivos de planilha ou Excel, quase sempre estarão disponíveis. "
+"Além disso, eles podem ser criados com muita facilidade capturando os dados "
+"que deseja importar, como em um arquivo texto, e editando-os manualmente."
+
+#. Tag: para
+#: details-impexp-csv.docbook:17
+#, no-c-format
+msgid ""
+"The initial focus of the CSV Importer was on handling data from bank "
+"statements, but the ability to also import some investment statements was "
+"added. In addition, it has been further enhanced to import both currency and "
+"stock prices. The original code for this was initially created, before "
+"becoming a CSV importer, to produce QIF files from CSV files, which could "
+"then be imported. This ability is still present, but is likely to be "
+"removed, as focus is now on directly importing CSV files. Also, &kmymoney; "
+"has the native ability to <link linkend=\"details.impexp.qifexp\">export QIF "
+"files</link>, so there is no longer a real reason to produce a QIF file from "
+"a CSV file."
+msgstr ""
+"O foco inicial do importador de CSV era lidar com dados de extratos "
+"bancários, mas a capacidade de importar também alguns extratos de "
+"investimentos foi adicionada. Além disso, foi melhorado para importar "
+"cotações de moedas e preços das ações. O código original para isso foi "
+"criado inicialmente, antes de tornar-se um importador de CSV, para produzir "
+"arquivos QIF a partir de arquivos CSV, que poderia então ser importado. Esta "
+"capacidade ainda está presente, mas é provável que seja removida, já que o "
+"foco agora está na importação direta de arquivos CSV. Além disso, o "
+"&kmymoney; tem a capacidade nativa de <link linkend=\"details.impexp.qifexp"
+"\">exportar para arquivos QIF</link>, então não há mais uma razão real para "
+"produzir um arquivo QIF a partir de um arquivo CSV."
+
+#. Tag: title
+#: details-impexp-csv.docbook:30
+#, no-c-format
+msgid "Getting the plugin"
+msgstr "Obtendo o plugin"
+
+#. Tag: para
+#: details-impexp-csv.docbook:31
+#, no-c-format
+msgid ""
+"The CSV importer is one of the newer features to have been added to "
+"&kmymoney; in the form of a plugin. However, as with other plugins, the CSV "
+"Importer is included with the core &kmymoney; source code, so it should be "
+"available in all &Linux; distribution versions, as well as the versions for "
+"other platforms made available through the &kmymoney; web site. The menu "
+"choice to import CSV files should automatically show up under the "
+"<menuchoice> <guimenu>File</guimenu> <guisubmenu>Import</guisubmenu> </"
+"menuchoice> submenu."
+msgstr ""
+"O importador CSV é um dos recursos mais recentes adicionados ao &kmymoney; "
+"na forma de um plugin. No entanto, como acontece com outros plugins, o "
+"importador CSV está incluído no código-fonte do &kmymoney;, então deve estar "
+"disponível em todos as versões das distribuições &Linux;, bem como nas "
+"versões para outras plataformas disponibilizadas através do site do "
+"&kmymoney;. A opção do menu para importar arquivos CSV deve aparecer "
+"automaticamente no submenu <menuchoice> <guimenu>Arquivo</guimenu> "
+"<guisubmenu>Importar</guisubmenu> </menuchoice>."
+
+#. Tag: para
+#: details-impexp-csv.docbook:41
+#, no-c-format
+msgid ""
+"To ensure that it is enabled within &kmymoney;, check the <menuchoice> "
+"<guimenu>Settings</guimenu> <guimenuitem>Configure &kmymoney;...</"
+"guimenuitem> </menuchoice> menu item, select <guilabel>Plugins</guilabel> on "
+"the left pane, and look for the <guilabel>CSV Importer</guilabel> in the "
+"displayed list of plugins. If the CSV importer does not seem to be installed "
+"in your version, the first place to check is in the same place you got your "
+"base &kmymoney; package. See if a later version is available, or if the "
+"importer is available as a separate package."
+msgstr ""
+"Para garantir que ele esteja ativado no &kmymoney;, verifique o item de menu "
+"<menuchoice> <guimenu >Configurações</guimenu> <guimenuitem >Configurar o "
+"&kmymoney;...</guimenuitem> </menuchoice>, selecione <guilabel>Plugins</"
+"guilabel> no no painel esquerdo e procure pelo <guilabel >Importador CSV</"
+"guilabel > na lista exibida de plugins. Se o importador CSV não parecer "
+"estar instalado na sua versão, o primeiro lugar a verificar é no mesmo lugar "
+"onde você obteve seu pacote base do &kmymoney;. Veja se uma versão mais "
+"recente está disponível ou se o importador está disponível como um pacote "
+"separado."
+
+#. Tag: para
+#: details-impexp-csv.docbook:51
+#, no-c-format
+msgid ""
+"If you have built from source, there should be no additional requirements. "
+"The &kmymoney; build process should detect the plugin source and compile the "
+"plugin. There are configuration settings which can be used to exclude this "
+"or other plugins from being built, but these should rarely be needed."
+msgstr ""
+"Se você compilou a partir do código-fonte, não deverá haver requisitos "
+"adicionais. O processo de compilação do &kmymoney; deve detectar a fonte do "
+"plugin e compilá-lo. Existem definições de configuração que podem ser usadas "
+"para excluir este ou outros plugins da compilação, mas estas definições "
+"raramente serão necessárias."
+
+#. Tag: title
+#: details-impexp-csv.docbook:59
+#, no-c-format
+msgid "Importing a CSV file"
+msgstr "Importação de um arquivo CSV"
+
+#. Tag: para
+#: details-impexp-csv.docbook:60
+#, no-c-format
+msgid ""
+"To import a CSV file, choose the importer from the main menu: <menuchoice> "
+"<guimenu>File</guimenu> <guisubmenu>Import</guisubmenu> <guimenuitem>CSV...</"
+"guimenuitem> </menuchoice>. If CSV does not show up under Import, the CSV "
+"Importer Plugin is not installed correctly or is not enabled. Please see the "
+"previous section."
+msgstr ""
+"Para importar um arquivo CSV, escolha o importador no menu principal: "
+"<menuchoice> <guimenu >Arquivo</guimenu> <guisubmenu >Importar</guisubmenu> "
+"<guimenuitem >CSV...</guimenuitem> </menuchoice>. Se o CSV não aparecer no "
+"menu Importar, o plugin do importador não está instalado corretamente ou não "
+"está habilitado. Por favor veja a seção anterior."
+
+#. Tag: para
+#: details-impexp-csv.docbook:68
+#, no-c-format
+msgid ""
+"The CSV Importer is presented in the form of a wizard, with a separate page "
+"for each individual step of the process."
+msgstr ""
+"O Importador CSV é apresentado na forma de um assistente, com uma página "
+"separada para cada etapa individual do processo."
+
+#. Tag: title
+#: details-impexp-csv.docbook:73
+#, no-c-format
+msgid "CSV Import Wizard: Start"
+msgstr "Assistente de importação de CSV: Início"
+
+#. Tag: para
+#: details-impexp-csv.docbook:74
+#, no-c-format
+msgid ""
+"When launched, the CSV Importer displays the <guilabel>Start</guilabel> or "
+"<guilabel>File</guilabel> page. On the left is a list of the steps of the "
+"import process, with the current one highlighted. The upper right area is "
+"where data to be imported will be displayed; before that it shows some brief "
+"instructions relevant to the current stage of the wizard. Below that is a "
+"set of radiobuttons for selection of the type of data to be imported. That "
+"list currently includes <guilabel>Banking</guilabel>, <guilabel>Investment</"
+"guilabel>, <guilabel>Currency prices</guilabel>, and <guilabel>Stock prices</"
+"guilabel>. Next, there is a profile selector dropdown, which is enabled if "
+"once the radio button has been selected for one of the import file types."
+msgstr ""
+"Quando iniciado, o importador CSV exibe o botão <guilabel >Iniciar</guilabel "
+"> ou a página <guilabel >Arquivo</guilabel >. À esquerda está uma lista das "
+"etapas do processo de importação, com a atual em destaque. A área superior "
+"direita é onde serão exibidos os dados a serem importados; antes disso, ele "
+"mostra alguns breves instruções relevantes para o estágio atual do "
+"assistente. Abaixo disso há um conjunto de botões de opção para seleção do "
+"tipo de dados a serem importados. Esta lista inclui atualmente <guilabel "
+">Banco</guilabel >, <guilabel >Investimento</guilabel>, <guilabel>Preços de "
+"moeda</guilabel> e <guilabel>Preços de ações</guilabel>. A seguir, há um "
+"menu suspenso do seletor de perfil, que é ativado uma vez que o botão de "
+"opção tenha sido selecionado para um dos tipos de arquivo de importação."
+
+#. Tag: screeninfo
+#: details-impexp-csv.docbook:88
+#, no-c-format
+msgid "<screeninfo>csv import wizard: start</screeninfo>"
+msgstr "<screeninfo>assistente de importação csv: início</screeninfo>"
+
+#. Tag: phrase
+#: details-impexp-csv.docbook:94
+#, no-c-format
+msgid "<phrase>csv import wizard: start</phrase>"
+msgstr "<phrase>assistente de importação csv: início</phrase>"
+
+#. Tag: title
+#: details-impexp-csv.docbook:100
+#, no-c-format
+msgid "CSV Import Profiles"
+msgstr "Perfis de importação de CSV"
+
+#. Tag: para
+#: details-impexp-csv.docbook:101
+#, no-c-format
+msgid ""
+"Each type of CSV file to be imported requires specification of several "
+"details regarding the expected formatting of the data, as described in the "
+"following sections. Not only do the details differ for the different types "
+"of data files imported, it is possible to need different configurations for "
+"the same type of data from different sources. So you do not need to enter "
+"all those details each time you import a file, the CSV Importer allows you "
+"to specify the details once, and save them in a named profile."
+msgstr ""
+"Cada tipo de arquivo CSV a ser importado requer a especificação de vários "
+"detalhes sobre a formatação esperada dos dados, conforme descrito nas seções "
+"a seguir. Os detalhes não diferem apenas para os diferentes tipos de "
+"arquivos de dados importados. É possível precisar de diferentes "
+"configurações para o mesmo tipo de dado de fontes diferentes. Então, você "
+"não precisa entrar todos esses detalhes cada vez que você importa um "
+"arquivo. O importador CSV permite que você especifique os detalhes uma vez e "
+"salve-os em um perfil nomeado."
+
+#. Tag: para
+#: details-impexp-csv.docbook:111
+#, no-c-format
+msgid ""
+"The name of a CSV import profile is completely arbitrary, but will be easier "
+"to remember if it reflects both the type of data being imported (bank, "
+"credit card, investment, ...) and the source of the data. There is no need "
+"to reference the account into which the data is imported, and it is possible "
+"to use the same profile for importing into more than one account, such as "
+"two checking accounts at the same bank."
+msgstr ""
+"O nome de um perfil de importação CSV é completamente arbitrário, mas será "
+"mais fácil lembrar se refletir o tipo de dado que esté sendo importados "
+"(banco, cartão de crédito, investimento, ...) e a fonte dos dados. Não há "
+"necessidade de fazer referência à conta para a qual os dados são importados, "
+"e é possível usar o mesmo perfil para importar para mais de uma conta, como "
+"duas contas correntes no mesmo banco."
+
+#. Tag: para
+#: details-impexp-csv.docbook:120
+#, no-c-format
+msgid ""
+"The profile selector dropdown includes the names of all CSV Importer "
+"profiles you have previously created, and it also lets you type the name of "
+"a new profile. Below the profile selector dropdown, there are three buttons. "
+"When you click <guilabel>Add</guilabel>, which is always enabled, a new "
+"profile will be created with the name entered in the dropdown. Nothing will "
+"happen if that field is empty or if it displays the name of an existing "
+"profile. As you proceed through the rest of the CSV import wizard, the "
+"various configuration settings you enter or modify will be saved in the "
+"selected profile."
+msgstr ""
+"O menu suspenso do seletor de perfil inclui os nomes de todos os perfis de "
+"importação de CSV perfis que você criou anteriormente e também permite "
+"digitar o nome de um novo perfil. Abaixo do menu suspenso do seletor de "
+"perfil, existem três botões. Ao clicar em <guilabel >Adicionar</guilabel >, "
+"que está sempre ativado, um novo o perfil será criado com o nome inserido no "
+"menu suspenso. Nada vai acontecer se esse campo estiver vazio ou se exibir o "
+"nome de um perfil existente. À medida que você avança no restante do "
+"assistente de importação de CSV, as várias definições de configuração que "
+"você insere ou modifica serão salvas no perfil selecionado."
+
+#. Tag: para
+#: details-impexp-csv.docbook:131
+#, no-c-format
+msgid ""
+"If you have previously created one or more profiles, the other two buttons "
+"will be enabled. If you click <guilabel>Remove</guilabel>, the profile named "
+"in the dropdown will be deleted. If you click <guilabel>Rename</guilabel>, "
+"then alter the name displayed in the dropdown, and click <guilabel>Rename</"
+"guilabel> again, the profile will be renamed accordingly."
+msgstr ""
+"Se você já criou um ou mais perfis, os outros dois botões estarão "
+"habilitados. Se você clicar em <guilabel>Remover</guilabel>, o perfil com o "
+"nome exibido no menu suspenso será excluído. Se você clicar em "
+"<guilabel>Renomear</guilabel>, alterar o nome exibido no menu suspenso e "
+"clicar em <guilabel>Renomear</guilabel> novamente, o perfil será renomeado "
+"de acordo."
+
+#. Tag: para
+#: details-impexp-csv.docbook:139
+#, no-c-format
+msgid ""
+"Next to the profile selector, there is a <guilabel>Skip setup</guilabel> "
+"checkbox. Initially, you should not select this checkbox. Once you have set "
+"up a profile and finished the wizard, all the configuration parameters you "
+"entered are saved in the resource file under the profile name. The next time "
+"you use that same profile, the parameters will be loaded into the UI (User "
+"Interface). The wizard would then plod through the following pages of "
+"parameters that you won't need to change. So, once you are happy with a "
+"profile, it may be helpful to check this box. The wizard will then move "
+"directly to the final page, and, assuming no problems are found, you just "
+"have to click <guilabel>Import</guilabel>."
+msgstr ""
+"Ao lado do seletor de perfil, há uma caixa de seleção <guilabel>Ignorar "
+"configuração</guilabel>. Inicialmente, você não deve selecionar esta caixa "
+"de seleção. Depois de configurar um perfil e concluir o assistente, todos os "
+"parâmetros de configuração inseridos serão salvos no arquivo de recursos com "
+"o nome do perfil. Na próxima vez que você usar esse mesmo perfil, os "
+"parâmetros serão carregados na interface do usuário. O assistente então "
+"percorrerá as páginas seguintes de parâmetros que você não precisará "
+"alterar. Portanto, quando estiver satisfeito com um perfil, pode ser útil "
+"marcar esta caixa. O assistente irá então para a página final e, supondo que "
+"nenhum problema seja encontrado, você só precisa clicar em "
+"<guilabel>Importar</guilabel>."
+
+#. Tag: para
+#: details-impexp-csv.docbook:151
+#, no-c-format
+msgid ""
+"At the bottom there is a <guilabel>Select File</guilabel> button. Clicking "
+"this will bring up a file selector dialog to let you choose the file to "
+"import. At the bottom of the remaining pages of the wizard are buttons to go "
+"<guibutton>&lt; Back</guibutton> to the previous step of the wizard, move on "
+"to the <guilabel>Next &gt;</guilabel> step, or <guibutton>Cancel</guibutton> "
+"the import."
+msgstr ""
+"Na parte inferior, há um botão <guilabel>Selecionar arquivo</guilabel>. "
+"Clicar nele abrirá uma caixa de diálogo de seleção de arquivos para que você "
+"possa escolher o arquivo a ser importado. Na parte inferior das páginas "
+"restantes do assistente, há botões para ir <guibutton>&lt;Voltar</guibutton> "
+"para a etapa anterior do assistente, <guilabel>Avançar&gt;</guilabel> para a "
+"próxima etapa ou <guibutton>Cancelar</guibutton> a importação."
+
+#. Tag: para
+#: details-impexp-csv.docbook:159
+#, no-c-format
+msgid ""
+"To review, on the Start page of the wizard, first select the checkbox for "
+"the type of data you are importing. In the profile selector dropdown, you "
+"can select the name of a previously created CSV Importer profile, or enter a "
+"new name, possibly the name of the account into which you wish to import, "
+"and click <guilabel>Add</guilabel>. Finally, click <guilabel>Select File</"
+"guilabel>, and a file selector dialog will open, where you select the CSV "
+"file you wish to import."
+msgstr ""
+"Para revisar, na página inicial do assistente, primeiro selecione a caixa de "
+"seleção para o tipo de dados que você está importando. No menu suspenso do "
+"seletor de perfil, você pode selecionar o nome de um perfil do importador "
+"CSV criado anteriormente ou inserir um novo nome, possivelmente o nome da "
+"conta para a qual deseja importar, e clicar em <guilabel>Adicionar</"
+"guilabel>. Finalmente, clique em <guilabel>Selecionar arquivo</guilabel> e "
+"uma caixa de diálogo de seleção de arquivo será aberta, onde você "
+"selecionará o arquivo CSV que deseja importar."
+
+#. Tag: title
+#: details-impexp-csv.docbook:169
+#, no-c-format
+msgid "CSV Import Wizard: Separators"
+msgstr "Assistente de Importação de CSV: Separadores"
+
+#. Tag: para
+#: details-impexp-csv.docbook:170
+#, no-c-format
+msgid ""
+"After opening your selected data file, the wizard will advance to the "
+"<guilabel>Separators</guilabel> page, and you should now see your data."
+msgstr ""
+"Após abrir o arquivo de dados selecionado, o assistente avançará para a "
+"página <guilabel>Separadores</guilabel>, e você poderá ver seus dados."
+
+#. Tag: screeninfo
+#: details-impexp-csv.docbook:176
+#, no-c-format
+msgid "<screeninfo>csv import wizard: separators</screeninfo>"
+msgstr "<screeninfo>assistente de importação csv: separadores</screeninfo>"
+
+#. Tag: phrase
+#: details-impexp-csv.docbook:182
+#, no-c-format
+msgid "<phrase>csv import wizard: separators</phrase>"
+msgstr "<phrase>assistente de importação csv: separadores</phrase>"
+
+#. Tag: para
+#: details-impexp-csv.docbook:188
+#, no-c-format
+msgid ""
+"It may appear that the data displayed in the upper section of the plugin "
+"window may be edited, and in fact they may, but any edits are not kept. The "
+"table is purely for display, not for editing. The input file is never "
+"altered by the CSV Importer, and the data actually imported comes from the "
+"input file, not from the display. The one exception to this is covered in "
+"<link linkend=\"details.impexp.csv.secsym\">Securities and Symbols</link> "
+"below."
+msgstr ""
+"Pode parecer que os dados apresentados na seção superior da janela do plugin "
+"podem ser editados e, de fato, eles podem ser, mas as alterações não serão "
+"mantidas. A tabela serve apenas para apresentar os dados, não para editá-"
+"los. O arquivo de entrada nunca é alterado pelo importador CSV e os dados "
+"importados sempre são originados do arquivo, não dos dados apresentados. A "
+"única exceção está descrita na seção <link linkend=\"details.impexp.csv."
+"secsym\">Títulos e símbolos</link> abaixo."
+
+#. Tag: para
+#: details-impexp-csv.docbook:198
+#, no-c-format
+msgid ""
+"The CSV Importer should have detected the appropriate <guilabel>Encoding</"
+"guilabel>, <guilabel>Field Delimiter</guilabel>, and <guilabel>Text "
+"Delimiter</guilabel>. You can change the encoding if the program did not "
+"choose correctly. If you need to change the Field Delimiter, such as if your "
+"data is actually tab delimited, and not a comma delimited, be aware that "
+"doing so will reset any field choices you may already have made. Generally "
+"the quote (&quot;) is the correct text delimiter, but you may change it as "
+"necessary. Click <guibutton>Next</guibutton> to proceed."
+msgstr ""
+"O importador de CSV deve ter detectado a <guilabel>Codificação</guilabel>, o "
+"<guilabel>Delimitador de campo</guilabel> e o <guilabel>Delimitador de "
+"texto</guilabel> apropriados. Você pode alterar a codificação se o programa "
+"não a tiver escolhido corretamente. Se precisar alterar o delimitador de "
+"campo, por exemplo, se seus dados estiverem delimitados por tabulação e não "
+"por vírgula, esteja ciente de que isso redefinirá todas as opções de campo "
+"que você já tenha feito. Geralmente, a aspa (&quot;) é o delimitador de "
+"texto correto, mas você pode alterá-la conforme necessário. Clique em "
+"<guibutton>Avançar</guibutton> para prosseguir."
+
+#. Tag: title
+#: details-impexp-csv.docbook:210
+#, no-c-format
+msgid "CSV Import Wizard: Rows"
+msgstr "Assistente de importação de CSV: Linhas"
+
+#. Tag: para
+#: details-impexp-csv.docbook:211
+#, no-c-format
+msgid ""
+"You will now be on the <guilabel>Rows</guilabel> or <guilabel>Lines</"
+"guilabel> page. Here, you indicate if any lines should be ignored at the "
+"beginning or end of the file."
+msgstr ""
+"Você estará agora na página <guilabel>Linhas</guilabel>. Aqui, você indica "
+"se alguma linha deve ser ignorada no início ou no final do arquivo."
+
+#. Tag: screeninfo
+#: details-impexp-csv.docbook:218
+#, no-c-format
+msgid "<screeninfo>csv import wizard: rows</screeninfo>"
+msgstr "<screeninfo>assistente de importação csv: linhas</screeninfo>"
+
+#. Tag: phrase
+#: details-impexp-csv.docbook:224
+#, no-c-format
+msgid "<phrase>csv import wizard: rows</phrase>"
+msgstr "<phrase>assistente de importação csv: linhas</phrase>"
+
+#. Tag: para
+#: details-impexp-csv.docbook:229
+#, no-c-format
+msgid ""
+"This page allows you to adjust the import to ignore header and footer rows "
+"at the beginning or end of the file, which do not actually contain data to "
+"be imported."
+msgstr ""
+"Esta página permite ajustar a importação para ignorar as linhas de cabeçalho "
+"e rodapé no início ou no final do arquivo, que não contêm dados a serem "
+"importados."
+
+#. Tag: title
+#: details-impexp-csv.docbook:234
+#, no-c-format
+msgid "Start line"
+msgstr "Linha inicial"
+
+#. Tag: para
+#: details-impexp-csv.docbook:235
+#, no-c-format
+msgid ""
+"Set this so the importer skips any header lines in the file. Your choice "
+"will be saved in this profile for future use. The start and end lines "
+"interact, and the start line may not be higher than the end line, nor may it "
+"be higher then the actual number of lines in the file. If the "
+"<guilabel>Start line</guilabel> selector does not respond, check the end "
+"line setting."
+msgstr ""
+"Configure isso para que o importador ignore quaisquer linhas de cabeçalho no "
+"arquivo. Sua escolha será salva neste perfil para uso futuro. As linhas de "
+"início e fim interagem, e a linha de início não pode ser maior que a linha "
+"de fim, nem pode ser maior que o número real de linhas no arquivo. Se o "
+"seletor <guilabel>Linha de início</guilabel> não responder, verifique a "
+"configuração da linha de fim."
+
+#. Tag: title
+#: details-impexp-csv.docbook:244
+#, no-c-format
+msgid "End line"
+msgstr "Linha final"
+
+#. Tag: para
+#: details-impexp-csv.docbook:245
+#, no-c-format
+msgid ""
+"The importer will automatically set this to the last line in the file, or to "
+"the setting last saved. You will only need to adjust it if there are footer "
+"lines in the file the importer should ignore. Otherwise, you are likely to "
+"get a data error warning when the plugin attempts to parse incorrect data. "
+"Again, if the <guilabel>End line</guilabel> selector does not respond, check "
+"the <guilabel>Start line</guilabel> setting."
+msgstr ""
+"O importador irá configurar automaticamente este campo com a última linha do "
+"arquivo ou com o valor da última configuração salva. Você só precisa ajustá-"
+"lo se existirem linhas de rodapé no arquivo, que devam ser ignoradas pelo "
+"importador. Caso contrário, você provavelmente receberá um aviso de erro nos "
+"dados quando o plugin tentar processar dados incorretos. Novamente, se o "
+"seletor da <guilabel>Linha final</guilabel> não responder, assinale a opção "
+"<guilabel>Linha inicial</guilabel>."
+
+#. Tag: para
+#: details-impexp-csv.docbook:255
+#, no-c-format
+msgid ""
+"Above these two fields is a <guilabel>Header contains account name or "
+"number</guilabel> checkbox. If checked, the importer will look in the lines "
+"above the start line for the name of number of the account to use for the "
+"import. If not, you will be prompted for that information."
+msgstr ""
+"Acima desses dois campos, há uma caixa de seleção <guilabel>O cabeçalho "
+"contém o nome ou número da conta</guilabel>. Se marcada, o importador "
+"procurará nas linhas acima da linha inicial o nome ou número da conta a ser "
+"usada para a importação. Caso contrário, você será solicitado a fornecer "
+"essas informações."
+
+#. Tag: para
+#: details-impexp-csv.docbook:262
+#, no-c-format
+msgid ""
+"When you are ready, click <guilabel>Next</guilabel> to proceed to the next "
+"step."
+msgstr ""
+"Quando estiver pronto, clique em <guilabel>Próximo</guilabel> para "
+"prosseguir para a próxima etapa."
+
+#. Tag: title
+#: details-impexp-csv.docbook:267
+#, no-c-format
+msgid "CSV Import Wizard: Columns"
+msgstr "Assistente de importação de CSV: Colunas"
+
+#. Tag: para
+#: details-impexp-csv.docbook:268
+#, no-c-format
+msgid ""
+"You should now be on the <guilabel>Columns</guilabel> page. This is where "
+"you tell the importer which columns in the file contain the data which maps "
+"to the specific fields needed to create a meaningful record or transaction, "
+"depending on the type of data being imported. There is a different version "
+"of this page for each type of data, as each requires a different combination "
+"of items."
+msgstr ""
+"Você agora deve estar na página <guilabel>Colunas</guilabel>. É aqui que "
+"você informa ao importador quais colunas do arquivo contêm os dados que "
+"correspondem aos campos específicos necessários para criar um registro ou "
+"transação significativa, dependendo do tipo de dados que está sendo "
+"importado. Há uma versão diferente desta página para cada tipo de dado, pois "
+"cada um requer uma combinação diferente de itens."
+
+#. Tag: title
+#: details-impexp-csv.docbook:276
+#, no-c-format
+msgid "CSV Import Wizard: Banking"
+msgstr "Assistente de importação de CSV: Banco"
+
+#. Tag: screeninfo
+#: details-impexp-csv.docbook:278
+#, no-c-format
+msgid "<screeninfo>csv import wizard: banking</screeninfo>"
+msgstr "<screeninfo>assistente de importação csv: banco</screeninfo>"
+
+#. Tag: phrase
+#: details-impexp-csv.docbook:284
+#, no-c-format
+msgid "<phrase>csv import wizard: banking</phrase>"
+msgstr "<phrase>assistente de importação csv: banco</phrase>"
+
+#. Tag: para
+#: details-impexp-csv.docbook:289
+#, no-c-format
+msgid ""
+"For most fields, you just need to use the dropdown to select the appropriate "
+"column. Note that many fields have an <quote>x</quote> button to the right. "
+"Clicking it will clear whatever value has been entered or selected in the "
+"field to the left. In addition, there are some special considerations."
+msgstr ""
+"Para a maioria dos campos, basta usar o menu suspenso para selecionar a "
+"coluna apropriada. Observe que muitos campos têm um botão <quote>x</quote> à "
+"direita. Clicar nele limpará qualquer valor que tenha sido inserido ou "
+"selecionado no campo à esquerda. Além disso, há algumas considerações "
+"especiais."
+
+#. Tag: para
+#: details-impexp-csv.docbook:298
+#, no-c-format
+msgid ""
+"To the right is an area with two tabs. If your file has a single column for "
+"all values, select the <guilabel>Amount</guilabel> tab. However, if there "
+"are separate columns for debits and credits, select the <guilabel>Debit/"
+"credit</guilabel> tab."
+msgstr ""
+"À direita, há uma área com duas abas. Se o seu arquivo tiver uma única "
+"coluna para todos os valores, selecione a aba <guilabel>Valor</guilabel>. No "
+"entanto, se houver colunas separadas para débitos e créditos, selecione a "
+"aba <guilabel>Débito/Crédito</guilabel>."
+
+#. Tag: para
+#: details-impexp-csv.docbook:305
+#, no-c-format
+msgid ""
+"On the Amount tab, start by selecting the column which contains the amount "
+"of the transaction. If there is a column which contains <quote>Credit</"
+"quote> or <quote>Debit</quote> to indicate which the amount is, select that "
+"column as the <guilabel>Debit/Credit Indicator</guilabel>. Separately, if "
+"there is a string included in the amount field which indicates the amount is "
+"either a credit or a debit, enter that string in the appropriate "
+"<guilabel>Indicator</guilabel> field. Finally, if despite setting all the "
+"above values correctly, the amount imported is reversed from what it should "
+"be, check the <guilabel>Opposite signs</guilabel> checkbox."
+msgstr ""
+"Na aba Montante, comece selecionando a coluna que contém o montante da "
+"transação. Se houver uma coluna que contenha <quote>Crédito</quote> ou "
+"<quote>Débito</quote> para indicar qual montante é, selecione essa coluna "
+"como o <guilabel>Indicador de Débito/Crédito</guilabel>. Além disso, se "
+"houver uma string no campo de valor que indique se o valor é um crédito ou "
+"um débito, insira essa string no campo <guilabel>Indicador</guilabel> "
+"apropriado. Por fim, se, apesar de definir todos os valores acima "
+"corretamente, o valor importado estiver invertido, marque a caixa de seleção "
+"<guilabel>Sinais opostos</guilabel>."
+
+#. Tag: para
+#: details-impexp-csv.docbook:317
+#, no-c-format
+msgid ""
+"On the Debit/credit tab, simply enter the numbers of the columns with those "
+"values in the appropriate fields."
+msgstr ""
+"Na aba Débito/Crédito, basta inserir os números das colunas com esses "
+"valores nos campos apropriados."
+
+#. Tag: para
+#: details-impexp-csv.docbook:324
+#, no-c-format
+msgid ""
+"It is possible to select more than one column for the Memo field, by making "
+"consecutive selections. Memo columns already selected are indicated in the "
+"<guilabel>Memo columns:</guilabel> field. If you select multiple columns in "
+"this way, their contents will be concatenated in the Memo field."
+msgstr ""
+"É possível selecionar mais de uma coluna para o campo \"Memo\", fazendo "
+"seleções consecutivas. As colunas \"Memo\" já selecionadas são indicadas no "
+"campo <guilabel>Colunas memo:</guilabel>. Se você selecionar várias colunas "
+"desta forma, o conteúdo delas será concatenado no campo \"Memo\"."
+
+#. Tag: para
+#: details-impexp-csv.docbook:333
+#, no-c-format
+msgid ""
+"If you attempt to choose the same column number for two fields, the importer "
+"will alert you and clear both selections. However, it is possible, if "
+"desired, to use the same column in both the <guilabel>Payee/Description</"
+"guilabel> and <guilabel>Memo</guilabel> fields. If you select a column for "
+"the <guilabel>Payee/Description</guilabel> field, and then select the same "
+"column for the <guilabel>Memo</guilabel> field, you will receive a warning "
+"that duplicate columns have been selected, but asking if you wish to "
+"proceed. If you do, click <guibutton>Yes</guibutton>, and the column will be "
+"used for both fields."
+msgstr ""
+"Se tentar escolher o mesmo número de coluna para dois campos, o importador "
+"irá alertá-lo e então limpar ambas as seleções. Contudo, você pode usar a "
+"mesma coluna nos campos <guilabel>Beneficiário/Descrição</guilabel> e "
+"<guilabel>Memorando</guilabel>. Se selecionar uma coluna para o campo "
+"<guilabel>Beneficiário/Descrição</guilabel> e depois selecionar a mesma "
+"coluna para <guilabel>Memorando</guilabel>, você receberá um aviso por ter "
+"selecionado colunas duplicadas, mas será questionado se deseja continuar. Se "
+"for isso mesmo que deseja fazer, clique em <guibutton>Sim</guibutton>, e a "
+"coluna será usada para ambos os campos."
+
+#. Tag: para
+#: details-impexp-csv.docbook:346
+#, no-c-format
+msgid ""
+"One particular reason to also capture the Payee/Descriptor field in the Memo "
+"field is that the incoming Payee/Description field might get completely "
+"changed on import when &kmymoney; does transaction matching. Selecting that "
+"field also as Memo will preserve that data, which would otherwise get lost."
+msgstr ""
+"Uma razão em particular para também capturar o campo Beneficiário/Descritor "
+"no campo Memorando é que o campo de Beneficiário/Descrição pode ficar "
+"completamente alterado na importação quando o &kmymoney; fizer a "
+"correspondência de transações. Se selecionar esse campo também como "
+"Memorando irá preservar esses dados, caso contrário, eles serão perdidos."
+
+#. Tag: para
+#: details-impexp-csv.docbook:355
+#, no-c-format
+msgid ""
+"If you notice you have made an incorrect choice, just change that selection. "
+"If several changes need to be made, you can click <guilabel>Clear all</"
+"guilabel> and start over."
+msgstr ""
+"Se você perceber que fez uma escolha incorreta, basta alterá-la. Se várias "
+"alterações precisarem ser feitas, você pode clicar em <guilabel>Limpar tudo</"
+"guilabel> e começar de novo."
+
+#. Tag: para
+#: details-impexp-csv.docbook:361
+#, no-c-format
+msgid ""
+"Once columns have been chosen for all the necessary fields, the "
+"<guilabel>Next</guilabel> button will be enabled, and clicking it will "
+"advance the wizard."
+msgstr ""
+"Assim que selecionar as colunas de todos os campos necessários, o botão "
+"<guilabel>Próximo</guilabel> ficará ativo, permitindo-lhe avançar com o "
+"assistente."
+
+#. Tag: title
+#: details-impexp-csv.docbook:368
+#, no-c-format
+msgid "CSV Import Wizard: Format"
+msgstr "Assistente de importação de CSV: Formato"
+
+#. Tag: para
+#: details-impexp-csv.docbook:369
+#, no-c-format
+msgid ""
+"The next page of the wizard still shows the data to be imported on the top, "
+"but the lower section provides three dropdowns. The initial values are set "
+"by &kmymoney; based on examining the actual data."
+msgstr ""
+"A próxima página do assistente ainda mostra os dados a serem importados na "
+"parte superior, mas a seção inferior fornece três menus suspensos. Os "
+"valores iniciais são definidos pelo &kmymoney; com base na análise dos dados "
+"reais."
+
+#. Tag: screeninfo
+#: details-impexp-csv.docbook:376 details-impexp-csv.docbook:425
+#, no-c-format
+msgid "<screeninfo>csv import wizard: investment</screeninfo>"
+msgstr "<screeninfo>assistente de importação csv: investimento</screeninfo>"
+
+#. Tag: phrase
+#: details-impexp-csv.docbook:382 details-impexp-csv.docbook:431
+#, no-c-format
+msgid "<phrase>csv import wizard: investment</phrase>"
+msgstr "<phrase>assistente de importação csv: investimento</phrase>"
+
+#. Tag: para
+#: details-impexp-csv.docbook:387
+#, no-c-format
+msgid ""
+"The <guilabel>Decimal Symbol</guilabel> defaults to <quote>auto,</quote> "
+"which usually produces the correct results. If not, you can explicitly "
+"specify the <quote>dot</quote> or <quote>comma.</quote>"
+msgstr ""
+"O <guilabel>Símbolo decimal</guilabel> tem como padrão <quote>auto</quote>, "
+"o que geralmente produz os resultados corretos. Caso contrário, você pode "
+"especificar explicitamente o <quote>ponto</quote> ou a <quote>vírgula.</"
+"quote>"
+
+#. Tag: para
+#: details-impexp-csv.docbook:393
+#, no-c-format
+msgid ""
+"The <guilabel>Thousands Symbol</guilabel> is set automatically, and the "
+"field may be disabled if it will not affect the results."
+msgstr ""
+"O <guilabel>Símbolo de milhar</guilabel> é definido automaticamente e o "
+"campo pode ser desativado se não afetar os resultados."
+
+#. Tag: para
+#: details-impexp-csv.docbook:398
+#, no-c-format
+msgid ""
+"This needs to be set according to the order of year, month, and day in the "
+"dates in the file. If the plugin finds data incompatible with this setting, "
+"it will complain when you try to import. However, if the setting is wrong, "
+"but it produce invalid results not detected (such as data with no days "
+"higher than 12, so month and day could be switched) you will simply get "
+"incorrect data, because the plugin cannot know you made a mistake. In this "
+"case, the error will be obvious in the ledger after import."
+msgstr ""
+"Isto precisa de ser definido de acordo com a ordem do ano, mês e dia nas "
+"datas do arquivo. Se o plugin encontrar dados incompatíveis com esta "
+"configuração, irá alertá-lo durante a importação. Contudo, se a configuração "
+"estiver errada, mas produzir resultados inválidos não detectados (como datas "
+"em que o dia é menor que 12, poderá acontecer uma troca entre mês e dia), "
+"irá simplesmente obter dados incorretos, uma vez que o plugin não consegue "
+"perceber que cometeu um erro. Neste caso, o erro ficará óbvio no livro de "
+"registros após a importação."
+
+#. Tag: para
+#: details-impexp-csv.docbook:408
+#, no-c-format
+msgid ""
+"The <guilabel>Date format</guilabel> specifies the order of day, month, and "
+"year, and is also set automatically. However, in some cases, such as data "
+"with no day higher than 12, you will notice the problem after the import. In "
+"such cases, you will need to repeat the import, and choose the actual order "
+"of the date components."
+msgstr ""
+"O <guilabel>Formato de data</guilabel> especifica a ordem do dia, mês e ano, "
+"e também é definido automaticamente. No entanto, em alguns casos, como dados "
+"sem nenhum dia maior que 12, você notará o problema após a importação. "
+"Nesses casos, você precisará repetir a importação e escolher a ordem correta "
+"dos componentes da data."
+
+#. Tag: title
+#: details-impexp-csv.docbook:416
+#, no-c-format
+msgid "CSV Import Wizard: Investment"
+msgstr "Assistente de importação de CSV: Investimento"
+
+#. Tag: para
+#: details-impexp-csv.docbook:417
+#, no-c-format
+msgid ""
+"This page is similar to the <guilabel>Banking</guilabel> page, although it "
+"is somewhat more complex. Most selections are fairly obvious, but there are "
+"some items which can seem confusing until you have completed the process "
+"once or twice."
+msgstr ""
+"Esta página é semelhante a do <guilabel>Banco</guilabel>, ainda que seja "
+"ligeiramente mais complexa. A maioria das seleções são relativamente óbvias, "
+"mas existem alguns itens que podem parecer confusos até que tenha terminado "
+"o processo uma ou duas vezes."
+
+#. Tag: para
+#: details-impexp-csv.docbook:439
+#, no-c-format
+msgid ""
+"As on the <guilabel>Banking</guilabel> page, you may select more than one "
+"column for the Memo field"
+msgstr ""
+"Tal como na página de <guilabel>Banco</guilabel>, você pode selecionar mais "
+"que uma coluna para o campo Memorando"
+
+#. Tag: para
+#: details-impexp-csv.docbook:446
+#, no-c-format
+msgid ""
+"The <guilabel>Type/Action</guilabel> selector is to identify the column "
+"which contains the action type, such as Buy, Sell, Dividend, &etc;"
+msgstr ""
+"O seletor <guilabel>Tipo/Ação</guilabel> serve para identificar a coluna que "
+"contém o tipo de ação, como por exemplo, Comprar, Vender, Dividendo, &etc;"
+
+#. Tag: para
+#: details-impexp-csv.docbook:453
+#, no-c-format
+msgid ""
+"The <guilabel>Price Fraction</guilabel> selector is to indicate the fraction/"
+"multiplier for compatibility between imported and stored prices. For "
+"instance, if the import file price is in cents, but your &kmymoney; account "
+"is priced in dollars, select 0.01. Or, if your &kmymoney; data file pricing "
+"is in dollars, and so is the CSV file being imported, then set "
+"<guilabel>Price Fraction</guilabel> to 1.0."
+msgstr ""
+"O seletor da <guilabel>Fração do preço</guilabel> serve para indicar a "
+"fração/multiplicador para fins de compatibilidade entre os preços importados "
+"e armazenados. Por exemplo, se o preço do arquivo importado estiver em "
+"centavos mas sua conta no &kmymoney; estiver em reais, selecione o valor "
+"0,01. Por outro lado, se os preços do seu arquivo de dados estiverem em "
+"reais, assim como o arquivo CSV a importar, configure a <guilabel>Fração do "
+"preço</guilabel> como 1,0."
+
+#. Tag: para
+#: details-impexp-csv.docbook:464
+#, no-c-format
+msgid ""
+"There are two ways to specify fees for transactions. If your file has a "
+"distinct column for fees, use the <guilabel>Fee Column</guilabel> selector. "
+"Note that on this page, this is the only field to explicitly include \"column"
+"\" in the label, to emphasize that it is for the fee column, not for any "
+"actual fee. Beware, though, that the fee might have been taken into account "
+"in the price."
+msgstr ""
+"Existem duas maneiras de especificar taxas para transações. Se o seu arquivo "
+"tiver uma coluna distinta para taxas, use o seletor <guilabel>Coluna de "
+"taxas</guilabel>. Observe que, nesta página, este é o único campo que inclui "
+"explicitamente \"coluna\" no rótulo, para enfatizar que se trata da coluna "
+"de taxas, e não de qualquer taxa real. No entanto, esteja ciente de que a "
+"taxa pode já ter sido considerada no preço."
+
+#. Tag: para
+#: details-impexp-csv.docbook:472
+#, no-c-format
+msgid ""
+"If there is a fee, but it is a percentage figure, rather than a specified "
+"value, click the <guilabel>Fee is percentage</guilabel> check box, and enter "
+"the percentage rate into the <guilabel>Fee rate</guilabel> field. In "
+"addition, if there is a minimum fee, specify it in the <guilabel>Minimal "
+"Fee</guilabel> field, which becomes enabled when you enter the Fee rate "
+"(with a decimal point.) At this point, clicking <guibutton>Calculate Fees</"
+"guibutton> will add a column at the right of the table above, and will "
+"indicate the calculated fee for each transaction."
+msgstr ""
+"Se houver uma taxa, mas ela for expressa em porcentagem, em vez de um valor "
+"fixo, marque a caixa de seleção <guilabel>Taxa em porcentagem</guilabel> e "
+"insira a porcentagem no campo <guilabel>Taxa</guilabel>. Além disso, se "
+"houver uma taxa mínima, especifique-a no campo <guilabel>Taxa mínima</"
+"guilabel>, que será habilitado ao inserir a Taxa (com um ponto decimal). "
+"Nesse ponto, clicar em <guibutton>Calcular taxas</guibutton> adicionará uma "
+"coluna à direita da tabela acima e indicará a taxa calculada para cada "
+"transação."
+
+#. Tag: para
+#: details-impexp-csv.docbook:483
+#, no-c-format
+msgid ""
+"If you made a mistake in entering the fee information, clicking "
+"<guibutton>Clear Fee</guibutton> will reset all the fee related fields to "
+"their initial values."
+msgstr ""
+"Se você cometeu um erro ao inserir as informações da taxa, clicar em "
+"<guibutton>Limpar taxa</guibutton> redefinirá todos os campos relacionados à "
+"taxa para seus valores iniciais."
+
+#. Tag: para
+#: details-impexp-csv.docbook:490
+#, no-c-format
+msgid ""
+"Below the column selectors are two areas for the security identity. "
+"Depending upon your broker or financial institution, your file may contain "
+"entries for only one or for several securities."
+msgstr ""
+"Abaixo dos seletores das colunas existem duas áreas para a identidade do "
+"título. Dependendo da sua instituição financeira ou de corretagem, seu "
+"arquivo poderá conter elementos para apenas um ou vários títulos."
+
+#. Tag: para
+#: details-impexp-csv.docbook:497
+#, no-c-format
+msgid ""
+"If the file contains transactions for just a single security, with the name "
+"possibly in a header row, the name should be entered into the "
+"<guilabel>Security Name</guilabel> box. The name you enter will be added to "
+"the dropdown list for future use. You may subsequently wish to remove that "
+"name from the list. If so, select it, then click <guilabel>Hide security</"
+"guilabel>. This removes it only from this list, and has no effect on your "
+"main &kmymoney; file."
+msgstr ""
+"Se o arquivo possuir transações para um único título, possivelmente com o "
+"nome em uma linha do cabeçalho, o nome deverá ser introduzido no campo "
+"<guilabel>Nome do título</guilabel>. O nome que inserir será adicionado à "
+"lista para uso posterior. Logo após, você pode querer remover esse nome da "
+"lista. Se assim for, selecione-o, clicando depois no botão <guilabel>Ocultar "
+"o título</guilabel>. Isso apenas removerá dessa lista, não produzindo nenhum "
+"efeito no seu arquivo principal do &kmymoney;."
+
+#. Tag: para
+#: details-impexp-csv.docbook:509
+#, no-c-format
+msgid ""
+"If the file includes transactions for several securities, each will be "
+"identified by its ticker symbol in a column with further detail in another "
+"column. Select those columns in the <guilabel>Symbol</guilabel> and "
+"<guilabel>Detail</guilabel> selectors. It may be that a security has no "
+"official symbol, and in this case a pseudo-symbol may be invented; this is "
+"not a problem, as long as it uniquely identifies that security in the import "
+"file. Sometimes the actual activity type is embedded in the detail column, "
+"possibly prefixed by a standard text. For instance, if the field contains "
+"<quote>type: dividend</quote>, go to <guilabel>Filter</guilabel> text box "
+"and enter <quote>type: </quote> including the trailing space."
+msgstr ""
+"Se o arquivo inclui transações para diversos títulos, cada um será "
+"identificado pelo seu símbolo em uma coluna e com mais detalhes em outra. "
+"Selecione essas colunas nos seletores <guilabel>Símbolo</guilabel> e "
+"<guilabel>Detalhe</guilabel>. Pode acontecer que um título não tenha um "
+"símbolo oficial e, nesse caso, poderá ser inventado um pseudo-símbolo. Isso "
+"não é nenhum problema, desde que identifique de forma única esse título no "
+"arquivo de importação. Às vezes, o tipo de atividade atual está incorporado "
+"na coluna de detalhes, possivelmente iniciado com um texto padrão. Por "
+"exemplo, se o campo conter <quote>type: dividend</quote>, vá para a caixa de "
+"texto <guilabel>Filtro</guilabel> e insira <quote>type: </quote>, incluindo "
+"o espaço final."
+
+#. Tag: para
+#: details-impexp-csv.docbook:528
+#, no-c-format
+msgid ""
+"When all required fields are selected, the <guilabel>Next</guilabel> button "
+"will be enabled, and clicking it will advance the wizard."
+msgstr ""
+"Quando todos os campos necessários estiverem selecionados, o botão "
+"<guilabel>Próximo</guilabel> ficará ativo, permitindo-lhe avançar no "
+"assistente."
+
+#. Tag: title
+#: details-impexp-csv.docbook:534
+#, no-c-format
+msgid "CSV Import Wizard: Securities and Symbols"
+msgstr "Assistente de Importação de CSV: Títulos e Símbolos"
+
+#. Tag: para
+#: details-impexp-csv.docbook:535
+#, no-c-format
+msgid ""
+"For an Investment file, after the <guilabel>Columns</guilabel> page has been "
+"accepted, you need to assure that each security in the file is matched to "
+"the correct security in your &kmymoney; file, before import can proceed. At "
+"this point, another window will open, showing the securities and symbols "
+"contained in the import file. Note that unlike the data display in the main "
+"wizard windows, the changes you make on this page <emphasis>are</emphasis> "
+"imported."
+msgstr ""
+"Para um arquivo de investimentos, depois de aceitar a página "
+"<guilabel>Colunas</guilabel>, você precisa ter certeza de que cada título no "
+"arquivo corresponde ao título correto no seu arquivo do &kmymoney;, antes de "
+"prosseguir com a importação. Nesse ponto, outra janela irá abrir, mostrando "
+"os títulos e símbolos existentes no arquivo de importação. Lembre-se de que, "
+"ao contrário da apresentação dos dados nas janelas principais do assistente, "
+"as alterações que fizer nesta página <emphasis>serão</emphasis> importadas."
+
+#. Tag: para
+#: details-impexp-csv.docbook:544
+#, no-c-format
+msgid "Completing this page is straightforward, if you consider these items:"
+msgstr "A finalização desta página será intuitiva, se considerar estes itens:"
+
+#. Tag: para
+#: details-impexp-csv.docbook:548
+#, no-c-format
+msgid ""
+"Each row represents one transaction, and so it may appear there are "
+"duplicate rows. This is OK."
+msgstr ""
+"Cada linha representa uma transação, podendo parecer que existem linhas "
+"duplicadas. Isso é normal."
+
+#. Tag: para
+#: details-impexp-csv.docbook:555
+#, no-c-format
+msgid ""
+"Each security name must match exactly the existing security as specified in "
+"&kmymoney;. If it does not match, it will be created as a new security, "
+"which you probably do not want, unless it represents the purchase of a new "
+"security."
+msgstr ""
+"Todos os nomes de títulos deverão corresponder exatamente ao título "
+"existente, tal como definido no &kmymoney;. Se não corresponder, será criado "
+"como um novo título, que provavelmente não será o que deseja, a menos que "
+"represente a compra de um novo título."
+
+#. Tag: para
+#: details-impexp-csv.docbook:564
+#, no-c-format
+msgid "A symbol must be shown for each security."
+msgstr "Deverá ser apresentado um símbolo para cada título."
+
+#. Tag: para
+#: details-impexp-csv.docbook:570
+#, no-c-format
+msgid ""
+"The <emphasis>only</emphasis> information on this page should be the "
+"security symbol and name. Any other information initially shown (such as "
+"date or activity type) is still in the actual import file, but should not be "
+"shown here."
+msgstr ""
+"A <emphasis>única</emphasis> informação nesta página deverá ser o símbolo e "
+"o nome do título. Todas as outras informações apresentadas inicialmente "
+"(como a data ou o tipo de atividade) ainda estão no arquivo de importação "
+"atual, mas não devem ser mostradas aqui."
+
+#. Tag: para
+#: details-impexp-csv.docbook:580
+#, no-c-format
+msgid ""
+"You can edit a symbol or security name by double-clicking the cell. For each "
+"security, if necessary, edit the name in one of its rows, If the correct "
+"security name appears in the imported file, double-click it to select it, "
+"then copy and paste/edit, taking care if you have used a variation or "
+"abbreviation within &kmymoney;. If you edit a security name, that edit will "
+"be applied to all rows with the same symbol."
+msgstr ""
+"Você pode editar o nome ou o símbolo de um título com um clique duplo em uma "
+"célula. Para cada título, se necessário, edite o nome em uma das suas "
+"linhas. Se o nome correto do título aparecer no arquivo importado, use o "
+"clique duplo para o selecionar e depois copie e cole/edite, tendo cuidado se "
+"tiver usado uma variante ou uma abreviatura dentro do &kmymoney;. Se editar "
+"o nome de um título, essa edição será aplicada a todas as linhas com o mesmo "
+"símbolo."
+
+#. Tag: para
+#: details-impexp-csv.docbook:589
+#, no-c-format
+msgid ""
+"Any line without a symbol will be treated as a brokerage-type checking item. "
+"If any transaction involves another account, &eg;, a checking or brokerage "
+"account for a received dividend or for making a payment, a message box will "
+"pop up for the account name to be entered for the transfer. This will "
+"generally be the Brokerage account you chose or created when you created the "
+"Investment account. Similarly enter the column number containing the payee, "
+"if requested. If a mistake is made when entering the account name, the "
+"import will go ahead, but &kmymoney; will not recognize it, and will flag "
+"those transactions as missing a category assignment. If the required account "
+"name is rather long, just enter a few characters. The import will proceed "
+"but the transactions will be flagged by &kmymoney; as missing a category "
+"assignment, and you will need to select the correct transfer account after "
+"the import. Click <guibutton>OK</guibutton> when done. The import process "
+"then gets handed over to &kmymoney;."
+msgstr ""
+"Qualquer linha sem um símbolo será tratada como um item de corretagem. Se "
+"qualquer transação envolver outra conta, &eg;, uma conta-corrente ou de "
+"corretagem para um dividendo recebido ou para fazer um pagamento, aparecerá "
+"uma caixa de mensagem para o nome da conta usada na transferência. Essa será "
+"normalmente a conta de corretagem selecionada ou criada durante a criação da "
+"conta de investimento. De forma semelhante, indique o número da coluna que "
+"contém o beneficiário, caso seja solicitado. Se cometer um erro ao digitar o "
+"nome da conta, a importação irá prosseguir, mas o &kmymoney; não o "
+"reconhecerá e irá marcar essas transações como sem categoria atribuída. Se o "
+"nome da conta desejado for muito longo, basta indicar alguns caracteres. A "
+"importação irá prosseguir, mas as transações serão marcadas pelo &kmymoney; "
+"como sem categoria atribuída, sendo necessário selecionar a conta de "
+"transferência correta após a importação. Clique em <guibutton>OK</guibutton> "
+"quando terminar. O processo de importação prossegue então para o &kmymoney;"
+
+#. Tag: para
+#: details-impexp-csv.docbook:606
+#, no-c-format
+msgid ""
+"If you have more that one transaction referring to the same security, you "
+"can edit all of them at once, using multi-select. For instance, to add a "
+"symbol for several lines, press and hold the &Ctrl; key, and in the symbol "
+"column, select each transaction. While still holding the &Ctrl; key, all "
+"those symbol cells should still be selected, so click one and enter the "
+"symbol. Click inside the window but outside that column, or hit &Enter; (not "
+"<guibutton>OK</guibutton>). Now that those transactions all have the same "
+"symbol, double-click one detail entry and edit the security name as you "
+"wish. Click elsewhere on the window (or &Enter;) to accept the edit, which "
+"will then change all those entries. The remaining entries will show the "
+"symbols picked up from the transactions in the import file."
+msgstr ""
+"Se tiver mais de uma transação que se refira ao mesmo título, você poderá "
+"editar todas de uma vez, usando a seleção múltipla. Por exemplo, para "
+"adicionar um símbolo em várias linhas, pressione e mantenha pressionada a "
+"tecla &Ctrl; e, na coluna do símbolo, selecione cada uma das transações. "
+"Enquanto mantém a tecla &Ctrl; pressionada, todas essas células de símbolos "
+"ainda deverão estar selecionadas, sendo possível clicar em uma delas e "
+"introduzir o símbolo. Clique dentro da janela, mas fora dessa coluna, ou "
+"então pressione &Enter; (não clique no botão <guibutton>OK</guibutton>). "
+"Agora que todas essas transações têm o mesmo símbolo, use o clique duplo "
+"sobre um item de detalhe e edite o nome do título como desejar. Clique em "
+"outro local da janela (ou pressione &Enter;) para aceitar a edição, fazendo "
+"com que todos esses elementos sejam alterados. Os itens restantes mostrarão "
+"os símbolos obtidos a partir das transações no arquivo de importação."
+
+#. Tag: para
+#: details-impexp-csv.docbook:619
+#, no-c-format
+msgid ""
+"Now click <guibutton>OK</guibutton>, then <guibutton>Import</guibutton>. In "
+"the <guilabel>Enter Account</guilabel> box, enter the name of a Brokerage/"
+"checking account for funds. If you enter a valid name that account will be "
+"used. If you can't be bothered entering a correct but long name, enter a few "
+"characters. The import will accept that but the transactions in the ledger "
+"after import will need a proper account to be selected. For the "
+"<guilabel>Brokerage</guilabel> box, enter the number of the column "
+"containing that detail. Now, on the <guilabel>Invalid transaction</guilabel> "
+"box you may get a few entries because the activity type does not match the "
+"qty/price/amount combination. On each message, click <guilabel>Select "
+"Transaction Type</guilabel>, and a dropdown will appear indicating valid "
+"activity types for that combination of values."
+msgstr ""
+"Agora clique no botão <guibutton>OK</guibutton> e depois em "
+"<guibutton>Importar</guibutton>. No campo <guilabel>Indique a conta</"
+"guilabel>, informe o nome da conta de corretagem/conta-corrente para os "
+"fundos. Se indicar um nome válido, será usada essa conta. Se não quiser se "
+"incomodar em inserir um nome correto, mas extenso, indique apenas alguns "
+"caracteres. A importação irá aceitá-lo, mas depois será necessário "
+"selecionar uma conta válida para as transações no livro de registros. Para o "
+"campo <guilabel>Corretagem</guilabel>, indique o número da coluna que contém "
+"esse detalhe. Agora, no campo <guilabel>Transação inválida</guilabel>, você "
+"poderá obter alguns itens porque o tipo de atividade não corresponde à "
+"combinação da quantidade/preço/montante. Em cada mensagem, clique em "
+"<guilabel>Selecionar o tipo de transação</guilabel>, onde aparecerá uma "
+"lista que indica os tipos de atividade válidos para essa combinação de "
+"valores."
+
+#. Tag: para
+#: details-impexp-csv.docbook:634
+#, no-c-format
+msgid ""
+"Now the import has occurred and you're into &kmymoney; to select the "
+"investment account to use. Then the checking account, if there were any "
+"brokerage type transactions."
+msgstr ""
+"Agora a importação foi realizada e você está no &kmymoney; para escolher "
+"qual a conta de investimento será usada. Depois deverá indicar a conta-"
+"corrente, caso existam algumas transações do tipo corretagem."
+
+#. Tag: title
+#: details-impexp-csv.docbook:641
+#, no-c-format
+msgid "CSV Import Wizard: Currency Prices"
+msgstr "Assistente de importação de CSV: Preços de moedas"
+
+#. Tag: para
+#: details-impexp-csv.docbook:642
+#, no-c-format
+msgid "something about importing currency prices"
+msgstr "algo sobre a importação de preços de moeda estrangeira"
+
+#. Tag: title
+#: details-impexp-csv.docbook:647
+#, no-c-format
+msgid "CSV Import Wizard: Stock prices"
+msgstr "Assistente de importação de CSV: Preços de ações"
+
+#. Tag: para
+#: details-impexp-csv.docbook:648
+#, no-c-format
+msgid "Something about importing stock prices"
+msgstr "Algo sobre importar preços de ações"
+
+#. Tag: title
+#: details-impexp-csv.docbook:654
+#, no-c-format
+msgid "CSV Import Wizard: Finish"
+msgstr "Assistente de importação de CSV: Concluir"
+
+#. Tag: para
+#: details-impexp-csv.docbook:655
+#, no-c-format
+msgid ""
+"On reaching the Final page, the plugin automatically validates the values. "
+"If the numeric value column/s is/are highlighted in green, then the "
+"validation was successful and all that is necessary is to click "
+"<guibutton>Import CSV</guibutton> and control then passes to the main "
+"&kmymoney; program. However, if the start and/or end lines are incorrectly "
+"set, or if the wrong columns were selected, the highlighting will be in red, "
+"and an error message will appear indicating where the error lies. The user "
+"will then need to click <guibutton>Back</guibutton> to get to the relevant "
+"page to correct the error."
+msgstr ""
+"Ao chegar à página Final, o plugin irá validar os valores automaticamente. "
+"Se as colunas dos valores numéricos estiverem realçadas em verde, então a "
+"validação foi concluída com sucesso, sendo necessário apenas clicar em "
+"<guibutton>Importar CSV</guibutton> para passar o controle ao programa "
+"principal do &kmymoney;. Contudo, se as linhas iniciais e finais estiverem "
+"definidas incorretamente, ou se as colunas erradas estiverem selecionadas, o "
+"realce ficará em vermelho, aparecendo uma mensagem de erro indicando onde o "
+"problema está ocorrendo. O usuário precisa então clicar em "
+"<guibutton>Voltar</guibutton> para retornar à página relevante para corrigir "
+"o erro."
+
+#. Tag: para
+#: details-impexp-csv.docbook:666
+#, no-c-format
+msgid ""
+"It might also be that if debit and credit columns are in use, one of those "
+"columns may legitimately contain no entries. This would mean that that "
+"column has no decimal symbol present, and this would result in a warning. If "
+"you see that this is the case, you may click either of the buttons to accept "
+"(<guibutton>Accept this</guibutton> or <guibutton>Accept all</guibutton>.)"
+msgstr ""
+"Também pode ser o caso de que as colunas de débito e crédito estão em uso, "
+"sendo que uma delas pode não conter nenhum item. Isso significa que a essa "
+"coluna não tem um símbolo decimal presente, resultando no aviso. Se for esse "
+"o caso, você poderá clicar em um dos botões para aceitar (<guibutton>Aceitar "
+"este</guibutton> ou <guibutton>Aceitar todos</guibutton>.)"
+
+#. Tag: title
+#: details-impexp-csv.docbook:674
+#, no-c-format
+msgid "Decimal Symbol"
+msgstr "Símbolo decimal"
+
+#. Tag: para
+#: details-impexp-csv.docbook:675
+#, no-c-format
+msgid ""
+"Another possible problem might be that the selected decimal symbol is "
+"incorrect. Selecting the symbol to match the data should clear that error. "
+"Normally, you should not need to change this selection. Note that the "
+"<guilabel>Decimal Symbol</guilabel> must be set to match your file, not your "
+"locale. If your locale setting has a different value, conversion will be "
+"seen to take place. The display of the file in the upper part of the window "
+"will show numeric fields highlighted in green if the current setting "
+"produces valid results, otherwise in red. The highlighting also reflects the "
+"<guilabel>Start line</guilabel> and <guilabel>End line</guilabel> settings. "
+"There could be warnings if any of the selected cells appear not to contain "
+"the selected symbol."
+msgstr ""
+"Outro problema possível pode ser a seleção incorreta do símbolo decimal. Se "
+"selecionar o símbolo para corresponder aos dados, deverá limpar esse erro. "
+"Normalmente, você não precisa alterar esta seleção. Lembre-se de que o "
+"<guilabel>Símbolo decimal</guilabel> deverá ser configurado para "
+"corresponder ao seu arquivo e não às suas definições regionais. Se a sua "
+"configuração regional tiver um valor diferente, será necessário testar a "
+"conversão. A apresentação do arquivo na parte superior da janela irá mostrar "
+"os campos numéricos realçados em verde, caso a configuração atual produza "
+"resultados válidos, caso contrário, aparecerão em vermelho. O realce também "
+"reflete as definições da <guilabel>Linha inicial</guilabel> e "
+"<guilabel>Linha final</guilabel>. Poderão aparecer avisos, caso alguma das "
+"células selecionadas pareça não conter o símbolo selecionado."
+
+#. Tag: title
+#: details-impexp-csv.docbook:690
+#, no-c-format
+msgid "Thousands Symbol"
+msgstr "Símbolo de milhares"
+
+#. Tag: para
+#: details-impexp-csv.docbook:691
+#, no-c-format
+msgid ""
+"This does not need to be selected, as it is set automatically based on the "
+"<guilabel>Decimal Symbol</guilabel>. It is provided purely as a guide. In "
+"addition, the selector will be inactive if none of the values to be imported "
+"is greater or equal to 1000."
+msgstr ""
+"Isto não precisa ser selecionado, já que é definido automaticamente com base "
+"no <guilabel>Símbolo decimal</guilabel>. É fornecido simplesmente como uma "
+"guia. Além disso, o seletor ficará inativo, caso nenhum dos valores a "
+"importar seja maior ou igual a 1000."
+
+#. Tag: title
+#: details-impexp-csv.docbook:699
+#, no-c-format
+msgid "Import CSV"
+msgstr "Importar CSV"
+
+#. Tag: para
+#: details-impexp-csv.docbook:700
+#, no-c-format
+msgid ""
+"Clicking this button tells the plugin to actually import the data from the "
+"file, based on the choices you have made above. &kmymoney; will prompt you "
+"for the correct account into which to import the data."
+msgstr ""
+"Clicar neste botão indica ao plugin para importar de fato os dados do "
+"arquivo, baseado nas opções feitas acima. O &kmymoney; perguntará para qual "
+"conta deve importar os dados."
+
+#. Tag: title
+#: details-impexp-csv.docbook:708
+#, no-c-format
+msgid "Make QIF File"
+msgstr "Criar um arquivo QIF"
+
+#. Tag: para
+#: details-impexp-csv.docbook:709
+#, no-c-format
+msgid ""
+"This button gives you the ability, after the import has been completed, to "
+"save the data from the CSV file as a QIF file, should you require one for "
+"any reason. This was actually the original functionality that drove the "
+"creation of this plugin. However, as &kmymoney; itself is now able to export "
+"a qif file, the capability is now probably of little use and is likely to be "
+"removed eventually."
+msgstr ""
+"Este botão permite-lhe, após concluir a importação, salvar os dados do "
+"arquivo CSV como um arquivo QIF, caso precise por alguma razão. Aliás, esta "
+"era a funcionalidade original que levou à criação deste plugin. Contudo, "
+"como o próprio &kmymoney; agora é capaz de exportar um arquivo QIF, essa "
+"capacidade agora é pouco útil e provavelmente será removida."
+
+#. Tag: title
+#: details-impexp-csv.docbook:719
+#, no-c-format
+msgid "Finishing up"
+msgstr "Concluindo"
+
+#. Tag: para
+#: details-impexp-csv.docbook:720
+#, no-c-format
+msgid ""
+"For a <guilabel>Banking</guilabel> import, the plugin has finished, and "
+"&kmymoney; will prompt you, as stated above, for the correct account into "
+"which to import the data. For an <guilabel>Investment</guilabel> import, "
+"however, a little more may be required. If, during import of a transaction, "
+"the plugin finds no valid transaction type, it will display the offending "
+"transaction, and the user may select a valid type to substitute, depending "
+"on the combination of quantity, price, and amount values. For every "
+"transaction, the plugin will validate the column contents to ensure they "
+"match the action type. For instance, if a quantity appears but no price or "
+"amount, it is assumed that the transaction can be only an Add or Remove "
+"Shares. Or, if there is an amount but no quantity or price, then a Dividend "
+"is assumed, &etc;"
+msgstr ""
+"Para uma importação de <guilabel>Banco</guilabel>, o plugin terminou e o "
+"&kmymoney; irá perguntar, como referido acima, a conta correta para onde "
+"importar os dados. Para uma importação de <guilabel>Investimento</guilabel>, "
+"contudo, ainda será necessária mais alguma informação. Se, durante a "
+"importação de uma transação, o plugin não encontrar nenhum tipo de transação "
+"válido, irá mostrar a transação afetada e o usuário poderá selecionar um "
+"tipo válido em substituição, dependendo da combinação dos valores da "
+"quantidade, preço e montante. Para cada transação, o plugin irá validar o "
+"conteúdo das colunas para garantir que correspondem ao tipo de ação. Por "
+"exemplo, se aparecer uma quantidade mas não o seu preço ou montante, assume-"
+"se que a transação só poderá ser para Adicionar ou Remover ações. Por outro "
+"lado, se existir um montante, mas não uma quantidade ou preço, então assume-"
+"se que é um Dividendo, &etc;"
+
+#. Tag: para
+#: details-impexp-csv.docbook:734
+#, no-c-format
+msgid ""
+"If you wish to save your settings, remember to click <guibutton>Finish</"
+"guibutton>, and the plugin will then close."
+msgstr ""
+"Se desejar salvar suas configurações, lembre-se de clicar no botão "
+"<guibutton>Concluir</guibutton>, para que o plugin seja fechado."
+
+#. Tag: title
+#: details-impexp-csv.docbook:740
+#, no-c-format
+msgid "Adding Investment Activity Types"
+msgstr "Adicionar tipos de atividade de investimento"
+
+#. Tag: para
+#: details-impexp-csv.docbook:741
+#, no-c-format
+msgid ""
+"If you find that your investment statements keep including activity types "
+"that are not recognized, just add them to the section in the resource file. "
+"(See <link linkend=\"details.impexp.csv.config\">below</link> for more "
+"details on this file.) For instance, in the <literal>[InvestmentSettings]</"
+"literal> section of the file, the <literal>BuyParam</literal> field includes "
+"entries for <literal>Purchase</literal>, <literal>Buy</literal>, "
+"<literal>New Inv</literal>, and <literal>Switch In</literal>. If you find a "
+"different one, add it to the correct list and restart the plugin. You may "
+"notice that there are similarities in the entries in different fields, and "
+"you may find that the wrong activity type is being selected. The plugin "
+"checks these lists in the following order: <literal>Shrsin</literal>, "
+"<literal>DivX</literal>, <literal>Reinvdiv</literal>, <literal>Brokerage</"
+"literal>, <literal>Buy</literal>, <literal>Sell</literal>, and "
+"<literal>Remove</literal>. Re-ordering the lists to suit this does not work "
+"as might be expected, since the entries in the resource file get sorted into "
+"alphabetical order. If the offending parameter is one you don't need, just "
+"delete it from the file. If that is not possible, you may need to edit your "
+"file before input."
+msgstr ""
+"Se achar que seus extratos de investimentos continuam incluindo tipos de "
+"atividade não reconhecidos, basta adicioná-los à seção correspondente no "
+"arquivo de recursos (Veja <link linkend=\"details.impexp.csv.config"
+"\">abaixo</link> para mais detalhes sobre este arquivo. Por exemplo, na "
+"seção <literal>[InvestmentSettings]</literal> do arquivo, o campo "
+"<literal>BuyParam</literal> inclui entrada para <literal>Purchase</literal>, "
+"<literal>Buy</literal>, <literal>New Inv</literal>, e <literal>Switch In</"
+"literal>. Se você encontrar uma diferente, adicione-a à lista correta e "
+"reinicie o plugin. Você pode notar que existem semelhanças nas entradas em "
+"campos diferentes, e você pode achar que o tipo errado de atividade está "
+"sendo selecionado. O plugin verifica estas listas na seguinte ordem: "
+"<literal>Shrsin</literal>, <literal>DivX</literal>, <literal>Reinvdiv</"
+"literal>, <literal>Brokerage</literal>, <literal>Buy</literal>, "
+"<literal>Sell</literal>, <literal>Remove</literal>. Reordenar as listas para "
+"adequar isso não funciona como o esperado, uma vez que as entradas no "
+"arquivo de recursos são ordenadas alfabeticamente. Se o parâmetro inválido "
+"não for interessante para você, basta removê-lo do arquivo. Se isso não for "
+"possível, você precisa editar seu arquivo antes da introdução."
+
+#. Tag: title
+#: details-impexp-csv.docbook:761
+#, no-c-format
+msgid "Configuration of CSV importer plugin"
+msgstr "Configuração do plugin de importação CSV"
+
+#. Tag: para
+#: details-impexp-csv.docbook:762
+#, no-c-format
+msgid ""
+"A well-known drawback of QIF format is that it is a fairly loose format. "
+"With CSV files, there is this same problem, only more so, in that there is "
+"no agreed standard at all. With investment files, in particular, there is "
+"much more scope for variation in specifying the different types of "
+"activities represented in the data. The plugin handles this by listing these "
+"activity types in a resource file, called <filename>csvimporterrc</"
+"filename>. The location of this file depends on your operating system or "
+"distribution. On a &Linux; system, this will be <filename class=\"directory"
+"\">$KDEHOME/share/config</filename> where <envar>$KDEHOME</envar> is usually "
+"<filename class=\"directory\">.config</filename> within your home folder. If "
+"you are migrating from a version of &kmymoney; prior to 5.0, the old "
+"location of <envar>$KDEHOME</envar> was <filename class=\"directory\">.kde4</"
+"filename>, also within your home folder. Using this resource file allows the "
+"user to add an activity type that the developer had not encountered. If the "
+"file does not exist when the importer first runs, it will create a default "
+"version, containing a few of the more obvious descriptions."
+msgstr ""
+"Uma desvantagem conhecida do formato QIF é que ele é bastante "
+"despadronizado. Com arquivos CSV, existe o mesmo problema, só que em maior "
+"escala, pois não há nenhum padrão acordado. Com arquivos de investimento, em "
+"particular, há muito mais espaço para variação na especificação dos "
+"diferentes tipos deatividades representadas nos dados. O plugin lida com "
+"isso listando esses tipos de atividade em um arquivo de recursos, chamado "
+"<filename>csvimporterrc</filename>. A localização deste arquivo depende do "
+"seu sistema operacional ou distribuição. Em um sistema &Linux;, ele estará "
+"em <filename class=\"directory\">$KDEHOME/share/config</filename>, onde "
+"<envar>$KDEHOME</envar> geralmente é <filename class=\"directory\">.config</"
+"filename> dentro da sua pasta pessoal. Se você estiver migrando de uma "
+"versão do &kmymoney; anterior à versão 5.0, o antigo local de <envar>"
+"$KDEHOME</envar> era <filename class=\"directory\">.kde4</filename>, também "
+"dentro da sua pasta pessoal. O uso deste arquivo de recursos permite ao "
+"usuário adicionar um tipo de atividade que o desenvolvedor não havia "
+"encontrado. Se o arquivo não existir quando o importador for executado pela "
+"primeira vez, ele criará uma versão padrão, contendo algumas das descrições "
+"mais óbvias."
+
+#. Tag: para
+#: details-impexp-csv.docbook:780
+#, no-c-format
+msgid ""
+"A number of sample CSV files are provided (in the <filename class=\"directory"
+"\"> kmymoney/contrib/csvimporter/</filename> folder in the source tree) in "
+"the hope that they may help. For example, in the investment sample, an "
+"activity type is \"<literal>ReInvestorContract Buy : ReInvested Units</"
+"literal>\". In the validation process, the first successful match is on the "
+"<literal>ReInv</literal> in <literal>ReInvestorContract Buy</literal>, so "
+"the transaction therefore gets classed as <literal>Reinvdiv</literal>, even "
+"though <literal>Buy</literal> also is mentioned. Another example which has "
+"been observed is an activity type of <literal>Reinvest</literal> even though "
+"the transaction included neither price nor amount, but only a quantity, so "
+"that needed to be treated as <literal>Add Shares</literal>, or "
+"<literal>Shrsin</literal>."
+msgstr ""
+"Alguns exemplos de arquivos CSV são disponibilizados (na pasta <filename "
+"class=\"directory\">kmymoney/contrib/csvimporter/</filename> da árvore do "
+"código-fonte) na esperança de que eles possam ajudar. Por exemplo, no "
+"exemplo de investimento, um tipo de atividade é <literal>ReInvestorContract "
+"Buy : ReInvested Units</literal>. No processo de validação, a primeira "
+"correspondência bem sucedida é no <literal>ReInv</literal> em "
+"<literal>ReInvestorContract Buy</literal>, assim a transação assume a partir "
+"daí a classe <literal>Reinvdiv</literal>, mesmo que o <literal>Buy</literal> "
+"também seja mencionado. Outro exemplo que tem sido observado é um tipo de "
+"atividade <literal>Reinvest</literal> mesmo quando a transação não inclui "
+"preço ou montante, somente uma quantidade, assim isto precisa ser tratado "
+"como <literal>Add Shares</literal> ou <literal>Shrsin</literal>."
+
+#. Tag: para
+#: details-impexp-csv.docbook:794
+#, no-c-format
+msgid ""
+"When this plugin was created, only a few investment formats had been seen as "
+"examples, and it may well be that you will encounter one which cannot be "
+"handled correctly. If you find such a file, please send a suitable example "
+"(edited to remove or replace personal information) to the &kmymoney; user "
+"list &userlist; or developer list &devlist;, the developer will do his best "
+"to modify the plugin to handle it."
+msgstr ""
+"Quando esse plugin foi criado, apenas alguns poucos formatos de investimento "
+"foram utilizados como exemplo, e pode muito bem ocorrer que você tenha "
+"encontrado um que não é tratados corretamente. Se você encontrar um arquivo "
+"desse tipo, por favor, envie um exemplo adequado (editado para remover ou "
+"substituir informações pessoais) para a lista de usuários do &kmymoney; "
+"&userlist; ou lista de desenvolvedores &devlist;. Os desenvolvedores farão o "
+"melhor possível para modificar o plugin de modo que ele funcione "
+"corretamente com esse novo formato."
+
+#. Tag: title
+#: details-impexp-csv.docbook:803
+#, no-c-format
+msgid "CSV Importer configuration dialog"
+msgstr "Diálogo de configuração do plugin de importação de CSV"
+
+#. Tag: para
+#: details-impexp-csv.docbook:804
+#, no-c-format
+msgid ""
+"Finally, there are a few other items which may be configured in a dialog "
+"invoked through the <link linkend=\"details.settings.plugins.csvimporter"
+"\">CSV Importer configuration dialog</link>, which can be invoked from the "
+"Plugins page of the main KMyMoney configuration dialog. This includes which "
+"items will be autodetected by the importer and which profile will be used if "
+"you do have the importer export a QIF file, as mentioned above."
+msgstr ""
+"Por fim, existem alguns outros itens que podem ser configurados em uma caixa "
+"de diálogo acessada através da <link linkend=\"details.settings.plugins."
+"csvimporter\">caixa de diálogo de configuração do importador CSV</link>, que "
+"pode ser acessada na página Plugins da caixa de diálogo de configuração "
+"principal do KMyMoney. Isso inclui quais itens serão detectados "
+"automaticamente pelo importador e qual perfil será usado se você optar por "
+"exportar um arquivo QIF pelo importador, como mencionado acima."
+
+#. Tag: title
+#: details-impexp-csv.docbook:820
+#, no-c-format
+msgid "CSV Exporter"
+msgstr "Exportador CSV"
+
+#. Tag: para
+#: details-impexp-csv.docbook:822
+#, no-c-format
+msgid ""
+"To export data to a CSV file, choose the <menuchoice><guimenu>File</guimenu> "
+"<guisubmenu>Export</guisubmenu> <guimenuitem>CSV...</guimenuitem> </"
+"menuchoice> menu item. The dialog which appears gives you a number of "
+"choices which control the data to be exported."
+msgstr ""
+"Para exportar dados para um arquivo CSV, escolha o item de menu "
+"<menuchoice><guimenu>Arquivo</guimenu> <guisubmenu>Exportar</guisubmenu> "
+"<guimenuitem>CSV...</guimenuitem> </menuchoice>. A caixa de diálogo que "
+"aparece oferece várias opções que controlam os dados a serem exportados."
+
+#. Tag: screeninfo
+#: details-impexp-csv.docbook:830
+#, no-c-format
+msgid "<screeninfo>csv exporter</screeninfo>"
+msgstr "<screeninfo>exportador csv</screeninfo>"
+
+#. Tag: phrase
+#: details-impexp-csv.docbook:836
+#, no-c-format
+msgid "<phrase>csv exporter</phrase>"
+msgstr "<phrase>exportador csv</phrase>"
+
+#. Tag: para
+#: details-impexp-csv.docbook:841
+#, no-c-format
+msgid ""
+"Please note that an exported CSV file can include data from only one account."
+msgstr ""
+"Observe que um arquivo CSV exportado pode incluir dados de apenas uma conta."
+
+#. Tag: para
+#: details-impexp-csv.docbook:845
+#, no-c-format
+msgid ""
+"Specify the name of the exported CSV file either by entering the complete "
+"path in the <guilabel>File to export to</guilabel> field, or by clicking "
+"<guilabel>Browse</guilabel> and navigating to it in the Save File dialog. "
+"Choose which account to export with the <guilabel>Account to export</"
+"guilabel> dropdown."
+msgstr ""
+"Especifique o nome do arquivo CSV exportado inserindo o caminho completo no "
+"campo <guilabel>Arquivo para exportar</guilabel> ou clicando em "
+"<guilabel>Procurar</guilabel> e navegando até ele na caixa de diálogo Salvar "
+"arquivo. Escolha qual conta exportar usando o menu suspenso <guilabel>Conta "
+"para exportar</guilabel>."
+
+#. Tag: para
+#: details-impexp-csv.docbook:852
+#, no-c-format
+msgid ""
+"The time period of data exported is controlled by the <guilabel>Date Range</"
+"guilabel> <guilabel>Start on</guilabel> and <guilabel>End on</guilabel> date "
+"fields. The default values represent the complete date range of your entire "
+"data file, and they are adjusted when you select an account to export."
+msgstr ""
+"O período de tempo dos dados exportados é controlado pelos campos de data "
+"<guilabel>Intervalo de datas</guilabel>, <guilabel>Início em</guilabel> e "
+"<guilabel>Fim em</guilabel>. Os valores padrão representam o intervalo de "
+"datas completo de todo o seu arquivo de dados e são ajustados quando você "
+"seleciona uma conta para exportar."
+
+#. Tag: para
+#: details-impexp-csv.docbook:859
+#, no-c-format
+msgid ""
+"By default, the <guilabel>Field Separator</guilabel> is a comma, but you can "
+"also choose to use a tab or semicolon."
+msgstr ""
+"Por padrão, o <guilabel>Separador de campo</guilabel> é uma vírgula, mas "
+"você também pode optar por usar uma tabulação ou ponto e vírgula."
+
+#. Tag: para
+#: details-impexp-csv.docbook:864
+#, no-c-format
+msgid ""
+"If you check the <guilabel>Contents to Export</guilabel> <guilabel>Account</"
+"guilabel> radio button, then the data exported will be the transactions from "
+"the specified account and date range. However, if you select the "
+"<guilabel>Categories</guilabel> radio button, then the exported file will "
+"contain one row for each category which has been defined. For top level "
+"categories, the category name is shown, and an <quote>I</quote> or <quote>E</"
+"quote> is shown to indicate whether the Category is Income or Expense. For "
+"non top-level categories, the parent category is also shown."
+msgstr ""
+"Se você selecionar a opção <guilabel>Conteúdo a exportar</guilabel> "
+"<guilabel>Conta</guilabel>, os dados exportados serão as transações da conta "
+"e do intervalo de datas especificados. No entanto, se você selecionar a "
+"opção <guilabel>Categorias</guilabel>, o arquivo exportado conterá uma linha "
+"para cada categoria definida. Para categorias de nível superior, o nome da "
+"categoria é exibido, juntamente com <quote>I</quote> ou <quote>E</quote> "
+"para indicar se a categoria é Receita ou Despesa. Para categorias que não "
+"são de nível superior, a categoria pai também é exibida."
+
+#. Tag: para
+#: details-impexp-csv.docbook:875
+#, no-c-format
+msgid ""
+"The exporter will output a set of columns appropriate for the type of "
+"account being exported."
+msgstr ""
+"O exportador irá gerar um conjunto de colunas apropriado para o tipo de "
+"conta que está sendo exportada."
+
+#~ msgid "&Allan.Anderson; &Allan.Anderson.mail;"
+#~ msgstr "&Allan.Anderson; &Allan.Anderson.mail;"
+
+#, fuzzy
+#~| msgid ""
+#~| "If you have installed from RPM or Deb, the CSV Importer Plugin should be "
+#~| "contained within the &kmymoney; package. If you have built from source, "
+#~| "there should be no additional requirements. The &kmymoney; build process "
+#~| "should detect the plugin source and compile the plugin."
+#~ msgid ""
+#~ "If you have installed from RPM or Deb, the CSV Importer Plugin should be "
+#~ "contained within the kmymoney package. If you have built from source, "
+#~ "there should be no additional requirements. The &kmymoney; build process "
+#~ "should detect the plugin source and compile the plugin."
+#~ msgstr ""
+#~ "Se tiver instalado a partir de um pacote RPM ou DEB, o plugin de "
+#~ "importação de CSV deverá integrar o pacote do &kmymoney;. Se tiver "
+#~ "compilado a partir do código-fonte, não há nenhum requisito adicional. O "
+#~ "processo de compilação do &kmymoney; deverá detectar e compilar o código "
+#~ "do plugin."
+
+#~ msgid ""
+#~ "The CSV Importer is in the form of a wizard, with a separate page for "
+#~ "each individual step of the process. There may be some minor differences "
+#~ "between the text in this handbook, the labels in the screenshots, and the "
+#~ "labels you actually see in the wizard. In such cases, the handbook "
+#~ "describes what the wizard will look like in the next release."
+#~ msgstr ""
+#~ "O importador de CSV tem a forma de um assistente, com uma página separada "
+#~ "para cada passo do processo. Poderão existir pequenas diferenças entre o "
+#~ "texto deste manual, as legendas nas imagens e os textos que você vê no "
+#~ "assistente. Nesses casos, o manual descreve como será o assistente na "
+#~ "próxima versão."
+
+#~ msgid ""
+#~ "When started, the CSV Importer displays the <guilabel>Start</guilabel> "
+#~ "page. The upper area, where data will be displayed, is initially empty. "
+#~ "Below that, on the left, is a list of the steps of the import process, "
+#~ "with the current one highlighted. To the right of that are some brief "
+#~ "instructions and two radio buttons, allowing the choice of either "
+#~ "<guilabel>Banking</guilabel> or <guilabel>Investment</guilabel>. Next "
+#~ "there is a profile selector box, which is enabled once one of the radio "
+#~ "buttons has been selected. At the bottom of the display are buttons to "
+#~ "move on to the next step of the wizard, go <guibutton>Back</guibutton> to "
+#~ "the previous step, or <guibutton>Cancel</guibutton> the import. At the "
+#~ "initial step, there is also a button <guilabel>Select File</guilabel> to "
+#~ "initially select the file to import."
+#~ msgstr ""
+#~ "Ao ser iniciado, o Importador de CSV mostra a página de <guilabel>Início</"
+#~ "guilabel>. A área superior, onde os dados serão apresentados, está "
+#~ "inicialmente vazia. Abaixo dela, à esquerda, existe uma lista com os "
+#~ "passos do processo de importação, com realce no atual. À direita da "
+#~ "lista, existem algumas breves instruções e dois botões de opção, "
+#~ "permitindo a escolha de <guilabel>Banco</guilabel> ou "
+#~ "<guilabel>Investimento</guilabel>. Em seguida, existe um campo de seleção "
+#~ "do perfil, que fica ativo assim que um dos botões de opção for "
+#~ "selecionado. Na parte inferior da janela existem botões para avançar para "
+#~ "o próximo passo do assistente, <guibutton>Voltar</guibutton> para o passo "
+#~ "anterior ou <guibutton>Cancelar</guibutton> a importação. No passo "
+#~ "inicial, existe também o botão <guilabel>Selecionar arquivo</guilabel> "
+#~ "para indicar o arquivo a importar."
+
+#, fuzzy
+#~| msgid ""
+#~| "The plugin should have detected the appropriate <guilabel>Field "
+#~| "Separator</guilabel> to use, and it is not usually possible to select a "
+#~| "different one. In fact, attempting to do so will reset any field choices "
+#~| "you may already have made. There is also a selector for the "
+#~| "<guilabel>Text Delimiter</guilabel>, but generally the quote (\") is "
+#~| "correct. Now click on the <guilabel>Next</guilabel> button. Depending "
+#~| "upon the earlier selection you made, you will now be on either the "
+#~| "Banking page or the Investment page."
+#~ msgid ""
+#~ "The plugin should have detected the appropriate <guilabel>Field "
+#~ "Separator</guilabel> to use, and it is not usually possible to select a "
+#~ "different one. In fact, attempting to do so will reset any field choices "
+#~ "you may already have made. There is also a selector for the "
+#~ "<guilabel>Text Delimiter</guilabel>, but generally the quote (\") is "
+#~ "correct. Now click on the <guibutton>Next</guibutton> button. Depending "
+#~ "upon the earlier selection you made, you will now be on either the "
+#~ "Banking page or the Investment page."
+#~ msgstr ""
+#~ "O plugin já deve ter detectado o <guilabel>Separador de campos</guilabel> "
+#~ "apropriado que será usado e, normalmente, não é possível selecionar um "
+#~ "diferente. De fato, se tentar fazer isso, irá limpar todas as escolhas de "
+#~ "campo já feitas. Existe também um seletor para o <guilabel>Delimitador de "
+#~ "texto</guilabel>, mas normalmente as aspas (\") estão corretas. Agora, "
+#~ "clique no botão <guilabel>Próximo</guilabel>. Dependendo da seleção "
+#~ "anterior, você poderá estar na página de Banco ou de Investimento."
+
+#~ msgid ""
+#~ "On this page, you select the column numbers from which to import the "
+#~ "relevant fields."
+#~ msgstr ""
+#~ "Nesta página, você poderá selecionar os números das colunas a partir dos "
+#~ "quais serão importados os campos relevantes."
+
+#~ msgid ""
+#~ "For most fields, you just need to use the appropriate dropdown to select "
+#~ "the appropriate column. However, there are a few special considerations."
+#~ msgstr ""
+#~ "Para a maioria dos campos, você apenas precisa usar a lista apropriada "
+#~ "para selecionar a coluna. Contudo, existem algumas considerações "
+#~ "especiais."
+
+#~ msgid ""
+#~ "On this page, you indicate if any lines should be ignored at the "
+#~ "beginning or end of the file. You also indicate the format of any date "
+#~ "column."
+#~ msgstr ""
+#~ "Nesta página, você poderá indicar se algumas das linhas deverão ser "
+#~ "ignoradas no início ou no fim do arquivo. Você também poderá indicar o "
+#~ "formato de qualquer coluna de datas."
+
+#~ msgid "Date format"
+#~ msgstr "Formato da data"
+
+#~ msgid ""
+#~ "Once ready, the <guilabel>Next</guilabel> button will be enabled, and "
+#~ "clicking it will advance the wizard."
+#~ msgstr ""
+#~ "Assim que estiver pronto, o botão <guilabel>Próximo</guilabel> ficará "
+#~ "ativo, permitindo-lhe avançar no assistente."

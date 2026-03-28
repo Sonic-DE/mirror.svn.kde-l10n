@@ -1,0 +1,2835 @@
+#
+# SPDX-FileCopyrightText: 2024 Matjaž Jeran <matjaz.jeran@amis.net>
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 12:04+0000\n"
+"PO-Revision-Date: 2024-09-24 11:51+0200\n"
+"Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
+"Language-Team: Slovenian <lugos-slo@lugos.si>\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
+"X-Generator: Poedit 3.5\n"
+
+#. Tag: title
+#: programming-reference.docbook:2
+#, no-c-format
+msgid "&turtlescript; Programming Reference"
+msgstr "&turtlescript; Referenca za programiranje"
+
+#. Tag: para
+#: programming-reference.docbook:3
+#, no-c-format
+msgid ""
+"This is the reference for &kturtle;'s &turtlescript;. In the first section "
+"of this chapter have a look at some aspects of the <link linkend=\"grammar"
+"\">grammar</link> of &turtlescript; programs. The second section deals "
+"exclusively with <link linkend=\"mathematical-operators\">mathematical "
+"operators</link>, <link linkend=\"boolean-operators\">boolean (true/false) "
+"operators</link> and <link linkend=\"comparing-operators\">comparison "
+"operators</link>. The third section is basically a giant list of all <link "
+"linkend=\"commands\">commands</link> explaining them one-by-one. Section "
+"four explains how to <link linkend=\"assignment-of-variables\">assign</link> "
+"values to <link linkend=\"assignment-of-variables\">variables</link>. "
+"Finally we explain how to arrange the execution of commands with <link "
+"linkend=\"controlling-execution\">execution controlling statements</link> in "
+"section five and how to create you own commands with <link linkend=\"learn"
+"\"><userinput>learn</userinput></link> in section six."
+msgstr ""
+"To je referenca za &kturtle;'s &turtlescript;. V prvem delu tega poglavja si "
+"oglejte nekatere vidike <link linkend=\"grammar\">slovnice</link> "
+"&turtlescript; programi. Drugi razdelek obravnava izključno <link linkend="
+"\"mathematical-operators\">matematične operatorje</link>, <link linkend="
+"\"boolean-operators\">logične (true/false) operatorje</link> in <link "
+"linkend=\"comparing-operators\">operatorji primerjave</link>. Tretji "
+"razdelek je v bistvu ogromen seznam vseh <link linkend=\"commands\">ukazov</"
+"link>, ki jih razlaga enega za drugim. V četrtem razdelku je razloženo, kako "
+"<link linkend=\"assignment-of-variables\">dodeliti</link> vrednosti <link "
+"linkend=\"assignment-of-variables\">spremenljivkam</link>. Nazadnje "
+"razložimo, kako urediti izvajanje ukazov s <link linkend=\"controlling-"
+"execution\">stavki za nadzor izvajanja</link> v petem razdelku in kako "
+"ustvariti lastne ukaze s <link linkend=\"learn\"><userinput> naučite se</"
+"userinput></link> v šestem razdelku."
+
+#. Tag: title
+#: programming-reference.docbook:6
+#, no-c-format
+msgid "The Grammar of &turtlescript;"
+msgstr "Slovnica &turtlescript;"
+
+#. Tag: para
+#: programming-reference.docbook:7
+#, no-c-format
+msgid ""
+"As in any language, &turtlescript; has different types of words and symbols. "
+"In English we distinguish verbs (like 'to walk' or 'to sing') and nouns "
+"(like 'sister' or 'house'), they are used for different purposes. "
+"&turtlescript; is a programming language, it is used to instruct &kturtle; "
+"what to do."
+msgstr ""
+"Kot v vsakem jeziku, &turtlescript; ima različne vrste besed in simbolov. V "
+"angleščini ločimo glagole (na primer 'hoditi' ali 'peti') in samostalnike "
+"(na primer 'sestra' ali 'hiša'), ki se uporabljajo za različne namene. "
+"&turtlescript; je programski jezik, uporablja se za ukazovanje &kturtle; kaj "
+"storiti."
+
+#. Tag: para
+#: programming-reference.docbook:8
+#, no-c-format
+msgid ""
+"In this section some of &turtlescript;'s different types of words and "
+"symbols are briefly explained. We explain <link linkend=\"comment"
+"\">comments</link>, <link linkend=\"command\">commands</link> and the three "
+"different kinds of literals: <link linkend=\"number\">numbers</link>, <link "
+"linkend=\"string\">strings</link> and <link linkend=\"boolean-value"
+"\">boolean (true/false) values</link>."
+msgstr ""
+"V tem razdelku so na kratko razložene nekatere različne vrste besed in "
+"simbolov &turtlescript;. Razložimo <link linkend=\"comment\">komentarje</"
+"link>, <link linkend=\"command\">ukaze</link> in tri različne vrste "
+"literalov: <link linkend=\"number\">števila</link> , <link linkend=\"string"
+"\">nizi</link> in <link linkend=\"boolean-value\">logične (true/false) "
+"vrednosti</link>."
+
+#. Tag: title
+#: programming-reference.docbook:12
+#, no-c-format
+msgid "Comments"
+msgstr "Komentarji"
+
+#. Tag: para
+#: programming-reference.docbook:13
+#, no-c-format
+msgid ""
+"A program consists instructions that are executed when the program is run "
+"and so called comments. Comments are not executed, &kturtle; simply ignores "
+"them when executing your program. Comment are there for other programmers to "
+"make them understand your program better. Everything that follows on a "
+"<userinput>#</userinput> symbol is considered a comment in &turtlescript;. "
+"For example this little program that does nothing: <screen>\n"
+"# this little program does nothing, it is only a comment!\n"
+"</screen> It is a bit useless but it explain the matter well."
+msgstr ""
+"Program sestavljajo navodila, ki se izvajajo, ko se program izvaja, in tako "
+"imenovani komentarji. Komentarji se ne izvajajo, &kturtle; jih preprosto "
+"ignorira pri izvajanju vašega programa. Komentarji so za druge programerje, "
+"da bolje razumejo vaš program. Vse, kar sledi simbolu <userinput>#</"
+"userinput>, se šteje za komentar v &turtlescript;. Na primer ta programček, "
+"ki ne naredi ničesar: <screen>\n"
+"# ta programček ne naredi ničesar, je samo komentar!\n"
+"</screen> Je nekoliko neuporabno, vendar dobro razloži zadevo."
+
+#. Tag: para
+#: programming-reference.docbook:16
+#, no-c-format
+msgid ""
+"Comments get very useful when the program gets a little bit more complex. It "
+"can help to give some advice to other programmers. In the following program "
+"you see comments being used together with the <link linkend=\"print\">print</"
+"link> command. <screen>\n"
+"# this program has been made by Cies Breijs.\n"
+"print \"this text will get printed on the canvas\"\n"
+"# the previous line is not a comment, but the next line is:\n"
+"# print \"this text will not get printed!\"\n"
+"</screen> The first line describes the program. The second line is executed "
+"by &kturtle; and prints <userinput>this text will get printed on the canvas</"
+"userinput> on the canvas. The third line is a comment. And the forth line is "
+"a comment that contains a piece of &turtlescript;, if the <userinput>#</"
+"userinput> symbol would be removed on the fourth line the print statement "
+"will we executed by &kturtle;. Programmers say: the print statement on the "
+"fourth line is 'commented out'."
+msgstr ""
+"Komentarji postanejo zelo uporabni, ko program postane nekoliko bolj "
+"zapleten. Pomaga lahko z nasveti drugim programerjem. V naslednjem programu "
+"vidite komentarje, ki se uporabljajo skupaj z ukazom <link linkend=\"print"
+"\">natisni</link>. <screen>\n"
+"# ta program je izdelal Cies Breijs.\n"
+"natisni \"to besedilo bo natisnjeno na platnu\"\n"
+"# prejšnja vrstica ni komentar, naslednja vrstica pa je:\n"
+"# print \"to besedilo ne bo natisnjeno!\"\n"
+"</screen> Prva vrstica opisuje program. Drugo vrstico izvede &kturtle; in "
+"natisne <userinput>to besedilo bo natisnjeno na platnu</userinput> na "
+"platnu. Tretja vrstica je komentar. In četrta vrstica je komentar, ki "
+"vsebuje del &turtlescript;, če bi bil simbol <userinput>#</userinput> "
+"odstranjen v četrti vrstici, bo &kturtle; izvedel stavek za tiskanje. "
+"Programerji pravijo: stavek za tiskanje v četrti vrstici je 'zakomentiran'."
+
+#. Tag: para
+#: programming-reference.docbook:19
+#, no-c-format
+msgid ""
+"Commented lines are <glossterm>highlighted</glossterm> with light gray in "
+"the <link linkend=\"the-editor\">code editor</link>."
+msgstr ""
+"Komentirane vrstice so <glossterm>označene</glossterm> s svetlo sivo v <link "
+"linkend=\"the-editor\">urejevalniku kode</link>."
+
+#. Tag: title
+#: programming-reference.docbook:23 programming-reference.docbook:162
+#, no-c-format
+msgid "Commands"
+msgstr "Ukazi"
+
+#. Tag: para
+#: programming-reference.docbook:24
+#, no-c-format
+msgid ""
+"Using commands you tell the turtle or &kturtle; to do something. Some "
+"commands need input, some give output. <screen>\n"
+"# forward is a command that needs input, in this case the number 100:\n"
+"forward 100\n"
+"</screen> The first line is a <link linkend=\"comment\">comment</link>. The "
+"second line contains the <userinput>forward</userinput> command and the "
+"<link linkend=\"number\">number</link> <userinput>100</userinput>. The "
+"number is not part of command, it is considered 'input' for the command."
+msgstr ""
+"Z ukazi poveste želvi ali &kturtle; narediti nekaj. Nekateri ukazi "
+"potrebujejo vnos, nekateri dajejo izhod. <screen>\n"
+"# forward je ukaz, ki potrebuje vnos, v tem primeru številko 100:\n"
+"naprej 100\n"
+"</screen> Prva vrstica je <link linkend=\"comment\">komentar</link>. Druga "
+"vrstica vsebuje ukaz <userinput>naprej</userinput> in <link linkend=\"number"
+"\">število</link> <userinput>100</userinput>. Številka ni del ukaza, šteje "
+"se za 'vhod' za ukaz."
+
+#. Tag: para
+#: programming-reference.docbook:27
+#, no-c-format
+msgid ""
+"Some commands like &eg; <userinput>go</userinput> need more than one input "
+"value. Multiple values have to be separated using the <userinput>,</"
+"userinput> character (comma)."
+msgstr ""
+"Nekateri ukazi, kot je &eg; <userinput>pojdi</userinput> potrebuje več kot "
+"eno vhodno vrednost. Več vrednosti je treba ločiti z znakom <userinput>,</"
+"userinput> (vejico)."
+
+#. Tag: para
+#: programming-reference.docbook:28
+#, no-c-format
+msgid ""
+"For a detailed overview of all commands that &kturtle; supports go <link "
+"linkend=\"commands\">here</link>. Built-in commands are "
+"<glossterm>highlighted</glossterm> in dark blue."
+msgstr ""
+"Za podroben pregled vseh ukazov, ki jih &kturtle; podpira pojdite <link "
+"linkend=\"commands\">tukaj</link>. Vgrajeni ukazi so <glossterm>označeni</"
+"glossterm> s temno modro barvo."
+
+#. Tag: title
+#: programming-reference.docbook:32
+#, no-c-format
+msgid "Numbers"
+msgstr "Številke"
+
+#. Tag: para
+#: programming-reference.docbook:33
+#, no-c-format
+msgid ""
+"Most likely you already know quite a bit about numbers. The way numbers are "
+"used in &kturtle; is not much different from spoken language, or math."
+msgstr ""
+"Najverjetneje že veste kar nekaj o številkah. Način uporabe števil v "
+"&kturtle; se ne razlikuje veliko od govorjenega jezika ali matematike."
+
+#. Tag: para
+#: programming-reference.docbook:34
+#, no-c-format
+msgid ""
+"We have the so called natural numbers: <userinput>0</userinput>, "
+"<userinput>1</userinput>, <userinput>2</userinput>, <userinput>3</"
+"userinput>, <userinput>4</userinput>, <userinput>5</userinput>, &etc; The "
+"negative numbers: <userinput>-1</userinput>, <userinput>-2</userinput>, "
+"<userinput>-3</userinput>, &etc; And the numbers with decimals, or dot-"
+"numbers, for example: <userinput>0.1</userinput>, <userinput>3.14</"
+"userinput>, <userinput>33.3333</userinput>, <userinput>-5.05</userinput>, "
+"<userinput>-1.0</userinput>. The <userinput>.</userinput> character (dot) is "
+"used as decimal separator."
+msgstr ""
+"Imamo tako imenovana naravna števila: <userinput>0</userinput>, "
+"<userinput>1</userinput>, <userinput>2</userinput>, <userinput>3</"
+"userinput>, <userinput>4</userinput>, <userinput>5</userinput>, &etc; "
+"Negativna števila: <userinput>-1</userinput>, <userinput>-2</userinput>, "
+"<userinput>-3</userinput> itd. In številke z decimalkami ali pikami, na "
+"primer: <userinput>0,1</userinput>, <userinput>3,14</userinput>, "
+"<userinput>33,3333</userinput>, <userinput>-5,05</userinput> , "
+"<userinput>-1.0</userinput>. Znak <userinput>.</userinput> (pika) se "
+"uporablja kot decimalno ločilo."
+
+#. Tag: para
+#: programming-reference.docbook:37
+#, no-c-format
+msgid ""
+"Numbers can be used in <link linkend=\"mathematical-operators\">mathematical "
+"operators</link> and <link linkend=\"comparing-operators\">comparison "
+"operators</link>. They can also be stored in <link linkend=\"assignment-of-"
+"variables\">variables</link>. Numbers are <glossterm>highlighted</glossterm> "
+"in dark red."
+msgstr ""
+"Številke je mogoče uporabiti v <link linkend=\"mathematical-operators"
+"\">matematičnih operatorjih</link> in <link linkend=\"comparing-operators"
+"\">operatorjih za primerjavo</link>. Lahko jih shranite tudi v <link linkend="
+"\"assignment-of-variables\">spremenljivke</link>. Številke so "
+"<glossterm>poudarjene</glossterm> s temno rdečo barvo."
+
+#. Tag: title
+#: programming-reference.docbook:43
+#, no-c-format
+msgid "Strings"
+msgstr "Strings"
+
+#. Tag: para
+#: programming-reference.docbook:44
+#, no-c-format
+msgid ""
+"First an example: <screen>\n"
+"print \"Hello, I'm a string.\"\n"
+"</screen> In this example <userinput>print</userinput> is a command where "
+"<userinput>\"Hello, I'm a string.\"</userinput> is a string. Strings start "
+"and end with the <userinput>\"</userinput> mark, by these marks &kturtle; "
+"knows it is a string."
+msgstr ""
+"Najprej primer: <screen>\n"
+"natisni \"Pozdravljeni, jaz sem niz.\"\n"
+"</screen> V tem primeru je <userinput>print</userinput> ukaz, kjer je "
+"<userinput>»Hello, I'm a string.«</userinput> niz. Nizi se začnejo in "
+"končajo z oznako <userinput>\"</userinput>, po teh oznakah &kturtle; ve, da "
+"gre za niz."
+
+#. Tag: para
+#: programming-reference.docbook:47
+#, no-c-format
+msgid ""
+"Strings can be put in <link linkend=\"assignment-of-variables\">variables</"
+"link>, just like <link linkend=\"number\">numbers</link>. Yet, unlike "
+"numbers, strings cannot be used in <link linkend=\"mathematical-operators"
+"\">mathematical operators</link> or <link linkend=\"comparing-operators"
+"\">comparison operators</link>. Strings are <glossterm>highlighted</"
+"glossterm> with red."
+msgstr ""
+"Nize lahko vstavite v <link linkend=\"assignment-of-variables"
+"\">spremenljivke</link>, tako kot <link linkend=\"number\">števila</link>. "
+"Vendar v nasprotju s številkami nizov ni mogoče uporabiti v <link linkend="
+"\"mathematical-operators\">matematičnih operaterjih</link> ali <link linkend="
+"\"comparing-operators\">operatorjih za primerjavo</link>. Nizi so "
+"<glossterm>poudarjeni</glossterm> z rdečo."
+
+#. Tag: title
+#: programming-reference.docbook:51
+#, no-c-format
+msgid "Boolean (true/false) values"
+msgstr "Boolove (true/false) vrednosti"
+
+#. Tag: para
+#: programming-reference.docbook:52
+#, no-c-format
+msgid ""
+"There are only two boolean values: <userinput>true</"
+"userinput><indexterm><primary>true</primary></indexterm> and "
+"<userinput>false</userinput><indexterm><primary>false</primary></indexterm>. "
+"Sometimes they are also called: <quote><userinput>on</userinput></quote> and "
+"<quote><userinput>off</userinput></quote>, <quote><userinput>yes</"
+"userinput></quote> and <quote><userinput>no</userinput></quote>, "
+"<quote><userinput>one</userinput></quote> and <quote><userinput>zero</"
+"userinput></quote>. But in &turtlescript; we call them, always, "
+"<userinput>true</userinput> and <userinput>false</userinput>. Have a look at "
+"this piece of &turtlescript;: <screen>\n"
+"$a = true\n"
+"</screen> If you look in the <link linkend=\"the-inspector\">inspector</"
+"link> you can see that the <link linkend=\"assignment-of-variables"
+"\">variable</link> <userinput>$a</userinput> is set to <userinput>true</"
+"userinput>, and has the boolean type."
+msgstr ""
+"Obstajata samo dve logični vrednosti: <userinput>true</"
+"userinput><indexterm><primary>true</primary></indexterm> in "
+"<userinput>false</userinput><indexterm><primary>false</primary> </"
+"indexterm>. Včasih se imenujejo tudi: <quote><userinput>on</userinput></"
+"quote> in <quote><userinput>off</userinput></quote>, <quote><userinput>da</"
+"userinput></quote> in <quote><userinput>ne</userinput></quote>, "
+"<quote><userinput>ena</userinput></quote> in <quote><userinput>nič</"
+"userinput></quote >. Toda v &turtlescript; vedno jih imenujemo "
+"<userinput>true</userinput> in <userinput>false</userinput>. Oglejte si ta "
+"del &turtlescript;: <screen>\n"
+"$a = res\n"
+"</screen> Če pogledate v <link linkend=\"the-inspector\">inšpektor</link>, "
+"lahko vidite, da je <link linkend=\"assignment-of-variables\">spremenljivka</"
+"link> <userinput>$ a</userinput> je nastavljen na <userinput>true</"
+"userinput> in ima logični tip."
+
+#. Tag: para
+#: programming-reference.docbook:55
+#, no-c-format
+msgid ""
+"Often boolean values are the result of a <link linkend=\"comparing-operators"
+"\">comparison operator</link>, like in the following piece of "
+"&turtlescript;: <screen>\n"
+"$answer = 10 &gt; 3\n"
+"</screen> The <link linkend=\"assignment-of-variables\">variable</link> "
+"<userinput>$answer</userinput> is set to <userinput>true</userinput> because "
+"<userinput>10</userinput> is larger than <userinput>3</userinput>."
+msgstr ""
+"Pogosto so logične vrednosti rezultat <link linkend=\"comparing-operators"
+"\">operatorja primerjave</link>, kot v naslednjem delu &turtlescript;: "
+"<screen>\n"
+"$odgovor = 10 &gt; 3\n"
+"</screen> <link linkend=\"assignment-of-variables\">spremenljivka</link> "
+"<userinput>$answer</userinput> je nastavljena na <userinput>true</"
+"userinput>, ker <userinput>10</userinput > je večji od <userinput>3</"
+"userinput>."
+
+#. Tag: para
+#: programming-reference.docbook:58
+#, no-c-format
+msgid ""
+"Boolean values, <userinput>true</userinput> and <userinput>false</"
+"userinput>, are <glossterm>highlighted</glossterm> with dark red."
+msgstr ""
+"Logične vrednosti, <userinput>true</userinput> in <userinput>false</"
+"userinput>, so <glossterm>označene</glossterm> s temno rdečo barvo."
+
+#. Tag: title
+#: programming-reference.docbook:66
+#, no-c-format
+msgid "Mathematical, boolean and comparing operators"
+msgstr "Matematični, logični in primerjalni operatorji"
+
+#. Tag: para
+#: programming-reference.docbook:67
+#, no-c-format
+msgid ""
+"The title of this section might sound very difficult, yet it is not as "
+"difficult as it sound."
+msgstr ""
+"Naslov tega razdelka se morda sliši zelo težko, vendar ni tako težko, kot se "
+"sliši."
+
+#. Tag: title
+#: programming-reference.docbook:70
+#, no-c-format
+msgid "Mathematical operators"
+msgstr "Matematični operatorji"
+
+#. Tag: para
+#: programming-reference.docbook:71
+#, no-c-format
+msgid ""
+"These are the basic math symbols known as: add (<userinput>+</userinput>), "
+"subtract (<userinput>-</userinput>), multiply (<userinput>*</userinput>), "
+"divide (<userinput>/</userinput>) and power (<userinput>^</userinput>)."
+msgstr ""
+"To so osnovni matematični simboli, znani kot: seštevanje (<userinput>+</"
+"userinput>), odštevanje (<userinput>-</userinput>), množenje (<userinput>*</"
+"userinput>), deljenje (<userinput> /</userinput>) in potenciranje "
+"(<userinput>^</userinput>)."
+
+#. Tag: para
+#: programming-reference.docbook:73
+#, no-c-format
+msgid ""
+"Here a small example of the mathematical operators you can use in "
+"&turtlescript;: <screen>\n"
+"$add      = 1 + 1\n"
+"$subtract = 20 - 5\n"
+"$multiply = 15 * 2\n"
+"$divide   = 30 / 30\n"
+"$power    = 2 ^ 2\n"
+"</screen> The values resulting from the mathematical operations get <link "
+"linkend=\"assignment-of-variables\">assigned</link> to various <link linkend="
+"\"assignment-of-variables\">variables</link>. Using the <link linkend=\"the-"
+"inspector\">inspector</link> you can see the values."
+msgstr ""
+"Tukaj je kratek primer matematičnih operatorjev, ki jih lahko uporabite v "
+"&turtlescript;: <screen>\n"
+"$dodaj = 1 + 1\n"
+"$ odštej = 20 - 5\n"
+"$pomnoži = 15 * 2\n"
+"$divid = 30/30\n"
+"$moč = 2 ^ 2\n"
+"</screen> Vrednosti, ki izhajajo iz matematičnih operacij, so <link linkend="
+"\"assignment-of-variables\">dodeljene</link> različnim <link linkend="
+"\"assignment-of-variables\">spremenljivkam</link>. Z <link linkend=\"the-"
+"inspector\">inšpektorjem</link> si lahko ogledate vrednosti."
+
+#. Tag: para
+#: programming-reference.docbook:76
+#, no-c-format
+msgid ""
+"If you just want a simple calculation to be done you can do something like "
+"this:"
+msgstr "Če želite le preprost izračun, lahko naredite nekaj takega:"
+
+#. Tag: screen
+#: programming-reference.docbook:77
+#, no-c-format
+msgid "print 2010-12"
+msgstr "print 2010-12"
+
+#. Tag: para
+#: programming-reference.docbook:78
+#, no-c-format
+msgid ""
+"Now an example with parentheses: <screen>\n"
+"print ( ( 20 - 5 ) * 2 / 30 ) + 1\n"
+"</screen> The expressions inside parentheses will be calculated first. In "
+"this example, 20-5 will be calculated, then multiplied by 2, divided by 30, "
+"and then 1 is added (giving 2). Parentheses can also be used in other cases."
+msgstr ""
+"Zdaj pa primer z oklepaji: <screen>\n"
+"print ( ( 20 - 5 ) * 2 / 30 ) + 1\n"
+"</screen> Najprej bodo izračunani izrazi v oklepajih. V tem primeru bo "
+"izračunano 20-5, nato pomnoženo z 2, deljeno s 30 in nato dodano 1 (kar "
+"pomeni 2). Oklepaji se lahko uporabljajo tudi v drugih primerih."
+
+#. Tag: para
+#: programming-reference.docbook:81
+#, no-c-format
+msgid ""
+"&kturtle; also has more advanced mathematical features in the form of "
+"commands. Have a look at the following commands but be aware that it "
+"concerns advanced operations: <link linkend=\"round\">round</link>, <link "
+"linkend=\"random\">random</link>, <link linkend=\"sqrt\">sqrt</link> , <link "
+"linkend=\"pi\">pi</link>, <link linkend=\"sin\">sin</link>, <link linkend="
+"\"cos\">cos</link>, <link linkend=\"tan\">tan</link>, <link linkend=\"arcsin"
+"\">arcsin</link>, <link linkend=\"arccos\">arccos</link>, <link linkend="
+"\"arctan\">arctan</link>."
+msgstr ""
+"&kturtle; ima tudi naprednejše matematične funkcije v obliki ukazov. Oglejte "
+"si naslednje ukaze, vendar se zavedajte, da zadevajo napredne operacije: "
+"<link linkend=\"round\">okroglo</link>, <link linkend=\"random\">naključno</"
+"link>, <link linkend=\"sqrt\">sqrt</link> , <link linkend=\"pi\">pi</link>, "
+"<link linkend=\"sin\">sin</link>, <link linkend=\"cos\">cos</link>, <link "
+"linkend=\"tan\">tan</link>, <link linkend=\"arcsin\">arcsin</link>, <link "
+"linkend=\"arccos\">arccos</link>, <link linkend=\"arctan\"> arctan</link>."
+
+#. Tag: title
+#: programming-reference.docbook:87
+#, no-c-format
+msgid "Boolean (true/false) operators"
+msgstr "Logični (true/false) operatorji"
+
+#. Tag: para
+#: programming-reference.docbook:88
+#, no-c-format
+msgid ""
+"Where <link linkend=\"mathematical-operators\">mathematical operators</link> "
+"are mainly for <link linkend=\"number\">numbers</link>, boolean operators "
+"are for <link linkend=\"boolean-value\">boolean values</link> "
+"(<userinput>true</userinput> and <userinput>false</userinput>). There are "
+"only three boolean operators, namely: <userinput>and</"
+"userinput><indexterm><primary>and</primary></indexterm>, <userinput>or</"
+"userinput><indexterm><primary>or</primary></indexterm>, and <userinput>not</"
+"userinput><indexterm><primary>not</primary></indexterm>. The following piece "
+"of &turtlescript; shows how to use them: <screen>\n"
+"$and_1_1 = true and true    # -> true\n"
+"$and_1_0 = true and false   # -> false\n"
+"$and_0_1 = false and true   # -> false\n"
+"$and_0_0 = false and false  # -> false\n"
+"\n"
+"$or_1_1 = true or true    # -> true\n"
+"$or_1_0 = true or false   # -> true\n"
+"$or_0_1 = false or true   # -> true\n"
+"$or_0_0 = false or false  # -> false\n"
+"\n"
+"$not_1 = not true   # -> false\n"
+"$not_0 = not false  # -> true\n"
+"</screen> Using the <link linkend=\"the-inspector\">inspector</link> you can "
+"see the values, yet we also supply these results as little comments at the "
+"end of the lines. <userinput>and</userinput> evaluates <userinput>true</"
+"userinput> only if both sides are <userinput>true</userinput>. "
+"<userinput>or</userinput> evaluates <userinput>true</userinput> if either "
+"side is <userinput>true</userinput>. And <userinput>not</userinput> turns a "
+"<userinput>true</userinput> into <userinput>false</userinput> and a "
+"<userinput>false</userinput> into <userinput>true</userinput>."
+msgstr ""
+"Medtem ko so <link linkend=\"mathematical-operators\">matematični "
+"operatorji</link> večinoma za <link linkend=\"number\">števila</link>, "
+"logični operatorji za <link linkend=\"boolean-value\">logične vrednosti </"
+"link> (<userinput>true</userinput> in <userinput>false</userinput>). "
+"Obstajajo le trije logični operatorji, in sicer: <userinput>and</"
+"userinput><indexterm><primary>in</primary></indexterm>, <userinput>or</"
+"userinput><indexterm><primary>or</primary></indexterm> in <userinput>not</"
+"userinput><indexterm><primary>not</primary></indexterm>. Naslednji del "
+"&turtlescript; prikazuje, kako jih uporabljati: <screen>\n"
+"$and_1_1 = true and true    # -> true\n"
+"$and_1_0 = true and false   # -> false\n"
+"$and_0_1 = false and true   # -> false\n"
+"$and_0_0 = false and false  # -> false\n"
+"\n"
+"$or_1_1 = true or true    # -> true\n"
+"$or_1_0 = true or false   # -> true\n"
+"$or_0_1 = false or true   # -> true\n"
+"$or_0_0 = false or false  # -> false\n"
+"\n"
+"$not_1 = not true   # -> false\n"
+"$not_0 = not false  # -> true\n"
+"</screen> Z uporabo <link linkend=\"the-inspector\">inspector</link> si "
+"lahko ogledate vrednosti, vendar te rezultate posredujemo tudi kot majhne "
+"komentarje na koncu vrstic. <userinput>in</userinput> oceni <userinput>true</"
+"userinput> samo, če sta obe strani <userinput>true</userinput>. "
+"<userinput>ali</userinput> oceni <userinput>true</userinput>, če je katera "
+"koli stran <userinput>true</userinput>. In <userinput>not</userinput> "
+"spremeni <userinput>true</userinput> v <userinput>false</userinput> in "
+"<userinput>false</userinput> v <userinput>true</userinput>."
+
+#. Tag: para
+#: programming-reference.docbook:91
+#, no-c-format
+msgid "Boolean operators are <glossterm>highlighted</glossterm> with pink."
+msgstr "Boolovi operatorji so <glossterm>označeni</glossterm> z rožnato."
+
+#. Tag: title
+#: programming-reference.docbook:94
+#, no-c-format
+msgid "Some more advanced examples"
+msgstr "Nekaj ​​naprednejših primerov"
+
+#. Tag: para
+#: programming-reference.docbook:95
+#, no-c-format
+msgid ""
+"Consider the following example with <userinput>and</userinput>: <screen>\n"
+"$a = 1\n"
+"$b = 5\n"
+"if (($a &lt; 10) and ($b == 5)) and ($a &lt; $b) {\n"
+"  print \"hello\"\n"
+"}\n"
+"</screen> In this piece of &turtlescript; the result of three <link linkend="
+"\"comparing-operators\">comparing operators</link> are merged using "
+"<userinput>and</userinput> operators. This means that all three have to "
+"evaluate <quote>true</quote> in order for the <quote>hello</quote> to be "
+"printed."
+msgstr ""
+"Razmislite o naslednjem primeru z <userinput>in</userinput>: <screen>\n"
+"$a = 1\n"
+"$b = 5\n"
+"če (($a &lt; 10) in ($b == 5)) in ($a &lt; $b) {\n"
+"   natisni \"zdravo\"\n"
+"}\n"
+"</screen> V tem delu &turtlescript; rezultati treh <link linkend=\"comparing-"
+"operators\">operatorjev za primerjavo</link> so združeni z uporabo "
+"operatorjev <userinput>in</userinput>. To pomeni, da morajo vsi trije "
+"oceniti <quote>true</quote>, da se <quote>zdravo</quote> natisne."
+
+#. Tag: para
+#: programming-reference.docbook:99
+#, no-c-format
+msgid ""
+"An example with <userinput>or</userinput>: <screen>\n"
+"$n = 1\n"
+"if ($n &lt; 10) or ($n == 2) {\n"
+"  print \"hello\"\n"
+"}\n"
+"</screen> In this piece of &turtlescript; the left side of the "
+"<userinput>or</userinput> is evaluating to <quote>true</quote>, the right "
+"side to <quote>false</quote>. Since one of the two sides of the "
+"<userinput>or</userinput> operator is <quote>true</quote>, the "
+"<userinput>or</userinput> operator evaluates <quote>true</quote>. That means "
+"<quote>hello</quote> gets printed."
+msgstr ""
+"Primer z <userinput>ali</userinput>: <screen>\n"
+"$n = 1\n"
+"if ($n &lt; 10) ali ($n == 2) {\n"
+"   natisni \"zdravo\"\n"
+"}\n"
+"</screen> V tem delu &turtlescript; leva stran <userinput>ali</userinput> je "
+"ocenjena na <quote>true</quote>, desna stran na <quote>false</quote>. Ker je "
+"ena od obeh strani operatorja <userinput>ali</userinput> <quote>true</"
+"quote>, operator <userinput>ali</userinput> oceni <quote>true</quote>. To "
+"pomeni, da se natisne <quote>zdravo</quote>."
+
+#. Tag: para
+#: programming-reference.docbook:103
+#, no-c-format
+msgid ""
+"And finally an example with <userinput>not</userinput> which changes "
+"<quote>true</quote> into <quote>false</quote> and <quote>false</quote> into "
+"<quote>true</quote>. Have a look:"
+msgstr ""
+"In končno primer z <userinput>not</userinput>, ki spremeni <quote>true</"
+"quote> v <quote>false</quote> in <quote>false</quote> v <quote>true</"
+"quote> . Poglej:"
+
+#. Tag: screen
+#: programming-reference.docbook:104
+#, no-c-format
+msgid ""
+"$n = 1\n"
+"if not ($n == 3) {\n"
+"  print \"hello\"\n"
+"} else {\n"
+"  print \"not hello ;-)\"\n"
+"}"
+msgstr ""
+"$n = 1\n"
+"če ne ($n == 3) {\n"
+" natisni \"zdravo\"\n"
+"} sicer {\n"
+" natisni \"ni pozdravljen ;-)\"\n"
+"}"
+
+#. Tag: title
+#: programming-reference.docbook:109
+#, no-c-format
+msgid "Comparing operators"
+msgstr "Operatorji primerjave"
+
+#. Tag: para
+#: programming-reference.docbook:110
+#, no-c-format
+msgid ""
+"Consider this simple comparison: <screen>\n"
+"$answer = 10 &gt; 3\n"
+"</screen> Here <userinput>10</userinput> is compared to <userinput>3</"
+"userinput> with the <quote>greater than</quote> operator. The result of this "
+"comparison, the <link linkend=\"boolean-value\">boolean value</link> "
+"<userinput>true</userinput> is stored in the <link linkend=\"assignment-of-"
+"variables\">variable</link> <userinput>$answer</userinput>."
+msgstr ""
+"Razmislite o tej preprosti primerjavi: <screen>\n"
+"$odgovor = 10 &gt; 3\n"
+"</screen> Tu se <userinput>10</userinput> primerja z <userinput>3</"
+"userinput> z operatorjem <quote>večje kot</quote>. Rezultat te primerjave, "
+"<link linkend=\"boolean-value\">logična vrednost</link> <userinput>true</"
+"userinput>, je shranjen v <link linkend=\"assignment-of-variables"
+"\">spremenljivki</link> <userinput>$answer</userinput>."
+
+#. Tag: para
+#: programming-reference.docbook:113
+#, no-c-format
+msgid ""
+"All <link linkend=\"number\">numbers</link> and <link linkend=\"assignment-"
+"of-variables\">variables</link> (that contain numbers) can be compared to "
+"each other with comparing operators."
+msgstr ""
+"Vse <link linkend=\"number\">števila</link> in <link linkend=\"assignment-of-"
+"variables\">spremenljivke</link> (ki vsebujejo števila) je mogoče med seboj "
+"primerjati s primerjalnimi operatorji."
+
+#. Tag: para
+#: programming-reference.docbook:114
+#, no-c-format
+msgid ""
+"Here are all possible comparing operators: <table> <title>Types of "
+"questions</title> <tgroup cols=\"3\"> <tbody> <row> <entry><userinput>$A == "
+"$B</userinput></entry> <entry>equals</entry> <entry>answer is <quote>true</"
+"quote> if <userinput>$A</userinput> equals <userinput>$B</userinput></entry> "
+"</row> <row> <entry><userinput>$A != $B</userinput></entry> <entry>not-"
+"equals</entry> <entry>answer is <quote>true</quote> if <userinput>$A</"
+"userinput> does not equal <userinput>$B</userinput></entry> </row> <row> "
+"<entry><userinput>$A &gt; $B</userinput></entry> <entry>greater than</entry> "
+"<entry>answer is <quote>true</quote> if <userinput>$A</userinput> is greater "
+"than <userinput>$B</userinput></entry> </row> <row> <entry><userinput>$A "
+"&lt; $B</userinput></entry> <entry>smaller than</entry> <entry>answer is "
+"<quote>true</quote> if <userinput>$A</userinput> is smaller than <userinput>"
+"$B</userinput></entry> </row> <row> <entry><userinput>$A &gt;= $B</"
+"userinput></entry> <entry>greater than or equals</entry> <entry>answer is "
+"<quote>true</quote> if <userinput>$A</userinput> is greater than or equals "
+"<userinput>$B</userinput></entry> </row> <row> <entry><userinput>$A &lt;= "
+"$B</userinput></entry> <entry>smaller than or equals</entry> <entry>answer "
+"is <quote>true</quote> if <userinput>$A</userinput> is smaller than or "
+"equals <userinput>$B</userinput></entry> </row> </tbody> </tgroup> </table> "
+"Please note that <userinput>$A</userinput> and <userinput>$B</userinput> "
+"have to be <link linkend=\"number\">numbers</link> or <link linkend="
+"\"assignment-of-variables\">variables</link> that contain numbers."
+msgstr ""
+"Tukaj so vsi možni primerjalni operatorji: <table> <title>Vrste vprašanj</"
+"title> <tgroup cols=\"3\"> <tbody> <row> <entry><userinput>$A == $B</"
+"userinput> </entry> <entry>je enako</entry> <entry>odgovor je <quote>true</"
+"quote>, če je <userinput>$A</userinput> enako <userinput>$B</userinput></"
+"entry> </row> <row> <entry><userinput>$A != $B</userinput></entry> <entry>ni "
+"enako</entry> <entry>odgovor je <quote>true</quote> če <userinput>$A</"
+"userinput> ni enako <userinput>$B</userinput></entry> </row> <row> "
+"<entry><userinput>$A &gt; $B</userinput></entry> <entry>večji od</entry> "
+"<entry>odgovor je <quote>true</quote>, če je <userinput>$A</userinput> večji "
+"od <userinput>$B </userinput></entry> </row> <row> <entry><userinput>$A &lt; "
+"$B</userinput></entry> <entry>manjši od</entry> <entry>odgovor je "
+"<quote>true</quote>, če je <userinput>$A</userinput> manjši od <userinput>$B "
+"</userinput></entry> </row> <row> <entry><userinput>$A &gt;= $B</userinput></"
+"entry> <entry>večje ali enako</entry> <entry> odgovor je <quote>true</"
+"quote>, če je <userinput>$A</userinput> večji ali enak <userinput>$B</"
+"userinput></entry> </row> <row> <entry><userinput >$A &lt;= $B</userinput></"
+"entry> <entry>manjše ali enako</entry> <entry>odgovor je <quote>true</"
+"quote>, če <userinput>$A</userinput> je manjše ali enako <userinput>$B</"
+"userinput></entry> </row> </tbody> </tgroup> </table> Upoštevajte, da sta "
+"<userinput>$A</userinput> in <userinput> $B</userinput> morajo biti <link "
+"linkend=\"number\">števila</link> ali <link linkend=\"assignment-of-variables"
+"\">spremenljivke</link>, ki vsebujejo števila."
+
+#. Tag: para
+#: programming-reference.docbook:163
+#, no-c-format
+msgid ""
+"Using commands you tell the turtle or &kturtle; to do something. Some "
+"commands need input, some give output. In this section we explain all the "
+"built-in commands of &kturtle;. Alternatively, using <link linkend=\"learn"
+"\"><userinput>learn</userinput></link>, you can create your own commands. "
+"Built-in commands we discuss here are <glossterm>highlighted</glossterm> "
+"with dark blue."
+msgstr ""
+"Z ukazi poveste želvi ali &kturtle; narediti nekaj. Nekateri ukazi "
+"potrebujejo vnos, nekateri dajejo izhod. V tem razdelku razložimo vse "
+"vgrajene ukaze &kturtle;. Druga možnost je, da z uporabo <link linkend="
+"\"learn\"><userinput>learn</userinput></link> ustvarite lastne ukaze. "
+"Vgrajeni ukazi, o katerih razpravljamo tukaj, so <glossterm>poudarjeni</"
+"glossterm> s temno modro barvo."
+
+#. Tag: title
+#: programming-reference.docbook:166
+#, no-c-format
+msgid "Moving the turtle"
+msgstr "Premikanje želve"
+
+#. Tag: para
+#: programming-reference.docbook:167
+#, no-c-format
+msgid "There are several commands to move the turtle over the screen."
+msgstr "Obstaja več ukazov za premikanje želve po zaslonu."
+
+#. Tag: term
+#: programming-reference.docbook:172
+#, no-c-format
+msgid "<term>forward (fw)</term>"
+msgstr "<term>forward (fw)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:172
+#, no-c-format
+msgid "<primary>forward (fw)</primary>"
+msgstr "<primary>forward (fw)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:173
+#, no-c-format
+msgid "forward X"
+msgstr "forward X"
+
+#. Tag: para
+#: programming-reference.docbook:173
+#, no-c-format
+msgid ""
+"<userinput>forward</userinput> moves the turtle forward by the amount of X "
+"pixels. When the pen is down the turtle will leave a trail. "
+"<userinput>forward</userinput> can be abbreviated to <userinput>fw</"
+"userinput>."
+msgstr ""
+"<userinput>forward</userinput> premakne želvo naprej za X slikovnih pik. Ko "
+"bo peresnik spuščen, bo želva pustila sled. <userinput>naprej</userinput> je "
+"mogoče skrajšati na <userinput>fw</userinput>."
+
+#. Tag: term
+#: programming-reference.docbook:180
+#, no-c-format
+msgid "<term>backward (bw)</term>"
+msgstr "<term>backward (bw)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:180
+#, no-c-format
+msgid "<primary>backward (bw)</primary>"
+msgstr "<primary>backward (bw)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:181
+#, no-c-format
+msgid "backward X"
+msgstr "backward X"
+
+#. Tag: para
+#: programming-reference.docbook:181
+#, no-c-format
+msgid ""
+"<userinput>backward</userinput> moves the turtle backward by the amount of X "
+"pixels. When the pen is down the turtle will leave a trail. "
+"<userinput>backward</userinput> can be abbreviated to <userinput>bw</"
+"userinput>."
+msgstr ""
+"<userinput>backward</userinput> premakne želvo nazaj za X slikovnih pik. Ko "
+"bo peresnik spuščen, bo želva pustila sled. <userinput>backward</userinput> "
+"je mogoče skrajšati na <userinput>bw</userinput>."
+
+#. Tag: term
+#: programming-reference.docbook:188
+#, no-c-format
+msgid "<term>turnleft (tl)</term>"
+msgstr "<term>turnleft (tl)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:188
+#, no-c-format
+msgid "<primary>turnleft (tl)</primary>"
+msgstr "<primary>turnleft (tl)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:189
+#, no-c-format
+msgid "turnleft X"
+msgstr "turnleft X"
+
+#. Tag: para
+#: programming-reference.docbook:189
+#, no-c-format
+msgid ""
+"<userinput>turnleft</userinput> commands the turtle to turn an amount of X "
+"degrees to the left. <userinput>turnleft</userinput> can be abbreviated to "
+"<userinput>tl</userinput>."
+msgstr ""
+"<userinput>turnleft</userinput> ukaže želvi, naj se obrne za X stopinj v "
+"levo. <userinput>turnleft</userinput> je mogoče skrajšati na <userinput>tl</"
+"userinput>."
+
+#. Tag: term
+#: programming-reference.docbook:196
+#, no-c-format
+msgid "<term>turnright (tr)</term>"
+msgstr "<term>turnright (tr)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:196
+#, no-c-format
+msgid "<primary>turnright (tr)</primary>"
+msgstr "<primary>turnright (tr)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:197
+#, no-c-format
+msgid "turnright X"
+msgstr "turnright X"
+
+#. Tag: para
+#: programming-reference.docbook:197
+#, no-c-format
+msgid ""
+"<userinput>turnright</userinput> the turtle to turn an amount of X degrees "
+"to the right. <userinput>turnright</userinput> can be abbreviated to "
+"<userinput>tr</userinput>."
+msgstr ""
+"<userinput>turnright</userinput>ukaže želvi, da se obrne za X stopinj v "
+"desno. <userinput>turnright</userinput> je mogoče skrajšati na "
+"<userinput>tr</userinput>."
+
+#. Tag: term
+#: programming-reference.docbook:204
+#, no-c-format
+msgid "<term>direction (dir)</term>"
+msgstr "<term>direction (dir)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:204
+#, no-c-format
+msgid "<primary>direction (dir)</primary>"
+msgstr "<primary>direction (dir)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:205
+#, no-c-format
+msgid "direction X"
+msgstr "direction X"
+
+#. Tag: para
+#: programming-reference.docbook:205
+#, no-c-format
+msgid ""
+"<userinput>direction</userinput> set the turtle's direction to an amount of "
+"X degrees counting from zero, and thus is not relative to the turtle's "
+"previous direction. <userinput>direction</userinput> can be abbreviated to "
+"<userinput>dir</userinput>."
+msgstr ""
+"<userinput>direction</userinput> nastavi smer želve na količino X stopinj, "
+"šteto od nič, in tako ni relativna glede na prejšnjo smer želve. "
+"<userinput>direction</userinput> je mogoče skrajšati na <userinput>dir</"
+"userinput>."
+
+#. Tag: term
+#: programming-reference.docbook:212
+#, no-c-format
+msgid "<term>getdirection</term>"
+msgstr "<term>getdirection</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:212
+#, no-c-format
+msgid "<primary>getdirection</primary>"
+msgstr "<primary>getdirection</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:213
+#, no-c-format
+msgid "<screen>getdirection</screen>"
+msgstr "<screen>getdirection</screen>"
+
+#. Tag: para
+#: programming-reference.docbook:213
+#, no-c-format
+msgid ""
+"<userinput>getdirection</userinput> returns the turtle's direction as an "
+"amount of degrees counting from zero, where zero is the direction when the "
+"turtle is pointing upwards."
+msgstr ""
+"<userinput>getdirection</userinput> vrne smer želve kot število stopinj, "
+"šteto od nič, kjer je nič smer, ko je želva obrnjena navzgor."
+
+#. Tag: term
+#: programming-reference.docbook:220
+#, no-c-format
+msgid "<term>center</term>"
+msgstr "<term>center</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:220
+#, no-c-format
+msgid "<primary>center</primary>"
+msgstr "<primary>center</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:221
+#, no-c-format
+msgid "<screen>center</screen>"
+msgstr "<screen>center</screen>"
+
+#. Tag: para
+#: programming-reference.docbook:221
+#, no-c-format
+msgid ""
+"<userinput>center</userinput> moves the turtle to the center on the canvas."
+msgstr "<userinput>center</userinput> premakne želvo na sredino platna."
+
+#. Tag: term
+#: programming-reference.docbook:228
+#, no-c-format
+msgid "<term>go</term>"
+msgstr "<term>go</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:228
+#, no-c-format
+msgid "<primary>go</primary>"
+msgstr "<primary>go</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:229
+#, no-c-format
+msgid "go X,Y"
+msgstr "go X,Y"
+
+#. Tag: para
+#: programming-reference.docbook:229
+#, no-c-format
+msgid ""
+"<userinput>go</userinput> commands the turtle to go to a certain place on "
+"the canvas. This place is X <glossterm linkend=\"pixels\">pixels</glossterm> "
+"from the left of the canvas, and Y <glossterm linkend=\"pixels\">pixels</"
+"glossterm> from the top of the canvas."
+msgstr ""
+"<userinput>go</userinput> ukaže želvi, naj gre na določeno mesto na platnu. "
+"To mesto je X <glossterm linkend=\"pixels\">pikslov</glossterm> od leve "
+"strani platna in Y <glossterm linkend=\"pixels\">pikslov</glossterm> od vrha "
+"platna."
+
+#. Tag: term
+#: programming-reference.docbook:236
+#, no-c-format
+msgid "<term>gox</term>"
+msgstr "<term>gox</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:236
+#, no-c-format
+msgid "gox (gx)"
+msgstr "gox (gx)"
+
+#. Tag: screen
+#: programming-reference.docbook:237
+#, no-c-format
+msgid "gox X"
+msgstr "gox X"
+
+#. Tag: para
+#: programming-reference.docbook:237
+#, no-c-format
+msgid ""
+"<userinput>gox</userinput> using this command the turtle will move to X "
+"<glossterm linkend=\"pixels\">pixels</glossterm> from the left of the canvas "
+"whilst staying at the same height. <userinput>gox</userinput> can be "
+"abbreviated to <userinput>gx</userinput>."
+msgstr ""
+"<userinput>gox</userinput> s tem ukazom se bo želva premaknila za X "
+"<glossterm linkend=\"pixels\">pikslov</glossterm> z leve strani platna, "
+"medtem ko bo ostala na isti višini. <userinput>gox</userinput> je mogoče "
+"skrajšati na <userinput>gx</userinput>."
+
+#. Tag: term
+#: programming-reference.docbook:244
+#, no-c-format
+msgid "<term>goy</term>"
+msgstr "<term>goy</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:244
+#, no-c-format
+msgid "goy (gy)"
+msgstr "goy (gy)"
+
+#. Tag: screen
+#: programming-reference.docbook:245
+#, no-c-format
+msgid "goy Y"
+msgstr "goy Y"
+
+#. Tag: para
+#: programming-reference.docbook:245
+#, no-c-format
+msgid ""
+"<userinput>goy</userinput> using this command the turtle will move to Y "
+"<glossterm linkend=\"pixels\">pixels</glossterm> from the top of the canvas "
+"whilst staying at the same distance from the left border of the canvas. "
+"<userinput>goy</userinput> can be abbreviated to <userinput>gy</userinput>."
+msgstr ""
+"<userinput>pojdiy</userinput> s tem ukazom se bo želva premaknila za Y "
+"<glossterm linkend=\"pixels\">pikslov</glossterm> od vrha platna, medtem ko "
+"bo ostala na enaki razdalji od leve meje platna. <userinput>pojdiy</"
+"userinput> je mogoče skrajšati na <userinput>gy</userinput>."
+
+#. Tag: para
+#: programming-reference.docbook:249
+#, no-c-format
+msgid ""
+"Using the commands <userinput>go</userinput>, <userinput>gox</userinput>, "
+"<userinput>goy</userinput> and <userinput>center</userinput> the turtle will "
+"not draw a line, no matter if the pen is up or down."
+msgstr ""
+"Z uporabo ukazov <userinput>go</userinput>, <userinput>gox</userinput>, "
+"<userinput>goy</userinput> in <userinput>center</userinput> želva ne bo "
+"narisala črte, ne glede na to, ali pero gor ali dol."
+
+#. Tag: title
+#: programming-reference.docbook:254
+#, no-c-format
+msgid "Where is the turtle?"
+msgstr "Kje je želva?"
+
+#. Tag: para
+#: programming-reference.docbook:255
+#, no-c-format
+msgid ""
+"There are two commands which return the position of the turtle on the screen."
+msgstr "Obstajata dva ukaza, ki vrneta položaj želve na zaslonu."
+
+#. Tag: term
+#: programming-reference.docbook:260
+#, no-c-format
+msgid "<term>getx</term>"
+msgstr "<term>getx</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:260
+#, no-c-format
+msgid "<primary>getx</primary>"
+msgstr "<primary>getx</primary>"
+
+#. Tag: para
+#: programming-reference.docbook:261
+#, no-c-format
+msgid ""
+"<userinput>getx</userinput> returns the number of pixels from the left of "
+"the canvas to the current position of the turtle."
+msgstr ""
+"<userinput>getx</userinput> vrne število slikovnih pik od leve strani platna "
+"do trenutnega položaja želve."
+
+#. Tag: term
+#: programming-reference.docbook:268
+#, no-c-format
+msgid "<term>gety</term>"
+msgstr "<term>gety</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:268
+#, no-c-format
+msgid "<primary>gety</primary>"
+msgstr "<primary>gety</primary>"
+
+#. Tag: para
+#: programming-reference.docbook:269
+#, no-c-format
+msgid ""
+"<userinput>gety</userinput> returns the number of pixels from the top of the "
+"canvas to the current position of the turtle."
+msgstr ""
+"<userinput>gety</userinput> vrne število slikovnih pik od vrha platna do "
+"trenutnega položaja želve."
+
+#. Tag: title
+#: programming-reference.docbook:276
+#, no-c-format
+msgid "The turtle has a pen"
+msgstr "Želva ima pero"
+
+#. Tag: para
+#: programming-reference.docbook:277
+#, no-c-format
+msgid ""
+"The turtle has a pen that draws a line when the turtle moves. There are a "
+"few commands to control the pen. In this section we explain these commands."
+msgstr ""
+"Želva ima pisalo, ki nariše črto, ko se želva premika. Obstaja nekaj ukazov "
+"za nadzor peresa. V tem razdelku razlagamo te ukaze."
+
+#. Tag: term
+#: programming-reference.docbook:281
+#, no-c-format
+msgid "<term>penup (pu)</term>"
+msgstr "<term>penup (pu)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:281
+#, no-c-format
+msgid "<primary>penup (pu)</primary>"
+msgstr "<primary>penup (pu)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:282
+#, no-c-format
+msgid "penup"
+msgstr "penup"
+
+#. Tag: para
+#: programming-reference.docbook:282
+#, no-c-format
+msgid ""
+"<userinput>penup</userinput> lifts the pen from the canvas. When the pen is "
+"<quote>up</quote> no line will be drawn when the turtle moves. See also "
+"<userinput>pendown</userinput>. <userinput>penup</userinput> can be "
+"abbreviated to <userinput>pu</userinput>."
+msgstr ""
+"<userinput>penup</userinput> dvigne pero s platna. Ko je pero <quote>gor</"
+"quote>, ko se želva premika, ne bo narisana črta. Glejte tudi "
+"<userinput>pendown</userinput>. <userinput>penup</userinput> je mogoče "
+"skrajšati na <userinput>pu</userinput>."
+
+#. Tag: term
+#: programming-reference.docbook:289
+#, no-c-format
+msgid "<term>pendown (pd)</term>"
+msgstr "<term>pendown (pd)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:289
+#, no-c-format
+msgid "<primary>pendown (pd)</primary>"
+msgstr "<primary>pendown (pd)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:290
+#, no-c-format
+msgid "pendown"
+msgstr "pendown"
+
+#. Tag: para
+#: programming-reference.docbook:290
+#, no-c-format
+msgid ""
+"<userinput>pendown</userinput> presses the pen down on the canvas. When the "
+"pen is press <quote>down</quote> on the canvas a line will be drawn when the "
+"turtle moves. See also <userinput>penup</userinput>. <userinput>pendown</"
+"userinput> can be abbreviated to <userinput>pd</userinput>."
+msgstr ""
+"<userinput>pendown</userinput> pritisne pero navzdol na platno. Ko pero "
+"pritisnete <quote>navzdol</quote> na platnu, se ob premikanju želve nariše "
+"črta. Glejte tudi <userinput>pisalo gor</userinput>. <userinput>pendown</"
+"userinput> je mogoče skrajšati na <userinput>pd</userinput>."
+
+#. Tag: term
+#: programming-reference.docbook:297
+#, no-c-format
+msgid "<term>penwidth (pw)</term>"
+msgstr "<term>penwidth (pw)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:297
+#, no-c-format
+msgid "<primary>penwidth (pw)</primary>"
+msgstr "<primary>penwidth (pw)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:298
+#, no-c-format
+msgid "penwidth X"
+msgstr "penwidth X"
+
+#. Tag: para
+#: programming-reference.docbook:298
+#, no-c-format
+msgid ""
+"<userinput>penwidth</userinput> sets the width of the pen (the line width) "
+"to an amount of X <glossterm linkend=\"pixels\">pixels</glossterm>. "
+"<userinput>penwidth</userinput> can be abbreviated to <userinput>pw</"
+"userinput>."
+msgstr ""
+"<userinput>penwidth</userinput> nastavi širino peresa (širino črte) na "
+"količino X <glossterm linkend=\"pixels\">pikslov</glossterm>. "
+"<userinput>penwidth</userinput> je mogoče skrajšati na <userinput>pw</"
+"userinput>."
+
+#. Tag: term
+#: programming-reference.docbook:305
+#, no-c-format
+msgid "<term>pencolor (pc)</term>"
+msgstr "<term>pencolor (pc)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:305
+#, no-c-format
+msgid "<primary>pencolor (pc)</primary>"
+msgstr "<primary>pencolor (pc)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:306
+#, no-c-format
+msgid "pencolor R,G,B"
+msgstr "pencolor R,G,B"
+
+#. Tag: para
+#: programming-reference.docbook:306
+#, no-c-format
+msgid ""
+"<userinput>pencolor</userinput> sets the color of the pen. "
+"<userinput>pencolor</userinput> takes an <glossterm linkend=\"rgb\">RGB "
+"combination</glossterm> as input. <userinput>pencolor</userinput> can be "
+"abbreviated to <userinput>pc</userinput>."
+msgstr ""
+"<userinput>pencolor</userinput> nastavi barvo pisala. <userinput>pencolor</"
+"userinput> kot vhod sprejme <glossterm linkend=\"rgb\">kombinacijo RGB</"
+"glossterm>.<userinput>pencolor</userinput> je mogoče skrajšati na "
+"<userinput>pc</userinput>."
+
+#. Tag: title
+#: programming-reference.docbook:313
+#, no-c-format
+msgid "Commands to control the canvas"
+msgstr "Ukazi za nadzor platna"
+
+#. Tag: para
+#: programming-reference.docbook:314
+#, no-c-format
+msgid "There are several commands to control the canvas."
+msgstr "Obstaja več ukazov za nadzor platna."
+
+#. Tag: term
+#: programming-reference.docbook:318
+#, no-c-format
+msgid "<term>canvassize (cs)</term>"
+msgstr "<term>canvassize (cs)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:318
+#, no-c-format
+msgid "<primary>canvassize (cs)</primary>"
+msgstr "<primary>canvassize (cs)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:319
+#, no-c-format
+msgid "canvassize X,Y"
+msgstr "canvassize X,Y"
+
+#. Tag: para
+#: programming-reference.docbook:319
+#, no-c-format
+msgid ""
+"With the <userinput>canvassize</userinput> command you can set the size of "
+"the canvas. It takes X and Y as input, where X is the new canvas width in "
+"<glossterm linkend=\"pixels\">pixels</glossterm>, and Y is the new height of "
+"the canvas in <glossterm linkend=\"pixels\">pixels</glossterm>. "
+"<userinput>canvassize</userinput> can be abbreviated to <userinput>cs</"
+"userinput>."
+msgstr ""
+"Z ukazom <term>canvascolor (cc)</term> lahko nastavite velikost platna. Kot "
+"vnos vzame X in Y, kjer je X nova širina platna v <glossterm linkend=\"pixels"
+"\">pikslih</glossterm>, Y pa nova višina platna v <glossterm linkend=\"pixels"
+"\">piksli</glossterm>. <userinput>canvassize</userinput> je mogoče skrajšati "
+"na <userinput>cs</userinput>."
+
+#. Tag: term
+#: programming-reference.docbook:326
+#, no-c-format
+msgid "<term>canvascolor (cc)</term>"
+msgstr "<term>canvascolor (cc)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:326
+#, no-c-format
+msgid "<primary>canvascolor (cc)</primary>"
+msgstr "<primary>canvascolor (cc)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:327
+#, no-c-format
+msgid "canvascolor R,G,B"
+msgstr "canvascolor R,G,B"
+
+#. Tag: para
+#: programming-reference.docbook:327
+#, no-c-format
+msgid ""
+"<userinput>canvascolor</userinput> set the color of the canvas. "
+"<userinput>canvascolor</userinput> takes an <glossterm linkend=\"rgb\">RGB "
+"combination</glossterm> as input. <userinput>canvascolor</userinput> can be "
+"abbreviated to <userinput>cc</userinput>."
+msgstr ""
+"<userinput>canvascolor</userinput> nastavi barvo platna. "
+"<userinput>canvascolor</userinput> kot vhod sprejme <glossterm linkend=\"rgb"
+"\">kombinacijo RGB</glossterm>. <userinput>canvascolor</userinput> je mogoče "
+"skrajšati na <userinput>cc</userinput>."
+
+#. Tag: title
+#: programming-reference.docbook:334
+#, no-c-format
+msgid "Commands to clean up"
+msgstr "Ukazi za čiščenje"
+
+#. Tag: para
+#: programming-reference.docbook:335
+#, no-c-format
+msgid ""
+"There are two commands to clean up the canvas after you have made a mess."
+msgstr "Obstajata dva ukaza za čiščenje platna, potem ko ste naredili nered."
+
+#. Tag: term
+#: programming-reference.docbook:339
+#, no-c-format
+msgid "<term>clear (ccl)</term>"
+msgstr "<term>clear (ccl)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:339
+#, no-c-format
+msgid "<primary>clear (ccl)</primary>"
+msgstr "<primary>clear (ccl)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:340
+#, no-c-format
+msgid "clear"
+msgstr "clear"
+
+#. Tag: para
+#: programming-reference.docbook:340
+#, no-c-format
+msgid ""
+"With <userinput>clear</userinput> you can clean all drawings from the "
+"canvas. All other things remain: the position and angle of the turtle, the "
+"canvascolor, the visibility of the turtle, and the canvas size."
+msgstr ""
+"Z <userinput>clear</userinput> lahko počistite vse risbe s platna. Ostale "
+"stvari ostanejo: položaj in kot želve, barva platna, vidnost želve in "
+"velikost platna."
+
+#. Tag: term
+#: programming-reference.docbook:347
+#, no-c-format
+msgid "<term>reset</term>"
+msgstr "<term>reset</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:347
+#, no-c-format
+msgid "<primary>reset</primary>"
+msgstr "<primary>reset</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:348
+#, no-c-format
+msgid "<screen>reset</screen>"
+msgstr "<screen>reset</screen>"
+
+#. Tag: para
+#: programming-reference.docbook:348
+#, no-c-format
+msgid ""
+"<userinput>reset</userinput> cleans much more thoroughly than the "
+"<userinput>clear</userinput> command. After a <userinput>reset</userinput> "
+"command everything is like is was when you had just started &kturtle;. The "
+"turtle is positioned at the middle of the screen, the canvas color is white, "
+"the turtle draws a black line on the canvas and the canvassize is set to 400 "
+"x 400 pixels."
+msgstr ""
+"<userinput>reset</userinput> očisti veliko bolj temeljito kot ukaz "
+"<userinput>clear</userinput>. Po ukazu <userinput>reset</userinput> je vse "
+"tako, kot je bilo, ko ste pravkar zagnali &kturtle;. Želva je postavljena na "
+"sredino zaslona, barva platna je bela, želva nariše črno črto na platnu, "
+"velikost platna pa je nastavljena na 400 x 400 slikovnih pik."
+
+#. Tag: title
+#: programming-reference.docbook:355
+#, no-c-format
+msgid "The turtle is a sprite"
+msgstr "Želva je sprite"
+
+#. Tag: para
+#: programming-reference.docbook:356
+#, no-c-format
+msgid ""
+"First a brief explanation of what sprites are: sprites are small pictures "
+"that can be moved around the screen, like we often see in computer games. "
+"Our turtle is also a sprite. For more info see the glossary on <glossterm "
+"linkend=\"sprites\">sprites</glossterm>."
+msgstr ""
+"Najprej kratka razlaga, kaj so sprite: sprite so majhne slike, ki jih lahko "
+"premikamo po zaslonu, kot jih pogosto vidimo v računalniških igrah. Tudi "
+"naša želva je sprite. Za več informacij glejte glosar o <glossterm linkend="
+"\"sprites\">sprites</glossterm>."
+
+#. Tag: para
+#: programming-reference.docbook:357
+#, no-c-format
+msgid ""
+"Next you will find a full overview on all commands to work with sprites."
+msgstr "Nato boste našli popoln pregled vseh ukazov za delo s spriti."
+
+#. Tag: para
+#: programming-reference.docbook:358
+#, no-c-format
+msgid ""
+"The current version of &kturtle; does not yet support the use of sprites "
+"other than the turtle. With future versions you will be able to change the "
+"turtle into something of your own design."
+msgstr ""
+"Trenutna različica &kturtle; še ne podpira uporabe duhov razen želve. S "
+"prihodnjimi različicami boste želvo lahko spremenili v nekaj svojega."
+
+#. Tag: term
+#: programming-reference.docbook:362
+#, no-c-format
+msgid "<term>spriteshow (ss)</term>"
+msgstr "<term>spriteshow (ss)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:362
+#, no-c-format
+msgid "<primary>spriteshow (ss)</primary>"
+msgstr "<primary>spriteshow (ss)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:363
+#, no-c-format
+msgid "spriteshow"
+msgstr "spriteshow"
+
+#. Tag: para
+#: programming-reference.docbook:363
+#, no-c-format
+msgid ""
+"<userinput>spriteshow</userinput> makes the turtle visible again after it "
+"has been hidden. <userinput>spriteshow</userinput> can be abbreviated to "
+"<userinput>ss</userinput>."
+msgstr ""
+"<userinput>spriteshow</userinput> naredi želvo znova vidno, potem ko je bila "
+"skrita. <userinput>spriteshow</userinput> je mogoče skrajšati na "
+"<userinput>ss</userinput>."
+
+#. Tag: term
+#: programming-reference.docbook:370
+#, no-c-format
+msgid "<term>spritehide (sh)</term>"
+msgstr "<term>spritehide (sh)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:370
+#, no-c-format
+msgid "<primary>spritehide (sh)</primary>"
+msgstr "<primary>spritehide (sh)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:371
+#, no-c-format
+msgid "spritehide"
+msgstr "spritehide"
+
+#. Tag: para
+#: programming-reference.docbook:371
+#, no-c-format
+msgid ""
+"<userinput>spritehide</userinput> hides the turtle. This can be used if the "
+"turtle does not fit in your drawing. <userinput>spritehide</userinput> can "
+"be abbreviated to <userinput>sh</userinput>."
+msgstr ""
+"<userinput>spritehide</userinput> skrije želvo. To lahko uporabite, če želva "
+"ne ustreza vaši risbi. <userinput>spritehide</userinput> je mogoče skrajšati "
+"na <userinput>sh</userinput>."
+
+#. Tag: title
+#: programming-reference.docbook:378
+#, no-c-format
+msgid "Can the turtle write?"
+msgstr "Zna želva pisati?"
+
+#. Tag: para
+#: programming-reference.docbook:379
+#, no-c-format
+msgid ""
+"The answer is: <quote>yes</quote>. The turtle can write: it writes just "
+"about everything you command it to."
+msgstr ""
+"Odgovor je: <quote>da</quote>. Želva zna pisati: napiše skoraj vse, kar ji "
+"ukažete."
+
+#. Tag: term
+#: programming-reference.docbook:383
+#, no-c-format
+msgid "<term>print</term>"
+msgstr "<term>print</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:383
+#, no-c-format
+msgid "<primary>print</primary>"
+msgstr "<primary>print</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:384
+#, no-c-format
+msgid "print X"
+msgstr "natisni X"
+
+#. Tag: para
+#: programming-reference.docbook:384
+#, no-c-format
+msgid ""
+"The <userinput>print</userinput> command is used to command the turtle to "
+"write something on the canvas. <userinput>print</userinput> takes numbers "
+"and strings as input. You can <userinput>print</userinput> various numbers "
+"and strings using the <quote>+</quote> symbol. See here a small example:"
+msgstr ""
+"Ukaz <userinput>print</userinput> se uporablja za ukaz želvi, naj nekaj "
+"napiše na platno. <userinput>print</userinput> kot vhod sprejme številke in "
+"nize. S simbolom <quote>+</quote> lahko <userinput>natisnete</userinput> "
+"različne številke in nize. Tukaj si oglejte majhen primer:"
+
+#. Tag: screen
+#: programming-reference.docbook:386
+#, no-c-format
+msgid ""
+"$year = 2003\n"
+"$author = \"Cies\"\n"
+"print $author + \" started the KTurtle project in \" + $year + \" and still "
+"enjoys working on it!\""
+msgstr ""
+"$year = 2003\n"
+"$author = \"Cies\"\n"
+"print $author \" je začel projekt KTurtle v \" $year \" in še vedno uživa "
+"pri delu!\""
+
+#. Tag: term
+#: programming-reference.docbook:393
+#, no-c-format
+msgid "<term>fontsize</term>"
+msgstr "<term>fontsize</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:393
+#, no-c-format
+msgid "<primary>fontsize</primary>"
+msgstr "<primary>fontsize</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:394
+#, no-c-format
+msgid "fontsize X"
+msgstr "fontsize X"
+
+#. Tag: para
+#: programming-reference.docbook:394
+#, no-c-format
+msgid ""
+"<userinput>fontsize</userinput> sets the size of the font that is used by "
+"<userinput>print</userinput>. <userinput>fontsize</userinput> takes one "
+"input which should be a number. The size is set in <glossterm linkend="
+"\"pixels\">pixels</glossterm>."
+msgstr ""
+"<userinput>fontsize</userinput> nastavi velikost pisave, ki jo uporablja "
+"<userinput>natisni</userinput>. <userinput>fontsize</userinput> sprejme en "
+"vnos, ki mora biti številka. Velikost je nastavljena v <glossterm linkend="
+"\"pixels\">pikslih</glossterm>."
+
+#. Tag: title
+#: programming-reference.docbook:401
+#, no-c-format
+msgid "Mathematical commands"
+msgstr "Matematični ukazi"
+
+#. Tag: para
+#: programming-reference.docbook:402
+#, no-c-format
+msgid ""
+"The following commands are &kturtle;'s more advanced mathematical commands."
+msgstr "Naslednji ukazi so naprednejši matematični ukazi &kturtle;."
+
+#. Tag: term
+#: programming-reference.docbook:406
+#, no-c-format
+msgid "<term>round</term>"
+msgstr "<term>round</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:406
+#, no-c-format
+msgid "<primary>round</primary>"
+msgstr "<primary>round</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:407
+#, no-c-format
+msgid "round(x)"
+msgstr "round(x)"
+
+#. Tag: para
+#: programming-reference.docbook:407
+#, no-c-format
+msgid ""
+"<userinput>round</userinput> the given number to the nearest integer. "
+"<screen>\n"
+"print round(10.8)\n"
+"forward 20\n"
+"print round(10.3)\n"
+"</screen> With this code the turtle will print the numbers 11 and 10."
+msgstr ""
+"<userinput>round</userinput> zaokroži dano število na najbližje celo "
+"število. <screen>\n"
+"print round(10.8)\n"
+"forward 20\n"
+"print round(10.3)\n"
+"</screen> S to kodo bo želva natisnila številki 11 in 10."
+
+#. Tag: term
+#: programming-reference.docbook:416
+#, no-c-format
+msgid "<term>random (rnd)</term>"
+msgstr "<term>random (rnd)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:416
+#, no-c-format
+msgid "<primary>random (rnd)</primary>"
+msgstr "<primary>random (rnd)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:417
+#, no-c-format
+msgid "random X,Y"
+msgstr "naključni X,Y"
+
+#. Tag: para
+#: programming-reference.docbook:417
+#, no-c-format
+msgid ""
+"<userinput>random</userinput> is a command that takes input and gives "
+"output. As input are required two numbers, the first (X) sets the minimum "
+"output, the second (Y) sets the maximum. The output is a randomly chosen "
+"number that is equal or greater than the minimum and equal or smaller than "
+"the maximum. Here a small example: <screen>\n"
+"repeat 500 {\n"
+"  $x = random 1,20\n"
+"  forward $x\n"
+"  turnleft 10 - $x\n"
+"}\n"
+"</screen> Using the <userinput>random</userinput> command you can add a bit "
+"of chaos to your program."
+msgstr ""
+"<userinput>random</userinput> je ukaz, ki sprejme vnos in poda izhod. Kot "
+"vnos sta potrebni dve števili, prva (X) določa minimalni izhod, druga (Y) pa "
+"maksimum. Rezultat je naključno izbrano število, ki je enako ali večje od "
+"minimuma in enako ali manjše od maksimuma. Tu je majhen primer: <screen>\n"
+"ponovi 500 {\n"
+"   $x = naključno 1,20\n"
+"   naprej $x\n"
+"   zavoj levo 10 - $x\n"
+"}\n"
+"</screen> Z ukazom <userinput>random</userinput> lahko svojemu programu "
+"dodate malo kaosa."
+
+#. Tag: term
+#: programming-reference.docbook:426
+#, no-c-format
+msgid "<term>mod</term>"
+msgstr "<term>mod</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:426
+#, no-c-format
+msgid "<primary>mod</primary>"
+msgstr "<primary>mod</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:427
+#, no-c-format
+msgid "mod X,Y"
+msgstr "mod X,Y"
+
+#. Tag: para
+#: programming-reference.docbook:427
+#, no-c-format
+msgid ""
+"The <userinput>mod</userinput> returns remainder of the division of first "
+"number by the second number."
+msgstr ""
+"<userinput>mod</userinput> vrne preostanek deljenja prvega števila z drugim "
+"številom."
+
+#. Tag: term
+#: programming-reference.docbook:434
+#, no-c-format
+msgid "<term>sqrt</term>"
+msgstr "<term>sqrt</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:434
+#, no-c-format
+msgid "<primary>sqrt</primary>"
+msgstr "<primary>sqrt</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:435
+#, no-c-format
+msgid "sqrt X"
+msgstr "sqrt X"
+
+#. Tag: para
+#: programming-reference.docbook:435
+#, no-c-format
+msgid ""
+"The <userinput>sqrt</userinput> command is sued to find the square root of a "
+"number, X."
+msgstr ""
+"Ukaz <userinput>sqrt</userinput> se uporablja za iskanje kvadratnega korena "
+"števila, X."
+
+#. Tag: term
+#: programming-reference.docbook:452
+#, no-c-format
+msgid "<term>pi</term>"
+msgstr "<term>pi</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:452
+#, no-c-format
+msgid "<primary>pi</primary>"
+msgstr "<primary>pi</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:453
+#, no-c-format
+msgid "<screen>pi</screen>"
+msgstr "<screen>pi</screen>"
+
+#. Tag: para
+#: programming-reference.docbook:453
+#, no-c-format
+msgid "This command returns the constant Pi, <userinput>3.14159</userinput>."
+msgstr "Ta ukaz vrne konstanto Pi, <userinput>3,14159</userinput>."
+
+#. Tag: term
+#: programming-reference.docbook:462
+#, no-c-format
+msgid ""
+"sin<indexterm><primary>sin</primary></indexterm>, "
+"cos<indexterm><primary>cos</primary></indexterm>, tan"
+msgstr ""
+"sin<indexterm><primary>sin</primary></indexterm>, "
+"cos<indexterm><primary>cos</primary></indexterm>, tan"
+
+#. Tag: primary
+#: programming-reference.docbook:462
+#, no-c-format
+msgid "<primary>tan</primary>"
+msgstr "<primary>tan</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:464
+#, no-c-format
+msgid ""
+"sin X\n"
+"cos X\n"
+"tan X"
+msgstr ""
+"sin X\n"
+"cos X\n"
+"tan X"
+
+#. Tag: para
+#: programming-reference.docbook:464
+#, no-c-format
+msgid ""
+"These three commands represent the world famous trigoniometrical functions "
+"<userinput>sin</userinput>, <userinput>cos</userinput> and <userinput>tan</"
+"userinput>. The input argument of these commands, X, is a <link linkend="
+"\"number\">number</link>."
+msgstr ""
+"Ti trije ukazi predstavljajo svetovno znane trigonometrične funkcije "
+"<userinput>sin</userinput>, <userinput>cos</userinput> in <userinput>tan</"
+"userinput>. Vhodni argument teh ukazov, X, je <link linkend=\"number"
+"\">število</link>."
+
+#. Tag: term
+#: programming-reference.docbook:473
+#, no-c-format
+msgid ""
+"arcsin<indexterm><primary>arcsin</primary></indexterm>, "
+"arccos<indexterm><primary>arccos</primary></indexterm>, arctan"
+msgstr ""
+"arcsin<indexterm><primary>arcsin</primary></indexterm>, "
+"arccos<indexterm><primary>arccos</primary></indexterm>, arctan"
+
+#. Tag: primary
+#: programming-reference.docbook:473
+#, no-c-format
+msgid "arctan"
+msgstr "arctan"
+
+#. Tag: screen
+#: programming-reference.docbook:475
+#, no-c-format
+msgid ""
+"arcsin X\n"
+"arccos X\n"
+"arctan X"
+msgstr ""
+"arcsin X\n"
+"arccos X\n"
+"arctan X"
+
+#. Tag: para
+#: programming-reference.docbook:475
+#, no-c-format
+msgid ""
+"These commands are the inverse functions of <link linkend=\"sin\">sin</"
+"link>, <link linkend=\"cos\">cos</link> and <link linkend=\"tan\">tan</"
+"link>. The input argument of these commands, X, is a <link linkend=\"number"
+"\">number</link>."
+msgstr ""
+"Ti ukazi so inverzne funkcije <link linkend=\"sin\">sin</link>, <link "
+"linkend=\"cos\">cos</link> in <link linkend=\"tan\">tan</link>. Vhodni "
+"argument teh ukazov, X, je <link linkend=\"number\">število</link>."
+
+#. Tag: title
+#: programming-reference.docbook:482
+#, no-c-format
+msgid "Input and feedback through dialogs"
+msgstr "Vnos in povratne informacije prek pogovornih oken"
+
+#. Tag: para
+#: programming-reference.docbook:483
+#, no-c-format
+msgid ""
+"A dialog is a small pop-up window that provides some feedback or asks for "
+"some input. &kturtle; has two commands for dialogs, namely: "
+"<userinput>message</userinput> and <userinput>ask</userinput>"
+msgstr ""
+"Pogovorno okno je majhno pojavno okno, ki ponuja povratne informacije ali "
+"zahteva nekaj vnosa. &kturtle; ima dva ukaza za pogovorna okna, in sicer: "
+"<userinput>sporočilo</userinput> in <userinput>vprašaj</userinput>"
+
+#. Tag: term
+#: programming-reference.docbook:487
+#, no-c-format
+msgid "<term>message</term>"
+msgstr "<term>message</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:487
+#, no-c-format
+msgid "<primary>message</primary>"
+msgstr "<primary>message</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:488
+#, no-c-format
+msgid "message X"
+msgstr "message X"
+
+#. Tag: para
+#: programming-reference.docbook:488
+#, no-c-format
+msgid ""
+"The <userinput>message</userinput> command takes a <link linkend=\"string"
+"\">string</link> as input. It shows a pop-up dialog containing the text from "
+"the <link linkend=\"string\">string</link>."
+msgstr ""
+"Ukaz <userinput>message</userinput> kot vhod sprejme <link linkend=\"string"
+"\">niz</link>. Prikazuje pojavno pogovorno okno, ki vsebuje besedilo iz "
+"<link linkend=\"string\">niza</link>."
+
+#. Tag: screen
+#: programming-reference.docbook:490
+#, no-c-format
+msgid ""
+"message \"Cies started KTurtle in 2003 and still enjoys working on it!\""
+msgstr ""
+"sporočilo \"Cies je začel KTurtle leta 2003 in še vedno uživa pri delu!\""
+
+#. Tag: term
+#: programming-reference.docbook:497
+#, no-c-format
+msgid "<term>ask</term>"
+msgstr "<term>ask</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:497
+#, no-c-format
+msgid "<primary>ask</primary>"
+msgstr "<primary>ask</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:498
+#, no-c-format
+msgid "ask X"
+msgstr "vprašaj X"
+
+#. Tag: para
+#: programming-reference.docbook:498
+#, no-c-format
+msgid ""
+"<userinput>ask</userinput> takes a <link linkend=\"string\">string</link> as "
+"input. It shows this string in a pop-up dialog (similar to <link linkend="
+"\"message\">message</link>), along with an input field. After the user has "
+"entered a <link linkend=\"number\">number</link> or a <link linkend=\"string"
+"\">string</link> into this, the result can be stored in a <link linkend="
+"\"assignment-of-variables\">variable</link> or passed as an argument to a "
+"<link linkend=\"commands\">command</link>. For example: <screen>\n"
+"$in = ask \"What is your year of birth?\"\n"
+"$out = 2003 - $in\n"
+"print \"In 2003 you were \" + $out + \" years old at some point.\"\n"
+"</screen> If the user cancels the input dialog, or does not enter anything "
+"at all, the <link linkend=\"assignment-of-variables\">variable</link> is "
+"empty."
+msgstr ""
+"<userinput>vprašaj</userinput> kot vhod sprejme <link linkend=\"string"
+"\">niz</link>. Ta niz prikaže v pojavnem pogovornem oknu (podobnem <link "
+"linkend=\"message\">sporočilo</link>) skupaj z vnosnim poljem. Ko uporabnik "
+"vanj vnese <link linkend=\"number\">število</link> ali <link linkend=\"string"
+"\">niz</link>, se lahko rezultat shrani v <link linkend=\"assignment-of-"
+"variables\">spremenljivka</link> ali posredovana kot argument <link linkend="
+"\"commands\">ukaz</link>. Na primer: <screen>\n"
+"$in = vprašaj \"Katero je tvoje leto rojstva?\"\n"
+"$out = 2003 - $in\n"
+"print \"Leta 2003 ste bili na neki točki stari \" + $out + \" let.\"\n"
+"</screen> Če uporabnik prekliče pogovorno okno za vnos ali sploh ne vnese "
+"ničesar, je <link linkend=\"assignment-of-variables\">spremenljivka</link> "
+"prazna."
+
+#. Tag: title
+#: programming-reference.docbook:511
+#, no-c-format
+msgid "Assignment of variables"
+msgstr "Dodelitev spremenljivk"
+
+#. Tag: para
+#: programming-reference.docbook:512
+#, no-c-format
+msgid ""
+"First we have a look at variables, then we look at assigning values to those "
+"variables."
+msgstr ""
+"Najprej si ogledamo spremenljivke, nato pa si ogledamo dodeljevanje "
+"vrednosti tem spremenljivkam."
+
+#. Tag: para
+#: programming-reference.docbook:516
+#, no-c-format
+msgid ""
+"Variables are words that start with a <quote>$</quote>, in the <link linkend="
+"\"the-editor\">editor</link> they are <glossterm>highlighted</glossterm> "
+"with purple."
+msgstr ""
+"Spremenljivke so besede, ki se začnejo z <quote>$</quote>, v <link linkend="
+"\"the-editor\">urejevalniku</link> so <glossterm>označene</glossterm> z "
+"vijolično."
+
+#. Tag: para
+#: programming-reference.docbook:518
+#, no-c-format
+msgid ""
+"Variables can contain any <link linkend=\"number\">number</link>, <link "
+"linkend=\"string\">string</link> or <link linkend=\"boolean-value\">boolean "
+"(true/false) value</link>. Using the assignment, <userinput>=</userinput>, a "
+"variable is given its content. It will keep that content until the program "
+"finishes executing or until the variable is reassigned to something else."
+msgstr ""
+"Spremenljivke lahko vsebujejo poljubno <link linkend=\"number\">število</"
+"link>, <link linkend=\"string\">niz</link> ali <link linkend=\"boolean-value"
+"\">logično (true/false) vrednost</link>. Z dodelitvijo <userinput>=</"
+"userinput> spremenljivka dobi svojo vsebino. To vsebino bo hranil, dokler se "
+"program ne konča z izvajanjem ali dokler spremenljivka ni dodeljena nečemu "
+"drugemu."
+
+#. Tag: para
+#: programming-reference.docbook:520
+#, no-c-format
+msgid ""
+"You can use variables, once assigned, just as if they are their content. For "
+"instance in the following piece of &turtlescript;: <screen>\n"
+"$x = 10\n"
+"$x = $x / 3\n"
+"print $x\n"
+"</screen> First the variable <userinput>$x</userinput> is assigned to "
+"<userinput>10</userinput>. Then <userinput>$x</userinput> is reassigned to "
+"itself divided by <userinput>3</userinput> &mdash; this effectively means "
+"<userinput>$x</userinput> is reassigned to product of <userinput>10 / 3</"
+"userinput>. Finally <userinput>$x</userinput> is printed. In line two and "
+"three you see that <userinput>$x</userinput> is used as if it is its "
+"contents."
+msgstr ""
+"Spremenljivke, ko so enkrat dodeljene, lahko uporabite, kot da bi bile "
+"njihova vsebina. Na primer v naslednjem delu &turtlescript;: <screen>\n"
+"$x = 10\n"
+"$x = $x / 3\n"
+"natisni $x\n"
+"</screen> Najprej je spremenljivka <userinput>$x</userinput> dodeljena "
+"<userinput>10</userinput>. Nato je <userinput>$x</userinput> znova dodeljen "
+"sam sebi deljeno z <userinput>3</userinput> &mdash; to dejansko pomeni, da "
+"je <userinput>$x</userinput> ponovno dodeljen produktu <userinput>10 / 3</"
+"userinput>. Končno se natisne <userinput>$x</userinput>. V drugi in tretji "
+"vrstici vidite, da je <userinput>$x</userinput> uporabljen, kot da je "
+"njegova vsebina."
+
+#. Tag: para
+#: programming-reference.docbook:524
+#, no-c-format
+msgid ""
+"Variables have to be assigned in order to be used. For example: <screen>\n"
+"print $n\n"
+"</screen> Will result in an error message."
+msgstr ""
+"Spremenljivke morajo biti dodeljene, da se lahko uporabijo. Na primer: "
+"<screen>\n"
+"natisni $n\n"
+"</screen> Prikaže se sporočilo o napaki."
+
+#. Tag: para
+#: programming-reference.docbook:528
+#, no-c-format
+msgid ""
+"Please consider the following piece of &turtlescript;: <screen>\n"
+"$a = 2004\n"
+"$b = 25\n"
+"\n"
+"# the next command prints \"2029\"\n"
+"print $a + $b\n"
+"backward 30\n"
+"# the next command prints \"2004 plus 25 equals 2029\"\n"
+"print $a + \" plus \" + $b + \" equals \" + ($a + $b)\n"
+"</screen> In the first two lines the variables <userinput>$a</userinput> and "
+"<userinput>$b</userinput> are set to 2004 and 25. Then in two "
+"<userinput>print</userinput> commands with a <userinput>backward 30</"
+"userinput> in between are executed. The comments before the "
+"<userinput>print</userinput> commands explain what they are doing. The "
+"command <userinput>backward 30</userinput> is there to make sure every "
+"output is on a new line. As you see variables can be used just as if their "
+"where what they contain, you can use them with any kind of <link linkend="
+"\"operators\">operators</link> or give them as input when invoking <link "
+"linkend=\"commands\">commands</link>."
+msgstr ""
+"Prosimo, upoštevajte naslednji del &turtlescript;: <screen>\n"
+"$a = 2004\n"
+"$b = 25\n"
+"\n"
+"# naslednji ukaz natisne \"2029\"\n"
+"print $a + $b\n"
+"backward 30\n"
+"# naslednji ukaz natisne \"2004 plus 25 je enako 2029\"\n"
+"print $a + \" plus \" + $b + \" je enako \" + ($a + $b)\n"
+"</screen> V prvih dveh vrsticah sta spremenljivki <userinput>$a</userinput> "
+"in <userinput>$b</userinput> nastavljeni na 2004 in 25. Nato v dveh ukazih "
+"<userinput>print</userinput> z vmes se izvede <userinput>backward 30</"
+"userinput>. Komentarji pred ukazi <userinput>natisni</userinput> "
+"pojasnjujejo, kaj počnejo. Ukaz <userinput>backward 30</userinput> poskrbi, "
+"da je vsak izhod v novi vrstici. Kot vidite, je spremenljivke mogoče "
+"uporabiti tako, kot če bi bile tam, kar vsebujejo, lahko jih uporabite s "
+"poljubnimi vrstami <link linkend=\"operators\">operatorjev</link> ali jih "
+"podate kot vnos pri klicanju <link linkend=\"commands\">ukazi</link>."
+
+#. Tag: para
+#: programming-reference.docbook:534
+#, no-c-format
+msgid ""
+"One more example: <screen>\n"
+"$name = ask \"What is your name?\"\n"
+"print \"Hi \" + $name + \"! Good luck while learning the art of "
+"programming...\"\n"
+"</screen> Pretty straight forward. Again you can see that the variable "
+"<userinput>$name</userinput>, treated just like a string."
+msgstr ""
+"Še en primer: <screen>\n"
+"$name = ask \"Kako ti je ime?\"\n"
+"print \"Živjo \" + $name + \"! Vso srečo pri učenju umetnosti "
+"programiranja...\"\n"
+"</screen> Precej naravnost. Spet lahko vidite, da je spremenljivka "
+"<userinput>$name</userinput> obravnavana kot niz."
+
+#. Tag: para
+#: programming-reference.docbook:538
+#, no-c-format
+msgid ""
+"When using variables the <link linkend=\"the-inspector\">inspector</link> is "
+"very helpful. It shows you the contents of all variables that are currently "
+"in use."
+msgstr ""
+"Pri uporabi spremenljivk je <link linkend=\"the-inspector\">inšpektor</link> "
+"zelo koristen. Prikazuje vsebino vseh spremenljivk, ki so trenutno v uporabi."
+
+#. Tag: title
+#: programming-reference.docbook:544
+#, no-c-format
+msgid "Controlling execution"
+msgstr "Nadzor izvajanja"
+
+#. Tag: para
+#: programming-reference.docbook:545
+#, no-c-format
+msgid ""
+"The execution controllers enable you &mdash; as their name implies &mdash; "
+"to control execution."
+msgstr ""
+"Krmilniki izvajanja vam omogočajo &mdash; kot pove njihovo ime &mdash; za "
+"nadzor izvajanja."
+
+#. Tag: para
+#: programming-reference.docbook:546
+#, no-c-format
+msgid ""
+"Execution controlling commands are <glossterm>highlighted</glossterm> with "
+"dark green in a bold font type. The brackets are mostly used together with "
+"execution controllers and they are <glossterm>highlighted</glossterm> with "
+"black."
+msgstr ""
+"Ukazi za nadzor izvajanja so <glossterm>poudarjeni</glossterm> s temno "
+"zeleno v krepki pisavi. Oklepaji se večinoma uporabljajo skupaj z "
+"izvajalnimi krmilniki in so <glossterm>poudarjeni</glossterm> s črno."
+
+#. Tag: title
+#: programming-reference.docbook:549
+#, no-c-format
+msgid "Have the turtle wait"
+msgstr "Želva naj počaka"
+
+#. Tag: para
+#: programming-reference.docbook:550
+#, no-c-format
+msgid ""
+"If you have done some programming in &kturtle; you have might noticed that "
+"the turtle can be very quick at drawing. This command makes the turtle wait "
+"for a given amount of time."
+msgstr ""
+"Če ste že nekaj programirali v &kturtle; morda ste opazili, da zna želva "
+"zelo hitro risati. Ta ukaz poskrbi, da želva čaka določen čas."
+
+#. Tag: term
+#: programming-reference.docbook:553
+#, no-c-format
+msgid "<term>wait</term>"
+msgstr "<term>wait</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:553
+#, no-c-format
+msgid "<primary>wait</primary>"
+msgstr "<primary>wait</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:554
+#, no-c-format
+msgid "wait X"
+msgstr "wait X"
+
+#. Tag: para
+#: programming-reference.docbook:554
+#, no-c-format
+msgid ""
+"<userinput>wait</userinput> makes the turtle wait for X seconds. <screen>\n"
+"repeat 36 {\n"
+"  forward 5\n"
+"  turnright 10\n"
+"  wait 0.5\n"
+"}\n"
+"</screen> This code draws a circle, but the turtle will wait half a second "
+"after each step. This gives the impression of a slow-moving turtle."
+msgstr ""
+"<userinput>wait</userinput> poskrbi, da želva čaka X sekund. <screen>\n"
+"ponovi 36 {\n"
+"   naprej 5\n"
+"   zavijanje desno 10\n"
+"   počakaj 0,5\n"
+"}\n"
+"</screen> Ta koda nariše krog, vendar bo želva po vsakem koraku čakala pol "
+"sekunde. To daje vtis počasne želve."
+
+#. Tag: title
+#: programming-reference.docbook:564
+#, no-c-format
+msgid "Execute <quote>if</quote>"
+msgstr "Izvedi <quote>if</quote>"
+
+#. Tag: term
+#: programming-reference.docbook:567
+#, no-c-format
+msgid "<term>if</term>"
+msgstr "<term>if</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:567
+#, no-c-format
+msgid "<primary>if</primary>"
+msgstr "<primary>if</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:568
+#, no-c-format
+msgid "if <link linkend=\"boolean-value\">boolean</link> { ... }"
+msgstr "if <link linkend=\"boolean-value\">boolean</link> { ... }"
+
+#. Tag: para
+#: programming-reference.docbook:568
+#, no-c-format
+msgid ""
+"The code that is placed between the brackets will only be executed "
+"<userinput>if</userinput> the <link linkend=\"boolean-value\">boolean value</"
+"link> evaluates <quote>true</quote>. <screen>\n"
+"$x = 6\n"
+"if $x &gt; 5 {\n"
+"  print \"$x is greater than five!\"\n"
+"}\n"
+"</screen> On the first line <userinput>$x</userinput> is set to 6. On the "
+"second line a <link linkend=\"comparing-operators\">comparing operator</"
+"link> is used to evaluate <userinput>$x &gt; 5</userinput>. Since this "
+"evaluates <quote>true</quote>, 6 is larger than 5, the execution controller "
+"<userinput>if</userinput> will allow the code between the brackets to be "
+"executed."
+msgstr ""
+"Koda, ki je v oklepaju, bo izvedena samo, <userinput>če</userinput> <link "
+"linkend=\"boolean-value\">logična vrednost</link> ovrednoti <quote>true</"
+"quote>. <screen>\n"
+"$x = 6\n"
+"if $x &gt; 5 {\n"
+"  print \"$x is greater than five!\"\n"
+"}\n"
+"</screen> V prvi vrstici je <userinput>$x</userinput> nastavljen na 6. V "
+"drugi vrstici se <link linkend=\"comparing-operators\">operator primerjave</"
+"link> uporablja za ovrednotenje <userinput> $x &gt; 5</userinput>. Ker to "
+"ovrednoti <quote>true</quote>, 6 je večje od 5, bo krmilnik izvajanja "
+"<userinput>če</userinput> dovolil izvedbo kode med oklepaji."
+
+#. Tag: title
+#: programming-reference.docbook:577
+#, no-c-format
+msgid "If not, in other words: <quote>else</quote>"
+msgstr "Če ne, z drugimi besedami: <quote>else</quote>"
+
+#. Tag: term
+#: programming-reference.docbook:580
+#, no-c-format
+msgid "<term>else</term>"
+msgstr "<term>else</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:580
+#, no-c-format
+msgid "<primary>else</primary>"
+msgstr "<primary>else</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:581
+#, no-c-format
+msgid "if <link linkend=\"boolean-value\">boolean</link> { ... } else { ... }"
+msgstr "if <link linkend=\"boolean-value\">boolean</link> { ... } else { ... }"
+
+#. Tag: para
+#: programming-reference.docbook:581
+#, no-c-format
+msgid ""
+"<userinput>else</userinput> can be used in addition to the execution "
+"controller <link linkend=\"if\"><userinput>if</userinput></link>. The code "
+"between the brackets after <userinput>else</userinput> is only executed if "
+"the <link linkend=\"boolean-value\">boolean</link> evaluates <quote>false</"
+"quote>. <screen>\n"
+"reset\n"
+"$x = 4\n"
+"if $x &gt; 5 {\n"
+"  print \"$x is greater than five!\"\n"
+"} else {\n"
+"  print \"$x is smaller than six!\"\n"
+"}\n"
+"</screen> The <link linkend=\"comparing-operators\">comparing operator</"
+"link> evaluates the expression <userinput>$x &gt; 5</userinput>. Since 4 is "
+"not greater than 5 the expression evaluates <quote>false</quote>. This means "
+"the code between the brackets after <userinput>else</userinput> gets "
+"executed."
+msgstr ""
+"<userinput>else</userinput> je mogoče uporabiti poleg krmilnika izvajanja "
+"<link linkend=\"if\"><userinput>if</userinput></link>. Koda med oklepaji za "
+"<userinput>else</userinput> se izvede le, če <link linkend=\"boolean-value"
+"\">boolean</link> oceni <quote>false</quote>. <screen>\n"
+"ponastavi\n"
+"$x = 4\n"
+"if $x &gt; 5 {\n"
+"  print \"$x is greater than five!\"\n"
+"} else {\n"
+"  print \"$x is smaller than six!\"\n"
+"}\n"
+"</screen> <link linkend=\"comparing-operators\">operator primerjanja</link> "
+"ovrednoti izraz <userinput>$x &gt; 5</userinput>. Ker 4 ni večje od 5, izraz "
+"oceni <quote>false</quote>. To pomeni, da se koda med oklepaji po "
+"<userinput>else</userinput> izvede."
+
+#. Tag: title
+#: programming-reference.docbook:590
+#, no-c-format
+msgid "The <quote>while</quote> loop"
+msgstr "Zanka <quote>while</quote>"
+
+#. Tag: term
+#: programming-reference.docbook:593
+#, no-c-format
+msgid "<term>while</term>"
+msgstr "<term>while</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:593
+#, no-c-format
+msgid "<primary>while</primary>"
+msgstr "<primary>while</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:594
+#, no-c-format
+msgid "while <link linkend=\"boolean-value\">boolean</link> { ... }"
+msgstr "while <link linkend=\"boolean-value\">boolean</link> { ... }"
+
+#. Tag: para
+#: programming-reference.docbook:594
+#, no-c-format
+msgid ""
+"The execution controller <userinput>while</userinput> is a lot like <link "
+"linkend=\"if\"><userinput>if</userinput></link>. The difference is that "
+"<userinput>while</userinput> keeps repeating (looping) the code between the "
+"brackets until the <link linkend=\"boolean-value\">boolean</link> evaluates "
+"<quote>false</quote>. <screen>\n"
+"$x = 1\n"
+"while $x &lt; 5 {\n"
+"  forward 10\n"
+"  wait 1\n"
+"  $x = $x + 1\n"
+"}\n"
+"</screen> On the first line <userinput>$x</userinput> is set to 1. On the "
+"second line <userinput>$x &lt; 5</userinput> is evaluated. Since the answer "
+"to this question is <quote>true</quote> the execution controller "
+"<userinput>while</userinput> starts executing the code between the brackets "
+"until the <userinput>$x &lt; 5</userinput> evaluates <quote>false</quote>. "
+"In this case the code between the brackets will be executed 4 times, because "
+"every time the fifth line is executed <userinput>$x</userinput> increases by "
+"1."
+msgstr ""
+"Krmilnik izvajanja <userinput>while</userinput> je zelo podoben <link "
+"linkend=\"if\"><userinput>if</userinput></link>. Razlika je v tem, da "
+"<userinput>medtem ko</userinput> ponavlja (zanka) kodo med oklepaji, dokler "
+"<link linkend=\"boolean-value\">boolean</link> ne oceni <quote>false</"
+"quote>. <screen>\n"
+"$x = 1\n"
+"while $x &lt; 5 {\n"
+"  forward 10\n"
+"  wait 1\n"
+"  $x = $x + 1\n"
+"}\n"
+"</screen> V prvi vrstici je <userinput>$x</userinput> nastavljen na 1. V "
+"drugi vrstici <userinput>$x &lt; 5</userinput> je ocenjeno. Ker je odgovor "
+"na to vprašanje <quote>true</quote>, izvajalni krmilnik <userinput>medtem "
+"ko</userinput> začne izvajati kodo med oklepaji, dokler se <userinput>$x "
+"&lt; 5</userinput> oceni <quote>false</quote>. V tem primeru bo koda med "
+"oklepaji izvedena 4-krat, ker se vsakič, ko se izvede peta vrstica, "
+"<userinput>$x</userinput> poveča za 1."
+
+#. Tag: title
+#: programming-reference.docbook:603
+#, no-c-format
+msgid "The <quote>repeat</quote> loop"
+msgstr "Zanka <quote>repeat</quote>"
+
+#. Tag: term
+#: programming-reference.docbook:606
+#, no-c-format
+msgid "<term>repeat</term>"
+msgstr "<term>repeat</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:606
+#, no-c-format
+msgid "<primary>repeat</primary>"
+msgstr "<primary>repeat</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:607
+#, no-c-format
+msgid "repeat <link linkend=\"number\">number</link> { ... }"
+msgstr "repeat <link linkend=\"number\">number</link> { ... }"
+
+#. Tag: para
+#: programming-reference.docbook:607
+#, no-c-format
+msgid ""
+"The execution controller <userinput>repeat</userinput> is a lot like <link "
+"linkend=\"while\"><userinput>while</userinput></link>. The difference is "
+"that <userinput>repeat</userinput> keeps repeating (looping) the code "
+"between the brackets for as many times as the given number."
+msgstr ""
+"Krmilnik izvajanja <userinput>repeat</userinput> je zelo podoben <link "
+"linkend=\"while\"><userinput>while</userinput></link>. Razlika je v tem, da "
+"<userinput>repeat</userinput> ponavlja (zanka) kodo med oklepaji tolikokrat, "
+"kot je podano število."
+
+#. Tag: title
+#: programming-reference.docbook:614
+#, no-c-format
+msgid "The <quote>for</quote> loop, a counting loop"
+msgstr "Zanka <quote>for</quote>, zanka štetja"
+
+#. Tag: term
+#: programming-reference.docbook:617
+#, no-c-format
+msgid "<term>for</term>"
+msgstr "<term>for</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:617
+#, no-c-format
+msgid "<primary>for</primary>"
+msgstr "<primary>for</primary>"
+
+#. Tag: primary
+#: programming-reference.docbook:617
+#, no-c-format
+msgid "<primary>to</primary>"
+msgstr "<primary>to</primary>"
+
+#. Tag: primary
+#: programming-reference.docbook:617
+#, no-c-format
+msgid "step"
+msgstr "step"
+
+#. Tag: screen
+#: programming-reference.docbook:618
+#, no-c-format
+msgid ""
+"for <link linkend=\"assignment-of-variables\">variable</link> = <link "
+"linkend=\"number\">number</link> to <link linkend=\"number\">number</link> "
+"{ ... }"
+msgstr ""
+"for <link linkend=\"assignment-of-variables\">variable</link> = <link "
+"linkend=\"number\">number</link> to <link linkend=\"number\">number</link> "
+"{ ... }"
+
+#. Tag: para
+#: programming-reference.docbook:618
+#, no-c-format
+msgid ""
+"The <userinput>for</userinput> loop is a <quote>counting loop</quote>, &ie; "
+"it keeps count for you. The first number sets the variable to the value in "
+"the first loop. Every loop the number is increased until the second number "
+"is reached. <screen>\n"
+"for $x = 1 to 10 {\n"
+"  print $x * 7\n"
+"  forward 15\n"
+"}\n"
+"</screen> Every time the code between the brackets is executed the "
+"<userinput>$x</userinput> is increased by 1, until <userinput>$x</userinput> "
+"reaches the value of 10. The code between the brackets prints the <userinput>"
+"$x</userinput> multiplied by 7. After this program finishes its execution "
+"you will see the times table of 7 on the canvas."
+msgstr ""
+"Zanka <userinput>for</userinput> je <quote>zanka štetja</quote>, &ie; šteje "
+"za vas. Prvo število nastavi spremenljivko na vrednost v prvi zanki. Vsako "
+"zanko se število povečuje, dokler ni doseženo drugo število. <screen>\n"
+"for $x = 1 to 10 {\n"
+"  print $x * 7\n"
+"  forward 15\n"
+"}\n"
+"</screen> Vsakič, ko se izvede koda med oklepaji, se <userinput>$x</"
+"userinput> poveča za 1, dokler <userinput>$x</userinput> ne doseže vrednosti "
+"10. Koda med oklepaji se natisne <userinput>$x</userinput> pomnoženo s 7. Ko "
+"ta program konča z izvajanjem, boste na platnu videli časovno tabelo 7."
+
+#. Tag: para
+#: programming-reference.docbook:623
+#, no-c-format
+msgid "The default step size of a loop is 1, you can use an other value with"
+msgstr "Privzeta velikost koraka zanke je 1, lahko uporabite drugo vrednost"
+
+#. Tag: screen
+#: programming-reference.docbook:625
+#, no-c-format
+msgid ""
+"for <link linkend=\"assignment-of-variables\">variable</link> = <link "
+"linkend=\"number\">number</link> to <link linkend=\"number\">number</link> "
+"step <link linkend=\"number\">number</link> { ... }"
+msgstr ""
+"for <link linkend=\"assignment-of-variables\">variable</link> = <link "
+"linkend=\"number\">number</link> to <link linkend=\"number\">number</link> "
+"step <link linkend=\"number\">number</link> { ... }"
+
+#. Tag: title
+#: programming-reference.docbook:631
+#, no-c-format
+msgid "Leave a loop"
+msgstr "Zapusti zanko"
+
+#. Tag: term
+#: programming-reference.docbook:634
+#, no-c-format
+msgid "<term>break</term>"
+msgstr "<term>break</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:634
+#, no-c-format
+msgid "<primary>break</primary>"
+msgstr "<primary>break</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:635
+#, no-c-format
+msgid "<screen>break</screen>"
+msgstr "<screen>break</screen>"
+
+#. Tag: para
+#: programming-reference.docbook:635
+#, no-c-format
+msgid ""
+"Terminates the current loop immediately and transfers control to the "
+"statement immediately following that loop."
+msgstr ""
+"Takoj prekine trenutno zanko in prenese nadzor na stavek, ki sledi tej zanki."
+
+#. Tag: title
+#: programming-reference.docbook:642
+#, no-c-format
+msgid "Stop executing your program"
+msgstr "Prenehaj z izvajanjem svojega programa"
+
+#. Tag: term
+#: programming-reference.docbook:645
+#, no-c-format
+msgid "<term>exit</term>"
+msgstr "<term>exit</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:645
+#, no-c-format
+msgid "<primary>exit</primary>"
+msgstr "<primary>exit</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:646
+#, no-c-format
+msgid "<screen>exit</screen>"
+msgstr "<screen>exit</screen>"
+
+#. Tag: para
+#: programming-reference.docbook:646
+#, no-c-format
+msgid "Finishes the execution of your program."
+msgstr "Konča izvajanje vašega programa."
+
+#. Tag: title
+#: programming-reference.docbook:653
+#, no-c-format
+msgid "Checking assertions at runtime"
+msgstr "Preverjanje trditev med izvajanjem"
+
+#. Tag: term
+#: programming-reference.docbook:656
+#, no-c-format
+msgid "<term>assert</term>"
+msgstr "<term>assert</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:656
+#, no-c-format
+msgid "<primary>assert</primary>"
+msgstr "<primary>assert</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:657
+#, no-c-format
+msgid "assert <link linkend=\"boolean-value\">boolean</link>"
+msgstr "assert <link linkend=\"boolean-value\">boolean</link>"
+
+#. Tag: para
+#: programming-reference.docbook:657
+#, no-c-format
+msgid "Can be used to reason about program or input correctness."
+msgstr "Lahko se uporablja za razmišljanje o pravilnosti programa ali vnosa."
+
+#. Tag: screen
+#: programming-reference.docbook:659
+#, no-c-format
+msgid ""
+"$in = ask \"What is your year of birth?\"\n"
+"# the year must be positive\n"
+"assert $in > 0"
+msgstr ""
+"$in = ask \"Katero je tvoje leto rojstva?\"\n"
+"# leto mora biti pozitivno\n"
+"assert $in > 0"
+
+#. Tag: title
+#: programming-reference.docbook:668
+#, no-c-format
+msgid "Create your own commands with <quote>learn</quote>"
+msgstr "Ustvarite lastne ukaze z <quote>learn</quote>"
+
+#. Tag: para
+#: programming-reference.docbook:669
+#, no-c-format
+msgid ""
+"<userinput>learn</userinput><indexterm><primary>learn</primary></indexterm> "
+"is special as it is used to create your own commands. The commands you "
+"create can take <glossterm linkend=\"input-output\">input</glossterm> and "
+"return <glossterm linkend=\"input-output\">output</glossterm>. Let us take a "
+"look at how a new command is created: <screen>\n"
+"learn circle $x {\n"
+"  repeat 36 {\n"
+"    forward $x\n"
+"    turnleft 10\n"
+"  }\n"
+"}\n"
+"</screen> The new command is called <userinput>circle</userinput>. "
+"<userinput>circle</userinput> takes one <glossterm linkend=\"input-output"
+"\">input</glossterm> argument, to set the size of the circle. "
+"<userinput>circle</userinput> returns no <glossterm linkend=\"input-output"
+"\">output</glossterm>. The <userinput>circle</userinput> command can now be "
+"used like a normal command in the rest of the code. See this example:"
+msgstr ""
+"<userinput>learn</userinput><indexterm><primary>learn</primary></indexterm> "
+"je poseben, saj se uporablja za ustvarjanje lastnih ukazov. Ukazi, ki jih "
+"ustvarite, lahko sprejmejo <glossterm linkend=\"input-output\">input</"
+"glossterm> in vrnejo <glossterm linkend=\"input-output\">output</glossterm>. "
+"Oglejmo si, kako se ustvari nov ukaz: <screen>\n"
+"learn circle $x {\n"
+"   repeat 36 {\n"
+"     forward $x\n"
+"     turnleft 10\n"
+"   }\n"
+"}\n"
+"</screen> Nov ukaz se imenuje <userinput>circle</userinput>. "
+"<userinput>circle</userinput> sprejme en <glossterm linkend=\"input-output"
+"\">input</glossterm> argument za nastavitev velikosti kroga. "
+"<userinput>krog</userinput> ne vrne nobenega <glossterm linkend=\"input-"
+"output\">output</glossterm>. Ukaz <userinput>circle</userinput> je zdaj "
+"mogoče uporabiti kot običajni ukaz v preostali kodi. Glejte ta primer:"
+
+#. Tag: screen
+#: programming-reference.docbook:672
+#, no-c-format
+msgid ""
+"learn circle $X {\n"
+"  repeat 36 {\n"
+"    forward $X \n"
+"    turnleft 10 \n"
+"  }\n"
+"}\n"
+"\n"
+"go 200,200 \n"
+"circle 20\n"
+"\n"
+"go 300,200 \n"
+"circle 40"
+msgstr ""
+"learn circle $X {\n"
+"  repeat 36 {\n"
+"    forward $X \n"
+"    turnleft 10 \n"
+"  }\n"
+"}\n"
+"\n"
+"go 200,200 \n"
+"circle 20\n"
+"\n"
+"go 300,200 \n"
+"circle 40"
+
+#. Tag: para
+#: programming-reference.docbook:674
+#, no-c-format
+msgid ""
+"In the next example, a command with a return<indexterm><primary>return</"
+"primary></indexterm> value is created. <screen>\n"
+"learn faculty $x {\n"
+"  $r = 1\n"
+"  for $i = 1 to $x {\n"
+"    $r = $r * $i\n"
+"  }\n"
+"  return $r\n"
+"}\n"
+"\n"
+"print faculty 5\n"
+"</screen> In this example a new command called <userinput>faculty</"
+"userinput> is created. If the input of this command is <userinput>5</"
+"userinput> then the output is <userinput>5*4*3*2*1</userinput>. By using "
+"<userinput>return</userinput> the <glossterm linkend=\"input-output"
+"\">output</glossterm> value is specified and the execution is returned."
+msgstr ""
+"V naslednjem primeru je ustvarjen ukaz z vrednostjo "
+"return<indexterm><primary>return</primary></indexterm>. <screen>\n"
+"learn faculty $x {\n"
+"  $r = 1\n"
+"  for $i = 1 to $x {\n"
+"    $r = $r * $i\n"
+"  }\n"
+"  return $r\n"
+"}\n"
+"\n"
+"print faculty 5\n"
+"</screen> V tem primeru je ustvarjen nov ukaz z imenom <userinput>faculty</"
+"userinput>. Če je vnos tega ukaza <userinput>5</userinput>, potem je izhod "
+"<userinput>5*4*3*2*1</userinput>. Z uporabo <userinput>return</userinput> je "
+"določena <glossterm linkend=\"input-output\">izhodna</glossterm> vrednost in "
+"vrnjena je izvedba."
+
+#. Tag: para
+#: programming-reference.docbook:677
+#, no-c-format
+msgid ""
+"Commands can have more than one <glossterm linkend=\"input-output\">input</"
+"glossterm>. In the next example, a command that draws a rectangle is "
+"created: <screen>\n"
+"learn box $x, $y {\n"
+"  forward $y\n"
+"  turnright 90\n"
+"  forward $x\n"
+"  turnright 90\n"
+"  forward $y\n"
+"  turnright 90\n"
+"  forward $x\n"
+"  turnright 90\n"
+"}\n"
+"</screen> Now you can run <userinput>box 50, 100</userinput> and the turtle "
+"will draw a rectangle on the canvas."
+msgstr ""
+"Ukazi imajo lahko več kot en <glossterm linkend=\"input-output\">vnos</"
+"glossterm>. V naslednjem primeru je ustvarjen ukaz, ki nariše pravokotnik: "
+"<screen>\n"
+"learn box $x, $y {\n"
+"  forward $y\n"
+"  turnright 90\n"
+"  forward $x\n"
+"  turnright 90\n"
+"  forward $y\n"
+"  turnright 90\n"
+"  forward $x\n"
+"  turnright 90\n"
+"}\n"
+"</screen> Zdaj lahko zaženete <userinput>box 50, 100</userinput> in želva bo "
+"narisala pravokotnik na platno."

@@ -1,0 +1,831 @@
+# SLOVENIAN TRANSLATION OF KDE DOCUMENTATION.
+# Copyright (C) 2001 Free Software Foundation, Inc.
+# $Id$
+# $Source$
+#
+# Andrej Vernekar <andrej.vernekar@moj.net>, 2001.
+# SPDX-FileCopyrightText: 2023, 2024 Matjaž Jeran <matjaz.jeran@amis.net>
+msgid ""
+msgstr ""
+"Project-Id-Version: kdesu\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 12:04+0000\n"
+"PO-Revision-Date: 2024-03-21 07:52+0100\n"
+"Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
+"Language-Team: Slovenian <lugos-slo@lugos.si>\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 23.08.5\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
+
+#. Tag: title
+#: index.docbook:13
+#, no-c-format
+msgid "The &kdesu; handbook"
+msgstr "Priročnik za &kdesu;"
+
+#. Tag: author
+#: index.docbook:16
+#, no-c-format
+msgid "&Geert.Jansen; &Geert.Jansen.mail;"
+msgstr "&Geert.Jansen; &Geert.Jansen.mail;"
+
+#. Tag: trans_comment
+#: index.docbook:17
+#, no-c-format
+msgid "ROLES_OF_TRANSLATORS"
+msgstr ""
+"<othercredit role=\"translator\"><firstname>Andrej</"
+"firstname><surname>Vernekar</surname><affiliation><address><email>andrej."
+"vernekar@moj.net</email></address></affiliation><contrib>Prevod</contrib></"
+"othercredit>"
+
+#. Tag: holder
+#: index.docbook:22
+#, no-c-format
+msgid "&Geert.Jansen;"
+msgstr "&Geert.Jansen;"
+
+#. Tag: date
+#: index.docbook:27
+#, no-c-format
+msgid "2010-09-21"
+msgstr "21.09.2010"
+
+#. Tag: releaseinfo
+#: index.docbook:28
+#, no-c-format
+msgid "KDE 4.5"
+msgstr "KDE 4.5"
+
+#. Tag: para
+#: index.docbook:31
+#, no-c-format
+msgid ""
+"&kdesu; is a graphical front end for the &UNIX; <command>su</command> "
+"command."
+msgstr "&kdesu; je grafični vmesnik za &UNIX;-ov ukaz <command>su</command>."
+
+#. Tag: keyword
+#: index.docbook:35
+#, no-c-format
+msgid "<keyword>KDE</keyword>"
+msgstr "<keyword>KDE</keyword>"
+
+#. Tag: keyword
+#: index.docbook:36
+#, no-c-format
+msgid "<keyword>su</keyword>"
+msgstr "<keyword>su</keyword>"
+
+#. Tag: keyword
+#: index.docbook:37
+#, no-c-format
+msgid "password"
+msgstr "password"
+
+#. Tag: keyword
+#: index.docbook:38
+#, no-c-format
+msgid "root"
+msgstr "root"
+
+#. Tag: title
+#: index.docbook:44
+#, no-c-format
+msgid "Introduction"
+msgstr "Uvod"
+
+#. Tag: para
+#: index.docbook:60
+#, no-c-format
+msgid ""
+"Welcome to &kdesu;! &kdesu; is a graphical front end for the &UNIX; "
+"<command>su</command> command for the K Desktop Environment. It allows you "
+"to run a program as different user by supplying the password for that user. "
+"&kdesu; is an unprivileged program; it uses the system's <command>su</"
+"command>."
+msgstr ""
+"Dobrodošli v &kdesu;! &kdesu; je grafični vmesnik za &UNIX;-ov ukaz "
+"<command>su</command> za namizno okolje KDE. Omogoča vam, da poganjate "
+"program kot drug uporabnik, s tem, da zagotovite geslo tega uporabnika. "
+"&kdesu; je nepriviligiran program; uporablja sistemski <command>su</command>."
+
+#. Tag: para
+#: index.docbook:66
+#, no-c-format
+msgid ""
+"&kdesu; has one additional feature: it can remember passwords for you. If "
+"you are using this feature, you only need to enter the password once for "
+"each command. See <xref linkend=\"sec-password-keeping\"/> for more "
+"information on this and a security analysis."
+msgstr ""
+"&kdesu; ima dodatno možnost: za vas si lahko zapomni gesla. Če uporabljate "
+"to možnost, morate vnesti vsako geslo le enkrat za vsak ukaz. Glejte <xref "
+"linkend=\"sec-password-keeping\"/> za več informacij o tem in za varnostno "
+"analizo."
+
+#. Tag: para
+#: index.docbook:72
+#, no-c-format
+msgid ""
+"This program is meant to be started from the command line or from <filename>."
+"desktop</filename> files. Although it asks for the <systemitem class="
+"\"username\">root</systemitem> password using a &GUI; dialog, I consider it "
+"to be more of a command line &lt;-&gt; &GUI; glue instead of a pure &GUI; "
+"program."
+msgstr ""
+"Ta program je mišljen za zagon iz ukazne vrstice ali <filename>.desktop</"
+"filename> datoteke. Čeprav vpraša za korensko (<systemitem class=\"username"
+"\">root</systemitem>) geslo z uporabo &GUI; pogovornega okna, ga smatram "
+"bolj za lepilo med ukazno vrstico &lt;-&gt; &GUI;, kot pa za čist &GUI; "
+"program."
+
+#. Tag: para
+#: index.docbook:78
+#, no-c-format
+msgid ""
+"Since <command>kdesu</command> is no longer installed in <userinput> $(kf5-"
+"config --prefix)</userinput>/bin but in <userinput>kf5-config --path "
+"libexec</userinput> and therefore not in your <envar>Path</envar>, you have "
+"to use <userinput>$(kf5-config --path libexec)<command>kdesu</command></"
+"userinput> to launch <command>kdesu</command>."
+msgstr ""
+"Ker <command>kdesu</command> ni več nameščen v <userinput> $(kf5-config --"
+"prefix)</userinput>/bin ampak v <userinput>kf5-config --pathlibexec</"
+"userinput> in zato ni na vaši <envar>Poti</envar>, imateza uporabo "
+"<userinput>$(kf5-config --path libexec)<command>kdesu</command></userinput> "
+"za zagon <command>kdesu</command>."
+
+#. Tag: title
+#: index.docbook:85
+#, no-c-format
+msgid "Using &kdesu;"
+msgstr "Uporaba &kdesu;"
+
+#. Tag: para
+#: index.docbook:87
+#, no-c-format
+msgid "Usage of &kdesu; is easy. The syntax is like this:"
+msgstr "Uporaba &kdesu; je preprosta. Skladnja izgleda takole:"
+
+#. Tag: cmdsynopsis
+#: index.docbook:89
+#, no-c-format
+msgid ""
+"<command>kdesu</command> <group choice=\"opt\"><option>-c</option> "
+"<replaceable> command</replaceable></group> <group choice=\"opt\"><option>-"
+"d</option></group> <group choice=\"opt\"><option>-f</option> <replaceable> "
+"file</replaceable></group> <group choice=\"opt\"><option>-i</option> "
+"<replaceable> icon name</replaceable></group> <group choice=\"opt\"><option>-"
+"n</option></group> <group choice=\"opt\"><option>-p</option> <replaceable> "
+"priority</replaceable></group> <group choice=\"opt\"><option>-r</option></"
+"group> <group choice=\"opt\"><option>-s</option></group> <group choice=\"opt"
+"\"><option>-t</option></group> <group choice=\"opt\"><option>-u</option> "
+"<replaceable> user</replaceable></group> <group choice=\"opt\"><option>--"
+"noignorebutton</option></group> <group choice=\"opt\"><option>--attach</"
+"option> <replaceable> winid</replaceable></group>"
+msgstr ""
+"<command>kdesu</command> <group choice=\"opt\"><option>-c</option> "
+"<replaceable> command</replaceable></group> <group choice=\"opt\"><option>-"
+"d</option></group> <group choice=\"opt\"><option>-f</option> <replaceable> "
+"file</replaceable></group> <group choice=\"opt\"><option>-i</option> "
+"<replaceable> icon name</replaceable></group> <group choice=\"opt\"><option>-"
+"n</option></group> <group choice=\"opt\"><option>-p</option> <replaceable> "
+"priority</replaceable></group> <group choice=\"opt\"><option>-r</option></"
+"group> <group choice=\"opt\"><option>-s</option></group> <group choice=\"opt"
+"\"><option>-t</option></group> <group choice=\"opt\"><option>-u</option> "
+"<replaceable> user</replaceable></group> <group choice=\"opt\"><option>--"
+"noignorebutton</option></group> <group choice=\"opt\"><option>--attach</"
+"option> <replaceable> winid</replaceable></group>"
+
+#. Tag: cmdsynopsis
+#: index.docbook:110
+#, no-c-format
+msgid ""
+"<command>kdesu</command> <arg choice=\"opt\">&kde; Generic Options</arg> "
+"<arg choice=\"opt\">&Qt; Generic Options</arg>"
+msgstr ""
+"<command>kdesu</command> <arg choice=\"opt\">&kde; Generic Options</arg> "
+"<arg choice=\"opt\">&Qt; Generic Options</arg>"
+
+#. Tag: para
+#: index.docbook:116
+#, no-c-format
+msgid "The command line options are explained below."
+msgstr "Možnosti ukazne vrstice so razložene spodaj."
+
+#. Tag: option
+#: index.docbook:120
+#, no-c-format
+msgid "-c <replaceable>command</replaceable>"
+msgstr "-c <replaceable>command</replaceable>"
+
+#. Tag: para
+#: index.docbook:121
+#, no-c-format
+msgid ""
+"This specifies the command to run as root. It has to be passed in one "
+"argument. So if, for example, you want to start a new file manager, you "
+"would enter at the prompt: <userinput>$(kf5-config --path "
+"libexec)<command>kdesu <option>-c <replaceable> &dolphin;</replaceable></"
+"option></command></userinput>"
+msgstr ""
+"To določa ukaz za zagon kot root. Prenesti ga je treba v enem argumentu. "
+"Torej, če želite na primer zagnati novega upravljalnika datotek, bi ob "
+"pozivu vnesli: <userinput>$(kf5-config --path libexec)<command>kdesu "
+"<option>-c <replaceable> &dolphin;</replaceable></option></command></"
+"userinput>"
+
+#. Tag: option
+#: index.docbook:127
+#, no-c-format
+msgid "<option>-d</option>"
+msgstr "<option>-d</option>"
+
+#. Tag: para
+#: index.docbook:128
+#, no-c-format
+msgid "Show debug information."
+msgstr "Prikaži informacije za razhroščevanje."
+
+#. Tag: option
+#: index.docbook:131
+#, no-c-format
+msgid "-f <replaceable>file</replaceable>"
+msgstr "-f <replaceable>file</replaceable>"
+
+#. Tag: para
+#: index.docbook:132
+#, no-c-format
+msgid ""
+"This option allow efficient use of &kdesu; in <filename>.desktop</filename> "
+"files. It tells &kdesu; to examine the file specified by <parameter>file</"
+"parameter>. If this file is writable by the current user, &kdesu; will "
+"execute the command as the current user. If it is not writable, the command "
+"is executed as user <parameter>user</parameter> (defaults to root)."
+msgstr ""
+"Ta možnost omogoča učinkovito uporabo &kdesu; v datoteki <filename>.desktop</"
+"filename>. Pove &kdesu; za pregled datoteke, ki jo določa "
+"<parameter>datoteka</parameter>. Če v to datoteko lahko piše trenutni "
+"uporabnik, &kdesu; bo izvedel ukaz kot trenutni uporabnik. Če ni zapisljiv, "
+"ukaz se izvede kot uporabnik <parameter>user</parameter> (privzeto je to "
+"root)."
+
+#. Tag: para
+#: index.docbook:138
+#, no-c-format
+msgid ""
+"<parameter>file</parameter> is evaluated like this: if <parameter>file</"
+"parameter> starts with a <literal>/</literal>, it is taken as an absolute "
+"filename. Otherwise, it is taken as the name of a global &kde; configuration "
+"file."
+msgstr ""
+"<parameter>datoteka</parameter> se ovrednoti takole: če je "
+"<parameter>datoteka</parameter> se začne z <literal>/</literal>, jemlje se "
+"kot absolutno ime datoteke. V nasprotnem primeru se vzame kot ime globalne "
+"&kde; konfiguracije."
+
+#. Tag: term
+#: index.docbook:144
+#, no-c-format
+msgid "<option>-i</option> <replaceable>icon name</replaceable>"
+msgstr "<option>-i</option> <replaceable>ime ikone</replaceable>"
+
+#. Tag: para
+#: index.docbook:145
+#, no-c-format
+msgid ""
+"Specify icon to use in the password dialog. You may specify just the name, "
+"without any extension."
+msgstr ""
+"Določite ikono za uporabo v pogovornem oknu za geslo. Lahko navedete samo "
+"ime,brez podaljška."
+
+#. Tag: para
+#: index.docbook:147
+#, no-c-format
+msgid ""
+"For instance to run &konqueror; in filemanager mode and show the &konqueror; "
+"icon in the password dialog:"
+msgstr ""
+"Na primer za zagon &konqueror; v načinu upravitelja datotek in pokaže ikono "
+"&konqueror; v pogovornem oknu za geslo:"
+
+#. Tag: screen
+#: index.docbook:149
+#, no-c-format
+msgid ""
+"<userinput>$(kf5-config --path libexec)<command>kdesu</command>  <option>-i "
+"konqueror</option>\n"
+"<option>-c \"konqueror --profile filemanagement\"</option></userinput>"
+msgstr ""
+"<userinput>$(kf5-config --path libexec)<command>kdesu</command>  <option>-i "
+"konqueror</option>\n"
+"<option>-c \"konqueror --profile filemanagement\"</option></userinput>"
+
+#. Tag: option
+#: index.docbook:154
+#, no-c-format
+msgid "<option>-n</option>"
+msgstr "<option>-n</option>"
+
+#. Tag: para
+#: index.docbook:155
+#, no-c-format
+msgid ""
+"Do not keep the password. This disables the <guilabel>keep password</"
+"guilabel> checkbox in the password dialog."
+msgstr ""
+"Ne hranite gesla. To onemogoči <guilabel>hrani geslo</guilabel> potrditveno "
+"polje v pogovornem oknu za geslo."
+
+#. Tag: term
+#: index.docbook:159
+#, no-c-format
+msgid "<option>-p</option> <replaceable>priority</replaceable>"
+msgstr "<option>-p</option> <replaceable>priority</replaceable>"
+
+#. Tag: para
+#: index.docbook:161
+#, no-c-format
+msgid ""
+"Set priority value. The priority is an arbitrary number between 0 and 100, "
+"where 100 means highest priority, and 0 means lowest. The default is 50."
+msgstr ""
+"Nastavite prednostno vrednost. Prioriteta je poljubno število med 0 in 100,"
+"kjer 100 pomeni najvišjo prioriteto, 0 pa najnižjo. Privzeto je 50."
+
+#. Tag: option
+#: index.docbook:167
+#, no-c-format
+msgid "<option>-r</option>"
+msgstr "<option>-r</option>"
+
+#. Tag: para
+#: index.docbook:168
+#, no-c-format
+msgid "Use realtime scheduling."
+msgstr "Uporabi sprotno razporejanje."
+
+#. Tag: option
+#: index.docbook:173
+#, no-c-format
+msgid "<option>-s</option>"
+msgstr "<option>-s</option>"
+
+#. Tag: para
+#: index.docbook:174
+#, no-c-format
+msgid "Stop the kdesu daemon. See <xref linkend=\"sec-password-keeping\"/>."
+msgstr ""
+"Ustavi kdesu daemona. Poglejte v <xref linkend=\"sec-password-keeping\"/>."
+
+#. Tag: option
+#: index.docbook:178
+#, no-c-format
+msgid "<option>-t</option>"
+msgstr "<option>-t</option>"
+
+#. Tag: para
+#: index.docbook:179
+#, no-c-format
+msgid ""
+"Enable terminal output. This disables password keeping. This is largely for "
+"debugging purposes; if you want to run a console mode app, use the standard "
+"<command>su</command> instead."
+msgstr ""
+"Omogoči terminalski izhod. To onemogoči shranjevanje gesel. Uporabno je "
+"predvsem za razhroščevanje; če želite poganjati program v konzolnem načinu, "
+"uporabite običajni <command>su</command>."
+
+#. Tag: term
+#: index.docbook:184
+#, no-c-format
+msgid "<option>-u</option> <replaceable> user</replaceable>"
+msgstr "<option>-u</option> <replaceable> user</replaceable>"
+
+#. Tag: para
+#: index.docbook:185
+#, no-c-format
+msgid ""
+"While the most common use for &kdesu; is to run a command as the superuser, "
+"you can supply any user name and the appropriate password."
+msgstr ""
+"Čeprav je najpogostejša uporaba &kdesu; za zagon ukaza kot skrbnik, vnesete "
+"lahko poljubno uporabniško ime in ustrezno geslo."
+
+#. Tag: title
+#: index.docbook:196
+#, no-c-format
+msgid "Internals"
+msgstr "Podrobnosti"
+
+#. Tag: title
+#: index.docbook:199
+#, no-c-format
+msgid "X authentication"
+msgstr "X avtentifikacija"
+
+#. Tag: para
+#: index.docbook:201
+#, no-c-format
+msgid ""
+"The program you execute will run under the root user id and will generally "
+"have no authority to access your X display. &kdesu; gets around this by "
+"adding an authentication cookie for your display to a temporary <filename>."
+"Xauthority</filename> file. After the command exits, this file is removed."
+msgstr ""
+"Program, ki ga izvedete bo tekel pod korenskim (root) id in v splošnem ne bo "
+"imel avtoritete za dostop do vašega X zaslona. &kdesu; se temu izogne z "
+"dodajanjem avtentifikacijskega piškotka za vaš zaslon v začasno datoteko "
+"<filename>.Xauthority</filename>. Ko je ukaz končan, je ta datoteka "
+"odstranjena."
+
+#. Tag: para
+#: index.docbook:207
+#, no-c-format
+msgid ""
+"If you don't use X cookies, you are on your own. &kdesu; will detect this "
+"and will not add a cookie but you will have to make sure that root is "
+"allowed to access to your display."
+msgstr ""
+"Če ne uporabljate X piškotkov, ste odvisni od samega sebe. &kdesu; bo to "
+"zaznal in ne bo dodal piškotka, vendar pa boste morali zagotoviti, da ima "
+"root dovoljen dostop do vašega zaslona."
+
+#. Tag: title
+#: index.docbook:214
+#, no-c-format
+msgid "Interface to <command>su</command>"
+msgstr "Vmesnik za <command>su</command>"
+
+#. Tag: para
+#: index.docbook:216
+#, no-c-format
+msgid ""
+"&kdesu; uses the sytem's <command>su</command> for acquiring priviliges. In "
+"this section, I explain the details of how &kdesu; does this."
+msgstr ""
+"&kdesu; uporablja sistemski <command>su</command> za dosego privilegijev. V "
+"tem odstavku bom razložil podrobnosti, kako &kdesu; to naredi."
+
+#. Tag: para
+#: index.docbook:220
+#, no-c-format
+msgid ""
+"Because some <command>su</command> implementations (&ie; the one from "
+"&RedHat;) don't want to read the password from <literal>stdin</literal>, "
+"&kdesu; creates a pty/tty pair and executes <command>su</command> with its "
+"standard filedescriptors connected to the tty."
+msgstr ""
+"Ker nekatere izvedbe <command>su</command> (&ie;. tista iz&RedHat;) ne želi "
+"brati gesla iz <literal>stdin</literal>,&kdesu; ustvari par pty/tty in "
+"izvede <command>su</command> z njimstandardni datotečni deskriptorji, "
+"povezani s tty."
+
+#. Tag: para
+#: index.docbook:226
+#, no-c-format
+msgid ""
+"To execute the command the user selected, rather than an interactive shell, "
+"&kdesu; uses the <option>-c</option> argument with <command>su</command>. "
+"This argument is understood by every shell that I know of so it should work "
+"portably. <command>su</command> passes this <option>-c</option> argument to "
+"the target user's shell, and the shell executes the program. Example "
+"command: <command>su <option>root -c <replaceable>the_program</replaceable></"
+"option></command>."
+msgstr ""
+"Da izvede ukaz, ki ga je izbral uporabnik in ne interaktivno lupino, "
+"uporablja &kdesu; skupaj z <command>su</command> argument <option>-c</"
+"option>. Ta argument razume vsaka lupina, ki jo poznam, tako da bi to moralo "
+"delovati prenosljivo. <command>su</command> preda <option>-c</option> lupini "
+"in ta prevzame program. Zgled: <command>su <option>root -c "
+"<replaceable>nek_program</replaceable></option></command>."
+
+#. Tag: para
+#: index.docbook:234
+#, no-c-format
+msgid ""
+"Instead of executing the user command directly with <command>su</command>, "
+"&kdesu; executes a little stub program called <application>kdesu_stub</"
+"application>. This stub (running as the target user), requests some "
+"information from &kdesu; over the pty/tty channel (the stub's stdin and "
+"stdout) and then executes the user's program. The information passed over "
+"is: the X display, an X authentication cookie (if available), the "
+"<envar>PATH</envar> and the command to run. The reason why a stub program is "
+"used is that the X cookie is private information and therefore cannot be "
+"passed on the command line."
+msgstr ""
+"Namesto izvajanja uporabnikovega ukaza direktno z <command>su</command>, "
+"izvede &kdesu; majhen programček imenovan <application>kdesu_stub</"
+"application>. Ta programček (teče kot uporabnik), zahteva nekaj podatkov od "
+"&kdesu; preko pty/tty kanala (njegov stdin in stdout) in potem izvede "
+"uporabniški program. Predane so naslednje informacije: X zaslon, X "
+"avtentifikacijski piškotek (če je dostopen), <envar>PATH</envar>in ukaz, ki "
+"naj bo pognan. Razlog, zakaj je uporabljen kratek programček je, da je X "
+"piškotek zasebna informacija in tako ne more biti predan na ukazni vrstici."
+
+#. Tag: title
+#: index.docbook:248
+#, no-c-format
+msgid "Password Checking"
+msgstr "Preverjanje gesel"
+
+#. Tag: para
+#: index.docbook:250
+#, no-c-format
+msgid ""
+"&kdesu; will check the password you entered and gives an error message if it "
+"is not correct. The checking is done by executing a test program: <filename>/"
+"bin/true</filename>. If this succeeds, the password is assumed to be correct."
+msgstr ""
+"&kdesu; bo preveril geslo ki ga vnesete in vrnil sporočilo o napaki, če je "
+"napačno. Preverjanje je izvedeno s testnim programom: <filename>/bin/true</"
+"filename>. Če to uspe, je geslo smatrano kot pravilno."
+
+#. Tag: title
+#: index.docbook:258
+#, no-c-format
+msgid "Password Keeping"
+msgstr "Ohranjanje gesel"
+
+#. Tag: para
+#: index.docbook:260
+#, no-c-format
+msgid ""
+"For your comfort, &kdesu; implements a <quote>keep password</quote> feature. "
+"If you are interested in security, you should read this paragraph."
+msgstr ""
+"Za vaše udobje ima &kdesu; izvedeno možnost <quote>Obdrži geslo</quote>. Če "
+"se zanimate za varnost, potem morate prebrati ta odstavek."
+
+#. Tag: para
+#: index.docbook:264
+#, no-c-format
+msgid ""
+"Allowing &kdesu; to remember passwords opens up a (small) security hole in "
+"your system. Obviously, &kdesu; does not allow anybody but your user id to "
+"use the passwords, but, if done without caution, this would lowers "
+"<systemitem class=\"username\">root</systemitem>'s security level to that of "
+"a normal user (you). A hacker who breaks into your account, would get "
+"<systemitem class=\"username\">root</systemitem> access. &kdesu; tries to "
+"prevent this. The security scheme it uses is, in my opinion at least, "
+"reasonably safe and is explained here."
+msgstr ""
+"Dovoljenje &kdesu;, da si zapomni gesla odpre (majhno) varnostno luknjo v "
+"vašem sistemu. Jasno je, da &kdesu; ne dovoli nikomur razen vašemu "
+"uporabniškemu id da uporablja gesla, vendar pa, če je to narejeno brez "
+"previdnosti, lahko zniža <systemitem class=\"username\">root</systemitem>-ov "
+"varnostni nivo na uporabniškega. Heker, ki bi vdrl v vaš račun, bi dobil "
+"korenski (<systemitem class=\"username\">root</systemitem>) dostop. kdesu; "
+"poskuša to preprečiti. Varnostna shema, ki jo uporablja je, vsaj po mojem "
+"prepričanju, razumno varna in je razložena tukaj."
+
+#. Tag: para
+#: index.docbook:274
+#, no-c-format
+msgid ""
+"&kdesu; uses a daemon, called <application>kdesud</application>. The daemon "
+"listens to a &UNIX; socket in <filename>/tmp</filename> for commands. The "
+"mode of the socket is 0600 so that only your user id can connect to it. If "
+"password keeping is enabled, &kdesu; executes commands through this daemon. "
+"It writes the command and <systemitem class=\"username\">root</systemitem>'s "
+"password to the socket and the daemon executes the command using "
+"<command>su</command>, as describe before. After this, the command and the "
+"password are not thrown away. Instead, they are kept for a specified amount "
+"of time. This is the timeout value from in the control module. If another "
+"request for the same command is coming within this time period, the client "
+"does not have to supply the password. To keep hackers who broke into your "
+"account from stealing passwords from the daemon (for example, by attaching a "
+"debugger), the daemon is installed set-group-id nogroup. This should prevent "
+"all normal users (including you) from getting passwords from the "
+"<application>kdesud</application> process. Also, the daemon sets the "
+"<envar>DISPLAY</envar> environment variable to the value it had when it was "
+"started. The only thing a hacker can do is execute an application on your "
+"display."
+msgstr ""
+"&kdesu; uporablja deamona, imenovanega <application>kdesud</application>. Ta "
+"posluša &UNIX;-ov socket v <filename>/tmp</filename> za ukazi. Način socketa "
+"je 0600, tako da se nanj lahko priključi le vaš uporabniški id. Če je "
+"shranjevanje gesel omogočeno, kdesu; izvede ukaze skozi ta deamon. Ukaze in "
+"korensko (<systemitem class=\"username\">root</systemitem>) geslo zapiše v "
+"socket in deamon izvede ukaz z uporabo <command>su</command>, kot je opisano "
+"prej. Po tem ukaz in geslo nista zavržena. Namesto tega sta shranjena za "
+"določen čas. To je časovna vrednost iz krmilnega modula. Če se v tem času "
+"pojavi nova zahteva klientu ni treba dostaviti gesla. Da prepreči hekerjem, "
+"ki so vdrli v vaš račun, krajo gesel (na primer z prilepljenjem "
+"razhroščevalnika), je deamon nameščen kot set-group-id nogrup. To bi moralo "
+"preprečiti vsem normalnim uporabnikom (vključno z vami) da bi dobili gesla "
+"od <application>kdesud</application> procesa. Prav tako deamon postavi "
+"spremenljivko <envar>DISPLAY</envar> na vrednost, ki jo je imela ob zagonu. "
+"Edina stvar, ki jo lahko heker naredi, je da na vašem zaslonu izvede program."
+
+#. Tag: para
+#: index.docbook:295
+#, no-c-format
+msgid ""
+"One weak spot in this scheme is that the programs you execute are probably "
+"not written with security in mind (like setuid <systemitem class=\"username"
+"\">root</systemitem> programs). This means that they might have buffer "
+"overruns or other problems and a hacker could exploit those."
+msgstr ""
+"Šibko mesto v tej shemi je, da programi, ki jih izvajate verjetno niso "
+"pisani z varnostjo v mislih (kot setuid <systemitem class=\"username\">root "
+"</systemitem> programi). To pomeni, da imajo morda prelitja medpomnilnika "
+"(buffer overruns) ali druge težave in jih lahko heker izkoristi."
+
+#. Tag: para
+#: index.docbook:301
+#, no-c-format
+msgid ""
+"The use of the password keeping feature is a tradeoff between security and "
+"comfort. I encourage you to think it over and decide for yourself if you "
+"want to use it or not."
+msgstr ""
+"Uporaba možnosti shranjevanja gesel je trgovina med varnostjo in udobjem. "
+"Spodbujam vas, da razmislite o tem in se odločite zase, ali to želite "
+"uporabljati ali ne."
+
+#. Tag: title
+#: index.docbook:309
+#, no-c-format
+msgid "Author"
+msgstr "Avtor"
+
+#. Tag: para
+#: index.docbook:311
+#, no-c-format
+msgid "&kdesu;"
+msgstr "&kdesu;"
+
+#. Tag: para
+#: index.docbook:313
+#, no-c-format
+msgid "Copyright 2000 &Geert.Jansen;"
+msgstr "Copyright 2000 &Geert.Jansen;"
+
+#. Tag: para
+#: index.docbook:315
+#, no-c-format
+msgid ""
+"&kdesu; is written by &Geert.Jansen;. It is somewhat based on Pietro Iglio's "
+"&kdesu;, version 0.3. Pietro and I agreed that I will maintain this program "
+"in the future."
+msgstr ""
+"&kdesu; je napisal &Geert.Jansen;. Nekako temelji na Pietru Igliu &kdesu;, "
+"različica 0.3. S Pietrom sva se dogovorila, da bom vzdrževal ta program v "
+"prihodnosti."
+
+#. Tag: para
+#: index.docbook:319
+#, no-c-format
+msgid ""
+"The author can be reached through email at &Geert.Jansen.mail;. Please "
+"report any bugs you find to me so that I can fix them. If you have a "
+"suggestion, feel free to contact me."
+msgstr ""
+"Avtor je dosegljiv po e-pošti na &Geert.Jansen.mail;. prosim sporočite mi "
+"vse napake, ki jih najdete, da jih lahko popravim. Če imate predlog, mi to "
+"brez zadržkov sporočite."
+
+#. Tag: trans_comment
+#: index.docbook:323
+#, no-c-format
+msgid "CREDIT_FOR_TRANSLATORS"
+msgstr ""
+"<para>Prevod: Andrej Vernekar<email>andrej.vernekar@moj.net</email></para>"
+
+#. Tag: chapter
+#: index.docbook:323
+#, no-c-format
+msgid "&underFDL; &underArtisticLicense;"
+msgstr "&underFDL; &underArtisticLicense;"
+
+#, fuzzy
+#~| msgid "&kdesu;"
+#~ msgid "&kde; 4.5"
+#~ msgstr "&kdesu;"
+
+#~ msgid "-c <replaceable>PROGRAM</replaceable>"
+#~ msgstr "-c <replaceable>PROGRAM</replaceable>"
+
+#~ msgid "<option>-q</option>"
+#~ msgstr "<option>-q</option>"
+
+#~ msgid "Be quiet."
+#~ msgstr "Bodi tiho."
+
+#~ msgid "<option>-v</option>"
+#~ msgstr "<option>-v</option>"
+
+#~ msgid "Print version information and exit."
+#~ msgstr "Izpiši informacijo o različici in končaj."
+
+#~ msgid "<option>-h</option>"
+#~ msgstr "<option>-h</option>"
+
+#~ msgid "Print some help."
+#~ msgstr "Izpiši nekaj pomoči."
+
+#~ msgid "Configuration"
+#~ msgstr "Nastavitev"
+
+#~ msgid ""
+#~ "&kdesu; comes with a control module named <application>kcmkdesu</"
+#~ "application>. You can find it in the <guimenu>K</guimenu> menu under "
+#~ "<menuchoice><guisubmenu>Settings</guisubmenu> <guisubmenu>Applications</"
+#~ "guisubmenu> <guimenuitem>KDE su</guimenuitem></menuchoice>. You can "
+#~ "change the following things:"
+#~ msgstr ""
+#~ "&kdesu; pride z nadzornim modulom imenovanim <application>kcmkdesu</"
+#~ "application>. Najdete ga lahko v menuju <guimenu>K</guimenu> pod "
+#~ "<menuchoice><guisubmenu>Nastavitve</guisubmenu> <guisubmenu>Uporabniški "
+#~ "programi</guisubmenu> <guimenuitem>KDE su</guimenuitem></menuchoice>. "
+#~ "Spremenite lahko naslednje stvari:"
+
+#~ msgid "Echo Mode"
+#~ msgstr "Echo Mode"
+
+#~ msgid ""
+#~ "This is how characters you type are echoed to the screen. Possible "
+#~ "choices are: one star per character, three stars or no echo at all. The "
+#~ "default is one star per character."
+#~ msgstr ""
+#~ "To je način, kako na zaslonu odmevajo znaki ki jih vtipkate. Možne izbire "
+#~ "so: ena zvezda za znak, tri zvezde ali brez odmeva. Privzeto je to ena "
+#~ "zvezda za znak."
+
+#~ msgid "Keeping passwords"
+#~ msgstr "Shranjevanje gesel"
+
+#~ msgid ""
+#~ "You can instruct &kdesu; remember passwords you enter by checking the "
+#~ "<guilabel>keep password</guilabel> check box. If this checked, you can "
+#~ "enter a timeout value in the text field below it. This is the amount of "
+#~ "time, in minutes, that the password will be remembered. The default is "
+#~ "not to remember passwords."
+#~ msgstr ""
+#~ "&kdesu; lahko naročite da shranjuje gesla z odkljukanjem izbire "
+#~ "<guilabel>Obdrži geslo</guilabel>. Če je ta označena, lahko vnesete "
+#~ "časovno vrednost v tekstno polje pod njo. To določa (v minutah), kako "
+#~ "dolgo se bo geslo shranilo. Privzeto je neshranjevanje gesel."
+
+#~ msgid "Reviewer"
+#~ msgstr "Pregled"
+
+#~ msgid "Installation"
+#~ msgstr "Namestitev"
+
+#~ msgid "Downloading"
+#~ msgstr "Nalaganje"
+
+#~ msgid "Compiling"
+#~ msgstr "Prevajanje"
+
+#~ msgid ""
+#~ "<firstname>Geert</firstname> <surname>Jansen</surname> <affiliation> "
+#~ "<address><email>g.t.jansen@stud.tue.nl</email></address> </affiliation>"
+#~ msgstr ""
+#~ "<firstname>Geert</firstname> <surname>Jansen</surname> <affiliation> "
+#~ "<address><email>g.t.jansen@stud.tue.nl</email></address> </affiliation>"
+
+#~ msgid ""
+#~ "&kdesu; is now in the KDE <abbrev>CVS</abbrev>, in kdebase. It should be "
+#~ "included in every (2.x) KDE distribution. You can also obtain a KDE 1.x "
+#~ "version from my homepage at <ulink url=\"ftp://skynet.stack.nl/pub/users/"
+#~ "geertj/\">ftp://skynet.stack.nl/pub/users/geertj/</ulink>."
+#~ msgstr ""
+#~ "&kdesu; je sedaj v KDE <abbrev>CVS</abbrev>, v kdebase. Moral bi biti "
+#~ "vključen v vsaki (2.x) KDE distribuciji. Dobite lahko tudi različico za "
+#~ "KDE 1.x z moje domače strani <ulink url=\"ftp://skynet.stack.nl/pub/users/"
+#~ "geertj/\">ftp://skynet.stack.nl/pub/users/geertj/</ulink>."
+
+#~ msgid ""
+#~ "&kdesu; is in kdebase so either you already have it, or you'll get it "
+#~ "when you intall kdebase."
+#~ msgstr ""
+#~ "&kdesu; je v kdebase, tako da ga že imate ali pa boste samodejno "
+#~ "prevedli, ko boste namestili kdebase."
+
+#~ msgid "To compile the KDE 1.x version, use:"
+#~ msgstr "Da prevedete različico za KDE 1.x vtipkajte:"
+
+#~ msgid ""
+#~ "<prompt>$</prompt> <command>./configure</command>\n"
+#~ "<prompt>$</prompt> <command>make</command>\n"
+#~ "<prompt>$</prompt> <command>make <option>install</option></command>"
+#~ msgstr ""
+#~ "<prompt>$</prompt> <command>./configure</command>\n"
+#~ "<prompt>$</prompt> <command>make</command>\n"
+#~ "<prompt>$</prompt> <command>make <option>install</option></command>"
+
+#~ msgid ""
+#~ "You will have to execute the last step as root. The installation process "
+#~ "needs to be able to write to the system wide KDE directories."
+#~ msgstr ""
+#~ "Zadnji korak boste morali izvesti kot root. Namestitveni proces mora biti "
+#~ "sposoben pisati v sistemske imenike KDE."

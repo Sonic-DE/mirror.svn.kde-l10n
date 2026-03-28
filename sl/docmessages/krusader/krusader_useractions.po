@@ -1,0 +1,955 @@
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 12:03+0000\n"
+"PO-Revision-Date: 2023-09-30 15:48+0200\n"
+"Last-Translator: Jan <jan.napast153@gmail.com>\n"
+"Language-Team: Slovenian <kde-i18n-doc@kde.org>\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.0.1\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
+
+#. Tag: title
+#: useractions.docbook:8
+#, no-c-format
+msgid "<title>UserActions</title>"
+msgstr "<title>Uporabniška dejanja</title>"
+
+#. Tag: primary
+#: useractions.docbook:10
+#, no-c-format
+msgid "<primary>UserActions</primary>"
+msgstr "<primary>Uporabniška dejanja</primary>"
+
+#. Tag: para
+#: useractions.docbook:13
+#, no-c-format
+msgid ""
+"With ActionMan you can set up, configure and manage UserActions. Some "
+"general settings are configured with <link linkend=\"konfig-useractions"
+"\">Konfigurator</link>. With UserActions you can perform actions on files in "
+"the panel or to access &krusader; internal functions with parameters "
+"directly using placeholders. The actions integrate seamlessly into &plasma; "
+"action system, which means that the standard Edit Toolbar and Edit Shortcut "
+"dialogs will show UserActions, too. The UserActions are stored in <filename> "
+"~/.local/share/krusader/useractions.xml</filename> or <filename>krusader/"
+"useraction.xml</filename> in the folder which can be determined using the "
+"<userinput>qtpaths --paths GenericDataLocation</userinput> command. Several "
+"<link linkend=\"useraction-xml\">examples</link> are included in the "
+"documentation. UserActions can be edited / added / imported / exported by "
+"using ActionMan. The default UserActions are stored in <filename> /usr/share/"
+"krusader/useraction-examples.xml</filename>. UserActions can appear nearly "
+"everywhere where <quote>normal</quote> KActions can be placed. The actions "
+"can even be placed in the menu bar, but for that the <filename>krusaderui."
+"rc</filename> file must be edited. A few examples:"
+msgstr ""
+"Z ActionMan lahko nastavite, konfigurirate in upravljate UserActions. "
+"Nekatere splošne nastavitve se konfigurirajo s <link linkend=\"konfig-"
+"useractions\">Konfiguratorjem</link>. Z UserActions lahko izvajate dejanja "
+"nad datotekami na plošči ali za dostop do &krusader; notranje funkcije s "
+"parametri neposredno z ogradami. Dejanja se neopazno integrirajo v &plasma; "
+"akcijski sistem, kar pomeni, da bosta standardna pogovorna okna Urejanje "
+"orodne vrstice in Urejanje bližnjice prav tako prikazala Uporabniška "
+"dejanja. Uporabniška dejanja so shranjena v <filename> ~/.local/share/"
+"krusader/useractions.xml</filename> ali <filename>krusader/useractions.xml</"
+"filename> v mapi, ki jo je mogoče določiti s pomočjo <userinput>qtpaths --"
+"paths GenericDataLocation</userinput> ukaz. V dokumentacijo je vključenih "
+"več <link linkend=\"useraction-xml\">primerov</link>. Uporabniška dejanja je "
+"mogoče urejati/dodati/uvažati/izvažati z uporabo ActionMan. Privzeta "
+"uporabniška dejanja so shranjena v <filename> /usr/share/krusader/useraction-"
+"examples.xml</filename>. Uporabniška dejanja se lahko pojavijo skoraj "
+"povsod, kjer je mogoče postaviti <quote>normalne</quote> KAkcije. Dejanja "
+"lahko postavite celo v menijsko vrstico, vendar je za to treba urediti "
+"datoteko <filename>krusaderui.rc</filename>. Nekaj primerov:"
+
+#. Tag: link
+#: useractions.docbook:38
+#, no-c-format
+msgid "Useractions Menu"
+msgstr "Meni uporabniških dejanj"
+
+#. Tag: link
+#: useractions.docbook:42
+#, no-c-format
+msgid "User Menu"
+msgstr "Uporabniški meni"
+
+#. Tag: link
+#: useractions.docbook:45
+#, no-c-format
+msgid "Actions Toolbar"
+msgstr "Orodna vrstica dejanj"
+
+#. Tag: para
+#: useractions.docbook:48
+#, no-c-format
+msgid "right click menus"
+msgstr "meniji z desnim klikom"
+
+#. Tag: para
+#: useractions.docbook:51
+#, no-c-format
+msgid "&etc;"
+msgstr "&etc;"
+
+#. Tag: para
+#: useractions.docbook:54
+#, no-c-format
+msgid ""
+"&krusader;'s UserActions tool is very powerful and customizable if you are "
+"familiar with writing UserActions in general."
+msgstr ""
+"&krusader;ovo orodje UserActions je zelo zmogljivo in prilagodljivo, če ste "
+"seznanjeni s pisanjem UserActions na splošno."
+
+#. Tag: para
+#: useractions.docbook:58
+#, no-c-format
+msgid ""
+"Several UserActions are provided by default. Please <link linkend="
+"\"help_krusader\">upload your favorite UserActions</link> so that they "
+"become available for the &krusader; community. Thanks!"
+msgstr ""
+"Privzeto je na voljo več uporabniških dejanj. Prosimo <link linkend="
+"\"help_krusader\">naložite svoja priljubljena uporabniška dejanja</link>, da "
+"bodo na voljo za &krusader; skupnosti. Hvala!"
+
+#. Tag: title
+#: useractions.docbook:65
+#, no-c-format
+msgid "<title>ActionMan</title>"
+msgstr "<title>ActionMan</title>"
+
+#. Tag: phrase
+#: useractions.docbook:71
+#, no-c-format
+msgid "<phrase>ActionMan</phrase>"
+msgstr "<phrase>ActionMan</phrase>"
+
+#. Tag: para
+#: useractions.docbook:75
+#, no-c-format
+msgid ""
+"Basically, UserActions are a method to call external programs with variable "
+"parameters. For example, you could have a UserAction with the following "
+"<command>xmms <option>--enqueue %aList(\"Selected\")%</option></command> to "
+"enqueue all selected items of the active panel to the current instance of "
+"xmms. Additionally, there is limited access to &krusader; internal functions "
+"requiring parameters. For example, <command>%aPanelSize(\"80\")%</command> "
+"will set the width of the active panel to 80% of the &krusader; mainwindow. "
+"Since the parameter of placeholders can contain other placeholders, few "
+"scripts are possible."
+msgstr ""
+"V bistvu so UserActions metoda za klicanje zunanjih programov s "
+"spremenljivimi parametri. Na primer, lahko bi imeli UserAction z naslednjim "
+"<command>xmms <option>--enqueue %aList(\"Selected\")%</option></command>, da "
+"vse izbrane elemente aktivne plošče postavite v čakalno vrsto na trenutni "
+"primerek od xmms. Poleg tega je dostop do &krusader; notranje funkcije, ki "
+"zahtevajo parametre. Na primer, <command>%aPanelSize(\"80\")%</command> bo "
+"nastavil širino aktivne plošče na 80 % širine &krusader; glavno okno. Ker "
+"parameter ograd lahko vsebuje druge ograde, je možnih nekaj skriptov."
+
+#. Tag: emphasis
+#: useractions.docbook:90
+#, no-c-format
+msgid "Managing UserActions"
+msgstr "Upravljanje uporabniških dejanj"
+
+#. Tag: para
+#: useractions.docbook:92
+#, no-c-format
+msgid ""
+"Open Konfigurator and choose <menuchoice><guimenu>User Actions</guimenu> "
+"<guimenuitem>Start ActionMan</guimenuitem></menuchoice>, in which you can "
+"add, edit, remove, import and export UserActions."
+msgstr ""
+"Odprite Konfigurator in izberite <menuchoice><guimenu>Uporabniška dejanja</"
+"guimenu> <guimenuitem>Zaženi ActionMan</guimenuitem></menuchoice>, v katerem "
+"lahko dodajate, urejate, odstranjujete, uvažate in izvažate uporabniška "
+"dejanja."
+
+#. Tag: para
+#: useractions.docbook:97
+#, no-c-format
+msgid ""
+"<guimenuitem>Add Action</guimenuitem>: If you add an new action, you get an "
+"empty input mask where you can enter all the properties you desire. The "
+"action will be added as soon as you press <guimenuitem>Apply</guimenuitem>. "
+"Afterwards, the name is shown in the list on the left."
+msgstr ""
+"<guimenuitem>Dodaj dejanje</guimenuitem>: Če dodate novo dejanje, dobite "
+"prazno vnosno masko, kjer lahko vnesete vse želene lastnosti. Dejanje bo "
+"dodano takoj, ko pritisnete <guimenuitem>Uporabi</guimenuitem>. Nato se ime "
+"prikaže na seznamu na levi."
+
+#. Tag: para
+#: useractions.docbook:106
+#, no-c-format
+msgid ""
+"To edit a UserAction: Select the UserAction on the left. Then choose it if "
+"you want to edit its properties. The changes will only take effect when you "
+"press <guimenuitem>Apply</guimenuitem>."
+msgstr ""
+"Če želite urediti UserAction: Izberite UserAction na levi. Nato ga izberite, "
+"če želite urediti njegove lastnosti. Spremembe bodo začele veljati šele, ko "
+"pritisnete <guimenuitem>Uporabi</guimenuitem>."
+
+#. Tag: para
+#: useractions.docbook:112
+#, no-c-format
+msgid ""
+"<guimenuitem>To remove a UserAction</guimenuitem>: Select the UserAction on "
+"the left and click the <inlinemediaobject> <imageobject> <imagedata fileref="
+"\"Icon-edit-delete.png\" format=\"PNG\"/> </imageobject> </"
+"inlinemediaobject>button."
+msgstr ""
+"<guimenuitem>Če želite odstraniti UserAction</guimenuitem>: Izberite "
+"UserAction na levi in kliknite <inlinemediaobject> <imageobject> <imagedata "
+"fileref=\"Icon-edit-delete.png\" format=\"PNG\"/> </imageobject > </"
+"inlinemediaobject>gumb."
+
+#. Tag: para
+#: useractions.docbook:119
+#, no-c-format
+msgid ""
+"<guimenuitem>To import a UserAction</guimenuitem>: If you import some "
+"actions, they will be automatically added to your list. If there are name "
+"conflicts (the names have to be unique because these are the ID for &plasma; "
+"action system), you are asked to resolve them. For this, the list on the "
+"left will only show the actions where conflicts exist. You can now give them "
+"new names or remove them."
+msgstr ""
+"<guimenuitem>Za uvoz uporabniškega dejanja</guimenuitem>: Če uvozite nekaj "
+"dejanj, bodo samodejno dodana na vaš seznam. Če pride do navzkrižja imen "
+"(imena morajo biti unikatna, ker so to ID za &plasma; akcijski sistem), "
+"boste pozvani, da jih razrešite. Za to bodo na seznamu na levi prikazana "
+"samo dejanja, kjer obstajajo spori. Zdaj jim lahko daste nova imena ali jih "
+"odstranite."
+
+#. Tag: para
+#: useractions.docbook:129
+#, no-c-format
+msgid ""
+"<guimenuitem>Export Action</guimenuitem>: If you export a UserAction you "
+"have to give a filename in which to store it. If it does not exist, it will "
+"be created. If the file already contains UserActions, the action you are "
+"exporting will be added to that file."
+msgstr ""
+"<guimenuitem>Dejanje izvoza</guimenuitem>: Če izvozite dejanje uporabnika, "
+"morate dati ime datoteke, v katero ga želite shraniti. Če ne obstaja, bo "
+"ustvarjen. Če datoteka že vsebuje UserActions, bo dejanje, ki ga izvažate, "
+"dodano tej datoteki."
+
+#. Tag: para
+#: useractions.docbook:137
+#, no-c-format
+msgid ""
+"All actions you have defined are now shown in the user menu and in &plasma; "
+"dialogs for changing shortcuts and managing the toolbar. In addition, all "
+"actions available for the current item will also show up in the right click "
+"menu."
+msgstr ""
+"Vsa dejanja, ki ste jih določili, so zdaj prikazana v uporabniškem meniju in "
+"v &plasma; pogovorna okna za spreminjanje bližnjic in upravljanje orodne "
+"vrstice. Poleg tega se bodo v meniju z desnim klikom prikazala tudi vsa "
+"dejanja, ki so na voljo za trenutni element."
+
+#. Tag: emphasis
+#: useractions.docbook:143
+#, no-c-format
+msgid "Basic Properties"
+msgstr "Osnovne lastnosti"
+
+#. Tag: para
+#: useractions.docbook:145
+#, no-c-format
+msgid ""
+"<guimenuitem>Identifier</guimenuitem>, <guimenuitem>Title</guimenuitem> and "
+"<guimenuitem>Command line</guimenuitem> are always required, all the other "
+"properties are optional."
+msgstr ""
+"<guimenuitem>Identifikator</guimenuitem>, <guimenuitem>Naslov</guimenuitem> "
+"in <guimenuitem>Ukazna vrstica</guimenuitem> so vedno potrebni, vse druge "
+"lastnosti so neobvezne."
+
+#. Tag: para
+#: useractions.docbook:151
+#, no-c-format
+msgid ""
+"<guimenuitem>Identifier</guimenuitem>: A unique name of the UserAction, used "
+"to identify it for &plasma; action system."
+msgstr ""
+"<guimenuitem>Identifikator</guimenuitem>: enolično ime UserAction, ki se "
+"uporablja za identifikacijo za &plasma; akcijski sistem."
+
+#. Tag: para
+#: useractions.docbook:157
+#, no-c-format
+msgid "<guimenuitem>Icon button</guimenuitem>: The icon for your UserAction."
+msgstr "<guimenuitem>Gumb ikone</guimenuitem>: Ikona za vaše UserAction."
+
+#. Tag: para
+#: useractions.docbook:162
+#, no-c-format
+msgid ""
+"<guimenuitem>Category</guimenuitem>: Categories are used for a better "
+"overview. They appear as submenu items in the <guimenuitem>Useractions</"
+"guimenuitem> menu."
+msgstr ""
+"<guimenuitem>Kategorija</guimenuitem>: Kategorije se uporabljajo za boljši "
+"pregled. Pojavijo se kot elementi podmenija v meniju "
+"<guimenuitem>Uporabniške akcije</guimenuitem>."
+
+#. Tag: para
+#: useractions.docbook:168
+#, no-c-format
+msgid ""
+"<guimenuitem>Title</guimenuitem>: The title displayed in the menus or "
+"dialogs."
+msgstr ""
+"<guimenuitem>Naslov</guimenuitem>: naslov, prikazan v menijih ali pogovornih "
+"oknih."
+
+#. Tag: para
+#: useractions.docbook:173
+#, no-c-format
+msgid ""
+"<guimenuitem>Tooltip</guimenuitem>: A tooltip for your UserAction, &eg; "
+"displayed in the toolbar on mouseover."
+msgstr ""
+"<guimenuitem>Namig orodja</guimenuitem>: Namig orodja za vaše UserAction, "
+"&eg; prikazano v orodni vrstici ob prehodu miške."
+
+#. Tag: para
+#: useractions.docbook:179
+#, no-c-format
+msgid ""
+"<guimenuitem>Description</guimenuitem>: A description of what the UserAction "
+"does. This is also displayed as <guimenuitem>What's This</guimenuitem> if "
+"you <keycombo action=\"simul\">&Shift; <keycap>F1</keycap></keycombo> click "
+"on your UserAction."
+msgstr ""
+"<guimenuitem>Opis</guimenuitem>: Opis, kaj naredi UserAction. To je "
+"prikazano tudi kot <guimenuitem>Kaj je to</guimenuitem>, če <keycombo action="
+"\"simul\">&Shift; <keycap>F1</keycap></keycombo> kliknite svoje UserAction."
+
+#. Tag: para
+#: useractions.docbook:188
+#, no-c-format
+msgid ""
+"<guimenuitem>Command</guimenuitem>: The command which will be executed. You "
+"can add placeholder using a &GUI; with the <guibutton>add</guibutton> button."
+msgstr ""
+"<guimenuitem>Ukaz</guimenuitem>: Ukaz, ki bo izveden. Oznako mesta lahko "
+"dodate z &GUI; z gumbom <guibutton>dodaj</guibutton>."
+
+#. Tag: para
+#: useractions.docbook:194
+#, no-c-format
+msgid ""
+"<guimenuitem>Workdir</guimenuitem>: The working folder for the command which "
+"will be executed."
+msgstr ""
+"<guimenuitem>Delovni imenik</guimenuitem>: Delovna mapa za ukaz, ki bo "
+"izveden."
+
+#. Tag: para
+#: useractions.docbook:199
+#, no-c-format
+msgid "<guimenuitem>Execution mode</guimenuitem>:"
+msgstr "<guimenuitem>Način izvajanja</guimenuitem>:"
+
+#. Tag: para
+#: useractions.docbook:203
+#, no-c-format
+msgid "<guimenuitem>Normal</guimenuitem>: Normal execution mode."
+msgstr "<guimenuitem>Normalno</guimenuitem>: Običajen način izvajanja."
+
+#. Tag: para
+#: useractions.docbook:208
+#, no-c-format
+msgid ""
+"<guimenuitem>Run in terminal</guimenuitem>: Runs the command in the terminal."
+msgstr ""
+"<guimenuitem>Zaženi v terminalu</guimenuitem>: Zažene ukaz v terminalu."
+
+#. Tag: para
+#: useractions.docbook:213
+#, no-c-format
+msgid ""
+"<guimenuitem>Run in embedded terminal emulator</guimenuitem>: Runs the "
+"command in the embedded terminal."
+msgstr ""
+"<guimenuitem>Zaženi v vdelanem terminalskem emulatorju</guimenuitem>: Zažene "
+"ukaz v vdelanem terminalu."
+
+#. Tag: para
+#: useractions.docbook:218
+#, no-c-format
+msgid ""
+"<guimenuitem>Collect output</guimenuitem>: Collects the output of the "
+"executed program in a &GUI; window."
+msgstr ""
+"<guimenuitem>Zberi izhodne podatke</guimenuitem>: Zbere izhodne podatke "
+"izvedenega programa v &GUI; okno."
+
+#. Tag: para
+#: useractions.docbook:224
+#, no-c-format
+msgid ""
+"<guimenuitem>Separate standard error</guimenuitem>: When <quote>Collect "
+"output</quote> is used the stdout and stderr are separately collected."
+msgstr ""
+"<guimenuitem>Ločena standardna napaka</guimenuitem>: Ko je uporabljen "
+"<quote>Zberi izhod</quote>, se stdout in stderr zbirata ločeno."
+
+#. Tag: para
+#: useractions.docbook:232
+#, no-c-format
+msgid "<guimenuitem>Command accepts</guimenuitem>:"
+msgstr "<guimenuitem>Ukaz sprejema</guimenuitem>:"
+
+#. Tag: para
+#: useractions.docbook:236
+#, no-c-format
+msgid ""
+"<guimenuitem>Local files only (no &URL;s)</guimenuitem>: Tells the "
+"placeholder it should return local addresses."
+msgstr ""
+"<guimenuitem>Samo lokalne datoteke (brez &URL;-jev)</guimenuitem>: "
+"nadomestnemu znaku pove, da mora vrniti lokalne naslove."
+
+#. Tag: para
+#: useractions.docbook:241
+#, no-c-format
+msgid ""
+"<guimenuitem>&URL;s (remote and local)</guimenuitem>: Tells the placeholder "
+"it should return &URL;s."
+msgstr ""
+"<guimenuitem>&URL;-ji (oddaljeni in lokalni)</guimenuitem>: pove označbi "
+"mesta, da mora vrniti &URL;-je."
+
+#. Tag: para
+#: useractions.docbook:256
+#, no-c-format
+msgid ""
+"<guimenuitem>Default shortcut</guimenuitem>: Configures a default shortcut "
+"for the UserAction."
+msgstr ""
+"<guimenuitem>Privzeta bližnjica</guimenuitem>: Konfigurira privzeto "
+"bližnjico za UserAction."
+
+#. Tag: para
+#: useractions.docbook:261
+#, no-c-format
+msgid ""
+"<guimenuitem>Enabled</guimenuitem>: if checked, the useraction is shown in "
+"the <link linkend=\"useractions\">User Menu</link>, otherwise the useraction "
+"will be hidden."
+msgstr ""
+"<guimenuitem>Omogočeno</guimenuitem>: če je označeno, je dejanje uporabnika "
+"prikazano v <link linkend=\"useractions\">uporabniškem meniju</link>, sicer "
+"bo dejanje uporabnika skrito."
+
+#. Tag: emphasis
+#: useractions.docbook:267
+#, no-c-format
+msgid "Command-line syntax"
+msgstr "Sintaksa ukazne vrstice"
+
+#. Tag: para
+#: useractions.docbook:269
+#, no-c-format
+msgid ""
+"Basically, everything you type in the command line will get executed (if you "
+"type <quote>ls -l</quote>, <quote>ls -l</quote> gets executed). You have the "
+"possibility to get a character string from &krusader; which represents the "
+"current state of the panel. This is done using placeholders. A placeholder "
+"begins with a percent-sign ('%') and is followed by a panel indicator ('a' "
+"for the active, 'o' for the other, 'l' for the left and 'r' for the right "
+"panel. If the placeholder does not need a panel to operate on, you have to "
+"indicate this by an underscore ('_')). Then comes the name of the "
+"placeholder (see the list below), which may get some parameters enclosed in "
+"quotes. Finally, again the percent sign."
+msgstr ""
+"V bistvu se izvede vse, kar vnesete v ukazno vrstico (če vnesete <quote>ls -"
+"l</quote>, se izvede <quote>ls -l</quote>). Imate možnost pridobiti niz "
+"znakov iz &krusader; ki predstavlja trenutno stanje plošče. To se naredi z "
+"uporabo nadomestnih mest. Oznaka mesta se začne z znakom za odstotek ('%'), "
+"sledi pa mu indikator plošče ('a' za aktivno, 'o' za drugo, 'l' za levo in "
+"'r' za desno ploščo. Če nadomestni znak ne potrebuje plošče za delovanje, "
+"morate to označiti s podčrtajem ('_')). Nato sledi ime nadomestnega znaka "
+"(glejte spodnji seznam), ki lahko dobi nekatere parametre v narekovajih. Na "
+"koncu spet znak za odstotek."
+
+#. Tag: para
+#: useractions.docbook:281
+#, no-c-format
+msgid ""
+"This sounds very complicated, so let's make an example: '%aList(\"Selected"
+"\")%' is replaced by a list of all selected items in the active panel. So a "
+"command like 'xmms --enqueue %aList(\"All\", \" \", \"\", \"*.mp3\")%' will "
+"execute xmms with a list of all .mp3s in the current panel, separated by a "
+"single blank."
+msgstr ""
+"To zveni zelo zapleteno, zato naredimo primer: '%aList(\"Selected\")%' je "
+"nadomeščen s seznamom vseh izbranih elementov v aktivni plošči. Torej bo "
+"ukaz, kot je 'xmms --enqueue %aList(\"All\", \" \", \"\", \"*.mp3\")%' "
+"izvedel xmms s seznamom vseh .mp3-jev na trenutni plošči, ločenih z enim "
+"samim praznim mestom ."
+
+#. Tag: para
+#: useractions.docbook:287
+#, no-c-format
+msgid "Currently, these placeholders are implemented:"
+msgstr "Trenutno so implementirani ti nadomestni znaki:"
+
+#. Tag: para
+#: useractions.docbook:290
+#, no-c-format
+msgid "<userinput>Path</userinput> - replaced by the panels path"
+msgstr "<userinput>Pot</userinput> - zamenjana s potjo plošč"
+
+#. Tag: para
+#: useractions.docbook:295 useractions.docbook:327 useractions.docbook:358
+#, no-c-format
+msgid "Parameter (optional): Automatic escape spaces. Default: yes"
+msgstr "Parameter (izbirno): Samodejni prostori za pobeg. Privzeto: da"
+
+#. Tag: para
+#: useractions.docbook:302
+#, no-c-format
+msgid ""
+"<userinput>Count</userinput> - replaced by the number of &lt;first "
+"parameter&gt;"
+msgstr ""
+"<userinput>Štetje</userinput> - zamenjano s številko &lt;prvega parametra&gt;"
+
+#. Tag: para
+#: useractions.docbook:307 useractions.docbook:339
+#, no-c-format
+msgid ""
+"Parameter: Which items; either <quote>All</quote>, <quote>Selected</quote>, "
+"<quote>Files</quote> or <quote>Dirs</quote>"
+msgstr ""
+"Parameter: kateri predmeti; <quote>Vse</quote>, <quote>Izbrano</quote>, "
+"<quote>Datoteke</quote> ali <quote>Imeniki</quote>"
+
+#. Tag: para
+#: useractions.docbook:313
+#, no-c-format
+msgid "<userinput>Filter</userinput> - replaced by the panel's filter mask"
+msgstr "<userinput>Filter</userinput> - nadomeščen z masko filtra plošče"
+
+#. Tag: para
+#: useractions.docbook:318
+#, no-c-format
+msgid "<userinput>Current</userinput> - replaced by the current item"
+msgstr "<userinput>Trenutno</userinput> - zamenjano s trenutnim elementom"
+
+#. Tag: para
+#: useractions.docbook:323 useractions.docbook:349
+#, no-c-format
+msgid "Parameter (optional): Omit the current path. Default: no"
+msgstr "Parameter (izbirno): Izpustite trenutno pot. Privzeto: ne"
+
+#. Tag: para
+#: useractions.docbook:334
+#, no-c-format
+msgid ""
+"<userinput>List</userinput> - replaced by a list of all &lt;first "
+"parameter&gt;"
+msgstr ""
+"<userinput>Seznam</userinput> - nadomeščen s seznamom vseh &lt;prvih "
+"parametrov&gt;"
+
+#. Tag: para
+#: useractions.docbook:343
+#, no-c-format
+msgid ""
+"Parameter (optional): Separator between the items. Default: <quote>&nbsp;</"
+"quote>"
+msgstr ""
+"Parameter (izbirno): ločilo med postavkami. Privzeto: <quote>&nbsp;</quote>"
+
+#. Tag: para
+#: useractions.docbook:353
+#, no-c-format
+msgid ""
+"Parameter (optional): Filtermask (for all but <quote>Selected</quote>). "
+"Default: *"
+msgstr ""
+"Parameter (izbirno): Filtermask (za vse, razen za <quote>Izbrano</quote>). "
+"Privzeto: *"
+
+#. Tag: para
+#: useractions.docbook:365
+#, no-c-format
+msgid "<userinput>Select</userinput> - manipulates the selection in a panel"
+msgstr "<userinput>Izberi</userinput> - manipulira z izbiro na plošči"
+
+#. Tag: para
+#: useractions.docbook:370
+#, no-c-format
+msgid "Parameter: Filtermask"
+msgstr "Parameter: Filtermask"
+
+#. Tag: para
+#: useractions.docbook:373
+#, no-c-format
+msgid ""
+"Parameter (optional): manipulate in which way; either <quote>Set</quote>, "
+"<quote>Add</quote> or <quote>Remove</quote>. Default: <quote>Set</quote>"
+msgstr ""
+"Parameter (izbirno): manipulirajte na kakšen način; <quote>Nastavi</quote>, "
+"<quote>Dodaj</quote> ali <quote>Odstrani</quote>. Privzeto: <quote>Nastavi</"
+"quote>"
+
+#. Tag: para
+#: useractions.docbook:380
+#, no-c-format
+msgid ""
+"<userinput>Goto</userinput> - changes the panels' path to &lt;first "
+"parameter&gt;"
+msgstr ""
+"<userinput>Pojdi</userinput> - spremeni pot plošč na &lt;prvi parameter&gt;"
+
+#. Tag: para
+#: useractions.docbook:385
+#, no-c-format
+msgid "Parameter: A relative or absolute path, or an &URL;"
+msgstr "Parameter: relativna ali absolutna pot ali &URL;"
+
+#. Tag: para
+#: useractions.docbook:389
+#, no-c-format
+msgid "Parameter (optional): Open the location in a new tab. Default: no"
+msgstr "Parameter (neobvezno): odpri lokacijo v novem zavihku. Privzeto: ne"
+
+#. Tag: para
+#: useractions.docbook:396
+#, no-c-format
+msgid ""
+"<userinput>Ask</userinput> - asks the user for some text and is replaced by "
+"the answer"
+msgstr ""
+"<userinput>Vprašaj</userinput> - od uporabnika zahteva nekaj besedila, ki ga "
+"nadomesti odgovor"
+
+#. Tag: para
+#: useractions.docbook:401
+#, no-c-format
+msgid "Parameter: The Question"
+msgstr "Parameter: vprašanje"
+
+#. Tag: para
+#: useractions.docbook:405
+#, no-c-format
+msgid "Parameter (optional): A default answer"
+msgstr "Parameter (izbirno): privzeti odgovor"
+
+#. Tag: para
+#: useractions.docbook:409
+#, no-c-format
+msgid "Parameter (optional): A caption for the question box"
+msgstr "Parameter (izbirno): napis za polje z vprašanji"
+
+#. Tag: para
+#: useractions.docbook:415
+#, no-c-format
+msgid "<userinput>Clipboard</userinput> - manipulates the clipboard"
+msgstr "<userinput>Odložišče</userinput> - upravlja z odložiščem"
+
+#. Tag: para
+#: useractions.docbook:420
+#, no-c-format
+msgid ""
+"Parameter: The text that should go to the clipboard (you may want to use "
+"<quote>%aCurrent%</quote> here)"
+msgstr ""
+"Parameter: Besedilo, ki naj gre v odložišče (tukaj boste morda želeli "
+"uporabiti <quote>%aCurrent%</quote>)"
+
+#. Tag: para
+#: useractions.docbook:425
+#, no-c-format
+msgid ""
+"Parameter (optional): Append the text to the current content of the "
+"clipboard with this separator"
+msgstr ""
+"Parameter (neobvezno): pripni besedilo trenutni vsebini odložišča s tem "
+"ločilom"
+
+#. Tag: para
+#: useractions.docbook:432
+#, no-c-format
+msgid ""
+"<userinput>Copy</userinput> - copies a file, useful for quick, local backups"
+msgstr ""
+"<userinput>Kopiraj</userinput> - kopira datoteko, uporabno za hitre lokalne "
+"varnostne kopije"
+
+#. Tag: para
+#: useractions.docbook:437
+#, no-c-format
+msgid "Parameter: What should be copied"
+msgstr "Parameter: Kaj naj se kopira"
+
+#. Tag: para
+#: useractions.docbook:441
+#, no-c-format
+msgid "Parameter: Where it should be copied"
+msgstr "Parameter: Kam naj se kopira"
+
+#. Tag: para
+#: useractions.docbook:447
+#, no-c-format
+msgid ""
+"<userinput>Sync</userinput> - opens the Synchronizer with a given profile"
+msgstr "<userinput>Sync</userinput> - odpre sinhronizator z danim profilom"
+
+#. Tag: para
+#: useractions.docbook:452
+#, no-c-format
+msgid "Parameter: A profile for the Synchronizer"
+msgstr "Parameter: Profil za sinhronizator"
+
+#. Tag: para
+#: useractions.docbook:458
+#, no-c-format
+msgid ""
+"<userinput>NewSearch</userinput> - opens the search windows with a given "
+"profile"
+msgstr ""
+"<userinput>Novo iskanje</userinput> - odpre iskalna okna z danim profilom"
+
+#. Tag: para
+#: useractions.docbook:463
+#, no-c-format
+msgid "Parameter: A profile for the search module"
+msgstr "Parameter: Profil za iskalni modul"
+
+#. Tag: para
+#: useractions.docbook:469
+#, no-c-format
+msgid "<userinput>Profile</userinput> - loads a given panel profile"
+msgstr "<userinput>Profil</userinput> - naloži dani profil plošče"
+
+#. Tag: para
+#: useractions.docbook:474
+#, no-c-format
+msgid "Parameter: A panel profile"
+msgstr "Parameter: Profil plošče"
+
+#. Tag: para
+#: useractions.docbook:480
+#, no-c-format
+msgid ""
+"<userinput>Each</userinput> - splits the commandline into a list. These "
+"commands are executed one after another."
+msgstr ""
+"<userinput>Vsak</userinput> - razdeli ukazno vrstico na seznam. Ti ukazi se "
+"izvajajo drug za drugim."
+
+#. Tag: para
+#: useractions.docbook:485
+#, no-c-format
+msgid "Parameter: A list item (all, all files, all dirs, all selected)."
+msgstr ""
+"Parameter: Element seznama (vse, vse datoteke, vsi imeniki, vsi izbrani)."
+
+#. Tag: para
+#: useractions.docbook:491
+#, no-c-format
+msgid "<userinput>Move</userinput> - move from source to destination."
+msgstr "<userinput>Premakni</userinput> - premakni se od vira do cilja."
+
+#. Tag: para
+#: useractions.docbook:496
+#, no-c-format
+msgid "Parameter: A source"
+msgstr "Parameter: vir"
+
+#. Tag: para
+#: useractions.docbook:499
+#, no-c-format
+msgid "Parameter: A destination"
+msgstr "Parameter: Cilj"
+
+#. Tag: para
+#: useractions.docbook:505
+#, no-c-format
+msgid ""
+"<userinput>PanelSize</userinput> - change the ratio between the two panels."
+msgstr ""
+"<userinput>Velikost plošče</userinput> - spremenite razmerje med obema "
+"ploščama."
+
+#. Tag: para
+#: useractions.docbook:510
+#, no-c-format
+msgid ""
+"Parameter (optional): A integer value, &eg;, 80 makes the active panel use "
+"80% of &krusader;'s width (height in vertical mode), omitting the parameter "
+"means 50%."
+msgstr ""
+"Parameter (neobvezno): celoštevilska vrednost, &eg; 80, omogoči, da aktivna "
+"plošča uporabi 80 % širine (višine v navpičnem načinu) &krusader;, "
+"izpustitev parametra pomeni 50 %."
+
+#. Tag: para
+#: useractions.docbook:518
+#, no-c-format
+msgid "<userinput>Ask</userinput> - cancel the execution."
+msgstr "<userinput>Vprašaj</userinput> - prekliči izvedbo."
+
+#. Tag: para
+#: useractions.docbook:522
+#, no-c-format
+msgid "Parameter (optional): A string for the cancel question."
+msgstr "Parameter (izbirno): niz za vprašanje za preklic."
+
+#. Tag: para
+#: useractions.docbook:528
+#, no-c-format
+msgid ""
+"<userinput>ListFile</userinput> - is replaced by path/file name of a "
+"temporary file containing a list of items"
+msgstr ""
+"<userinput>ListFile</userinput> - zamenja se z imenom poti/datoteke začasne "
+"datoteke, ki vsebuje seznam elementov"
+
+#. Tag: para
+#: useractions.docbook:533
+#, no-c-format
+msgid "Parameter: path/filename"
+msgstr "Parameter: pot/ime datoteke"
+
+#. Tag: para
+#: useractions.docbook:539
+#, no-c-format
+msgid ""
+"<userinput>ColSort</userinput> - set the sorting on a column of a specific "
+"panel."
+msgstr ""
+"<userinput>ColSort</userinput> - nastavite razvrščanje v stolpcu določene "
+"plošče."
+
+#. Tag: para
+#: useractions.docbook:544
+#, no-c-format
+msgid ""
+"Parameter: Column: Either <quote>Name</quote>, <quote>Ext</quote>, "
+"<quote>Type</quote>, <quote>Size</quote>, <quote>Modified</quote>, "
+"<quote>Perms</quote>, <quote>rwx</quote>, <quote>Owner</quote> and "
+"<quote>Group</quote>"
+msgstr ""
+"Parameter: Stolpec: <quote>Ime</quote>, <quote>Zunanja</quote>, "
+"<quote>Vrsta</quote>, <quote>Velikost</quote>, <quote>Spremenjeno</quote>, "
+"<quote>Dovoljenja</quote>, <quote>rwx</quote>, <quote>Lastnik</quote> in "
+"<quote>Skupina</quote>"
+
+#. Tag: para
+#: useractions.docbook:549
+#, no-c-format
+msgid ""
+"Parameter: Sort sequence: Either <quote>Toggle</quote>, <quote>Asc</quote>, "
+"<quote>Desc</quote>"
+msgstr ""
+"Parameter: Zaporedje razvrščanja: bodisi <quote>Toggle</quote>, <quote>Asc</"
+"quote>, <quote>Desc</quote>"
+
+#. Tag: para
+#: useractions.docbook:555
+#, no-c-format
+msgid "<userinput>View</userinput> - set the view mode."
+msgstr "<userinput>Pogled</userinput> - nastavite način pogleda."
+
+#. Tag: para
+#: useractions.docbook:559
+#, no-c-format
+msgid ""
+"Parameter: View mode: Either <quote>generic</quote>, <quote>text</quote>, "
+"<quote>hex</quote>"
+msgstr ""
+"Parameter: Način pogleda: <quote>generično</quote>, <quote>besedilno</"
+"quote>, <quote>šestnajstiško</quote>"
+
+#. Tag: para
+#: useractions.docbook:563
+#, no-c-format
+msgid ""
+"Parameter: Window Mode: Either <quote>tab</quote>, <quote>window</quote>"
+msgstr ""
+"Parameter: okenski način: bodisi <quote>zavihek</quote>, <quote>okno</quote>"
+
+#. Tag: para
+#: useractions.docbook:569
+#, no-c-format
+msgid ""
+"A &GUI;-based helper for placeholder adding is provided. Spaces in Path, "
+"Current and List are by default, automatically escaped. There is one more "
+"important thing to know: All placeholders that interact with &krusader; "
+"internal functions are called at expand time (meaning directly when the "
+"placeholders are replaced). External programs are called at execution time "
+"(meaning after all placeholders are replaced)."
+msgstr ""
+"Na voljo je pomočnik za dodajanje ograd, ki temelji na &GUI;. Presledki v "
+"možnostih Pot, Trenutno in Seznam so privzeto samodejno ubežni. Vedeti "
+"morate še eno pomembno stvar: vse ogradne oznake, ki sodelujejo z &krusader; "
+"notranje funkcije se kličejo v času razširitve (kar pomeni neposredno, ko se "
+"zamenjajo ograde). Zunanji programi so priklicani v času izvajanja (kar "
+"pomeni, ko so zamenjane vse ograde)."
+
+#. Tag: emphasis
+#: useractions.docbook:578
+#, no-c-format
+msgid "Advanced Properties"
+msgstr "Napredne lastnosti"
+
+#. Tag: para
+#: useractions.docbook:580
+#, no-c-format
+msgid ""
+"Here you can configure where your command should be visible (for the right "
+"click menu). In addition, it is possible to change the command executed and "
+"confirm it separately. You can also set a user under which the command "
+"should be executed."
+msgstr ""
+"Tukaj lahko konfigurirate, kje naj bo vaš ukaz viden (za meni z desnim "
+"klikom). Poleg tega je mogoče spremeniti izvedeni ukaz in ga posebej "
+"potrditi. Nastavite lahko tudi uporabnika, pod katerim naj se izvede ukaz."
+
+#. Tag: para
+#: useractions.docbook:586
+#, no-c-format
+msgid ""
+"Configures if the action is valid for a Protocol, Path, &MIME; type or File "
+"name."
+msgstr ""
+"Konfigurira, ali je dejanje veljavno za protokol, pot, &MIME; vrsto ali Ime "
+"datoteke."
+
+#. Tag: para
+#: useractions.docbook:590
+#, no-c-format
+msgid "Tweaking the command line before being executed."
+msgstr "Prilagoditev ukazne vrstice pred izvedbo."
+
+#. Tag: para
+#: useractions.docbook:593
+#, no-c-format
+msgid ""
+"Set a different user for the execution (this has no effect in &krusader; "
+"internal functions)"
+msgstr ""
+"Nastavite drugega uporabnika za izvajanje (to nima vpliva na notranje "
+"funkcije &krusader;)"

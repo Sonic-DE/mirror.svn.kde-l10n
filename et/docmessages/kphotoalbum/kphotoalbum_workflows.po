@@ -1,0 +1,403 @@
+#
+# Marek Laane <bald@smail.ee>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 12:03+0000\n"
+"PO-Revision-Date: 2012-12-25 15:11+0200\n"
+"Last-Translator: Marek Laane <bald@smail.ee>\n"
+"Language-Team: Estonian <kde-et@linux.ee>\n"
+"Language: et\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#. Tag: title
+#: workflows.docbook:10
+#, no-c-format
+msgid "Workflows with &kphotoalbum;"
+msgstr "&kphotoalbum;i töövoog"
+
+#. Tag: para
+#: workflows.docbook:11
+#, no-c-format
+msgid ""
+"Workflow is rather important aspect in digital imaging. In this chapter we "
+"describe different workflows that fit on different needs. There are many "
+"different factors that must be considered when developing a workflow. "
+"Hopefully these examples will provide you with sufficient ideas of how to "
+"tune-up your own method of working with digital imaging."
+msgstr ""
+"Töövoog on on digitaalpiltide korral üsna tähtis. Selles peatükis kirjeldame "
+"eri vajadustele sobivaid töövooge. Töövoo paikapanemisel tuleb arvestada "
+"paljude teguritega. Loodetavasti annavad need näited piisavalt ideid, kuidas "
+"panna paika omaenda digitaalpiltide kasutamise töövoog."
+
+#. Tag: title
+#: workflows.docbook:19
+#, no-c-format
+msgid "RAW workflow using &kphotoalbum; and Bibble5/AfterShot Pro"
+msgstr "Toorpiltide töövoog &kphotoalbum;i ja Bibble5/AfterShot Pro abil"
+
+#. Tag: para
+#: workflows.docbook:20
+#, no-c-format
+msgid ""
+"When shooting RAW images the files from camera must be developed to commonly "
+"recognized format like JPEG or TIFF. There are a few options to choose from "
+"when working on Linux. For example RawTherapee and Ufraw are open-source "
+"alternatives when Bibble5/AfterShot Pro are commercial application for this "
+"purpose."
+msgstr ""
+"Toorpiltide pildistamisel tuleb kaamerast saadavad failid nii-ütelda "
+"ilmutada levinud failivormingutesse, näiteks JPEG või TIFF. Linuxis töötades "
+"saab valida mitme võimaluse vahel. Näiteks RawTherapee ja Ufraw on avatud "
+"lähtekoodiga tarkvara, Bibble5/AfterShot Pro aga kommertsrakendused."
+
+#. Tag: para
+#: workflows.docbook:26
+#, no-c-format
+msgid ""
+"A few settings are recommended for a RAW workflow. First is to enable the "
+"using of the embedded thumbnail. This will give a tremendous speed boost "
+"over decoding each raw file each time they are viewed (check also the "
+"minimum dimension configuration to ensure decent quality). Second one is for "
+"the New Image Finder to automatically stack the developed versions over the "
+"RAW file (developed image must be on same directory as the original). This "
+"requires regular expressions as described in <xref linkend=\"opt-search-new"
+"\"/>. Two helper scripts are provided in &kphotoalbum; sources to help in "
+"RAW workflow. These are open-raw.desktop and open-raw.pl. The first one "
+"enables GUI applications to open the RAW files in the open-raw.pl script "
+"that tries to find the original RAW file and open that instead of the "
+"developed image."
+msgstr ""
+"Toorpiltide töövoo puhul on kasulikud teatavad määrangud. Esiteks on "
+"mõttekas kasutada põimitud pisipilte. See tähendab tohutut kiiruse "
+"paranemist võrreldes iga toorpildi dekodeerimisega igal vaatamiskoraal "
+"(talutava kvaliteedi huvides tuleks kontrollida ka minimaalsete mõõtmete "
+"määrangut). Teiseks on mõttekas lasta uute piltide leidjal asendada "
+"automaatsel toorpildid teisendatud piltidega (viimased peavad asuma samas "
+"kataloogis originaalidega). See nõuab selliseid regulaaravaldisi, mida "
+"kirjeldab <xref linkend=\"opt-search-new\"/>. &kphotoalbum;i lähtekoodiga on "
+"kaasas kaks skripti spetsiaalselt toorpiltide töövoo tarbeks. Need on open-"
+"raw.desktop ja open-raw.pl. Esimene võimaldab graafilise kasutajaliidesega "
+"rakendustel avada toorfaile skriptiga open-raw.pl, mis püüab leida toorfaili "
+"originaali ja avada selle teisendatud pildi asemel."
+
+#. Tag: title
+#: workflows.docbook:41
+#, no-c-format
+msgid "Sending Images to RAW Editor"
+msgstr "Piltide saatmine toorpiltide redaktorisse"
+
+#. Tag: para
+#: workflows.docbook:49
+#, no-c-format
+msgid ""
+"First step in actual workflow is to copy the images from camera to the "
+"computer. A simple copy on a terminal window is all that is needed:"
+msgstr ""
+"Töövoo esimene samm on piltide kopeerimine kaamerast arvutisse. Selleks "
+"piisab ka kõige lihtsamast kopeerimisest terminaliaknas."
+
+#. Tag: screen
+#: workflows.docbook:52
+#, no-c-format
+msgid ""
+"<userinput><command>cp</command> <option>-a</option> <filename>/"
+"media/.../101CANON/</filename> <filename>~/Pictures/2012/sample</filename>\n"
+"  </userinput>"
+msgstr ""
+"<userinput><command>cp</command> <option>-a</option> <filename>/"
+"media/.../101CANON/</filename> <filename>~/Pictures/2012/sample</filename>\n"
+"  </userinput>"
+
+#. Tag: para
+#: workflows.docbook:53
+#, no-c-format
+msgid ""
+"Then either start &kphotoalbum; or run <menuchoice><guimenu>Maintenance</"
+"guimenu><guimenuitem>Rescan for Images and Videos</guimenuitem></"
+"menuchoice>. New images should be found and now is time for initially "
+"tagging the images. As I usually photograph while traveling I first insert "
+"the place. Select <guilabel>Folder</guilabel> and browse to the new "
+"directory. Then go to the <guilabel>Show Thumbnails</guilabel>, select all "
+"and <guimenu>Annotate Multiple Items at a Time</guimenu> or <keycombo action="
+"\"simul\">&Ctrl;<keycap>2</keycap></keycombo>. Insert the proper place like "
+"Finland-Helsinki (see <xref linkend=\"sec-member-groups-in-property-editor\"/"
+">)."
+msgstr ""
+"Seejärel käivita &kphotoalbum; või vali <menuchoice><guimenu>Hooldus</"
+"guimenu><guimenuitem>Otsi pilte ja videoid uuesti</guimenuitem></"
+"menuchoice>. Uute piltide leidmisel on aeg lisada neile esialgsed sildid. Et "
+"ma tavaliselt pildistan reisil, siis lisan esmalt asukoha. Vali "
+"<guilabel>kataloog</guilabel> ja liigu uude kataloogi. Siis vali "
+"<guilabel>Näita pisipilte</guilabel>, vali kõik ning vali <guimenu>Annoteeri "
+"mitu elementi korraga</guimenu> või kasuta <keycombo action=\"simul\">&Ctrl;"
+"<keycap>2</keycap></keycombo>. Lisa vajalik asukoht, näiteks Soome-Helsingi "
+"(vt. <xref linkend=\"sec-member-groups-in-property-editor\"/>)."
+
+#. Tag: para
+#: workflows.docbook:67
+#, no-c-format
+msgid ""
+"Now that the new images are easy to find I do the initial ranking and "
+"deletion. For this I go to the thumbnail view and start the Viewer by "
+"hitting &Enter;. I use rating for good images, just press the appropriate "
+"number from <keycap>1</keycap> to <keycap>5</keycap>. I only give 3 to 5 "
+"ratings and hit <keycombo action=\"simul\">&Ctrl;<keycap>Del</keycap></"
+"keycombo> for the bad photos to delete them. At this point I might add also "
+"People names if there happens to be a diver in the photo. Once the first "
+"round is done I exit the Viewer by hitting &Esc; and select "
+"<guimenuitem>Delete file from disk</guimenuitem> to get rid off the bad "
+"images for good."
+msgstr ""
+"Nüüd, kus uusi pilte on lihtne leida, võib alustada esialgse hindamise ja "
+"kustutamisega. Selleks tuleks minna pisipildivaatesse ja käivitada klahvile "
+"&Enter; vajutades näitaja. Mina kasutan hinnet ainult heade piltide puhul, "
+"aga igal juhul on valida <keycap>1</keycap> kuni <keycap>5</keycap> vahel. "
+"Ma annan ainult hindeid 3 kuni 5 ja vajutan halbade fotode kustutamiseks "
+"<keycombo action=\"simul\">&Ctrl;<keycap>Del</keycap></keycombo>. Nüüd võiks "
+"lisada ka inimeste nimesid, kui näiteks on pildistatud sukeldujat. Kui "
+"esimene tiir on piltidele peale tehtud, väljun näitajast klahvi &Esc; "
+"vajutades ning valin halbadest piltidest jäädavaks vabanemiseks "
+"<guimenuitem>Kustuta fail kettalt</guimenuitem>."
+
+#. Tag: para
+#: workflows.docbook:81
+#, no-c-format
+msgid ""
+"Next I select only the images that have high enough rating using the search "
+"function. Naturally the Place has to be set if search is started with "
+"<keycombo action=\"simul\">&Ctrl;<keycap>F</keycap></keycombo>. However, if "
+"search is invoked from the Main Window the current selection is drilled down "
+"to the more precise match. Anyway, at this point I go through the better "
+"rated images again doing refining on the rating. E.g. if I have 5 similar "
+"photos of one Nudibranch species I generally decrease the rating of the "
+"poorer images and might increase the best one. Comparing images can be done "
+"by selecting the ones you want to compare and starting the Viewer. Removing "
+"images from the Viewer selection can be done with <keycap>Delete</keycap>. "
+"This only disables the viewing of the current image while within the Viewer, "
+"nothing is removed or deleted. This allows comparing 2 or 3 better images "
+"next to each other moving between them with <keycap>PgUp</keycap> and "
+"<keycap>PgDn</keycap>. I quite commonly use a <literal>tmp</literal> "
+"category to mark &eg; crabs and shrimps to be easily able to display only "
+"selected type of images during the later phases of selection and "
+"identification."
+msgstr ""
+"Nüüd valin otsingut kasutades ainult piisavalt hea hinnanguga pildid. "
+"Tavaliselt on määratud koht, kui käivitan otsingu kiirklahviga <keycombo "
+"action=\"simul\">&Ctrl;<keycap>F</keycap></keycombo>. Ent kui käivitada "
+"otsing peaaknast, kasutatakse täpsemate sobivuste leidmiseks aktiivset "
+"valikut. Igal juhul võtan taas ette paremini hinnatud pildid, et hinnangut "
+"täpsustada. Kui mul on näiteks viis pilti nudistide rannast, siis ma "
+"tavaliselt alandan kehvemate piltide hinnangut ja suurendan parima oma. "
+"Piltide võrdlemiseks tuleb valida vajalikud pildid ja käivitada näitaja. "
+"Pilte saab näitaja valikust eemaldada klahviga <keycap>Delete</keycap>. See "
+"lõpetab ainult pildi näitamise näitajas ega eemalda või kustuta seda. Nii "
+"saab võrrelda kaht-kolme parimat pilti, liikudes nende vahel klahvidega "
+"<keycap>PgUp</keycap> ja <keycap>PgDn</keycap>. Ma kasutan õieti sageli "
+"kategooriat <literal>tmp</literal> märkimaks näiteks krabisid ja muud "
+"sellist, et hilisematel valimise ja tuvastamise etappidel hõlpsasti näha "
+"ainult valitud tüüpi pilte."
+
+#. Tag: para
+#: workflows.docbook:101
+#, no-c-format
+msgid ""
+"After a reduced amount of images is left I start tagging them. I add the "
+"Latin Name of the species and Common Name. Whenever I have these two "
+"categories completed I consider the image Done and get rid of the Untagged "
+"marking. Note that if you still need to do tagging after developing the RAW "
+"image (and auto-stacking them) you need to select the top of collapsed stack "
+"(or all images on expanded stack) and select <emphasis>Annotate Multiple "
+"Items at a Time</emphasis> to get the whole stack annotated instead of only "
+"the topmost image."
+msgstr ""
+"Pärast piltide arvu vähendamist hakkan neid sildistama. Lisan liikide "
+"(ladinakeelsed) ja isikute nimed. Kui need kaks kategooriat on määratud, "
+"pean pilti valmisolevaks ja eemaldan tähistuse 'sildistamata'. Pane tähele, "
+"et kui soovid silti lisada pärast toorpildi teisendamist (ja nende "
+"automaatset pinusse lisamist), tuleb valida kokkukeritud pinu pealmine pilt "
+"(või lahtikeritud pinu kõik pildid) ning käsk <emphasis>Annoteeri mitu "
+"elementi korraga</emphasis>, et ainult pealmise pildi asemel annoteeritaks "
+"kogu pinu."
+
+#. Tag: para
+#: workflows.docbook:111
+#, no-c-format
+msgid ""
+"The best images are sent to external application for developing. With wanted "
+"images selected, right click on selected thumbnail and select "
+"<menuchoice><guimenuitem>Invoke External Program</"
+"guimenuitem><guimenuitem>All Selected Images</guimenuitem><guimenuitem>Send "
+"Bibble5</guimenuitem></menuchoice>. The application selected is actually my "
+"script that detects if there is a RAW file for the possibly already "
+"developed images available and uses that if possible. Within the external "
+"application I do some tuning up and cropping if required and then output the "
+"developed JPEGs next to the original RAW file. File naming is rather simple, "
+"change the extension or add underscore and running number if needed."
+msgstr ""
+"Parimad pildid võib saata teisendamiseks välisesse rakendusse. Kui vajalikud "
+"pildid on valitud, tee valitud pisipildil paremklõps ja vali "
+"<menuchoice><guimenuitem>Välise rakenduse väljakutsumine</"
+"guimenuitem><guimenuitem>Kõik valitud pildid</guimenuitem><guimenuitem>Saada "
+"rakendusse Bibble5</guimenuitem></menuchoice>. Valitud rakendus on "
+"tegelikult minu skript, mis kontrollib, kas võib-olla juba teisendatud "
+"piltide jaoks on saadaval toorfail ja võimaluse korral kasutab seda. Välise "
+"rakendusega saan teha mõningat peentöötlemist, vajaduse korral kärpida, enne "
+"kui saata teisendatud JPEG originaal-toorfaili kõrvale. Faili nime muutmine "
+"on õige lihtne: selleks tuleb vaid muuta laiendit või soovi korral lisada "
+"allkriips ja järjekorranumber."
+
+#. Tag: para
+#: workflows.docbook:125
+#, no-c-format
+msgid ""
+"Now that there is plenty of new JPEGs in the image directories I let "
+"&kphotoalbum; search for new images and automatically stack the new ones on "
+"top of the original RAW (<xref linkend=\"fig-options-file-versions\"/>). "
+"Then a final round of selection with the developed images and adding some "
+"descriptions if needed."
+msgstr ""
+"Nüüd, kus pildikataloogides on hulk uusi JPEG-faile, lasen &kphotoalbum;il "
+"otsida uusi pilte ja automaatselt lisada uued originaalse toorpildi pinusse "
+"(<xref linkend=\"fig-options-file-versions\"/>). Siis jõuab kätte viimane "
+"kord vaadata veel läbi kõik teisendatud pildid ja vajaduse korral lisada "
+"kirjeldused."
+
+#. Tag: para
+#: workflows.docbook:131
+#, no-c-format
+msgid ""
+"Final step is to generate static &HTML; pages and upload to my web server "
+"for the enjoyment of friends and colleagues. This I do with the stacks "
+"collapsed to only get the developed images to the web page. &HTML; "
+"generation is described in <xref linkend=\"chp-generating-html\"/>."
+msgstr ""
+"Viimane samm on luua staatilised &HTML;-leheküljed ja laadida need oma "
+"veebiserverisse sõpradele ja kolleegidele nautida. Seda ma teen kokkukeritud "
+"pinudega, et veebileheküljele jõuaksid ainult teisendatud pildid. &HTML;-i "
+"genereerimist kirjeldab <xref linkend=\"chp-generating-html\"/>."
+
+#. Tag: title
+#: workflows.docbook:139
+#, no-c-format
+msgid "Panorama workflow"
+msgstr "Panoraami töövoog"
+
+#. Tag: para
+#: workflows.docbook:140
+#, no-c-format
+msgid ""
+"Panoramas require a bit different workflow than normal photo editing. This "
+"is due to the requirement for multiple source files. The tool of choice for "
+"panoramas is Autopano Pro but latest version of &digikam; should do well and "
+"fits zero budget. Following list describes the steps required:"
+msgstr ""
+"Panoraam nõuab veidi teistsugust töövoogu kui tavaline fotode redigeerimine. "
+"See on tingitud sellest, et panoraamil on mitu lähtefaili. Mõistlik tööriist "
+"selle jaoks on Autopano Pro, kuid ka &digikam;i uusim versioon tuleb sellega "
+"korralikult toime - ja täiesti tasuta. Vajalikud on järgmised sammud:"
+
+#. Tag: para
+#: workflows.docbook:147
+#, no-c-format
+msgid ""
+"Tag the photos belonging to a panorama in &kphotoalbum; appropriately. This "
+"is done mainly to avoid discarding images by accident, when sorting out the "
+"garbage among the photos taken. You probably want also to stack the set of "
+"source images at this point."
+msgstr ""
+"Panoraami lisatavate fotode korralik sildistamine &kphotoalbum;is. See on "
+"eelkõige vajalik selleks, et võetud pilte sorteerides ei visataks ära "
+"tegelikult vajalikke pilte. Samuti võib sel etapil seada lähtepildid pinusse."
+
+#. Tag: para
+#: workflows.docbook:152
+#, no-c-format
+msgid "You have at least two simple options for next step:"
+msgstr "Järgmisel sammul on vähemalt kaks lihtsat valikut:"
+
+#. Tag: para
+#: workflows.docbook:155
+#, no-c-format
+msgid ""
+"You can let Autopano Pro find the panoramas automatically from the photo "
+"directory."
+msgstr ""
+"Autopano Prol võib automaatselt lasta leida panoraamipildid fotokataloogist."
+
+#. Tag: para
+#: workflows.docbook:158
+#, no-c-format
+msgid ""
+"Or send the proper images to Autopano Pro on command line to speed things "
+"up. This is handy if the image directory contains a lot of images, "
+"especially RAW ones. This requires one to fix the script that starts "
+"Autopano Pro to accept input and to create a desktop file or invoking "
+"external program with own command line."
+msgstr ""
+"Vajalikud pildid võib saata Autopano Prosse käsurealt, mis kiirendab "
+"operatsiooni. See on mugav siis, kui pildikataloog sisaldab väga palju pilte "
+"ja eriti veel toorpilte. Selleks on vaja täiustada skripti, mis käivitab "
+"Autopano Pro, et see tunnistaks sisendit ja looks desktop-faili või kutsuks "
+"omaenda käsurealt välja välise programmi."
+
+#. Tag: para
+#: workflows.docbook:165
+#, no-c-format
+msgid ""
+"If it happens that the resulting panorama is missing a small part, you can "
+"try to craft it e.g. with the Gimp. Gimp works usually quite well if there "
+"is enough \"structure\" to be cloned but there is absolutely no guarantee "
+"you will get usable results."
+msgstr ""
+"Kui juhtub, et saadud panoraamil on mingi väike osa puudu, võib seda püüda "
+"parandada näiteks Gimpiga. Gimp tuleb tavaliselt üpris hästi toime, kui on "
+"piisavalt \"struktuuri\", mida kloonida, aga kindla peale ei saa muidugi "
+"head tulemust garanteerida."
+
+#. Tag: para
+#: workflows.docbook:170
+#, no-c-format
+msgid ""
+"Save the new image somewhere under &kphotoalbum;'s image directory and run "
+"<menuchoice><guimenu>Maintenance</guimenu><guimenuitem>Rescan for Images and "
+"Videos</guimenuitem></menuchoice>. This should notice the new panorama and "
+"include it in the picture gallery."
+msgstr ""
+"Uus pilt tuleb salvestada kuhugi &kphotoalbum;i pildikataloogi ning valida "
+"<menuchoice><guimenu>Hooldus</guimenu><guimenuitem>Otsi pilte ja videoid "
+"uuesti</guimenuitem></menuchoice>. Sellega peaks uus panoraam üles leitama "
+"ja seda näidatama pildigaleriis."
+
+#. Tag: para
+#: workflows.docbook:176
+#, no-c-format
+msgid ""
+"If you have set the AutoStacking of new images properly and name of the new "
+"panorama matches the rules for this, the panorama should be on top of the "
+"stack. Otherwise sort the images by date, so the new panorama ends up at by "
+"the source images and stack them manually. (Autopano Pro seems to write the "
+"EXIF info of the first image into the panorama.)"
+msgstr ""
+"Kui uute piltide automaatne pakki seadmine on korralikult seadistatud ning "
+"uue panoraami nimi vastab neile reeglitele, peaks panoraam paiknema paki "
+"peale. Vastasel juhul tuleb pilte sortida kuupäeva järgi, et uus panoraam "
+"jõuaks lähtepiltide peale, ning nad käsitsi pakki seadma. (Tundub, et "
+"Autopano Pro kirjutab panoraami esimese pildi EXIF-teabe.)"
+
+#. Tag: para
+#: workflows.docbook:182
+#, no-c-format
+msgid ""
+"You can still add tagging at this point to the panorama or you might include "
+"all the source images also with <keycombo>&Ctrl;<keycap>2</keycap></"
+"keycombo>."
+msgstr ""
+"Veel sel hetkelgi võib lisada panoraamile silte või ka näiteks kõik "
+"lähtepildid kiirklahviga <keycombo>&Ctrl;<keycap>2</keycap></keycombo>."

@@ -1,0 +1,1226 @@
+# Danish translation of KRegExpEditor
+# Copyright (C)
+#
+# Erik Kjær Pedersen <erik@binghamton.edu>, 2002,2003, 2005, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: KRegExpEditor\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 12:04+0000\n"
+"PO-Revision-Date: 2006-04-21 22:04-0400\n"
+"Last-Translator: Erik Kjær Pedersen <erik@binghamton.edu>\n"
+"Language-Team: Danish <dansk@klid.dk>\n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#. Tag: title
+#: index.docbook:10
+#, no-c-format
+msgid "The Regular Expression Editor Manual"
+msgstr "Håndbog for editoren for regulære udtryk"
+
+#. Tag: author
+#: index.docbook:13
+#, no-c-format
+msgid "<firstname>Jesper K.</firstname> <surname>Pedersen</surname>"
+msgstr "<firstname>Jesper K.</firstname> <surname>Pedersen</surname>"
+
+#. Tag: address
+#: index.docbook:16
+#, no-c-format
+msgid "&Jesper.Pedersen.mail;"
+msgstr "&Jesper.Pedersen.mail;"
+
+#. Tag: trans_comment
+#: index.docbook:18
+#, no-c-format
+msgid "ROLES_OF_TRANSLATORS"
+msgstr "&erik.kjaer.pedersen.role;"
+
+#. Tag: date
+#: index.docbook:21
+#, no-c-format
+msgid "2001-07-03"
+msgstr ""
+
+#. Tag: releaseinfo
+#: index.docbook:22
+#, no-c-format
+msgid "<releaseinfo>0.1</releaseinfo>"
+msgstr ""
+
+#. Tag: holder
+#: index.docbook:28
+#, no-c-format
+msgid "Jesper K. Pedersen"
+msgstr "Jesper K. Pedersen"
+
+#. Tag: para
+#: index.docbook:32
+#, no-c-format
+msgid "This Handbook describes the Regular Expression Editor widget"
+msgstr "Denne håndbog beskriver den 'regulære udtryk'-editorkontrol"
+
+#. Tag: keyword
+#: index.docbook:36
+#, no-c-format
+msgid "<keyword>KDE</keyword>"
+msgstr "<keyword>KDE</keyword>"
+
+#. Tag: keyword
+#: index.docbook:37
+#, no-c-format
+msgid "regular expression"
+msgstr "regulært udtryk"
+
+#. Tag: title
+#: index.docbook:45
+#, no-c-format
+msgid "Introduction"
+msgstr "Indledning"
+
+#. Tag: para
+#: index.docbook:48
+#, no-c-format
+msgid ""
+"The regular expression editor is an editor for editing regular expression in "
+"a graphical style (in contrast to the <acronym>ASCII</acronym> syntax). "
+"Traditionally regular expressions have been typed in the <acronym>ASCII</"
+"acronym> syntax, which for example looks like <literal>^.*kde\\b</literal>. "
+"The major drawbacks of this style are:"
+msgstr ""
+"Den regulær udtryk editor er en editor til redigering af regulære udtryk på "
+"en grafisk måde (i modsætning til <acronym>ASCII</acronym>-syntaks). "
+"Traditionelle regulære udtryk er blevet skrevet i <acronym>ASCII</acronym>-"
+"syntaks, som for eksempel ser sådan her ud <literal>^.*kde\\b</literal>. Den "
+"største bagdel ved dette er:"
+
+#. Tag: para
+#: index.docbook:55
+#, no-c-format
+msgid "It is hard to understand for non-programmers."
+msgstr "Det er svær at forstå for folk der ikke er programmører."
+
+#. Tag: para
+#: index.docbook:58
+#, no-c-format
+msgid ""
+"It requires that you <emphasis>escape</emphasis> certain symbols (to match a "
+"star for example, you need to type <literal>\\*</literal>)."
+msgstr ""
+"Det kræver at du <emphasis>escaper</emphasis> visse symboler (for for "
+"eksempel at matche en stjerne, skal du skrive <literal>\\*</literal>)."
+
+#. Tag: para
+#: index.docbook:62
+#, no-c-format
+msgid ""
+"It requires that you remember rules for <emphasis>precedence</emphasis> "
+"(What does <literal>x|y*</literal> match? a single <literal>x</literal> or a "
+"number of <literal>y</literal>, <emphasis>OR</emphasis> a number of "
+"<literal>x</literal> and <literal>y</literal>'s mixed?)"
+msgstr ""
+"Det kræver at du husker regler for <emphasis>præcedens</emphasis> (Hvad "
+"matcher <literal>x|y*</literal>? et enkelt <literal>x</literal> eller et "
+"antal <literal>y</literal>, <emphasis>OR</emphasis> et antal <literal>x</"
+"literal>'er og <literal>y</literal>'er blandede?)"
+
+#. Tag: para
+#: index.docbook:70
+#, no-c-format
+msgid ""
+"The regular expression editor, on the other hand, lets you <emphasis>draw</"
+"emphasis> your regular expression in an unambiguous way. The editor solves "
+"at least item two and three above. It might not make regular expressions "
+"available for the non-programmers, though only tests by users can tell that. "
+"So, if are you a non programmer, who has gained the power of regular "
+"expression from this editor, then please <ulink url=\"mailto:blackie@kde.org"
+"\">let me know</ulink>."
+msgstr ""
+"Editoren for regulære udtryk, på den anden side, lader dig <emphasis>tegne</"
+"emphasis> dine regulære udtryk på en entydig måde. Editoren løser i det "
+"mindste punkt to og tre ovenfor. Den gør måske ikke regulære udtryk "
+"tilgængelige for dem der ikke er programmører, skønt det er noget tiden vil "
+"vise. Så hvis du ikke er programmør, men er blevet i stand til at bruge "
+"styrken i regulære udtryk  ved hjælp af denne editor, så vil jeg <ulink url="
+"\"mailto:blackie@kde.org\"> rigtig gerne vide det</ulink>."
+
+#. Tag: title
+#: index.docbook:86
+#, no-c-format
+msgid "What is a Regular Expression"
+msgstr "Hvad er et regulært udtryk"
+
+#. Tag: para
+#: index.docbook:88
+#, no-c-format
+msgid ""
+"A regular expression is a way to specify <emphasis>conditions</emphasis> to "
+"be fulfilled for a situation in mind. Normally when you search in a text "
+"editor you specify the text to search for <emphasis>literally</emphasis>, "
+"using a regular expression, on the other hand, you tell what a given match "
+"would look like. Examples of this include <emphasis>I'm searching for the "
+"word &kde;, but only at the beginning of the line</emphasis>, or "
+"<emphasis>I'm searching for the word <literal>the</literal>, but it must "
+"stand on its own</emphasis>, or <emphasis>I'm searching for files starting "
+"with the word <literal>test</literal>, followed by a number of digits, for "
+"example <literal>test12</literal>, <literal>test107</literal> and "
+"<literal>test007</literal></emphasis>"
+msgstr ""
+"Et regulært udtryk er en måde at angive <emphasis>betingelser</emphasis> der "
+"skal være opfyldt for en situation man tænker på. Normalt når du søger i en "
+"teksteditor angiver du teksten der skal søges efter <emphasis>bogstaveligt</"
+"emphasis>. Ved brug af regulære udtryk, på den anden side, fortæller du "
+"hvordan en given match skal se ud. Eksempler på dette inkluderer "
+"<emphasis>Jeg leder efter ordet &kde;, men kun i begyndelsen af linjen</"
+"emphasis>, eller <emphasis>Jeg leder efter ordet <literal>den</literal>, men "
+"det skal stå for sig selv</emphasis>, eller <emphasis>Jeg leder efter filer "
+"der begynder med ordet <literal>test</literal>, fulgt af et antal cifre, for "
+"eksempel <literal>test12</literal>, <literal>test107</literal> og "
+"<literal>test007</literal></emphasis>"
+
+#. Tag: para
+#: index.docbook:102
+#, no-c-format
+msgid ""
+"You build regular expressions from smaller regular expressions, just like "
+"you build large Lego toys from smaller subparts. As in the Lego world, there "
+"are a number of basic building blocks. In the following I will describe each "
+"of these basic building blocks using a number of examples."
+msgstr ""
+"Du bygger regulære udtryk fra mindre regulære udtryk, ligesom du bygger "
+"store Lego-legetøjsting fra mindre dele. Ligesom i Lego-verdenen, er der et "
+"antal basale byggeblokke. I det følgende vil jeg beskrive hver af disse "
+"basale byggeblokke ved brug af et antal eksempler."
+
+#. Tag: title
+#: index.docbook:109
+#, no-c-format
+msgid "Searching for normal text."
+msgstr "Søgning efter normal tekst."
+
+#. Tag: para
+#: index.docbook:110
+#, fuzzy, no-c-format
+#| msgid ""
+#| "If you just want to search for a given text, a then regular expression is "
+#| "definitely not a good choice. The reason for this is that regular "
+#| "expressions assign special meaning to some characters. This includes the "
+#| "following characters: <literal>.*|$</literal>. Thus if you want to search "
+#| "for the text <literal>kde.</literal> (i.e. the characters <literal>kde</"
+#| "literal> followed by a period), then you would need to specify this as "
+#| "<literal>kde\\.</literal><footnote><para>The regular expression editor "
+#| "solves this problem by taking care of escape rules for you.</para></"
+#| "footnote> Writing <literal>\\.</literal> rather than just <literal>.</"
+#| "literal> is called <emphasis>escaping</emphasis>."
+msgid ""
+"If you just want to search for a given text, then regular expression is "
+"definitely not a good choice. The reason for this is that regular "
+"expressions assign special meaning to some characters. This includes the "
+"following characters: <literal>.*|$</literal>. Thus if you want to search "
+"for the text <literal>kde.</literal> (i.e. the characters <literal>kde</"
+"literal> followed by a period), then you would need to specify this as "
+"<literal>kde\\.</literal><footnote><para>The regular expression editor "
+"solves this problem by taking care of escape rules for you.</para></"
+"footnote> Writing <literal>\\.</literal> rather than just <literal>.</"
+"literal> is called <emphasis>escaping</emphasis>."
+msgstr ""
+"Hvis du kun ønsker at søge efter en given tekst, er et regulært udtryk "
+"bestemt ikke et godt valg. Grunden er at regulære udtryk tilknytter en "
+"speciel betydning til visse tegn. Dette inkluderer følgende tegn: <literal>."
+"*|$</literal>. Hvis du altså ønsker at søge efter teksten <literal>kde.</"
+"literal> (dvs tegnene <literal>kde</literal> fulgt af et punktum), så vil du "
+"skulle angive dette som <literal>kde\\.</literal><footnote><para>Editoren "
+"for regulære udtryk løser dette problem ved at tage sig escape-reglerne for "
+"dig.</para></footnote> At skrive <literal>\\.</literal> snarere end blot "
+"<literal>.</literal> kaldes at <emphasis>escape</emphasis>."
+
+#. Tag: title
+#: index.docbook:124
+#, no-c-format
+msgid "Matching &URL;s"
+msgstr "Matchende &URL;'er"
+
+#. Tag: para
+#: index.docbook:125
+#, no-c-format
+msgid ""
+"When you select something looking like a &URL; in &kde;, then the program "
+"<command>klipper</command> will offer to start <command>konqueror</command> "
+"with the selected &URL;."
+msgstr ""
+"Når du vælger noget der ser ud som en &URL; i &kde;, så vil programmet "
+"<command>klipper</command> tilbyde at starte <command>konqueror</command> "
+"med en valgte &URL;."
+
+#. Tag: para
+#: index.docbook:129
+#, no-c-format
+msgid ""
+"<command>Klipper</command> does this by matching the selection against "
+"several different regular expressions, when one of the regular expressions "
+"matches, the accommodating command will be offered."
+msgstr ""
+"<command>Klipper</command> gør dette ved at matche markeringen mod "
+"adskillige forskellige regulære udtryk, når et af de regulære udtryk "
+"matcher, bil hjælpekommandoen blive tilbudt."
+
+#. Tag: para
+#: index.docbook:133
+#, no-c-format
+msgid ""
+"The regular expression for &URL;s says (among other things), that the "
+"selection must start with the text <literal>http://</literal>. This is "
+"described using regular expressions by prefixing the text <literal>http://</"
+"literal> with a hat (the <literal>^</literal> character)."
+msgstr ""
+"Det regulære udtryk for &URL;'er siger (blandt andet), at markeringen skal "
+"begynde med teksten <literal>http://</literal>. Dette beskrives ved brug af "
+"regulære udtryk med at sætte en hat (<literal>^</literal>-tegnet). foran "
+"<literal>http://</literal>)."
+
+#. Tag: para
+#: index.docbook:139
+#, no-c-format
+msgid ""
+"The above is an example of matching positions using regular expressions. "
+"Similar, the position <emphasis>end-of-line</emphasis> can be matched using "
+"the character <literal>$</literal> (i.e. a dollar sign)."
+msgstr ""
+"Ovestående er et eksempel på matchende positioner ved brug af regulære "
+"udtryk. Tilsvarende kan positionen <emphasis>linjeslut</emphasis> matches "
+"ved brug af tegnet <literal>$</literal> (dvs. et dollar-tegn)."
+
+#. Tag: title
+#: index.docbook:146
+#, no-c-format
+msgid ""
+"Searching for the word <literal>the</literal>, but not <emphasis>the</"
+"emphasis><literal>re</literal>, <literal>brea</literal><emphasis>the</"
+"emphasis> or <literal>ano</literal><emphasis>the</emphasis><literal>r</"
+"literal>"
+msgstr ""
+"Søgning efter ordet <literal>den</literal>, men ikke <emphasis>den</"
+"emphasis><literal>ne</literal>, <literal>hån</literal><emphasis>den</"
+"emphasis> eller <literal>man</literal><emphasis>den</emphasis><literal>s</"
+"literal>"
+
+#. Tag: para
+#: index.docbook:150
+#, no-c-format
+msgid ""
+"Two extra position types can be matches in the above way, namely "
+"<emphasis>the position at a word boundary</emphasis>, and <emphasis>the "
+"position at a <emphasis>non</emphasis>-word boundary</emphasis>. The "
+"positions are specified using the text <literal>\\b</literal> (for word-"
+"boundary) and <literal>\\B</literal> (for non-word boundary)"
+msgstr ""
+"To ekstra positionstyper kan matches på ovenstående måde, nemlig "
+"<emphasis>positionen ved en ordgrænse</emphasis>, og <emphasis>positionen "
+"ved en <emphasis>ikke</emphasis>-ordgrænse</emphasis>. Disse positioner "
+"angives ved hjælp af teksten <literal>\\b</literal> (for ordgrænse) og "
+"<literal>\\B</literal> (for ikke-ordgrænse)"
+
+#. Tag: para
+#: index.docbook:157
+#, no-c-format
+msgid ""
+"Thus, searching for the word <literal>the</literal> can be done using the "
+"regular expression <literal>\\bthe\\b</literal>. This specifies that we are "
+"searching for <literal>the</literal> with no letters on each side of it (i."
+"e. with a word boundary on each side)"
+msgstr ""
+"Derfor består søgning efter ordet <literal>den</literal> i at bruge det "
+"regulære udtryk <literal>\\bden\\b</literal>. Dette angiver at vi søger "
+"efter <literal>den</literal> uden bogstaver på nogen af siderne (dvs. med en "
+"ordgrænse på hver side)"
+
+#. Tag: para
+#: index.docbook:162
+#, no-c-format
+msgid ""
+"The four position matching regular expressions are inserted in the regular "
+"expression editor using <link linkend=\"positiontool\">four different "
+"positions tool</link>"
+msgstr ""
+"De fire positioner der matcher et regulært udtryk indsættes i editoren for "
+"regulære udtryk ved brug af <link linkend=\"positiontool\">fire forskellige "
+"positioner værktøjet</link>"
+
+#. Tag: title
+#: index.docbook:168
+#, no-c-format
+msgid "Searching for either <literal>this</literal> or <literal>that</literal>"
+msgstr ""
+"Søgning efter enten <literal>den</literal> eller <literal>det</literal>"
+
+#. Tag: para
+#: index.docbook:169
+#, no-c-format
+msgid ""
+"Imagine that you want to run through your document searching for either the "
+"word <literal>this</literal> or the word <literal>that</literal>. With a "
+"normal search method you could do this in two sweeps, the first time around, "
+"you would search for <literal>this</literal>, and the second time around you "
+"would search for <literal>that</literal>."
+msgstr ""
+"Forestil dig at du ønsker at gennemgå  dit dokument søgende efter enten "
+"ordet <literal>den</literal> eller ordet <literal>det</literal>. Med en "
+"sædvanlig søgemetode kunne du gøre dette i to omgange, i første omgang ville "
+"du søge efter <literal>den</literal>, og i anden omgang ville du søge efter "
+"<literal>det</literal>."
+
+#. Tag: para
+#: index.docbook:176
+#, no-c-format
+msgid ""
+"Using regular expression searches you would search for both in the same "
+"sweep. You do this by searching for <literal>this|that</literal>, &ie; "
+"separating the two words with a vertical bar."
+msgstr ""
+"Ved brug af regulært udtryk søgning vil du kunne søge efter begge i én "
+"omgang. Du gør dette ved at søge efter <literal>det|den</literal>. Det vil "
+"sige ved at adskille de to ord med en lodret linje."
+
+#. Tag: para
+#: index.docbook:179
+#, no-c-format
+msgid ""
+"Note on each side of the vertical bar is a regular expression, so this "
+"feature is not only for searching for two different pieces of text, but for "
+"searching for two different regular expressions."
+msgstr ""
+"Bemærk at på hver side af den lodrette linje er der et regulært udtryk, så "
+"denne egenskab bruges ikke blot til at søge efter to forskellige stumper "
+"tekst,men til at søge efter to forskellige regulære udtryk."
+
+#. Tag: para
+#: index.docbook:184
+#, no-c-format
+msgid ""
+"In the regular expression editor you do not write the vertical bar yourself, "
+"but instead select the <link linkend=\"altntool\">alternative tool</link>, "
+"and insert the smaller regular expressions above each other."
+msgstr ""
+"I editoren for regulære udtryk skriver du ikke selv den lodrette linje, men "
+"du vælger i stedet <link linkend=\"altntool\">alternativt værktøj</link>, og "
+"indsætter de mindre regulære udtryk ovenover hinanden."
+
+#. Tag: title
+#: index.docbook:190
+#, no-c-format
+msgid "Matching anything"
+msgstr "Matche nogetsomhelst"
+
+#. Tag: para
+#: index.docbook:191
+#, no-c-format
+msgid ""
+"Regular expressions are often compared to wildcard matching in the shell - "
+"that is the capability to specify a number of files using the asterisk. You "
+"will most likely recognize wildcard matching from the following examples:"
+msgstr ""
+"Regulære udtryk sammenlignes ofte med jokertegn-matchning i skallen - det "
+"vil sige muligheden for at angive et antal filer ved brug af stjernen. Du "
+"genkender formodentlig jokertegn-matchning fra følgende eksempler:"
+
+#. Tag: para
+#: index.docbook:196
+#, no-c-format
+msgid ""
+"<literal>ls *.txt</literal> - here <literal>*.txt</literal> is the shell "
+"wildcard matching every file ending with the <literal>.txt</literal> "
+"extension."
+msgstr ""
+"<literal>ls *.txt</literal> - her er <literal>*.txt</literal> skallens "
+"jokertegn som matcher alle filer som slutter med filendelsen <literal>.txt</"
+"literal>."
+
+#. Tag: para
+#: index.docbook:199
+#, no-c-format
+msgid ""
+"<literal>cat test??.res</literal> - matching every file starting with "
+"<literal>test</literal> followed by two arbitrary characters, and finally "
+"followed by the test <literal>.res</literal>"
+msgstr ""
+"<literal>cat test??.res</literal> - matcher hver fil der begynder med "
+"<literal>test</literal> fulgt af to vilkårlige tegn, og endelig efterfulgt "
+"af  <literal>.res</literal>"
+
+#. Tag: para
+#: index.docbook:205
+#, no-c-format
+msgid ""
+"In the shell the asterisk matches any character any number of times. In "
+"other words, the asterisk matches <emphasis>anything</emphasis>. This is "
+"written like <literal>.*</literal> with regular expression syntax. The dot "
+"matches any single character, &ie; just <emphasis>one</emphasis> character, "
+"and the asterisk, says that the regular expression prior to it should be "
+"matched any number of times. Together this says any single character any "
+"number of times."
+msgstr ""
+"I skallen matcher stjernen et vilkårligt tegn et vilkårligt antal gange. "
+"Stjerne matcher med andre ord <emphasis>hvadsomhelst</emphasis>. Dette "
+"skrives som <literal>.*</literal> i syntaksen for regulære udtryk. Prikken "
+"matcher et vilkårligt enkelt tegn, dvs blot <emphasis>ét</emphasis> tegn, og "
+"stjernen siger at det regulære udtryk før dette skal matches et vilkårligt "
+"antal gange. Tilsammen siger dette et enkelt tegn et vilkårligt antal gange."
+
+#. Tag: para
+#: index.docbook:214
+#, no-c-format
+msgid ""
+"This may seem overly complicated, but when you get the larger picture you "
+"will see the power. Let me show you another basic regular expression: "
+"<literal>a</literal>. The letter <literal>a</literal> on its own is a "
+"regular expression that matches a single letter, namely the letter "
+"<literal>a</literal>. If we combine this with the asterisk, &ie; "
+"<literal>a*</literal>, then we have a regular expression matching any number "
+"of a's."
+msgstr ""
+"Dette synes måske vældig kompliceret, men når du ser det større billede vil "
+"du også kunne se styrken. Lad mig vise dig et andet basalt regulært udtryk: "
+"<literal>a</literal>. Bogstavet <literal>a</literal> for sig selv er et "
+"regulært udtryk der matcher et enkelt bogstav, nemlig bogstavet <literal>a</"
+"literal>. Hvis vi kombinerer det med stjernen, altså <literal>a*</literal>, "
+"så har vi et regulært udtryk der matcher et vilkårligt antal a'er."
+
+#. Tag: para
+#: index.docbook:222
+#, no-c-format
+msgid ""
+"We can combine several regular expression after each other, for example "
+"<literal>ba(na)*</literal>. <footnote><para><literal>(na)*</literal> just "
+"says that what is inside the parenthesis is repeated any number of times.</"
+"para></footnote> Imagine you had typed this regular expression into the "
+"search field in a text editor, then you would have found the following words "
+"(among others): <literal>ba</literal>, <literal>bana</literal>, "
+"<literal>banana</literal>, <literal>bananananananana</literal>"
+msgstr ""
+"Vi kan kombinere flere regulære udtryk efter hinanden, for eksempel siger "
+"<literal>lod(de)*</literal>. <footnote><para><literal>(de)*</literal> siger "
+"at det, der er indenfor parenteserne, gentages et vilkårligt antal gange.</"
+"para></footnote> Forestil dig at du havde skrevet dette regulære udtryk i "
+"søgefeltet i en teksteditor, så ville du have fundet følgende ord (blandt "
+"andre): <literal>lod</literal>, <literal>lodde</literal>, <literal>loddede</"
+"literal>, <literal>loddededededede</literal>"
+
+#. Tag: para
+#: index.docbook:232
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Given the information above, it hopefully isn't hard for you to write the "
+#| "shell wildcard <literal>test??.res</literal> as a regular expression "
+#| "Answer: <literal>test..\\.res</literal>. The dot on its own is any "
+#| "character. To match a single dot you must write <literal>\\.</"
+#| "literal><footnote><para>This is called escaping</para></footnote>. In "
+#| "other word, the regular expression <literal>\\.</literal> matches a dot, "
+#| "while a dot on its own matches any character."
+msgid ""
+"Given the information above, it hopefully isn't hard for you to write the "
+"shell wildcard <literal>test??.res</literal> as a regular expression. "
+"Answer: <literal>test..\\.res</literal>. The dot on its own is any "
+"character. To match a single dot you must write <literal>\\.</"
+"literal><footnote><para>This is called escaping</para></footnote>. In other "
+"word, the regular expression <literal>\\.</literal> matches a dot, while a "
+"dot on its own matches any character."
+msgstr ""
+"Når du har forstået dette er det forhåbentlig ikke svært for dig at skrive "
+"skal-joker-søgningen <literal>test??.res</literal> som et regulært udtryk. "
+"Svar: <literal>test..\\.res</literal>. Prikken for sig selv er et vilkårligt "
+"tegn. For at matche en enkel prik må du skrive <literal>\\.</"
+"literal><footnote><para>Dette kaldes at escape</para></footnote>. Det "
+"regulære udtryk <literal>\\.</literal> matcher med andre ord et punktum, "
+"mens et punktum for sig selv matcher et vilkårligt tegn."
+
+#. Tag: para
+#: index.docbook:240
+#, no-c-format
+msgid ""
+"In the regular expression editor, a repeated regular expression is created "
+"using the <link linkend=\"repeattool\">repeat tool</link>"
+msgstr ""
+"I editoren for regulære udtryk, laves gentagne regulære udtryk ved brug af "
+"<link linkend=\"repeattool\">gentagelsesværktøjet</link>"
+
+#. Tag: title
+#: index.docbook:245
+#, no-c-format
+msgid ""
+"Replacing <literal>&amp;</literal> with <literal>&amp;amp;</literal> in a "
+"&HTML; document"
+msgstr ""
+"Erstatning af <literal>&amp;</literal> med <literal>&amp;amp;</literal> i et "
+"&HTML;-dokument"
+
+#. Tag: para
+#: index.docbook:246
+#, no-c-format
+msgid ""
+"In &HTML; the special character <literal>&amp;</literal> must be written as "
+"<literal>&amp;amp;</literal> - this is similar to escaping in regular "
+"expressions."
+msgstr ""
+"I &HTML; skal det specielle tegn <literal>&amp;</literal> skrives som "
+"<literal>&amp;amp;</literal> - dette er ligesom at escape i et regulært "
+"udtryk."
+
+#. Tag: para
+#: index.docbook:251
+#, no-c-format
+msgid ""
+"Imagine that you have written an &HTML; document in a normal editor (e.g. "
+"&XEmacs; or &kate;), and you totally forgot about this rule. What you would "
+"do when realized your mistake was to replace every occurrences of "
+"<literal>&amp;</literal> with <literal>&amp;amp;</literal>."
+msgstr ""
+"Forestil dig at du har skrevet et &HTML;-dokument i en normal editor (f.eks. "
+"&XEmacs; eller &kate;), og du havde fuldstændig glemt denne regel. Når du "
+"bliver klar over denne fejl bliver du så nødt til at erstatte hver forekomst "
+"af <literal>&amp;</literal> med <literal>&amp;amp;</literal>."
+
+#. Tag: para
+#: index.docbook:256
+#, no-c-format
+msgid ""
+"This can easily be done using normal search and replace, there is, however, "
+"one glitch. Imagine that you did remember this rule - <emphasis>just a bit</"
+"emphasis> - and did it right in some places. Replacing unconditionally would "
+"result in <literal>&amp;amp;</literal> being replaced with <literal>&amp;amp;"
+"amp;</literal>"
+msgstr ""
+"Dette kan man sagtens gøre med normal 'søg og erstat', der er imidlertid et "
+"lille problem. Lad os sige at du huskede denne regel - <emphasis>en gang "
+"imellem</emphasis> - og gjorde det rigtigt nogle steder. Ubetinget "
+"erstatning vil nu resultere i at <literal>&amp;amp;</literal> bliver "
+"erstattet med <literal>&amp;amp;amp;</literal>"
+
+#. Tag: para
+#: index.docbook:263
+#, no-c-format
+msgid ""
+"What you really want to say is that <literal>&amp;</literal> should only be "
+"replaced if it is <emphasis>not</emphasis> followed by the letters "
+"<literal>amp;</literal>. You can do this using regular expressions using "
+"<emphasis>positive lookahead</emphasis>."
+msgstr ""
+"Det du virkelig ønsker at gøre er at <literal>&amp;</literal> kun skal "
+"erstattes hvis der <emphasis>ikke</emphasis> efterfølges af bogstaverne "
+"<literal>amp;</literal>. Du kan gøre dette ved brug af regulære udtryk ved "
+"noget der hedder <emphasis>positiv fremadskuen</emphasis>."
+
+#. Tag: para
+#: index.docbook:268
+#, no-c-format
+msgid ""
+"The regular expression, which only matches an ampersand if it is not "
+"followed by the letters <literal>amp;</literal> looks as follows: "
+"<literal>&amp;(?!amp;)</literal>. This is, of course, easier to read using "
+"the regular expression editor, where you would use the <link linkend="
+"\"lookaheadtools\">lookahead tools</link>."
+msgstr ""
+"Det regulære udtryk, der kun matcher et ét-tegn hvis det ikke efterfølges af "
+"bogstaverne <literal>amp;</literal> ser sådan her ud: <literal>&amp;(?!"
+"amp;)</literal>. Det her er selvfølgelig nemmere at læse ved brug af "
+"editoren for regulære udtryk, hvor du ville bruge <link linkend="
+"\"lookaheadtools\">fremadskuen-værktøjerne</link>."
+
+#. Tag: title
+#: index.docbook:281
+#, no-c-format
+msgid "Using the Regular Expression Editor"
+msgstr "Brug af editor for regulære udtryk"
+
+#. Tag: para
+#: index.docbook:283
+#, no-c-format
+msgid ""
+"This chapter will tell you about how the regular expression editor works."
+msgstr ""
+"Dette kapitel vil fortælle dig om hvordan editoren for regulære udtryk "
+"virker."
+
+#. Tag: title
+#: index.docbook:291
+#, no-c-format
+msgid "The organization of the screen"
+msgstr "Organisation af skærmen"
+
+#. Tag: para
+#: index.docbook:297
+#, no-c-format
+msgid ""
+"The most important part of the editor is of course the editing area, this is "
+"the area where you draw your regular expression. This area is the larger "
+"gray one in the middle."
+msgstr ""
+"Den vigtigste den af editoren er selvfølgelig redigeringsområdet, som er det "
+"område hvor du tegner dit regulære udtryk. Dette område er det store grå "
+"område i midten."
+
+#. Tag: para
+#: index.docbook:301
+#, fuzzy, no-c-format
+msgid ""
+"Above the editing area you have two Toolbars, the first one contains the "
+"<link linkend=\"editingtools\">editing actions</link> - much like drawing "
+"tools in a drawing program. The second Toolbar contains the <emphasis>What's "
+"This?</emphasis> button, and buttons for undo and redo."
+msgstr ""
+"Ovenover redigeringsområdet har du to værktøjslinjer, den første indeholder "
+"<link linkend=\"editingtools\">redigeringshandlinger</link> - meget ligesom "
+"tegneværktøjer i et tegneprogram. Den anden værktøjslinje indeholder en "
+"<emphasis>hvad er dette</emphasis>-knap og knapper til fortryd og 'annullér "
+"fortryd'."
+
+#. Tag: para
+#: index.docbook:307
+#, no-c-format
+msgid ""
+"Below the editing area you find the regular expression currently build, in "
+"the so called ascii syntax. The ascii syntax is updated while you edit the "
+"regular expression in the graphical editor. If you rather want to update the "
+"ascii syntax then please do, the graphical editor is updated on the fly to "
+"reflect your changes."
+msgstr ""
+"Nedenfor redigeringsområdet finder du det regulære udtryk der bygges for "
+"øjeblikket i såkaldt ascii-syntaks. Ascii-syntaksen opdateres mens du "
+"redigerer det regulære udtryk i den grafiske editor. Hvis du hellere vil "
+"opdatere ascii-syntaksen, så gør det bare, den grafiske editor vil blive "
+"opdateret langs af sted for at reflektere dine ændringer."
+
+#. Tag: para
+#: index.docbook:314
+#, no-c-format
+msgid ""
+"Finally to the left of the editor area you will find a number of pre-built "
+"regular expressions. They serve two purposes: (1) When you load the editor "
+"with a regular expression then this regular expression is made "
+"<emphasis>nicer</emphasis> or more comprehensive by replacing common regular "
+"expressions. In the screen dump above, you can see how the ascii syntax \".*"
+"\" have been replaced with a box saying \"anything\". (2) When you insert "
+"regular expression you may find building blocks for your own regular "
+"expression from the set of pre build regular expressions. See the section on "
+"<link linkend=\"userdefinedregexps\">user defined regular expressions</link> "
+"to learn how to save your own regular expressions."
+msgstr ""
+"Endelig, til venstre for redigeringsområdet, vil du finde et antal præ-"
+"fabrikerede regulære udtryk. De tjener to formål: (1) Når du indlæser "
+"editoren med et regulært udtryk så bliver dette regulære udtryk gjort "
+"<emphasis>pænere</emphasis> eller bedre forståeligt ved at erstatte "
+"almindelige regulære udtryk. I skærmaftrykker ovenfor, kan du se hvordan "
+"ascii-syntaksen \".*\" er blevet erstattet med et felt der siger "
+"\"hvadsomhelst\". (2) Når du indsætter regulære udtryk vil du måske finde "
+"byggeblokke for dine egne regulære udtryk fra sættet af præfabrikerede "
+"regulære udtryk. Se afsnittet om <link linkend=\"userdefinedregexps"
+"\">brugerdefinerede regulære udtryk</link> for at lære hvordan du gemmer "
+"dine egen regulære udtryk."
+
+#. Tag: title
+#: index.docbook:331
+#, no-c-format
+msgid "Editing Tools"
+msgstr "Redigeringsværktøjer"
+
+#. Tag: para
+#: index.docbook:332
+#, no-c-format
+msgid ""
+"The text in this section expects that you have read the chapter on <link "
+"linkend=\"whatIsARegExp\">what a regular expression is</link>, or have "
+"previous knowledge on this subject."
+msgstr ""
+"I dette afsnit bliver forventes det at du har læst kapitlet om <link linkend="
+"\"whatIsARegExp\">hvad er et regulært udtryk</link>, eller har tidligere "
+"kendskab til dette emne."
+
+#. Tag: para
+#: index.docbook:336
+#, no-c-format
+msgid ""
+"All the editing tools are located in the toolbar above editing area. Each of "
+"them will be described in the following."
+msgstr ""
+"Alle redigeringsværktøjerne er placeret i værktøjslinjen over redigerings "
+"området. Hvert af dem vil blive beskrevet i det følgende."
+
+#. Tag: title
+#: index.docbook:342
+#, no-c-format
+msgid "Selection Tool"
+msgstr "Markeringsværktøj"
+
+#. Tag: para
+#: index.docbook:346
+#, no-c-format
+msgid ""
+"The selection tool is used to mark elements for cut-and-paste and drag-and-"
+"drop. This is very similar to a selection tool in any drawing program."
+msgstr ""
+"Markeringsværktøjet bruges til at markere elementer for klip-og-klistr og "
+"træk-og-slip. Dette er ligesom markeringsværktøjet i alle andre "
+"tegneprogrammer."
+
+#. Tag: title
+#: index.docbook:353
+#, no-c-format
+msgid "Text Tool"
+msgstr "Tekstværktøj"
+
+#. Tag: para
+#: index.docbook:363
+#, no-c-format
+msgid ""
+"Using this tool you will insert normal text to match. The text is matched "
+"literally, &ie; you do not have to worry about escaping of special "
+"characters. In the example above the following regular expression will be "
+"build: <literal>abc\\*\\\\\\)</literal>"
+msgstr ""
+"Ved brug af dette værktøj vil du indsætte normal tekst at matche. Tekst "
+"matches bogstaveligt, dvs. du behøver ikke at bekymre dig om at specielle "
+"tegn. I eksemplet ovenfor vil følgende regulære udtryk blive bygget: "
+"<literal>abc\\*\\\\\\)</literal>"
+
+#. Tag: title
+#: index.docbook:371
+#, no-c-format
+msgid "Character Tool"
+msgstr "Tegn-værktøj"
+
+#. Tag: para
+#: index.docbook:379
+#, no-c-format
+msgid ""
+"Using this tool you insert character ranges. Examples includes what in ASCII "
+"text says <literal>[0-9]</literal>, <literal>[^a-zA-Z,_]</literal>. When "
+"inserting an item with this tool a dialog will appear, in which you specify "
+"the character ranges."
+msgstr ""
+"Ved brug af dette værktøj kan du indsætte tegn-områder. Eksempler inkluderer "
+"det der i ASCII-tekst hedder <literal>[0-9]</literal>, <literal>[^a-zA-Z,_]</"
+"literal>. Når et punkt indsættes med dette værktøj vil  en dialog komme "
+"frem, i hvilken du angiver tegn-områderne."
+
+#. Tag: para
+#: index.docbook:385
+#, no-c-format
+msgid ""
+"See description of <link linkend=\"repeatregexp\">repeated regular "
+"expressions</link>."
+msgstr ""
+"Se  beskrivelsen af <link linkend=\"repeatregexp\">Gentagne regulære udtryk</"
+"link>."
+
+#. Tag: title
+#: index.docbook:391
+#, no-c-format
+msgid "Any Character Tool"
+msgstr "Vilkårligt-tegn værktøj"
+
+#. Tag: para
+#: index.docbook:398
+#, no-c-format
+msgid ""
+"This is the regular expression \"dot\" (.). It matches any single character."
+msgstr ""
+"Dette er det regulære udtryk \"punktum\" (.). Det matcher et vilkårligt "
+"enkelt tegn."
+
+#. Tag: title
+#: index.docbook:407
+#, no-c-format
+msgid "Repeat Tool"
+msgstr "Gentagelsesværktøj"
+
+#. Tag: para
+#: index.docbook:415
+#, no-c-format
+msgid ""
+"This is the repeated elements. This includes what in ASCII syntax is "
+"represented using an asterix (*), a plus (+), a question mark (?), and "
+"ranges ({3,5}). When you insert an item using this tool, a dialog will "
+"appear asking for the number of times to repeat."
+msgstr ""
+"Dette er de gentagne elementer. Dette inkluderer der der i ASCII-syntaks "
+"bliver repræsenteret ved en stjerne (*), et plus (+), et spørgsmålstegn (?), "
+"og områder ({3,5}). Når du indsætter et punkt ved brug af dette værktøj, vil "
+"en dialog komme frem der spørger om antallet af gange der skal gentages."
+
+#. Tag: para
+#: index.docbook:422
+#, no-c-format
+msgid ""
+"You specify what to repeat by drawing the repeated content inside the box "
+"which this tool inserts."
+msgstr ""
+"Du angiver hvad der skal gentages ved at tegne det gentagne indhold indeni "
+"felter som dette værktøj indsætter."
+
+#. Tag: para
+#: index.docbook:425
+#, no-c-format
+msgid ""
+"Repeated elements can both be built from the outside in and the inside out. "
+"That is you can first draw what to be repeated, select it and use the repeat "
+"tool to repeat it. Alternatively you can first insert the repeat element, "
+"and draw what is to be repeated inside it."
+msgstr ""
+"Gentagne elementer kan både bygges udefra og ind, og indefra og ud. Det vil "
+"sige du kan først tegne det der skal gentages, vælge det og bruge "
+"gentagelsesværktøjet til at gentage det. Alternativt kan du først indsætte "
+"gentagelseselementet, og tegne det der skal gentages indeni det."
+
+#. Tag: para
+#: index.docbook:432
+#, no-c-format
+msgid ""
+"See description on the <link linkend=\"repeatregexp\">repeated regular "
+"expressions</link>."
+msgstr ""
+"Se beskrivelse i <link linkend=\"repeatregexp\">gentaget regulært udtryk</"
+"link>."
+
+#. Tag: title
+#: index.docbook:439
+#, no-c-format
+msgid "Alternative Tool"
+msgstr "Alternativt værktøj"
+
+#. Tag: para
+#: index.docbook:446
+#, no-c-format
+msgid ""
+"This is the alternative regular expression (|). You specify the alternatives "
+"by drawing each alternative on top of each other inside the box that this "
+"tool inserts."
+msgstr ""
+"Dette er det alternative regulære udtryk (|). Du angiver alternativerne ved "
+"at tegne hvert alternativ oven på det andet indeni feltet som dette værktøj "
+"indsætter."
+
+#. Tag: para
+#: index.docbook:450
+#, no-c-format
+msgid ""
+"See description on <link linkend=\"altnregexp\">alternative regular "
+"expressions</link>"
+msgstr ""
+"Se beskrivelsen i <link linkend=\"altnregexp\">alternative regulære udtryk</"
+"link>"
+
+#. Tag: title
+#: index.docbook:457
+#, no-c-format
+msgid "Compound Tool"
+msgstr "Sammensætningsværktøj"
+
+#. Tag: para
+#: index.docbook:464
+#, no-c-format
+msgid ""
+"The compound tool does not represent any regular expressions. It is used to "
+"group other sub parts together in a box, which easily can be collapsed to "
+"only its title. This can be seen in the right part of the screen dump above."
+msgstr ""
+"Sammensætningsværktøjet repræsenter ikke  noget bestemt regulært udtryk. Det "
+"bruges til at gruppere andre underdele sammen i et felt, som nemt kan "
+"kollapses til kun at være sin titel. Dette kan ses i højre del af "
+"skærmaftrykket ovenfor."
+
+#. Tag: title
+#: index.docbook:474
+#, no-c-format
+msgid "Line Start/End Tools"
+msgstr "Værktøj for linjebegyndelse og linjeslut"
+
+#. Tag: para
+#: index.docbook:484
+#, no-c-format
+msgid ""
+"The line start and line end tools matches the start of the line, and the end "
+"of the line respectively. The regular expression in the screen dump above "
+"thus matches lines only matches spaces."
+msgstr ""
+"Værktøjer for linjestart og linjeslut matcher henholdsvis starten af linjen "
+"og slutningen af linjen. Det regulære udtryk i skærmaftrykket ovenfor "
+"matcher således linjer der kun matcher mellemrum."
+
+#. Tag: para
+#: index.docbook:489
+#, no-c-format
+msgid ""
+"See description of <link linkend=\"positionregexp\">position regular "
+"expressions</link>."
+msgstr ""
+"Se beskrivelsen <link linkend=\"positionregexp\">position regulære udtryk</"
+"link>."
+
+#. Tag: title
+#: index.docbook:497
+#, no-c-format
+msgid "Word (Non)Boundary Tools"
+msgstr "Ordgrænseværktøj"
+
+#. Tag: para
+#: index.docbook:506
+#, no-c-format
+msgid ""
+"The boundary tools matches a word boundary respectively a non-word boundary. "
+"The regular expression in the screen dump thus matches any words starting "
+"with <literal>the</literal>. The word <literal>the</literal> itself is, "
+"however, not matched."
+msgstr ""
+"Ordgrænseværktøjer matcher en ordgrænse henholdsvis en ikke-ord grænse. Det "
+"regulære udtryk i skærmaftrykket matcher således ethvert ord der starter med "
+"<literal>the</literal>. Ord <literal>the</literal> selv bliver imidlertid "
+"ikke matchet."
+
+#. Tag: para
+#: index.docbook:511
+#, no-c-format
+msgid ""
+"See description of <link linkend=\"boundaryregexp\">boundary regular "
+"expressions</link>."
+msgstr ""
+"Se beskrivelsen i <link linkend=\"boundaryregexp\">grænse regulære udtryk</"
+"link>."
+
+#. Tag: title
+#: index.docbook:519
+#, no-c-format
+msgid "Positive/Negative Lookahead Tools"
+msgstr "Positive eller negative værktøjer for søgning fremad"
+
+#. Tag: para
+#: index.docbook:529
+#, no-c-format
+msgid ""
+"The look ahead tools either specify a positive or negative regular "
+"expression to match. The match is, however, not part of the total match."
+msgstr ""
+"Se-fremad værktøjerne angiver enten et positivt eller negativt regulært "
+"udtryk der skal matches. Når det er ovre er det imidlertid ikke en del af "
+"det fundne i alt."
+
+#. Tag: para
+#: index.docbook:533
+#, no-c-format
+msgid ""
+"Note: You are only allowed to place lookaheads at the end of the regular "
+"expressions. The Regular Expression Editor widget does not enforce this."
+msgstr ""
+"Bemærk: Du har kun lov til at placere se-frem ved slutningen af det regulære "
+"udtryk. Editorens kontrol for regulære udtryk påtvinger ikke dette."
+
+#. Tag: para
+#: index.docbook:537
+#, no-c-format
+msgid ""
+"See description of <link linkend=\"lookaheadregexp\">look ahead regular "
+"expressions</link>."
+msgstr ""
+"Se beskrivelsen i <link linkend=\"lookaheadregexp\">se-fremad regulære "
+"udtryk</link>."
+
+#. Tag: title
+#: index.docbook:546
+#, no-c-format
+msgid "User Defined Regular Expressions"
+msgstr "Brugerdefinerede regulære udtryk"
+
+#. Tag: para
+#: index.docbook:547
+#, no-c-format
+msgid ""
+"Located at the left of the editing area is a list box containing user "
+"defined regular expressions. Some regular expressions are pre-installed with "
+"your &kde; installation, while others you can save yourself."
+msgstr ""
+"I venstre side af redigeringsområdet er der et listefelt placeret der "
+"indeholder brugerdefinerede regulære udtryk. Nogle regulære udtryk er "
+"præinstallerede med din &kde;-installation, men du kan også selv gemme andre."
+
+#. Tag: para
+#: index.docbook:552
+#, no-c-format
+msgid ""
+"These regular expression serves two purposes (<link linkend="
+"\"screenorganization\">see detailed description</link>), namely (1) to offer "
+"you a set of building block and (2) to make common regular expressions "
+"prettier."
+msgstr ""
+"Disse regulære udtryk tjener to formål ( <link linkend=\"screenorganization"
+"\">se detaljeret beskrivelse</link>), nemlig (1) at tilbyde dig et sæt "
+"byggeblokke og (2) at få almindelige regulære udtryk til at se pænere ud."
+
+#. Tag: para
+#: index.docbook:557
+#, no-c-format
+msgid ""
+"You can save your own regular expressions by right clicking the mouse button "
+"in the editing area, and choosing <literal>Save Regular Expression</literal>."
+msgstr ""
+"Du kan gemme dine egne regulære udtryk ved at højreklikke med museknappen i "
+"redigeringsområdet, og vælge <literal>Gem regulært udtryk</literal>."
+
+#. Tag: para
+#: index.docbook:561
+#, no-c-format
+msgid ""
+"If the regular expression you save is within a <link linkend=\"compoundtool"
+"\">compound container</link> then the regular expression will take part in "
+"making subsequent regular expressions prettier."
+msgstr ""
+"Hvis det regulære udtryk du gemmer er indenfor en <link linkend="
+"\"compoundtool\">sammensat beholder</link> så vil det regulære udtryk være "
+"med til at få senere regulære udtryk til at se pænere ud."
+
+#. Tag: para
+#: index.docbook:566
+#, no-c-format
+msgid ""
+"User defined regular expressions can be deleted or renamed by pressing the "
+"right mouse button on top of the regular expression in question in the list "
+"box."
+msgstr ""
+"Brugerdefinerede regulære udtryk kan slettes eller omdøbes ved at trykke med "
+"højre museknap foroven i det regulære udtryk det drejer sig om i listefeltet."
+
+#. Tag: title
+#: index.docbook:576
+#, no-c-format
+msgid "Reporting bugs and Suggesting Features"
+msgstr "Rapportering af fejl og forslag til nye egenskaber"
+
+#. Tag: para
+#: index.docbook:577
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Bug reports and feature requests should be submitted through the <ulink "
+#| "url=\"http://bugs.kde.org/\">&kde; Bug Tracking System</ulink>. <emphasis "
+#| "role=\"strong\">Before</emphasis> you report a bug or suggest a feature, "
+#| "please check that it hasn't already been <ulink url=\"http://bugs.kde.org/"
+#| "simple_search.cgi?id=kregexpeditor\">reported/suggested.</ulink>"
+msgid ""
+"Bug reports and feature requests should be submitted through the <ulink url="
+"\"http://bugs.kde.org/\">&kde; Bug Tracking System</ulink>. <emphasis role="
+"\"strong\">Before</emphasis> you report a bug or suggest a feature, please "
+"check that it hasn't already been <ulink url=\"http://bugs.kde.org/buglist."
+"cgi?quicksearch=kregexpeditor\">reported/suggested.</ulink>"
+msgstr ""
+"Fejlrapporter og ønskemål skal rapporteres via <ulink url=\"http://bugs.kde."
+"org/\">&kde;'s fejlsporingssystem</ulink>. Kontrollér <emphasis role=\"strong"
+"\">inden</emphasis> du rapporterer en fejl eller foreslår en funktion, at "
+"dette ikke allerede er <ulink url=\"http://bugs.kde.org/simple_search.cgi?"
+"id=kregexpeditor\">gjort</ulink>."
+
+#. Tag: title
+#: index.docbook:588
+#, no-c-format
+msgid "Frequently Asked Questions"
+msgstr "Ofte stillede spørgsmål"
+
+#. Tag: title
+#: index.docbook:590
+#, no-c-format
+msgid "Does the regular expression editor support back references?"
+msgstr "Understøtter editoren for regulære udtryk tilbagereferencer?"
+
+#. Tag: para
+#: index.docbook:591
+#, no-c-format
+msgid "No currently this is not supported. It is planned for the next version."
+msgstr ""
+"Nej for øjeblikke er dette ikke understøttet. Det er planlagt til næste "
+"udgave."
+
+#. Tag: title
+#: index.docbook:596
+#, no-c-format
+msgid "Does the regular expression editor support showing matches?"
+msgstr "Understøtter editoren for regulære udtryk at vise matcher?"
+
+#. Tag: para
+#: index.docbook:597
+#, no-c-format
+msgid "No, hopefully this will be available in the next version."
+msgstr "Nej, forhåbentlig vil det være der i næste udgave."
+
+#. Tag: title
+#: index.docbook:601
+#, no-c-format
+msgid ""
+"I'm the author of a &kde; program, how can I use this widget in my "
+"application?"
+msgstr ""
+"Jeg er forfatter til et &kde;-program, hvordan kan jeg bruge denne kontrol i "
+"mit program?"
+
+#. Tag: para
+#: index.docbook:603
+#, no-c-format
+msgid ""
+"See <ulink url=\"http://developer.kde.org/documentation/library/cvs-api/"
+"classref/interfaces/KRegExpEditorInterface.html\">The documentation for the "
+"class KRegExpEditorInterface</ulink>."
+msgstr ""
+"Se <ulink url=\"http://developer.kde.org/documentation/library/cvs-api/"
+"classref/interfaces/KRegExpEditorInterface.html\">Dokumentationen for "
+"klassen KRegExpEditorInterface</ulink>"
+
+#. Tag: title
+#: index.docbook:608
+#, no-c-format
+msgid ""
+"I cannot find the <emphasis>Edit Regular expression</emphasis> button in for "
+"example konqueror on another KDE3 installation, why?"
+msgstr ""
+"Hvorfor kan jeg ikke finde <emphasis>Redigér regulært udtryk</emphasis>-"
+"knappen i for eksempel konqueror på en anden KDE3-installation?"
+
+#. Tag: para
+#: index.docbook:610
+#, no-c-format
+msgid ""
+"The regular expression widget is located in the package &kde;-utils. If you "
+"do not have this package installed, then the <emphasis>edit regular "
+"expressions</emphasis> buttons will not appear in the programs."
+msgstr ""
+"Kontrollen for regulære udtryk er i pakken &kde;-utils. Hvis du ikke har "
+"denne pakke installeret, så vil <emphasis>redigér regulære udtryk</emphasis>-"
+"knapperne ikke være der i programmerne."
+
+#. Tag: title
+#: index.docbook:621
+#, fuzzy, no-c-format
+#| msgid "Credits and Licenses"
+msgid "Credits and License"
+msgstr "Medvirkende og licenser"
+
+#. Tag: para
+#: index.docbook:623
+#, no-c-format
+msgid ""
+"Documentation is copyright 2001, Jesper K. Pedersen &Jesper.Pedersen.mail;"
+msgstr ""
+"Dokumentation ophavsret 2001, Jesper K. Pedersen &Jesper.Pedersen.mail;"
+
+#. Tag: trans_comment
+#: index.docbook:628
+#, no-c-format
+msgid "CREDIT_FOR_TRANSLATORS"
+msgstr "&erik.kjaer.pedersen.credit;"
+
+#. Tag: chapter
+#: index.docbook:628
+#, no-c-format
+msgid "&underFDL; &underGPL;"
+msgstr "&underFDL; &underGPL;"
+
+#~ msgid "blackie@kde.org"
+#~ msgstr "blackie@kde.org"

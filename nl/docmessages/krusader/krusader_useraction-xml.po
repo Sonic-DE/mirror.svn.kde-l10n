@@ -1,0 +1,516 @@
+#
+# Freek de Kruijf <freekdekruijf@kde.nl>, 2010, 2012, 2013, 2015, 2016, 2021.
+# Ronald Stroethoff <stroet43@zonnet.nl>, 2015.
+# Lo Fernchu <lofernchu@zonnet.nl>, 2018.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 12:03+0000\n"
+"PO-Revision-Date: 2021-09-20 11:39+0200\n"
+"Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
+"Language-Team: \n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 21.08.1\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#. Tag: title
+#: useraction-xml.docbook:8
+#, no-c-format
+msgid "useractions.xml"
+msgstr "useractions.xml"
+
+#. Tag: para
+#: useraction-xml.docbook:9
+#, no-c-format
+msgid ""
+"This appendix gives several examples of <filename>useractions.xml</filename> "
+"files. With this you can begin to discover the power of the <link linkend="
+"\"useractions\">UserActions</link> and start learning how to use them. Once "
+"you understand how to write UserActions you will find that &krusader; is an "
+"even more powerful, customizable tool."
+msgstr ""
+"Deze appendix geeft verschillende voorbeelden van <filename>useractions.xml</"
+"filename> bestanden. Hiermee kunt u beginnen met het verkennen van de kracht "
+"van de <link linkend=\"useractions\">UserActions</link> en starten met het "
+"leren hoe u ze kunt gebruiken. Als u heeft geleerd hoe u UserActions moet "
+"schrijven dan zal u pas begrijpen dat &krusader; een zeer krachtig "
+"hulpmiddel is dat u kunt aanpassen."
+
+#. Tag: para
+#: useraction-xml.docbook:15
+#, no-c-format
+msgid ""
+"Please consider uploading your UserActions at <ulink url=\"https://store.kde."
+"org\">store.kde.org</ulink> as we are collecting them. If your UserAction is "
+"selected by us it will be shipped with &krusader; at the next release."
+msgstr ""
+"Omdat we ze verzamelen, vragen wij u te overwegen om uw UserActions in te "
+"sturen naar <ulink url=\"https://store.kde.org\">store.kde.org</ulink> omdat "
+"we deze verzamelen. Als uw UserAction door ons is geselecteerd zal het "
+"geleverd worden met &krusader; bij de volgende uitgave."
+
+#. Tag: para
+#: useraction-xml.docbook:20
+#, no-c-format
+msgid "Runs <command>uptime</command>"
+msgstr "Voert <command>uptime</command> uit"
+
+#. Tag: programlisting
+#: useraction-xml.docbook:21
+#, no-c-format
+msgid ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+" &lt;KrusaderUserActions>\n"
+"  &lt;action name=\"uptime\" >\n"
+"  &lt;title>Up-time&lt;/title>\n"
+"  &lt;tooltip>tells how long since the computer has been booted&lt;/"
+"tooltip>\n"
+"  &lt;icon>clock&lt;/icon>\n"
+"  &lt;category>information&lt;/category>\n"
+"  &lt;description same_as=\"tooltip\" />\n"
+"  &lt;command executionmode=\"collect_output\" >uptime&lt;/command>\n"
+"  &lt;defaultshortcut>Alt+Ctrl+U&lt;/defaultshortcut>\n"
+" &lt;/action>\n"
+"&lt;/KrusaderUserActions>"
+msgstr ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+" &lt;KrusaderUserActions>\n"
+"  &lt;action name=\"uptime\" >\n"
+"  &lt;title>Up-time&lt;/title>\n"
+"  &lt;tooltip>vertelt sinds wanneer de computer is opgestart&lt;/tooltip>\n"
+"  &lt;icon>clock&lt;/icon>\n"
+"  &lt;category>information&lt;/category>\n"
+"  &lt;description same_as=\"tooltip\" />\n"
+"  &lt;command executionmode=\"collect_output\" >uptime&lt;/command>\n"
+"  &lt;defaultshortcut>Alt+Ctrl+U&lt;/defaultshortcut>\n"
+" &lt;/action>\n"
+"&lt;/KrusaderUserActions>"
+
+#. Tag: para
+#: useraction-xml.docbook:24
+#, no-c-format
+msgid "Runs <command>ls -l</command>"
+msgstr "Voert <command>ls -l</command> uit"
+
+#. Tag: programlisting
+#: useraction-xml.docbook:25
+#, no-c-format
+msgid ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+" &lt;KrusaderUserActions>\n"
+"  &lt;action name=\"ls -l\" >\n"
+"  &lt;title>ls -l in current dir&lt;/title>\n"
+"  &lt;description same_as=\"tooltip\" />\n"
+"  &lt;command executionmode=\"collect_output\" >ls -l %aPath% %oPath%&lt;/"
+"command>\n"
+" &lt;/action>\n"
+"&lt;/KrusaderUserActions>"
+msgstr ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+" &lt;KrusaderUserActions>\n"
+"  &lt;action name=\"ls -l\" >\n"
+"  &lt;title>ls -l in huidige map&lt;/title>\n"
+"  &lt;description same_as=\"tooltip\" />\n"
+"  &lt;command executionmode=\"collect_output\" >ls -l %aPath% %oPath%&lt;/"
+"command>\n"
+" &lt;/action>\n"
+"&lt;/KrusaderUserActions>"
+
+#. Tag: para
+#: useraction-xml.docbook:28
+#, no-c-format
+msgid "Echo Placeholder"
+msgstr "Echo Placeholder"
+
+#. Tag: programlisting
+#: useraction-xml.docbook:29
+#, no-c-format
+msgid ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+" &lt;KrusaderUserActions>\n"
+"  &lt;action name=\"test_placeholder\" >\n"
+"  &lt;title>Echo Placeholder&lt;/title>\n"
+"  &lt;tooltip>Echo's the placeholder values&lt;/tooltip>\n"
+"  &lt;category>Testing&lt;/category>\n"
+"  &lt;description same_as=\"tooltip\" />\n"
+"  &lt;command executionmode=\"collect_output\" onmultiplefiles=\"call_each\" "
+">echo -e &quot;aPath %aPath()%  \\naCurrent: %aCurrent()%&quot;&lt;/"
+"command>\n"
+" &lt;/action>\n"
+"&lt;/KrusaderUserActions>"
+msgstr ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+" &lt;KrusaderUserActions>\n"
+"  &lt;action name=\"test_placeholder\" >\n"
+"  &lt;title>Echo Placeholder&lt;/title>\n"
+"  &lt;tooltip>Echo's de placeholder waarde&lt;/tooltip>\n"
+"  &lt;category>Testing&lt;/category>\n"
+"  &lt;description same_as=\"tooltip\" />\n"
+"  &lt;command executionmode=\"collect_output\" onmultiplefiles=\"call_each\" "
+">echo -e &quot;aPath %aPath()%  \\naCurrent: %aCurrent()%&quot;&lt;/"
+"command>\n"
+" &lt;/action>\n"
+"&lt;/KrusaderUserActions>"
+
+#. Tag: para
+#: useraction-xml.docbook:32
+#, no-c-format
+msgid "This useraction copies current path and filename to clipboard:"
+msgstr ""
+"Deze useraction kopieert het huidig pad en bestandsnaam naar het klembord:"
+
+#. Tag: programlisting
+#: useraction-xml.docbook:33
+#, no-c-format
+msgid ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+"&lt;KrusaderUserActions>\n"
+" &lt;action name=\"clipboard current\" >\n"
+"  &lt;title>Copy to Clipboard&lt;/title>\n"
+"  &lt;tooltip>Copy to clipboard&lt;/tooltip>\n"
+"  &lt;icon>klipper&lt;/icon>\n"
+"  &lt;category>System&lt;/category>\n"
+"  &lt;description>Copy current path and filename to clipboard&lt;/"
+"description>\n"
+"  &lt;command>%_Clipboard(&quot;%aCurrent%&quot;)%&lt;/command>\n"
+"  &lt;defaultshortcut>Win+C&lt;/defaultshortcut>\n"
+" &lt;/action>\n"
+"&lt;/KrusaderUserActions>"
+msgstr ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+"&lt;KrusaderUserActions>\n"
+" &lt;action name=\"clipboard current\" >\n"
+"  &lt;title>Kopieert naar klembord&lt;/title>\n"
+"  &lt;tooltip>Kopieert naar klembord&lt;/tooltip>\n"
+"  &lt;icon>klipper&lt;/icon>\n"
+"  &lt;category>System&lt;/category>\n"
+"  &lt;description>Kopieert huidige pad en bestandsnaam naar klembord&lt;/"
+"description>\n"
+"  &lt;command>%_Clipboard(&quot;%aCurrent%&quot;)%&lt;/command>\n"
+"  &lt;defaultshortcut>Win+C&lt;/defaultshortcut>\n"
+" &lt;/action>\n"
+"&lt;/KrusaderUserActions>"
+
+#. Tag: para
+#: useraction-xml.docbook:36
+#, no-c-format
+msgid ""
+"Selects <literal role=\"extension\">.diff</literal> and <literal role="
+"\"extension\">*.h</literal> in the active panel:"
+msgstr ""
+"Selecteert <literal role=\"extension\">.diff</literal> en <literal role="
+"\"extension\">*.h</literal> in het actieve paneel:"
+
+#. Tag: programlisting
+#: useraction-xml.docbook:37
+#, no-c-format
+msgid ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+"&lt;KrusaderUserActions>\n"
+" &lt;action name=\"test_select\" >\n"
+"  &lt;title>Add selection *.diff and *.h&lt;/title>\n"
+"  &lt;category>Selection&lt;/category>\n"
+"  &lt;command>%aSelect(&quot;*.diff&quot;, &quot;add&quot;)% %aSelect(&quot;"
+"*.h&quot;, &quot;add&quot;)%&lt;/command>\n"
+" &lt;/action>\n"
+"&lt;/KrusaderUserActions>"
+msgstr ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+"&lt;KrusaderUserActions>\n"
+" &lt;action name=\"test_select\" >\n"
+"  &lt;title>Voegt *.diff en *.h&lt; toe aan selectie/title>\n"
+"  &lt;category>Selection&lt;/category>\n"
+"  &lt;command>%aSelect(&quot;*.diff&quot;, &quot;add&quot;)% %aSelect(&quot;"
+"*.h&quot;, &quot;add&quot;)%&lt;/command>\n"
+" &lt;/action>\n"
+"&lt;/KrusaderUserActions>"
+
+#. Tag: para
+#: useraction-xml.docbook:40
+#, no-c-format
+msgid "Active panel changes to <filename>mnt/floppy</filename> (bookmark):"
+msgstr "Actieve paneel gaat naar <filename>mnt/floppy</filename> (bladwijzer):"
+
+#. Tag: programlisting
+#: useraction-xml.docbook:41
+#, no-c-format
+msgid ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+"&lt;KrusaderUserActions>\n"
+"&lt;action name=\"mnt/floppy bookmark\" >\n"
+"  &lt;title>Jump to /mnt/floppy&lt;/title>\n"
+"  &lt;category>Bookmarks&lt;/category>\n"
+"  &lt;command>%aGoto(&quot;/mnt/floppy&quot;, &quot;yes&quot;)%&lt;/"
+"command>\n"
+" &lt;/action>\n"
+"&lt;/KrusaderUserActions>"
+msgstr ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+"&lt;KrusaderUserActions>\n"
+"&lt;action name=\"mnt/floppy bookmark\" >\n"
+"  &lt;title>Gaat naar /mnt/floppy&lt;/title>\n"
+"  &lt;category>Bookmarks&lt;/category>\n"
+"  &lt;command>%aGoto(&quot;/mnt/floppy&quot;, &quot;yes&quot;)%&lt;/"
+"command>\n"
+" &lt;/action>\n"
+"&lt;/KrusaderUserActions>"
+
+#. Tag: para
+#: useraction-xml.docbook:44
+#, no-c-format
+msgid ""
+"Select in the non-active panel, all filenames that are highlighted in the "
+"active panel:"
+msgstr ""
+"Selecteert in het niet-actieve paneel, alle bestandsnamen die geactiveerd "
+"zijn in het actieve paneel:"
+
+#. Tag: programlisting
+#: useraction-xml.docbook:45
+#, no-c-format
+msgid ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+"&lt;KrusaderUserActions>\n"
+" &lt;action name=\"asdfasdf\" >\n"
+"  &lt;title>Select in Other Panel&lt;/title>\n"
+"  &lt;category>Selection&lt;/category>\n"
+"  &lt;description>Select all filenames that are selected in the active "
+"panel, also in the non-active panel&lt;/description>\n"
+"  &lt;command>%oSelect(&quot;%aList(&quot;selected&quot;, &quot; &quot;, "
+"&quot;Yes&quot;)%&quot;)%&lt;/command>\n"
+" &lt;/action>\n"
+"&lt;/KrusaderUserActions>"
+msgstr ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+"&lt;KrusaderUserActions>\n"
+" &lt;action name=\"asdfasdf\" >\n"
+"  &lt;title>Selecteer in Andere Paneel&lt;/title>\n"
+"  &lt;category>Selection&lt;/category>\n"
+"  &lt;description>Selecteer in het actieve paneel alle geselecteerde "
+"bestandsnamen ook in het niet actieve paneel&lt;/description>\n"
+"  &lt;command>%oSelect(&quot;%aList(&quot;selected&quot;, &quot; &quot;, "
+"&quot;Yes&quot;)%&quot;)%&lt;/command>\n"
+" &lt;/action>\n"
+"&lt;/KrusaderUserActions>"
+
+#. Tag: para
+#: useraction-xml.docbook:48
+#, no-c-format
+msgid ""
+"Make a backup of the current file/folder to <filename>foo.bak</filename> "
+"into the current folder:"
+msgstr ""
+"Maak een backup van het/de huidige bestand/map naar <filename>foo.bak</"
+"filename> in de huidige map:"
+
+#. Tag: programlisting
+#: useraction-xml.docbook:49
+#, no-c-format
+msgid ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+"&lt;KrusaderUserActions>\n"
+" &lt;action name=\"backup current\" >\n"
+"  &lt;title>Backup in Current Directory&lt;/title>\n"
+"  &lt;tooltip>Backup in current folder&lt;/tooltip>\n"
+"  &lt;icon>document-save-as&lt;/icon>\n"
+"  &lt;category>System&lt;/category>\n"
+"  &lt;description same_as=\"tooltip\" />\n"
+"  &lt;command>%_Copy(&quot;%aCurrent%&quot;, &quot;%_Ask(&quot;new "
+"name&quot;, &quot;%aCurrent%.bak&quot;)%&quot;)%&lt;/command>\n"
+"  &lt;defaultshortcut>Shift+F5&lt;/defaultshortcut>\n"
+" &lt;/action>\n"
+"&lt;/KrusaderUserActions>"
+msgstr ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+"&lt;KrusaderUserActions>\n"
+" &lt;action name=\"backup actieve\" >\n"
+"  &lt;title>Maak backup in huidige map&lt;/title>\n"
+"  &lt;tooltip>Maak backup in huidige map&lt;/tooltip>\n"
+"  &lt;icon>document-save-as&lt;/icon>\n"
+"  &lt;category>Systeem&lt;/category>\n"
+"  &lt;description same_as=\"tooltip\" />\n"
+"  &lt;command>%_Copy(&quot;%aCurrent%&quot;, &quot;%_Ask(&quot;nieuwe "
+"naam&quot;, &quot;%aCurrent%.bak&quot;)%&quot;)%&lt;/command>\n"
+"  &lt;defaultshortcut>Shift+F5&lt;/defaultshortcut>\n"
+" &lt;/action>\n"
+"&lt;/KrusaderUserActions>"
+
+#. Tag: para
+#: useraction-xml.docbook:52
+#, no-c-format
+msgid "Opens <link linkend=\"krusearcher\">KruSearcher</link>:"
+msgstr "Opent <link linkend=\"krusearcher\">KruSearcher</link>:"
+
+#. Tag: programlisting
+#: useraction-xml.docbook:53
+#, no-c-format
+msgid ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+"&lt;KrusaderUserActions>\n"
+" &lt;action name=\"search\" >\n"
+"  &lt;title>Search Test&lt;/title>\n"
+"  &lt;command>%_NewSearch(&quot;Search 2&quot;)%&lt;/command>\n"
+" &lt;/action>\n"
+"&lt;/KrusaderUserActions>"
+msgstr ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+"&lt;KrusaderUserActions>\n"
+" &lt;action name=\"search\" >\n"
+"  &lt;title>Zoek Test&lt;/title>\n"
+"  &lt;command>%_NewSearch(&quot;Search 2&quot;)%&lt;/command>\n"
+" &lt;/action>\n"
+"&lt;/KrusaderUserActions>"
+
+#. Tag: para
+#: useraction-xml.docbook:56
+#, no-c-format
+msgid "Sets the selected picture as wallpaper:"
+msgstr "Stelt de geselecteerde afbeelding in als achtergrondafbeelding:"
+
+#. Tag: programlisting
+#: useraction-xml.docbook:57
+#, no-c-format
+msgid ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+"&lt;KrusaderUserActions>\n"
+" &lt;action name=\"set wallpaper\" >\n"
+"  &lt;title>Set as Wallpaper&lt;/title>\n"
+"  &lt;tooltip>Set as wallpaper&lt;/tooltip>\n"
+"  &lt;icon>image&lt;/icon>\n"
+"  &lt;category>Service Menu&lt;/category>\n"
+"  &lt;description>Set as wallpaper (scaled)&lt;/description>\n"
+"  &lt;command>dcop kdesktop KBackgroundIface setWallpaper &quot;%aCurrent"
+"%&quot; 6&lt;/command>\n"
+"  &lt;defaultshortcut>Win+W&lt;/defaultshortcut>\n"
+" &lt;/action>\n"
+"&lt;/KrusaderUserActions>"
+msgstr ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+"&lt;KrusaderUserActions>\n"
+" &lt;action name=\"set wallpaper\" >\n"
+"  &lt;title>Als achtergrond instellen&lt;/title>\n"
+"  &lt;tooltip>Stelt in als achtergrond&lt;/tooltip>\n"
+"  &lt;icon>image&lt;/icon>\n"
+"  &lt;category>Service Menu&lt;/category>\n"
+"  &lt;description>Als achtergrond instellen (verschaalt)&lt;/description>\n"
+"  &lt;command>dcop kdesktop KBackgroundIface setWallpaper &quot;%aCurrent"
+"%&quot; 6&lt;/command>\n"
+"  &lt;defaultshortcut>Win+W&lt;/defaultshortcut>\n"
+" &lt;/action>\n"
+"&lt;/KrusaderUserActions>"
+
+#. Tag: para
+#: useraction-xml.docbook:60
+#, no-c-format
+msgid ""
+"This useraction edits a file with root permissions using <command>kdesu</"
+"command>:"
+msgstr ""
+"Deze useraction bewerkt een bestand met root permissies met behulp van "
+"<command>kdesu</command>:"
+
+#. Tag: programlisting
+#: useraction-xml.docbook:61
+#, no-c-format
+msgid ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+"&lt;KrusaderUserActions>\n"
+" &lt;action name=\"edit as root\" >\n"
+"  &lt;title>Edit as Root&lt;/title>\n"
+"  &lt;tooltip>Edit as root&lt;/tooltip>\n"
+"  &lt;icon>kwrite&lt;/icon>\n"
+"  &lt;category>System&lt;/category>\n"
+"  &lt;description>Edit a file with root permissions using kdesu&lt;/"
+"description>\n"
+"  &lt;command>kdesu kwrite %aCurrent%&lt;/command>\n"
+"  &lt;defaultshortcut>Win+F4&lt;/defaultshortcut>\n"
+" &lt;/action>\n"
+"&lt;/KrusaderUserActions>"
+msgstr ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+"&lt;KrusaderUserActions>\n"
+" &lt;action name=\"edit as root\" >\n"
+"  &lt;title>Als Root bewerken&lt;/title>\n"
+"  &lt;tooltip>Als Root bewerken&lt;/tooltip>\n"
+"  &lt;icon>kwrite&lt;/icon>\n"
+"  &lt;category>System&lt;/category>\n"
+"  &lt;description>Bewerkt een bestand met root permissie met behulp van "
+"kdesu&lt;/description>\n"
+"  &lt;command>kdesu kwrite %aCurrent%&lt;/command>\n"
+"  &lt;defaultshortcut>Win+F4&lt;/defaultshortcut>\n"
+" &lt;/action>\n"
+"&lt;/KrusaderUserActions>"
+
+#. Tag: para
+#: useraction-xml.docbook:64
+#, no-c-format
+msgid "This useraction Add item(s) to Amarok playlist:"
+msgstr "Deze useraction voegt item(s) toe aan de afspeellijst van Amarok:"
+
+#. Tag: programlisting
+#: useraction-xml.docbook:65
+#, no-c-format
+msgid ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+"&lt;KrusaderUserActions>\n"
+" &lt;action name=\"amarok enqueue\" >\n"
+"  &lt;title>Enqueue in Amarok&lt;/title>\n"
+"  &lt;tooltip>Append selected item(s) to Amarok playlist&lt;/tooltip>\n"
+"  &lt;icon>amarok&lt;/icon>\n"
+"  &lt;category>Multimedia&lt;/category>\n"
+"  &lt;description same_as=\"tooltip\" />\n"
+"  &lt;command>amarok --append %aList(&quot;Selected&quot;)%&lt;/command>\n"
+"  &lt;defaultshortcut>Win+A&lt;/defaultshortcut>\n"
+" &lt;/action>\n"
+"&lt;/KrusaderUserActions>"
+msgstr ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+"&lt;KrusaderUserActions>\n"
+" &lt;action name=\"amarok enqueue\" >\n"
+"  &lt;title>Afspeellijst van Amarok&lt;/title>\n"
+"  &lt;tooltip>Voegt selecteerde item(s) toe aan de afspeellijst van "
+"Amarok&lt;/tooltip>\n"
+"  &lt;icon>amarok&lt;/icon>\n"
+"  &lt;category>Multimedia&lt;/category>\n"
+"  &lt;description same_as=\"tooltip\" />\n"
+"  &lt;command>amarok --append %aList(&quot;Selected&quot;)%&lt;/command>\n"
+"  &lt;defaultshortcut>Win+A&lt;/defaultshortcut>\n"
+" &lt;/action>\n"
+"&lt;/KrusaderUserActions>"
+
+#. Tag: para
+#: useraction-xml.docbook:68
+#, no-c-format
+msgid "Opens <link linkend=\"synchronizer\">Synchronizer</link>:"
+msgstr "Opent <link linkend=\"krusearcher\">Synchronisatie</link>:"
+
+#. Tag: programlisting
+#: useraction-xml.docbook:69
+#, no-c-format
+msgid ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+"&lt;KrusaderUserActions>\n"
+" &lt;action name=\"synchronizer\" >\n"
+"  &lt;title>Synchronizer&lt;/title>\n"
+"  &lt;command>%_Sync(&quot;Sync 2&quot;)%&lt;/command>\n"
+" &lt;/action>\n"
+"&lt;/KrusaderUserActions>"
+msgstr ""
+"&lt;!DOCTYPE KrusaderUserActions>\n"
+"&lt;KrusaderUserActions>\n"
+" &lt;action name=\"synchronizer\" >\n"
+"  &lt;title>Synchronisatie&lt;/title>\n"
+"  &lt;command>%_Sync(&quot;Sync 2&quot;)%&lt;/command>\n"
+" &lt;/action>\n"
+"&lt;/KrusaderUserActions>"
+
+#~ msgid ""
+#~ "Opens <link linkend=\"synchronizer\">Synchronizer (disabled at the "
+#~ "compilation time by default)</link>:"
+#~ msgstr ""
+#~ "Opent <link linkend=\"synchronizer\">Synchronisatie (standaard "
+#~ "uitgeschakeld op het moment van compilatie)</link>:"

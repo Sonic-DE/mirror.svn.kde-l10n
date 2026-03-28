@@ -1,0 +1,1725 @@
+#
+# SPDX-FileCopyrightText: 2012, 2018, 2020, 2021, 2023, 2025 Freek de Kruijf <freekdekruijf@kde.nl>
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 12:04+0000\n"
+"PO-Revision-Date: 2025-06-09 14:32+0200\n"
+"Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
+"Language-Team: \n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 25.04.1\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#. Tag: firstname
+#: troubleshooting.docbook:7
+#, no-c-format
+msgid ""
+"Portions of this chapter were converted from the KDE UserBase <ulink url="
+"\"https://userbase.kde.org/Special:MyLanguage/KMail/FAQs_Hints_and_Tips"
+"\">KMail/FAQs Hints and Tips</ulink> page in 2012."
+msgstr ""
+"Delen van dit hoofdstuk zijn geconverteerd uit de KDE UserBase pagina <ulink "
+"url=\"https://userbase.kde.org/Special:MyLanguage/KMail/FAQs_Hints_and_Tips"
+"\">KMail/FAQs Hints and Tips</ulink> in 2012."
+
+#. Tag: author
+#: troubleshooting.docbook:11
+#, no-c-format
+msgid "&David.Bryant; &David.Bryant.mail;"
+msgstr "&David.Bryant; &David.Bryant.mail;"
+
+#. Tag: trans_comment
+#: troubleshooting.docbook:15
+#, no-c-format
+msgid "ROLES_OF_TRANSLATORS"
+msgstr "&Freek.de.Kruijf;"
+
+#. Tag: date
+#: troubleshooting.docbook:17
+#, no-c-format
+msgid "2021-08-08"
+msgstr "2021-08-08"
+
+#. Tag: releaseinfo
+#: troubleshooting.docbook:18
+#, no-c-format
+msgid "5.14.2 (Applications 20.04.2)"
+msgstr "5.14.2 (Applications 20.04.2)"
+
+#. Tag: title
+#: troubleshooting.docbook:21
+#, no-c-format
+msgid "&kmail; Troubleshooting"
+msgstr "&kmail; probleemoplossing"
+
+#. Tag: title
+#: troubleshooting.docbook:24
+#, no-c-format
+msgid "Introduction to &akonadi;"
+msgstr "Inleiding in &akonadi;"
+
+#. Tag: para
+#: troubleshooting.docbook:26
+#, no-c-format
+msgid ""
+"&kmail; has been under active development since 1997. A lot of bugs have "
+"cropped up over the years. Many of these have been resolved. If you are "
+"curious about any of those old bugs, please see the <ulink url=\"https://"
+"userbase.kde.org/Special:MyLanguage/KMail/FAQs_Hints_and_Tips\">KMail/FAQs "
+"Hints and Tips</ulink> in the &kde; UserBase Wiki. Or visit <ulink url="
+"\"https://bugs.kde.org\">&kde;'s main bug tracking page</ulink> to learn "
+"about bugs of a more recent vintage."
+msgstr ""
+"&kmail; is actief in ontwikkeling sinds 1997. Heel wat bugs zijn over de "
+"jaren opgedoken. Veel ervan zijn opgelost. Als u nieuwsgierig bent naar een "
+"van deze oude bugs, kijk dan op <ulink url=\"https://userbase.kde.org/"
+"Special:MyLanguage/KMail/FAQs_Hints_and_Tips\">KMail/FAQs Hints and Tips</"
+"ulink> in de UserBase Wiki van &kde;. Of bezoek <ulink url=\"https://bugs."
+"kde.org\">hoofd bug volgpagina van &kde;</ulink> om meer te weten te komen "
+"over bugs met een recentere datum."
+
+#. Tag: para
+#: troubleshooting.docbook:32
+#, no-c-format
+msgid ""
+"At the present time (2021), many of the problems people are experiencing "
+"with &kmail; involve the &akonadi; server. &akonadi; is an auxiliary program "
+"that functions as an intermediary between &kmail; (plus all the other &PIM; "
+"applications) and a general purpose database daemon (most commonly \"mysqld"
+"\"). It also facilitates inter-process communications among the various "
+"pieces of the &PIM; applications. Depending on the way your system is "
+"configured, &akonadi; may be started during the boot-up / login process. Or "
+"it may not start until you invoke a &PIM; application program (like &kmail;, "
+"or &kaddressbook;, or &kontact;)."
+msgstr ""
+"Op dit moment (2021) hebben veel problemen die mensen tegenkomen met &kmail; "
+"te maken met de &akonadi;-server. &akonadi; is een extra programma dat als "
+"een intermediair tussen &kmail; (plus alle andere &PIM; toepassingen) en een "
+"database-daemon voor algemene doelen functioneert (gewoonlijk \"mysqld\"). "
+"Het faciliteert communicatie tussen processen onder de verschillende stukjes "
+"van de &PIM; toepassingen. Afhankelijk van de manier waarop uw systeem is "
+"geconfigureerd, kan &akonadi; gestart worden tijdens de opstart van het "
+"systeem / het aanmeldproces. Of het kan niet gestart worden totdat u een "
+"&PIM; toepassingsprogramma (zoals &kmail;, of &kaddressbook; of &kontact;) "
+"opstart."
+
+#. Tag: para
+#: troubleshooting.docbook:39
+#, no-c-format
+msgid ""
+"There are two application programs that permit one to interact with the "
+"&akonadi; server directly: <code>akonadictl</code> (a terminal-oriented "
+"control program), and <code>akonadiconsole</code> (a GUI application). Here "
+"is a little information about those two programs."
+msgstr ""
+"Er zijn twee toepassingsprogramma's die u directe interactie met de "
+"&akonadi;-server biedt: <code>akonadictl</code> (een terminal georiënteerd "
+"besturingsprogramma) en <code>akonadiconsole</code> (een GUI toepassing). "
+"Hier enige informatie over deze twee programma's."
+
+#. Tag: para
+#: troubleshooting.docbook:42 troubleshooting.docbook:60
+#: troubleshooting.docbook:86 troubleshooting.docbook:105
+#: troubleshooting.docbook:404 troubleshooting.docbook:409
+#, no-c-format
+msgid "&nbsp;"
+msgstr "&nbsp;"
+
+#. Tag: title
+#: troubleshooting.docbook:45
+#, no-c-format
+msgid "The Akonadictl Control Program"
+msgstr "Het Akonadictl besturingsprogramma"
+
+#. Tag: screeninfo
+#: troubleshooting.docbook:47
+#, no-c-format
+msgid "<screeninfo>&akonadi; status report</screeninfo>"
+msgstr "<screeninfo>&akonadi; statusrapport</screeninfo>"
+
+#. Tag: phrase
+#: troubleshooting.docbook:53
+#, no-c-format
+msgid "<phrase>&akonadi; status report</phrase>"
+msgstr "<phrase>&akonadi; statusrapport</phrase>"
+
+#. Tag: para
+#: troubleshooting.docbook:56
+#, no-c-format
+msgid "Akonadictl Status Report, 32 Agents Running"
+msgstr "Akonadictl statusrapport, 32 agenten actief"
+
+#. Tag: para
+#: troubleshooting.docbook:62
+#, no-c-format
+msgid ""
+"The preceding screenshot illustrates one of the commands one may use with "
+"the <code>akonadictl</code> program. Here are all the commands "
+"<code>akonadictl</code> recognizes."
+msgstr ""
+"De voorgaande schermafdruk illustreert een van de commando's die gebruikt "
+"kunnen  worden met het programma <code>akonadictl</code>. Hier zijn alle "
+"commando's die <code>akonadictl</code> herkent."
+
+#. Tag: screen
+#: troubleshooting.docbook:65
+#, no-c-format
+msgid "~$ akonadictl start"
+msgstr "~$ akonadictl start"
+
+#. Tag: para
+#: troubleshooting.docbook:65
+#, no-c-format
+msgid "Starts the &akonadi; server."
+msgstr "Start de &akonadi;-server."
+
+#. Tag: screen
+#: troubleshooting.docbook:66
+#, no-c-format
+msgid "~$ akonadictl stop"
+msgstr "~$ akonadictl stop"
+
+#. Tag: para
+#: troubleshooting.docbook:66
+#, no-c-format
+msgid "Stops the &akonadi; server."
+msgstr "Stopt de &akonadi;-server."
+
+#. Tag: screen
+#: troubleshooting.docbook:67
+#, no-c-format
+msgid "~$ akonadictl restart"
+msgstr "~$ akonadictl restart"
+
+#. Tag: para
+#: troubleshooting.docbook:67
+#, no-c-format
+msgid "Stops the &akonadi; server, then launches it anew."
+msgstr "Stopt de &akonadi;-server en start deze als nieuw."
+
+#. Tag: screen
+#: troubleshooting.docbook:68
+#, no-c-format
+msgid "~$ akonadictl status"
+msgstr "~$ akonadictl status"
+
+#. Tag: para
+#: troubleshooting.docbook:68
+#, no-c-format
+msgid "Produces the status report illustrated in the preceding screenshot."
+msgstr ""
+"Produceert het statusrapport geïllustreerd in de voorgaande schermafdruk."
+
+#. Tag: screen
+#: troubleshooting.docbook:69
+#, no-c-format
+msgid "~$ akonadictl instances"
+msgstr "~$ akonadictl instances"
+
+#. Tag: para
+#: troubleshooting.docbook:69
+#, no-c-format
+msgid ""
+"Lists the &akonadi; server instances (more than one can be running at the "
+"same time)."
+msgstr ""
+"Geeft een lijst met exemplaren van &akonadi;-server (meer dan één kunnen "
+"tegelijk actief zijn)."
+
+#. Tag: screen
+#: troubleshooting.docbook:71
+#, no-c-format
+msgid "~$ akonadictl vacuum"
+msgstr "~$ akonadictl vacuum"
+
+#. Tag: para
+#: troubleshooting.docbook:71
+#, no-c-format
+msgid "Cleans up &akonadi;'s storage, or at least tries to do that."
+msgstr "Schoont de opslag van &akonadi; op of probeert dat tenminste."
+
+#. Tag: screen
+#: troubleshooting.docbook:72
+#, no-c-format
+msgid "~$ akonadictl fsck"
+msgstr "~$ akonadictl fsck"
+
+#. Tag: para
+#: troubleshooting.docbook:72
+#, no-c-format
+msgid ""
+"Performs a file consistency check. The output from this command can be quite "
+"voluminous, especially if you have added your own folders to &kmail;. Use "
+"this version of the command (piping the output through grep) to verify that "
+"your &akonadi; database is healthy, without producing a lot of extraneous "
+"output."
+msgstr ""
+"Er wordt een controle op consistentie van het bestand gedaan. De uitvoer van "
+"dit commando kan behoorlijk veel zijn, speciaal als u uw eigen mappen aan "
+"&kmail; hebt toegevoegd. Gebruik deze version van het commando (met pipe van "
+"de uitvoer door grep) om te verifiëren dat uw &akonadi; database gezond is, "
+"zonder veel overbodige uitvoer."
+
+#. Tag: screen
+#: troubleshooting.docbook:78
+#, no-c-format
+msgid ""
+"~ $ akonadictl fsck 2>&amp;1 | grep ^Found\n"
+"Found 0 external files.\n"
+"Found 0 external parts.\n"
+"Found no unreferenced external files.\n"
+"Found 0 parts to be moved to external files\n"
+"Found 0 parts to be moved to database\n"
+"Found 6 collections without RID.\n"
+"Found 0 items without RID.\n"
+"Found 0 dirty items."
+msgstr ""
+"~ $ akonadictl fsck 2>&amp;1 | grep ^Found\n"
+"Found 0 external files.\n"
+"Found 0 external parts.\n"
+"Found no unreferenced external files.\n"
+"Found 0 parts to be moved to external files\n"
+"Found 0 parts to be moved to database\n"
+"Found 6 collections without RID.\n"
+"Found 0 items without RID.\n"
+"Found 0 dirty items."
+
+#. Tag: para
+#: troubleshooting.docbook:78
+#, no-c-format
+msgid ""
+"RID stands for RemoteId, a named field in the mysql database tables. If "
+"there are more than 0 items without RID, you have a minor problem that "
+"should be corrected. If there are more than 0 dirty items you may have a "
+"major problem that <emphasis>must</emphasis> be corrected. See <link linkend="
+"\"resource-conflict-error\">\"Unable to Fetch Item ...\"</link> and also "
+"<link linkend=\"dealing-with-dirt\">Correcting &kmail;'s \"Dirty\" Items</"
+"link>, below."
+msgstr ""
+"RID staat voor RemoteId, een veld met een naam in de mysql database "
+"tabellen. Als er meer dan 0 items zonder RID zijn, hebt u een klein probleem "
+"dat gecorrigeerd zou moeten worden. Als er meer dan 0 dirty items zijn kunt "
+"u een groter probleem hebben dat gecorrigeerd <emphasis>moet</emphasis> "
+"worden. Zie <link linkend=\"resource-conflict-error\">\"Item ophalen lukt "
+"niet...\"</link> en ook <link linkend=\"dealing-with-dirt\"> \"Dirty\" items "
+"van &kmail; corrigeren</link>, zie onderstaand."
+
+#. Tag: title
+#: troubleshooting.docbook:90
+#, no-c-format
+msgid "The Akonadiconsole Program"
+msgstr "Het programma Akonadiconsole"
+
+#. Tag: screeninfo
+#: troubleshooting.docbook:92
+#, no-c-format
+msgid "<screeninfo>What akonadiconsole looks like</screeninfo>"
+msgstr "<screeninfo>Hoe akonadiconsole er uit ziet</screeninfo>"
+
+#. Tag: phrase
+#: troubleshooting.docbook:98
+#, no-c-format
+msgid "<phrase>What akonadiconsole looks like</phrase>"
+msgstr "<phrase>Hoe akonadiconsole er uit ziet</phrase>"
+
+#. Tag: para
+#: troubleshooting.docbook:101
+#, no-c-format
+msgid "Akonadiconsole in action"
+msgstr "Akonadiconsole in actie"
+
+#. Tag: para
+#: troubleshooting.docbook:107
+#, no-c-format
+msgid ""
+"The <code>akonadiconsole</code> program provides twelve different \"windows"
+"\" into the inner workings of the &PIM; applications. Here is a brief "
+"summary of the available views."
+msgstr ""
+"Het programma <code>akonadiconsole</code> levert twaalf verschillende "
+"\"vensters\" in de interne werking van de &PIM; toepassingen. Hier is een "
+"korte samenvatting van de beschikbare beelden."
+
+#. Tag: term
+#: troubleshooting.docbook:112
+#, no-c-format
+msgid "<guilabel>Agents</guilabel> tab."
+msgstr "Tabblad <guilabel>Agents</guilabel>."
+
+#. Tag: para
+#: troubleshooting.docbook:113
+#, no-c-format
+msgid "Here you can see a list of the user agents (processors)."
+msgstr "Hier ziet u een lijst met de gebruikersagenten (processoren)."
+
+#. Tag: term
+#: troubleshooting.docbook:117
+#, no-c-format
+msgid "<guilabel>Browse</guilabel> tab."
+msgstr "Tabblad <guilabel>Bladeren</guilabel>."
+
+#. Tag: para
+#: troubleshooting.docbook:118
+#, no-c-format
+msgid ""
+"This tab provides an overview of the various collections of data &akonadi; "
+"is maintaining, organized as a hierarchical tree that shows how many items "
+"reside in each collection."
+msgstr ""
+"Dit tabblad levert een overzicht van de verschillende verzamelingen gegevens "
+"die &akonadi; beheert, georganiseerd als een hiërarchische boomstructuur die "
+"toont hoeveel  items er zich in elke verzameling bevinden."
+
+#. Tag: term
+#: troubleshooting.docbook:124
+#, no-c-format
+msgid "<guilabel>Debugger</guilabel> tab."
+msgstr "Tabblad <guilabel>Debugger</guilabel>."
+
+#. Tag: para
+#: troubleshooting.docbook:125
+#, no-c-format
+msgid "Here you can turn debugging on and off, and view the debug message log."
+msgstr ""
+"Hier kunt u debugging aan en uit zetten en de debugberichtenlog bekijken."
+
+#. Tag: term
+#: troubleshooting.docbook:129
+#, no-c-format
+msgid "<guilabel>Logging</guilabel> tab."
+msgstr "Tabblad <guilabel>Logging</guilabel>."
+
+#. Tag: para
+#: troubleshooting.docbook:130
+#, no-c-format
+msgid ""
+"This tab lets you view messages emitted by various &akonadi; components."
+msgstr ""
+"Dit tabblad laat u berichten uitgezonden door verschillende &akonadi; "
+"componenten bekijken."
+
+#. Tag: term
+#: troubleshooting.docbook:134
+#, no-c-format
+msgid "<guilabel>DB Browser</guilabel> tab."
+msgstr "Tabblad <guilabel>DB-browser</guilabel>."
+
+#. Tag: para
+#: troubleshooting.docbook:135
+#, no-c-format
+msgid ""
+"Use this tab to peek inside the mysql database. There are many different "
+"tables."
+msgstr ""
+"Dit tabblad gebruiken om in de mysql database te gluren. Er zijn veel "
+"verschillende tabellen."
+
+#. Tag: term
+#: troubleshooting.docbook:139
+#, no-c-format
+msgid "<guilabel>DB Console</guilabel> tab."
+msgstr "Tabblad <guilabel>DB console</guilabel>."
+
+#. Tag: para
+#: troubleshooting.docbook:140
+#, no-c-format
+msgid "Here you can query the mysql database."
+msgstr "Hier kunt u de mysql database bevragen."
+
+#. Tag: term
+#: troubleshooting.docbook:144
+#, no-c-format
+msgid "<guilabel>Query Debugger</guilabel> tab."
+msgstr "Tabblad <guilabel>Query debugger</guilabel>."
+
+#. Tag: para
+#: troubleshooting.docbook:145
+#, no-c-format
+msgid ""
+"Use this tab to turn database query debugging on and off. &kmail; queries "
+"the mysql database many times in just a few seconds; output can be "
+"voluminous."
+msgstr ""
+"Dit tabblad gebruiken om query-debugging aan en uit te zetten. &kmail; "
+"bevraagt de mysql database vele keren in enkele seconden; uitvoer kan veel "
+"zijn."
+
+#. Tag: term
+#: troubleshooting.docbook:150
+#, no-c-format
+msgid "<guilabel>Job Tracker</guilabel> tab."
+msgstr "Tabblad <guilabel>Takenvolger</guilabel>."
+
+#. Tag: para
+#: troubleshooting.docbook:151
+#, no-c-format
+msgid ""
+"The &PIM; applications perform various functions by initiating \"jobs\". Use "
+"this tab to toggle job tracking on and off."
+msgstr ""
+"De &PIM; toepassingen voeren verschillende functies uit door \"taken\" te "
+"initiëren. Dit tabblad gebruiken om taken volgen aan en uit te zetten."
+
+#. Tag: term
+#: troubleshooting.docbook:156
+#, no-c-format
+msgid "<guilabel>Resources Schedulers</guilabel> tab."
+msgstr "Tabblad <guilabel>Planners van hulpbronnen</guilabel>."
+
+#. Tag: para
+#: troubleshooting.docbook:157
+#, no-c-format
+msgid ""
+"Here you can see which resources are needed when a particular &PIM; function "
+"is invoked. You can see a list of all the &akonadi; resources in your system "
+"in the <filename>~/.config/akonadi/</filename> directory."
+msgstr ""
+"Hier kunt u zien welke hulpbronnen nodig zijn wanneer een specifieke &PIM; "
+"functie wordt aangeroepen. U kunt een lijst met alle hulpbronnen van "
+"&akonadi; in uw systeem zien in de map <filename>~/.config/akonadi/</"
+"filename>."
+
+#. Tag: term
+#: troubleshooting.docbook:163
+#, no-c-format
+msgid "<guilabel>Notification Monitor</guilabel> tab."
+msgstr "Tabblad <guilabel>Meldingenmonitor</guilabel>."
+
+#. Tag: para
+#: troubleshooting.docbook:164
+#, no-c-format
+msgid ""
+"Use this tab to monitor notifications sent by various &akonadi; resources."
+msgstr ""
+"Dit tabblad gebruiken om meldingen te monitoren verzonden door verschillende "
+"hulpbronnen van &akonadi;."
+
+#. Tag: term
+#: troubleshooting.docbook:168
+#, no-c-format
+msgid "<guilabel>Item Search</guilabel> tab."
+msgstr "Tabblad <guilabel>Item zoeken</guilabel>."
+
+#. Tag: para
+#: troubleshooting.docbook:169
+#, no-c-format
+msgid ""
+"This tab provides a generic search function. Searches can be restricted to "
+"Calendar, Contact, Email, or Note."
+msgstr ""
+"Dit tabblad biedt een generieke zoekfunctie. Zoekopdrachten kunnen beperkt "
+"worden tot Agenda, Contactpersonen, E-mail of Notitie."
+
+#. Tag: term
+#: troubleshooting.docbook:174
+#, no-c-format
+msgid "<guilabel>Monitors</guilabel> tab."
+msgstr "Tabblad <guilabel>Monitoren</guilabel>."
+
+#. Tag: para
+#: troubleshooting.docbook:175
+#, no-c-format
+msgid ""
+"Here you can see a list of all the monitors running under &akonadi;, and "
+"also view their properties. Agents, resources, and even some application "
+"programs are monitored."
+msgstr ""
+"Hier kunt u een lijst van alle monitoren die onder &akonadi; actief zijn "
+"bekijken evenals hun eigenschappen. Agenten, hulpbronnen en zelfs enige "
+"toepassingsprogramma's worden gemonitord."
+
+#. Tag: title
+#: troubleshooting.docbook:324
+#, no-c-format
+msgid "\"Unable to Fetch Item from Backend\" When Entering &IMAP; Folder"
+msgstr "\"Item ophalen uit de backend\" wanneer u een IMAP-map ingaat"
+
+#. Tag: para
+#: troubleshooting.docbook:326
+#, no-c-format
+msgid ""
+"There are at least two possible reasons for this. Here are some workarounds."
+msgstr ""
+"Er zijn hiervoor minstens twee mogelijke redenen. Hier zijn enige omwegen."
+
+#. Tag: term
+#: troubleshooting.docbook:330
+#, no-c-format
+msgid "Workaround 1"
+msgstr "Workaround 1"
+
+#. Tag: para
+#: troubleshooting.docbook:333
+#, no-c-format
+msgid "edit <filename>~/.local/share/akonadi/mysql.conf</filename>"
+msgstr "bewerk <filename>~/.local/share/akonadi/mysql.conf</filename>"
+
+#. Tag: para
+#: troubleshooting.docbook:334
+#, no-c-format
+msgid ""
+"Under the <guilabel>[mysql]</guilabel> section, add: "
+"<userinput>binlog_format=row</userinput>"
+msgstr ""
+"Onder de sectie <guilabel>[mysql]</guilabel> voeg toe: "
+"<userinput>binlog_format=row</userinput>"
+
+#. Tag: para
+#: troubleshooting.docbook:336
+#, no-c-format
+msgid "If this does not work, try workaround 2 (below)."
+msgstr "Als dat niet werkt, probeer workaround 2 (onderstaand)."
+
+#. Tag: term
+#: troubleshooting.docbook:341
+#, no-c-format
+msgid "Workaround 2"
+msgstr "Workaround 2"
+
+#. Tag: para
+#: troubleshooting.docbook:343
+#, no-c-format
+msgid ""
+"This one is a matter of restarting so &kmail; can fetch those pesky items. "
+"Some possible steps include:"
+msgstr ""
+"Hierbij is het zaak om opnieuw op te starten zodat &kmail; de vervelende "
+"items kan ophalen. Enkele mogelijke stappen zijn:"
+
+#. Tag: para
+#: troubleshooting.docbook:344
+#, no-c-format
+msgid ""
+"Use <keycombo>&Alt;<keycap>F2</keycap></keycombo> (&krunner;) or &konsole; "
+"to type <userinput><command>kquitapp kmail</command></userinput> , then wait "
+"a minute, then <userinput><command>akonadictl stop</command></userinput> . "
+"Wait a minute, type <userinput><command>akonadictl start</command></"
+"userinput> , wait a minute, then type <userinput> <command>kmail</command></"
+"userinput> . This stops &kmail; (closing <emphasis>all</emphasis> windows), "
+"stops the &kmail; backend, restarts the &kmail; backend, and restarts "
+"&kmail;. Having a working internet connection increases the chances of "
+"success. Sometimes, you can also just do <userinput><command>kquitapp kmail</"
+"command></userinput> , wait a minute, and then start &kmail; again. Often, a "
+"few restarts seem to be needed. It is unclear what causes this error, but on "
+"bad network connections it is more likely to happen."
+msgstr ""
+"Gebruik <keycombo>&Alt;<keycap>F2</keycap></keycombo> (&krunner;) of "
+"&konsole; om te typen: <userinput><command>kquitapp kmail</command></"
+"userinput>, wacht dan een minuut, dan <userinput><command>akonadictl stop</"
+"command></userinput>. Wacht een minuut, typ <userinput><command>akonadictl "
+"start</command></userinput>, wacht een minuut, typ "
+"<userinput><command>kmail</command></userinput>. Dit stopt &kmail; (met het "
+"sluiten van <emphasis>alle</emphasis> vensters), stopt de backend van "
+"&kmail;, herstart deze en herstart &kmail;. Met een werkende "
+"internetverbinding wordt de kans op succes vergroot. Soms kunt u ook gewoon "
+"<userinput><command>kquitapp kmail</command></userinput> doen, wacht een "
+"minuut en start &kmail; opnieuw. Vaak is er een paar keer opnieuw starten "
+"nodig. Het is onduidelijk wat de reden van deze fout is, maar met een "
+"slechte netwerkverbinding is het meer waarschijnlijk."
+
+#. Tag: para
+#: troubleshooting.docbook:356
+#, no-c-format
+msgid ""
+"See also <link linkend=\"your-mails-are-not-being-sent\">the next topic</"
+"link> to learn how <application>akonadiconsole</application> can be helpful."
+msgstr ""
+"Zie ook <link linkend=\"your-mails-are-not-being-sent\">het onderstaande "
+"onderwerp</link> voor hoe <application>akonadiconsole</application> "
+"behulpzaam kan zijn."
+
+#. Tag: title
+#: troubleshooting.docbook:361
+#, no-c-format
+msgid "Your Emails Are Not Being Sent, Without Error Messages"
+msgstr "Uw e-mails worden niet verzonden, zonder foutmeldingen"
+
+#. Tag: para
+#: troubleshooting.docbook:363
+#, no-c-format
+msgid ""
+"If &kmail; does not send mail without saying anything, the <quote>agent</"
+"quote> responsible for dispatching messages may be stuck. Of course, you "
+"should first verify you have proper network connectivity so mail can be sent!"
+msgstr ""
+"Als &kmail; geen e-mail verzendt zonder iets te melden, dan is de "
+"<quote>agent</quote> verantwoordelijk voor het versturen van de berichten "
+"vastgelopen. Natuurlijk moet u nagaan dat u een werkende netwerkverbinding "
+"hebt zodat u e-mail kunt verzenden!"
+
+#. Tag: para
+#: troubleshooting.docbook:366
+#, no-c-format
+msgid ""
+"To remedy this, it might help to abort the current action and restart it. "
+"First, quit &kmail; by using &krunner; (<keycombo>&Alt;<keycap>F2</keycap></"
+"keycombo>) or &konsole; and typing: <userinput><command>kquitapp kmail</"
+"command></userinput> . Note that a normal <keycombo>&Alt;<keycap>F4</"
+"keycap></keycombo> or <menuchoice><guimenu>File</guimenu><guimenuitem>Quit</"
+"guimenuitem> </menuchoice> does <emphasis>not</emphasis> do the trick! Wait "
+"a minute, then start &kmail; again. Now start <application>akonadiconsole</"
+"application> using &krunner; (<keycombo>&Alt;<keycap>F2</keycap></keycombo>) "
+"or &konsole;. Go to the <guilabel>Mail Dispatcher Agent</guilabel> (under "
+"the <guilabel>Agents</guilabel> tab), do a right-click, and abort the "
+"current action. You will most likely get some error messages popping up. Now "
+"go back to &kmail; and choose <menuchoice><guimenu>File</guimenu> "
+"<guimenuitem>Send Queued Messages</guimenuitem></menuchoice>. Now it might "
+"work. If not, instead of aborting the current action, try toggling the "
+"offline/online status of the <guilabel>Mail Dispatcher Agent</guilabel> "
+"(same context menu) or restarting things as mentioned in workaround 2 of "
+"<link linkend=\"unable-to-fetch-item-from-backend\"> the previous topic</"
+"link>."
+msgstr ""
+"Om dit te verhelpen kan het zijn dat de huidige actie afbreken en opnieuw "
+"starten helpt. Beëindig als eerste &kmail; door &krunner; te gebruiken "
+"(<keycombo>&Alt;<keycap>F2</keycap></keycombo>) of &konsole; en invoeren "
+"van: <userinput><command>kquitapp kmail</command></userinput>. Merk op dat "
+"een normale <keycombo>&Alt;<keycap>F4</keycap></keycombo> of "
+"<menuchoice><guimenu>Bestand</guimenu><guimenuitem>Afsluiten</guimenuitem></"
+"menuchoice> <emphasis>niet</emphasis> helpt! Wacht een minuut, start dan "
+"&kmail; opnieuw. Start dan <application>akonadiconsole</application> met "
+"&krunner; (<keycombo>&Alt;<keycap>F2</keycap></keycombo>) of &konsole;. Ga "
+"naar de <guilabel>Agent voor het verzenden van e-mail</guilabel> (onder het "
+"tabblad <guilabel>Agenten</guilabel>), klik rechts en breek de huidige actie "
+"af. U zult waarschijnlijk een soort foutmelding zien verschijnen. Ga nu "
+"terug naar &kmail; en kies <menuchoice><guimenu>Bestand</"
+"guimenu><guimenuitem>Berichten in wachtrij verzenden</guimenuitem></"
+"menuchoice>. Nu zou het kunnen werken. Zo niet, in plaats van de huidige "
+"actie afbreken, probeer de status offline/online van de "
+"genoemd<guilabel>Agent voor het verzenden van e-mail</guilabel> (hetzelfde "
+"contextmenu) om te schakelen of start de dingen opnieuw zoals eerder genoemd "
+"in de workaround 2 van <link linkend=\"unable-to-fetch-item-from-backend"
+"\">het eerdere probleem</link>."
+
+#. Tag: para
+#: troubleshooting.docbook:377
+#, no-c-format
+msgid ""
+"akonadiconsole can be quite helpful for a number of situations because it "
+"shows all the <quote>agents</quote>, the separate components of the &kmail; "
+"backend. You can stop and start them, put them in offline mode, abort "
+"ongoing actions &etc;. It can be very helpful when &kmail; is acting cranky."
+msgstr ""
+"akonadiconsole kan erg behulpzaam zijn voor een aantal situaties omdat het "
+"alle <quote>agenten</quote> toont, de separate componenten van de backend "
+"van &kmail;. U kunt ze stoppen en starten, ze in een modus offline zetten, "
+"gaande acties afbreken &etc;. Het kan zeer behulpzaam zijn wanneer &kmail; "
+"vreemd reageert."
+
+#. Tag: para
+#: troubleshooting.docbook:381
+#, no-c-format
+msgid ""
+"Sometimes the <guilabel>Mail Dispatcher Agent</guilabel> fails to function "
+"because the dbus daemon (a system-level facility for inter-process "
+"communications) is not functioning correctly. Your best bet in this "
+"circumstance is simply to reboot the system. The dbus daemon is one of the "
+"first processes started when you log in to the &kde; desktop, so it cannot "
+"be easily stopped and restarted. The whole &plasma; environment depends on "
+"it."
+msgstr ""
+"Soms werkt de <guilabel>Agent voor het verzenden van e-mail</guilabel> niet "
+"goed omdat de dbus-daemon (een faciliteit op systeemniveau voor communicatie "
+"tussen processen) niet juist functioneert. Uw beste gok in deze "
+"omstandigheid is eenvoudig het systeem opnieuw opstarten. De dbus-daemon is "
+"een van de eerste processen die worden gestart wanneer u zich aanmeldt in "
+"het bureaublad van &kde;, zodat het niet gemakkelijk gestopt en herstart kan "
+"worden. De gehele &plasma; omgeving hangt er vanaf."
+
+#. Tag: title
+#: troubleshooting.docbook:389
+#, no-c-format
+msgid "\"Unable to Fetch Item from Backend ... [LRCONFLICT]\""
+msgstr "\"Item ophalen uit de backend ... [LRCONFLICT]\""
+
+#. Tag: para
+#: troubleshooting.docbook:391
+#, no-c-format
+msgid ""
+"This problem is directly related to <ulink url=\"https://bugs.kde.org/"
+"show_bug.cgi?id=283682\">&akonadi; bug #283682</ulink>, which has been a "
+"thorn in the side of &kmail; since October, 2011. There is a timing / co-"
+"ordination problem with asynchronous processing of message filters. Once in "
+"a while, a filter rule that moves messages to a different folder \"hiccups"
+"\", and produces more than one database entry for a message that has been "
+"moved. When you try to open the second copy of such a message, the error "
+"message \"Unable to fetch item from backend ...[LRCONFLICT]\" appears. Such "
+"phantom messages cannot be deleted or moved to trash using &kmail;'s built-"
+"in functions. But you <emphasis>can</emphasis> get rid of them. Here's how "
+"you do it."
+msgstr ""
+"Dit probleem is direct gerelateerd aan <ulink url=\"https://bugs.kde.org/"
+"show_bug.cgi?id=283682\">&akonadi; bug #283682</ulink>, die een nagel aan de "
+"doodskist van &kmail; is sinds oktober, 2011. Er is een probleem met "
+"timing / coördinatie tussen asynchroon verwerken van berichtfilters. Af en "
+"toe is er een filterregel die berichten naar een andere map verplaatst "
+"\"hiccups (verslikt zich)\" en produceert meer dan één database item voor "
+"een bericht dat verplaatst is. Wanneer u de tweede kopie van zo'n bericht "
+"opent, verschijnt de foutmelding \"Item ophalen uit de backend ... "
+"[LRCONFLICT]\". Zo'n spookbericht kan niet verwijderd of verplaatst worden "
+"naar de prullenbak met ingebouwde functies van &kmail;. Maar u "
+"<emphasis>kunt</emphasis> ze kwijtraken. Hier is hoe u dat doet."
+
+#. Tag: para
+#: troubleshooting.docbook:399
+#, no-c-format
+msgid ""
+"First, exit the &kmail; program. This may not be necessary, but better safe "
+"than sorry."
+msgstr ""
+"Sluit het programma &kmail; af. Dis misschien niet nodig, maar beter veilig "
+"dan sorry."
+
+#. Tag: para
+#: troubleshooting.docbook:401
+#, no-c-format
+msgid ""
+"You can learn how many corrupted messages are present by using "
+"<code>akonadictl</code>. <screen>~ $ akonadictl fsck 2>&amp;1 | grep ^Found\n"
+"Found 6 external files.\n"
+"Found 6 external parts.\n"
+"Found no unreferenced external files.\n"
+"Found 0 parts to be moved to external files\n"
+"Found 0 parts to be moved to database\n"
+"Found 6 collections without RID.\n"
+"Found 9 items without RID.\n"
+"Found 0 dirty items.</screen> In this instance, there are nine duplicated "
+"messages (without RID)."
+msgstr ""
+"U kunt te weten komen hoeveel corrupte berichten er aanwezig zijn door "
+"<code>akonadictl</code> te gebruiken. <screen>~ $ akonadictl fsck 2>&amp;1 | "
+"grep ^Found\n"
+"Found 6 external files.\n"
+"Found 6 external parts.\n"
+"Found no unreferenced external files.\n"
+"Found 0 parts to be moved to external files\n"
+"Found 0 parts to be moved to database\n"
+"Found 6 collections without RID.\n"
+"Found 9 items without RID.\n"
+"Found 0 dirty items.</screen> In dit exemplaar zijn er negen gedupliceerde "
+"berichten (zonder RID)."
+
+#. Tag: para
+#: troubleshooting.docbook:406
+#, no-c-format
+msgid ""
+"You need to know how to connect directly to the mysql server. Use the "
+"<code>ps</code> and <code>grep</code> commands to do this."
+msgstr ""
+"U moet weten hoe direct een verbinding te maken met de mysql-server. Gebruik "
+"de commando's <code>ps</code> en <code>grep</code> om dat te doen."
+
+#. Tag: screen
+#: troubleshooting.docbook:408
+#, no-c-format
+msgid ""
+"~ $ ps ux | grep mysql\n"
+"david     8788  0.2  0.9 3736292 153936 ?      Sl   06:45   0:16 /usr/sbin/"
+"mysqld\n"
+"--defaults-file=/home/david/.local/share/akonadi/mysql.conf\n"
+"--datadir=/home/david/.local/share/akonadi/db_data/\n"
+"--socket=/run/user/1000/akonadi/mysql.socket\n"
+"--pid-file=/run/user/1000/akonadi/mysql.pid\n"
+"david    24275  0.0  0.0   8056  2144 pts/1    S+   08:24   0:00 grep --"
+"colour=auto mysql"
+msgstr ""
+"~ $ ps ux | grep mysql\n"
+"david     8788  0.2  0.9 3736292 153936 ?      Sl   06:45   0:16 /usr/sbin/"
+"mysqld \n"
+"--defaults-file=/home/david/.local/share/akonadi/mysql.conf\n"
+"--datadir=/home/david/.local/share/akonadi/db_data/ \n"
+"--socket=/run/user/1000/akonadi/mysql.socket\n"
+"--pid-file=/run/user/1000/akonadi/mysql.pid\n"
+"david    24275  0.0  0.0   8056  2144 pts/1    S+   08:24   0:00 grep --"
+"colour=auto mysql"
+
+#. Tag: para
+#: troubleshooting.docbook:411
+#, no-c-format
+msgid ""
+"Invoke the mysql server program using the socket information from step 3 and "
+"issue three mysql commands, as illustrated below. <screen>~ $ mysql --"
+"socket=/run/user/1000/akonadi/mysql.socket                 &lt;==\n"
+"Welcome to the MariaDB monitor.  Commands end with ; or \\g.\n"
+"Your MariaDB connection id is 114\n"
+"Server version: 10.5.10-MariaDB Source distribution\n"
+"\n"
+"Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.\n"
+"\n"
+"Type 'help;' or '\\h' for help. Type '\\c' to clear the current input "
+"statement.\n"
+"\n"
+"MariaDB [(none)]> use akonadi;                                         &lt;"
+"==\n"
+"Reading table information for completion of table and column names\n"
+"You can turn off this feature to get a quicker startup with -A\n"
+"\n"
+"Database changed\n"
+"MariaDB [akonadi]> delete from pimitemtable where remoteid is NULL;    &lt;"
+"==\n"
+"Query OK, 9 rows affected (0.003 sec)\n"
+"\n"
+"MariaDB [akonadi]> \\q                                                  &lt;"
+"==\n"
+"Bye</screen> The three mysql commands are \"use akonadi;\", \"delete from "
+"pimitemtable where remoteid is NULL;\", and \"\\q\". After you say \"mysql --"
+"socket= ...\" you will be in a dialog with the mysql server (aka \"MariaDB"
+"\"), which provides a &gt; prompt. The entire dialog is presented here, for "
+"clarity. User input lines are marked with &lt;== in the preceding "
+"illustration."
+msgstr ""
+"Gebruik het serverprogramma mysql met de socketinformatie uit stap 3 en "
+"geeft drie mysql commando's, zoals onderstaand geïllustreerd. <screen>~ $ "
+"mysql --socket=/run/user/1000/akonadi/mysql.socket                  &lt;==\n"
+"Welcome to the MariaDB monitor.  Commands end with ; or \\g.\n"
+"Your MariaDB connection id is 114\n"
+"Server version: 10.5.10-MariaDB Source distribution\n"
+"\n"
+"Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.\n"
+"\n"
+"Type 'help;' or '\\h' for help. Type '\\c' to clear the current input "
+"statement.\n"
+"\n"
+"MariaDB [(none)]> use akonadi;                                         &lt;"
+"==\n"
+"Reading table information for completion of table and column names\n"
+"You can turn off this feature to get a quicker startup with -A\n"
+"\n"
+"Database changed\n"
+"MariaDB [akonadi]> delete from pimitemtable where remoteid is NULL;    &lt;"
+"==\n"
+"Query OK, 9 rows affected (0.003 sec)\n"
+"\n"
+"MariaDB [akonadi]> \\q                                                  &lt;"
+"==\n"
+"Bye</screen> The drie mysql commando's zijn \"use akonadi;\", \"delete from "
+"pimitemtable where remoteid is NULL;\" en \"\\q\". Nadat u \"mysql --"
+"socket= ...\" ingeeft zult u in een dialoog komen met de mysql-server (aka "
+"\"MariaDB\"), die een prompt &gt; laat zien. De gehele dialoog is hier, voor "
+"de helderheid, gepresenteerd. Ingevoerde regels zijn gemarkeerd met &lt;== "
+"in de voorgaande illustratie."
+
+#. Tag: para
+#: troubleshooting.docbook:421
+#, no-c-format
+msgid ""
+"When you restart &kmail;, those pesky duplicate messages will be gone. They "
+"were merely phantoms caused by the NULL pointers in the mysql database "
+"tables."
+msgstr ""
+"Wanneer u &kmail; herstart zijn deze pesterige gedupliceerde berichten "
+"verdwenen. Het waren eigenlijk fantomen veroorzaakt door de NULL pointers in "
+"de mysql database tabellen."
+
+#. Tag: title
+#: troubleshooting.docbook:427
+#, no-c-format
+msgid "Keeping &kmail;'s Auxiliary Storage Areas Clean"
+msgstr "Extra opslaggebieden van &kmail; schoon houden"
+
+#. Tag: para
+#: troubleshooting.docbook:429
+#, no-c-format
+msgid ""
+"&kmail; stores data in several different places on your machine. Most of "
+"these places are inside the <filename>~/.local/share/</filename> directory "
+"somewhere. For instance, on most Linux distros, your <guilabel>Local "
+"Folders</guilabel> are in <filename>~/.local/share/local-mail/</filename> . "
+"&akonadi; stores most of its data in <filename>~/.local/share/akonadi/</"
+"filename> ."
+msgstr ""
+"&kmail; slaat gegevens op op verschillende plaatsen op uw machine op. De "
+"meeste van deze plaatsen zijn ergens in de map <filename>~/.local/share/</"
+"filename>. Op de meeste Linux distributies zitten uw <guilabel>Lokale "
+"mappen</guilabel> in <filename>~/.local/share/local-mail/</filename> . "
+"&akonadi; slaat het meeste van zijn gegevens op in <filename>~/.local/share/"
+"akonadi/</filename> ."
+
+#. Tag: screen
+#: troubleshooting.docbook:433
+#, no-c-format
+msgid ""
+"~ $ cd .local/share/akonadi\n"
+"~/.local/share/akonadi $ ls\n"
+"Akonadi.error      db_data  file_db_data     mysql.conf  socket-localhost-"
+"default\n"
+"Akonadi.error.old  db_misc  file_lost+found  search_db"
+msgstr ""
+"~ $ cd .local/share/akonadi\n"
+"~/.local/share/akonadi $ ls\n"
+"Akonadi.error      db_data  file_db_data     mysql.conf  socket-localhost-"
+"default\n"
+"Akonadi.error.old  db_misc  file_lost+found  search_db"
+
+#. Tag: para
+#: troubleshooting.docbook:435
+#, no-c-format
+msgid ""
+"<filename>Akonadi.error</filename> and <filename>Akonadi.error.old</"
+"filename> are log files that are created whenever &akonadi; stops and "
+"restarts. Text file <filename>mysql.conf</filename> is a configuration file "
+"for the mysqld daemon that serves as &akonadi;'s backend. The two "
+"directories <filename>db_data</filename> and <filename>search_db</filename> "
+"contain the actual mysql database tables. There are also a couple of mysql "
+"log files in <filename>db_data</filename> that might be helpful if and when "
+"&akonadi; acts up."
+msgstr ""
+"<filename>Akonadi.error</filename> en <filename>Akonadi.error.old</filename> "
+"zijn logbestanden die gemaakt worden wanneer &akonadi; stopt en opnieuw "
+"start. Tekstbestand <filename>mysql.conf</filename> is een "
+"configuratiebestand voor de mysqld-daemon die dienst als de backend van "
+"&akonadi;. De twee mappen <filename>db_data</filename> en "
+"<filename>search_db</filename> bevatten de actuele mysql database tabellen. "
+"Er zijn ook een aantal mysql logbestanden in <filename>db_data</filename> "
+"die kunnen helpen als en wanneer &akonadi; vreemd doet."
+
+#. Tag: para
+#: troubleshooting.docbook:441
+#, no-c-format
+msgid ""
+"The two directories <filename>file_db_data</filename> and <filename>file_lost"
+"+found</filename> contain auxiliary data associated with asynchronous "
+"processing. &akonadi; does not automatically clean out the "
+"<filename>file_lost+found</filename> directory, so you may wish to clean "
+"those files up manually from time to time (&eg;, with &dolphin;). &akonadi; "
+"does try to clean the <filename>file_db_data</filename> directory out after "
+"it has merged everything into the main database files, but sometimes junk "
+"piles up in there. Use this command <screen>find .local/share/akonadi/"
+"file_db_data/ -type f | xargs rm</screen> to fix this when it happens. (If "
+"the directory <filename>file_db_data</filename> is already clean, the \"find"
+"\" command shown above will return an error.)"
+msgstr ""
+"De twee mappen <filename>file_db_data</filename> en <filename>file_lost"
+"+found</filename> bevatten extra gegevens geassocieerd met asynchrone "
+"verwerking. &akonadi; schoont de map <filename>file_lost+found</filename> "
+"niet automatisch op, u zou deze bestanden handmatig zo af en toe kunnen "
+"opschonen (&eg;, with &dolphin;). &akonadi; probeert de map "
+"<filename>file_db_data</filename> op te schonen nadat het alles in de "
+"hoofddatabasebestanden heeft samengevoegd, maar soms blijft er daar rommel "
+"zich opstapelen. Gebruik dit commando <screen>find .local/share/akonadi/"
+"file_db_data/ -type f | xargs rm</screen> om dit te repareren wanneer het "
+"gebeurt. (Als de map <filename>file_db_data</filename> al schoon is, zal het "
+"commando \"find\", boven getoond, een fout tonen.)"
+
+#. Tag: title
+#: troubleshooting.docbook:452
+#, no-c-format
+msgid "Correcting &kmail;'s \"Dirty\" Items"
+msgstr "\"Dirty\" items in &kmail; corrigeren"
+
+#. Tag: para
+#: troubleshooting.docbook:454
+#, no-c-format
+msgid ""
+"This problem is directly related to <ulink url=\"https://bugs.kde.org/"
+"show_bug.cgi?id=436550\">&akonadi; bug #436550</ulink>, which was reported "
+"in April, 2021. It results from the \"dirty\" items occasionally found by "
+"<code>akonadictl fsck</code>."
+msgstr ""
+"Dit probleem is direct gerelateerd aan <ulink url=\"https://bugs.kde.org/"
+"show_bug.cgi?id=436550\">&akonadi; bug #436550</ulink>, die gerapporteerd is "
+"in april, 2021. Het komt van de \"dirty\" items die zo af en toe door "
+"<code>akonadictl fsck</code> gevonden worden."
+
+#. Tag: screen
+#: troubleshooting.docbook:456
+#, no-c-format
+msgid ""
+"~ $ akonadictl fsck 2>&amp;1 | grep ^Found\n"
+"Found 5 external files.\n"
+"Found 5 external parts.\n"
+"Found no unreferenced external files.\n"
+"Found 0 parts to be moved to external files\n"
+"Found 0 parts to be moved to database\n"
+"Found 6 collections without RID.\n"
+"Found 0 items without RID.\n"
+"Found 750 dirty items."
+msgstr ""
+"~ $ akonadictl fsck 2>&amp;1 | grep ^Found\n"
+"Found 5 external files.\n"
+"Found 5 external parts.\n"
+"Found no unreferenced external files.\n"
+"Found 0 parts to be moved to external files\n"
+"Found 0 parts to be moved to database\n"
+"Found 6 collections without RID.\n"
+"Found 0 items without RID.\n"
+"Found 750 dirty items."
+
+#. Tag: para
+#: troubleshooting.docbook:459
+#, no-c-format
+msgid ""
+"The \"dirty\" flag on an item in pimitemtable (one of the tables in the "
+"&akonadi; database) is used to control certain aspects of asynchronous "
+"processing. It is set true when there are operations pending for a "
+"particular email message. Most of the time, the \"dirty\" flag is cleared "
+"one or two seconds later, when the once pending operation finishes up."
+msgstr ""
+"De vlag \"dirty\" op een item in pimitemtable (een van de tabellen in de "
+"&akonadi; database) wordt gebruikt om bepaalde aspecten van asynchrone "
+"verwerking te controleren. Deze is op true is gezet wanneer er bewerkingen "
+"staan te wachten voor een bepaald e-mailbericht. Meestal wordt de vlag "
+"\"dirty\" een of twee seconden later gewist, wanneer de eens wachtende "
+"bewerking beëindigd wordt."
+
+#. Tag: para
+#: troubleshooting.docbook:463
+#, no-c-format
+msgid ""
+"Occasionally, for reasons that are not entirely clear, the \"dirty\" flag "
+"can get set on dozens or even hundreds of messages all at once, as "
+"illustrated above. When this happens, the automatic clearing mechanism gets "
+"stuck, and is unable to repair itself automatically. The primary reason for "
+"a \"dirty\" item in this circumstance is that the field \"remoteid\" is not "
+"set correctly, making retrieval of a \"dirty\" message impossible in "
+"&kmail;. The message still exists on the disk. But &kmail; can't find it."
+msgstr ""
+"Af en toe, voor redenen die niet geheel helder zijn, kan de vlag \"dirty\" "
+"gezet worden op tientallen of zelfs honderden berichten alles ineens, zoals "
+"boven aangegeven. Wanneer dat gebeurt zal het automatische wismechanisme "
+"vastlopen en is is niet in staat om zichzelf automatisch te repareren. De "
+"primaire reden voor een \"dirty\" item in deze omstandigheden is dat het "
+"veld \"remoteid\" niet juist is gezet, waardoor ophalen van een \"dirty\" "
+"bericht onmogelijk is in &kmail;. Het bericht bestaat nog steeds op de "
+"schijf. Maar &kmail; kan het niet vinden."
+
+#. Tag: para
+#: troubleshooting.docbook:469
+#, no-c-format
+msgid ""
+"There ought to be a better way to correct this problem. If you think of a "
+"better way, please let the authors know about it, so this documentation can "
+"be improved. The following procedure will at least correct the database "
+"errors. But it does entail a lot of work."
+msgstr ""
+"Er zout een betere manier moeten zijn om dit probleem te corrigeren. Als u "
+"een betere manier weet, laat het dan de auteurs weten, zodat deze "
+"documentatie verbeterd kan worden. De volgende procedure zal tenminste de "
+"databasefouten corrigeren. Maar het vraagt heel wat werk."
+
+#. Tag: para
+#: troubleshooting.docbook:474
+#, no-c-format
+msgid ""
+"Exit &kmail; and stop the &akonadi; server with a terminal command: "
+"<code>akonadictl stop</code> ."
+msgstr ""
+"Beëindig &kmail; en stop de &akonadi; server met een terminalcommando: "
+"<code>akonadictl stop</code> ."
+
+#. Tag: para
+#: troubleshooting.docbook:476
+#, no-c-format
+msgid ""
+"Make a backup copy of all your email messages. You may be able to use <ulink "
+"url=\"help:/pimdataexporter\">PIM Data Exporter</ulink> for this purpose. Or "
+"you may use &ark; to make an archive, or &dolphin; to make a second copy of "
+"<filename>~/.local/share/local-mail/</filename> somewhere else on your hard "
+"disk. If you're adventurous, you might just rename your local folders "
+"directory to something like <filename>local-mail-save</filename> . But it's "
+"safer to be sure you have a backup copy of your messages before you proceed."
+msgstr ""
+"Maak een reservekopie van al uw e-mailberichten. U zou <ulink url=\"help:/"
+"pimdataexporter\">PIM gegevensexporteur</ulink> voor dit doel kunnen "
+"gebruiken. Of u kunt &ark; gebruiken om een archief te maken of &dolphin; om "
+"een tweede kopie van <filename>~/.local/share/local-mail/</filename> ergens "
+"anders op uw vaste schijf. Als u van avonturen houdt, zou u uw lokale mappen "
+"direct naar iets als <filename>local-mail-save</filename> kunnen hernoemen. "
+"Maar het is veiliger om zeker te zijn dat u een reservekopie van uw "
+"berichten hebt alvorens u verder gaat."
+
+#. Tag: para
+#: troubleshooting.docbook:482
+#, no-c-format
+msgid ""
+"You should also make a backup copy of any filters you have created, and make "
+"sure you know how to restore any custom <guilabel>Sent mail folder</"
+"guilabel>, <guilabel>Drafts folder</guilabel>, or <guilabel>Templates "
+"folder</guilabel> entries associated with your &kmail; identities. The next "
+"step will remove all your personally customized mail folders, and you will "
+"need to patch some stuff up after &akonadi; rebuilds its database tables."
+msgstr ""
+"U zou ook een reservekopie van alle filters die u hebt gemaakt kunnen maken "
+"en nagaan dat u weet hoe aangepaste items <guilabel>Map Verzonden e-mail</"
+"guilabel>, <guilabel>Map Concepten</guilabel> of <guilabel>Map Sjablonen</"
+"guilabel> geassocieerd met uw &kmail; identiteiten herstelt. De volgende "
+"stap zal al uw persoonlijk aangepaste e-mailmappen verwijderen en u zult "
+"enige zaken moeten aanpassen nadat &akonadi; zijn databasetabellen opnieuw "
+"bouwt."
+
+#. Tag: para
+#: troubleshooting.docbook:487
+#, no-c-format
+msgid ""
+"Now delete all the folders inside of the directory <filename>local-mail</"
+"filename>, or rename that directory to something like <filename>local-mail-"
+"save</filename> . Then start the &kmail; program. This will force &akonadi; "
+"to erase all the database table entries associated with email messages. You "
+"will see your old folder names, briefly, but these will disappear when "
+"&akonadi; finishes deleting all the \"dirty\" items (and all the clean ones, "
+"too)."
+msgstr ""
+"Verwijder nu alle mappen in de map <filename>local-mail</filename> of "
+"hernoem die map tot iets zoals <filename>local-mail-save</filename> . Start "
+"daarna het programma &kmail;. Dit dwingt &akonadi; om alle "
+"databasetabelitems geassocieerd met e-mailberichten te wissen. U zult uw "
+"oude mapnamen zien, kort, maar deze zullen verdwijnen wanneer &akonadi; "
+"eindigt met het verwijderen van alle \"dirty\" items (en alle schone, ook)."
+
+#. Tag: para
+#: troubleshooting.docbook:492
+#, no-c-format
+msgid ""
+"Exit &kmail; and stop the &akonadi; server as explained in step 1, then "
+"restore the backup copy of your messages (created in step 2) to the "
+"<filename>~/.local/share/local-mail/</filename> directory."
+msgstr ""
+"Beëindig &kmail; en stop de &akonadi; server zoals uitgelegd in stap 1, "
+"herstel daarna de reservekopie van uw berichten (aangemaakt in stap 2) naar "
+"de map <filename>~/.local/share/local-mail/</filename> ."
+
+#. Tag: para
+#: troubleshooting.docbook:495
+#, no-c-format
+msgid ""
+"Start &kmail; up again, and force &akonadi; to re-sync the database. The "
+"easiest way to do this is to <menuchoice> <shortcut><keycombo action=\"simul"
+"\">&Ctrl;<keycap>L</keycap></keycombo></shortcut><guimenu>File</"
+"guimenu><guimenuitem>Check Mail</guimenuitem></menuchoice>; &akonadi; "
+"automatically re-syncs all the folders when it fetches mail. This will take "
+"several minutes to complete, depending on how many messages you have saved "
+"in your &kmail; folders. But when the process is complete all the \"dirty\" "
+"items will be gone."
+msgstr ""
+"&kmail; opnieuw opstarten en afdwingen dat &akonadi; zich opnieuw "
+"synchroniseert met de database. De gemakkelijkste manier om dat te doen is "
+"<menuchoice> <shortcut><keycombo action=\"simul\">&Ctrl;<keycap>L</keycap></"
+"keycombo></shortcut><guimenu>Bestand</guimenu><guimenuitem>E-mail "
+"controleren</guimenuitem></menuchoice>; &akonadi; synchroniseert automatisch "
+"alle mappen wanneer het e-mail ophaalt. Dit kan een aantal minuten duren om "
+"te voltooien, afhankelijk van hoeveel berichten u hebt opgeslagen in uw "
+"mappen in &kmail;. Maar wanneer het proces gereed is zullen alle \"dirty\" "
+"items weg zijn."
+
+#. Tag: para
+#: troubleshooting.docbook:501
+#, no-c-format
+msgid ""
+"Finally, you will want to restore your mail filter rules backed up in step "
+"3, and check that all the custom folder items (<guilabel>Sent mail folder</"
+"guilabel>, &etc;) for your identities are set the way you want them. You "
+"will also need to reset any custom folder properties you had set up, and you "
+"will probably have a bunch of spurious \"Unread Message\" notifications to "
+"deal with. But your &akonadi; database tables will be all clean and shiny "
+"once again!"
+msgstr ""
+"Tenslotte zult u uw e-mailfilterregels wille herstellen waarvan een "
+"reservekopie in stap 3 is gemaakt en controleer dat alle aangepaste mapitems "
+"(<guilabel>Map Verzonden e-mail</guilabel>, &etc;) voor uw identiteiten "
+"ingesteld zijn op de manier die u wilt. Het is ook nodig om elke aangepaste "
+"mapeigenschap die u hebt ingesteld terug te zetten en u zult waarschijnlijk "
+"wat moeten doen met een aantal onverwachte \"Ongelezen bericht\" meldingen. "
+"Maar uw &akonadi; databasetabellen zullen weer schoon en glanzend zijn!"
+
+#~ msgid "2012-07-28"
+#~ msgstr "2012-07-28"
+
+#~ msgid "&kde; SC 4.9"
+#~ msgstr "&kde; SC 4.9"
+
+#~ msgid "KMail doesn't send mail"
+#~ msgstr "KMail verzend geen e-mail"
+
+#~ msgid ""
+#~ "Some users find that mail does not go out, and it appears that &SMTP; is "
+#~ "missing, even though the <guilabel>Settings</guilabel> page looks "
+#~ "correct. It has been reported that this is cured by opening "
+#~ "<application>akonadiconsole</application> and adding Mail Dispatcher "
+#~ "Agent."
+#~ msgstr ""
+#~ "Sommige gebruikers ondervinden dat e-mail niet naar buiten gaat en het "
+#~ "lijkt er op dat &SMTP; ontbreekt, hoewel de pagina "
+#~ "<guilabel>Instellingen</guilabel> juist lijkt. Er is gerapporteerd dat "
+#~ "dit opgelost kan worden door het openen van <application>akonadiconsole</"
+#~ "application> en toevoegen van Agent voor het verzenden van e-mail."
+
+#~ msgid ""
+#~ "If the computer was suddenly turned off in suspend mode (&eg; by a power "
+#~ "cut) sometimes e-mails simply stay in the outbox without being sent, but "
+#~ "no error message is generated either. This may be due to the fact that "
+#~ "the Mail Dispatcher Agent is set to <quote>offline</quote> in the "
+#~ "configuration file during suspend and is not changed back due to the "
+#~ "crash. Edit the following file:"
+#~ msgstr ""
+#~ "Als de computer plotseling uitgeschakeld is in modus onderbroken (&eg; "
+#~ "door een energiestoring) dan blijven e-mails eenvoudig in het Postvak uit "
+#~ "zonder te worden verzonden, maar ook zonder dat er een foutboodschap is "
+#~ "gegeneerd. Dit kan het gevolg zijn van het feit dat de E-mail "
+#~ "verspreidingsagent <quote>offline</quote> is gezet in het "
+#~ "instellingenbestand bij het onderbreken en niet is terug veranderd "
+#~ "vanwege de crash. Bewerk het volgende bestand:"
+
+#~ msgid "~/.config/akonadi/agent_config_akonadi_maildispatcher_agent"
+#~ msgstr "~/.config/akonadi/agent_config_akonadi_maildispatcher_agent"
+
+#~ msgid "and change"
+#~ msgstr "en wijzig"
+
+#~ msgid ""
+#~ "[Agent]\n"
+#~ "Online=false"
+#~ msgstr ""
+#~ "[Agent]\n"
+#~ "Online=false"
+
+#~ msgid "<para>to</para>"
+#~ msgstr "<para>in</para>"
+
+#~ msgid ""
+#~ "[Agent]\n"
+#~ "Online=true"
+#~ msgstr ""
+#~ "[Agent]\n"
+#~ "Online=true"
+
+#~ msgid "Clean start after a failed migration"
+#~ msgstr "Schone start na een mislukte migratie"
+
+#~ msgid ""
+#~ "In case migration from &kmail; 1 to &kmail; 2 fails or you have weird "
+#~ "problems after it, you can try to do a clean import of your data, instead "
+#~ "of migrating the existing settings. Be warned, this needs more manual "
+#~ "setup, so do only if you are confident of setting up your &kmail; "
+#~ "accounts again; it can generate a large amount of network traffic for "
+#~ "&IMAP; resources."
+#~ msgstr ""
+#~ "In het geval dat de migratie van &kmail; 1 naar &kmail; 2 mislukt of u "
+#~ "hebt nadien vreemde problemen, dan kunt u een schone import van uw "
+#~ "gegevens, in plaats van de bestaande instellingen te migreren. Wees "
+#~ "gewaarschuwd, dat vereist meer handmatige instellingen, doe dat dus "
+#~ "alleen als u zelfverzekerd bent bij het opnieuw instellen van uw &kmail;-"
+#~ "accounts en het kan een grote hoeveelheid netwerkverkeer genereren voor "
+#~ "&IMAP;-hulpbronnen."
+
+#~ msgid "Stop Akonadi and related applications"
+#~ msgstr "Stop Akonadi en gerelateerde toepassingen"
+
+#~ msgid "quit &kmail;/&kontact;/&korganizer;, and issue this command:"
+#~ msgstr "sluit &kmail;/&kontact;/&korganizer; af en geef dit commando:"
+
+#~ msgid ""
+#~ "Make sure no <application>Akonadi</application> or <application>MySQL</"
+#~ "application> process is running:"
+#~ msgstr ""
+#~ "Ga na dat er geen <application>Akonadi</application> of "
+#~ "<application>MySQL</application> proces neer actief is:"
+
+#~ msgid "ps ux | grep mysql"
+#~ msgstr "ps ux | grep mysql"
+
+#~ msgid "ps ux | grep akonadi"
+#~ msgstr "ps ux | grep akonadi"
+
+#~ msgid ""
+#~ "They should not show anything else but the <application>grep</"
+#~ "application> process itself."
+#~ msgstr ""
+#~ "Er zou niets anders te zien moeten zijn dan het <application>grep</"
+#~ "application>-proces zelf."
+
+#~ msgid "Remove old Akonadi database and config"
+#~ msgstr "Verwijder oude database en configuratie van Akonadi"
+
+#~ msgid "Delete the following folders"
+#~ msgstr "Verwijder de volgende mappen"
+
+#~ msgid "~/.local/share/akonadi"
+#~ msgstr "~/.local/share/akonadi"
+
+#~ msgid "~/.config/akonadi"
+#~ msgstr "~/.config/akonadi"
+
+#~ msgid ""
+#~ "Delete also the files starting with <emphasis>akonadi</emphasis> from "
+#~ "<filename role=\"directory\">~/.kde4/share/config</filename>"
+#~ msgstr ""
+#~ "Verwijder ook de bestanden die beginnen met <emphasis>akonadi</emphasis> "
+#~ "uit <filename role=\"directory\">~/.kde4/share/config</filename>"
+
+#~ msgid "Add back the accounts"
+#~ msgstr "Voeg de accounts terug toe"
+
+#~ msgid ""
+#~ "Now it is time to add your account back. You can use &kmail; (&kontact;) "
+#~ "for it, or you can use the <application>akonadiconsole</application> tool."
+#~ msgstr ""
+#~ "Nu is het tijd om uw account terug toe te voegen. U kunt &kmail; "
+#~ "(&kontact;) hiervoor gebruiken of u kunt het  hulpmiddel "
+#~ "<application>akonadiconsole</application> gebruiken."
+
+#~ msgid ""
+#~ "In &kmail;: <menuchoice><guimenu>Settings</guimenu><guisubmenu>Configure "
+#~ "KMail</guisubmenu><guimenuitem>Accounts</guimenuitem></menuchoice> and "
+#~ "use <guilabel>Add</guilabel>."
+#~ msgstr ""
+#~ "In &kmail;: <menuchoice><guimenu>Instellingen</guimenu><guisubmenu>KMail "
+#~ "instellen</guisubmenu><guimenuitem>Accounts</guimenuitem></menuchoice> en "
+#~ "gebruik <guilabel>Toevoegen</guilabel>."
+
+#~ msgid ""
+#~ "If you use &IMAP;, add a new <guimenuitem>&IMAP; E-Mail server</"
+#~ "guimenuitem>. If you want disconnected mode (so you can read the mails "
+#~ "offline), enable it on the <guilabel>Advanced</guilabel> tab. Be sure to "
+#~ "check that you are subscribed to all your important folders."
+#~ msgstr ""
+#~ "Als u &IMAP; gebruikt, voegt u een nieuwe <guimenuitem>&IMAP; e-"
+#~ "mailserver</guimenuitem> toe. Als u de modus niet-verbonden gebruikt "
+#~ "(zodat u de e-mails offline kunt lezen), schakel dit dan in in het "
+#~ "tabblad <guilabel>Geavanceerd</guilabel>. Ga na dat u ingeschreven bent "
+#~ "op alle belangrijke mappen."
+
+#~ msgid ""
+#~ "You might already see a <guilabel>Local folder</guilabel> resource. This "
+#~ "points to a local maildir folder. You can either modify this to point to "
+#~ "your existing maildir folders or you can add a new resource for local "
+#~ "mails."
+#~ msgstr ""
+#~ "U ziet mogelijk dat u al een hulpbron <guilabel>Lokale map</guilabel>. "
+#~ "Deze wijst naar een lokale maildir-map. U kunt deze ofwel wijzigen om "
+#~ "wijzen naar uw bestaande maildir-mappen of u kunt een nieuwe hulpbron "
+#~ "toevoegen voor lokale e-mails."
+
+#~ msgid ""
+#~ "When adding a maildir resource you can choose between <guilabel>&kmail; "
+#~ "Mail Folder</guilabel> or <guilabel>Maildir</guilabel>. Unless you have a "
+#~ "mixed folder containing <emphasis>both</emphasis> maildir folders and "
+#~ "mbox files, you should choose <guilabel>Maildir</guilabel>. For "
+#~ "independent mbox files, like the one in the <filename role=\"directory\">/"
+#~ "var/spool/mail</filename>, you can set up a new <emphasis>MBox</emphasis> "
+#~ "folder."
+#~ msgstr ""
+#~ "Bij het toevoegen van een maildir-hulpbron kunt u kiezen tussen "
+#~ "<guilabel>&kmail; e-mailmap</guilabel> of <guilabel>Maildir</guilabel>. "
+#~ "Tenzij u een gemengde map hebt met <emphasis>beide</emphasis> maildir-"
+#~ "mappen en mbox-bestanden, zou u <guilabel>Maildir</guilabel> moeten "
+#~ "kiezen. Voor onafhankelijke mbox-bestanden, zoals die in <filename role="
+#~ "\"directory\">/var/spool/mail</filename>, kunt u een nieuwe "
+#~ "<emphasis>MBox</emphasis>-map instellen."
+
+#~ msgid ""
+#~ "Add the POP3 accounts as well. If you have multiple Local Folders set up, "
+#~ "on the <guilabel>Advanced</guilabel> tab, choose the destination folder "
+#~ "where the newly downloaded mails are put."
+#~ msgstr ""
+#~ "Voeg ook de POP3-accounts toe. Als u meerdere Lokale mappen hebt "
+#~ "ingesteld, kiest u in het tabblad <guilabel>Geavanceerd</guilabel> de "
+#~ "bestemmingsmap waar de nieuw gedownloade e-mails naar toe moeten."
+
+#~ msgid ""
+#~ "For all accounts, configure the mail check interval. For Local folders "
+#~ "disable interval checking and also disable <guilabel>Include in manual "
+#~ "mail check</guilabel> in the <guilabel>Retrieval options</guilabel>."
+#~ msgstr ""
+#~ "Stel voor alle accounts het e-mailcontrole-interval in. Voor Lokale "
+#~ "mappen schakelt u de intervalcontrole uit en ook <guilabel>Meenemen in "
+#~ "handmatige berichtencontrole</guilabel> in de <guilabel>Opties voor "
+#~ "ophalen</guilabel>."
+
+#~ msgid "Add the sending (SMTP) accounts."
+#~ msgstr "Voeg de verzendende (SMTP) accounts toe."
+
+#~ msgid "Fix your filters, identities and favorite folders"
+#~ msgstr "Repareer uw filters, identiteiten en favoriete mappen"
+
+#~ msgid ""
+#~ "If you have client side filtering (common with POP3 mails), go to "
+#~ "<menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure Filters</"
+#~ "guimenuitem></menuchoice> and fix the destination folder for the filters, "
+#~ "they most probably are wrong. Otherwise mails will end up in folders you "
+#~ "don't expect."
+#~ msgstr ""
+#~ "Als u filtering aan de kant van de client hebt (normaal met POP3-e-"
+#~ "mails), dan gaat u naar <menuchoice><guimenu>Instellingen</"
+#~ "guimenu><guimenuitem>Filters instellen</guimenuitem></menuchoice> en "
+#~ "repareert u de bestemmingsmap voor de filters, ze zijn zeer "
+#~ "waarschijnlijk fout. Anders komen e-mails in mappen waar u ze niet "
+#~ "verwacht."
+
+#~ msgid ""
+#~ "Spam filter (at least in version 4.7.3 and earlier) does not work as "
+#~ "expected in that the rule that the wizard creates does not send spam to "
+#~ "the folder you have defined."
+#~ msgstr ""
+#~ "Spamfilter (tenminste in versie 4.7.3 en eerder) werkt niet zoals "
+#~ "verwacht in zoverre dat de regel die de assistent aanmaakt spam niet naar "
+#~ "de map zendt die u hebt gedefinieerd."
+
+#~ msgid ""
+#~ "The workaround for this is to change the <quote>spam</quote> and "
+#~ "<quote>spam unsure</quote> (if the spam filter you use supports that) "
+#~ "from looking at Status-fields in the header <literal>X-Spam-Status</"
+#~ "literal> to look <guimenuitem>Anywhere in headers</guimenuitem> for X-"
+#~ "<replaceable>your spam filter</replaceable>-Classification: <quote>SPAM "
+#~ "or unsure</quote>. Look at the filters the wizard creates and copy the "
+#~ "<quote>contains</quote> part. Example for <application>Spambayes</"
+#~ "application>: <quote>X-Spambayes-Classification: spam</quote> and "
+#~ "<quote>X-Spambayes-Classification: unsure</quote>."
+#~ msgstr ""
+#~ "De omweg hiervoor is het wijzigen van de <quote>spam</quote> en "
+#~ "<quote>spam unsure</quote> (als het spamfilter dat u gebruikt dat "
+#~ "ondersteunt) van kijken naar de Status-velden in de kop <literal>X-Spam-"
+#~ "Status</literal> naar <guimenuitem>Overal in berichtkoppen</guimenuitem> "
+#~ "kijken naar X-<replaceable>uw spamfilter</replaceable>-Classification: "
+#~ "<quote>SPAM of unsure</quote>. Kijk naar de filters die de assistent "
+#~ "aanmaakt en kopieer het deel <quote>contains</quote>. Voorbeeld voor "
+#~ "<application>Spambayes</application>: <quote>X-Spambayes-Classification: "
+#~ "spam</quote> en <quote>X-Spambayes-Classification: unsure</quote>."
+
+#~ msgid ""
+#~ "You also need to verify the identity settings and set the sent-mail, "
+#~ "drafts and templates folders to point to the right folders. To do that go "
+#~ "to <menuchoice><guimenu>Settings</guimenu><guisubmenu>Configure KMail</"
+#~ "guisubmenu><guimenuitem>Identities</guimenuitem></menuchoice>, modify the "
+#~ "identity, go to the <guilabel>Advanced</guilabel> tab and modify the "
+#~ "above mentioned folder settings."
+#~ msgstr ""
+#~ "U moet ook de instellingen voor de identiteit controleren en de mappen "
+#~ "verzonden-e-mail, concepten en sjablonen laten wijzen naar de juiste "
+#~ "mappen. Dat doet u met <menuchoice><guimenu>Instellingen</"
+#~ "guimenu><guisubmenu>KMail instellen</"
+#~ "guisubmenu><guimenuitem>Identiteiten</guimenuitem></menuchoice>, wijzig "
+#~ "de identiteit, ga naar het tabblad <guilabel>Geavanceerd</guilabel> en "
+#~ "wijzig de bovengenoemde instellingen voor de mappen."
+
+#~ msgid ""
+#~ "Check also that your <guilabel>Favorite Folders</guilabel> are the ones "
+#~ "you have chosen before."
+#~ msgstr ""
+#~ "Controleer ook dat uw <guilabel>Favoriete mappen</guilabel> diegene zijn "
+#~ "die u eerder hebt gekozen."
+
+#~ msgid "Initiate a mail check"
+#~ msgstr "Doe een controle van uw e-mail"
+
+#~ msgid ""
+#~ "Start a mail check for your accounts. It is suggested doing it per "
+#~ "account."
+#~ msgstr ""
+#~ "Doe een controle van uw e-mail voor uw accounts. Aanbevolen is dat te "
+#~ "doen per account."
+
+#~ msgid "First check for &IMAP;, if you have it."
+#~ msgstr "Doe het als eerste voor &IMAP;, als u die hebt."
+
+#~ msgid ""
+#~ "Next check (import) your local mails. One solution is to do a full check "
+#~ "in one go <menuchoice><guimenu>File</guimenu><guimenuitem>Check Mail In</"
+#~ "guimenuitem></menuchoice> and select the local account; the other is to "
+#~ "click one by one on the folders, that should initiate the check for that "
+#~ "folder (alternatively right click on the folder name and select "
+#~ "<guilabel>Update Folder</guilabel>)."
+#~ msgstr ""
+#~ "Het volgende is om uw lokale e-mails op te halen (importeren). Een manier "
+#~ "om dat te doen is met een volledige controle in één gang "
+#~ "<menuchoice><guimenu>Bestand</guimenu><guimenuitem>E-mail ophalen vanaf</"
+#~ "guimenuitem></menuchoice> en selecteer het lokale account, het andere is "
+#~ "om een voor een op de mappen te klikken, die het ophalen voor die map "
+#~ "start (alternatief, klik rechts op de naam van de map en selecteer "
+#~ "<guilabel>Map bijwerken</guilabel>)."
+
+#~ msgid ""
+#~ "The initial import might be slow and could use a lot of memory, "
+#~ "especially if you have folders with a large amount of mail. In that case "
+#~ "per-folder check is preferred. If the check (complete or for one folder) "
+#~ "is finished and the memory usage is still high, you could restart the "
+#~ "Akonadi server &mdash; as seen above &mdash; or just the maildir agent, "
+#~ "if you use <varname>akonadiconsole</varname>. Do not worry, this high "
+#~ "memory usage is <emphasis>only</emphasis> for initial import."
+#~ msgstr ""
+#~ "Het initiële importeren kan langzaam zijn en kan veel geheugen vragen, "
+#~ "speciaal wanneer u mappen hebt met een grote hoeveelheid e-mail. In dat "
+#~ "geval heeft het per map ophalen de voorkeur. Als het ophalen (alles of "
+#~ "voor een map) klaar is en het geheugengebruik nog steeds hoog, dan zou u "
+#~ "de Akonadi-server opnieuw kunnen starten &mdash; zie boven &mdash; of "
+#~ "allen de maildir-agent, als u <varname>akonadiconsole</varname>gebruikt. "
+#~ "Maak u geen zorgen, dit hoge geheugengebruik is er <emphasis>alleen</"
+#~ "emphasis> bij het initieel importeren."
+
+#~ msgid "Initiate a check mail for POP3 resources."
+#~ msgstr "Doe een controle van uw POP3 hulpbronnen."
+
+#~ msgid ""
+#~ "Hopefully after these steps, you will have a much nicer &kmail; "
+#~ "experience."
+#~ msgstr ""
+#~ "Het is te hopen dat u na deze stappen een veel betere ervaring hebt met "
+#~ "&kmail;."
+
+#~ msgid "Local Folders is added over and over"
+#~ msgstr "Lokale mappen wordt telkens toegevoegd"
+
+#~ msgid ""
+#~ "In some cases you might end up with a maildir account pointing to a "
+#~ "certain place (like <filename>$HOME/Mail</filename>), but you still see a "
+#~ "<guilabel>Local Folders</guilabel> folder in the folder list with Inbox/"
+#~ "Outbox/Trash/Drafts/&etc; subfolders and &kmail; keeps putting mails "
+#~ "there, especially sent mails."
+#~ msgstr ""
+#~ "In sommige gevallen kunt u uitkomen op een maildir-account verwijzend "
+#~ "naar een zekere plaats (zoals <filename>$HOME/Mail</filename>), maar u "
+#~ "ziet nog steeds de map <guilabel>Locale mappen</guilabel> in de lijst met "
+#~ "mappen met submappen Postvak in/Postvak uit/Prullenbak/Concepten/&etc; en "
+#~ "&kmail; blijft e-mails daar in stoppen, speciaal verzonden e-mails."
+
+#~ msgid ""
+#~ "The problem is that certain folders are marked as special folders (system "
+#~ "folders) and if you don't have them, &kmail; cannot operate correctly. "
+#~ "That is the reason why it keeps re-creating that folder."
+#~ msgstr ""
+#~ "Het probleem is dat bepaalde mappen gemarkeerd zijn als speciale mappen "
+#~ "(systeemmappen) en als u ze niet hebt, dan kan &kmail; niet juist werken. "
+#~ "Dat is de reden waarom die map telkens opnieuw wordt aangemaakt."
+
+#~ msgid ""
+#~ "At this time there is no easy way to change this in the UI for all types "
+#~ "of special folders. Here is what you can do:"
+#~ msgstr ""
+#~ "Op dit moment is er geen gemakkelijke manier om dit in de UI voor alle "
+#~ "typen speciale mappen te wijzigen. Dit is wat u kunt doen:"
+
+#~ msgid ""
+#~ "The <emphasis>Sent-Mail, Drafts and Templates</emphasis> folder is "
+#~ "configurable for each identity. Go to <menuchoice><guimenu>Settings</"
+#~ "guimenu><guisubmenu>Configure KMail</guisubmenu><guimenuitem>Identities</"
+#~ "guimenuitem></menuchoice>, select your identity, click on "
+#~ "<guilabel>Modify</guilabel>, go to the <guilabel>Advanced</guilabel> tab "
+#~ "and set the folders to point to the right place."
+#~ msgstr ""
+#~ "De mappen <emphasis>Verzonden, Concepten en Sjablonen</emphasis> zijn "
+#~ "voor elke identiteit in te stellen. Ga naar "
+#~ "<menuchoice><guimenu>Instellingen</guimenu><guisubmenu>KMail instellen</"
+#~ "guisubmenu><guimenuitem>Identiteiten</guimenuitem></menuchoice>, "
+#~ "selecteer uw identiteit, klik op <guilabel>Wijzigen</guilabel>, ga naar "
+#~ "het tabblad <guilabel>Geavanceerd</guilabel> stel de mappen in door ze "
+#~ "naar de juiste plaats te laten verwijzen."
+
+#~ msgid ""
+#~ "The default <emphasis>Inbox</emphasis> is configurable for each POP3 "
+#~ "account. Go to <menuchoice><guimenu>Settings</"
+#~ "guimenu><guisubmenu>Configure KMail</guisubmenu><guimenuitem>Account</"
+#~ "guimenuitem></menuchoice>, select your POP3 account, click on "
+#~ "<guilabel>Modify</guilabel> go to the <guilabel>Advanced</guilabel> tab "
+#~ "and set the <guilabel>Destination folder</guilabel>."
+#~ msgstr ""
+#~ "De standaard <emphasis>Postvak in</emphasis> is voor elk POP3-account in "
+#~ "te stellen. Ga naar <menuchoice><guimenu>Instellingen</"
+#~ "guimenu><guisubmenu>KMail instellen</guisubmenu><guimenuitem>Account</"
+#~ "guimenuitem></menuchoice>, selecteer uw POP3-account, klik op "
+#~ "<guilabel>Wijzigen</guilabel> ga naar het tabblad <guilabel>Geavanceerd</"
+#~ "guilabel> en stel de <guilabel>Bestemmingsmap</guilabel> in."
+
+#~ msgid ""
+#~ "For IMAP accounts you can configure the <emphasis>Trash</emphasis> "
+#~ "folder. Do as above. The setting name is <emphasis>Trash folder</"
+#~ "emphasis>."
+#~ msgstr ""
+#~ "Voor IMAP-accounts kunt u de map <emphasis>Prullenbak</emphasis> "
+#~ "instellen. Zie boven. De naam van de instelling is <emphasis>Map "
+#~ "Prullenbak</emphasis>."
+
+#~ msgid ""
+#~ "The most problematic part is the <emphasis>Outbox</emphasis>. First, "
+#~ "locate <filename>specialmailcollectionsrc</filename> in your &kde; "
+#~ "configuration directory (<filename>$HOME/.kde4/share/config</filename> or "
+#~ "similar). It contains something like this:"
+#~ msgstr ""
+#~ "Het onderdeel met de meeste problemen is <emphasis>Postvak uit</"
+#~ "emphasis>. Lokaliseer als eerste het bestand "
+#~ "<filename>specialmailcollectionsrc</filename> in de map voor uw &kde;-"
+#~ "instellingen (<filename>$HOME/.kde4/share/config</filename> of iets "
+#~ "soortgelijks). Het bevat zoiets als dit:"
+
+#~ msgid "[SpecialCollections] DefaultResourceId=akonadi_maildir_resource_0"
+#~ msgstr "[SpecialCollections] DefaultResourceId=akonadi_maildir_resource_0"
+
+#~ msgid ""
+#~ "Now start <application>akonadiconsole</application>, on the "
+#~ "<guilabel>Agents</guilabel> tab locate your local account for your "
+#~ "<emphasis>Outbox</emphasis> folder, click on it and note the identifier "
+#~ "that appears in the lower part "
+#~ "(<replaceable>akonadi_maildir_resource_XXX</replaceable> or similar). Put "
+#~ "this identifier in the above shown <filename>specialmailcollectionsrc</"
+#~ "filename>, by replacing the existing one."
+#~ msgstr ""
+#~ "Start nu <application>akonadiconsole</application>, op het tabblad "
+#~ "<guilabel>Agents</guilabel> zoekt u uw lokale account waarin u uw map "
+#~ "<emphasis>Postvak uit</emphasis> wilt hebben, klik er op en noteer de "
+#~ "identifier die verschijnt in het onderste deel van "
+#~ "(<replaceable>akonadi_maildir_resource_XXX</replaceable> of iets "
+#~ "soortgelijks). Stop deze identifier in de boven getoonde "
+#~ "<filename>specialmailcollectionsrc</filename>, door de bestaande te "
+#~ "vervangen."
+
+#~ msgid ""
+#~ "After that restart <application>akonadi</application> (you can do from "
+#~ "the <application>akonadiconsole</application>, "
+#~ "<menuchoice><guimenu>Server</guimenu><guimenuitem>Restart Server</"
+#~ "guimenuitem></menuchoice> or from command line with:"
+#~ msgstr ""
+#~ "Na het opnieuw starten van <application>akonadi</application> (u kunt dat "
+#~ "doen vanuit <application>akonadiconsole</application>, "
+#~ "<menuchoice><guimenu>Server</guimenu><guimenuitem>Server herstarten</"
+#~ "guimenuitem></menuchoice> of vanaf de opdrachtregel met:"
+
+#~ msgid ""
+#~ "Now remove the <guilabel>Local Folders</guilabel> that you don't want to "
+#~ "use anymore."
+#~ msgstr ""
+#~ "Verwijder daarna de <guilabel>Lokale mappen</guilabel> die u niet meer "
+#~ "wilt gebruiken."
+
+#~ msgid ""
+#~ "If it keeps reappearing and the <guilabel>Mail Dispatcher Agent</"
+#~ "guilabel> still crashes, you need to do one more thing in "
+#~ "<application>akonadiconsole</application>. Go to the <guilabel>Browser</"
+#~ "guilabel> tab, find the outbox you <emphasis>want</emphasis> to use, "
+#~ "right click on it, select <guilabel>Folder Properties</guilabel>, "
+#~ "<guilabel>Attributes</guilabel> tab, enter "
+#~ "<userinput>SpecialCollectionAttribute</userinput> then click "
+#~ "<guilabel>Add</guilabel>, double click on the <guilabel>Value</guilabel> "
+#~ "near the <guilabel>SpecialCollectionAttribute</guilabel> and enter "
+#~ "<userinput>outbox</userinput>. Add also another attribute, the attribute "
+#~ "name has to be <guilabel>ENTITYDISPLAY</guilabel> and the value "
+#~ "<userinput>(\"outbox\" \"mail-folder-outbox\" \"\" ())</userinput> (just "
+#~ "copy paste from here). Restart <application>akonadi</application> and now "
+#~ "you should be able to remove completely the unneeded local folder account."
+#~ msgstr ""
+#~ "Als het blijft verschijnen en de <guilabel>Agent voor het verzenden van e-"
+#~ "mail</guilabel> blijft crashen, dan moet u nog een ding meer doen in "
+#~ "<application>akonadiconsole</application>. Ga naar het tabblad "
+#~ "<guilabel>Browser</guilabel>, zoek het Postvak uit dat u <emphasis>wilt</"
+#~ "emphasis> gebruiken, klik er rechts op, selecteer "
+#~ "<guilabel>Mapeigenschappen</guilabel>, tabblad <guilabel>Attributen</"
+#~ "guilabel>, voer <userinput>SpecialCollectionAttribute</userinput> in en "
+#~ "klik dan op <guilabel>Toevoegen</guilabel>, dubbelklik op "
+#~ "<guilabel>Waarde</guilabel> bij <guilabel>SpecialCollectionAttribute</"
+#~ "guilabel> en voer <userinput>Postvak uit</userinput> in. Voeg ook een "
+#~ "ander attribuut toe, de attribuutnaam moet <guilabel>ENTITYDISPLAY</"
+#~ "guilabel> zijn en de waarde <userinput>(\"outbox\" \"mail-folder-outbox\" "
+#~ "\"\" ())</userinput> (gewoon vanaf hier kopiëren plakken). Start "
+#~ "<application>akonadi</application> opnieuw en nu zou u in staat moeten "
+#~ "zijn om het onnodige account lokale map te verwijderen."
+
+#~ msgid ""
+#~ "There are a number of possible reasons for this and it is something the "
+#~ "&kmail; team hopes to tackle in time. Meanwhile, there are some "
+#~ "workarounds:"
+#~ msgstr ""
+#~ "Er zijn een aantal mogelijke redenen hiervoor en het is iets dat het "
+#~ "&kmail;-team op den duur hoopt op te lossen. Intussen zijn er "
+#~ "mogelijkheden om er omheen te werken:"

@@ -1,0 +1,2875 @@
+# translation of kturtle_programming-reference.po to Swedish
+# Copyright (C) 2004, 2005, 2007, 2008, 2009 Free Software Foundation, Inc.
+#
+# Stefan Asserhäll <stefan.asserhall@gmail.com>, 2004, 2005, 2007, 2008, 2009, 2010, 2011, 2013, 2016, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: kturtle_programming-reference\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 12:04+0000\n"
+"PO-Revision-Date: 2021-01-22 13:43+0100\n"
+"Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
+"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 19.04.3\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#. Tag: title
+#: programming-reference.docbook:2
+#, no-c-format
+msgid "&turtlescript; Programming Reference"
+msgstr "Programmeringsreferens för &kturtle;s språk"
+
+#. Tag: para
+#: programming-reference.docbook:3
+#, no-c-format
+msgid ""
+"This is the reference for &kturtle;'s &turtlescript;. In the first section "
+"of this chapter have a look at some aspects of the <link linkend=\"grammar"
+"\">grammar</link> of &turtlescript; programs. The second section deals "
+"exclusively with <link linkend=\"mathematical-operators\">mathematical "
+"operators</link>, <link linkend=\"boolean-operators\">boolean (true/false) "
+"operators</link> and <link linkend=\"comparing-operators\">comparison "
+"operators</link>. The third section is basically a giant list of all <link "
+"linkend=\"commands\">commands</link> explaining them one-by-one. Section "
+"four explains how to <link linkend=\"assignment-of-variables\">assign</link> "
+"values to <link linkend=\"assignment-of-variables\">variables</link>. "
+"Finally we explain how to arrange the execution of commands with <link "
+"linkend=\"controlling-execution\">execution controlling statements</link> in "
+"section five and how to create you own commands with <link linkend=\"learn"
+"\"><userinput>learn</userinput></link> in section six."
+msgstr ""
+"Det här är referensen för &kturtle;s språk. I kapitlets första avsnitt, kan "
+"du ta en titt på vissa aspekter hos <link linkend=\"grammar\">grammatiken</"
+"link> i &kturtle;s språk. Det andra avsnittet handlar enbart om <link "
+"linkend=\"mathematical-operators\">matematiska operatorer</link>, <link "
+"linkend=\"boolean-operators\">Booleska operatorer (sann eller falsk)</link> "
+"och <link linkend=\"comparing-operators\">jämförelseoperatorer</link>. Det "
+"tredje avsnittet är egentlingen en enorm lista med alla <link linkend="
+"\"commands\">kommandon</link> som förklaras ett i taget. Avsnitt fyra "
+"förklarar hur värden <link linkend=\"assignment-of-variables\">tilldelas</"
+"link> till <link linkend=\"assignment-of-variables\">variabler</link>. Till "
+"sist förklarar vi hur körning av kommandon arrangeras med <link linkend="
+"\"controlling-execution\">kommandon för styrning av körningen</link> i "
+"avsnitt fem, och hur egna kommandon kan skapas med <link linkend=\"learn"
+"\"><userinput>lär</userinput></link> i avsnitt sex."
+
+#. Tag: title
+#: programming-reference.docbook:6
+#, no-c-format
+msgid "The Grammar of &turtlescript;"
+msgstr "Grammatiken för &kturtle;s språk"
+
+#. Tag: para
+#: programming-reference.docbook:7
+#, no-c-format
+msgid ""
+"As in any language, &turtlescript; has different types of words and symbols. "
+"In English we distinguish verbs (like 'to walk' or 'to sing') and nouns "
+"(like 'sister' or 'house'), they are used for different purposes. "
+"&turtlescript; is a programming language, it is used to instruct &kturtle; "
+"what to do."
+msgstr ""
+"Som med alla språk, har &kturtle;s språk olika typer av ord och symboler. På "
+"svenska skiljer vi på verb (som 'att gå' eller 'att sjunga') och substantiv "
+"(som 'syster' eller 'hus'), eftersom de används för olika syften. &kturtle;s "
+"språk är ett programspråk, och används för att tala om för &kturtle; vad som "
+"ska göras."
+
+#. Tag: para
+#: programming-reference.docbook:8
+#, no-c-format
+msgid ""
+"In this section some of &turtlescript;'s different types of words and "
+"symbols are briefly explained. We explain <link linkend=\"comment"
+"\">comments</link>, <link linkend=\"command\">commands</link> and the three "
+"different kinds of literals: <link linkend=\"number\">numbers</link>, <link "
+"linkend=\"string\">strings</link> and <link linkend=\"boolean-value"
+"\">boolean (true/false) values</link>."
+msgstr ""
+"I det här avsnittet förklaras vissa av de olika typerna av ord och symboler "
+"&kturtle;s språk kortfattat. Vi förklarar <link linkend=\"comment"
+"\">kommentarer</link>, <link linkend=\"command\">kommandon</link> och de tre "
+"olika typerna av litteraler: <link linkend=\"number\">tal</link>, <link "
+"linkend=\"string\">strängar</link> och <link linkend=\"boolean-value"
+"\">Booleska värden (sann eller falsk)</link>."
+
+#. Tag: title
+#: programming-reference.docbook:12
+#, no-c-format
+msgid "Comments"
+msgstr "Kommentarer"
+
+#. Tag: para
+#: programming-reference.docbook:13
+#, no-c-format
+msgid ""
+"A program consists instructions that are executed when the program is run "
+"and so called comments. Comments are not executed, &kturtle; simply ignores "
+"them when executing your program. Comment are there for other programmers to "
+"make them understand your program better. Everything that follows on a "
+"<userinput>#</userinput> symbol is considered a comment in &turtlescript;. "
+"For example this little program that does nothing: <screen>\n"
+"# this little program does nothing, it is only a comment!\n"
+"</screen> It is a bit useless but it explain the matter well."
+msgstr ""
+"Ett program består av instruktioner som utförs när programmet körs, och så "
+"kallade kommentarer. Kommentarer utförs inte. &kturtle; ignorerar helt "
+"enkelt dem när programmet körs. Kommentarer finns till för andra "
+"programmerare, för att få dem att förstå programmet bättre. Allt som följer "
+"symbolen <userinput>#</userinput> anses vara en kommentar i &kturtle;s "
+"språk. Exempelvis gör det här lilla programmet ingenting: <screen>\n"
+"# det här lilla programmet gör ingenting, det är bara en kommentar!\n"
+"</screen> Det är inte särskilt användbart, men förklarar saken bra."
+
+#. Tag: para
+#: programming-reference.docbook:16
+#, no-c-format
+msgid ""
+"Comments get very useful when the program gets a little bit more complex. It "
+"can help to give some advice to other programmers. In the following program "
+"you see comments being used together with the <link linkend=\"print\">print</"
+"link> command. <screen>\n"
+"# this program has been made by Cies Breijs.\n"
+"print \"this text will get printed on the canvas\"\n"
+"# the previous line is not a comment, but the next line is:\n"
+"# print \"this text will not get printed!\"\n"
+"</screen> The first line describes the program. The second line is executed "
+"by &kturtle; and prints <userinput>this text will get printed on the canvas</"
+"userinput> on the canvas. The third line is a comment. And the forth line is "
+"a comment that contains a piece of &turtlescript;, if the <userinput>#</"
+"userinput> symbol would be removed on the fourth line the print statement "
+"will we executed by &kturtle;. Programmers say: the print statement on the "
+"fourth line is 'commented out'."
+msgstr ""
+"Kommentarer är mycket användbara när programmen blir lite mer komplicerade. "
+"De kan hjälpa till med att ge råd till andra programmerare. I följande "
+"program ser du kommentarer som används tillsammans med kommandot <link "
+"linkend=\"print\">skriv</link>. <screen>\n"
+"# Programmet är skapat av Cies Breijs.\n"
+"skriv \"Den här texten skrivs ut på duken\"\n"
+"# Den föregående raden är inte en kommentar, men nästa rad är det:\n"
+"# skriv \"Den här texten kommer inte att skrivas ut.\"\n"
+"</screen> Den första raden beskriver programmet. Den andra raden utförs av "
+"&kturtle; och skriver ut <userinput>Den här texten skrivs ut på duken</"
+"userinput> på duken. Den tredje raden är en kommentar, och den fjärde raden "
+"är en kommentar som innehåller kod på &kturtle;s språk. Om symbolen "
+"<userinput>#</userinput> skulle tas bort från den fjärde raden, skulle "
+"utskriften utföras av &kturtle;. Programmerare säger: utskriften på fjärde "
+"raden är 'bortkommenterad'."
+
+#. Tag: para
+#: programming-reference.docbook:19
+#, no-c-format
+msgid ""
+"Commented lines are <glossterm>highlighted</glossterm> with light gray in "
+"the <link linkend=\"the-editor\">code editor</link>."
+msgstr ""
+"Kommentarrader är <glossterm>färglagda</glossterm> med ljusgrått i <link "
+"linkend=\"the-editor\">editorn</link>."
+
+#. Tag: title
+#: programming-reference.docbook:23 programming-reference.docbook:162
+#, no-c-format
+msgid "Commands"
+msgstr "Kommandon"
+
+#. Tag: para
+#: programming-reference.docbook:24
+#, no-c-format
+msgid ""
+"Using commands you tell the turtle or &kturtle; to do something. Some "
+"commands need input, some give output. <screen>\n"
+"# forward is a command that needs input, in this case the number 100:\n"
+"forward 100\n"
+"</screen> The first line is a <link linkend=\"comment\">comment</link>. The "
+"second line contains the <userinput>forward</userinput> command and the "
+"<link linkend=\"number\">number</link> <userinput>100</userinput>. The "
+"number is not part of command, it is considered 'input' for the command."
+msgstr ""
+"Genom att använda kommentarer kan du tala om för sköldpaddan eller &kturtle; "
+"att göra någonting. Vissa kommandon behöver indata, vissa ger utdata. "
+"<screen>\n"
+"# framåt är ett kommando som behöver indata, i detta fall talet 100:\n"
+"framåt 100\n"
+"</screen> Den första raden är en <link linkend=\"comment\">kommentar</link>. "
+"Den andra raden innehåller kommandot <userinput>framåt</userinput> och <link "
+"linkend=\"number\">talet</link> <userinput>100</userinput>. Talet är inte en "
+"del av kommandot, utan anses vara 'indata' till kommandot."
+
+#. Tag: para
+#: programming-reference.docbook:27
+#, no-c-format
+msgid ""
+"Some commands like &eg; <userinput>go</userinput> need more than one input "
+"value. Multiple values have to be separated using the <userinput>,</"
+"userinput> character (comma)."
+msgstr ""
+"Vissa kommandon, som t.ex. <userinput>gå</userinput> behöver mer än ett "
+"indatavärde. Flera värden måste skiljas åt med ett kommatecken: <userinput>,"
+"</userinput>."
+
+#. Tag: para
+#: programming-reference.docbook:28
+#, no-c-format
+msgid ""
+"For a detailed overview of all commands that &kturtle; supports go <link "
+"linkend=\"commands\">here</link>. Built-in commands are "
+"<glossterm>highlighted</glossterm> in dark blue."
+msgstr ""
+"För en detaljerad översikt av alla kommandon som &kturtle; stöder, titta "
+"<link linkend=\"commands\">här</link>. Inbyggda kommandon är "
+"<glossterm>färglagda</glossterm> med mörkblått."
+
+#. Tag: title
+#: programming-reference.docbook:32
+#, no-c-format
+msgid "Numbers"
+msgstr "Tal"
+
+#. Tag: para
+#: programming-reference.docbook:33
+#, no-c-format
+msgid ""
+"Most likely you already know quite a bit about numbers. The way numbers are "
+"used in &kturtle; is not much different from spoken language, or math."
+msgstr ""
+"Troligen kan du redan en hel del om tal. Sättet som tal används i &kturtle; "
+"är inte särskilt annorlunda än ett talat språk eller matematik."
+
+#. Tag: para
+#: programming-reference.docbook:34
+#, no-c-format
+msgid ""
+"We have the so called natural numbers: <userinput>0</userinput>, "
+"<userinput>1</userinput>, <userinput>2</userinput>, <userinput>3</"
+"userinput>, <userinput>4</userinput>, <userinput>5</userinput>, &etc; The "
+"negative numbers: <userinput>-1</userinput>, <userinput>-2</userinput>, "
+"<userinput>-3</userinput>, &etc; And the numbers with decimals, or dot-"
+"numbers, for example: <userinput>0.1</userinput>, <userinput>3.14</"
+"userinput>, <userinput>33.3333</userinput>, <userinput>-5.05</userinput>, "
+"<userinput>-1.0</userinput>. The <userinput>.</userinput> character (dot) is "
+"used as decimal separator."
+msgstr ""
+"Vi har de så kallade naturliga talen: <userinput>0</userinput>, "
+"<userinput>1</userinput>, <userinput>2</userinput>, <userinput>3</"
+"userinput>, <userinput>4</userinput>, <userinput>5</userinput>, etc. De "
+"negativa talen: <userinput>-1</userinput>, <userinput>-2</userinput>, "
+"<userinput>-3</userinput>, etc. Och talen med decimaler eller decimaltalen, "
+"till exempel: <userinput>0.1</userinput>, <userinput>3.14</userinput>, "
+"<userinput>33.3333</userinput>, <userinput>-5.05</userinput>, "
+"<userinput>-1.0</userinput>. Tecknet <userinput>.</userinput> (punkt) "
+"används som decimaltecken."
+
+#. Tag: para
+#: programming-reference.docbook:37
+#, no-c-format
+msgid ""
+"Numbers can be used in <link linkend=\"mathematical-operators\">mathematical "
+"operators</link> and <link linkend=\"comparing-operators\">comparison "
+"operators</link>. They can also be stored in <link linkend=\"assignment-of-"
+"variables\">variables</link>. Numbers are <glossterm>highlighted</glossterm> "
+"in dark red."
+msgstr ""
+"Tal kan användas i <link linkend=\"mathematical-operators\">matematiska "
+"beräkningar</link> och <link linkend=\"comparing-operators\">jämförelser</"
+"link>. De kan också placeras i <link linkend=\"assignment-of-variables"
+"\">variabler</link>. Tal <glossterm>färgläggs</glossterm> i mörkrött."
+
+#. Tag: title
+#: programming-reference.docbook:43
+#, no-c-format
+msgid "Strings"
+msgstr "Strängar"
+
+#. Tag: para
+#: programming-reference.docbook:44
+#, no-c-format
+msgid ""
+"First an example: <screen>\n"
+"print \"Hello, I'm a string.\"\n"
+"</screen> In this example <userinput>print</userinput> is a command where "
+"<userinput>\"Hello, I'm a string.\"</userinput> is a string. Strings start "
+"and end with the <userinput>\"</userinput> mark, by these marks &kturtle; "
+"knows it is a string."
+msgstr ""
+"Först ett exempel: <screen>\n"
+"skriv \"Hej, jag är en sträng.\"\n"
+"</screen> I det här exemplet är <userinput>skriv</userinput> ett kommando, "
+"medan <userinput>\"Hej, jag är en sträng.\"</userinput> är en sträng. "
+"Strängar börjar och slutar med tecknet <userinput>\"</userinput>. Det är "
+"dessa tecken som gör att &kturtle; vet att det är en sträng."
+
+#. Tag: para
+#: programming-reference.docbook:47
+#, no-c-format
+msgid ""
+"Strings can be put in <link linkend=\"assignment-of-variables\">variables</"
+"link>, just like <link linkend=\"number\">numbers</link>. Yet, unlike "
+"numbers, strings cannot be used in <link linkend=\"mathematical-operators"
+"\">mathematical operators</link> or <link linkend=\"comparing-operators"
+"\">comparison operators</link>. Strings are <glossterm>highlighted</"
+"glossterm> with red."
+msgstr ""
+"Strängar kan tilldelas till <link linkend=\"assignment-of-variables"
+"\">variabler</link> precis som <link linkend=\"number\">tal</link>. Ändå, i "
+"motsats till tal, kan inte strängar användas med <link linkend="
+"\"mathematical-operators\">matematiska operatorer</link> eller <link linkend="
+"\"comparing-operators\">jämförelseoperatorer</link>. Strängar "
+"<glossterm>färgläggs</glossterm> med rött."
+
+#. Tag: title
+#: programming-reference.docbook:51
+#, no-c-format
+msgid "Boolean (true/false) values"
+msgstr "Booleska värden (sann eller falsk)"
+
+#. Tag: para
+#: programming-reference.docbook:52
+#, no-c-format
+msgid ""
+"There are only two boolean values: <userinput>true</"
+"userinput><indexterm><primary>true</primary></indexterm> and "
+"<userinput>false</userinput><indexterm><primary>false</primary></indexterm>. "
+"Sometimes they are also called: <quote><userinput>on</userinput></quote> and "
+"<quote><userinput>off</userinput></quote>, <quote><userinput>yes</"
+"userinput></quote> and <quote><userinput>no</userinput></quote>, "
+"<quote><userinput>one</userinput></quote> and <quote><userinput>zero</"
+"userinput></quote>. But in &turtlescript; we call them, always, "
+"<userinput>true</userinput> and <userinput>false</userinput>. Have a look at "
+"this piece of &turtlescript;: <screen>\n"
+"$a = true\n"
+"</screen> If you look in the <link linkend=\"the-inspector\">inspector</"
+"link> you can see that the <link linkend=\"assignment-of-variables"
+"\">variable</link> <userinput>$a</userinput> is set to <userinput>true</"
+"userinput>, and has the boolean type."
+msgstr ""
+"Det finns bara två Booleska värden: <userinput>sann</"
+"userinput><indexterm><primary>sann</primary></indexterm> och "
+"<userinput>falsk</userinput><indexterm><primary>falsk</primary></indexterm>. "
+"Ibland kallas de också <quote><userinput>på</userinput></quote> och "
+"<quote><userinput>av</userinput></quote>, <quote><userinput>ja</userinput></"
+"quote> och <quote><userinput>nej</userinput></quote>, <quote><userinput>ett</"
+"userinput></quote> och <quote><userinput>noll</userinput></quote>. Men i "
+"&kturtle;s språk kallar vi dem alltid <userinput>sann</userinput> och "
+"<userinput>falsk</userinput>. Ta en titt på följande kod i &kturtle;s språk: "
+"<screen>\n"
+"a = sann\n"
+"</screen> Om du tittar i <link linkend=\"the-inspector\">inspektören</link> "
+"kan du se att <link linkend=\"assignment-of-variables\">variabeln</link> "
+"<userinput>$a</userinput> har värdet <userinput>sann</userinput>, och typen "
+"Boolean."
+
+#. Tag: para
+#: programming-reference.docbook:55
+#, no-c-format
+msgid ""
+"Often boolean values are the result of a <link linkend=\"comparing-operators"
+"\">comparison operator</link>, like in the following piece of "
+"&turtlescript;: <screen>\n"
+"$answer = 10 &gt; 3\n"
+"</screen> The <link linkend=\"assignment-of-variables\">variable</link> "
+"<userinput>$answer</userinput> is set to <userinput>true</userinput> because "
+"<userinput>10</userinput> is larger than <userinput>3</userinput>."
+msgstr ""
+"Ofta är Booleska värden resultat av en <link linkend=\"comparing-operators"
+"\">jämförelseoperator</link>, som i följande kod på &kturtle;s språk: "
+"<screen>\n"
+"$svar = 10 &gt; 3\n"
+"</screen> <link linkend=\"assignment-of-variables\">Variabeln</link> "
+"<userinput>$svar</userinput> tilldelas <userinput>sann</userinput> eftersom "
+"<userinput>10</userinput> är större än <userinput>3</userinput>."
+
+#. Tag: para
+#: programming-reference.docbook:58
+#, no-c-format
+msgid ""
+"Boolean values, <userinput>true</userinput> and <userinput>false</"
+"userinput>, are <glossterm>highlighted</glossterm> with dark red."
+msgstr ""
+"Booleska värden, <userinput>sann</userinput> och <userinput>falsk</"
+"userinput>, <glossterm>färgläggs</glossterm> med mörkrött."
+
+#. Tag: title
+#: programming-reference.docbook:66
+#, no-c-format
+msgid "Mathematical, boolean and comparing operators"
+msgstr "Matematiska, Booleska och jämförelseoperatorer"
+
+#. Tag: para
+#: programming-reference.docbook:67
+#, no-c-format
+msgid ""
+"The title of this section might sound very difficult, yet it is not as "
+"difficult as it sound."
+msgstr ""
+"Det här avsnittets titel kan låta mycket svår, men det är inte så svårt som "
+"det låter."
+
+#. Tag: title
+#: programming-reference.docbook:70
+#, no-c-format
+msgid "Mathematical operators"
+msgstr "Matematiska operatorer"
+
+#. Tag: para
+#: programming-reference.docbook:71
+#, no-c-format
+msgid ""
+"These are the basic math symbols known as: add (<userinput>+</userinput>), "
+"subtract (<userinput>-</userinput>), multiply (<userinput>*</userinput>), "
+"divide (<userinput>/</userinput>) and power (<userinput>^</userinput>)."
+msgstr ""
+"Det här är de grundläggande matematiska symbolerna: addera (<userinput>+</"
+"userinput>), subtrahera (<userinput>-</userinput>), multiplicera "
+"(<userinput>*</userinput>), dividera (<userinput>/</userinput>) och upphöjt "
+"till (<userinput>^</userinput>)."
+
+#. Tag: para
+#: programming-reference.docbook:73
+#, no-c-format
+msgid ""
+"Here a small example of the mathematical operators you can use in "
+"&turtlescript;: <screen>\n"
+"$add      = 1 + 1\n"
+"$subtract = 20 - 5\n"
+"$multiply = 15 * 2\n"
+"$divide   = 30 / 30\n"
+"$power    = 2 ^ 2\n"
+"</screen> The values resulting from the mathematical operations get <link "
+"linkend=\"assignment-of-variables\">assigned</link> to various <link linkend="
+"\"assignment-of-variables\">variables</link>. Using the <link linkend=\"the-"
+"inspector\">inspector</link> you can see the values."
+msgstr ""
+"Här är ett litet exempel på de matematiska operatorerna du kan använda med "
+"&kturtle;s språk: <screen>\n"
+"$addera       = 1 + 1\n"
+"$subtrahera   = 20 - 5\n"
+"$multiplicera = 15 * 2\n"
+"$dividera     = 30 / 30\n"
+"$upphöja      = 2 ^ 2\n"
+"</screen> Värden som är resultatet av matematiska operationer <link linkend="
+"\"assignment-of-variables\">tilldelas</link> till diverse <link linkend="
+"\"assignment-of-variables\">variabler</link>. Genom att använda <link "
+"linkend=\"the-inspector\">inspektören</link> kan du se värdena."
+
+#. Tag: para
+#: programming-reference.docbook:76
+#, no-c-format
+msgid ""
+"If you just want a simple calculation to be done you can do something like "
+"this:"
+msgstr ""
+"Om du bara vill göra en enkel beräkning kan du skriva något som liknar detta:"
+
+#. Tag: screen
+#: programming-reference.docbook:77
+#, no-c-format
+msgid "print 2010-12"
+msgstr "skriv 2010-12"
+
+#. Tag: para
+#: programming-reference.docbook:78
+#, no-c-format
+msgid ""
+"Now an example with parentheses: <screen>\n"
+"print ( ( 20 - 5 ) * 2 / 30 ) + 1\n"
+"</screen> The expressions inside parentheses will be calculated first. In "
+"this example, 20-5 will be calculated, then multiplied by 2, divided by 30, "
+"and then 1 is added (giving 2). Parentheses can also be used in other cases."
+msgstr ""
+"Nu ett exempel med parenteser: <screen>\n"
+"skriv ( ( 20 - 5 ) * 2 / 30 ) + 1\n"
+"</screen> Uttrycken inne i parenteserna räknas ut först. I det här exemplet "
+"beräknas 20-5, och därefter multipliceras det med 2, divideras med 30 och "
+"därefter läggs 1 till (vilket ger 2). Parenteser kan också användas i andra "
+"fall."
+
+#. Tag: para
+#: programming-reference.docbook:81
+#, no-c-format
+msgid ""
+"&kturtle; also has more advanced mathematical features in the form of "
+"commands. Have a look at the following commands but be aware that it "
+"concerns advanced operations: <link linkend=\"round\">round</link>, <link "
+"linkend=\"random\">random</link>, <link linkend=\"sqrt\">sqrt</link> , <link "
+"linkend=\"pi\">pi</link>, <link linkend=\"sin\">sin</link>, <link linkend="
+"\"cos\">cos</link>, <link linkend=\"tan\">tan</link>, <link linkend=\"arcsin"
+"\">arcsin</link>, <link linkend=\"arccos\">arccos</link>, <link linkend="
+"\"arctan\">arctan</link>."
+msgstr ""
+"&kturtle; har också mer avancerade matematiska funktioner i form av "
+"kommandon. Ta en titt på följande kommandon, men var medveten om att det "
+"gäller avancerade operationer: <link linkend=\"round\">avrunda</link>, <link "
+"linkend=\"random\">slump</link>, <link linkend=\"sqrt\">kvadratrot</link>, "
+"<link linkend=\"pi\">pi</link>, <link linkend=\"sin\">sin</link>, <link "
+"linkend=\"cos\">cos</link>, <link linkend=\"tan\">tan</link>, <link linkend="
+"\"arcsin\">arcsin</link>, <link linkend=\"arccos\">arccos</link>, <link "
+"linkend=\"arctan\">arctan</link>."
+
+#. Tag: title
+#: programming-reference.docbook:87
+#, no-c-format
+msgid "Boolean (true/false) operators"
+msgstr "Booleska operatorer (sann eller falsk)"
+
+#. Tag: para
+#: programming-reference.docbook:88
+#, no-c-format
+msgid ""
+"Where <link linkend=\"mathematical-operators\">mathematical operators</link> "
+"are mainly for <link linkend=\"number\">numbers</link>, boolean operators "
+"are for <link linkend=\"boolean-value\">boolean values</link> "
+"(<userinput>true</userinput> and <userinput>false</userinput>). There are "
+"only three boolean operators, namely: <userinput>and</"
+"userinput><indexterm><primary>and</primary></indexterm>, <userinput>or</"
+"userinput><indexterm><primary>or</primary></indexterm>, and <userinput>not</"
+"userinput><indexterm><primary>not</primary></indexterm>. The following piece "
+"of &turtlescript; shows how to use them: <screen>\n"
+"$and_1_1 = true and true    # -> true\n"
+"$and_1_0 = true and false   # -> false\n"
+"$and_0_1 = false and true   # -> false\n"
+"$and_0_0 = false and false  # -> false\n"
+"\n"
+"$or_1_1 = true or true    # -> true\n"
+"$or_1_0 = true or false   # -> true\n"
+"$or_0_1 = false or true   # -> true\n"
+"$or_0_0 = false or false  # -> false\n"
+"\n"
+"$not_1 = not true   # -> false\n"
+"$not_0 = not false  # -> true\n"
+"</screen> Using the <link linkend=\"the-inspector\">inspector</link> you can "
+"see the values, yet we also supply these results as little comments at the "
+"end of the lines. <userinput>and</userinput> evaluates <userinput>true</"
+"userinput> only if both sides are <userinput>true</userinput>. "
+"<userinput>or</userinput> evaluates <userinput>true</userinput> if either "
+"side is <userinput>true</userinput>. And <userinput>not</userinput> turns a "
+"<userinput>true</userinput> into <userinput>false</userinput> and a "
+"<userinput>false</userinput> into <userinput>true</userinput>."
+msgstr ""
+"Medan <link linkend=\"mathematical-operators\">matematiska operatorer</link> "
+"i huvudsak är till för <link linkend=\"number\">tal</link>, är Booleska "
+"operatorer till för <link linkend=\"boolean-value\">Booleska värden</link> "
+"(<userinput>sann</userinput> och <userinput>falsk</userinput>). Det finns "
+"bara tre booleska operatorer, nämligen: <userinput>och</"
+"userinput><indexterm><primary>och</primary></indexterm>, <userinput>eller</"
+"userinput><indexterm><primary>eller</primary></indexterm> och "
+"<userinput>inte</userinput><indexterm><primary>inte</primary></indexterm>. "
+"Följande kod på &kturtle;s språk visar hur de används: <screen>\n"
+"$och_1_1 = sann  och sann   # -> sann\n"
+"$och_1_0 = sann  och falsk  # -> falsk\n"
+"$och_0_1 = falsk och sann   # -> falsk\n"
+"$och_0_0 = falsk och falsk  # -> falsk\n"
+"\n"
+"$eller_1_1 = sann  eller sann    # -> sann\n"
+"$eller_1_0 = sann  eller falsk   # -> sann\n"
+"$eller_0_1 = falsk eller sann    # -> sann\n"
+"$eller_0_0 = falsk eller falsk   # -> falsk\n"
+"\n"
+"$inte_1 = inte sann   # -> falsk\n"
+"$inte_0 = inte falsk  # -> sann\n"
+"</screen> Genom att använda <link linkend=\"the-inspector\">inspektören</"
+"link> kan du se värdena, men vi tillhandahåller också resultaten som små "
+"kommentarer i slutet av raderna. <userinput>och</userinput> utvärderas bara "
+"som <userinput>sann</userinput> om båda sidorna är <userinput>sann</"
+"userinput>. <userinput>eller</userinput> utvärderas som <userinput>sann</"
+"userinput> om någon av sidorna är <userinput>sann</userinput>. Och "
+"<userinput>inte</userinput> omvandlar <userinput>sann</userinput> till "
+"<userinput>falsk</userinput>, och <userinput>falsk</userinput> till "
+"<userinput>sann</userinput>."
+
+#. Tag: para
+#: programming-reference.docbook:91
+#, no-c-format
+msgid "Boolean operators are <glossterm>highlighted</glossterm> with pink."
+msgstr "Booleska operatorer <glossterm>färgläggs</glossterm> med rosa."
+
+#. Tag: title
+#: programming-reference.docbook:94
+#, no-c-format
+msgid "Some more advanced examples"
+msgstr "Några mer avancerade exempel"
+
+#. Tag: para
+#: programming-reference.docbook:95
+#, no-c-format
+msgid ""
+"Consider the following example with <userinput>and</userinput>: <screen>\n"
+"$a = 1\n"
+"$b = 5\n"
+"if (($a &lt; 10) and ($b == 5)) and ($a &lt; $b) {\n"
+"  print \"hello\"\n"
+"}\n"
+"</screen> In this piece of &turtlescript; the result of three <link linkend="
+"\"comparing-operators\">comparing operators</link> are merged using "
+"<userinput>and</userinput> operators. This means that all three have to "
+"evaluate <quote>true</quote> in order for the <quote>hello</quote> to be "
+"printed."
+msgstr ""
+"Betrakta följande exempel med <userinput>och</userinput>: <screen>$a = 1\n"
+"$b = 5\n"
+"om (($a &lt; 10) och ($b == 5)) och ($a &lt; $b) {\n"
+"  skriv \"hej\"\n"
+"}\n"
+"</screen> I denna kod på &kturtle;s språk, sammanfogas resultatet av tre "
+"<link linkend=\"comparing-operators\">jämförelseoperatorer</link> med "
+"operatorn <userinput>och</userinput>. Det betyder att alla tre måste "
+"utvärderas till <quote>sann</quote>, för att <quote>hej</quote> ska skrivas "
+"ut."
+
+#. Tag: para
+#: programming-reference.docbook:99
+#, no-c-format
+msgid ""
+"An example with <userinput>or</userinput>: <screen>\n"
+"$n = 1\n"
+"if ($n &lt; 10) or ($n == 2) {\n"
+"  print \"hello\"\n"
+"}\n"
+"</screen> In this piece of &turtlescript; the left side of the "
+"<userinput>or</userinput> is evaluating to <quote>true</quote>, the right "
+"side to <quote>false</quote>. Since one of the two sides of the "
+"<userinput>or</userinput> operator is <quote>true</quote>, the "
+"<userinput>or</userinput> operator evaluates <quote>true</quote>. That means "
+"<quote>hello</quote> gets printed."
+msgstr ""
+"Ett exempel med <userinput>eller</userinput>: <screen>\n"
+"$n = 1\n"
+"om ($n &lt; 10) eller ($n == 2) {\n"
+"  skriv \"hej\"\n"
+"}\n"
+"</screen> I denna kod på &kturtle;s språk, utvärderas vänster sida av "
+"<userinput>eller</userinput> till <quote>sann</quote>, och höger sida till "
+"<quote>falsk</quote>. Eftersom en av de två sidorna av operatorn "
+"<userinput>eller</userinput> är sann, utvärderas operatorn <userinput>eller</"
+"userinput> till <quote>sann</quote>. Det betyder att <quote>hej</quote> "
+"skrivs ut."
+
+#. Tag: para
+#: programming-reference.docbook:103
+#, no-c-format
+msgid ""
+"And finally an example with <userinput>not</userinput> which changes "
+"<quote>true</quote> into <quote>false</quote> and <quote>false</quote> into "
+"<quote>true</quote>. Have a look:"
+msgstr ""
+"Och till sist ett exempel med <userinput>inte</userinput> som ändrar "
+"<quote>sann</quote> till <quote>falsk</quote> och <quote>falsk</quote> till "
+"<quote>sann</quote>. Ta en titt:"
+
+#. Tag: screen
+#: programming-reference.docbook:104
+#, no-c-format
+msgid ""
+"$n = 1\n"
+"if not ($n == 3) {\n"
+"  print \"hello\"\n"
+"} else {\n"
+"  print \"not hello ;-)\"\n"
+"}"
+msgstr ""
+"$n = 1\n"
+"om inte ($n == 3) {\n"
+"  skriv \"hej\"\n"
+"} annars {\n"
+"  skriv \"inte hej ;-)\"\n"
+"}"
+
+#. Tag: title
+#: programming-reference.docbook:109
+#, no-c-format
+msgid "Comparing operators"
+msgstr "Jämförelseoperatorer"
+
+#. Tag: para
+#: programming-reference.docbook:110
+#, no-c-format
+msgid ""
+"Consider this simple comparison: <screen>\n"
+"$answer = 10 &gt; 3\n"
+"</screen> Here <userinput>10</userinput> is compared to <userinput>3</"
+"userinput> with the <quote>greater than</quote> operator. The result of this "
+"comparison, the <link linkend=\"boolean-value\">boolean value</link> "
+"<userinput>true</userinput> is stored in the <link linkend=\"assignment-of-"
+"variables\">variable</link> <userinput>$answer</userinput>."
+msgstr ""
+"Betrakta följande enkla jämförelse: <screen>\n"
+"$svar = 10 &gt; 3\n"
+"</screen> Här jämförs <userinput>10</userinput> med <userinput>3</userinput> "
+"med operatorn <quote>större än</quote>. Resultatet av jämförelsen, det <link "
+"linkend=\"boolean-value\">Booleska värdet</link> <userinput>sann</userinput> "
+"lagras i <link linkend=\"assignment-of-variables\">variabeln</link> "
+"<userinput>$svar</userinput>."
+
+#. Tag: para
+#: programming-reference.docbook:113
+#, no-c-format
+msgid ""
+"All <link linkend=\"number\">numbers</link> and <link linkend=\"assignment-"
+"of-variables\">variables</link> (that contain numbers) can be compared to "
+"each other with comparing operators."
+msgstr ""
+"Alla <link linkend=\"number\">tal</link> och <link linkend=\"assignment-of-"
+"variables\">variabler</link> (som innehåller tal) kan jämföras med varandra "
+"med jämförelseoperatorer."
+
+#. Tag: para
+#: programming-reference.docbook:114
+#, no-c-format
+msgid ""
+"Here are all possible comparing operators: <table> <title>Types of "
+"questions</title> <tgroup cols=\"3\"> <tbody> <row> <entry><userinput>$A == "
+"$B</userinput></entry> <entry>equals</entry> <entry>answer is <quote>true</"
+"quote> if <userinput>$A</userinput> equals <userinput>$B</userinput></entry> "
+"</row> <row> <entry><userinput>$A != $B</userinput></entry> <entry>not-"
+"equals</entry> <entry>answer is <quote>true</quote> if <userinput>$A</"
+"userinput> does not equal <userinput>$B</userinput></entry> </row> <row> "
+"<entry><userinput>$A &gt; $B</userinput></entry> <entry>greater than</entry> "
+"<entry>answer is <quote>true</quote> if <userinput>$A</userinput> is greater "
+"than <userinput>$B</userinput></entry> </row> <row> <entry><userinput>$A "
+"&lt; $B</userinput></entry> <entry>smaller than</entry> <entry>answer is "
+"<quote>true</quote> if <userinput>$A</userinput> is smaller than <userinput>"
+"$B</userinput></entry> </row> <row> <entry><userinput>$A &gt;= $B</"
+"userinput></entry> <entry>greater than or equals</entry> <entry>answer is "
+"<quote>true</quote> if <userinput>$A</userinput> is greater than or equals "
+"<userinput>$B</userinput></entry> </row> <row> <entry><userinput>$A &lt;= "
+"$B</userinput></entry> <entry>smaller than or equals</entry> <entry>answer "
+"is <quote>true</quote> if <userinput>$A</userinput> is smaller than or "
+"equals <userinput>$B</userinput></entry> </row> </tbody> </tgroup> </table> "
+"Please note that <userinput>$A</userinput> and <userinput>$B</userinput> "
+"have to be <link linkend=\"number\">numbers</link> or <link linkend="
+"\"assignment-of-variables\">variables</link> that contain numbers."
+msgstr ""
+"Här är alla tillgängliga jämförelseopratorer: <table> <title>Frågetyper</"
+"title> <tgroup cols=\"3\"> <tbody> <row> <entry><userinput>$A == $B</"
+"userinput></entry> <entry>lika med</entry> <entry>svaret är <quote>sann</"
+"quote> om <userinput>$A</userinput> är lika med <userinput>$B</userinput></"
+"entry> </row> <row> <entry><userinput>$A != $B</userinput></entry> "
+"<entry>inte lika med</entry> <entry>svaret är <quote>sann</quote> om "
+"<userinput>$A</userinput> inte är lika med <userinput>$B</userinput></entry> "
+"</row> <row> <entry><userinput>$A &gt; $B</userinput></entry> <entry>större "
+"än</entry> <entry>svaret är <quote>sann</quote> om <userinput>$A</userinput> "
+"är större än <userinput>B</userinput></entry> </row> <row><entry><userinput>"
+"$A &lt; $B</userinput></entry> <entry>mindre än</entry> <entry>svaret är "
+"<quote>sann</quote> om <userinput>$A</userinput> är mindre än ' <userinput>"
+"$B</userinput></entry> </row> <row> <entry><userinput>A &gt;= B</userinput></"
+"entry> <entry>större än eller lika med</entry> <entry>svaret är <quote>sann</"
+"quote> om <userinput>$A</userinput> är större än eller lika med <userinput>"
+"$B</userinput></entry> </row> <row> <entry><userinput>$A &lt;= $B</"
+"userinput></entry> <entry>mindre än eller lika med</entry> <entry>svaret är "
+"<quote>sann</quote> om <userinput>$A</userinput> är mindre än eller lika med "
+"<userinput>$B</userinput></entry> </row> </tbody> </tgroup> </table> "
+"Observera att <userinput>$A</userinput> och <userinput>$B</userinput> måste "
+"vara <link linkend=\"number\">tal</link> och <link linkend=\"assignment-of-"
+"variables\">variabler</link> som innehåller tal."
+
+#. Tag: para
+#: programming-reference.docbook:163
+#, no-c-format
+msgid ""
+"Using commands you tell the turtle or &kturtle; to do something. Some "
+"commands need input, some give output. In this section we explain all the "
+"built-in commands of &kturtle;. Alternatively, using <link linkend=\"learn"
+"\"><userinput>learn</userinput></link>, you can create your own commands. "
+"Built-in commands we discuss here are <glossterm>highlighted</glossterm> "
+"with dark blue."
+msgstr ""
+"Du talar om för sköldpaddan eller &kturtle; att göra något med kommandon. "
+"Vissa kommandon behöver indata, andra ger utdata. I det här avsnittet "
+"förklarar vi alla inbyggda kommandon i &kturtle;. Som alternativ, kan du "
+"skapa dina egna kommandon genom att använda <link linkend=\"learn"
+"\"><userinput>lär</userinput></link>. Inbyggda kommandon som vi beskriver "
+"här är <glossterm>färglagda</glossterm> med mörkblått."
+
+#. Tag: title
+#: programming-reference.docbook:166
+#, no-c-format
+msgid "Moving the turtle"
+msgstr "Flytta sköldpaddan"
+
+#. Tag: para
+#: programming-reference.docbook:167
+#, no-c-format
+msgid "There are several commands to move the turtle over the screen."
+msgstr "Det finns flera kommandon för att flytta sköldpaddan över skärmen."
+
+#. Tag: term
+#: programming-reference.docbook:172
+#, no-c-format
+msgid "<term>forward (fw)</term>"
+msgstr "<term>framåt (fr)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:172
+#, no-c-format
+msgid "<primary>forward (fw)</primary>"
+msgstr "<primary>framåt (fr)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:173
+#, no-c-format
+msgid "forward X"
+msgstr "framåt X"
+
+#. Tag: para
+#: programming-reference.docbook:173
+#, no-c-format
+msgid ""
+"<userinput>forward</userinput> moves the turtle forward by the amount of X "
+"pixels. When the pen is down the turtle will leave a trail. "
+"<userinput>forward</userinput> can be abbreviated to <userinput>fw</"
+"userinput>."
+msgstr ""
+"<userinput>framåt</userinput> flyttar sköldpaddan framåt X bildpunkter. När "
+"pennan är sänkt lämnar sköldpaddan ett spår. <userinput>framåt</userinput> "
+"kan förkortas <userinput>fr</userinput>."
+
+#. Tag: term
+#: programming-reference.docbook:180
+#, no-c-format
+msgid "<term>backward (bw)</term>"
+msgstr "<term>bakåt (ba)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:180
+#, no-c-format
+msgid "<primary>backward (bw)</primary>"
+msgstr "<primary>bakåt (ba)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:181
+#, no-c-format
+msgid "backward X"
+msgstr "bakåt X"
+
+#. Tag: para
+#: programming-reference.docbook:181
+#, no-c-format
+msgid ""
+"<userinput>backward</userinput> moves the turtle backward by the amount of X "
+"pixels. When the pen is down the turtle will leave a trail. "
+"<userinput>backward</userinput> can be abbreviated to <userinput>bw</"
+"userinput>."
+msgstr ""
+"<userinput>bakåt</userinput> flyttar sköldpaddan bakåt X bildpunkter. När "
+"pennan är sänkt lämnar sköldpaddan ett spår. <userinput>bakåt</userinput> "
+"kan förkortas <userinput>ba</userinput>."
+
+#. Tag: term
+#: programming-reference.docbook:188
+#, no-c-format
+msgid "<term>turnleft (tl)</term>"
+msgstr "<term>svängvänster (sv)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:188
+#, no-c-format
+msgid "<primary>turnleft (tl)</primary>"
+msgstr "<primary>svängvänster (sv)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:189
+#, no-c-format
+msgid "turnleft X"
+msgstr "svängvänster X"
+
+#. Tag: para
+#: programming-reference.docbook:189
+#, no-c-format
+msgid ""
+"<userinput>turnleft</userinput> commands the turtle to turn an amount of X "
+"degrees to the left. <userinput>turnleft</userinput> can be abbreviated to "
+"<userinput>tl</userinput>."
+msgstr ""
+"<userinput>svängvänster</userinput> talar om för sköldpaddan att svänga X "
+"grader åt vänster. <userinput>svängvänster</userinput> kan förkortas till "
+"<userinput>sv</userinput>."
+
+#. Tag: term
+#: programming-reference.docbook:196
+#, no-c-format
+msgid "<term>turnright (tr)</term>"
+msgstr "<term>svänghöger (sh)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:196
+#, no-c-format
+msgid "<primary>turnright (tr)</primary>"
+msgstr "<primary>svänghöger (sh)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:197
+#, no-c-format
+msgid "turnright X"
+msgstr "svänghöger X"
+
+#. Tag: para
+#: programming-reference.docbook:197
+#, no-c-format
+msgid ""
+"<userinput>turnright</userinput> the turtle to turn an amount of X degrees "
+"to the right. <userinput>turnright</userinput> can be abbreviated to "
+"<userinput>tr</userinput>."
+msgstr ""
+"<userinput>svänghöger</userinput> talar om för sköldpaddan att svänga X "
+"grader åt höger. <userinput>svänghöger</userinput> kan förkortas till "
+"<userinput>sh</userinput>."
+
+#. Tag: term
+#: programming-reference.docbook:204
+#, no-c-format
+msgid "<term>direction (dir)</term>"
+msgstr "<term>riktning (ri)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:204
+#, no-c-format
+msgid "<primary>direction (dir)</primary>"
+msgstr "<primary>riktning (ri)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:205
+#, no-c-format
+msgid "direction X"
+msgstr "riktning X"
+
+#. Tag: para
+#: programming-reference.docbook:205
+#, no-c-format
+msgid ""
+"<userinput>direction</userinput> set the turtle's direction to an amount of "
+"X degrees counting from zero, and thus is not relative to the turtle's "
+"previous direction. <userinput>direction</userinput> can be abbreviated to "
+"<userinput>dir</userinput>."
+msgstr ""
+"<userinput>riktning</userinput> ställer in sköldpaddans riktning till X "
+"grader från noll, och är på så sätt inte relativ till sköldpaddans tidigare "
+"riktning. <userinput>riktning</userinput> kan förkortas till <userinput>ri</"
+"userinput>."
+
+#. Tag: term
+#: programming-reference.docbook:212
+#, no-c-format
+msgid "<term>getdirection</term>"
+msgstr "<term>hämtariktning</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:212
+#, no-c-format
+msgid "<primary>getdirection</primary>"
+msgstr "<primary>hämtariktning</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:213
+#, no-c-format
+msgid "<screen>getdirection</screen>"
+msgstr "<screen>hämtariktning</screen>"
+
+#. Tag: para
+#: programming-reference.docbook:213
+#, no-c-format
+msgid ""
+"<userinput>getdirection</userinput> returns the turtle's direction as an "
+"amount of degrees counting from zero, where zero is the direction when the "
+"turtle is pointing upwards."
+msgstr ""
+"<userinput>hämtariktning</userinput> returnerar sköldpaddans riktning som "
+"ett gradantal räknat från noll, där noll är riktningen då sköldpaddan pekar "
+"uppåt."
+
+#. Tag: term
+#: programming-reference.docbook:220
+#, no-c-format
+msgid "<term>center</term>"
+msgstr "<term>mitten</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:220
+#, no-c-format
+msgid "<primary>center</primary>"
+msgstr "<primary>mitten</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:221
+#, no-c-format
+msgid "<screen>center</screen>"
+msgstr "<screen>mitten</screen>"
+
+#. Tag: para
+#: programming-reference.docbook:221
+#, no-c-format
+msgid ""
+"<userinput>center</userinput> moves the turtle to the center on the canvas."
+msgstr "<userinput>mitten</userinput> flyttar sköldpaddan till dukens mitt."
+
+#. Tag: term
+#: programming-reference.docbook:228
+#, no-c-format
+msgid "<term>go</term>"
+msgstr "<term>gå</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:228
+#, no-c-format
+msgid "<primary>go</primary>"
+msgstr "<primary>gå</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:229
+#, no-c-format
+msgid "go X,Y"
+msgstr "gå X,Y"
+
+#. Tag: para
+#: programming-reference.docbook:229
+#, no-c-format
+msgid ""
+"<userinput>go</userinput> commands the turtle to go to a certain place on "
+"the canvas. This place is X <glossterm linkend=\"pixels\">pixels</glossterm> "
+"from the left of the canvas, and Y <glossterm linkend=\"pixels\">pixels</"
+"glossterm> from the top of the canvas."
+msgstr ""
+"<userinput>gå</userinput> talar om för sköldpaddan att gå till en viss plats "
+"på duken. Den platsen är X <glossterm linkend=\"pixels\">bildpunkter</"
+"glossterm> från dukens vänsterkant och Y <glossterm linkend=\"pixels"
+"\">bildpunkter</glossterm> från dukens överkant."
+
+#. Tag: term
+#: programming-reference.docbook:236
+#, no-c-format
+msgid "<term>gox</term>"
+msgstr "<term>gåx</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:236
+#, no-c-format
+msgid "gox (gx)"
+msgstr "gåx (gx)"
+
+#. Tag: screen
+#: programming-reference.docbook:237
+#, no-c-format
+msgid "gox X"
+msgstr "gåx X"
+
+#. Tag: para
+#: programming-reference.docbook:237
+#, no-c-format
+msgid ""
+"<userinput>gox</userinput> using this command the turtle will move to X "
+"<glossterm linkend=\"pixels\">pixels</glossterm> from the left of the canvas "
+"whilst staying at the same height. <userinput>gox</userinput> can be "
+"abbreviated to <userinput>gx</userinput>."
+msgstr ""
+"<userinput>gåx</userinput> gör att sköldpaddan flyttas till X <glossterm "
+"linkend=\"pixels\">bildpunkter</glossterm> från dukens vänsterkant, medan "
+"den bibehåller samma höjd. <userinput>gåx</userinput> kan förkortas till "
+"<userinput>gx</userinput>."
+
+#. Tag: term
+#: programming-reference.docbook:244
+#, no-c-format
+msgid "<term>goy</term>"
+msgstr "<term>gåy</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:244
+#, no-c-format
+msgid "goy (gy)"
+msgstr "gåy (gy)"
+
+#. Tag: screen
+#: programming-reference.docbook:245
+#, no-c-format
+msgid "goy Y"
+msgstr "gåy Y"
+
+#. Tag: para
+#: programming-reference.docbook:245
+#, no-c-format
+msgid ""
+"<userinput>goy</userinput> using this command the turtle will move to Y "
+"<glossterm linkend=\"pixels\">pixels</glossterm> from the top of the canvas "
+"whilst staying at the same distance from the left border of the canvas. "
+"<userinput>goy</userinput> can be abbreviated to <userinput>gy</userinput>."
+msgstr ""
+"<userinput>gåy</userinput> gör att sköldpaddan flyttas till Y <glossterm "
+"linkend=\"pixels\">bildpunkter</glossterm> från dukens överkant, medan den "
+"behåller samma avstånd från dukens vänsterkant. <userinput>gåy</userinput> "
+"kan förkortas till <userinput>gy</userinput>."
+
+#. Tag: para
+#: programming-reference.docbook:249
+#, no-c-format
+msgid ""
+"Using the commands <userinput>go</userinput>, <userinput>gox</userinput>, "
+"<userinput>goy</userinput> and <userinput>center</userinput> the turtle will "
+"not draw a line, no matter if the pen is up or down."
+msgstr ""
+"När kommandona <userinput>gå</userinput>, <userinput>gåx</userinput>, "
+"<userinput>gåy</userinput> och <userinput>mitten</userinput> används ritar "
+"sköldpaddan inte någon linje oberoende av om pennan är uppe eller nere."
+
+#. Tag: title
+#: programming-reference.docbook:254
+#, no-c-format
+msgid "Where is the turtle?"
+msgstr "Var är sköldpaddan?"
+
+#. Tag: para
+#: programming-reference.docbook:255
+#, no-c-format
+msgid ""
+"There are two commands which return the position of the turtle on the screen."
+msgstr ""
+"Det finns två kommandon som returnerar sköldpaddans position på skärmen."
+
+#. Tag: term
+#: programming-reference.docbook:260
+#, no-c-format
+msgid "<term>getx</term>"
+msgstr "<term>hämtax</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:260
+#, no-c-format
+msgid "<primary>getx</primary>"
+msgstr "<primary>hämtax</primary>"
+
+#. Tag: para
+#: programming-reference.docbook:261
+#, no-c-format
+msgid ""
+"<userinput>getx</userinput> returns the number of pixels from the left of "
+"the canvas to the current position of the turtle."
+msgstr ""
+"<userinput>hämtax</userinput> returnerar antal bildpunkter från dukens "
+"vänsterkant till sköldpaddans nuvarande position."
+
+#. Tag: term
+#: programming-reference.docbook:268
+#, no-c-format
+msgid "<term>gety</term>"
+msgstr "<term>hämtay</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:268
+#, no-c-format
+msgid "<primary>gety</primary>"
+msgstr "<primary>hämtay</primary>"
+
+#. Tag: para
+#: programming-reference.docbook:269
+#, no-c-format
+msgid ""
+"<userinput>gety</userinput> returns the number of pixels from the top of the "
+"canvas to the current position of the turtle."
+msgstr ""
+"<userinput>hämtay</userinput> returnerar antal bildpunkter från dukens "
+"överkant till sköldpaddans nuvarande position."
+
+#. Tag: title
+#: programming-reference.docbook:276
+#, no-c-format
+msgid "The turtle has a pen"
+msgstr "Sköldpaddan har en penna"
+
+#. Tag: para
+#: programming-reference.docbook:277
+#, no-c-format
+msgid ""
+"The turtle has a pen that draws a line when the turtle moves. There are a "
+"few commands to control the pen. In this section we explain these commands."
+msgstr ""
+"Sköldpaddan har en penna som ritar en linje medan sköldpaddan rör sig. Det "
+"finns några få kommandon att styra pennan. I det här avsnittet förklarar vi "
+"dessa kommandon."
+
+#. Tag: term
+#: programming-reference.docbook:281
+#, no-c-format
+msgid "<term>penup (pu)</term>"
+msgstr "<term>höjpenna (hp)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:281
+#, no-c-format
+msgid "<primary>penup (pu)</primary>"
+msgstr "<primary>höjpenna (hp)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:282
+#, no-c-format
+msgid "penup"
+msgstr "höjpenna"
+
+#. Tag: para
+#: programming-reference.docbook:282
+#, no-c-format
+msgid ""
+"<userinput>penup</userinput> lifts the pen from the canvas. When the pen is "
+"<quote>up</quote> no line will be drawn when the turtle moves. See also "
+"<userinput>pendown</userinput>. <userinput>penup</userinput> can be "
+"abbreviated to <userinput>pu</userinput>."
+msgstr ""
+"<userinput>höjpenna</userinput> lyfter pennan från duken. När pennan är "
+"<quote>höjd</quote>, ritas ingen linje när sköldpaddan rör sig. Se också "
+"<userinput>sänkpenna</userinput>. <userinput>höjpenna</userinput> kan "
+"förkortas till <userinput>hp</userinput>."
+
+#. Tag: term
+#: programming-reference.docbook:289
+#, no-c-format
+msgid "<term>pendown (pd)</term>"
+msgstr "<term>sänkpenna (sp)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:289
+#, no-c-format
+msgid "<primary>pendown (pd)</primary>"
+msgstr "<primary>sänkpenna (sp)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:290
+#, no-c-format
+msgid "pendown"
+msgstr "sänkpenna"
+
+#. Tag: para
+#: programming-reference.docbook:290
+#, no-c-format
+msgid ""
+"<userinput>pendown</userinput> presses the pen down on the canvas. When the "
+"pen is press <quote>down</quote> on the canvas a line will be drawn when the "
+"turtle moves. See also <userinput>penup</userinput>. <userinput>pendown</"
+"userinput> can be abbreviated to <userinput>pd</userinput>."
+msgstr ""
+"<userinput>sänkpenna</userinput> sänker ner pennan på duken. När pennan är "
+"<quote>sänkt</quote>, ritas en linje när sköldpaddan rör sig. Se också "
+"<userinput>höjpenna</userinput>. <userinput>sänkpenna</userinput> kan "
+"förkortas till <userinput>sp</userinput>."
+
+#. Tag: term
+#: programming-reference.docbook:297
+#, no-c-format
+msgid "<term>penwidth (pw)</term>"
+msgstr "<term>pennbredd (pb)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:297
+#, no-c-format
+msgid "<primary>penwidth (pw)</primary>"
+msgstr "<primary>pennbredd (pb)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:298
+#, no-c-format
+msgid "penwidth X"
+msgstr "pennbredd X"
+
+#. Tag: para
+#: programming-reference.docbook:298
+#, no-c-format
+msgid ""
+"<userinput>penwidth</userinput> sets the width of the pen (the line width) "
+"to an amount of X <glossterm linkend=\"pixels\">pixels</glossterm>. "
+"<userinput>penwidth</userinput> can be abbreviated to <userinput>pw</"
+"userinput>."
+msgstr ""
+"<userinput>pennbredd</userinput> ställer in pennans bredd (linjebredden) "
+"till X <glossterm linkend=\"pixels\">bildpunkter</glossterm>. "
+"<userinput>pennbredd</userinput> kan förkortas till <userinput>pb</"
+"userinput>."
+
+#. Tag: term
+#: programming-reference.docbook:305
+#, no-c-format
+msgid "<term>pencolor (pc)</term>"
+msgstr "<term>pennfärg (pf)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:305
+#, no-c-format
+msgid "<primary>pencolor (pc)</primary>"
+msgstr "<primary>pennfärg (pf)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:306
+#, no-c-format
+msgid "pencolor R,G,B"
+msgstr "pennfärg R,G,B"
+
+#. Tag: para
+#: programming-reference.docbook:306
+#, no-c-format
+msgid ""
+"<userinput>pencolor</userinput> sets the color of the pen. "
+"<userinput>pencolor</userinput> takes an <glossterm linkend=\"rgb\">RGB "
+"combination</glossterm> as input. <userinput>pencolor</userinput> can be "
+"abbreviated to <userinput>pc</userinput>."
+msgstr ""
+"<userinput>pennfärg</userinput> ställer in pennans färg. "
+"<userinput>pennfärg</userinput> behöver en <glossterm linkend=\"rgb\">RGB-"
+"kombination</glossterm> som indata. <userinput>pennfärg</userinput> kan "
+"förkortas till <userinput>pf</userinput>."
+
+#. Tag: title
+#: programming-reference.docbook:313
+#, no-c-format
+msgid "Commands to control the canvas"
+msgstr "Kommandon för att kontrollera duken"
+
+#. Tag: para
+#: programming-reference.docbook:314
+#, no-c-format
+msgid "There are several commands to control the canvas."
+msgstr "Det finns flera kommandon för att kontrollera duken."
+
+#. Tag: term
+#: programming-reference.docbook:318
+#, no-c-format
+msgid "<term>canvassize (cs)</term>"
+msgstr "<term>dukstorlek (ds)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:318
+#, no-c-format
+msgid "<primary>canvassize (cs)</primary>"
+msgstr "<primary>dukstorlek (ds)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:319
+#, no-c-format
+msgid "canvassize X,Y"
+msgstr "dukstorlek X,Y"
+
+#. Tag: para
+#: programming-reference.docbook:319
+#, no-c-format
+msgid ""
+"With the <userinput>canvassize</userinput> command you can set the size of "
+"the canvas. It takes X and Y as input, where X is the new canvas width in "
+"<glossterm linkend=\"pixels\">pixels</glossterm>, and Y is the new height of "
+"the canvas in <glossterm linkend=\"pixels\">pixels</glossterm>. "
+"<userinput>canvassize</userinput> can be abbreviated to <userinput>cs</"
+"userinput>."
+msgstr ""
+"Med kommandot <userinput>dukstorlek</userinput> kan du ställa in dukens "
+"storlek. Den har X och Y som indata, där X är den nya dukbredden i "
+"<glossterm linkend=\"pixels\">bildpunkter</glossterm>, och Y är den nya "
+"höjden av duken i <glossterm linkend=\"pixels\">bildpunkter</glossterm>. "
+"<userinput>dukstorlek</userinput> kan förkortas till <userinput>ds</"
+"userinput>."
+
+#. Tag: term
+#: programming-reference.docbook:326
+#, no-c-format
+msgid "<term>canvascolor (cc)</term>"
+msgstr "<term>dukfärg (df)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:326
+#, no-c-format
+msgid "<primary>canvascolor (cc)</primary>"
+msgstr "<primary>dukfärg (df)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:327
+#, no-c-format
+msgid "canvascolor R,G,B"
+msgstr "dukfärg R,G,B"
+
+#. Tag: para
+#: programming-reference.docbook:327
+#, no-c-format
+msgid ""
+"<userinput>canvascolor</userinput> set the color of the canvas. "
+"<userinput>canvascolor</userinput> takes an <glossterm linkend=\"rgb\">RGB "
+"combination</glossterm> as input. <userinput>canvascolor</userinput> can be "
+"abbreviated to <userinput>cc</userinput>."
+msgstr ""
+"<userinput>dukfärg</userinput> ställer in dukens färg. <userinput>dukfärg</"
+"userinput> behöver en <glossterm linkend=\"rgb\">RGB-kombination</glossterm> "
+"som indata. <userinput>dukfärg</userinput> kan förkortas till <userinput>df</"
+"userinput>."
+
+#. Tag: title
+#: programming-reference.docbook:334
+#, no-c-format
+msgid "Commands to clean up"
+msgstr "Kommandon för att städa"
+
+#. Tag: para
+#: programming-reference.docbook:335
+#, no-c-format
+msgid ""
+"There are two commands to clean up the canvas after you have made a mess."
+msgstr ""
+"Det finns två kommandon för att städa duken efter du har ställt till den."
+
+#. Tag: term
+#: programming-reference.docbook:339
+#, no-c-format
+msgid "<term>clear (ccl)</term>"
+msgstr "<term>rensa (ren)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:339
+#, no-c-format
+msgid "<primary>clear (ccl)</primary>"
+msgstr "<primary>rensa (ren)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:340
+#, no-c-format
+msgid "clear"
+msgstr "rensa"
+
+#. Tag: para
+#: programming-reference.docbook:340
+#, no-c-format
+msgid ""
+"With <userinput>clear</userinput> you can clean all drawings from the "
+"canvas. All other things remain: the position and angle of the turtle, the "
+"canvascolor, the visibility of the turtle, and the canvas size."
+msgstr ""
+"Med <userinput>rensa</userinput> suddar du allt som ritats på duken. Allt "
+"annat blir kvar: sköldpaddans position och vinkel, dukfärgen, sköldpaddans "
+"synlighet och dukstorleken."
+
+#. Tag: term
+#: programming-reference.docbook:347
+#, no-c-format
+msgid "<term>reset</term>"
+msgstr "<term>återställ</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:347
+#, no-c-format
+msgid "<primary>reset</primary>"
+msgstr "<primary>återställ</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:348
+#, no-c-format
+msgid "<screen>reset</screen>"
+msgstr "<screen>återställ</screen>"
+
+#. Tag: para
+#: programming-reference.docbook:348
+#, no-c-format
+msgid ""
+"<userinput>reset</userinput> cleans much more thoroughly than the "
+"<userinput>clear</userinput> command. After a <userinput>reset</userinput> "
+"command everything is like is was when you had just started &kturtle;. The "
+"turtle is positioned at the middle of the screen, the canvas color is white, "
+"the turtle draws a black line on the canvas and the canvassize is set to 400 "
+"x 400 pixels."
+msgstr ""
+"<userinput>återställ</userinput> städar mycket noggrannare än kommandot "
+"<userinput>rensa</userinput>. Efter kommandot <userinput>återställ</"
+"userinput> är allt som det var precis när du startat &kturtle;. Sköldpaddan "
+"är placerad i mitten av skärmen, dukfärgen är vit, sköldpaddan ritar en "
+"svart linje på duken och dukstorleken är inställd till 400 x 400 bildpunkter."
+
+#. Tag: title
+#: programming-reference.docbook:355
+#, no-c-format
+msgid "The turtle is a sprite"
+msgstr "Sköldpaddan är en sprite"
+
+#. Tag: para
+#: programming-reference.docbook:356
+#, no-c-format
+msgid ""
+"First a brief explanation of what sprites are: sprites are small pictures "
+"that can be moved around the screen, like we often see in computer games. "
+"Our turtle is also a sprite. For more info see the glossary on <glossterm "
+"linkend=\"sprites\">sprites</glossterm>."
+msgstr ""
+"Först en kort förklaring av vad en sprite är: En sprite är en liten bild som "
+"kan flyttas omkring på skärmen, som vi ofta ser i datorspel. Vår sköldpadda "
+"är alltså en sprite. För ytterligare information se ordförklaringen av "
+"<glossterm linkend=\"sprites\">sprite</glossterm>."
+
+#. Tag: para
+#: programming-reference.docbook:357
+#, no-c-format
+msgid ""
+"Next you will find a full overview on all commands to work with sprites."
+msgstr ""
+"Härnäst hittar du en fullständig översikt av alla kommandon som arbetar med "
+"en sprite."
+
+#. Tag: para
+#: programming-reference.docbook:358
+#, no-c-format
+msgid ""
+"The current version of &kturtle; does not yet support the use of sprites "
+"other than the turtle. With future versions you will be able to change the "
+"turtle into something of your own design."
+msgstr ""
+"Nuvarande version av &kturtle; stöder ännu inte användning av någon annan "
+"sprite än sköldpaddan. I framtida versioner kommer du att kunna ändra "
+"sköldpaddan till något som du själv skapat."
+
+#. Tag: term
+#: programming-reference.docbook:362
+#, no-c-format
+msgid "<term>spriteshow (ss)</term>"
+msgstr "<term>visa (vi)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:362
+#, no-c-format
+msgid "<primary>spriteshow (ss)</primary>"
+msgstr "<primary>visa (vi)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:363
+#, no-c-format
+msgid "spriteshow"
+msgstr "visa"
+
+#. Tag: para
+#: programming-reference.docbook:363
+#, no-c-format
+msgid ""
+"<userinput>spriteshow</userinput> makes the turtle visible again after it "
+"has been hidden. <userinput>spriteshow</userinput> can be abbreviated to "
+"<userinput>ss</userinput>."
+msgstr ""
+"<userinput>visa</userinput> gör sköldpaddan synlig igen efter den har gömts. "
+"<userinput>visa</userinput> kan förkortas till <userinput>vi</userinput>."
+
+#. Tag: term
+#: programming-reference.docbook:370
+#, no-c-format
+msgid "<term>spritehide (sh)</term>"
+msgstr "<term>göm</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:370
+#, no-c-format
+msgid "<primary>spritehide (sh)</primary>"
+msgstr "<primary>göm</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:371
+#, no-c-format
+msgid "spritehide"
+msgstr "göm"
+
+#. Tag: para
+#: programming-reference.docbook:371
+#, no-c-format
+msgid ""
+"<userinput>spritehide</userinput> hides the turtle. This can be used if the "
+"turtle does not fit in your drawing. <userinput>spritehide</userinput> can "
+"be abbreviated to <userinput>sh</userinput>."
+msgstr ""
+"<userinput>göm</userinput> gömmer sköldpaddan. Det kan användas om "
+"sköldpaddan inte passar in i bilden. <userinput>göm</userinput> kan "
+"förkortas <userinput>gö</userinput>."
+
+#. Tag: title
+#: programming-reference.docbook:378
+#, no-c-format
+msgid "Can the turtle write?"
+msgstr "Kan sköldpaddan skriva?"
+
+#. Tag: para
+#: programming-reference.docbook:379
+#, no-c-format
+msgid ""
+"The answer is: <quote>yes</quote>. The turtle can write: it writes just "
+"about everything you command it to."
+msgstr ""
+"Svaret är <quote>ja</quote>. Sköldpaddan kan skriva. Den skriver nästan vad "
+"som helst som du talar om för den att skriva."
+
+#. Tag: term
+#: programming-reference.docbook:383
+#, no-c-format
+msgid "<term>print</term>"
+msgstr "<term>skriv</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:383
+#, no-c-format
+msgid "<primary>print</primary>"
+msgstr "<primary>skriv</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:384
+#, no-c-format
+msgid "print X"
+msgstr "skriv X"
+
+#. Tag: para
+#: programming-reference.docbook:384
+#, no-c-format
+msgid ""
+"The <userinput>print</userinput> command is used to command the turtle to "
+"write something on the canvas. <userinput>print</userinput> takes numbers "
+"and strings as input. You can <userinput>print</userinput> various numbers "
+"and strings using the <quote>+</quote> symbol. See here a small example:"
+msgstr ""
+"Kommandot <userinput>skriv</userinput> används för att tala om för "
+"sköldpaddan att skriva någonting på duken. <userinput>skriv</userinput> "
+"behöver tal och strängar som indata. Du kan använda <userinput>skriv</"
+"userinput> för att skriva ut olika tal och strängar med symbolen '+'. Här är "
+"ett litet exempel:"
+
+#. Tag: screen
+#: programming-reference.docbook:386
+#, no-c-format
+msgid ""
+"$year = 2003\n"
+"$author = \"Cies\"\n"
+"print $author + \" started the KTurtle project in \" + $year + \" and still "
+"enjoys working on it!\""
+msgstr ""
+"$år = 2003\n"
+"$upphovsman = \"Cies\"\n"
+"skriv $upphovsman + \" startade projektet Kturtle \" + $år + \" och gillar "
+"ännu att jobba med det!\""
+
+#. Tag: term
+#: programming-reference.docbook:393
+#, no-c-format
+msgid "<term>fontsize</term>"
+msgstr "<term>teckenstorlek</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:393
+#, no-c-format
+msgid "<primary>fontsize</primary>"
+msgstr "<primary>teckenstorlek</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:394
+#, no-c-format
+msgid "fontsize X"
+msgstr "teckenstorlek X"
+
+#. Tag: para
+#: programming-reference.docbook:394
+#, no-c-format
+msgid ""
+"<userinput>fontsize</userinput> sets the size of the font that is used by "
+"<userinput>print</userinput>. <userinput>fontsize</userinput> takes one "
+"input which should be a number. The size is set in <glossterm linkend="
+"\"pixels\">pixels</glossterm>."
+msgstr ""
+"<userinput>teckenstorlek</userinput> anger storlek på teckensnittet som "
+"används av <userinput>skriv</userinput>. <userinput>teckenstorlek</"
+"userinput> behöver indata som ska vara ett tal. Storleken ställs in i "
+"<glossterm linkend=\"pixels\">bildpunkter</glossterm>."
+
+#. Tag: title
+#: programming-reference.docbook:401
+#, no-c-format
+msgid "Mathematical commands"
+msgstr "Matematiska kommandon"
+
+#. Tag: para
+#: programming-reference.docbook:402
+#, no-c-format
+msgid ""
+"The following commands are &kturtle;'s more advanced mathematical commands."
+msgstr "Följande kommandon är &kturtle;s mer avancerade matematiska kommandon."
+
+#. Tag: term
+#: programming-reference.docbook:406
+#, no-c-format
+msgid "<term>round</term>"
+msgstr "<term>avrunda</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:406
+#, no-c-format
+msgid "<primary>round</primary>"
+msgstr "<primary>avrunda</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:407
+#, no-c-format
+msgid "round(x)"
+msgstr "avrunda(x)"
+
+#. Tag: para
+#: programming-reference.docbook:407
+#, no-c-format
+msgid ""
+"<userinput>round</userinput> the given number to the nearest integer. "
+"<screen>\n"
+"print round(10.8)\n"
+"forward 20\n"
+"print round(10.3)\n"
+"</screen> With this code the turtle will print the numbers 11 and 10."
+msgstr ""
+"<userinput>avrunda</userinput> det givna talet till närmaste heltal. "
+"<screen>\n"
+"skriv avrunda(10,8)\n"
+"framåt 20\n"
+"skriv avrunda(10,3)\n"
+"</screen> Sköldpaddan skriver ut talen 11 och 10 med den här koden."
+
+#. Tag: term
+#: programming-reference.docbook:416
+#, no-c-format
+msgid "<term>random (rnd)</term>"
+msgstr "<term>slump (slu)</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:416
+#, no-c-format
+msgid "<primary>random (rnd)</primary>"
+msgstr "<primary>slump (slu)</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:417
+#, no-c-format
+msgid "random X,Y"
+msgstr "slump X,Y"
+
+#. Tag: para
+#: programming-reference.docbook:417
+#, no-c-format
+msgid ""
+"<userinput>random</userinput> is a command that takes input and gives "
+"output. As input are required two numbers, the first (X) sets the minimum "
+"output, the second (Y) sets the maximum. The output is a randomly chosen "
+"number that is equal or greater than the minimum and equal or smaller than "
+"the maximum. Here a small example: <screen>\n"
+"repeat 500 {\n"
+"  $x = random 1,20\n"
+"  forward $x\n"
+"  turnleft 10 - $x\n"
+"}\n"
+"</screen> Using the <userinput>random</userinput> command you can add a bit "
+"of chaos to your program."
+msgstr ""
+"<userinput>slump</userinput> är ett kommando som kräver indata och ger "
+"utdata. Två tal krävs som indata, det första (X) anger minimal utdata och "
+"det andra (Y) anger maximal. Utdata är ett slumpmässigt valt tal som är "
+"större än eller lika med minimum och mindre än eller lika med maximum. Här "
+"är ett litet exempel: <screen>\n"
+"upprepa 500 {\n"
+"  $x = slump 1,20\n"
+"  framåt $x\n"
+"  svängvänster 10 - $x\n"
+"}\n"
+"</screen> Med kommandot <userinput>slump</userinput> kan du lägga till en "
+"viss mängd kaos i programmet."
+
+#. Tag: term
+#: programming-reference.docbook:426
+#, no-c-format
+msgid "<term>mod</term>"
+msgstr "<term>mod</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:426
+#, no-c-format
+msgid "<primary>mod</primary>"
+msgstr "<primary>mod</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:427
+#, no-c-format
+msgid "mod X,Y"
+msgstr "mod X,Y"
+
+#. Tag: para
+#: programming-reference.docbook:427
+#, no-c-format
+msgid ""
+"The <userinput>mod</userinput> returns remainder of the division of first "
+"number by the second number."
+msgstr ""
+"Kommandot <userinput>mod</userinput> returnerar resten vid division av det "
+"första talet med det andra."
+
+#. Tag: term
+#: programming-reference.docbook:434
+#, no-c-format
+msgid "<term>sqrt</term>"
+msgstr "<term>kvadratrot</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:434
+#, no-c-format
+msgid "<primary>sqrt</primary>"
+msgstr "<primary>kvadratrot</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:435
+#, no-c-format
+msgid "sqrt X"
+msgstr "kvadratrot X"
+
+#. Tag: para
+#: programming-reference.docbook:435
+#, no-c-format
+msgid ""
+"The <userinput>sqrt</userinput> command is sued to find the square root of a "
+"number, X."
+msgstr ""
+"Kommandot <userinput>kvadratrot</userinput> används för att beräkna "
+"kvadratroten av ett tal, X."
+
+#. Tag: term
+#: programming-reference.docbook:452
+#, no-c-format
+msgid "<term>pi</term>"
+msgstr "<term>pi</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:452
+#, no-c-format
+msgid "<primary>pi</primary>"
+msgstr "<primary>pi</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:453
+#, no-c-format
+msgid "<screen>pi</screen>"
+msgstr "<screen>pi</screen>"
+
+#. Tag: para
+#: programming-reference.docbook:453
+#, no-c-format
+msgid "This command returns the constant Pi, <userinput>3.14159</userinput>."
+msgstr ""
+"Kommandot returnerar konstanten π (pi), <userinput>3.14159</userinput>."
+
+#. Tag: term
+#: programming-reference.docbook:462
+#, no-c-format
+msgid ""
+"sin<indexterm><primary>sin</primary></indexterm>, "
+"cos<indexterm><primary>cos</primary></indexterm>, tan"
+msgstr ""
+"sin<indexterm><primary>sin</primary></indexterm>, "
+"cos<indexterm><primary>cos</primary></indexterm>, tan"
+
+#. Tag: primary
+#: programming-reference.docbook:462
+#, no-c-format
+msgid "<primary>tan</primary>"
+msgstr "<primary>tan</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:464
+#, no-c-format
+msgid ""
+"sin X\n"
+"cos X\n"
+"tan X"
+msgstr ""
+"sin X\n"
+"cos X\n"
+"tan X"
+
+#. Tag: para
+#: programming-reference.docbook:464
+#, no-c-format
+msgid ""
+"These three commands represent the world famous trigoniometrical functions "
+"<userinput>sin</userinput>, <userinput>cos</userinput> and <userinput>tan</"
+"userinput>. The input argument of these commands, X, is a <link linkend="
+"\"number\">number</link>."
+msgstr ""
+"De här tre kommandona representerar de världsberömda trigonometriska "
+"funktionerna <userinput>sin</userinput>, <userinput>cos</userinput> och "
+"<userinput>tan</userinput>. Indata till kommandona, X, är ett <link linkend="
+"\"number\">tal</link>."
+
+#. Tag: term
+#: programming-reference.docbook:473
+#, no-c-format
+msgid ""
+"arcsin<indexterm><primary>arcsin</primary></indexterm>, "
+"arccos<indexterm><primary>arccos</primary></indexterm>, arctan"
+msgstr ""
+"arcsin<indexterm><primary>arcsin</primary></indexterm>, "
+"arccos<indexterm><primary>arccos</primary></indexterm>, arctan"
+
+#. Tag: primary
+#: programming-reference.docbook:473
+#, no-c-format
+msgid "arctan"
+msgstr "arctan"
+
+#. Tag: screen
+#: programming-reference.docbook:475
+#, no-c-format
+msgid ""
+"arcsin X\n"
+"arccos X\n"
+"arctan X"
+msgstr ""
+"arcsin X\n"
+"arccos X\n"
+"arctan X"
+
+#. Tag: para
+#: programming-reference.docbook:475
+#, no-c-format
+msgid ""
+"These commands are the inverse functions of <link linkend=\"sin\">sin</"
+"link>, <link linkend=\"cos\">cos</link> and <link linkend=\"tan\">tan</"
+"link>. The input argument of these commands, X, is a <link linkend=\"number"
+"\">number</link>."
+msgstr ""
+"De här kommandona är de inversa funktionerna för <userinput>sin</userinput>, "
+"<userinput>cos</userinput> och <userinput>tan</userinput>. Indata till "
+"kommandona, X, är ett <link linkend=\"number\">tal</link>."
+
+#. Tag: title
+#: programming-reference.docbook:482
+#, no-c-format
+msgid "Input and feedback through dialogs"
+msgstr "Inmatning och återmatning via dialogrutor"
+
+#. Tag: para
+#: programming-reference.docbook:483
+#, no-c-format
+msgid ""
+"A dialog is a small pop-up window that provides some feedback or asks for "
+"some input. &kturtle; has two commands for dialogs, namely: "
+"<userinput>message</userinput> and <userinput>ask</userinput>"
+msgstr ""
+"En dialogruta är ett litet fönster som dyker upp och tillhandahåller "
+"återmatning eller frågar efter inmatning. &kturtle; har två kommandon för "
+"dialogrutor, närmare bestämt <userinput>meddelande</userinput> och "
+"<userinput>fråga</userinput>."
+
+#. Tag: term
+#: programming-reference.docbook:487
+#, no-c-format
+msgid "<term>message</term>"
+msgstr "<term>meddelande</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:487
+#, no-c-format
+msgid "<primary>message</primary>"
+msgstr "<primary>meddelande</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:488
+#, no-c-format
+msgid "message X"
+msgstr "meddelande X"
+
+#. Tag: para
+#: programming-reference.docbook:488
+#, no-c-format
+msgid ""
+"The <userinput>message</userinput> command takes a <link linkend=\"string"
+"\">string</link> as input. It shows a pop-up dialog containing the text from "
+"the <link linkend=\"string\">string</link>."
+msgstr ""
+"Kommandot <userinput>meddelande</userinput> har en <link linkend=\"string"
+"\">sträng</link> som indata. Det visar en dialogruta som innehåller texten "
+"från <link linkend=\"string\">strängen</link>."
+
+#. Tag: screen
+#: programming-reference.docbook:490
+#, no-c-format
+msgid ""
+"message \"Cies started KTurtle in 2003 and still enjoys working on it!\""
+msgstr ""
+"skriv \"Cies startade Kturtle 2003 och gillar fortfarande att jobba med det!"
+"\""
+
+#. Tag: term
+#: programming-reference.docbook:497
+#, no-c-format
+msgid "<term>ask</term>"
+msgstr "<term>fråga</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:497
+#, no-c-format
+msgid "<primary>ask</primary>"
+msgstr "<primary>fråga</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:498
+#, no-c-format
+msgid "ask X"
+msgstr "fråga X"
+
+#. Tag: para
+#: programming-reference.docbook:498
+#, no-c-format
+msgid ""
+"<userinput>ask</userinput> takes a <link linkend=\"string\">string</link> as "
+"input. It shows this string in a pop-up dialog (similar to <link linkend="
+"\"message\">message</link>), along with an input field. After the user has "
+"entered a <link linkend=\"number\">number</link> or a <link linkend=\"string"
+"\">string</link> into this, the result can be stored in a <link linkend="
+"\"assignment-of-variables\">variable</link> or passed as an argument to a "
+"<link linkend=\"commands\">command</link>. For example: <screen>\n"
+"$in = ask \"What is your year of birth?\"\n"
+"$out = 2003 - $in\n"
+"print \"In 2003 you were \" + $out + \" years old at some point.\"\n"
+"</screen> If the user cancels the input dialog, or does not enter anything "
+"at all, the <link linkend=\"assignment-of-variables\">variable</link> is "
+"empty."
+msgstr ""
+"Kommandot <userinput>fråga</userinput> har en <link linkend=\"string"
+"\">sträng</link> som indata. Det visar strängen i en dialogruta (på likande "
+"sätt som <link linkend=\"message\">meddelande</link>), tillsammans med ett "
+"inmatningsfält. Efter användaren har skrivit in ett  <link linkend=\"number"
+"\">tal</link> eller en <link linkend=\"string\">sträng</link>, kan "
+"resultatet lagras i en <link linkend=\"assignment-of-variables\">variabel</"
+"link> eller skickas som ett argument till ett <link linkend=\"commands"
+"\">kommando</link>. Till exempel <screen>\n"
+"$in = fråga \"Hur gammal är du?\"\n"
+"$ut = 2003 - $in\n"
+"skriv \"År 2003 var du \" + $ut + \" år gammal vid något tillfälle.\"\n"
+"</screen> Om användaren avbryter inmatningsdialogrutan, eller inte skriver "
+"in någonting alls, blir <link linkend=\"assignment-of-variables\">variabeln</"
+"link> tom."
+
+#. Tag: title
+#: programming-reference.docbook:511
+#, no-c-format
+msgid "Assignment of variables"
+msgstr "Tilldelning av variabler"
+
+#. Tag: para
+#: programming-reference.docbook:512
+#, no-c-format
+msgid ""
+"First we have a look at variables, then we look at assigning values to those "
+"variables."
+msgstr ""
+"Först tar vi en titt på variabler, därefter tittar vi på tilldelning av "
+"värden till variablerna."
+
+#. Tag: para
+#: programming-reference.docbook:516
+#, no-c-format
+msgid ""
+"Variables are words that start with a <quote>$</quote>, in the <link linkend="
+"\"the-editor\">editor</link> they are <glossterm>highlighted</glossterm> "
+"with purple."
+msgstr ""
+"Variabler är ord som börjar med <quote>$</quote>, i <link linkend=\"the-"
+"editor\">editorn</link> <glossterm>färgläggs</glossterm> de med violett."
+
+#. Tag: para
+#: programming-reference.docbook:518
+#, no-c-format
+msgid ""
+"Variables can contain any <link linkend=\"number\">number</link>, <link "
+"linkend=\"string\">string</link> or <link linkend=\"boolean-value\">boolean "
+"(true/false) value</link>. Using the assignment, <userinput>=</userinput>, a "
+"variable is given its content. It will keep that content until the program "
+"finishes executing or until the variable is reassigned to something else."
+msgstr ""
+"Variabler kan använda vilket <link linkend=\"number\">tal</link>, vilken "
+"<link linkend=\"string\">sträng</link> eller vilket <link linkend=\"boolean-"
+"value\">Booleskt värde (sann eller falsk)</link> som helst. Genom att "
+"använda en tilldelning, <userinput>=</userinput>, får en variabel sitt "
+"innehåll. Den behåller det innehållet till programmet har kört klart, eller "
+"till variabeln tilldelas någonting annat."
+
+#. Tag: para
+#: programming-reference.docbook:520
+#, no-c-format
+msgid ""
+"You can use variables, once assigned, just as if they are their content. For "
+"instance in the following piece of &turtlescript;: <screen>\n"
+"$x = 10\n"
+"$x = $x / 3\n"
+"print $x\n"
+"</screen> First the variable <userinput>$x</userinput> is assigned to "
+"<userinput>10</userinput>. Then <userinput>$x</userinput> is reassigned to "
+"itself divided by <userinput>3</userinput> &mdash; this effectively means "
+"<userinput>$x</userinput> is reassigned to product of <userinput>10 / 3</"
+"userinput>. Finally <userinput>$x</userinput> is printed. In line two and "
+"three you see that <userinput>$x</userinput> is used as if it is its "
+"contents."
+msgstr ""
+"När variabler väl har tilldelats någonting, kan de användas precis som om de "
+"vore innehållet. Titta exempelvis på följande kod i &kturtle;s språk: "
+"<screen>\n"
+"$x = 10\n"
+"$x = $x / 3\n"
+"skriv $x\n"
+"</screen> Först tilldelas variabeln <userinput>$x</userinput> värdet "
+"<userinput>10</userinput>. Därefter tilldelas <userinput>$x</userinput> "
+"värdet av sig själv dividerat med <userinput>3</userinput>. Det betyder "
+"alltså att <userinput>$x</userinput> tilldelas resultatet av <userinput>10 / "
+"3</userinput>. Till sist skrivs <userinput>$x</userinput> ut. På den andra "
+"och tredje raden ser du att <userinput>$x</userinput> används som sitt "
+"innehåll."
+
+#. Tag: para
+#: programming-reference.docbook:524
+#, no-c-format
+msgid ""
+"Variables have to be assigned in order to be used. For example: <screen>\n"
+"print $n\n"
+"</screen> Will result in an error message."
+msgstr ""
+"Variabler måste tilldelas för att kunna användas. Ett exempel: <screen>\n"
+"skriv $n\n"
+"</screen> Ger ett felmeddelande."
+
+#. Tag: para
+#: programming-reference.docbook:528
+#, no-c-format
+msgid ""
+"Please consider the following piece of &turtlescript;: <screen>\n"
+"$a = 2004\n"
+"$b = 25\n"
+"\n"
+"# the next command prints \"2029\"\n"
+"print $a + $b\n"
+"backward 30\n"
+"# the next command prints \"2004 plus 25 equals 2029\"\n"
+"print $a + \" plus \" + $b + \" equals \" + ($a + $b)\n"
+"</screen> In the first two lines the variables <userinput>$a</userinput> and "
+"<userinput>$b</userinput> are set to 2004 and 25. Then in two "
+"<userinput>print</userinput> commands with a <userinput>backward 30</"
+"userinput> in between are executed. The comments before the "
+"<userinput>print</userinput> commands explain what they are doing. The "
+"command <userinput>backward 30</userinput> is there to make sure every "
+"output is on a new line. As you see variables can be used just as if their "
+"where what they contain, you can use them with any kind of <link linkend="
+"\"operators\">operators</link> or give them as input when invoking <link "
+"linkend=\"commands\">commands</link>."
+msgstr ""
+"Betrakta följande kod på &kturtle;s språk: <screen>\n"
+"$a = 2004\n"
+"$b = 25\n"
+"\n"
+"# nästa kommando skriver \"2029\"\n"
+"skriv $a + $b\n"
+"bakåt 30\n"
+"# nästa kommando skriver \"2004 plus 25 är lika med 2029\"\n"
+"skriv $a + \" plus \" + $b + \" är lika med \" + ($a + $b)\n"
+"</screen> På de första två raderna sätts variablerna <userinput>$a</"
+"userinput> och <userinput>$b</userinput> till 2004 och 25. Därefter följer "
+"två <userinput>skrivkommandon</userinput> med <userinput>bakåt 30</"
+"userinput> mellan. Kommentarerna innan <userinput>skrivkommandona</"
+"userinput> förklarar vad de gör. Som du ser kan variabler användas precis "
+"som det de innehåller, och man kan kan använda dem med alla sorters <link "
+"linkend=\"operators\">operatorer</link> eller använda dem som indata när "
+"<link linkend=\"commands\">kommandon</link> utförs."
+
+#. Tag: para
+#: programming-reference.docbook:534
+#, no-c-format
+msgid ""
+"One more example: <screen>\n"
+"$name = ask \"What is your name?\"\n"
+"print \"Hi \" + $name + \"! Good luck while learning the art of "
+"programming...\"\n"
+"</screen> Pretty straight forward. Again you can see that the variable "
+"<userinput>$name</userinput>, treated just like a string."
+msgstr ""
+"Ett exempel till: <screen>\n"
+"$namn = fråga \"Vad heter du?\"\n"
+"skriv \"Hej \" + $namn + \"! Lycka till med att lära dig programmeringens "
+"konst ...\"\n"
+"</screen> Ganska enkelt. Återigen kan du se att variabeln <userinput>$namn</"
+"userinput> behandlas precis som en sträng."
+
+#. Tag: para
+#: programming-reference.docbook:538
+#, no-c-format
+msgid ""
+"When using variables the <link linkend=\"the-inspector\">inspector</link> is "
+"very helpful. It shows you the contents of all variables that are currently "
+"in use."
+msgstr ""
+"När variabler används är <link linkend=\"the-inspector\">inspektören</link> "
+"till stor hjälp. Den visar innehållet i alla variabler som för närvarande "
+"används."
+
+#. Tag: title
+#: programming-reference.docbook:544
+#, no-c-format
+msgid "Controlling execution"
+msgstr "Styra körning"
+
+#. Tag: para
+#: programming-reference.docbook:545
+#, no-c-format
+msgid ""
+"The execution controllers enable you &mdash; as their name implies &mdash; "
+"to control execution."
+msgstr ""
+"Styrning av körningen gör det möjligt för dig att styra körningen, precis "
+"som namnet anger."
+
+#. Tag: para
+#: programming-reference.docbook:546
+#, no-c-format
+msgid ""
+"Execution controlling commands are <glossterm>highlighted</glossterm> with "
+"dark green in a bold font type. The brackets are mostly used together with "
+"execution controllers and they are <glossterm>highlighted</glossterm> with "
+"black."
+msgstr ""
+"Kommandon för att styra körningen <glossterm>färgläggs</glossterm> med "
+"mörkgrönt och fetstil. Hakparenteserna som oftast används tillsammans med "
+"kommandon för att styra körningen <glossterm>färgläggs</glossterm> med svart."
+
+#. Tag: title
+#: programming-reference.docbook:549
+#, no-c-format
+msgid "Have the turtle wait"
+msgstr "Låta sköldpaddan vänta"
+
+#. Tag: para
+#: programming-reference.docbook:550
+#, no-c-format
+msgid ""
+"If you have done some programming in &kturtle; you have might noticed that "
+"the turtle can be very quick at drawing. This command makes the turtle wait "
+"for a given amount of time."
+msgstr ""
+"Om du försökt programmera en del med &kturtle; kanske du märker att "
+"sköldpaddan kan vara mycket snabb när den ritar. Det här kommandot gör att "
+"sköldpaddan väntar en angiven tid."
+
+#. Tag: term
+#: programming-reference.docbook:553
+#, no-c-format
+msgid "<term>wait</term>"
+msgstr "<term>vänta</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:553
+#, no-c-format
+msgid "<primary>wait</primary>"
+msgstr "<primary>vänta</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:554
+#, no-c-format
+msgid "wait X"
+msgstr "vänta X"
+
+#. Tag: para
+#: programming-reference.docbook:554
+#, no-c-format
+msgid ""
+"<userinput>wait</userinput> makes the turtle wait for X seconds. <screen>\n"
+"repeat 36 {\n"
+"  forward 5\n"
+"  turnright 10\n"
+"  wait 0.5\n"
+"}\n"
+"</screen> This code draws a circle, but the turtle will wait half a second "
+"after each step. This gives the impression of a slow-moving turtle."
+msgstr ""
+"<userinput>vänta</userinput> låter sköldpaddan vänta X sekunder. <screen>\n"
+"upprepa 36 {\n"
+"  framåt 5\n"
+"  svänghöger 10\n"
+"  vänta 0.5\n"
+"}\n"
+"</screen> Den här koden ritar en cirkel, men sköldpaddan väntar en halv "
+"sekund mellan varje steg. Det ger intrycket av en sköldpadda som rör sig "
+"långsamt."
+
+#. Tag: title
+#: programming-reference.docbook:564
+#, no-c-format
+msgid "Execute <quote>if</quote>"
+msgstr "Kör <quote>om</quote>"
+
+#. Tag: term
+#: programming-reference.docbook:567
+#, no-c-format
+msgid "<term>if</term>"
+msgstr "<term>om</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:567
+#, no-c-format
+msgid "<primary>if</primary>"
+msgstr "<primary>om</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:568
+#, no-c-format
+msgid "if <link linkend=\"boolean-value\">boolean</link> { ... }"
+msgstr "om <link linkend=\"boolean-value\">Boolean</link> { ... }"
+
+#. Tag: para
+#: programming-reference.docbook:568
+#, no-c-format
+msgid ""
+"The code that is placed between the brackets will only be executed "
+"<userinput>if</userinput> the <link linkend=\"boolean-value\">boolean value</"
+"link> evaluates <quote>true</quote>. <screen>\n"
+"$x = 6\n"
+"if $x &gt; 5 {\n"
+"  print \"$x is greater than five!\"\n"
+"}\n"
+"</screen> On the first line <userinput>$x</userinput> is set to 6. On the "
+"second line a <link linkend=\"comparing-operators\">comparing operator</"
+"link> is used to evaluate <userinput>$x &gt; 5</userinput>. Since this "
+"evaluates <quote>true</quote>, 6 is larger than 5, the execution controller "
+"<userinput>if</userinput> will allow the code between the brackets to be "
+"executed."
+msgstr ""
+"Koden som placeras mellan krullparenteserna utförs bara <userinput>om</"
+"userinput> det <link linkend=\"boolean-value\">Booleska värdet</link> "
+"utvärderas till <quote>sann</quote>. <screen>\n"
+"$x = 6\n"
+"om $x &gt; 5 {\n"
+"  skriv \"$x är större än fem!\"\n"
+"}\n"
+"</screen> På första raden tilldelas <userinput>$x</userinput> värdet 6. På "
+"den andra raden används en <link linkend=\"comparing-operators"
+"\">jämförelseoperator</link> för att utvärdera <userinput>$x &gt; 5</"
+"userinput>. Eftersom det utvärderas till <quote>sann</quote>, 6 är större än "
+"5, tillåter kommandot för styrning av körningen <userinput>om</userinput> "
+"att koden mellan krullparenteserna utförs."
+
+#. Tag: title
+#: programming-reference.docbook:577
+#, no-c-format
+msgid "If not, in other words: <quote>else</quote>"
+msgstr "Om inte, med andra ord <quote>annars</quote>"
+
+#. Tag: term
+#: programming-reference.docbook:580
+#, no-c-format
+msgid "<term>else</term>"
+msgstr "<term>annars</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:580
+#, no-c-format
+msgid "<primary>else</primary>"
+msgstr "<primary>annars</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:581
+#, no-c-format
+msgid "if <link linkend=\"boolean-value\">boolean</link> { ... } else { ... }"
+msgstr ""
+"om <link linkend=\"boolean-value\">Boolean</link> { ... } annars { ... }"
+
+#. Tag: para
+#: programming-reference.docbook:581
+#, no-c-format
+msgid ""
+"<userinput>else</userinput> can be used in addition to the execution "
+"controller <link linkend=\"if\"><userinput>if</userinput></link>. The code "
+"between the brackets after <userinput>else</userinput> is only executed if "
+"the <link linkend=\"boolean-value\">boolean</link> evaluates <quote>false</"
+"quote>. <screen>\n"
+"reset\n"
+"$x = 4\n"
+"if $x &gt; 5 {\n"
+"  print \"$x is greater than five!\"\n"
+"} else {\n"
+"  print \"$x is smaller than six!\"\n"
+"}\n"
+"</screen> The <link linkend=\"comparing-operators\">comparing operator</"
+"link> evaluates the expression <userinput>$x &gt; 5</userinput>. Since 4 is "
+"not greater than 5 the expression evaluates <quote>false</quote>. This means "
+"the code between the brackets after <userinput>else</userinput> gets "
+"executed."
+msgstr ""
+"<userinput>annars</userinput> kan användas som tillägg till kommandot för "
+"styrning av körningen <link linkend=\"if\"><userinput>om</userinput></link>. "
+"Koden mellan krullparenteserna efter <userinput>annars</userinput> utförs "
+"bara om det <link linkend=\"boolean-value\">Booleska värdet</link> "
+"utvärderas till <quote>falsk</quote>. <screen>\n"
+"$x = 4\n"
+"om $x &gt; 5 {\n"
+"  skriv \"x är större än fem!\"\n"
+"} annars {\n"
+"  skriv \"x är mindre än sex!\"\n"
+"}\n"
+"</screen> <link linkend=\"comparing-operators\">Jämförelseoperatorn</link> "
+"utvärderar uttrycket <userinput>$x &gt; 5</userinput>. Eftersom 4 inte är "
+"större än 5, utvärderas uttrycket till <quote>falsk</quote>. Det betyder att "
+"koden mellan krullparenteserna efter <userinput>annars</userinput> utförs."
+
+#. Tag: title
+#: programming-reference.docbook:590
+#, no-c-format
+msgid "The <quote>while</quote> loop"
+msgstr "En <quote>medan</quote> snurra"
+
+#. Tag: term
+#: programming-reference.docbook:593
+#, no-c-format
+msgid "<term>while</term>"
+msgstr "<term>medan</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:593
+#, no-c-format
+msgid "<primary>while</primary>"
+msgstr "<primary>medan</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:594
+#, no-c-format
+msgid "while <link linkend=\"boolean-value\">boolean</link> { ... }"
+msgstr "medan <link linkend=\"boolean-value\">Boolean</link> { ... }"
+
+#. Tag: para
+#: programming-reference.docbook:594
+#, no-c-format
+msgid ""
+"The execution controller <userinput>while</userinput> is a lot like <link "
+"linkend=\"if\"><userinput>if</userinput></link>. The difference is that "
+"<userinput>while</userinput> keeps repeating (looping) the code between the "
+"brackets until the <link linkend=\"boolean-value\">boolean</link> evaluates "
+"<quote>false</quote>. <screen>\n"
+"$x = 1\n"
+"while $x &lt; 5 {\n"
+"  forward 10\n"
+"  wait 1\n"
+"  $x = $x + 1\n"
+"}\n"
+"</screen> On the first line <userinput>$x</userinput> is set to 1. On the "
+"second line <userinput>$x &lt; 5</userinput> is evaluated. Since the answer "
+"to this question is <quote>true</quote> the execution controller "
+"<userinput>while</userinput> starts executing the code between the brackets "
+"until the <userinput>$x &lt; 5</userinput> evaluates <quote>false</quote>. "
+"In this case the code between the brackets will be executed 4 times, because "
+"every time the fifth line is executed <userinput>$x</userinput> increases by "
+"1."
+msgstr ""
+"Kommandot för styrning av körningen <userinput>medan</userinput> liknar "
+"<link linkend=\"if\"><userinput>om</userinput></link> en hel del. Skillnaden "
+"är att <userinput>medan</userinput> fortsätter upprepa (snurra i) koden "
+"mellan krullparenteserna, ända till det <link linkend=\"boolean-value"
+"\">Booleska värdet</link> utvärderas till <quote>falsk</quote>. <screen>\n"
+"$x = 1\n"
+"medan $x &lt; 5 {\n"
+"  framåt 10\n"
+"  vänta 1\n"
+"  $x = $x + 1\n"
+"}\n"
+"</screen> På den första raden sätts <userinput>x</userinput> till 1. På den "
+"andra raden utvärderas <userinput>x &lt; 5</userinput>. Eftersom svaret på "
+"frågan är <quote>sann</quote> utför kommandot <userinput>medan</userinput> "
+"för styrning av körningen koden mellan krullparenteserna, ända till "
+"<userinput>$x &lt; 5</userinput> utvärderas till <quote>falsk</quote>. I det "
+"här fallet utförs koden mellan hakparenteserna fyra gånger, eftersom varje "
+"gång den femte raden utförs ökas <userinput>x</userinput> med ett."
+
+#. Tag: title
+#: programming-reference.docbook:603
+#, no-c-format
+msgid "The <quote>repeat</quote> loop"
+msgstr "En <quote>upprepa</quote> snurra"
+
+#. Tag: term
+#: programming-reference.docbook:606
+#, no-c-format
+msgid "<term>repeat</term>"
+msgstr "<term>upprepa</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:606
+#, no-c-format
+msgid "<primary>repeat</primary>"
+msgstr "<primary>upprepa</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:607
+#, no-c-format
+msgid "repeat <link linkend=\"number\">number</link> { ... }"
+msgstr "upprepa <link linkend=\"number\">tal</link> { ... }"
+
+#. Tag: para
+#: programming-reference.docbook:607
+#, no-c-format
+msgid ""
+"The execution controller <userinput>repeat</userinput> is a lot like <link "
+"linkend=\"while\"><userinput>while</userinput></link>. The difference is "
+"that <userinput>repeat</userinput> keeps repeating (looping) the code "
+"between the brackets for as many times as the given number."
+msgstr ""
+"Kommandot för att styra körningen <userinput>upprepa</userinput> är mycket "
+"likt <link linkend=\"while\"><userinput>medan</userinput></link>. Skillnaden "
+"är att <userinput>upprepa</userinput> fortsätter upprepa (snurra i) koden "
+"mellan krullparenteserna lika många gånger som det angivna talet."
+
+#. Tag: title
+#: programming-reference.docbook:614
+#, no-c-format
+msgid "The <quote>for</quote> loop, a counting loop"
+msgstr "En <quote>för</quote> snurra, en räknande snurra"
+
+#. Tag: term
+#: programming-reference.docbook:617
+#, no-c-format
+msgid "<term>for</term>"
+msgstr "<term>för</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:617
+#, no-c-format
+msgid "<primary>for</primary>"
+msgstr "<primary>för</primary>"
+
+#. Tag: primary
+#: programming-reference.docbook:617
+#, no-c-format
+msgid "<primary>to</primary>"
+msgstr "<primary>till</primary>"
+
+#. Tag: primary
+#: programming-reference.docbook:617
+#, no-c-format
+msgid "step"
+msgstr "steg"
+
+#. Tag: screen
+#: programming-reference.docbook:618
+#, no-c-format
+msgid ""
+"for <link linkend=\"assignment-of-variables\">variable</link> = <link "
+"linkend=\"number\">number</link> to <link linkend=\"number\">number</link> "
+"{ ... }"
+msgstr ""
+"för <link linkend=\"assignment-of-variables\">variabel</link> = <link "
+"linkend=\"number\">tal</link> till <link linkend=\"number\">tal</link> "
+"{ ... }"
+
+#. Tag: para
+#: programming-reference.docbook:618
+#, no-c-format
+msgid ""
+"The <userinput>for</userinput> loop is a <quote>counting loop</quote>, &ie; "
+"it keeps count for you. The first number sets the variable to the value in "
+"the first loop. Every loop the number is increased until the second number "
+"is reached. <screen>\n"
+"for $x = 1 to 10 {\n"
+"  print $x * 7\n"
+"  forward 15\n"
+"}\n"
+"</screen> Every time the code between the brackets is executed the "
+"<userinput>$x</userinput> is increased by 1, until <userinput>$x</userinput> "
+"reaches the value of 10. The code between the brackets prints the <userinput>"
+"$x</userinput> multiplied by 7. After this program finishes its execution "
+"you will see the times table of 7 on the canvas."
+msgstr ""
+"Snurran <userinput>för</userinput> är en <quote>räknande snurra</quote>, "
+"dvs. den håller räkning åt dig. <screen>\n"
+"för $x = 1 till 10 {\n"
+"  skriv $x * 7\n"
+"  framåt 15\n"
+"}\n"
+"</screen> Varje gång koden mellan krullparenteserna utförs ökas <userinput>"
+"$x</userinput> med ett, till <userinput>$x</userinput> når värdet 10. Koden "
+"mellan krullparenteserna skriver ut <userinput>$x</userinput> multiplicerat "
+"med 7. När programmet har kört färdigt, ser du sjuans multiplikationstabell "
+"på duken."
+
+#. Tag: para
+#: programming-reference.docbook:623
+#, no-c-format
+msgid "The default step size of a loop is 1, you can use an other value with"
+msgstr ""
+"Den förvalda stegstorleken i en snurra är 1, du kan använda ett annat värde "
+"med:"
+
+#. Tag: screen
+#: programming-reference.docbook:625
+#, no-c-format
+msgid ""
+"for <link linkend=\"assignment-of-variables\">variable</link> = <link "
+"linkend=\"number\">number</link> to <link linkend=\"number\">number</link> "
+"step <link linkend=\"number\">number</link> { ... }"
+msgstr ""
+"för <link linkend=\"assignment-of-variables\">variabel</link> = <link "
+"linkend=\"number\">tal</link> till <link linkend=\"number\">tal</link> steg "
+"<link linkend=\"number\">tal</link> { ... }"
+
+#. Tag: title
+#: programming-reference.docbook:631
+#, no-c-format
+msgid "Leave a loop"
+msgstr "Lämna en snurra"
+
+#. Tag: term
+#: programming-reference.docbook:634
+#, no-c-format
+msgid "<term>break</term>"
+msgstr "<term>avbryt</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:634
+#, no-c-format
+msgid "<primary>break</primary>"
+msgstr "<primary>avbryt</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:635
+#, no-c-format
+msgid "<screen>break</screen>"
+msgstr "<screen>avbryt</screen>"
+
+#. Tag: para
+#: programming-reference.docbook:635
+#, no-c-format
+msgid ""
+"Terminates the current loop immediately and transfers control to the "
+"statement immediately following that loop."
+msgstr ""
+"Avbryter omedelbart nuvarande snurra och överför kontroll till satsen som "
+"kommer direkt efter snurran."
+
+#. Tag: title
+#: programming-reference.docbook:642
+#, no-c-format
+msgid "Stop executing your program"
+msgstr "Stoppa körning av programmet"
+
+#. Tag: term
+#: programming-reference.docbook:645
+#, no-c-format
+msgid "<term>exit</term>"
+msgstr "<term>avsluta</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:645
+#, no-c-format
+msgid "<primary>exit</primary>"
+msgstr "<primary>avsluta</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:646
+#, no-c-format
+msgid "<screen>exit</screen>"
+msgstr "<screen>avsluta</screen>"
+
+#. Tag: para
+#: programming-reference.docbook:646
+#, no-c-format
+msgid "Finishes the execution of your program."
+msgstr "Avslutar körningen av programmet."
+
+#. Tag: title
+#: programming-reference.docbook:653
+#, no-c-format
+msgid "Checking assertions at runtime"
+msgstr "Kontrollera påståenden under körning"
+
+#. Tag: term
+#: programming-reference.docbook:656
+#, no-c-format
+msgid "<term>assert</term>"
+msgstr "<term>påstå</term>"
+
+#. Tag: primary
+#: programming-reference.docbook:656
+#, no-c-format
+msgid "<primary>assert</primary>"
+msgstr "<primary>påstå</primary>"
+
+#. Tag: screen
+#: programming-reference.docbook:657
+#, no-c-format
+msgid "assert <link linkend=\"boolean-value\">boolean</link>"
+msgstr "påstå <link linkend=\"boolean-value\">Boolean</link>"
+
+#. Tag: para
+#: programming-reference.docbook:657
+#, no-c-format
+msgid "Can be used to reason about program or input correctness."
+msgstr "Kan användas för att resonera om programmets eller indatas riktighet."
+
+#. Tag: screen
+#: programming-reference.docbook:659
+#, no-c-format
+msgid ""
+"$in = ask \"What is your year of birth?\"\n"
+"# the year must be positive\n"
+"assert $in > 0"
+msgstr ""
+"$in = fråga \"När fyller du år?\"\n"
+"# året måste vara positivt\n"
+"påstå $in > 0"
+
+#. Tag: title
+#: programming-reference.docbook:668
+#, no-c-format
+msgid "Create your own commands with <quote>learn</quote>"
+msgstr "Skapa dina egna kommandon med <quote>lär</quote>"
+
+#. Tag: para
+#: programming-reference.docbook:669
+#, no-c-format
+msgid ""
+"<userinput>learn</userinput><indexterm><primary>learn</primary></indexterm> "
+"is special as it is used to create your own commands. The commands you "
+"create can take <glossterm linkend=\"input-output\">input</glossterm> and "
+"return <glossterm linkend=\"input-output\">output</glossterm>. Let us take a "
+"look at how a new command is created: <screen>\n"
+"learn circle $x {\n"
+"  repeat 36 {\n"
+"    forward $x\n"
+"    turnleft 10\n"
+"  }\n"
+"}\n"
+"</screen> The new command is called <userinput>circle</userinput>. "
+"<userinput>circle</userinput> takes one <glossterm linkend=\"input-output"
+"\">input</glossterm> argument, to set the size of the circle. "
+"<userinput>circle</userinput> returns no <glossterm linkend=\"input-output"
+"\">output</glossterm>. The <userinput>circle</userinput> command can now be "
+"used like a normal command in the rest of the code. See this example:"
+msgstr ""
+"<userinput>lär</userinput><indexterm><primary>lär</primary></indexterm> är "
+"speciellt eftersom det används för att skapa dina egna kommandon. Kommandot "
+"som du skapar kan ha <glossterm linkend=\"input-output\">indata</glossterm> "
+"och returnera <glossterm linkend=\"input-output\">utdata</glossterm>. Låt "
+"oss ta en titt på hur ett nytt kommando skapas: <screen>\n"
+"lär cirkel $x {\n"
+"  upprepa 36 {\n"
+"    framåt $x\n"
+"    svängvänster 10\n"
+"  }\n"
+"}\n"
+"</screen> Det nya kommandot kallas <userinput>cirkel</userinput>. "
+"<userinput>cirkel</userinput> har <glossterm linkend=\"input-output"
+"\">indata</glossterm>, som anger cirkelns storlek. <userinput>cirkel</"
+"userinput> returnerar ingen <glossterm linkend=\"input-output\">utdata</"
+"glossterm>. Kommandot <userinput>cirkel</userinput> kan nu användas som ett "
+"vanligt kommando i resten av koden. Se följande exempel:"
+
+#. Tag: screen
+#: programming-reference.docbook:672
+#, no-c-format
+msgid ""
+"learn circle $X {\n"
+"  repeat 36 {\n"
+"    forward $X \n"
+"    turnleft 10 \n"
+"  }\n"
+"}\n"
+"\n"
+"go 200,200 \n"
+"circle 20\n"
+"\n"
+"go 300,200 \n"
+"circle 40"
+msgstr ""
+"lär cirkel $x {\n"
+"  upprepa 36 {\n"
+"    framåt $x \n"
+"    svängvänster 10 \n"
+"  }\n"
+"}\n"
+"\n"
+"gå 200,200 \n"
+"cirkel 20\n"
+"\n"
+"gå 300,200 \n"
+"cirkel 40"
+
+#. Tag: para
+#: programming-reference.docbook:674
+#, no-c-format
+msgid ""
+"In the next example, a command with a return<indexterm><primary>return</"
+"primary></indexterm> value is created. <screen>\n"
+"learn faculty $x {\n"
+"  $r = 1\n"
+"  for $i = 1 to $x {\n"
+"    $r = $r * $i\n"
+"  }\n"
+"  return $r\n"
+"}\n"
+"\n"
+"print faculty 5\n"
+"</screen> In this example a new command called <userinput>faculty</"
+"userinput> is created. If the input of this command is <userinput>5</"
+"userinput> then the output is <userinput>5*4*3*2*1</userinput>. By using "
+"<userinput>return</userinput> the <glossterm linkend=\"input-output"
+"\">output</glossterm> value is specified and the execution is returned."
+msgstr ""
+"I nästa exempel skapas ett kommando som returnerar ett värde med "
+"<indexterm><primary>returnera</primary></indexterm>. <screen>\n"
+"lär fakultet $x {\n"
+"  $r = 1\n"
+"  för$i = 1 till $x {\n"
+"    $r = $n * $i\n"
+"  }\n"
+"  returnera $r\n"
+"}\n"
+"\n"
+"skriv fakultet 5\n"
+"</screen> I det här exemplet skapas ett nytt kommando som heter "
+"<userinput>fakultet</userinput>. Om indata till kommandot är <userinput>5</"
+"userinput> är utdata <userinput>5*4*3*2*1</userinput>. Genom att använda "
+"<userinput>returnera</userinput> anges <glossterm linkend=\"input-output"
+"\">utdata</glossterm> och körningen returnerar."
+
+#. Tag: para
+#: programming-reference.docbook:677
+#, no-c-format
+msgid ""
+"Commands can have more than one <glossterm linkend=\"input-output\">input</"
+"glossterm>. In the next example, a command that draws a rectangle is "
+"created: <screen>\n"
+"learn box $x, $y {\n"
+"  forward $y\n"
+"  turnright 90\n"
+"  forward $x\n"
+"  turnright 90\n"
+"  forward $y\n"
+"  turnright 90\n"
+"  forward $x\n"
+"  turnright 90\n"
+"}\n"
+"</screen> Now you can run <userinput>box 50, 100</userinput> and the turtle "
+"will draw a rectangle on the canvas."
+msgstr ""
+"Kommandon kan ha mer än ett <glossterm linkend=\"input-output\">indatavärde</"
+"glossterm>. I nästa exempel, skapas ett kommando som ritar en fyrkant: "
+"<screen>\n"
+"lär fyrkant $x, $y {\n"
+"  framåt $y\n"
+"  svänghöger 90\n"
+"  framåt $x\n"
+"  svänghöger 90\n"
+"  framåt $y\n"
+"  svänghöger 90\n"
+"  framåt $x\n"
+"  svänghöger 90\n"
+"}\n"
+"</screen> Nu kan du köra <userinput>fyrkant 50, 100</userinput> så ritar "
+"sköldpaddan en rektangel på duken."
+
+#~ msgid "Execute \"if\""
+#~ msgstr "Kör \"om\""
+
+#~ msgid "<primary>gox</primary>"
+#~ msgstr "<primary>gåx</primary>"
+
+#~ msgid "<primary>goy</primary>"
+#~ msgstr "<primary>gåy</primary>"
+
+#~ msgid "<term>exp</term>"
+#~ msgstr "<term>exp</term>"
+
+#~ msgid "<primary>exp</primary>"
+#~ msgstr "<primary>exp</primary>"

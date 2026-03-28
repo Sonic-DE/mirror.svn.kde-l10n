@@ -1,0 +1,1620 @@
+#
+# SPDX-FileCopyrightText: 2026 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 12:04+0000\n"
+"PO-Revision-Date: 2026-03-25 17:29+0400\n"
+"Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
+"Language-Team: ar\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 23.08.5\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+
+#. Tag: author
+#: details-impexp-csv.docbook:3
+#, no-c-format
+msgid "&Allan.Anderson;"
+msgstr "&Allan.Anderson;"
+
+#. Tag: author
+#: details-impexp-csv.docbook:4 details-impexp-csv.docbook:818
+#, no-c-format
+msgid "&Jack.H.Ostroff; &Jack.H.Ostroff.mail;"
+msgstr "&Jack.H.Ostroff; &Jack.H.Ostroff.mail;"
+
+#. Tag: title
+#: details-impexp-csv.docbook:6
+#, no-c-format
+msgid "CSV Importer Plugin"
+msgstr "ملحق مستورد CSV"
+
+#. Tag: title
+#: details-impexp-csv.docbook:8
+#, no-c-format
+msgid "Reasons for importing CSV Files"
+msgstr "أسباب استيراد ملفات CSV"
+
+#. Tag: para
+#: details-impexp-csv.docbook:9
+#, no-c-format
+msgid ""
+"In general, it is preferable to import OFX. However, not all institutions "
+"provide data in that format. CSV (comma separated value) files are almost "
+"always available, sometimes described as Excel or spreadsheet files. Also, "
+"they can often be created fairly easily by capturing the data you want to "
+"import, such as in a text file, and manually editing it."
+msgstr ""
+"بشكل عام، يُفضل استيراد OFX. ومع ذلك، لا توفر جميع المؤسسات البيانات بهذا "
+"التنسيق. تتوفر ملفات CSV (قيم مفصولة بفواصل) تقريبًا دائمًا، وتوصف أحيانًا "
+"بملفات إكسل أو جداول البيانات. أيضًا، يمكن إنشاؤها غالبًا بسهولة تامة عن طريق "
+"التقاط البيانات التي تريد استيرادها، كما هو الحال في ملف نصي، وتحريرها يدويًا."
+
+#. Tag: para
+#: details-impexp-csv.docbook:17
+#, no-c-format
+msgid ""
+"The initial focus of the CSV Importer was on handling data from bank "
+"statements, but the ability to also import some investment statements was "
+"added. In addition, it has been further enhanced to import both currency and "
+"stock prices. The original code for this was initially created, before "
+"becoming a CSV importer, to produce QIF files from CSV files, which could "
+"then be imported. This ability is still present, but is likely to be "
+"removed, as focus is now on directly importing CSV files. Also, &kmymoney; "
+"has the native ability to <link linkend=\"details.impexp.qifexp\">export QIF "
+"files</link>, so there is no longer a real reason to produce a QIF file from "
+"a CSV file."
+msgstr ""
+"كان التركيز المبدئي لمستورد CSV منصبًا على معالجة البيانات من كشوف الحسابات "
+"البنكية، ولكن أُضيفت القدرة أيضًا على استيراد بعض كشوف الاستثمار. بالإضافة إلى "
+"ذلك، حُسّن لاستيراد كل من أسعار العملات والأسهم. كُتبت الشيفرة الأصلية لهذا في "
+"البداية، قبل أن تصبح مستورد CSV، لإنتاج ملفات QIF من ملفات CSV، والتي يمكن "
+"استيرادها بعد ذلك. لا تزال هذه القدرة موجودة، ولكن من المحتمل أن تُزال، حيث "
+"ينصب التركيز الآن على استيراد ملفات CSV مباشرة. أيضًا، لدى أموالك القدرة "
+"الأصلية على <link linkend=\"details.impexp.qifexp\">تصدير ملفات QIF</link>، "
+"لذا لم يعد هناك سبب حقيقي لإنتاج ملف QIF من ملف CSV."
+
+#. Tag: title
+#: details-impexp-csv.docbook:30
+#, no-c-format
+msgid "Getting the plugin"
+msgstr "الحصول على الملحق"
+
+#. Tag: para
+#: details-impexp-csv.docbook:31
+#, no-c-format
+msgid ""
+"The CSV importer is one of the newer features to have been added to "
+"&kmymoney; in the form of a plugin. However, as with other plugins, the CSV "
+"Importer is included with the core &kmymoney; source code, so it should be "
+"available in all &Linux; distribution versions, as well as the versions for "
+"other platforms made available through the &kmymoney; web site. The menu "
+"choice to import CSV files should automatically show up under the "
+"<menuchoice> <guimenu>File</guimenu> <guisubmenu>Import</guisubmenu> </"
+"menuchoice> submenu."
+msgstr ""
+"يُعد مستورد CSV أحد الميزات الأحدث التي أُضيفت إلى أموالك في شكل ملحق. ومع "
+"ذلك، كما هو الحال مع الملحقات الأخرى، يُضمن مستورد CSV مع شيفرة أموالك "
+"المصدرية، لذا يجب أن يكون متاحًا في جميع إصدارات توزيعات لينكس، بالإضافة إلى "
+"إصدارات المنصات الأخرى المتاحة عبر موقع أموالك على الويب. يجب أن يظهر خيار "
+"القائمة لاستيراد ملفات CSV آليًا تحت القائمة الفرعية <menuchoice> "
+"<guimenu>ملف</guimenu> <guisubmenu>استيراد</guisubmenu> </menuchoice>."
+
+#. Tag: para
+#: details-impexp-csv.docbook:41
+#, no-c-format
+msgid ""
+"To ensure that it is enabled within &kmymoney;, check the <menuchoice> "
+"<guimenu>Settings</guimenu> <guimenuitem>Configure &kmymoney;...</"
+"guimenuitem> </menuchoice> menu item, select <guilabel>Plugins</guilabel> on "
+"the left pane, and look for the <guilabel>CSV Importer</guilabel> in the "
+"displayed list of plugins. If the CSV importer does not seem to be installed "
+"in your version, the first place to check is in the same place you got your "
+"base &kmymoney; package. See if a later version is available, or if the "
+"importer is available as a separate package."
+msgstr ""
+"للتأكد من تمكينه داخل أموالك، تحقق من عنصر القائمة <menuchoice> "
+"<guimenu>إعدادات</guimenu> <guimenuitem>اضبط أموالك...</guimenuitem> </"
+"menuchoice>، واختر <guilabel>الملحقات</guilabel> في اللوح الأيسر، وابحث عن "
+"<guilabel>مستورد CSV</guilabel> في قائمة الملحقات المعروضة. إذا بدا أن "
+"مستورد CSV غير مثبت في إصدارك، فإن أول مكان يجب التحقق منه هو نفس المكان "
+"الذي حصلت منه على حزمة أموالك الأساسية. انظر ما إذا كان هناك إصدار أحدث "
+"متاحًا، أو ما إذا كان المستورد متاحًا كحزمة منفصلة."
+
+#. Tag: para
+#: details-impexp-csv.docbook:51
+#, no-c-format
+msgid ""
+"If you have built from source, there should be no additional requirements. "
+"The &kmymoney; build process should detect the plugin source and compile the "
+"plugin. There are configuration settings which can be used to exclude this "
+"or other plugins from being built, but these should rarely be needed."
+msgstr ""
+"إذا كنت قد بنيت البرنامج من المصدر، فلا ينبغي أن تكون هناك متطلبات إضافية. "
+"يجب أن تكتشف عملية بناء أموالك مصدر الملحق وتصرفه. توجد إعدادات ضبط يمكن "
+"استخدامها لاستبعاد هذا الملحق أو غيره من الملحقات من البناء، ولكن نادرًا ما "
+"تكون هناك حاجة إليها."
+
+#. Tag: title
+#: details-impexp-csv.docbook:59
+#, no-c-format
+msgid "Importing a CSV file"
+msgstr "استيراد ملف CSV"
+
+#. Tag: para
+#: details-impexp-csv.docbook:60
+#, no-c-format
+msgid ""
+"To import a CSV file, choose the importer from the main menu: <menuchoice> "
+"<guimenu>File</guimenu> <guisubmenu>Import</guisubmenu> <guimenuitem>CSV...</"
+"guimenuitem> </menuchoice>. If CSV does not show up under Import, the CSV "
+"Importer Plugin is not installed correctly or is not enabled. Please see the "
+"previous section."
+msgstr ""
+"لاستيراد ملف CSV، اختر المستورد من القائمة الرئيسة: <menuchoice> "
+"<guimenu>ملف</guimenu> <guisubmenu>استيراد</guisubmenu> <guimenuitem>CSV...</"
+"guimenuitem> </menuchoice>. إذا لم يظهر CSV تحت استيراد، فإن ملحق مستورد CSV "
+"غير مثبت بشكل صحيح أو غير مُمكّن. يرجى مراجعة القسم السابق."
+
+#. Tag: para
+#: details-impexp-csv.docbook:68
+#, no-c-format
+msgid ""
+"The CSV Importer is presented in the form of a wizard, with a separate page "
+"for each individual step of the process."
+msgstr ""
+"يُقدم مستورد CSV في شكل معالج، مع صفحة منفصلة لكل خطوة فردية من العملية."
+
+#. Tag: title
+#: details-impexp-csv.docbook:73
+#, no-c-format
+msgid "CSV Import Wizard: Start"
+msgstr "معالج استيراد CSV: البدء"
+
+#. Tag: para
+#: details-impexp-csv.docbook:74
+#, no-c-format
+msgid ""
+"When launched, the CSV Importer displays the <guilabel>Start</guilabel> or "
+"<guilabel>File</guilabel> page. On the left is a list of the steps of the "
+"import process, with the current one highlighted. The upper right area is "
+"where data to be imported will be displayed; before that it shows some brief "
+"instructions relevant to the current stage of the wizard. Below that is a "
+"set of radiobuttons for selection of the type of data to be imported. That "
+"list currently includes <guilabel>Banking</guilabel>, <guilabel>Investment</"
+"guilabel>, <guilabel>Currency prices</guilabel>, and <guilabel>Stock prices</"
+"guilabel>. Next, there is a profile selector dropdown, which is enabled if "
+"once the radio button has been selected for one of the import file types."
+msgstr ""
+"عند تشغيله، يعرض مستورد CSV صفحة <guilabel>البدء</guilabel> أو "
+"<guilabel>الملف</guilabel>. على اليمين توجد قائمة بخطوات عملية الاستيراد، مع "
+"تمييز الخطوة الحالية. المنطقة العلوية اليسرى هي المكان الذي ستُعرض فيه "
+"البيانات المراد استيرادها؛ وقبل ذلك تعرض بعض التعليمات الموجزة المتعلقة "
+"بالمرحلة الحالية من المعالج. يوجد أسفل ذلك مجموعة من أزرار الخيار لاختيار "
+"نوع البيانات المراد استيرادها. تشمل تلك القائمة حاليًا <guilabel>البنوك</"
+"guilabel>، و<guilabel>الاستثمار</guilabel>، و<guilabel>أسعار العملات</"
+"guilabel>، و<guilabel>أسعار الأسهم</guilabel>. بعد ذلك، يوجد منتقي تشكيلات "
+"منسدل، والذي يُفعل بمجرد اختيار زر الخيار لأحد أنواع ملفات الاستيراد."
+
+#. Tag: screeninfo
+#: details-impexp-csv.docbook:88
+#, no-c-format
+msgid "<screeninfo>csv import wizard: start</screeninfo>"
+msgstr "<screeninfo>معالج استيراد csv: البدء</screeninfo>"
+
+#. Tag: phrase
+#: details-impexp-csv.docbook:94
+#, no-c-format
+msgid "<phrase>csv import wizard: start</phrase>"
+msgstr "<phrase>معالج استيراد csv: البدء</phrase>"
+
+#. Tag: title
+#: details-impexp-csv.docbook:100
+#, no-c-format
+msgid "CSV Import Profiles"
+msgstr "تشكيلات استيراد CSV"
+
+#. Tag: para
+#: details-impexp-csv.docbook:101
+#, no-c-format
+msgid ""
+"Each type of CSV file to be imported requires specification of several "
+"details regarding the expected formatting of the data, as described in the "
+"following sections. Not only do the details differ for the different types "
+"of data files imported, it is possible to need different configurations for "
+"the same type of data from different sources. So you do not need to enter "
+"all those details each time you import a file, the CSV Importer allows you "
+"to specify the details once, and save them in a named profile."
+msgstr ""
+"يتطلب كل نوع من ملفات CSV المراد استيرادها تحديد تفاصيل عدة تتعلق بالتنسيق "
+"المتوقع للبيانات، كما هو موضح في الأقسام التالية. لا تختلف التفاصيل باختلاف "
+"أنواع ملفات البيانات المستوردة فحسب، بل من الممكن الحاجة إلى إعدادات ضبط "
+"مختلفة لنفس نوع البيانات من مصادر مختلفة. لذا لا تحتاج إلى إدخال كل تلك "
+"التفاصيل في كل مرة تستورد فيها ملفًا، يتيح لك مستورد CSV تحديد التفاصيل مرة "
+"واحدة، وحفظها في تشكيلة مسماة."
+
+#. Tag: para
+#: details-impexp-csv.docbook:111
+#, no-c-format
+msgid ""
+"The name of a CSV import profile is completely arbitrary, but will be easier "
+"to remember if it reflects both the type of data being imported (bank, "
+"credit card, investment, ...) and the source of the data. There is no need "
+"to reference the account into which the data is imported, and it is possible "
+"to use the same profile for importing into more than one account, such as "
+"two checking accounts at the same bank."
+msgstr ""
+"اسم تشكيلة استيراد CSV عشوائي تمامًا، ولكنه سيكون أسهل في التذكر إذا عكس كلاً "
+"من نوع البيانات التي تُستورد (بنك، بطاقة ائتمان، استثمار، ...) ومصدر "
+"البيانات. لا توجد حاجة للإشارة إلى الحساب الذي تُستورد البيانات إليه، ومن "
+"الممكن استخدام نفس التشكيلة للاستيراد إلى أكثر من حساب واحد، مثل حسابين "
+"جاريين في نفس البنك."
+
+#. Tag: para
+#: details-impexp-csv.docbook:120
+#, no-c-format
+msgid ""
+"The profile selector dropdown includes the names of all CSV Importer "
+"profiles you have previously created, and it also lets you type the name of "
+"a new profile. Below the profile selector dropdown, there are three buttons. "
+"When you click <guilabel>Add</guilabel>, which is always enabled, a new "
+"profile will be created with the name entered in the dropdown. Nothing will "
+"happen if that field is empty or if it displays the name of an existing "
+"profile. As you proceed through the rest of the CSV import wizard, the "
+"various configuration settings you enter or modify will be saved in the "
+"selected profile."
+msgstr ""
+"تتضمن قائمة منتقي التشكيلات المنسدلة أسماء جميع تشكيلات مستورد CSV التي "
+"أنشأتها سابقًا، وتسمح لك أيضًا بكتابة اسم تشكيلة جديدة. يوجد أسفل منتقي "
+"التشكيلات ثلاثة أزرار. عند النقر فوق <guilabel>أضف</guilabel>، وهو مفعل "
+"دائمًا، ستُنشأ تشكيلة جديدة بالاسم المدخل في القائمة المنسدلة. لن يحدث شيء إذا "
+"كان هذا الحقل فارغًا أو إذا كان يعرض اسم تشكيلة موجودة. بينما تتابع بقية "
+"معالج استيراد CSV، ستُحفظ إعدادات الضبط المختلفة التي تدخلها أو تعدلها في "
+"التشكيلة المختارة."
+
+#. Tag: para
+#: details-impexp-csv.docbook:131
+#, no-c-format
+msgid ""
+"If you have previously created one or more profiles, the other two buttons "
+"will be enabled. If you click <guilabel>Remove</guilabel>, the profile named "
+"in the dropdown will be deleted. If you click <guilabel>Rename</guilabel>, "
+"then alter the name displayed in the dropdown, and click <guilabel>Rename</"
+"guilabel> again, the profile will be renamed accordingly."
+msgstr ""
+"إذا كنت قد أنشأت سابقًا تشكيلة واحدة أو أكثر، فسيُفعل الزران الآخران. إذا نقرت "
+"فوق <guilabel>أزل</guilabel>، فستُحذف التشكيلة المسماة في القائمة المنسدلة. "
+"إذا نقرت فوق <guilabel>غير الاسم</guilabel>، ثم غيرت الاسم المعروض في "
+"القائمة المنسدلة، ونقرت فوق <guilabel>غير الاسم</guilabel> مرة أخرى، فسيُعاد "
+"تسمية التشكيلة وفقًا لذلك."
+
+#. Tag: para
+#: details-impexp-csv.docbook:139
+#, no-c-format
+msgid ""
+"Next to the profile selector, there is a <guilabel>Skip setup</guilabel> "
+"checkbox. Initially, you should not select this checkbox. Once you have set "
+"up a profile and finished the wizard, all the configuration parameters you "
+"entered are saved in the resource file under the profile name. The next time "
+"you use that same profile, the parameters will be loaded into the UI (User "
+"Interface). The wizard would then plod through the following pages of "
+"parameters that you won't need to change. So, once you are happy with a "
+"profile, it may be helpful to check this box. The wizard will then move "
+"directly to the final page, and, assuming no problems are found, you just "
+"have to click <guilabel>Import</guilabel>."
+msgstr ""
+"بجانب منتقي التشكيلات، يوجد مربع اختيار <guilabel>تخطّ الإعداد</guilabel>. في "
+"البداية، يجب ألا تختار مربع الاختيار هذا. بمجرد ضبط التشكيلة وإنهاء المعالج، "
+"تُحفظ جميع معاملات الضبط التي أدخلتها في ملف الموارد تحت اسم التشكيلة. في "
+"المرة القادمة التي تستخدم فيها نفس التشكيلة، ستُحمل المعاملات في واجهة "
+"المستخدم. سيقوم المعالج بعد ذلك بالمرور عبر الصفحات التالية من المعاملات "
+"التي لن تحتاج إلى تغييرها. لذا، بمجرد أن تكون راضيًا عن التشكيلة، قد يكون من "
+"المفيد تحديد هذا المربع. سينتقل المعالج بعد ذلك مباشرة إلى الصفحة النهائية، "
+"وبافتراض عدم العثور على مشاكل، عليك فقط النقر فوق <guilabel>استيراد</"
+"guilabel>."
+
+#. Tag: para
+#: details-impexp-csv.docbook:151
+#, no-c-format
+msgid ""
+"At the bottom there is a <guilabel>Select File</guilabel> button. Clicking "
+"this will bring up a file selector dialog to let you choose the file to "
+"import. At the bottom of the remaining pages of the wizard are buttons to go "
+"<guibutton>&lt; Back</guibutton> to the previous step of the wizard, move on "
+"to the <guilabel>Next &gt;</guilabel> step, or <guibutton>Cancel</guibutton> "
+"the import."
+msgstr ""
+"يوجد في الأسفل زر <guilabel>اختر ملفًا</guilabel>. سيؤدي النقر فوق هذا إلى "
+"إظهار حوار اختيار الملفات لتسمح لك باختيار الملف المراد استيراده. في أسفل "
+"الصفحات المتبقية من المعالج توجد أزرار للذهاب <guibutton>&lt; السابق</"
+"guibutton> إلى الخطوة السابقة من المعالج، أو الانتقال إلى خطوة "
+"<guilabel>التالي &gt;</guilabel>، أو <guibutton>ألغِ</guibutton> الاستيراد."
+
+#. Tag: para
+#: details-impexp-csv.docbook:159
+#, no-c-format
+msgid ""
+"To review, on the Start page of the wizard, first select the checkbox for "
+"the type of data you are importing. In the profile selector dropdown, you "
+"can select the name of a previously created CSV Importer profile, or enter a "
+"new name, possibly the name of the account into which you wish to import, "
+"and click <guilabel>Add</guilabel>. Finally, click <guilabel>Select File</"
+"guilabel>, and a file selector dialog will open, where you select the CSV "
+"file you wish to import."
+msgstr ""
+"للمراجعة، في صفحة البدء بالمعالج، حدد أولاً مربع الاختيار لنوع البيانات التي "
+"تستوردها. في قائمة منتقي التشكيلات المنسدلة، يمكنك اختيار اسم تشكيلة مستورد "
+"CSV أُنشئت سابقًا، أو إدخال اسم جديد، ربما اسم الحساب الذي ترغب في الاستيراد "
+"إليه، وانقر فوق <guilabel>أضف</guilabel>. أخيرًا، انقر فوق <guilabel>اختر "
+"ملفًا</guilabel>، وسيُفتح حوار اختيار الملفات، حيث تختار ملف CSV الذي ترغب في "
+"استيراده."
+
+#. Tag: title
+#: details-impexp-csv.docbook:169
+#, no-c-format
+msgid "CSV Import Wizard: Separators"
+msgstr "معالج استيراد CSV: الفواصل"
+
+#. Tag: para
+#: details-impexp-csv.docbook:170
+#, no-c-format
+msgid ""
+"After opening your selected data file, the wizard will advance to the "
+"<guilabel>Separators</guilabel> page, and you should now see your data."
+msgstr ""
+"بعد فتح ملف البيانات المختار، سينتقل المعالج إلى صفحة <guilabel>الفواصل</"
+"guilabel>، ويجب أن ترى بياناتك الآن."
+
+#. Tag: screeninfo
+#: details-impexp-csv.docbook:176
+#, no-c-format
+msgid "<screeninfo>csv import wizard: separators</screeninfo>"
+msgstr "<screeninfo>معالج استيراد csv: الفواصل</screeninfo>"
+
+#. Tag: phrase
+#: details-impexp-csv.docbook:182
+#, no-c-format
+msgid "<phrase>csv import wizard: separators</phrase>"
+msgstr "<phrase>معالج استيراد csv: الفواصل</phrase>"
+
+#. Tag: para
+#: details-impexp-csv.docbook:188
+#, no-c-format
+msgid ""
+"It may appear that the data displayed in the upper section of the plugin "
+"window may be edited, and in fact they may, but any edits are not kept. The "
+"table is purely for display, not for editing. The input file is never "
+"altered by the CSV Importer, and the data actually imported comes from the "
+"input file, not from the display. The one exception to this is covered in "
+"<link linkend=\"details.impexp.csv.secsym\">Securities and Symbols</link> "
+"below."
+msgstr ""
+"قد يبدو أن البيانات المعروضة في القسم العلوي من نافذة الملحق يمكن تحريرها، "
+"وفي الواقع يمكن ذلك، ولكن لا تُحفظ أي تعديلات. هذا الجدول للعرض فقط، وليس "
+"للتحرير. لا يُعدل ملف المدخلات أبدًا بواسطة مستورد CSV، والبيانات المستوردة "
+"فعليًا تأتي من ملف المدخلات، وليس من العرض. الاستثناء الوحيد لهذا مشمول في "
+"<link linkend=\"details.impexp.csv.secsym\">الأوراق المالية والرموز</link> "
+"أدناه."
+
+#. Tag: para
+#: details-impexp-csv.docbook:198
+#, no-c-format
+msgid ""
+"The CSV Importer should have detected the appropriate <guilabel>Encoding</"
+"guilabel>, <guilabel>Field Delimiter</guilabel>, and <guilabel>Text "
+"Delimiter</guilabel>. You can change the encoding if the program did not "
+"choose correctly. If you need to change the Field Delimiter, such as if your "
+"data is actually tab delimited, and not a comma delimited, be aware that "
+"doing so will reset any field choices you may already have made. Generally "
+"the quote (&quot;) is the correct text delimiter, but you may change it as "
+"necessary. Click <guibutton>Next</guibutton> to proceed."
+msgstr ""
+"يجب أن يكون مستورد CSV قد اكتشف <guilabel>الترميز</guilabel> المناسب، "
+"و<guilabel>محدد الحقول</guilabel>، و<guilabel>محدد النصوص</guilabel>. يمكنك "
+"تغيير الترميز إذا لم يختر البرنامج الخيار الصحيح. إذا كنت بحاجة إلى تغيير "
+"محدد الحقول، كما هو الحال إذا كانت بياناتك مفصولة بعلامات جدولة فعليًا، وليست "
+"مفصولة بفواصل، فاعلم أن القيام بذلك سيؤدي إلى إعادة ضبط أي خيارات حقول قد "
+"تكون اخترتها بالفعل. بشكل عام علامة الاقتباس (&quot;) هي محدد النص الصحيح، "
+"ولكن يمكنك تغييرها حسب الضرورة. انقر فوق <guibutton>التالي</guibutton> "
+"للمتابعة."
+
+#. Tag: title
+#: details-impexp-csv.docbook:210
+#, no-c-format
+msgid "CSV Import Wizard: Rows"
+msgstr "معالج استيراد CSV: الصفوف"
+
+#. Tag: para
+#: details-impexp-csv.docbook:211
+#, no-c-format
+msgid ""
+"You will now be on the <guilabel>Rows</guilabel> or <guilabel>Lines</"
+"guilabel> page. Here, you indicate if any lines should be ignored at the "
+"beginning or end of the file."
+msgstr ""
+"ستكون الآن في صفحة <guilabel>الصفوف</guilabel> أو <guilabel>الأسطر</"
+"guilabel>. هنا، تشير إلى ما إذا كان يجب تجاهل أي أسطر في بداية أو نهاية "
+"الملف."
+
+#. Tag: screeninfo
+#: details-impexp-csv.docbook:218
+#, no-c-format
+msgid "<screeninfo>csv import wizard: rows</screeninfo>"
+msgstr "<screeninfo>معالج استيراد csv: الصفوف</screeninfo>"
+
+#. Tag: phrase
+#: details-impexp-csv.docbook:224
+#, no-c-format
+msgid "<phrase>csv import wizard: rows</phrase>"
+msgstr "<phrase>معالج استيراد csv: الصفوف</phrase>"
+
+#. Tag: para
+#: details-impexp-csv.docbook:229
+#, no-c-format
+msgid ""
+"This page allows you to adjust the import to ignore header and footer rows "
+"at the beginning or end of the file, which do not actually contain data to "
+"be imported."
+msgstr ""
+"تتيح لك هذه الصفحة ضبط الاستيراد لتجاهل صفوف الترويسة والتذييل في بداية "
+"الملف أو نهايته، والتي لا تحتوي فعليًا على بيانات يراد استيرادها."
+
+#. Tag: title
+#: details-impexp-csv.docbook:234
+#, no-c-format
+msgid "Start line"
+msgstr "سطر البدء"
+
+#. Tag: para
+#: details-impexp-csv.docbook:235
+#, no-c-format
+msgid ""
+"Set this so the importer skips any header lines in the file. Your choice "
+"will be saved in this profile for future use. The start and end lines "
+"interact, and the start line may not be higher than the end line, nor may it "
+"be higher then the actual number of lines in the file. If the "
+"<guilabel>Start line</guilabel> selector does not respond, check the end "
+"line setting."
+msgstr ""
+"اضبط هذا حتى يتخطى المستورد أي أسطر ترويسة في الملف. سيُحفظ اختيارك في هذه "
+"التشكيلة للاستخدام في المستقبل. يتفاعل سطرا البدء والنهاية، ولا يجوز أن يكون "
+"سطر البدء أعلى من سطر النهاية، ولا يجوز أن يكون أعلى من العدد الفعلي للأسطر "
+"في الملف. إذا لم يستجب منتقي <guilabel>سطر البدء</guilabel>، فتحقق من إعداد "
+"سطر النهاية."
+
+#. Tag: title
+#: details-impexp-csv.docbook:244
+#, no-c-format
+msgid "End line"
+msgstr "سطر النهاية"
+
+#. Tag: para
+#: details-impexp-csv.docbook:245
+#, no-c-format
+msgid ""
+"The importer will automatically set this to the last line in the file, or to "
+"the setting last saved. You will only need to adjust it if there are footer "
+"lines in the file the importer should ignore. Otherwise, you are likely to "
+"get a data error warning when the plugin attempts to parse incorrect data. "
+"Again, if the <guilabel>End line</guilabel> selector does not respond, check "
+"the <guilabel>Start line</guilabel> setting."
+msgstr ""
+"سيقوم المستورد آليًا بضبط هذا على السطر الأخير في الملف، أو على الإعداد الذي "
+"حُفظ آخِر مرة. ستحتاج فقط إلى ضبطه إذا كانت هناك أسطر تذييل في الملف يجب أن "
+"يتجاهلها المستورد. خلاف ذلك، من المحتمل أن تحصل على تحذير من خطأ في البيانات "
+"عندما يحاول الملحق تحليل بيانات غير صحيحة. مرة أخرى، إذا لم يستجب منتقي "
+"<guilabel>سطر النهاية</guilabel>، فتحقق من إعداد <guilabel>سطر البدء</"
+"guilabel>."
+
+#. Tag: para
+#: details-impexp-csv.docbook:255
+#, no-c-format
+msgid ""
+"Above these two fields is a <guilabel>Header contains account name or "
+"number</guilabel> checkbox. If checked, the importer will look in the lines "
+"above the start line for the name of number of the account to use for the "
+"import. If not, you will be prompted for that information."
+msgstr ""
+"يوجد فوق هذين الحقلين مربع اختيار <guilabel>الترويسة تحتوي على اسم الحساب أو "
+"رقمه</guilabel>. إذا حُدد، سيبحث المستورد في الأسطر الموجودة فوق سطر البدء عن "
+"اسم أو رقم الحساب لاستخدامه في الاستيراد. وإذا لم يكن كذلك، فسيُطلب منك "
+"تزويده بهذه المعلومات."
+
+#. Tag: para
+#: details-impexp-csv.docbook:262
+#, no-c-format
+msgid ""
+"When you are ready, click <guilabel>Next</guilabel> to proceed to the next "
+"step."
+msgstr ""
+"عندما تكون مستعدًا، انقر فوق <guilabel>التالي</guilabel> للمتابعة إلى الخطوة "
+"التالية."
+
+#. Tag: title
+#: details-impexp-csv.docbook:267
+#, no-c-format
+msgid "CSV Import Wizard: Columns"
+msgstr "معالج استيراد CSV: الأعمدة"
+
+#. Tag: para
+#: details-impexp-csv.docbook:268
+#, no-c-format
+msgid ""
+"You should now be on the <guilabel>Columns</guilabel> page. This is where "
+"you tell the importer which columns in the file contain the data which maps "
+"to the specific fields needed to create a meaningful record or transaction, "
+"depending on the type of data being imported. There is a different version "
+"of this page for each type of data, as each requires a different combination "
+"of items."
+msgstr ""
+"يجب أن تكون الآن في صفحة <guilabel>الأعمدة</guilabel>. هنا تخبر المستورد "
+"بالأعمدة في الملف التي تحتوي على البيانات التي تطابق الحقول المحددة اللازمة "
+"لإنشاء سجل أو معاملة ذات مغزى، اعتمادًا على نوع البيانات التي تُستورد. هناك "
+"إصدار مختلف من هذه الصفحة لكل نوع من البيانات، حيث يتطلب كل منها مزيجًا "
+"مختلفًا من العناصر."
+
+#. Tag: title
+#: details-impexp-csv.docbook:276
+#, no-c-format
+msgid "CSV Import Wizard: Banking"
+msgstr "معالج استيراد CSV: البنوك"
+
+#. Tag: screeninfo
+#: details-impexp-csv.docbook:278
+#, no-c-format
+msgid "<screeninfo>csv import wizard: banking</screeninfo>"
+msgstr "<screeninfo>معالج استيراد csv: البنوك</screeninfo>"
+
+#. Tag: phrase
+#: details-impexp-csv.docbook:284
+#, no-c-format
+msgid "<phrase>csv import wizard: banking</phrase>"
+msgstr "<phrase>معالج استيراد csv: البنوك</phrase>"
+
+#. Tag: para
+#: details-impexp-csv.docbook:289
+#, no-c-format
+msgid ""
+"For most fields, you just need to use the dropdown to select the appropriate "
+"column. Note that many fields have an <quote>x</quote> button to the right. "
+"Clicking it will clear whatever value has been entered or selected in the "
+"field to the left. In addition, there are some special considerations."
+msgstr ""
+"بالنسبة لمعظم الحقول، تحتاج فقط إلى استخدام القائمة المنسدلة لاختيار العمود "
+"المناسب. لاحظ أن العديد من الحقول تحتوي على زر <quote>x</quote> على اليمين. "
+"سيؤدي النقر فوقه إلى مسح أي قيمة أُدخلت أو اختيرت في الحقل الموجود على "
+"اليسار. بالإضافة إلى ذلك، هناك بعض الاعتبارات الخاصة."
+
+#. Tag: para
+#: details-impexp-csv.docbook:298
+#, no-c-format
+msgid ""
+"To the right is an area with two tabs. If your file has a single column for "
+"all values, select the <guilabel>Amount</guilabel> tab. However, if there "
+"are separate columns for debits and credits, select the <guilabel>Debit/"
+"credit</guilabel> tab."
+msgstr ""
+"على اليمين توجد منطقة بها علامتا تبويب. إذا كان ملفك يحتوي على عمود واحد لـ "
+"جميع القيم، فاختر علامة التبويب <guilabel>المبلغ</guilabel>. ومع ذلك، إذا "
+"كانت هناك أعمدة منفصلة للمدين والدائن، فاختر علامة التبويب <guilabel>مدين/"
+"دائن</guilabel>."
+
+#. Tag: para
+#: details-impexp-csv.docbook:305
+#, no-c-format
+msgid ""
+"On the Amount tab, start by selecting the column which contains the amount "
+"of the transaction. If there is a column which contains <quote>Credit</"
+"quote> or <quote>Debit</quote> to indicate which the amount is, select that "
+"column as the <guilabel>Debit/Credit Indicator</guilabel>. Separately, if "
+"there is a string included in the amount field which indicates the amount is "
+"either a credit or a debit, enter that string in the appropriate "
+"<guilabel>Indicator</guilabel> field. Finally, if despite setting all the "
+"above values correctly, the amount imported is reversed from what it should "
+"be, check the <guilabel>Opposite signs</guilabel> checkbox."
+msgstr ""
+"في علامة تبويب المبلغ، ابدأ باختيار العمود الذي يحتوي على مبلغ المعاملة. إذا "
+"كان هناك عمود يحتوي على <quote>دائن</quote> أو <quote>مدين</quote> للإشارة "
+"إلى ماهية المبلغ، فاختر ذلك العمود كـ <guilabel>مؤشر مدين/دائن</guilabel>. "
+"بشكل منفصل، إذا كان هناك سلسلة نصية مضمنة في حقل المبلغ تشير إلى أن المبلغ "
+"إما دائن أو مدين، فأدخل تلك السلسلة في حقل <guilabel>المؤشر</guilabel> "
+"المناسب. أخيرًا، إذا كان المبلغ المستورد معكوسًا عما ينبغي أن يكون عليه، على "
+"الرغم من ضبط جميع القيم أعلاه بشكل صحيح، فحدد مربع الاختيار <guilabel>إشارات "
+"متعاكسة</guilabel>."
+
+#. Tag: para
+#: details-impexp-csv.docbook:317
+#, no-c-format
+msgid ""
+"On the Debit/credit tab, simply enter the numbers of the columns with those "
+"values in the appropriate fields."
+msgstr ""
+"في علامة تبويب مدين/دائن، أدخل ببساطة أرقام الأعمدة التي تحتوي على تلك القيم "
+"في الحقول المناسبة."
+
+#. Tag: para
+#: details-impexp-csv.docbook:324
+#, no-c-format
+msgid ""
+"It is possible to select more than one column for the Memo field, by making "
+"consecutive selections. Memo columns already selected are indicated in the "
+"<guilabel>Memo columns:</guilabel> field. If you select multiple columns in "
+"this way, their contents will be concatenated in the Memo field."
+msgstr ""
+"من الممكن اختيار أكثر من عمود لحقل المذكرة، عن طريق إجراء اختيارات متتالية. "
+"يُشار إلى أعمدة المذكرة المختارة بالفعل في حقل <guilabel>أعمدة المذكرة:</"
+"guilabel>. إذا اخترت أعمدة متعددة بهذه الطريقة، فسيُربط محتواها في حقل "
+"المذكرة."
+
+#. Tag: para
+#: details-impexp-csv.docbook:333
+#, no-c-format
+msgid ""
+"If you attempt to choose the same column number for two fields, the importer "
+"will alert you and clear both selections. However, it is possible, if "
+"desired, to use the same column in both the <guilabel>Payee/Description</"
+"guilabel> and <guilabel>Memo</guilabel> fields. If you select a column for "
+"the <guilabel>Payee/Description</guilabel> field, and then select the same "
+"column for the <guilabel>Memo</guilabel> field, you will receive a warning "
+"that duplicate columns have been selected, but asking if you wish to "
+"proceed. If you do, click <guibutton>Yes</guibutton>, and the column will be "
+"used for both fields."
+msgstr ""
+"إذا حاولت اختيار نفس رقم العمود لحقلين، فسيقوم المستورد بتنبيهك ومسح كلا "
+"الاختيارين. ومع ذلك، من الممكن، إذا رغبت في ذلك، استخدام نفس العمود في كل من "
+"حقلي <guilabel>المستفيد/الوصف</guilabel> و <guilabel>المذكرة</guilabel>. إذا "
+"اخترت عمودًا لـ حقل <guilabel>المستفيد/الوصف</guilabel>، ثم اخترت نفس العمود "
+"لحقل <guilabel>المذكرة</guilabel>، فستتلقى تحذيرًا يفيد بأنه اختيرت أعمدة "
+"مكررة، ولكن مع سؤالك عما إذا كنت ترغب في المتابعة. إذا كنت ترغب في ذلك، "
+"فانقر فوق <guibutton>نعم</guibutton>، وسيُستخدم العمود لكلا الحقلين."
+
+#. Tag: para
+#: details-impexp-csv.docbook:346
+#, no-c-format
+msgid ""
+"One particular reason to also capture the Payee/Descriptor field in the Memo "
+"field is that the incoming Payee/Description field might get completely "
+"changed on import when &kmymoney; does transaction matching. Selecting that "
+"field also as Memo will preserve that data, which would otherwise get lost."
+msgstr ""
+"أحد الأسباب المحددة لالتقاط حقل المستفيد/الوصف أيضًا في حقل المذكرة هو أن حقل "
+"المستفيد/الوصف الوارد قد يتغير تمامًا عند الاستيراد عندما يقوم أموالك بمطابقة "
+"المعاملات. اختيار ذلك الحقل أيضًا كمذكرة سيحافظ على تلك البيانات، التي قد "
+"تُفقد بغير ذلك."
+
+#. Tag: para
+#: details-impexp-csv.docbook:355
+#, no-c-format
+msgid ""
+"If you notice you have made an incorrect choice, just change that selection. "
+"If several changes need to be made, you can click <guilabel>Clear all</"
+"guilabel> and start over."
+msgstr ""
+"إذا لاحظت أنك قمت باختيار غير صحيح، فما عليك سوى تغيير ذلك الاختيار. إذا "
+"كانت هناك حاجة لإجراء تغييرات عدة، يمكنك النقر فوق <guilabel>امسح الكل</"
+"guilabel> والبدء من جديد."
+
+#. Tag: para
+#: details-impexp-csv.docbook:361
+#, no-c-format
+msgid ""
+"Once columns have been chosen for all the necessary fields, the "
+"<guilabel>Next</guilabel> button will be enabled, and clicking it will "
+"advance the wizard."
+msgstr ""
+"بمجرد اختيار الأعمدة لجميع الحقول الضرورية، سيُفعل زر <guilabel>التالي</"
+"guilabel>، وسيؤدي النقر فوقه إلى تقدم المعالج."
+
+#. Tag: title
+#: details-impexp-csv.docbook:368
+#, no-c-format
+msgid "CSV Import Wizard: Format"
+msgstr "معالج استيراد CSV: التنسيق"
+
+#. Tag: para
+#: details-impexp-csv.docbook:369
+#, no-c-format
+msgid ""
+"The next page of the wizard still shows the data to be imported on the top, "
+"but the lower section provides three dropdowns. The initial values are set "
+"by &kmymoney; based on examining the actual data."
+msgstr ""
+"لا تزال الصفحة التالية من المعالج تعرض البيانات المراد استيرادها في الأعلى، "
+"ولكن القسم السفلي يوفر ثلاث قوائم منسدلة. تُضبط القيم المبدئية بواسطة أموالك "
+"بناءً على فحص البيانات الفعلية."
+
+#. Tag: screeninfo
+#: details-impexp-csv.docbook:376 details-impexp-csv.docbook:425
+#, no-c-format
+msgid "<screeninfo>csv import wizard: investment</screeninfo>"
+msgstr "<screeninfo>معالج استيراد csv: الاستثمار</screeninfo>"
+
+#. Tag: phrase
+#: details-impexp-csv.docbook:382 details-impexp-csv.docbook:431
+#, no-c-format
+msgid "<phrase>csv import wizard: investment</phrase>"
+msgstr "<phrase>معالج استيراد csv: الاستثمار</phrase>"
+
+#. Tag: para
+#: details-impexp-csv.docbook:387
+#, no-c-format
+msgid ""
+"The <guilabel>Decimal Symbol</guilabel> defaults to <quote>auto,</quote> "
+"which usually produces the correct results. If not, you can explicitly "
+"specify the <quote>dot</quote> or <quote>comma.</quote>"
+msgstr ""
+"تكون القيمة المبدئية لـ <guilabel>الرمز العشري</guilabel> هي <quote>آلي،</"
+"quote> والتي عادة ما تعطي نتائج صحيحة. إذا لم يكن الأمر كذلك، يمكنك تحديد "
+"<quote>النقطة</quote> أو <quote>الفاصلة</quote> صراحة."
+
+#. Tag: para
+#: details-impexp-csv.docbook:393
+#, no-c-format
+msgid ""
+"The <guilabel>Thousands Symbol</guilabel> is set automatically, and the "
+"field may be disabled if it will not affect the results."
+msgstr ""
+"يُضبط <guilabel>رمز الآلاف</guilabel> آليًا، وقد يُعطل الحقل إذا كان لن يؤثر "
+"على النتائج."
+
+#. Tag: para
+#: details-impexp-csv.docbook:398
+#, no-c-format
+msgid ""
+"This needs to be set according to the order of year, month, and day in the "
+"dates in the file. If the plugin finds data incompatible with this setting, "
+"it will complain when you try to import. However, if the setting is wrong, "
+"but it produce invalid results not detected (such as data with no days "
+"higher than 12, so month and day could be switched) you will simply get "
+"incorrect data, because the plugin cannot know you made a mistake. In this "
+"case, the error will be obvious in the ledger after import."
+msgstr ""
+"يجب ضبط هذا وفقًا لترتيب السنة والشهر واليوم في التواريخ الموجودة في الملف. "
+"إذا وجد الملحق بيانات غير متوافقة مع هذا الإعداد، فسوف يشتكي عندما تحاول "
+"الاستيراد. ومع ذلك، إذا كان الإعداد خاطئًا، ولكنه أنتج نتائج غير صالحة لم "
+"تُكتشف (مثل البيانات التي لا تحتوي على أيام أعلى من 12، بحيث يمكن تبديل الشهر "
+"واليوم) فستحصل ببساطة على بيانات غير صحيحة، لأن الملحق لا يمكنه معرفة أنك "
+"ارتكبت خطأ. في هذه الحالة، سيكون الخطأ واضحًا في السجل بعد الاستيراد."
+
+#. Tag: para
+#: details-impexp-csv.docbook:408
+#, no-c-format
+msgid ""
+"The <guilabel>Date format</guilabel> specifies the order of day, month, and "
+"year, and is also set automatically. However, in some cases, such as data "
+"with no day higher than 12, you will notice the problem after the import. In "
+"such cases, you will need to repeat the import, and choose the actual order "
+"of the date components."
+msgstr ""
+"يحدد <guilabel>تنسيق التاريخ</guilabel> ترتيب اليوم والشهر والسنة، ويُضبط "
+"آليًا أيضًا. ومع ذلك، في بعض الحالات، مثل البيانات التي لا يزيد فيها اليوم عن "
+"12، ستلاحظ المشكلة بعد الاستيراد. في مثل هذه الحالات، ستحتاج إلى تكرار "
+"الاستيراد واختيار الترتيب الفعلي لمكونات التاريخ."
+
+#. Tag: title
+#: details-impexp-csv.docbook:416
+#, no-c-format
+msgid "CSV Import Wizard: Investment"
+msgstr "معالج استيراد CSV: الاستثمار"
+
+#. Tag: para
+#: details-impexp-csv.docbook:417
+#, no-c-format
+msgid ""
+"This page is similar to the <guilabel>Banking</guilabel> page, although it "
+"is somewhat more complex. Most selections are fairly obvious, but there are "
+"some items which can seem confusing until you have completed the process "
+"once or twice."
+msgstr ""
+"تشبه هذه الصفحة صفحة <guilabel>البنوك</guilabel>، على الرغم من أنها أكثر "
+"تعقيدًا إلى حد ما. معظم الاختيارات واضحة تمامًا، ولكن هناك بعض العناصر التي قد "
+"تبدو مربكة حتى تكمل العملية مرة أو مرتين."
+
+#. Tag: para
+#: details-impexp-csv.docbook:439
+#, no-c-format
+msgid ""
+"As on the <guilabel>Banking</guilabel> page, you may select more than one "
+"column for the Memo field"
+msgstr ""
+"كما هو الحال في صفحة <guilabel>البنوك</guilabel>، يمكنك اختيار أكثر من عمود "
+"واحد لحقل المذكرة"
+
+#. Tag: para
+#: details-impexp-csv.docbook:446
+#, no-c-format
+msgid ""
+"The <guilabel>Type/Action</guilabel> selector is to identify the column "
+"which contains the action type, such as Buy, Sell, Dividend, &etc;"
+msgstr ""
+"منتقي <guilabel>النوع/الإجراء</guilabel> هو لتحديد العمود الذي يحتوي على نوع "
+"الإجراء، مثل شراء، بيع، أرباح أسهم، إلخ؛"
+
+#. Tag: para
+#: details-impexp-csv.docbook:453
+#, no-c-format
+msgid ""
+"The <guilabel>Price Fraction</guilabel> selector is to indicate the fraction/"
+"multiplier for compatibility between imported and stored prices. For "
+"instance, if the import file price is in cents, but your &kmymoney; account "
+"is priced in dollars, select 0.01. Or, if your &kmymoney; data file pricing "
+"is in dollars, and so is the CSV file being imported, then set "
+"<guilabel>Price Fraction</guilabel> to 1.0."
+msgstr ""
+"منتقي <guilabel>جزء السعر</guilabel> مخصص للإشارة إلى الكسر/المضاعف للتوافق "
+"بين الأسعار المستوردة والمخزنة. على سبيل المثال، إذا كان سعر ملف الاستيراد "
+"بالسنتات، ولكن حساب أموالك مسعر بالدولار، فاختر 0.01. أو إذا كان تسعير ملف "
+"بيانات أموالك بالدولار، وكذلك ملف CSV الذي يُستورد، فاضبط <guilabel>جزء "
+"السعر</guilabel> على 1.0."
+
+#. Tag: para
+#: details-impexp-csv.docbook:464
+#, no-c-format
+msgid ""
+"There are two ways to specify fees for transactions. If your file has a "
+"distinct column for fees, use the <guilabel>Fee Column</guilabel> selector. "
+"Note that on this page, this is the only field to explicitly include \"column"
+"\" in the label, to emphasize that it is for the fee column, not for any "
+"actual fee. Beware, though, that the fee might have been taken into account "
+"in the price."
+msgstr ""
+"هناك طريقتان لتحديد الرسوم للمعاملات. إذا كان ملفك يحتوي على عمود متميز "
+"للرسوم، فاستخدم منتقي <guilabel>عمود الرسوم</guilabel>. لاحظ أنه في هذه "
+"الصفحة، هذا هو الحقل الوحيد الذي يتضمن صراحة كلمة \"عمود\" في التسمية، "
+"للتأكيد على أنه لعمود الرسوم، وليس لأي رسوم فعلية. احذر مع ذلك، فقد تكون "
+"الرسوم قد أُخذت في الاعتبار في السعر."
+
+#. Tag: para
+#: details-impexp-csv.docbook:472
+#, no-c-format
+msgid ""
+"If there is a fee, but it is a percentage figure, rather than a specified "
+"value, click the <guilabel>Fee is percentage</guilabel> check box, and enter "
+"the percentage rate into the <guilabel>Fee rate</guilabel> field. In "
+"addition, if there is a minimum fee, specify it in the <guilabel>Minimal "
+"Fee</guilabel> field, which becomes enabled when you enter the Fee rate "
+"(with a decimal point.) At this point, clicking <guibutton>Calculate Fees</"
+"guibutton> will add a column at the right of the table above, and will "
+"indicate the calculated fee for each transaction."
+msgstr ""
+"إذا كانت هناك رسوم، ولكنها نسبة مئوية وليست قيمة محددة، فانقر فوق مربع "
+"الاختيار <guilabel>الرسوم نسبة مئوية</guilabel>، وأدخل معدل النسبة المئوية "
+"في حقل <guilabel>معدل الرسوم</guilabel>. بالـ إضافة إلى ذلك، إذا كان هناك حد "
+"أدنى للرسوم، فحدده في حقل <guilabel>الحد الأدنى للرسوم</guilabel>، والذي "
+"يُفعل عندما تدخل معدل الرسوم (مع نقطة عشرية). عند هذه النقطة، سيؤدي النقر فوق "
+"<guibutton>احسب الرسوم</guibutton> إلى إضافة عمود على يمين الجدول أعلاه، "
+"وسيظهر الرسوم المحسوبة لكل معاملة."
+
+#. Tag: para
+#: details-impexp-csv.docbook:483
+#, no-c-format
+msgid ""
+"If you made a mistake in entering the fee information, clicking "
+"<guibutton>Clear Fee</guibutton> will reset all the fee related fields to "
+"their initial values."
+msgstr ""
+"إذا ارتكبت خطأً في إدخال معلومات الرسوم، فإن النقر فوق <guibutton>امسح "
+"الرسوم</guibutton> سيؤدي إلى إعادة ضبط جميع الحقول المتعلقة بالرسوم إلى "
+"قيمها المبدئية."
+
+#. Tag: para
+#: details-impexp-csv.docbook:490
+#, no-c-format
+msgid ""
+"Below the column selectors are two areas for the security identity. "
+"Depending upon your broker or financial institution, your file may contain "
+"entries for only one or for several securities."
+msgstr ""
+"توجد أسفل منتقيات الأعمدة منطقتان لهوية الورقة المالية. اعتمادًا على الوسيط "
+"أو المؤسسة المالية، قد يحتوي ملفك على مدخلات لورقة مالية واحدة فقط أو لأوراق "
+"مالية عدة."
+
+#. Tag: para
+#: details-impexp-csv.docbook:497
+#, no-c-format
+msgid ""
+"If the file contains transactions for just a single security, with the name "
+"possibly in a header row, the name should be entered into the "
+"<guilabel>Security Name</guilabel> box. The name you enter will be added to "
+"the dropdown list for future use. You may subsequently wish to remove that "
+"name from the list. If so, select it, then click <guilabel>Hide security</"
+"guilabel>. This removes it only from this list, and has no effect on your "
+"main &kmymoney; file."
+msgstr ""
+"إذا كان الملف يحتوي على معاملات لورقة مالية واحدة فقط، مع احتمال وجود الاسم "
+"في سطر الترويسة، فيجب إدخال الاسم في مربع <guilabel>اسم الورقة المالية</"
+"guilabel>. سيُضاف الاسم الذي تدخله إلى القائمة المنسدلة للاستخدام في "
+"المستقبل. قد ترغب لاحقًا في إزالة ذلك الاسم من القائمة. إذا كان الأمر كذلك، "
+"فاختره، ثم انقر فوق <guilabel>أخفِ الورقة المالية</guilabel>. يؤدي هذا إلى "
+"إزالتها من هذه القائمة فقط، وليس له أي تأثير على ملف أموالك الرئيس."
+
+#. Tag: para
+#: details-impexp-csv.docbook:509
+#, no-c-format
+msgid ""
+"If the file includes transactions for several securities, each will be "
+"identified by its ticker symbol in a column with further detail in another "
+"column. Select those columns in the <guilabel>Symbol</guilabel> and "
+"<guilabel>Detail</guilabel> selectors. It may be that a security has no "
+"official symbol, and in this case a pseudo-symbol may be invented; this is "
+"not a problem, as long as it uniquely identifies that security in the import "
+"file. Sometimes the actual activity type is embedded in the detail column, "
+"possibly prefixed by a standard text. For instance, if the field contains "
+"<quote>type: dividend</quote>, go to <guilabel>Filter</guilabel> text box "
+"and enter <quote>type: </quote> including the trailing space."
+msgstr ""
+"إذا كان الملف يتضمن معاملات لأوراق مالية عدة، فسيُعرف كل منها برمزها في عمود "
+"مع مزيد من التفاصيل في عمود آخر. اختر تلك الأعمدة في منتقيات "
+"<guilabel>الرمز</guilabel> و <guilabel>التفاصيل</guilabel>. قد لا يكون "
+"للورقة المالية رمز رسمي، وفي هذه الحالة يمكن اختراع رمز وهمي؛ هذه ليست "
+"مشكلة، طالما أنه يحدد تلك الورقة المالية بشكل فريد في ملف الاستيراد. أحيانًا "
+"يكون نوع النشاط الفعلي مضمنًا في عمود التفاصيل، وربما يكون مسبوقًا بنص قياسي. "
+"على سبيل المثال، إذا كان الحقل يحتوي على <quote>النوع: أرباح الأسهم</quote>، "
+"فانتقل إلى مربع نص <guilabel>المرشح</guilabel> وأدخل <quote>النوع: </quote> "
+"بما في ذلك المسافة اللاحقة."
+
+#. Tag: para
+#: details-impexp-csv.docbook:528
+#, no-c-format
+msgid ""
+"When all required fields are selected, the <guilabel>Next</guilabel> button "
+"will be enabled, and clicking it will advance the wizard."
+msgstr ""
+"عند اختيار جميع الحقول المطلوبة، سيُفعل زر <guilabel>التالي</guilabel>، "
+"وسيؤدي النقر فوقه إلى تقدم المعالج."
+
+#. Tag: title
+#: details-impexp-csv.docbook:534
+#, no-c-format
+msgid "CSV Import Wizard: Securities and Symbols"
+msgstr "معالج استيراد CSV: الأوراق المالية والرموز"
+
+#. Tag: para
+#: details-impexp-csv.docbook:535
+#, no-c-format
+msgid ""
+"For an Investment file, after the <guilabel>Columns</guilabel> page has been "
+"accepted, you need to assure that each security in the file is matched to "
+"the correct security in your &kmymoney; file, before import can proceed. At "
+"this point, another window will open, showing the securities and symbols "
+"contained in the import file. Note that unlike the data display in the main "
+"wizard windows, the changes you make on this page <emphasis>are</emphasis> "
+"imported."
+msgstr ""
+"بالنسبة لملف استثمار، بعد قبول صفحة <guilabel>الأعمدة</guilabel>، تحتاج إلى "
+"التأكد من مطابقة كل ورقة مالية في الملف مع الورقة المالية الصحيحة في ملف "
+"أموالك، قبل أن يتمكن الاستيراد من المتابعة. في هذه المرحلة، ستُفتح نافذة "
+"أخرى، تعرض الأوراق المالية والرموز الموجودة في ملف الاستيراد. لاحظ أنه على "
+"عكس عرض البيانات في نوافذ المعالج الرئيسة، فإن التغييرات التي تجريها في هذه "
+"الصفحة <emphasis>تُستورد</emphasis> بالفعل."
+
+#. Tag: para
+#: details-impexp-csv.docbook:544
+#, no-c-format
+msgid "Completing this page is straightforward, if you consider these items:"
+msgstr "إكمال هذه الصفحة أمر مباشر، إذا وضعت هذه العناصر في الاعتبار:"
+
+#. Tag: para
+#: details-impexp-csv.docbook:548
+#, no-c-format
+msgid ""
+"Each row represents one transaction, and so it may appear there are "
+"duplicate rows. This is OK."
+msgstr ""
+"يمثل كل صف معاملة واحدة، ولذا قد يبدو أن هناك صفوفًا مكررة. هذا أمر طبيعي."
+
+#. Tag: para
+#: details-impexp-csv.docbook:555
+#, no-c-format
+msgid ""
+"Each security name must match exactly the existing security as specified in "
+"&kmymoney;. If it does not match, it will be created as a new security, "
+"which you probably do not want, unless it represents the purchase of a new "
+"security."
+msgstr ""
+"يجب أن يتطابق كل اسم ورقة مالية تمامًا مع الورقة المالية الموجودة كما هو محدد "
+"في أموالك. إذا لم يتطابق، فستُنشأ ورقة مالية جديدة، وهو ما لا تريده على "
+"الأرجح، إلا إذا كان يمثل شراء ورقة مالية جديدة."
+
+#. Tag: para
+#: details-impexp-csv.docbook:564
+#, no-c-format
+msgid "A symbol must be shown for each security."
+msgstr "يجب إظهار رمز لكل ورقة مالية."
+
+#. Tag: para
+#: details-impexp-csv.docbook:570
+#, no-c-format
+msgid ""
+"The <emphasis>only</emphasis> information on this page should be the "
+"security symbol and name. Any other information initially shown (such as "
+"date or activity type) is still in the actual import file, but should not be "
+"shown here."
+msgstr ""
+"المعلومات <emphasis>الوحيدة</emphasis> في هذه الصفحة يجب أن تكون رمز الورقة "
+"المالية واسمها. أي معلومات أخرى تظهر في البداية (مثل التاريخ أو نوع النشاط) "
+"لا تزال موجودة في ملف الاستيراد الفعلي، ولكن لا ينبغي عرضها هنا."
+
+#. Tag: para
+#: details-impexp-csv.docbook:580
+#, no-c-format
+msgid ""
+"You can edit a symbol or security name by double-clicking the cell. For each "
+"security, if necessary, edit the name in one of its rows, If the correct "
+"security name appears in the imported file, double-click it to select it, "
+"then copy and paste/edit, taking care if you have used a variation or "
+"abbreviation within &kmymoney;. If you edit a security name, that edit will "
+"be applied to all rows with the same symbol."
+msgstr ""
+"يمكنك تحرير رمز أو اسم ورقة مالية عن طريق النقر المزدوج على الخلية. لكل ورقة "
+"مالية، إذا لزم الأمر، حرر الاسم في أحد صفوفها. إذا ظهر اسم الورقة المالية "
+"الصحيح في الملف المستورد، فانقر فوقه مرتين لاختياره، ثم انسخه والصقه/حرره، "
+"مع توخي الحذر إذا كنت قد استخدمت تنويعًا أو اختصارًا داخل أموالك. إذا حررت اسم "
+"ورقة مالية، فسيُطبق هذا التعديل على جميع الصفوف التي لها نفس الرمز."
+
+#. Tag: para
+#: details-impexp-csv.docbook:589
+#, no-c-format
+msgid ""
+"Any line without a symbol will be treated as a brokerage-type checking item. "
+"If any transaction involves another account, &eg;, a checking or brokerage "
+"account for a received dividend or for making a payment, a message box will "
+"pop up for the account name to be entered for the transfer. This will "
+"generally be the Brokerage account you chose or created when you created the "
+"Investment account. Similarly enter the column number containing the payee, "
+"if requested. If a mistake is made when entering the account name, the "
+"import will go ahead, but &kmymoney; will not recognize it, and will flag "
+"those transactions as missing a category assignment. If the required account "
+"name is rather long, just enter a few characters. The import will proceed "
+"but the transactions will be flagged by &kmymoney; as missing a category "
+"assignment, and you will need to select the correct transfer account after "
+"the import. Click <guibutton>OK</guibutton> when done. The import process "
+"then gets handed over to &kmymoney;."
+msgstr ""
+"سيُعامل أي سطر بدون رمز كعنصر جاري من نوع وساطة. إذا كانت أي معاملة تتضمن "
+"حسابًا آخر، على سبيل المثال، حسابًا جاريًا أو حساب وساطة لأرباح أسهم مستلمة أو "
+"لإجراء دفعة، فسيظهر مربع رسالة لإدخال اسم الحساب للتحويل. سيكون هذا بشكل عام "
+"حساب الوساطة الذي اخترته أو أنشأته عندما أنشأت حساب الاستثمار. وبالمثل، أدخل "
+"رقم العمود الذي يحتوي على المستفيد، إذا طُلب منك ذلك. إذا ارتكب خطأ عند إدخال "
+"اسم الحساب، فسيستمر الاستيراد، ولكن أموالك لن يتعرف عليه، وسيقوم بوضع علامة "
+"على تلك المعاملات على أنها تفتقد إلى فئة. إذا كان اسم الحساب المطلوب طويلاً "
+"نوعًا ما، فما عليك سوى إدخال بضعة أحرف. سيستمر الاستيراد ولكن ستُعلم المعاملات "
+"بواسطة أموالك على أنها تفتقد إلى فئة، وستحتاج إلى اختيار حساب التحويل الصحيح "
+"بعد الاستيراد. انقر فوق <guibutton>موافق</guibutton> عند الانتهاء. ثم تُسلم "
+"عملية الاستيراد إلى أموالك."
+
+#. Tag: para
+#: details-impexp-csv.docbook:606
+#, no-c-format
+msgid ""
+"If you have more that one transaction referring to the same security, you "
+"can edit all of them at once, using multi-select. For instance, to add a "
+"symbol for several lines, press and hold the &Ctrl; key, and in the symbol "
+"column, select each transaction. While still holding the &Ctrl; key, all "
+"those symbol cells should still be selected, so click one and enter the "
+"symbol. Click inside the window but outside that column, or hit &Enter; (not "
+"<guibutton>OK</guibutton>). Now that those transactions all have the same "
+"symbol, double-click one detail entry and edit the security name as you "
+"wish. Click elsewhere on the window (or &Enter;) to accept the edit, which "
+"will then change all those entries. The remaining entries will show the "
+"symbols picked up from the transactions in the import file."
+msgstr ""
+"إذا كان لديك أكثر من معاملة تشير إلى نفس الورقة المالية، يمكنك تحريرها جميعًا "
+"مرة واحدة باستخدام الاختيار المتعدد. على سبيل المثال، لإضافة رمز لأسطر عدة، "
+"اضغط باستمرار على مفتاح &Ctrl;، وفي عمود الرمز، اختر كل معاملة. بينما لا "
+"تزال تضغط على مفتاح &Ctrl;، يجب أن تظل جميع خلايا الرمز تلك مختارة، لذا انقر "
+"فوق إحداها وأدخل الرمز. انقر داخل النافذة ولكن خارج ذلك العمود، أو اضغط على "
+"&Enter; (ليس <guibutton>موافق</guibutton>). الآن بعد أن أصبح لجميع تلك "
+"المعاملات نفس الرمز، انقر نقرًا مزدوجًا فوق إدخال تفاصيل واحد وحرر اسم الورقة "
+"المالية كما تريد. انقر في مكان آخر في النافذة (أو &Enter;) لقبول التعديل، "
+"والذي سيغير بعد ذلك جميع تلك الإدخالات. ستظهر الإدخالات المتبقية الرموز التي "
+"التُقطت من المعاملات في ملف الاستيراد."
+
+#. Tag: para
+#: details-impexp-csv.docbook:619
+#, no-c-format
+msgid ""
+"Now click <guibutton>OK</guibutton>, then <guibutton>Import</guibutton>. In "
+"the <guilabel>Enter Account</guilabel> box, enter the name of a Brokerage/"
+"checking account for funds. If you enter a valid name that account will be "
+"used. If you can't be bothered entering a correct but long name, enter a few "
+"characters. The import will accept that but the transactions in the ledger "
+"after import will need a proper account to be selected. For the "
+"<guilabel>Brokerage</guilabel> box, enter the number of the column "
+"containing that detail. Now, on the <guilabel>Invalid transaction</guilabel> "
+"box you may get a few entries because the activity type does not match the "
+"qty/price/amount combination. On each message, click <guilabel>Select "
+"Transaction Type</guilabel>, and a dropdown will appear indicating valid "
+"activity types for that combination of values."
+msgstr ""
+"الآن انقر فوق <guibutton>موافق</guibutton>، ثم <guibutton>استيراد</"
+"guibutton>. في مربع <guilabel>أدخل الحساب</guilabel>، أدخل اسم حساب وساطة/"
+"جاري للأموال. إذا أدخلت اسمًا صالحًا، فسيُستخدم ذلك الحساب. إذا كنت لا ترغب في "
+"إدخال اسم صحيح ولكنه طويل، فأدخل بضعة أحرف. سيقبل الاستيراد ذلك ولكن "
+"المعاملات في السجل بعد الاستيراد ستحتاج إلى اختيار حساب مناسب. بالنسبة لمربع "
+"<guilabel>الوساطة</guilabel>، أدخل رقم العمود الذي يحتوي على تلك التفاصيل. "
+"الآن، في مربع <guilabel>معاملة غير صالحة</guilabel> قد تحصل على بضعة إدخالات "
+"لأن نوع النشاط لا يتطابق مع مزيج الكمية/السعر/المبلغ. في كل رسالة، انقر فوق "
+"<guilabel>اختر نوع المعاملة</guilabel>، وستظهر قائمة منسدلة تشير إلى أنواع "
+"الأنشطة الصالحة لهذا المزيج من القيم."
+
+#. Tag: para
+#: details-impexp-csv.docbook:634
+#, no-c-format
+msgid ""
+"Now the import has occurred and you're into &kmymoney; to select the "
+"investment account to use. Then the checking account, if there were any "
+"brokerage type transactions."
+msgstr ""
+"الآن قد تم الاستيراد وأنت داخل أموالك لاختيار حساب الاستثمار المراد "
+"استخدامه. ثم الحساب الجاري، إذا كانت هناك أي معاملات من نوع الوساطة."
+
+#. Tag: title
+#: details-impexp-csv.docbook:641
+#, no-c-format
+msgid "CSV Import Wizard: Currency Prices"
+msgstr "معالج استيراد CSV: أسعار العملات"
+
+#. Tag: para
+#: details-impexp-csv.docbook:642
+#, no-c-format
+msgid "something about importing currency prices"
+msgstr "شيء ما عن استيراد أسعار العملات"
+
+#. Tag: title
+#: details-impexp-csv.docbook:647
+#, no-c-format
+msgid "CSV Import Wizard: Stock prices"
+msgstr "معالج استيراد CSV: أسعار الأسهم"
+
+#. Tag: para
+#: details-impexp-csv.docbook:648
+#, no-c-format
+msgid "Something about importing stock prices"
+msgstr "شيء ما عن استيراد أسعار الأسهم"
+
+#. Tag: title
+#: details-impexp-csv.docbook:654
+#, no-c-format
+msgid "CSV Import Wizard: Finish"
+msgstr "معالج استيراد CSV: إنهاء"
+
+#. Tag: para
+#: details-impexp-csv.docbook:655
+#, no-c-format
+msgid ""
+"On reaching the Final page, the plugin automatically validates the values. "
+"If the numeric value column/s is/are highlighted in green, then the "
+"validation was successful and all that is necessary is to click "
+"<guibutton>Import CSV</guibutton> and control then passes to the main "
+"&kmymoney; program. However, if the start and/or end lines are incorrectly "
+"set, or if the wrong columns were selected, the highlighting will be in red, "
+"and an error message will appear indicating where the error lies. The user "
+"will then need to click <guibutton>Back</guibutton> to get to the relevant "
+"page to correct the error."
+msgstr ""
+"عند الوصول إلى الصفحة النهائية، يقوم الملحق آليًا بالتحقق من صحة القيم. إذا "
+"سُلط الضوء على عمود/أعمدة القيم الرقمية باللون الأخضر، فإن التحقق كان ناجحًا "
+"وكل ما هو ضروري هو النقر فوق <guibutton>استيراد CSV</guibutton> ثم تنتقل "
+"السيطرة إلى برنامج أموالك الرئيس. ومع ذلك، إذا ضُبط سطر البدء و/أو النهاية "
+"بشكل غير صحيح، أو إذا اختيرت أعمدة خاطئة، فسيُسلط الضوء باللون الأحمر، وستظهر "
+"رسالة خطأ تشير إلى مكان الخطأ. سيحتاج المستخدم بعد ذلك إلى النقر فوق "
+"<guibutton>السابق</guibutton> للوصول إلى الصفحة ذات الصلة لتصحيح الخطأ."
+
+#. Tag: para
+#: details-impexp-csv.docbook:666
+#, no-c-format
+msgid ""
+"It might also be that if debit and credit columns are in use, one of those "
+"columns may legitimately contain no entries. This would mean that that "
+"column has no decimal symbol present, and this would result in a warning. If "
+"you see that this is the case, you may click either of the buttons to accept "
+"(<guibutton>Accept this</guibutton> or <guibutton>Accept all</guibutton>.)"
+msgstr ""
+"قد يحدث أيضًا أنه في حالة استخدام أعمدة المدين والدائن، قد لا يحتوي أحد تلك "
+"الأعمدة بشكل مشروع على أي إدخالات. وهذا يعني أن ذلك العمود لا يحتوي على رمز "
+"عشري، وهذا سيؤدي إلى تحذير. إذا رأيت أن هذا هو الحال، يمكنك النقر فوق أي من "
+"الزرين للقبول (<guibutton>اقبل هذا</guibutton> أو <guibutton>اقبل الكل</"
+"guibutton>.)"
+
+#. Tag: title
+#: details-impexp-csv.docbook:674
+#, no-c-format
+msgid "Decimal Symbol"
+msgstr "الرمز العشري"
+
+#. Tag: para
+#: details-impexp-csv.docbook:675
+#, no-c-format
+msgid ""
+"Another possible problem might be that the selected decimal symbol is "
+"incorrect. Selecting the symbol to match the data should clear that error. "
+"Normally, you should not need to change this selection. Note that the "
+"<guilabel>Decimal Symbol</guilabel> must be set to match your file, not your "
+"locale. If your locale setting has a different value, conversion will be "
+"seen to take place. The display of the file in the upper part of the window "
+"will show numeric fields highlighted in green if the current setting "
+"produces valid results, otherwise in red. The highlighting also reflects the "
+"<guilabel>Start line</guilabel> and <guilabel>End line</guilabel> settings. "
+"There could be warnings if any of the selected cells appear not to contain "
+"the selected symbol."
+msgstr ""
+"مشكلة أخرى محتملة قد تكون أن الرمز العشري المختار غير صحيح. يجب أن يؤدي "
+"اختيار الرمز لمطابقة البيانات إلى مسح ذلك الخطأ. عادةً، لا ينبغي أن تحتاج إلى "
+"تغيير هذا الاختيار. لاحظ أن <guilabel>الرمز العشري</guilabel> يجب أن يُضبط "
+"ليتوافق مع ملفك، وليس مع محليتك. إذا كان لإعداد محليتك قيمة مختلفة، فسيُلاحظ "
+"حدوث تحويل. سيظهر عرض الملف في الجزء العلوي من النافذة حقولاً رقمية مسلطًا "
+"عليها الضوء باللون الأخضر إذا كان الإعداد الحالي ينتج نتائج صالحة، وإلا "
+"فباللون الأحمر. يعكس تسليط الضوء أيضًا إعدادات <guilabel>سطر البدء</guilabel> "
+"و <guilabel>سطر النهاية</guilabel>. قد تكون هناك تحذيرات إذا بدت أي من "
+"الخلايا المختارة لا تحتوي على الرمز المختار."
+
+#. Tag: title
+#: details-impexp-csv.docbook:690
+#, no-c-format
+msgid "Thousands Symbol"
+msgstr "رمز الآلاف"
+
+#. Tag: para
+#: details-impexp-csv.docbook:691
+#, no-c-format
+msgid ""
+"This does not need to be selected, as it is set automatically based on the "
+"<guilabel>Decimal Symbol</guilabel>. It is provided purely as a guide. In "
+"addition, the selector will be inactive if none of the values to be imported "
+"is greater or equal to 1000."
+msgstr ""
+"لا يحتاج هذا إلى الاختيار، حيث يُضبط آليًا بناءً على <guilabel>الرمز العشري</"
+"guilabel>. يُقدم كدليل محض. بـ الإضافة إلى ذلك، سيكون المنتقي غير نشط إذا لم "
+"تكن أي من القيم المراد استيرادها أكبر من أو تساوي 1000."
+
+#. Tag: title
+#: details-impexp-csv.docbook:699
+#, no-c-format
+msgid "Import CSV"
+msgstr "استورد CSV"
+
+#. Tag: para
+#: details-impexp-csv.docbook:700
+#, no-c-format
+msgid ""
+"Clicking this button tells the plugin to actually import the data from the "
+"file, based on the choices you have made above. &kmymoney; will prompt you "
+"for the correct account into which to import the data."
+msgstr ""
+"يخبر النقر فوق هذا الزر الملحق باستيراد البيانات فعليًا من الملف، بناءً على "
+"الاختيارات التي أجريتها أعلاه. سيطلب منك أموالك الحساب الصحيح الذي ترغب في "
+"استيراد البيانات إليه."
+
+#. Tag: title
+#: details-impexp-csv.docbook:708
+#, no-c-format
+msgid "Make QIF File"
+msgstr "أنشئ ملف QIF"
+
+#. Tag: para
+#: details-impexp-csv.docbook:709
+#, no-c-format
+msgid ""
+"This button gives you the ability, after the import has been completed, to "
+"save the data from the CSV file as a QIF file, should you require one for "
+"any reason. This was actually the original functionality that drove the "
+"creation of this plugin. However, as &kmymoney; itself is now able to export "
+"a qif file, the capability is now probably of little use and is likely to be "
+"removed eventually."
+msgstr ""
+"يمنحك هذا الزر القدرة، بعد اكتمال الاستيراد، على حفظ البيانات من ملف CSV "
+"كملف QIF، إذا كنت بحاجة إلى واحد لـ أي سبب من الأسباب. كانت هذه في الواقع "
+"الوظيفة الأصلية التي دفعت إلى إنشاء هذا الملحق. ومع ذلك، نظرًا لأن أموالك "
+"نفسه أصبح قادرًا الآن على تصدير ملف qif، فمن المحتمل أن تكون هذه القدرة الآن "
+"قليلة الفائدة ومن المرجح أن تُزال في النهاية."
+
+#. Tag: title
+#: details-impexp-csv.docbook:719
+#, no-c-format
+msgid "Finishing up"
+msgstr "الانتهاء"
+
+#. Tag: para
+#: details-impexp-csv.docbook:720
+#, no-c-format
+msgid ""
+"For a <guilabel>Banking</guilabel> import, the plugin has finished, and "
+"&kmymoney; will prompt you, as stated above, for the correct account into "
+"which to import the data. For an <guilabel>Investment</guilabel> import, "
+"however, a little more may be required. If, during import of a transaction, "
+"the plugin finds no valid transaction type, it will display the offending "
+"transaction, and the user may select a valid type to substitute, depending "
+"on the combination of quantity, price, and amount values. For every "
+"transaction, the plugin will validate the column contents to ensure they "
+"match the action type. For instance, if a quantity appears but no price or "
+"amount, it is assumed that the transaction can be only an Add or Remove "
+"Shares. Or, if there is an amount but no quantity or price, then a Dividend "
+"is assumed, &etc;"
+msgstr ""
+"بالنسبة لاستيراد <guilabel>البنوك</guilabel>، فقد انتهى الملحق، و سيطلب منك "
+"أموالك، كما ذكر أعلاه، الحساب الصحيح الذي ترغب في استيراد البيانات إليه. أما "
+"بالنسبة لاستيراد <guilabel>الاستثمار</guilabel>، فقد يتطلب الأمر أكثر قليلاً. "
+"إذا وجد الملحق أثناء استيراد معاملة ما نوع معاملة غير صالح، فسيقوم بعرض "
+"المعاملة المسيئة، ويمكن للمستخدم اختيار نوع صالح لاستبداله، اعتمادًا على مزيج "
+"قيم الكمية والسعر والمبلغ. لكل معاملة، سيتحقق الملحق من محتويات العمود "
+"للتأكد من أنها تطابق نوع الإجراء. على سبيل المثال، إذا ظهرت كمية ولكن بدون "
+"سعر أو مبلغ، فيُفترض أن المعاملة لا يمكن أن تكون إلا إضافة أو إزالة أسهم. أو "
+"إذا كان هناك مبلغ ولكن بدون كمية أو سعر، فيُفترض وجود أرباح أسهم، إلخ؛"
+
+#. Tag: para
+#: details-impexp-csv.docbook:734
+#, no-c-format
+msgid ""
+"If you wish to save your settings, remember to click <guibutton>Finish</"
+"guibutton>, and the plugin will then close."
+msgstr ""
+"إذا كنت ترغب في حفظ إعداداتك، فتذكر النقر فوق <guibutton>أنهِ</guibutton>، "
+"وسينغلق الملحق بعد ذلك."
+
+#. Tag: title
+#: details-impexp-csv.docbook:740
+#, no-c-format
+msgid "Adding Investment Activity Types"
+msgstr "إضافة أنواع أنشطة الاستثمار"
+
+#. Tag: para
+#: details-impexp-csv.docbook:741
+#, no-c-format
+msgid ""
+"If you find that your investment statements keep including activity types "
+"that are not recognized, just add them to the section in the resource file. "
+"(See <link linkend=\"details.impexp.csv.config\">below</link> for more "
+"details on this file.) For instance, in the <literal>[InvestmentSettings]</"
+"literal> section of the file, the <literal>BuyParam</literal> field includes "
+"entries for <literal>Purchase</literal>, <literal>Buy</literal>, "
+"<literal>New Inv</literal>, and <literal>Switch In</literal>. If you find a "
+"different one, add it to the correct list and restart the plugin. You may "
+"notice that there are similarities in the entries in different fields, and "
+"you may find that the wrong activity type is being selected. The plugin "
+"checks these lists in the following order: <literal>Shrsin</literal>, "
+"<literal>DivX</literal>, <literal>Reinvdiv</literal>, <literal>Brokerage</"
+"literal>, <literal>Buy</literal>, <literal>Sell</literal>, and "
+"<literal>Remove</literal>. Re-ordering the lists to suit this does not work "
+"as might be expected, since the entries in the resource file get sorted into "
+"alphabetical order. If the offending parameter is one you don't need, just "
+"delete it from the file. If that is not possible, you may need to edit your "
+"file before input."
+msgstr ""
+"إذا وجدت أن كشوف الاستثمار الخاصة بك تستمر في تضمين أنواع أنشطة غير معروفة، "
+"فما عليك سوى إضافتها إلى القسم الموجود في ملف الموارد. (راجع <link linkend="
+"\"details.impexp.csv.config\">أدناه</link> لمزيد من التفاصيل حول هذا الملف.) "
+"على سبيل المثال، في قسم <literal>[InvestmentSettings]</literal> من الملف، "
+"يتضمن حقل <literal>BuyParam</literal> مدخلات لـ <literal>Purchase</literal>، "
+"و <literal>Buy</literal>، و <literal>New Inv</literal>، و <literal>Switch "
+"In</literal>. إذا وجدت واحدًا مختلفًا، فأضفه إلى القائمة الصحيحة وأعد تشغيل "
+"الملحق. قد تلاحظ وجود تشابه في المدخلات في حقول مختلفة، وقد تجد أنه يتم "
+"اختيار نوع النشاط الخاطئ. يتحقق الملحق من هذه القوائم بالترتيب التالي: "
+"<literal>Shrsin</literal>، و <literal>DivX</literal>، و <literal>Reinvdiv</"
+"literal>، و <literal>Brokerage</literal>، و <literal>Buy</literal>، و "
+"<literal>Sell</literal>، و <literal>Remove</literal>. إعادة ترتيب القوائم "
+"لتناسب ذلك لا تعمل كما قد يتوقع، لأن المدخلات في ملف الموارد تُفرز ترتيبًا "
+"أبجديًا. إذا كان المعامل المسيء واحدًا لا تحتاجه، فما عليك سوى حذفه من الملف. "
+"إذا لم يكن ذلك ممكنًا، فقد تحتاج إلى تحرير ملفك قبل الإدخال."
+
+#. Tag: title
+#: details-impexp-csv.docbook:761
+#, no-c-format
+msgid "Configuration of CSV importer plugin"
+msgstr "إعداد ضبط ملحق مستورد CSV"
+
+#. Tag: para
+#: details-impexp-csv.docbook:762
+#, no-c-format
+msgid ""
+"A well-known drawback of QIF format is that it is a fairly loose format. "
+"With CSV files, there is this same problem, only more so, in that there is "
+"no agreed standard at all. With investment files, in particular, there is "
+"much more scope for variation in specifying the different types of "
+"activities represented in the data. The plugin handles this by listing these "
+"activity types in a resource file, called <filename>csvimporterrc</"
+"filename>. The location of this file depends on your operating system or "
+"distribution. On a &Linux; system, this will be <filename class=\"directory"
+"\">$KDEHOME/share/config</filename> where <envar>$KDEHOME</envar> is usually "
+"<filename class=\"directory\">.config</filename> within your home folder. If "
+"you are migrating from a version of &kmymoney; prior to 5.0, the old "
+"location of <envar>$KDEHOME</envar> was <filename class=\"directory\">.kde4</"
+"filename>, also within your home folder. Using this resource file allows the "
+"user to add an activity type that the developer had not encountered. If the "
+"file does not exist when the importer first runs, it will create a default "
+"version, containing a few of the more obvious descriptions."
+msgstr ""
+"من العيوب المعروفة لتنسيق QIF أنه تنسيق فضفاض إلى حد ما. مع ملفات CSV، توجد "
+"نفس هذه المشكلة، بل وأكثر من ذلك، حيث لا يوجد معيار متفق عليه على الإطلاق. "
+"مع ملفات الاستثمار بشكل خاص، هناك مجال أكبر بكثير للاختلاف في تحديد الأنواع "
+"المختلفة للأنشطة الممثلة في البيانات. يعالج الملحق ذلك عن طريق إدراج أنواع "
+"الأنشطة هذه في ملف موارد يسمى <filename>csvimporterrc</filename>. يعتمد موقع "
+"هذا الملف على نظام التشغيل أو التوزيعة الخاصة بك. على نظام لينكس، سيكون هذا "
+"<filename class=\"directory\">$KDEHOME/share/config</filename> حيث تكون "
+"<envar>$KDEHOME</envar> عادةً <filename class=\"directory\">.config</"
+"filename> داخل مجلد منزلك. إذا كنت تهاجر من إصدار من أموالك قبل 5.0، فإن "
+"الموقع القديم لـ <envar>$KDEHOME</envar> كان <filename class=\"directory\">."
+"kde4</filename>، داخل مجلد منزلك أيضًا. يسمح استخدام ملف الموارد هذا للمستخدم "
+"بإضافة نوع نشاط لم يواجهه المطور. إذا كان الملف غير موجود عند تشغيل المستورد "
+"لأول مرة، فسيقوم بإنشاء نسخة مبدئية، تحتوي على عدد قليل من الأوصاف الأكثر "
+"وضوحًا."
+
+#. Tag: para
+#: details-impexp-csv.docbook:780
+#, no-c-format
+msgid ""
+"A number of sample CSV files are provided (in the <filename class=\"directory"
+"\"> kmymoney/contrib/csvimporter/</filename> folder in the source tree) in "
+"the hope that they may help. For example, in the investment sample, an "
+"activity type is \"<literal>ReInvestorContract Buy : ReInvested Units</"
+"literal>\". In the validation process, the first successful match is on the "
+"<literal>ReInv</literal> in <literal>ReInvestorContract Buy</literal>, so "
+"the transaction therefore gets classed as <literal>Reinvdiv</literal>, even "
+"though <literal>Buy</literal> also is mentioned. Another example which has "
+"been observed is an activity type of <literal>Reinvest</literal> even though "
+"the transaction included neither price nor amount, but only a quantity, so "
+"that needed to be treated as <literal>Add Shares</literal>, or "
+"<literal>Shrsin</literal>."
+msgstr ""
+"وُفر عدد من ملفات CSV التجريبية (في مجلد <filename class=\"directory\"> "
+"kmymoney/contrib/csvimporter/</filename> في شجرة المصدر) على أمل أن تساعد. "
+"على سبيل المثال، في عينة الاستثمار، يكون نوع النشاط هو "
+"\"<literal>ReInvestorContract Buy : ReInvested Units</literal>\". في عملية "
+"التحقق، تكون المطابقة الناجحة الأولى على <literal>ReInv</literal> في "
+"<literal>ReInvestorContract Buy</literal>، لذا تُصنف المعاملة بالتالي على "
+"أنها <literal>Reinvdiv</literal>، على الرغم من ذكر <literal>Buy</literal> "
+"أيضًا. مثال آخر لوحظ هو نوع نشاط <literal>Reinvest</literal> على الرغم من أن "
+"المعاملة لم تتضمن سعرًا ولا مبلغًا، بل كمية فقط، لذا لزم معاملتها كـ "
+"<literal>إضافة أسهم</literal>، أو <literal>Shrsin</literal>."
+
+#. Tag: para
+#: details-impexp-csv.docbook:794
+#, no-c-format
+msgid ""
+"When this plugin was created, only a few investment formats had been seen as "
+"examples, and it may well be that you will encounter one which cannot be "
+"handled correctly. If you find such a file, please send a suitable example "
+"(edited to remove or replace personal information) to the &kmymoney; user "
+"list &userlist; or developer list &devlist;, the developer will do his best "
+"to modify the plugin to handle it."
+msgstr ""
+"عندما أُنشئ هذا الملحق، شوهدت تنسيقات استثمار قليلة فقط كأمثلة، وقد يحدث أن "
+"تواجه واحدًا لا يمكن التعامل معه بشكل صحيح. إذا وجدت مثل هذا الملف، يرجى "
+"إرسال مثال مناسب (محرر لإزالة أو استبدال المعلومات الشخصية) إلى قائمة "
+"مستخدمي أموالك أو قائمة المطورين، وسيبذل المطور قصارى جهده لتعديل الملحق "
+"للتعامل معه."
+
+#. Tag: title
+#: details-impexp-csv.docbook:803
+#, no-c-format
+msgid "CSV Importer configuration dialog"
+msgstr "حوار ضبط مستورد CSV"
+
+#. Tag: para
+#: details-impexp-csv.docbook:804
+#, no-c-format
+msgid ""
+"Finally, there are a few other items which may be configured in a dialog "
+"invoked through the <link linkend=\"details.settings.plugins.csvimporter"
+"\">CSV Importer configuration dialog</link>, which can be invoked from the "
+"Plugins page of the main KMyMoney configuration dialog. This includes which "
+"items will be autodetected by the importer and which profile will be used if "
+"you do have the importer export a QIF file, as mentioned above."
+msgstr ""
+"أخيرًا، هناك عدد قليل من العناصر الأخرى التي يمكن ضبطها في حوار يُستدعى من "
+"خلال <link linkend=\"details.settings.plugins.csvimporter\">حوار ضبط مستورد "
+"CSV</link>، والذي يمكن استدعاؤه من صفحة الملحقات في حوار ضبط أموالك الرئيس. "
+"يتضمن ذلك العناصر التي سيتم اكتشافها آليًا بواسطة المستورد والتشكيلة التي "
+"ستُستخدم إذا قمت بجعل المستورد يصدر ملف QIF، كما ذكر أعلاه."
+
+#. Tag: title
+#: details-impexp-csv.docbook:820
+#, no-c-format
+msgid "CSV Exporter"
+msgstr "مصدر CSV"
+
+#. Tag: para
+#: details-impexp-csv.docbook:822
+#, no-c-format
+msgid ""
+"To export data to a CSV file, choose the <menuchoice><guimenu>File</guimenu> "
+"<guisubmenu>Export</guisubmenu> <guimenuitem>CSV...</guimenuitem> </"
+"menuchoice> menu item. The dialog which appears gives you a number of "
+"choices which control the data to be exported."
+msgstr ""
+"لتصدير البيانات إلى ملف CSV، اختر عنصر القائمة <menuchoice><guimenu>ملف</"
+"guimenu> <guisubmenu>تصدير</guisubmenu> <guimenuitem>CSV...</guimenuitem> </"
+"menuchoice>. يمنحك الحوار الذي يظهر عددًا من الاختيارات التي تتحكم في "
+"البيانات المراد تصديرها."
+
+#. Tag: screeninfo
+#: details-impexp-csv.docbook:830
+#, no-c-format
+msgid "<screeninfo>csv exporter</screeninfo>"
+msgstr "<screeninfo>مصدر csv</screeninfo>"
+
+#. Tag: phrase
+#: details-impexp-csv.docbook:836
+#, no-c-format
+msgid "<phrase>csv exporter</phrase>"
+msgstr "<phrase>مصدر csv</phrase>"
+
+#. Tag: para
+#: details-impexp-csv.docbook:841
+#, no-c-format
+msgid ""
+"Please note that an exported CSV file can include data from only one account."
+msgstr "يرجى ملاحظة أن ملف CSV المصدر يمكن أن يتضمن بيانات من حساب واحد فقط."
+
+#. Tag: para
+#: details-impexp-csv.docbook:845
+#, no-c-format
+msgid ""
+"Specify the name of the exported CSV file either by entering the complete "
+"path in the <guilabel>File to export to</guilabel> field, or by clicking "
+"<guilabel>Browse</guilabel> and navigating to it in the Save File dialog. "
+"Choose which account to export with the <guilabel>Account to export</"
+"guilabel> dropdown."
+msgstr ""
+"حدد اسم ملف CSV المصدر إما عن طريق إدخال المسار الكامل في حقل <guilabel>ملف "
+"للتصدير إليه</guilabel>، أو عن طريق النقر فوق <guilabel>تصفح</guilabel> "
+"والانتقال إليه في حوار حفظ الملف. اختر الحساب المراد تصديره باستخدام القائمة "
+"المنسدلة <guilabel>حساب للتصدير</guilabel>."
+
+#. Tag: para
+#: details-impexp-csv.docbook:852
+#, no-c-format
+msgid ""
+"The time period of data exported is controlled by the <guilabel>Date Range</"
+"guilabel> <guilabel>Start on</guilabel> and <guilabel>End on</guilabel> date "
+"fields. The default values represent the complete date range of your entire "
+"data file, and they are adjusted when you select an account to export."
+msgstr ""
+"يتم التحكم في الفترة الزمنية للبيانات المصدرة بواسطة حقلي التاريخ "
+"<guilabel>نطاق التاريخ</guilabel> <guilabel>يبدأ في</guilabel> و "
+"<guilabel>ينتهي في</guilabel>. تمثل القيم المبدئية نطاق التاريخ الكامل لملف "
+"بياناتك بالكامل، وتُعدل عند اختيار حساب لتصديره."
+
+#. Tag: para
+#: details-impexp-csv.docbook:859
+#, no-c-format
+msgid ""
+"By default, the <guilabel>Field Separator</guilabel> is a comma, but you can "
+"also choose to use a tab or semicolon."
+msgstr ""
+"مبدئيًا، يكون <guilabel>فاصل الحقول</guilabel> فاصلة، ولكن يمكنك أيضًا اختيار "
+"استخدام علامة جدولة أو فاصلة منقوطة."
+
+#. Tag: para
+#: details-impexp-csv.docbook:864
+#, no-c-format
+msgid ""
+"If you check the <guilabel>Contents to Export</guilabel> <guilabel>Account</"
+"guilabel> radio button, then the data exported will be the transactions from "
+"the specified account and date range. However, if you select the "
+"<guilabel>Categories</guilabel> radio button, then the exported file will "
+"contain one row for each category which has been defined. For top level "
+"categories, the category name is shown, and an <quote>I</quote> or <quote>E</"
+"quote> is shown to indicate whether the Category is Income or Expense. For "
+"non top-level categories, the parent category is also shown."
+msgstr ""
+"إذا حددت زر الخيار <guilabel>المحتويات للتصدير</guilabel> <guilabel>حساب</"
+"guilabel>، فستكون البيانات المصدرة هي المعاملات من الحساب ونطاق التاريخ "
+"المحددين. ومع ذلك، إذا اخترت زر خيار <guilabel>الفئات</guilabel>، فسيحتوي "
+"الملف المصدر على صف واحد لكل فئة تم تعريفها. بالنسبة للفئات رفيعة المستوى، "
+"يُعرض اسم الفئة، ويُعرض حرف <quote>I</quote> أو <quote>E</quote> للإشارة إلى "
+"ما إذا كانت الفئة دخلاً أم مصروفًا. بالنسبة للفئات غير رفيعة المستوى، تُعرض "
+"الفئة الأم أيضًا."
+
+#. Tag: para
+#: details-impexp-csv.docbook:875
+#, no-c-format
+msgid ""
+"The exporter will output a set of columns appropriate for the type of "
+"account being exported."
+msgstr "سيخرج المصدر مجموعة من الأعمدة المناسبة لنوع الحساب الذي يتم تصديره."

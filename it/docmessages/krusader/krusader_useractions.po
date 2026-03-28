@@ -1,0 +1,1002 @@
+# translation of krusader_useractions.po to Italian
+#
+# Valter Mura <valtermura@gmail.com>, 2010, 2011, 2012, 2014, 2016, 2017, 2020, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: krusader_useractions\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 12:03+0000\n"
+"PO-Revision-Date: 2021-10-05 19:52+0200\n"
+"Last-Translator: Valter Mura <valtermura@gmail.com>\n"
+"Language-Team: Italian <kde-i18n-it@kde.org>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 21.03.80\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. Tag: title
+#: useractions.docbook:8
+#, no-c-format
+msgid "<title>UserActions</title>"
+msgstr "<title>Azioni</title>"
+
+#. Tag: primary
+#: useractions.docbook:10
+#, no-c-format
+msgid "<primary>UserActions</primary>"
+msgstr "<primary>Azioni</primary>"
+
+#. Tag: para
+#: useractions.docbook:13
+#, no-c-format
+msgid ""
+"With ActionMan you can set up, configure and manage UserActions. Some "
+"general settings are configured with <link linkend=\"konfig-useractions"
+"\">Konfigurator</link>. With UserActions you can perform actions on files in "
+"the panel or to access &krusader; internal functions with parameters "
+"directly using placeholders. The actions integrate seamlessly into &plasma; "
+"action system, which means that the standard Edit Toolbar and Edit Shortcut "
+"dialogs will show UserActions, too. The UserActions are stored in <filename> "
+"~/.local/share/krusader/useractions.xml</filename> or <filename>krusader/"
+"useraction.xml</filename> in the folder which can be determined using the "
+"<userinput>qtpaths --paths GenericDataLocation</userinput> command. Several "
+"<link linkend=\"useraction-xml\">examples</link> are included in the "
+"documentation. UserActions can be edited / added / imported / exported by "
+"using ActionMan. The default UserActions are stored in <filename> /usr/share/"
+"krusader/useraction-examples.xml</filename>. UserActions can appear nearly "
+"everywhere where <quote>normal</quote> KActions can be placed. The actions "
+"can even be placed in the menu bar, but for that the <filename>krusaderui."
+"rc</filename> file must be edited. A few examples:"
+msgstr ""
+"ActionMan ti permette di impostare, configurare e gestire le azioni "
+"configurabili dall'utente. Alcune impostazioni generali sono configurate con "
+"<link linkend=\"konfig-useractions\">Konfigurator</link>. Con le azioni puoi "
+"eseguire azioni sui file nel pannello o per accedere a funzioni interne di "
+"&krusader; con parametri, utilizzando in modo diretto dei segnaposto. Le "
+"azioni si integrano perfettamente all'interno del sistema di azioni di "
+"&plasma;, e ciò significa che le finestre standard Modifica barra degli "
+"strumenti e Modifica scorciatoie mostreranno anche le azioni personalizzate. "
+"Queste ultime sono memorizzate in <filename> ~/.local/share/krusader/"
+"useractions.xml</filename> oppure <filename>krusader/useraction.xml</"
+"filename> nella cartella che può essere determinata usando il comando "
+"<userinput>qtpaths --paths GenericDataLocation</userinput>. Nella "
+"documentazione sono inclusi vari <link linkend=\"useraction-xml\">esempi</"
+"link>. Le azioni possono essere modificate / aggiunte / importate / "
+"esportate tramite ActionMan. Le azioni predefinite sono memorizzate in "
+"<filename> /usr/share/krusader/useraction-examples.xml</filename>. Esse "
+"possono apparire praticamente ovunque può essere inserita una KAction "
+"<quote>normale</quote>. Possono essere pure inserite nella barra dei menu, "
+"ma in questo caso deve essere modificato il file <filename>krusaderui.rc</"
+"filename>. Alcuni esempi:"
+
+#. Tag: link
+#: useractions.docbook:38
+#, no-c-format
+msgid "Useractions Menu"
+msgstr "Menu azioni"
+
+#. Tag: link
+#: useractions.docbook:42
+#, no-c-format
+msgid "User Menu"
+msgstr "Menu utente"
+
+#. Tag: link
+#: useractions.docbook:45
+#, no-c-format
+msgid "Actions Toolbar"
+msgstr "Barra degli strumenti delle azioni"
+
+#. Tag: para
+#: useractions.docbook:48
+#, no-c-format
+msgid "right click menus"
+msgstr "menu contestuali (pulsante destro del mouse)"
+
+#. Tag: para
+#: useractions.docbook:51
+#, no-c-format
+msgid "&etc;"
+msgstr "&etc;"
+
+#. Tag: para
+#: useractions.docbook:54
+#, no-c-format
+msgid ""
+"&krusader;'s UserActions tool is very powerful and customizable if you are "
+"familiar with writing UserActions in general."
+msgstr ""
+"Lo strumento azioni di &krusader; è molto potente e personalizzabile, se sai "
+"come scrivere azioni generiche."
+
+#. Tag: para
+#: useractions.docbook:58
+#, no-c-format
+msgid ""
+"Several UserActions are provided by default. Please <link linkend="
+"\"help_krusader\">upload your favorite UserActions</link> so that they "
+"become available for the &krusader; community. Thanks!"
+msgstr ""
+"Il programma è distribuito con varie azioni predefinite. <link linkend="
+"\"help_krusader\">Carica le tue azioni preferite</link> affinché siano "
+"disponibili alla comunità di &krusader;. Grazie!"
+
+#. Tag: title
+#: useractions.docbook:65
+#, no-c-format
+msgid "<title>ActionMan</title>"
+msgstr "<title>ActionMan</title>"
+
+#. Tag: phrase
+#: useractions.docbook:71
+#, no-c-format
+msgid "<phrase>ActionMan</phrase>"
+msgstr "<phrase>ActionMan</phrase>"
+
+#. Tag: para
+#: useractions.docbook:75
+#, no-c-format
+msgid ""
+"Basically, UserActions are a method to call external programs with variable "
+"parameters. For example, you could have a UserAction with the following "
+"<command>xmms <option>--enqueue %aList(\"Selected\")%</option></command> to "
+"enqueue all selected items of the active panel to the current instance of "
+"xmms. Additionally, there is limited access to &krusader; internal functions "
+"requiring parameters. For example, <command>%aPanelSize(\"80\")%</command> "
+"will set the width of the active panel to 80% of the &krusader; mainwindow. "
+"Since the parameter of placeholders can contain other placeholders, few "
+"scripts are possible."
+msgstr ""
+"Le azioni sono, fondamentalmente, un metodo per richiamare programmi esterni "
+"con parametri variabili. Potresti avere, per esempio, un'azione con "
+"<command>xmms <option>--enqueue %aList(\"Selected\")%</option></command> per "
+"accodare tutti gli elementi selezionati del pannello attivo all'attuale "
+"istanza di xmms. In aggiunta, è possibile anche un accesso limitato alle "
+"funzioni interne di &krusader; che richiedono parametri. Per esempio, "
+"<command>%aPanelSize(\"80\")%</command> imposterà la larghezza del pannello "
+"attivo all'ottanta per cento della finestra principale di &krusader;. Dato "
+"che il parametro dei segnaposto può contenere altri segnaposto, sono "
+"possibili pochi script."
+
+#. Tag: emphasis
+#: useractions.docbook:90
+#, no-c-format
+msgid "Managing UserActions"
+msgstr "Gestire le azioni"
+
+#. Tag: para
+#: useractions.docbook:92
+#, no-c-format
+msgid ""
+"Open Konfigurator and choose <menuchoice><guimenu>User Actions</guimenu> "
+"<guimenuitem>Start ActionMan</guimenuitem></menuchoice>, in which you can "
+"add, edit, remove, import and export UserActions."
+msgstr ""
+"Apri Konfigurator e scegli  <menuchoice><guimenu>Azioni utente</guimenu> "
+"<guimenuitem>Gestisci azioni</guimenuitem></menuchoice>, in cui puoi "
+"aggiungere, modificare, rimuovere, importare ed esportare le azioni."
+
+#. Tag: para
+#: useractions.docbook:97
+#, no-c-format
+msgid ""
+"<guimenuitem>Add Action</guimenuitem>: If you add an new action, you get an "
+"empty input mask where you can enter all the properties you desire. The "
+"action will be added as soon as you press <guimenuitem>Apply</guimenuitem>. "
+"Afterwards, the name is shown in the list on the left."
+msgstr ""
+"<guimenuitem>Aggiungi azione</guimenuitem>: se vuoi aggiungere una nuova "
+"azione, ti verrà proposta una maschera di immissione in cui inserire tutte "
+"le proprietà prescelte. L'azione sarà aggiunta dopo aver premuto il pulsante "
+"<guimenuitem>Applica</guimenuitem>, e il nome mostrato nell'elenco a "
+"sinistra."
+
+#. Tag: para
+#: useractions.docbook:106
+#, no-c-format
+msgid ""
+"To edit a UserAction: Select the UserAction on the left. Then choose it if "
+"you want to edit its properties. The changes will only take effect when you "
+"press <guimenuitem>Apply</guimenuitem>."
+msgstr ""
+"Per modificare un'azione: seleziona l'azione sulla sinistra, poi scegli "
+"quali proprietà modificare. Le modifiche avranno effetto solo dopo aver "
+"premuto il pulsante <guimenuitem>Applica</guimenuitem>."
+
+#. Tag: para
+#: useractions.docbook:112
+#, no-c-format
+msgid ""
+"<guimenuitem>To remove a UserAction</guimenuitem>: Select the UserAction on "
+"the left and click the <inlinemediaobject> <imageobject> <imagedata fileref="
+"\"Icon-edit-delete.png\" format=\"PNG\"/> </imageobject> </"
+"inlinemediaobject>button."
+msgstr ""
+"<guimenuitem>Per rimuovere un'azione</guimenuitem>: seleziona l'azione sulla "
+"sinistra poi premi il pulsante <inlinemediaobject> <imageobject> <imagedata "
+"fileref=\"Icon-edit-delete.png\" format=\"PNG\"/> </imageobject> </"
+"inlinemediaobject>."
+
+#. Tag: para
+#: useractions.docbook:119
+#, no-c-format
+msgid ""
+"<guimenuitem>To import a UserAction</guimenuitem>: If you import some "
+"actions, they will be automatically added to your list. If there are name "
+"conflicts (the names have to be unique because these are the ID for &plasma; "
+"action system), you are asked to resolve them. For this, the list on the "
+"left will only show the actions where conflicts exist. You can now give them "
+"new names or remove them."
+msgstr ""
+"<guimenuitem>Per importare un'azione</guimenuitem>: se importi delle azioni, "
+"esse saranno aggiunte automaticamente al tuo elenco. Se ci sono conflitti di "
+"nome (i nomi devono essere univoci perché sono gli identificatori per il "
+"sistema delle azioni di &plasma;), essi devono essere risolti. Per questo "
+"motivo l'elenco di sinistra mostrerà solo le azioni per cui esiste un "
+"conflitto. Puoi attribuire loro nuovi nomi o rimuoverle."
+
+#. Tag: para
+#: useractions.docbook:129
+#, no-c-format
+msgid ""
+"<guimenuitem>Export Action</guimenuitem>: If you export a UserAction you "
+"have to give a filename in which to store it. If it does not exist, it will "
+"be created. If the file already contains UserActions, the action you are "
+"exporting will be added to that file."
+msgstr ""
+"<guimenuitem>Esporta azione</guimenuitem>: se esporti un'azione devi "
+"attribuire un nome al file in cui la memorizzi. Se non esiste, sarà creato. "
+"Se il file contiene già azioni, l'azione esportata verrà aggiunta a quel "
+"file."
+
+#. Tag: para
+#: useractions.docbook:137
+#, no-c-format
+msgid ""
+"All actions you have defined are now shown in the user menu and in &plasma; "
+"dialogs for changing shortcuts and managing the toolbar. In addition, all "
+"actions available for the current item will also show up in the right click "
+"menu."
+msgstr ""
+"Tutte le azioni definite vengono ora mostrate nel menu utente e nelle "
+"finestre di &plasma; che cambiano le scorciatoie e gestiscono la barra degli "
+"strumenti. In aggiunta, tutte le azioni disponibili per l'elemento corrente "
+"verranno anche mostrate nel menu contestuale."
+
+#. Tag: emphasis
+#: useractions.docbook:143
+#, no-c-format
+msgid "Basic Properties"
+msgstr "Proprietà di base"
+
+#. Tag: para
+#: useractions.docbook:145
+#, no-c-format
+msgid ""
+"<guimenuitem>Identifier</guimenuitem>, <guimenuitem>Title</guimenuitem> and "
+"<guimenuitem>Command line</guimenuitem> are always required, all the other "
+"properties are optional."
+msgstr ""
+"<guimenuitem>Identificatore</guimenuitem>, <guimenuitem>Titolo</guimenuitem> "
+"e <guimenuitem>Comando</guimenuitem> sono sempre richiesti, tutte le altre "
+"proprietà sono facoltative."
+
+#. Tag: para
+#: useractions.docbook:151
+#, no-c-format
+msgid ""
+"<guimenuitem>Identifier</guimenuitem>: A unique name of the UserAction, used "
+"to identify it for &plasma; action system."
+msgstr ""
+"<guimenuitem>Identificatore</guimenuitem>: nome univoco per l'azione, "
+"utilizzato per identificarla dal sistema delle azioni di &plasma;."
+
+#. Tag: para
+#: useractions.docbook:157
+#, no-c-format
+msgid "<guimenuitem>Icon button</guimenuitem>: The icon for your UserAction."
+msgstr "<guimenuitem>Pulsante dell'icona</guimenuitem>: l'icona per l'azione."
+
+#. Tag: para
+#: useractions.docbook:162
+#, no-c-format
+msgid ""
+"<guimenuitem>Category</guimenuitem>: Categories are used for a better "
+"overview. They appear as submenu items in the <guimenuitem>Useractions</"
+"guimenuitem> menu."
+msgstr ""
+"<guimenuitem>Categoria</guimenuitem>: le categorie sono usate per una "
+"migliore catalogazione. Esse appaiono come elementi di sotto-menu nel menu "
+"<guimenuitem>Azioni utente</guimenuitem>."
+
+#. Tag: para
+#: useractions.docbook:168
+#, no-c-format
+msgid ""
+"<guimenuitem>Title</guimenuitem>: The title displayed in the menus or "
+"dialogs."
+msgstr ""
+"<guimenuitem>Titolo</guimenuitem>: il titolo visualizzato nei menu o nelle "
+"finestre di dialogo."
+
+#. Tag: para
+#: useractions.docbook:173
+#, no-c-format
+msgid ""
+"<guimenuitem>Tooltip</guimenuitem>: A tooltip for your UserAction, &eg; "
+"displayed in the toolbar on mouseover."
+msgstr ""
+"<guimenuitem>Suggerimento</guimenuitem>: suggerimento per l'azione che "
+"appare, &eg;, nella barra degli strumenti o al passaggio del mouse."
+
+#. Tag: para
+#: useractions.docbook:179
+#, no-c-format
+msgid ""
+"<guimenuitem>Description</guimenuitem>: A description of what the UserAction "
+"does. This is also displayed as <guimenuitem>What's This</guimenuitem> if "
+"you <keycombo action=\"simul\">&Shift; <keycap>F1</keycap></keycombo> click "
+"on your UserAction."
+msgstr ""
+"<guimenuitem>Descrizione</guimenuitem>: descrizione di ciò che esegue "
+"l'azione. Essa viene visualizzata anche come elemento <guimenuitem>Che "
+"cos'è</guimenuitem> se premi <keycombo action=\"simul\">&Shift; <keycap>F1</"
+"keycap></keycombo> sull'azione."
+
+#. Tag: para
+#: useractions.docbook:188
+#, no-c-format
+msgid ""
+"<guimenuitem>Command</guimenuitem>: The command which will be executed. You "
+"can add placeholder using a &GUI; with the <guibutton>add</guibutton> button."
+msgstr ""
+"<guimenuitem>Comando</guimenuitem>: il comando da eseguire. Puoi inserire un "
+"segnaposto utilizzando un'interfaccia tramite il pulsante "
+"<guibutton>aggiungi</guibutton>."
+
+#. Tag: para
+#: useractions.docbook:194
+#, no-c-format
+msgid ""
+"<guimenuitem>Workdir</guimenuitem>: The working folder for the command which "
+"will be executed."
+msgstr ""
+"<guimenuitem>Cartella di lavoro</guimenuitem>: la cartella di lavoro del "
+"comando da eseguire."
+
+#. Tag: para
+#: useractions.docbook:199
+#, no-c-format
+msgid "<guimenuitem>Execution mode</guimenuitem>:"
+msgstr "<guimenuitem>Modo di esecuzione</guimenuitem>:"
+
+#. Tag: para
+#: useractions.docbook:203
+#, no-c-format
+msgid "<guimenuitem>Normal</guimenuitem>: Normal execution mode."
+msgstr "<guimenuitem>Normale</guimenuitem>: modo di esecuzione normale."
+
+#. Tag: para
+#: useractions.docbook:208
+#, no-c-format
+msgid ""
+"<guimenuitem>Run in terminal</guimenuitem>: Runs the command in the terminal."
+msgstr ""
+"<guimenuitem>Esegui in un terminale</guimenuitem>: avvia il comando nel "
+"terminale."
+
+#. Tag: para
+#: useractions.docbook:213
+#, no-c-format
+msgid ""
+"<guimenuitem>Run in embedded terminal emulator</guimenuitem>: Runs the "
+"command in the embedded terminal."
+msgstr ""
+"<guimenuitem>Esegui nell'emulatore di terminale integrato</guimenuitem>: "
+"avvia il comando nel terminale integrato."
+
+#. Tag: para
+#: useractions.docbook:218
+#, no-c-format
+msgid ""
+"<guimenuitem>Collect output</guimenuitem>: Collects the output of the "
+"executed program in a &GUI; window."
+msgstr ""
+"<guimenuitem>Cattura output</guimenuitem>: cattura l'output del programma "
+"eseguito in una finestra a interfaccia grafica."
+
+#. Tag: para
+#: useractions.docbook:224
+#, no-c-format
+msgid ""
+"<guimenuitem>Separate standard error</guimenuitem>: When <quote>Collect "
+"output</quote> is used the stdout and stderr are separately collected."
+msgstr ""
+"<guimenuitem>Standard error separato</guimenuitem>: quando viene usato "
+"<quote>Cattura output</quote>, stdout e stderr vengono catturati "
+"separatamente."
+
+#. Tag: para
+#: useractions.docbook:232
+#, no-c-format
+msgid "<guimenuitem>Command accepts</guimenuitem>:"
+msgstr "<guimenuitem>Il comando accetta</guimenuitem>:"
+
+#. Tag: para
+#: useractions.docbook:236
+#, no-c-format
+msgid ""
+"<guimenuitem>Local files only (no &URL;s)</guimenuitem>: Tells the "
+"placeholder it should return local addresses."
+msgstr ""
+"<guimenuitem>Solo file locali (non &URL;)</guimenuitem>: indica al "
+"segnaposto che deve restituire indirizzi locali."
+
+#. Tag: para
+#: useractions.docbook:241
+#, no-c-format
+msgid ""
+"<guimenuitem>&URL;s (remote and local)</guimenuitem>: Tells the placeholder "
+"it should return &URL;s."
+msgstr ""
+"<guimenuitem>&URL; (remoti e locali)</guimenuitem>: indica al segnaposto che "
+"deve restituire &URL;."
+
+#. Tag: para
+#: useractions.docbook:256
+#, no-c-format
+msgid ""
+"<guimenuitem>Default shortcut</guimenuitem>: Configures a default shortcut "
+"for the UserAction."
+msgstr ""
+"<guimenuitem>Scorciatoia predefinita</guimenuitem>: configura la scorciatoia "
+"predefinita per l'azione."
+
+#. Tag: para
+#: useractions.docbook:261
+#, no-c-format
+msgid ""
+"<guimenuitem>Enabled</guimenuitem>: if checked, the useraction is shown in "
+"the <link linkend=\"useractions\">User Menu</link>, otherwise the useraction "
+"will be hidden."
+msgstr ""
+"<guimenuitem>Abilitata</guimenuitem>: se selezionata, l'azione viene "
+"mostrata nel <link linkend=\"useractions\">menu utente</link>, in caso "
+"contrario verrà nascosta."
+
+#. Tag: emphasis
+#: useractions.docbook:267
+#, no-c-format
+msgid "Command-line syntax"
+msgstr "Sintassi della riga di comando"
+
+#. Tag: para
+#: useractions.docbook:269
+#, no-c-format
+msgid ""
+"Basically, everything you type in the command line will get executed (if you "
+"type <quote>ls -l</quote>, <quote>ls -l</quote> gets executed). You have the "
+"possibility to get a character string from &krusader; which represents the "
+"current state of the panel. This is done using placeholders. A placeholder "
+"begins with a percent-sign ('%') and is followed by a panel indicator ('a' "
+"for the active, 'o' for the other, 'l' for the left and 'r' for the right "
+"panel. If the placeholder does not need a panel to operate on, you have to "
+"indicate this by an underscore ('_')). Then comes the name of the "
+"placeholder (see the list below), which may get some parameters enclosed in "
+"quotes. Finally, again the percent sign."
+msgstr ""
+"Fondamentalmente, tutto ciò che digiti nella riga di comando viene eseguito "
+"(se digiti <quote>ls -l</quote>, <quote>ls -l</quote> viene eseguito). Hai "
+"la possibilità di ottenere una stringa di caratteri da &krusader; che "
+"rappresenta lo stato corrente del pannello. Questo viene fatto utilizzando i "
+"segnaposti. Un segnaposto inizia con un segno percentuale ('%') seguito da "
+"un indicatore di pannello ('a' per il pannello attivo, 'o' per l'altro, 'l' "
+"per il sinistro e 'r' per il destro (le iniziali sono quelle delle parole "
+"inglesi, N.d.T.). Se il segnaposto non necessita di un pannello per operare, "
+"devi indicarlo con un trattino basso ('_')). Poi segue il nome del "
+"segnaposto (consulta l'elenco sottostante), che può contenere qualche "
+"parametro racchiuso tra virgolette. Segue di nuovo, per finire, il segno "
+"percentuale."
+
+#. Tag: para
+#: useractions.docbook:281
+#, no-c-format
+msgid ""
+"This sounds very complicated, so let's make an example: '%aList(\"Selected"
+"\")%' is replaced by a list of all selected items in the active panel. So a "
+"command like 'xmms --enqueue %aList(\"All\", \" \", \"\", \"*.mp3\")%' will "
+"execute xmms with a list of all .mp3s in the current panel, separated by a "
+"single blank."
+msgstr ""
+"Tutto questo sembra molto complicato, facciamo dunque un esempio: "
+"'%aList(\"Selected\")%' viene sostituito da un elenco di tutti gli elementi "
+"selezionati nel pannello attivo. Perciò, un comando come «xmms --enqueue "
+"%aList(\"All\", \" \", \"\", \"*.mp3\")%» eseguirà xmms con un elenco di "
+"tutti i file .mp3 presenti nel pannello attivo, separati da uno spazio vuoto."
+
+#. Tag: para
+#: useractions.docbook:287
+#, no-c-format
+msgid "Currently, these placeholders are implemented:"
+msgstr "Attualmente, sono implementati questi segnaposti:"
+
+#. Tag: para
+#: useractions.docbook:290
+#, no-c-format
+msgid "<userinput>Path</userinput> - replaced by the panels path"
+msgstr "<userinput>Percorso</userinput> - sostituito dal percorso dei pannelli"
+
+#. Tag: para
+#: useractions.docbook:295 useractions.docbook:327 useractions.docbook:358
+#, no-c-format
+msgid "Parameter (optional): Automatic escape spaces. Default: yes"
+msgstr ""
+"Parametro (facoltativo): escape automatico degli spazi. Predefinito: sì"
+
+#. Tag: para
+#: useractions.docbook:302
+#, no-c-format
+msgid ""
+"<userinput>Count</userinput> - replaced by the number of &lt;first "
+"parameter&gt;"
+msgstr ""
+"<userinput>Numero di</userinput> - sostituito dal numero del &lt;primo "
+"parametro&gt;"
+
+#. Tag: para
+#: useractions.docbook:307 useractions.docbook:339
+#, no-c-format
+msgid ""
+"Parameter: Which items; either <quote>All</quote>, <quote>Selected</quote>, "
+"<quote>Files</quote> or <quote>Dirs</quote>"
+msgstr ""
+"Parametro: quali elementi; <quote>Tutto</quote>, <quote>Selezionato</quote>, "
+"<quote>File</quote> o <quote>Cartelle</quote>"
+
+#. Tag: para
+#: useractions.docbook:313
+#, no-c-format
+msgid "<userinput>Filter</userinput> - replaced by the panel's filter mask"
+msgstr ""
+"<userinput>Maschera filtro</userinput> - sostituito dalla maschera filtro "
+"del pannello"
+
+#. Tag: para
+#: useractions.docbook:318
+#, no-c-format
+msgid "<userinput>Current</userinput> - replaced by the current item"
+msgstr "<userinput>Attuale</userinput> - sostituito dall'elemento attuale"
+
+#. Tag: para
+#: useractions.docbook:323 useractions.docbook:349
+#, no-c-format
+msgid "Parameter (optional): Omit the current path. Default: no"
+msgstr "Parametro (facoltativo): ometti il percorso attuale. Predefinito: no"
+
+#. Tag: para
+#: useractions.docbook:334
+#, no-c-format
+msgid ""
+"<userinput>List</userinput> - replaced by a list of all &lt;first "
+"parameter&gt;"
+msgstr ""
+"<userinput>Elenco</userinput> - sostituito da un elenco di tutto il &lt;"
+"primo parametro&gt;"
+
+#. Tag: para
+#: useractions.docbook:343
+#, no-c-format
+msgid ""
+"Parameter (optional): Separator between the items. Default: <quote>&nbsp;</"
+"quote>"
+msgstr ""
+"Parametro (facoltativo): separatore tra gli elementi. Predefinito: "
+"<quote>&nbsp;</quote>"
+
+#. Tag: para
+#: useractions.docbook:353
+#, no-c-format
+msgid ""
+"Parameter (optional): Filtermask (for all but <quote>Selected</quote>). "
+"Default: *"
+msgstr ""
+"Parametro (facoltativo): maschera filtro (per tutti eccetto che per "
+"<quote>Selezionato</quote>). Predefinito: *"
+
+#. Tag: para
+#: useractions.docbook:365
+#, no-c-format
+msgid "<userinput>Select</userinput> - manipulates the selection in a panel"
+msgstr ""
+"<userinput>Modifica la selezione</userinput> - manipola la selezione in un "
+"pannello"
+
+#. Tag: para
+#: useractions.docbook:370
+#, no-c-format
+msgid "Parameter: Filtermask"
+msgstr "Parametro: maschera filtro"
+
+#. Tag: para
+#: useractions.docbook:373
+#, no-c-format
+msgid ""
+"Parameter (optional): manipulate in which way; either <quote>Set</quote>, "
+"<quote>Add</quote> or <quote>Remove</quote>. Default: <quote>Set</quote>"
+msgstr ""
+"Parametro (facoltativo): manipola in che modo; <quote>Imposta</quote>, "
+"<quote>Aggiungi</quote> o <quote>Rimuovi</quote>. Predefinito: "
+"<quote>Imposta</quote>"
+
+#. Tag: para
+#: useractions.docbook:380
+#, no-c-format
+msgid ""
+"<userinput>Goto</userinput> - changes the panels' path to &lt;first "
+"parameter&gt;"
+msgstr ""
+"<userinput>Vai a</userinput> - cambia il percorso del pannello al &lt;primo "
+"parametro&gt;"
+
+#. Tag: para
+#: useractions.docbook:385
+#, no-c-format
+msgid "Parameter: A relative or absolute path, or an &URL;"
+msgstr "Parametro: percorso relativo o assoluto, oppure un &URL;"
+
+#. Tag: para
+#: useractions.docbook:389
+#, no-c-format
+msgid "Parameter (optional): Open the location in a new tab. Default: no"
+msgstr ""
+"Parametro (facoltativo): apre la posizione in una nuova scheda. Predefinito: "
+"no"
+
+#. Tag: para
+#: useractions.docbook:396
+#, no-c-format
+msgid ""
+"<userinput>Ask</userinput> - asks the user for some text and is replaced by "
+"the answer"
+msgstr ""
+"<userinput>Chiedi</userinput> - chiede all'utente del testo ed è sostituito "
+"dalla risposta"
+
+#. Tag: para
+#: useractions.docbook:401
+#, no-c-format
+msgid "Parameter: The Question"
+msgstr "Parametro: la domanda"
+
+#. Tag: para
+#: useractions.docbook:405
+#, no-c-format
+msgid "Parameter (optional): A default answer"
+msgstr "Parametro (facoltativo): una risposta predefinita"
+
+#. Tag: para
+#: useractions.docbook:409
+#, no-c-format
+msgid "Parameter (optional): A caption for the question box"
+msgstr "Parametro (facoltativo): un titolo per il riquadro della domanda"
+
+#. Tag: para
+#: useractions.docbook:415
+#, no-c-format
+msgid "<userinput>Clipboard</userinput> - manipulates the clipboard"
+msgstr "<userinput>Appunti</userinput> - manipola gli appunti"
+
+#. Tag: para
+#: useractions.docbook:420
+#, no-c-format
+msgid ""
+"Parameter: The text that should go to the clipboard (you may want to use "
+"<quote>%aCurrent%</quote> here)"
+msgstr ""
+"Parametro: il testo che deve essere copiato negli appunti (qui potresti "
+"usare, se vuoi, <quote>%aCurrent%</quote>)"
+
+#. Tag: para
+#: useractions.docbook:425
+#, no-c-format
+msgid ""
+"Parameter (optional): Append the text to the current content of the "
+"clipboard with this separator"
+msgstr ""
+"Parametro (facoltativo): aggiungi il testo al contenuto corrente degli "
+"appunti con questo separatore"
+
+#. Tag: para
+#: useractions.docbook:432
+#, no-c-format
+msgid ""
+"<userinput>Copy</userinput> - copies a file, useful for quick, local backups"
+msgstr ""
+"<userinput>Copia</userinput> - copia un file, utile per copie di sicurezza "
+"rapide e locali"
+
+#. Tag: para
+#: useractions.docbook:437
+#, no-c-format
+msgid "Parameter: What should be copied"
+msgstr "Parametro: cosa deve essere copiato"
+
+#. Tag: para
+#: useractions.docbook:441
+#, no-c-format
+msgid "Parameter: Where it should be copied"
+msgstr "Parametro: dove deve essere copiato"
+
+#. Tag: para
+#: useractions.docbook:447
+#, no-c-format
+msgid ""
+"<userinput>Sync</userinput> - opens the Synchronizer with a given profile"
+msgstr ""
+"<userinput>Sincronizzazione</userinput> - apre la sincronizzazione col "
+"profilo indicato"
+
+#. Tag: para
+#: useractions.docbook:452
+#, no-c-format
+msgid "Parameter: A profile for the Synchronizer"
+msgstr "Parametro: un profilo per la sincronizzazione"
+
+#. Tag: para
+#: useractions.docbook:458
+#, no-c-format
+msgid ""
+"<userinput>NewSearch</userinput> - opens the search windows with a given "
+"profile"
+msgstr ""
+"<userinput>Nuova ricerca</userinput> - apre la finestra della ricerca col "
+"profilo indicato"
+
+#. Tag: para
+#: useractions.docbook:463
+#, no-c-format
+msgid "Parameter: A profile for the search module"
+msgstr "Parametro: un profilo per il modulo di ricerca"
+
+#. Tag: para
+#: useractions.docbook:469
+#, no-c-format
+msgid "<userinput>Profile</userinput> - loads a given panel profile"
+msgstr ""
+"<userinput>Profilo</userinput> - carica il profilo di pannello indicato"
+
+#. Tag: para
+#: useractions.docbook:474
+#, no-c-format
+msgid "Parameter: A panel profile"
+msgstr "Parametro: un profilo di pannello"
+
+#. Tag: para
+#: useractions.docbook:480
+#, no-c-format
+msgid ""
+"<userinput>Each</userinput> - splits the commandline into a list. These "
+"commands are executed one after another."
+msgstr ""
+"<userinput>Esecuzione separata dei programmi ogni...</userinput> - divide la "
+"riga di comando in un elenco. Questi comandi vengono eseguiti uno dopo "
+"l'altro."
+
+#. Tag: para
+#: useractions.docbook:485
+#, no-c-format
+msgid "Parameter: A list item (all, all files, all dirs, all selected)."
+msgstr ""
+"Parametro: un elenco (tutto, tutti i file, tutte le cartelle, tutti i "
+"selezionati)."
+
+#. Tag: para
+#: useractions.docbook:491
+#, no-c-format
+msgid "<userinput>Move</userinput> - move from source to destination."
+msgstr ""
+"<userinput>Sposta</userinput> - sposta da un punto di origine a uno di "
+"destinazione."
+
+#. Tag: para
+#: useractions.docbook:496
+#, no-c-format
+msgid "Parameter: A source"
+msgstr "Parametro: un punto di origine"
+
+#. Tag: para
+#: useractions.docbook:499
+#, no-c-format
+msgid "Parameter: A destination"
+msgstr "Parametro: un punto di destinazione"
+
+#. Tag: para
+#: useractions.docbook:505
+#, no-c-format
+msgid ""
+"<userinput>PanelSize</userinput> - change the ratio between the two panels."
+msgstr ""
+"<userinput>Imposta una relazione tra i due pannelli</userinput> - modifica "
+"le proporzioni tra i due pannelli."
+
+#. Tag: para
+#: useractions.docbook:510
+#, no-c-format
+msgid ""
+"Parameter (optional): A integer value, &eg;, 80 makes the active panel use "
+"80% of &krusader;'s width (height in vertical mode), omitting the parameter "
+"means 50%."
+msgstr ""
+"Parametro (facoltativo): un valore intero, &eg;, 80 fa usare al pannello "
+"attivo l'ottanta per cento della larghezza di &krusader; (l'altezza, nel "
+"modo verticale); l'omissione del parametro indica il cinquanta per cento."
+
+#. Tag: para
+#: useractions.docbook:518
+#, no-c-format
+msgid "<userinput>Ask</userinput> - cancel the execution."
+msgstr "<userinput>Chiedi</userinput> - annulla l'esecuzione."
+
+#. Tag: para
+#: useractions.docbook:522
+#, no-c-format
+msgid "Parameter (optional): A string for the cancel question."
+msgstr "Parametro (facoltativo): una stringa per la domanda di annullamento."
+
+#. Tag: para
+#: useractions.docbook:528
+#, no-c-format
+msgid ""
+"<userinput>ListFile</userinput> - is replaced by path/file name of a "
+"temporary file containing a list of items"
+msgstr ""
+"<userinput>ElencoFile</userinput> - è sostituito dal nome del percorso/file "
+"di un file temporaneo contenente un elenco di elementi"
+
+#. Tag: para
+#: useractions.docbook:533
+#, no-c-format
+msgid "Parameter: path/filename"
+msgstr "Parametro: percorso/nome file"
+
+#. Tag: para
+#: useractions.docbook:539
+#, no-c-format
+msgid ""
+"<userinput>ColSort</userinput> - set the sorting on a column of a specific "
+"panel."
+msgstr ""
+"<userinput>Imposta ordinamento</userinput> - imposta l'ordinamento di una "
+"colonna di uno specifico pannello."
+
+#. Tag: para
+#: useractions.docbook:544
+#, no-c-format
+msgid ""
+"Parameter: Column: Either <quote>Name</quote>, <quote>Ext</quote>, "
+"<quote>Type</quote>, <quote>Size</quote>, <quote>Modified</quote>, "
+"<quote>Perms</quote>, <quote>rwx</quote>, <quote>Owner</quote> and "
+"<quote>Group</quote>"
+msgstr ""
+"Parametro: colonna <quote>Name</quote>, <quote>Ext</quote>, <quote>Type</"
+"quote>, <quote>Size</quote>, <quote>Modified</quote>, <quote>Perms</quote>, "
+"<quote>rwx</quote>, <quote>Owner</quote> and <quote>Group</quote>"
+
+#. Tag: para
+#: useractions.docbook:549
+#, no-c-format
+msgid ""
+"Parameter: Sort sequence: Either <quote>Toggle</quote>, <quote>Asc</quote>, "
+"<quote>Desc</quote>"
+msgstr ""
+"Parametro: sequenza di ordinamento; <quote>Toggle</quote>, <quote>Asc</"
+"quote> o <quote>Desc</quote>"
+
+#. Tag: para
+#: useractions.docbook:555
+#, no-c-format
+msgid "<userinput>View</userinput> - set the view mode."
+msgstr ""
+"<userinput>Visualizza un file</userinput> - imposta la modalità di "
+"visualizzazione."
+
+#. Tag: para
+#: useractions.docbook:559
+#, no-c-format
+msgid ""
+"Parameter: View mode: Either <quote>generic</quote>, <quote>text</quote>, "
+"<quote>hex</quote>"
+msgstr ""
+"Parametro: modo visualizzazione; <quote>generic</quote>, <quote>text</quote> "
+"o <quote>hex</quote>"
+
+#. Tag: para
+#: useractions.docbook:563
+#, no-c-format
+msgid ""
+"Parameter: Window Mode: Either <quote>tab</quote>, <quote>window</quote>"
+msgstr ""
+"Parametro: modalità della finestra; <quote>tab</quote> o <quote>window</"
+"quote>"
+
+#. Tag: para
+#: useractions.docbook:569
+#, no-c-format
+msgid ""
+"A &GUI;-based helper for placeholder adding is provided. Spaces in Path, "
+"Current and List are by default, automatically escaped. There is one more "
+"important thing to know: All placeholders that interact with &krusader; "
+"internal functions are called at expand time (meaning directly when the "
+"placeholders are replaced). External programs are called at execution time "
+"(meaning after all placeholders are replaced)."
+msgstr ""
+"È fornito un aiuto a interfaccia grafica per l'aggiunta dei segnaposti. Gli "
+"spazi sono inseriti automaticamente in modo predefinito nel percorso, nel "
+"file attuale e nell'elenco. È necessario sapere anche un'altra cosa molto "
+"importante: tutti i segnaposti che interagiscono con le funzioni interne di "
+"&krusader; vengono richiamati al momento dell'espansione (ossia direttamente "
+"quando i segnaposti vengono sostituiti). I programmi esterni vengono "
+"richiamati al tempo di esecuzione (ossia dopo che tutti i segnaposti sono "
+"stati sostituiti)."
+
+#. Tag: emphasis
+#: useractions.docbook:578
+#, no-c-format
+msgid "Advanced Properties"
+msgstr "Proprietà avanzate"
+
+#. Tag: para
+#: useractions.docbook:580
+#, no-c-format
+msgid ""
+"Here you can configure where your command should be visible (for the right "
+"click menu). In addition, it is possible to change the command executed and "
+"confirm it separately. You can also set a user under which the command "
+"should be executed."
+msgstr ""
+"Qui puoi configurare dove deve essere visibile il comando (riferito al menu "
+"contestuale). In aggiunta, è possibile cambiare il comando eseguito e "
+"confermarlo separatamente. Puoi impostare anche un utente per il quale il "
+"comando deve essere eseguito."
+
+#. Tag: para
+#: useractions.docbook:586
+#, no-c-format
+msgid ""
+"Configures if the action is valid for a Protocol, Path, &MIME; type or File "
+"name."
+msgstr ""
+"Configura se l'azione è valida per un protocollo, un percorso, un tipo "
+"&MIME; o un nome di file."
+
+#. Tag: para
+#: useractions.docbook:590
+#, no-c-format
+msgid "Tweaking the command line before being executed."
+msgstr "Regolare la riga di comando prima dell'esecuzione."
+
+#. Tag: para
+#: useractions.docbook:593
+#, no-c-format
+msgid ""
+"Set a different user for the execution (this has no effect in &krusader; "
+"internal functions)"
+msgstr ""
+"Imposta un utente diverso per l'esecuzione (non ha effetto sulle funzioni "
+"interne di &krusader;)"
+
+#~ msgid ""
+#~ "Parameter: Column: Either \"Name\", \"Ext\", \"Type\", \"Size\", "
+#~ "\"Modified\", \"Perms\", \"rwx\", \"Owner\" and \"Group\""
+#~ msgstr ""
+#~ "Parametro: colonna «Nome», «Est», «Tipo», «Dimensione», «Modificato», "
+#~ "«Permessi», «rwx», «Proprietario» e «Gruppo»"
+
+#~ msgid ""
+#~ "<guimenuitem>Use Tooltip checkbox</guimenuitem>: Uses the tooltip as "
+#~ "description."
+#~ msgstr ""
+#~ "<guimenuitem>Usa casella del suggerimento</guimenuitem>: usa il "
+#~ "suggerimento come descrizione."
